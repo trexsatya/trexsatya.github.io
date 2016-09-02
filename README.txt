@@ -68,6 +68,28 @@ Syntax: module.provider( 'providerName', function );
 Result: When declaring providerName as an injectable argument you will be provided with (new ProviderFunction()).$get(). The constructor function is instantiated before the $get method is called - ProviderFunction is the function reference passed to module.provider.
 
 Providers have the advantage that they can be configured during the module configuration phase.
+service, factory, value are all derived from provider.
 
+provider.service = function(name, Class) {
+  provider.provide(name, function() {
+    this.$get = function($injector) {
+      return $injector.instantiate(Class);
+    };
+  });
+}
+
+provider.factory = function(name, factory) {
+  provider.provide(name, function() {
+    this.$get = function($injector) {
+      return $injector.invoke(factory);
+    };
+  });
+}
+
+provider.value = function(name, value) {
+  provider.factory(name, function() {
+    return value;
+  });
+};
 
 
