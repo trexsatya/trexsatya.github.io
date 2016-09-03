@@ -20,24 +20,25 @@
 
 
         <!-- the home page is the default one. -->
-       <!--  <home data-page="true" ng-include src="'html/home.html'" ng-controller="HomeCtrl" data-ng-ready></home> -->
+        <!-- <home data-page="true" ng-include src="'html/home.html'" ng-controller="DrawerCtrl" data-ng-ready></home> -->
 
         <!-- Second page. --> 
         <pagetwo data-page="true" id="pagetwo" ng-include src="'html/pagetwo.html'" ng-controller="PageTwoCtrl"></pagetwo>
         
-          <div class="side-panel side-panel-left" data-expose-aside="none" data-disable="right" data-page="home" id="side-panel-example">
+        <div class="side-panel side-panel-left" data-expose-aside="none" data-disable="right" data-page="home" id="side-panel-example">
             <header class="header-bar">
                 <button class="btn pull-right icon icon-close show-for-phone-only" data-side-panel-close="true"></button>
                 <div class="pull-left">
                     <h1 class="title">Side Panel</h1>
                 </div>
             </header>
-            <div class="content">
+            <div class="content" ng-controller="DrawerCtrl">
                 <ul class="list">
-                    <li><a class="padded-list">Profile</a></li>
+                	<li ng-repeat="(key, value) in options"><a class="padded-list" ng-href="{{value.url}}">{{value.name}}</a></li>
+                    <!-- <li><a class="padded-list">Profile</a></li>
                     <li><a class="padded-list">About</a></li>
                     <li><a class="padded-list">Settings</a></li>
-                    <li><a class="padded-list">Login</a></li>
+                    <li><a class="padded-list">Login</a></li> -->
                 </ul>
             </div>
         </div>
@@ -71,9 +72,10 @@
         <script src="js/lib/angular.min.js"></script>
         <script src="js/lib/phonon/phonon.js"></script>
 
+		<script src="js/modules/home/HomeController.js"></script>
         <script src="js/app.js"></script>
         <script>
-            phonon.options({
+           phonon.options({
                 navigator: {
                     defaultPage: 'home',
                     animatePages: true
