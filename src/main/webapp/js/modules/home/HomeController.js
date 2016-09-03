@@ -18,7 +18,7 @@
          * here we did not implement it, but if you do, you can use readyDelay to add a small delay
          * between the OnCreate and the OnReady callbacks
         */
-		phonon.navigator().on({page: 'home', preventClose: true, content: null, readyDelay: 1}, function(activity) {
+		phonon.navigator().on({page: 'pagetwo', preventClose: true, content: null, readyDelay: 1}, function(activity) {
 
 		    var action = null;
 
