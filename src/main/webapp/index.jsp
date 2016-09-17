@@ -1,88 +1,57 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 
-        <link rel="stylesheet" href="js/lib/phonon/css/phonon.css" />
-        <title>App</title>
-    </head>
-    <body>
-        
-        <!-- Panel tags go here -->
+<!-- define angular app -->
+<html ng-app="scotchApp">
 
-        <!-- Side Panel tags go here -->
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 
-        <!-- Notification tags go here -->
+  <!-- SPELLS -->
+  <script src="js/lib/underscore.js"></script>
+  <script src="js/app/utils.js"></script>
+  
+  <script type="text/javascript">
+  	var files = { "js/lib/angular" : ["angular.js", "animate.js", "ui-router.js"]}
+  	
+  	includeScript(files)
+  </script>
+  
+  <script src="js/app/main.js"></script>
+</head>
 
-        <!-- Dialog tags go here -->
+<!-- define angular controller -->
+<body ng-controller="mainController">
 
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Going to be Awessomee Blog</a>
+      </div>
 
-        <!-- the home page is the default one. -->
-        <!-- <home data-page="true" ng-include src="'html/home.html'" ng-controller="DrawerCtrl" data-ng-ready></home> -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        <!-- Second page. --> 
-        <pagetwo data-page="true" id="pagetwo" ng-include src="'html/pagetwo.html'" ng-controller="PageTwoCtrl"></pagetwo>
-        
-        <div class="side-panel side-panel-left" data-expose-aside="none" data-disable="right" data-page="home" id="side-panel-example">
-            <header class="header-bar">
-                <button class="btn pull-right icon icon-close show-for-phone-only" data-side-panel-close="true"></button>
-                <div class="pull-left">
-                    <h1 class="title">Side Panel</h1>
-                </div>
-            </header>
-            <div class="content" ng-controller="DrawerCtrl">
-                <ul class="list">
-                	<li ng-repeat="(key, value) in options"><a class="padded-list" ng-href="{{value.url}}">{{value.name}}</a></li>
-                    <!-- <li><a class="padded-list">Profile</a></li>
-                    <li><a class="padded-list">About</a></li>
-                    <li><a class="padded-list">Settings</a></li>
-                    <li><a class="padded-list">Login</a></li> -->
-                </ul>
-            </div>
-        </div>
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  
+  <footer class="text-center">
+    <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
+  
+    <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
+  </footer>
+  
+</body>
 
-        <home data-page="true">
-            <header class="header-bar">
-                <button class="btn icon icon-menu pull-left show-for-phone-only" data-side-panel-id="side-panel-example"></button>
-                <div class="center">
-                    <h1 class="title">Side Panels</h1>
-                </div>
-            </header>
-            <div class="content">
-                <div class="padded-full">
-                    <div class="show-for-tablet-up">
-                        <h3>On tablet/large screens</h3>
-
-                        <p>In this demo, the attribute data-expose-aside has the value "left" so the side panel is visible and cannot be closed. On the other hand, if you set the value "none", it is possible to drag and drop in order to toggle the side panel.</p>
-                    </div>
-
-                    <div class="show-for-phone-only">
-                        <h3>On phone screens</h3>
-
-                        <p>In this demo, drag and drop in the page content to open or close the side panel.</p>
-                        <p>You can also click the menu button.</p>
-                    </div>
-                </div>
-            </div> 
-        </home>
-
-        <!-- scripts -->
-        <script src="js/lib/angular.min.js"></script>
-        <script src="js/lib/phonon/phonon.js"></script>
-
-		<script src="js/modules/home/HomeController.js"></script>
-        <script src="js/app.js"></script>
-        <script>
-           phonon.options({
-                navigator: {
-                    defaultPage: 'home',
-                    animatePages: true
-                },
-                i18n: null
-            });
-            phonon.navigator().start();
-        </script>
-    </body>
 </html>
