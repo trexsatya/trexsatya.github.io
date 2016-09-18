@@ -1,7 +1,12 @@
 	// create the module and name it app
-	var app = angular.module('app', ['ngAnimate','ui.router','ui.bootstrap', 'uiRouterStyles']);
+	var app = angular.module('app', ['app.articles.service','ngAnimate','ui.router','ui.bootstrap', 'uiRouterStyles',
+	                                 'ngWig']);
 
-
+	app.config(['ngWigToolbarProvider', function (ngWigToolbarProvider) {
+        ngWigToolbarProvider.setButtons(['formats', 'list1', 'list2', 'bold', 'italic', 'link']);
+        ngWigToolbarProvider.addStandardButton('underline', 'Underline', 'underline', 'fa-underline');
+      }]);
+      
 	app.config(function($stateProvider, $urlRouterProvider) {
 	    
 	    $stateProvider
@@ -58,10 +63,45 @@
 	        })
 	        
 	        .state('article', {
-	        	url: '/article',
-	        	templateUrl : '/html/article/article.html',
-	        	controller: 'articleController'
+	        	url: '/articles',
+	        	template : '<ui-view/>',
+	        	controller: 'articleController',
+	        	abstract: true,
+	        	resolve: {
+	        		articles : ['articles','$q','$timeout',function(articles, $q, $timeout){
+	                    var deferred = $q.defer();
+	                    var mockArticles = [{
+	                        id: 1,
+	                        name: "test article"
+	                    }];
+	                    
+	                    $timeout(function() {
+	                        deferred.resolve(mockArticles);
+	                    }, 1000);
+	                    return deferred.promise;
+	                }]
+	        	},
+	        	onEnter: function($stateParams, $state){
+	        		console.log("entered article")
+	        	}
 	        })
+	        .state('article.list', {
+	        	url: '', //This will become active as soon as parent state is navigated.
+	        	templateUrl : '/html/article/list.html',
+	        	controller: function($scope, articles){
+	        		console.log(articles)
+	        		$scope.articles = articles
+	        	}
+	        })
+	        .state('article.detail', {
+	        	url: '/:id',
+	        	name: 'articleDetail',
+	        	templateUrl : '/html/article/detail.html',
+	        	onEnter: function(){
+	        		console.log('details')
+	        	}
+	        })
+	        
 	    // catch all route
 	    // send users to the form page 
 	    $urlRouterProvider.when('/','/learn')    
