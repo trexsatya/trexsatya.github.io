@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 
 <!-- define angular app -->
-<html ng-app="scotchApp">
+<html ng-app="app" >
 
 <head>
   <!-- SCROLLS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <link rel="stylesheet" href="/css/font-awesome.css" />
+  <link rel="stylesheet" href="/css/bootstrap.css" />
 
   <!-- SPELLS -->
   <script src="js/lib/underscore.js"></script>
   <script src="js/app/utils.js"></script>
   
   <script type="text/javascript">
-  	var files = { "js/lib/angular" : ["angular.js", "animate.js", "ui-router.js"]}
+  	var files = { "js/lib/angular" : ["angular.js", "ui-router.js", "animate.js", "ui-bootstrap.js"],
+				  "js/app/modules" : ["routerStyle.js"]  	
+  				}
   	
   	includeScript(files)
   </script>
@@ -22,7 +24,7 @@
 </head>
 
 <!-- define angular controller -->
-<body ng-controller="mainController">
+<body ng-controller="mainController" ui-router-styles>
 
   <nav class="navbar navbar-default">
     <div class="container">
@@ -31,19 +33,16 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
         <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <div id="main">
-  
-    <!-- angular templating -->
-		<!-- this is where content will be injected -->
-    <div ng-view></div>
-    
+  <div class="container">
+        <!-- views will be injected here -->
+        <div ui-view></div>
   </div>
   
   <footer class="text-center">
