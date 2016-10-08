@@ -1,6 +1,8 @@
 .classpath
 .project
-
+node/
+node_modules/
+reactapp/
 target
 tomcat.8080
 tomcat.5000
