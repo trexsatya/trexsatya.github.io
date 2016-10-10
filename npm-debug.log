@@ -1,14 +1,15 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Users\\Anoop Singh\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'start' ]
+1 verbose cli   'run',
+1 verbose cli   'build' ]
 2 info using npm@3.10.8
 3 info using node@v6.7.0
 4 verbose stack Error: ENOENT: no such file or directory, open 'D:\angular-projects\weblog-angular\package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd D:\angular-projects\weblog-angular
 6 error Windows_NT 10.0.14393
-7 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Anoop Singh\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "start"
+7 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Anoop Singh\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "build"
 8 error node v6.7.0
 9 error npm  v3.10.8
 10 error path D:\angular-projects\weblog-angular\package.json
