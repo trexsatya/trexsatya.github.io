@@ -22,7 +22,8 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'colors' },
 		{ name: 'tools' },
 		{ name: 'others' },
-		{ name: 'about' }
+		{ name: 'about' },
+		{name : 'pbckcode'},
 	];
 
 	// The default plugins included in the basic setup define some buttons that

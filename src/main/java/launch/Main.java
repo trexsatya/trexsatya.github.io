@@ -17,7 +17,7 @@ import org.apache.tomcat.util.scan.StandardJarScanFilter;
 
 public class Main {
 
-    private static File getRootFolder() {
+    public static File getRootFolder() {
         try {
             File root;
             String runningJarPath = Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath().replaceAll("\\\\", "/");
