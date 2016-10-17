@@ -35,7 +35,7 @@ CKEDITOR.plugins.add('pbckcode', {
             ],
             theme    : 'textmate',
             tab_size : 4,
-            js       : "http://cdn.jsdelivr.net//ace/1.1.4/noconflict///"
+            js       : "/static//js//ext-dependencies///"
         };
 
         // merge user settings with default settings
