@@ -2,7 +2,7 @@
 .project
 node/
 node_modules/
-reactapp/
+reactapp/node_modules/
 target
 tomcat.8080
 tomcat.5000
