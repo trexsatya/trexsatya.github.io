@@ -1,0 +1,40 @@
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <title>Learnathing</title>
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"></link>-->
+    <link rel="stylesheet" href="/js/prism.css"/>
+    <!--<link rel="stylesheet" href="/ext/js/font-awesome.css"/>-->
+    <script src="/js/prism.js"></script>
+    <script src="/js/prism.css"></script>
+    <link rel="stylesheet" type="text/css" href="/js/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/js/animate.css">
+    <link rel="stylesheet" type="text/css" href="/js/react-redux-modal.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300,200,100,900' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'/>
+
+    <script src="/js/jquery.js"></script>
+
+    <script src="/js/anime.min.js"></script>
+    <script src="/js/fabric.min.js"></script>
+    <script src="/js/lettering.js"></script>
+    <script src="/js/textillate.js"></script>
+    <script src="/js/typed.min.js"></script>
+    <script src="/js/ace-min/ace.js"></script>
+    <script src="/js/katex/katex.min.js"></script>
+    <link href='/js/katex/katex.min.css' rel='stylesheet' type='text/css'/>
+    <script src="/js/ace-min/ext-beautify.js"></script>
+
+    <style type="text/css">
+        .ui.styled.accordion {
+            width: '100%';
+        }
+    </style>
+</head>
+<body style="background: #d8d8d6;">
+<div id="app" ></div>
+
+<script type="text/javascript">
+</script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+</body>
