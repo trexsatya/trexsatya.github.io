@@ -1,0 +1,80 @@
+jHiccup, JProfiler, Censum, AutoPilot, New Relic, VisualVM, OverOps, Plumbr - AP analysis
+AppDynamics, CA Application Monitoring , Catchpoint, DripStat, Dynatrace Application Monitoring, Dynatrace SaaS and Managed, FusionReactor, Illuminate , SteelCentral, site24x7 - APM
+Immunio 
+
+
+Apache Struts, Apache Tapestry, Apache Wicket, ItsNat, Play, Ninja Framework, zkFramework, Vaadin, Spark Framework - (enterprise) java web
+CUBA Platform - enterpirse app development
+
+YourKitJavaProfiler, xRebel - profiler, 
+
+
+JRebel
+
+Lagom, Hystrix, WildFly, WSO2 - microservices
+
+
+Jersey, DropWizard, Spring-Boot - 
+RxJava, Project Reactor, Vert.x Netty - Event-driven/Reactive
+
+Apache Xerces2, jDBI, JDOM, xstream - xml 
+
+Electric Flow, Puppet, Ansible, XebiaLabsXL -deployment 
+
+vmlens, Race Catcher - concurrency
+
+Finagle/Finatra - RPC
+
+Twilio - Messaging APIs(speech,text,VoIP)
+Push Technology, JGroups - messagin libraries
+
+Go - Continuous delivery
+Jenkins, Cloudbees Jenkins Platform
+
+Docker, Sysdig, Kubernetes - container related
+
+TestNG, Cucumber, Spock, Selenium  - Testing
+Sauce Labs Automated Testing Platform - Testing automation for android
+JaCOCO, Clover - code coverage
+
+
+Dagger, Guice, Spring -IoC 
+
+TayzGrid, Apache Ignite, GridGain, Hazelcast Enterprise Platform, WebSphere eXtreme Scale, Oracle Coherence, Percona Server, GemFire, Infinispan, JBoss Data Grid, Redis, BigMemory Max, EHCache - Caching/ data grid
+Informatica - data integration and management
+Teradata - Bigdata
+Apache Kafka
+H2, Derby
+Couchbase, MongoDB, 
+
+BlueMix, Jelastic, Heroku Platform , Salesforce App Cloud - PaaS
+
+EclipseLink, MyBatis, Hibernate - ORM
+DataDirect - datastore connection
+
+
+Activiti, Drools - BPMs, Rules management
+
+Apache TomEE, WebSphere, WebLogic, Payara Server, Glassfish , Wildfly - Application Servers
+Jetty, Apache, NGINX, Tomcat - Web server
+
+
+OSGi - modular/component based system
+
+Apache CXF, Apache DeltaSpike, Apache Lucene, FlexJSON, Selenide, jOOQ, jOO_ (java8 extension), Eclipse Collections, gson, Apache util libraries, Guava, Jackson, C3P0, QueryDSL - libraries
+
+Jahia Platform, JReport, Joda Platform, Liferay - CMS 
+
+SmartGWT
+
+Eclipse Che
+
+Cask
+
+TrueSight Pulse - infra monitoring
+
+Zing, Zulu - JDKs
+
+Apache Shiro - security
+
+Apache Camel
