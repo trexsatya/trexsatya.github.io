@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<script>
+var app = angular.module("myApp", []); 
+app.controller("pageCtrl", function($scope) {
+    $scope.appLogs = {};
+    collectPods(collectLogs($scope));
+});
+function collectPods(whenDone){
+	
+}
+
+function collectLogs(toUpdate){
+
+   toUpdate.$applyAsync();
+}
+
+function socketData(wsUrl, onMessage){
+	var ws = new WebSocket(wsUrl);
+				
+    ws.onopen = function(){
+      // Web Socket is connected, send data using send()
+      ws.send("Message to send");
+      console.log("Message is sent...");
+    };
+
+    ws.onmessage = function (evt) { 
+      var received_msg = evt.data;
+      onMessage(received_msg);
+    };
+
+    ws.onclose = function() { 
+      // websocket is closed.
+      console.log("Connection is closed..."); 
+    };
+
+    window.onbeforeunload = function(event) {
+      socket.close();
+    };
+}
+
+</script>
+
+<div ng-app="myApp" ng-controller="pageCtrl">
+  <ul>
+    <li ng-repeat="(app,logs) in appLogs">
+      <div> {{app}} </div>
+      <div style="max-height:200">
+      	<div ng-repeat="logLine in appLogs[app] track by $index">
+          {{logLine}}
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>
