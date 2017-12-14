@@ -59,3 +59,64 @@ function socketData(wsUrl, onMessage){
 
 </body>
 </html>
+
+
+import com.jayway.jsonpath.JsonPath
+import groovy.json.JsonSlurper
+
+import java.awt.Toolkit
+import java.awt.datatransfer.DataFlavor
+
+import static groovy.json.JsonOutput.prettyPrint
+import static groovy.json.JsonOutput.toJson
+
+String string = Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor)
+
+boolean isRunningJson = false
+List jsonStrings = []
+String jsonString = ""
+
+def extractions = [] as Set
+string.each {letter ->
+    jsonStrings = jsonStrings.collect { it +letter }
+    if(letter == "{") {
+        jsonStrings.add("{")
+    }
+    else if(letter == "}"){
+        jsonStrings.each {
+            def json = jsonConversionOf(it)
+            if(json) extractions.add(json)
+        }
+    }
+}
+
+extractions = extractions.collect { toJson(it)}.toSorted{a,b -> (a.length() <=> b.length()) }
+
+def finalExtraction = []
+
+for(int i=0; i < extractions.size(); i++){
+    boolean isContained = false
+    for(int j=i+1; j < extractions.size(); j++){
+        if(extractions[j].contains(extractions[i])){
+            isContained = true; break
+        }
+    }
+    if(!isContained) finalExtraction.add(extractions[i])
+}
+
+finalExtraction.each {
+    println(prettyPrint(it))
+    println("\n---------------------------\n")
+}
+
+def jsonConversionOf(String jsonString){
+    try {
+        return new JsonSlurper().parseText(jsonString)
+    } catch (e){
+        return null
+    }
+}
+
+def masterJson(set) {
+
+}
