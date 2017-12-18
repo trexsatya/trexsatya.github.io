@@ -61,62 +61,109 @@ function socketData(wsUrl, onMessage){
 </html>
 
 
-import com.jayway.jsonpath.JsonPath
-import groovy.json.JsonSlurper
+import groovy.transform.Field
 
+import javax.script.Invocable
+import javax.script.ScriptEngine
+import javax.script.ScriptEngineManager
 import java.awt.Toolkit
 import java.awt.datatransfer.DataFlavor
-
-import static groovy.json.JsonOutput.prettyPrint
-import static groovy.json.JsonOutput.toJson
+import java.awt.datatransfer.StringSelection
 
 String string = Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor)
 
-boolean isRunningJson = false
-List jsonStrings = []
-String jsonString = ""
-
-def extractions = [] as Set
-string.each {letter ->
-    jsonStrings = jsonStrings.collect { it +letter }
-    if(letter == "{") {
-        jsonStrings.add("{")
-    }
-    else if(letter == "}"){
-        jsonStrings.each {
-            def json = jsonConversionOf(it)
-            if(json) extractions.add(json)
-        }
+def lines = string.split("\n");
+def out = [new StringBuilder()]
+lines.each { line ->
+    if(line =~ /^\d{2,2}\:\d{2,2}:\d{2,2}.\d{3,}/){
+        out.add(new StringBuilder(line))
+    } else {
+        out.last().append(line)
     }
 }
 
-extractions = extractions.collect { toJson(it)}.toSorted{a,b -> (a.length() <=> b.length()) }
+def processedLogs = out.findAll {
+    it.length() > 0
+}.collect { processLogLine(it.toString())}.join("\n")
 
-def finalExtraction = []
+println(processedLogs)
 
-for(int i=0; i < extractions.size(); i++){
-    boolean isContained = false
-    for(int j=i+1; j < extractions.size(); j++){
-        if(extractions[j].contains(extractions[i])){
-            isContained = true; break
-        }
-    }
-    if(!isContained) finalExtraction.add(extractions[i])
+def stringSelection = new StringSelection(processedLogs)
+Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,stringSelection)
+
+def processLogLine(String line) {
+    if(line.contains("<?xml")) return formatXml(line)
+    return tryJsonFormatting(line)
 }
 
-finalExtraction.each {
-    println(prettyPrint(it))
-    println("\n---------------------------\n")
+def formatXml(String string){
+    Invocable invocable = getJSEngine()
+    return invocable.invokeFunction("prettyXml", string)
 }
 
-def jsonConversionOf(String jsonString){
+def formatJson(String string){
     try {
-        return new JsonSlurper().parseText(jsonString)
-    } catch (e){
-        return null
+        return getJSEngine().invokeFunction("prettyJson", string)
+    }catch (e){
+        return string
     }
 }
 
-def masterJson(set) {
+def tryJsonFormatting(String logLine) {
+    def jsonFormatOuts = []
 
+    int len = logLine.length()
+    int leftBraceAt = logLine.indexOf("{")
+    if(leftBraceAt == -1) return logLine
+    jsonFormatOuts.add(logLine.substring(0,leftBraceAt))
+
+    def stack = [] as Stack
+
+    StringBuilder jsonString = new StringBuilder()
+
+    int x = leftBraceAt
+
+    while (x < len){
+        if(logLine[x] == "{") {
+            stack.push("{")
+        }
+        else if(logLine[x] == "}") {
+            stack.pop()
+        }
+        jsonString.append(logLine[x])
+
+        if(stack.isEmpty()) {
+            jsonFormatOuts.add(formatJson(jsonString.toString()))
+
+            jsonString = new StringBuilder()
+        }
+
+        x++
+    }
+    jsonFormatOuts.add(formatJson(jsonString.toString()))
+    return jsonFormatOuts.join("")
+}
+
+
+private Invocable getJSEngine() {
+    ScriptEngineManager engineManager = new ScriptEngineManager();
+
+    // Create ScriptEngine
+    ScriptEngine engine = engineManager.getEngineByName("ECMAScript");
+
+    //Create file and reader instance for reading the script file
+    File file = new File("vkbeautify.js");
+    Reader reader = new FileReader(file);
+
+    //Pass the script file to the engine
+    engine.eval("window={}")
+    engine.eval(reader)
+
+    //Create invocable instance
+    Invocable invocable = (Invocable) engine
+
+    //Invoke the methods defined in the script file
+    engine.eval("var beautifier = new vkbeautify(); function prettyXml(text){ return beautifier.xml(text) }" +
+            "function prettyJson(text){ return beautifier.json(text); }")
+    invocable
 }
