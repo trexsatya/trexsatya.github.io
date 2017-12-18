@@ -167,3 +167,17 @@ private Invocable getJSEngine() {
             "function prettyJson(text){ return beautifier.json(text); }")
     invocable
 }
+
+
+from subprocess import Popen as command
+from subprocess import PIPE
+import re
+pos = command(["oc","get","po"], stdout=PIPE)
+runningPos = command(["grep" , "Running"], stdin=pos.stdout, stdout=PIPE)
+justNamesOfPos = command(["awk", "{print $1}"], stdin= runningPos.stdout, stdout=PIPE)
+(out,err) = justNamesOfPos.communicate()
+for pod in out.split('\n'):
+    toDownload = next((x for x in ["req.*", "res.*", "bat.*"] if re.compile(x).match(pod)), False)
+    if toDownload:
+      log = command(["oc", "logs", pod], stdout = open(pod, "w+"))
+      log.communicate()
