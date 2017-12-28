@@ -181,3 +181,38 @@ for pod in out.split('\n'):
     if toDownload:
       log = command(["oc", "logs", pod], stdout = open(pod, "w+"))
       log.communicate()
+
+
+
+http://visjs.org/dist/vis.js
+
+<script type="text/javascript">
+	connections = { 1: [2,3], 4: [5], 3: [6,7]}
+
+	var _nodes = {};
+	Object.keys(connections).forEach(k => { nodes[k] = 1; connections[k].forEach(vi => nodes[vi] = 1);})
+
+	Object.keys(nodes).map(n => { return {id: n, label: n} })
+
+	var _edges = [];
+	Object.keys(connections).forEach( n => {
+	   connections[n].forEach( v => {
+		edges.push({ from: n, to: v, arrows: 'to'}) 
+	   })
+	})
+
+  // create an array with nodes
+  var nodes = new vis.DataSet(_nodes)
+
+  // create an array with edges
+  var edges = new vis.DataSet(_edges);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {};
+  var network = new vis.Network(container, data, options);
+</script>
