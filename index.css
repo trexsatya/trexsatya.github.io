@@ -160,3 +160,14 @@ hr.boxed + h2::before {
 hr.boxed + h2::after {
   right: 0;
 }
+
+hr.dots {
+  margin: 12px 0;
+  border: 0;
+  text-align: center;
+}
+hr.dots:before {
+  content: "•••";
+  font-size: 50px;
+  color: #4F8BCA;
+}
