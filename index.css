@@ -164,6 +164,7 @@ hr.boxed + h2::after {
 hr.dots {
   margin: 12px 0;
   border: 0;
+  width: 100%;	
   text-align: center;
 }
 hr.dots:before {
