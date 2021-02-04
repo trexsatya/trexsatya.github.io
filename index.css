@@ -35,13 +35,15 @@ a {
 hr {
   border: 0;
   height: 1px;
-  width: 10%;
   position: relative;
   margin: 30px auto;
 }
+
 hr.center-ball {
   background: #39D1B4;
+  width: 10%;
 }
+
 hr.center-ball:before {
   content: "";
   width: 6px;
@@ -59,6 +61,7 @@ hr.center-ball:before {
 }
 hr.center-diamond {
   background: #39D1B4;
+  width: 10%;
 }
 hr.center-diamond:before {
   content: "";
@@ -79,6 +82,7 @@ hr.center-diamond:before {
 }
 hr.center-square {
   background: #39D1B4;
+  width: 10%;	
 }
 hr.center-square:before {
   content: "";
@@ -94,6 +98,7 @@ hr.center-square:before {
 }
 hr.center-star {
   background: #39D1B4;
+  width: 10%;	
 }
 hr.center-star:before {
   content: "★";
@@ -166,6 +171,7 @@ hr.dots {
   border: 0;
   width: 100%;	
   text-align: center;
+  margin-bottom: 5em;
 }
 hr.dots:before {
   content: "•••";
