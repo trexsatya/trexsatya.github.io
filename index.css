@@ -1,5 +1,421 @@
-@font-face {
-  font-family: myFirstFont;
-  src: url(fonts/Beattingvile.woff);
+.box1 {
+    line-height: 2.5em;
+    background-color: #f3f3f3;
+    color: #17175f;
+    padding: 2%;
+}
+
+body {
+	background-color: black;
+}
+
+.article .content {
+	background-color: white;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+a {
+	color: blue;
+}
+
+@media (max-width: 767px) {
+  .article .content {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
+
+  h2.article-name { 
+    font-size: 50px;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  position: relative;
+  margin: 30px auto;
+}
+
+hr.center-ball {
+  background: #39D1B4;
+  width: 10%;
+}
+
+hr.center-ball:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #39D1B4;
+  display: inline-block;
+  border: 2px solid #39D1B4;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  margin: 0 0 0 -3px;
+}
+hr.center-diamond {
+  background: #39D1B4;
+  width: 10%;
+}
+hr.center-diamond:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #39D1B4;
+  display: inline-block;
+  border: 2px solid #39D1B4;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin: 0 0 0 -3px;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Opera, Chrome, and Safari */
+}
+hr.center-square {
+  background: #39D1B4;
+  width: 10%;	
+}
+hr.center-square:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #39D1B4;
+  display: inline-block;
+  border: 2px solid #39D1B4;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin: 0 0 0 -3px;
+}
+hr.center-star {
+  background: #39D1B4;
+  width: 10%;	
+}
+hr.center-star:before {
+  content: "★";
+  color: #39D1B4;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin: 0 0 0 -3px;
+  font-size: 15px;
+  line-height: 0;
+  text-shadow: 0 0 3px #d9d9d9;
+}
+
+
+
+hr.boxed {
+  display: block;
+  margin: 50px 0 -15px;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+hr.boxed + h2 {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #453986;
+  transform: translateX(-50%);
+  color: #453986;
+  font-size: 12px !important;
+  font-weight: bolder !important;
+  letter-spacing: 0.25em !important;
+  padding-bottom: 0.5em !important;
+  margin-top: -1em !important;
+  margin-bottom: 2em !important;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+hr.boxed + h2::first-letter {
+  margin-left: 0.32em;
+}
+
+/* Alternative transform: translate */
+hr.boxed + h2 {
+  border-width: 1px 0;
+}
+hr.boxed + h2::before, hr.boxed + h2::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #453986;
+  content: "";
+}
+hr.boxed + h2::before {
+  left: 0;
+}
+hr.boxed + h2::after {
+  right: 0;
+}
+
+hr.dots {
+  margin: 12px 0;
+  border: 0;
+  width: 100%;	
+  text-align: center;
+  margin-bottom: 5em;
+}
+hr.dots:before {
+  content: "•••";
+  font-size: 50px;
+  color: #4F8BCA;
+}
+
+hr.zig, hr.zag {
+  border: none;
+  height: 30px;
+  margin: 0 50px;
+}
+
+hr.zig{
+  background: linear-gradient(-135deg, #FFF 20px, rgba(0, 0, 0, 0) 0) 0 5px, linear-gradient(135deg, #FFF 20px, rgba(0, 0, 0, 0) 0) 0 5px;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: 20px 40px;
+  z-index: 100;
+  position: relative;
+}
+
+hr.zag {
+  background: linear-gradient(-135deg, #333 20px, rgba(0, 0, 0, 0) 0) 0 5px, linear-gradient(135deg, #333 20px, #FFF 0) 0 5px;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: 20px 40px;
+  z-index: 50;
+  margin-top: -28px;
+}
+
+.liner {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+.liner:after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: #D66853;
+  min-width: 20px;
+  margin: auto;
+}
+.liner:after {
+  margin-left: 20px;
+}
+
+/*
+<h1 class="liner">Good for titles</h1>
+  <h2 class="liner">...And subtitles</h2>
+  <p class="liner">Even for a long a$$ blocks of text</p>
+  <p class="liner">
+    <button>Works with any element</button>
+  </p>
+*/
+
+.text-hr {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  width: 100%;
+  margin: 15px auto;
+  color: #444;
+}
+.text-hr__text {
+  padding-right: 15px;
+}
+.text-hr__text:not(:first-child) {
+  display: none;
+}
+.text-hr::after {
+  flex: 1;
+  background: #c7c7c7;
+  content: "";
+  height: 1px;
+}
+.text-hr--right .text-hr__text {
+  order: 1;
+  padding: 0 0 0 15px;
+}
+.text-hr--double .text-hr__text:nth-child(2) {
+  order: 1;
+  display: inline;
+  padding: 0 0 0 15px;
+}
+.text-hr--center::before {
+  flex: 1;
+  background: #c7c7c7;
+  content: "";
+  height: 1px;
+}
+.text-hr--center .text-hr__text {
+  padding: 0 15px;
+}
+.text-hr--triple .text-hr__text:nth-child(2) {
+  order: 2;
+  display: inline;
+  padding: 0 15px;
+}
+.text-hr--triple .text-hr__text:nth-child(3) {
+  order: 4;
+  display: inline;
+  padding: 0 0 0 15px;
+}
+.text-hr--triple::after {
+  order: 3;
+}
+.text-hr--triple::before {
+  flex: 1;
+  background: #c7c7c7;
+  content: "";
+  height: 1px;
+  order: 1;
+}
+.text-hr--loud .text-hr__text {
+  font-size: 36px;
   font-weight: bold;
+}
+.text-hr--loud .text-hr__text:nth-child(2) {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/*
+<div class="text-hr">
+  <span class="text-hr__text">Standard</span>
+</div>
+<div class="text-hr text-hr--right">
+  <span class="text-hr__text">Right Aligned</span>
+</div>
+<div class="text-hr text-hr--double">
+  <span class="text-hr__text">Double</span>
+  <span class="text-hr__text">Sided</span>
+</div>
+<div class="text-hr text-hr--center">
+  <span class="text-hr__text">Centered</span>
+</div>
+<!-- Added 2016-07-09 -->
+<div class="text-hr text-hr--triple">
+  <span class="text-hr__text">First</span>
+  <span class="text-hr__text">Second</span>
+  <span class="text-hr__text">Third</span>
+</div>
+<div class="text-hr text-hr--loud">
+  <span class="text-hr__text">First</span>
+</div>
+<div class="text-hr text-hr--double text-hr--loud">
+  <span class="text-hr__text">First</span>
+  <span class="text-hr__text">Second</span>
+</div>
+*/
+
+.divider {
+  display: flex;
+}
+.divider:before, .divider:after {
+  content: "";
+  flex: 1;
+}
+
+.line {
+  align-items: center;
+  margin: 1em -1em;
+}
+.line:before, .line:after {
+  height: 1px;
+  margin: 0 1em;
+}
+
+.one-line:before, .one-line:after {
+  background: black;
+}
+
+.razor:before, .razor:after {
+  box-shadow: 0 0.5px 0 black;
+}
+
+.double-razor:before, .double-razor:after {
+  height: 3px;
+  box-shadow: 0 -0.5px 0 black, 0 0.5px 0 black;
+  border-width: 0;
+}
+
+.glow:before, .glow:after {
+  height: 6px;
+  -webkit-filter: blur(5px);
+  border-radius: 5px;
+}
+.glow:before {
+  background: linear-gradient(to right, blue, hotpink);
+}
+.glow:after {
+  background: linear-gradient(to left, blue, hotpink);
+}
+
+.gradient {
+  align-items: stretch;
+  margin: 1em 0;
+  height: 2em;
+  line-height: 2em;
+  color: white;
+  background: black;
+}
+.gradient:before {
+  background: linear-gradient(to right, white, black);
+}
+.gradient:after {
+  background: linear-gradient(to left, white, black);
+}
+
+.donotcross {
+  overflow: hidden;
+  align-items: center;
+  background: #ffd500;
+  color: black;
+  height: 2em;
+  line-height: 2em;
+}
+.donotcross:before, .donotcross:after {
+  background: white;
+  padding: 50px 0;
+  height: 0;
+  transform: rotate(45deg);
+}
+
+/*
+<h2 class="divider line one-line" contenteditable>Simple 1px</h2>
+<h2 class="divider line razor" contenteditable>Razor Line 0.5px</h2>
+<h2 class="divider line double-razor" contenteditable>Double 0.5px</h2>
+<h2 class="divider line glow" contenteditable>Light Saber</h2>
+<h2 class="divider gradient" contenteditable>Gradient Heading</h2>
+<h2 class="divider donotcross" contenteditable>Do Not Cross</h2>
+*/
+
+hr.shadow {
+  border:none;
+  height: 20px;
+ 	width: 90%;
+	height: 50px;
+	margin-top: 0;
+	border-bottom: 1px solid #1f1209;
+	box-shadow: 0 20px 20px -20px #333;
+  margin: -50px auto 10px; 
 }
