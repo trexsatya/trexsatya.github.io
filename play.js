@@ -213,7 +213,7 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
      if(first.length) {
        let task = typeof(first[0]) == 'function' ? first[0] : () => taskRunner(first[0])
        let result = task()
-
+       update();
        if(result instanceof Promise) {
        	   result.then(it => {
        	   	  fn(100)
