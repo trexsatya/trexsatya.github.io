@@ -15,6 +15,18 @@ function globalStore(key, obj){
 	return key+id
 }
 
+window.globalFabricObjId = 0;
+
+fabric.Canvas.prototype.add = (function(originalFn) {
+  return function(...args) {
+    originalFn.call(this, ...args);
+    globalFabricObjId += 1;
+    args[0].uid = globalFabricObjId;
+    console.log('added obj ' + globalFabricObjId);
+    return this
+  };
+})(fabric.Canvas.prototype.add);
+
 function record() {
   $("#btnStart").click()
 }
@@ -1689,3 +1701,14 @@ function handleFileDialogButtons(src) {
 		}//onpaste
 
 
+function scrollBackgroundInf() {
+	var x = 0;
+    window.bgScroll = setInterval(function(){
+        x-=1;
+        $('body').css('background-position', x + 'px 0');
+    }, 10);
+}
+
+function stopBackgroundScroll() {
+	if(window.bgScroll) clearInterval(window.bgScroll)
+}
