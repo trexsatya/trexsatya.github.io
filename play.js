@@ -15,6 +15,14 @@ function globalStore(key, obj){
 	return key+id
 }
 
+function update(canvas) {
+  if(!canvas) canvas = pc;
+  if(canvas) {
+    canvas._objects.forEach(o => o.setCoords());
+    canvas.renderAll();
+  }
+}
+
 window.globalFabricObjId = 0;
 
 fabric.Canvas.prototype.add = (function(originalFn) {
