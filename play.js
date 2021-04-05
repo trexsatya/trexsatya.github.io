@@ -8,7 +8,8 @@ function globalStore(key, obj){
 	if(!window.globalMapping) window.globalMapping = {}
 	if(!globalMapping[key]) globalMapping[key] = 0
 
-	let id = globalMapping[key] + 1
+	let id = globalMapping[key] + 1;
+	globalMapping[key] = id;
 	_[key+id] = obj
 	
 	return key+id
