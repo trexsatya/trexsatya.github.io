@@ -4,6 +4,16 @@ window.globalVariableNames = {
     "texts": 0
 }
 
+function globalStore(key, obj){
+	if(!window.globalMapping) window.globalMapping = {}
+	if(!globalMapping[key]) globalMapping[key] = 0
+
+	let id = globalMapping[key] + 1
+	_[key+id] = obj
+	
+	return key+id
+}
+
 function record() {
   $("#btnStart").click()
 }
@@ -798,6 +808,7 @@ function Copy(canvas) {
     window.canPasteImageFromClipboard = false;
 }
 
+
 function Paste(canvas) {
     if (!window._clipboard) return;
 
@@ -819,6 +830,8 @@ function Paste(canvas) {
             // active selection needs a reference to the canvas.
             clonedObj.canvas = canvas;
             clonedObj.forEachObject(function(obj) {
+	            let id = globalStore('clone', obj)
+	        	console.log(`Cloned _.${id}`)
                 canvas.add(obj);
                 var tr = obj.calcTransformMatrix()
                 options.left = obj.left + 10 + tr[4]
@@ -828,14 +841,19 @@ function Paste(canvas) {
             });
 
         } else {
+        	let id = globalStore('clone', clonedObj)
+        	console.log(`Cloned _.${id}`)
             canvas.add(clonedObj);
         }
         _clipboard.top += 10;
         _clipboard.left += 10;
+
+
         //canvas.setActiveObject(clonedObj);
         canvas.renderAll();
     });
 }
+
 
 function editSelectedObject() {
     if (!pc.getActiveObject()) return;
