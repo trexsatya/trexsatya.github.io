@@ -183,7 +183,12 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
        let task = typeof(first[0]) == 'function' ? first[0] : () => taskRunner(first[0])
        let result = task()
 
-       if(result !== false) {
+       if(result instanceof Promise) {
+       	   result.then(it => {
+       	   	  fn(100)
+       	   })
+       }
+       else if(result !== false) {
           let delay = timeInSeconds*1000
           if(typeof(result) == 'number') delay = result * 1000
 
@@ -206,6 +211,37 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
      }
   }, x);
   fn(0);
+}
+
+
+function speak(msg, name) {
+	if (!name) name = 'Samantha'
+	let speech = new SpeechSynthesisUtterance();
+	let voice = speechSynthesis.getVoices().find(it => it.name == name);
+	console.log(voice.name)
+	speech.voice = voice;
+	speech.text = msg;
+	speech.volume = 1;
+	speech.rate = 1;
+	speech.pitch = 1;                
+
+	window.speechSynthesis.speak(speech);
+
+	return new Promise(function(myResolve, myReject) {
+		speech.onend = e => {
+			myResolve()
+		}
+	});
+}
+
+var pos = obj => {
+   let c = obj.aCoords
+   return {...c, 
+   			ml: {x: c.tl.x, y: c.tl.y + (c.bl.y - c.tl.y)/2}, 
+   			mr: {x: c.tr.x, y: c.tr.y + (c.br.y - c.tr.y)/2},
+   			mt: {y: c.tl.y, x: c.tl.x + (c.tr.x - c.tl.x)/2},
+   			mb: {y: c.bl.y, x: c.bl.x + (c.br.x - c.bl.x)/2},
+   }
 }
 
 function resumeAnimationScript() {
