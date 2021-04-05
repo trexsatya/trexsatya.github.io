@@ -795,12 +795,12 @@ function duplicate(obj) {
   }).then(x => { pc.add(x); return x});
 }
 
-function Copy(canvas) {
+function Copy(canvas, obj) {
     // clone what are you copying since you
     // may want copy and paste on different moment.
     // and you do not want the changes happened
     // later to reflect on the copy.
-    var target = canvas.getActiveObject() || canvas.getActiveGroup();
+    var target = obj || canvas.getActiveObject() || canvas.getActiveGroup();
     if(!target) return;
 
     target.clone(function(cloned) {
