@@ -156,6 +156,9 @@ function textbox(opts){
       hasRotatingPoint: true,
       centerTransform: true
     });
+    let id = globalStore('tb', textSample)
+
+    console.log(`_.${id} = textbox(${JSON.stringify(opts)})`)
 	return textSample
 }
 
