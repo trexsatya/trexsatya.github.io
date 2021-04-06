@@ -36,22 +36,28 @@ fabric.Canvas.prototype.add = (function(originalFn) {
 })(fabric.Canvas.prototype.add);
 
 
-function addImported(objs, canvas){
+function addFromJSON(objs, canvas){
 	if(!objs) return;
 	if(!canvas) canvas = pc;
 
 	let items = [objs].flat()
-	fabric.util.enlivenObjects(items, function(objects) {
-	  var origRenderOnAddRemove = canvas.renderOnAddRemove;
-	  canvas.renderOnAddRemove = false;
 
-	  objects.forEach(function(o) {
-	    canvas.add(o);
-	  });
+	return new Promise((myResolve, myReject) => {
+		fabric.util.enlivenObjects(items, function(objects) {
+		  var origRenderOnAddRemove = canvas.renderOnAddRemove;
+		  canvas.renderOnAddRemove = false;
 
-	  canvas.renderOnAddRemove = origRenderOnAddRemove;
-	  canvas.renderAll();
-	});
+		  let res = []
+		  objects.forEach(function(o) {
+		    canvas.add(o);
+		    res.push(o);
+		  });
+		  myResolve(res)
+
+		  canvas.renderOnAddRemove = origRenderOnAddRemove;
+		  canvas.renderAll();
+		});
+	})
 }
 
 function findById(id, canvas) {
