@@ -665,14 +665,22 @@ function visualAlgoMethods(){
 	]
 }
 
-function animate(canvas, obj, props,opts){
-	Object.keys(props).forEach(k => {
-		obj.animate(k, props[k], Object.assign({}, {
-			  duration: 1000,
-			  onChange: canvas.renderAll.bind(canvas),
-			  onComplete: function() {}
-		},opts));
+function animate(obj, props,opts){
+	let canvas = pc;
+	let options = Object.assign({}, {
+	  duration: 1000,
+		  onChange: canvas.renderAll.bind(canvas),
+		  onComplete: function() {}
+	},opts);
 
+	let fn = options.onComplete;
+
+	return new Promise(function(myResolve, myReject) {
+	    options.onComplete = (e) => {
+	    	fn(e);
+	    	myResolve()
+	    }
+		obj.animate(props, options);
 	});
 }
 
