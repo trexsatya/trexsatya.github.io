@@ -255,7 +255,7 @@ function speak(msg, name) {
 	if (!name) name = 'Samantha'
 	let speech = new SpeechSynthesisUtterance();
 	let voice = speechSynthesis.getVoices().find(it => it.name == name);
-	console.log(voice.name)
+	//console.log(voice.name)
 	speech.voice = voice;
 	speech.text = msg;
 	speech.volume = 1;
