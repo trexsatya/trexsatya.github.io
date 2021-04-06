@@ -35,6 +35,12 @@ fabric.Canvas.prototype.add = (function(originalFn) {
   };
 })(fabric.Canvas.prototype.add);
 
+
+function findById(id, canvas) {
+   if(!canvas) canvas = pc
+   return canvas._objects.find(it => it.uid == id)
+}
+
 function record() {
   $("#btnStart").click()
 }
