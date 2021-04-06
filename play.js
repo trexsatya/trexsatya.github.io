@@ -36,6 +36,24 @@ fabric.Canvas.prototype.add = (function(originalFn) {
 })(fabric.Canvas.prototype.add);
 
 
+function addImported(objs, canvas){
+	if(!objs) return;
+	if(!canvas) canvas = pc;
+
+	let items = [objs].flat()
+	fabric.util.enlivenObjects(items, function(objects) {
+	  var origRenderOnAddRemove = canvas.renderOnAddRemove;
+	  canvas.renderOnAddRemove = false;
+
+	  objects.forEach(function(o) {
+	    canvas.add(o);
+	  });
+
+	  canvas.renderOnAddRemove = origRenderOnAddRemove;
+	  canvas.renderAll();
+	});
+}
+
 function findById(id, canvas) {
    if(!canvas) canvas = pc
    return canvas._objects.find(it => it.uid == id)
