@@ -60,6 +60,19 @@ function addFromJSON(objs, canvas){
 	})
 }
 
+function Clone(object){
+	return new Promise((myResolve, myReject) => {
+		object.clone(function(clone) {
+	    	pc.add(clone.set({
+	        	left: object.left + 1, 
+		        top: object.top + 1
+		    }));
+		    update();
+		    myResolve(clone);
+		});
+	});
+}
+
 function findById(id, canvas) {
    if(!canvas) canvas = pc
    return canvas._objects.find(it => it.uid == id)
