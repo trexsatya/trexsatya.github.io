@@ -69,6 +69,7 @@ function Clone(object){
 		    }));
 		    update();
 		    myResolve(clone);
+  		    if(window._) _[id] = clone;
 		});
 	});
 }
