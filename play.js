@@ -36,9 +36,10 @@ fabric.Canvas.prototype.add = (function(originalFn) {
 })(fabric.Canvas.prototype.add);
 
 
-function addFromJSON(objs, canvas){
+function addFromJSON(objs, id){
+	let ids = [id].flat()
 	if(!objs) return;
-	if(!canvas) canvas = pc;
+        let canvas = pc;
 
 	let items = [objs].flat()
 
@@ -48,19 +49,22 @@ function addFromJSON(objs, canvas){
 		  canvas.renderOnAddRemove = false;
 
 		  let res = []
+		  let i = 0;
 		  objects.forEach(function(o) {
 		    canvas.add(o);
 		    res.push(o);
+		    if(ids[i] && window._) _[ids[i]] = o;
+	            i++;
 		  });
 		  myResolve(res)
-
+                  
 		  canvas.renderOnAddRemove = origRenderOnAddRemove;
 		  canvas.renderAll();
 		});
 	})
 }
 
-function Clone(object){
+function Clone(object, id){
 	return new Promise((myResolve, myReject) => {
 		object.clone(function(clone) {
 	    	pc.add(clone.set({
@@ -69,7 +73,7 @@ function Clone(object){
 		    }));
 		    update();
 		    myResolve(clone);
-  		    if(window._) _[id] = clone;
+  		    if(window._ && id) _[id] = clone;
 		});
 	});
 }
