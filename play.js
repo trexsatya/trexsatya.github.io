@@ -1782,3 +1782,26 @@ function scrollBackgroundInf() {
 function stopBackgroundScroll() {
 	if(window.bgScroll) clearInterval(window.bgScroll)
 }
+
+var checkAndInject = function(name, url) {
+        if (typeof window[name] != 'undefined') {
+            return console.log(name + ' already present: v' + jQuery.fn.jquery);
+        }
+        var script = document.createElement('script');
+        script.src = url;
+        var head = document.getElementsByTagName('head')[0],
+            done = false;
+        script.onload = script.onreadystatechange = function() {
+            if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+                done = true;
+                if (typeof jQuery == 'undefined') {
+                    console.log(name + ' not loaded');
+                } else {
+                    console.log(name + ' loaded');
+                }
+                script.onload = script.onreadystatechange = null;
+                head.removeChild(script);
+            }
+        };
+        head.appendChild(script);
+    };
