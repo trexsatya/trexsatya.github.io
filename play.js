@@ -213,34 +213,41 @@ function resetTextillateContainer() {
     $('#cinemaText').css({ color: 'black'})
     $('#cinemaText').html('')
 }
-
 function type(strings, elSelector, opts) {
   var options = Object.assign({}, {
     strings: [strings].flat(),
     onComplete: (self) => {}
   }, opts);
 
-  $('#typed-strings').html("<p>"+strings+ "</p>")
+  $(elSelector).css(options);
+  
+  $('#typed-strings').html("<p>"+strings+ "</p>");
+  $('#textillateContainer .typed-cursor').remove()
 
   let prettyLog = (x) => console.log(x);
+  
+  $(elSelector).html('');
 
-  var typed = new Typed(elSelector, {
-    stringsElement: '#typed-strings',
-    typeSpeed: 40,
-    backSpeed: 0,
-    backDelay: 500,
-    startDelay: 1000,
-    loop: false,
-    onComplete: function(self) {
-        // prettyLog('onCmplete ' + self); self.destroy();
-       options.onComplete(self);
-    },
-    onDestroy: function(self) {
-      console.log("destroyed")
-    }
+  return new Promise((myResolve, myReject) => {
+  	var typed = new Typed(elSelector, {
+	    stringsElement: '#typed-strings',
+	    typeSpeed: 40,
+	    backSpeed: 0,
+	    backDelay: 500,
+	    startDelay: 1000,
+	    loop: false,
+	    onComplete: function(self) {
+		// prettyLog('onCmplete ' + self); self.destroy();
+	       options.onComplete(self);
+	       myResolve(self);
+	    },
+	    onDestroy: function(self) {
+	      console.log("destroyed");
+	       myResolve(self);		    
+	    }
 
-  });
-  return typed;
+	  });
+  });//promise
 }
 
 //Accessor for matrix
