@@ -400,15 +400,22 @@ function bringInText(text, opts) {
 
   var item = createTextBox(text, css)
 
-  $(item).velocity(opts.to, {duration: 1000});
+  return new Promise((myResolve, myReject) => {
+  	  let options = {duration: 1000};
+  	  let fn = opts.complete || (() => {});
+  	  options.complete = (it) => {
+  	  		fn(it);
+  	  		myResolve(item);
+  	  }
+  	  $(item).velocity(opts.to, options);
 
-  window.globalVariableNames['texts'] += 1
-  var varName = "T"+ window.globalVariableNames['texts']
-  logItem(varName, item, 'Text', {delete: (nm) => {
-      globalVariableNames[nm].remove()
-  }})
-
-  return item;
+	  window.globalVariableNames['texts'] += 1
+	  var varName = "T"+ window.globalVariableNames['texts']
+	  logItem(varName, item, 'Text', {delete: (nm) => {
+	      globalVariableNames[nm].remove()
+	  }})
+  })
+  
 }
 
 function highlightByChangingColor(el) {
