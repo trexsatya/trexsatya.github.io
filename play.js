@@ -1150,18 +1150,25 @@ function makeSubtree(node, values, pc, opts) {
     }
 }
 
-function drawMathSymbols(text, canvas) {
-    matex(text, function(svg, width, height) {
-        // Here you have a data url for a svg file
-        // Draw using FabricJS:
-        fabric.Image.fromURL(svg, function(img) {
-            img.height = height;
-            img.width = width;
-            img.left = matexInsertionPoint.left
-            img.top = matexInsertionPoint.top
-            canvas.add(img);
-        });
-    });
+function drawMathSymbols(text, canvas, id) {
+	let matexInsertionPoint = window.matexInsertionPoint || {left: 100, top: 100}
+	return new Promise((myResolve, myReject) => {
+		matex(text, function(svg, width, height) {
+	        // Here you have a data url for a svg file
+	        // Draw using FabricJS:
+	        fabric.Image.fromURL(svg, function(img) {
+	            img.height = height;
+	            img.width = width;
+	            img.left = matexInsertionPoint.left
+	            img.top = matexInsertionPoint.top
+	            canvas.add(img);
+	            if(id && window._) {
+	            	_[id] = img
+	            }
+	            myResolve(img);
+	        });
+	    });
+	}); //promise
 }
 
 function onMakeTreeClick() {
