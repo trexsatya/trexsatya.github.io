@@ -301,15 +301,17 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
 
 
 function speak(msg, name) {
-	if (!name) name = 'Samantha'
 	let speech = new SpeechSynthesisUtterance();
-	let voice = speechSynthesis.getVoices().find(it => it.name == name);
+	let options = Object.assign({name: 'Samantha', volume: 0.9, rate: 1, pitch: 1 }, window.speechOptions);
+	if(name) options.name = name;
+	
+	let voice = speechSynthesis.getVoices().find(it => it.name == options.name);
 	//console.log(voice.name)
 	speech.voice = voice;
 	speech.text = msg;
-	speech.volume = 1;
-	speech.rate = 1;
-	speech.pitch = 1;                
+	speech.volume = options.volume;
+	speech.rate = options.rate;
+	speech.pitch = options.pitch;                
 
 	window.speechSynthesis.speak(speech);
 
