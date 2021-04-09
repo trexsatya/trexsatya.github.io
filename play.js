@@ -288,8 +288,7 @@ function typeAndDisappear(text, opts) {
   // id = "cinemaText"
   let T = createTextBox('', opts).attr('id', id)
 
-  window.id = id
-  return id
+  return type(text, '#'+id, opts).then(it => setTimeout(() => T.hide(), opts.delay || 2000))
 }
 
 function resetTextillateContainer() {
