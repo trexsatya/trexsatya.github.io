@@ -694,7 +694,7 @@
             'w': 'whiten'
         }
         $(document).keydown(e => {
-	    if(e.target.id == 'mathtext') return;
+	    if(e.target.id == 'mathtext' || e.target.id == 'mathjaxFunctionInput') return;
             if($('.commands-select').is(":focus") || window.commandSelectionIsGoingOn){
                 console.log('select is in focus. returning.')
             }
