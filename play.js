@@ -385,6 +385,15 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
 
 
 function speak(msg, name) {
+	if(msg.endsWith('.mp3')) {
+		let base_path = window.baseAudioPath || ""
+		
+		return new Promise((myResolve, myReject) => {
+			let a = new Audio(base_path + "/" + msg);
+			a.play()
+			a.onended = e => myResolve(e)
+		})
+	}
 	let speech = new SpeechSynthesisUtterance();
 	let options = Object.assign({name: 'Samantha', volume: 0.9, rate: 1, pitch: 1 }, window.speechOptions);
 	if(name) options.name = name;
