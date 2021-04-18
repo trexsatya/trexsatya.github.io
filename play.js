@@ -289,8 +289,8 @@ function typeQuote(text, _options) {
     }})
 }
 
-function typeAndDisappear(text, opts) {
-  let options = Object.assign({}, {wait: 100}, opts);
+function typeAndDisappear(text, top, left, opts) {
+  let options = Object.assign({}, {wait: 100, top: top, left: left}, opts);
 
   let id = "T"+new Date().getTime();
   // id = "cinemaText"
