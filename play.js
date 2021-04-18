@@ -120,32 +120,40 @@ fabric.Sprite.fromURL = function(url, callback, imgOptions) {
 
 fabric.Sprite.async = true;
 
-function addFromJSON(objs, id){
-	let ids = [id].flat()
-	if(!objs) return;
-        let canvas = pc;
+/**
+ * 
+ * @param obj
+ * @param id
+ * @param top
+ * @param left
+ * @returns {Promise<unknown>}
+ */
+function addFromJSON(obj, id, top, left){
+    let ids = [id];
+    if(!obj) return;
+    let canvas = pc;
 
-	let items = [objs].flat()
+    let items = [obj]
 
-	return new Promise((myResolve, myReject) => {
-		fabric.util.enlivenObjects(items, function(objects) {
-		  var origRenderOnAddRemove = canvas.renderOnAddRemove;
-		  canvas.renderOnAddRemove = false;
+    return new Promise((myResolve, myReject) => {
+        fabric.util.enlivenObjects(items, function(objects) {
+            var origRenderOnAddRemove = canvas.renderOnAddRemove;
+            canvas.renderOnAddRemove = false;
 
-		  let res = []
-		  let i = 0;
-		  objects.forEach(function(o) {
-		    canvas.add(o);
-		    res.push(o);
-		    if(ids[i] && window._) _[ids[i]] = o;
-	            i++;
-		  });
-		  myResolve(res)
-                  
-		  canvas.renderOnAddRemove = origRenderOnAddRemove;
-		  canvas.renderAll();
-		});
-	})
+            let res = []
+            let i = 0;
+            objects.forEach(function(o) {
+                o.set({top: top, left: left});
+                canvas.add(o);
+                res.push(o);
+                if(ids[i] && window._) _[ids[i]] = o;
+                i++;
+            });
+            canvas.renderOnAddRemove = origRenderOnAddRemove;
+            canvas.renderAll();
+            myResolve(res[0]);
+        });
+    })
 }
 
 function Clone(object, id){
