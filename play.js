@@ -156,12 +156,12 @@ function addFromJSON(obj, id, top, left){
     })
 }
 
-function Clone(object, id){
+function Clone(object, id, top, left){
 	return new Promise((myResolve, myReject) => {
 		object.clone(function(clone) {
 	    	pc.add(clone.set({
-	        	left: object.left + 1, 
-		        top: object.top + 1
+	        	left: left || (object.left + 1), 
+		        top: top || (object.top + 1)
 		    }));
 		    update();
 		    myResolve(clone);
