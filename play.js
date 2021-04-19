@@ -23,6 +23,12 @@ function update(canvas) {
     }
 }
 
+function sleep(x) {
+   return new Promise((suc, fail)=> {
+     setTimeout(() => suc(), x*1000)
+   })
+}
+
 window.globalFabricObjId = 0;
 
 fabric.Canvas.prototype.add = (function(originalFn) {
