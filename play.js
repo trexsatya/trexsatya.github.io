@@ -460,6 +460,7 @@ function resumeAnimationScript() {
     }
     window.animationScriptFunction()
     window.animationScriptFunction = null
+    window.stopAnimationSignal = false;
     $('#btnResumeAnimation').hide();
     $('#btnStopAnimation').show();
 }
