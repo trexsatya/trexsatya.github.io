@@ -1172,8 +1172,8 @@ function makeSubtree(node, values, pc, opts) {
     }
 }
 
-function drawMathSymbols(text, canvas, id) {
-    let matexInsertionPoint = window.matexInsertionPoint || {left: 100, top: 100}
+function drawMathSymbols(text, top, left, id) {
+    let matexInsertionPoint = window.matexInsertionPoint || {left: left || 100, top: top || 100}
     return new Promise((myResolve, myReject) => {
         matex(text, function(svg, width, height) {
             // Here you have a data url for a svg file
@@ -1183,11 +1183,12 @@ function drawMathSymbols(text, canvas, id) {
                 img.width = width;
                 img.left = matexInsertionPoint.left
                 img.top = matexInsertionPoint.top
-                canvas.add(img);
+                pc.add(img);
                 if(id && window._) {
                     _[id] = img
                 }
                 myResolve(img);
+                update()
             });
         });
     }); //promise
