@@ -378,7 +378,7 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
             if(result instanceof Promise) {
                 result.then(it => {
                     if(window.stopAnimationSignal) {
-                        window.animationScriptFunction = () => fn(delay) //Store function
+                        window.animationScriptFunction = () => fn(100) //Store function
                         console.log("Waiting for signal. Call resumeAnimationScript()")                    
                     } else {
                        fn(100)
