@@ -377,14 +377,20 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
             update();
             if(result instanceof Promise) {
                 result.then(it => {
-                    fn(100)
+                    if(window.stopAnimationSignal) {
+                        window.animationScriptFunction = () => fn(delay) //Store function
+                        console.log("Waiting for signal. Call resumeAnimationScript()")                    
+                    } else {
+                       fn(100)
+                    }
+                    
                 })
             }
             else if(result !== false) {
                 let delay = timeInSeconds*1000
                 if(typeof(result) == 'number') delay = result * 1000
 
-                if(result ===  -1) {
+                if(result ===  -1 || window.stopAnimationSignal) {
                     if(window.animationScriptFunction) {
                         console.log('There is already a function for animation script!!!')
                     } else {
@@ -455,6 +461,10 @@ function resumeAnimationScript() {
     window.animationScriptFunction()
     window.animationScriptFunction = null
     $('#btnResumeAnimation').hide();
+}
+
+function stopAnimationScript() {
+    window.stopAnimationSignal = true;
 }
 
 function scanMatrix(name) {
