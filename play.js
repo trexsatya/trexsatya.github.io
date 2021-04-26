@@ -461,10 +461,13 @@ function resumeAnimationScript() {
     window.animationScriptFunction()
     window.animationScriptFunction = null
     $('#btnResumeAnimation').hide();
+    $('#btnStopAnimation').show();
 }
 
 function stopAnimationScript() {
     window.stopAnimationSignal = true;
+    $('#btnStopAnimation').hide();
+    $('#btnResumeAnimation').show();
 }
 
 function scanMatrix(name) {
