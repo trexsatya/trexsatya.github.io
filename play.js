@@ -15,6 +15,18 @@ function globalStore(key, obj){
     return key+id
 }
 
+function hide(xs) {
+   let items = [xs].flat();
+   items.forEach(it => {
+      if(it instanceof fabric.Object) {
+          it.setOpacity(0);
+          update();
+      } else if(it instanceof jQuery) {
+          it.hide()
+      }
+   }); 
+}
+
 function update(canvas) {
     if(!canvas) canvas = pc;
     if(canvas) {
