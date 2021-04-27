@@ -296,7 +296,9 @@ function typeQuote(text, _options) {
     cinemaText.css(options.css)
 
     let start = new Date().getTime();
-
+    
+    $('#cinemaText').html('');
+    
     return type(text, '#cinemaText').then(it => sleep(options.delay || 1)).then(it => {
     	console.log("typed in " + (new Date().getTime() - start)/1000 + "secs")
         textillateContainer.css(savedCssTC);
