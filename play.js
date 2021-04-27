@@ -15,8 +15,8 @@ function globalStore(key, obj){
     return key+id
 }
 
-function hide(xs) {
-   let items = [xs].flat();
+function hide() {
+   var items = Array.prototype.slice.apply(arguments);   
    items.forEach(it => {
       if(it instanceof fabric.Object) {
           it.setOpacity(0);
