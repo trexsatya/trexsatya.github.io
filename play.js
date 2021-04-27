@@ -302,7 +302,7 @@ function typeQuote(text, _options) {
         textillateContainer.css(savedCssTC);
         cinemaText.css(savedCssCT);
         cinemaText.html(cinemaHtml);
-        //self.destroy();
+        it.destroy();
         options.onComplete();
     })
 }
