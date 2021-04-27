@@ -252,6 +252,8 @@ function createArrow(){
 
 }
 
+
+
 function typeQuote(text, _options) {
     let options = Object.assign({}, {
         wait: 0,
@@ -295,16 +297,14 @@ function typeQuote(text, _options) {
 
     let start = new Date().getTime();
 
-    type(text, '#cinemaText', { onComplete: (self) => {
-            setTimeout(()=> {
-                console.log("typed in " + (new Date().getTime() - start)/1000 + "secs")
-                textillateContainer.css(savedCssTC);
-                cinemaText.css(savedCssCT);
-                cinemaText.html(cinemaHtml);
-                self.destroy();
-                options.onComplete();
-            }, options.wait * 1000)
-        }})
+    return type(text, '#cinemaText').then(it => sleep(options.delay || 1)).then(it => {
+    	console.log("typed in " + (new Date().getTime() - start)/1000 + "secs")
+        textillateContainer.css(savedCssTC);
+        cinemaText.css(savedCssCT);
+        cinemaText.html(cinemaHtml);
+        //self.destroy();
+        options.onComplete();
+    })
 }
 
 function delayExecution(fn, delay) {
