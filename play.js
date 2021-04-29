@@ -297,7 +297,7 @@ function typeQuote(text, _options) {
 
     let start = new Date().getTime();
     
-    $('#cinemaText').html('').show();
+    $('#cinemaText').html('').css({zIndex: 900010}).show();
     
     return type(text, '#cinemaText').then(it => sleep(options.delay || 1)).then(it => {
     	console.log("typed in " + (new Date().getTime() - start)/1000 + "secs")
