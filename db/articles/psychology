@@ -1,1 +1,132 @@
-[{"name": "Parental Psychology", "id": 151, "img": null, "subject": "psychology", "summary": null, "lastUpdated": "2020-06-21T05:15:42.021+0000", "tags": [], "content": ""}, {"name": "Cognitive Biases", "id": 218, "img": null, "subject": "psychology", "summary": "", "lastUpdated": null, "tags": [], "content": ""}, {"name": "MySelf, YourSelf and ThemSelves", "id": 220, "img": "", "subject": "psychology", "summary": "", "lastUpdated": "2021-02-15 12:57:08.830547", "tags": ["prity=2"], "content": ""}, {"name": "Interpersonal Psychology", "id": 219, "img": null, "subject": "psychology", "summary": "", "lastUpdated": null, "tags": [], "content": ""}, {"name": "Personality and Transformation", "id": 89, "img": "", "subject": "psychology", "summary": "", "lastUpdated": "2021-03-28 12:01:06.755366", "tags": ["prity=5"], "content": ""}, {"name": "Unusual Perceptions and Experiences", "id": 28, "img": null, "subject": "psychology", "summary": null, "lastUpdated": "2020-05-02T10:59:54.251+0000", "tags": [""], "content": ""}, {"name": "Intra-Personal Psychology", "id": 188, "img": null, "subject": "psychology", "summary": null, "lastUpdated": "2020-05-01T16:56:16.837+0000", "tags": ["prity=4"], "content": ""}, {"name": "Cognitive Dissonance", "id": 72, "img": "/images/psychology.jpg", "subject": "psychology", "summary": "Often times, you may find your mind puzzled/ stressed when what you already know/ believe\u00a0and  some event/knowledge do not come along. But why?", "lastUpdated": "2018-04-19T17:48:15.282+0000", "tags": [], "content": ""}, {"name": "Buddhist Psychology", "id": 200, "img": null, "subject": "psychology", "summary": null, "lastUpdated": "2020-12-05T11:55:51.159+0000", "tags": [], "content": ""}, {"name": "Social Psychology - Coursera", "id": 183, "img": null, "subject": "psychology", "summary": "This course explores how people (in groups particularly) act in different situations, what their biases are.", "lastUpdated": "2020-04-16T05:39:07.890+0000", "tags": ["prity=3"], "content": ""}, {"name": "The Limitations Of Human Mind", "id": 171, "img": "/images/moving-image.jpg", "subject": "psychology", "summary": "Humans have the most sophisticated systems (Brain) but yet it is continuously being manipulated and fooled. See how.", "lastUpdated": "2018-04-26T18:42:54.493+0000", "tags": [], "content": ""}]
+[
+  {
+    "name": "Parental Psychology",
+    "id": 151,
+    "img": null,
+    "subject": "psychology",
+    "summary": null,
+    "lastUpdated": "2020-06-21T05:15:42.021+0000",
+    "tags": [],
+    "content": ""
+  },
+  {
+    "name": "Cognitive Biases",
+    "id": 218,
+    "img": null,
+    "subject": "psychology",
+    "summary": "",
+    "lastUpdated": null,
+    "tags": [],
+    "content": ""
+  },
+  {
+    "name": "MySelf, YourSelf and ThemSelves",
+    "id": 220,
+    "img": "",
+    "subject": "psychology",
+    "summary": "",
+    "lastUpdated": "2021-02-15 12:57:08.830547",
+    "tags": [
+      "prity=2"
+    ],
+    "content": ""
+  },
+  {
+    "name": "Interpersonal Psychology",
+    "id": 219,
+    "img": null,
+    "subject": "psychology",
+    "summary": "",
+    "lastUpdated": null,
+    "tags": [],
+    "content": ""
+  },
+  {
+    "name": "Personality and Transformation",
+    "id": 89,
+    "img": "",
+    "subject": "psychology",
+    "summary": "",
+    "lastUpdated": "2021-03-28 12:01:06.755366",
+    "tags": [
+      "prity=5"
+    ],
+    "content": ""
+  },
+  {
+    "name": "Unusual Perceptions and Experiences",
+    "id": 28,
+    "img": null,
+    "subject": "psychology",
+    "summary": null,
+    "lastUpdated": "2020-05-02T10:59:54.251+0000",
+    "tags": [
+      ""
+    ],
+    "content": ""
+  },
+  {
+    "name": "Intra-Personal Psychology",
+    "id": 188,
+    "img": null,
+    "subject": "psychology",
+    "summary": null,
+    "lastUpdated": "2020-05-01T16:56:16.837+0000",
+    "tags": [
+      "prity=4"
+    ],
+    "content": ""
+  },
+  {
+    "name": "Cognitive Dissonance",
+    "id": 72,
+    "img": "/images/psychology.jpg",
+    "subject": "psychology",
+    "summary": "Often times, you may find your mind puzzled/ stressed when what you already know/ believe\u00a0and  some event/knowledge do not come along. But why?",
+    "lastUpdated": "2018-04-19T17:48:15.282+0000",
+    "tags": [],
+    "content": ""
+  },
+  {
+    "name": "Buddhist Psychology",
+    "id": 200,
+    "img": null,
+    "subject": "psychology",
+    "summary": null,
+    "lastUpdated": "2020-12-05T11:55:51.159+0000",
+    "tags": [],
+    "content": ""
+  },
+  {
+    "name": "Social Psychology - Coursera",
+    "id": 183,
+    "img": null,
+    "subject": "psychology",
+    "summary": "This course explores how people (in groups particularly) act in different situations, what their biases are.",
+    "lastUpdated": "2020-04-16T05:39:07.890+0000",
+    "tags": [
+      "prity=3"
+    ],
+    "content": ""
+  },
+  {
+    "name": "The Limitations Of Human Mind",
+    "id": 171,
+    "img": "/images/moving-image.jpg",
+    "subject": "psychology",
+    "summary": "Humans have the most sophisticated systems (Brain) but yet it is continuously being manipulated and fooled. See how.",
+    "lastUpdated": "2018-04-26T18:42:54.493+0000",
+    "tags": [],
+    "content": ""
+  },
+  {
+    "name": "Crash Course Psychology\n",
+    "id": 221,
+    "img": null,
+    "subject": "psychology",
+    "summary": "Humans have the most sophisticated systems (Brain) but yet it is continuously being manipulated and fooled. See how.",
+    "lastUpdated": "2021-06-27T18:42:54.493+0000",
+    "tags": [],
+    "content": ""
+  }
+]
