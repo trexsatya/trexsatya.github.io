@@ -1141,4 +1141,14 @@ function stopAnimation(object, canvas){
 	return null
 }
 
+function makeLine(coords) {
+    return new fabric.Line(coords, {
+      fill: 'red',
+      stroke: 'red',
+      strokeWidth: 5,
+      selectable: false,
+      evented: false,
+    });
+}
+
 
