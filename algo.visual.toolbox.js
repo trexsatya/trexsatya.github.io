@@ -1141,11 +1141,12 @@ function stopAnimation(object, canvas){
 	return null
 }
 
-function makeLine(coords) {
+function makeLine(coords, opts) {
+    opts = Object.assign({}, {fill: 'red', stroke: 'red', strokeWidth: 2}, opts);
     return new fabric.Line(coords, {
-      fill: 'red',
-      stroke: 'red',
-      strokeWidth: 5,
+      fill: opts.fill,
+      stroke: opts.stroke,
+      strokeWidth: opts.strokeWidth,
       selectable: false,
       evented: false,
     });
