@@ -368,13 +368,15 @@
 
     function showRandomAToG(){
         hideAll();
-        Object.keys(notesToPosMap).forEach(note => {
+        var randomPositions = []
+        Object.keys(notesToPosMap).sort().forEach(note => {
             var array = notesToPosMap[note];
             var randomElement = array[Math.floor(Math.random() * array.length)];
-            showNoteAt(randomElement[0] + 1, randomElement[1]);
-        })
+            randomPositions.push(randomElement);
+        });
+        schedule(randomPositions, 3, pos => showNoteAt(pos[0] + 1, pos[1]), ()=>{});
     }
-
+    
 </script>
 <div id="guitar-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
     <label for="notes">Choose a note:</label>
