@@ -361,7 +361,7 @@
     var notesToPosMap = {}
 
     for (var i = 0; i < 6; i++) {
-        for(var j = 0; j < notes[i].length - 1; j++) {
+        for(var j = 0; j < 17; j++) {
             var pos = notesToPosMap[notes[i][j]] || []
             pos.push([i, j]);
             notesToPosMap[notes[i][j]] = pos;
