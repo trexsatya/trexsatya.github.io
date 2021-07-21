@@ -385,6 +385,16 @@
         }, ()=>{});
     }
 
+    function hideAllNotesOf(name) {
+        for (var i = 0; i < 6; i++) {
+            for(var j = 0; j < notes[i].length; j++) {
+                if(notes[i][j].toLowerCase() === name.toLowerCase()) {
+                    if(noteLabels[i][j]) noteLabels[i][j].setOpacity(0)
+                }
+            }
+        }
+        pc.renderAll()
+    }
 </script>
 <div id="guitar-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
     <label for="notes">Choose a note:</label>
@@ -403,6 +413,8 @@
     <button style="margin-left: 1em;" onclick="hideAll()">Hide All Notes</button>
 
     <button style="margin-left: 1em;" onclick="showRandomAToG()">Show Random A-G</button>
+
+    <button style="margin-left: 1em;" onclick="hideAllNotesOf(document.getElementById('notes').value)">Hide All Of Selected Note</button>
 </div>
 
 <div id="drawing-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 0; top: 50; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
