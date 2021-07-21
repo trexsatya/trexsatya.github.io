@@ -306,10 +306,12 @@
         if(noteLabels[i][j]) {
             noteLabels[i][j].setOpacity(1);
             pc.renderAll();
+            return noteLabels[i][j];
         } else {
             var n = textInCircle(notes[i][j], posX, posY, {}, {fill: color})
             noteLabels[i][j] = n;
             pc.add(n);
+            return n;
         }
     }
 
@@ -369,14 +371,20 @@
     function showRandomAToG(){
         hideAll();
         var randomPositions = []
+
         Object.keys(notesToPosMap).sort().forEach(note => {
             var array = notesToPosMap[note];
             var randomElement = array[Math.floor(Math.random() * array.length)];
             randomPositions.push(randomElement);
         });
-        schedule(randomPositions, 3, pos => showNoteAt(pos[0] + 1, pos[1]), ()=>{});
+
+        var prev = null;
+        schedule(randomPositions, window.delayBetweenNotes || 5, pos => {
+            if(prev) prev.setOpacity(0.5);
+            prev = showNoteAt(pos[0] + 1, pos[1]);
+        }, ()=>{});
     }
-    
+
 </script>
 <div id="guitar-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
     <label for="notes">Choose a note:</label>
