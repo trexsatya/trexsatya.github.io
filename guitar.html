@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
     <script src="/jquery.js"></script>
     <script></script>
@@ -34,16 +34,18 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script type="text/javascript" src="/diff-match-patch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
-    <link href="/select2.min.css" rel="stylesheet" />
+    <link href="/select2.min.css" rel="stylesheet"/>
     <script src="/select2.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG">
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG">
     </script>
-    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charSet="utf-8"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript">
-        Array.prototype.max = function() {
+        Array.prototype.max = function () {
             return Math.max.apply(null, this);
         };
     </script>
@@ -53,7 +55,7 @@
 
     <script>
         //alert(window.innerWidth + " " + window.innerHeight);
-        window.addEventListener("keydown",function (e) {
+        window.addEventListener("keydown", function (e) {
             if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
                 e.preventDefault();
                 //Control F
@@ -88,7 +90,7 @@
 
 </head>
 
-<body >
+<body>
 
 
 <svg id="horizRuler" xmlns="http://www.w3.org/2000/svg" style="height: 40px; position: fixed; top: 0;"></svg>
@@ -104,28 +106,28 @@
     rulez = new Rulez({
         element: someSvgElement,
         layout: 'vertical',
-        textDefaults:{
+        textDefaults: {
             rotation: 90
         }
     });
     rulez.render();
 </script>
-<div id="CMOGDAT-dialog" title="Enter required data" class="dialog">
+<div id="CMOGDAT-dialog" title="Enter required data" className="dialog">
     <input placeholder="Ex: [1, 2], [2, 3]" name="data" value="[1,2,3], [4,5,6]" style="width: 80%">
-    <button type="submit" onclick="createMatrix('#CMOGDAT-dialog')">OK</button>
+    <button type="submit" onClick="createMatrix('#CMOGDAT-dialog')">OK</button>
     <br> <br>
     <input placeholder="Location on screen" value="400,80" name="location">
 </div>
 
-<div id="CAOGSD-dialog" title="Enter required data" class="dialog">
+<div id="CAOGSD-dialog" title="Enter required data" className="dialog">
     <input placeholder="Ex: 1, 2, 3" name="data" value="1,2,3" style="width: 80%">
-    <button type="submit" onclick="createArray('#CAOGSD-dialog')">OK</button>
+    <button type="submit" onClick="createArray('#CAOGSD-dialog')">OK</button>
     <br> <br>
     <input placeholder="Location on screen" value="400,80" name="location">
 </div>
 
-<div class="top-bar" style="width: 40%; z-index: 3400; position: fixed; top: 0; left: 25%; opacity: 0.5;">
-    <select class="commands-select" name="command" style="width: 100%;">
+<div className="top-bar" style="width: 40%; z-index: 3400; position: fixed; top: 0; left: 25%; opacity: 0.5;">
+    <select className="commands-select" name="command" style="width: 100%;">
         <option value="NULL"></option>
         <option value="CMOGDAT">Create Matrix Of Given Data</option>
         <option value="CMOGDIM">Create Matrix Of Given Dimension</option>
@@ -137,8 +139,8 @@
     <button id="btnStop" style="display: none;">STOP</button>
     <button id="btnPause" style="display: none;">PAUSE</button>
     <button id="btnResume" style="display: none;">RESUME</button>
-    <button id="btnStopAnimation" style="" onclick="stopAnimationScript()">STOP-ANIM</button>
-    <button id="btnResumeAnimation" style="display: none" onclick="resumeAnimationScript()">ANIM-SCRIPT</button>
+    <button id="btnStopAnimation" style="" onClick="stopAnimationScript()">STOP-ANIM</button>
+    <button id="btnResumeAnimation" style="display: none" onClick="resumeAnimationScript()">ANIM-SCRIPT</button>
 </div>
 
 <div style="position: fixed; right: -37px; top: 10%;z-index: 3000; color: green">
@@ -149,20 +151,21 @@
 
 <!--    <video width="100%" height="100%" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0;" src="/videos/smoke.mp4" autoplay muted>-->
 <!--    </video>-->
-<nav id="edit-table-cell-toolbar" style="display: none; position: fixed; z-index: 3000; background: #e2dbdb; padding: 10px; ">
-    <ul class="" style="list-style: none;">
-        <li class="">
-            Value: <input type="text" name="value" onchange="">
+<nav id="edit-table-cell-toolbar"
+     style="display: none; position: fixed; z-index: 3000; background: #e2dbdb; padding: 10px; ">
+    <ul className="" style="list-style: none;">
+        <li className="">
+            Value: <input type="text" name="value" onChange="">
         </li>
-        <li class="">
-            BG-Color: <input type="color" name="background" onchange="">
+        <li className="">
+            BG-Color: <input type="color" name="background" onChange="">
         </li>
-        <li class="">
-            FG-Color: <input type="color" name="color" onchange="">
+        <li className="">
+            FG-Color: <input type="color" name="color" onChange="">
         </li>
-        <li class="">
-            <button onclick="$('#edit-table-cell-toolbar').hide()">Close</button>
-            <button onclick="" class="reset">Reset</button>
+        <li className="">
+            <button onClick="$('#edit-table-cell-toolbar').hide()">Close</button>
+            <button onClick="" className="reset">Reset</button>
         </li>
 
     </ul>
@@ -170,7 +173,7 @@
 
 <script>
     // In your Javascript (external .js resource or <script> tag)
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.commands-select').select2();
     });
     $('.commands-select').on('select2:open', function (e) {
@@ -221,7 +224,7 @@
     var API_HOST = 'http://livintolearn.com/api';
     var id = window.location.hash.replace("#", "")
 
-    window.onbeforeunload = function(){
+    window.onbeforeunload = function () {
         return 'Are you sure you want to leave?';
     };
 
@@ -247,9 +250,9 @@
 </script>
 
 <div style="display: inline-block;margin-left: 10px;position: absolute;left: 0;top: 8px;z-index: 1000000;height: 0;">
-        <span style=""> <label class="switch">
+        <span style=""> <label className="switch">
           <input type="checkbox" id="eraser">
-          <span class="slider round"></span>
+          <span className="slider round"></span>
             </label>
         </span>
 </div>
@@ -260,7 +263,7 @@
     var strings = []
 
     for (var i = 0; i < 6; i++) {
-        strings.push(makeLine([100, 100 + i*50, 1300, 100 + i*50]));
+        strings.push(makeLine([100, 100 + i * 50, 1300, 100 + i * 50]));
         pc.add(strings[i])
     }
 
@@ -268,15 +271,15 @@
 
     let baseWidth = window.fretDistance || 100;
     for (var i = 0; i < 18; i++) {
-        let defaultReductionFn = x => x === 0 ? 0 : (14*Math.log(x))*x;
+        let defaultReductionFn = x => x === 0 ? 0 : (14 * Math.log(x)) * x;
         let reductionFn = window.fretDistanceMultiplier || defaultReductionFn
         let reduction = reductionFn(i);
-        let offset = i*baseWidth - reduction;
-        frets.push(makeLine([100 + offset, 100 , 100 + offset, 350]));
+        let offset = i * baseWidth - reduction;
+        frets.push(makeLine([100 + offset, 100, 100 + offset, 350]));
         pc.add(frets[i])
     }
 
-    var fretHead = makeLine([98, 98 , 98, 352], {strokeWidth: 5})
+    var fretHead = makeLine([98, 98, 98, 352], {strokeWidth: 5})
     pc.add(fretHead)
 
     var notes = [
@@ -292,24 +295,26 @@
     notes.forEach(row => noteLabels.push(new Array(row.length)));
 
     function showNoteAt(string, fret) {
-        var i = string-1, j = fret;
-        if(i < 0 || i > strings.length - 1) {
+        var i = string - 1, j = fret;
+        if (i < 0 || i > strings.length - 1) {
             console.log(`string ${string} invalid`);
             return;
         }
-        if(j < 0 || j > frets.length - 1) {
+        if (j < 0 || j > frets.length - 1) {
             console.log(`fret ${fret} invalid`);
             return;
         }
         var posX, posY, color;
 
-        if(fret === 0) {
-            posX = frets[0].get('x1') - 30; posY = strings[i].get('y1') - 11; color = 'green';
+        if (fret === 0) {
+            posX = frets[0].get('x1') - 30;
+            posY = strings[i].get('y1') - 11;
+            color = 'green';
         } else {
-            posX = frets[j-1].get('x1') + 15, posY = strings[i].get('y1') - 11, color = 'blue';
+            posX = frets[j - 1].get('x1') + 15, posY = strings[i].get('y1') - 11, color = 'blue';
         }
 
-        if(noteLabels[i][j]) {
+        if (noteLabels[i][j]) {
             noteLabels[i][j].setOpacity(1);
             noteLabels[i][j].setLeft(posX);
             noteLabels[i][j].setTop(posY);
@@ -318,14 +323,15 @@
         } else {
             var n = textInCircle(notes[i][j], posX, posY, {}, {fill: color})
             noteLabels[i][j] = n;
+            n.hasControls = false;
             pc.add(n);
             return n;
         }
     }
 
     function hideNoteAt(string, fret) {
-        var i = string-1, j = fret;
-        if(noteLabels[i][i]) {
+        var i = string - 1, j = fret;
+        if (noteLabels[i][i]) {
             noteLabels[i][j].setOpacity(0);
             pc.renderAll();
         }
@@ -333,9 +339,9 @@
 
     function showAllNotesOf(name) {
         for (var i = 0; i < 6; i++) {
-            for(var j = 0; j < notes[i].length; j++) {
-                if(notes[i][j].toLowerCase() === name.toLowerCase()) {
-                    showNoteAt(i+1, j);
+            for (var j = 0; j < notes[i].length; j++) {
+                if (notes[i][j].toLowerCase() === name.toLowerCase()) {
+                    showNoteAt(i + 1, j);
                 }
             }
         }
@@ -344,7 +350,7 @@
     function hideAll() {
         noteLabels.forEach(row => {
             row.forEach(it => {
-                if(it) it.setOpacity(0);
+                if (it) it.setOpacity(0);
             })
         });
         pc.renderAll();
@@ -353,13 +359,21 @@
     function fretMarker(fret) {
         var x = makeLine([frets[fret].get('x1') - 24, strings[5].get('y1'), frets[fret].get('x1') - 24, strings[5].get('y1') + 50]);
         pc.add(x);
-        var t = textInRect(' '+fret+' ', frets[fret].get('x1') - 50, strings[5].get('y1') + 50, {color: 'black'}, {fill: 'transparent', strokeWidth: 2, stroke: 'blue'});
+        var t = textInRect(' ' + fret + ' ', frets[fret].get('x1') - 50, strings[5].get('y1') + 50, {color: 'black'}, {
+            fill: 'transparent',
+            strokeWidth: 2,
+            stroke: 'blue'
+        });
         t._objects[1].setColor('black');
         pc.add(t);
     }
 
     function showFretMarkers() {
-        fretMarker(5); fretMarker(7); fretMarker(9); fretMarker(12); fretMarker(15);
+        fretMarker(5);
+        fretMarker(7);
+        fretMarker(9);
+        fretMarker(12);
+        fretMarker(15);
 
         pc.renderAll();
     }
@@ -369,14 +383,14 @@
     var notesToPosMap = {}
 
     for (var i = 0; i < 6; i++) {
-        for(var j = 0; j < 17; j++) {
+        for (var j = 0; j < 17; j++) {
             var pos = notesToPosMap[notes[i][j]] || []
             pos.push([i, j]);
             notesToPosMap[notes[i][j]] = pos;
         }
     }
 
-    function showRandomAToG(){
+    function showRandomAToG() {
         hideAll();
         var randomPositions = []
 
@@ -388,16 +402,17 @@
 
         var prev = null;
         schedule(randomPositions, window.delayBetweenNotes || 5, pos => {
-            if(prev) prev.setOpacity(0.5);
+            if (prev) prev.setOpacity(0.5);
             prev = showNoteAt(pos[0] + 1, pos[1]);
-        }, ()=>{});
+        }, () => {
+        });
     }
 
     function hideAllNotesOf(name) {
         for (var i = 0; i < 6; i++) {
-            for(var j = 0; j < notes[i].length; j++) {
-                if(notes[i][j].toLowerCase() === name.toLowerCase()) {
-                    if(noteLabels[i][j]) noteLabels[i][j].setOpacity(0)
+            for (var j = 0; j < notes[i].length; j++) {
+                if (notes[i][j].toLowerCase() === name.toLowerCase()) {
+                    if (noteLabels[i][j]) noteLabels[i][j].setOpacity(0)
                 }
             }
         }
@@ -408,23 +423,25 @@
         var withinLimit = (val, target, n) => val < target + n && val > target - n;
         var between = (val, x, y) => val <= y && val >= x;
 
-        for(i = 0; i < 6; i++) {
-            for(var j = 1; j < 17; j++) {
-                if(withinLimit(e.e.clientY, strings[i].get('y1'), 20)
-                    && between(e.e.clientX, frets[j-1].get('x1'), frets[j].get('x1'))) {
-                    console.log(`Fret ${j} String ${i+1}`);
-                    showNoteAt(i+1, j);
+        for (i = 0; i < 6; i++) {
+            for (var j = 1; j < 17; j++) {
+                if (withinLimit(e.e.clientY, strings[i].get('y1'), 20)
+                    && between(e.e.clientX, frets[j - 1].get('x1'), frets[j].get('x1'))) {
+                    console.log(`Fret ${j} String ${i + 1}`);
+                    showNoteAt(i + 1, j);
                 }
             }
         }
     }
-    
-    if(window.innerWidth < 800 && window.innerHeight < 400){
-       pc.setZoom(0.6);
+
+    if (window.innerWidth < 800 && window.innerHeight < 400) {
+        pc.setZoom(0.6);
     }
 </script>
-<div id="guitar-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
-    <label for="notes">Choose a note:</label>
+<div id="guitar-toolbar"
+     style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0"
+     className="ui-draggable ui-draggable-handle">
+    <label htmlFor="notes">Choose a note:</label>
 
     <select name="notes" id="notes">
         <option value="A">A</option>
@@ -435,30 +452,39 @@
         <option value="F">F</option>
         <option value="G">G</option>
     </select>
-    <button style="margin-left: 1em;" onclick="showAllNotesOf(document.getElementById('notes').value)">Show All Notes</button>
+    <button style="margin-left: 1em;" onClick="showAllNotesOf(document.getElementById('notes').value)">Show All Notes
+    </button>
 
-    <button style="margin-left: 1em;" onclick="hideAll()">Hide All Notes</button>
+    <button style="margin-left: 1em;" onClick="hideAll()">Hide All Notes</button>
 
-    <button style="margin-left: 1em;" onclick="showRandomAToG()">Show Random A-G</button>
+    <button style="margin-left: 1em;" onClick="showRandomAToG()">Show Random A-G</button>
 
-    <button style="margin-left: 1em;" onclick="hideAllNotesOf(document.getElementById('notes').value)">Hide All Of Selected Note</button>
+    <button style="margin-left: 1em;" onClick="hideAllNotesOf(document.getElementById('notes').value)">Hide All Of
+        Selected Note
+    </button>
 </div>
 
-<div id="drawing-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 0; top: 50; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
-    <img id="toolbarToggle1" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;" onclick="$('#toolbar1-buttons').toggle();" src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png">
+<div id="drawing-toolbar"
+     style="display: inline-block; margin-left: 10px;position: absolute; left: 0; top: 50; z-index: 1000000; height: 0"
+     className="ui-draggable ui-draggable-handle">
+    <img id="toolbarToggle1" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;"
+         onClick="$('#toolbar1-buttons').toggle();"
+         src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png">
 
     <div id="toolbar1-buttons">
         Drawing Mode:
-        <label class="switch">
+        <label className="switch">
             <input type="checkbox" id="flip-drawing">
-            <span class="slider round"></span>
+            <span className="slider round"></span>
         </label>
         <br><br>
-        <button id="undo" class="btn btn-info" onclick="undoDrawing(event)">Undo</button> <span> &nbsp;&nbsp;&nbsp;</span>
-        <button id="redo" class="btn btn-info" onclick="redoDrawing(event)">Redo</button><br>
+        <button id="undo" className="btn btn-info" onClick="undoDrawing(event)">Undo</button>
+        <span> &nbsp;&nbsp;&nbsp;</span>
+        <button id="redo" className="btn btn-info" onClick="redoDrawing(event)">Redo</button>
+        <br>
 
         <br>
-        <label for="drawing-mode-selector">Mode:</label>
+        <label htmlFor="drawing-mode-selector">Mode:</label>
         <select id="drawing-mode-selector">
             <option>Pencil</option>
             <option>Circle</option>
@@ -472,42 +498,42 @@
             <option>texture</option>
         </select><br>
         <br>
-        <label for="drawing-line-width">Line width:</label>
-        <span class="info">2</span><input type="number" value="3" id="drawing-line-width"><br>
+        <label htmlFor="drawing-line-width">Line width:</label>
+        <span className="info">2</span><input type="number" value="3" id="drawing-line-width"><br>
 
         <br>
-        <label for="drawing-color">Line color:</label>
+        <label htmlFor="drawing-color">Line color:</label>
         <input type="color" value="#005E7A" id="drawing-color"><br>
         <br>
-        <button id="clear-canvas" class="btn btn-info">Clear</button>
+        <button id="clear-canvas" className="btn btn-info">Clear</button>
 
         <br><br>
-        <label for="drawing-shadow-color">Shadow color:</label>
+        <label htmlFor="drawing-shadow-color">Shadow color:</label>
         <input type="color" value="#005E7A" id="drawing-shadow-color"><br>
         <br>
-        <label for="drawing-shadow-width">Shadow width:</label>
-        <span class="info">0</span><input type="number" value="0" id="drawing-shadow-width"><br>
+        <label htmlFor="drawing-shadow-width">Shadow width:</label>
+        <span className="info">0</span><input type="number" value="0" id="drawing-shadow-width"><br>
 
         <br>
-        <label for="drawing-shadow-offset">Shadow offset:</label>
-        <span class="info">0</span><input type="number" value="0" id="drawing-shadow-offset"><br>
+        <label htmlFor="drawing-shadow-offset">Shadow offset:</label>
+        <span className="info">0</span><input type="number" value="0" id="drawing-shadow-offset"><br>
         <br>
     </div>
 </div>
 
 <div id="rollbackConfirmationDialog" title="Rollback Recording!" style="display: none;">
     <p>Select the time where to rollback:</p>
-    <div class="slider"></div>
+    <div className="slider"></div>
     <br><br>
     <div>
-        Selected Value: <span class="info"></span>
+        Selected Value: <span className="info"></span>
 
     </div>
 </div>
 
 <div id="recordingFileChooserDialog" title="Choose Recording Files!" style="display: none; z-index: 5000">
     <p>Choose Files:</p>
-    <input type="file" accept="text/plain" onchange="openFile(event)" id="recordingFiles" multiple="multiple">
+    <input type="file" accept="text/plain" onChange="openFile(event)" id="recordingFiles" multiple="multiple">
 
     <div>
         OR
@@ -518,43 +544,51 @@
 <div id="playbackControls" style="display: none; position:fixed; bottom:0;width:100%;">
     <table style="width:100%">
         <tr>
-            <th style="width: 20%;"><span class="time"style="float: right;margin-right: 30px;"></span></th>
-            <th style="width: 60%;"> <div class="slider"></div> </th>
-            <th><span class="time" style="float: left;margin-left:30px"></span></th>
+            <th style="width: 20%;"><span className="time" style="float: right;margin-right: 30px;"></span></th>
+            <th style="width: 60%;">
+                <div className="slider"></div>
+            </th>
+            <th><span className="time" style="float: left;margin-left:30px"></span></th>
         </tr>
     </table>
 
 </div>
 
-<div id="toolbar" style="display: inline-block; margin-left: 10px;position: absolute; right: -10; top: 50; z-index: 1000000; height: 0">
-    <img id="toolbarToggle" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;" onclick="$('#drawing-mode-options').toggle();" src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png"></img>
+<div id="toolbar"
+     style="display: inline-block; margin-left: 10px;position: absolute; right: -10; top: 50; z-index: 1000000; height: 0">
+    <img id="toolbarToggle" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;"
+         onClick="$('#drawing-mode-options').toggle();"
+         src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png"></img>
 
-    <select id="savePoints" style="margin-right: 30px;float: right;" onchange="restoreCanvas()"><option >0</option></select>
+    <select id="savePoints" style="margin-right: 30px;float: right;" onChange="restoreCanvas()">
+        <option>0</option>
+    </select>
 
 
     <div id="drawing-mode-options" style="background: rgba(15, 14, 14, 0.4);padding-left: 10px;padding-top: 10px;">
 
 
-        <button id="record-launch" class="btn btn-info" onclick="initializeRecording()">Record</button>
-        <button id="record-play-launch" class="btn btn-info" onclick="launchRecordingDialog()">Play Recording</button>
-        <button id="rollbackRecording" onclick="launchRollbackRecording()">Rollback Recording</button>
+        <button id="record-launch" className="btn btn-info" onClick="initializeRecording()">Record</button>
+        <button id="record-play-launch" className="btn btn-info" onClick="launchRecordingDialog()">Play Recording
+        </button>
+        <button id="rollbackRecording" onClick="launchRollbackRecording()">Rollback Recording</button>
         <br><br>
-        <button id="delete-selected" class="btn btn-info" onclick="deleteSelectedObjects()">Delete</button>
-        <button id="record-play-save" class="btn btn-info" onclick="saveRecording()">Save Recording</button>
+        <button id="delete-selected" className="btn btn-info" onClick="deleteSelectedObjects()">Delete</button>
+        <button id="record-play-save" className="btn btn-info" onClick="saveRecording()">Save Recording</button>
         <br> <br>
 
-        <button class="btn btn-info" onclick="Copy(pc)">Copy</button>
-        <button class="btn btn-info" onclick="Paste(pc)">Paste</button>
-        <button class="btn btn-info" onclick="degroup(pc)">Ungroup</button>
+        <button className="btn btn-info" onClick="Copy(pc)">Copy</button>
+        <button className="btn btn-info" onClick="Paste(pc)">Paste</button>
+        <button className="btn btn-info" onClick="degroup(pc)">Ungroup</button>
 
         <br><br>
 
-        <button id="create-text" class="btn btn-info">Text</button>
-        <button id="create-small-text" class="btn btn-info">Small Text</button>
-        <button id="create-rect-text" class="btn btn-info">[]</button>
+        <button id="create-text" className="btn btn-info">Text</button>
+        <button id="create-small-text" className="btn btn-info">Small Text</button>
+        <button id="create-rect-text" className="btn btn-info">[]</button>
 
         <br><br>
-        Color: <select onchange="changeCircleColor(this.value)">
+        Color: <select onChange="changeCircleColor(this.value)">
         <option value="">--</option>
         <option value="blue">Blue</option>
         <option value="green">Green</option>
@@ -566,25 +600,34 @@
     </select>
 
         <br><br>
-        <button id="greenen" class="btn btn-info" onclick="zoomSelectedObject(true)" style="margin-right:10px;">+</button>
-        <button id="whiten" class="btn btn-info" onclick="zoomSelectedObject(false)" style="margin-right:10px;">-</button>
+        <button id="greenen" className="btn btn-info" onClick="zoomSelectedObject(true)" style="margin-right:10px;">+
+        </button>
+        <button id="whiten" className="btn btn-info" onClick="zoomSelectedObject(false)" style="margin-right:10px;">-
+        </button>
 
-        <button id="arrow" class="btn btn-info" onclick="arrowButton()">--></button>
+        <button id="arrow" className="btn btn-info" onClick="arrowButton()">--></button>
         <br><br>
 
-        <button id="flipConnectionMode" class="btn btn-info" onclick="flipConnectionMode(event)" style="">Connect</button>
-        <button id="makeTree" class="btn btn-info" onclick="onMakeTreeClick(event)" style="">MakeTree</button>
-        <button id="removeTree" class="btn btn-info" onclick="onRemoveTreeClick(event)" style="">RemoveTree</button>
+        <button id="flipConnectionMode" className="btn btn-info" onClick="flipConnectionMode(event)" style="">Connect
+        </button>
+        <button id="makeTree" className="btn btn-info" onClick="onMakeTreeClick(event)" style="">MakeTree</button>
+        <button id="removeTree" className="btn btn-info" onClick="onRemoveTreeClick(event)" style="">RemoveTree</button>
 
         <br><br>
 
-        <button id="create-array" class="btn btn-info" onclick="window.insertArray=true; turnOffDrawing();" style="margin-right:10px;">Array</button>
+        <button id="create-array" className="btn btn-info" onClick="window.insertArray=true; turnOffDrawing();"
+                style="margin-right:10px;">Array
+        </button>
 
-        <button id="insert-matex" class="btn btn-info" onclick="window.signalMatexInsertion=true;turnOffDrawing();">Matex</button>
-        <button id="insert-image" class="btn btn-info" onclick="window.signalImageInsertion=true;turnOffDrawing();">Image</button>
+        <button id="insert-matex" className="btn btn-info" onClick="window.signalMatexInsertion=true;turnOffDrawing();">
+            Matex
+        </button>
+        <button id="insert-image" className="btn btn-info" onClick="window.signalImageInsertion=true;turnOffDrawing();">
+            Image
+        </button>
         <br><br>
-        <button id="save" style="margin-right:10px;" onclick="saveCanvas()">Save</button>
-        <button id="newCanvas" onclick="newCanvas()"> New </button>
+        <button id="save" style="margin-right:10px;" onClick="saveCanvas()">Save</button>
+        <button id="newCanvas" onClick="newCanvas()"> New</button>
         <br><br>
 
         <br><br>
@@ -592,7 +635,7 @@
 
     </div>
 </div>
-<script >
+<script>
 
     var drawingModeEl = $('#drawing-mode'),
         drawingOptionsEl = $('#drawing-mode-options'),
@@ -604,23 +647,23 @@
         clearEl = $('#clear-canvas'),
         eraserEl = $('#eraser');
 
-    clearEl.click(function() {
+    clearEl.click(function () {
         var yes = confirm('Are you sure?');
         if (yes) oc.clear();
     });
 
-    drawingColorEl.change(function(e) {
+    drawingColorEl.change(function (e) {
         oc.freeDrawingBrush.color = this.value;
     });
 
-    function turnOffDrawing(){
-        if(flipDrawindEl.is(':checked')) {
+    function turnOffDrawing() {
+        if (flipDrawindEl.is(':checked')) {
             flipDrawindEl.click();
         }
     }
 
     eraserEl.change(e => {
-        if(eraserEl.is(':checked')) {
+        if (eraserEl.is(':checked')) {
             //Store
             window.saved = window.saved || {};
             window.saved.eraserStoredData = window.saved.eraserStoredData || {}
@@ -628,7 +671,7 @@
             window.saved.eraserStoredData.drawingColor = drawingColorEl.val()
             window.saved.eraserStoredData.drawingLineWidth = drawingLineWidthEl.val()
 
-            if(window.theme == 'black') {
+            if (window.theme == 'black') {
                 drawingColorEl.val('#000000')
             } else {
                 drawingColorEl.val('#ffffff')
@@ -648,18 +691,18 @@
         }
     });
 
-    drawingShadowColorEl.change(function() {
+    drawingShadowColorEl.change(function () {
         oc.freeDrawingBrush.shadow.color = this.value;
     });
-    drawingLineWidthEl.change( function() {
+    drawingLineWidthEl.change(function () {
         oc.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
         this.previousSibling.innerHTML = this.value;
     });
-    drawingShadowWidth.change(function() {
+    drawingShadowWidth.change(function () {
         oc.freeDrawingBrush.shadow.blur = parseInt(this.value, 10) || 0;
         this.previousSibling.innerHTML = this.value;
     });
-    drawingShadowOffset.change( function() {
+    drawingShadowOffset.change(function () {
         oc.freeDrawingBrush.shadow.offsetX = parseInt(this.value, 10) || 0;
         oc.freeDrawingBrush.shadow.offsetY = parseInt(this.value, 10) || 0;
         this.previousSibling.innerHTML = this.value;
@@ -675,7 +718,8 @@
             affectStroke: true,
             color: drawingShadowColorEl.val() || 'black',
         });
-    };
+    }
+    ;
 </script>
 <script type="text/javascript">
     localStorage.setItem('pc', JSON.stringify({}))
@@ -688,7 +732,7 @@
         })
     }
 
-    $('body').scroll(function(e) {
+    $('body').scroll(function (e) {
         console.log('resized')
 
     });
@@ -697,7 +741,6 @@
 
         $('#toolbar').draggable();
     });
-
 
 
     $('#create-text').click(e => {
@@ -716,13 +759,13 @@
 
     var flipDrawindEl = $('#flip-drawing');
     flipDrawindEl.click(e => {
-        if(flipDrawindEl.is(':checked')) {
+        if (flipDrawindEl.is(':checked')) {
             moveToFront('oc')
         } else {
             moveToFront('pc')
         }
     })
-    pc.on('object:selected', function(e) {
+    pc.on('object:selected', function (e) {
         var obj = e.target
         if (window.connectionMode) {
             if (!window.firstOfConnection) firstOfConnection = obj
@@ -791,11 +834,11 @@
     $('#drawing-mode-options').hide();
     $('#toolbar1-buttons').hide();
 
-    oc.on('mouse:up', function(e) {
+    oc.on('mouse:up', function (e) {
         $('#drawing-mode-options').hide();
         $('#toolbar1-buttons').hide();
     })
-    pc.on('mouse:up', function(e) {
+    pc.on('mouse:up', function (e) {
         $('#drawing-mode-options').hide();
         $('#toolbar1-buttons').hide();
 
@@ -887,11 +930,11 @@
         'w': 'whiten'
     }
     $(document).keydown(e => {
-        if(e.target.id == 'mathtext' || e.target.id == 'mathjaxFunctionInput') return;
-        if($('.commands-select').is(":focus") || window.commandSelectionIsGoingOn){
+        if (e.target.id == 'mathtext' || e.target.id == 'mathjaxFunctionInput') return;
+        if ($('.commands-select').is(":focus") || window.commandSelectionIsGoingOn) {
             console.log('select is in focus. returning.')
         }
-        if(e.keyCode == 32 && e.target == document.body) {
+        if (e.keyCode == 32 && e.target == document.body) {
             e.preventDefault();
         }
 
@@ -901,7 +944,7 @@
         if (e.keyCode == 187) { //zoom in
             zoomSelectedObject(true)
         }
-        if(e.keyCode == 32){
+        if (e.keyCode == 32) {
             toggleRecording()
         }
         if (e.keyCode == 189) { //zoom out
@@ -912,30 +955,30 @@
         }
         switch (e.keyCode) {
             case 37: //left
-                if(pc.getActiveObject())moveActiveObject('left', -10)
+                if (pc.getActiveObject()) moveActiveObject('left', -10)
                 else {
-                    if(window.playingMode){
+                    if (window.playingMode) {
                         stopPlayback = true
                         playerTimer -= 10
-                        if(playerTimer < playerTimerStart) playerTimer = playerTimerStart;
-                        $('#recording-info').html('Jumped To: '+playerTimer)
+                        if (playerTimer < playerTimerStart) playerTimer = playerTimerStart;
+                        $('#recording-info').html('Jumped To: ' + playerTimer)
                     }
                 }
                 break
             case 67:
-                if(e.ctrlKey) Copy(pc)
+                if (e.ctrlKey) Copy(pc)
                 break;
             case 86:
-                if(e.ctrlKey) Paste(pc)
+                if (e.ctrlKey) Paste(pc)
                 break;
             case 39: //right
-                if(pc.getActiveObject())moveActiveObject('left', 10)
+                if (pc.getActiveObject()) moveActiveObject('left', 10)
                 else {
-                    if(window.playingMode){
+                    if (window.playingMode) {
                         stopPlayback = true
                         playerTimer += 10
-                        if(playerTimer > playerTimerTotal) playerTimer = playerTimerTotal;
-                        $('#recording-info').html('Jumped To: '+playerTimer)
+                        if (playerTimer > playerTimerTotal) playerTimer = playerTimerTotal;
+                        $('#recording-info').html('Jumped To: ' + playerTimer)
                     }
                 }
                 break
@@ -949,15 +992,15 @@
                 editSelectedObject()
                 break
             case 188: //,
-                if(e.ctrlKey)
+                if (e.ctrlKey)
                     moveToFront('pc')
                 break
             case 190: //.
-                if(e.ctrlKey)
+                if (e.ctrlKey)
                     moveToFront('oc')
                 break
             case 191: ///
-                if(e.ctrlKey) {
+                if (e.ctrlKey) {
                     e.preventDefault()
                     moveToFront('txt')
                 }
@@ -969,13 +1012,14 @@
 </script>
 
 
-
-<div id="imageInputDialog" style="background: blue; color: white; display: none; z-index: 500000;position: absolute;left: 30%;top: 30%;width: 400px;height: 400px;border: 1px solid black;padding: 1%;">
-    <input autofocus type="text" id="imageInputUrl" onkeyup="renderMath(event)">
+<div id="imageInputDialog"
+     style="background: blue; color: white; display: none; z-index: 500000;position: absolute;left: 30%;top: 30%;width: 400px;height: 400px;border: 1px solid black;padding: 1%;">
+    <input autoFocus type="text" id="imageInputUrl" onKeyUp="renderMath(event)">
 
     <input type="file" id="imageInputFile">
 
-    <button onclick="handleFileDialogButtons('OK')">OK</button> <button onclick="handleFileDialogButtons('')">Close</button>
+    <button onClick="handleFileDialogButtons('OK')">OK</button>
+    <button onClick="handleFileDialogButtons('')">Close</button>
 </div>
 
 <div id="mathjaxDialog" style="">
@@ -992,60 +1036,60 @@
             }
         }
     </script>
-    <input autofocus type="text" id="mathtext" onkeyup="renderMath(event)">
+    <input autoFocus type="text" id="mathtext" onKeyUp="renderMath(event)">
 
-    <div id="representation" style="margin-top: 20; padding: 15;"> </div>
+    <div id="representation" style="margin-top: 20; padding: 15;"></div>
 
-    <div class="keyboard">
-        <div class="key letter">
+    <div className="keyboard">
+        <div className="key letter">
             0
         </div>
-        <div class="key letter">
+        <div className="key letter">
             1
         </div>
-        <div class="key letter">
+        <div className="key letter">
             2
         </div>
-        <div class="key letter">
+        <div className="key letter">
             3
         </div>
-        <div class="key letter">
+        <div className="key letter">
             4
         </div>
-        <div class="key letter">
+        <div className="key letter">
             5
         </div>
-        <div class="key letter">
+        <div className="key letter">
             6
         </div>
-        <div class="key letter">
+        <div className="key letter">
             7
         </div>
-        <div class="key letter">
+        <div className="key letter">
             8
         </div>
-        <div class="key letter">
+        <div className="key letter">
             9
         </div>
-        <div class="key letter">
+        <div className="key letter">
             +
         </div>
-        <div class="key letter">
+        <div className="key letter">
             -
         </div>
-        <div class="key letter">
+        <div className="key letter">
             *
         </div>
-        <div class="key letter">
+        <div className="key letter">
             /
         </div>
-        <div class="key letter">
+        <div className="key letter">
             (
         </div>
-        <div class="key letter">
+        <div className="key letter">
             )
         </div>
-        <div class="key letter" data-mathjax="\{">
+        <div className="key letter" data-mathjax="\{">
             {
         </div>
         <div class="key letter" data-mathjax="\}">
@@ -1066,16 +1110,16 @@
         <div class="key letter">
             @
         </div>
-        <div class="key letter"  data-mathjax="\#">
+        <div class="key letter" data-mathjax="\#">
             #
         </div>
         <div class="key letter">
             $
         </div>
-        <div class="key letter"  data-mathjax="\%">
+        <div class="key letter" data-mathjax="\%">
             %
         </div>
-        <div class="key letter"  data-mathjax="\&">
+        <div class="key letter" data-mathjax="\&">
             &
         </div>
         <div class="key letter">
@@ -1117,7 +1161,8 @@
         </div>
 
 
-        <input type="text" list="mathjaxFunctions" id="mathjaxFunctionInput" onchange="insertMathFromSelect(this)" style="margin-top: 10px;" />
+        <input type="text" list="mathjaxFunctions" id="mathjaxFunctionInput" onchange="insertMathFromSelect(this)"
+               style="margin-top: 10px;"/>
         <datalist id="mathjaxFunctions">
             <option value="\infty">Infinity</option>
 
@@ -1139,17 +1184,17 @@
             <option value="\subset">proper subset</option>
             <option value="\subseteq">subset</option>
             <option value="\emptyset">empty set</option>
-            <option value="\cup"> union </option>
-            <option value="\cap"> intersection </option>
+            <option value="\cup"> union</option>
+            <option value="\cap"> intersection</option>
 
-            <option value="\hat { }"> hat </option>
-            <option value="\sqrt[root]{ }"> square root </option>
-            <option value="\partial"> partial </option>
-            <option value="\cap"> intersection </option>
-            <option value="\cap"> intersection </option>
-            <option value="\cap"> intersection </option>
-            <option value="\cap"> intersection </option>
-            <option value="\cap"> intersection </option>
+            <option value="\hat { }"> hat</option>
+            <option value="\sqrt[root]{ }"> square root</option>
+            <option value="\partial"> partial</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
 
 
             <option value="\frac { }{ }">Fraction</option>
@@ -1195,14 +1240,14 @@
 
         $('.keyboard .key').click(e => {
             var key = $(e.target).text().trim();
-            insertAtCursor( $('#mathtext')[0], $(e.target).data('mathjax') || key);
+            insertAtCursor($('#mathtext')[0], $(e.target).data('mathjax') || key);
 
         });
 
         $('#mathjaxFunctionInput').keyup(e => {
 
-            if(e.keyCode == 13) {
-                insertAtCursor( $('#mathtext')[0], $(e.target).val());
+            if (e.keyCode == 13) {
+                insertAtCursor($('#mathtext')[0], $(e.target).val());
             }
 
         });
@@ -1222,6 +1267,7 @@
             border: 1px solid black;
             padding: 1%;
         }
+
         @media (max-width: 767px) {
             #mathjaxDialog {
                 left: 2%;
@@ -1229,45 +1275,149 @@
             }
         }
 
-        .key{
-            width: 40px; height:40px;
-            display:block;
-            background-color:#333;
+        .key {
+            width: 40px;
+            height: 40px;
+            display: block;
+            background-color: #333;
             text-align: left;
             padding-left: 8px;
             line-height: 29px;
-            border-radius:2px;
-            float:left; margin-left: 2px;
-            margin-bottom:2px;
+            border-radius: 2px;
+            float: left;
+            margin-left: 2px;
+            margin-bottom: 2px;
             cursor: pointer;
             transition: box-shadow 0.7s ease;
         }
 
-        .section-a{width:650px; height:260px; float:left;}
-        .section-b{width:150px; height:260px; float:left;}
+        .section-a {
+            width: 650px;
+            height: 260px;
+            float: left;
+        }
 
-        .function{font-size: 12px; width:30px; height:30px; margin-bottom:15px;}
-        .small{font-size:10px; line-height:13px; text-align: center; padding:0 5px; padding-top:2px; height:28px !important;}
-        .space1{margin-right: 43px !important;}
-        .space2{margin-right: 25px !important;}
-        .dual {font-size: 14px; line-height: 20px; width:30px; }
-        .backspace {width:84px; font-size: 12px;}
-        .tab {width: 50px; line-height: 40px; font-size:13px;}
-        .letter{width:30px;}
-        .slash{width:64px;}
-        .caps{width:70px; font-size:12px; line-height:18px;}
-        .enter{width:92px; line-height:40px; text-align: center; padding-left:0;}
-        .shift.left{width: 90px;line-height: 40px; font-size:13px;}
-        .shift.right{width: 104px;line-height: 40px; font-size:13px;}
-        .ctrl{width: 50px; line-height: 40px; font-size:13px;}
-        .space{width:234px;}
-        .arrows{position:relative; top:42px;}
-        .sec-func .key{width: 32px; font-size:10px; text-align:left; line-height:40px; float:left;}
-        .sec-func div.dual{line-height:20px;}
-        .arrows .key{text-align: center; padding-left: 7px; margin-left:2px;}
-        .hidden{visibility: hidden;}
+        .section-b {
+            width: 150px;
+            height: 260px;
+            float: left;
+        }
 
-        .key:hover{box-shadow:0px 0px 10px #14B524; z-index:1000;}
+        .function {
+            font-size: 12px;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .small {
+            font-size: 10px;
+            line-height: 13px;
+            text-align: center;
+            padding: 0 5px;
+            padding-top: 2px;
+            height: 28px !important;
+        }
+
+        .space1 {
+            margin-right: 43px !important;
+        }
+
+        .space2 {
+            margin-right: 25px !important;
+        }
+
+        .dual {
+            font-size: 14px;
+            line-height: 20px;
+            width: 30px;
+        }
+
+        .backspace {
+            width: 84px;
+            font-size: 12px;
+        }
+
+        .tab {
+            width: 50px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .letter {
+            width: 30px;
+        }
+
+        .slash {
+            width: 64px;
+        }
+
+        .caps {
+            width: 70px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        .enter {
+            width: 92px;
+            line-height: 40px;
+            text-align: center;
+            padding-left: 0;
+        }
+
+        .shift.left {
+            width: 90px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .shift.right {
+            width: 104px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .ctrl {
+            width: 50px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .space {
+            width: 234px;
+        }
+
+        .arrows {
+            position: relative;
+            top: 42px;
+        }
+
+        .sec-func .key {
+            width: 32px;
+            font-size: 10px;
+            text-align: left;
+            line-height: 40px;
+            float: left;
+        }
+
+        .sec-func div.dual {
+            line-height: 20px;
+        }
+
+        .arrows .key {
+            text-align: center;
+            padding-left: 7px;
+            margin-left: 2px;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .key:hover {
+            box-shadow: 0px 0px 10px #14B524;
+            z-index: 1000;
+        }
     </style>
 </div>
 </div>
@@ -1281,7 +1431,10 @@
         let captureStream = null;
 
         return navigator.mediaDevices.getDisplayMedia(displayMediaOptions)
-            .catch(err => { console.error("Error:" + err); return null; });
+            .catch(err => {
+                console.error("Error:" + err);
+                return null;
+            });
     }
 
     function stopCapture(evt) {
@@ -1292,7 +1445,6 @@
     }
 
 
-
     //let start = document.getElementById('btnStart');
     //let stop = document.getElementById('btnStop');
     //let vidSave = document.getElementById('vid2');
@@ -1300,8 +1452,8 @@
     window.mediaRecorder = null
     window.recordingChunks = []
 
-    $('#btnStart').on('click', (ev)=> {
-        if(window.mediaRecorder) {
+    $('#btnStart').on('click', (ev) => {
+        if (window.mediaRecorder) {
             window.mediaRecorder.stop()
             window.mediaRecorder = null;
             window.recordingChunks = []
@@ -1317,12 +1469,12 @@
             $("#btnPause").show();
             console.log(window.mediaRecorder.state);
 
-            window.mediaRecorder.ondataavailable = function(ev) {
+            window.mediaRecorder.ondataavailable = function (ev) {
                 window.recordingChunks.push(ev.data);
             };
-            window.mediaRecorder.onstop = (ev)=> {
-                let blob = new Blob(window.recordingChunks, { 'type' : window.recordingChunks[0].type });
-                console.log("type="+window.recordingChunks[0].type)
+            window.mediaRecorder.onstop = (ev) => {
+                let blob = new Blob(window.recordingChunks, {'type': window.recordingChunks[0].type});
+                console.log("type=" + window.recordingChunks[0].type)
                 window.recordingChunks = [];
                 var videoURL = window.URL.createObjectURL(blob);
 //            vidSave.src = videoURL;
@@ -1342,7 +1494,7 @@
     });
 
     $("#btnPause").click(e => {
-        if(window.mediaRecorder) {
+        if (window.mediaRecorder) {
             window.mediaRecorder.pause()
             console.log(window.mediaRecorder.state);
             $("#btnPause").hide();
@@ -1351,7 +1503,7 @@
     });
 
     $("#btnResume").click(e => {
-        if(window.mediaRecorder) {
+        if (window.mediaRecorder) {
             window.mediaRecorder.resume();
             console.log(window.mediaRecorder.state);
             $("#btnPause").show();
@@ -1361,7 +1513,7 @@
 
 
     $('#btnStop').on('click', (ev) => {
-        if(window.mediaRecorder) window.mediaRecorder.stop();
+        if (window.mediaRecorder) window.mediaRecorder.stop();
         console.log(mediaRecorder.state);
         $("#btnStop").hide();
         $("#btnPause").hide();
