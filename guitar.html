@@ -302,7 +302,7 @@
         }
         var posX, posY, color;
 
-        if(fret == 0) {
+        if(fret === 0) {
             posX = frets[0].get('x1') - 30; posY = strings[i].get('y1') - 11; color = 'green';
         } else {
             posX = frets[j-1].get('x1') + 15, posY = strings[i].get('y1') - 11, color = 'blue';
@@ -310,6 +310,8 @@
 
         if(noteLabels[i][j]) {
             noteLabels[i][j].setOpacity(1);
+            noteLabels[i][j].setLeft(posX);
+            noteLabels[i][j].setTop(posY);
             pc.renderAll();
             return noteLabels[i][j];
         } else {
