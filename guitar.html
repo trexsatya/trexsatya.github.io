@@ -52,7 +52,7 @@
     </style>
 
     <script>
-        alert(window.innerWidth + " " + window.innerHeight);
+        //alert(window.innerWidth + " " + window.innerHeight);
         window.addEventListener("keydown",function (e) {
             if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
                 e.preventDefault();
@@ -417,6 +417,10 @@
                 }
             }
         }
+    }
+    
+    if(window.innerWidth < 800 && window.innerHeight < 400){
+       pc.setZoom(0.6);
     }
 </script>
 <div id="guitar-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
