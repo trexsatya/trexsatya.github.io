@@ -267,7 +267,10 @@
 
     let baseWidth = window.fretDistance || 100;
     for (var i = 0; i < 18; i++) {
-        let offset = i*baseWidth - ((window.fretDistanceMultiplier && window.fretDistanceMultiplier(i)) || 14*Math.log(i))*i;
+        let defaultReductionFn = x => x === 0 ? 0 : (14*Math.log(x))*x;
+        let reductionFn = window.fretDistanceMultiplier || defaultReductionFn
+        let reduction = reductionFn(i);
+        let offset = i*baseWidth - reduction;
         frets.push(makeLine([100 + offset, 100 , 100 + offset, 350]));
         pc.add(frets[i])
     }
