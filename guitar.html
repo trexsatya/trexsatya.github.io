@@ -265,8 +265,10 @@
 
     var frets = []
 
+    let baseWidth = 55;
     for (var i = 0; i < 18; i++) {
-        frets.push(makeLine([100 + i*55, 100 , 100 + i*55, 350]));
+        let offset = i*baseWidth - (window.fretDistanceMultiplier || 3)*i;
+        frets.push(makeLine([100 + offset, 100 , 100 + offset, 350]));
         pc.add(frets[i])
     }
 
@@ -394,6 +396,21 @@
             }
         }
         pc.renderAll()
+    }
+
+    function showNoteOnClick(e) {
+        var withinLimit = (val, target, n) => val < target + n && val > target - n;
+        var between = (val, x, y) => val <= y && val >= x;
+
+        for(i = 0; i < 6; i++) {
+            for(var j = 1; j < 17; j++) {
+                if(withinLimit(e.e.clientY, strings[i].get('y1'), 20)
+                    && between(e.e.clientX, frets[j-1].get('x1'), frets[j].get('x1'))) {
+                    console.log(`Fret ${j} String ${i+1}`);
+                    showNoteAt(i+1, j);
+                }
+            }
+        }
     }
 </script>
 <div id="guitar-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
@@ -775,6 +792,8 @@
         if (!e.e) e.e = {}
         if (!e.e.clientX) e.e.clientX = 10;
         if (!e.e.clientY) e.e.clientY = 10;
+
+        showNoteOnClick(e);
 
         if (window.insertText) {
             var tb = textbox({
