@@ -265,7 +265,7 @@
 
     var frets = []
 
-    let baseWidth = 55;
+    let baseWidth = window.fretDistance || 55;
     for (var i = 0; i < 18; i++) {
         let offset = i*baseWidth - (window.fretDistanceMultiplier || 3)*i;
         frets.push(makeLine([100 + offset, 100 , 100 + offset, 350]));
