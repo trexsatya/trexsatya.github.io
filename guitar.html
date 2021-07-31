@@ -359,6 +359,10 @@
         pc.add(x);
         var t = textInRect(' '+fret+' ', frets[fret].get('x1') - 50, strings[5].get('y1') + 50, {color: 'black'}, {fill: 'transparent', strokeWidth: 2, stroke: 'blue'});
         t._objects[1].setColor('black');
+        t.lockMovementX = true;
+        t.lockMovementY = true;
+        t.lockScalingX = true;
+        t.lockScalingY = true;
         pc.add(t);
     }
 
