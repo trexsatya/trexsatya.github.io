@@ -517,7 +517,7 @@
         }
 
         Object.keys(majorScales).forEach(k => {
-            let notesInScale = k.split(' - ');
+            let notesInScale = majorScales[k].split(' - ');
             let isMajor = [1, 3, 5].map(i => notesInScale[i-1]).filter(x => x).every(noteName => noteIsBeingShown(noteName))
             if(isMajor) {
                 console.log(`Its ${k} major chord`)
