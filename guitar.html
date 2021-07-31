@@ -495,7 +495,7 @@
     }
     hideAll();
 
-    function guessChord() {
+    function findNotestBeingShown() {
         let notesBeingShown = {}
         for (let i = 0; i < noteLabels.length; i++) {
             for (let j = 0; j < noteLabels[i].length; j++) {
@@ -504,8 +504,8 @@
                 let isShown = noteLabel.getOpacity() !== 0;
                 // console.log(`isShown ${isShown}`)
                 if (isShown) {
-                    let noteName = noteLabel._objects[1].text;
-                    if (!noteName) {
+                    let noteName = noteLabel._objects[1].text || '';
+                    if (!noteName.trim()) {
                         noteName = ''
                         //Either sharp or flat
                         if (noteLabels[i][j + 1]) {
@@ -513,7 +513,7 @@
                             noteName += (nextNote + 'b')
                         }
                         if (noteLabels[i][j - 1]) {
-                            let prevNote = noteLabels[i][j + 1]._objects[1].text;
+                            let prevNote = noteLabels[i][j - 1]._objects[1].text;
                             if (prevNote) noteName += ("/" + prevNote + '#')
                         }
                     }
@@ -521,9 +521,14 @@
                 }
             }
         }
-        notesBeingShown = Object.keys(notesBeingShown) // as set instead of list
+        return Object.keys(notesBeingShown).flatMap(x => x.split('/')) // as set instead of list
+    }
 
-        function findMatchingFromScales(scales, pattern) {
+    function guessChord() {
+        let notesBeingShown = findNotestBeingShown();
+        let notesInScale = (scales, k) => scales[k].split(' - ');
+
+        function findMatchingFromScales(scales, pattern, notesBeingShown) {
             let noteIsBeingShown = noteName => {
                 //Take care of sharp/flat notes
                 return noteName.split("/").some(n =>
@@ -532,20 +537,22 @@
             }
 
             return Object.keys(scales).find(k => {
-                let notesInScale = scales[k].split(' - ');
-                let matched = pattern(notesInScale).every(noteName => noteIsBeingShown(noteName))
+                let matched = pattern(notesInScale(scales, k)).every(noteName => noteIsBeingShown(noteName))
                 if (matched) return k;
             })
         }
 
         let oneThreeFivePattern = notesInScale => [1, 3, 5].map(i => notesInScale[i - 1]).filter(x => x);
 
-        let majorChord = findMatchingFromScales(majorScales, oneThreeFivePattern);
-        let minorChord = findMatchingFromScales(minorScales, oneThreeFivePattern);
+        let majorChord = findMatchingFromScales(majorScales, oneThreeFivePattern, notesBeingShown);
+        let minorChord = findMatchingFromScales(minorScales, oneThreeFivePattern, notesBeingShown);
         if(majorChord) majorChord = majorChord + "maj"
         if(minorChord) minorChord = minorChord + "min"
         let chord = majorChord || minorChord;
         console.log('Guessed chord = ' + chord);
+
+        //Tests
+        console.log(oneThreeFivePattern(notesInScale(minorScales, 'F') === ["F", "Ab", "C"]))
 
         let $guessedChord = $('#guessedChord');
         $guessedChord.html(chord)
