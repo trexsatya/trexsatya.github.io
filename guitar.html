@@ -450,7 +450,8 @@
     }
 
     let majorScales = {
-        'G': 'Gb - Ab - Bb - Cb - Db - Eb - F',
+        'G': 'G - A - B - C - D - E - F#',
+        'Gb': 'Gb - Ab - Bb - Cb - Db - Eb - F',
         'G#': 'G# - A# - B# - C# - D# - E# - F#',
         'F': 'F - G - A - Bb - C - D - E',
         'F#': 'F# - G#- A# - B - C# - D# - E#',
@@ -539,8 +540,17 @@
 
             return Object.keys(scales).filter(rootNote => {
                 let patternNotes = pattern(notesInScale(scales, rootNote));
-                let matched = patternNotes.filter(noteName => noteIsBeingShown(noteName))
-                return (patternNotes.length - matched.length) <= 1 ? rootNote : false;
+                let isCandidate = false;
+                if(patternNotes.length === 3) {
+                    //For Triad chords Root, and perfect 3rd are enough
+                    isCandidate = noteIsBeingShown(patternNotes[0]) && noteIsBeingShown(patternNotes[1])
+                    console.log(`Triad, Root: ${rootNote}, Pattern: ${patternNotes} Matched: ${isCandidate}`)
+                } else {
+                    let matched = patternNotes.filter(noteName => noteIsBeingShown(noteName))
+                    isCandidate = (patternNotes.length - matched.length) <= 1
+                    console.log(`Root: ${rootNote}, Pattern: ${patternNotes} Matched: ${matched}`)
+                }
+                return isCandidate ? rootNote : false;
             })
         }
 
@@ -566,7 +576,7 @@
         if(majorChord) majorChord = majorChord + "maj"
         if(minorChord) minorChord = minorChord + "min"
         if(augChord) augChord = augChord + "aug"
-        if(dimChord) minorChord = dimChord + "dim"
+        if(dimChord) dimChord = dimChord + "dim"
         if(dimSeventhChord) dimSeventhChord = dimSeventhChord + "dim7"
 
         let chord = [majorChord, minorChord, augChord, dimChord].join(";   ");
