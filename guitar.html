@@ -316,7 +316,11 @@
             pc.renderAll();
             return noteLabels[i][j];
         } else {
-            var n = textInCircle(notes[i][j], posX, posY, {}, {fill: color})
+            var n = textInCircle(notes[i][j], posX, posY, {}, {fill: color});
+            n.lockMovementY = true;
+            n.lockMovementX = true;
+            n.lockScalingX = true;
+            n.lockScalingY = true;
             noteLabels[i][j] = n;
             pc.add(n);
             return n;
@@ -409,18 +413,87 @@
         var between = (val, x, y) => val <= y && val >= x;
 
         for(i = 0; i < 6; i++) {
-            for(var j = 1; j < 17; j++) {
-                if(withinLimit(e.e.clientY, strings[i].get('y1'), 20)
-                    && between(e.e.clientX, frets[j-1].get('x1'), frets[j].get('x1'))) {
+            for(var j = 0; j < 17; j++) {
+                var isNearStringI = withinLimit(e.e.clientY, strings[i].get('y1'), 20);
+                var isOnFretJ = false;
+
+                if(j === 0) {
+                    isOnFretJ = between(e.e.clientX, frets[0].get('x1') - 30, frets[0].get('x1'));
+                } else {
+                    isOnFretJ = between(e.e.clientX, frets[j-1].get('x1'), frets[j].get('x1'));
+                }
+
+                if( isNearStringI && isOnFretJ) {
                     console.log(`Fret ${j} String ${i+1}`);
                     showNoteAt(i+1, j);
                 }
             }
         }
     }
-    
+
+    let majorScales = {
+        'G': 'Gb - Ab - Bb - Cb - Db - Eb - F',
+        'G#': 'G# - A# - B# - C# - D# - E# - F#',
+        'F': 'F - G - A - Bb - C - D - E',
+        'F#': 'F# - G#- A# - B - C# - D# - E#',
+        'E': 'E - F# - G# - A - B - C# - D#',
+        'Eb': 'Eb - F - G - Ab - Bb - C - D',
+        'D': 'D - E - F# - G - A - B - C#',
+        'Db': 'Db - Eb - F - Gb - Ab - Bb - C',
+        'D#': 'D# - E# - F# - G# - A# - B#- C#',
+        'C': 'C - D - E - F - G - A - B',
+        'C#': 'C# - D# - E# - F# - G# - A# - B#',
+        'B': 'B - C# - D# - E - F# - G# - A#',
+        'Bb': 'Bb - C - D - Eb - F - G - A',
+        'A': 'A - B - C# - D - E - F# - G#',
+        'Ab': 'Ab - Bb - C - Db - Eb - F - G',
+        'A#': 'A# - B# - C# - D# - E# - F# - G#',
+    };
+    let minorScales = {
+        'C': 'C - D - Eb - F - G - Ab - Bb',
+        'C#': 'C# - D# - E - F# - G# - A - B',
+        'D': 'D - E - F - G - A - Bb - C',
+        'Db': 'Db - Eb - Fb - Gb - Ab - Bb - Cb',
+        'D#': 'D# - E# -F# - G# - A# - B - C#',
+        'E': 'E - F# - G - A - B - C - D',
+        'Eb': 'Eb - F - Gb - Ab - Bb - Cb - Db',
+        'F': 'F - G - Ab - Bb - C - Db - Eb',
+        'F#': 'F# - G# - A - B - C# - D - E',
+        'G': 'G - A - Bb - C - D - Eb - F',
+        'Gb': 'Gb - Ab - bb - Cb - Db - Eb - Fb',
+        'G#': 'G# - A# - B - C# - D# - E - F#',
+        'A': 'A - B - C - D - E - F - G',
+        'Ab': 'Ab - Bb - Cb - Db - Eb - Fb - Gb',
+        'A#': 'A# - B# - C# - D# - E# - F# - G#',
+        'B': 'B - C# - D - E - F# - G - A',
+        'Bb': 'Bb - C - Db - Eb - F - Gb - Ab'
+    }
+
+    //Pre-load all notes and hide
+    for(i = 0; i < 7; i++) {
+        for (var j = 0; j < 17; j++) {
+            showNoteAt(i, j);
+        }
+    }
+    hideAll();
+
+    function guessChord() {
+        let notesBeingShown = {}
+        for (let i of noteLabels) {
+            for (let j of i) {
+                if(!j) continue
+                let isShown = j.getOpacity() !== 0;
+                // console.log(`isShown ${isShown}`)
+                if(isShown) {
+                    notesBeingShown[j._objects[1].text] = true;
+                }
+            }
+        }
+        console.log(Object.keys(notesBeingShown))
+    }
+
     if(window.innerWidth < 800 && window.innerHeight < 400){
-       pc.setZoom(0.6);
+        pc.setZoom(0.6);
     }
 </script>
 <div id="guitar-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0" class="ui-draggable ui-draggable-handle">
