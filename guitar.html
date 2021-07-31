@@ -479,17 +479,46 @@
 
     function guessChord() {
         let notesBeingShown = {}
-        for (let i of noteLabels) {
-            for (let j of i) {
-                if(!j) continue
-                let isShown = j.getOpacity() !== 0;
+        for (let i = 0; i < noteLabels.length; i++) {
+            for (let j = 0; j < noteLabels[i].length; j++) {
+                let noteLabel = noteLabels[i][j];
+                if(!noteLabel) continue
+                let isShown = noteLabel.getOpacity() !== 0;
                 // console.log(`isShown ${isShown}`)
                 if(isShown) {
-                    notesBeingShown[j._objects[1].text] = true;
+                    let noteName = noteLabel._objects[1].text;
+                    if(!noteName) {
+                        noteName = ''
+                        //Either sharp or flat
+                        if(noteLabels[i][j+1]) {
+                            let nextNote = noteLabels[i][j+1]._objects[1].text;
+                            noteName += (nextNote + 'b')
+                        }
+                        if(noteLabels[i][j-1]) {
+                            let prevNote = noteLabels[i][j+1]._objects[1].text;
+                            if(prevNote) noteName += ( "/" + prevNote + '#')
+                        }
+                    }
+                    notesBeingShown[noteName] = true;
                 }
             }
         }
-        console.log(Object.keys(notesBeingShown))
+        notesBeingShown = Object.keys(notesBeingShown) // as set instead of list
+
+        let noteIsBeingShown = noteName => {
+            //Take care of sharp/flat notes
+            return noteName.split("/").some(n =>
+                 notesBeingShown.indexOf(n) >= 0
+            )
+        }
+
+        Object.keys(majorScales).forEach(k => {
+            let notesInScale = k.split(' - ');
+            let isMajor = [1, 3, 5].map(i => notesInScale[i-1]).filter(x => x).every(noteName => noteIsBeingShown(noteName))
+            if(isMajor) {
+                console.log(`Its ${k} major chord`)
+            }
+        })
     }
 
     if(window.innerWidth < 800 && window.innerHeight < 400){
