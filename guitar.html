@@ -529,7 +529,7 @@
         let notesBeingShown = findNotesBeingShown();
         let notesInScale = (scales, k) => scales[k].split(' - ');
 
-        function findMatchingFromScales(pattern, notesBeingShown) {
+        function findMatchingFromScales(patternName, pattern, notesBeingShown) {
             let scales = majorScales;
             let noteIsBeingShown = noteName => {
                 //Take care of sharp/flat notes
@@ -538,55 +538,94 @@
                 )
             }
 
-            return Object.keys(scales).filter(rootNote => {
+            let candidates = {} //Map of {rootNote: [missingCount, missingNote]}
+
+            Object.keys(scales).forEach(rootNote => {
                 let patternNotes = pattern(notesInScale(scales, rootNote));
                 let isCandidate = false;
-                if(patternNotes.length === 3) {
+                if (patternNotes.length === 3) {
                     //For Triad chords Root, and perfect 3rd are enough
                     isCandidate = noteIsBeingShown(patternNotes[0]) && noteIsBeingShown(patternNotes[1])
-                    console.log(`Triad, Root: ${rootNote}, Pattern: ${patternNotes} Matched: ${isCandidate}`)
+                    if (isCandidate) {
+                        let thirdMissing = !noteIsBeingShown(patternNotes[2]);
+                        if (thirdMissing) {
+                            candidates[`${rootNote}${patternName}`] = [1, patternNotes[2]];
+                        } else {
+                            candidates[`${rootNote}${patternName}`] = [0, null];
+                        }
+                    }
+                    console.log(`${patternName}, Root: ${rootNote}, Pattern: ${patternNotes} Matched: ${isCandidate}`)
                 } else {
                     let matched = patternNotes.filter(noteName => noteIsBeingShown(noteName))
+                    let notMatched = patternNotes.filter(noteName => !noteIsBeingShown(noteName))
                     isCandidate = (patternNotes.length - matched.length) <= 1
-                    console.log(`Root: ${rootNote}, Pattern: ${patternNotes} Matched: ${matched}`)
+                    if (isCandidate) {
+                        candidates[`${rootNote}${patternName}`] = [patternNotes.length - matched.length, notMatched.join(", ")];
+                    }
+                    console.log(`${patternName} Root: ${rootNote}, Pattern: ${patternNotes} Matched: ${matched}`)
                 }
-                return isCandidate ? rootNote : false;
             })
+
+            return candidates
         }
 
         let evalSharpsFlats = x => {
-            x = ""+x
-            if(x.length <= 2) return x;
-            if(x.endsWith("#b")) return x.replaceAll("#b", "")
-            if(x.endsWith("b#")) return x.replaceAll("b#", "")
+            x = "" + x
+            if (x.length <= 2) return x;
+            if (x.endsWith("#b")) return x.replaceAll("#b", "")
+            if (x.endsWith("b#")) return x.replaceAll("b#", "")
             return x
         }
 
         let pattern = nums => {
-            nums = nums.map(it => ''+it).map(it => it.split(''))
+            nums = nums.map(it => '' + it).map(it => it.split(''))
             return notesInScale => nums.map(xx => evalSharpsFlats(notesInScale[xx[0] - 1] + (xx[1] || ''))).filter(x => x);
         }
 
-        let majorChord = findMatchingFromScales(pattern([1, 3, 5]), notesBeingShown) || '';
-        let minorChord = findMatchingFromScales(pattern([1, '3b', 5]), notesBeingShown) || '';
-        let augChord = findMatchingFromScales(pattern([1, 3, '5#']), notesBeingShown) || '';
-        let dimChord = findMatchingFromScales(pattern([1, '3b', '5b']), notesBeingShown) || '';
-        let dimSeventhChord = findMatchingFromScales(pattern([1, '3b', '5b', 6]), notesBeingShown) || '';
+        let chords = {}
 
-        if(majorChord) majorChord = majorChord + "maj"
-        if(minorChord) minorChord = minorChord + "min"
-        if(augChord) augChord = augChord + "aug"
-        if(dimChord) dimChord = dimChord + "dim"
-        if(dimSeventhChord) dimSeventhChord = dimSeventhChord + "dim7"
+        let addToList = candidates => Object.keys(candidates).forEach(c => {
+            chords[c] = candidates[c]
+        });
 
-        let chord = [majorChord, minorChord, augChord, dimChord].join(";   ");
-        console.log('Guessed chord = ' + chord);
+        addToList(findMatchingFromScales('maj', pattern([1, 3, 5]), notesBeingShown));
+        addToList(findMatchingFromScales('min', pattern([1, '3b', 5]), notesBeingShown));
+        addToList(findMatchingFromScales('aug', pattern([1, 3, '5#']), notesBeingShown));
+        addToList(findMatchingFromScales('dim', pattern([1, '3b', '5b']), notesBeingShown));
+        addToList(findMatchingFromScales('dim7', pattern([1, '3b', '5b', 6]), notesBeingShown));
+
+        console.log('Guessed chord = ' + chords);
+        let solidMatch = []
+        Object.keys(chords).forEach(c => {
+            if (chords[c][0] === 0) {
+                solidMatch.push(c)
+                delete chords[c]
+            }
+        })
 
         //Tests
+        let toString = chords => {
+            let str = ""
+            Object.keys(chords).forEach(c => {
+                str += `${c} - ${chords[c][1]} \n`
+            })
+            return str
+        }
 
         let $guessedChord = $('#guessedChord');
-        $guessedChord.html(chord)
-        setTimeout(() => $guessedChord.html(''), 4000)
+        $guessedChord.html(
+            $('<span>').css({
+                fontSize: 'larger',
+                color: 'green'
+            }).html(solidMatch.join(", ") + "<br><hr>")
+            .append(
+                $('<span>').css({
+                    fontSize: 'smaller',
+                    color: 'blue'
+                }).html(toString(chords))
+            )
+        )
+        setTimeout(() => $guessedChord.html(''), 40000)
     }
 
     if (window.innerWidth < 800 && window.innerHeight < 400) {
@@ -619,7 +658,7 @@
     </button>
 
     <button style="margin-left: 2em;" onclick="guessChord()">Guess Chord</button>
-    <span id="guessedChord" style="margin-left: 1em;color: blue; font-weight: bold;"></span>
+    <div id="guessedChord" style="position: absolute; right: 1em; top: 4em;"></div>
 
 </div>
 
