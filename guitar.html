@@ -740,7 +740,12 @@
         console.log('playing ', uniq)
         let chords = []
         uniq.forEach(x => {
-            let cc = !chords ? chord(x) : chord(x, chords[0].map(n => n.fret));
+            let cc = null
+            if(!chords.length) {
+                cc = chord(x)
+            } else {
+                cc = chord(x, chords[0].map(n => n.fret));
+            }
             chords.push(cc[Math.floor(Math.random() * chords.length)])
         });
 
