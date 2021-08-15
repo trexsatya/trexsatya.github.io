@@ -824,13 +824,13 @@ function appendTableInto(table, target, opts){
         for(let i = 0; i < opts.yheaders.length; i++) {
             for(let j = 0; j < opts.xheaders.length; j++) {
                 let el = $($(table.find('tr.data')[i]).find('td')[j]);
-                el.click(e => fn(i, j, el))
+                fn(i, j, el)
             }
         }
     }
 
     if(opts.cellClicked) {
-        each(opts.cellClicked)
+        each( (i, j, el) => el.click(e => opts.cellClicked(i, j, el)) )
     }
 
     return {
