@@ -703,7 +703,7 @@
             $(el).toggleClass('highlighted')
 
             if($(el).hasClass('highlighted')) {
-                chordsToPlay[keyChart1[x][y]] = 1
+                chordsToPlay.push(keyChart1[x][y])
             }
         }
     })
@@ -749,7 +749,7 @@
     <button style="margin-left: 1em;" onclick="hideAllNotesOf(document.getElementById('notes').value)">Hide All Of
         Selected Note
     </button>
-    
+
     <script>
         function showLayer(x) {
             $('#txtLayer, #pcLayer, #ocLayer').removeClass('highlighted');
