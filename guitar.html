@@ -722,6 +722,8 @@
     if (window.innerWidth < 800 && window.innerHeight < 400) {
         pc.setZoom(0.6);
     }
+
+    moveToFront('txt')
 </script>
 <div id="guitar-toolbar"
      style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0"
@@ -747,6 +749,19 @@
     <button style="margin-left: 1em;" onclick="hideAllNotesOf(document.getElementById('notes').value)">Hide All Of
         Selected Note
     </button>
+    
+    <script>
+        function showLayer(x) {
+            $('#txtLayer, #pcLayer, #ocLayer').removeClass('highlighted');
+            moveToFront(x)
+            $(this).addClass('highlighted');
+        }
+    </script>
+    <div style="position: fixed; left: 1400px; top: 50px">
+        <button id="txtLayer" style="position: fixed; left: 1400px; top: 300px" onclick="showLayer('txt', this)" class="highlighted">TXT</button>
+        <button id="pcLayer" style="position: fixed; left: 1400px; top: 300px" onclick="showLayer('pc', this)">PC</button>
+        <button id="ocLayer" style="position: fixed; left: 1400px; top: 300px" onclick="showLayer('oc', this)">OC</button>
+    </div>
 
     <button style="margin-left: 2em;" onclick="guessChord()">Guess Chord</button>
     <div id="guessedChord" style="position: fixed; right: 10em; top: 10em;"></div>
