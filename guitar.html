@@ -344,19 +344,20 @@
 
     function showAllNotesOf(name) {
         let shown = []
-        for (var i = 0; i < 6; i++) {
-            for (var j = 0; j < notes[i].length; j++) {
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < notes[i].length; j++) {
+                let n = null
                 if (name.startsWith(notes[i][j])) {
-                    let n = null
                     if(name.endsWith('#')) {
                         n = showNoteAt(i + 1, j + 1)
+                        shown.push({string: i+1, fret: j + 1, label: n});
                     } else if(name.endsWith('b')) {
                         n = showNoteAt(i + 1, j - 1)
+                        shown.push({string: i+1, fret: j - 1, label: n});
                     } else {
                         n = showNoteAt(i + 1, j)
-                    }
-                    if(n)
                         shown.push({string: i+1, fret: j, label: n});
+                    }
                 }
             }
         }
@@ -597,7 +598,7 @@
     function chord(name) {
         let find = (scale, name) => {
             let scaleNotes = scale[name].split(" - ")
-            let notesOfChord = [1, 3, 5].map((x, i) => showAllNotesOf(scaleNotes[x - 1]))
+            let notesOfChord = [1, 3, 5].map(i => showAllNotesOf(scaleNotes[i - 1]))
             let closrByNotes = cartesian(notesOfChord[0], notesOfChord[1], notesOfChord[2]).filter(notes => {
                 return withinLimit(notes[0].fret, notes[1].fret, 3) && withinLimit(notes[1].fret, notes[2].fret, 3)
             })
@@ -741,7 +742,7 @@
        let prev = []
         schedule(chords, window.delayBetweenNotes || 5, chord => {
             console.log(chord)
-            if (prev) prev.forEach(it => it.setOpacity(0.5));
+            if (prev) prev.filter(it => it).forEach(it => it.setOpacity(0.5));
             prev = []
             chord.forEach(note => {
                 prev.push(showNoteAt(note.string, note.fret))
