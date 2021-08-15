@@ -598,7 +598,7 @@
     function chord(name, fretsToReach) {
         fretsToReach = fretsToReach || []
         console.log(`Chord ${name} nearby frets ${fretsToReach}`)
-        
+
         let reachable = (fret1, fret2) => {
             return fret1 === 0 || fret2 === 0 || withinLimit(fret1, fret2, 3)
         }
@@ -748,7 +748,7 @@
             } else {
                 cc = chord(x, chords[0].map(n => n.fret));
             }
-            chords.push(cc[Math.floor(Math.random() * chords.length)])
+            chords.push(cc[Math.floor(Math.random() * cc.length)])
         });
 
        let prev = []
