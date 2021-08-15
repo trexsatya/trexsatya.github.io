@@ -346,8 +346,15 @@
         let shown = []
         for (var i = 0; i < 6; i++) {
             for (var j = 0; j < notes[i].length; j++) {
-                if (notes[i][j].toLowerCase() === name.toLowerCase()) {
-                    let n = showNoteAt(i + 1, j)
+                if (name.startsWith(notes[i][j])) {
+                    let n = null
+                    if(name.endsWith('#')) {
+                        n = showNoteAt(i + 1, j + 1)
+                    } else if(name.endsWith('b')) {
+                        n = showNoteAt(i + 1, j - 1)
+                    } else {
+                        n = showNoteAt(i + 1, j)
+                    }
                     if(n)
                         shown.push({string: i+1, fret: j, label: n});
                 }
@@ -724,7 +731,7 @@
     }
 
     function playChords() {
-        let uniq = [...new Set(chordsToPlay)];
+        let uniq = chordsToPlay //[...new Set(chordsToPlay)];
         console.log('playing ', uniq)
         let chords = uniq.map(x => {
             let chords = chord(x)
