@@ -820,13 +820,17 @@ function appendTableInto(table, target, opts){
 //	table.find('table.data').css(opts)
 //	setTimeout(()=> table.find('.yheader').css({'padding-left': '4%','padding-right': '4%'}), 500);
 
-    if(opts.cellClicked) {
+    let each = fn => {
         for(let i = 0; i < opts.yheaders.length; i++) {
             for(let j = 0; j < opts.xheaders.length; j++) {
                 let el = $($(table.find('tr.data')[i]).find('td')[j]);
-                el.click(e => opts.cellClicked(i, j, el))
+                el.click(e => fn(i, j, el))
             }
         }
+    }
+    
+    if(opts.cellClicked) {
+        each(opts.cellClicked)
     }
 
     return {
@@ -839,7 +843,8 @@ function appendTableInto(table, target, opts){
         },
         at : function(i,j){
             return $($(table.find('tr.data')[i-1]).find('td')[j-1])
-        }
+        },
+        each: each
     }
 }
 
