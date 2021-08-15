@@ -712,6 +712,7 @@
 
     function resetChords() {
         chordsToPlay = []
+        keyTable1.each((i, j, el) => $(el).removeClass('highlighted'))
     }
 
     function playChords() {
