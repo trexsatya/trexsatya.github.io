@@ -751,16 +751,16 @@
     </button>
 
     <script>
-        function showLayer(x) {
+        function showLayer(x, e) {
             $('#txtLayer, #pcLayer, #ocLayer').removeClass('highlighted');
             moveToFront(x)
-            $(this).addClass('highlighted');
+            $(e.target).addClass('highlighted');
         }
     </script>
     <div style="position: fixed; left: 1400px; top: 50px">
-        <button id="txtLayer" style="" onclick="showLayer('txt', this)" class="highlighted">TXT</button>
-        <button id="pcLayer" style="" onclick="showLayer('pc', this)">PC</button>
-        <button id="ocLayer" style="" onclick="showLayer('oc', this)">OC</button>
+        <button id="txtLayer" style="" onclick="showLayer('txt', event)" class="highlighted">TXT</button>
+        <button id="pcLayer" style="" onclick="showLayer('pc', event)">PC</button>
+        <button id="ocLayer" style="" onclick="showLayer('oc', event)">OC</button>
     </div>
 
     <button style="margin-left: 2em;" onclick="guessChord()">Guess Chord</button>
