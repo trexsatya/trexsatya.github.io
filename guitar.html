@@ -588,17 +588,24 @@
     }
 
     function chord(name) {
-        if(name.endsWith("m")) {
-            //Minor chord
-
-        } else {
-            //Major chord
-            let scaleNotes = majorScales[name].split(" - ")
-            let notesOfMajorChord = [1, 3, 5].map((x, i) => showAllNotesOf(scaleNotes[x - 1]))
-            let closrByNotes = cartesian(notesOfMajorChord[0], notesOfMajorChord[1], notesOfMajorChord[2]).filter(notes => {
+        let find = (scale, name) => {
+            let scaleNotes = scale[name].split(" - ")
+            let notesOfChord = [1, 3, 5].map((x, i) => showAllNotesOf(scaleNotes[x - 1]))
+            let closrByNotes = cartesian(notesOfChord[0], notesOfChord[1], notesOfChord[2]).filter(notes => {
                 return withinLimit(notes[0].fret, notes[1].fret, 3) && withinLimit(notes[1].fret, notes[2].fret, 3)
             })
-            console.log(closrByNotes)
+            // console.log(closrByNotes)
+            hideAll()
+            return closrByNotes
+        };
+
+        if(name.endsWith("m")) {
+            name = name.replace("m", "")
+            //Minor chord
+            return find(minorScales, name)
+        } else {
+            //Major chord
+            return  find(majorScales, name)
         }
     }
 
@@ -713,11 +720,27 @@
     function resetChords() {
         chordsToPlay = []
         keyTable1.each((i, j, el) => $(el).removeClass('highlighted'))
+        hideAll()
     }
 
     function playChords() {
         let uniq = [...new Set(chordsToPlay)];
         console.log('playing ', uniq)
+        let chords = uniq.map(x => {
+            let chords = chord(x)
+            return chords[Math.floor(Math.random() * chords.length)]
+        });
+
+       let prev = []
+        schedule(chords, window.delayBetweenNotes || 5, chord => {
+            console.log(chord)
+            if (prev) prev.forEach(it => it.setOpacity(0.5));
+            prev = []
+            chord.forEach(note => {
+                prev.push(showNoteAt(note.string, note.fret))
+            })
+        }, () => {
+        });
     }
 
     if (window.innerWidth < 800 && window.innerHeight < 400) {
