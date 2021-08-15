@@ -828,7 +828,7 @@ function appendTableInto(table, target, opts){
             }
         }
     }
-    
+
     if(opts.cellClicked) {
         each(opts.cellClicked)
     }
@@ -844,7 +844,9 @@ function appendTableInto(table, target, opts){
         at : function(i,j){
             return $($(table.find('tr.data')[i-1]).find('td')[j-1])
         },
-        each: each
+        each: function (fn) {
+            each(fn)
+        }
     }
 }
 
