@@ -707,7 +707,8 @@ function appendTableInto(table, target, opts){
         width: 100, height: 60,
         backgroundColor: 'white', color: 'white',
         xheaderColor: '#73738c',
-        yheaderColor: '#73738c'
+        yheaderColor: '#73738c',
+        id: `table-autogen-${new Date().getTime()}`
     }, opts)
 
     if(table.length == 0 && options.xheaders.length != 0){
@@ -751,7 +752,7 @@ function appendTableInto(table, target, opts){
     }
 
 
-    var tableHtml = `<table style="position: absolute; " class="main-container">
+    var tableHtml = `<table id="${options.id}" style="position: absolute; " class="main-container">
   <tr>
     <td>
 	  	<tr width="100%" style="color: blue; height: 20px;">
