@@ -16,7 +16,7 @@ function globalStore(key, obj){
 }
 
 function hide() {
-   var items = Array.prototype.slice.apply(arguments);   
+   var items = Array.prototype.slice.apply(arguments);
    items.forEach(it => {
       if(it instanceof fabric.Object) {
           it.setOpacity(0);
@@ -24,7 +24,7 @@ function hide() {
       } else if(it instanceof jQuery) {
           it.hide()
       }
-   }); 
+   });
 }
 
 function update(canvas) {
@@ -296,9 +296,9 @@ function typeQuote(text, _options) {
     cinemaText.css(options.css)
 
     let start = new Date().getTime();
-    
+
     $('#cinemaText').html('').css({zIndex: 900010}).show();
-    
+
     return type(text, '#cinemaText').then(it => sleep(options.delay || 1)).then(it => {
     	console.log("typed in " + (new Date().getTime() - start)/1000 + "secs")
         textillateContainer.css(savedCssTC);
@@ -316,7 +316,7 @@ function delayExecution(fn, delay) {
             fn();
             myResolve()
         }, delay)
-    })    
+    })
 }
 
 function typeAndDisappear(text, top, left, opts) {
@@ -394,11 +394,11 @@ function schedule(data, timeInSeconds, taskRunner, onComplete) {
                 result.then(it => {
                     if(window.stopAnimationSignal) {
                         window.animationScriptFunction = () => fn(100) //Store function
-                        console.log("Waiting for signal. Call resumeAnimationScript()")                    
+                        console.log("Waiting for signal. Call resumeAnimationScript()")
                     } else {
                        fn(100)
                     }
-                    
+
                 })
             }
             else if(result !== false) {
