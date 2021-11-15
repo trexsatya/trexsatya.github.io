@@ -41,7 +41,7 @@
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG">
     </script>
-    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charSet="utf-8"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript">
@@ -95,55 +95,10 @@
 <body>
 
 
-<svg id="horizRuler" xmlns="http://www.w3.org/2000/svg" style="height: 40px; position: fixed; top: 0;"></svg>
-<svg id="vertRuler" xmlns="http://www.w3.org/2000/svg" style="height: 1000px;position: absolute; left: 0;"></svg>
 <script>
-    var someSvgElement = document.getElementById('horizRuler');
-    var rulez = new Rulez({
-        element: someSvgElement,
-    });
-    rulez.render();
 
-    var someSvgElement = document.getElementById('vertRuler');
-    rulez = new Rulez({
-        element: someSvgElement,
-        layout: 'vertical',
-        textDefaults: {
-            rotation: 90
-        }
-    });
-    rulez.render();
 </script>
-<div id="CMOGDAT-dialog" title="Enter required data" class="dialog">
-    <input placeholder="Ex: [1, 2], [2, 3]" name="data" value="[1,2,3], [4,5,6]" style="width: 80%">
-    <button type="submit" onclick="createMatrix('#CMOGDAT-dialog')">OK</button>
-    <br> <br>
-    <input placeholder="Location on screen" value="400,80" name="location">
-</div>
 
-<div id="CAOGSD-dialog" title="Enter required data" class="dialog">
-    <input placeholder="Ex: 1, 2, 3" name="data" value="1,2,3" style="width: 80%">
-    <button type="submit" onclick="createArray('#CAOGSD-dialog')">OK</button>
-    <br> <br>
-    <input placeholder="Location on screen" value="400,80" name="location">
-</div>
-
-<div class="top-bar" style="width: 40%; z-index: 3400; position: fixed; top: 0; left: 25%; opacity: 0.5;">
-    <select class="commands-select" name="command" style="width: 100%;">
-        <option value="NULL"></option>
-        <option value="CMOGDAT">Create Matrix Of Given Data</option>
-        <option value="CMOGDIM">Create Matrix Of Given Dimension</option>
-        <option value="CAOGSD">Create Array Of Given Data</option>
-        <option value="CAOGSZ">Create Array Of Given Size</option>
-    </select>
-
-    <button id="btnStart">REC</button>
-    <button id="btnStop" style="display: none;">STOP</button>
-    <button id="btnPause" style="display: none;">PAUSE</button>
-    <button id="btnResume" style="display: none;">RESUME</button>
-    <button id="btnStopAnimation" style="" onclick="stopAnimationScript()">STOP-ANIM</button>
-    <button id="btnResumeAnimation" style="display: none" onclick="resumeAnimationScript()">ANIM-SCRIPT</button>
-</div>
 
 <div style="position: fixed; right: -37px; top: 10%;z-index: 3000; color: green">
     <ul id="item-variables">
@@ -153,25 +108,7 @@
 
 <!--    <video width="100%" height="100%" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0;" src="/videos/smoke.mp4" autoplay muted>-->
 <!--    </video>-->
-<nav id="edit-table-cell-toolbar"
-     style="display: none; position: fixed; z-index: 3000; background: #e2dbdb; padding: 10px; ">
-    <ul class="" style="list-style: none;">
-        <li class="">
-            Value: <input type="text" name="value" onchange="">
-        </li>
-        <li class="">
-            BG-Color: <input type="color" name="background" onchange="">
-        </li>
-        <li class="">
-            FG-Color: <input type="color" name="color" onchange="">
-        </li>
-        <li class="">
-            <button onclick="$('#edit-table-cell-toolbar').hide()">Close</button>
-            <button onclick="" class="reset">Reset</button>
-        </li>
 
-    </ul>
-</nav>
 
 <script>
     // In your Javascript (external .js resource or <script> tag)
@@ -252,37 +189,49 @@
 </script>
 
 <div style="display: inline-block;margin-left: 10px;position: absolute;left: 0;top: 8px;z-index: 1000000;height: 0;">
-        <span style=""> <label class="switch">
+        <span style=""> <label className="switch">
           <input type="checkbox" id="eraser">
-          <span class="slider round"></span>
+          <span className="slider round"></span>
             </label>
         </span>
 </div>
 
 <script>
 
+    function renderStringsAndFrets() {
+        var strings = []
+        let left = 100;
+        let top =  100;
+        let right = 1300;
+        let verticalGap = 20;
+        let bottom = 200;
 
-    var strings = []
+        for (var i = 0; i < 6; i++) {
+            let verticalPos = top + i * verticalGap;
+            strings.push(makeLine([left, verticalPos, right, verticalPos]));
+            pc.add(strings[i])
+        }
 
-    for (var i = 0; i < 6; i++) {
-        strings.push(makeLine([100, 100 + i * 50, 1300, 100 + i * 50]));
-        pc.add(strings[i])
+        var frets = []
+
+        let baseWidth = window.fretDistance || 100;
+        for (var i = 0; i < 18; i++) {
+            let defaultReductionFn = x => x === 0 ? 0 : (14 * Math.log(x)) * x;
+            let reductionFn = window.fretDistanceMultiplier || defaultReductionFn
+            let reduction = reductionFn(i);
+            let offset = i * baseWidth - reduction;
+            frets.push(makeLine([left + offset, top, left + offset, bottom]));
+            pc.add(frets[i])
+        }
+
+        var fretHead = makeLine([98, 98, 98, 352], {strokeWidth: 5})
+        pc.add(fretHead)
+
+
+
+        return [strings, frets]
     }
-
-    var frets = []
-
-    let baseWidth = window.fretDistance || 100;
-    for (var i = 0; i < 18; i++) {
-        let defaultReductionFn = x => x === 0 ? 0 : (14 * Math.log(x)) * x;
-        let reductionFn = window.fretDistanceMultiplier || defaultReductionFn
-        let reduction = reductionFn(i);
-        let offset = i * baseWidth - reduction;
-        frets.push(makeLine([100 + offset, 100, 100 + offset, 350]));
-        pc.add(frets[i])
-    }
-
-    var fretHead = makeLine([98, 98, 98, 352], {strokeWidth: 5})
-    pc.add(fretHead)
+    let [strings, frets] = renderStringsAndFrets()
 
     var notes = [
         ['E', 'F', ' ', 'G', ' ', 'A', ' ', 'B', 'C', ' ', 'D', ' ', 'E', 'F', ' ', 'G', ' ', 'A', ' ', 'B', 'C'],
@@ -296,7 +245,8 @@
     var noteLabels = []
     notes.forEach(row => noteLabels.push(new Array(row.length)));
 
-    function showNoteAt(string, fret) {
+    function showNoteAt(string, fret, toggle) {
+        toggle = toggle || false
         var i = string - 1, j = fret;
         if (i < 0 || i > strings.length - 1) {
             console.log(`string ${string} invalid`);
@@ -316,12 +266,14 @@
             posX = frets[j - 1].get('x1') + 15, posY = strings[i].get('y1') - 11, color = 'blue';
         }
 
-        if (noteLabels[i][j]) {
-            noteLabels[i][j].setOpacity(1);
-            noteLabels[i][j].setLeft(posX);
-            noteLabels[i][j].setTop(posY);
+        let noteLabel = noteLabels[i][j];
+        if (noteLabel) {
+            let flippedOpacity = noteLabel.opacity === 1 ? 0 : 1;
+            noteLabel.setOpacity(toggle ? flippedOpacity : 1);
+            noteLabel.setLeft(posX);
+            noteLabel.setTop(posY);
             pc.renderAll();
-            return noteLabels[i][j];
+            return noteLabel;
         } else {
             var n = textInCircle(notes[i][j], posX, posY, {}, {fill: color});
             n.lockMovementY = true;
@@ -350,15 +302,15 @@
             for (let j = 0; j < maxReach; j++) {
                 let n = null
                 if (name.startsWith(notes[i][j])) {
-                    if(name.endsWith('#')) {
+                    if (name.endsWith('#')) {
                         n = showNoteAt(i + 1, j + 1)
-                        shown.push({string: i+1, fret: j + 1, label: n});
-                    } else if(name.endsWith('b')) {
+                        shown.push({string: i + 1, fret: j + 1, label: n});
+                    } else if (name.endsWith('b')) {
                         n = showNoteAt(i + 1, j - 1)
-                        shown.push({string: i+1, fret: j - 1, label: n});
+                        shown.push({string: i + 1, fret: j - 1, label: n});
                     } else {
                         n = showNoteAt(i + 1, j)
-                        shown.push({string: i+1, fret: j, label: n});
+                        shown.push({string: i + 1, fret: j, label: n});
                     }
                 }
             }
@@ -445,21 +397,22 @@
     var withinLimit = (val, target, n) => val < target + n && val > target - n;
     var between = (val, x, y) => val <= y && val >= x;
 
+    let clickVicinity = 10;
     function showNoteOnClick(e) {
         for (i = 0; i < 6; i++) {
             for (var j = 0; j < 17; j++) {
-                var isNearStringI = withinLimit(e.e.clientY, strings[i].get('y1'), 20);
+                var isNearStringI = withinLimit(e.e.clientY, strings[i].get('y1'), clickVicinity);
                 var isOnFretJ = false;
 
                 if (j === 0) {
-                    isOnFretJ = between(e.e.clientX, frets[0].get('x1') - 30, frets[0].get('x1'));
+                    isOnFretJ = between(e.e.clientX, frets[0].get('x1') - clickVicinity, frets[0].get('x1'));
                 } else {
                     isOnFretJ = between(e.e.clientX, frets[j - 1].get('x1'), frets[j].get('x1'));
                 }
 
                 if (isNearStringI && isOnFretJ) {
                     console.log(`Fret ${j} String ${i + 1}`);
-                    showNoteAt(i + 1, j);
+                    showNoteAt(i + 1, j, true);
                 }
             }
         }
@@ -582,17 +535,19 @@
     }
 
     function cartesian(...args) {
-        var r = [], max = args.length-1;
+        var r = [], max = args.length - 1;
+
         function helper(arr, i) {
-            for (var j=0, l=args[i].length; j<l; j++) {
+            for (var j = 0, l = args[i].length; j < l; j++) {
                 var a = arr.slice(0); // clone arr
                 a.push(args[i][j]);
                 if (i === max)
                     r.push(a);
                 else
-                    helper(a, i+1);
+                    helper(a, i + 1);
             }
         }
+
         helper([], 0);
         return r;
     }
@@ -616,13 +571,13 @@
             return closrByNotes.length ? closrByNotes : allPossible
         };
 
-        if(name.endsWith("m")) {
+        if (name.endsWith("m")) {
             name = name.replace("m", "")
             //Minor chord
             return find(minorScales, name)
         } else {
             //Major chord
-            return  find(majorScales, name)
+            return find(majorScales, name)
         }
     }
 
@@ -716,7 +671,7 @@
         ['B', 'C#m', 'D#m', 'E', 'F#m', 'G#m', 'A#dim'],
         ['F#', 'G#m', 'A#m', 'B', 'C#', 'D#m', 'E#dim'],
     ]
-    let keyTable1 = appendTableInto(keyChart1, $('#textillateContainer'),{
+    let keyTable1 = appendTableInto(keyChart1, $('#textillateContainer'), {
         id: 'key-chart',
         ytitle: '',
         xtitle: '',
@@ -728,7 +683,7 @@
         cellClicked: (x, y, el) => {
             $(el).toggleClass('highlighted')
 
-            if($(el).hasClass('highlighted')) {
+            if ($(el).hasClass('highlighted')) {
                 chordsToPlay.push(keyChart1[x][y])
             }
         }
@@ -752,10 +707,10 @@
         let chords = []
         uniq.forEach(x => {
             let cc = null
-            if(!chords.length) {
+            if (!chords.length) {
                 cc = chord(x)
             } else {
-                cc = chord(x, chords[chords.length-1].map(n => n.fret));
+                cc = chord(x, chords[chords.length - 1].map(n => n.fret));
             }
             chords.push(randomFromArray(cc))
         });
@@ -788,8 +743,8 @@
 </script>
 <div id="guitar-toolbar"
      style="display: inline-block; margin-left: 10px;position: absolute; left: 150px; bottom: 150px; z-index: 1000000; height: 0"
-     class="ui-draggable ui-draggable-handle">
-    <label for="notes">Choose a note:</label>
+     className="ui-draggable ui-draggable-handle">
+    <label htmlFor="notes">Choose a note:</label>
 
     <select name="notes" id="notes">
         <option value="A">A</option>
@@ -800,16 +755,16 @@
         <option value="F">F</option>
         <option value="G">G</option>
     </select>
-    <button style="margin-left: 1em;" onclick="showAllNotesOf(document.getElementById('notes').value)">Show All Notes
+    <button style="margin-left: 1em;" onClick="showAllNotesOf(document.getElementById('notes').value)">Show All Notes
     </button>
 
-    <button style="margin-left: 1em;" onclick="hideAll()">Hide All Notes</button>
+    <button style="margin-left: 1em;" onClick="hideAll()">Hide All Notes</button>
 
     <br>
     <br>
-    <button style="margin-left: 1em;" onclick="showRandomAToG()">Show Random A-G</button>
+    <button style="margin-left: 1em;" onClick="showRandomAToG()">Show Random A-G</button>
 
-    <button style="margin-left: 1em;" onclick="hideAllNotesOf(document.getElementById('notes').value)">Hide All Of
+    <button style="margin-left: 1em;" onClick="hideAllNotesOf(document.getElementById('notes').value)">Hide All Of
         Selected Note
     </button>
 
@@ -821,45 +776,45 @@
         }
     </script>
     <div style="position: fixed; left: 1400px; top: 50px">
-        <button id="txtLayer" style="" onclick="showLayer('txt', event)" class="highlighted">TXT</button>
-        <button id="pcLayer" style="" onclick="showLayer('pc', event)">PC</button>
-        <button id="ocLayer" style="" onclick="showLayer('oc', event)">OC</button>
+        <button id="txtLayer" style="" onClick="showLayer('txt', event)" className="highlighted">TXT</button>
+        <button id="pcLayer" style="" onClick="showLayer('pc', event)">PC</button>
+        <button id="ocLayer" style="" onClick="showLayer('oc', event)">OC</button>
     </div>
 
-    <button style="margin-left: 2em;" onclick="guessChord()">Guess Chord</button>
+    <button style="margin-left: 2em;" onClick="guessChord()">Guess Chord</button>
     <div id="guessedChord" style="position: fixed; right: 10em; top: 10em;"></div>
 
     <div style="position: fixed; right: 40px; top: 250px">
-        <label for="chordChangeSpeed">Speed:</label>
+        <label htmlFor="chordChangeSpeed">Speed:</label>
         <input type="number" id="chordChangeSpeed" name="chordChangeSpeed" min="10" max="100">
     </div>
 
-    <button style="position: fixed; right: 40px; top: 300px" onclick="resetChords()">Reset</button>
-    <button style="position: fixed; right: 100px; top: 300px" onclick="playChords()">Play Chords</button>
+    <button style="position: fixed; right: 40px; top: 300px" onClick="resetChords()">Reset</button>
+    <button style="position: fixed; right: 100px; top: 300px" onClick="playChords()">Play Chords</button>
 
 </div>
 
 <div id="drawing-toolbar"
      style="display: inline-block; margin-left: 10px;position: absolute; left: 0; top: 50; z-index: 1000000; height: 0"
-     class="ui-draggable ui-draggable-handle">
+     className="ui-draggable ui-draggable-handle">
     <img id="toolbarToggle1" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;"
-         onclick="$('#toolbar1-buttons').toggle();"
+         onClick="$('#toolbar1-buttons').toggle();"
          src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png">
 
     <div id="toolbar1-buttons">
         Drawing Mode:
-        <label class="switch">
+        <label className="switch">
             <input type="checkbox" id="flip-drawing">
-            <span class="slider round"></span>
+            <span className="slider round"></span>
         </label>
         <br><br>
-        <button id="undo" class="btn btn-info" onclick="undoDrawing(event)">Undo</button>
+        <button id="undo" className="btn btn-info" onClick="undoDrawing(event)">Undo</button>
         <span> &nbsp;&nbsp;&nbsp;</span>
-        <button id="redo" class="btn btn-info" onclick="redoDrawing(event)">Redo</button>
+        <button id="redo" className="btn btn-info" onClick="redoDrawing(event)">Redo</button>
         <br>
 
         <br>
-        <label for="drawing-mode-selector">Mode:</label>
+        <label htmlFor="drawing-mode-selector">Mode:</label>
         <select id="drawing-mode-selector">
             <option>Pencil</option>
             <option>Circle</option>
@@ -873,42 +828,42 @@
             <option>texture</option>
         </select><br>
         <br>
-        <label for="drawing-line-width">Line width:</label>
-        <span class="info">2</span><input type="number" value="3" id="drawing-line-width"><br>
+        <label htmlFor="drawing-line-width">Line width:</label>
+        <span className="info">2</span><input type="number" value="3" id="drawing-line-width"><br>
 
         <br>
-        <label for="drawing-color">Line color:</label>
+        <label htmlFor="drawing-color">Line color:</label>
         <input type="color" value="#005E7A" id="drawing-color"><br>
         <br>
-        <button id="clear-canvas" class="btn btn-info">Clear</button>
+        <button id="clear-canvas" className="btn btn-info">Clear</button>
 
         <br><br>
-        <label for="drawing-shadow-color">Shadow color:</label>
+        <label htmlFor="drawing-shadow-color">Shadow color:</label>
         <input type="color" value="#005E7A" id="drawing-shadow-color"><br>
         <br>
-        <label for="drawing-shadow-width">Shadow width:</label>
-        <span class="info">0</span><input type="number" value="0" id="drawing-shadow-width"><br>
+        <label htmlFor="drawing-shadow-width">Shadow width:</label>
+        <span className="info">0</span><input type="number" value="0" id="drawing-shadow-width"><br>
 
         <br>
-        <label for="drawing-shadow-offset">Shadow offset:</label>
-        <span class="info">0</span><input type="number" value="0" id="drawing-shadow-offset"><br>
+        <label htmlFor="drawing-shadow-offset">Shadow offset:</label>
+        <span className="info">0</span><input type="number" value="0" id="drawing-shadow-offset"><br>
         <br>
     </div>
 </div>
 
 <div id="rollbackConfirmationDialog" title="Rollback Recording!" style="display: none;">
     <p>Select the time where to rollback:</p>
-    <div class="slider"></div>
+    <div className="slider"></div>
     <br><br>
     <div>
-        Selected Value: <span class="info"></span>
+        Selected Value: <span className="info"></span>
 
     </div>
 </div>
 
 <div id="recordingFileChooserDialog" title="Choose Recording Files!" style="display: none; z-index: 5000">
     <p>Choose Files:</p>
-    <input type="file" accept="text/plain" onchange="openFile(event)" id="recordingFiles" multiple="multiple">
+    <input type="file" accept="text/plain" onChange="openFile(event)" id="recordingFiles" multiple="multiple">
 
     <div>
         OR
@@ -919,11 +874,11 @@
 <div id="playbackControls" style="display: none; position:fixed; bottom:0;width:100%;">
     <table style="width:100%">
         <tr>
-            <th style="width: 20%;"><span class="time" style="float: right;margin-right: 30px;"></span></th>
+            <th style="width: 20%;"><span className="time" style="float: right;margin-right: 30px;"></span></th>
             <th style="width: 60%;">
-                <div class="slider"></div>
+                <div className="slider"></div>
             </th>
-            <th><span class="time" style="float: left;margin-left:30px"></span></th>
+            <th><span className="time" style="float: left;margin-left:30px"></span></th>
         </tr>
     </table>
 
@@ -932,10 +887,10 @@
 <div id="toolbar"
      style="display: inline-block; margin-left: 10px;position: absolute; right: -10; top: 50; z-index: 1000000; height: 0">
     <img id="toolbarToggle" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;"
-         onclick="$('#drawing-mode-options').toggle();"
+         onClick="$('#drawing-mode-options').toggle();"
          src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png"></img>
 
-    <select id="savePoints" style="margin-right: 30px;float: right;" onchange="restoreCanvas()">
+    <select id="savePoints" style="margin-right: 30px;float: right;" onChange="restoreCanvas()">
         <option>0</option>
     </select>
 
@@ -943,26 +898,27 @@
     <div id="drawing-mode-options" style="background: rgba(15, 14, 14, 0.4);padding-left: 10px;padding-top: 10px;">
 
 
-        <button id="record-launch" class="btn btn-info" onclick="initializeRecording()">Record</button>
-        <button id="record-play-launch" class="btn btn-info" onclick="launchRecordingDialog()">Play Recording</button>
-        <button id="rollbackRecording" onclick="launchRollbackRecording()">Rollback Recording</button>
+        <button id="record-launch" className="btn btn-info" onClick="initializeRecording()">Record</button>
+        <button id="record-play-launch" className="btn btn-info" onClick="launchRecordingDialog()">Play Recording
+        </button>
+        <button id="rollbackRecording" onClick="launchRollbackRecording()">Rollback Recording</button>
         <br><br>
-        <button id="delete-selected" class="btn btn-info" onclick="deleteSelectedObjects()">Delete</button>
-        <button id="record-play-save" class="btn btn-info" onclick="saveRecording()">Save Recording</button>
+        <button id="delete-selected" className="btn btn-info" onClick="deleteSelectedObjects()">Delete</button>
+        <button id="record-play-save" className="btn btn-info" onClick="saveRecording()">Save Recording</button>
         <br> <br>
 
-        <button class="btn btn-info" onclick="Copy(pc)">Copy</button>
-        <button class="btn btn-info" onclick="Paste(pc)">Paste</button>
-        <button class="btn btn-info" onclick="degroup(pc)">Ungroup</button>
+        <button className="btn btn-info" onClick="Copy(pc)">Copy</button>
+        <button className="btn btn-info" onClick="Paste(pc)">Paste</button>
+        <button className="btn btn-info" onClick="degroup(pc)">Ungroup</button>
 
         <br><br>
 
-        <button id="create-text" class="btn btn-info">Text</button>
-        <button id="create-small-text" class="btn btn-info">Small Text</button>
-        <button id="create-rect-text" class="btn btn-info">[]</button>
+        <button id="create-text" className="btn btn-info">Text</button>
+        <button id="create-small-text" className="btn btn-info">Small Text</button>
+        <button id="create-rect-text" className="btn btn-info">[]</button>
 
         <br><br>
-        Color: <select onchange="changeCircleColor(this.value)">
+        Color: <select onChange="changeCircleColor(this.value)">
         <option value="">--</option>
         <option value="blue">Blue</option>
         <option value="green">Green</option>
@@ -974,34 +930,34 @@
     </select>
 
         <br><br>
-        <button id="greenen" class="btn btn-info" onclick="zoomSelectedObject(true)" style="margin-right:10px;">+
+        <button id="greenen" className="btn btn-info" onClick="zoomSelectedObject(true)" style="margin-right:10px;">+
         </button>
-        <button id="whiten" class="btn btn-info" onclick="zoomSelectedObject(false)" style="margin-right:10px;">-
+        <button id="whiten" className="btn btn-info" onClick="zoomSelectedObject(false)" style="margin-right:10px;">-
         </button>
 
-        <button id="arrow" class="btn btn-info" onclick="arrowButton()">--></button>
+        <button id="arrow" className="btn btn-info" onClick="arrowButton()">--></button>
         <br><br>
 
-        <button id="flipConnectionMode" class="btn btn-info" onclick="flipConnectionMode(event)" style="">Connect
+        <button id="flipConnectionMode" className="btn btn-info" onClick="flipConnectionMode(event)" style="">Connect
         </button>
-        <button id="makeTree" class="btn btn-info" onclick="onMakeTreeClick(event)" style="">MakeTree</button>
-        <button id="removeTree" class="btn btn-info" onclick="onRemoveTreeClick(event)" style="">RemoveTree</button>
+        <button id="makeTree" className="btn btn-info" onClick="onMakeTreeClick(event)" style="">MakeTree</button>
+        <button id="removeTree" className="btn btn-info" onClick="onRemoveTreeClick(event)" style="">RemoveTree</button>
 
         <br><br>
 
-        <button id="create-array" class="btn btn-info" onclick="window.insertArray=true; turnOffDrawing();"
+        <button id="create-array" className="btn btn-info" onClick="window.insertArray=true; turnOffDrawing();"
                 style="margin-right:10px;">Array
         </button>
 
-        <button id="insert-matex" class="btn btn-info" onclick="window.signalMatexInsertion=true;turnOffDrawing();">
+        <button id="insert-matex" className="btn btn-info" onClick="window.signalMatexInsertion=true;turnOffDrawing();">
             Matex
         </button>
-        <button id="insert-image" class="btn btn-info" onclick="window.signalImageInsertion=true;turnOffDrawing();">
+        <button id="insert-image" className="btn btn-info" onClick="window.signalImageInsertion=true;turnOffDrawing();">
             Image
         </button>
         <br><br>
-        <button id="save" style="margin-right:10px;" onclick="saveCanvas()">Save</button>
-        <button id="newCanvas" onclick="newCanvas()"> New</button>
+        <button id="save" style="margin-right:10px;" onClick="saveCanvas()">Save</button>
+        <button id="newCanvas" onClick="newCanvas()"> New</button>
         <br><br>
 
         <br><br>
@@ -1388,12 +1344,12 @@
 
 <div id="imageInputDialog"
      style="background: blue; color: white; display: none; z-index: 500000;position: absolute;left: 30%;top: 30%;width: 400px;height: 400px;border: 1px solid black;padding: 1%;">
-    <input autofocus type="text" id="imageInputUrl" onkeyup="renderMath(event)">
+    <input autoFocus type="text" id="imageInputUrl" onKeyUp="renderMath(event)">
 
     <input type="file" id="imageInputFile">
 
-    <button onclick="handleFileDialogButtons('OK')">OK</button>
-    <button onclick="handleFileDialogButtons('')">Close</button>
+    <button onClick="handleFileDialogButtons('OK')">OK</button>
+    <button onClick="handleFileDialogButtons('')">Close</button>
 </div>
 
 <div id="mathjaxDialog" style="">
@@ -1410,60 +1366,60 @@
             }
         }
     </script>
-    <input autofocus type="text" id="mathtext" onkeyup="renderMath(event)">
+    <input autoFocus type="text" id="mathtext" onKeyUp="renderMath(event)">
 
     <div id="representation" style="margin-top: 20; padding: 15;"></div>
 
-    <div class="keyboard">
-        <div class="key letter">
+    <div className="keyboard">
+        <div className="key letter">
             0
         </div>
-        <div class="key letter">
+        <div className="key letter">
             1
         </div>
-        <div class="key letter">
+        <div className="key letter">
             2
         </div>
-        <div class="key letter">
+        <div className="key letter">
             3
         </div>
-        <div class="key letter">
+        <div className="key letter">
             4
         </div>
-        <div class="key letter">
+        <div className="key letter">
             5
         </div>
-        <div class="key letter">
+        <div className="key letter">
             6
         </div>
-        <div class="key letter">
+        <div className="key letter">
             7
         </div>
-        <div class="key letter">
+        <div className="key letter">
             8
         </div>
-        <div class="key letter">
+        <div className="key letter">
             9
         </div>
-        <div class="key letter">
+        <div className="key letter">
             +
         </div>
-        <div class="key letter">
+        <div className="key letter">
             -
         </div>
-        <div class="key letter">
+        <div className="key letter">
             *
         </div>
-        <div class="key letter">
+        <div className="key letter">
             /
         </div>
-        <div class="key letter">
+        <div className="key letter">
             (
         </div>
-        <div class="key letter">
+        <div className="key letter">
             )
         </div>
-        <div class="key letter" data-mathjax="\{">
+        <div className="key letter" data-mathjax="\{">
             {
         </div>
         <div class="key letter" data-mathjax="\}">
