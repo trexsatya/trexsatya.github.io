@@ -347,7 +347,7 @@
     function hideAll() {
         noteLabels.forEach(row => {
             row.forEach(it => {
-                if (it) it.setOpacity(0);
+                if (it) it.removeClass('highlighted')
             })
         });
         pc.renderAll();
