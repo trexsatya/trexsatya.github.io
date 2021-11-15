@@ -226,13 +226,13 @@
         }
 
         var fretHead = makeLine([98, 98, 98, 352], {strokeWidth: 5})
-        pc.add(fretHead)
+        // pc.add(fretHead)
 
 
 
         return [strings, frets]
     }
-    let [strings, frets] = renderStringsAndFrets()
+    let [strings, frets] = [[], []]
 
     var notes = [
         ['E', 'F', ' ', 'G', ' ', 'A', ' ', 'B', 'C', ' ', 'D', ' ', 'E', 'F', ' ', 'G', ' ', 'A', ' ', 'B', 'C'],
@@ -243,8 +243,33 @@
         ['E', 'F', ' ', 'G', ' ', 'A', ' ', 'B', 'C', ' ', 'D', ' ', 'E', 'F', ' ', 'G', ' ', 'A', ' ', 'B', 'C']
     ];
 
+    let noteTable = appendTableInto(notes, $('#textillateContainer'), {
+        id: 'notes-chart',
+        ytitle: '',
+        xtitle: '',
+        xheaders: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        yheaders: ['E', 'B', 'G', 'D', 'A', 'E'],
+        width: '1200px', height: '300px',
+        marginRight: '1%',
+        marginTop: '5%',
+        top: 100,
+        color: 'blue',
+        cellClicked: (x, y, el) => {
+            $(el).toggleClass('highlighted')
+
+            if ($(el).hasClass('highlighted')) {
+
+            }
+        }
+    })
+
     var noteLabels = []
-    notes.forEach(row => noteLabels.push(new Array(row.length)));
+    for(var i=0; i < notes.length; i++) {
+        noteLabels[i] = new Array(notes[i].length)
+        for (j = 0; j < notes[i].length; j++) {
+            noteLabels[i][j] = noteTable.at(i + 1, j + 1)
+        }
+    }
 
     function showNoteAt(string, fret, toggle) {
         toggle = toggle || false
@@ -354,7 +379,7 @@
         pc.renderAll();
     }
 
-    showFretMarkers();
+    // showFretMarkers();
 
     var notesToPosMap = {}
 
@@ -463,7 +488,7 @@
             showNoteAt(i, j);
         }
     }
-    hideAll();
+    // hideAll();
 
     function findNotesBeingShown() {
         let notesBeingShown = {}
@@ -471,19 +496,19 @@
             for (let j = 0; j < noteLabels[i].length; j++) {
                 let noteLabel = noteLabels[i][j];
                 if (!noteLabel) continue
-                let isShown = noteLabel.getOpacity() !== 0;
+                let isShown = noteLabel.hasClass('highlighted')
                 // console.log(`isShown ${isShown}`)
                 if (isShown) {
-                    let noteName = noteLabel._objects[1].text || '';
+                    let noteName = noteLabel.text().trim()
                     if (!noteName.trim()) {
                         noteName = ''
                         //Either sharp or flat
                         if (noteLabels[i][j + 1]) {
-                            let nextNote = noteLabels[i][j + 1]._objects[1].text;
+                            let nextNote = noteLabels[i][j + 1].text().trim()
                             noteName += (nextNote + 'b')
                         }
                         if (noteLabels[i][j - 1]) {
-                            let prevNote = noteLabels[i][j - 1]._objects[1].text;
+                            let prevNote = noteLabels[i][j - 1].text().trim()
                             if (prevNote) noteName += ("/" + prevNote + '#')
                         }
                     }
@@ -628,7 +653,7 @@
         addToList(findMatchingFromScales('maj9', pattern([1, 3, 5, 7, 9]), notesBeingShown));
         addToList(findMatchingFromScales('min9', pattern([1, '3b', 5, '7b', 9]), notesBeingShown));
 
-        console.log('Guessed chord = ' + chords);
+        console.log('Guessed chord = ' + Object.keys(chords));
         let solidMatch = []
         Object.keys(chords).forEach(c => {
             if (chords[c][0] === 0) {
@@ -975,7 +1000,7 @@
     </div>
 </div>
 <script>
-    $('#pcLayer').click();
+    $('#txtLayer').click();
     var drawingModeEl = $('#drawing-mode'),
         drawingOptionsEl = $('#drawing-mode-options'),
         drawingColorEl = $('#drawing-color'),
@@ -1185,7 +1210,7 @@
         if (!e.e.clientX) e.e.clientX = 10;
         if (!e.e.clientY) e.e.clientY = 10;
 
-        showNoteOnClick(e);
+        // showNoteOnClick(e);
 
         if (window.insertText) {
             var tb = textbox({
