@@ -17,6 +17,7 @@
     <script type="text/javascript" src="/jquery.lettering.js"></script>
     <script type="text/javascript" src="/jquery.fittext.js"></script>
     <script type="text/javascript" src="/rulez.min.js"></script>
+    <script type="text/javascript" src="/guitar.js"></script>
     <!-- <script type="text/javascript" src="/treant.js"></script> -->
     <link rel="stylesheet" href="/animate.css">
     <link rel="stylesheet" href="/treant.css">
@@ -611,65 +612,9 @@
     function guessChord() {
         let notesBeingShown = findNotesBeingShown();
 
-        let evalSharpsFlats = x => {
-            x = "" + x
-            if (x.length <= 2) return x;
-            if (x.endsWith("#b")) return x.replaceAll("#b", "")
-            if (x.endsWith("b#")) return x.replaceAll("b#", "")
-            return x
-        }
-
-        let roundAt = (lim, x) => x === lim ? x : x % lim;
-
-        let pattern = nums => {
-            nums = nums.map(it => '' + it).map(it => it.split(''))
-            return notesInScale => nums.map(xx => evalSharpsFlats(notesInScale[roundAt(7, xx[0] - 1)] + (xx[1] || ''))).filter(x => x);
-        }
-
-        let chords = {}
-
-        let addToList = candidates => Object.keys(candidates).forEach(c => {
-            chords[c] = candidates[c]
-        });
-
-        addToList(findMatchingFromScales('maj', pattern([1, 3, 5]), notesBeingShown));
-        addToList(findMatchingFromScales('min', pattern([1, '3b', 5]), notesBeingShown));
-        addToList(findMatchingFromScales('aug', pattern([1, 3, '5#']), notesBeingShown));
-        addToList(findMatchingFromScales('dim', pattern([1, '3b', '5b']), notesBeingShown));
-        addToList(findMatchingFromScales('dim7', pattern([1, '3b', '5b', 6]), notesBeingShown));
-        addToList(findMatchingFromScales('sus4', pattern([1, 4, 5]), notesBeingShown));
-        addToList(findMatchingFromScales('+9', pattern([1, 3, 5, 9]), notesBeingShown));
-        addToList(findMatchingFromScales('min+9', pattern([1, '3b', 5, 9]), notesBeingShown));
-        addToList(findMatchingFromScales('5', pattern([1, 5]), notesBeingShown));
-        addToList(findMatchingFromScales('6', pattern([1, 3, 5, 6]), notesBeingShown));
-        addToList(findMatchingFromScales('min6', pattern([1, '3b', 5, 6]), notesBeingShown));
-        addToList(findMatchingFromScales('6+9', pattern([1, 3, 5, 6, 9]), notesBeingShown));
-        addToList(findMatchingFromScales('min6+9', pattern([1, '3b', 5, 6, 9]), notesBeingShown));
-        addToList(findMatchingFromScales('7', pattern([1, '3', 5, '7b']), notesBeingShown));
-        addToList(findMatchingFromScales('min7', pattern([1, '3b', 5, '7b']), notesBeingShown));
-        addToList(findMatchingFromScales('dim7', pattern([1, '3b', '5b', 6]), notesBeingShown));
-        addToList(findMatchingFromScales('7Sus4', pattern([1, '4', '5', '7b']), notesBeingShown));
-        addToList(findMatchingFromScales('9', pattern([1, 3, 5, '7b', 9]), notesBeingShown));
-        addToList(findMatchingFromScales('maj9', pattern([1, 3, 5, 7, 9]), notesBeingShown));
-        addToList(findMatchingFromScales('min9', pattern([1, '3b', 5, '7b', 9]), notesBeingShown));
-
-        console.log('Guessed chord = ' + Object.keys(chords));
-        let solidMatch = []
-        Object.keys(chords).forEach(c => {
-            if (chords[c][0] === 0) {
-                solidMatch.push(c)
-                delete chords[c]
-            }
+        let solidMatch = Object.keys(chordMap).find(chord => {
+            return chordMap[chord].any(notes => notesBeingShown.every(n => notes.indexOf(n) >= 0))
         })
-
-        //Tests
-        let toString = chords => {
-            let str = ""
-            Object.keys(chords).forEach(c => {
-                str += `${c} - ${chords[c][1]} <br>`
-            })
-            return str
-        }
 
         let $guessedChord = $('#guessedChord');
         $guessedChord.html(
@@ -681,7 +626,7 @@
                     $('<span>').css({
                         fontSize: 'smaller',
                         color: 'blue'
-                    }).html(toString(chords))
+                    }).html(toString(""))
                 )
         )
         setTimeout(() => $guessedChord.html(''), 90000)
