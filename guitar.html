@@ -613,7 +613,7 @@
         let notesBeingShown = findNotesBeingShown();
 
         let solidMatch = Object.keys(chordMap).find(chord => {
-            return chordMap[chord].some(notes => notesBeingShown.every(n => notes.indexOf(n) >= 0))
+            return chordMap[chord].some(notes => notesBeingShown.every(n => notes.indexOf(n) >= 0) && notes.every(n => notesBeingShown.indexOf(n) >= 0))
         })
 
         let $guessedChord = $('#guessedChord');
