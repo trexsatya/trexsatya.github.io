@@ -9,12 +9,19 @@
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
   width: 100%;
   text-align: left;
   border: none;
   outline: none;
   transition: 0.4s;
+}
+
+div.accordion h2, div.accordion h1, div.accordion h3, div.accordion h4 {
+  padding-bottom: 1%;
+  margin-top: 0;
+  margin-right: 5vw;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
