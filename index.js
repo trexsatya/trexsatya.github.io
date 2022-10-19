@@ -1,5 +1,5 @@
 function makeLinksOpenInNewTab() {
-  document.querySelectorAll('a').forEach((e,i) => {
+  document.querySelectorAll('.article-container a').forEach((e,i) => {
      e.setAttribute('target', '_blank');
   })
 }
@@ -33,6 +33,8 @@ function renderAccordions() {
   var i;
 
   for (i = 0; i < acc.length; i++) {
+    acc[i].classList.add(i % 2 === 0 ? 'even' : 'odd')
+
     if(acc[i].dataset.accordion_rendered === "true") continue;
 
     fixAccordionPanel(acc[i])
