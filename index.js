@@ -83,7 +83,7 @@ function showTitlePopup(title, el) {
 
 function enablePopups() {
   try {
-    document.querySelectorAll('.article div[title]').forEach((div, i) => {
+    document.querySelectorAll('.article *[title]').forEach((div, i) => {
       const title = div.getAttribute('title');
       div.style.cursor = 'pointer';
       div.onclick = e => {

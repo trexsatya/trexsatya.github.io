@@ -1,25 +1,25 @@
-CKEDITOR.dialog.add( 'mathematicaDialog', function ( editor ) {
+CKEDITOR.dialog.add( 'titleDialog', function ( editor ) {
 
     return {
-        title: 'Abbreviation Properties',
+        title: 'Add Title Popup',
         minWidth: 400,
         minHeight: 200,
 
         contents: [
             {
-                    id: 'tab-basic',
-                    label: 'Mathematical Text',
+                    id: 'tab-basic-title',
+                    label: 'Title Text',
                     elements: [
                         {
                             type: 'textarea',
-                            id: 'mats',
-                            label: 'Maths',
+                            id: 'titleTextarea',
+                            label: 'Text',
                             validate: CKEDITOR.dialog.validate.notEmpty( "Cannot be empty." ),
                             required: true
                         },
                         {
                             type: 'select',
-                            id: 'mathContainerType',
+                            id: 'titleContainerType',
                             label: 'Container Type',
                             items: [ ['span' , 'span'], ['div' , 'div']],
                             default: 'span'
@@ -28,36 +28,35 @@ CKEDITOR.dialog.add( 'mathematicaDialog', function ( editor ) {
              }
         ],
         onLoad: function(){
-            
+
         },
         onShow: function(){
             var dialog = this;
             var editing = editor;
 
             var existing = editing.getSelection().getStartElement();
-            if(existing.hasClass('math')){
-                dialog.setValueOf( 'tab-basic', 'mathContainerType',  existing.getName())
-                dialog.setValueOf( 'tab-basic', 'mats', existing.getHtml() )
+            if(existing.hasAttribute('title')){
+                dialog.setValueOf( 'tab-basic-title', 'titleContainerType',  existing.getName())
+                dialog.setValueOf( 'tab-basic-title', 'titleTextarea', existing.getHtml() )
             }
         },
 
         onOk: function() {
                 var dialog = this;
-                var mattext = dialog.getValueOf( 'tab-basic', 'mats' )
-                var mathContainerType = dialog.getValueOf( 'tab-basic', 'mathContainerType' )
-                
+                var mattext = dialog.getValueOf( 'tab-basic-title', 'titleTextarea' )
+                var mathContainerType = dialog.getValueOf( 'tab-basic-title', 'titleContainerType' )
+
                 var existing = editor.getSelection().getStartElement();
-                if(existing.hasClass('math')){
-                    existing.setHtml(mattext)
+                if(existing.hasAttribute('title')){
+                    existing.setAttribute('title', mattext)
                 } else {
-                    var insertingElement = mathContainerType == 'span' ? editor.document.createElement('span') 
+                    var insertingElement = mathContainerType === 'span' ? editor.document.createElement('span')
                                                                    : editor.document.createElement('div');
 
-                    insertingElement.addClass('math');
-                    insertingElement.setHtml (mattext);
-                    editor.insertElement( insertingElement );    
+                    insertingElement.setAttribute('title', mattext)
+                    editor.insertElement( insertingElement );
                 }
-                
+
         }
     };
 });
