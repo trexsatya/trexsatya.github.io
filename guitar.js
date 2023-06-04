@@ -1,665 +1,1420 @@
-var chordMap = {
-  "C Major": [["C", "E", "G", "C", "E"], ["G", "C", "E", "G", "C", "E"], ["C", "G", "C", "E", "G", "C"], ["G", "C", "G", "C", "E", "G"], ["C", "G", "C", "E", "E"], ["E", "C", "E", "G", "C", "E"], ["C", "E", "G", "C", "G"], ["G", "C", "E", "C"]],
-  "Cm a.k.a C Minor and  C -": [["C", "G", "C", "Eb", "G"], ["G", "C", "Eb", "G"], ["C", "G", "C", "Eb", "G", "C"], ["C", "Eb", "G", "C"], ["G", "C", "G", "C", "Eb", "G"], ["Eb", "G", "C", "Eb"], ["Eb", "G", "C", "G"], ["G", "Eb", "G", "C"]],
-  "C7": [["C", "E", "Bb", "C", "E"], ["C", "G", "Bb", "E", "G"], ["G", "C", "E", "Bb", "C", "E"], ["E", "Bb", "C", "G"], ["G", "C", "G", "Bb", "E", "G"], ["C", "G", "C", "E", "Bb"], ["C", "G", "E", "Bb"], ["C", "G", "Bb", "E", "G", "C"]],
-  "Cm7 a.k.a C Minor 7 and  C -7": [["C", "G", "Bb", "Eb", "G"], ["Eb", "Bb", "C", "G"], ["G", "C", "Eb", "Bb"], ["C", "G", "Bb", "Eb", "G", "C"], ["G", "Eb", "Bb", "C"], ["C", "Bb", "Eb", "G"], ["C", "G", "Bb", "Eb", "Bb", "C"]],
-  "Cmaj7 a.k.a C Major 7 and  C ?7": [["C", "E", "G", "B", "E"], ["G", "E", "B", "C", "E"], ["G", "C", "G", "B", "E", "G"], ["G", "C", "E", "B"], ["C", "E", "G", "B"], ["C", "B", "E", "G"]],
-  "C m#7 (CmM7) a.k.a C Minor Sharp 7 and  C Minor, Major 7": [["C", "Eb", "G", "B", "G"], ["C", "Eb", "G", "B"], ["G", "C", "Eb", "B"], ["C", "G", "B", "Eb"], ["C", "G", "B", "Eb", "G"]],
-  "C7b5 a.k.a C 7 Flat 5)": [["C", "F#", "Bb", "E"], ["F#", "E", "Bb", "C"], ["C", "Bb", "E", "F#"]],
-  "C7#5": [["E", "Bb", "C", "G#"], ["Bb", "E", "G#", "C"], ["C", "G#", "Bb", "E"], ["C", "Bb", "E", "G#"]],
-  "Cm7b5 a.k.a C Half-Dimished": [["C", "F#", "Bb", "Eb"], ["C", "Bb", "Eb", "F#"]],
-  "C7b9": [["C", "E", "Bb", "C#", "E"]],
-  "Cb5": [["C", "F#", "C", "E"]],
-  "C5 Power Chord": [["C", "G", "C"]],
-  "C6": [["A", "E", "A", "C", "G"], ["E", "A", "E", "G", "C", "G"], ["A", "E", "G", "C", "E"], ["A", "G", "C", "E", "C"], ["C", "E", "A", "E", "G"], ["C", "G", "C", "E", "A"], ["E", "A", "C", "G"], ["C", "A", "E", "G"], ["A", "E", "G", "C"]],
-  "Cm6": [["Eb", "A", "C", "G"], ["A", "Eb", "G", "C", "G"], ["C", "Eb", "A", "C", "G"], ["C", "A", "Eb", "G"], ["C", "G", "Eb", "A"], ["A", "Eb", "G", "C"]],
-  "C69": [["C", "E", "A", "D", "G"], ["A", "D", "G", "C", "E"], ["C", "D", "G", "C", "E", "A"], ["C", "G", "D", "E", "A"], ["E", "A", "D", "G", "C"]],
-  "C9": [["C", "G", "Bb", "E", "G", "D"], ["C", "E", "Bb", "D"], ["C", "E", "Bb", "D", "G"], ["Bb", "D", "E", "C"], ["C", "Bb", "D", "E"], ["E", "Bb", "D", "G", "C"]],
-  "C9b5": [["E", "C", "Bb", "D", "F#"], ["C", "E", "Bb", "D", "F#"], ["E", "Bb", "D", "F#", "C"], ["F#", "C", "E", "Bb", "D"]],
-  "C9#5": [["E", "Bb", "D", "G#", "C", "E"], ["C", "E", "Bb", "D", "G#"], ["C", "Bb", "E", "G#", "D"]],
-  "Cm9 a.k.a C Minor 9 and  C -9": [["C", "Eb", "Bb", "D", "G"], ["C", "Bb", "Eb", "G", "D"], ["C", "Eb", "Bb", "D"], ["Eb", "Bb", "D", "G", "C"], ["C", "G", "Bb", "Eb", "Bb", "D"]],
-  "Cmaj9 a.k.a C Major 9 and  C ?9": [["C", "D", "G", "B", "E"], ["C", "G", "B", "D", "E"], ["C", "E", "B", "D", "G"], ["C", "G", "D", "E", "B"], ["C", "E", "B", "D", "G", "B"], ["E", "C", "D", "G", "B"]],
-  "Cadd9": [["C", "E", "G", "D", "E"]],
-  "C7#9": [["C", "E", "Bb", "Eb"]],
-  "c11": [["C", "G", "Bb", "F", "G"], ["C", "E", "Bb", "C", "F"]],
-  "Cm11 a.k.a C Minor 11 and  C -11": [["C", "G", "Bb", "F"], ["C", "Eb", "Bb", "D", "F"], ["C", "Bb", "Eb", "F"], ["C", "F", "Bb", "Eb", "G"], ["C", "Bb", "Eb", "F#"], ["F#", "Eb", "Bb", "C#", "F"]],
-  "C13": [["C", "G", "Bb", "E", "A"]],
-  "Cmaj13 a.k.a C Major 13 and  C ?13": [["C", "B", "E", "A"], ["C", "E", "A", "D", "G", "B"], ["C", "B", "E", "A", "D"]],
-  "Csus2": [["C", "D", "G", "C"], ["D", "G", "C", "G"], ["C", "D", "G", "D", "G"], ["C", "G", "C", "D", "G"]],
-  "Csus4": [["F", "G", "C", "G"], ["C", "F", "G", "C", "F"], ["C", "G", "C", "F"], ["G", "C", "F", "C", "F", "G"], ["G", "C", "F", "C"], ["C", "G", "C", "F", "G", "C"]],
-  "C7sus4": [["C", "G", "Bb", "F", "G"], ["G", "F", "Bb", "C"], ["F", "Bb", "C", "G"], ["G", "C", "F#", "B"], ["F", "C", "Eb", "Bb", "Eb", "F"]],
-  "C9sus4": [["C", "Bb", "D", "F"], ["C", "F", "Bb", "D", "G"], ["C", "Bb", "D", "F", "Bb"], ["G", "C", "F", "Bb", "D"]],
-  "Cdim a.k.a C Dimished and  C o": [["C", "F#", "C", "Eb"]],
-  "Cm7b5 a.k.a C Half-Dimished and  C ?": [["C", "F#", "Bb", "Eb"], ["C", "Bb", "Eb", "F#"]],
-  "Cdim7 a.k.a C Dimished 7th and  C o7": [["Eb", "A", "C", "F#"], ["C", "F#", "A", "Eb"], ["C", "A", "Eb", "F#"], ["A", "Eb", "A", "C", "F#", "A"]],
-  "Caug": [["E", "G#", "C", "G#"], ["C", "E", "G#", "C"]],
-  "c/e(c chord with e in the bass)": [["E", "C", "E", "G", "C", "E"]],
-  "C/G(C chord with G in the bass)": [["G", "C", "E", "G", "C", "E"]],
-  "C/B(C chord with B in the bass)": [["B", "E", "G", "C", "E"]],
-  "C/Bb(C chord with Bb in the bass)": [["Bb", "E", "G", "C", "E"]],
-  "C/D(C chord with D in the bass)": [["D", "G", "C", "E"]],
-  "C# Major": [["F", "G#", "C#", "F"], ["C#", "F", "G#", "C#", "F"], ["C#", "G#", "C#", "F", "G#", "C#"], ["G#", "C#", "G#", "C#", "F", "G#"], ["G#", "F", "G#", "C#"], ["G#", "C#", "F", "C#"], ["G#", "C#", "G#", "C#", "F"]],
-  "C#m a.k.a C# Minor and  C# -": [["E", "G#", "C#", "E"], ["G#", "C#", "G#", "C#", "E", "G#"], ["C#", "G#", "C#", "E", "G#", "C#"], ["C#", "E", "G#", "C#"], ["E", "G#", "C#", "G#"], ["C#", "E", "G#", "E"]],
-  "C#7": [["F", "B", "C#", "G#"], ["G#", "C#", "F", "B", "C#"], ["G#", "C#", "G#", "B", "F", "G#"], ["C#", "G#", "C#", "F", "B"], ["C#", "G#", "B", "F", "G#", "C#"], ["G#", "C#", "F", "B"]],
-  "C#m7 a.k.a C# Minor 7 and  C# -7": [["E", "B", "C#", "G#"], ["B", "E", "G#", "C#"], ["C#", "E", "G#", "B", "E"], ["C#", "B", "E", "G#"], ["C#", "G#", "B", "E", "B"]],
-  "C#maj7 a.k.a C# Major 7 and  C# ?7": [["C#", "F", "G#", "C", "F"], ["G#", "F", "C", "B"], ["C#", "G#", "C", "F", "G#"], ["G#", "C#", "F", "C"], ["C#", "F", "G#", "C"], ["C#", "C", "F", "G#"]],
-  "C# m#7 (C#mM7) a.k.a C# Minor Sharp 7 and  C# Minor, Major 7": [["C#", "G#", "C", "E", "G#"], ["C#", "E", "G#", "C"], ["G#", "C#", "D", "C"], ["G#", "C#", "E", "C"], ["C#", "C", "E", "G#"]],
-  "C#7b5 a.k.a C# 7 Flat 5)": [["G", "F", "B", "C#"], ["C#", "G", "B", "F"], ["G", "C#", "F", "B"], ["C#", "B", "F", "G"]],
-  "C#7#5": [["C#", "F", "A", "B"], ["C#", "B", "F", "A"], ["B", "F", "A", "C#"]],
-  "C#m7b5 a.k.a C# Half-Dimished and  C# ?": [["B", "E", "G", "C#", "E"], ["C#", "B", "E", "G"], ["C#", "G", "B", "E"]],
-  "C#7b9": [["C#", "F", "B", "D", "G#"]],
-  "C#b5": [["C#", "G", "C#", "F"]],
-  "C#5 Power Chord": [["C#", "G#", "C#"]],
-  "C#6": [["F", "A#", "C#", "G#"], ["A#", "F", "G#", "C#", "F"], ["G#", "F", "A#", "C#"], ["C#", "F", "A#", "F", "G#"], ["C#", "G#", "C#", "F", "A#"], ["C#", "A#", "F", "G#"]],
-  "C#m6": [["C#", "E", "A#", "C#", "G#"], ["C", "A", "D#", "G"], ["A#", "E", "G#", "C#"], ["C#", "A#", "E", "G#"], ["C#", "G#", "E", "A#"], ["A#", "G#", "C#", "E"]],
-  "C#69": [["C#", "F", "A#", "D#", "G#"], ["A#", "D#", "G#", "C#", "F"], ["C#", "D#", "G#", "C#", "F", "A#"], ["C#", "G#", "D#", "F", "A#"], ["F", "A#", "D#", "G#", "C#"], ["A#", "D#", "G#", "C#", "F#"]],
-  "C#9": [["C#", "G#", "C#", "D#", "G#"], ["C#", "F", "B", "D#", "G#"], ["C#", "B", "D#", "F"], ["B", "D#", "F", "C#"], ["C#", "F", "B", "D#"], ["F", "B", "D#", "G#", "C#"]],
-  "C#9b5": [["C#", "F", "B", "D#", "G"], ["G", "C#", "F", "B", "D#"], ["F", "B", "D#", "G", "C#"]],
-  "C#9#5": [["C#", "F", "B", "D#", "A"], ["F", "B", "D#", "A", "C#", "F"], ["C#", "B", "F", "A", "D#"]],
-  "C#m9 a.k.a C# Minor 9 and  C# -9": [["E", "B", "D#", "G#", "C#", "E"], ["C#", "E", "B", "D#"], ["E", "B", "D#", "G#", "C#"], ["C#", "B", "E", "G#", "D#"], ["E", "C#", "G#", "B", "D#"]],
-  "C#maj9 a.k.a C# Major 9 and  C# ?9": [["C#", "D#", "G#", "C", "F"], ["C#", "F", "C", "D#", "G#"], ["C#", "G#", "D#", "F", "C"], ["F", "C#", "D#", "G#", "C"]],
-  "C#add9": [["F", "D#", "G#", "C#", "F"]],
-  "C#7#9": [["C#", "F", "B", "E"]],
-  "c#11": [["C#", "F", "B", "C#", "F#"]],
-  "C#m11 a.k.a C# Minor 11 and  C# -11": [["C#", "E", "B", "D#", "F#"], ["C", "D#", "A#", "D#", "F"], ["C#", "F#", "B", "E", "G#"], ["C#", "B", "E", "F#"], ["G#", "C#", "F#", "B", "E"]],
-  "C#13": [["B", "F#", "A", "D#", "G#"]],
-  "C#maj13 a.k.a C# Major 13 and  C# ?13": [["C#", "C", "F", "A#"], ["C#", "F", "A#", "D#", "G#", "C"], ["C#", "C", "F", "A#", "D#"]],
-  "C#sus2": [["D#", "G#", "C#"]],
-  "C#sus4": [["F#", "B", "E", "F#"], ["G#", "C#", "F#", "C#", "F#", "G#"], ["G#", "C#", "F#", "C#", "F#"], ["G#", "C#", "F#", "C#"], ["C#", "G#", "C#", "F#"], ["C#", "F#", "G#", "C#"]],
-  "C#7sus4": [["C#", "F#", "B", "C#", "F#"], ["G#", "F#", "B", "C#"], ["F#", "B", "C#", "G#"], ["C#", "G#", "B", "F#", "G#"], ["G#", "C#", "F#", "B"], ["C#", "G#", "B", "F#", "G#", "C#"]],
-  "C#9sus4": [["C#", "B", "D#", "F#"], ["C#", "F#", "B", "D#", "G#"], ["G#", "C#", "F#", "B", "D#"]],
-  "C#dim a.k.a C# Dimished and  C# o": [["C#", "G", "C#", "E"]],
-  "C#m7b5 a.k.a C# Half-Dimished and  C# ?": [["B", "E", "G", "C#", "E"], ["C#", "B", "E", "G"], ["C#", "G", "B", "E"]],
-  "c#dim7 a.k.a C# Dimished 7th and  C# o7": [["E", "A#", "C#", "G"], ["C#", "G", "A#", "E"], ["A#", "E", "A#", "C#", "G", "A#"], ["C#", "A#", "E", "G"]],
-  "C#aug": [["C#", "F", "A", "C#"]],
-  "C#/F(Cx chord with F in the bass)": [["F", "C#", "F", "G#", "C#", "F"]],
-  "C#/G#(Cx chord with G# in the bass)": [["E", "A", "F", "A#", "D", "E"]],
-  "C#/C(Cx chord with C in the bass)": [["C", "F", "G#", "C#", "F"]],
-  "C#/B(Cx chord with B in the bass)": [["B", "F", "G#", "C#", "F"]],
-  "C#/D#(Cx chord with D# in the bass)": [["D#", "G#", "C#", "F"]],
-  "Db Major": [["F", "Ab", "Db", "F"], ["Ab", "Db", "Ab", "Db", "F", "Ab"], ["Db", "F", "Ab", "Db", "F"], ["Db", "Ab", "Db", "F", "Ab"], ["Ab", "Db", "F", "Ab"], ["Db", "Ab", "Db", "F", "Ab", "Db"]],
-  "Dbm a.k.a Db Minor and  Db -": [["E", "Ab", "Db", "E"], ["Db", "Ab", "Db", "E", "Ab"], ["Db", "Ab", "Db", "E"], ["Db", "Ab", "Db", "E", "Ab", "Db"]],
-  "Db7": [["F", "B", "Db", "Ab"], ["Db", "F", "B", "B", "Ab"]],
-  "Dbm7 a.k.a Db Minor 7 and  Db -7": [["E", "B", "Db", "Ab"], ["E", "B", "E", "Ab", "Db", "E"], ["Db", "Ab", "B", "E", "Ab"]],
-  "Dbmaj7 a.k.a Db Major 7 and  Db ?7": [["Db", "F", "Ab", "C", "F"], ["C", "F", "Ab", "Db", "F"], ["Db", "Ab", "C", "F", "Ab"]],
-  "Db m#7 (DbmM7) a.k.a Db Minor Sharp 7 and  Db Minor, Major 7": [["Db", "Ab", "C", "E", "Ab"], ["Ab", "Db", "D", "C"], ["Db", "E", "Ab", "C"], ["Db", "C", "E", "Ab"], ["Ab", "Db", "E", "C"]],
-  "Db7b5 a.k.a Db 7 Flat 5)": [["G", "F", "B", "Db"], ["Db", "G", "B", "F"], ["G", "Db", "F", "B"], ["Db", "B", "F", "G"]],
-  "Db7#5": [["Db", "F", "A", "B"], ["Db", "B", "F", "A"], ["B", "F", "A", "Db"]],
-  "Dbm7b5 a.k.a Db Half-Dimished and  Db ?": [["B", "E", "G", "Db", "E"], ["Db", "B", "E", "G"], ["Db", "G", "B", "E"]],
-  "Db7b9": [["Db", "F", "B", "D", "Ab"]],
-  "Dbb5": [["B", "F", "B", "Eb"]],
-  "Db5 Power Chord": [["B", "Gb", "B"]],
-  "Db6": [["Bb", "F", "Ab", "Db", "F"], ["F", "Bb", "Db", "Ab"]],
-  "Dbm6": [["Db", "E", "Bb", "Db", "Ab"], ["C", "A", "Eb", "G"], ["Db", "Bb", "E", "Ab"], ["Bb", "E", "Ab", "Db"], ["Db", "Ab", "E", "Bb"], ["Bb", "Ab", "Db", "E"]],
-  "Db69": [["Db", "F", "Bb", "Eb", "Ab"], ["Bb", "Eb", "Ab", "Db", "F"], ["Db", "Eb", "Ab", "Db", "F", "Bb"], ["Db", "Ab", "Eb", "F", "Bb"], ["Bb", "Eb", "Ab", "Db", "Gb"], ["F", "Bb", "Eb", "Ab", "Db"]],
-  "Db9": [["F", "B", "Eb", "Ab", "Db", "F"], ["Db", "Ab", "Db", "Eb", "Ab"], ["Db", "F", "B", "Eb", "Ab"], ["Db", "B", "Eb", "F"], ["B", "Eb", "F", "Db"], ["Db", "F", "B", "Eb"], ["F", "B", "Eb", "Ab", "Db"]],
-  "Db9b5": [["Db", "F", "B", "Eb", "G"], ["G", "Db", "F", "B", "Eb"], ["F", "B", "Eb", "G", "Db"]],
-  "Db9#5": [["Db", "F", "B", "Eb", "A"], ["F", "B", "Eb", "A", "Db", "F"], ["Db", "B", "F", "A", "Eb"]],
-  "Dbm9 a.k.a Db Minor 9 and  Db -9": [["E", "B", "Eb", "Ab", "Db", "E"], ["E", "B", "Eb", "Ab", "Db"], ["Db", "B", "E", "Ab", "Eb"], ["Db", "E", "B", "Eb"], ["E", "Db", "Ab", "B", "Eb"]],
-  "Dbmaj9 a.k.a Db Major 9 and  Db ?9": [["Db", "Eb", "Ab", "C", "F"], ["Db", "Ab", "Eb", "F", "C"], ["Db", "F", "C", "Eb", "Ab"], ["F", "Db", "Eb", "Ab", "C"]],
-  "Dbadd9": [["F", "Eb", "Ab", "Db", "F"]],
-  "Db7#9": [["Db", "F", "B", "E"]],
-  "db11": [["Db", "F", "B", "Db", "Gb"]],
-  "dbm11 a.k.a Db Minor 11 and  Db -11": [["Db", "E", "B", "Eb", "Gb"], ["C", "Eb", "Bb", "Eb", "F"], ["Db", "Gb", "B", "E", "Ab"], ["Db", "B", "E", "Gb"], ["Ab", "Db", "Gb", "B", "E"]],
-  "Db13": [["B", "Gb", "A", "Eb", "Ab"]],
-  "Dbmaj13 a.k.a Db Major 13 and  Db ?13": [["Db", "F", "Bb", "Eb", "Ab", "C"], ["Db", "C", "F", "Bb", "Eb"], ["Db", "C", "F", "Bb"]],
-  "Dbsus2": [["Gb", "B", "Db", "Gb"]],
-  "Dbsus4": [["Gb", "B", "E", "Gb"], ["Ab", "Db", "Gb", "Db", "Gb"], ["Ab", "Db", "Gb", "Db"], ["Ab", "Db", "Gb", "Db", "Gb", "Ab"], ["Db", "Ab", "Db", "Gb"], ["Db", "Gb", "Ab", "Db"]],
-  "Db7sus4": [["Db", "Gb", "B", "Db", "Gb"], ["Ab", "Gb", "B", "Db"], ["Gb", "B", "Db", "Ab"], ["Db", "Ab", "B", "Gb", "Ab"], ["Ab", "Db", "Gb", "B"], ["Db", "Ab", "B", "Gb", "Ab", "Db"]],
-  "Db9sus4": [["Db", "B", "Eb", "Gb"], ["Db", "Gb", "B", "Eb", "Ab"], ["Ab", "Db", "Gb", "B", "Eb"]],
-  "Dbdim a.k.a Db Dimished and  Db o": [["Db", "G", "Db", "E"]],
-  "Dbm7b5 a.k.a Db Half-Dimished and  Db ?": [["B", "E", "G", "Db", "E"], ["Db", "B", "E", "G"], ["Db", "G", "B", "E"]],
-  "Dbdim7 a.k.a Db Dimished 7th and  Db o7": [["Bb", "E", "G", "Db", "E"], ["E", "Bb", "Db", "G"]],
-  "Dbaug": [["F", "A", "F", "A", "Db", "F"]],
-  "Db/F(Db chord with F in the bass)": [["F", "Db", "F", "Ab", "Db", "F"]],
-  "Db/Ab(Db chord with Ab in the bass)": [["E", "A", "F", "Bb", "D", "E"]],
-  "Db/C(Db chord with C in the bass)": [["C", "F", "Ab", "Db", "F"]],
-  "Db/B(Db chord with B in the bass)": [["B", "F", "Ab", "Db", "F"]],
-  "Db/Eb(Db chord with Eb in the bass)": [["Eb", "Ab", "Db", "F"]],
-  "D Major": [["D", "A", "D", "F#"], ["D", "F#", "A", "D", "F#"], ["F#", "A", "D", "A", "D", "F#"], ["A", "F#", "A", "D", "F#"], ["D", "D", "F#", "A"], ["D", "A", "D", "F#", "A", "D"], ["A", "D", "A", "D", "F#", "A"], ["F#", "A", "D", "A"], ["A", "D", "F#", "D"]],
-  "Dm a.k.a D Minor and  D -": [["D", "A", "D", "F"], ["A", "D", "A", "D", "F", "A"], ["D", "A", "D", "F", "A", "D"], ["D", "F", "A", "D"], ["F", "A", "D", "F"], ["F", "A", "D", "A"], ["A", "F", "A", "D"]],
-  "D7": [["D", "A", "C", "F#"], ["C", "A", "D", "F#"], ["D", "A", "C", "F#", "A"], ["A", "D", "A", "C", "F#"], ["F#", "C", "D", "A"], ["A", "D", "F#", "C", "D"], ["D", "A", "D", "F#", "C"], ["A", "D", "A", "C", "F#", "A"]],
-  "Dm7 a.k.a D Minor 7 and  D -7": [["D", "A", "C", "F"], ["D", "C", "F", "A"], ["F", "C", "D", "A"], ["D", "A", "C", "F", "A"], ["A", "D", "F", "C"], ["C", "A", "D", "F"]],
-  "Dmaj7 a.k.a D Major 7 and  D ?7": [["D", "A", "C#", "F#"], ["D", "F#", "A", "C#"], ["A", "D", "A", "C#", "F#"], ["D", "F#", "A", "C#", "F#"], ["D", "A", "C#", "F#", "A"], ["A", "D", "F#", "C#"], ["F#", "D", "A", "C#"]],
-  "D m#7 (DmM7) a.k.a D Minor Sharp 7 and  D Minor, Major 7": [["D", "A", "C#", "F"], ["D", "A", "C#", "F", "A"], ["D", "F", "A", "C#"], ["A", "D", "F", "C#"]],
-  "D7b5 a.k.a D 7 Flat 5)": [["D", "G#", "C", "F#"], ["G#", "F#", "C", "D"], ["D", "C", "F#", "G#"]],
-  "D7#5": [["D", "A#", "C", "F#"], ["F#", "C", "D", "A#"], ["D", "C", "F#", "A#"]],
-  "Dm7b5 a.k.a D Half-Dimished and  D ?": [["D", "G#", "C", "F"], ["G#", "F", "C", "D"], ["D", "C", "F", "G#"]],
-  "D7b9": [["C", "E", "A#", "C#", "G"]],
-  "Db5": [["D", "G#", "D", "F#"]],
-  "D5 Power Chord": [["A", "D", "A", "D"], ["A", "D", "A", "D", "A"]],
-  "D6": [["A", "D", "A", "B", "F#"], ["A", "F#", "B", "D", "F#"], ["B", "D", "A", "B", "F#"], ["B", "F#", "A", "D", "F#"], ["A", "F#", "B", "D"], ["D", "F#", "B", "F#", "A"], ["D", "A", "D", "F#", "B"], ["F#", "B", "D", "A"], ["D", "B", "F#", "A"]],
-  "Dm6": [["B", "D", "A", "B", "F"], ["D", "A", "B", "F"], ["B", "F", "A", "D"], ["D", "F", "B", "D", "A"], ["D", "B", "F", "A"], ["D", "A", "F", "B"]],
-  "D69": [["D", "F#", "B", "E", "A"], ["B", "E", "A", "D", "F#"], ["D", "E", "A", "D", "F#", "B"], ["D", "A", "E", "F#", "B"]],
-  "D9": [["D", "A", "C", "F#", "A", "E"], ["F#", "D", "A", "C", "E"], ["D", "A", "C", "F#", "E"], ["D", "F#", "C", "E", "A"], ["C", "E", "F#", "D"], ["D", "C", "E", "F#"], ["F#", "C", "E", "A", "D"], ["D", "F#", "C", "E"]],
-  "D9b5": [["D", "F#", "C", "E", "G#"], ["G#", "D", "F#", "C", "E"]],
-  "D9#5": [["E", "C", "A#", "D", "F#"], ["F#", "C", "E", "A#", "D", "F#"], ["D", "F#", "C", "E", "A#"], ["D", "C", "F#", "A#", "E"]],
-  "Dm9 a.k.a D Minor 9 and  D -9": [["F", "A", "C", "E"], ["D", "F", "C", "E", "A"], ["D", "F", "C", "E"], ["F", "C", "E", "A", "D"], ["D", "C", "F", "A", "E"], ["D", "A", "C", "F", "C", "E"]],
-  "Dmaj9 a.k.a D Major 9 and  D ?9": [["D", "E", "A", "C#", "F#"], ["D", "F#", "C#", "E", "A"], ["D", "A", "E", "F#", "C#"], ["F#", "D", "E", "A", "C#"]],
-  "Dadd9": [["D", "A", "D", "E"]],
-  "D7#9": [["D", "F#", "C", "F", "A#"], ["D", "F#", "C", "F"]],
-  "d11": [["D", "F#", "C", "D", "G"]],
-  "dm11 a.k.a D Minor 11 and  D -11": [["D", "F", "C", "D", "G"], ["A", "D", "G", "C", "F"], ["D", "F", "C", "E", "G"], ["D", "G", "C", "F", "A"], ["D", "C", "F", "G"]],
-  "D13": [["D", "A", "C", "F#", "B"]],
-  "Dmaj13 a.k.a D Major 13 and  D ?13": [["D", "F#", "B", "C#", "F#"], ["D", "C#", "F#", "B"], ["D", "F#", "B", "E", "A", "C#"], ["D", "C#", "F#", "B", "E"]],
-  "Dsus2": [["E", "A", "D", "A", "D", "E"], ["A", "E", "A", "D", "E"], ["A", "D", "A", "D", "E"]],
-  "Dsus4": [["D", "A", "D", "G"], ["D", "G", "A", "D"], ["A", "D", "G", "A"], ["A", "D", "G", "D", "G", "A"], ["A", "D", "G", "D"]],
-  "D7sus4": [["A", "D", "A", "C", "G"], ["D", "A", "C", "G"], ["G", "C", "D", "A"], ["A", "G", "C", "D"], ["A", "D", "G", "C"]],
-  "D9sus4": [["D", "C", "E", "G"], ["D", "G", "C", "E", "A"], ["A", "D", "G", "C", "E"]],
-  "Ddim a.k.a D Dimished and  D o": [["D", "G#", "D", "F"]],
-  "Dm7b5 a.k.a D Half-Dimished and  D ?": [["D", "G#", "C", "F"], ["G#", "F", "C", "D"], ["D", "C", "F", "G#"]],
-  "Ddim7 a.k.a D Dimished 7th and  D o7": [["B", "D", "G#", "B", "F"], ["D", "G#", "B", "F"], ["F", "B", "D", "G#"], ["G#", "F", "B", "D"], ["B", "F", "G#", "D"], ["D", "B", "F", "G#"]],
-  "Daug": [["D", "A#", "D", "F#"]],
-  "D/F#(D chord with F# in the bass)": [["F#", "A", "D", "A", "D", "F#"]],
-  "D/A(D chord with A in the bass)": [["A", "D", "A", "D", "F#", "A"]],
-  "D/C#(D chord with C# in the bass)": [["C#", "F#", "A", "D", "F#"]],
-  "D/C(D chord with C in the bass)": [["C", "D", "A", "D", "F#"]],
-  "D/E(D chord with E in the bass)": [["E", "A", "D", "A", "D", "F#"]],
-  "D# Major": [["G", "A#", "D#", "G"], ["A#", "D#", "A#", "D#", "G", "A#"], ["D#", "A#", "D#", "G", "A#", "D#"], ["A#", "D#", "A#", "D#", "G"], ["G", "D#", "A#", "D#"], ["D#", "G", "A#", "D#", "G"], ["G", "A#", "D#", "A#"], ["A#", "D#", "G", "D#"]],
-  "D#m a.k.a D# Minor and  D# -": [["F#", "A#", "D#", "F#"], ["F#", "D#", "A#", "D#"], ["A#", "F#", "A#", "D#"], ["D#", "F#", "A#", "D#"], ["A#", "D#", "A#", "D#", "F#", "A#"]],
-  "D#7": [["D#", "A#", "C#", "G"], ["G", "D#", "A#", "C#"], ["G", "C#", "A#", "D#", "G"], ["A#", "D#", "G", "C#", "D#"], ["F", "A#", "F", "G#", "D", "F"], ["D#", "A#", "D#", "G", "C#"]],
-  "D#m7 a.k.a D# Minor 7 and  D# -7": [["D#", "A#", "C#", "F#"], ["F#", "D#", "A#", "C#"], ["C#", "F#", "A#", "D#"], ["D#", "F#", "C#", "D#", "A#"], ["D#", "A#", "C#", "F#", "A#"], ["C#", "A#", "D#", "F#"]],
-  "D#maj7 a.k.a D# Major 7 and  D# ?7": [["D#", "A#", "D", "G"], ["G", "D#", "A#", "D"], ["D#", "G", "A#", "D", "G"], ["A#", "D#", "A#", "D", "G", "A#"], ["A#", "D#", "G", "D"], ["D#", "G", "A#", "D"]],
-  "D# m#7 (D#mM7) a.k.a D# Minor Sharp 7 and  D# Minor, Major 7": [["D#", "A#", "D", "F#"], ["D#", "F#", "A#", "D"], ["A#", "D#", "F#", "D"], ["D#", "A#", "D", "F#", "A#"]],
-  "D#7b5 a.k.a D# 7 Flat 5)": [["D#", "A", "C#", "G"], ["A", "G", "C#", "D#"], ["D#", "C#", "G", "A"]],
-  "D#7#5": [["D#", "B", "C#", "G"], ["G", "C#", "D#", "B"], ["D#", "C#", "G", "B"]],
-  "D#m7b5 a.k.a D# Half-Dimished and  D# ?": [["D#", "A", "C#", "F#"], ["A", "F#", "C#", "D#"], ["D#", "C#", "F#", "A"]],
-  "D#7b9": [["D#", "G", "C#", "E"]],
-  "D#b5": [["D#", "A", "D#", "G"]],
-  "D#5 Power Chord": [["D#", "A#", "D#"]],
-  "D#6": [["C", "G", "A#", "D#", "G"], ["D#", "A#", "C", "G"], ["G", "C", "D#", "A#"], ["A#", "G", "C", "D#"], ["D#", "A#", "D#", "G", "C"], ["D#", "G", "C", "G", "A#"]],
-  "D#m6": [["D#", "A#", "C", "F#"], ["C", "F#", "A#", "D#"], ["F#", "D#", "A#", "C"], ["D#", "F#", "C", "D#", "A#"], ["D#", "C", "F#", "A#"], ["D#", "A#", "F#", "C"]],
-  "D#69": [["D#", "G", "C", "F"], ["C", "F", "A#", "D#", "G"], ["D#", "G", "C", "F", "A#"], ["D#", "A#", "F", "G", "C"], ["D#", "F", "A#", "D#", "G", "C"]],
-  "D#9": [["G", "A#", "D#", "C#", "F"], ["D#", "G", "C#", "F"], ["G", "D#", "A#", "C#", "F"], ["D#", "C#", "F", "G"], ["D#", "G", "C#", "F", "A#"], ["C#", "F", "G", "D#"]],
-  "D#9b5": [["A", "D#", "G", "C#", "F"], ["D#", "G", "C#", "F", "A"]],
-  "D#9#5": [["G", "C#", "F", "B", "D#", "G"], ["D#", "G", "C#", "F", "B"], ["D#", "C#", "G", "B", "F"]],
-  "D#m9 a.k.a D# Minor 9 and  D# -9": [["F#", "A#", "D#", "A#", "C#", "F"], ["F#", "D#", "A#", "C#", "F"], ["D#", "F#", "C#", "F"], ["F#", "C#", "F", "A#", "D#"], ["D#", "C#", "F#", "A#", "F"]],
-  "D#maj9 a.k.a D# Major 9 and  D# ?9": [["D#", "G", "D", "F"], ["G", "D#", "A#", "D", "F"], ["D#", "F", "A#", "D", "G"], ["D#", "G", "D", "F", "A#"], ["D#", "A#", "F", "G", "D"]],
-  "D#add9": [["G", "A#", "D#", "G", "F"]],
-  "D#7#9": [["D#", "G", "C#", "F#"]],
-  "d#11": [["C#", "F", "B", "C#", "F#"]],
-  "d#m11 a.k.a D# Minor 11 and  D# -11": [["C#", "E", "B", "D#", "F#"], ["A#", "D#", "G#", "C#", "F#"], ["D#", "G#", "C#", "F#", "A#"], ["D#", "G#", "C#", "F#", "A#", "D#"]],
-  "D#13": [["D#", "G", "C#", "G", "C"]],
-  "D#maj13 a.k.a D# Major 13 and  D# ?13": [["D#", "G", "C", "D", "G"], ["D#", "G", "D", "G", "C"], ["D#", "G", "C", "F", "A#", "D"]],
-  "D#sus2": [["F", "A#", "D#", "A#", "F"]],
-  "D#sus4": [["D#", "A#", "D#", "G#"], ["A#", "D#", "G#", "D#", "G#"], ["D#", "G#", "A#", "D#"], ["A#", "D#", "G#", "A#"], ["A#", "D#", "G#", "D#", "G#", "A#"]],
-  "D#7sus4": [["D#", "G#", "C#", "G#"], ["D#", "A#", "C#", "G#"], ["A#", "D#", "G#", "C#"], ["A#", "G#", "C#", "D#"]],
-  "D#9sus4": [["A#", "D#", "G#", "C#", "F"], ["D#", "C#", "F", "G#"], ["D#", "G#", "C#", "F", "A#"]],
-  "D#dim a.k.a D# Dimished and  D# o": [["D#", "A", "D#", "F#"]],
-  "D#m7b5 a.k.a D# Half-Dimished and  D# ?": [["D#", "A", "C#", "F#"], ["A", "F#", "C#", "D#"], ["D#", "C#", "F#", "A"]],
-  "D#dim7 a.k.a D# Dimished 7th and  D# o7": [["D#", "A", "C", "F#"], ["C", "A", "D#", "F#"], ["A", "F#", "C", "D#"]],
-  "D#aug": [["G", "B", "D#", "G", "B", "G"]],
-  "D#/G(Dx chord with G in the bass)": [["G", "A#", "D#", "A#", "D#"]],
-  "D#/A#(Dx chord with A# in the bass)": [["A#", "D#", "A#", "D#", "G", "A#"]],
-  "D#/D(Dx chord with D in the bass)": [["D", "G", "A#", "D#", "G"]],
-  "D#/C#(Dx chord with C# in the bass)": [["C#", "G", "A#", "D#", "G"]],
-  "D#/F(Dx chord with F in the bass)": [["F", "A#", "D#", "G"]],
-  "Eb Major": [["G", "Bb", "Eb", "G"], ["Bb", "Eb", "Bb", "Eb", "G"], ["Eb", "Bb", "Eb", "G"], ["Eb", "Bb", "Eb", "G", "Bb", "Eb"], ["Bb", "Eb", "Bb", "Eb", "G", "Bb"]],
-  "Ebm a.k.a Eb Minor and  Eb -": [["Gb", "Bb", "Eb", "Gb"]],
-  "Eb7": [["Eb", "Bb", "Db", "G"], ["Bb", "Eb", "Bb", "Db", "G"], ["Eb", "Bb", "Db", "G", "Bb"]],
-  "Ebm7 a.k.a Eb Minor 7 and  Eb -7": [["Eb", "Bb", "Db", "Gb"]],
-  "Ebmaj7 a.k.a Eb Major 7 and  Eb ?7": [["Eb", "Bb", "D", "G"], ["Eb", "Bb", "D", "G", "Bb"]],
-  "Eb m#7 (EbmM7) a.k.a Eb Minor Sharp 7 and  Eb Minor, Major 7": [["Eb", "Bb", "D", "Gb"], ["Eb", "Gb", "Bb", "D"], ["Bb", "Eb", "Gb", "D"], ["Eb", "Bb", "D", "Gb", "Bb"]],
-  "Eb7b5 a.k.a Eb 7 Flat 5)": [["Eb", "A", "Db", "G"], ["Eb", "A", "Db", "Ab"], ["A", "G", "Db", "Eb"], ["Eb", "Db", "G", "A"]],
-  "Eb7#5": [["Eb", "B", "Db", "G"], ["G", "Db", "Eb", "B"], ["Eb", "Db", "G", "B"]],
-  "Ebm7b5 a.k.a Eb Half-Dimished and  Eb ?": [["Eb", "A", "Db", "Gb"], ["A", "Gb", "Db", "Eb"], ["Eb", "Db", "Gb", "A"]],
-  "Eb7b9": [["Eb", "G", "Db", "E"]],
-  "ebb5": [["Eb", "A", "Eb", "G"]],
-  "Eb5 Power Chord": [["Eb", "Bb", "Eb"]],
-  "Eb6": [["C", "G", "Bb", "Eb", "G"]],
-  "Ebm6": [["Eb", "Bb", "C", "Gb"], ["C", "Gb", "Bb", "Eb"], ["Gb", "Eb", "Bb", "C"], ["Eb", "Gb", "C", "Eb", "Bb"], ["Eb", "Bb", "Gb", "C"], ["Eb", "C", "Gb", "Bb"]],
-  "Eb69": [["Eb", "G", "C", "F"], ["C", "F", "Bb", "Eb", "G"], ["Eb", "G", "C", "F", "Bb"], ["Eb", "Bb", "F", "G", "C"], ["Eb", "F", "Bb", "Eb", "G", "C"]],
-  "Eb9": [["Bb", "Eb", "Bb", "Eb", "F"], ["G", "Bb", "Eb", "Db", "F"], ["Eb", "G", "Db", "F"], ["G", "Eb", "Bb", "Db", "F"], ["Eb", "Db", "F", "G"], ["Eb", "G", "Db", "F", "Bb"], ["Db", "F", "G", "Eb"]],
-  "Eb9b5": [["A", "Eb", "G", "Db", "F"], ["Eb", "G", "Db", "F", "A"]],
-  "Eb9#5": [["G", "Db", "F", "B", "Eb", "G"], ["Eb", "G", "Db", "F", "B"], ["Eb", "Db", "G", "B", "F"]],
-  "Ebm9 a.k.a Eb Minor 9 and  Eb -9": [["Gb", "Bb", "Eb", "Bb", "Db", "F"], ["Eb", "Gb", "Db", "F"], ["Gb", "Db", "F", "Bb", "Eb"], ["Gb", "Eb", "Bb", "Db", "F"], ["Eb", "Db", "Gb", "Bb", "F"]],
-  "Ebmaj9 a.k.a Eb Major 9 and  Eb ?9": [["Eb", "G", "D", "F"], ["G", "Eb", "Bb", "D", "F"], ["Eb", "F", "Bb", "D", "G"], ["Eb", "G", "D", "F", "Bb"], ["Eb", "Bb", "F", "G", "D"]],
-  "Ebadd9": [["G", "Bb", "Eb", "G", "F"]],
-  "Eb7#9": [["Eb", "G", "Db", "Gb"]],
-  "eb11": [["Db", "F", "B", "Db", "Gb"]],
-  "ebm11 a.k.a Eb Minor 11 and  Eb -11": [["Db", "E", "B", "Eb", "Gb"], ["Bb", "Eb", "Ab", "Db", "Gb"], ["Eb", "Ab", "Db", "Gb", "Bb"], ["Eb", "Ab", "Db", "Gb", "Bb", "Eb"]],
-  "Eb13": [["Eb", "G", "Db", "G", "C"]],
-  "Ebmaj13 a.k.a Eb Major 13 and  Eb ?13": [["Eb", "G", "D", "G", "C"], ["Eb", "G", "C", "F", "Bb", "D"], ["Eb", "G", "C", "D", "G"]],
-  "Ebsus2": [["F", "Bb", "Eb", "Bb", "F"]],
-  "Ebsus4": [["Eb", "Bb", "Eb", "Ab"], ["Bb", "Eb", "Ab", "Eb", "Ab"], ["Eb", "Ab", "Bb", "Eb"], ["Bb", "Eb", "Ab", "Bb"], ["Bb", "Eb", "Ab", "Eb", "Ab", "Bb"]],
-  "Eb7sus4": [["Eb", "Ab", "Db", "Ab"], ["Eb", "Bb", "Db", "Ab"], ["Bb", "Eb", "Ab", "Db"], ["Bb", "Ab", "Db", "Eb"]],
-  "Eb9sus4": [["Bb", "Eb", "Ab", "Db", "F"], ["Eb", "Db", "F", "Ab"], ["Eb", "Ab", "Db", "F", "Bb"]],
-  "Ebdim a.k.a Eb Dimished and  Eb o": [["Gb", "A", "Eb", "A", "Gb"]],
-  "Ebm7b5 a.k.a Eb Half-Dimished and  Eb ?": [["Eb", "A", "Db", "Gb"], ["A", "Gb", "Db", "Eb"], ["Eb", "Db", "Gb", "A"]],
-  "Ebdim7 a.k.a Eb Dimished 7th and  Eb o7": [["Eb", "A", "C", "Gb"]],
-  "Ebaug": [["G", "B", "Eb", "G", "B", "G"]],
-  "Eb/G(Eb chord with G in the bass)": [["G", "Bb", "Eb", "Bb", "Eb"]],
-  "Eb/Bb(Eb chord with Bb in the bass)": [["Bb", "Eb", "Bb", "Eb", "G", "Bb"]],
-  "Eb/D(Eb chord with D in the bass)": [["D", "G", "Bb", "Eb", "G"]],
-  "Eb/Db(Eb chord with Db in the bass)": [["Db", "G", "Bb", "Eb", "G"]],
-  "Eb/F(Eb chord with F in the bass)": [["F", "Bb", "Eb", "G"]],
-  "E Major": [["E", "B", "E", "G#", "B", "E"], ["E", "G#", "B", "E", "E"], ["B", "E", "B", "E", "G#", "B"], ["G#", "E", "B", "E"], ["E", "G#", "B", "E", "G#"], ["G#", "B", "E", "B"]],
-  "Em a.k.a E Minor and  E -": [["E", "B", "E", "G", "B", "E"], ["G", "E", "G", "B", "E"], ["B", "E", "B", "E", "G", "B"], ["E", "B", "E", "G"], ["G", "B", "E", "G"], ["E", "G", "B", "E"]],
-  "E7": [["E", "B", "E", "G#", "D", "E"], ["E", "B", "D", "G#", "B", "E"], ["B", "D", "G#", "D", "E"], ["D", "G#", "B", "E"], ["G#", "E", "B", "D"], ["D", "B", "E", "G#"], ["B", "E", "G#", "D", "E"], ["E", "B", "E", "G#", "D"]],
-  "Em7 a.k.a E Minor 7 and  E -7": [["E", "B", "E", "G", "D", "E"], ["D", "G", "B", "E"], ["D", "E", "G", "B"], ["E", "B", "D", "G"], ["E", "D", "G", "B", "E"], ["G", "D", "G", "B", "E"], ["E", "B", "D", "G", "B", "E"], ["E", "B", "D", "G", "D", "E"], ["E", "B", "E", "G", "D", "G"], ["E", "B", "D", "G", "D", "G"], ["E", "G", "D", "E", "B"]],
-  "Emaj7 a.k.a E Major 7 and  E ?7": [["E", "B", "D#", "G#", "B"], ["E", "B", "D#", "G#", "B", "E"], ["E", "G#", "B", "D#", "E"], ["D#", "G#", "B", "E"], ["E", "B", "E", "G#", "D#", "E"], ["G#", "E", "B", "D#"], ["E", "G#", "B", "D#", "G#"], ["B", "E", "B", "D#", "G#", "B"], ["B", "E", "G#", "D#"]],
-  "E m#7 (EmM7) a.k.a E Minor Sharp 7 and  E Minor, Major 7": [["E", "B", "D#", "G", "B", "E"], ["E", "B", "E", "G", "D#"], ["E", "B", "D#", "G"], ["G", "E", "B", "D#"], ["E", "G", "B", "D#"]],
-  "E7b5 a.k.a E 7 Flat 5)": [["E", "A#", "D", "G#", "D", "E"], ["E", "A#", "D", "G#"], ["A#", "E", "G#", "D"], ["A#", "G#", "D", "E"]],
-  "E7#5": [["E", "B", "D", "G#", "C"], ["D", "C", "D", "G#"], ["E", "D", "G#", "C"], ["E", "C", "D", "G#"]],
-  "Em7b5 a.k.a E Half-Dimished and  E ?": [["E", "A#", "D", "G"], ["G", "E", "A#", "D"], ["A#", "G", "D", "E"]],
-  "E7b9": [["E", "B", "D", "G#", "B", "F"]],
-  "Eb5": [["E", "A#", "E", "G#"]],
-  "E5 Power Chord": [["E", "B", "E"]],
-  "E6": [["B", "E", "G#", "C#"], ["E", "B", "E", "G#", "C#", "E"], ["C#", "G#", "B", "E", "G#"], ["E", "C#", "E", "G#", "B", "E"], ["E", "B", "C#", "G#"], ["B", "G#", "C#", "E"], ["E", "C#", "G#", "B"], ["E", "B", "E", "G#", "C#"]],
-  "Em6": [["E", "B", "E", "G", "C#", "E"], ["E", "G", "C#", "E", "B"], ["E", "C#", "G", "B"], ["E", "C#", "E", "G", "B", "E"], ["G", "E", "B", "C#"], ["E", "B", "G", "C#"]],
-  "E69": [["B", "E", "G#", "C#", "F#"], ["E", "B", "G#", "C#", "F#"], ["C#", "F#", "B", "E", "G#"], ["E", "G#", "C#", "F#", "B"], ["E", "G#", "C#", "F#"], ["E", "B", "F#", "G#", "C#"], ["G#", "C#", "F#", "B", "E"]],
-  "E9": [["E", "B", "D", "G#", "B", "F#"], ["E", "B", "E", "G#", "B", "F#"], ["E", "G#", "D", "F#"], ["G#", "E", "B", "D", "F#"], ["E", "D", "F#", "G#"], ["E", "G#", "D", "F#", "B"], ["D", "F#", "G#", "E"]],
-  "E9b5": [["A#", "E", "G#", "D", "F#"], ["G#", "E", "A#", "D", "F#"], ["E", "G#", "D", "F#", "A#"]],
-  "E9#5": [["E", "C", "D", "G#", "C", "F#"], ["G#", "D", "F#", "C", "E", "G#"], ["E", "G#", "D", "F#", "C"]],
-  "Em9 a.k.a E Minor 9 and  E -9": [["E", "B", "F#", "G", "B", "E"], ["E", "B", "D", "G", "B", "F#"], ["E", "B", "D", "G", "D", "F#"], ["E", "B", "E", "G", "D", "F#"], ["G", "E", "B", "D", "F#"], ["E", "G", "D", "F#"], ["E", "D", "G", "B", "F#"], ["B", "E", "G", "D", "F#"]],
-  "Emaj9 a.k.a E Major 9 and  E ?9": [["E", "B", "D#", "G#", "B", "F#"], ["G#", "F#", "B", "D#", "E"], ["E", "B", "F#", "B", "D#", "G#"], ["G#", "B", "E", "B", "D#", "F#"], ["E", "F#", "B", "D#", "G#"], ["E", "G#", "D#", "F#", "B"]],
-  "Eadd9": [["E", "F#", "G#", "B", "E"], ["F#", "B", "E", "G#", "B", "E"]],
-  "E7#9": [["E", "B", "E", "G#", "D", "G"], ["E", "G#", "D", "G"]],
-  "e11": [["G#", "C#", "F#", "B", "E", "A"], ["E", "G#", "D", "E", "A"]],
-  "em11 a.k.a E Minor 11 and  E -11": [["E", "B", "D", "A", "B", "G"], ["E", "A", "D", "G", "B", "E"], ["E", "G", "D", "F#", "A"], ["E", "A", "D", "G", "B"], ["E", "D", "G", "A"]],
-  "E13": [["E", "B", "D", "G#", "C#", "E"]],
-  "Emaj13 a.k.a E Major 13 and  E ?13": [["E", "B", "D#", "G#", "C#", "F#"], ["E", "G#", "C#", "D#", "G#"], ["E", "G#", "C#", "F#", "B", "D#"], ["E", "D#", "G#", "C#", "F#"]],
-  "Esus2": [["B", "F#", "B", "E"]],
-  "Esus4": [["E", "B", "E", "A", "B", "E"], ["E", "B", "E", "A", "E", "A"], ["E", "B", "E", "A"], ["E", "A", "B", "E"], ["B", "E", "A", "B"], ["B", "E", "A", "E", "A", "B"]],
-  "E7sus4": [["E", "B", "D", "A", "B", "E"], ["B", "E", "A", "D"], ["E", "B", "D", "A"], ["B", "A", "D", "E"]],
-  "E9sus4": [["B", "E", "A", "D", "F#"], ["E", "D", "F#", "A"], ["E", "A", "D", "F#", "B"]],
-  "Edim a.k.a E Dimished and  E o": [["E", "A#", "E", "G"]],
-  "Em7b5 a.k.a E Half-Dimished and  E ?": [["E", "A#", "D", "G"], ["G", "E", "A#", "D"], ["A#", "G", "D", "E"]],
-  "Edim7 a.k.a E Dimished 7th and  E o7": [["A#", "E", "G", "C#", "E"], ["E", "A#", "C#", "G"], ["E", "C#", "G", "A#"], ["G", "C#", "E", "A#"]],
-  "Eaug": [["E", "C", "E", "G#"], ["G#", "C", "E", "G#"]],
-  "E/G#(E chord with G# in the bass)": [["G#", "B", "E", "B", "E"]],
-  "E/B(E chord with B in the bass)": [["B", "E", "G#", "B", "E"]],
-  "E/D#(E chord with D# in the bass)": [["D#", "G#", "B", "E"]],
-  "E/D(E chord with D in the bass)": [["D", "G#", "B", "E"]],
-  "E/F#(E chord with F# in the bass)": [["F#", "B", "E", "G#", "B", "E"]],
-  "F Major": [["A", "F", "A", "C", "F"], ["C", "F", "A", "C", "F"], ["F", "A", "C", "F"], ["F", "C", "F", "A", "C", "F"], ["A", "F", "C", "F"], ["F", "A", "C", "F", "A"], ["C", "A", "C", "F"], ["A", "C", "F", "C"], ["C", "F", "C", "F", "A", "C"]],
-  "Fm a.k.a F Minor and  F -": [["F", "C", "F", "Ab", "C", "F"], ["C", "F", "Ab", "C", "F"], ["F", "Ab", "C", "F"], ["Ab", "F", "C", "F"], ["C", "F", "C", "F", "Ab"], ["Ab", "C", "F", "Ab"], ["C", "F", "C", "F", "Ab", "C"]],
-  "F7": [["F", "C", "Eb", "A", "C", "F"], ["Eb", "A", "C", "F"], ["F", "C", "Eb", "A"], ["F", "C", "A", "Eb"], ["C", "F", "C", "Eb", "A"], ["Eb", "C", "F", "A"], ["C", "F", "A", "Eb", "F"], ["C", "F", "C", "Eb", "A", "C"]],
-  "Fm7 a.k.a F Minor 7 and  F -7": [["F", "C", "Eb", "Ab", "C", "F"], ["F", "C", "Eb", "Ab", "C"], ["Eb", "Ab", "C", "F"], ["F", "C", "F", "Ab", "Eb", "F"], ["F", "Eb", "Ab", "C"], ["F", "C", "Eb", "Ab"], ["F", "Ab", "Eb", "F", "C"]],
-  "Fmaj7 a.k.a F Major 7 and  F ?7": [["C", "F", "A", "C", "E"], ["E", "A", "C", "F"], ["F", "A", "C", "E"], ["E", "A", "F", "A", "C", "E"], ["F", "C", "F", "A", "C", "E"], ["F", "E", "A", "C", "E"], ["F", "E", "A", "C"], ["F", "C", "E", "A"], ["A", "F", "C", "E"], ["F", "A", "C", "E", "A"], ["C", "A", "E", "F"]],
-  "F m#7 (FmM7) a.k.a F Minor Sharp 7 and  F Minor, Major 7": [["F", "Ab", "C", "E"], ["F", "C", "E", "Ab", "C", "F"], ["E", "Ab", "C", "F"], ["F", "C", "E", "Ab"], ["C", "F", "Ab", "E"]],
-  "F7b5 a.k.a F 7 Flat 5)": [["F", "Eb", "A", "B"], ["F", "B", "Eb", "A"], ["B", "A", "Eb", "F"]],
-  "F7#5": [["F", "Eb", "A", "Db"], ["F", "Db", "Eb", "A"], ["A", "Eb", "F", "Db"]],
-  "Fm7b5 a.k.a F Half-Dimished and  F ?": [["F", "B", "Eb", "Ab"], ["F", "Eb", "Ab", "B"]],
-  "F7b9": [["F", "A", "Eb", "Gb"]],
-  "Fb5": [["F", "B", "F", "A"]],
-  "F5 Power Chord": [["F", "C", "F"]],
-  "F6": [["C", "F", "A", "D"], ["D", "A", "C", "F", "A"], ["D", "A", "C", "F"], ["D", "C", "F", "A"], ["F", "D", "A", "C"], ["F", "C", "A", "D"], ["C", "A", "D", "F"], ["C", "F", "C", "D", "A"], ["F", "C", "D", "A"]],
-  "Fm6": [["D", "Ab", "C", "F"], ["F", "C", "D", "Ab"], ["F", "C", "F", "Ab", "D", "F"], ["F", "Ab", "D", "F", "C"], ["F", "D", "Ab", "C"], ["F", "C", "F", "Ab", "D"]],
-  "F69": [["F", "A", "D", "G", "C", "F"], ["F", "C", "A", "D", "G"], ["C", "F", "A", "D", "G"], ["D", "G", "C", "F", "A"], ["F", "A", "D", "G", "C"], ["F", "G", "C", "F", "A", "D"]],
-  "F9": [["G", "A", "F", "A", "C", "F"], ["A", "Eb", "G", "C"], ["F", "A", "Eb", "G", "C"], ["F", "A", "Eb", "G"], ["F", "C", "Eb", "A", "C", "G"], ["F", "Eb", "G", "A"], ["Eb", "G", "A", "F"]],
-  "F9b5": [["F", "A", "Eb", "G", "B"], ["B", "F", "A", "Eb", "G"], ["A", "F", "B", "Eb", "G"]],
-  "F9#5": [["A", "Eb", "G", "Db", "F"], ["F", "Eb", "A", "Db", "G"], ["A", "Eb", "G", "Db", "F", "A"], ["F", "A", "Eb", "G", "Db"]],
-  "Fm9 a.k.a F Minor 9 and  F -9": [["Eb", "Ab", "C", "G"], ["Ab", "Eb", "G", "C"], ["F", "C", "Eb", "Ab", "C", "G"], ["F", "C", "Eb", "Ab", "Eb", "G"], ["F", "Ab", "Eb", "G"], ["F", "Eb", "Ab", "C", "G"], ["Ab", "F", "C", "Eb", "G"], ["Ab", "Eb", "G", "C", "F"]],
-  "Fmaj9 a.k.a F Major 9 and  F ?9": [["E", "A", "F", "G", "C", "G"], ["F", "A", "F", "G", "C"], ["F", "A", "E", "G", "C"], ["A", "F", "G", "C", "E"], ["F", "E", "A", "G"], ["F", "A", "E", "G"], ["A", "C", "F", "C", "E", "G"], ["F", "G", "C", "E", "A"]],
-  "Fadd9": [["G", "F", "A", "C", "F"], ["F", "A", "C", "G"]],
-  "F7#9": [["F", "A", "Eb", "Ab"]],
-  "f11": [["F", "C", "Eb", "Bb", "C", "F"], ["F", "A", "Eb", "Bb", "C"], ["F", "A", "Eb", "Bb"]],
-  "fm11 a.k.a F Minor 11 and  F -11": [["F", "Bb", "Eb", "Ab"], ["F", "C", "Eb", "Bb", "C", "Ab"], ["F", "Bb", "Eb", "Ab", "C", "F"], ["F", "Eb", "Ab", "Bb"], ["F", "Ab", "Eb", "G", "Bb"]],
-  "F13": [["F", "A", "Eb", "Bb", "D", "G"]],
-  "Fmaj13 a.k.a F Major 13 and  F ?13": [["F", "E", "A", "D"], ["F", "A", "D", "E", "A"], ["F", "A", "D", "G", "C", "E"]],
-  "Fsus2": [["C", "F", "G", "C", "F"], ["F", "G", "C", "F"]],
-  "Fsus4": [["F", "Bb", "C", "F"], ["F", "C", "F", "Bb", "C", "F"], ["C", "F", "Bb", "F", "Bb"], ["F", "C", "F", "Bb"], ["C", "F", "Bb", "F", "Bb", "C"], ["C", "F", "Bb", "C"]],
-  "F7sus4": [["F", "Bb", "Eb", "Bb", "C", "F"], ["F", "C", "Eb", "Bb", "C", "F"], ["C", "Bb", "Eb", "F"], ["C", "F", "Bb", "Eb"], ["F", "C", "Eb", "Bb"]],
-  "F9sus4": [["C", "F", "Bb", "Eb", "G"], ["F", "Eb", "G", "Bb"], ["F", "Bb", "Eb", "G", "C"]],
-  "Fdim a.k.a F Dimished and  F o": [["F", "Ab", "B", "F"]],
-  "Fm7b5 a.k.a F Half-Dimished and  F ?": [["F", "B", "Eb", "Ab"], ["F", "Eb", "Ab", "B"]],
-  "Fdim7 a.k.a F Dimished 7th and  F o7": [["B", "D", "Ab", "B", "F"], ["F", "B", "D", "Ab"], ["D", "Ab", "B", "F"], ["Ab", "F", "B", "D"]],
-  "Faug": [["F", "Db", "F", "A"]],
-  "F/A(F chord with A in the bass)": [["A", "F", "A", "C", "F"]],
-  "F/C(F chord with C in the bass)": [["C", "F", "A", "C", "F"]],
-  "F/E(F chord with E in the bass)": [["E", "A", "F", "A", "C", "F"]],
-  "F/Eb(F chord with Eb in the bass)": [["Eb", "A", "C", "F"]],
-  "F/G(F chord with G in the bass)": [["G", "C", "F", "A"]],
-  "F# Major": [["F#", "C#", "F#", "A#", "C#", "F#"], ["C#", "F#", "C#", "F#", "A#", "C#"], ["A#", "F#", "C#", "F#"], ["C#", "F#", "C#", "F#", "A#"], ["F#", "A#", "C#", "F#", "A#"], ["C#", "A#", "C#", "F#"]],
-  "F#m a.k.a F# Minor and  F# -": [["F#", "C#", "F#", "A", "C#", "F#"], ["F#", "A", "C#", "A"], ["A", "F#", "C#", "F#"], ["F#", "C#", "F#", "A"], ["F#", "A", "C#", "F#"], ["C#", "F#", "C#", "F#", "A", "C#"]],
-  "F#7": [["F#", "A#", "C#", "E"], ["F#", "E", "A#", "C#"], ["F#", "C#", "A#", "E"], ["F#", "C#", "E", "A#", "C#", "F#"], ["C#", "F#", "C#", "E", "A#"], ["C#", "F#", "A#", "E", "F#"]],
-  "F#m7 a.k.a F# Minor 7 and  F# -7": [["E", "A", "C#", "F#"], ["F#", "E", "A", "C#"], ["C#", "F#", "A", "E"], ["F#", "C#", "E", "A"], ["F#", "A", "E", "F#", "C#"], ["F#", "C#", "E", "A", "E"]],
-  "F#maj7 a.k.a F# Major 7 and  F# ?7": [["F#", "A#", "C#", "F"], ["F#", "F", "A#", "C#"], ["C#", "F#", "A#", "F"], ["A#", "F#", "C#", "F"], ["C#", "F#", "C#", "F", "A#"], ["F#", "A#", "C#", "F", "A#"]],
-  "F# m#7 (F#mM7) a.k.a F# Minor Sharp 7 and  F# Minor, Major 7": [["F#", "C#", "F", "A", "C#", "F#"], ["F#", "A", "C#", "F"], ["F#", "F", "A", "C#"], ["F#", "C#", "F", "A"]],
-  "F#7b5 a.k.a F# 7 Flat 5)": [["F#", "E", "A#", "C"], ["F#", "C", "E", "A#"], ["C", "A#", "E", "F#"]],
-  "F#7#5": [["F#", "E", "A#", "D"], ["F#", "D", "E", "A#"], ["E", "A#", "D", "F#"]],
-  "F#m7b5 a.k.a F# Half-Dimished and  F# ?": [["E", "A", "C", "F#"], ["F#", "E", "A", "C"], ["F#", "C", "E", "A"]],
-  "F#7b9": [["F#", "A#", "E", "G", "C#", "E"]],
-  "F#b5": [["F#", "C", "F#", "A#"]],
-  "F#5 Power Chord": [["F#", "C#", "F#"]],
-  "F#6": [["D#", "A#", "C#", "F#"], ["F#", "D#", "A#", "C#"], ["F#", "C#", "A#", "D#"], ["C#", "F#", "C#", "D#", "A#"], ["C#", "A#", "D#", "F#"], ["F#", "C#", "D#", "A#"], ["F#", "A#", "D#", "A#", "C#"]],
-  "F#m6": [["D#", "A", "C#", "F#"], ["F#", "D#", "A", "C#", "F#"], ["F#", "C#", "F#", "A", "D#", "F#"], ["F#", "C#", "D#", "A"], ["F#", "A", "D#", "F#", "C#"], ["F#", "D#", "A", "C#"]],
-  "F#69": [["F#", "A#", "D#", "G#", "C#", "F#"], ["F#", "C#", "A#", "D#", "G#"], ["C#", "F#", "A#", "D#", "G#"], ["D#", "G#", "C#", "F#", "A#"], ["F#", "A#", "D#", "G#", "C#"], ["F#", "C#", "G#", "A#", "D#"]],
-  "F#9": [["F#", "C#", "E", "A#", "C#", "G#"], ["A#", "E", "G#", "C#", "F#"], ["F#", "A#", "E", "G#"], ["F#", "E", "G#", "A#"], ["F#", "A#", "E", "G#", "C#"]],
-  "F#9b5": [["F#", "A#", "E", "G#", "C"], ["C", "F#", "A#", "E", "G#"], ["A#", "E", "G#", "C", "F#"]],
-  "F#9#5": [["A#", "E", "G#", "D", "F#"], ["F#", "E", "A#", "D", "G#"], ["A#", "E", "G#", "D", "F#", "A#"], ["F#", "A#", "E", "G#", "D"]],
-  "F#m9 a.k.a F# Minor 9 and  F# -9": [["G", "A", "F", "G#", "C#", "F#"], ["F#", "A", "E", "G#", "C#"], ["F#", "E", "A", "C#", "G#"], ["F#", "A", "E", "G#"], ["F#", "C#", "E", "A", "E", "G#"], ["A", "F#", "C#", "E", "G#"]],
-  "F#maj9 a.k.a F# Major 9 and  F# ?9": [["F#", "F", "A#", "G#"], ["F#", "A#", "F", "G#", "C#", "F"], ["A#", "F#", "G#", "C#", "F"], ["C#", "F#", "A#", "F", "G#"], ["A#", "C#", "F#", "C#", "F", "G#"], ["F#", "G#", "C#", "F", "A#"]],
-  "F#add9": [["F#", "A#", "G#", "C#", "F#"]],
-  "F#7#9": [["F#", "A#", "E", "A"]],
-  "f#11": [["F#", "C#", "E", "B", "C#", "F#"], ["F#", "A#", "E", "A#", "B", "E"]],
-  "f#m11 a.k.a F# Minor 11 and  F# -11": [["F#", "A", "E", "A", "B"], ["F#", "A", "B", "E"], ["F#", "B", "E", "A", "C#", "F#"], ["F#", "A", "E", "G#", "B"], ["F#", "B", "E", "A", "C#"]],
-  "F#13": [["F#", "C#", "E", "A#", "D#", "F#"]],
-  "F#maj13 a.k.a F# Major 13 and  F# ?13": [["F#", "A#", "D#", "G#", "C#", "F"], ["F#", "F", "A#", "D#"], ["F#", "A#", "D#", "F", "A#"]],
-  "F#sus2": [["F#", "G#", "C#", "F#"]],
-  "F#sus4": [["F#", "B", "C#", "F#"], ["F#", "C#", "F#", "B", "C#", "F#"], ["C#", "F#", "B", "F#", "B"], ["F#", "C#", "F#", "B"], ["B", "C#", "F#", "C#"], ["C#", "F#", "B", "C#"]],
-  "F#7sus4": [["F#", "B", "E", "B", "C#", "F#"], ["E", "B", "C#", "F#"], ["F#", "C#", "E", "B", "C#", "F#"], ["C#", "B", "E", "F#"], ["F#", "C#", "E", "B"]],
-  "F#9sus4": [["C#", "F#", "B", "E", "G#"], ["F#", "E", "G#", "B"], ["F#", "B", "E", "G#", "C#"]],
-  "F#dim a.k.a F# Dimished and  F# o": [["F#", "C", "F#", "A"]],
-  "F#m7b5 a.k.a F# Half-Dimished and  F# ?": [["E", "A", "C", "F#"], ["F#", "E", "A", "C"], ["F#", "C", "E", "A"]],
-  "F#dim7 a.k.a F# Dimished 7th and  F# o7": [["D#", "A", "C", "F#"], ["F#", "D#", "A", "C"], ["C", "A", "D#", "F#"], ["F#", "C", "D#", "A"]],
-  "F#aug": [["F#", "A#", "D", "A#", "D", "F#"]],
-  "F#/A#(Fx chord with A# in the bass)": [["A#", "F#", "A#", "C#", "F#", "A#"]],
-  "F#/C#(Fx chord with C# in the bass)": [["C#", "F#", "A#", "C#", "F#"]],
-  "F#/F(Fx chord with F in the bass)": [["F", "A#", "C#", "F#"]],
-  "F#/E(Fx chord with E in the bass)": [["E", "A#", "C#", "F#"]],
-  "F#/G#(Fx chord with G# in the bass)": [["G#", "C#", "F#", "A#"]],
-  "Gb Major": [["Gb", "Db", "Gb", "Bb", "Db", "Gb"], ["Db", "Gb", "Bb", "Db", "Gb"], ["Gb", "Bb", "Db", "Gb"], ["Db", "Gb", "Db", "Gb", "Bb", "Db"]],
-  "Gbm a.k.a Gb Minor and  Gb -": [["Gb", "Db", "Gb", "A", "Db", "Gb"], ["Db", "Gb", "A", "Db", "Gb"], ["Gb", "A", "Db", "Gb"]],
-  "Gb7": [["Gb", "Bb", "Db", "E"], ["Gb", "Db", "E", "Bb", "Db", "Gb"]],
-  "Gbm7 a.k.a Gb Minor 7 and  Gb -7": [["E", "A", "Db", "Gb"], ["A", "Gb", "A", "Db", "E"], ["E", "A", "E", "A", "Db", "Gb"], ["E", "Gb", "A", "Db", "E"], ["Gb", "E", "A", "Db", "E"]],
-  "Gbmaj7 a.k.a Gb Major 7 and  Gb ?7": [["Gb", "Bb", "Db", "F"], ["F", "Bb", "Db", "Gb"]],
-  "Gb m#7 (GbmM7) a.k.a Gb Minor Sharp 7 and  Gb Minor, Major 7": [["Gb", "Db", "F", "A", "Db", "Gb"], ["Gb", "F", "A", "Db"], ["Gb", "A", "Db", "F"], ["Gb", "Db", "F", "A"]],
-  "Gb7b5 a.k.a Gb 7 Flat 5)": [["Gb", "E", "Bb", "C"], ["Gb", "C", "E", "Bb"], ["C", "Bb", "E", "Gb"]],
-  "Gb7#5": [["Gb", "E", "Bb", "D"], ["Gb", "D", "E", "Bb"], ["E", "Bb", "D", "Gb"]],
-  "Gbm7b5 a.k.a Gb Half-Dimished and  Gb ?": [["A", "E", "A", "C", "Gb"], ["Gb", "E", "A", "C"], ["Gb", "C", "E", "A"]],
-  "Gb7b9": [["Gb", "Bb", "E", "G", "Db", "E"]],
-  "Gbb5": [["Gb", "C", "Gb", "Bb"]],
-  "Gb5 Power Chord": [["Gb", "Db", "Gb"]],
-  "Gb6": [["Eb", "Bb", "Db", "Gb"], ["Gb", "Db", "Bb", "Eb"], ["Db", "Gb", "Db", "Eb", "Bb"], ["Gb", "Eb", "Bb", "Db"], ["Db", "Bb", "Eb", "Gb"], ["Gb", "Db", "Eb", "Bb"], ["Gb", "Bb", "Eb", "Bb", "Db"]],
-  "Gbm6": [["Gb", "Eb", "A", "Db", "Gb"], ["Eb", "A", "Db", "Gb"], ["Gb", "Db", "Gb", "A", "Eb", "Gb"], ["Gb", "Db", "Eb", "A"], ["Gb", "A", "Eb", "Gb", "Db"], ["Gb", "Eb", "A", "Db"]],
-  "Gb69": [["Gb", "Bb", "Eb", "Ab", "Db", "Gb"], ["Gb", "Db", "Bb", "Eb", "Ab"], ["Db", "Gb", "Bb", "Eb", "Ab"], ["Eb", "Ab", "Db", "Gb", "Bb"], ["Gb", "Bb", "Eb", "Ab", "Db"], ["Gb", "Db", "Ab", "Bb", "Eb"]],
-  "Gb9": [["Bb", "E", "Ab", "Db", "Gb"], ["Gb", "Bb", "Db", "Ab"], ["Gb", "Db", "E", "Bb", "Db", "Ab"], ["Gb", "Bb", "E", "Ab"], ["Gb", "Bb", "E", "Ab", "Db"], ["Gb", "E", "Ab", "Bb"]],
-  "Gb9b5": [["C", "Gb", "Bb", "E", "Ab"], ["Gb", "Bb", "E", "Ab", "C"], ["Bb", "E", "Ab", "C", "Gb"]],
-  "Gb9#5": [["Bb", "E", "Ab", "D", "Gb"], ["Gb", "E", "Bb", "D", "Ab"], ["Bb", "E", "Ab", "D", "Gb", "Bb"], ["Gb", "Bb", "E", "Ab", "D"]],
-  "Gbm9 a.k.a Gb Minor 9 and  Gb -9": [["Gb", "A", "E", "Ab", "Db", "Gb"], ["Gb", "E", "A", "Db", "Ab"], ["Gb", "A", "E", "Ab"], ["Gb", "A", "E", "Ab", "Db"], ["Gb", "Db", "E", "A", "E", "Ab"], ["A", "Gb", "Db", "E", "Ab"]],
-  "Gbmaj9 a.k.a Gb Major 9 and  Gb ?9": [["Gb", "F", "Bb", "Ab"], ["Bb", "Gb", "Ab", "Db", "F"], ["Gb", "Bb", "F", "Ab", "Db", "F"], ["Db", "Gb", "Bb", "F", "Ab"], ["Bb", "Db", "Gb", "Db", "F", "Ab"], ["Gb", "Ab", "Db", "F", "Bb"]],
-  "Gbadd9": [["Gb", "Bb", "Ab", "Db", "Gb"]],
-  "Gb7#9": [["Gb", "Bb", "E", "A"]],
-  "gb11": [["Gb", "Bb", "E", "Ab", "B", "E"], ["Gb", "Bb", "E", "Bb", "B", "E"], ["Gb", "Bb", "E", "B"]],
-  "gbm11 a.k.a Gb Minor 11 and  Gb -11": [["Gb", "A", "E", "A", "B"], ["Gb", "A", "B", "E"], ["Gb", "B", "E", "A", "Db", "Gb"], ["Gb", "A", "E", "Ab", "B"], ["Gb", "B", "E", "A", "Db"]],
-  "Gb13": [["Gb", "Db", "E", "Bb", "Eb", "Gb"]],
-  "Gbmaj13 a.k.a Gb Major 13 and  Gb ?13": [["Gb", "F", "Bb", "Eb"], ["Gb", "Bb", "Eb", "F", "Bb"], ["Gb", "Bb", "Eb", "Ab", "Db", "F"]],
-  "Gbsus2": [["Gb", "Ab", "Db", "Gb"]],
-  "Gbsus4": [["Gb", "B", "Db", "Gb"], ["Gb", "Db", "Gb", "B", "Db", "Gb"], ["Db", "Gb", "B", "Gb", "B"], ["Gb", "Db", "Gb", "B"], ["B", "Db", "Gb", "Db"], ["Db", "Gb", "B", "Db"]],
-  "Gb7sus4": [["Db", "Gb", "B", "E"], ["Gb", "B", "E", "B", "Db", "Gb"], ["Gb", "Db", "E", "B", "Db", "Gb"], ["E", "B", "Db", "Gb"], ["Db", "B", "E", "Gb"], ["Gb", "Db", "E", "B"]],
-  "Gb9sus4": [["Gb", "E", "Ab", "B"], ["Db", "Gb", "B", "E", "Ab"], ["Gb", "B", "E", "Ab", "Db"]],
-  "Gbdim a.k.a Gb Dimished and  Gb o": [["Gb", "C", "Gb", "A"]],
-  "Gbm7b5 a.k.a Gb Half-Dimished and  Gb ?": [["A", "E", "A", "C", "Gb"], ["Gb", "E", "A", "C"], ["Gb", "C", "E", "A"]],
-  "Gbdim7 a.k.a Gb Dimished 7th and  Gb o7": [["Eb", "A", "C", "Gb"], ["Gb", "Eb", "A", "C"], ["C", "A", "Eb", "Gb"], ["Gb", "C", "Eb", "A"]],
-  "Gbaug": [["Gb", "Bb", "D", "Bb", "D", "Gb"]],
-  "Gb/Bb(Gb chord with Bb in the bass)": [["Ab", "E", "Ab", "B", "E", "Ab"]],
-  "Gb/Db(Gb chord with Db in the bass)": [["D", "G", "B", "D", "G"]],
-  "Gb/F(Gb chord with F in the bass)": [["F", "Bb", "Db", "Gb"]],
-  "Gb/E(Gb chord with E in the bass)": [["E", "Bb", "Db", "Gb"]],
-  "Gb/Ab(Gb chord with Ab in the bass)": [["Ab", "Db", "Gb", "Bb"]],
-  "G Major": [["G", "B", "D", "G", "B", "G"], ["D", "G", "B", "D", "G"], ["D", "B", "D", "G"], ["D", "D", "G", "B"], ["G", "D", "G", "B", "D"], ["G", "B", "D", "G", "D", "G"], ["G", "D", "G", "B", "D", "G"], ["G", "D", "G", "B", "G"], ["B", "G", "D", "G"], ["D", "G", "D", "G", "B"], ["G", "B", "D", "G", "B"]],
-  "Gm a.k.a G Minor and  G -": [["G", "D", "G", "A#", "D", "G"], ["G", "D", "G", "A#", "D"], ["G", "A#", "D", "G", "D", "G"], ["G", "A#", "D", "A#"], ["G", "D", "G", "A#"], ["A#", "D", "G", "A#"], ["G", "A#", "D", "G"]],
-  "G7": [["G", "B", "D", "G", "B", "F"], ["G", "F", "B", "D"], ["G", "D", "F", "B", "D", "G"], ["G", "D", "F", "B"], ["B", "G", "D", "F"]],
-  "Gm7 a.k.a G Minor 7 and  G -7": [["G", "D", "F", "A#", "D", "G"], ["F", "A#", "D", "G"], ["A#", "F", "G", "D"], ["G", "F", "A#", "D"], ["G", "D", "F", "A#", "F", "G"], ["G", "D", "F", "A#"]],
-  "Gmaj7 a.k.a G Major 7 and  G ?7": [["G", "B", "D", "F#"], ["G", "B", "D", "G", "B", "F#"], ["F#", "B", "D", "G"], ["F#", "B", "D", "G", "B", "G"], ["F#", "B", "D", "G", "D", "G"], ["G", "F#", "B", "D"], ["G", "D", "F#", "B"], ["G", "B", "D", "F#", "B"]],
-  "G m#7 (GmM7) a.k.a G Minor Sharp 7 and  G Minor, Major 7": [["G", "D", "F#", "A#", "D", "G"], ["G", "A#", "D", "F#"], ["G", "F#", "A#", "D"], ["G", "D", "F#", "A#"], ["A#", "G", "D", "F#"]],
-  "G7b5 a.k.a G 7 Flat 5)": [["G", "F", "B", "C#"], ["F", "B", "D", "A"], ["C#", "G", "B", "F"], ["G", "C#", "F", "B"]],
-  "G7#5": [["G", "F", "B", "D#"], ["G", "D#", "F", "B"], ["B", "F", "G", "D#"]],
-  "Gm7b5 a.k.a G Half-Dimished and  G ?": [["G", "C#", "F", "A#"], ["G", "F", "A#", "C#"], ["C#", "A#", "F", "G"]],
-  "G7b9": [["G", "B", "D", "G#", "B", "F"]],
-  "Gb5": [["G", "C#", "G", "B"]],
-  "G5 Power Chord": [["G", "D", "G"], ["G", "D", "G", "D", "G"]],
-  "G6": [["G", "D", "G", "B", "E"], ["D", "G", "B", "E"], ["D", "E", "G", "B"], ["E", "B", "D", "G"], ["E", "D", "G", "B", "E"], ["E", "B", "D", "G", "B", "E"], ["E", "B", "D", "G", "D", "E"], ["E", "B", "E", "G", "D", "E"], ["E", "B", "E", "G", "D", "G"], ["G", "D", "B", "E", "G"], ["G", "B", "D", "G", "B", "E"], ["G", "E", "B", "D"], ["D", "G", "D", "E", "B"], ["D", "B", "E", "G"]],
-  "Gm6": [["E", "A#", "D", "G"], ["G", "D", "A#", "D", "E"], ["G", "E", "A#", "D"], ["G", "D", "G", "A#", "E", "G"], ["A#", "G", "D", "E"], ["G", "A#", "E", "G", "D"]],
-  "G69": [["G", "D", "A", "B", "E"], ["G", "B", "D", "A", "B", "E"], ["G", "B", "E", "A", "D", "G"], ["G", "D", "B", "E", "A"], ["D", "G", "B", "E", "A"], ["E", "A", "D", "G", "B"]],
-  "G9": [["G", "D", "A", "B", "F"], ["A", "D", "G", "B", "F"], ["B", "F", "A", "D", "G"], ["G", "F", "A", "B", "G"], ["G", "D", "F", "B", "D", "A"], ["G", "B", "F", "A"], ["G", "F", "A", "B"]],
-  "G9b5": [["B", "F", "A", "C#", "G"], ["G", "B", "F", "A", "C#"], ["C#", "G", "B", "F", "A"]],
-  "G9#5": [["B", "F", "A", "D#", "G"], ["G", "F", "B", "D#", "A"], ["B", "F", "A", "D#", "G", "B"], ["G", "B", "F", "A", "D#"]],
-  "Gm9 a.k.a G Minor 9 and  G -9": [["G", "D", "F", "A#", "D", "A"], ["A#", "F", "A", "D", "G"], ["G", "F", "A#", "D", "A"], ["G", "D", "F", "A#", "F", "A"], ["G", "A#", "F", "A"], ["A#", "G", "D", "F", "A"]],
-  "Gmaj9 a.k.a G Major 9 and  G ?9": [["F#", "B", "G", "A", "D", "F#"], ["G", "D", "A", "B", "F#"], ["B", "G", "A", "D", "F#"], ["G", "B", "F#", "A", "D", "F#"], ["G", "F#", "B", "A"], ["G", "B", "F#", "A"], ["B", "D", "G", "D", "F#", "A"]],
-  "Gadd9": [["G", "D", "B", "D", "A"], ["G", "A", "D", "G", "B", "G"]],
-  "G7#9": [["G", "D", "F", "B", "D", "A#"]],
-  "g11": [["G", "D", "A", "C", "F"], ["G", "B", "D", "G", "C", "F"]],
-  "gm11 a.k.a G Minor 11 and  G -11": [["G", "A#", "F", "A#", "C"], ["G", "A#", "F", "A", "C"], ["G", "A#", "D", "G", "C", "F"], ["G", "A#", "F", "A#", "C", "F"], ["G", "F", "A#", "C"], ["G", "C", "F", "A#", "D", "G"], ["G", "C", "F", "A#", "D"]],
-  "G13": [["G", "B", "F", "G", "B", "E"]],
-  "Gmaj13 a.k.a G Major 13 and  G ?13": [["G", "F#", "A", "B", "E"], ["G", "B", "E", "A", "D", "F#"], ["G", "F#", "B", "E", "A"], ["G", "F#", "B", "E"]],
-  "Gsus2": [["A", "D", "G", "D", "G"], ["D", "A", "D", "G"], ["A", "D", "G", "D", "A"], ["G", "A", "D", "G", "D", "G"]],
-  "Gsus4": [["G", "D", "G", "C", "D", "G"], ["G", "D", "G", "C", "G"], ["D", "G", "D", "G", "C"], ["C", "D", "G", "D"], ["G", "C", "D", "G"], ["D", "G", "C", "D"]],
-  "G7sus4": [["G", "C", "D", "G", "C", "F"], ["G", "D", "F", "C", "D", "G"], ["D", "C", "F", "G"], ["G", "D", "F", "C"], ["C", "F", "G", "D"]],
-  "G9sus4": [["G", "F", "A", "C", "F"], ["D", "G", "C", "F", "A"], ["G", "F", "A", "C"], ["G", "C", "F", "A", "D"]],
-  "Gdim a.k.a G Dimished and  G o": [["G", "C#", "G", "A#"]],
-  "Gm7b5 a.k.a G Half-Dimished and  G ?": [["G", "C#", "F", "A#"], ["G", "F", "A#", "C#"], ["C#", "A#", "F", "G"]],
-  "Gdim7 a.k.a G Dimished 7th and  G o7": [["A#", "E", "G", "C#", "E"], ["E", "A#", "C#", "G"], ["G", "E", "A#", "C#"], ["G", "C#", "E", "A#"], ["C#", "A#", "E", "G"]],
-  "Gaug": [["G", "D#", "G", "B"]],
-  "G/B(G chord with B in the bass)": [["B", "D", "G", "D", "G"]],
-  "G/D(G chord with D in the bass)": [["D", "G", "B", "G"]],
-  "G/F#(G chord with F# in the bass)": [["F#", "B", "D", "G", "D", "G"]],
-  "G/F(G chord with F in the bass)": [["F", "B", "D", "G", "B", "G"]],
-  "G/A(G chord with A in the bass)": [["A", "D", "G", "B", "G"]],
-  "G# Major": [["G#", "D#", "G#", "C", "D#", "G#"], ["D#", "G#", "D#", "G#", "C", "D#"], ["G#", "C", "D#", "G#", "C"], ["D#", "G#", "C", "G#"], ["C", "G#", "D#", "G#"], ["D#", "G#", "D#", "G#", "C"], ["G#", "C", "D#", "G#"]],
-  "G#m a.k.a G# Minor and  G# -": [["G#", "D#", "G#", "B", "D#", "G#"], ["B", "D#", "G#", "D#", "G#"], ["B", "G#", "B", "D#", "G#"], ["G#", "D#", "G#", "B"], ["B", "D#", "G#", "B"], ["G#", "B", "D#", "G#"]],
-  "G#7": [["D#", "G#", "C", "F#"], ["G#", "D#", "C", "F#"], ["G#", "D#", "F#", "C", "D#", "G#"], ["G#", "F#", "C", "D#"], ["D#", "G#", "D#", "F#", "C"], ["C", "G#", "D#", "F#"]],
-  "G#m7 a.k.a G# Minor 7 and  G# -7": [["F#", "B", "D#", "G#"], ["G#", "D#", "F#", "B", "F#", "G#"], ["G#", "F#", "B", "D#"], ["G#", "D#", "F#", "B"], ["B", "F#", "G#", "D#"]],
-  "G#maj7 a.k.a G# Major 7 and  G# ?7": [["D#", "G#", "C", "G"], ["G#", "C", "D#", "G"], ["G#", "G", "C", "D#"], ["G#", "D#", "G", "C", "D#", "G#"], ["G#", "D#", "G", "C"]],
-  "G# m#7 (G#mM7) a.k.a G# Minor Sharp 7 and  G# Minor, Major 7": [["G#", "D#", "G", "B", "D#", "G#"], ["G#", "G", "B", "D#"], ["G#", "B", "D#", "G"], ["G#", "D#", "G", "B"]],
-  "G#7b5 a.k.a G# 7 Flat 5)": [["G#", "F#", "C", "D"], ["D", "G#", "C", "F#"], ["G#", "D", "F#", "C"]],
-  "G#7#5": [["F#", "E", "A#", "D"], ["F#", "C", "E", "G#"], ["G#", "E", "F#", "C"], ["G#", "F#", "C", "E"]],
-  "G#m7b5 a.k.a G# Half-Dimished and  G# ?": [["G#", "D", "F#", "B"], ["G#", "F#", "B", "D"], ["D", "B", "F#", "G#"]],
-  "G#7b9": [["G#", "C", "F#", "A"]],
-  "G#b5": [["G#", "D", "G#", "C"]],
-  "G#5 Power Chord": [["G#", "D#", "G#", "G", "B", "E"]],
-  "G#6": [["D#", "G#", "C", "F"], ["G#", "F", "C", "D#"], ["G#", "D#", "C", "F", "G#"], ["D#", "G#", "D#", "F", "C"], ["D#", "C", "F", "G#"], ["G#", "D#", "F", "C"]],
-  "G#m6": [["D#", "G#", "B", "F"], ["F", "B", "D#", "G#"], ["G#", "F", "B", "D#"], ["G#", "D#", "G#", "B", "F", "G#"], ["B", "G#", "D#", "F"], ["G#", "D#", "F", "B"]],
-  "G#69": [["G#", "C", "F", "A#", "D#", "G#"], ["G#", "D#", "A#", "C", "F"], ["G#", "C", "F", "A#", "D#"], ["D#", "G#", "C", "F", "A#"], ["G#", "D#", "C", "F", "A#"], ["F", "A#", "D#", "G#", "C"]],
-  "G#9": [["F#", "A#", "D#", "G#", "C", "F#"], ["G#", "F#", "A#", "C"], ["F#", "A#", "C", "G#"], ["C", "F#", "A#", "D#", "G#"], ["G#", "D#", "F#", "C", "D#", "A#"], ["G#", "C", "F#", "A#"], ["C", "G#", "D#", "F#", "A#"]],
-  "G#9b5": [["G#", "C", "F#", "A#", "D"], ["D", "G#", "C", "F#", "A#"]],
-  "G#9#5": [["G#", "C", "F#", "A#", "E"], ["G#", "F#", "C", "E", "A#"], ["C", "F#", "A#", "E", "G#", "C"]],
-  "G#m9 a.k.a G# Minor 9 and  G# -9": [["F#", "A#", "D#", "G#", "B", "F#"], ["B", "F#", "A#", "D#", "G#"], ["G#", "F#", "B", "D#", "A#"], ["G#", "D#", "F#", "B", "F#", "A#"], ["G#", "B", "F#", "A#"], ["B", "G#", "D#", "F#", "A#"]],
-  "G#maj9 a.k.a G# Major 9 and  G# ?9": [["G#", "C", "G", "A#", "D#"], ["G#", "D#", "A#", "C", "G"], ["C", "G#", "A#", "D#", "G"], ["G#", "G", "C", "A#"], ["G#", "C", "G", "A#"]],
-  "G#add9": [["A#", "D#", "G#", "C"]],
-  "G#7#9": [["G#", "D#", "F#", "C", "D#", "B"]],
-  "g#11": [["G#", "C", "D#", "G#", "C#", "F#"]],
-  "g#m11 a.k.a G# Minor 11 and  G# -11": [["G#", "B", "F#", "B", "C#", "F#"], ["G#", "B", "F#", "B", "C#"], ["G#", "B", "F#", "A#", "C#", "F#"], ["G#", "B", "F#", "A#", "C#"], ["G#", "F#", "B", "C#"], ["G#", "C#", "F#", "B", "D#", "G#"], ["G#", "C#", "F#", "B", "D#"]],
-  "G#13": [["G#", "C", "F#", "G#", "C", "F"]],
-  "G#maj13 a.k.a G# Major 13 and  G# ?13": [["G#", "C", "F", "A#", "D#", "G"], ["G#", "G", "C", "F", "A#"], ["G#", "G", "C", "F"]],
-  "G#sus2": [["A#", "D#", "G#"]],
-  "G#sus4": [["D#", "G#", "C#", "G#"], ["G#", "C#", "D#", "G#"], ["G#", "D#", "G#", "C#", "D#", "G#"], ["D#", "G#", "C#", "G#", "C#"], ["G#", "D#", "G#", "C#"]],
-  "G#7sus4": [["G#", "C#", "F#", "C#", "D#", "G#"], ["D#", "G#", "C#", "F#"], ["D#", "C#", "F#", "G#"], ["G#", "D#", "F#", "C#", "D#", "G#"], ["G#", "D#", "F#", "C#"]],
-  "G#9sus4": [["G#", "F#", "A#", "C#"], ["D#", "G#", "C#", "F#", "A#"], ["G#", "C#", "F#", "A#", "D#"]],
-  "G#dim a.k.a G# Dimished and  G# o": [["G#", "D", "G#", "B"]],
-  "G#m7b5 a.k.a G# Half-Dimished and  G# ?": [["G#", "D", "F#", "B"], ["G#", "F#", "B", "D"], ["D", "B", "F#", "G#"]],
-  "G#dim7 a.k.a G# Dimished 7th and  G# o7": [["D", "G#", "B", "F"], ["G#", "F", "B", "D"], ["D", "B", "F", "G#"], ["G#", "D", "F", "B"]],
-  "G#aug": [["E", "C", "E", "G#", "C", "E"]],
-  "G#/C(Gx chord with C in the bass)": [["C", "D#", "G#", "D#", "G#"]],
-  "G#/D#(Gx chord with D# in the bass)": [["D#", "G#", "C", "G#"]],
-  "G#/G(Gx chord with G in the bass)": [["F", "A#", "C#", "F#"]],
-  "G#/F#(Gx chord with F# in the bass)": [["E", "A#", "C#", "F#"]],
-  "G#/A#(Gx chord with A# in the bass)": [["A#", "D#", "G#", "C", "G#"]],
-  "Ab Major": [["Ab", "Eb", "Ab", "C", "Eb", "Ab"], ["Eb", "Ab", "Eb", "Ab", "C", "Eb"]],
-  "Abm a.k.a Ab Minor and  Ab -": [["Ab", "Eb", "Ab", "B", "Eb", "Ab"]],
-  "Ab7": [["Eb", "Ab", "C", "Gb"], ["Gb", "C", "Eb", "Ab"]],
-  "Abm7 a.k.a Ab Minor 7 and  Ab -7": [["Gb", "B", "Eb", "Ab"]],
-  "Abmaj7 a.k.a Ab Major 7 and  Ab ?7": [["Eb", "Ab", "C", "G"]],
-  "Ab m#7 (AbmM7) a.k.a Ab Minor Sharp 7 and  Ab Minor, Major 7": [["Ab", "Eb", "G", "B", "Eb", "Ab"]],
-  "Ab7b5 a.k.a Ab 7 Flat 5)": [["Ab", "Gb", "C", "D"], ["D", "Ab", "C", "Gb"], ["Ab", "D", "Gb", "C"]],
-  "Ab7#5": [["Ab", "Gb", "C", "E"], ["Gb", "C", "E", "Ab"], ["Ab", "E", "Gb", "C"]],
-  "Abm7b5 a.k.a Ab Half-Dimished and  Ab ?": [["Ab", "D", "Gb", "B"], ["Ab", "Gb", "B", "D"], ["D", "B", "Gb", "Ab"]],
-  "Ab7b9": [["Ab", "C", "Gb", "A"]],
-  "Abb5": [["Ab", "D", "Ab", "C"]],
-  "Ab5 Power Chord": [["Ab", "Eb", "Ab", "G", "B", "E"]],
-  "Ab6": [["F", "C", "Eb", "Ab", "C"], ["Eb", "Ab", "C", "F"]],
-  "Abm6": [["Eb", "Ab", "B", "F"], ["F", "B", "Eb", "Ab"], ["Ab", "F", "B", "Eb"], ["Ab", "Eb", "Ab", "B", "F", "Ab"], ["B", "Ab", "Eb", "F"], ["Ab", "Eb", "F", "B"]],
-  "Ab69": [["Ab", "C", "F", "Bb", "Eb", "Ab"], ["Ab", "C", "F", "Bb", "Eb"], ["Eb", "Ab", "C", "F", "Bb"], ["Ab", "Eb", "Bb", "C", "F"], ["Ab", "Eb", "C", "F", "Bb"], ["F", "Bb", "Eb", "Ab", "C"]],
-  "Ab9": [["Gb", "Bb", "Eb", "Ab", "C", "Gb"], ["Gb", "Bb", "C", "Ab"], ["Ab", "Gb", "Bb", "C"], ["C", "Gb", "Bb", "Eb", "Ab"], ["C", "Ab", "Eb", "Gb", "Bb"], ["Ab", "Eb", "Gb", "C", "Eb", "Bb"], ["Ab", "C", "Gb", "Bb"]],
-  "Ab9b5": [["D", "Ab", "C", "Gb", "Bb"], ["Ab", "C", "Gb", "Bb", "D"]],
-  "Ab9#5": [["Ab", "C", "Gb", "Bb", "E"], ["Ab", "Gb", "C", "E", "Bb"], ["C", "Gb", "Bb", "E", "Ab", "C"]],
-  "Abm9 a.k.a Ab Minor 9 and  Ab -9": [["Gb", "Bb", "Eb", "Ab", "B", "Gb"], ["Ab", "Gb", "B", "Eb", "Bb"], ["Ab", "Eb", "Gb", "B", "Gb", "Bb"], ["B", "Gb", "Bb", "Eb", "Ab"], ["Ab", "B", "Gb", "Bb"], ["B", "Ab", "Eb", "Gb", "Bb"]],
-  "Abmaj9 a.k.a Ab Major 9 and  Ab ?9": [["Ab", "C", "G", "Bb", "Eb"], ["Ab", "Eb", "Bb", "C", "G"], ["C", "Ab", "Bb", "Eb", "G"], ["Ab", "G", "C", "Bb"], ["Ab", "C", "G", "Bb"]],
-  "Abadd9": [["Bb", "Eb", "Ab", "C"]],
-  "Ab7#9": [["Ab", "Eb", "Gb", "C", "Eb", "B"]],
-  "ab11": [["Ab", "Eb", "Gb", "Db", "Eb", "Ab"], ["Ab", "C", "Eb", "Ab", "Db", "Gb"]],
-  "abm11 a.k.a Ab Minor 11 and  Ab -11": [["Ab", "B", "Gb", "B", "Db", "Gb"], ["Ab", "B", "Gb", "B", "Db"], ["Ab", "B", "Gb", "Bb", "Db", "Gb"], ["Ab", "B", "Gb", "Bb", "Db"], ["Ab", "Gb", "B", "Db"], ["Ab", "Db", "Gb", "B", "Eb", "Ab"], ["Ab", "Db", "Gb", "B", "Eb"]],
-  "Ab13": [["Ab", "C", "Gb", "Ab", "C", "F"]],
-  "Abmaj13 a.k.a Ab Major 13 and  Ab ?13": [["Ab", "C", "F", "Bb", "Eb", "G"], ["Ab", "G", "C", "F", "Bb"], ["Ab", "G", "C", "F"]],
-  "Absus2": [["Bb", "Eb", "Ab"]],
-  "Absus4": [["Eb", "Ab", "Db"], ["Eb", "Ab", "Db", "Ab"], ["Ab", "Db", "Eb", "Ab"], ["Ab", "Eb", "Ab", "Db", "Eb", "Ab"], ["Eb", "Ab", "Db", "Ab", "Db"], ["Ab", "Eb", "Ab", "Db"]],
-  "Ab7sus4": [["Ab", "Db", "Gb", "Db", "Eb", "Ab"], ["Eb", "Db", "Gb", "Ab"], ["Eb", "Ab", "Db", "Gb"], ["Ab", "Eb", "Gb", "Db", "Eb", "Ab"], ["Ab", "Eb", "Gb", "Db"]],
-  "Ab9sus4": [["Eb", "Ab", "Db", "Gb", "Bb"], ["Ab", "Gb", "Bb", "Db"], ["Ab", "Db", "Gb", "Bb", "Eb"]],
-  "Abdim a.k.a Ab Dimished and  Ab o": [["Ab", "D", "Ab", "B"]],
-  "Abm7b5 a.k.a Ab Half-Dimished and  Ab ?": [["Ab", "D", "Gb", "B"], ["Ab", "Gb", "B", "D"], ["D", "B", "Gb", "Ab"]],
-  "Abdim7 a.k.a Ab Dimished 7th and  Ab o7": [["B", "D", "Ab", "B", "F"], ["D", "Ab", "B", "F"], ["F", "B", "D", "Ab"]],
-  "Abaug": [["E", "C", "E", "Ab", "C", "E"]],
-  "Ab/C(Ab chord with C in the bass)": [["C", "Eb", "Ab", "Eb", "Ab"]],
-  "Ab/Eb(Ab chord with Eb in the bass)": [["Eb", "Ab", "C", "Ab"]],
-  "Ab/G(Ab chord with G in the bass)": [["F", "Bb", "Db", "Gb"]],
-  "Ab/Gb(Ab chord with Gb in the bass)": [["E", "Bb", "Db", "Gb"]],
-  "Ab/Bb(Ab chord with Bb in the bass)": [["Bb", "Eb", "Ab", "C", "Ab"]],
-  "A Major": [["A", "E", "A", "C#", "E"], ["E", "C#", "A", "E", "E"], ["A", "E", "A", "C#", "E", "A"], ["C#", "A", "A"], ["E", "A", "E", "A", "C#", "E"], ["A", "C#", "E", "A", "C#"], ["C#", "A", "E", "A"], ["E", "A", "E", "A", "C#"], ["E", "C#", "E", "A"]],
-  "Am a.k.a A Minor and  A -": [["A", "E", "A", "C", "E"], ["A", "A", "C", "E", "A"], ["C", "E", "A", "C", "E"], ["E", "A", "E", "A", "C", "E"], ["C", "E", "A", "E"], ["A", "E", "A", "C", "E", "A"], ["A", "C", "E", "C"], ["E", "C", "E", "A"], ["A", "E", "A", "C"]],
-  "A7": [["A", "E", "G", "C#", "E"], ["G", "E", "A", "C#", "E"], ["A", "E", "A", "C#", "G"], ["E", "A", "E", "G", "C#", "E"], ["E", "A", "E", "A", "C#", "G"], ["A", "E", "C#", "G"], ["A", "E", "G", "C#", "E", "A"], ["E", "A", "E", "G", "C#"], ["G", "E", "A", "C#"]],
-  "Am7 a.k.a A Minor 7 and  A -7": [["A", "E", "A", "C", "G"], ["E", "A", "E", "G", "C", "G"], ["A", "E", "G", "C", "E"], ["A", "G", "C", "E", "C"], ["E", "A", "E", "A", "C", "G"], ["G", "C", "E", "A"], ["A", "E", "G", "C", "G", "A"], ["A", "G", "C", "E"], ["A", "E", "G", "C"]],
-  "Amaj7 a.k.a A Major 7 and  A ?7": [["A", "E", "G#", "C#", "E"], ["E", "A", "C#", "G#"], ["E", "A", "E", "G#", "C#", "E"], ["E", "A", "E", "A", "C#", "G#"], ["A", "C#", "E", "G#"], ["A", "G#", "C#", "E"], ["E", "A", "C#", "G#", "C#"], ["E", "A", "E", "G#", "C#"]],
-  "A m#7 (AmM7) a.k.a A Minor Sharp 7 and  A Minor, Major 7": [["A", "E", "A", "C", "G#"], ["E", "G#", "C", "E"], ["A", "E", "G#", "C", "E"], ["E", "A", "E", "A", "C", "G#"], ["A", "C", "E", "G#"], ["A", "E", "G#", "C", "E", "A"], ["A", "E", "G#", "C"]],
-  "A7b5 a.k.a A 7 Flat 5)": [["A", "G", "C#", "D#"], ["A", "D#", "A", "C#", "G"], ["A", "G", "C#", "D"], ["D#", "A", "C#", "G"], ["A", "D#", "G", "C#"]],
-  "A7#5": [["A", "G", "C#", "F"], ["G", "C#", "F", "A"], ["A", "F", "G", "C#"]],
-  "Am7b5 a.k.a A Half-Dimished and  A ?": [["D#", "A", "C", "G"], ["A", "G", "C", "D#"], ["A", "D#", "G", "C", "G"], ["A", "D#", "G", "C"]],
-  "A7b9": [["A", "E", "A#", "C#", "G"]],
-  "ab5": [["A", "D#", "A", "C#"]],
-  "A5 Power Chord": [["A", "E", "A", "E"]],
-  "A6": [["E", "A", "C#", "F#"], ["E", "F#", "A", "C#", "E"], ["F#", "E", "A", "C#", "E"], ["A", "F#", "A", "C#", "E"], ["E", "A", "E", "A", "C#", "F#"], ["C#", "F#", "A", "E"], ["F#", "C#", "E", "A"], ["A", "F#", "C#", "E"], ["A", "E", "C#", "F#", "A"], ["E", "A", "E", "F#", "C#"]],
-  "Am6": [["A", "E", "A", "C", "F#"], ["A", "F#", "C", "E", "A"], ["E", "A", "E", "A", "C", "F#"], ["A", "F#", "A", "C", "E"], ["A", "E", "A", "C", "F#", "A"], ["A", "E", "F#", "C"], ["A", "C", "F#", "A", "E"]],
-  "A69": [["A", "C#", "F#", "B", "E", "A"], ["A", "F#", "B", "C#", "E"], ["A", "E", "B", "C#", "F#"], ["A", "B", "E", "A", "C#", "F#"], ["A", "E", "C#", "F#", "B"], ["E", "A", "C#", "F#", "B"]],
-  "A9": [["A", "E", "B", "C#", "G"], ["A", "E", "G", "C#", "E", "B"], ["A", "C#", "G", "B"], ["A", "G", "B", "C#"], ["G", "B", "C#", "A"], ["A", "C#", "G", "B", "E"], ["C#", "G", "B", "E", "A"]],
-  "A9b5": [["A", "C#", "G", "B", "D#"], ["C#", "G", "B", "D#", "A"], ["D#", "A", "C#", "G", "B"]],
-  "A9#5": [["A", "C#", "G", "B", "F"], ["A", "G", "C#", "F", "B"], ["C#", "G", "B", "F", "A", "C#"]],
-  "Am9 a.k.a A Minor 9 and  A -9": [["A", "G", "C", "E", "B"], ["C", "E", "G", "B", "E"], ["A", "C", "G", "B"], ["A", "E", "G", "C", "G", "B"], ["C", "A", "E", "G", "B"]],
-  "Amaj9 a.k.a A Major 9 and  A ?9": [["A", "E", "B", "C#", "G#"], ["C#", "A", "B", "E", "G#"], ["A", "C#", "G#", "B", "E", "G#"], ["A", "G#", "C#", "B"], ["A", "C#", "G#", "B"]],
-  "Aadd9": [["E", "A", "E", "B", "C#", "E"], ["A", "A", "C#", "B", "E"], ["A", "E", "A", "B", "E"], ["A", "E", "B", "C#", "E"]],
-  "A7#9": [["A", "E", "G", "C#", "E", "C"]],
-  "a11": [["C#", "E", "B", "D", "G"], ["A", "C#", "G", "A", "D"]],
-  "am11 a.k.a A Minor 11 and  A -11": [["G#", "B", "F#", "B", "C#", "F#"], ["G#", "B", "F#", "B", "C#"], ["G#", "B", "F#", "A#", "C#", "F#"], ["G#", "B", "F#", "A#", "C#"], ["A", "D", "G", "C", "E"], ["A", "D", "G", "C", "E", "A"], ["E", "A", "D", "G", "C"], ["A", "C", "G", "B", "D"]],
-  "A13": [["A", "G", "C#", "F#", "A"], ["A", "E", "G", "C#", "F#"]],
-  "Amaj13 a.k.a A Major 13 and  A ?13": [["E", "A", "E", "G#", "C#", "F#"], ["A", "E", "B", "C#", "F#"], ["A", "C#", "F#", "B", "E", "G#"], ["A", "G#", "C#", "F#", "B"]],
-  "Asus2": [["E", "A", "E", "A", "B", "E"], ["E", "A", "E", "B", "B", "E"], ["E", "B", "E", "A", "B", "E"]],
-  "Asus4": [["A", "E", "A", "D", "E"], ["E", "A", "E", "A", "D", "E"], ["A", "E", "A", "D", "E", "A"], ["A", "D", "E", "A"], ["A", "E", "A", "D"], ["E", "A", "D", "A", "D"]],
-  "A7sus4": [["E", "A", "E", "G", "D", "E"], ["A", "E", "G", "D", "G"], ["A", "E", "A", "D", "G"], ["A", "A", "D", "G", "D", "E"], ["E", "A", "E", "A", "D", "G"], ["A", "E", "D", "G"], ["A", "E", "G", "D", "E", "A"], ["E", "A", "D", "G"], ["A", "E", "G", "D"]],
-  "A9sus4": [["A", "G", "B", "D"], ["E", "A", "D", "G", "B"], ["A", "D", "G", "B", "E"]],
-  "Adim a.k.a A Dimished and  A o": [["A", "D#", "A", "C"]],
-  "Am7b5 a.k.a A Half-Dimished and  A ?": [["D#", "A", "C", "G"], ["A", "G", "C", "D#"], ["A", "D#", "G", "C", "G"], ["A", "D#", "G", "C"]],
-  "Adim7 a.k.a A Dimished 7th and  A o7": [["D#", "A", "C", "F#"], ["A", "D#", "A", "C", "F#"], ["A", "F#", "C", "D#"], ["A", "D#", "A", "C", "F#", "A"], ["A", "D#", "F#", "C"]],
-  "Aaug": [["A", "F", "A", "C#", "F"]],
-  "A/C#(A chord with C# in the bass)": [["C#", "A", "C#", "E", "A"]],
-  "A/E(A chord with E in the bass)": [["E", "A", "E", "A", "C#", "E"]],
-  "A/G#(A chord with G# in the bass)": [["G#", "C#", "E", "A"]],
-  "A/G(A chord with G in the bass)": [["G", "A", "E", "A", "C#", "E"]],
-  "A/B(A chord with B in the bass)": [["E", "A", "E", "B", "C#", "E"], ["A", "A", "C#", "B", "E"], ["B", "E", "A", "C#", "E"]],
-  "A# Major": [["A#", "F", "A#", "D", "F"], ["A#", "F", "A#", "D", "F", "A#"], ["D", "A#", "D", "F"], ["F", "A#", "F", "A#", "D", "F"], ["A#", "D", "F", "A#", "D"], ["F", "A#", "D", "A#"], ["D", "A#", "F", "A#"]],
-  "A#m a.k.a A# Minor and  A# -": [["A#", "F", "A#", "C#", "F"], ["C#", "F", "A#", "C#"], ["F", "A#", "F", "A#", "C#", "F"], ["F", "C#", "F", "A#"], ["C#", "F", "A#", "F"], ["A#", "F", "A#", "C#", "F", "A#"], ["A#", "C#", "F", "C#"]],
-  "A#7": [["F", "A#", "D", "G#"], ["A#", "F", "G#", "D", "F"], ["A#", "F", "A#", "D", "G#"], ["G#", "F", "A#", "D"], ["A#", "F", "G#", "D", "F", "A#"], ["A#", "F", "D", "G#"], ["F", "A#", "F", "G#", "D"]],
-  "A#m7 a.k.a A# Minor 7 and  A# -7": [["A#", "F", "G#", "C#", "F"], ["F", "A#", "F", "G#", "C#", "F"], ["A#", "F", "G#", "C#", "G#"], ["F", "A#", "C#", "G#"], ["G#", "C#", "F", "A#"], ["A#", "G#", "C#", "F"], ["A#", "F", "G#", "C#", "G#", "A#"]],
-  "A#maj7 a.k.a A# Major 7 and  A# ?7": [["A#", "F", "A", "D"], ["A#", "F", "A", "D", "F"], ["A#", "A", "D", "F"], ["F", "A#", "D", "A"], ["A#", "D", "F", "A"]],
-  "A# m#7 (A#mM7) a.k.a A# Minor Sharp 7 and  A# Minor, Major 7": [["A#", "F", "A", "C#", "F"], ["F", "A#", "C#", "A"], ["A#", "C#", "F", "A"], ["A#", "F", "A", "C#", "F", "A#"], ["A#", "A", "C#", "F"], ["A#", "F", "A", "C#"]],
-  "A#7b5 a.k.a A# 7 Flat 5)": [["A#", "G#", "D", "E"], ["A#", "D", "G#", "D", "E"], ["A#", "E", "G#", "D"]],
-  "A#7#5": [["A#", "G#", "D", "F#"], ["A#", "F#", "G#", "D"]],
-  "A#m7b5 a.k.a A# Half-Dimished and  A# ?": [["A#", "G#", "C#", "E"], ["A#", "E", "G#", "C#", "G#", "A#"], ["A#", "E", "G#", "C#"]],
-  "A#7b9": [["A#", "D", "G#", "B"]],
-  "A#b5": [["A#", "E", "A#", "D"]],
-  "A#5 Power Chord": [["A#", "F", "A#", "G", "B", "E"]],
-  "A#6": [["A#", "F", "A#", "D", "G"], ["A#", "G", "D", "F"], ["A#", "D", "G", "D", "F"], ["A#", "D", "F", "A#", "D", "G"], ["G", "D", "F", "A#"], ["A#", "F", "D", "G", "A#"]],
-  "A#m6": [["A#", "F", "G", "C#"], ["A#", "F", "A#", "C#", "G", "A#"], ["A#", "F", "C#", "G"], ["A#", "G", "C#", "F"], ["C#", "A#", "F", "G"], ["G", "C#", "F", "A#"]],
-  "A#69": [["A#", "D", "G", "C", "F"], ["A#", "F", "C", "D", "G"], ["A#", "C", "F", "A#", "D", "G"], ["D", "G", "C", "F", "A#"], ["A#", "F", "D", "G", "C"]],
-  "A#9": [["F", "A#", "D", "G#", "C", "F"], ["A#", "D", "G#", "C", "F"], ["G#", "C", "D", "A#"], ["A#", "G#", "C", "D"], ["D", "G#", "C", "F", "A#"], ["A#", "F", "G#", "D", "F", "C"], ["A#", "D", "G#", "C"]],
-  "A#9b5": [["A#", "D", "G#", "C", "E"], ["D", "G#", "C", "E", "A#"], ["E", "A#", "D", "G#", "C"]],
-  "A#9#5": [["A#", "D", "G#", "C", "F#"], ["A#", "G#", "D", "F#", "C"], ["D", "G#", "C", "F#", "A#", "D"]],
-  "A#m9 a.k.a A# Minor 9 and  A# -9": [["C#", "F", "C"], ["C#", "G#", "C", "F", "A#"], ["A#", "F", "G#", "C#", "G#", "C"], ["A#", "G#", "C#", "F", "C"], ["A#", "C#", "G#", "C"], ["C#", "A#", "F", "G#", "C"]],
-  "A#maj9 a.k.a A# Major 9 and  A# ?9": [["A#", "D", "A", "C", "F"], ["A#", "F", "C", "D", "A"], ["D", "A#", "C", "F", "A"], ["A#", "A", "D", "C"]],
-  "A#add9": [["F", "A#", "D", "A#", "C", "F"]],
-  "A#7#9": [["A#", "F", "G#", "D", "F", "C#"]],
-  "a#11": [["A#", "D", "G#", "A#", "D#"]],
-  "a#m11 a.k.a A# Minor 11 and  A# -11": [["A#", "C#", "G#", "C#", "D#", "G#"], ["A#", "D#", "G#", "C#", "F"], ["A#", "G#", "C#", "D#"], ["F", "A#", "D#", "G#", "C#"], ["A#", "C#", "G#", "C", "D#"]],
-  "A#13": [["A#", "D", "G#", "D", "G"]],
-  "A#maj13 a.k.a A# Major 13 and  A# ?13": [["A#", "A", "D", "G"], ["A#", "D", "G", "C", "F", "A"], ["A#", "A", "D", "G", "C"], ["A#", "D", "G", "A", "D"]],
-  "A#sus2": [["F", "A#", "F", "A#", "C", "F"]],
-  "A#sus4": [["F", "A#", "D#", "F"], ["F", "A#", "D#", "A#", "D#", "F"], ["F", "A#", "D#", "A#"], ["A#", "F", "A#", "D#", "F", "A#"], ["A#", "D#", "F", "A#"], ["F", "A#", "D#", "A#", "D#"]],
-  "A#7sus4": [["A#", "F", "G#", "D#", "F"], ["F", "A#", "D#", "G#"], ["F", "D#", "G#", "A#"], ["A#", "F", "G#", "D#", "F", "A#"], ["A#", "G#", "D#", "F"]],
-  "A#9sus4": [["A#", "D#", "G#", "C", "F"], ["A#", "G#", "C", "D#"], ["A#", "F", "G#", "D#", "F", "C"]],
-  "A#dim a.k.a A# Dimished and  A# o": [["A#", "E", "A#", "C#"]],
-  "A#m7b5 a.k.a A# Half-Dimished and  A# ?": [["A#", "G#", "C#", "E"], ["A#", "E", "G#", "C#", "G#", "A#"], ["A#", "E", "G#", "C#"]],
-  "A#dim7 a.k.a A# Dimished 7th and  A# o7": [["E", "A#", "C#", "G"], ["A#", "E", "G", "C#"], ["A#", "G", "C#", "E"], ["A#", "E", "A#", "C#", "G", "A#"]],
-  "A#aug": [["F#", "A#", "D", "A#", "D", "F#"]],
-  "A#/D(Ax chord with D in the bass)": [["D", "A#", "D", "F"]],
-  "A#/F(Ax chord with F in the bass)": [["F", "A#", "F", "A#", "D", "F"]],
-  "A#/A(Ax chord with A in the bass)": [["A", "F", "A#", "D", "F"]],
-  "A#/G#(Ax chord with G# in the bass)": [["G#", "D", "F", "A#"]],
-  "A#/C(Ax chord with C in the bass)": [["C", "D", "A#", "D", "F"]],
-  "Bb Major": [["Bb", "F", "Bb", "D", "F"], ["F", "Bb", "F", "Bb", "D", "F"], ["D", "Bb", "D", "F"], ["Bb", "F", "Bb", "D", "F", "Bb"]],
-  "Bbm a.k.a Bb Minor and  Bb -": [["F", "Bb", "F", "Bb", "Db", "F"], ["Bb", "F", "Bb", "Db", "F"]],
-  "Bb7": [["F", "Bb", "D", "Ab"], ["Bb", "F", "Ab", "D", "F"]],
-  "Bbm7 a.k.a Bb Minor 7 and  Bb -7": [["Bb", "F", "Ab", "Db", "F"]],
-  "Bbmaj7 a.k.a Bb Major 7 and  Bb ?7": [["Bb", "F", "A", "D"], ["F", "Bb", "F", "A", "D", "F"]],
-  "Bb m#7 (BbmM7) a.k.a Bb Minor Sharp 7 and  Bb Minor, Major 7": [["Bb", "F", "A", "Db", "F"], ["F", "Bb", "Db", "A"], ["Bb", "Db", "F", "A"], ["Bb", "F", "A", "Db", "F", "Bb"], ["Bb", "A", "Db", "F"], ["Bb", "F", "A", "Db"]],
-  "Bb7b5 a.k.a Bb 7 Flat 5)": [["Bb", "Ab", "D", "E"], ["Bb", "E", "Ab", "D"], ["Bb", "D", "Ab", "D", "E"]],
-  "Bb7#5": [["Bb", "Ab", "D", "Gb"], ["Bb", "Gb", "Ab", "D"]],
-  "Bbm7b5 a.k.a Bb Half-Dimished and  Bb ?": [["Bb", "Ab", "Db", "E"], ["Bb", "E", "Ab", "Db", "Ab", "Bb"], ["Bb", "E", "Ab", "Db"]],
-  "Bb7b9": [["Bb", "D", "Ab", "B"]],
-  "Bbb5": [["Bb", "E", "Bb", "D"]],
-  "Bb5 Power Chord": [["Bb", "F", "Bb"]],
-  "Bb6": [["F", "Bb", "D", "G"], ["G", "D", "F", "Bb", "D", "G"], ["Bb", "G", "D", "F"]],
-  "Bbm6": [["Bb", "F", "G", "Db"], ["Bb", "F", "Bb", "Db", "G", "Bb"], ["Bb", "F", "Db", "G"], ["Bb", "G", "Db", "F"], ["Db", "Bb", "F", "G"], ["G", "Db", "F", "Bb"]],
-  "Bb69": [["Bb", "D", "G", "C", "F"], ["Bb", "F", "C", "D", "G"], ["Bb", "C", "F", "Bb", "D", "G"], ["D", "G", "C", "F", "Bb"], ["Bb", "F", "D", "G", "C"]],
-  "Bb9": [["Bb", "F", "Ab", "D", "F", "C"], ["F", "Bb", "D", "Ab", "C", "F"], ["Ab", "C", "D", "Bb"], ["Bb", "D", "Ab", "C", "F"], ["Bb", "Ab", "C", "D"], ["Bb", "D", "Ab", "C"], ["D", "Ab", "C", "F", "Bb"]],
-  "Bb9b5": [["Bb", "D", "Ab", "C", "E"], ["D", "Ab", "C", "E", "Bb"], ["E", "Bb", "D", "Ab", "C"]],
-  "Bb9#5": [["Bb", "D", "Ab", "C", "Gb"], ["Bb", "Ab", "D", "Gb", "C"], ["D", "Ab", "C", "Gb", "Bb", "D"]],
-  "Bbm9 a.k.a Bb Minor 9 and  Bb -9": [["Db", "F", "C"], ["Db", "Ab", "C", "F", "Bb"], ["Bb", "F", "Ab", "Db", "Ab", "C"], ["Bb", "Ab", "Db", "F", "C"], ["Bb", "Db", "Ab", "C"], ["Db", "Bb", "F", "Ab", "C"]],
-  "Bbmaj9 a.k.a Bb Major 9 and  Bb ?9": [["C", "F", "Bb", "D", "A"], ["Bb", "D", "A", "C", "F"], ["Bb", "F", "C", "D", "A"], ["D", "Bb", "C", "F", "A"], ["Bb", "A", "D", "C"]],
-  "Bbadd9": [["F", "Bb", "D", "Bb", "C", "F"]],
-  "Bb7#9": [["Bb", "F", "Ab", "D", "F", "Db"]],
-  "bb11": [["Bb", "F", "Ab", "Eb", "Ab", "Bb"], ["Bb", "D", "Ab", "Bb", "Eb"]],
-  "bbm11 a.k.a Bb Minor 11 and  Bb -11": [["Bb", "Db", "Ab", "Db", "Eb", "Ab"]],
-  "Bb13": [["Bb", "D", "Ab", "D", "G"]],
-  "Bbmaj13 a.k.a Bb Major 13 and  Bb ?13": [["Bb", "A", "D", "G"], ["Bb", "D", "G", "C", "F", "A"], ["Bb", "A", "D", "G", "C"], ["Bb", "D", "G", "A", "D"]],
-  "Bbsus2": [["F", "Bb", "C", "F"]],
-  "Bbsus4": [["F", "Bb", "Eb", "F"], ["F", "Bb", "Eb", "Bb", "Eb", "F"], ["F", "Bb", "Eb", "Bb"], ["Bb", "F", "Bb", "Eb", "F", "Bb"], ["Bb", "Eb", "F", "Bb"], ["F", "Bb", "Eb", "Bb", "Eb"]],
-  "Bb7sus4": [["Bb", "F", "Ab", "Eb", "F"], ["F", "Bb", "Eb", "Ab"], ["F", "Eb", "Ab", "Bb"], ["Bb", "F", "Ab", "Eb", "F", "Bb"], ["Bb", "Ab", "Eb", "F"]],
-  "Bb9sus4": [["Bb", "Ab", "C", "Eb"], ["Bb", "Eb", "Ab", "C", "F"], ["Bb", "F", "Ab", "Eb", "F", "C"]],
-  "Bbdim a.k.a Bb Dimished and  Bb o": [["Bb", "E", "Bb", "Db"]],
-  "Bbm7b5 a.k.a Bb Half-Dimished and  Bb ?": [["Bb", "Ab", "Db", "E"], ["Bb", "E", "Ab", "Db", "Ab", "Bb"], ["Bb", "E", "Ab", "Db"]],
-  "Bbdim7 a.k.a Bb Dimished 7th and  Bb o7": [["Bb", "E", "G", "Db", "E"], ["E", "Bb", "Db", "G"]],
-  "Bbaug": [["Gb", "Bb", "D", "Bb", "D", "Gb"]],
-  "Bb/D(Bb chord with D in the bass)": [["D", "Bb", "D", "F"]],
-  "Bb/F(Bb chord with F in the bass)": [["F", "Bb", "F", "Bb", "D", "F"]],
-  "Bb/A(Bb chord with A in the bass)": [["A", "F", "Bb", "D", "F"]],
-  "Bb/Ab(Bb chord with Ab in the bass)": [["Ab", "D", "F", "Bb"]],
-  "Bb/C(Bb chord with C in the bass)": [["C", "D", "Bb", "D", "F"]],
-  "B Major": [["B", "F#", "B", "D#", "F#"], ["B", "F#", "B", "D#", "F#", "B"], ["F#", "B", "F#", "B", "D#", "F#"], ["B", "D#", "F#", "B", "D#"], ["F#", "B", "D#", "B"], ["D#", "B", "F#", "B"], ["F#", "B", "F#", "B", "D#"]],
-  "Bm a.k.a B Minor and  B -": [["B", "F#", "B", "D", "F#"], ["F#", "B", "F#", "B", "D", "F#"], ["D", "B", "D", "F#"], ["D", "F#", "B", "D"], ["D", "F#", "B", "F#"], ["B", "F#", "B", "D", "F#", "B"], ["D", "B", "F#", "B"]],
-  "B7": [["B", "D#", "A", "B", "F#"], ["A", "D#", "A", "B", "F#"], ["B", "F#", "A", "D#", "F#"], ["F#", "B", "F#", "A", "D#", "F#"], ["B", "F#", "B", "D#", "A"], ["B", "A", "D#", "F#"], ["B", "F#", "A", "D#", "F#", "B"], ["B", "F#", "A", "D#", "A", "B"]],
-  "Bm7 a.k.a B Minor 7 and  B -7": [["B", "F#", "A", "D", "F#"], ["A", "F#", "B", "D", "F#"], ["B", "D", "A", "B", "F#"], ["B", "D", "A", "D", "F#"], ["D", "A", "B", "F#"], ["A", "F#", "B", "D"], ["F#", "B", "D", "A"], ["B", "A", "D", "F#"], ["B", "F#", "A", "D", "A", "B"]],
-  "Bmaj7 a.k.a B Major 7 and  B ?7": [["B", "F#", "A#", "D#"], ["F#", "B", "D#", "A#", "B"], ["F#", "B", "F#", "A#", "D#", "F#"], ["D#", "F#", "B", "F#", "A#"], ["F#", "B", "D#", "A#"], ["B", "D#", "F#", "A#"], ["B", "A#", "D#", "F#"]],
-  "B m#7 (BmM7) a.k.a B Minor Sharp 7 and  B Minor, Major 7": [["B", "D", "A#", "B", "F#"], ["B", "F#", "A#", "D"], ["B", "A#", "D", "F#"], ["F#", "B", "D", "A#"], ["B", "D", "F#", "A#"], ["B", "F#", "A#", "D", "F#", "B"]],
-  "B7b5 a.k.a B 7 Flat 5)": [["B", "A", "D#", "F"], ["B", "F", "A", "D#"]],
-  "B7#5": [["B", "D#", "A", "B", "G"], ["B", "G", "A", "D#"], ["B", "A", "D#", "G"]],
-  "Bm7b5 a.k.a B Half-Dimished and  B ?": [["F", "B", "F", "A", "D", "F"], ["B", "D", "A", "B", "F"], ["D", "A", "B", "F"], ["B", "A", "D", "F"], ["B", "F", "A", "D"], ["B", "F", "A", "D", "A", "B"]],
-  "B7b9": [["B", "D#", "A", "C", "F#"]],
-  "Bb5": [["B", "F", "B", "D#"]],
-  "B5 Power Chord": [["B", "F#", "B"]],
-  "B6": [["F#", "B", "D#", "G#"], ["F#", "B", "D#", "G#", "B"], ["B", "G#", "D#", "F#"], ["B", "F#", "B", "D#", "G#"], ["D#", "G#", "B", "F#"], ["B", "F#", "D#", "G#", "B"]],
-  "Bm6": [["F#", "B", "D", "G#"], ["B", "G#", "D", "F#"], ["B", "F#", "G#", "D"], ["B", "F#", "D", "G#"], ["D", "G#", "B", "F#", "B"], ["B", "G#", "D", "F#", "B"], ["B", "F#", "B", "D", "G#", "B"]],
-  "B69": [["B", "D#", "G#", "C#", "F#"], ["B", "F#", "C#", "D#", "G#"], ["B", "C#", "F#", "B", "D#", "G#"], ["D#", "G#", "C#", "F#", "B"], ["B", "F#", "D#", "G#", "C#"]],
-  "B9": [["B", "F#", "A", "D#", "F#", "C#"], ["B", "D#", "A", "C#", "F#"], ["A", "C#", "D#", "B"], ["B", "A", "C#", "D#"], ["B", "D#", "A", "C#"], ["D#", "A", "C#", "F#", "B"]],
-  "B9b5": [["B", "D#", "A", "C#", "F"], ["F", "B", "D#", "A", "C#"]],
-  "B9#5": [["B", "D#", "A", "C#", "G"], ["B", "A", "D#", "G", "C#"], ["D#", "A", "C#", "G", "B", "D#"]],
-  "Bm9 a.k.a B Minor 9 and  B -9": [["B", "D", "A", "C#", "F#"], ["D", "A", "C#", "F#"], ["D", "A", "C#", "F#", "B"], ["B", "F#", "A", "D", "A", "C#"], ["B", "A", "D", "F#", "C#"], ["B", "D", "A", "C#"], ["D", "B", "F#", "A", "C#"]],
-  "Bmaj9 a.k.a B Major 9 and  B ?9": [["B", "D#", "A#", "C#", "F#"], ["B", "F#", "C#", "D#", "A#"], ["B", "D#", "A#", "C#", "F#", "A#"], ["B", "A#", "D#", "C#"], ["B", "D#", "A#", "C#"]],
-  "Badd9": [["B", "F#", "B", "C#", "F#"]],
-  "B7#9": [["B", "D#", "A", "D"], ["B", "F#", "A", "D#", "F#", "D"]],
-  "b11": [["B", "F#", "B", "D#", "B", "E"], ["B", "D#", "A", "B", "E"], ["B", "D#", "A", "C#", "E"]],
-  "bm11 a.k.a B Minor 11 and  B -11": [["B", "D", "A", "B", "E"], ["B", "D", "A", "C#", "E"], ["B", "D", "A", "D", "E"], ["B", "E", "A", "D", "F#"], ["B", "E", "A", "D", "F#", "B"], ["F#", "B", "E", "A", "D"]],
-  "B13": [["B", "D#", "A", "B", "G#"], ["B", "F#", "A", "D#", "G#"]],
-  "Bmaj13 a.k.a B Major 13 and  B ?13": [["B", "A#", "D#", "G#"], ["B", "D#", "G#", "C#", "F#", "A#"], ["B", "D#", "G#", "A#", "D#"]],
-  "Bsus2": [["C#", "F#", "B", "F#"], ["F#", "B", "C#", "F#"]],
-  "Bsus4": [["F#", "B", "E", "F#"], ["F#", "B", "E", "B", "E", "F#"], ["F#", "B", "E", "B"], ["B", "F#", "B", "E", "F#", "B"], ["B", "E", "F#", "B"], ["F#", "B", "E", "B", "E"]],
-  "B7sus4": [["A", "F#", "B", "B", "E"], ["B", "F#", "A", "E", "F#"], ["B", "E", "A", "B", "F#"], ["F#", "B", "F#", "A", "E", "F#"], ["F#", "B", "E", "A"], ["B", "F#", "A", "E", "F#", "B"], ["F#", "E", "A", "B"]],
-  "B9sus4": [["B", "E", "A", "C#", "F#"], ["B", "A", "C#", "E"], ["F#", "B", "E", "A", "C#"]],
-  "Bdim a.k.a B Dimished and  B o": [["B", "F", "B", "D"], ["B", "D", "F"]],
-  "Bm7b5 a.k.a B Half-Dimished and  B ?": [["F", "B", "F", "A", "D", "F"], ["B", "D", "A", "B", "F"], ["D", "A", "B", "F"], ["B", "A", "D", "F"], ["B", "F", "A", "D"], ["B", "F", "A", "D", "A", "B"]],
-  "Bdim7 a.k.a B Dimished 7th and  B o7": [["D", "G#", "B", "F"], ["F", "B", "D", "G#"], ["B", "F", "G#", "D"], ["B", "G#", "D", "F"], ["B", "F", "B", "D", "G#", "B"]],
-  "Baug": [["B", "D#", "G", "B"]],
-  "B/D#(B chord with D# in the bass)": [["D#", "B", "D#", "F#"]],
-  "B/F#(B chord with F# in the bass)": [["F#", "B", "F#", "B", "D#", "F#"]],
-  "B/A#(B chord with A# in the bass)": [["A#", "F#", "B", "D#"]],
-  "B/A(B chord with A in the bass)": [["A", "D#", "F#", "B"]],
-  "B/C#(B chord with C# in the bass)": [["C#", "F#", "B", "D#", "B"]]
+const debug = false; //Enable/disable debug
+const defaultSet = { //vars}
+  notes: { //1-based string, 1st string highest
+    6: ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E'],
+    5: ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', "A"],
+    4: ['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D'],
+    3: ['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G'],
+    2: ['B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
+    1: ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E'],
+  },
+  noteMarkers: {
+    6: [null, null, null, null, null, null, null, null, null, null, null, null, null],
+    5: [null, null, null, null, null, null, null, null, null, null, null, null, null],
+    4: [null, null, null, null, null, null, null, null, null, null, null, null, null],
+    3: [null, null, null, null, null, null, null, null, null, null, null, null, null],
+    2: [null, null, null, null, null, null, null, null, null, null, null, null, null],
+    1: [null, null, null, null, null, null, null, null, null, null, null, null, null],
+  },
+  octaves: {
+    6: ['2', '2', '2', '2', '2', '2', '2', '2', '3', '3', '3', '3', '3', '3', '3', '3', '3'],
+    5: ['2', '2', '2', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '4', '4'],
+    4: ['3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '4', '4', '4', '4', '4', '4', '4'],
+    3: ['3', '3', '3', '3', '3', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4'],
+    2: ['3', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '5', '5', '5', '5'],
+    1: ['4', '4', '4', '4', '4', '4', '4', '4', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+  },
+  options: '#options',
+  messageBox: '#message',
+  controls: '#controls',
+  guitarNeck: '.guitar-neck',
+  strings: ['E', 'a', 'd', 'g', 'b', 'e'],
+  message: 'Guitar Fretboard Trainer',
+  active: false,
+  activeNote: ''
+};
+
+const tips = [
+  "Melodic Phrasing: <span class='highlighted'>Question Answer Format</span>",
+  "Melodic Line: <span class='highlighted'>Scale Fragment</span>",
+  "Melodic Line: <span class='highlighted'>Sequencing</span>",
+  "Melodic Embellishment: <span class='highlighted'>Add slurs</span>",
+  "Melodic Embellishment: <span class='highlighted'>Add slides</span>",
+  "Melodic Embellishment: <span class='highlighted'>Add trills</span>",
+  "Melodic Embellishment: <span class='highlighted'>Add grace notes</span>",
+  "Melodic Embellishment: <span class='highlighted'>Add vibrato</span>",
+  "Harmonic Embellishment: <span class='highlighted'>Add <a href='https://musictheory.pugetsound.edu/mt21c/Suspension.html' target='_blank'> suspension</a></span>",
+  "Harmonic Embellishment: <span class='highlighted'>Add <a href='https://www.harmony.org.uk/book/voice_leading/appoggiatura.htm' target='_blank'> appogiatura</a></span>",
+  "Harmonic Embellishment: <span class='highlighted'>Add <a href='https://musictheory.pugetsound.edu/mt21c/Anticipation.html' target='_blank'> anticipation</a></span>",
+  "Musicality: <span class='highlighted'>Play in Time!</span>",
+  "Musicality: <span class='highlighted'>Apply dynamics</span>",
+  "Musicality: <span class='highlighted'>Mix thick voice melody and thin voice melody</span>",
+  "Accompaniment:<span class='highlighted'> Block Chords</span>",
+  "Accompaniment: <span class='highlighted'>Rolled Chords</span>",
+  "Accompaniment: <span class='highlighted'>Alberti Bass</span>",
+  "Accompaniment: <span class='highlighted'>Break Chord partially</span>",
+  "Accompaniment: <span class='highlighted'>Break Chord partially</span>",
+  "Rhythmic Embellishment: <span class='highlighted'>Add smaller notes</span>",
+  "Generic: <span class='highlighted'>Add strumming</span>",
+  "Generic: <span class='highlighted'>Try Rest Stroke</span>",
+  "Generic: <span class='highlighted'>R E L A X!</span>",
+]
+
+function chordTonesForHarmony(harmony, key) {
+  if (!key) {
+    const i = ['#', 'b'].includes(harmony.substr(1, 1)) ? 2 : 1
+    const name = harmony.substr(0, i)
+    const allAfterName = harmony.substr(i)
+    return chordPatterns[allAfterName] && chordPatterns[allAfterName](notesInScale(majorScales, name))
+  }
+  let chordTones
+  if (!romanToInt(harmony)) {
+    harmony = harmony.replaceAll("m", "").replaceAll("o", "")
+    chordTones = key.chordTonesForNote(harmony).flat()
+  } else {
+    chordTones = key.chordTonesForRomanNumeral(harmony)
+  }
+  return chordTones;
 }
+
+const Fretboard = function () {
+  this.init = function (defaults) {
+    this.active = defaults.active;
+    this.notes = defaults.notes;
+    this.options = defaults.options;
+    this.messageBox = defaults.messageBox;
+    this.controls = defaults.controls;
+    this.guitarNeck = defaults.guitarNeck;
+    this.strings = defaults.strings;
+    this.message = defaults.message;
+    this.activeNote = defaults.activeNote;
+    this.noteMarkers = defaults.noteMarkers;
+    this.activeKey = new Key('C')
+    this.melodyBeingPlayedInKey = null
+    this.melodyBeingPlayed = null
+    this.setHeader(this.message);
+
+    Object.keys(this.notes).forEach(str => {
+      for (let i = 0; i < this.notes[str].length; i++) {
+        this.showNote(str, i)
+      }
+      $(".note").css({opacity: 0}).hide()
+    })
+  };
+
+  this.chordPatterns = chordPatterns
+
+  this.notesInChord = (fullName) => {
+    let type = Object.keys(chordPatterns).sort(sortByLength).find(it => fullName.endsWith(it))
+    if (!type) type = "maj"
+    const chordSymbol = fullName.replace(type, "")
+    return fretboard.chordPatterns[type](notesInScale(majorScales, chordSymbol))
+  }
+
+  this.randomFretNumber = () => randomFromArray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+  const removeSomeNotes = (notes, duplicates) => {
+    const canBeRemoved = {}
+    duplicates.forEach(d => canBeRemoved[d] = true)
+    return notes.filter(it => {
+      const random_boolean = Math.random() < 0.5;
+      if (random_boolean && canBeRemoved[it.name]) {
+        canBeRemoved[it.name] = false
+        console.log("Removing ", it)
+        return null
+      }
+      return it
+    }).filter(it => it != null)
+  }
+
+  this.findChordNotesOnFretboard = (notes, position) => {
+    const bassNote = notes[0]
+    let bassString = null
+    const maxStretch = 4
+
+    const self = this;
+    const selectedNotesOnString = (str) => {
+      return self.notes[str].slice(position, position + maxStretch)
+    }
+
+    if (position === undefined || position === null) {
+      position = this.randomFretNumber()
+    }
+
+    bassString = [6, 5, 4, 3, 2].find(str => {
+      return selectedNotesOnString(str).indexOf(bassNote) >= 0
+    })
+    const noteIndexOnString = (noteName, str) => {
+      const p = position || 0
+      return self.notes[str].slice(p).indexOf(noteName) + position
+    }
+    let notesInChord = [{
+      name: bassNote,
+      string: bassString,
+      fret: noteIndexOnString(bassNote, bassString)
+    }]
+
+    const otherNotes = notes
+    const notesOnOtherStrings = () => {
+      const notes = []
+      let i = bassString - 1;
+      while (i > 0) {
+        const noteAvailableOnThisStr = otherNotes.find(it => selectedNotesOnString(i).indexOf(it) >= 0)
+        if (noteAvailableOnThisStr) notes.push({
+          name: noteAvailableOnThisStr,
+          string: i,
+          fret: noteIndexOnString(noteAvailableOnThisStr, i)
+        })
+        i = i - 1;
+      }
+      return notes
+    }
+
+    const others = notesOnOtherStrings()
+    const duplicates = findDuplicates(others.map(it => it.name).concat(bassNote))
+
+    notesInChord = notesInChord.concat(removeSomeNotes(others, duplicates))
+    return {
+      position: position,
+      notesInChord: notesInChord
+    }
+  }
+
+  const excludingLowerStrings = string => {
+    const excluded = []
+    for (let i = parseInt(string); i >= 1; i--) {
+      excluded.push(i)
+    }
+    return excluded
+  }
+
+  /**
+   * Harmony notes wil always be on strings above
+   * @param melodyNote ({string, fret})
+   * @param harmony e.g. I, IV etc
+   * @param key ({...Key})
+   */
+  this.findHarmonyNotesForMelodyNote = (melodyNote, harmony, key) => {
+    if (!harmony) return []
+    key = key || this.activeKey
+    const withinReach = (fretNote) => {
+      if (fretNote.fret === 0) return true
+      return Math.abs(fretNote.fret - melodyNote.fret) < 4;
+    }
+    let out = []
+
+    let cts = chordTonesForHarmony(harmony, key);
+    if (!cts.length) {
+      cts = chordTonesForHarmony(harmony)
+    }
+    cts.forEach(tone => {
+      out = out.concat(this.findNoteOnFretboard({name: tone}, excludingLowerStrings(melodyNote.string)).filter(it => withinReach(it)))
+    })
+    return out
+  }
+
+  this.getChords = (progression, musicKey) => {
+    return progression.split("-").map(it => it.trim()).map(it => this.getChord(it, musicKey)).map(it => ({
+      chord: it,
+      chordNotes: this.notesInChord(it.symbol + it.quality)
+    }))
+  }
+
+  this.chordsToPlay = []
+
+  /**
+   *
+   * @param chordNotes
+   * @returns e.g. [[{string: '6', fret: 12}]]
+   */
+  this.usefulChords = (chordNotes) => {
+    return cartesian(...chordNotes.map(it => this.findNoteOnFretboard(it)).filter(it => it.length > 0)).filter(it => combinations(it, 2).every(this.isPlayable)).filter(notes => {
+      const strs = notes.map(n => n.string)
+      return _.uniq(strs).length === strs.length
+    }).filter(it => it.length >= chordNotes.length)
+      .filter(uniqueByJsonRepresentation);
+  }
+
+  function openStrings(notes) { return notes.filter(n => ['E', 'A', 'D', 'G', 'B'].includes(n) ) }
+
+  this.isPlayable = it => it.map(x => x.fret).includes(0) || (Math.abs(it[0].fret - it[1].fret) <= 3)
+
+  /**
+   *
+   * @param chordName e.g. Cmaj
+   * @returns {T[]}
+   */
+  this.openChords = (chordName) => {
+    const notes = allChords[chordName].notes
+
+    const ret = []
+    _.flatMap(openStrings(notes), (v, i, a) => combinations(a, i + 1)).forEach(comb => {
+      const nonOpenNotes = _.difference(notes, comb)
+      const nons = []
+      nonOpenNotes.forEach(non => {
+        nons.push(fretboard.findNoteOnFretboard({name: non}))
+      })
+
+      const nonOpenNotesOnFretboard = cartesian(...nons)
+        .filter(it => combinations(it, 2).every(this.isPlayable))
+
+      nonOpenNotesOnFretboard.forEach(option => {
+        comb.map(n => fretboard.findNoteOnFretboard({name: n }).filter(it => it.fret === 0)).flat().forEach(openNote => {
+          ret.push([openNote].concat(option).flat())
+        })
+      })
+    })
+    return ret.filter(it => combinations(it, 2).every(this.isPlayable)).filter(notes => {
+      const strs = notes.map(n => n.string)
+      return _.uniq(strs).length === strs.length
+    }).filter(it => it.length > 2)
+      .filter(uniqueByJsonRepresentation)
+  }
+
+  /**
+   *
+   * @param note ({name, octave})
+   * @param excludedStrings
+   * @returns [*{string, fret}]
+   */
+  this.findNoteOnFretboard = (note, excludedStrings) => {
+    if (!note) return
+    const givenOctave = note.octave
+    excludedStrings = excludedStrings || []
+    excludedStrings = excludedStrings.map(it => it + "")
+    const strings = Object.keys(defaultSet.notes).reverse().filter(it => !excludedStrings.includes(it)) //1-6
+    const out = []
+    for (let i = 0; i < strings.length; i++) {
+      const string = strings[i]
+      const frets = defaultSet.notes[string]
+      for (let j = 0; j < frets.length; j++) {
+        let octaveMatches = true
+        if (givenOctave) octaveMatches = (defaultSet.octaves[string][j] + "" === givenOctave + "")
+        if (equalNotes(frets[j], note.name) && octaveMatches) {
+          out.push({string: string, fret: j})
+        }
+      }
+    }
+    return out
+  }
+
+  /**
+   *
+   * @param notes [*{string, fret}]
+   */
+  this.showOnlyTheseNotes = (notes, cls) => {
+    $('.note').hide().removeClass("highlight-as-harmony")
+
+    if (!notes) return
+    notes.forEach(it => {
+      this.showNote(it.string, it.fret, cls)
+    })
+  }
+
+  this.showRandomTip = () => {
+    $("#tips").html(randomFromArray(tips))
+  }
+
+  this.playProgression = (progression) => {
+    const prev = []
+    const self = this;
+    this.chordBeingPlayed = 0
+
+    if (window.osmds[0] && window.osmds[0].cursor) {
+      window.osmds[0].cursor.reset()
+      window.osmds[0].cursor.show()
+    }
+
+    this.chordsToPlay = this.getChords(progression, this.activeKey.name())
+    this.chordsToPlay.forEach(it => {
+      it['fretboardNotes'] = this.findChordNotesOnFretboard(it.chordNotes)
+      // Show chords on sheet music
+      // it['fretboardNotes'].notesInChord.forEach(n => window.mxml.addNoteToLastMeasure(n))
+      // window.mxml.addNoteToLastMeasure(it['fretboardNotes'].notesInChord[0])
+      // it['fretboardNotes'].notesInChord.slice(1).forEach(n => window.mxml.addNoteToLastMeasure(n, 'chord', it.chord.symbol, it.chord.romanNumeral))
+      // window.mxml.addRestToLastMeasure('half')
+    })
+
+    this.showRandomTip()
+
+    const stopThisSchedule = false
+    const lastMeasure = -1
+    schedule(window.mxml.notes(), 2, (note, idx) => {
+      const newMeasure = osmds[0].cursors[0].iterator.currentMeasureIndex
+      const currentMelodyNote = this.melodyBeingPlayedInKey.map(it => it.notes).flat()[idx]
+
+      log(this.findNoteOnFretboard(currentMelodyNote))
+
+      if (newMeasure > lastMeasure) {
+        // Get harmony notes
+
+      }
+
+      if (osmds[0].cursor.NotesUnderCursor().length > 0 && osmds[0].cursor.NotesUnderCursor()[0].isRest()) {
+        // Rest note
+      }
+      window.osmds[0].cursor.next()
+    }, x => {
+      this.playFlag = true;
+      // this.playProgression(progression)
+    }, x => (self.playFlag === false || stopThisSchedule === true))
+  }
+
+  this.stopProgression = () => {
+    this.playFlag = false
+  }
+
+  this.reset = function () {
+    this.init(defaultSet);
+    // $(this.guitarNeck).fadeOut(500);
+  }
+
+  this.setHeader = function (m) {
+    $(this.messageBox).text(this.message);
+  }
+
+  this.noteClicked = (string, fret, note) => {
+    const harmony = $("#diatonic-chords").find(".active").text().trim();
+    if (harmony === '') {
+      return
+    }
+    const notes = fretboard.findHarmonyNotesForMelodyNote({
+      string: string,
+      fret: fret,
+      note: note
+    }, harmony)
+    $(".note.highlight-as-harmony").css({opacity: 0}).hide()
+    $(".note").removeClass("highlight-as-harmony")
+
+    notes.forEach(it => {
+      const marker = fretboard.noteAt(it.string, it.fret)
+      if (marker) {
+        $(marker).addClass("highlight-as-harmony").css({opacity: 1}).show()
+      } else {
+        log("Note not found for ", it)
+      }
+    })
+  }
+
+  this.noteAt = (str, fret) => {
+    return this.noteMarkers[str][fret]
+  }
+
+  this.showNote = function (string, fret, cls) {
+    const note = this.notes[string][fret];
+    const ss = 7 - string;
+    let leftDist, bottomDist;
+    if (fret === 0) {
+      leftDist = -42.5;
+    } else {
+      leftDist = ((fret - 1) * 80) + 15;
+    }
+    if ((ss - 1) === 0) {
+      bottomDist = 0;
+    } else {
+      //var leftDist = left * 45;
+      bottomDist = (ss - 1) * 42.5;
+    }
+
+    if (this.noteMarkers[string][fret] === null) {
+      this.noteMarkers[string][fret] = $('<div>' + note + '</div>').addClass("note").data("string", string).data("fret", fret).data("note", note);
+      $('.guitar-neck').append(this.noteMarkers[string][fret]);
+      this.noteMarkers[string][fret].click(e => this.noteClicked(string, fret, note))
+    }
+
+    const noteMarker = this.noteMarkers[string][fret]
+
+    $(noteMarker).css('left', leftDist);
+    $(noteMarker).css('bottom', bottomDist);
+
+
+    $(noteMarker).css({opacity: 1}).show();
+  }
+
+};
+
+/**
+ *
+ * @param osmd OSMD object
+ * @returns {*[]}
+ */
+const getHtmlElementsForStaffNoteHeads = (osmd) => {
+  const result = []
+  const measureLists = osmd.graphic.measureList
+
+  let vfNoteId = 0
+  for (let a = 0; a < measureLists.length; a++) {
+    const measures = measureLists[a]
+    for (let i = 0; i < measures.length; i++) {
+      const measure = measures[i]
+      const staffEntries = measure.staffEntries
+      for (let j = 0; j < staffEntries.length; j++) {
+        const staff = staffEntries[j]
+        const voices = staff.graphicalVoiceEntries
+        for (let k = 0; k < voices.length; k++) {
+          const voice = voices[k]
+          const notes = voice.notes
+          for (let l = 0; l < notes.length; l++) {
+            const sourceNote = notes[l].sourceNote
+            const vfnotes = notes[l].vfnote
+            const vfnoteIndex = notes[l].vfnoteIndex
+            const vfpitch = notes[l].vfpitch
+
+            const noteHeadEl = $(vfnotes[0].attrs.el).find(".vf-notehead").toArray()[vfnoteIndex];
+            const lyricEntryWithId = Object.values(sourceNote.voiceEntry.lyricsEntries.table).map(Object.values).flat().find(it => it.text && it.text.startsWith("id="));
+            let id = null
+            if(lyricEntryWithId) {
+              id = lyricEntryWithId.text.slice(3)
+              id = number(id)
+              if (vfnotes[0].note_heads.length > 1) {
+                id = id - vfnotes[0].note_heads.length + vfnoteIndex + 1
+              }
+            }
+
+            result.push({
+              staveNoteEl: vfnotes[0].attrs.el, // vfnotes[1] must be equal to vfnoteIndex
+              noteHeadEl: noteHeadEl,
+              key: vfnotes[0].keys[vfnoteIndex], //Assuming ordered from below to up
+              pitch: vfpitch, //undefined for rests
+              sourceNote: sourceNote, //From sourceNote everything else can be reached e.g.: osmd.rules.GNote(x[43].sourceNote)
+              measureList: a,
+              measure: i,
+              voice: voice,
+              id: id,
+              vfNoteId: vfNoteId++
+            })
+          }
+        }
+      }
+    }
+  }
+  return result
+}
+
+function colorVoices(xml) {
+  const colors = {
+    "1": "#000000",
+    "2": "#000000",
+    "3": "#0d6efd",
+    "4": "#000000"
+  }
+  xml.find("note").each((i, e) => {
+    e = $(e)
+    const voice = e.find("voice").text()
+    if (voice)
+      e.find("notehead").attr("color", colors[voice])
+
+    if (e.find("notehead").length === 0) {
+      e.append($(`<notehead>normal</notehead>`, xml).attr("color", colors[voice]))
+    }
+  })
+}
+
+function highlightNonChordTones(xml, key) {
+  xml.find("note").each((i, e) => {
+    e = $(e)
+    let step = e.find("pitch>step").text()
+    const pitch = e.find("pitch");
+
+    if (pitch.find("alter").text() === '1') {
+      step += "#"
+    } else if (pitch.find("alter").text() === '-1') {
+      step += "b"
+    }
+
+    if (!key.contains(step)) {
+      e.find("notehead").text("diamond")
+      if (e.find("notehead").length === 0) {
+        e.append($(`<notehead>normal</notehead>`, xml).attr("color", colors[voice]))
+      }
+    }
+  })
+}
+
+/**
+ * Use OSMD internal details to find the screen position of measure. Position is relative to the OSMD page div
+ * @param measureNumber
+ * @param osmd
+ * @returns {{top, left: (number|*), width: null, height}}
+ */
+function getMeasurePosition(measureNumber, osmd) {
+  osmd = osmd || osmds[0]
+  const st = osmd.graphic.measureList[measureNumber][0].stave
+  const off = $(st.context.element).offset()
+  let w = null
+  if (st.end_x) w = st.end_x - st.start_x
+  else w = st.width
+  return {top: st.y, left: st.start_x, width: w, height: st.height}
+}
+
+function removeTechnicalDetails(xml) {
+  xml.find("technical").remove()
+  xml.find("direction").remove()
+}
+
+window.noteheadCache = {}
+
+function populateNoteheadData(osmd, jqueryXml) {
+  window.noteheadCache = {}
+  const result = getHtmlElementsForStaffNoteHeads(osmd)
+  let clefChange = jqueryXml.find("clef-octave-change").text()
+  if (clefChange) clefChange = parseInt(clefChange)
+
+  const accMap = {0: "#", 2: '', 1: 'b'}
+  result.forEach(it => {
+    let step = '', octave = ''
+    if(it.pitch) {
+      step = it.pitch[0].split("/")[0]
+      octave = it.pitch[0].split("/")[1]
+    }
+
+    step = step.replace("n", "").toUpperCase()
+    octave = parseInt(octave.trim())
+
+    if (clefChange) octave += clefChange
+    const accidental = (it.sourceNote.pitch && accMap[it.sourceNote.pitch.accidental]) || (it.pitch && it.pitch[1]) || ""
+    const duration = it.sourceNote.length.numerator + "/" + it.sourceNote.length.denominator
+    const voiceId = it.voice.parentVoiceEntry.parentVoice.voiceId
+    const $noteheadEl = $(it.noteHeadEl);
+    $noteheadEl.css({position: "absolute"})
+    const offset = $noteheadEl.offset()
+    const offtop = (offset && offset.top) || 0
+    const offleft = (offset && offset.left) || 0
+    const measurePos = getMeasurePosition(it.measureList, osmd)
+    const mtop = measurePos && measurePos.top
+
+    //TODO: use osmd.rules.NoteToGraphicalNoteMap for note data like name, octave, measure, voice etc, that will be more stable
+    const left = offset && Math.floor(offset.left);
+    $noteheadEl.data("name", step + accidental)
+      .data("octave", octave)
+      .data("duration", duration)
+      .data("voice", voiceId)
+      .data("measure", it.measureList)
+      .data("top", Math.floor( offtop - (mtop || 0) ))
+      .data("offsetTop", offtop)
+      .data("offsetLeft", offleft)
+      .data("left", left)
+      .data("right", Math.ceil(left + $noteheadEl.width()))
+      .data("id", it.id)
+  })
+
+  //Add horizontal line info
+  const yset = new Set()
+  const noteheads = $('.vf-notehead');
+  noteheads.toArray().map($).forEach(it => {
+    yset.add(it.data("top"))
+  })
+  let map = {}
+  const ylist = Array.from(yset)
+  ylist.sort();
+  ylist.forEach((e, i) => map[e] = i);
+  noteheads.toArray().map($).forEach((it, i) => {
+    noteheadCache[i] = {el: it, color: it.find("path").attr("fill")}
+    it.data("line", map[it.data("top")]).data("cacheIndex", i)
+  })
+
+  //Add vertical line info
+  const xset = new Set()
+  noteheads.toArray().map($).forEach(it => {
+    xset.add([it.data("left"), it.data("right"), it.data("measure")])
+  })
+  map = {}
+  const xlist = Array.from(xset)
+  xlist.sort((a, b) => a[0] - b[0]);
+  xlist.forEach((e, i) => map[e] = i);
+  noteheads.toArray().map($).forEach((it, i) => {
+    const l = it.data("left"), r = it.data("right"), m = it.data("measure")
+    let xId = -1
+    for (let j = 0; j < xlist.length; j++) {
+      const xn = xlist[j]
+      if(xn[2] === m && xn[0] <= l && l <= xn[1]) {
+        xId = j
+        break
+      }
+    }
+    if(xId >= 0) {
+      it.data("x", xId)
+    }
+  })
+}
+
+function hideIdTexts() {
+  $('text:contains("id=")').parent().css({visibility: 'hidden'})
+}
+
+function populateNoteNames() {
+  $('.note-name').remove()
+  $('.vf-notehead path').css({fill: 'none', stroke: 'black', strokeWidth: 1})
+
+  const poff = $('#osmdCanvasPage1').offset()
+  getNotesFromHtml().forEach(n => {
+    const $nn = $(`<span>${n.name}</span>`).addClass("note-name").css({position: 'absolute', left: n.offsetLeft - poff.left , top: n.offsetTop - poff.top -5, padding: 0})
+    $('#osmdCanvasPage1').append($nn)
+  })
+}
+
+function loadMainOSMD(musicXml, height,) {
+  const osmd = window.osmds[0];
+  //TODO: Guess it based on the lowest octave
+  osmd.EngravingRules.StaffHeight = height || 25.0
+
+  musicXml && mxml.loadXml(musicXml)
+  const jqueryXml = mxml.xml
+  // colorVoices(jqueryXml)
+  removeTechnicalDetails(jqueryXml)
+  // highlightNonChordTones(jqueryXml, fretboard.activeKey)
+
+  return osmd.load(mxml.toString()).then(it => {
+    osmd.render();
+    populateNoteheadData(osmd, jqueryXml);
+    hideIdTexts()
+    populateNoteNames()
+    return jqueryXml
+  });
+}
+
+
+function chordExtensions(chordName) {
+  chordName = normaliseChordName(chordName)
+  return ['7', '+9'].map(it => chordName + it).concat(chordName.endsWith("m") ? chordName + 'inMaj7' : chordName + 'maj7');
+}
+
+function usefulVersionsOfChord(chordName, fretboard) {
+  return allVersionsOfChord(chordName).map(chord => {
+    return chord.notesWithOctave.map((n, i) => ({
+      name: n[0],
+      octave: n[1],
+      type: 'quarter',
+      chord: i !== 0
+    }))
+  }).filter(it => fretboard.usefulChords(it).length > 0)
+    .toSorted((a, b) => fretboard.usefulChords(b).length - fretboard.usefulChords(a).length);
+}
+
+/**
+ *
+ * @param chordsOnFretboard e.g. [[{string: '6', fret: 12}]]
+ * @param fretboard
+ */
+function populateChordButtons(chordsOnFretboard, fretboard) {
+  let cnt = 1
+  const $chordNumbers = $('#chordNumbers');
+  $chordNumbers.html('')
+  chordsOnFretboard.forEach(it => {
+    const $cnBtn = $(`<span>${cnt}</span>`).addClass("chord-number-btn").data("notes", it).click(e => {
+      $('.chord-number-btn').removeClass("selected")
+      $cnBtn.addClass("selected")
+      fretboard.showOnlyTheseNotes(it)
+    })
+    if (it.find(x => x.fret === 0)) {
+      $cnBtn.addClass("open-chord")
+    }
+    cnt += 1
+    if(cnt % 30 === 0) {
+      $chordNumbers.append("<br/>")
+    }
+    $chordNumbers.append($cnBtn)
+  })
+
+  fretboard.showOnlyTheseNotes(chordsOnFretboard[0])
+}
+
+/*** Contollers ***/
+$(function () {
+  //Initiate obj
+  const fretboard = new Fretboard;
+
+  fretboard.init(defaultSet)
+  window.fretboard = fretboard;
+
+  function populateChordProgressions() {
+    $("select.progressions").html("")
+
+    const isMinor = fretboard.activeKey.isMinor()
+    const progressions = isMinor ? minorChordProgressions : majorChordProgressions
+    Object.keys(progressions).forEach(key => {
+      const $group = $('<optgroup></optgroup>').attr("label", key)
+      progressions[key].forEach(it => {
+        const displayHtml = it.displayHtml || it.displayText || it.data
+        $group.append($(`<option>${displayHtml}</option>`).attr("value", it.data))
+      })
+      $("select.progressions").append($group)
+    })
+    $('.progressions').select2({tags: true, theme: "classic"}).hide();
+  }
+
+  const $diatonic = $('#diatonic-chords');
+  const $neck = $('#guitar-neck')
+
+
+  function showDiatonicChords() {
+    $diatonic.html('').show()
+    const i = 0
+    const isMinor = fretboard.activeKey.isMinor()
+
+    fretboard.activeKey.chords().forEach((it, idx) => {
+      it = normaliseChordName(it)
+      let fifth = ''
+      const root = chordTonesForHarmony(it, fretboard.activeKey)[0]
+      fifth = normaliseChordName(new Key(root).chords()[4])
+
+      $diatonic.append($(`<li>
+            ${idx === 4 ? `<span class="chord extra"> ${getTritoneNote(root)}7</span>` : ''}
+            <span class="chord">${fifth} </span>
+            <span class="chord">${it} </span>
+        </li>`))
+    })
+    $($diatonic.find(".chord")[1]).addClass("active")
+  }
+
+  const $keyLabel = $('#keyLabel');
+
+  function populateKeyDetail(keyName) {
+    $keyLabel.text(keyName)
+    populateChordProgressions()
+    showDiatonicChords()
+  }
+
+  $keyLabel.click(e => {
+    const keyName = fretboard.activeKey.name();
+    const scale = getScale(keyName);
+
+    $('#scaleContainer').html('')
+    scale.forEach(n => {
+      $('#scaleContainer').append(`<span>${n}</span>`)
+    })
+
+    if (fretboard.activeKey.isMinor()) {
+      scale.slice(scale.length - 2).map(raiseNote).filter(it => it).forEach(n => {
+        $('#scaleContainer').append(`<span class="extra">${n}</span>`)
+      })
+    }
+  })
+
+  const $app = $('#app');
+
+  $diatonic.click(e => {
+    if ($(e.target).hasClass("chord")) {
+      $diatonic.find(".chord").removeClass("active")
+      $(e.target).addClass("active")
+    }
+  })
+
+  function minimizeCircleOfFifth() {
+    $app.animate({
+      width: 30,
+      height: 30
+    }, 2000, c => {
+      // console.log("Minimised")
+      $app.addClass("minimized")
+    })
+  }
+
+  function restoreCircleOfFifth() {
+    $app.animate({
+      width: 300,
+      height: 300
+    }, 2000, c => {
+      // console.log("Restored")
+      $app.removeClass("minimized")
+    })
+  }
+
+  function fixUI() {
+    const $frets = $(".fret");
+    const fret = n => $($frets[n - 1])
+    const fretOffset = n => fret(n).offset()
+
+    const $dots = $("ul.dots li").css({position: 'absolute'});
+    const dot = n => $($dots[n - 1])
+    const dotOffset = n => dot(n).offset()
+
+    dot(1).offset($.extend(dotOffset(1), {left: fretOffset(3).left + 30}))
+    dot(2).offset($.extend(dotOffset(2), {left: fretOffset(5).left + 30}))
+    dot(3).offset($.extend(dotOffset(3), {left: fretOffset(7).left + 30}))
+    dot(4).offset($.extend(dotOffset(4), {left: fretOffset(9).left + 30}))
+    dot(5).offset($.extend(dotOffset(5), {left: fretOffset(12).left + 30}))
+    dot(6).offset($.extend(dotOffset(6), {left: fretOffset(12).left + 30}))
+
+  }
+
+  function showKeyDetail(target, keyName) {
+    $("path.active").removeClass("active");
+
+    $(target).addClass("active");
+
+    const $keyDetail = $("#key-detail");
+    $keyDetail.animate({opacity: 1}, 3000, c => {
+    });
+
+    populateKeyDetail(keyName)
+    minimizeCircleOfFifth()
+
+    //Change key of melody
+    if (fretboard.melodyBeingPlayed) {
+      fretboard.melodyBeingPlayedInKey = melodyInContextOfKey(fretboard.melodyBeingPlayed, fretboard.activeKey)
+
+      mxml.transpose(fretboard.melodyBeingPlayedInKey)
+      loadMainOSMD(mxml.toString());
+    }
+  }
+
+  $('.cf-arcs').each((i, el) => {
+    $($(el).find("path")[1]).click(e => {
+      if ($app.hasClass("minimized")) {
+        restoreCircleOfFifth()
+        e.stopPropagation()
+        e.preventDefault()
+        return
+      }
+      let wanted = $(e.target).parent().next().next("text").text();
+      wanted = wanted.replaceAll("\n", "").replaceAll(" ", "")
+      console.log(`Lay out chords of key: ${wanted}`)
+      fretboard.activeKey = new Key(wanted)
+
+      showKeyDetail(e.target, wanted)
+    });
+    $($(el).find("path")[2]).click(e => {
+      if ($app.hasClass("minimized")) {
+        restoreCircleOfFifth()
+        e.stopPropagation()
+        e.preventDefault()
+        return
+      }
+      let wanted = $(e.target).parent().next().next("text").next("text").text();
+      wanted = wanted.replaceAll("\n", "").replaceAll(" ", "")
+      fretboard.activeKey = new Key(wanted)
+      console.log(`Lay out chords of key: ${wanted}`)
+      showKeyDetail(e.target, wanted)
+    })
+  })
+
+  window.osmds = []
+
+  function createOsmd(cntnr) {
+    const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(cntnr);
+    osmd.setOptions({
+      backend: "svg",
+      drawingParameters: "compacttight", // more compact spacing, less padding
+      drawTitle: false, // included in "compacttight"
+    });
+
+    window.osmds.push(osmd)
+  }
+
+  createOsmd("osmdContainer1")
+  // createOsmd("osmdContainer2")
+  // createOsmd("osmdContainer3")
+
+  function toggleFretboard() {
+    const $collapse2 = $('#collapse2');
+    $collapse2.toggle()
+    if ($collapse2.is(":visible")) {
+      $('#mainSheetMusic').removeClass('expanded')
+      $("#diatonic-chords").show()
+      $('#keyChartDialog').show()
+    } else {
+      $('#mainSheetMusic').addClass('expanded')
+      $("#diatonic-chords").hide()
+      $('#keyChartDialog').hide()
+    }
+  }
+
+  $('#toggleFretboardBtn').click(toggleFretboard)
+  $('#toggleKeyChartBtn').click(e => {
+    $('#keyChartDialog').toggle()
+  })
+
+  $('.chord-multiselect li').click(e => {
+    $(e.target).toggleClass("active")
+  });
+
+  populateKeyDetail('C')
+
+  $('#playProgressionBtn').click(e => {
+    fretboard.playFlag = true
+    fretboard.playProgression($('.progressions').select2('data')[0].element.value)
+    $('#playProgressionBtn').fadeTo('fast', 0)
+    $('#stopProgressionBtn').fadeTo('slow', 1)
+  })
+
+  $('#stopProgressionBtn').hide().click(e => {
+    fretboard.playFlag = false
+    $('#playProgressionBtn').fadeTo('slow', 1)
+    $('#stopProgressionBtn').fadeTo('fast', 0)
+  })
+
+
+  const playMp3 = (musicxml, key) => $.ajax({
+    type: "POST",
+    url: "http://localhost:5000/musicxml",
+    // The key needs to match your method's input parameter (case-sensitive).
+    data: JSON.stringify({key: key, musicxml: musicxml}),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (data) {
+      log(data);
+      const $audio = $('#melody-audio')
+      $audio.html('').append($(`<source>`).attr("src", "http://localhost:5000/mp3/" + data.name).attr('type', 'audio/mpeg'))
+      $audio[0].load();
+      $audio[0].play();
+    },
+    error: function (errMsg) {
+      log(errMsg);
+    }
+  });
+
+  const $osmdContainer1 = $('#osmdContainer1')
+
+  const sheetMusicClicked = e => {
+    const data = $(e.target).parents(".vf-notehead").data();
+    if (!data) return;
+    if (!Object.keys(data).length) {
+      populateNoteheadData(osmds[0], mxml.xml);
+    }
+    logJson("Notehead data", data)
+    const info = `${data.name}${data.octave}, ${durationType(data.duration)}=${data.duration}, voice:${data.voice}`
+    $('#note-information>.info').html(info)
+    $('#note-information').show()
+
+    if (data.id) {
+      const found = mxml.xml.find("note").toArray().find(it => $(it).text().indexOf("id=" + data.id) >= 0)
+      log(found)
+    }
+
+    const cursor = osmds[0].cursor;
+    cursor.show();
+    cursor.reset()
+
+    nTimes(data.measure, () => cursor.next())
+
+    const chordNotes = getNotesFromHtml().filter(it => it.measure === data.measure && it.x === data.x)
+
+    const usefulChordsOnFretboard = fretboard.usefulChords(chordNotes);
+
+    if (!usefulChordsOnFretboard.length) {
+      return
+    }
+
+    populateChordButtons(usefulChordsOnFretboard, fretboard);
+  }
+
+  $osmdContainer1.click(sheetMusicClicked);
+
+  $('#generateMelodyBtn').click(e => {
+    const melody = randomMelody()
+    window.mxml.reset()
+    fretboard.melodyBeingPlayed = melody;
+    log(melodyToSimpleString(fretboard.melodyBeingPlayed))
+
+    const melodyInKey = melodyInContextOfKey(melody, fretboard.activeKey)
+    melodyInKey.forEach(measure => mxml.addMeasure(measure.notes))
+    log(melodyToSimpleString(melodyInKey))
+    fretboard.melodyBeingPlayedInKey = melodyInKey;
+
+    const inversion = diatonicMelodicInversion(melody)
+    const inversionInKey = melodyInContextOfKey(inversion, fretboard.activeKey)
+    inversionInKey.forEach(measure => mxml.addMeasure(measure.notes))
+    log(melodyToSimpleString(inversion))
+    log(melodyToSimpleString(inversionInKey))
+
+    fretboard.melodyBeingPlayed = fretboard.melodyBeingPlayed.concat(inversion)
+    fretboard.melodyBeingPlayedInKey = fretboard.melodyBeingPlayedInKey.concat(inversionInKey);
+
+    playMp3(window.mxml.toString(), fretboard.activeKey.name())
+    loadMainOSMD(mxml.toString(), 10);
+    $('#playProgressionBtn').fadeTo('slow', 1)
+  })
+
+  function guessVoicesForMelody(xml) {
+    // Strategy - Melody in higher octave
+    // Strategy - Melody has most movement, and has most non-chord tones
+    // Determine key;
+  }
+
+  const extractMelodyFromXml = (xmlStr) => {
+    loadMusicFromXmlFile(xmlStr).then(xml => {
+      const noteheadData = getNotesFromHtml()
+      groupBy(noteheadData, it => it.measure + "-" + it.x, (k, v) => {
+        const melNote = v.toSorted((a, b) => a.line - b.line).find(it => it.name.length > 0)
+        if(melNote) {
+          melNote.melodyNote = true
+          if(melNote.id !== undefined) {
+            v.filter(vi => vi.name.length > 0 && vi.id !== melNote.id && vi.voice === melNote.voice).forEach(vi => vi.remove = true)
+            v.filter(vi => vi.name.length > 0 && vi.id !== melNote.id && vi.voice !== melNote.voice).forEach(vi => vi.convertToRest = true)
+          }
+        }
+      })
+
+      const notes = $(xml).find("note")
+      noteheadData.filter(it => it.id !== undefined).forEach(nhd => {
+        const $note = notes.filter((i, n) => $(n).find(`lyric>text`).text().trim() === 'id='+ nhd.id)
+        $note.find("chord").remove()
+        if(nhd.remove) {
+          $note.remove()
+          log(nhd.id, 'removed')
+        }
+        if(nhd.convertToRest) {
+          $note.find("pitch").remove()
+          $note.prepend($('<rest/>', xml))
+          log(nhd.id, 'converted to rest')
+        }
+        console.log(nhd.id, $note[0])
+      })
+
+      xml = mxml.serialiser.serializeToString(xml[0])
+      loadMainOSMD(xml)
+
+      // let modified = $($.parseXML(xml)).find("lyrics:contains('id=')").remove()
+      // log(mxml.serialiser.serializeToString(modified[0]))
+
+      fretboard.melodyBeingPlayedInKey = mxml.toArray().map(it => ({notes: it}))
+      fretboard.melodyBeingPlayed = melodyWithoutContextOfKey(fretboard.melodyBeingPlayedInKey, fretboard.activeKey)
+    })
+  }
+
+  const extractOuterVoicesFromXml = (xmlStr) => {
+    loadMusicFromXmlFile(xmlStr).then(xml => {
+      const noteheadData = getNotesFromHtml()
+      groupBy(noteheadData, it => it.measure + "-" + it.x, (k, v) => {
+        const sortedByLine = v.toSorted((a, b) => a.line - b.line).filter(it => it.name.length > 0)
+        sortedByLine.forEach((e, i) => {
+          if(i !== 0 && i !== sortedByLine.length - 1) {
+            e.remove = true
+          }
+        })
+      })
+
+      const notes = $(xml).find("note")
+      noteheadData.filter(it => it.id !== undefined).forEach(nhd => {
+        const $note = notes.filter((i, n) => $(n).find(`lyric>text`).text().trim() === 'id='+ nhd.id)
+        if(nhd.remove) {
+          $note.remove()
+          log(nhd.id, 'removed')
+        }
+        console.log(nhd.id, $note[0])
+      })
+
+      xml = mxml.serialiser.serializeToString(xml[0])
+      loadMainOSMD(xml)
+
+      // let modified = $($.parseXML(xml)).find("lyrics:contains('id=')").remove()
+      // log(mxml.serialiser.serializeToString(modified[0]))
+
+      fretboard.melodyBeingPlayedInKey = mxml.toArray().map(it => ({notes: it}))
+      fretboard.melodyBeingPlayed = melodyWithoutContextOfKey(fretboard.melodyBeingPlayedInKey, fretboard.activeKey)
+    })
+  }
+
+  $('#loadMelodyBtn').click(e => {
+    const [file] = document.querySelector("input[type=file]").files;
+    const reader = new FileReader();
+    reader.addEventListener(
+      "load",
+      () => {
+        extractMelodyFromXml(reader.result)
+      },
+      false
+    );
+    if (file) {
+      reader.readAsText(file);
+    }
+  })
+
+  $('#extractOuterVoicesBtn').click(e => {
+    const [file] = document.querySelector("input[type=file]").files;
+    const reader = new FileReader();
+    reader.addEventListener(
+      "load",
+      () => {
+        extractOuterVoicesFromXml(reader.result)
+      },
+      false
+    );
+    if (file) {
+      reader.readAsText(file);
+    }
+  })
+
+  $('#playMelodyBtn').click(e => {
+    playMp3(mxml.toString(), fretboard.activeKey.name())
+  })
+
+  const addIdsToNotes = xml => {
+    xml.find("note").each((i, e) => {
+      let lyric = $(e).find("lyric")
+      const number = lyric.length + 1
+      lyric = $(`<lyric number="${number}">
+                      <syllabic>single</syllabic>
+                      <text>id=${i}</text>
+                  </lyric>`, xml)
+      $(e).append(lyric)
+    })
+  }
+
+  const addNoteNames = xml => {
+    function extracted(e) {
+      let el = $(e);
+      const accidental = el.find("accidental").text()
+      const name = el.find('pitch>step').text()
+      const noteheadText = $(`<notehead-text>
+          <display-text>${name}</display-text>
+          ${accidental ? '<accidental-text>' + accidental + '</accidental-text>' : ''}
+        </notehead-text>`, e);
+      el.find('stem').after(noteheadText)
+    }
+
+    xml.find("note").each((i, e) => {
+      if($(e).find('notehead-text').length === 0)
+          extracted(e);
+    })
+  }
+
+  const loadMusicFromXmlFile = (xml) => {
+    const doc = $.parseXML(xml)
+    addIdsToNotes($(doc))
+    addNoteNames($(doc))
+    const musicXml = mxml.serialiser.serializeToString(doc)
+    mxml.loadXml(musicXml)
+
+    fretboard.melodyBeingPlayedInKey = mxml.toArray().map(it => ({notes: it}))
+    fretboard.melodyBeingPlayed = melodyWithoutContextOfKey(fretboard.melodyBeingPlayedInKey, fretboard.activeKey)
+
+    return loadMainOSMD(musicXml);
+  }
+
+  $('#loadMusicBtn').click(e => {
+    const [file] = document.querySelector("input[type=file]").files;
+    const reader = new FileReader();
+    reader.addEventListener(
+      "load",
+      () => {
+        loadMusicFromXmlFile(reader.result)
+      },
+      false
+    );
+    if (file) {
+      reader.readAsText(file);
+    }
+  })
+
+  $("#invertAndLoadBtn").click(e => {
+    let measures = $("#measuresEntered").val()
+    if (!measures) return
+    measures = parseRangeInput(measures)
+
+    const toInvert = []
+    measures.forEach(m => toInvert.push(fretboard.melodyBeingPlayed[m - 1]))
+    const inversion = melodyInContextOfKey(diatonicMelodicInversion(toInvert), fretboard.activeKey)
+    const _mxml = new MusicXml()
+    inversion.forEach(measure => _mxml.addMeasure(measure.notes))
+
+    $("#saveAlteredMelody").data("xml", _mxml.toString())
+
+    const osmd = window.osmds[1];
+    osmd.load(_mxml.toString())
+      .then(it => {
+        osmd.render();
+      });
+  })
+
+
+  $('#analyseMusicBtn').click(e => {
+    const noteheadsData = getNotesFromHtml()
+    const notes = groupBy(noteheadsData, it => it.measure + "-" + it.x, (k, notes) => {
+      const sortedByY = notes.toSorted((a, b) => a.line - b.line);
+      let melNote = sortedByY.find(it => it.name.length > 0)
+      if(!melNote) melNote = sortedByY[0]
+      melNote.melodyNote = true
+      $(noteheadCache[melNote.cacheIndex]).data("melodyNote", true)
+      return notes
+    })
+
+    const measures = groupBy(notes.flat().filter(it => it.melodyNote).map(it => ({ name: it.name, type: durationType(it.duration), measure: it.measure})), 'measure', (m, ns) => ({notes: ns}))
+    const similarities = analyseRhythmSimilarity(measures);
+    log(similarities)
+    // $('#analysisDialog').fadeIn()
+    guessChords()
+  })
+
+  setTimeout(() => minimizeCircleOfFifth(), 4000)
+
+  async function saveFile(data, name) {
+    const blob = new Blob([data], {
+      type: "application/xml",
+    });
+
+    // create a new handle
+    const newHandle = await window.showSaveFilePicker({suggestedName: name});
+
+    // create a FileSystemWritableFileStream to write to
+    const writableStream = await newHandle.createWritable();
+
+    // write our file
+    await writableStream.write(blob);
+
+    // close the file and write the contents to disk.
+    await writableStream.close();
+  }
+
+  $app.click(e => {
+    if ($app.hasClass("minimized")) {
+      restoreCircleOfFifth()
+      e.stopPropagation()
+    }
+  });
+
+  $("#saveAlteredMelody").click(e => {
+    const [file] = document.querySelector("input[type=file]").files;
+    if (!file) return
+    saveFile($("#saveAlteredMelody").data("xml"), file.name.split(".")[0] + "_mod_" + new Date().getTime() + ".xml").then(r => {
+    })
+  })
+
+  $("#saveMusicXmlBtn").click(e => {
+    const [file] = document.querySelector("input[type=file]").files;
+    let name = null
+    if (!file) {
+      name = "unknown_" + new Date().getTime() + ".xml";
+    } else name = file.name.split(".")[0] + "_melody_" + new Date().getTime() + ".xml";
+
+    $(mxml.xml).find("lyric:contains('id=')").remove()
+
+    saveFile(mxml.toString(), name).then(r => {
+    })
+  })
+
+  fixUI();
+  window.mxml = new MusicXml()
+
+  $osmdContainer1[0].addEventListener("fullscreenchange", (event) => {
+    if (document.fullscreenElement === null)
+      $('.toolbar').show()
+  });
+
+  $('#enterFullScreenBtn').click(e => {
+    $osmdContainer1[0].requestFullscreen().then(it => {
+      log("entered")
+      $('.toolbar').hide()
+      $('.ui-dialog').hide()
+      schedule([() => {
+      }, () => $('#loadMusicBtn').click(), () => $('#analyseMusicBtn').click()], 2)
+    })
+  })
+
+  $('#toggleNoteNamesBtn').click(e => {
+    $('.note-name').toggle()
+  })
+
+  const $keyChartDialog = $('#keyChartDialog')
+  keyList.forEach(k => {
+    const key = new Key(k)
+    const row = $(`<div class="chord-list" data-key="${k}"></div>`)
+    key.chords().forEach(c => {
+      const $cohrd = $(`<span class="chord" data-fullname="${c}"> ${normaliseChordName(c)}</span>`)
+      if(!allChords[c]) {
+        log(c)
+      }
+      if(allChords[c] && intersection(allChords[c].notes, ['E', 'A', 'D', 'G', 'B']).length > 0) {
+        $cohrd.addClass('open-str')
+      }
+      row.append($cohrd)
+    })
+    $keyChartDialog.find(".content").append(row)
+  })
+
+  $keyChartDialog.find(".chord").click(e => {
+    const chordName = e.target.dataset.fullname;
+    $keyChartDialog.find(`.chord`).removeClass("highlighted").removeClass("highlighted-main")
+    $keyChartDialog.find(`.chord[data-fullname='${chordName}']`).addClass("highlighted-main")
+    findChordsWithAChromaticNote(allChords[chordName].notes).forEach(c => {
+      $keyChartDialog.find(`.chord[data-fullname='${c}']`).addClass("highlighted")
+    })
+
+    const dominantKey = $($(e.target).parents(".chord-list").find(".chord")[4]).text().trim()
+    $(".chord-list").removeClass("highlighted")
+    $(e.target).parents(".chord-list").addClass("highlighted").addClass("selected")
+    $(`.chord-list[data-key='${dominantKey}']`).addClass("highlighted").addClass("dominant")
+  })
+
+  mxml.setTime(4, 4)
+
+  const $chordInput = $('#chordInput');
+  const $chordVariationsCntnr = $('#chord-variations-container');
+
+  function chordVariationClicked(chordName) {
+    $chordInput.val($chordInput.val() + "\n" + chordName)
+    mxml.reset()
+    mxml.setKey(fretboard.activeKey)
+
+    const allVersions = usefulVersionsOfChord(chordName, fretboard);
+    // let extensions = chordExtensions(chordName);
+
+    const ocs = fretboard.openChords(chordName)
+
+    mxml.addMeasure([{name: '', type: 'quarter', octave: 4, chordSymbol: chordName}])
+
+    allVersions.forEach(it => mxml.addMeasure(it))
+
+    // extensions.forEach(it => {
+    //   ocs = ocs.concat(fretboard.openChords(it))
+    //   mxml.addMeasure([{name: '', type: 'quarter', octave: 4, chordSymbol: it}])
+    //   usefulVersionsOfChord(it, fretboard).forEach(it => {
+    //     mxml.addMeasure(it)
+    //   })
+    // })
+
+    populateChordButtons(ocs, fretboard)
+
+    const doc = mxml.xml[0]
+    addIdsToNotes($(doc))
+    const musicXml = mxml.serialiser.serializeToString(doc)
+    mxml.loadXml(musicXml)
+    loadMainOSMD(null, 10)
+  }
+
+  $keyChartDialog.find(".chord").dblclick(e => {
+    $chordVariationsCntnr.html('')
+
+    const chordName = e.target.dataset.fullname;
+    [chordName, chordExtensions(chordName)].flat().forEach(it => {
+      const $btn = $(`<span>${it}</span>`);
+      $btn.addClass("chord-variation-btn").click(e => {
+        chordVariationClicked(it)
+        $('.chord-variation-btn').removeClass("selected")
+        $btn.addClass("selected")
+      })
+      $chordVariationsCntnr.append($btn)
+    })
+  })
+
+  $chordInput.change(e => {
+    const chords = $chordInput.val().split("\n").map(it => ({
+      chord: allChords[it],
+      name: it
+    })).filter(it => it.chord)
+    mxml.reset()
+    mxml.setKey(fretboard.activeKey)
+    chords.forEach(c => {
+      mxml.addMeasure(c.chord.notes.map((n, i) => ({
+        name: n,
+        octave: 3,
+        type: 'quarter',
+        chord: i !== 0,
+        chordSymbol: normaliseChordName(c.name)
+      })))
+    })
+    loadMainOSMD(null, 10)
+  })
+});
+
+function allOpenChordsInPos(pos) {
+  let chords = []
+
+  const chordName = $('.chord-variation-btn.selected').text()
+  chords = chords.concat(fretboard.openChords(chordName))
+
+  populateChordButtons(chords.filter(those => those.map(it => it.fret).every(i => i <= 5)).filter(uniqueByJsonRepresentation), fretboard)
+}
+
+$(window).resize(e => setTimeout(() => hideIdTexts(), 3000))
