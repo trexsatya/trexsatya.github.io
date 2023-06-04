@@ -32,12 +32,11 @@ CKEDITOR.dialog.add( 'titleDialog', function ( editor ) {
         },
         onShow: function(){
             var dialog = this;
-            var editing = editor;
-
-            var existing = editing.getSelection().getStartElement();
-            if(existing.hasAttribute('title')){
-                dialog.setValueOf( 'tab-basic-title', 'titleContainerType',  existing.getName())
-                dialog.setValueOf( 'tab-basic-title', 'titleTextarea', existing.getHtml() )
+            var existing = editor.getSelection().getStartElement();
+            console.log(existing)
+            if(existing.hasClass('title-popup')) { //Means it's already convered
+              dialog.setValueOf( 'tab-basic-title', 'titleContainerType',  existing.getName())
+              dialog.setValueOf( 'tab-basic-title', 'titleTextarea', existing.getAttribute('title') )
             }
         },
 
@@ -47,12 +46,14 @@ CKEDITOR.dialog.add( 'titleDialog', function ( editor ) {
                 var mathContainerType = dialog.getValueOf( 'tab-basic-title', 'titleContainerType' )
 
                 var existing = editor.getSelection().getStartElement();
-                if(existing.hasAttribute('title')){
+
+                if(existing.hasClass('title-popup')){
                     existing.setAttribute('title', mattext)
                 } else {
                     var insertingElement = mathContainerType === 'span' ? editor.document.createElement('span')
                                                                    : editor.document.createElement('div');
-
+                    insertingElement.setHtml(editor.getSelection().getSelectedText())
+                    insertingElement.addClass('title-popup')
                     insertingElement.setAttribute('title', mattext)
                     editor.insertElement( insertingElement );
                 }
