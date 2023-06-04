@@ -81,6 +81,11 @@ function showTitlePopup(title, el) {
   })
 }
 
+function css(element, style) {
+  for (const property in style)
+    element.style[property] = style[property];
+}
+
 function enablePopups() {
   try {
     document.querySelectorAll('.article *[title]').forEach((div, i) => {
