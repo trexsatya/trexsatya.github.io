@@ -38,7 +38,7 @@
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG">
     </script>
-    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charSet="utf-8"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript">
@@ -65,26 +65,26 @@
 </head>
 
 <body>
-Subtitles: <input type="file" onchange="loadSubtitle(this.files[0])" title="Subtitles">
+Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles">
 
-    <br/>
-Audio: <input id="video-file" type="file"  title="Video"/>
+<br/>
+Audio: <input id="video-file" type="file" title="Video"/>
 <audio id="video" src="" width="700" height="500">
 
 </audio>
 
-<!--<button id="playBtn">Play</button>-->
+<button onclick="playAudio()">Play</button>
 <div id="message"></div>
 
 <script>
     function toSeconds(str) {
         let splits = str.split(":")
         let hour = 0, mins = 0, secs = 0
-        if(splits.length === 2) {
+        if (splits.length === 2) {
             mins = splits[0]
             secs = splits[1]
         }
-        if(splits.length === 3) {
+        if (splits.length === 3) {
             hour = splits[0]
             mins = splits[1]
             secs = splits[2]
@@ -130,7 +130,7 @@ Audio: <input id="video-file" type="file"  title="Video"/>
 
         //console.log(originalSubs.map(it => `${it.ts}-${it.te}`).join("\n"))
 
-        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.75 }])
+        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.75}])
 
         let currentSub = subs.shift()
         //console.log(subs)
@@ -138,7 +138,7 @@ Audio: <input id="video-file" type="file"  title="Video"/>
         videoNode.ontimeupdate = e => {
             // console.log(currentSub, videoNode.currentTime)
             let ct = videoNode.currentTime
-            if(ct >= currentSub.te) {
+            if (ct >= currentSub.te) {
                 videoNode.pause()
                 currentSub = subs.shift()
                 videoNode.currentTime = currentSub.ts
@@ -152,7 +152,10 @@ Audio: <input id="video-file" type="file"  title="Video"/>
     let inputNode = document.querySelector('#video-file')
     inputNode.addEventListener('change', playSelectedFile, false)
 
-
+    function playAudio() {
+        videoNode.play()
+    }
+    
 </script>
 </body>
 
