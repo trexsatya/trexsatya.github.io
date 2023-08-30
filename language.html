@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script type="text/javascript" src="/fabric.min.js"></script>
+    <script type="text/javascript" src="/pagination.min.js"></script>
     <script type="text/javascript" src="/algo.visual.toolbox.js"></script>
     <script type="text/javascript" src="/rx.all.min.js"></script>
     <script type="text/javascript" src="/rx.all.min.js"></script>
@@ -32,6 +33,8 @@
     <script type="text/javascript" src="/diff-match-patch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
     <link href="/select2.min.css" rel="stylesheet"/>
+    <link href="/pagination.css" rel="stylesheet"/>
+
     <script src="/select2.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.ui.min.js"></script>
@@ -58,7 +61,7 @@
     <script>
         async function loadSubtitle(file) {
             let text = await file.text();
-            console.log(text);
+            // console.log(text);
             window.subtitles = JSON.parse(text)
         }
     </script>
@@ -67,14 +70,19 @@
 <body>
 
 <div>
-    Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles">
+    Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">
     Audio: <input id="video-file" type="file" title="Video"/>
 
     <audio id="video" src="" width="700" height="500"></audio>
 
     <button onclick="playAudio()">Play</button>
+    <button onclick="pauseAudio()">Pause</button>
 </div>
+<br/>
+Current: <span id="currentNumber"></span>
+<div id="pagination">
 
+</div>
 <div id="subtitle-container">
     <br>
     <br>
@@ -115,6 +123,58 @@
 
     let videoNode = document.querySelector('audio')
 
+    let clearSubtitles = () => {
+        $('#sv-sub').html('')
+        $('#en-sub').html('')
+    }
+
+    let populateSubtitles = (currentSub) => {
+        $('#currentNumber').html(currentSub.number)
+        $('#sv-sub').html(currentSub.sv)
+        $('#en-sub').html(currentSub.en)
+    }
+    let prepareSubs = (originalSubs) => {
+        videoNode.pause()
+        //Reset
+
+        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.6}
+            // , {...sub, speed: 0.9}
+        ])
+
+        let currentSub = subs.shift()
+        videoNode.currentTime = currentSub.ts
+        videoNode.playbackRate = 1
+
+        videoNode.play()
+        //console.log(subs)
+
+
+        videoNode.ontimeupdate = e => {
+            // console.log(currentSub, videoNode.currentTime)
+            let ct = videoNode.currentTime
+
+            populateSubtitles(currentSub)
+
+            if (ct >= currentSub.te) {
+                // Go to next subtitle
+                videoNode.pause()
+                currentSub = subs.shift()
+                videoNode.currentTime = currentSub.ts
+                videoNode.playbackRate = currentSub.speed
+
+                console.log(currentSub)
+                clearSubtitles()
+
+                // if(currentSub.speed < 1) {
+                   populateSubtitles(currentSub)
+                // }
+                videoNode.play()
+            }
+        }
+
+        videoNode.play()
+    }
+
     let playSelectedFile = function (event) {
         let file = this.files[0]
         let type = file.type
@@ -134,48 +194,45 @@
         let strategy = "Normal-Slow"
 
         let originalSubs = window.subtitles.map(it => ({...it}))
-        originalSubs = _.sortBy(window.subtitles, it => toSeconds(it.ts))
+        originalSubs = _.sortBy(originalSubs, it => toSeconds(it.ts))
+
+        window.subtitles = originalSubs
         originalSubs.forEach(it => {
             it['ts'] = toSeconds(it['ts'])
         })
         for (let i = 0; i < originalSubs.length - 1; i++) {
             originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 1
+            originalSubs[i]['number'] = i+1
         }
+
+        $('#pagination').pagination({
+            dataSource: range(1, originalSubs.length + 1),
+            pageSize: 1,
+            // showPrevious: false,
+            // showNext: false,
+            showGoInput: true,
+            showGoButton: true,
+            formatGoInput: 'go to <%= input %> st/rd/th',
+            callback: function(data, pagination) {
+                console.log(data)
+                prepareSubs(originalSubs.toSpliced(0, data - 1))
+            }
+        })
+
+        prepareSubs(originalSubs)
 
         //console.log(originalSubs.map(it => `${it.ts}-${it.te}`).join("\n"))
-
-        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.6}, {...sub, speed: 0.9}])
-
-        let currentSub = subs.shift()
-        //console.log(subs)
-
-        videoNode.ontimeupdate = e => {
-            // console.log(currentSub, videoNode.currentTime)
-            let ct = videoNode.currentTime
-            if (ct >= currentSub.te) {
-                videoNode.pause()
-                currentSub = subs.shift()
-                videoNode.currentTime = currentSub.ts
-                videoNode.playbackRate = currentSub.speed
-
-                $('#sv-sub').html('')
-                $('#en-sub').html('')
-
-                if(currentSub.speed < 1) {
-                    $('#sv-sub').html(currentSub.sv)
-                    $('#en-sub').html(currentSub.en)
-                }
-                videoNode.play()
-            }
-        }
-
-        videoNode.play()
     }
+
     let inputNode = document.querySelector('#video-file')
     inputNode.addEventListener('change', playSelectedFile, false)
 
     function playAudio() {
         videoNode.play()
+    }
+
+    function pauseAudio() {
+        videoNode.pause()
     }
 
 </script>
