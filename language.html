@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <script src="/jquery.js"></script>
+    <script></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="/fabric.min.js"></script>
+    <script type="text/javascript" src="/algo.visual.toolbox.js"></script>
+    <script type="text/javascript" src="/rx.all.min.js"></script>
+    <script type="text/javascript" src="/rx.all.min.js"></script>
+
+    <script type="text/javascript" src="/jquery.lettering.js"></script>
+    <script type="text/javascript" src="/jquery.fittext.js"></script>
+    <script type="text/javascript" src="/rulez.min.js"></script>
+    <!-- <script type="text/javascript" src="/treant.js"></script> -->
+    <link rel="stylesheet" href="/animate.css">
+    <link rel="stylesheet" href="/treant.css">
+    <script src="/vendor/raphael.js"></script>
+    <script src="https://unpkg.com/geometric@2.2.3/build/geometric.min.js"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="/tree.js"></script>
+    <!-- <script src="../../vendor/jquery.min.js"></script> -->
+    <script src="../../vendor/jquery.easing.js"></script>
+
+    <script type="text/javascript" src="/jquery.textillate.js"></script>
+    <!--    <script src="/typed.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script type="text/javascript" src="/diff-match-patch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <link href="/select2.min.css" rel="stylesheet"/>
+    <script src="/select2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.ui.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG">
+    </script>
+    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript">
+        Array.prototype.max = function () {
+            return Math.max.apply(null, this);
+        };
+    </script>
+    <style>
+
+    </style>
+
+    <script src="/play.js"></script>
+    <!--    <script src="/play2.js"></script>-->
+    <link rel="stylesheet" href="/play.css">
+    <link rel="stylesheet" href="/fontawesome-all.css">
+
+    <script>
+        async function loadSubtitle(file) {
+            let text = await file.text();
+            console.log(text);
+            window.subtitles = JSON.parse(text)
+        }
+    </script>
+</head>
+
+<body>
+<input type="file" onchange="loadSubtitle(this.files[0])" title="Subtitles">
+
+<input id="video-file" type="file" accept="audio/*" title="Video"/>
+<audio id="video" src="" width="700" height="500">
+
+</audio>
+
+<!--<button id="playBtn">Play</button>-->
+<div id="message"></div>
+
+<script>
+    function toSeconds(str) {
+        let splits = str.split(":")
+        let hour = 0, mins = 0, secs = 0
+        if(splits.length === 2) {
+            mins = splits[0]
+            secs = splits[1]
+        }
+        if(splits.length === 3) {
+            hour = splits[0]
+            mins = splits[1]
+            secs = splits[2]
+        }
+        return parseInt(hour) * 3600 + parseInt(mins) * 60 + parseInt(secs)
+    }
+
+    let URL = window.URL || window.webkitURL
+    let displayMessage = function (message, isError) {
+        let element = document.querySelector('#message')
+        element.innerHTML = message
+        element.className = isError ? 'error' : 'info'
+    }
+
+    let videoNode = document.querySelector('audio')
+
+    let playSelectedFile = function (event) {
+        let file = this.files[0]
+        let type = file.type
+
+        let canPlay = videoNode.canPlayType(type)
+        if (canPlay === '') canPlay = 'no'
+        let message = 'Can play type "' + type + '": ' + canPlay
+        let isError = canPlay === 'no'
+        displayMessage(message, isError)
+
+        if (isError) {
+            return
+        }
+
+        videoNode.src = URL.createObjectURL(file)
+
+        let strategy = "Normal-Slow"
+
+        let originalSubs = window.subtitles.map(it => ({...it}))
+        originalSubs = _.sortBy(window.subtitles, it => toSeconds(it.ts))
+        originalSubs.forEach(it => {
+            it['ts'] = toSeconds(it['ts'])
+        })
+        for (let i = 0; i < originalSubs.length - 1; i++) {
+            originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 1
+        }
+
+        console.log(originalSubs.map(it => `${it.ts}-${it.te}`).join("\n"))
+
+        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.75 }])
+
+        let currentSub = subs.shift()
+        console.log(subs)
+
+        videoNode.ontimeupdate = e => {
+            console.log(currentSub, videoNode.currentTime)
+            let ct = videoNode.currentTime
+            if(ct >= currentSub.te) {
+                videoNode.pause()
+                currentSub = subs.shift()
+                videoNode.currentTime = currentSub.ts
+                videoNode.playbackRate = currentSub.speed
+                videoNode.play()
+            }
+        }
+
+        videoNode.play()
+    }
+    let inputNode = document.querySelector('#video-file')
+    inputNode.addEventListener('change', playSelectedFile, false)
+
+
+</script>
+</body>
+
+</html>
