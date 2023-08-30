@@ -65,16 +65,30 @@
 </head>
 
 <body>
-Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles">
 
-<br/>
-Audio: <input id="video-file" type="file" title="Video"/>
-<audio id="video" src="" width="700" height="500">
+<div>
+    Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles">
+    Audio: <input id="video-file" type="file" title="Video"/>
 
-</audio>
+    <audio id="video" src="" width="700" height="500"></audio>
 
-<button onclick="playAudio()">Play</button>
-<div id="message"></div>
+    <button onclick="playAudio()">Play</button>
+</div>
+
+<div id="subtitle-container">
+    <br>
+    <br>
+    <div id="sv-sub" style="font-weight: bold; color: blue">
+
+    </div>
+
+    <br>
+    <br>
+    <div id="en-sub" style="">
+
+    </div>
+</div>
+<div id="message" style="display: none"></div>
 
 <script>
     function toSeconds(str) {
@@ -130,7 +144,7 @@ Audio: <input id="video-file" type="file" title="Video"/>
 
         //console.log(originalSubs.map(it => `${it.ts}-${it.te}`).join("\n"))
 
-        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.75}])
+        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.6}, {...sub, speed: 0.9}])
 
         let currentSub = subs.shift()
         //console.log(subs)
@@ -143,6 +157,14 @@ Audio: <input id="video-file" type="file" title="Video"/>
                 currentSub = subs.shift()
                 videoNode.currentTime = currentSub.ts
                 videoNode.playbackRate = currentSub.speed
+
+                $('#sv-sub').html('')
+                $('#en-sub').html('')
+
+                if(currentSub.speed < 1) {
+                    $('#sv-sub').html(currentSub.sv)
+                    $('#en-sub').html(currentSub.en)
+                }
                 videoNode.play()
             }
         }
@@ -155,7 +177,7 @@ Audio: <input id="video-file" type="file" title="Video"/>
     function playAudio() {
         videoNode.play()
     }
-    
+
 </script>
 </body>
 
