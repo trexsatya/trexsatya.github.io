@@ -128,15 +128,15 @@ Audio: <input id="video-file" type="file"  title="Video"/>
             originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 1
         }
 
-        console.log(originalSubs.map(it => `${it.ts}-${it.te}`).join("\n"))
+        //console.log(originalSubs.map(it => `${it.ts}-${it.te}`).join("\n"))
 
         let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.75 }])
 
         let currentSub = subs.shift()
-        console.log(subs)
+        //console.log(subs)
 
         videoNode.ontimeupdate = e => {
-            console.log(currentSub, videoNode.currentTime)
+            // console.log(currentSub, videoNode.currentTime)
             let ct = videoNode.currentTime
             if(ct >= currentSub.te) {
                 videoNode.pause()
