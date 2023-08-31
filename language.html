@@ -64,7 +64,36 @@
             // console.log(text);
             window.subtitles = JSON.parse(text)
         }
+
+        function togglePlay(el) {
+            if(!el) el = $('#playBtn')[0]
+
+            if($(el).text() === 'Play') {
+                videoNode.play()
+                $(el).html("Pause").removeClass('play-btn').addClass('pause-btn')
+            } else {
+                videoNode.pause()
+                $(el).html("Play").removeClass('pause-btn').addClass('play-btn')
+            }
+        }
     </script>
+    <style>
+        #playBtn {
+            border-radius: 50%;
+            height: 5em;
+            width: 5em;
+            cursor: pointer;
+        }
+        .play-btn {
+            background: blue;
+            color: white;
+        }
+
+        .pause-btn {
+            background: red;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -74,15 +103,10 @@
     Audio: <input id="video-file" type="file" title="Video"/>
 
     <audio id="video" src="" width="700" height="500"></audio>
-
-    <button onclick="playAudio()">Play</button>
-    <button onclick="pauseAudio()">Pause</button>
 </div>
 <br/>
 Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-left: 1em;"></span>
-<div id="pagination">
 
-</div>
 <div id="subtitle-container">
     <br>
     <br>
@@ -94,6 +118,12 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
     <br>
     <div id="en-sub" style="">
 
+    </div>
+</div>
+<div style="margin-top: 5em;">
+    <div style="text-align: center;">
+        <div id="pagination"></div>
+        <button onclick="togglePlay(this)" id="playBtn" class="play-btn" disabled>Play</button>
     </div>
 </div>
 <div id="message" style="display: none"></div>
@@ -132,6 +162,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
     }
 
     let videoNode = document.querySelector('audio')
+    window.videoNode = videoNode
 
     let currentVideoTime = () => {
         return parseFloat(parseFloat(videoNode.currentTime + '').toFixed(2))
@@ -148,22 +179,18 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
         $('#sv-sub').html(currentSub.sv)
         $('#en-sub').html(currentSub.en)
     }
-    let prepareSubs = (originalSubs) => {
+    let prepareSubs = (pageNumber, allSubs) => {
+        pageNumber = parseInt(pageNumber)
         // videoNode.pause()
         //Reset
-
-        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}
+        let subs = [allSubs[pageNumber-1]].flatMap(sub => [{...sub, speed: 1}
             // , {...sub, speed: 0.6}
             // , {...sub, speed: 0.9}
         ])
 
         let currentSub = subs.shift()
         videoNode.currentTime = currentSub.ts
-        videoNode.playbackRate = 1
-
-        // videoNode.play()
-        //console.log(subs)
-
+        videoNode.playbackRate = currentSub.speed
 
         videoNode.ontimeupdate = e => {
             // console.log(currentSub, videoNode.currentTime)
@@ -174,21 +201,25 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
             if (ct >= currentSub.te) {
                 // Go to next subtitle
                 // videoNode.pause()
-                currentSub = subs.shift()
-                videoNode.currentTime = currentSub.ts
-                videoNode.playbackRate = currentSub.speed
+                if(subs.length === 0) {
+                    $('#pagination').pagination('go', pageNumber + 1)
+                } else {
+                    currentSub = subs.shift()
+                    videoNode.currentTime = currentSub.ts - 0.01
+                    videoNode.playbackRate = currentSub.speed
 
-                console.log(currentSub)
-                clearSubtitles()
+                    console.log(currentSub)
+                    clearSubtitles()
 
-                // if(currentSub.speed < 1) {
-                   populateSubtitles(currentSub)
-                // }
-                // videoNode.play()
+                    // if(currentSub.speed < 1) {
+                    populateSubtitles(currentSub)
+                    // }
+                }
             }
         }
 
         videoNode.play()
+        $('#playBtn').html('Pause')
     }
 
     let playSelectedFile = function (event) {
@@ -235,11 +266,12 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
             formatGoInput: 'go to <%= input %> st/rd/th',
             callback: function(data, pagination) {
                 console.log(data)
-                prepareSubs(originalSubs.toSpliced(0, data - 1))
+                prepareSubs(data, originalSubs)
             }
         })
 
-        prepareSubs(originalSubs)
+        $('#playBtn').attr('disabled', false)
+        prepareSubs(1, originalSubs)
 
         console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
     }
