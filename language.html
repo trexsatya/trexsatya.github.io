@@ -191,7 +191,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
         ])
 
         let currentSub = subs.shift()
-        videoNode.currentTime = currentSub.ts
+        videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
         videoNode.playbackRate = currentSub.speed
 
         videoNode.ontimeupdate = e => {
@@ -207,7 +207,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
                     $('#pagination').pagination('go', pageNumber + 1)
                 } else {
                     currentSub = subs.shift()
-                    videoNode.currentTime = currentSub.ts - 0.01
+                    videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
                     videoNode.playbackRate = currentSub.speed
 
                     console.log(currentSub)
