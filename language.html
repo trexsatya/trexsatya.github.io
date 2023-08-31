@@ -66,9 +66,9 @@
         }
 
         function togglePlay(el) {
-            if(!el) el = $('#playBtn')[0]
+            if (!el) el = $('#playBtn')[0]
 
-            if($(el).text() === 'Play') {
+            if ($(el).text() === 'Play') {
                 videoNode.play()
                 $(el).html("Pause").removeClass('play-btn').addClass('pause-btn')
             } else {
@@ -84,6 +84,7 @@
             width: 5em;
             cursor: pointer;
         }
+
         .play-btn {
             background: blue;
             color: white;
@@ -145,7 +146,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
     }
 
     function fromSeconds(number) {
-        let _pad = x => x.length < 2 ? '0'+x : x;
+        let _pad = x => x.length < 2 ? '0' + x : x;
         let hrs = Math.floor(number / 3600) + ''
         let mins = Math.floor((number % 3600) / 60) + ''
         let secs = Math.floor((number % 3600) % 60) + ''
@@ -174,7 +175,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
 
     let populateSubtitles = (currentSub) => {
         $('#currentNumber').html(currentSub.number)
-        $('#currentTime').html(fromSeconds(currentVideoTime())  + ' / ' + currentSub.ts_o)
+        $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / ' + currentSub.ts_o)
 
         $('#sv-sub').html(currentSub.sv)
         $('#en-sub').html(currentSub.en)
@@ -183,9 +184,10 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
         pageNumber = parseInt(pageNumber)
         // videoNode.pause()
         //Reset
-        let subs = [allSubs[pageNumber-1]].flatMap(sub => [{...sub, speed: 1}
-            // , {...sub, speed: 0.6}
-            // , {...sub, speed: 0.9}
+        let subs = [allSubs[pageNumber - 1]].flatMap(sub => [
+            {...sub, speed: 1}
+            , {...sub, speed: 0.6}
+            , {...sub, speed: 0.9}
         ])
 
         let currentSub = subs.shift()
@@ -201,7 +203,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
             if (ct >= currentSub.te) {
                 // Go to next subtitle
                 // videoNode.pause()
-                if(subs.length === 0) {
+                if (subs.length === 0) {
                     $('#pagination').pagination('go', pageNumber + 1)
                 } else {
                     currentSub = subs.shift()
@@ -211,9 +213,9 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
                     console.log(currentSub)
                     clearSubtitles()
 
-                    // if(currentSub.speed < 1) {
-                    populateSubtitles(currentSub)
-                    // }
+                    if(currentSub.speed < 1) {
+                       populateSubtitles(currentSub)
+                    }
                 }
             }
         }
@@ -264,7 +266,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
             showGoInput: true,
             showGoButton: true,
             formatGoInput: 'go to <%= input %> st/rd/th',
-            callback: function(data, pagination) {
+            callback: function (data, pagination) {
                 console.log(data)
                 prepareSubs(data, originalSubs)
             }
