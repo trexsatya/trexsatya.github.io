@@ -114,6 +114,16 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
         return parseInt(hour) * 3600 + parseInt(mins) * 60 + parseInt(secs)
     }
 
+    function fromSeconds(number) {
+        let _pad = x => x.length < 2 ? '0'+x : x;
+        let hrs = Math.floor(number / 3600) + ''
+        let mins = Math.floor((number % 3600) / 60) + ''
+        let secs = Math.floor((number % 3600) % 60) + ''
+
+
+        return `${_pad(hrs)}:${_pad(mins)}:${_pad(secs)}`
+    }
+
     let URL = window.URL || window.webkitURL
     let displayMessage = function (message, isError) {
         let element = document.querySelector('#message')
@@ -123,6 +133,9 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
 
     let videoNode = document.querySelector('audio')
 
+    let currentVideoTime = () => {
+        return parseFloat(parseFloat(videoNode.currentTime + '').toFixed(2))
+    }
     let clearSubtitles = () => {
         $('#sv-sub').html('')
         $('#en-sub').html('')
@@ -130,13 +143,13 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
 
     let populateSubtitles = (currentSub) => {
         $('#currentNumber').html(currentSub.number)
-        $('#currentTime').html(videoNode.currentTime + ' / ' + currentSub.ts_o + '(' + currentSub.ts + 's)')
+        $('#currentTime').html(fromSeconds(currentVideoTime())  + ' / ' + currentSub.ts_o)
 
         $('#sv-sub').html(currentSub.sv)
         $('#en-sub').html(currentSub.en)
     }
     let prepareSubs = (originalSubs) => {
-        videoNode.pause()
+        // videoNode.pause()
         //Reset
 
         let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}
@@ -148,19 +161,19 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
         videoNode.currentTime = currentSub.ts
         videoNode.playbackRate = 1
 
-        videoNode.play()
+        // videoNode.play()
         //console.log(subs)
 
 
         videoNode.ontimeupdate = e => {
             // console.log(currentSub, videoNode.currentTime)
-            let ct = videoNode.currentTime
+            let ct = currentVideoTime()
 
             populateSubtitles(currentSub)
 
             if (ct >= currentSub.te) {
                 // Go to next subtitle
-                videoNode.pause()
+                // videoNode.pause()
                 currentSub = subs.shift()
                 videoNode.currentTime = currentSub.ts
                 videoNode.playbackRate = currentSub.speed
@@ -171,7 +184,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
                 // if(currentSub.speed < 1) {
                    populateSubtitles(currentSub)
                 // }
-                videoNode.play()
+                // videoNode.play()
             }
         }
 
@@ -197,17 +210,19 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
         let strategy = "Normal-Slow"
 
         let originalSubs = window.subtitles.map(it => ({...it}))
-        originalSubs = _.sortBy(originalSubs, it => toSeconds(it.ts))
 
         window.subtitles = originalSubs
         originalSubs.forEach(it => {
             it['ts_o'] = it['ts']
             it['ts'] = toSeconds(it['ts'])
         })
+
+        originalSubs = _.sortBy(originalSubs, it => it.ts)
+
         for (let i = 0; i < originalSubs.length - 1; i++) {
             originalSubs[i]['te_o'] = originalSubs[i + 1]['ts_o']
-            originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 1
-            originalSubs[i]['number'] = i+1
+            originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 0.009
+            originalSubs[i]['number'] = i + 1
         }
 
         $('#pagination').pagination({
@@ -226,7 +241,7 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
 
         prepareSubs(originalSubs)
 
-        console.log(originalSubs.map(it => `${it.ts_o}-${it.te_o} -> ${it.sv}`).join("\n"))
+        console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
     }
 
     let inputNode = document.querySelector('#video-file')
