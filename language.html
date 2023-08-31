@@ -79,7 +79,7 @@
     <button onclick="pauseAudio()">Pause</button>
 </div>
 <br/>
-Current: <span id="currentNumber"></span>
+Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-left: 1em;"></span>
 <div id="pagination">
 
 </div>
@@ -130,6 +130,8 @@ Current: <span id="currentNumber"></span>
 
     let populateSubtitles = (currentSub) => {
         $('#currentNumber').html(currentSub.number)
+        $('#currentTime').html(videoNode.currentTime + ' / ' + currentSub.ts_o + '(' + currentSub.ts + 's)')
+
         $('#sv-sub').html(currentSub.sv)
         $('#en-sub').html(currentSub.en)
     }
@@ -137,7 +139,8 @@ Current: <span id="currentNumber"></span>
         videoNode.pause()
         //Reset
 
-        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}, {...sub, speed: 0.6}
+        let subs = originalSubs.flatMap(sub => [{...sub, speed: 1}
+            // , {...sub, speed: 0.6}
             // , {...sub, speed: 0.9}
         ])
 
@@ -198,9 +201,11 @@ Current: <span id="currentNumber"></span>
 
         window.subtitles = originalSubs
         originalSubs.forEach(it => {
+            it['ts_o'] = it['ts']
             it['ts'] = toSeconds(it['ts'])
         })
         for (let i = 0; i < originalSubs.length - 1; i++) {
+            originalSubs[i]['te_o'] = originalSubs[i + 1]['ts_o']
             originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 1
             originalSubs[i]['number'] = i+1
         }
@@ -221,7 +226,7 @@ Current: <span id="currentNumber"></span>
 
         prepareSubs(originalSubs)
 
-        //console.log(originalSubs.map(it => `${it.ts}-${it.te}`).join("\n"))
+        console.log(originalSubs.map(it => `${it.ts_o}-${it.te_o} -> ${it.sv}`).join("\n"))
     }
 
     let inputNode = document.querySelector('#video-file')
