@@ -101,6 +101,8 @@
 
 <div>
     Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">
+    <br>
+    <br>
     Audio: <input id="video-file" type="file" title="Video"/>
 
     <audio id="video" src="" width="700" height="500"></audio>
@@ -108,22 +110,18 @@
 <br/>
 Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-left: 1em;"></span>
 
-<div id="subtitle-container">
+<div id="subtitle-container" style="min-height: 150px;">
     <br>
     <br>
-    <div id="sv-sub" style="font-weight: bold; color: blue">
-
-    </div>
-
+    <div id="sv-sub" style="font-weight: bold; font-size: large; color: blue"></div>
     <br>
     <br>
-    <div id="en-sub" style="">
-
-    </div>
+    <div id="en-sub" style=""></div>
 </div>
-<div style="margin-top: 5em; position:absolute;bottom: 30%;width: 100%;">
+<div style="margin-top: 8em; width: 100%;">
     <div style="text-align: center; ">
         <div id="pagination"></div>
+        <br>
         <button id="rewindBtn" style="font-weight: bolder;font-size: larger; margin-right: 3em;width: 5em;height: 9em;" onclick="rewind()"> < </button>
         <button onclick="togglePlay(this)" id="playBtn" class="play-btn" disabled>Play</button>
     </div>
