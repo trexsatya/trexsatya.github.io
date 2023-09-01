@@ -121,9 +121,10 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
 
     </div>
 </div>
-<div style="margin-top: 5em;">
-    <div style="text-align: center;">
+<div style="margin-top: 5em; position:absolute;bottom: 30%;width: 100%;">
+    <div style="text-align: center; ">
         <div id="pagination"></div>
+        <button id="rewindBtn" style="font-weight: bolder;font-size: larger; margin-right: 3em;width: 5em;height: 9em;" onclick="rewind()"> < </button>
         <button onclick="togglePlay(this)" id="playBtn" class="play-btn" disabled>Play</button>
     </div>
 </div>
@@ -196,7 +197,15 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
 
         videoNode.ontimeupdate = e => {
             // console.log(currentSub, videoNode.currentTime)
-            let ct = currentVideoTime()
+            let ct = videoNode.currentTime
+
+            if(window.rewindData) {
+                if(ct >= window.rewindData.from) {
+                    window.rewindData = null
+                } else {
+                    return
+                }
+            }
 
             populateSubtitles(currentSub)
 
@@ -281,14 +290,13 @@ Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-
     let inputNode = document.querySelector('#video-file')
     inputNode.addEventListener('change', playSelectedFile, false)
 
-    function playAudio() {
-        videoNode.play()
+    function rewind() {
+        window.rewindData = {
+            from: videoNode.currentTime,
+            amount: -3 //seconds
+        }
+        videoNode.currentTime = videoNode.currentTime + window.rewindData.amount
     }
-
-    function pauseAudio() {
-        videoNode.pause()
-    }
-
 </script>
 </body>
 
