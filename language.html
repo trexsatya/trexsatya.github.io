@@ -166,6 +166,10 @@
     let videoNode = document.querySelector('audio')
     window.videoNode = videoNode
 
+    function pauseVideo() {
+        window.videoNode.pause()
+        $('#playBtn').html('Play')
+    }
     let currentVideoTime = () => {
         return parseFloat(parseFloat(videoNode.currentTime + '').toFixed(2))
     }
@@ -178,7 +182,24 @@
         $('#currentNumber').html(currentSub.number)
         $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / ' + currentSub.ts_o)
 
-        $('#sv-sub').html(currentSub.sv)
+        $('#sv-sub').html('')
+        currentSub.sv.split(" ").map(it => it.trim()).filter(it => it.length > 0).forEach(word => {
+            let sanitizedWord = word
+            if(['-', '–', '!', '.', ','].some(it => sanitizedWord.startsWith(it))) {
+                sanitizedWord = sanitizedWord.substr(1)
+            }
+
+            if(['-', '–', '!', '?', '.', ','].some(it => sanitizedWord.endsWith(it))) {
+                sanitizedWord = sanitizedWord.substr(0, sanitizedWord.length - 1)
+            }
+
+            let wordLink = $(`<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(sanitizedWord)}" target="_blank">${word}</a></span>`);
+            wordLink.click(e => {
+                pauseVideo()
+            })
+            $('#sv-sub').append(wordLink)
+        })
+
         $('#en-sub').html(currentSub.en)
     }
     let prepareSubs = (pageNumber, allSubs) => {
