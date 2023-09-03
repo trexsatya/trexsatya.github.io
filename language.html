@@ -121,7 +121,18 @@
     <div id="en-sub" style=""></div>
 </div>
 <div style="margin-top: 8em; width: 100%;">
-    <div style="text-align: center; ">
+
+    <div class="controlgroup">
+        <label for="speed-1">0.5</label>
+        <input type="radio" name="speedOption" id="speed-1" data-speed="0.5">
+        <label for="speed-2">0.7</label>
+        <input type="radio" name="speedOption" id="speed-2" checked data-speed="0.7">
+        <label for="speed-3">0.8</label>
+        <input type="radio" name="speedOption" id="speed-3" data-speed="0.8">
+        <label for="speed-4">0.9</label>
+        <input type="radio" name="speedOption" id="speed-4" data-speed="0.9">
+    </div>
+    <div style="text-align: center; margin-top: 2em;">
         <div id="pagination"></div>
         <br>
         <button id="rewindBtn" style="font-weight: bolder;font-size: larger; margin-right: 3em;width: 5em;height: 9em;" onclick="rewind()"> < </button>
@@ -230,7 +241,7 @@
 
             populateSubtitles(currentSub)
 
-            if (ct >= currentSub.te) {
+            if (ct >= currentSub.te + 0.1) {
                 // Go to next subtitle
                 // videoNode.pause()
                 if (subs.length === 0) {
@@ -238,7 +249,12 @@
                 } else {
                     currentSub = subs.shift()
                     videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
-                    videoNode.playbackRate = currentSub.speed
+                    
+                    if(currentSub.speed < 1) {
+                        videoNode.playbackRate = $('.controlgroup input:checked').data('speed')
+                    } else {
+                        videoNode.playbackRate = currentSub.speed
+                    }
 
                     console.log(currentSub)
                     clearSubtitles()
@@ -298,6 +314,7 @@
             formatGoInput: 'go to <%= input %> st/rd/th',
             callback: function (data, pagination) {
                 console.log(data)
+                window.rewindData = null
                 prepareSubs(data, originalSubs)
             }
         })
@@ -318,6 +335,8 @@
         }
         videoNode.currentTime = videoNode.currentTime + window.rewindData.amount
     }
+
+    $('.controlgroup').controlgroup()
 </script>
 </body>
 
