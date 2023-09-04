@@ -100,6 +100,10 @@
 <body>
 
 <div>
+    <iframe width="0" height="0"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+    </iframe>
+    
     Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">
     <br>
     <br>
@@ -249,7 +253,7 @@
                 } else {
                     currentSub = subs.shift()
                     videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
-                    
+
                     if(currentSub.speed < 1) {
                         videoNode.playbackRate = $('.controlgroup input:checked').data('speed')
                     } else {
