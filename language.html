@@ -315,23 +315,25 @@
             originalSubs[i]['number'] = i + 1
         }
 
-        $('#pagination').pagination({
-            dataSource: range(1, originalSubs.length + 1),
-            pageSize: 1,
-            // showPrevious: false,
-            // showNext: false,
-            showGoInput: true,
-            showGoButton: true,
-            formatGoInput: 'go to <%= input %> st/rd/th',
-            callback: function (data, pagination) {
-                console.log(data)
-                window.rewindData = null
-                // prepareSubs(data, originalSubs)
-                let time = prompt("Please enter time", "0");
-                videoNode.currentTime = parseFloat(time)
-                alert(videoNode.currentTime)
-            }
-        })
+        videoNode.oncanplay = e => {
+            $('#pagination').pagination({
+                dataSource: range(1, originalSubs.length + 1),
+                pageSize: 1,
+                // showPrevious: false,
+                // showNext: false,
+                showGoInput: true,
+                showGoButton: true,
+                formatGoInput: 'go to <%= input %> st/rd/th',
+                callback: function (data, pagination) {
+                    console.log(data)
+                    window.rewindData = null
+                    // prepareSubs(data, originalSubs)
+                    let time = prompt("Please enter time", "0");
+                    videoNode.currentTime = parseFloat(time)
+                    alert(videoNode.currentTime)
+                }
+            })
+        }
 
         $('#playBtn').attr('disabled', false)
         prepareSubs(1, originalSubs)
