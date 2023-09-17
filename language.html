@@ -235,7 +235,7 @@
 
         videoNode.play()
 
-        alert(videoNode.currentTime)
+        // alert(videoNode.currentTime)
 
         videoNode.ontimeupdate = e => {
             // console.log(currentSub, videoNode.currentTime)
@@ -327,10 +327,7 @@
                 callback: function (data, pagination) {
                     console.log(data)
                     window.rewindData = null
-                    // prepareSubs(data, originalSubs)
-                    let time = prompt("Please enter time", "0");
-                    videoNode.currentTime = parseFloat(time)
-                    alert(videoNode.currentTime)
+                    prepareSubs(data, originalSubs)
                 }
             })
         }
