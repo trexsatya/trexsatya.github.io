@@ -229,6 +229,7 @@
 
         let currentSub = subs.shift()
         videoNode.pause()
+        alert('Going to ' + Math.max(currentSub.ts - 0.01, 0))
         videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
         videoNode.playbackRate = currentSub.speed
 
