@@ -228,10 +228,11 @@
         ])
 
         let currentSub = subs.shift()
-        
-        alert(JSON.stringify(currentSub))
+        videoNode.pause()
         videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
         videoNode.playbackRate = currentSub.speed
+
+        videoNode.play()
 
         videoNode.ontimeupdate = e => {
             // console.log(currentSub, videoNode.currentTime)
@@ -241,6 +242,7 @@
                 if(ct >= window.rewindData.from) {
                     window.rewindData = null
                 } else {
+                    alert("Returning")
                     return
                 }
             }
