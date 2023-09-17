@@ -235,6 +235,8 @@
 
         videoNode.play()
 
+        alert(videoNode.currentTime)
+
         videoNode.ontimeupdate = e => {
             // console.log(currentSub, videoNode.currentTime)
             let ct = videoNode.currentTime
