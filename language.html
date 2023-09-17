@@ -103,7 +103,7 @@
     <iframe width="0" height="0"
             src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
     </iframe>
-    
+
     Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">
     <br>
     <br>
@@ -341,6 +341,12 @@
     }
 
     $('.controlgroup').controlgroup()
+
+    document.onkeyup = e => {
+        if(e.which === 32) { //Space
+            togglePlay()
+        }
+    }
 </script>
 </body>
 
