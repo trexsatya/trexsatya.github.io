@@ -98,7 +98,7 @@
 </head>
 
 <body>
-ska
+
 <div>
     <iframe width="0" height="0"
             src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
@@ -229,7 +229,7 @@ ska
 
         let currentSub = subs.shift()
         videoNode.pause()
-        alert('Going to ' + Math.max(currentSub.ts - 0.01, 0))
+        // alert('Going to ' + Math.max(currentSub.ts - 0.01, 0))
         videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
         videoNode.playbackRate = currentSub.speed
 
@@ -326,7 +326,10 @@ ska
             callback: function (data, pagination) {
                 console.log(data)
                 window.rewindData = null
-                prepareSubs(data, originalSubs)
+                // prepareSubs(data, originalSubs)
+                let time = prompt("Please enter time", "0");
+                videoNode.currentTime = parseFloat(time)
+                alert(videoNode.currentTime)
             }
         })
 
