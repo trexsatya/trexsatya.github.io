@@ -228,6 +228,8 @@
         ])
 
         let currentSub = subs.shift()
+        
+        alert(JSON.stringify(currentSub))
         videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
         videoNode.playbackRate = currentSub.speed
 
