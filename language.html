@@ -16,6 +16,7 @@
     <script type="text/javascript" src="/jquery.lettering.js"></script>
     <script type="text/javascript" src="/jquery.fittext.js"></script>
     <script type="text/javascript" src="/rulez.min.js"></script>
+    <script type="text/javascript" src="/mediaelement.js"></script>
     <!-- <script type="text/javascript" src="/treant.js"></script> -->
     <link rel="stylesheet" href="/animate.css">
     <link rel="stylesheet" href="/treant.css">
@@ -69,10 +70,10 @@
             if (!el) el = $('#playBtn')[0]
 
             if ($(el).text() === 'Play') {
-                videoNode.play()
+                player.play()
                 $(el).html("Pause").removeClass('play-btn').addClass('pause-btn')
             } else {
-                videoNode.pause()
+                player.pause()
                 $(el).html("Play").removeClass('pause-btn').addClass('play-btn')
             }
         }
@@ -178,15 +179,20 @@
         element.className = isError ? 'error' : 'info'
     }
 
-    let videoNode = document.querySelector('audio')
-    window.videoNode = videoNode
+    let player = new MediaElement(document.querySelector('audio'), {
+        success: function(mediaElement, originalNode) {
+            console.log('Media element', mediaElement, originalNode)
+        }
+    });
+
+    window.player = player
 
     function pauseVideo() {
-        window.videoNode.pause()
+        window.player.pause()
         $('#playBtn').html('Play')
     }
     let currentVideoTime = () => {
-        return parseFloat(parseFloat(videoNode.currentTime + '').toFixed(2))
+        return parseFloat(parseFloat(player.getCurrentTime() + '').toFixed(2))
     }
     let clearSubtitles = () => {
         $('#sv-sub').html('')
@@ -219,7 +225,7 @@
     }
     let prepareSubs = (pageNumber, allSubs) => {
         pageNumber = parseInt(pageNumber)
-        // videoNode.pause()
+        // player.pause()
         //Reset
         let subs = [allSubs[pageNumber - 1]].flatMap(sub => [
             {...sub, speed: 1}
@@ -228,56 +234,17 @@
         ])
 
         let currentSub = subs.shift()
-        videoNode.pause()
+        // player.pause()
         // alert('Going to ' + Math.max(currentSub.ts - 0.01, 0))
-        videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
-        videoNode.playbackRate = currentSub.speed
+        player.setCurrentTime(Math.max(currentSub.ts - 0.01, 0))
+        // player.playbackRate = currentSub.speed
 
-        videoNode.play()
+        player.play()
 
-        // alert(videoNode.currentTime)
+        window.subs = subs
+        window.currentSub = currentSub 
+        window.pageNumber = pageNumber
 
-        videoNode.ontimeupdate = e => {
-            // console.log(currentSub, videoNode.currentTime)
-            let ct = videoNode.currentTime
-
-            if(window.rewindData) {
-                if(ct >= window.rewindData.from) {
-                    window.rewindData = null
-                } else {
-                    alert("Returning")
-                    return
-                }
-            }
-
-            populateSubtitles(currentSub)
-
-            if (ct >= currentSub.te + 0.1) {
-                // Go to next subtitle
-                // videoNode.pause()
-                if (subs.length === 0) {
-                    $('#pagination').pagination('go', pageNumber + 1)
-                } else {
-                    currentSub = subs.shift()
-                    videoNode.currentTime = Math.max(currentSub.ts - 0.01, 0)
-
-                    if(currentSub.speed < 1) {
-                        videoNode.playbackRate = $('.controlgroup input:checked').data('speed')
-                    } else {
-                        videoNode.playbackRate = currentSub.speed
-                    }
-
-                    console.log(currentSub)
-                    clearSubtitles()
-
-                    if(currentSub.speed < 1) {
-                       populateSubtitles(currentSub)
-                    }
-                }
-            }
-        }
-
-        videoNode.play()
         $('#playBtn').html('Pause')
     }
 
@@ -285,7 +252,7 @@
         let file = this.files[0]
         let type = file.type
 
-        let canPlay = videoNode.canPlayType(type)
+        let canPlay = player.canPlayType(type)
         if (canPlay === '') canPlay = 'no'
         let message = 'Can play type "' + type + '": ' + canPlay
         let isError = canPlay === 'no'
@@ -295,7 +262,7 @@
             return
         }
 
-        videoNode.src = URL.createObjectURL(file)
+        player.setSrc(URL.createObjectURL(file))
 
         let strategy = "Normal-Slow"
 
@@ -333,6 +300,50 @@
         $('#playBtn').attr('disabled', false)
         prepareSubs(1, originalSubs)
 
+        const ontimeupdate = e => {
+            // console.log(currentSub, player.currentTime)
+            let ct = player.getCurrentTime()
+
+            if(window.rewindData) {
+                if(ct >= window.rewindData.from) {
+                    window.rewindData = null
+                } else {
+                    alert("Returning")
+                    return
+                }
+            }
+
+            let currentSub = window.currentSub
+            let subs = window.subs
+
+            populateSubtitles(currentSub)
+
+            if (ct >= currentSub.te + 0.1) {
+                // Go to next subtitle
+                // player.pause()
+                if (subs.length === 0) {
+                    $('#pagination').pagination('go', window.pageNumber + 1)
+                } else {
+                    currentSub = subs.shift()
+                    player.setCurrentTime(Math.max(currentSub.ts - 0.01, 0))
+
+                    // if(currentSub.speed < 1) {
+                    //     player.playbackRate = $('.controlgroup input:checked').data('speed')
+                    // } else {
+                    //     player.playbackRate = currentSub.speed
+                    // }
+
+                    console.log(currentSub)
+                    clearSubtitles()
+
+                    if(currentSub.speed < 1) {
+                        populateSubtitles(currentSub)
+                    }
+                }
+            }
+        }
+        player.addEventListener('timeupdate', ontimeupdate)
+
         console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
     }
 
@@ -341,10 +352,10 @@
 
     function rewind() {
         window.rewindData = {
-            from: videoNode.currentTime,
+            from: player.getCurrentTime(),
             amount: -3 //seconds
         }
-        videoNode.currentTime = videoNode.currentTime + window.rewindData.amount
+        player.setCurrentTime(player.currentTime + window.rewindData.amount)
     }
 
     $('.controlgroup').controlgroup()
