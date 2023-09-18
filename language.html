@@ -17,20 +17,19 @@
     <script type="text/javascript" src="/jquery.fittext.js"></script>
     <script type="text/javascript" src="/rulez.min.js"></script>
     <script type="text/javascript" src="/mediaelement.js"></script>
+    <script type="text/javascript" src="/mediaelement-plugins/speed/speed.min.js"></script>
+    <script type="text/javascript" src="/mediaelement-plugins/speed/speed-i18n.js"></script>
     <!-- <script type="text/javascript" src="/treant.js"></script> -->
     <link rel="stylesheet" href="/animate.css">
     <link rel="stylesheet" href="/treant.css">
     <script src="/vendor/raphael.js"></script>
-    <script src="https://unpkg.com/geometric@2.2.3/build/geometric.min.js"></script>
 
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="/tree.js"></script>
     <!-- <script src="../../vendor/jquery.min.js"></script> -->
     <script src="../../vendor/jquery.easing.js"></script>
 
     <script type="text/javascript" src="/jquery.textillate.js"></script>
     <!--    <script src="/typed.min.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
     <script type="text/javascript" src="/diff-match-patch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
     <link href="/select2.min.css" rel="stylesheet"/>
@@ -114,7 +113,7 @@
 </div>
 <br/>
 <div style="color: grey;">
-    Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-left: 1em;"></span>
+    Current: <span id="currentNumber"></span> <span id="currentTime" style="padding-left: 1em;"></span> <span id="currentSpeed" style="padding-left: 1em;"></span>
 </div>
 
 <div id="subtitle-container" style="min-height: 150px;">
@@ -180,6 +179,8 @@
     }
 
     let player = new MediaElement(document.querySelector('audio'), {
+        defaultSpeed: 1.0,
+        features: ['speed'],
         success: function(mediaElement, originalNode) {
             console.log('Media element', mediaElement, originalNode)
         }
@@ -202,6 +203,7 @@
     let populateSubtitles = (currentSub) => {
         $('#currentNumber').html(currentSub.number)
         $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / ' + currentSub.ts_o)
+        $('#currentSpeed').html(player.getPlaybackRate())
 
         $('#sv-sub').html('')
         currentSub.sv.split(" ").map(it => it.trim()).filter(it => it.length > 0).forEach(word => {
@@ -242,7 +244,7 @@
         player.play()
 
         window.subs = subs
-        window.currentSub = currentSub 
+        window.currentSub = currentSub
         window.pageNumber = pageNumber
 
         $('#playBtn').html('Pause')
@@ -324,14 +326,14 @@
                 if (subs.length === 0) {
                     $('#pagination').pagination('go', window.pageNumber + 1)
                 } else {
-                    currentSub = subs.shift()
+                    window.currentSub = subs.shift()
                     player.setCurrentTime(Math.max(currentSub.ts - 0.01, 0))
 
-                    // if(currentSub.speed < 1) {
-                    //     player.playbackRate = $('.controlgroup input:checked').data('speed')
-                    // } else {
-                    //     player.playbackRate = currentSub.speed
-                    // }
+                    if(currentSub.speed < 1) {
+                        player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
+                    } else {
+                        player.setPlaybackRate(currentSub.speed)
+                    }
 
                     console.log(currentSub)
                     clearSubtitles()
