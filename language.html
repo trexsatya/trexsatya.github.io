@@ -187,7 +187,27 @@
     });
 
     window.player = player
+    window.marginStartSubtitle = 0.01
 
+    const isIOS = () => {
+        const iosQuirkPresent = function () {
+            const audio = new Audio();
+
+            audio.volume = 0.5;
+            return audio.volume === 1;   // volume cannot be changed from "1" on iOS 12 and below
+        };
+
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isAppleDevice = navigator.userAgent.includes('Macintosh');
+        const isTouchScreen = navigator.maxTouchPoints >= 1;   // true for iOS 13 (and hopefully beyond)
+
+        return isIOS || (isAppleDevice && (isTouchScreen || iosQuirkPresent()));
+    };
+
+    if(isIOS()) {
+        window.marginStartSubtitle = 4
+    }
+    
     function pauseVideo() {
         window.player.pause()
         $('#playBtn').html('Play')
@@ -237,9 +257,8 @@
 
         let currentSub = subs.shift()
         // player.pause()
-        // alert('Going to ' + Math.max(currentSub.ts - 0.01, 0))
-        player.setCurrentTime(Math.max(currentSub.ts - 0.01, 0))
-        // player.playbackRate = currentSub.speed
+        player.setCurrentTime(Math.max(currentSub.ts - window.marginStartSubtitle, 0))
+        player.setplaybackRate(currentSub.speed)
 
         player.play()
 
@@ -327,7 +346,7 @@
                     $('#pagination').pagination('go', window.pageNumber + 1)
                 } else {
                     window.currentSub = subs.shift()
-                    player.setCurrentTime(Math.max(currentSub.ts - 0.01, 0))
+                    player.setCurrentTime(Math.max(currentSub.ts - window.marginStartSubtitle, 0))
 
                     if(currentSub.speed < 1) {
                         player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
