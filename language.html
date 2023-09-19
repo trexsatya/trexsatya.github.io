@@ -191,7 +191,7 @@
     });
 
     window.player = player
-    window.marginStartSubtitle = 0.01
+    window.marginStartSubtitle = - 0.1
     window.marginEndSubtitle = 1
 
     const isIOS = () => {
@@ -210,7 +210,7 @@
     };
 
     if(isIOS()) {
-        window.marginStartSubtitle = 4
+        window.marginStartSubtitle = -1
         window.marginEndSubtitle = 0
     }
 
@@ -263,7 +263,7 @@
 
         let currentSub = subs.shift()
 
-        player.setCurrentTime(Math.max(currentSub.ts - window.marginStartSubtitle, 0))
+        player.setCurrentTime(Math.max(currentSub.ts + window.marginStartSubtitle, 0))
         player.setPlaybackRate(currentSub.speed)
 
         player.play()
@@ -335,7 +335,7 @@
                 if(ct >= window.rewindData.from) {
                     window.rewindData = null
                 } else {
-                    return
+                    // return
                 }
             }
 
