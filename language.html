@@ -94,6 +94,10 @@
             background: red;
             color: white;
         }
+
+        body {
+            touch-action: manipulation;
+        }
     </style>
 </head>
 
@@ -207,7 +211,7 @@
     if(isIOS()) {
         window.marginStartSubtitle = 4
     }
-    
+
     function pauseVideo() {
         window.player.pause()
         $('#playBtn').html('Play')
