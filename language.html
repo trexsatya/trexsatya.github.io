@@ -251,7 +251,7 @@
     }
     let prepareSubs = (pageNumber, allSubs) => {
         pageNumber = parseInt(pageNumber)
-        // player.pause()
+
         //Reset
         let subs = [allSubs[pageNumber - 1]].flatMap(sub => [
             {...sub, speed: 1}
@@ -260,9 +260,9 @@
         ])
 
         let currentSub = subs.shift()
-        // player.pause()
+
         player.setCurrentTime(Math.max(currentSub.ts - window.marginStartSubtitle, 0))
-        player.setplaybackRate(currentSub.speed)
+        player.setPlaybackRate(currentSub.speed)
 
         player.play()
 
@@ -333,7 +333,6 @@
                 if(ct >= window.rewindData.from) {
                     window.rewindData = null
                 } else {
-                    // alert("Returning")
                     return
                 }
             }
