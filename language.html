@@ -192,6 +192,7 @@
 
     window.player = player
     window.marginStartSubtitle = 0.01
+    window.marginEndSubtitle = 1
 
     const isIOS = () => {
         const iosQuirkPresent = function () {
@@ -210,6 +211,7 @@
 
     if(isIOS()) {
         window.marginStartSubtitle = 4
+        window.marginEndSubtitle = 0
     }
 
     function pauseVideo() {
@@ -342,7 +344,7 @@
 
             populateSubtitles(currentSub)
 
-            if (ct >= currentSub.te + 1) {
+            if (ct >= currentSub.te + window.marginEndSubtitle) {
                 // Go to next subtitle
                 // player.pause()
                 if (subs.length === 0) {
