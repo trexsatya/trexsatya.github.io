@@ -228,7 +228,7 @@
 
     let populateSubtitles = (currentSub) => {
         $('#currentNumber').html(currentSub.number)
-        $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / ' + currentSub.ts_o)
+        $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / [' + currentSub.ts_o + '-' + currentSub.te_o + ']')
         $('#currentSpeed').html(player.getPlaybackRate())
 
         $('#sv-sub').html('')
