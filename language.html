@@ -229,7 +229,7 @@
     let populateSubtitles = (currentSub) => {
         $('#currentNumber').html(currentSub.number)
         $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / [' + currentSub.ts_o + '-' + currentSub.te_o + ']')
-        $('#currentSpeed').html(player.getPlaybackRate())
+        $('#currentSpeed').html(player.getPlaybackRate() + ' / ' + currentSub.speed)
 
         $('#sv-sub').html('')
         currentSub.sv.split(" ").map(it => it.trim()).filter(it => it.length > 0).forEach(word => {
@@ -256,9 +256,9 @@
 
         //Reset
         let subs = [allSubs[pageNumber - 1]].flatMap(sub => [
-            {...sub, speed: 1}
-            , {...sub, speed: 0.6}
-            , {...sub, speed: 0.9}
+            {...sub, speed: 0.6}
+            , {...sub, speed: 0.8}
+            , {...sub, speed: 1.0}
         ])
 
         let currentSub = subs.shift()
@@ -350,7 +350,8 @@
                 if (subs.length === 0) {
                     $('#pagination').pagination('go', window.pageNumber + 1)
                 } else {
-                    window.currentSub = subs.shift()
+                    currentSub = subs.shift()
+                    window.currentSub = currentSub
                     player.setCurrentTime(Math.max(currentSub.ts + window.marginStartSubtitle, 0))
 
                     if(currentSub.speed < 1) {
