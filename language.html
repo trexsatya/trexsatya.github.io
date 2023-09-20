@@ -351,7 +351,7 @@
                     $('#pagination').pagination('go', window.pageNumber + 1)
                 } else {
                     window.currentSub = subs.shift()
-                    player.setCurrentTime(Math.max(currentSub.ts - window.marginStartSubtitle, 0))
+                    player.setCurrentTime(Math.max(currentSub.ts + window.marginStartSubtitle, 0))
 
                     if(currentSub.speed < 1) {
                         player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
