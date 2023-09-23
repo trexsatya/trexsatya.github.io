@@ -214,6 +214,9 @@
         window.marginEndSubtitle = 0
     }
 
+    window.marginStartSubtitle = 0
+    window.marginEndSubtitle = 0
+
     function pauseVideo() {
         window.player.pause()
         $('#playBtn').html('Play')
@@ -256,14 +259,16 @@
 
         //Reset
         let subs = [allSubs[pageNumber - 1]].flatMap(sub => [
-            {...sub, speed: 0.6}
-            , {...sub, speed: 0.8}
-            , {...sub, speed: 1.0}
+            // {...sub, speed: 0.6}
+            // , {...sub, speed: 0.8}
+             {...sub, speed: 1.0}
         ])
 
         let currentSub = subs.shift()
 
         player.setCurrentTime(Math.max(currentSub.ts + window.marginStartSubtitle, 0))
+
+        if(!window.rewindData)
         player.setPlaybackRate(currentSub.speed)
 
         player.play()
@@ -331,20 +336,22 @@
             // console.log(currentSub, player.currentTime)
             let ct = player.getCurrentTime()
 
+            let currentSub = window.currentSub
+            let subs = window.subs
+
             if(window.rewindData) {
                 if(ct >= window.rewindData.from) {
                     window.rewindData = null
+                    console.log("Resetting speed", ct)
+                    player.setPlaybackRate(currentSub.speed)
                 } else {
                     // return
                 }
             }
 
-            let currentSub = window.currentSub
-            let subs = window.subs
-
             populateSubtitles(currentSub)
 
-            if (ct >= currentSub.te + window.marginEndSubtitle) {
+            if (!window.rewindData && ct >= currentSub.te + window.marginEndSubtitle) {
                 // Go to next subtitle
                 // player.pause()
                 if (subs.length === 0) {
@@ -356,7 +363,7 @@
 
                     if(currentSub.speed < 1) {
                         player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
-                    } else {
+                    } else if(!window.rewindData){
                         player.setPlaybackRate(currentSub.speed)
                     }
 
@@ -374,11 +381,13 @@
     inputNode.addEventListener('change', playSelectedFile, false)
 
     function rewind() {
-        window.rewindData = {
+        window.rewindData = window.rewindData || {
             from: player.getCurrentTime(),
-            amount: -3 //seconds
         }
-        player.setCurrentTime(player.currentTime + window.rewindData.amount)
+
+        console.log("Should come back to", window.rewindData.from)
+        player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
+        player.setCurrentTime(player.currentTime - 3)
     }
 
     $('.controlgroup').controlgroup()
