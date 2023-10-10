@@ -88,6 +88,19 @@
       audio {
         margin-top: 1em;
       }
+
+      #expected-answer {
+        padding: 1em;
+        border-radius: 2em;
+      }
+
+      input.wrong {
+        border-color: red;
+      }
+
+      input.right {
+
+      }
     </style>
 
     <script src="/play.js"></script>
@@ -171,19 +184,30 @@
          $("#test-answer").val('')
          $(`.highlighted`).removeClass("highlighted")
          $('#expected-answer').html('')
+         $("#test-answer").removeClass("wrong")
        }
 
        function checkAnswer() {
-         let answer = $("#test-answer").val()
+         let answer = $("#test-answer").val().trim()
+
+         if (answer.length === 0) {
+           alert('Write answer first!')
+           return
+         }
+
          let id = $('#test-word').data()['exampleId']
          let en = $('#test-word').data()['en']
 
          let expected = window.words.find(it => it.id === id && it.en === en).sv
          console.log("Expected", expected, "Got", answer)
-
-         $(`#${id}`).addClass("highlighted")
+         if(expected.trim() !== answer) {
+           $("#test-answer").addClass("wrong")
+         }
+         let highlighted = $(`#${id}`);
+         highlighted.addClass("highlighted")
 
          $('#expected-answer').html(expected)
+         highlighted[0].scrollIntoView(false);
        }
     </script>
     <style>
@@ -194,10 +218,10 @@
 <body class="article">
 
 <div style="text-align: center; margin-bottom: 2em;" class="header">
-   <button onclick="showNewWord(this)" style="margin-right: 2em;">New Word</button>
-    <span id="test-word" style="font-weight: bold;"></span> <input id="test-answer">
-    <button onclick="checkAnswer(this)" style="margin-left: 3em;">Check</button>
-    <span id="expected-answer" style="color: blue; font-weight: bold; margin-left: 2em;"></span>
+    <button onclick="showNewWord(this)" style="margin-right: 2em; margin-bottom: 1em;">New Word</button>
+    <span id="test-word" style="font-weight: bold;margin-bottom: 1em;"></span> <input id="test-answer" style="margin-bottom: 1em;">
+    <button onclick="checkAnswer(this)" style="margin-bottom: 1em;">Check</button>
+    <span id="expected-answer" style="color: blue; font-weight: bold; margin-left: 2em;margin-bottom: 1em;"></span>
 </div>
 <hr style="margin-top: 4em;">
 <div id="result" style="">
