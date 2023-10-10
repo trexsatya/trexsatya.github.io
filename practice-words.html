@@ -200,6 +200,8 @@
 
          let expected = window.words.find(it => it.id === id && it.en === en).sv
          console.log("Expected", expected, "Got", answer)
+         expected = expected.replaceAll(" ", " ");
+         
          if(expected.trim() !== answer) {
            $("#test-answer").addClass("wrong")
          } else {
