@@ -202,6 +202,8 @@
          console.log("Expected", expected, "Got", answer)
          if(expected.trim() !== answer) {
            $("#test-answer").addClass("wrong")
+         } else {
+           $("#test-answer").removeClass("wrong")
          }
          let highlighted = $(`#${id}`);
          highlighted.addClass("highlighted")
