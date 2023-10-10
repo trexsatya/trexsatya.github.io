@@ -51,8 +51,42 @@
       };
     </script>
     <style>
-      .article {
+      body {
+        top: 0 !important;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+      }
+
+      #result {
         font-size: 1.0rem;
+        padding: 2em;
+        margin-top: 2em;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2em;
+        position: fixed;
+        background: #a3e8a3;
+        padding: 1em;
+        width: 100%;
+        z-index: 10000;
+      }
+
+      .highlighted {
+        background-color: cyan;
+        padding: 1em;
+        border-radius: 2em;
+        color: blue;
+      }
+
+      audio {
+        margin-top: 1em;
       }
     </style>
 
@@ -63,6 +97,23 @@
     <link rel="stylesheet" href="/fontawesome-all.css">
 
     <script>
+      window.words = []
+
+      function populateWords(exampleHtml, id) {
+          $(exampleHtml).find("*[title]").toArray().forEach((div, i) => {
+            const title = div.getAttribute('title');
+            title.split(";").map(it => {
+              if(it.indexOf("=") < 0) return null
+              let [sv, en] = it.split("=").map(_it => _it.trim())
+
+              sv = sv.replace("vs. ", "").replace("<br>\n", "")
+              sv = sv.replaceAll(/\[.*?\]/g, "")
+
+              window.words.push({ sv: sv.trim(), en: en, tested: false, id: id })
+            })
+          });
+      }
+
       function render(history, article_html) {
          let relevant = history.filter(it => (new Date().getTime() - Date.parse(it['time']))/(1000 * 3600 * 24) <= 7)
 
@@ -71,9 +122,12 @@
         $('#result').html('')
         relevant.forEach(word => {
             let example = article_html.map(it => $(it).find(`div[example-id="${word['word_html_id']}"]`)).filter(it => $(it).length > 0).map(it => $(it).html()).join("<br>")
-            let $div = $('<div></div>').html(example)
+            let $div = $('<div></div>').html(example).attr("id", word['word_html_id'])
+            populateWords(example, word['word_html_id'])
             $('#result').append($div).append('<br>')
         });
+
+        showNewWord();
 
         (window.transformers || []).forEach(transformer => {
           try {
@@ -92,6 +146,44 @@
          history = await history.json()
 
          render(history, article['content'])
+
+         $("audio").toArray().forEach(it => {
+           new MediaElement(it, {
+             defaultSpeed: 1.0,
+             features: ['speed'],
+             success: function(mediaElement, originalNode) {
+               console.log('Media element', mediaElement, originalNode)
+             }
+           });
+         })
+       }
+
+       window.alreadyTested = []
+       function showNewWord() {
+         let randomWord = _.sample(window.words.filter(it => !it.tested));
+
+         let $test = $('#test-word');
+         $test.html(`${randomWord['en']} = `)
+         $test.data("example-id", randomWord.id)
+         $test.data("en", randomWord.en)
+         randomWord.tested = true;
+
+         $("#test-answer").val('')
+         $(`.highlighted`).removeClass("highlighted")
+         $('#expected-answer').html('')
+       }
+
+       function checkAnswer() {
+         let answer = $("#test-answer").val()
+         let id = $('#test-word').data()['exampleId']
+         let en = $('#test-word').data()['en']
+
+         let expected = window.words.find(it => it.id === id && it.en === en).sv
+         console.log("Expected", expected, "Got", answer)
+
+         $(`#${id}`).addClass("highlighted")
+
+         $('#expected-answer').html(expected)
        }
     </script>
     <style>
@@ -101,7 +193,14 @@
 
 <body class="article">
 
-<div id="result">
+<div style="text-align: center; margin-bottom: 2em;" class="header">
+   <button onclick="showNewWord(this)" style="margin-right: 2em;">New Word</button>
+    <span id="test-word" style="font-weight: bold;"></span> <input id="test-answer">
+    <button onclick="checkAnswer(this)" style="margin-left: 3em;">Check</button>
+    <span id="expected-answer" style="color: blue; font-weight: bold; margin-left: 2em;"></span>
+</div>
+<hr style="margin-top: 4em;">
+<div id="result" style="">
 
 </div>
 <div>
