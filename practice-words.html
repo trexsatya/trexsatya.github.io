@@ -96,6 +96,7 @@
 
       input.wrong {
         border-color: red;
+        border-width: 3px;
       }
 
       input.right {
@@ -122,7 +123,9 @@
               sv = sv.replace("vs. ", "").replace("<br>\n", "")
               sv = sv.replaceAll(/\[.*?\]/g, "")
 
-              window.words.push({ sv: sv.trim(), en: en, tested: false, id: id })
+              if(!window.words.find(it => it.en.toLowerCase() === en.toLowerCase())) {
+                window.words.push({ sv: sv.trim(), en: en, tested: false, id: id })
+              }
             })
           });
       }
@@ -181,6 +184,8 @@
          $test.data("en", randomWord.en)
          randomWord.tested = true;
 
+         let howManyLeft = window.words.filter(it => !it.tested).length;
+         $('#word-counter').html(`( ${howManyLeft} )`)
          $("#test-answer").val('')
          $(`.highlighted`).removeClass("highlighted")
          $('#expected-answer').html('')
@@ -188,7 +193,7 @@
        }
 
        function checkAnswer() {
-         let answer = $("#test-answer").val().trim()
+         let answer = $("#test-answer").val().trim().toLowerCase()
 
          if (answer.length === 0) {
            alert('Write answer first!')
@@ -200,8 +205,9 @@
 
          let expected = window.words.find(it => it.id === id && it.en === en).sv
          console.log("Expected", expected, "Got", answer)
+         expected = expected.toLowerCase()
          expected = expected.replaceAll(" ", " ");
-         
+
          if(expected.trim() !== answer) {
            $("#test-answer").addClass("wrong")
          } else {
@@ -222,6 +228,7 @@
 <body class="article">
 
 <div style="text-align: center; margin-bottom: 2em;" class="header">
+    <span id="word-counter"></span>
     <button onclick="showNewWord(this)" style="margin-right: 2em; margin-bottom: 1em;">New Word</button>
     <span id="test-word" style="font-weight: bold;margin-bottom: 1em;"></span> <input id="test-answer" style="margin-bottom: 1em;">
     <button onclick="checkAnswer(this)" style="margin-bottom: 1em;">Check</button>
