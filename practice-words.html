@@ -122,6 +122,8 @@
 
               sv = sv.replace("vs. ", "").replace("<br>\n", "")
               sv = sv.replaceAll(/\[.*?\]/g, "")
+              en = en.replace("vs. ", "").replace("<br>\n", "")
+              en = en.replaceAll(/\[.*?\]/g, "")
 
               if(!window.words.find(it => it.en.toLowerCase() === en.toLowerCase())) {
                 window.words.push({ sv: sv.trim(), en: en, tested: false, id: id })
