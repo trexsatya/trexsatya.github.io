@@ -147,7 +147,10 @@
         window.words = []
 
         if(!date_range) {
-          date_range = [moment().subtract(1, 'days'), moment()]
+          date_range = [moment().subtract(2, 'days'), moment()]
+          let drp = $('#date-range').data('daterangepicker')
+          drp.setStartDate(date_range[0]);
+          drp.setEndDate(date_range[1])
         }
 
         let relevant = history.filter(it => date_range[0].isBefore(Date.parse(it['time'])) &&  date_range[1].isAfter(Date.parse(it['time'])))
@@ -195,7 +198,7 @@
       }
 
       $(function() {
-        const start = moment().subtract(29, 'days');
+        const start = moment().subtract(2, 'days');
         const end = moment();
 
         function cb(start, end) {
