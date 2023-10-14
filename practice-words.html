@@ -45,6 +45,10 @@
     <script src="/ace/src-noconflict/ace.js" type="text/javascript" charSet="utf-8"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <script type="text/javascript">
       Array.prototype.max = function () {
         return Math.max.apply(null, this);
@@ -75,7 +79,12 @@
         background: #a3e8a3;
         padding: 1em;
         width: 100%;
-        z-index: 10000;
+        z-index: 3;
+      }
+
+      #date-range {
+        position: fixed;
+        z-index: 4;
       }
 
       .highlighted {
@@ -132,8 +141,16 @@
           });
       }
 
-      function render(history, article_html) {
-         let relevant = history.filter(it => (new Date().getTime() - Date.parse(it['time']))/(1000 * 3600 * 24) <= 7)
+      function render(date_range) {
+        let history = window.wordHistory;
+        let article_html = window.article
+        window.words = []
+
+        if(!date_range) {
+          date_range = [moment().subtract(6, 'days'), moment()]
+        }
+
+        let relevant = history.filter(it => date_range[0].isBefore(Date.parse(it['time'])) &&  date_range[1].isAfter(Date.parse(it['time'])))
 
         article_html = $.parseHTML(`<body>${article_html}</body>`)
 
@@ -153,8 +170,58 @@
           } catch (e) {
             console.log(e);
           }
-        })
+        });
+
+        // Remove/Cleanup players
+        window.audioPlayers = window.audioPlayers || []
+        window.audioPlayers.forEach(player => {
+          if (!player.paused) {
+            player.pause();
+          }
+          player.remove();
+        });
+
+        $("audio").toArray().forEach(it => {
+          let player = new MediaElement(it, {
+            defaultSpeed: 1.0,
+            features: ['speed'],
+            success: function(mediaElement, originalNode) {
+              console.log('Media element', mediaElement, originalNode)
+            }
+          });
+          window.audioPlayers.push(player);
+        }); //audios
+
       }
+
+      $(function() {
+        const start = moment().subtract(29, 'days');
+        const end = moment();
+
+        function cb(start, end) {
+          $('#date-range span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+
+        $('#date-range').daterangepicker({
+          startDate: start,
+          endDate: end,
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          }
+        }, cb);
+
+        cb(start, end);
+        $('#date-range')
+          .css({width: 'auto'})
+          .on('apply.daterangepicker', function(ev, picker) {
+              render([picker.startDate, picker.endDate])
+          });
+      });
 
        window.onload = async () => {
          let article = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/article/14")
@@ -163,17 +230,13 @@
          let history = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/word_history.json")
          history = await history.json()
 
-         render(history, article['content'])
+         window.wordHistory = history;
+         window.article = article['content'];
 
-         $("audio").toArray().forEach(it => {
-           new MediaElement(it, {
-             defaultSpeed: 1.0,
-             features: ['speed'],
-             success: function(mediaElement, originalNode) {
-               console.log('Media element', mediaElement, originalNode)
-             }
-           });
-         })
+         render()
+
+         //Apply date filter
+
        }
 
        window.alreadyTested = []
@@ -228,6 +291,11 @@
 </head>
 
 <body class="article">
+
+<div id="date-range" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+    <i class="fa fa-calendar"></i>&nbsp;
+    <span></span> <i class="fa fa-caret-down"></i>
+</div>
 
 <div style="text-align: center; margin-bottom: 2em;" class="header">
     <span id="word-counter"></span>
