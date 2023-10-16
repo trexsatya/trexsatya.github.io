@@ -31,6 +31,7 @@
     <!--    <script src="/typed.min.js"></script>-->
 
     <script type="text/javascript" src="/diff-match-patch.js"></script>
+    <script type="text/javascript" src="/data-structures.js"></script>
 <!--    <script src="/underscore.min.js"></script>-->
     <link href="/select2.min.css" rel="stylesheet"/>
     <link href="/pagination.css" rel="stylesheet"/>
@@ -249,8 +250,22 @@
        }
 
        window.alreadyTested = []
+       window.currentWord = null
+
        function showNewWord() {
-         let randomWord = _.sample(window.words.filter(it => !it.tested));
+         let randomWord = null;
+         if(!window.currentWord) {
+           randomWord = _.sample(window.words.filter(it => !it.tested));
+         } else {
+           let sortedBySimilarity = _.sortBy(window.words.filter(it => !it.tested), x => stringSimilarity(x.sv, window.currentWord.sv)).reverse();
+           if(sortedBySimilarity.length === 0) {
+             console.log("No new word");
+             return
+           }
+           randomWord = sortedBySimilarity[0]
+         }
+
+         window.currentWord = randomWord;
 
          let $test = $('#test-word');
          $test.html(`${randomWord['en']} = `)
