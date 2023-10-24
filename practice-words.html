@@ -231,8 +231,6 @@
           });
           window.audioPlayers.push(player);
         }); //audios
-
-        makeLinksOpenInNewTab()
       }
 
       $(function() {
@@ -345,28 +343,27 @@
     </style>
 </head>
 
-<body class="article-container">
+<body class="article-container article">
 
-<div id="date-range" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-    <i class="fa fa-calendar"></i>&nbsp;
-    <span></span> <i class="fa fa-caret-down"></i>
-</div>
+    <div id="date-range" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+        <i class="fa fa-calendar"></i>&nbsp;
+        <span></span> <i class="fa fa-caret-down"></i>
+    </div>
 
-<div style="text-align: center; margin-bottom: 2em;" class="header">
-    <span id="word-counter"></span>
-    <button onclick="showNewWord(this)" style="margin-right: 2em; margin-bottom: 1em;">Change Word</button>
-    <span id="test-word" style="font-weight: bold;margin-bottom: 1em;"></span> <input id="test-answer" style="margin-bottom: 1em;">
-    <button onclick="checkAnswer(this)" style="margin-bottom: 1em;">Check</button>
-    <span id="expected-answer" style="color: blue; font-weight: bold; margin-left: 2em;margin-bottom: 1em;"></span>
-</div>
-<hr style="margin-top: 4em;">
-<div id="result" style="">
+    <div style="text-align: center; margin-bottom: 2em;" class="header">
+        <span id="word-counter"></span>
+        <button onclick="showNewWord(this)" style="margin-right: 2em; margin-bottom: 1em;">Change Word</button>
+        <span id="test-word" style="font-weight: bold;margin-bottom: 1em;"></span> <input id="test-answer" style="margin-bottom: 1em;">
+        <button onclick="checkAnswer(this)" style="margin-bottom: 1em;">Check</button>
+        <span id="expected-answer" style="color: blue; font-weight: bold; margin-left: 2em;margin-bottom: 1em;"></span>
+    </div>
+    <hr style="margin-top: 4em;">
+    <div id="result" style="">
 
-</div>
-<div>
+    </div>
+    <div>
 
-</div>
-
+    </div>
 </body>
 
 </html>
