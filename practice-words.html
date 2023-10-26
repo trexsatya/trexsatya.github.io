@@ -372,7 +372,17 @@
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  $( "#audioPlayerPopup" ).dialog({ modal: true, width: 390, height: 400, autoOpen: false });
+  $( "#audioPlayerPopup" ).dialog({
+    modal: true,
+    width: 390,
+    height: 400,
+    autoOpen: false,
+    open: function(){
+      $('.ui-widget-overlay').bind('click',function(){
+        $('#audioPlayerPopup').dialog('close');
+      })
+    }
+  });
 
   function populateSpeeds() {
     window.playingSpeeds = ['0.75', '1.00', '1.00']
