@@ -367,7 +367,7 @@
 </div>
 
 <script>
-  $( "#audioPlayerPopup" ).dialog({ modal: true, width: 500, height: 400, autoOpen: false });
+  $( "#audioPlayerPopup" ).dialog({ modal: true, width: 400, height: 400, autoOpen: false });
 
   window.player = new MediaElementPlayer('audio-player', {
     iconSprite: '/img/icons/mejs-controls.svg',
@@ -378,6 +378,7 @@
       // do things
     }
   })
+  window.player.setPlayerSize(300, 50)
 </script>
 </body>
 
