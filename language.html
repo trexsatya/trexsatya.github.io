@@ -308,6 +308,7 @@
 
 
     function srtNamesFromUrl(url) {
+      //Assumes names are same for MP3 file and SRT files
       url = url.replace(".mp3", ".srt")
       let splits = url.split("/")
       let nm =  splits[splits.length-1]
@@ -327,9 +328,17 @@
       let srtNames = srtNamesFromUrl(mp3Url)
 
       let svSrt = await fetch(srtUrl(srtNames.sv), {})
+      if(svSrt.status === 404) {
+        alert('Sv SRT not found')
+        return
+      }
       let sv = await svSrt.text()
 
       let enSrt = await fetch(srtUrl(srtNames.en), {})
+      if(enSrt.status === 404) {
+        alert('En SRT not found')
+        return
+      }
       let en = await enSrt.text()
 
       sv = srtToJson(sv, 'sv')
