@@ -307,19 +307,28 @@
     }
 
 
+    function srtNamesFromUrl(url) {
+      url = url.replace(".mp3", ".srt")
+      let splits = url.split("/")
+      let nm =  splits[splits.length-1]
+
+      return {sv: nm, en: nm.replace(".srt", "_EN.srt")}
+    }
+
+    function srtUrl(srtNm) {
+      return `https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/${srtNm}`
+    }
+
     $('#mp3Choice').change(async e => {
       //Load subtitle
       let mp3Url = $('#mp3Choice').val()
 
-      let url = mp3Url
-      url = "http://localhost:5000/proxy?url=" + url
-      url = url.replace(".mp3", ".srt")
+      let [svSrtNm, enSrtNm] = srtNamesFromUrl(mp3Url)
 
-      let svSrt = await fetch(url, {})
+      let svSrt = await fetch(srtUrl(svSrtNm), {})
       let sv = await svSrt.text()
-
-      url = url.replace(".srt", "_EN.srt")
-      let enSrt = await fetch(url, {})
+      
+      let enSrt = await fetch(srtUrl(enSrtNm), {})
       let en = await enSrt.text()
 
       sv = srtToJson(sv, 'sv')
