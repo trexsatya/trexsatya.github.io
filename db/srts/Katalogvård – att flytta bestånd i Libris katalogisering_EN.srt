@@ -1,0 +1,103 @@
+1
+00:00:13,824 --> 00:00:19,456
+The Catalog Care function means that you can move your library's stock from one item to another.
+
+2
+00:00:19,712 --> 00:00:27,141
+This can be done, for example, if a duplicate has been created in Libris or if one's stock has ended up wrong when it has been added via Libri's acquisition routine.
+
+3
+00:00:27,392 --> 00:00:32,000
+I can only move stocks for the one (s) I have permission for.
+
+4
+00:00:33,141 --> 00:00:41,135
+To see what Sigler I have permission for, I click on my name in the right corner and look at the roller list with Sigler.
+
+5
+00:00:41,984 --> 00:00:46,877
+I can also go under Settings and look here under active sigel.
+
+6
+00:00:49,122 --> 00:00:55,552
+Under Settings there are also contact information for Libris customer service if I need rights other than the ones I have.
+
+7
+00:00:57,856 --> 00:01:02,577
+Under the heading Catalog Care is an instructional text for how to move stocks.
+
+8
+00:01:03,050 --> 00:01:06,407
+I start by searching the title in Libris.
+
+9
+00:01:08,801 --> 00:01:15,148
+In order for the items to appear in directory care, I must click on the flag at each post.
+
+10
+00:01:15,463 --> 00:01:22,209
+I do this either directly in the hit list or by going into each description.
+
+11
+00:01:23,712 --> 00:01:29,344
+Now the number 2 is visible in directory care and I can click there to move the stock.
+
+12
+00:01:31,136 --> 00:01:34,208
+Now I will choose the sender and recipient.
+
+13
+00:01:34,464 --> 00:01:39,584
+I click on Choose the sender and select the mail that I want to move from.
+
+14
+00:01:41,172 --> 00:01:43,894
+Now I see all Sigler who have stocks on the title.
+
+15
+00:01:44,117 --> 00:01:48,800
+If I happened to choose the wrong sender, I click on the cross in the corner and choose.
+
+16
+00:01:49,757 --> 00:01:55,907
+Then I choose the recipient. I can only choose the entry that I have not already chosen as a sender.
+
+17
+00:01:56,669 --> 00:01:59,167
+Now I see the Sigler who have stocks on this post.
+
+18
+00:02:01,600 --> 00:02:07,744
+When I have chosen the recipient, I click on the sigel of my library and then on the "Move stock" button.
+
+19
+00:02:11,504 --> 00:02:16,704
+When I click on "Moving stock", a pop-up box comes up asking if I want to flag the sender.
+
+20
+00:02:17,353 --> 00:02:23,104
+Here I can do in different ways. If it is so that my library is the only thing that has stocks on this post,
+
+21
+00:02:24,384 --> 00:02:32,285
+That it has been created a duplicate that I will delete, then I can print "no", so that it becomes easier to find the post and remove it, because the flag remains.
+
+22
+00:02:33,344 --> 00:02:37,952
+If only a stock item is wrong and not a duplicate I can print "yes".
+
+23
+00:02:39,697 --> 00:02:47,297
+When I have deleted a possible double and am finished and want to clear the flags, I click on my name again and choose "Clean flags".
+
+24
+00:02:48,927 --> 00:02:56,343
+If it is a duplicate, but it turns out that other libraries also have stocks on it, so that they also have to move their stock before it can be deleted,
+
+25
+00:02:56,640 --> 00:03:01,066
+Then I can send a CXZ message to them and ask them to move their stock.
+
+26
+00:03:01,775 --> 00:03:09,184
+Information on how to send and monitors CXZ messages can be found on KB's website under Libris and Breach lists.
