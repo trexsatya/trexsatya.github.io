@@ -1,0 +1,340 @@
+1
+00:00:08,448 --> 00:00:13,312
+I den här filmen ska vi titta närmare på egenskaper och entiteter.
+
+2
+00:00:13,568 --> 00:00:18,688
+Vi ska gå igenom att lägga till egenskaper, söka fram entiteter,
+
+3
+00:00:18,944 --> 00:00:23,808
+lägga till länkade och lokala entiteter och att hantera entiteter.
+
+4
+00:00:24,064 --> 00:00:27,392
+Vi ska återvända till vårt kokboksexempel.
+
+5
+00:00:28,160 --> 00:00:34,304
+Vissa egenskaper knyts till verk och andra till instans. Det finns också egenskaper som knyts
+
+6
+00:00:34,560 --> 00:00:36,864
+till adminmetadata eller bestånd.
+
+7
+00:00:37,120 --> 00:00:41,216
+För att lägga till en egenskap, gå först till redigera.
+
+8
+00:00:41,728 --> 00:00:46,848
+Knappen med det stora plustecknet i verktygsmenyn är "lägg till egenskaper".
+
+9
+00:00:47,104 --> 00:00:53,248
+Om du är i Instans, vilket vi är nu, så betyder plustecknet "lägg till egenskaper under instans".
+
+10
+00:00:53,760 --> 00:00:57,344
+Alltså egenskaper som är specifika för utgåvan.
+
+11
+00:00:58,112 --> 00:01:01,440
+Vi kan prova att ta bort en egenskap och lägga till den igen.
+
+12
+00:01:02,976 --> 00:01:05,536
+Vi tar bort omfång.
+
+13
+00:01:08,360 --> 00:01:12,540
+Och vi går till lägg till egenskaper.
+
+14
+00:01:13,980 --> 00:01:16,800
+Vi söker fram omfång.
+
+15
+00:01:17,568 --> 00:01:23,712
+Och för att nu lägga till egenskapen igen så kan vi antingen klicka på plustecknet
+
+16
+00:01:23,968 --> 00:01:30,112
+eller tabba oss fram till plus och trycka enter för att lägga till egenskapen.
+
+17
+00:01:31,140 --> 00:01:37,420
+Så trycker vi enter en gång till för att lägga till en förekomst av egenskapen och nu kan du skriva in
+
+18
+00:01:37,420 --> 00:01:39,420
+antal sidor igen.
+
+19
+00:01:39,580 --> 00:01:42,900
+Sedan använder jag Esc för att stänga sidorutan.
+
+20
+00:01:44,960 --> 00:01:48,032
+Vissa egenskaper knyts istället till verk.
+
+21
+00:01:48,288 --> 00:01:54,432
+Verksinformationen ligger under Instans av verk än så länge eftersom vi inte
+
+22
+00:01:54,688 --> 00:01:59,040
+har börjat bryta ut verk. Vi expanderar Instans av verk
+
+23
+00:02:00,064 --> 00:02:05,184
+och vi provar att ta bort en egenskap här också. Vi tar bort ämne.
+
+24
+00:02:05,440 --> 00:02:07,232
+Jag klickar på Ta bort.
+
+25
+00:02:07,744 --> 00:02:12,096
+Och för att nu lägga till ämne igen under Instans av verk
+
+26
+00:02:12,600 --> 00:02:19,860
+så går vi till Lägg till egenskaper under text, alltså Instans av verk, Text,
+
+27
+00:02:20,040 --> 00:02:21,820
+Lägg till egenskaper.
+
+28
+00:02:22,336 --> 00:02:24,896
+Vi söker fram egenskapen igen
+
+29
+00:02:25,152 --> 00:02:29,504
+och tabbar oss fram och trycker enter för att lägga till den.
+
+30
+00:02:29,760 --> 00:02:33,856
+Sedan trycker vi enter en gång till för att komma till sidorutan.
+
+31
+00:02:35,904 --> 00:02:38,976
+Här kan vi nu söka fram entiteten igen.
+
+32
+00:02:39,488 --> 00:02:43,840
+Så vi söker fram vegetarisk mat
+
+33
+00:02:44,100 --> 00:02:48,960
+och vi skriver in att det ska vara från Svenska ämnesord, SAO.
+
+34
+00:02:49,720 --> 00:02:55,860
+När man söker efter entiteter i sidorutan så har man möjlighet att avgränsa
+
+35
+00:02:56,120 --> 00:03:02,160
+sökningen och man har vissa möjligheter att sortera träfflistan.
+
+36
+00:03:02,780 --> 00:03:06,620
+Vi tabbar oss fram till Lägg till och trycker enter
+
+37
+00:03:07,648 --> 00:03:09,952
+och nu har egenskapen lagts till igen.
+
+38
+00:03:10,460 --> 00:03:17,380
+Om du vill få en översikt över vilka egenskaper som knyts till Verk, Instans, Adminmetadata eller Bestånd,
+
+39
+00:03:17,640 --> 00:03:21,740
+gå till hjälp och titta i innehållsförteckningen där.
+
+40
+00:03:22,496 --> 00:03:25,824
+Vi klickar på hjälp, öppnar det i en ny flik.
+
+41
+00:03:28,640 --> 00:03:34,784
+Vi går in på Verk och vi kan se i innehållsförteckningen att ämne
+
+42
+00:03:35,040 --> 00:03:37,260
+ligger under verk.
+
+43
+00:03:38,120 --> 00:03:40,420
+Vi går tillbaka till formuläret.
+
+44
+00:03:40,672 --> 00:03:44,512
+Vi provar med egenskapen Medverkan och funktion
+
+45
+00:03:44,768 --> 00:03:46,304
+under Instans av verk.
+
+46
+00:03:46,816 --> 00:03:49,376
+Vi tar bort egenskapen.
+
+47
+00:03:51,420 --> 00:03:58,940
+Vi går till Lägg till egenskaper under Instans av verk och vi söker fram Medverkan och funktion igen.
+
+48
+00:03:59,620 --> 00:04:05,760
+Vi använder tabb och enter för att lägga till egenskapen. Då kommer vi till en lista
+
+49
+00:04:06,020 --> 00:04:12,160
+där vi kan välja typ. Vi väljer primär medverkan eftersom det bara var en författare här.
+
+50
+00:04:13,800 --> 00:04:21,880
+Sedan söker vi fram entiteten igen genom att klicka på Lägg till entitet och söka i sidorutan.
+
+51
+00:04:26,500 --> 00:04:32,340
+Vi tabbar oss fram till Lägg till och trycker enter.
+
+52
+00:04:33,160 --> 00:04:35,460
+Sedan gör vi likadant med funktion.
+
+53
+00:04:35,711 --> 00:04:41,343
+Vi går till Lägg till funktion, söker i sidorutan efter entiteten författare,
+
+54
+00:04:42,111 --> 00:04:46,207
+vi tabbar oss fram och trycker enter för att lägga till.
+
+55
+00:04:46,719 --> 00:04:52,095
+Principen är att vi länkar till entiteter som redan finns, till exempel en person.
+
+56
+00:04:52,863 --> 00:04:57,983
+Vi kan vid behov skapa nya agenter för nya personer och du kan se en film om det.
+
+57
+00:04:58,239 --> 00:05:00,543
+Filmen Skapa ny Agent - Person.
+
+58
+00:05:00,799 --> 00:05:06,943
+Ibland finns det inte någon entitet att länka till, och vi har inga uppgifter som underlag för att skapa en ny entitet.
+
+59
+00:05:07,711 --> 00:05:10,271
+Då kan vi behöva skapa en lokal entitet.
+
+60
+00:05:10,527 --> 00:05:12,575
+Jag ska visa hur det ser ut.
+
+61
+00:05:13,343 --> 00:05:16,159
+Vi tar bort den länkade entiteten
+
+62
+00:05:16,415 --> 00:05:20,767
+och jag klickar nu på Lägg till entitet vid Agent
+
+63
+00:05:22,303 --> 00:05:28,191
+och sedan går jag till Skapa lokal entitet längst ner i sidorutan. Jag väljer person,
+
+64
+00:05:29,471 --> 00:05:34,079
+och sen skriver jag in de uppgifter jag har.
+
+65
+00:05:37,920 --> 00:05:43,580
+Det här är då ett fingerat fall som det kan se ut när man inte har alla uppgifter.
+
+66
+00:05:44,060 --> 00:05:46,620
+Så här gör man ibland även med ämnesord.
+
+67
+00:05:46,879 --> 00:05:51,999
+Det finns filmer om att länka till ämnesord och om ämnesord som lokal entitet.
+
+68
+00:05:52,511 --> 00:05:55,839
+Vi ska titta på en egenskap till under Instans.
+
+69
+00:05:57,119 --> 00:05:59,167
+Vi går till Titel.
+
+70
+00:06:01,215 --> 00:06:06,079
+Vi har en huvudtitel och övrig titelinformation eller undertitel.
+
+71
+00:06:08,127 --> 00:06:14,271
+Om vi vill lägga till en omslagstitel får vi lägga till ytterligare en titelentitet.
+
+72
+00:06:14,527 --> 00:06:18,367
+Vi går till Lägg till entitet och väljer typ
+
+73
+00:06:18,620 --> 00:06:20,160
+Omslagstitel
+
+74
+00:06:23,520 --> 00:06:29,200
+Jag skriver in en omslagstitel här, jag hittar på det.
+
+75
+00:06:32,200 --> 00:06:37,820
+Om vi här vill lägga till övrig titelinformation under omslagstitel får vi gå till
+
+76
+00:06:38,060 --> 00:06:45,600
+Lägg till egenskaper under Omslagstitel. Sedan får vi söka fram egenskapen Övrig titelinformation
+
+77
+00:06:45,740 --> 00:06:48,840
+och tabba oss fram och lägga till den.
+
+78
+00:06:49,080 --> 00:06:54,200
+Och sedan kan vi skriva in den övriga titelinformationen om det finns en sådan.
+
+79
+00:06:55,740 --> 00:07:01,880
+Det går också att kopiera en entitet till urklipp och att duplicera den.
+
+80
+00:07:02,143 --> 00:07:05,727
+Klicka på de tre prickarna som betyder hantera.
+
+81
+00:07:06,239 --> 00:07:12,127
+Om du kopierar till urklipp känner verktyget av var entiteten kan klistras in.
+
+82
+00:07:14,431 --> 00:07:20,575
+En klistra in-ikon visas sedan på de ställen där det nu går att klistra in urklippet.
+
+83
+00:07:24,415 --> 00:07:30,047
+Du kan t.ex. kopiera en entitet från en post och klistra in den i en annan.
+
+84
+00:07:31,071 --> 00:07:36,703
+Du kan också duplicera en entitet vilket kan vara användbart i vissa sammanhang
+
+85
+00:07:41,060 --> 00:07:48,520
+För att radera en egenskap eller entitet, klicka på papperskorgen vid egenskapen eller entiteten.
+

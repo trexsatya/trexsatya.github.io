@@ -1,0 +1,578 @@
+1
+00:00:07,940 --> 00:00:15,640
+Nu ska vi tala om FRBR – Functional Requirements for Bibliographic Records.
+
+2
+00:00:16,160 --> 00:00:20,160
+Och den här presentationen den innehåller genomgångar av
+
+3
+00:00:20,300 --> 00:00:25,340
+FR-modellerna: FRBR, FRAD och FRSAD.
+
+4
+00:00:25,600 --> 00:00:29,696
+FR-modellernas grupper av entiteter.
+
+5
+00:00:29,952 --> 00:00:33,024
+FRBR och Libris/Bibframe.
+
+6
+00:00:34,304 --> 00:00:36,864
+FR-modellernas användarbehov.
+
+7
+00:00:37,120 --> 00:00:45,500
+Och slutligen snabbfrågor om FRBR:s entiteter Exemplar, Manifestation, Uttryck och Verk.
+
+8
+00:00:46,600 --> 00:00:54,160
+RDA bygger på internationellt erkända modeller, framför allt IFLA:s modeller:
+
+9
+00:00:54,600 --> 00:00:59,140
+FRBR (Functional Requirements for Bibliographic Records)
+
+10
+00:01:00,920 --> 00:01:05,900
+FRAD (Functional Requirements for Authority Data)
+
+11
+00:01:06,280 --> 00:01:13,140
+FRSAD (Functional Requirements for Subject  Authority Data)
+
+12
+00:01:17,060 --> 00:01:21,200
+FR-modellernas entiteter ska vi gå igenom nu.
+
+13
+00:01:21,640 --> 00:01:30,080
+FR-modellerna identifierar ett antal så kallade entiteter som är centrala för användare av bibliografiska data.
+
+14
+00:01:30,380 --> 00:01:34,460
+Dessa entiteter kan delas in i tre grupper.
+
+15
+00:01:34,800 --> 00:01:45,340
+Grupp 1, Verk, Uttryck (Verk och Uttryck motsvaras av Verk i Libris).
+
+16
+00:01:46,320 --> 00:01:52,280
+Manifestation (Manifestation motsvaras av Instans i Libris).
+
+17
+00:01:52,700 --> 00:01:54,700
+Och slutligen Exemplar.
+
+18
+00:01:56,740 --> 00:02:03,840
+Grupp 2 består av Person, Släkt och Institution.
+
+19
+00:02:04,160 --> 00:02:12,500
+Och Grupp 3, Koncept, Objekt, Händelse och Plats.
+
+20
+00:02:17,720 --> 00:02:25,300
+Grupp 1, Verk - det är en avgränsad intellektuell eller konstnärlig skapelse.
+
+21
+00:02:26,440 --> 00:02:35,800
+Uttryck - den intellektuella eller konstnärliga form ett verk får varje gång det förverkligas,
+
+22
+00:02:36,680 --> 00:02:41,940
+text, ljud, bild osv. Eller en kombination av dessa former.
+
+23
+00:02:43,320 --> 00:02:52,000
+Manifestation - den fysiska gestaltningen av ett uttryck av ett verk, t.ex. en viss upplaga
+
+24
+00:02:52,540 --> 00:03:00,200
+Exemplar - en enskild representation av en manifestation.
+
+25
+00:03:04,840 --> 00:03:15,320
+Exempel 1 - text, Verk
+Händelser vid vatten av Kerstin Ekman
+
+26
+00:03:17,880 --> 00:03:23,220
+Uttryck av det verket - Originaltexten från 1993.
+
+27
+00:03:24,040 --> 00:03:31,480
+En översättning till engelska av Händelser vid vatten är ett annat uttryck av samma verk.
+
+28
+00:03:33,760 --> 00:03:38,580
+Manifestation, som alltså kallas Instans i Libris.
+
+29
+00:03:38,880 --> 00:03:44,760
+Upplagan utgiven av En bok för alla år 2007.
+
+30
+00:03:45,536 --> 00:03:51,680
+Samma text utgiven som e-bok är en annan manifestation av samma uttryck.
+
+31
+00:03:54,240 --> 00:03:55,776
+Exemplar
+
+32
+00:03:57,312 --> 00:04:01,664
+KB:s exemplar av upplagan från En bok för alla.
+
+33
+00:04:01,920 --> 00:04:07,808
+Göteborgs stadsbiblioteks exemplar av samma upplaga är ett annat exemplar.
+
+34
+00:04:11,136 --> 00:04:14,720
+Exempel 2 - musikinspelning
+
+35
+00:04:15,740 --> 00:04:19,840
+Verk - Arbos av Arvo Pärt.
+
+36
+00:04:21,120 --> 00:04:28,040
+Uttryck - Inspelningen med the Hilliard Ensemble från 1987.
+
+37
+00:04:29,060 --> 00:04:35,220
+Manifestation - ECM-utgåvan från 2008.
+
+38
+00:04:36,740 --> 00:04:42,380
+Och Exemplar - KB:s exemplar av ECM- utgåvan från 2008.
+
+39
+00:04:45,960 --> 00:04:51,200
+Grupp 2 - Person, Släkt, Institution.
+
+40
+00:04:52,860 --> 00:04:55,940
+De kallas med ett gemensamt namn för Agenter.
+
+41
+00:04:57,220 --> 00:05:05,000
+Agenten kan t ex stå för skapande, medverkan eller utgivning av entiteterna i grupp 1.
+
+42
+00:05:05,240 --> 00:05:14,120
+och anges på någon av dess nivåer:
+Verk, Uttryck, Manifestation eller Exemplar.
+
+43
+00:05:17,180 --> 00:05:26,260
+Grupp 3 - Koncept, Objekt, Händelse och Plats.
+
+44
+00:05:27,940 --> 00:05:33,060
+Dessa entiteter kan utgöra ämnet för det entiteterna i grupp 2 skapar.
+
+45
+00:05:33,320 --> 00:05:39,680
+Ett verk kan handla om ett koncept (t ex japanskt tema),
+
+46
+00:05:40,000 --> 00:05:49,380
+ett objekt (t ex en staty), en händelse (t ex en konsert, eller en demonstration)
+
+47
+00:05:49,700 --> 00:05:56,480
+och slutligen kan ämnet vara en plats (till exempel Stockholm).
+
+48
+00:06:00,440 --> 00:06:05,420
+Här är en modell som visar entiterna I FRBR:s grupp 1:
+
+49
+00:06:05,800 --> 00:06:13,260
+Verk, Uttryck, Manifestation och Exemplar med exempel och inbördes relationer.
+
+50
+00:06:13,920 --> 00:06:19,380
+Tanken med att definiera de olika nivåerna är att information som knyts till de högre
+
+51
+00:06:19,620 --> 00:06:26,040
+beskrivningsnivåerna verk och uttryck ska kunna ”ärvas” av de underliggande nivåerna.
+
+52
+00:06:27,839 --> 00:06:33,983
+Och här har vi då Verk - Röda Rummet skapad av August Strindberg, författare
+
+53
+00:06:34,495 --> 00:06:38,335
+Verket förverkligas i uttryck
+
+54
+00:06:39,359 --> 00:06:41,663
+Originaltexten på svenska
+
+55
+00:06:43,199 --> 00:06:46,015
+Texten översatt till danska
+
+56
+00:06:47,800 --> 00:06:51,120
+och texten inläst på svenska.
+
+57
+00:06:51,920 --> 00:06:55,480
+Uttrycket gestaltas i manifestation
+
+58
+00:06:56,000 --> 00:07:03,300
+Originalupplaga av originaltexten på svenska och en andra upplaga av originaltexten på svenska.
+
+59
+00:07:03,680 --> 00:07:10,120
+Första upplagan av texten översatt till danska, en ljudbok på svenska
+
+60
+00:07:10,340 --> 00:07:16,220
+av texten inläst på svenska och en ljudbok på MP3-CD
+
+61
+00:07:16,991 --> 00:07:19,039
+av texten inläst på svenska.
+
+62
+00:07:19,551 --> 00:07:23,903
+Och manifestationen representeras slutligen av exemplar.
+
+63
+00:07:25,439 --> 00:07:29,535
+Då har vi KB:s signerade exemplar av originalupplagan,
+
+64
+00:07:31,080 --> 00:07:37,220
+KB:s två exemplar av andra upplagan varav det andra har ett slitet omslag,
+
+65
+00:07:38,000 --> 00:07:43,880
+KB:s exemplar av första upplagan av texten översatt till danska,
+
+66
+00:07:44,127 --> 00:07:46,431
+som en gåva från Danmark,
+
+67
+00:07:48,991 --> 00:07:55,135
+KB:s exemplar av ljudboken på CD och KB:s exemplar av ljudboken på MP3-CD,
+
+68
+00:07:55,400 --> 00:08:02,380
+som råkar vara repigt. Detta är ett fiktivt exempel kan jag meddela.
+
+69
+00:08:05,380 --> 00:08:09,380
+Och här är samma exempel i Libris/Bibframe.
+
+70
+00:08:09,580 --> 00:08:17,920
+Eftersom Bibframe har slagit ihop verk och uttryck till en nivå så ligger här verket, översättningen och inläsningen
+
+71
+00:08:18,175 --> 00:08:20,223
+på samma nivå.
+
+72
+00:08:21,759 --> 00:08:25,343
+Vi har fortfarande verket Röda rummet
+
+73
+00:08:26,879 --> 00:08:33,023
+Men på samma nivå ligger då texten översatt till danska och texten inläst på svenska
+
+74
+00:08:34,047 --> 00:08:37,887
+Och verket har ju fortfarande August Strindberg som skapare,
+
+75
+00:08:38,910 --> 00:08:45,055
+medan texten översatt till danska har en översättare som med ett
+
+76
+00:08:45,311 --> 00:08:48,639
+övergripande namn kallas för bidragsgivare.
+
+77
+00:08:49,919 --> 00:08:55,551
+Bidragsgivaren till texten inläst på svenska, det är inläsaren.
+
+78
+00:08:59,135 --> 00:09:04,255
+På instansnivån har vi originalupplagan av Röda rummet och andra upplagan.
+
+79
+00:09:07,580 --> 00:09:12,180
+Vi har texten översatt till danska i en första upplaga
+
+80
+00:09:13,480 --> 00:09:19,520
+och vi har texten inläst på svenska i ljudbok på CD och ljudbok på MP3-CD.
+
+81
+00:09:22,440 --> 00:09:26,740
+Och sen har vi bestånd. Motsvarigheten till exemplar.
+
+82
+00:09:27,560 --> 00:09:33,440
+Och då har vi som tidigare KB:s signerade ex av originalupplagan,
+
+83
+00:09:33,695 --> 00:09:36,511
+KB:s två exemplar av andra upplagan,
+
+84
+00:09:37,279 --> 00:09:41,375
+KB:s exemplar av första upplagan av den danska texten
+
+85
+00:09:42,399 --> 00:09:47,263
+och KB:s två exemplar av ljudböckerna, varav det ena var repigt.
+
+86
+00:09:51,359 --> 00:09:57,503
+FRBR och FRAD definierar också ett antal användarbehov som bibliografiska
+
+87
+00:09:57,759 --> 00:10:00,831
+data och auktoritetsdata måste uppfylla.
+
+88
+00:10:01,343 --> 00:10:05,695
+Dessa användarbehov är viktiga även i RDA.
+
+89
+00:10:08,260 --> 00:10:14,820
+Bibliografiska data som beskriver en resurs ska hjälpa användaren att hitta.
+
+90
+00:10:15,680 --> 00:10:21,740
+Hitta material som motsvarar den sökning man har gjort. Till exempel
+
+91
+00:10:21,900 --> 00:10:28,220
+ska man kunna hitta alla resurser inom ett visst ämne, eller en inspelning som givits ut med en viss titel.
+
+92
+00:10:29,880 --> 00:10:39,240
+Identifiera - identifiera en resurs. Till exempel ska man kunna vara säker på att den resurs som beskrivs
+
+93
+00:10:39,480 --> 00:10:45,120
+motsvarar den resurs man söker, eller kunna skilja mellan två resurser som har samma titel.
+
+94
+00:10:47,980 --> 00:10:54,600
+Välja - välja en resurs som är anpassad till ens behov.
+
+95
+00:10:55,360 --> 00:10:59,960
+Till exempel ska man kunna välja en text som är på ett språk som man förstår.
+
+96
+00:11:01,640 --> 00:11:07,640
+Få tillgång till - Få tillgång till den resurs som beskrivs.
+
+97
+00:11:08,160 --> 00:11:14,640
+Till exempel ska man kunna beställa en resurs i bibliotekets samling, eller via nätet få tillgång till ett
+
+98
+00:11:14,860 --> 00:11:18,140
+elektroniskt dokument som lagras på en annan dator.
+
+99
+00:11:21,983 --> 00:11:27,103
+Auktoritetsdata - som beskriver en entitet som är relaterad till en resurs,
+
+100
+00:11:28,383 --> 00:11:32,479
+Till exempel en person eller institution eller ett verk,
+
+101
+00:11:32,735 --> 00:11:35,039
+ska hjälpa användaren att
+
+102
+00:11:35,300 --> 00:11:42,020
+hitta information om en entitet samt resurser som är relaterade till entiteten.
+
+103
+00:11:43,240 --> 00:11:49,380
+Identifiera att entiteten är den man sökt efter och kunna skilja mellan en eller flera
+
+104
+00:11:49,631 --> 00:11:51,935
+entiteter med samma eller liknande namn.
+
+105
+00:11:53,215 --> 00:11:57,055
+Få klarhet i relationen mellan entiteten och en resurs.
+
+106
+00:11:58,591 --> 00:12:04,223
+och förstå varför ett namn har valts som det föredragna namnet för entiteten.
+
+107
+00:12:07,295 --> 00:12:12,415
+Och här är ett konkret exempel på användarbehov för bibliografiska data.
+
+108
+00:12:14,460 --> 00:12:21,120
+Jag vill hitta filmen ”Gå på vatten”, och sedan identifiera att det är filmen om
+
+109
+00:12:21,300 --> 00:12:25,480
+byggandet av Öresundsbron, och inte en film om Jesus.
+
+110
+00:12:27,520 --> 00:12:36,000
+Sedan väljer jag DVD-utgåvan och inte den på Blu-ray, eftersom jag inte har någon Blu-ray-spelare.
+
+111
+00:12:36,480 --> 00:12:42,120
+Därefter kan jag få tillgång till den efter att ha beställt den från en annan filial.
+
+112
+00:12:46,719 --> 00:12:51,839
+Och nu avslutar vi den här presentationen med ett antal snabbfrågor
+
+113
+00:12:52,095 --> 00:12:56,959
+som går ut på att identifiera entiteterna i grupp 1.
+
+114
+00:12:57,215 --> 00:13:01,567
+Och första frågan är: Identifiera Exemplaret
+
+115
+00:13:03,100 --> 00:13:07,000
+En upplaga av Röda rummet utgiven 1981
+
+116
+00:13:07,440 --> 00:13:09,880
+En inbunden signerad kopia
+
+117
+00:13:11,240 --> 00:13:12,900
+En finsk översättning
+
+118
+00:13:14,300 --> 00:13:18,600
+Inspelning av Drottningholmsmusiken av Johan Helmich Roman
+
+119
+00:13:21,160 --> 00:13:23,720
+Gösta Berlings saga av Selma Lagerlöf
+
+120
+00:13:25,380 --> 00:13:28,960
+Vilken eller vilka av dessa är ett exemplar
+
+121
+00:13:32,287 --> 00:13:34,335
+Och svaret är
+
+122
+00:13:34,591 --> 00:13:38,687
+B - En inbunden signerad kopia
+
+123
+00:13:42,271 --> 00:13:48,159
+Nästa fråga blir: Identifiera Manifestationen av dessa exempel.
+
+124
+00:13:48,415 --> 00:13:52,255
+A - En upplaga av Röda rummet utgiven 1981
+
+125
+00:13:52,520 --> 00:13:55,840
+B - En inbunden signerad kopia
+
+126
+00:13:56,880 --> 00:13:59,420
+C - En finsk översättning
+
+127
+00:14:00,440 --> 00:14:05,340
+D - En inspelning av Drottningholmsmusiken av Johan Helmich Roman
+
+128
+00:14:05,640 --> 00:14:09,420
+E - Gösta Berlings saga av Selma Lagerlöf
+
+129
+00:14:13,759 --> 00:14:19,903
+Och rätt svar är A - En upplaga av Röda rummet utgiven 1981
+
+130
+00:14:24,511 --> 00:14:27,071
+Identifiera Uttrycket
+
+131
+00:14:27,327 --> 00:14:31,935
+A - En upplaga av Röda rummet utgiven 1981
+
+132
+00:14:32,200 --> 00:14:35,020
+B - En inbunden signerad kopia
+
+133
+00:14:35,460 --> 00:14:38,840
+C - En finsk översättning
+
+134
+00:14:39,360 --> 00:14:44,740
+D - En inspelning av Drottningholmsmusiken av Johan Helmich Roman
+
+135
+00:14:45,420 --> 00:14:49,080
+E - Gösta Berlings saga av Selma Lagerlöf
+
+136
+00:14:52,420 --> 00:15:02,360
+Och här är det både C - En finsk översättning och D - inspelning av Drottningholmsmusiken som är uttryck.
+
+137
+00:15:05,720 --> 00:15:08,280
+Och Identifiera Verket
+
+138
+00:15:09,567 --> 00:15:12,895
+A - En upplaga av Röda rummet utgiven 1981
+
+139
+00:15:13,151 --> 00:15:15,711
+B - En inbunden signerad kopia
+
+140
+00:15:16,223 --> 00:15:18,783
+C - En finsk översättning
+
+141
+00:15:19,040 --> 00:15:23,980
+D - En inspelning av Drottningholmsmusiken av Johan Helmich Roman
+
+142
+00:15:24,320 --> 00:15:28,260
+E - Gösta Berlings saga av Selma Lagerlöf
+
+143
+00:15:32,095 --> 00:15:38,239
+Och här är rätt svar E - Gösta Berlings saga av Selma Lagerlöf
+
+144
+00:15:41,823 --> 00:15:42,591
+Det var allt.
+

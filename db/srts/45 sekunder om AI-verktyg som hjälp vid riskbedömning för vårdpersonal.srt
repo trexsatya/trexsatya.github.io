@@ -1,0 +1,93 @@
+1
+00:00:14,633 --> 00:00:18,333
+Hej, jag heter Lina Lundgren och jag
+är projektledare i-
+
+2
+00:00:18,333 --> 00:00:22,000
+-Heart Failure Readmission Prediction 
+HARP-
+
+3
+00:00:22,000 --> 00:00:25,467
+-ett projekt inom Högskolans 
+fokusområde Hälsoinnovation.  
+
+4
+00:00:25,700 --> 00:00:29,133
+I det här projektet arbetar vi med
+informationsdriven vård.
+
+5
+00:00:29,133 --> 00:00:32,133
+Som är ett sätt att bidra till lösningar 
+som kan hjälpa-  
+
+6
+00:00:32,133 --> 00:00:35,033
+-hälso- och sjukvården i
+sin transformation.
+
+7
+00:00:35,033 --> 00:00:38,000
+Häng med så berättar jag mer.
+
+8
+00:00:42,367 --> 00:00:46,600
+Hjärtsvikt drabbar ungefär två procent
+av Sveriges befolkning.
+
+9
+00:00:46,600 --> 00:00:51,567
+Många patienter är inneliggande på sjukhus
+flera gånger under kort tid.
+
+10
+00:00:51,567 --> 00:00:54,433
+För att vårdpersonal ska kunna ta
+rätt beslut-
+
+11
+00:00:54,433 --> 00:00:57,033
+-behöver de ta in en 
+stor mängd information.
+
+12
+00:00:57,033 --> 00:01:01,767
+Med hjälp av AI-verktyg kan historisk 
+information sammanställas-
+
+13
+00:01:01,767 --> 00:01:04,867
+-och bidra till en riskbedömning.
+
+14
+00:01:04,959 --> 00:01:09,840
+I projektet HARP undersöker vi i
+projektteamet hur vi kan utveckla-
+
+15
+00:01:09,920 --> 00:01:14,520
+-ett sådant AI-verktyg, hur dess output
+ska presenteras för användaren-
+
+16
+00:01:14,933 --> 00:01:19,300
+-och hur det ska implementeras för att
+fungera i den dagliga vårdverksamheten.
+
+17
+00:01:19,300 --> 00:01:23,100
+Projektet är en del i CAISR health 
+och genomförs tillsammans-
+
+18
+00:01:23,100 --> 00:01:25,600
+-med Cambio och
+Region Halland.
+
+19
+00:01:25,600 --> 00:01:29,100
+Vill du veta mer? 
+Hör av dig! 
+

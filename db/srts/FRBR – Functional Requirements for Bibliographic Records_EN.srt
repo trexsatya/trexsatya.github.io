@@ -1,0 +1,575 @@
+1
+00:00:07,940 --> 00:00:15,640
+Now we will talk about FRBR - Functional Requirements for Bibliographic Records.
+
+2
+00:00:16,160 --> 00:00:20,160
+And this presentation it contains reviews of
+
+3
+00:00:20,300 --> 00:00:25,340
+FR models: FRBR, FRAD and FRESS.
+
+4
+00:00:25,600 --> 00:00:29,696
+FR models' groups of entities.
+
+5
+00:00:29,952 --> 00:00:33,024
+FRBR and LIBRIS/BIRTFRAME.
+
+6
+00:00:34,304 --> 00:00:36,864
+The user needs of the FR models.
+
+7
+00:00:37,120 --> 00:00:45,500
+And finally, quick questions about FRBR's entities of copies, manifestation, expression and works.
+
+8
+00:00:46,600 --> 00:00:54,160
+RDA is based on internationally recognized models, especially IFLA's models:
+
+9
+00:00:54,600 --> 00:00:59,140
+FRBR (Functional Requirements for Bibliographic Records)
+
+10
+00:01:00,920 --> 00:01:05,900
+Frad (Functional Requirements for Authority Data)
+
+11
+00:01:06,280 --> 00:01:13,140
+Frozen (Functional Requirements for Subject Authority Data)
+
+12
+00:01:17,060 --> 00:01:21,200
+We will go through the FR models' entities now.
+
+13
+00:01:21,640 --> 00:01:30,080
+The FR models identify a number of so-called entities that are central to users of bibliographic data.
+
+14
+00:01:30,380 --> 00:01:34,460
+These entities can be divided into three groups.
+
+15
+00:01:34,800 --> 00:01:45,340
+Group 1, works, expression (works and expressions correspond to works in Libris).
+
+16
+00:01:46,320 --> 00:01:52,280
+Manifestation (manifestation corresponds to the instance of Libris).
+
+17
+00:01:52,700 --> 00:01:54,700
+And finally copies.
+
+18
+00:01:56,740 --> 00:02:03,840
+Group 2 consists of person, family and institution.
+
+19
+00:02:04,160 --> 00:02:12,500
+And group 3, concept, object, event and location.
+
+20
+00:02:17,720 --> 00:02:25,300
+Group 1, Works - It is a defined intellectual or artistic creation.
+
+21
+00:02:26,440 --> 00:02:35,800
+Expression - the intellectual or artistic form a work may every time it is realized,
+
+22
+00:02:36,680 --> 00:02:41,940
+Text, sound, image, etc. Or a combination of these forms.
+
+23
+00:02:43,320 --> 00:02:52,000
+Manifestation - The physical design of an expression of a work, e.g. A certain edition
+
+24
+00:02:52,540 --> 00:03:00,200
+Copies - an individual representation of a manifestation.
+
+25
+00:03:04,840 --> 00:03:15,320
+Example 1 - text, works events at water by Kerstin Ekman
+
+26
+00:03:17,880 --> 00:03:23,220
+Expression of that work - the original text from 1993.
+
+27
+00:03:24,040 --> 00:03:31,480
+A translation into English of events in water is another expression of the same work.
+
+28
+00:03:33,760 --> 00:03:38,580
+Manifestation, which is thus called the body in Libris.
+
+29
+00:03:38,880 --> 00:03:44,760
+The edition published by a book for all in 2007.
+
+30
+00:03:45,536 --> 00:03:51,680
+The same text published as e-book is another manifestation of the same expression.
+
+31
+00:03:54,240 --> 00:03:55,776
+Copy
+
+32
+00:03:57,312 --> 00:04:01,664
+KB's copies of the edition from a book for everyone.
+
+33
+00:04:01,920 --> 00:04:07,808
+Gothenburg City Library's copies of the same edition is another copy.
+
+34
+00:04:11,136 --> 00:04:14,720
+Example 2 - Music Recording
+
+35
+00:04:15,740 --> 00:04:19,840
+Works - Arbos by Arvo Pärt.
+
+36
+00:04:21,120 --> 00:04:28,040
+Expression - the recording with The Hilliard Ensemble from 1987.
+
+37
+00:04:29,060 --> 00:04:35,220
+Manifestation - ECM edition from 2008.
+
+38
+00:04:36,740 --> 00:04:42,380
+And copies - KB's copies of the ECM edition from 2008.
+
+39
+00:04:45,960 --> 00:04:51,200
+Group 2 - person, family, institution.
+
+40
+00:04:52,860 --> 00:04:55,940
+They are called with a common name for agents.
+
+41
+00:04:57,220 --> 00:05:05,000
+The agent may, for example, be responsible for the creation, participation or publishing of the entities in Group 1.
+
+42
+00:05:05,240 --> 00:05:14,120
+and indicated at any of its levels: works, expression, manifestation or copies.
+
+43
+00:05:17,180 --> 00:05:26,260
+Group 3 - Concept, object, event and location.
+
+44
+00:05:27,940 --> 00:05:33,060
+These entities can be the topic of the entities in Group 2 creates.
+
+45
+00:05:33,320 --> 00:05:39,680
+A work can be about a concept (eg Japanese theme),
+
+46
+00:05:40,000 --> 00:05:49,380
+an object (eg a statue), an event (eg a concert, or a demonstration)
+
+47
+00:05:49,700 --> 00:05:56,480
+And finally, the subject can be a place (for example Stockholm).
+
+48
+00:06:00,440 --> 00:06:05,420
+Here is a model that shows the entits in the FrB's group 1:
+
+49
+00:06:05,800 --> 00:06:13,260
+Works, expressions, manifestation and copies with examples and mutual relationships.
+
+50
+00:06:13,920 --> 00:06:19,380
+The idea of defining the different levels is that information that is linked to the higher
+
+51
+00:06:19,620 --> 00:06:26,040
+The description levels works and expressions should be able to be "inherited" by the underlying levels.
+
+52
+00:06:27,839 --> 00:06:33,983
+And here we have works - the Red Room created by August Strindberg, writer
+
+53
+00:06:34,495 --> 00:06:38,335
+The work is realized in expression
+
+54
+00:06:39,359 --> 00:06:41,663
+The original text in Swedish
+
+55
+00:06:43,199 --> 00:06:46,015
+The text translated into Danish
+
+56
+00:06:47,800 --> 00:06:51,120
+And the text read in Swedish.
+
+57
+00:06:51,920 --> 00:06:55,480
+The term is being embodied in manifestation
+
+58
+00:06:56,000 --> 00:07:03,300
+Original edition of the original text in Swedish and a second edition of the original text in Swedish.
+
+59
+00:07:03,680 --> 00:07:10,120
+First edition of the text translated into Danish, an audio book in Swedish
+
+60
+00:07:10,340 --> 00:07:16,220
+of the text read in Swedish and an audio book on MP3 CD
+
+61
+00:07:16,991 --> 00:07:19,039
+of the text read in Swedish.
+
+62
+00:07:19,551 --> 00:07:23,903
+And the manifestation is finally represented by copies.
+
+63
+00:07:25,439 --> 00:07:29,535
+Then we have KB's signed copies of the original edition,
+
+64
+00:07:31,080 --> 00:07:37,220
+KB's two copies of the second edition of which the other has a worn cover,
+
+65
+00:07:38,000 --> 00:07:43,880
+KB's copy of the first edition of the text translated into Danish,
+
+66
+00:07:44,127 --> 00:07:46,431
+As a gift from Denmark,
+
+67
+00:07:48,991 --> 00:07:55,135
+KB's copy of the audio book on CD and KB's copies of the audio book on MP3-CD,
+
+68
+00:07:55,400 --> 00:08:02,380
+Which happens to be scratched. This is a fictional example I can announce.
+
+69
+00:08:05,380 --> 00:08:09,380
+And here is the same example in Libris/Betframe.
+
+70
+00:08:09,580 --> 00:08:17,920
+Since Betframe has merged works and expressions to one level, here lies, the translation and read
+
+71
+00:08:18,175 --> 00:08:20,223
+on the same level.
+
+72
+00:08:21,759 --> 00:08:25,343
+We still have the work Red Room
+
+73
+00:08:26,879 --> 00:08:33,023
+But at the same level, the text is translated into Danish and the text read in Swedish
+
+74
+00:08:34,047 --> 00:08:37,887
+And the work still has August Strindberg as a creator,
+
+75
+00:08:38,910 --> 00:08:45,055
+While the text translated into Danish has a translator as with a
+
+76
+00:08:45,311 --> 00:08:48,639
+Overall names are called contributors.
+
+77
+00:08:49,919 --> 00:08:55,551
+The contributor to the text read in Swedish, it is the reader.
+
+78
+00:08:59,135 --> 00:09:04,255
+At the level of instance we have the original edition of the Red Room and the second edition.
+
+79
+00:09:07,580 --> 00:09:12,180
+We have the text translated into Danish in a first edition
+
+80
+00:09:13,480 --> 00:09:19,520
+And we have read the text in Swedish in audio book on CD and audiobook on MP3 CD.
+
+81
+00:09:22,440 --> 00:09:26,740
+And then we have stocks. The equivalent of copies.
+
+82
+00:09:27,560 --> 00:09:33,440
+And then, as before, we have KB's signed ex of the original edition,
+
+83
+00:09:33,695 --> 00:09:36,511
+KB's two copies of second edition,
+
+84
+00:09:37,279 --> 00:09:41,375
+KB's copy of the first edition of the Danish text
+
+85
+00:09:42,399 --> 00:09:47,263
+And KB's two copies of the audio books, one of which was scratched.
+
+86
+00:09:51,359 --> 00:09:57,503
+FRBR and Frad also defines a number of user needs as bibliographic
+
+87
+00:09:57,759 --> 00:10:00,831
+Data and authority data must fulfill.
+
+88
+00:10:01,343 --> 00:10:05,695
+These user needs are also important in RDA.
+
+89
+00:10:08,260 --> 00:10:14,820
+Bibliographic data describing a resource should help the user find.
+
+90
+00:10:15,680 --> 00:10:21,740
+Find materials that correspond to the search you have made. For example
+
+91
+00:10:21,900 --> 00:10:28,220
+Should you be able to find all resources within a particular subject, or a recording that has been released with a certain title.
+
+92
+00:10:29,880 --> 00:10:39,240
+Identify - identify a resource. For example, one should be able to be sure that the resource described
+
+93
+00:10:39,480 --> 00:10:45,120
+corresponds to the resource you are looking for, or be able to distinguish between two resources that have the same title.
+
+94
+00:10:47,980 --> 00:10:54,600
+Choose - choose a resource that is adapted to one's needs.
+
+95
+00:10:55,360 --> 00:10:59,960
+For example, you should be able to choose a text that is in a language that you understand.
+
+96
+00:11:01,640 --> 00:11:07,640
+Gain access to - gain access to the resource described.
+
+97
+00:11:08,160 --> 00:11:14,640
+For example, one should be able to order a resource in the library's collection, or via the internet have access to a
+
+98
+00:11:14,860 --> 00:11:18,140
+Electronic document stored on another computer.
+
+99
+00:11:21,983 --> 00:11:27,103
+Authority data - which describes an entity related to a resource,
+
+100
+00:11:28,383 --> 00:11:32,479
+Such as a person or institution or a work,
+
+101
+00:11:32,735 --> 00:11:35,039
+shall help the user to
+
+102
+00:11:35,300 --> 00:11:42,020
+Find information about an entity as well as resources related to the entity.
+
+103
+00:11:43,240 --> 00:11:49,380
+Identify that the entity is the one to seek for and be able to distinguish between one or more
+
+104
+00:11:49,631 --> 00:11:51,935
+entities with the same or similar name.
+
+105
+00:11:53,215 --> 00:11:57,055
+Get clarity in the relationship between the entity and a resource.
+
+106
+00:11:58,591 --> 00:12:04,223
+And understand why a name has been chosen as the preferred name for the entity.
+
+107
+00:12:07,295 --> 00:12:12,415
+And here is a concrete example of user needs for bibliographic data.
+
+108
+00:12:14,460 --> 00:12:21,120
+I want to find the movie "Go on Water", and then identify that it's the movie about
+
+109
+00:12:21,300 --> 00:12:25,480
+The construction of the Öresund Bridge, and not a movie about Jesus.
+
+110
+00:12:27,520 --> 00:12:36,000
+Then I choose the DVD edition and not the one on Blu-ray, because I have no Blu-ray player.
+
+111
+00:12:36,480 --> 00:12:42,120
+Then I can access it after ordering it from another branch.
+
+112
+00:12:46,719 --> 00:12:51,839
+And now we finish this presentation with a number of quick questions
+
+113
+00:12:52,095 --> 00:12:56,959
+that is about identifying the entities in Group 1.
+
+114
+00:12:57,215 --> 00:13:01,567
+And the first question is: identify the copy
+
+115
+00:13:03,100 --> 00:13:07,000
+An edition of the Red Room published in 1981
+
+116
+00:13:07,440 --> 00:13:09,880
+A hardcover signed copy
+
+117
+00:13:11,240 --> 00:13:12,900
+A Finnish translation
+
+118
+00:13:14,300 --> 00:13:18,600
+Recording of Drottningholmsmusiken by Johan Helmich Roman
+
+119
+00:13:21,160 --> 00:13:23,720
+Gösta Berlings saga by Selma Lagerlöf
+
+120
+00:13:25,380 --> 00:13:28,960
+Which one (s) of these is a copy
+
+121
+00:13:32,287 --> 00:13:34,335
+And the answer is
+
+122
+00:13:34,591 --> 00:13:38,687
+B - a hardcover signed copy
+
+123
+00:13:42,271 --> 00:13:48,159
+The next question will be: Identify the manifestation of these examples.
+
+124
+00:13:48,415 --> 00:13:52,255
+A - an edition of the Red Room released in 1981
+
+125
+00:13:52,520 --> 00:13:55,840
+B - a hardcover signed copy
+
+126
+00:13:56,880 --> 00:13:59,420
+C - a Finnish translation
+
+127
+00:14:00,440 --> 00:14:05,340
+D - A recording of Drottningholmsmusiken by Johan Helmich Roman
+
+128
+00:14:05,640 --> 00:14:09,420
+E - Gösta Berlings saga by Selma Lagerlöf
+
+129
+00:14:13,759 --> 00:14:19,903
+And the correct answer is a - an edition of the Red Room published in 1981
+
+130
+00:14:24,511 --> 00:14:27,071
+Identify the expression
+
+131
+00:14:27,327 --> 00:14:31,935
+A - an edition of the Red Room released in 1981
+
+132
+00:14:32,200 --> 00:14:35,020
+B - a hardcover signed copy
+
+133
+00:14:35,460 --> 00:14:38,840
+C - a Finnish translation
+
+134
+00:14:39,360 --> 00:14:44,740
+D - A recording of Drottningholmsmusiken by Johan Helmich Roman
+
+135
+00:14:45,420 --> 00:14:49,080
+E - Gösta Berlings saga by Selma Lagerlöf
+
+136
+00:14:52,420 --> 00:15:02,360
+And here it is both C - a Finnish translation and D - recording of Drottningholm music that is expression.
+
+137
+00:15:05,720 --> 00:15:08,280
+And identify the work
+
+138
+00:15:09,567 --> 00:15:12,895
+A - an edition of the Red Room released in 1981
+
+139
+00:15:13,151 --> 00:15:15,711
+B - a hardcover signed copy
+
+140
+00:15:16,223 --> 00:15:18,783
+C - a Finnish translation
+
+141
+00:15:19,040 --> 00:15:23,980
+D - A recording of Drottningholmsmusiken by Johan Helmich Roman
+
+142
+00:15:24,320 --> 00:15:28,260
+E - Gösta Berlings saga by Selma Lagerlöf
+
+143
+00:15:32,095 --> 00:15:38,239
+And here is the correct answer e - Gösta Berlings saga by Selma Lagerlöf
+
+144
+00:15:41,823 --> 00:15:42,591
+That is all.
