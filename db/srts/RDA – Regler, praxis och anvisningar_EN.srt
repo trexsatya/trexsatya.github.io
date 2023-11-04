@@ -1,0 +1,611 @@
+1
+00:00:08,704 --> 00:00:14,848
+RDA (Resource Description & Access) It is the international standard
+
+2
+00:00:15,104 --> 00:00:17,664
+We use resources in Libris when describing.
+
+3
+00:00:17,920 --> 00:00:20,736
+And the content of this presentation:
+
+4
+00:00:21,000 --> 00:00:29,560
+It will be a review. But not the rules in detail, but an overview of how the content of the RDA is structured.
+
+5
+00:00:29,920 --> 00:00:35,340
+And about the conceptual models behind it.
+
+6
+00:00:36,096 --> 00:00:38,912
+There will also be something about RDA and Libris.
+
+7
+00:00:39,168 --> 00:00:42,496
+Where to find libris practice for RDA
+
+8
+00:00:42,752 --> 00:00:46,080
+And where to find instructions for cataloging.
+
+9
+00:00:48,896 --> 00:00:51,712
+RDA nationally and internationally
+
+10
+00:00:52,224 --> 00:00:58,368
+From autumn 2017 there is a national RDA committee with representatives from research,
+
+11
+00:00:58,624 --> 00:01:02,720
+Special and public libraries around the country.
+
+12
+00:01:02,976 --> 00:01:08,608
+KB is a member of the European Cooperation Group Eurig,
+
+13
+00:01:09,376 --> 00:01:15,520
+European RDA Interest Group, which meets once a year to exchange experiences.
+
+14
+00:01:16,540 --> 00:01:26,180
+Eurig is represented in RSC, the RDA Steering Committee, which is the main organ of RDA.
+
+15
+00:01:27,560 --> 00:01:31,140
+There is a beta version with a new version of RDA.
+
+16
+00:01:31,904 --> 00:01:37,280
+It will start to be used no earlier than 2021 internationally.
+
+17
+00:01:37,540 --> 00:01:42,140
+But KB is awaiting the new version of RDA until further notice.
+
+18
+00:01:44,300 --> 00:01:49,060
+RDA will be used in primary catalogization in Libris.
+
+19
+00:01:50,592 --> 00:01:55,200
+Descriptions in Libris may be made according to different cataloging rules:
+
+20
+00:01:56,740 --> 00:02:02,080
+Before RDA, KRS (cataloging rules were followed for Swedish libraries).
+
+21
+00:02:02,360 --> 00:02:10,980
+Imported items may be made according to RDA, AACR2 or national cataloging rules.
+
+22
+00:02:12,360 --> 00:02:18,500
+The main rule is that descriptions in Libris that follow other cataloging rules other than RDA
+
+23
+00:02:18,752 --> 00:02:21,568
+not to be redone according to RDA.
+
+24
+00:02:23,360 --> 00:02:31,580
+The RDA is developed by the RSC (RDA Steering Committee) consisting of representatives from different countries.
+
+25
+00:02:32,060 --> 00:02:38,080
+The goal is for all continents to be represented and it is a work that is ongoing.
+
+26
+00:02:40,760 --> 00:02:50,560
+RDA was completed in 2010 and then replaced AACR2 on which our previous cataloging rules, KRS, are based on.
+
+27
+00:02:51,000 --> 00:02:59,860
+The Library of Congress was the first to switch to RDA. They went over 2013.
+
+28
+00:03:01,500 --> 00:03:05,340
+KB switched to RDA in 2017.
+
+29
+00:03:08,160 --> 00:03:12,256
+RDA is gathered in the online service RDA Toolkit.
+
+30
+00:03:13,020 --> 00:03:22,680
+Swedish, publicly funded libraries have access to RDA Toolkit through a subscription that KB has.
+
+31
+00:03:23,680 --> 00:03:46,600
+Via the link: https://www.kb.se/rdakatalgization/rda-litaction/rda--toolkit
+
+32
+00:03:47,080 --> 00:03:52,460
+If you get information on how to access RDA Toolkit.
+
+33
+00:03:55,520 --> 00:04:03,500
+RDA contains data elements, guidelines and instructions to create well -formulated metadata.
+
+34
+00:04:04,480 --> 00:04:09,860
+RDA is based on internationally recognized models, especially IFLA's models:
+
+35
+00:04:10,120 --> 00:04:16,380
+FRBR (Functional Requirements for Bibliographic Records)
+
+36
+00:04:17,279 --> 00:04:22,420
+Frad (Functional Requirements for Authority Data)
+
+37
+00:04:24,200 --> 00:04:31,980
+and frozen (Functional Requirements for Subject Authority Data)
+
+38
+00:04:35,200 --> 00:04:38,280
+RDA follows principles for linked data.
+
+39
+00:04:38,780 --> 00:04:46,780
+RDA's elements and vocabulary as linked data in RDF can be found in a service called RDA Registry.
+
+40
+00:04:49,540 --> 00:04:55,600
+Element. To each entity a number of elements are attached.
+
+41
+00:04:56,200 --> 00:05:07,120
+Example: Main title, publishing site, type of carrying, medium type are elements that are linked to the manifestation.
+
+42
+00:05:09,740 --> 00:05:16,720
+And further examples: Gösta Berling's saga - it is the main title of a manifestation.
+
+43
+00:05:17,680 --> 00:05:22,040
+Kalmar - It may be the place of release for a manifestation
+
+44
+00:05:22,560 --> 00:05:28,420
+Elements in RDA are the same as properties in Libris.
+
+45
+00:05:32,280 --> 00:05:38,420
+By having basic knowledge of the FR models, one also gains a better understanding of how RDA
+
+46
+00:05:38,680 --> 00:05:43,300
+Is structured and it becomes easier to navigate in Toolkit.
+
+47
+00:05:45,860 --> 00:05:50,460
+KB's RDA instructions also follow the structure of RDA Toolkit.
+
+48
+00:05:52,260 --> 00:05:55,840
+RDA is divided into ten sections.
+
+49
+00:05:56,140 --> 00:06:04,200
+Sections 1-4 include the elements, as well as instructions for the elements, used to describe the entities:
+
+50
+00:06:04,540 --> 00:06:07,100
+1: Manifestations and copies
+
+51
+00:06:07,100 --> 00:06:09,100
+2: works and expressions
+
+52
+00:06:09,920 --> 00:06:13,160
+3: families, persons, institutions
+
+53
+00:06:13,500 --> 00:06:16,820
+4: Subjects, objects, events, locations
+
+54
+00:06:18,623 --> 00:06:22,975
+Places are the only chapter in section 4 that contains information.
+
+55
+00:06:23,240 --> 00:06:30,980
+It was thought that the other chapters would be added after the release of RDA Toolkit, but it never happened.
+
+56
+00:06:31,420 --> 00:06:40,580
+Now that you have launched the beta version of the new RDA Toolkit, there is only space left of the entities in section 4.
+
+57
+00:06:42,940 --> 00:06:49,480
+Section 5-10 gives you guidelines on how to describe relationships between the entities.
+
+58
+00:06:50,620 --> 00:06:56,840
+A number of appendix that contains rules for upper and lower case, for example,
+
+59
+00:06:57,140 --> 00:07:00,340
+Abbreviations and symbols are also available.
+
+60
+00:07:01,380 --> 00:07:07,240
+There are also appendix with different types of relationship designations to indicate more
+
+61
+00:07:07,400 --> 00:07:10,080
+specific relationships between the units.
+
+62
+00:07:13,663 --> 00:07:19,551
+Appendix I-M (Relationships)
+
+63
+00:07:21,340 --> 00:07:27,940
+Relationships between a resource and agents linked to the resource. It is available in appendix I.
+
+64
+00:07:29,280 --> 00:07:35,160
+When you talk about resource, you mean the work, the expression, manifestation and copy
+
+65
+00:07:35,420 --> 00:07:41,400
+When you say agent you mean person, family and institution.
+
+66
+00:07:43,160 --> 00:07:50,080
+Relationships between works, expressions, manifestations and copies can be found in Appendix J.
+
+67
+00:07:51,040 --> 00:07:55,140
+For example, a work can be based on another work.
+
+68
+00:07:56,415 --> 00:07:59,999
+Relationships between agents can be found in Appendix K.
+
+69
+00:08:00,260 --> 00:08:06,680
+For example, a person may be a member of a family or be employed by an institution.
+
+70
+00:08:08,700 --> 00:08:15,100
+Relationships between concepts, objects, events and locations - Appendix L.
+
+71
+00:08:15,360 --> 00:08:21,240
+Unfortunately, there is no content there because these entities never developed in the RDA.
+
+72
+00:08:24,320 --> 00:08:34,380
+And subject relationships can be found in Appendix M. e.g. A work may be the subject of another work.
+
+73
+00:08:37,120 --> 00:08:40,960
+Appendix I-M (Relationships)
+
+74
+00:08:41,980 --> 00:08:49,360
+Libris practice is not to use the relationship designations in the Appendix I-M in RDA.
+
+75
+00:08:49,660 --> 00:08:57,060
+The features we use for agents in the new Libris are based on the function codes in Marc21.
+
+76
+00:08:57,600 --> 00:09:05,020
+These largely overlap in the appendix in the RDA.
+
+77
+00:09:06,820 --> 00:09:12,460
+It is possible to specify more specific relationships between e.g. Works in Libris.
+
+78
+00:09:16,287 --> 00:09:18,591
+Description methods
+
+79
+00:09:19,359 --> 00:09:22,687
+The new RDA talks about four description methods.
+
+80
+00:09:22,940 --> 00:09:30,360
+Please note that the description methods are about how to specify the value for a particular element.
+
+81
+00:09:30,660 --> 00:09:37,060
+They should not be mixed with description levels, which we will talk about later.
+
+82
+00:09:38,820 --> 00:09:44,960
+But the description levels are also available in the current RDA but there they are not as clearly pronounced.
+
+83
+00:09:45,480 --> 00:09:53,160
+The four description methods are: unstructured description, structured description,
+
+84
+00:09:53,640 --> 00:09:58,040
+Identifier and uri.
+
+85
+00:10:01,080 --> 00:10:03,900
+Unstructured description
+
+86
+00:10:05,183 --> 00:10:11,327
+Yes, there may be remarks, quotes from different sources and information transferred from the manifestation.
+
+87
+00:10:13,375 --> 00:10:17,215
+"Mechanical" transfer, ie That you write what stands.
+
+88
+00:10:19,260 --> 00:10:27,640
+They are manipulated according to certain rules that apply to punctuation, upper and lower case, etc.
+
+89
+00:10:28,980 --> 00:10:33,860
+And unstructured description cannot be understood by machines.
+
+90
+00:10:36,415 --> 00:10:38,975
+Structured description
+
+91
+00:10:41,540 --> 00:10:45,100
+We have an example under publishing details:
+
+92
+00:10:45,640 --> 00:10:53,940
+"Take what you see" applies to each individual element, ie. Follow the formulation of the resource, but
+
+93
+00:10:54,340 --> 00:10:57,660
+Enter the elements in a particular order.
+
+94
+00:10:58,180 --> 00:11:08,140
+Example: Stockholm: Bonniers, 2019
+
+95
+00:11:09,960 --> 00:11:14,800
+Structured description can partly be understood by machines.
+
+96
+00:11:16,360 --> 00:11:22,240
+The information is retrieved from the manifestation and you enter them as they look in the manifestation,
+
+97
+00:11:22,495 --> 00:11:27,871
+But you specify each task in specific elements, in a certain order.
+
+98
+00:11:28,120 --> 00:11:35,000
+There is an element for publishing site, one for publishers and one for publishing year.
+
+99
+00:11:38,880 --> 00:11:40,420
+Identifiers
+
+100
+00:11:40,680 --> 00:11:47,620
+Locally unique and assigned by an organization, so -called. default number.
+
+101
+00:11:48,600 --> 00:11:56,600
+For example. Issn, ISBN and EAN.
+
+102
+00:11:57,560 --> 00:12:05,520
+Also publishing number, such as Disc mark and number are counted as identifier.
+
+103
+00:12:07,800 --> 00:12:11,900
+Identifiers can partly be understood by machines.
+
+104
+00:12:13,360 --> 00:12:18,040
+URI (Uniform Resource Identifier)
+
+105
+00:12:18,300 --> 00:12:23,660
+They are globally unique and they can be understood by machines.
+
+106
+00:12:29,320 --> 00:12:31,880
+Description levels
+
+107
+00:12:33,160 --> 00:12:38,200
+In KRS, which we used before the RDA, we talked about three description levels.
+
+108
+00:12:38,460 --> 00:12:43,720
+They indicated which elements must be stated at each level of description.
+
+109
+00:12:43,940 --> 00:12:48,000
+In Libris, the description levels remain.
+
+110
+00:12:48,520 --> 00:12:55,640
+In RDA there are really no description levels. Instead, talking about nuclear elements
+
+111
+00:12:55,940 --> 00:12:59,800
+Or core elements as it is called in English.
+
+112
+00:13:00,500 --> 00:13:10,140
+The picture shows the element title (manifestation) in RDA Toolkit. Title has several sub -elements.
+
+113
+00:13:10,660 --> 00:13:21,360
+The main title is a nuclear element. All other titles are optional, e.g. Other title information, variant titles.
+
+114
+00:13:26,920 --> 00:13:29,480
+Nuclear elements - what does RDA say?
+
+115
+00:13:30,500 --> 00:13:38,180
+Well, a description of an entity should contain all nuclear elements that are applicable and easily accessible.
+
+116
+00:13:38,680 --> 00:13:44,580
+It should also contain all other elements necessary to distinguish
+
+117
+00:13:44,840 --> 00:13:48,160
+the entity from other similar entities.
+
+118
+00:13:50,980 --> 00:13:56,920
+Think about the user's needs and use the catalog's judgment.
+
+119
+00:13:58,540 --> 00:14:00,560
+Not least important.
+
+120
+00:14:03,260 --> 00:14:05,060
+Libris practice
+
+121
+00:14:05,311 --> 00:14:11,455
+In addition to the nuclear elements in RDA, the cataloging instance can define
+
+122
+00:14:11,720 --> 00:14:15,620
+Additional elements that are mandatory to indicate.
+
+123
+00:14:16,140 --> 00:14:24,380
+KB has defined a number of elements compulsory in Libris. Who they are found in libris practice.
+
+124
+00:14:25,280 --> 00:14:37,720
+Librispraxis is found in RDA Toolkit, such as KBSP, and in instructions for cataloging (RDA).
+
+125
+00:14:43,460 --> 00:14:46,020
+Librispraxis in RDA Toolkit
+
+126
+00:14:46,280 --> 00:14:55,980
+When clicking the KBSP button, in yellow and blue, in RDA Toolkit,
+
+127
+00:14:56,520 --> 00:15:00,880
+KBSP thus stands for the Royal Library Swedish Practice,
+
+128
+00:15:01,120 --> 00:15:09,300
+So you get into the document that contains libris practice, and SMDB practice, for RDA.
+
+129
+00:15:12,900 --> 00:15:18,280
+Librispraxis in instructions for cataloging (RDA)
+
+130
+00:15:20,320 --> 00:15:35,360
+Yes, here is also libris practice in the RDA instructions at https://www.kb.se/rdakatalogization
+
+131
+00:15:37,980 --> 00:15:41,300
+The description levels in Libris
+
+132
+00:15:41,560 --> 00:15:46,700
+Minimum level = nuclear elements in RDA
+
+133
+00:15:47,460 --> 00:15:55,900
+Library level = nuclear elements + the elements stated as mandatory in Libris.
+
+134
+00:15:56,920 --> 00:16:05,720
+National bibliographic level = nuclear elements + the elements stated as mandatory in librispraxis +
+
+135
+00:16:05,960 --> 00:16:10,980
+a few more elements specified by the national bibliography.
+
+136
+00:16:11,780 --> 00:16:15,880
+NB practice can be found in the RDA instructions.
+
+137
+00:16:21,000 --> 00:16:24,580
+Important aids in cataloging
+
+138
+00:16:24,960 --> 00:16:37,260
+RDA Toolkit is at the address https://ecess.RdoDoolkit.org
+
+139
+00:16:37,880 --> 00:16:43,000
+Contains the RDA instructions and all RDA's entities
+
+140
+00:16:43,260 --> 00:16:49,140
+And the elements for the entities and KBSP which are libris practice.
+
+141
+00:16:50,180 --> 00:16:58,060
+Libris practice talks about which elements are mandatory and briefly how we apply RDA's rules in Libris.
+
+142
+00:16:59,900 --> 00:17:04,500
+Instructions for cataloging (RDA)
+
+143
+00:17:05,800 --> 00:17:14,700
+Available at https://www.kb.se/rdakatalgization
+
+144
+00:17:15,260 --> 00:17:20,640
+Contains more extensive instructions with examples (in Marc)
+
+145
+00:17:20,900 --> 00:17:27,840
+For the most common elements and rules in RDA including authority work
+
+146
+00:17:28,319 --> 00:17:34,280
+Here is also stated which elements are nuclear elements and which elements are mandatory
+
+147
+00:17:34,480 --> 00:17:40,600
+according to libris practice. There are also workflows for a number of material types.
+
+148
+00:17:42,143 --> 00:17:48,287
+Another tool for cataloging is help texts in the cataloging tool.
+
+149
+00:17:48,540 --> 00:18:00,480
+which is at the address https://libris.kb.se/katalization/help
+
+150
+00:18:01,020 --> 00:18:08,660
+and they contain, among other things. instructions on how to insert and add properties to the cataloging tool
+
+151
+00:18:09,020 --> 00:18:12,860
+As well as workflows for a number of materials.
+
+152
+00:18:13,119 --> 00:18:19,263
+Work is underway with new cataloging instructions adapted to Libris.
+
+153
+00:18:20,543 --> 00:18:22,335
+Yes, that was all.

@@ -1,0 +1,128 @@
+1
+00:00:07,936 --> 00:00:14,080
+Vi ska gå igenom sökfunktionen i Libris katalogisering. Vi ska titta på sökrutan,
+
+2
+00:00:14,336 --> 00:00:20,480
+hur man kan avgränsa sökningen och sortering av träfflistan. Sökrutan finns med
+
+3
+00:00:20,736 --> 00:00:26,624
+var du än är i verktyget. Med kortkommandot Alt + s kommer du till sök.
+
+4
+00:00:26,880 --> 00:00:33,024
+Du kan söka direkt i sökrutan. Du kan också avgränsa din sökning på olika sätt.
+
+5
+00:00:33,792 --> 00:00:37,376
+Som förval är sökningen inställd på Instans.
+
+6
+00:00:38,144 --> 00:00:41,728
+Det motsvarar att du söker på utgåvor eller liknande.
+
+7
+00:00:42,496 --> 00:00:48,640
+Du kan ändra avgränsningen till Verk, Agent, Koncept eller Alla.
+
+8
+00:00:49,920 --> 00:00:53,660
+Eftersom vi ännu inte har börjat jobba med verk som egna entiteter
+
+9
+00:00:53,780 --> 00:00:56,820
+får du inte många träffar när du söker på verk.
+
+10
+00:00:56,832 --> 00:01:00,672
+Som förval är sökningen också inställd på fritext.
+
+11
+00:01:01,184 --> 00:01:07,328
+Du kan sedan avgränsa ytterligare här genom att välja ISBN, ISSN eller Huvudtitel.
+
+12
+00:01:09,376 --> 00:01:15,520
+Om du avgränsar till ISBN kan du söka på ISBN med eller utan bindestreck.
+
+13
+00:01:15,776 --> 00:01:21,408
+Om du söker på ISBN som fritext, sök utan bindestreck.
+
+14
+00:01:21,920 --> 00:01:25,504
+Du kan också klicka på Sök i huvudmenyn.
+
+15
+00:01:26,528 --> 00:01:31,392
+Då kommer du till en vy där du kan söka i Libris eller Andra källor.
+
+16
+00:01:31,904 --> 00:01:38,048
+Det är viktigt att alltid söka noga i Libris först för att vara säker på att man inte skapar dubbletter.
+
+17
+00:01:39,072 --> 00:01:43,680
+Om man inte hittar det man söker i Libris kan man gå vidare till Andra källor.
+
+18
+00:01:44,192 --> 00:01:49,056
+Här finns möjlighet att söka i andra databaser och importera en post.
+
+19
+00:01:49,312 --> 00:01:52,640
+Se filmen "Söka i andra källor" för mer information.
+
+20
+00:01:53,920 --> 00:01:56,736
+Vi testar att göra en sökning i Libris.
+
+21
+00:01:58,272 --> 00:02:04,416
+Jag söker på Hypnotisören av Lars Kepler.
+
+22
+00:02:09,024 --> 00:02:13,632
+Man kan avgränsa med olika filter som du ser i vänstermenyn.
+
+23
+00:02:14,400 --> 00:02:18,240
+Jag väljer till exempel att avgränsa på verkstyp text
+
+24
+00:02:18,496 --> 00:02:23,360
+och på utgivningsår 2009.
+
+25
+00:02:26,940 --> 00:02:33,620
+Då ser vi att träfflistan blev betydligt kortare. Man kan ta bort filtren genom att klicka på krysset.
+
+26
+00:02:33,940 --> 00:02:36,920
+Man kan också sortera träfflistan.
+
+27
+00:02:37,696 --> 00:02:43,584
+Sorteringen är inställd på Relevans som förval och man kan även välja
+
+28
+00:02:43,840 --> 00:02:48,448
+Huvudtitel, Utgivningsår eller Senast uppdaterad.
+
+29
+00:02:49,216 --> 00:02:54,080
+Jag väljer att sortera på Utgivningsår (äldst först).
+
+30
+00:02:55,360 --> 00:03:01,504
+Träfflistan kan också ställas in på detaljerad vy, som här, eller på kompakt vy.
+
+31
+00:03:01,760 --> 00:03:05,240
+Det finns fler möjligheter att göra din sökning mer detaljerad.
+
+32
+00:03:05,500 --> 00:03:10,200
+Läs i hjälpsektionen under rubriken Sök för mer information.
+

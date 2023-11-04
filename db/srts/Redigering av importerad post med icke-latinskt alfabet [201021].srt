@@ -1,0 +1,504 @@
+1
+00:00:13,824 --> 00:00:19,968
+Hej! Mitt namn är Fatima Klanco Al Mulki. Jag arbetar på Kungliga biblioteket.
+
+2
+00:00:20,224 --> 00:00:24,832
+Jag ska nu visa hur man redigerar en importerad post med icke-latinskt alfabet.
+
+3
+00:00:25,088 --> 00:00:33,363
+Det beskrivna tillvägagångssättet gäller version 1.19 av Libris katalogisering och kan komma att ändras.
+
+4
+00:00:34,560 --> 00:00:43,764
+Jag har valt en bok som är på arabiska. Jag har sökt fram den arabiska översättningen av August Strindbergs Ett drömspel.
+
+5
+00:00:44,800 --> 00:00:48,741
+Jag börjar med att titta på Adminmetadata och se över den. 
+
+6
+00:00:48,877 --> 00:00:57,344
+Man behöver inte följa den ordningen, det är olika hur man brukar redigera sina poster. Mitt sätt är att börja med Adminmetadata.
+
+7
+00:00:57,600 --> 00:01:03,744
+Här kontrollerar jag att Beskrivningsnivå är med.
+
+8
+00:01:04,000 --> 00:01:13,090
+Vid import hamnar Beskrivningsnivå automatiskt på Miniminivå om systemet inte känner igen koden från den databas posten importerats ifrån.
+
+9
+00:01:13,393 --> 00:01:17,574
+Jag ändrar den till Biblioteksnivå.
+
+10
+00:01:18,000 --> 00:01:29,481
+Systemteknisk anmärkning. Det finns redan egenskapen så jag kan duplicera den entiteteten genom att klicka på de här tre prickarna
+
+11
+00:01:29,600 --> 00:01:47,156
+och Hantera och sen duplicera entiteten och ersätta den texten med en anmärkning om translittereringsschema som vi kommer att använda.
+
+12
+00:01:47,866 --> 00:01:54,944
+Inom Libriskollektivet använder vi i stort sett Library of Congress romaniseringsscheman vid överföring av 
+
+13
+00:01:55,200 --> 00:01:59,237
+text med icke-latinsk skriftart till latinsk skriftart.
+
+14
+00:01:59,373 --> 00:02:08,598
+Undantag från detta görs för kyrillisk skrift. KB-/LIBRIS-praxis är att slaviska och flertalet icke-slaviska verk 
+
+15
+00:02:08,598 --> 00:02:15,430
+med kyrillisk skrift ska translittereras enligt ISO 9:1995.
+
+16
+00:02:15,430 --> 00:02:22,859
+De bibliotek som har särskilt behov av det kan i stället välja att transkribera enligt KR76 (Kjellberg)
+
+17
+00:02:22,859 --> 00:02:37,815
+och vid behov komplettera med ALA-LC Romanization Table, Non-Slavic Languages (in Cyrillic Script) för de extratecken som kan förekomma i icke-slaviska språk. 
+
+18
+00:02:37,815 --> 00:02:47,741
+Undantag görs för mongoliska där extratecknen Ө, ө romaniseras som svenskt Ö, ö och Ү, ү som Ü, ü.
+
+19
+00:02:48,819 --> 00:02:53,830
+Dessutom har vi undantag för grekisk skrift.
+
+20
+00:02:53,830 --> 00:03:02,225
+Verk med grekisk skrift följer två olika principer. Gammalgrekiska texter och nygrekiska texter.
+
+21
+00:03:02,343 --> 00:03:15,911
+Gammalgrekiska (från före 1454) följer translittereringsschema fastlagt för vetenskapliga bibliotek i Svenska katalogiseringsregler 1980 (SKR).
+
+22
+00:03:16,173 --> 00:03:27,777
+Nygrekiska texter (efter 1453) följer transkriberingsschema angivet för svenska bibliotek efter Bibliotekstjänsts praxis för folkbiblioteken.
+
+23
+00:03:27,967 --> 00:03:35,069
+Mera detaljerad information inklusive länkar till de olika schemana finner ni i Metadatabyrån.
+
+24
+00:03:35,445 --> 00:03:42,000
+Det viktiga är att man i det här fältet anger vilken tabell man använder.
+
+25
+00:03:42,443 --> 00:03:59,835
+Så här skriver jag in att vi använder oss utav Library of Congress ... så där.
+
+26
+00:04:01,758 --> 00:04:10,368
+Det importerande bibliotekets sigel hamnar vid import automatiskt i Skapad av och det ska vi inte ändra på.
+
+27
+00:04:10,624 --> 00:04:20,305
+Jag ser under katalogiseringsregler att det är en RDA-post och jag ska då komma ihåg att följa de reglerna när jag fortsätter med redigeringen.
+
+28
+00:04:20,305 --> 00:04:28,842
+Hade katalogiseringsreglerna varit andra skulle jag inte ha behövt ändra dem till RDA trots att vi primärkatalogiserar enligt RDA.
+
+29
+00:04:29,153 --> 00:04:35,967
+Anledningen är att det finns andra bibliotek i världen som använder andra regler och vi har sagt att vi accepterar det.
+
+30
+00:04:36,223 --> 00:04:42,367
+Katalogiseringsspråket ser jag här att det är arabiska.
+
+31
+00:04:42,623 --> 00:04:48,767
+Och eftersom det är en importerad post så hade jag inte behövt ändra på det så länge det stämmer men
+
+32
+00:04:49,023 --> 00:04:55,040
+här vet jag att antal sidor till exempel kommer att stå på arabiska så för att slippa
+
+33
+00:04:55,040 --> 00:05:00,465
+translitterera det också väljer jag att ändra här till svenska.
+
+34
+00:05:11,295 --> 00:05:20,384
+I importerade poster står det att det bibliotek som importerar posten är det som har skapat posten. Vi ändrar inte på det utan i stället lägger vi in
+
+35
+00:05:21,374 --> 00:05:27,861
+Uppgraderad eller importerad av.
+
+36
+00:05:31,775 --> 00:05:32,799
+Så här
+
+37
+00:05:35,871 --> 00:05:40,770
+Så skriver vi vårt biblioteks sigel här.
+
+38
+00:05:43,295 --> 00:05:49,439
+Så, nu är det dags att infoga information om Modifieringar.
+
+39
+00:05:49,695 --> 00:05:54,303
+Man använder sig utav plustecknet här till höger.
+
+40
+00:05:57,764 --> 00:05:59,744
+Så här
+
+41
+00:06:01,727 --> 00:06:11,128
+Lägg till. Och då väljer man den som står längst ner: Icke-latinska tecken finns i såväl originalskrift som translittererad form.
+
+42
+00:06:13,138 --> 00:06:22,754
+Men innan jag lämnar Adminmetadata behöver jag lägga till ytterligare en egenskap. Eftersom  jag katalogiserar för KB
+
+43
+00:06:23,209 --> 00:06:29,184
+och det är en översättning av ett svenskt verk, vill jag att den ska föras in i Suecana-samlingen, 
+
+44
+00:06:29,184 --> 00:06:35,387
+alltså den samling av utländskt material med svensk anknytning som KB bevarar.
+
+45
+00:06:35,794 --> 00:06:44,086
+För att göra det ska jag lägga in en ny egenskap genom att klicka på plustecknet i högerspalten och väljer Bibliografi. 
+
+46
+00:06:46,982 --> 00:06:48,518
+Så
+
+47
+00:06:50,623 --> 00:06:52,159
+Och så fortsätter jag här.
+
+48
+00:06:54,719 --> 00:06:56,255
+Skapa lokal entitet
+
+49
+00:06:56,511 --> 00:07:06,779
+Trots att det står sigel här så skriver jag inte mitt biblioteks sigel utan skriver SUEC i stället.
+
+50
+00:07:07,187 --> 00:07:12,461
+Alltså namn på den bibliografi den ska ligga på.
+
+51
+00:07:13,407 --> 00:07:19,295
+Och nu är jag klar med adminmetadatan och går över till instansen.
+
+52
+00:07:24,671 --> 00:07:30,815
+Jag börjar med att stänga av för att ha bättre översikt.
+
+53
+00:07:32,095 --> 00:07:36,234
+Och börjar med instansen.
+
+54
+00:07:36,703 --> 00:07:40,165
+Och jag börjar med beskrivningen och se att det stämmer.
+
+55
+00:07:41,092 --> 00:07:53,438
+Nu kontrollerar vi att ISBN:et är korrekt. Utgivningssätt: Monografisk resurs. Det ska alltid stå monografisk resurs eftersom vi katalogiserar en monografi.
+
+56
+00:07:53,438 --> 00:08:02,303
+Medietyp, Bärartyp, det är korrekt. Och där ser vi att de är på engelska. Det betyder att när vi sparar posten kommer de automatiskt länkas
+
+57
+00:08:02,303 --> 00:08:08,447
+rätt till den svenska varianten.
+
+58
+00:08:08,703 --> 00:08:18,106
+Nu är vi framme vid titeln och här ser vi att titeln är i orginalskrift.
+
+59
+00:08:21,503 --> 00:08:31,143
+Enligt Librispraxis ska vi använda oss utav originalskrift. Vi lägger originaltiteln som varianttitel på följande sätt:
+
+60
+00:08:34,736 --> 00:08:44,640
+Så. Och jag väljer att flytta över originaltiteln till den här rutan.
+
+61
+00:08:45,297 --> 00:08:54,434
+Dessutom, eftersom det handlar om en skriftart som skrivs från höger till vänster kontrollerar jag att skrivriktningen är korrekt genom att
+
+62
+00:08:54,434 --> 00:09:00,385
+högerklicka och välja rätt. Så.
+
+63
+00:09:01,695 --> 00:09:08,773
+I egenskap för Huvudtitel skriver vi in den romaniserade formen av huvudtiteln.
+
+64
+00:09:08,909 --> 00:09:17,424
+I det här fallet, eftersom det handlar om arabiska, använder vi oss av LC:s translittereringsschema.
+
+65
+00:09:17,613 --> 00:09:26,271
+Och när vi har translittererat huvudtiteln ser det ut så här.
+
+66
+00:09:26,527 --> 00:09:32,671
+När vi tittar på upphovsuppgifterna ser vi att det är icke-latinsk skrift. 
+
+67
+00:09:32,927 --> 00:09:42,000
+Eftersom translitterering är främst till för att hjälpa användargruppen som är bibliotekarier, behöver vi translitterera upphovsuppgifterna också.
+
+68
+00:09:42,000 --> 00:09:48,000
+Här skriver vi som det står på titelsidan fast i transmitterad form.
+
+69
+00:09:48,503 --> 00:09:53,623
+ Så här kommer det att se ut så här.
+
+70
+00:10:00,920 --> 00:10:10,297
+I importerade poster kan det hända att övrig titelinformation hamnar felaktigen i egenskapen Upphovsuppgift.
+
+71
+00:10:10,559 --> 00:10:16,703
+Det kan vara extra svårt om man inte förstår språket. En påminnelse bara att man är uppmärksam.
+
+72
+00:10:16,959 --> 00:10:31,094
+Och för att avhjälpa det så skulle man flytta upp den informationen till Övrig titelinformation.
+
+73
+00:10:32,474 --> 00:10:38,530
+Så här. Men det var inte fallet i mitt exempel.
+
+74
+00:10:39,999 --> 00:10:50,860
+Nu tittar vi på utgivningen. Vi ser att Primär utgivning är korrekt
+
+75
+00:10:51,007 --> 00:10:53,567
+Landet är korrekt.
+
+76
+00:10:53,823 --> 00:11:07,673
+Plats måste vi translitterera och då skriver vi in den translittererade formen, och det blir så här.
+
+77
+00:11:24,799 --> 00:11:35,261
+Jag klamrar in platsen eftersom den inte står i publikationen men vi vet att just det här förlaget är från den här platsen.
+
+78
+00:11:36,483 --> 00:11:43,756
+Agent, alltså förlaget, den translittererar vi också.
+
+79
+00:11:48,095 --> 00:11:54,239
+Under utgivningsuppgifterna kan det hända att årtalet upprepas väldigt många gånger, vilket kan verka förvirrande, 
+
+80
+00:11:54,495 --> 00:12:00,000
+men det är för att uppgifterna hämtas från olika fält i Marc21-formatet.
+
+81
+00:12:00,153 --> 00:12:03,199
+Mer information om detta finns i hjälptexterna.
+
+82
+00:12:04,006 --> 00:12:09,343
+Våra utgivningsuppgifter är korrekta så vi ändrar inte på det.
+
+83
+00:12:09,599 --> 00:12:18,122
+Vi kontrollerar sidantalet och ser att det är korrekt, men står på arabiska, och vi har ändrat
+
+84
+00:12:19,583 --> 00:12:27,681
+katalogiseringsspråket i Adminmetadata till svenska så vi skriver här på svenska.
+
+85
+00:12:32,639 --> 00:12:44,774
+Vi ser att manifestationen är en del i en serie. Så vi lägger rätt uppgifter här också.
+
+86
+00:12:45,015 --> 00:12:50,303
+För mer information om seriemedlemskap , läs i hjälptexterna.
+
+87
+00:12:50,559 --> 00:12:58,667
+Nu är vi färdiga med instansen och går vidare till Instans av Verk.
+
+88
+00:12:59,521 --> 00:13:04,204
+Man kan klicka på Home-knappen för att komma högst upp.
+
+89
+00:13:08,735 --> 00:13:12,000
+Nu går vi hit.
+
+90
+00:13:14,879 --> 00:13:24,447
+Titeln i Instans av Verk ska vara den föredragna titeln för verket och eftersom det här är en översättning så ska det vara originaltiteln
+
+91
+00:13:24,447 --> 00:13:29,003
+och vi ska därför kontrollera att den stämmer med svensk praxis.
+
+92
+00:13:29,727 --> 00:13:38,264
+Vi ser att den inte är korrekt. Det ska vara Ett drömspel.
+
+93
+00:13:42,527 --> 00:13:48,000
+Och det saknas fileringsvärde också.
+
+94
+00:13:52,649 --> 00:13:54,303
+Det ska vara 4.
+
+95
+00:14:00,191 --> 00:14:03,519
+Nu följer Översättning av.
+
+96
+00:14:04,031 --> 00:14:10,206
+Och detta säger att det här är en översättning från ett svenskt original.
+
+97
+00:14:12,223 --> 00:14:24,905
+Sedan följer Medverkan och funktion och vi fortsätter med att kontrollera om det finns en auktoriserad och länkbar namnform för de medverkande agenterna.
+
+98
+00:14:25,535 --> 00:14:30,143
+Och jag vet här att det står August Strindberg så jag kontrollerar att det finns en
+
+99
+00:14:30,911 --> 00:14:37,525
+auktoriserad post, och det gör det, så jag länkar till den istället för den arabiska formen.
+
+100
+00:14:37,525 --> 00:14:46,867
+Funktion är på arabiska och jag ändrar ... det kommer inte gå att länka till den utan jag måste välja
+
+101
+00:14:47,295 --> 00:15:00,737
+Jag tar bort den och gör om till Författare.
+
+102
+00:15:02,655 --> 00:15:08,540
+Här har vi översättaren. Den andra medverkan.
+
+103
+00:15:11,359 --> 00:15:22,665
+Nu ska vi göra översättaren och det enklaste för mig i det här fallet är att göra en ny medverkan
+
+104
+00:15:22,879 --> 00:15:32,008
+för att jag måste translitterera hans uppgifter och så väljer jag Person.
+
+105
+00:15:33,119 --> 00:15:42,956
+Och då plockar jag hans namn härifrån i translittererad form och skriver ner ...
+
+106
+00:15:51,433 --> 00:15:53,108
+Så.
+
+107
+00:16:01,023 --> 00:16:03,327
+Och funktionen är översättare.
+
+108
+00:16:07,167 --> 00:16:13,681
+I det här fallet saknas en auktoriserad namnform och jag väljer att inte ”Skapa och länka entitet” 
+
+109
+00:16:13,681 --> 00:16:19,929
+eftersom det skulle skapa en entitet där innehållet inte följer anvisningarna för auktoriserad namnform. 
+
+110
+00:16:20,044 --> 00:16:24,286
+I stället gör jag på det här sättet.
+
+111
+00:16:25,218 --> 00:16:27,903
+Och länkar rätt funktion.
+
+112
+00:16:28,159 --> 00:16:36,000
+Sedan följer en ny språkuppgift som berättar om att det här är en bok på arabiska.
+
+113
+00:16:37,375 --> 00:16:43,529
+Och sen får vi upp Genre/form-delen.
+
+114
+00:16:47,103 --> 00:16:55,408
+Här ska vi lägga olika koder som den litterära genren, och genre/form-termer.
+
+115
+00:16:56,474 --> 00:17:10,698
+Och här vet jag att vi ska välja Dramatik.
+
+116
+00:17:17,567 --> 00:17:24,000
+Och vi ska vara uppmärksamma på listor. Att vi väljer rätt.
+
+117
+00:17:25,502 --> 00:17:33,834
+Jag ser här att vi saknar ämne så jag ska ta fram den egenskapen genom att klicka på ... här.
+
+118
+00:17:36,000 --> 00:17:38,338
+Så där.
+
+119
+00:17:42,143 --> 00:17:49,857
+Vad gäller ämnesord, om de hade funnits redan hade vi låtit dem ligga kvar.
+
+120
+00:17:50,079 --> 00:18:01,824
+Men här tar jag fram svenska ämnesord enligt svenska originalet.
+
+121
+00:18:02,111 --> 00:18:11,548
+För att få endast svenska ämnesord så avslutar jag min sökning med sao.
+
+122
+00:18:11,839 --> 00:18:17,882
+Och då får jag dels färre träffar och dels endast de som är sao-träffar.
+
+123
+00:18:21,567 --> 00:18:26,372
+Och här har jag Innehållstyp och det är korrekt, också.
+
+124
+00:18:26,687 --> 00:18:31,936
+Och det är på engelska så det kommer att länkas till svenska när vi sparar posten.
+
+125
+00:18:32,575 --> 00:18:40,683
+Nu är vi klara med redigeringen och kan efter en sista kontroll klicka på Skapa post, här.
+
+126
+00:18:41,535 --> 00:18:49,379
+Det återstår att lägga bestånd på posten och för att se hur man gör se filmen om Beståndsregistrering.
+
