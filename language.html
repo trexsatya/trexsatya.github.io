@@ -322,13 +322,14 @@
     $('#mp3Choice').change(async e => {
       //Load subtitle
       let mp3Url = $('#mp3Choice').val()
+      if(mp3Url.indexOf('https://') < 0) return
 
-      let [svSrtNm, enSrtNm] = srtNamesFromUrl(mp3Url)
+      let srtNames = srtNamesFromUrl(mp3Url)
 
-      let svSrt = await fetch(srtUrl(svSrtNm), {})
+      let svSrt = await fetch(srtUrl(srtNames.sv), {})
       let sv = await svSrt.text()
-      
-      let enSrt = await fetch(srtUrl(enSrtNm), {})
+
+      let enSrt = await fetch(srtUrl(srtNames.en), {})
       let en = await enSrt.text()
 
       sv = srtToJson(sv, 'sv')
