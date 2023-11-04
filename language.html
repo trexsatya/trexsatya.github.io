@@ -105,13 +105,17 @@
 
 <div>
     <iframe width="0" height="0"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1">
     </iframe>
 
-    Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">
-    <br>
-    <br>
-    Audio: <input id="video-file" type="file" title="Video"/>
+<!--    Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    Audio: <input id="video-file" type="file" title="Video"/>-->
+
+    <select id="mp3Choice">
+        <option value="">-</option>
+    </select>
 
     <audio id="video" src="" width="700" height="500"></audio>
 </div>
@@ -134,11 +138,11 @@
         <label for="speed-1">0.5</label>
         <input type="radio" name="speedOption" id="speed-1" data-speed="0.5">
         <label for="speed-2">0.7</label>
-        <input type="radio" name="speedOption" id="speed-2" checked data-speed="0.7">
+        <input type="radio" name="speedOption" id="speed-2"  data-speed="0.7">
         <label for="speed-3">0.8</label>
         <input type="radio" name="speedOption" id="speed-3" data-speed="0.8">
-        <label for="speed-4">0.9</label>
-        <input type="radio" name="speedOption" id="speed-4" data-speed="0.9">
+        <label for="speed-4">1.0</label>
+        <input type="radio" name="speedOption" id="speed-4" checked data-speed="1.0">
     </div>
     <div style="text-align: center; margin-top: 2em;">
         <div id="pagination"></div>
@@ -280,21 +284,77 @@
         $('#playBtn').html('Pause')
     }
 
+    let mp3s = [ 'https://storage.googleapis.com/cupitor-220103.appspot.com/swedish_media/First%20patient%20receives%20milestone%20stem%20cell-based%20transplant%20for%20Parkinson%E2%80%99s%20Disease.mp3',
+    'https://storage.googleapis.com/cupitor-220103.appspot.com/swedish_media/Stephanie%20om%20studentlivet%20i%20Halmstad.mp3']
+
+    $('#mp3Choice').html('').append($(`<option>-</option>`).attr('value', ''))
+
+    mp3s.forEach(it => {
+          let parts = it.split("/")
+          let $opt = $(`<option>${decodeURI(parts[parts.length-1])}</option>`).attr('value', it)
+          $('#mp3Choice').append($opt)
+    })
+
+    function srtToJson(text, lang) {
+      let parseSrtItem = (x, lang) => {
+        let [id, times, ...rest] =  x.split("\n")
+        let [ts, te] = times.split(" --> ")
+        let item = {ts: ts, te: te, id: id}
+        item[lang] = rest.join("\n")
+        return item
+      }
+      return text.trim().split("\n\n").map(it => parseSrtItem(it, lang))
+    }
+
+
+    $('#mp3Choice').change(async e => {
+      //Load subtitle
+      let mp3Url = $('#mp3Choice').val()
+
+      let url = mp3Url
+      url = "http://localhost:5000/proxy?url=" + url
+      url = url.replace(".mp3", ".srt")
+
+      let svSrt = await fetch(url, {})
+      let sv = await svSrt.text()
+
+      url = url.replace(".srt", "_EN.srt")
+      let enSrt = await fetch(url, {})
+      let en = await enSrt.text()
+
+      sv = srtToJson(sv, 'sv')
+      en = srtToJson(en, 'en')
+
+      let combined = sv.map(svItem => {
+        let enItem = en.find(eni => eni.id === svItem.id)
+        return {...svItem, ...enItem}
+      })
+      // console.log(sv)
+      // console.log(en)
+      console.log(combined)
+
+      window.subtitles = combined
+
+      player.setSrc(mp3Url)
+
+      playSelectedFile()
+    })
+
     let playSelectedFile = function (event) {
-        let file = this.files[0]
-        let type = file.type
-
-        let canPlay = player.canPlayType(type)
-        if (canPlay === '') canPlay = 'no'
-        let message = 'Can play type "' + type + '": ' + canPlay
-        let isError = canPlay === 'no'
-        displayMessage(message, isError)
-
-        if (isError) {
-            return
-        }
-
-        player.setSrc(URL.createObjectURL(file))
+        // let file = this.files[0]
+        // let type = file.type
+        //
+        // let canPlay = player.canPlayType(type)
+        // if (canPlay === '') canPlay = 'no'
+        // let message = 'Can play type "' + type + '": ' + canPlay
+        // let isError = canPlay === 'no'
+        // displayMessage(message, isError)
+        //
+        // if (isError) {
+        //     return
+        // }
+        //
+        // player.setSrc(URL.createObjectURL(file))
 
         let strategy = "Normal-Slow"
 
@@ -350,6 +410,7 @@
             }
 
             populateSubtitles(currentSub)
+            player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
 
             if (!window.rewindData && ct >= currentSub.te + window.marginEndSubtitle) {
                 // Go to next subtitle
@@ -378,7 +439,8 @@
     }
 
     let inputNode = document.querySelector('#video-file')
-    inputNode.addEventListener('change', playSelectedFile, false)
+    if(inputNode)
+        inputNode.addEventListener('change', playSelectedFile, false)
 
     function rewind() {
         window.rewindData = window.rewindData || {
