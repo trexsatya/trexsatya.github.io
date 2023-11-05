@@ -66,16 +66,13 @@
         }
 
         function togglePlay(el) {
-            if (!el) el = $('#playBtn')[0]
-
-            if ($(el).text() === 'Play') {
+            if (player.paused) {
                 player.play()
-                $(el).html("Pause").removeClass('play-btn').addClass('pause-btn')
             } else {
                 player.pause()
-                $(el).html("Play").removeClass('pause-btn').addClass('play-btn')
             }
         }
+
     </script>
     <style>
         #playBtn {
@@ -233,7 +230,7 @@
         $('#en-sub').html('')
     }
 
-    let populateSubtitles = (currentSub) => {
+    let renderSubtitles = (currentSub) => {
         $('#currentNumber').html(currentSub.number)
         $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / [' + currentSub.ts_o + '-' + currentSub.te_o + ']')
         $('#currentSpeed').html(player.getPlaybackRate() + ' / ' + currentSub.speed)
@@ -258,7 +255,7 @@
 
         $('#en-sub').html(currentSub.en)
     }
-    let prepareSubs = (pageNumber, allSubs) => {
+    let prepareSubsForPage = (pageNumber, allSubs, setTime) => {
         pageNumber = parseInt(pageNumber)
 
         //Reset
@@ -270,18 +267,20 @@
 
         let currentSub = subs.shift()
 
-        player.setCurrentTime(Math.max(currentSub.ts + window.marginStartSubtitle, 0))
+        if(setTime) {
+          player.setCurrentTime(Math.max(currentSub.ts + window.marginStartSubtitle, 0))
+        }
 
-        if(!window.rewindData)
-        player.setPlaybackRate(currentSub.speed)
+        // if(!window.rewindData)
+        // player.setPlaybackRate(currentSub.speed)
 
-        player.play()
+        // player.play()
 
         window.subs = subs
         window.currentSub = currentSub
         window.pageNumber = pageNumber
 
-        $('#playBtn').html('Pause')
+        // $('#playBtn').html('Pause')
     }
 
     let mp3s = [
@@ -322,6 +321,8 @@
     }
 
     $('#mp3Choice').change(async e => {
+      clearSubtitles()
+      player.pause()
       //Load subtitle
       let mp3Url = $('#mp3Choice').val()
       if(mp3Url.indexOf('https://') < 0) return
@@ -359,6 +360,16 @@
 
       playSelectedFile()
     })
+
+    function  setSpeed() {
+      player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
+    }
+
+    function goToCurrentPageNumber(originalSubs) {
+      let pageNum = $('#pagination').pagination('getCurrentPageNum')
+      window.rewindData = null
+      prepareSubsForPage(pageNum, originalSubs, true)
+    }
 
     let playSelectedFile = function (event) {
         // let file = this.files[0]
@@ -403,14 +414,22 @@
             showGoButton: true,
             formatGoInput: 'go to <%= input %> st/rd/th',
             callback: function (data, pagination) {
-                console.log(data)
-                window.rewindData = null
-                prepareSubs(data, originalSubs)
+                // console.log(data)
+            }, //page changed
+            afterPageOnClick: e => {
+              console.log(e)
+              goToCurrentPageNumber(originalSubs);
+            },
+            afterNextOnClick: e => {
+              goToCurrentPageNumber(originalSubs);
+            },
+            afterPreviousOnClick: e => {
+              goToCurrentPageNumber(originalSubs);
             }
         })
 
         $('#playBtn').attr('disabled', false)
-        prepareSubs(1, originalSubs)
+        prepareSubsForPage(1, originalSubs)
 
         const ontimeupdate = e => {
             // console.log(currentSub, player.currentTime)
@@ -429,31 +448,32 @@
                 }
             }
 
-            populateSubtitles(currentSub)
-            player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
+            renderSubtitles(currentSub)
+            setSpeed();
 
-            if (!window.rewindData && ct >= currentSub.te + window.marginEndSubtitle) {
+            if (!window.rewindData && ct >= currentSub.te) {
                 // Go to next subtitle
                 // player.pause()
-                if (subs.length === 0) {
-                    $('#pagination').pagination('go', window.pageNumber + 1)
-                } else {
-                    currentSub = subs.shift()
-                    window.currentSub = currentSub
-                    player.setCurrentTime(Math.max(currentSub.ts + window.marginStartSubtitle, 0))
-
-                    if(currentSub.speed < 1) {
-                        player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
-                    } else if(!window.rewindData){
-                        player.setPlaybackRate(currentSub.speed)
-                    }
-
-                    console.log(currentSub)
-                    clearSubtitles()
-                }
+                $('#pagination').pagination('next', (data, p) => {
+                   prepareSubsForPage(data, originalSubs)
+                })
             }
         }
+
+        function updatePlayBtn() {
+          let el = $('#playBtn')[0]
+
+          if (player.paused) {
+            $(el).html("Play").removeClass('pause-btn').addClass('play-btn')
+          } else {
+            $(el).html("Pause").removeClass('play-btn').addClass('pause-btn')
+          }
+        }
+
         player.addEventListener('timeupdate', ontimeupdate)
+        player.addEventListener('pause', updatePlayBtn)
+        player.addEventListener('ended', updatePlayBtn)
+        player.addEventListener('playing', updatePlayBtn)
 
         console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
     }
