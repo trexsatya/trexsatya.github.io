@@ -230,7 +230,7 @@
         $('#currentSpeed').html(player.getPlaybackRate() + ' / ' + currentSub.speed)
 
         $('#sv-sub').html('')
-        currentSub.sv.split(" ").map(it => it.trim()).filter(it => it.length > 0).forEach(word => {
+        currentSub.sv.replaceAll("\n", " ").split(" ").map(it => it.trim()).filter(it => it.length > 0).forEach(word => {
             let sanitizedWord = word
             if(['-', '–', '!', '.', ','].some(it => sanitizedWord.startsWith(it))) {
                 sanitizedWord = sanitizedWord.substr(1)
