@@ -59,12 +59,6 @@
     <link rel="stylesheet" href="/fontawesome-all.css">
 
     <script>
-        async function loadSubtitle(file) {
-            let text = await file.text();
-            // console.log(text);
-            window.subtitles = JSON.parse(text)
-        }
-
         function togglePlay(el) {
             if (player.paused) {
                 player.play()
@@ -255,9 +249,10 @@
 
         $('#en-sub').html(currentSub.en)
     }
-    let prepareSubsForPage = (pageNumber, allSubs, setTime) => {
+    let prepareSubsForPage = (pageNumber, setTime) => {
         pageNumber = parseInt(pageNumber)
 
+        let allSubs = window.subtitles
         //Reset
         let subs = [allSubs[pageNumber - 1]].flatMap(sub => [
             // {...sub, speed: 0.6}
@@ -320,6 +315,27 @@
       return `https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/${srtNm}`
     }
 
+    function storeSubtitles(subs) {
+      let strategy = "Normal-Slow"
+
+      let originalSubs = subs.map(it => ({...it}))
+
+      originalSubs.forEach(it => {
+        it['ts_o'] = it['ts']
+        it['ts'] = toSeconds(it['ts'])
+      })
+
+      originalSubs = _.sortBy(originalSubs, it => it.ts)
+
+      for (let i = 0; i < originalSubs.length - 1; i++) {
+        originalSubs[i]['te_o'] = originalSubs[i + 1]['ts_o']
+        originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 0.009
+        originalSubs[i]['number'] = i + 1
+      }
+      window.subtitles = originalSubs
+      return originalSubs;
+    }
+
     $('#mp3Choice').change(async e => {
       clearSubtitles()
       player.pause()
@@ -354,7 +370,7 @@
       // console.log(en)
       console.log(combined)
 
-      window.subtitles = combined
+      storeSubtitles(combined)
 
       player.setSrc(mp3Url)
 
@@ -365,48 +381,21 @@
       player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
     }
 
-    function goToCurrentPageNumber(originalSubs) {
+    function goToCurrentPageNumber() {
       let pageNum = $('#pagination').pagination('getCurrentPageNum')
       window.rewindData = null
-      prepareSubsForPage(pageNum, originalSubs, true)
+      prepareSubsForPage(pageNum, true)
     }
 
     let playSelectedFile = function (event) {
-        // let file = this.files[0]
-        // let type = file.type
-        //
-        // let canPlay = player.canPlayType(type)
-        // if (canPlay === '') canPlay = 'no'
-        // let message = 'Can play type "' + type + '": ' + canPlay
-        // let isError = canPlay === 'no'
-        // displayMessage(message, isError)
-        //
-        // if (isError) {
-        //     return
-        // }
-        //
-        // player.setSrc(URL.createObjectURL(file))
+      try {
+        $('#pagination').pagination('destroy');
+      } catch (e) {
+        console.log(e)
+      }
 
-        let strategy = "Normal-Slow"
-
-        let originalSubs = window.subtitles.map(it => ({...it}))
-
-        window.subtitles = originalSubs
-        originalSubs.forEach(it => {
-            it['ts_o'] = it['ts']
-            it['ts'] = toSeconds(it['ts'])
-        })
-
-        originalSubs = _.sortBy(originalSubs, it => it.ts)
-
-        for (let i = 0; i < originalSubs.length - 1; i++) {
-            originalSubs[i]['te_o'] = originalSubs[i + 1]['ts_o']
-            originalSubs[i]['te'] = originalSubs[i + 1]['ts'] - 0.009
-            originalSubs[i]['number'] = i + 1
-        }
-
-        $('#pagination').pagination({
-            dataSource: range(1, originalSubs.length + 1),
+      $('#pagination').pagination({
+            dataSource: range(1, window.subtitles.length + 1),
             pageSize: 1,
             // showPrevious: false,
             // showNext: false,
@@ -417,45 +406,42 @@
                 // console.log(data)
             }, //page changed
             afterPageOnClick: e => {
-              console.log(e)
-              goToCurrentPageNumber(originalSubs);
+              // console.log(e)
+              goToCurrentPageNumber();
             },
             afterNextOnClick: e => {
-              goToCurrentPageNumber(originalSubs);
+              goToCurrentPageNumber();
             },
             afterPreviousOnClick: e => {
-              goToCurrentPageNumber(originalSubs);
+              goToCurrentPageNumber();
             }
         })
 
         $('#playBtn').attr('disabled', false)
-        prepareSubsForPage(1, originalSubs)
+        prepareSubsForPage(1)
 
         const ontimeupdate = e => {
             // console.log(currentSub, player.currentTime)
             let ct = player.getCurrentTime()
 
-            let currentSub = window.currentSub
-            let subs = window.subs
-
             if(window.rewindData) {
                 if(ct >= window.rewindData.from) {
                     window.rewindData = null
                     console.log("Resetting speed", ct)
-                    player.setPlaybackRate(currentSub.speed)
+                    player.setPlaybackRate(window.currentSub.speed)
                 } else {
                     // return
                 }
             }
 
-            renderSubtitles(currentSub)
+            renderSubtitles(window.currentSub)
             setSpeed();
 
-            if (!window.rewindData && ct >= currentSub.te) {
+            if (!window.rewindData && ct >= window.currentSub.te) {
                 // Go to next subtitle
                 // player.pause()
                 $('#pagination').pagination('next', (data, p) => {
-                   prepareSubsForPage(data, originalSubs)
+                   prepareSubsForPage(data)
                 })
             }
         }
@@ -475,7 +461,7 @@
         player.addEventListener('ended', updatePlayBtn)
         player.addEventListener('playing', updatePlayBtn)
 
-        console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
+        // console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
     }
 
     let inputNode = document.querySelector('#video-file')
