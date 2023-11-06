@@ -480,6 +480,7 @@
 
     player.addEventListener('ended', e => {
       $('#pagination').pagination('go', 1)
+      goToCurrentPageNumber()
       if($('#loopSwitch').is(":checked")) {
         console.log('Replaying')
         sleep(2).then(() => $('#playBtn').click())
