@@ -97,9 +97,6 @@
 <body>
 
 <div>
-    <iframe width="0" height="0"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1">
-    </iframe>
 
     <!--    Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">-->
     <!--    <br>-->
@@ -437,58 +434,58 @@
     $('#playBtn').attr('disabled', false)
     prepareSubsForPage(1)
 
-    const ontimeupdate = e => {
-      // console.log(currentSub, player.currentTime)
-      let ct = player.getCurrentTime()
-
-      if (window.rewindData) {
-        if (ct >= window.rewindData.from) {
-          window.rewindData = null
-          console.log("Resetting speed", ct)
-          player.setPlaybackRate(window.currentSub.speed)
-        } else {
-          // return
-        }
-      }
-
-      renderSubtitles(window.currentSub)
-      setSpeed();
-
-      if (!window.rewindData && ct >= window.currentSub.te) {
-        // Go to next subtitle
-        // player.pause()
-        $('#pagination').pagination('next', (data, p) => {
-          prepareSubsForPage(data)
-        })
-      }
-    }
-
-    function updatePlayBtn() {
-      let el = $('#playBtn')[0]
-
-      if (player.paused) {
-        $(el).html("Play").removeClass('pause-btn').addClass('play-btn')
-      } else {
-        $(el).html("Pause").removeClass('play-btn').addClass('pause-btn')
-      }
-    }
-
-    player.addEventListener('timeupdate', ontimeupdate)
-    player.addEventListener('pause', updatePlayBtn)
-    player.addEventListener('ended', updatePlayBtn)
-    player.addEventListener('playing', updatePlayBtn)
-
-    player.addEventListener('ended', e => {
-      $('#pagination').pagination('go', 1)
-      goToCurrentPageNumber()
-      if($('#loopSwitch').is(":checked")) {
-        console.log('Replaying')
-        sleep(2).then(() => $('#playBtn').click())
-      }
-    })
-
     // console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
   }
+
+  const ontimeupdate = e => {
+    // console.log(currentSub, player.currentTime)
+    let ct = player.getCurrentTime()
+
+    if (window.rewindData) {
+      if (ct >= window.rewindData.from) {
+        window.rewindData = null
+        console.log("Resetting speed", ct)
+        player.setPlaybackRate(window.currentSub.speed)
+      } else {
+        // return
+      }
+    }
+
+    renderSubtitles(window.currentSub)
+    setSpeed();
+
+    if (!window.rewindData && ct >= window.currentSub.te) {
+      // Go to next subtitle
+      // player.pause()
+      $('#pagination').pagination('next', (data, p) => {
+        prepareSubsForPage(data)
+      })
+    }
+  }
+
+  function updatePlayBtn() {
+    let el = $('#playBtn')[0]
+
+    if (player.paused) {
+      $(el).html("Play").removeClass('pause-btn').addClass('play-btn')
+    } else {
+      $(el).html("Pause").removeClass('play-btn').addClass('pause-btn')
+    }
+  }
+
+  player.addEventListener('timeupdate', ontimeupdate)
+  player.addEventListener('pause', updatePlayBtn)
+  player.addEventListener('ended', updatePlayBtn)
+  player.addEventListener('playing', updatePlayBtn)
+
+  player.addEventListener('ended', e => {
+    $('#pagination').pagination('go', 1)
+    goToCurrentPageNumber()
+    if($('#loopSwitch').is(":checked")) {
+      console.log('Replaying')
+      sleep(2).then(() => $('#playBtn').click())
+    }
+  })
 
   let inputNode = document.querySelector('#video-file')
   if (inputNode)
