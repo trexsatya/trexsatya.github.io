@@ -707,12 +707,12 @@
   let subWidth = 0;
 
   if(ww >= 1000) {
-    ytVideoWidth = ww * 0.75;
+    ytVideoWidth = ww * 0.6;
     subWidth = $(window).width() - (ytVideoWidth + 40)
   } else {
     ytVideoWidth = ww - 10;
     subWidth = ww - 10;
-    ytHeight = wh/2;
+    ytHeight = wh/2 - 50;
     $('#controls').css({width: '100%', bottom: '-15em', right: 0})
     $('#player-info').hide()
   }
