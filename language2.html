@@ -193,8 +193,7 @@
     const files = this.files;
     let $backgroundMusicAudio = $("#backgroundMusicAudio")[0];
     window.bgAudioHowler = new Howl({
-      src: [URL.createObjectURL(files[0])],
-      volume: 0.1
+      src: [URL.createObjectURL(files[0])]
     });
     window.bgAudioHowler.play()
   }
