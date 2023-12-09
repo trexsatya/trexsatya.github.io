@@ -122,6 +122,13 @@
 
     <div style="margin-bottom: 1em; margin-top: 1em;">
         <audio id="audio" src="" width="700" height="500" controls></audio>
+        <audio id="backgroundMusicAudio" src="" width="700" height="500" controls></audio>
+        <input id="backgroundMusicFile" type="file" accept="audio/*">
+        <select id="bgAudioVolume">
+            <option value="0">0</option>
+            <option value="0.1">0.1</option>
+            <option value="0.5">0.5</option>
+        </select>
     </div>
 
     <div id="ytPlayer"></div>
@@ -181,6 +188,21 @@
     player.setSrc($swedishTrackChoice.val())
   })
 
+  backgroundMusicFile.onchange = function() {
+    const files = this.files;
+    let $backgroundMusicAudio = $("#backgroundMusicAudio")[0];
+    $backgroundMusicAudio.src = URL.createObjectURL(files[0]);
+    // $backgroundMusicAudio.play();
+    directToAudioContext(backgroundMusicAudio, (gainNode, audioCtx) => {
+      window.bgAudioGainNode = gainNode;
+      window.bgAudioCtx = audioCtx;
+      setTimeout(() => gainNode.gain.value = 0.2, 1000)
+    });
+  }
+
+  bgAudioVolume.onchange = function () {
+    window.bgAudioGainNode.gain.setValueAtTime(parseFloat(this.value), window.bgAudioCtx.currentTime)
+  }
 </script>
 
 <script>
@@ -221,23 +243,23 @@
     $('#speed-control').parent().hide()
   }
   function onYouTubeIframeAPIReady() {
-    window.ytPlayer = new YT.Player('ytPlayer', {
-      height: 200,
-      width: 500,
-      videoId: $('#musicTrackChoice').val(),
-      playerVars: {
-        'playsinline': 1
-      },
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-    });
-    $('#subtitle-container').css({
-      left: ytVideoWidth,
-      marginLeft: '1em',
-      width: subWidth
-    })
+    // window.ytPlayer = new YT.Player('ytPlayer', {
+    //   height: 200,
+    //   width: 500,
+    //   videoId: $('#musicTrackChoice').val(),
+    //   playerVars: {
+    //     'playsinline': 1
+    //   },
+    //   events: {
+    //     'onReady': onPlayerReady,
+    //     'onStateChange': onPlayerStateChange
+    //   }
+    // });
+    // $('#subtitle-container').css({
+    //   left: ytVideoWidth,
+    //   marginLeft: '1em',
+    //   width: subWidth
+    // })
   }
 
   // 4. The API will call this function when the video player is ready.
@@ -264,6 +286,27 @@
       ontimeupdate()
     }
   }, 100)
+
+  function directToAudioContext(myAudio, fn) {
+    const audioCtx = new AudioContext();
+    // Create a MediaElementAudioSourceNode
+    // Feed the HTMLMediaElement into it
+    const source = audioCtx.createMediaElementSource(myAudio);
+
+    // Create a gain node
+    const gainNode = audioCtx.createGain();
+    
+    // Connect the AudioBufferSourceNode to the gainNode
+    // and the gainNode to the destination, so we can play the
+    // music and adjust the volume using the mouse cursor
+    source.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    if(fn) {
+      fn(gainNode, audioCtx)
+    }
+  }
+
 </script>
 </body>
 
