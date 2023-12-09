@@ -6,6 +6,7 @@
     <script src="/jquery.js"></script>
     <script></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script type="text/javascript" src="/fabric.min.js"></script>
     <script type="text/javascript" src="/pagination.min.js"></script>
@@ -191,17 +192,16 @@
   backgroundMusicFile.onchange = function() {
     const files = this.files;
     let $backgroundMusicAudio = $("#backgroundMusicAudio")[0];
-    $backgroundMusicAudio.src = URL.createObjectURL(files[0]);
-    // $backgroundMusicAudio.play();
-    directToAudioContext(backgroundMusicAudio, (gainNode, audioCtx) => {
-      window.bgAudioGainNode = gainNode;
-      window.bgAudioCtx = audioCtx;
-      setTimeout(() => gainNode.gain.value = 0.2, 1000)
+    window.bgAudioHowler = new Howl({
+      src: [URL.createObjectURL(files[0])],
+      volume: 0.1,
+      html5: true
     });
+    window.bgAudioHowler.play()
   }
 
   bgAudioVolume.onchange = function () {
-    window.bgAudioGainNode.gain.setValueAtTime(parseFloat(this.value), window.bgAudioCtx.currentTime)
+    window.bgAudioHowler.volume(parseFloat(this.value))
   }
 </script>
 
@@ -288,23 +288,7 @@
   }, 100)
 
   function directToAudioContext(myAudio, fn) {
-    const audioCtx = new AudioContext();
-    // Create a MediaElementAudioSourceNode
-    // Feed the HTMLMediaElement into it
-    const source = audioCtx.createMediaElementSource(myAudio);
 
-    // Create a gain node
-    const gainNode = audioCtx.createGain();
-    
-    // Connect the AudioBufferSourceNode to the gainNode
-    // and the gainNode to the destination, so we can play the
-    // music and adjust the volume using the mouse cursor
-    source.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-
-    if(fn) {
-      fn(gainNode, audioCtx)
-    }
   }
 
 </script>
