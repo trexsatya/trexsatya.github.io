@@ -1,0 +1,351 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <script src="/jquery.js"></script>
+    <script></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="/fabric.min.js"></script>
+    <script type="text/javascript" src="/pagination.min.js"></script>
+    <script type="text/javascript" src="/algo.visual.toolbox.js"></script>
+    <script type="text/javascript" src="/rx.all.min.js"></script>
+    <script type="text/javascript" src="/rx.all.min.js"></script>
+
+    <script type="text/javascript" src="/jquery.lettering.js"></script>
+    <script type="text/javascript" src="/jquery.fittext.js"></script>
+    <script type="text/javascript" src="/rulez.min.js"></script>
+    <script type="text/javascript" src="/mediaelement.js"></script>
+    <script type="text/javascript" src="/mediaelement-plugins/speed/speed.min.js"></script>
+    <script type="text/javascript" src="/mediaelement-plugins/loop/loop.min.js"></script>
+    <!-- <script type="text/javascript" src="/treant.js"></script> -->
+    <link rel="stylesheet" href="/animate.css">
+    <link rel="stylesheet" href="/treant.css">
+    <script src="/vendor/raphael.js"></script>
+
+    <!-- <script src="../../vendor/jquery.min.js"></script> -->
+    <script src="../../vendor/jquery.easing.js"></script>
+
+    <script type="text/javascript" src="/jquery.textillate.js"></script>
+    <!--    <script src="/typed.min.js"></script>-->
+
+    <script type="text/javascript" src="/diff-match-patch.js"></script>
+    <script type="text/javascript" src="/data-structures.js"></script>
+    <!--    <script src="/underscore.min.js"></script>-->
+    <link href="/select2.min.css" rel="stylesheet"/>
+    <link href="/pagination.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/mediaelement@latest/build/mediaelementplayer.min.css" rel="stylesheet"/>
+    <link href="/index.css" rel="stylesheet"/>
+
+    <script src="/select2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.ui.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG">
+    </script>
+    <script src="/ace/src-noconflict/ace.js" type="text/javascript" charSet="utf-8"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/mediaelement-plugins/speed/speed.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/mediaelement-plugins/loop/loop.min.css"/>
+
+    <script type="text/javascript">
+      Array.prototype.max = function () {
+        return Math.max.apply(null, this);
+      };
+    </script>
+    <style>
+    .btn {
+        cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: cyan;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+    </style>
+
+    <script src="/play.js"></script>
+    <script src="/lodash.js"></script>
+    <link rel="stylesheet" href="/play.css">
+    <link rel="stylesheet" href="/fontawesome-all.css">
+
+    <script>
+      async function extractMP3(url, request) {
+        let resp = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(request),
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        });
+        console.log(resp)
+      }
+
+      function exportSelection(file, button) {
+        console.log(file)
+        $(button).parent('.srt-file').find(".srt-line").each(async (i, e) => {
+          if ($(e).find("input:checked").length) {
+            let folderName = $('#folderName').val().trim() || window.searchText
+            let fl = $(e).data("file")
+
+            fl = window.searchResult.find(it => it.path._str === fl.path._str)
+
+            let lines = $(e).find(".line").map((i,e) => $(e).data()).toArray()
+                            .map(it => it.index).map(idx => fl.data.find(it => it.index === idx))
+            console.log(fl, lines)
+            let url = 'http://localhost:5000/extract_word_from_subtitle'
+            let request = {
+              srt_path: file,
+              start: lines[0].start.ordinal,
+              end: lines[lines.length-1].end.ordinal,
+              word: folderName,
+              text: lines.map(it => it.text).join(" ")
+            };
+            await extractMP3(url, request);
+          }
+        })
+      }
+
+      function getTimes(el, fl) {
+        let lines = $(el).find(".line").map((i,e) => $(e).data()).toArray()
+          .map(it => it.index).map(idx => fl.data.find(it => it.index === idx))
+
+        return {
+          start: lines[0].start.ordinal, end: lines[lines.length-1].end.ordinal
+        }
+      }
+      function render(list, search) {
+        window.searchResult = list;
+        window.searchText = search;
+
+        $('#result').html('')
+
+        function htmlForSrtLine(line, file, url) {
+          let text = _.trim(line.text, "-:_");
+          let hText = text
+          try {
+            let match = text.match(new RegExp(window.searchText, "i"))
+            let index = match.index
+            hText = text.substring(0,index) + "<span class='highlight'>" + text.substring(index, index + match[0].length) + "</span>" + text.substring(index + text.length);
+          } catch (e) {
+            console.log(e)
+          }
+
+          return $(`<div class="srt-line" data-index="${line.index}" data-file="${file.path._str}">
+                                    <input type="checkbox"/>
+                                    <span class="add-prev-btn btn"> + </span>
+                                    <span class="remove-next-btn btn"> - </span>
+                                    <span class="line main-line" data-index="${line.index}"> ${hText} </span>
+                                    <span class="remove-prev-btn btn"> - </span>
+                                    <span class="add-next-btn btn"> + </span>
+                                    <img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn" data-url="${url}">
+                                 </div>`).data({line: line, file: file})
+        }
+
+        list.forEach(item => {
+          let file = item.subs
+          let parts = file.path._str.split("/")
+          let fileName = parts[parts.length - 1]
+          let $file = $(`<div class="srt-file">
+                            <h4> ${fileName} </h4> <button onclick="exportSelection('${file.path._str}', this)"> Export </button>
+                        </div>`)
+          let matchingLines = file.data.filter(it => it.text.toLowerCase().match(search))
+
+          matchingLines.forEach(line => {
+            $file.append(htmlForSrtLine(line, file, item.url));
+          })
+
+          $('#result').append($file)
+        })
+
+        $('.add-prev-btn').click(e => {
+          let plusBtn = $(e.target);
+          let dt = plusBtn.parent().data()
+
+          let lines = plusBtn.parent().find(".line").toArray()
+          let firstLine = $(lines[0])
+
+          let nextLine = firstLine.data('index')
+          if(nextLine < 2) return
+
+          let newLn = dt.file.data[nextLine-2]
+          let $newLine = $(`<span class="line" data-index="${newLn.index}"> ${newLn.text}</span>`);
+          $newLine.insertBefore(firstLine)
+        })
+        $('.add-next-btn').click(e => {
+          let plusBtn = $(e.target);
+          let dt = plusBtn.parent().data()
+          let lines = plusBtn.parent().find(".line").toArray()
+          let lastLine = $(lines[lines.length-1])
+
+          let prevLine = lastLine.data('index')
+          if(prevLine === dt.file.data.length) return
+
+          let newLn = dt.file.data[prevLine]
+          let $newLine = $(`<span class="line" data-index="${newLn.index}"> ${newLn.text}</span>`);
+          $newLine.insertAfter(lastLine)
+        })
+
+        $('.remove-prev-btn').click(e => {
+          let btn = $(e.target);
+          let dt = btn.parent().data()
+          let prevLine = btn.prev('.line')
+          if(prevLine.hasClass("main-line")) return
+
+          prevLine.remove()
+        })
+
+        $('.remove-next-btn').click(e => {
+          let btn = $(e.target);
+          let dt = btn.parent().data()
+          let nextLine = btn.next('.line')
+          if(nextLine.hasClass("main-line")) return
+
+          nextLine.remove()
+        })
+
+        $(".srt-line .play-btn").click(e => {
+           let url = $(e.target).data("url")
+           let dt = $(e.target).parent().data()
+           let vId = new URL(url).searchParams.get("v")
+           loadVideo(vId)
+
+          let times = getTimes($(e.target).parent(), dt.file)
+          let st = times.start / 1000;
+          setTimeout(()=> {
+             window.ytPlayer.seekTo(st, true)
+           }, 2000)
+          window.endTimeForClip = times.end / 1000
+
+          console.log("Playing from ", st, " to ",endTimeForClip)
+           $( "#audioPlayerPopup" ).dialog('open')
+        })
+      } // end render
+
+      function fetchSRTs(el) {
+        let txt = $("#searchText").val().toLowerCase()
+        fetch("http://localhost:5000/find?text=" + txt)
+          .then(it => it.json())
+          .then(it => render(it, txt))
+      }
+
+      function ontimeupdate() {
+        let ct = window.ytPlayer.getCurrentTime()
+        if(window.endTimeForClip && ct >= window.endTimeForClip) {
+          ytPlayer.pauseVideo()
+          // window.endTimeForClip = null
+        }
+      }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div id="audioPlayerPopup" style="padding-top: 6em;">
+    <div id="ytPlayer"></div>
+</div>
+<input type="text" id="searchText" placeholder="Search text" onchange="fetchSRTs(this)">
+
+<input type="text" id="folderName" placeholder="Folder name">
+
+<div id="result">
+
+</div>
+<div>
+
+</div>
+
+<script>
+
+</script>
+
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+
+  function loadVideo(videoId) {
+    let iframe = ytPlayer.getIframe()
+    try {
+      let currentVideoId = iframe.src.split("embed/")[1].split("?")[0]
+      iframe.src = `${iframe.src}`.replaceAll(currentVideoId, videoId)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  let wh = $(window).height(), ww = $(window).width();
+
+  let ytVideoWidth = 300, ytHeight = 300;
+
+  function onYouTubeIframeAPIReady() {
+    window.ytPlayer = new YT.Player('ytPlayer', {
+      height: ytHeight,
+      width: ytVideoWidth,
+      videoId: 'JSR5ETrEmIU',
+      playerVars: {
+        'playsinline': 1
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING ) {
+      window.ytPlaying = true
+    } else {
+      window.ytPlaying = false;
+    }
+  }
+  function stopVideo() {
+    window.ytPlayer.stopVideo();
+  }
+
+  setInterval(() => {
+    //Check time
+    if(window.ytPlayer) {
+      ontimeupdate()
+    }
+  }, 100)
+
+  $( "#audioPlayerPopup" ).dialog({
+    modal: true,
+    width: 390,
+    height: 400,
+    autoOpen: false,
+    open: function(){
+      $('.ui-widget-overlay').bind('click',function(){
+        $('#audioPlayerPopup').dialog('close');
+      })
+    }
+  });
+</script>
+</body>
+
+</html>
