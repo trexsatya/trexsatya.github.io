@@ -135,7 +135,7 @@
           try {
             let match = text.match(new RegExp(window.searchText, "i"))
             let index = match.index
-            hText = text.substring(0,index) + "<span class='highlight'>" + text.substring(index, index + match[0].length) + "</span>" + text.substring(index + text.length);
+            hText = text.substring(0,index) + "<span class='highlight'>" + text.substring(index, index + match[0].length) + "</span>" + text.substring(index + match[0].length);
           } catch (e) {
             console.log(e)
           }
@@ -259,6 +259,11 @@
 
 <input type="text" id="folderName" placeholder="Folder name">
 
+<div id="translate">
+    <iframe id="translate-iframe" src="https://translate.google.com/?sl=sv&tl=en&text=Dessa&op=translate">
+
+    </iframe>
+</div>
 <div id="result">
 
 </div>
