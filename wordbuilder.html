@@ -123,22 +123,29 @@
           start: lines[0].start.ordinal, end: lines[lines.length-1].end.ordinal
         }
       }
+
+      function highlightedText(text) {
+        let hText = text
+        try {
+          let match = text.match(new RegExp(window.searchText, "i"))
+          let index = match.index
+          hText = text.substring(0, index) + "<span class='highlight'>" + text.substring(index, index + match[0].length) + "</span>" + text.substring(index + match[0].length);
+        } catch (e) {
+          console.log(e)
+        }
+        return hText;
+      }
+
       function render(list, search) {
         window.searchResult = list;
         window.searchText = search;
 
-        $('#result').html('')
+        let $result = $('#result');
+        $result.html('')
 
         function htmlForSrtLine(line, file, url) {
           let text = _.trim(line.text, "-:_");
-          let hText = text
-          try {
-            let match = text.match(new RegExp(window.searchText, "i"))
-            let index = match.index
-            hText = text.substring(0,index) + "<span class='highlight'>" + text.substring(index, index + match[0].length) + "</span>" + text.substring(index + match[0].length);
-          } catch (e) {
-            console.log(e)
-          }
+          let hText = highlightedText(text);
 
           return $(`<div class="srt-line" data-index="${line.index}" data-file="${file.path._str}">
                                     <input type="checkbox"/>
@@ -151,7 +158,43 @@
                                  </div>`).data({line: line, file: file})
         }
 
-        list.forEach(item => {
+        $result.append('<br><br>')
+
+        function chunkifySentence(text, max_chars) {
+            let words = text.split(" ")
+            let res = []
+            let current = ""
+            for(let i=0; i < words.length; i++) {
+              let w = words[i]
+              if(current.length + w.length >= max_chars) {
+                res.push(current)
+                current = w+" "
+              } else {
+                current += (w + " ")
+              }
+            }
+            res.push(current)
+            return res
+        }
+
+        list.filter(it => it.text).forEach(item => {
+          let $line = $(`<div class="normal-line"></div>`)
+
+          chunkifySentence(item.text, 190).forEach(chunk => {
+            let div = $(`
+    <div class="line-part"> ${highlightedText(chunk)} <img src="/img/icons/play_icon.png"
+        alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn">
+    </div>`);
+            div.data({text: chunk})
+            $line.append(div)
+          })
+
+          $result.append($line)
+        })
+
+        $result.append("<hr>")
+
+        list.filter(it => it.subs).forEach(item => {
           let file = item.subs
           let parts = file.path._str.split("/")
           let fileName = parts[parts.length - 1]
@@ -164,7 +207,7 @@
             $file.append(htmlForSrtLine(line, file, item.url));
           })
 
-          $('#result').append($file)
+          $result.append($file)
         })
 
         $('.add-prev-btn').click(e => {
@@ -229,7 +272,25 @@
           console.log("Playing from ", st, " to ",endTimeForClip)
            $( "#audioPlayerPopup" ).dialog('open')
         })
+
+        $(".normal-line .play-btn").click(e => {
+          let selTxt = getSelectionText() || ''
+          let txt = selTxt.length > 1 ? selTxt : $(e.target).parent().data('text')
+          let a = new Audio()
+          a.src = "http://localhost:5000/tts-proxy?q=" + txt
+          a.play()
+        })
       } // end render
+
+      function getSelectionText() {
+        var text = "";
+        if (window.getSelection) {
+          text = window.getSelection().toString();
+        } else if (document.selection && document.selection.type != "Control") {
+          text = document.selection.createRange().text;
+        }
+        return text;
+      }
 
       function fetchSRTs(el) {
         let txt = $("#searchText").val().toLowerCase()
@@ -253,16 +314,14 @@
 
 <body>
 <div id="audioPlayerPopup" style="padding-top: 6em;">
-    <div id="ytPlayer"></div>
+    <div id="ytPlayerDiv"></div>
 </div>
 <input type="text" id="searchText" placeholder="Search text" onchange="fetchSRTs(this)">
 
 <input type="text" id="folderName" placeholder="Folder name">
 
 <div id="translate">
-    <iframe id="translate-iframe" src="https://translate.google.com/?sl=sv&tl=en&text=Dessa&op=translate">
 
-    </iframe>
 </div>
 <div id="result">
 
@@ -301,10 +360,10 @@
   let ytVideoWidth = 300, ytHeight = 300;
 
   function onYouTubeIframeAPIReady() {
-    window.ytPlayer = new YT.Player('ytPlayer', {
+    window.ytPlayer = new YT.Player('ytPlayerDiv', {
       height: ytHeight,
       width: ytVideoWidth,
-      videoId: 'JSR5ETrEmIU',
+      videoId: 'Qk2Ow4ew8ws',
       playerVars: {
         'playsinline': 1
       },
@@ -350,6 +409,44 @@
       })
     }
   });
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  function playTTS(lang,sentence) {
+    //get the iframe
+    var iFrame = document.getElementById('translate-iframe');
+
+    //remove its sandbox property
+    iFrame.removeAttribute('sandbox');
+
+    //this is your reference variable for the iframe body and head tag
+    var iFrameBody;
+
+    //get the body
+    if (iFrame.contentDocument) { // FF
+      iFrameBody = iFrame.contentDocument.getElementsByTagName('body')[0];
+      iFrameHead = iFrame.contentDocument.getElementsByTagName('head')[0];
+    }
+    else if (iFrame.contentWindow) { // IE
+      iFrameBody = iFrame.contentWindow.document.getElementsByTagName('body')[0];
+      iFrameHead = iFrame.contentWindow.document.getElementsByTagName('head')[0];
+    }
+    else {
+      iFrameBody = iFrame.contentDocument.body;
+      iFrameHead = iFrame.contentDocument.head;
+    }
+
+    //generate link to Google Translate TTS using arguments (pay attention to random version number at the end)
+    var link = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=' + lang + '&q=' + sentence.replace(/ /g,'+').replace(/[.]/g,'') + '&rd=' + getRandomInt(0,50000000) + "&output=embed";
+
+    //add embed element with our link
+    iFrameBody.innerHTML = '<embed src="' + link + '" id="TTS">';
+
+    //isolate iframe
+    iFrame.setAttribute('sandbox','');
+  }
 </script>
 </body>
 
