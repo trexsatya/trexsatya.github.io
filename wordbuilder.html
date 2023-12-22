@@ -63,12 +63,20 @@
         cursor: pointer;
     }
 
+    .Comment {
+      border-left: 1px solid black;
+      padding-left: 4px;
+    }
     .btn:hover {
       background-color: cyan;
     }
 
-    .highlight {
+    .highlight, .highlighted-selection {
       background-color: yellow;
+    }
+
+    .srt-line.selected {
+      background-color: cyan;
     }
     </style>
 
@@ -88,6 +96,23 @@
           }
         });
         console.log(resp)
+      }
+
+      function chunkifySentence(text, max_chars) {
+        let words = text.split(" ")
+        let res = []
+        let current = ""
+        for(let i=0; i < words.length; i++) {
+          let w = words[i]
+          if(current.length + w.length >= max_chars) {
+            res.push(current)
+            current = w+" "
+          } else {
+            current += (w + " ")
+          }
+        }
+        res.push(current)
+        return res
       }
 
       function exportSelection(file, button) {
@@ -136,6 +161,29 @@
         return hText;
       }
 
+      function playSelectedText(e) {
+
+        function playChunk(_txt) {
+          return new Promise(function(resolve, reject) {
+            let a = new Audio()
+            a.src = "http://localhost:5000/tts-proxy?q=" + _txt
+            a.preload = "auto";
+            a.onerror = reject;                      // on error, reject
+            a.onended = resolve;                     // when done, resolve
+            a.playbackRate = 1.2
+            a.play()
+          });
+        }
+
+        let selTxt = getSelectionText() || ''
+        let txt = selTxt.length > 1 ? selTxt : $(e.target).parent().data('text')
+
+        let chunks = chunkifySentence(txt)
+
+        let first = chunks.shift()
+        let promise = playChunk(first)
+      }
+
       function render(list, search) {
         window.searchResult = list;
         window.searchText = search;
@@ -160,22 +208,6 @@
 
         $result.append('<br><br>')
 
-        function chunkifySentence(text, max_chars) {
-            let words = text.split(" ")
-            let res = []
-            let current = ""
-            for(let i=0; i < words.length; i++) {
-              let w = words[i]
-              if(current.length + w.length >= max_chars) {
-                res.push(current)
-                current = w+" "
-              } else {
-                current += (w + " ")
-              }
-            }
-            res.push(current)
-            return res
-        }
 
         list.filter(it => it.text).forEach(item => {
           let $line = $(`<div class="normal-line"></div>`)
@@ -189,7 +221,7 @@
             $line.append(div)
           })
 
-          $result.append($line)
+          $result.append($line).append('<br>')
         })
 
         $result.append("<hr>")
@@ -257,33 +289,50 @@
         })
 
         $(".srt-line .play-btn").click(e => {
+          if($(e.target).hasClass('disabled')) return
+
+          $('.srt-line').removeClass('selected')
+          $(e.target).parents('.srt-line').addClass('selected')
+
            let url = $(e.target).data("url")
            let dt = $(e.target).parent().data()
-           let vId = new URL(url).searchParams.get("v")
-           loadVideo(vId)
 
           let times = getTimes($(e.target).parent(), dt.file)
-          let st = times.start / 1000;
-          setTimeout(()=> {
-             window.ytPlayer.seekTo(st, true)
-           }, 2000)
-          window.endTimeForClip = times.end / 1000
 
-          console.log("Playing from ", st, " to ",endTimeForClip)
-           $( "#audioPlayerPopup" ).dialog('open')
+          dampenBgMusic()
+
+          let btn = $(e.target)
+          $(btn).addClass('disabled')
+
+          setTimeout(()=> {
+            let st = times.start;
+             console.log(1)
+            let a = new Audio()
+            a.src = "http://localhost:5000/mp3_slice?srt_path="+ dt.file.path._str.replace(".srt", ".mp3") + "&start=" + st + "&end=" + times.end
+            a.play()
+            a.currentTime = st
+            a.onended = e => {
+              restoreBgMusic()
+              btn.removeClass('disabled')
+            }
+
+            a.onerror = e => {
+               console.log("err", e)
+               restoreBgMusic()
+            }
+           }, 1500)
+
+           // $( "#audioPlayerPopup" ).dialog('open')
+           // $('#audioPlayerPopup').css({width: '100%'})
         })
 
         $(".normal-line .play-btn").click(e => {
-          let selTxt = getSelectionText() || ''
-          let txt = selTxt.length > 1 ? selTxt : $(e.target).parent().data('text')
-          let a = new Audio()
-          a.src = "http://localhost:5000/tts-proxy?q=" + txt
-          a.play()
+          playSelectedText(e);
         })
       } // end render
 
       function getSelectionText() {
-        var text = "";
+        let text = "";
         if (window.getSelection) {
           text = window.getSelection().toString();
         } else if (document.selection && document.selection.type != "Control") {
@@ -299,13 +348,6 @@
           .then(it => render(it, txt))
       }
 
-      function ontimeupdate() {
-        let ct = window.ytPlayer.getCurrentTime()
-        if(window.endTimeForClip && ct >= window.endTimeForClip) {
-          ytPlayer.pauseVideo()
-          // window.endTimeForClip = null
-        }
-      }
     </script>
     <style>
 
@@ -313,90 +355,110 @@
 </head>
 
 <body>
-<div id="audioPlayerPopup" style="padding-top: 6em;">
-    <div id="ytPlayerDiv"></div>
+<div style="float: left; width: 50%;">
+    <div id="audioPlayerPopup" style="width: 100% !important;">
+        <div id="ytPlayerDiv"></div>
+    </div>
+    <input type="text" id="searchText" placeholder="Search text" onchange="fetchSRTs(this)">
+
+    <input type="text" id="folderName" placeholder="Folder name">
+
+    <div id="extra-content">
+    </div>
+
+    <div id="result">
+
+    </div>
 </div>
-<input type="text" id="searchText" placeholder="Search text" onchange="fetchSRTs(this)">
+<div style="float: right; left: 51%; width: 49%; position: fixed;">
+    <textarea id="enteredWords" onchange="populateWords()"></textarea>
+    <div style="">
+        <input id="bgMusicInput" type="file" accept="audio/mpeg" onchange="playBgMusic()">
+        <audio id="bgMusicAudio" controls="controls" ></audio>
+    </div>
 
-<input type="text" id="folderName" placeholder="Folder name">
+    <img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn" onclick="playSelectedText()">
+    <div id="wordlist" style="height: 600px; overflow: scroll;">
 
-<div id="translate">
-
+    </div>
 </div>
-<div id="result">
-
-</div>
-<div>
-
-</div>
-
 <script>
 
+function playBgMusic() {
+    bgMusicAudio.src = URL.createObjectURL(document.getElementById('bgMusicInput').files[0])
+}
+
+function dampenBgMusic() {
+
+  let min = 0.05
+
+  let vol = bgMusicAudio.volume;
+  let interval = 200; // 200ms interval
+
+  let fadeout = setInterval(
+    function() {
+      // Reduce volume by 0.05 as long as it is above 0
+      // This works as long as you start with a multiple of 0.05!
+      if (vol > min) {
+        vol -= 0.05;
+        bgMusicAudio.volume = vol;
+      }
+      else {
+        // Stop the setInterval when 0 is reached
+        clearInterval(fadeout);
+      }
+    }, interval);
+}
+
+function restoreBgMusic() {
+  let max = 0.7
+  let vol = bgMusicAudio.volume;
+  let interval = 200; // 200ms interval
+
+  let fadein = setInterval(
+    function() {
+      // Reduce volume by 0.05 as long as it is above 0
+      // This works as long as you start with a multiple of 0.05!
+      if (vol < max) {
+        vol += 0.05;
+        if(vol > max) { vol = max }
+        bgMusicAudio.volume = vol;
+      }
+      else {
+        // Stop the setInterval when 0 is reached
+        clearInterval(fadein);
+      }
+    }, interval);
+}
+
+function populateWords() {
+  $("#wordlist").html(enteredWords.value)
+
+  $("#wordlist").dblclick(e => {
+    $('#searchText').val(getSelectionText())
+    fetchSRTs()
+    $("*").removeClass("highlighted-selection")
+    $(getSelectionParentElement()).addClass("highlighted-selection")
+  })
+
+  $("img[alt='User avatar']").remove()
+  $("img[alt='Subreddit Icon']").parent().parent().parent().remove()
+  $("button").remove()
+  $("svg").remove()
+  $("*[data-click-id=\"body\"]").remove()
+  $("span:contains('ConcentrateSlow4119')").remove()
+  $("*[data-testid=\"comment_author_link\"]").parent().parent().parent().parent().remove()
+
+  $("span:contains('level ')").each((i, e) => {
+    let $el = $('<div> Comment </div>').addClass('accordion')
+    $el.insertBefore($(e))
+  })
+
+  renderAccordions()
+}
 </script>
 
 <script>
-  // 2. This code loads the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-
-  function loadVideo(videoId) {
-    let iframe = ytPlayer.getIframe()
-    try {
-      let currentVideoId = iframe.src.split("embed/")[1].split("?")[0]
-      iframe.src = `${iframe.src}`.replaceAll(currentVideoId, videoId)
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
-  let wh = $(window).height(), ww = $(window).width();
-
-  let ytVideoWidth = 300, ytHeight = 300;
-
-  function onYouTubeIframeAPIReady() {
-    window.ytPlayer = new YT.Player('ytPlayerDiv', {
-      height: ytHeight,
-      width: ytVideoWidth,
-      videoId: 'Qk2Ow4ew8ws',
-      playerVars: {
-        'playsinline': 1
-      },
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-    });
-  }
-
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-    event.target.playVideo();
-  }
-
-
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING ) {
-      window.ytPlaying = true
-    } else {
-      window.ytPlaying = false;
-    }
-  }
-  function stopVideo() {
-    window.ytPlayer.stopVideo();
-  }
-
-  setInterval(() => {
-    //Check time
-    if(window.ytPlayer) {
-      ontimeupdate()
-    }
-  }, 100)
 
   $( "#audioPlayerPopup" ).dialog({
     modal: true,
@@ -414,40 +476,77 @@
     return Math.floor(Math.random() * max);
   }
 
-  function playTTS(lang,sentence) {
-    //get the iframe
-    var iFrame = document.getElementById('translate-iframe');
+  function renderAccordions() {
+    console.log('Rendering accordions')
 
-    //remove its sandbox property
-    iFrame.removeAttribute('sandbox');
+    let isAccordion = it => Array.from(it.classList.values()).indexOf('accordion') >= 0
 
-    //this is your reference variable for the iframe body and head tag
-    var iFrameBody;
+    function fixAccordionPanel(accordionEl) {
+      let el = accordionEl.nextElementSibling
+      let siblings = []
+      while(el) {
+        if(isAccordion(el)) break
 
-    //get the body
-    if (iFrame.contentDocument) { // FF
-      iFrameBody = iFrame.contentDocument.getElementsByTagName('body')[0];
-      iFrameHead = iFrame.contentDocument.getElementsByTagName('head')[0];
+        siblings.push(el)
+        el = el.nextElementSibling
+      }
+
+      if(siblings.length > 1) {
+        let newEl = document.createElement('div')
+        newEl.classList.add('autocreated-panel')
+        siblings.forEach(it => newEl.appendChild(it))
+
+        accordionEl.insertAdjacentElement('afterend', newEl)
+      }
     }
-    else if (iFrame.contentWindow) { // IE
-      iFrameBody = iFrame.contentWindow.document.getElementsByTagName('body')[0];
-      iFrameHead = iFrame.contentWindow.document.getElementsByTagName('head')[0];
+
+    let acc = document.getElementsByClassName("accordion");
+    let i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].classList.add(i % 2 === 0 ? 'even' : 'odd')
+
+      if(acc[i].dataset.accordion_rendered === "true") continue;
+
+      fixAccordionPanel(acc[i])
+      acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        let panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
     }
-    else {
-      iFrameBody = iFrame.contentDocument.body;
-      iFrameHead = iFrame.contentDocument.head;
+  }
+
+  function getSelectionParentElement() {
+    let parentEl = null, sel;
+    if (window.getSelection) {
+      sel = window.getSelection();
+      if (sel.rangeCount) {
+        parentEl = sel.getRangeAt(0).commonAncestorContainer;
+        if (parentEl.nodeType != 1) {
+          parentEl = parentEl.parentNode;
+        }
+      }
+    } else if ( (sel = document.selection) && sel.type != "Control") {
+      parentEl = sel.createRange().parentElement();
     }
-
-    //generate link to Google Translate TTS using arguments (pay attention to random version number at the end)
-    var link = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=' + lang + '&q=' + sentence.replace(/ /g,'+').replace(/[.]/g,'') + '&rd=' + getRandomInt(0,50000000) + "&output=embed";
-
-    //add embed element with our link
-    iFrameBody.innerHTML = '<embed src="' + link + '" id="TTS">';
-
-    //isolate iframe
-    iFrame.setAttribute('sandbox','');
+    return parentEl;
   }
 </script>
-</body>
 
+
+</body>
+<style>
+  *:after {
+    content: none !important;
+  }
+</style>
 </html>
