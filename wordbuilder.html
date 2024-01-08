@@ -162,6 +162,7 @@
       }
 
       function playSelectedText(e) {
+        let selTxt = getSelectionText() || ''
 
         function playChunk(_txt) {
           return new Promise(function(resolve, reject) {
@@ -175,13 +176,17 @@
           });
         }
 
-        let selTxt = getSelectionText() || ''
-        let txt = selTxt.length > 1 ? selTxt : $(e.target).parent().data('text')
+        let play = () => {
+          let txt = selTxt.length > 1 ? selTxt : $(e.target).parent().data('text')
 
-        let chunks = chunkifySentence(txt)
+          let chunks = chunkifySentence(txt)
 
-        let first = chunks.shift()
-        let promise = playChunk(first)
+          let first = chunks.shift()
+          let promise = playChunk(first)
+
+          promise.then(x => restoreBgMusic())
+        }
+        dampenBgMusic().then(x => play())
       }
 
       function render(list, search) {
@@ -299,12 +304,10 @@
 
           let times = getTimes($(e.target).parent(), dt.file)
 
-          dampenBgMusic()
-
           let btn = $(e.target)
           $(btn).addClass('disabled')
 
-          setTimeout(()=> {
+          let play = ()=> {
             let st = times.start;
              console.log(1)
             let a = new Audio()
@@ -320,7 +323,9 @@
                console.log("err", e)
                restoreBgMusic()
             }
-           }, 1500)
+          }
+
+          dampenBgMusic().then(x => play())
 
            // $( "#audioPlayerPopup" ).dialog('open')
            // $('#audioPlayerPopup').css({width: '100%'})
@@ -348,6 +353,10 @@
           .then(it => render(it, txt))
       }
 
+      function iframeLoaded(it) {
+        console.log("Loaded", it)
+      }
+
     </script>
     <style>
 
@@ -359,26 +368,57 @@
     <div id="audioPlayerPopup" style="width: 100% !important;">
         <div id="ytPlayerDiv"></div>
     </div>
-    <input type="text" id="searchText" placeholder="Search text" onchange="fetchSRTs(this)">
+    <input type="text" id="searchText" placeholder="Search text"
+           onchange="fetchSRTs(this)"
+    >
 
     <input type="text" id="folderName" placeholder="Folder name">
 
     <div id="extra-content">
     </div>
 
-    <div id="result">
+    <div id="wikiResult" style="max-height: 300px; overflow: scroll">
+        <iframe id="wikiFrame" src="https://sv.wiktionary.org/wiki/upplevelse#Substantiv" width="100%" height="100%" onload="iframeLoaded()">
+            <script>
+              function getSelectionText() {
+                let text = "";
+                if (window.getSelection) {
+                  text = window.getSelection().toString();
+                } else if (document.selection && document.selection.type !== "Control") {
+                  text = document.selection.createRange().text;
+                }
+                return text;
+              }
 
+              function receiver(event) {
+                if (event.origin === 'https://sv.wiktionary.org/') {
+                  if (event.data === 'getSelection') {
+                    let text = getSelectionText();
+                    event.source.postMessage(text, event.origin);
+                  }
+                  else {
+                    alert(event.data);
+                  }
+                }
+              }
+              window.addEventListener('message', receiver, false);
+            </script>
+        </iframe>
+    </div>
+    <div id="result">
     </div>
 </div>
 <div style="float: right; left: 51%; width: 49%; position: fixed;">
-    <textarea id="enteredWords" onchange="populateWords()"></textarea>
-    <div style="">
+    <div>
+        <textarea id="enteredWords" onchange="populateWords()"></textarea>
         <input id="bgMusicInput" type="file" accept="audio/mpeg" onchange="playBgMusic()">
+    </div>
+    <div style="">
         <audio id="bgMusicAudio" controls="controls" ></audio>
+        <img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn" onclick="playSelectedText()">
     </div>
 
-    <img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn" onclick="playSelectedText()">
-    <div id="wordlist" style="height: 600px; overflow: scroll;">
+    <div id="wordlist" style="height: 600px; overflow: scroll; margin-top: 1em;">
 
     </div>
 </div>
@@ -389,54 +429,100 @@ function playBgMusic() {
 }
 
 function dampenBgMusic() {
+  let promise = new Promise((res, rej) => {
+    let min = 0.05
 
-  let min = 0.05
+    let vol = bgMusicAudio.volume;
+    let interval = 200; // 200ms interval
 
-  let vol = bgMusicAudio.volume;
-  let interval = 200; // 200ms interval
-
-  let fadeout = setInterval(
-    function() {
-      // Reduce volume by 0.05 as long as it is above 0
-      // This works as long as you start with a multiple of 0.05!
-      if (vol > min) {
-        vol -= 0.05;
-        bgMusicAudio.volume = vol;
-      }
-      else {
-        // Stop the setInterval when 0 is reached
-        clearInterval(fadeout);
-      }
-    }, interval);
+    let fadeout = setInterval(
+      function() {
+        // Reduce volume by 0.05 as long as it is above 0
+        // This works as long as you start with a multiple of 0.05!
+        if (vol > min) {
+          vol -= 0.05;
+          bgMusicAudio.volume = vol;
+        }
+        else {
+          // Stop the setInterval when 0 is reached
+          clearInterval(fadeout);
+          res(1)
+        }
+      }, interval);
+  })
+  return promise
 }
 
 function restoreBgMusic() {
-  let max = 0.7
-  let vol = bgMusicAudio.volume;
-  let interval = 200; // 200ms interval
+  return new Promise((res, rej) => {
+    let max = 0.7
+    let vol = bgMusicAudio.volume;
+    let interval = 200; // 200ms interval
 
-  let fadein = setInterval(
-    function() {
-      // Reduce volume by 0.05 as long as it is above 0
-      // This works as long as you start with a multiple of 0.05!
-      if (vol < max) {
-        vol += 0.05;
-        if(vol > max) { vol = max }
-        bgMusicAudio.volume = vol;
-      }
-      else {
-        // Stop the setInterval when 0 is reached
-        clearInterval(fadein);
-      }
-    }, interval);
+    let fadein = setInterval(
+      function () {
+        // Reduce volume by 0.05 as long as it is above 0
+        // This works as long as you start with a multiple of 0.05!
+        if (vol < max) {
+          vol += 0.05;
+          if (vol > max) {
+            vol = max
+          }
+          bgMusicAudio.volume = vol;
+        } else {
+          // Stop the setInterval when 0 is reached
+          clearInterval(fadein);
+          res(1)
+        }
+      }, interval);
+  })
+}
+
+function whenWikiLinkClicked(e) {
+  e.preventDefault()
+  e.stopPropagation()
+  if (e.target.href.indexOf("/wiki/") > 0) {
+    window.location.hash = e.target.href.split("/wiki/")[1]
+    populateWiki()
+  }
+}
+
+window.onhashchange = e => {
+  populateWiki()
+}
+function populateWiki() {
+  let w = window.location.hash
+  w = w.substring(1)
+  fetch("http://localhost:5000/proxy?url=https://sv.wiktionary.org/wiki/"+w)
+    .then(it => it.text())
+    .then(it => {
+      let $result = $('#wikiResult');
+      $result.html(it)
+      $(".noprint").remove()
+      $(".mw-jump-link").remove()
+      $(".mw-headline").parent().remove()
+      $("#toc").remove()
+      $result.find("a").each((i,e) => {
+        $(e).click(linkClicked => {
+          whenWikiLinkClicked(linkClicked);
+        })
+      }) //find end
+    })
 }
 
 function populateWords() {
-  $("#wordlist").html(enteredWords.value)
+  let words = enteredWords.value
+  words = words.split(" ").map(x => `<span>${x}</span>`).join(" ")
+  words = words.replaceAll("\n", "<br>").replaceAll("-", "+")
 
-  $("#wordlist").dblclick(e => {
+  let $wordlist = $("#wordlist");
+  $wordlist.html(words)
+
+  $wordlist.dblclick(e => {
     $('#searchText').val(getSelectionText())
     fetchSRTs()
+    window.location.hash = getSelectionText()
+    populateWiki()
     $("*").removeClass("highlighted-selection")
     $(getSelectionParentElement()).addClass("highlighted-selection")
   })
@@ -449,8 +535,13 @@ function populateWords() {
   $("span:contains('ConcentrateSlow4119')").remove()
   $("*[data-testid=\"comment_author_link\"]").parent().parent().parent().parent().remove()
 
+  let commCounter = 0;
   $("span:contains('level ')").each((i, e) => {
-    let $el = $('<div> Comment </div>').addClass('accordion')
+    let $comment = $('<div> Comment </div>');
+    if($(e).text().trim() === 'level 1') {
+      $comment.html(`#${++commCounter} Comment`)
+    }
+    let $el = $comment.addClass('accordion')
     $el.insertBefore($(e))
   })
 
