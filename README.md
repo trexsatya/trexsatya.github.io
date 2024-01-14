@@ -1,6 +1,6 @@
 Download video and subtitles from YT:
 ```
-yt-dlp -a urls_to_download.txt --sub-langs SV --write-subs --convert-subs srt --audio-format mp3 -x -o "%(uploader)s/%(title)s [%(id)s].%(ext)s" -o "subtitle:%(uploader)s/%(title)s [%(id)s].%(ext)s"
+yt-dlp --write-subs --sub-langs sv,en --convert-subs srt --skip-download -o "%(uploader)s || %(title)s || %(id)s.%(ext)s" -a urls_to_download.txt
 
 ```
 Python:
