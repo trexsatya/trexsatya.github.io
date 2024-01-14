@@ -1,5 +1,5 @@
 Download video and subtitles from YT:
-yt-dlp -a urls_to_download.txt --sub-langs SV --write-subs --convert-subs srt --audio-format mp3 -x -o "%(uploader)s/%(title)s.%(ext)s" -o "subtitle:%(uploader)s/%(title)s.%(ext)s"
+yt-dlp -a urls_to_download.txt --sub-langs SV --write-subs --convert-subs srt --audio-format mp3 -x -o "%(uploader)s/%(title)s [%(id)s].%(ext)s" -o "subtitle:%(uploader)s/%(title)s [%(id)s].%(ext)s"
 
 Python:
 p = pathlib.Path("/Users/satyendra.kumar/Documents/Swedish_Media/Swedish_YT_9")
