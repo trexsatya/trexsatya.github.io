@@ -298,7 +298,7 @@
     return new Promise((resolve, reject) => {
       let interval = null
       interval = setInterval(() => {
-        if(Math.abs(window.ytPlayer.getCurrentTime() - t) <= 2) {
+        if(Math.abs(window.ytPlayer.getCurrentTime() - t) <= 6) {
           clearInterval(interval)
           console.log("Seek request completed", t, "currentTime=", window.ytPlayer.getCurrentTime())
           window.seekRequestProcessing = false
@@ -306,7 +306,7 @@
         } else {
           window.ytPlayer.seekTo(t)
         }
-      }, 200)
+      }, 100)
     })
   }
 
@@ -365,14 +365,27 @@
   loadAllSubtitles()
 
   function srtToJson(text, lang) {
-    let parseSrtItem = (x, lang) => {
-      let [id, times, ...rest] = x.split("\n")
-      let [ts, te] = times.split(" --> ")
-      let item = {ts: ts, te: te, id: id}
-      item[lang] = rest.join("\n")
-      return item
-    }
-    return text.trim().split("\n\n").map(it => parseSrtItem(it, lang))
+    let items = []
+    let currentItem = {}
+    currentItem[lang] = ''
+    text.split("\n").forEach(line => {
+      line = line.trim()
+      let matchTime = line.match(/(\d\d:\d\d:\d\d,\d\d\d) --> (\d\d:\d\d:\d\d,\d\d\d)/m)
+      let matchId = line.match(/^\d+$/m)
+      if(matchId) {
+        items.push(currentItem)
+        currentItem = {id: line}
+        currentItem[lang] = ''
+      } else if(matchTime) {
+        currentItem['ts'] = matchTime[1]
+        currentItem['te'] = matchTime[2]
+      } else {
+        currentItem[lang] += line
+      }
+    })
+
+    items.push(currentItem)
+    return items.filter(it => it.ts)
   }
 
   function searchText() {
