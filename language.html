@@ -353,20 +353,42 @@
     $mp3Choice.select2();
   });
 
+  async function fetchCategorisation() {
+    let categorisation = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/categorisation.txt")
+    categorisation = await categorisation.text()
+    categorisation = categorisation.split("\n")
+    let categories = {}
+    categorisation.forEach(it => {
+      let l = it.split(" || ")
+      let c = '        '
+      if(l.length === 4){
+        c = l[0]
+      }
+      categories[l[l.length-1]] = c
+    })
+    return categories
+  }
+
   async function loadAllSubtitles() {
     let $mp3Choice = $('#mp3Choice');
     $mp3Choice.html('').append($(`<option>-</option>`).attr('value', ''))
     let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/combined.json")
     srts = await srts.json()
     let srtLinks = Array.from(new Set(srts.map(it => it.link)));
-    srtLinks = _(srtLinks).chain().sortBy(function(link) {
-      let srt = srts.find(it => it.link === link)
-      return srt.name.split(" || ")[0];
-    }).value()
+
+    let categories = await fetchCategorisation()
+    srtLinks = _(srtLinks).chain()
+      .sortBy(link => categories[link])
+      // .sortBy(function(link) {
+      //     let srt = srts.find(it => it.link === link)
+      //     return srt.name.split(" || ")[0];
+      // })
+      .reverse()
+      .value()
 
     srtLinks.forEach(link => {
       let item = srts.find(it => it.link === link)
-      let $opt = $(`<option>${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
+      let $opt = $(`<option>${categories[item.link]} / ${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
       $mp3Choice.append($opt)
     })
     window.srts = srts
