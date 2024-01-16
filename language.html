@@ -349,8 +349,37 @@
 
   let $mp3Choice = $('#mp3Choice');
 
-  $(document).ready(function() {
+  function fixSectionBox() {
     $mp3Choice.select2();
+
+    let optgroupState = {};
+
+    $("body").on('click', '.select2-container--open .select2-results__group', function() {
+      $(this).siblings().toggle();
+      let id = $(this).closest('.select2-results__options').attr('id');
+      let index = $('.select2-results__group').index(this);
+      optgroupState[id][index] = !optgroupState[id][index];
+    })
+
+    $mp3Choice.on('select2:open', function() {
+      $('.select2-dropdown--below').css('opacity', 0);
+      setTimeout(() => {
+        let groups = $('.select2-container--open .select2-results__group');
+        let id = $('.select2-results__options').attr('id');
+        if (!optgroupState[id]) {
+          optgroupState[id] = {};
+        }
+        $.each(groups, (index, v) => {
+          optgroupState[id][index] = optgroupState[id][index] || false;
+          optgroupState[id][index] ? $(v).siblings().show() : $(v).siblings().hide();
+        })
+        $('.select2-dropdown--below').css('opacity', 1);
+      }, 0);
+    })
+  }
+
+  $(document).ready(function() {
+    fixSectionBox()
   });
 
   async function fetchCategorisation() {
@@ -386,11 +415,20 @@
       .reverse()
       .value()
 
+    let ogs = {}
+    let getOptgroup = category => {
+      if(!ogs[category]) {
+        ogs[category] = $(`<optgroup label="${category}">`)
+      }
+      return ogs[category]
+    }
     srtLinks.forEach(link => {
       let item = srts.find(it => it.link === link)
-      let $opt = $(`<option>${categories[item.link]} / ${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
-      $mp3Choice.append($opt)
+      let $opt = $(`<option>${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
+      getOptgroup(categories[item.link]).append($opt)
     })
+
+    Object.values(ogs).forEach(it => $mp3Choice.append(it))
     window.srts = srts
   }
 
