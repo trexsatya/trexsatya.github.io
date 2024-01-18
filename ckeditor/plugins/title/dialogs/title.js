@@ -37,12 +37,15 @@ CKEDITOR.dialog.add( 'titleDialog', function ( editor ) {
             if(existing.hasClass('title-popup')) { //Means it's already convered
               dialog.setValueOf( 'tab-basic-title', 'titleContainerType',  existing.getName())
               dialog.setValueOf( 'tab-basic-title', 'titleTextarea', existing.getAttribute('title') )
+            } else {
+              const selectedText = editor.getSelection().getSelectedText()
+              dialog.setValueOf( 'tab-basic-title', 'titleTextarea', selectedText )
             }
         },
 
         onOk: function() {
                 var dialog = this;
-                var mattext = dialog.getValueOf( 'tab-basic-title', 'titleTextarea' )
+                var mattext = dialog.getValueOf( 'tab-basic-title', 'titleTextarea' ).trim()
                 var mathContainerType = dialog.getValueOf( 'tab-basic-title', 'titleContainerType' )
 
                 var existing = editor.getSelection().getStartElement();
@@ -57,7 +60,6 @@ CKEDITOR.dialog.add( 'titleDialog', function ( editor ) {
                     insertingElement.setAttribute('title', mattext)
                     editor.insertElement( insertingElement );
                 }
-
         }
     };
 });

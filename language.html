@@ -398,14 +398,13 @@
     return categories
   }
 
-  async function loadAllSubtitles() {
+  function populateAllLinks() {
     let $mp3Choice = $('#mp3Choice');
     $mp3Choice.html('').append($(`<option>-</option>`).attr('value', ''))
-    let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/combined.json")
-    srts = await srts.json()
-    let srtLinks = Array.from(new Set(srts.map(it => it.link)));
+    let srts = window.srts
+    let srtLinks = Array.from(new Set(window.srts.map(it => it.link)));
 
-    let categories = await fetchCategorisation()
+    let categories = window.categories
     srtLinks = _(srtLinks).chain()
       .sortBy(link => categories[link])
       // .sortBy(function(link) {
@@ -417,7 +416,7 @@
 
     let ogs = {}
     let getOptgroup = category => {
-      if(!ogs[category]) {
+      if (!ogs[category]) {
         ogs[category] = $(`<optgroup label="${category}">`)
       }
       return ogs[category]
@@ -429,7 +428,16 @@
     })
 
     Object.values(ogs).forEach(it => $mp3Choice.append(it))
+    return srts;
+  }
+
+  async function loadAllSubtitles() {
+    let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/combined.json")
+    srts = await srts.json()
     window.srts = srts
+    window.categories = await fetchCategorisation()
+
+    populateAllLinks();
   }
 
   loadAllSubtitles()
@@ -461,16 +469,32 @@
   function searchText() {
     let searchText = $("#searchInput").val().trim()
 
+    if(searchText.length < 3) {
+      populateAllLinks()
+      return
+    }
     let items = window.srts.filter(it => it.srt.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)
     let $mp3Choice = $('#mp3Choice')
     $mp3Choice.html('<option>--</option>')
+
+    let ogs = {}
+    let getOptgroup = category => {
+      if(!ogs[category]) {
+        ogs[category] = $(`<optgroup label="${category}">`)
+      }
+      return ogs[category]
+    }
+
     items.map(item => {
       let count = (item.srt.toLowerCase().match(new RegExp(searchText,"gi")) || []).length;
       return ({...item, matches: count})
-    }).toSorted((x,y) => y.matches - x.matches).forEach(item => {
+    }).toSorted((x,y) => y.matches - x.matches)
+      .forEach(item => {
       let $opt = $(`<option>(${item.matches}) ${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
-      $mp3Choice.append($opt)
+      getOptgroup(window.categories[item.link]).append($opt)
     })
+
+    Object.values(ogs).forEach(it => $mp3Choice.append(it))
   }
 
   function storeSubtitles(subs) {

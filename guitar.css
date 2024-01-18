@@ -722,3 +722,10 @@ audio {
     font-weight: bold;
     background: cyan;
 }
+
+#chordNumbers {
+    max-width: 800px;
+    overflow: scroll;
+    height: 26px;
+    padding-top: 0.5em;
+}

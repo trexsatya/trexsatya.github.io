@@ -411,4 +411,3 @@ function combinations(collection, n) {
   return recur(array, n);
 }
 
-

@@ -123,8 +123,8 @@
 <!--    </select>-->
 
     <div style="margin-bottom: 1em; margin-top: 1em;">
-        <audio id="audio" src="" width="700" height="500" controls></audio>
-        <audio id="backgroundMusicAudio" src="" width="700" height="500" controls style="margin-top: 1em; margin-bottom: 1em;"></audio>
+        <audio id="mainAudio" src="" width="700" height="500" controls crossorigin="anonymous"></audio>
+        <audio id="backgroundMusicAudio" src="" width="700" height="500" controls style="margin-top: 1em; margin-bottom: 1em;" crossorigin="anonymous"></audio>
         <div>
             <input id="backgroundMusicFile" type="file" style="">
         </div>
@@ -190,6 +190,8 @@
   player.setSrc($swedishTrackChoice.val())
   $swedishTrackChoice.change(async e => {
     player.setSrc($swedishTrackChoice.val())
+
+    directToAudioContext(mainAudio)
   })
 
   backgroundMusicFile.onchange = function() {
@@ -292,8 +294,59 @@
     }
   }, 100)
 
-  function directToAudioContext(myAudio, fn) {
+  function directToAudioContext(audioInput, fn) {
+    // A user interaction happened we can create the audioContext
+    const audioContext = new AudioContext();
 
+    fetch(audioInput.src)
+      .then((response) => response.arrayBuffer())
+      .then((downloadedBuffer) =>
+        audioContext.decodeAudioData(downloadedBuffer)
+      )
+      .then((decodedBuffer) => {
+        // Set up the AudioBufferSourceNode
+        const sourceNode = new AudioBufferSourceNode(audioContext, {
+          buffer: decodedBuffer,
+          loop: true,
+        });
+
+        // Set up the audio analyser and the javascript node
+        const analyserNode = new AnalyserNode(audioContext);
+        const javascriptNode = audioContext.createScriptProcessor(
+          1024,
+          1,
+          1
+        );
+
+        // Connect the nodes together
+        sourceNode.connect(audioContext.destination);
+        sourceNode.connect(analyserNode);
+        analyserNode.connect(javascriptNode);
+        javascriptNode.connect(audioContext.destination);
+
+        // Play the audio
+        sourceNode.start(0, 4); // Play the sound now
+
+        // Set up the event handler that is triggered every time enough samples have been collected
+        // then trigger the audio analysis and draw the results
+        javascriptNode.onaudioprocess = () => {
+          // Read the frequency values
+          const amplitudeArray = new Float32Array(
+            analyserNode.frequencyBinCount
+          );
+
+          // Get the time domain data for this sample
+          analyserNode.getFloatFrequencyData(amplitudeArray);
+
+          let avg = amplitudeArray.reduce((a, b) => a + b) / amplitudeArray.length
+          console.log(avg)
+          // Draw the display when the audio is playing
+          if (audioContext.state === "running") {
+            // Draw the time domain in the canvas
+
+          }
+        };
+      })
   }
 
 </script>

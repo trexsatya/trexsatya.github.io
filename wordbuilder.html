@@ -398,7 +398,7 @@
         <audio id="swedishAudio" controls="controls" ></audio>
         <br>
         Background Music: <input id="bgMusicInput" type="file" accept="audio/mpeg" onchange="loadMediaFile(bgMusicAudio, 'bgMusicInput')">
-        <audio id="bgMusicAudio" controls="controls" ></audio>
+        <audio id="bgMusicAudio" controls="controls" autoplay></audio>
     </div>
     <div style="">
         <audio id="swedishAudioHidden" style="display: none;"></audio>
@@ -410,7 +410,7 @@
     </div>
 </div>
 <script>
-  const secondsWithSound = new Set()
+  let secondsWithSound = new Set()
 
   window.dampeningInProgress = null
   window.restoringInProgress = null
@@ -465,14 +465,15 @@ function loadMediaFile(el, input) {
   el.src = URL.createObjectURL(document.getElementById(input).files[0])
 }
 
-function analyseAudio(el, callbackWhenMovedEnough) {
   const MIN_DECIBELS = -45;
-
   const audioContext = new AudioContext();
-  const audioStreamSource = audioContext.createMediaElementSource(el);
+  const audioStreamSource = audioContext.createMediaElementSource(swedishAudio);
   const analyser = audioContext.createAnalyser();
   analyser.minDecibels = MIN_DECIBELS;
   audioStreamSource.connect(analyser);
+
+function analyseAudio(el, callbackWhenMovedEnough) {
+  secondsWithSound = new Set()
   el.play()
 
   const bufferLength = analyser.frequencyBinCount;
@@ -548,7 +549,7 @@ function restoreBgMusic() {
 
   let interval = null
   let promise = new Promise((res, rej) => {
-    let max = 0.7
+    let max = 0.5
     let vol = bgMusicAudio.volume;
     let t = 200; // 200ms interval
 
@@ -587,7 +588,7 @@ function whenWikiLinkClicked(e) {
   e.stopPropagation()
   if (e.target.href.indexOf("/wiki/") > 0) {
     recordWikiScrollPosition()
-    window.location.hash = e.target.href.split("/wiki/")[1]
+    window.location.hash = e.target.href.split("/wiki/")[1].toLowerCase()
     populateWiki()
   }
 }
@@ -598,7 +599,7 @@ window.onhashchange = e => {
 function populateWiki() {
   let w = window.location.hash
   w = w.substring(1)
-  fetch("http://localhost:5000/proxy?url=https://sv.wiktionary.org/wiki/"+w)
+  fetch("http://localhost:5000/proxy?url=https://sv.wiktionary.org/wiki/"+ w.toLowerCase())
     .then(it => it.text())
     .then(it => {
       let $result = $('#wikiResult');
@@ -637,7 +638,7 @@ function populateWords() {
   $wordlist.dblclick(e => {
     $('#searchText').val(getSelectionText())
     fetchSRTs()
-    window.location.hash = getSelectionText()
+    window.location.hash = getSelectionText().toLowerCase()
     populateWiki()
     $("*").removeClass("highlighted-selection")
     $(getSelectionParentElement()).addClass("highlighted-selection")
