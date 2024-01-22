@@ -328,6 +328,7 @@
             a.onerror = e => {
                console.log("err", e)
                restoreBgMusic()
+               btn.removeClass('disabled')
             }
           }
 
@@ -352,8 +353,11 @@
         return text;
       }
 
-      function fetchSRTs(el) {
-        let txt = $("#searchText").val().toLowerCase()
+      function fetchSRTs(searchText) {
+        if(!(searchText instanceof String )) {
+          searchText = null
+        }
+        let txt = searchText || $("#searchText").val().toLowerCase()
         fetch("http://localhost:5000/find?text=" + txt)
           .then(it => it.json())
           .then(it => render(it, txt))
@@ -377,7 +381,7 @@
 
 
     <div id="wikiResult" style="max-height: 300px; overflow: scroll; position: fixed; height: 380px; width: 50%;">
-        <iframe id="wikiFrame" src="https://sv.wiktionary.org/wiki/upplevelse#Substantiv" width="100%" height="100%" onload="iframeLoaded()">
+        <iframe id="wikiFrame" src="" width="100%" height="100%" onload="iframeLoaded()">
         </iframe>
     </div>
     <div style="position: fixed; top: 382px; width: 50%; ">
@@ -394,52 +398,91 @@
 <div style="float: right; left: 51%; width: 49%; position: fixed;">
     <div>
         <textarea id="enteredWords" onchange="populateWords()"></textarea> <br>
-        Swedish Audio: <input id="swedishAudioInput" type="file" accept="audio/mpeg" onchange="analyseSoundAndSilence()">
+        Swedish Audio: <input id="swedishAudioInput" type="file" accept="audio/*" onchange="analyseSoundAndSilence()">
         <audio id="swedishAudio" controls="controls" ></audio>
         <br>
-        Background Music: <input id="bgMusicInput" type="file" accept="audio/mpeg" onchange="loadMediaFile(bgMusicAudio, 'bgMusicInput')">
+        Background Music: <input id="bgMusicInput" type="file" accept="audio/*" onchange="loadMediaFile(bgMusicAudio, 'bgMusicInput')">
         <audio id="bgMusicAudio" controls="controls" autoplay></audio>
     </div>
     <div style="">
-        <audio id="swedishAudioHidden" style="display: none;"></audio>
+        <audio id="swedishAudioHidden" style="display: none;" autoplay=""></audio>
         <img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn" onclick="playSelectedText()">
     </div>
 
-    <div id="wordlist" style="height: 600px; overflow: scroll; margin-top: 1em;">
+    <div id="wordlist" style="height: 500px; overflow: scroll; margin-top: 1em; padding-bottom: 2em;">
 
     </div>
 </div>
 <script>
   let secondsWithSound = new Set()
+  let dampenAtSeconds = new Set()
+  let restoreAtSeconds = new Set()
 
   window.dampeningInProgress = null
   window.restoringInProgress = null
 
+  let normaliseTimestamp = ar => {
+    ar = Array.from(ar)
+    let fa = [ar[0]]
+    for(let i = 1; i < ar.length; i++) {
+      if(Math.abs(ar[i] - ar[i-1]) > 2) {
+        fa.push(ar[i])
+      }
+    }
+    return new Set(fa)
+  }
+
+  let populateSecondsForBgMusic = secondsWithSound => {
+    let ts = Array.from(secondsWithSound) //normaliseTimestamp(secondsWithSound)
+    range(1, ts[ts.length-1] + 1).forEach(x => {
+      if(secondsWithSound.has(x+1)) {
+        dampenAtSeconds.add(x)
+      }
+      if(secondsWithSound.has(x-1) && !secondsWithSound.has(x) && !secondsWithSound.has(x+1)) {
+        restoreAtSeconds.add(x)
+      }
+    })
+  }
+
   function analyseSoundAndSilence() {
     let secondsHandled = new Set()
+
+    function handleTimestampSecond(t) {
+      secondsHandled.add(t)
+      let shouldDampen = dampenAtSeconds.has(t)
+      let shouldRestore = restoreAtSeconds.has(t)
+      if (shouldDampen) dampenBgMusic(t)
+      if (shouldRestore) restoreBgMusic(t)
+    }
+
     swedishAudio.ontimeupdate = e => {
       let t = mediaTimeInSeconds(swedishAudio);
       if(secondsHandled.has(t)) return
 
-      console.log(t)
-      secondsHandled.add(t)
-      let shouldDampen = secondsWithSound.has(t + 2)
-      let shouldRestore = [0, -1, -2, +1, +2].every(it => !secondsWithSound.has(t + it))
-      if(shouldDampen) dampenBgMusic()
-      else if(shouldRestore) restoreBgMusic()
+      handleTimestampSecond(t);
     }
 
     swedishAudio.onended = e => {
       secondsHandled = new Set()
+      restoreBgMusic()
     }
 
     loadMediaFile(swedishAudio, 'swedishAudioInput')
-    loadMediaFile(swedishAudioHidden, 'swedishAudioInput')
+    swedishAudio.pause()
+    // loadMediaFile(swedishAudioHidden, 'swedishAudioInput')
+    function getAudioBuffer() {
+      let blob = document.getElementById("swedishAudioInput").files[0]
+      return  new Response(blob).arrayBuffer(); //promise
+    }
 
     swedishAudio.controls = false
-    analyseAudio(swedishAudioHidden, x => {
-      swedishAudio.controls = true
-      swedishAudio.play()
+    swedishAudioHidden.volume = 0
+
+    getAudioBuffer().then(buffer => {
+      analyseAudio(buffer, x => {
+        swedishAudio.controls = true
+        swedishAudio.play()
+      })
     })
   }
   function round(value, p) {
@@ -448,13 +491,20 @@
     return Math.round(value * multiplier) / multiplier;
   }
 
-function populateSoundTimes(buffer, el) {
+function populateSoundTimes(buffer, el, suspendTime) {
     buffer = Array.from(buffer)
-    for (let i = 0; i < buffer.length; i++) {
-       if(buffer[i] > -50) secondsWithSound.add(mediaTimeInSeconds(el))
+  let threshold = -50;
+
+  let t = suspendTime;
+  for (let i = 0; i < buffer.length; i++) {
+      if(buffer[i] > threshold) {
+         secondsWithSound.add(Math.floor(round(t)))
+         populateSecondsForBgMusic(secondsWithSound)
+       }
     }
-    // console.log(a.map(it => it < -50 ? '' : round(it) + '/' + round(bgMusicAudio.currentTime)).join(' '))
-    // console.log(timesWithSound)
+    // console.log(buffer
+    //   .map(it => it < threshold ? '' : round(it) + '/' + round(t))
+    //   .join(' '))
 }
 
 function mediaTimeInSeconds(el) {
@@ -465,40 +515,55 @@ function loadMediaFile(el, input) {
   el.src = URL.createObjectURL(document.getElementById(input).files[0])
 }
 
-  const MIN_DECIBELS = -45;
-  const audioContext = new AudioContext();
-  const audioStreamSource = audioContext.createMediaElementSource(swedishAudio);
-  const analyser = audioContext.createAnalyser();
-  analyser.minDecibels = MIN_DECIBELS;
-  audioStreamSource.connect(analyser);
-
-function analyseAudio(el, callbackWhenMovedEnough) {
+function analyseAudio(audioData, callbackWhenMovedEnough) {
   secondsWithSound = new Set()
-  el.play()
+  // el.play()
 
-  const bufferLength = analyser.frequencyBinCount;
-  const domainData = new Float32Array(bufferLength);
+  const seconds = Math.ceil(swedishAudio.duration)
+  const sampleRate  = 96000
+  const length = seconds * sampleRate
+  const offlineAudioContext = new OfflineAudioContext({ length, sampleRate });
+  offlineAudioContext.decodeAudioData(audioData, buffer => {
+    const audioBufferSourceNode = new AudioBufferSourceNode(offlineAudioContext, { buffer });
+    const analyserNode = new AnalyserNode(offlineAudioContext);
 
-  const detectSound = () => {
-    analyser.getFloatFrequencyData(domainData);
-    populateSoundTimes(domainData, el)
+    audioBufferSourceNode.connect(analyserNode);
+    audioBufferSourceNode.start();
 
-    if(el.currentTime > 6) {
-      callbackWhenMovedEnough(el.currentTime)
-    }
+    const renderQuantumInSeconds = 128 / sampleRate;
+    const durationInSeconds = length / sampleRate;
+    const frequencyData = new Float32Array(analyserNode.frequencyBinCount);
 
-    if(el.currentTime >= el.duration) {
-      console.log(secondsWithSound)
-      return
-    }
-    window.requestAnimationFrame(detectSound);
-  };
+    const analyze = (index) => {
+      const suspendTime = renderQuantumInSeconds * index;
+      let el = swedishAudioHidden;
 
-  window.requestAnimationFrame(detectSound);
+      if (suspendTime < durationInSeconds) {
+        offlineAudioContext.suspend(suspendTime).then(() => {
+          analyserNode.getFloatFrequencyData(frequencyData);
+          populateSoundTimes(frequencyData, el, suspendTime)
+
+          if(secondsWithSound.size > 0) {
+            callbackWhenMovedEnough()
+          }
+
+          analyze(index + 1);
+        });
+      }
+
+      if (index === 1) {
+        offlineAudioContext.startRendering();
+      } else {
+        offlineAudioContext.resume();
+      }
+    };
+
+    analyze(1);
+  }, x => console.log("error", x))
 }
 
 let bgControl = 1
-function dampenBgMusic() {
+function dampenBgMusic(t) {
   if(window.dampeningInProgress) return
 
   let cnt = bgControl++
@@ -510,6 +575,7 @@ function dampenBgMusic() {
 
   let interval = null
   let promise = new Promise((res, rej) => {
+    console.log("Dampening at ", mediaTimeInSeconds(swedishAudio))
     let min = 0.05
 
     let vol = bgMusicAudio.volume;
@@ -520,9 +586,9 @@ function dampenBgMusic() {
         // Reduce volume by 0.05 as long as it is above 0
         // This works as long as you start with a multiple of 0.05!
         if (vol > min) {
-          vol -= 0.05;
+          vol -= 0.08;
           bgMusicAudio.volume = vol;
-          console.log("Dampening", swedishAudio.currentTime, cnt)
+          // console.log("Dampening", swedishAudio.currentTime, cnt)
         } else {
           // Stop the setInterval when 0 is reached
           clearInterval(interval);
@@ -553,17 +619,19 @@ function restoreBgMusic() {
     let vol = bgMusicAudio.volume;
     let t = 200; // 200ms interval
 
+    console.log("Restoring at ", mediaTimeInSeconds(swedishAudio))
+
     interval = setInterval(
       function () {
         // Reduce volume by 0.05 as long as it is above 0
         // This works as long as you start with a multiple of 0.05!
         if (vol < max) {
-          vol += 0.05;
+          vol += 0.08;
           if (vol > max) {
             vol = max
           }
           bgMusicAudio.volume = vol;
-          console.log("Restoring", swedishAudio.currentTime, cnt)
+          // console.log("Restoring", swedishAudio.currentTime, cnt)
         } else {
           // Stop the setInterval when 0 is reached
           clearInterval(interval);
@@ -596,7 +664,27 @@ function whenWikiLinkClicked(e) {
 window.onhashchange = e => {
   populateWiki()
 }
-function populateWiki() {
+
+  function whenWikiWordClicked($result) {
+    $result.find("a").each((i, e) => {
+      // Restore scroll position if applicable
+      if (wikiScrollPositions[location.hash]) {
+        wikiResult.scrollTop = wikiScrollPositions[location.hash]
+      } else {
+        wikiResult.scrollTop = 0
+      }
+      let href = $(e).attr("href") || ''
+      if (href.indexOf("/wiki/") < 0) {
+        $(e).removeAttr("href")
+      } else {
+        $(e).click(linkClicked => {
+          whenWikiLinkClicked(linkClicked);
+        })
+      }
+    }) //find end
+  }
+
+  function populateWiki() {
   let w = window.location.hash
   w = w.substring(1)
   fetch("http://localhost:5000/proxy?url=https://sv.wiktionary.org/wiki/"+ w.toLowerCase())
@@ -608,22 +696,18 @@ function populateWiki() {
       $(".mw-jump-link").remove()
       $(".mw-headline").parent().remove()
       $("#toc").remove()
-      $result.find("a").each((i,e) => {
-        // Restore scroll position if applicable
-        if(wikiScrollPositions[location.hash]) {
-          wikiResult.scrollTop = wikiScrollPositions[location.hash]
-        } else {
-          wikiResult.scrollTop = 0
-        }
-        let href = $(e).attr("href") || ''
-        if(href.indexOf("/wiki/") < 0) {
-           $(e).removeAttr("href")
-        } else {
-          $(e).click(linkClicked => {
-            whenWikiLinkClicked(linkClicked);
-          })
-        }
-      }) //find end
+      whenWikiWordClicked($result);
+
+      let headers = ["Aktiv", 'Böjningar av',  'Aktiv', 'Passiv', 'Infinitiv',  'Presens',  'Preteritum',
+        'Supinum',  'Imperativ', 'Particip', 'Presens',  'Perfekt',
+        'Böjningar av', 'Singular', 'Plural', 'utrum', 'Obestämd', 'Bestämd', 'Obestämd', 'Bestämd', 'Nominativ', 'Genitiv', 'Oräknebart']
+
+      let wordsToSearch = $('table[class*="template-sv-"]').text().split(/[\n ,]/).filter(it => it.trim().length && !headers.includes(it.trim()))
+        .filter(it => it.length > 2)
+      // $('grammar.template-sv-subst-').text().split(/[\n ,]/).filter(it => it.trim().length && !headers.includes(it.trim()))
+      //   .forEach(it => wordsToSearch.push(it))
+
+      fetchSRTs(wordsToSearch.map(it => `([ ,.]${it.trim()})`).join("|"))
     })
 }
 
@@ -637,7 +721,7 @@ function populateWords() {
 
   $wordlist.dblclick(e => {
     $('#searchText').val(getSelectionText())
-    fetchSRTs()
+    // fetchSRTs()
     window.location.hash = getSelectionText().toLowerCase()
     populateWiki()
     $("*").removeClass("highlighted-selection")
