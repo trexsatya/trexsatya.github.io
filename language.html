@@ -63,9 +63,9 @@
     <script>
       function togglePlay(el) {
         if(window.playingVideo) {
-          if (!ytPlaying) {
+          if (ytPlayer.getPlayerState() === 2) {
             ytPlayer.playVideo()
-          } else {
+          } else if (ytPlayer.getPlayerState() === 1) {
             ytPlayer.pauseVideo()
           }
         }  else  {
@@ -458,7 +458,7 @@
         currentItem['ts'] = matchTime[1]
         currentItem['te'] = matchTime[2]
       } else {
-        currentItem[lang] += line
+        currentItem[lang] += (line + "\n")
       }
     })
 
@@ -633,11 +633,22 @@
     // console.log(originalSubs.map(it => `${it.number} ${it.ts_o}-${it.te_o} (${it.ts}-${it.te} )-> ${it.sv}`).join("\n"))
   }
 
+  function updatePlayPauseButton() {
+    if (ytPlayer.getPlayerState() === 2) {
+      $('#playBtn').html('Play')
+    } else if (ytPlayer.getPlayerState() === 1) {
+      $('#playBtn').html('Pause')
+    }
+  }
+
   const ontimeupdate = e => {
     // console.log(currentSub, player.currentTime)
     if(window.seekRequestProcessing) {
       return
     }
+
+    updatePlayPauseButton()
+
     let ct = player.getCurrentTime()
     if(window.playingVideo) {
       ct = window.ytPlayer.getCurrentTime()
