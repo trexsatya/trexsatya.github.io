@@ -432,7 +432,7 @@
   }
 
   async function loadAllSubtitles() {
-    let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/combined.json")
+    let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/index.json")
     srts = await srts.json()
     window.srts = srts
     window.categories = await fetchCategorisation()
@@ -518,9 +518,13 @@
     return originalSubs;
   }
 
-  function loadSubtitlesForLink(link) {
-    let sv = window.srts.find(it => it.link === link &&  it.name.endsWith(".sv.srt"))
-    let en = window.srts.find(it => it.link === link &&  it.name.endsWith(".en.srt"))
+  async function loadSubtitlesForLink(link) {
+    let svName = window.srts.find(it => it.link === link).name + ".sv.srt"
+    let enName = window.srts.find(it => it.link === link).name + ".en.srt"
+    let sv = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + svName)
+    sv = await sv.text()
+    let en = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + enName)
+    en = await en.text()
 
     if(!sv) {
       alert("SV subtitle not found")
@@ -531,10 +535,10 @@
       en = {...sv}
     }
 
-    window.srtLoaded = sv.srt
-    sv = srtToJson(sv.srt, 'sv')
+    window.srtLoaded = sv
+    sv = srtToJson(sv, 'sv')
 
-    en = srtToJson(en.srt, 'en')
+    en = srtToJson(en, 'en')
     let combined = sv.map(svItem => {
       let enItem = en.find(eni => eni.ts === svItem.ts)
       let combinedItem = {...svItem, ...enItem};
