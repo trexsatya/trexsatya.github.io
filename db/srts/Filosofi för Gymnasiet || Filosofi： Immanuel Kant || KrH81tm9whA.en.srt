@@ -1,0 +1,363 @@
+1
+00:00:02,200 --> 00:00:08,140
+Imagine a little guy whose daily walks were so punctual that you can set the clock after them.
+
+2
+00:00:08,900 --> 00:00:15,780
+Immanuel Kant was a German philosopher from Königsberg, a city Germany losing to the Soviet Union
+
+3
+00:00:15,780 --> 00:00:20,140
+After World War II and then renamed Kaliningrad.
+
+4
+00:00:22,740 --> 00:00:26,460
+Immanuel Kant was to the exterior a very unassuming man,
+
+5
+00:00:26,460 --> 00:00:31,060
+But philosophically, he undoubtedly belongs to the greatest.
+
+6
+00:00:31,280 --> 00:00:35,860
+He is for philosophy what Newton is for physics or Darwin for biology -
+
+7
+00:00:36,000 --> 00:00:42,380
+Creator of a theory that all descendants must relate to, whether he agreed with him or not.
+
+8
+00:00:42,960 --> 00:00:48,260
+Kant himself meant that his philosophy was a "Copernican revolution" -
+
+9
+00:00:48,260 --> 00:00:54,080
+comparable to what Nicolaus Copernicus achieved in astronomy during the 16th century
+
+10
+00:00:54,080 --> 00:00:59.240
+By assuming that the sun, not the earth, was the center of the universe.
+
+11
+00:01:00,020 --> 00:01:05.960
+So far, Kant meant, assumed that our knowledge must adhere to the objects.
+
+12
+00:01:05,960 --> 00:01:11,460
+But that is not the case. It is the objects that adhere to our knowledge ability.
+
+13
+00:01:12,420 --> 00:01:17,480
+In this section, we will take a closer look at Kant's theory of knowledge.
+
+14
+00:01:18,420 --> 00:01:25,240
+His view of ethics (Kant was duty ethicist and formulated, among other things, the categorical imperative)
+
+15
+00:01:25,240 --> 00:01:28,380
+Treated under Chapter 3: Ethics and Morality.
+
+16
+00:01:29,500 --> 00:01:31,680
+So what is the theory of knowledge?
+
+17
+00:01:31,980 --> 00:01:40,340
+Knowledge theory, or epistemology (from the Greek episteme, "knowledge"), is the doctrine of knowledge.
+
+18
+00:01:40,860 --> 00:01:46,280
+Here you examine boundaries and conditions for knowledge and ask questions such as
+
+19
+00:01:46,280 --> 00:01:50,540
+"How do we get knowledge" or "How do we know that knowledge is true"?
+
+20
+00:01:51,180 --> 00:01:57,140
+Already Plato devoted himself to these issues and he defined knowledge as "true justified faith"
+
+21
+00:01:57,340 --> 00:02:03,320
+Based on the view that knowledge is that person A knows X about and only about:
+
+22
+00:02:03,640 --> 00:02:05,280
+X is true.
+
+23
+00:02:05,520 --> 00:02:08,380
+A is convinced that X is true.
+
+24
+00:02:08,760 --> 00:02:12,140
+A has good reasons for believing that X is true.
+
+25
+00:02:13,400 --> 00:02:17,460
+Thus, there are historically three necessary requirements for knowledge.
+
+26
+00:02:17,900 --> 00:02:25,020
+By definition, this means that there is no incorrect knowledge, only knowledge or error.
+
+27
+00:02:25,380 --> 00:02:31,440
+Traditionally, knowledge theorists are divided into two camps; Empirists and rationalists.
+
+28
+00:02:31,700 --> 00:02:36,000
+According to empiricism, all knowledge is founded in sensation experience,
+
+29
+00:02:36,160 --> 00:02:39.560
+A reasoning that can be traced back to Aristotle.
+
+30
+00:02:40,060 --> 00:02:47,380
+Empiri is based on scientific studies of reality, observations and experiments,
+
+31
+00:02:47,620 --> 00:02:53,280
+rather than on pre -set theories or philosophical reasoning.
+
+32
+00:02:53,760 --> 00:03:01.540
+A rationalist, on the other hand, claims that knowledge of the world originates from reason, thinking and congenital ideas
+
+33
+00:03:01,760 --> 00:03:05,780
+(Although sensory experience may of course be involved).
+
+34
+00:03:06,400 --> 00:03:11,320
+It is believed that the sensations are too unreliable to constitute knowledge,
+
+35
+00:03:11,500 --> 00:03:17,660
+A reasoning that is well exemplified by René Descartes and his systematic doubt.
+
+36
+00:03:18,140 --> 00:03:22,800
+What Kant is trying to find is the limit of human knowledge.
+
+37
+00:03:22,960 --> 00:03:29,060
+His reasoning can be seen as an attempt to preserve the best out both empirism and rationalism,
+
+38
+00:03:29,400 --> 00:03:33,580
+While taking into account the criticism they directed at each other.
+
+39
+00:03:33,940 --> 00:03:39,420
+This is a theory of knowledge often called critical or transcendental idealism.
+
+40
+00:03:39,820 --> 00:03:46,680
+According to Kant, one must distinguish between two kinds of knowledge: experience knowledge and reasonable knowledge.
+
+41
+00:03:47,260 --> 00:03:52.440
+Experience knowledge (or empirical knowledge) is something whose truth
+
+42
+00:03:52,440 --> 00:03:55,680
+We cannot know without reference to experience.
+
+43
+00:03:56,100 --> 00:04:00,160
+An example of this is that Paris is the capital of France.
+
+44
+00:04:00,600 --> 00:04:05.660
+We know this from experience - we have learned it by using our minds
+
+45
+00:04:05,740 --> 00:04:09.320
+For example, we have read it in a book or heard it from our parents.
+
+46
+00:04:10,260 --> 00:04:17,440
+This type of knowledge calls Kant "a posteriori", which means after experience.
+
+47
+00:04:17,720 --> 00:04:23,360
+He calls the second type of knowledge "a priori", before experience.
+
+48
+00:04:23,720 --> 00:04:30,580
+This is knowledge we have without reference to the experience - for example, 5+7 = 12.
+
+49
+00:04:30,960 --> 00:04:35,580
+In mathematics, for example, we use reason to determine what is true.
+
+50
+00:04:35,580 --> 00:04:38,600
+But how can such knowledge be possible?
+
+51
+00:04:39,980 --> 00:04:45,460
+Kant replies that Knowledge A Priori is not based on the world that surrounds us,
+
+52
+00:04:45,460 --> 00:04:49,720
+Without how our consciousness is organized and works.
+
+53
+00:04:50,100 --> 00:04:53,420
+Here, Kant also points to the limitation of knowledge.
+
+54
+00:04:53,920 --> 00:04:59.560
+He initiates the book "Criticism of Pure Reason" (1781) by claiming
+
+55
+00:04:59,560 --> 00:05:05,480
+“That all our knowledge begins with the experience, there is no doubt at all [...]
+
+56
+00:05:05,680 --> 00:05:12,600
+But even if all our knowledge begins with the experience, it does not arise from the experience. "
+
+57
+00:05:13,020 --> 00:05:18,000
+Everything we perceive - whether it is mind impressions, feelings, thoughts or memories -
+
+58
+00:05:18,000 --> 00:05:26,620
+We perceive through our body's knowledge organ; Our five senses, our brain and our central nervous system.
+
+59
+00:05:27,160 --> 00:05:30,900
+Everything that these organs can sense can therefore be experienced,
+
+60
+00:05:30,900 --> 00:05:36,160
+While eventualities they cannot deal with can never be perceived by us.
+
+61
+00:05:36,620 --> 00:05:43,400
+Our knowledge of the world is thus limited by what our senses, brain and nervous system can handle.
+
+62
+00:05:43,820 --> 00:05:49,280
+Thus, on the one hand, there is what exists regardless of us and our perception
+
+63
+00:05:49,500 --> 00:05:51,820
+(the objective reality)
+
+64
+00:05:52,040 --> 00:05:57,640
+And on the other hand, what we have the opportunity to perceive (the human interpretation of reality).
+
+65
+00:05:58,460 --> 00:06:03.640
+There is no reason to believe that these two types of existence are the same.
+
+66
+00:06:03,920 --> 00:06:08,900
+There is almost certainly much less of the latter than the former.
+
+67
+00:06:09,440 --> 00:06:14,820
+In addition, there is a "filter" between each human and the objective outer world.
+
+68
+00:06:14,820 --> 00:06:19,600
+Which allows us to only interpret reality - never really experience it.
+
+69
+00:06:20,020 --> 00:06:24,660
+This filter can be likened to a pair of colored glasses for reason.
+
+70
+00:06:24,960 --> 00:06:31,620
+In the same way as a pair of blue -colored glasses, reality is perceived as blue -tinted,
+
+71
+00:06:31,620 --> 00:06:38.560
+perceives reason reality as spatial, timely and causal (causal)
+
+72
+00:06:38,560 --> 00:06:41,820
+- Something edge calls views.
+
+73
+00:06:42,580 --> 00:06:47,280
+We cannot possibly have experiences decoupled from the views.
+
+74
+00:06:47,680 --> 00:06:55.880
+This, like a priori knowledge, which also forces our impressions in order to understand them for us.
+
+75
+00:06:56,240 --> 00:07:03,480
+Time and space are like our experience of colors - they are not in reality, they are only mental constructions.
+
+76
+00:07:03,980 --> 00:07:11,900
+Kant himself expresses this as “thoughts without content are empty; Observations without concepts are blind ”.
+
+77
+00:07:12,420 --> 00:07:17,340
+Edge thus distinguishes between the thing itself that exists in reality as it is
+
+78
+00:07:17,340 --> 00:07:23,340
+Regardless of our interpretation of the (by Kanten named Noumenon), and the thing for me
+
+79
+00:07:23,340 --> 00:07:30,840
+- The human interpretation / filtration / experience of a thing (by Kant named the phenomenon world).
+
+80
+00:07:31,240 --> 00:07:36,180
+Of these, only the phenomenon world we can have knowledge or experience about.
+
+81
+00:07:36,460 --> 00:07:41,720
+What is beyond our experience of the world we have no opportunity to know.
+
+82
+00:07:42,060 --> 00:07:47,500
+This means, according to Kant, that we will never be able to reach knowledge of, for example
+
+83
+00:07:47,500 --> 00:07:50,520
+God's existence or free will.
+
+84
+00:07:51,220 --> 00:07:56,860
+Kant himself expressed this as that he excluded the knowledge to leave room for faith.
+
+85
+00:07:57,100 --> 00:08:02,400
+Kant's theory of knowledge has been of great importance to philosophy when he was thrown out
+
+86
+00:08:02,400 --> 00:08:07,120
+All so -called "evidence" for (or against) for example God's existence.
+
+87
+00:08:07,720 --> 00:08:14,000
+Since Kantt's time, among philosophers has been virtually generally accepted that certain issues
+
+88
+00:08:14,000 --> 00:08:18,120
+is beyond what man can theoretically have knowledge of.
+
+89
+00:08:18,580 --> 00:08:25,760
+Kantts thus describes how both the natural sciences (phenomena world) as well as metaphysical
+
+90
+00:08:25,760 --> 00:08:34,240
+Issues and religion (Noumenon) can coexist without any mutual contradiction.
+
+91
+00:08:34,980 --> 00:08:40,860
+He also shows that there is a clearly defined boundary between knowledge and faith.
