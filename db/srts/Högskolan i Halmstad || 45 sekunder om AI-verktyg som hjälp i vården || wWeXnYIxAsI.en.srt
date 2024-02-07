@@ -1,0 +1,75 @@
+1
+00:00:14,633 --> 00:00:18,333
+Hi, my name is Lina Lundgren and I am project manager I-
+
+2
+00:00:18,333 --> 00:00:22,000
+-Heart failure readmission prediction harp-
+
+3
+00:00:22,000 --> 00:00:25,467
+-A project within the University's focus area Health Innovation.
+
+4
+00:00:25,700 --> 00:00:29,133
+In this project, we work with information -driven care.
+
+5
+00:00:29,133 --> 00:00:32,133
+That is a way to contribute to solutions that can help-
+
+6
+00:00:32,133 --> 00:00:35.033
+-Health care in its transformation.
+
+7
+00:00:35,033 --> 00:00:38,000
+Join us and I'll tell you more.
+
+8
+00:00:42,367 --> 00:00:46,600
+Heart failure affects about two percent of Sweden's population.
+
+9
+00:00:46,600 --> 00:00:51.567
+Many patients are in hospitals several times for a short period of time.
+
+10
+00:00:51,567 --> 00:00:54,433
+In order for healthcare personnel to be able to take the right decision-
+
+11
+00:00:54,433 --> 00:00:57.033
+-How they take in a large amount of information.
+
+12
+00:00:57,033 --> 00:01:01.767
+With the help of AI tools, historical information can be compiled-
+
+13
+00:01:01,767 --> 00:01:04.867
+-And contribute to a risk assessment.
+
+14
+00:01:04,960 --> 00:01:09.840
+In the Harp project we investigate in the project team how we can develop-
+
+15
+00:01:09,920 --> 00:01:14,520
+-A such AI tool, how its output should be presented to user-
+
+16
+00:01:14,933 --> 00:01:19,300
+-And how it should be implemented to function in daily healthcare activities.
+
+17
+00:01:19,300 --> 00:01:23,100
+The project is part of CAISR Health and is implemented together-
+
+18
+00:01:23,100 --> 00:01:25,600
+-With Cambio and Region Halland.
+
+19
+00:01:25,600 --> 00:01:29,100
+Do you want to know more? Get in touch!

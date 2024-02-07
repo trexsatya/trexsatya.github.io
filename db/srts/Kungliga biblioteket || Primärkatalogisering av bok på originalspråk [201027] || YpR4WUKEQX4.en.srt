@@ -1,0 +1,1131 @@
+1
+00:00:14,336 --> 00:00:19,276
+Hello! My name is Olof Osterman. I work on the national bibliography here at KB.
+
+2
+00:00:19,276 --> 00:00:32,054
+It is I who will do this instructional film over a cataloging of a book, a monograph. A primary catalog of a book in original.
+
+3
+00:00:32,768 --> 00:00:46,183
+The book we will be based on, which we will catalog, is called Swedish murder stories and is written by Sebastian Krantz and Cyril Hellman.
+
+4
+00:00:46,687 --> 00:00:55.293
+So, now I will switch to Libris XL and show there how to do this.
+
+5
+00:00:56,320 --> 00:00:57,856
+I will split the screen here.
+
+6
+00:00:59,392 --> 00:01:10,655
+So, when you enter Libris XL you get this screen, opening screen, and then you have headlines at the top here.
+
+7
+00:01:10,912 --> 00:01:14,240
+I have start, search, create new, catalog care, help.
+
+8
+00:01:14,496 --> 00:01:22,025
+And then we will click Create new and choose something called Mall.
+
+9
+00:01:22,688 --> 00:01:28,576
+But before we do, I just have to say that this is an exercise so this book is cataloged before.
+
+10
+00:01:30,000 --> 00:01:42,420
+In reality, so to speak, one should of course be very careful to first search the books on both ISBN numbers, title and author
+
+11
+00:01:42,567 --> 00:01:51,999
+To really make sure that the book is not cataloged before, so that you do not do any duplicates in the base.
+
+12
+00:01:52,128 --> 00:02:01,274
+And if there is already an entry, you use it and hopefully you just need to put on a stock on it.
+
+13
+00:02:02,112 --> 00:02:09.222
+And if there is a preliminary item, you use it as well. You just update it.
+
+14
+00:02:09,222 --> 00:02:12,775
+They can be very rudimentary but these are the ones to use anyway.
+
+15
+00:02:13,632 --> 00:02:21,161
+But as I said, this is an exercise, so we pretend that this book is not cataloged before and that we primarily catalog it.
+
+16
+00:02:22,336 --> 00:02:27,712
+So then we start from a template and then we click here at Create new.
+
+17
+00:02:29,504 --> 00:02:31,552
+And then we get these alternatives.
+
+18
+00:02:32,320 --> 00:02:36,160
+The first option is just a very ordinary book.
+
+19
+00:02:36,672 --> 00:02:41,792
+And it is the one we should use. That template. So I click here on Choose.
+
+20
+00:02:44,096 --> 00:02:46,400
+So, and then we get a template here.
+
+21
+00:02:47,424 --> 00:02:53.568
+This one is quite long this template and here there are different fields to be filled in.
+
+22
+00:02:55,104 --> 00:03:05,236
+What you can say about catalog items is generally that they are divided into three parts in Libris XL.
+
+23
+00:03:06,000 --> 00:03:12,000
+The first part you see here is the instance of works,
+
+24
+00:03:12,256 --> 00:03:23,596
+And the other part here, which comes after it is highlighted that it splits a bit here, is the instance itself,
+
+25
+00:03:23,596 --> 00:03:27.516
+Or what you also call the manifestation.
+
+26
+00:03:27,704 --> 00:03:35,452
+And the third part is admin metadata. Simply just data about the directory post itself.
+
+27
+00:03:36,576 --> 00:03:44,098
+And I usually start by filling in what is on the body.
+
+28
+00:03:45,024 --> 00:03:56,337
+And in order for this one not to be so long, this post, now that I work with it, I fold the instance of works by clicking on this arrow.
+
+29
+00:03:57,312 --> 00:03:59.616
+So, it disappears there.
+
+30
+00:04:00,384 --> 00:04:03.712
+So then I can devote myself to this place.
+
+31
+00:04:04,992 --> 00:04:06,784
+And the first ...
+
+32
+00:04:08,576 --> 00:04:14,642
+The first field that we are going to fill in is ISBN number,
+
+33
+00:04:14,642 --> 00:04:21,314
+And ISBN numbers are in the identifier field.
+
+34
+00:04:21,631 --> 00:04:27.519
+And for books, the most common identifier is ISBN.
+
+35
+00:04:27,775 --> 00:04:33,357
+Then we fill in the ISBN number in the value field.
+
+36
+00:04:44,671 --> 00:04:45.951
+So.
+
+37
+00:04:46,207 --> 00:04:51,424
+Often the ISBN numbers are specified in the books with hyphens
+
+38
+00:04:51,839 --> 00:04:57.471
+It is almost the most common that they are, but we fill in this without a hyphen.
+
+39
+00:05:00,031 --> 00:05:03.846
+And the next field we have here is distinctive addition.
+
+40
+00:05:04,043 --> 00:05:10,271
+And this is not a nuclear element, distinctive addition,
+
+41
+00:05:11,039 --> 00:05:15,391
+So you can choose whether you want to add an addition or not.
+
+42
+00:05:16,159 --> 00:05:26,774
+If you want it, the most common thing you usually put in is whether the book is hardcover or if it is stapled and so on. And this book is hardcover.
+
+43
+00:05:27,167 --> 00:05:29,471
+I enter here that the hardcover.
+
+44
+00:05:33,311 --> 00:05:34,079
+That's how.
+
+45
+00:05:36,895 --> 00:05:44,392
+Then there are three filled fields here. Publishing methods, media type, carrier type.
+
+46
+00:05:45,599 --> 00:05:54,787
+These are defaults for printed books so you don't have to touch. They just lie there in the mail.
+
+47
+00:05:56,863 --> 00:06:04.455
+So, then comes the next field and it is has the title.
+
+48
+00:06:05,055 --> 00:06:18,623
+Then we will fill in this book's main title in the first field. Then we start from the title page which is the primary source in the book. It is the one that you always assume.
+
+49
+00:06:18,623 --> 00:06:26,341
+And on the title page we have the title - Swedish murder stories. So then we enter this.
+
+50
+00:06:31,679 --> 00:06:35,263
+And then we have another field here, other title information.
+
+51
+00:06:35,775 --> 00:06:44,228
+And here you can add eg. A subtitle if it is. In this case, there was no such thing. Then you just skip that field.
+
+52
+00:06:45,247 --> 00:06:47,039
+It then disappears when saving
+
+53
+00:06:47,295 --> 00:06:49,599
+And then comes origin.
+
+54
+00:06:49,855 --> 00:06:58.707
+The origin details are the person or persons who have written the book.
+
+55
+00:06:58,815 --> 00:07:06,495
+And the origin details here are Sebastian Krantz and Cyril Hellman.
+
+56
+00:07:06,495 --> 00:07:09.055
+So we fill in their name here.
+
+57
+00:07:19,551 --> 00:07:24,671
+Like that, and you fill it in as per title page
+
+58
+00:07:25,439 --> 00:07:37,456
+Sebastian Krantz is first on the title side and then Cyril Hellman is located. You do not change this but it is filled in as it says on the title page.
+
+59
+00:07:37,727 --> 00:07:48,216
+What you fill in here in the copy's task must be descriptive. You describe what the title page looks like.
+
+60
+00:07:48,479 --> 00:07:52.831
+What you can do, on the other hand, is that you can put in punctuation if needed.
+
+61
+00:07:53,087 --> 00:08:01,679
+In this case it is only Sebastian Krantz and Cyril Hellman, but we put in a comma between just for the sake of readability.
+
+62
+00:08:01,791 --> 00:08:11,030
+And if there had been any other authors, they would also have put them in this field. For example. If there had been any illustrator
+
+63
+00:08:11,030 --> 00:08:14,759
+or any photographer or translator or something like that there.
+
+64
+00:08:15,871 --> 00:08:22,973
+This is also laid in this field. But now it was only these two so now the field is done.
+
+65
+00:08:23,176 --> 00:08:32,511
+And the next field to enter something in it is the circulation task.
+
+66
+00:08:32,767 --> 00:08:41,073
+Not all books have a circulation task. Especially when they come out the first time then it is often just skipping that task. Or the publisher does.
+
+67
+00:08:41,215 --> 00:08:46,591
+But if there is a circulation task then you should state it.
+
+68
+00:08:47,103 --> 00:08:49,407
+And in this case, it does.
+
+69
+00:08:49,663 --> 00:08:53,834
+And we find it here on the back of the title page.
+
+70
+00:08:54,000 --> 00:09:03.403
+And if you look at it you can see that it says the first edition on the back of the title page.
+
+71
+00:09:03,999 --> 00:09:06,559
+And then you quote just as it stands.
+
+72
+00:09:07,327 --> 00:09:13,325
+So we write the first edition.
+
+73
+00:09:13,471 --> 00:09:19,359
+Had first stood with a number you would have written so too, or then you would have written with a number.
+
+74
+00:09:19,871 --> 00:09:24,223
+This is a descriptive field so you write as it says.
+
+75
+00:09:24,735 --> 00:09:28,575
+Then we move on to the next field - publishing.
+
+76
+00:09:29,087 --> 00:09:32,671
+And we have already completed the country of publishing, Sweden.
+
+77
+00:09:33,439 --> 00:09:35,743
+And that's right in this case.
+
+78
+00:09:36,255 --> 00:09:42.567
+But had we cataloged another book published in another country so just click
+
+79
+00:09:42,655 --> 00:09:48,288
+The cross there and remove it and add relevant country.
+
+80
+00:09:48,543 --> 00:09:53,663
+And then we will add a publishing site here.
+
+81
+00:09:55,199 --> 00:09:56,479
+On site here.
+
+82
+00:09:57,759 --> 00:10:03.903
+And then we look for here in the book if there is any publishing site specified.
+
+83
+00:10:04,927 --> 00:10:15.038
+On the title page there was no one but on the back of the title page we find an address to Pagina called the publisher.
+
+84
+00:10:15,935 --> 00:10:20,799
+And here it is Stockholm printed so then we can only enter this.
+
+85
+00:10:21,567 --> 00:10:22,335
+That's how.
+
+86
+00:10:22,591 --> 00:10:27,035
+Had it not been in the book you would have had to cling to it instead.
+
+87
+00:10:27,249 --> 00:10:44,175
+So. Then we move on to the next field. It is the publisher, the entire publisher in this case that is the publisher and it is completed in the agent and under the term there.
+
+88
+00:10:44,351 --> 00:10:52,285
+And then I start from the title page which is a primary source and there we find Pagina.
+
+89
+00:10:53,823 --> 00:10:55,871
+So, spelled that way.
+
+90
+00:10:56,895 --> 00:11:03.039
+If you look at the back side of the title page, it says Pagina Group AB,
+
+91
+00:11:03,295 --> 00:11:07,135
+But it is the title page that applies so that is where you take the task.
+
+92
+00:11:07,391 --> 00:11:09.951
+So that's how we enter it.
+
+93
+00:11:10,463 --> 00:11:16,373
+The two next fields are years and date.
+
+94
+00:11:16,607 --> 00:11:24,940
+And years is a numeric field. So you just specify it with numbers.
+
+95
+00:11:25,055 --> 00:11:31,199
+And then we look for when this one was released. It was released in 2019 I have for me.
+
+96
+00:11:32,223 --> 00:11:35.551
+Right. And then I write in 2019 here only.
+
+97
+00:11:37,733 --> 00:11:48,729
+And this field is what controls, for example, hit lists if you want them in chronological order, etc.
+
+98
+00:11:49,119 --> 00:11:51,423
+That is why you have to enter that.
+
+99
+00:11:51,679 --> 00:11:57,823
+And next field is date
+
+100
+00:11:57,823 --> 00:12:09,122
+And in the date, you should enter the publishing year or if it is the date of release if they have added both months and day to the publication.
+
+101
+00:12:09,599 --> 00:12:12,927
+Not so common, but it occurs.
+
+102
+00:12:13,183 --> 00:12:17,133
+In date you should enter the release year
+
+103
+00:12:17,133 --> 00:12:22,899
+And then we have to look for if there is any publishing year here. There is nothing on the title page.
+
+104
+00:12:23,935 --> 00:12:31,275
+On the back we find only one print year, 2019, and a copyright year, 2019.
+
+105
+00:12:31,871 --> 00:12:38,532
+So then we have to construct a publishing year by clinging in 2019.
+
+106
+00:12:39,039 --> 00:12:42,367
+Since there was no real release year.
+
+107
+00:12:43,647 --> 00:12:44,671
+Then we'll do it.
+
+108
+00:12:47,487 --> 00:12:49,279
+That's how.
+
+109
+00:12:49,535 --> 00:13:01,924
+And we base this year of release on the print year and if there had been no pressure year we would have based on the publishing year on the copyright year.
+
+110
+00:13:03,871 --> 00:13:14,235
+And since there was no real release year, we must state what we have based on the publishing year.
+
+111
+00:13:14,879 --> 00:13:20,843
+And as I said before, we have based this on the manufacturing year.
+
+112
+00:13:21,535 --> 00:13:24,095
+So then we fill in 2019 here.
+
+113
+00:13:24,351 --> 00:13:29,401
+It is printed in Latvia 2019. We do not need to bring Latvia.
+
+114
+00:13:29,727 --> 00:13:45,775
+If the book had been printed in Sweden, NB usually fills in the print shop here as well. The printing room and name as well.
+
+115
+00:13:45,775 --> 00:13:49,951
+But since it was printed abroad, it is enough to just enter 2019 here.
+
+116
+00:13:51,231 --> 00:13:56,095
+We skip the field Copyright even if there is a copyright year here.
+
+117
+00:13:56,351 --> 00:14:02,173
+But since we had the print year that we based on the release year on, it is enough.
+
+118
+00:14:03,007 --> 00:14:08.808
+Range. It is therefore how many pages there are in the book
+
+119
+00:14:09,407 --> 00:14:13,759
+As we specify here and you just state the last pagination.
+
+120
+00:14:14,271 --> 00:14:23,858
+Although there would be more printed pages after, you just specify the last pagination and there are 203 pages.
+
+121
+00:14:24,255 --> 00:14:28,826
+If we move on here we will be able to measure.
+
+122
+00:14:29,119 --> 00:14:36,732
+Dimensions are not a mandatory field or a nuclear element as we usually say.
+
+123
+00:14:37,567 --> 00:14:40,127
+So you don't have to fill it out.
+
+124
+00:14:40,383 --> 00:14:47,849
+Most libraries probably don't do what we at NB do it so if you want you can fill in this
+
+125
+00:14:49,855 --> 00:15:02,225
+What you have to keep in mind then is that you specify the book's height in centimeters.
+
+126
+00:15:03,167 --> 00:15:07,272
+And that you always round up.
+
+127
+00:15:11,615 --> 00:15:17,504
+And the next field are other physical details
+
+128
+00:15:18,015 --> 00:15:21,087
+Then let's see, was it illustrated this one?
+
+129
+00:15:25,401 --> 00:15:37,332
+It was it and the most common physical detail is whether a book is illustrated or not illustrated. If it is not illustrated, you do not fill in anything.
+
+130
+00:15:37,563 --> 00:15:41,311
+If it is, you just fill illustrations here.
+
+131
+00:15:45,407 --> 00:15:54,574
+If we move on here we have a series membership. If the book had been included in any series, this would have been stated.
+
+132
+00:15:55,391 --> 00:15:59,231
+But it doesn't do it so we just skip these fields.
+
+133
+00:16:01,791 --> 00:16:05.887
+Then we come to a remark field.
+
+134
+00:16:06,143 --> 00:16:15,352
+And note it is used if you want to specify something that is not shown in the bibliographic description.
+
+135
+00:16:15,615 --> 00:16:27,449
+And in this case, we thought there was an information that could be interesting that we wanted to make a note here.
+
+136
+00:16:27,903 --> 00:16:30,686
+And then you do this.
+
+137
+00:16:31,743 --> 00:16:35,071
+I'll write rear cover here. So.
+
+138
+00:16:36,863 --> 00:16:44,885
+If you want to quote something, you talk about where the quote comes from.
+
+139
+00:16:45,823 --> 00:16:56,926
+And then we write "15 real cases from the success pod"
+
+140
+00:16:58,111 --> 00:17:07,886
+These crime cases they include in this book have apparently been dealt with in the pod in the past and may be of interest to include.
+
+141
+00:17:08,095 --> 00:17:22,334
+Otherwise, we usually do not include so many such quotes and similar things from the books, but often the bibliographic tasks that you add.
+
+142
+00:17:23,967 --> 00:17:31,085
+And then this instance, the manifestation, was actually completed.
+
+143
+00:17:33,695 --> 00:17:40,831
+And then you can move on to the instance of works instead.
+
+144
+00:17:41,631 --> 00:17:44,703
+So then I unfold this by clicking on the arrow here.
+
+145
+00:17:48,799 --> 00:17:51,359
+And then I'll fill in ...
+
+146
+00:17:51,615 --> 00:17:57,759
+At the work level are the author names in authorized form,
+
+147
+00:17:58,015 --> 00:18:10,912
+Here lies classification, here are subject words. Things that belong to actual levels of the book or the work should be said rather.
+
+148
+00:18:11,583 --> 00:18:14,911
+The type of work is stated as text.
+
+149
+00:18:15,423 --> 00:18:18,239
+And it is also lying and it is true, it should be so.
+
+150
+00:18:18,751 --> 00:18:24,895
+There is only one person who can become primary involvement, and that is
+
+151
+00:18:25,151 --> 00:18:29,759
+The one first stated on the title page that becomes primary participation.
+
+152
+00:18:30,527 --> 00:18:35,391
+And then we will add this person who is thus Krantz.
+
+153
+00:18:36,415 --> 00:18:46,253
+On primary participation, we add either in authorized form or also how the person should be presented in the index.
+
+154
+00:18:46,399 --> 00:18:52,721
+Often in inverted form, reverse form. The last name first and the first name later.
+
+155
+00:18:53,823 --> 00:18:55,871
+But then we click here on the plus.
+
+156
+00:18:58,431 --> 00:19:04,278
+And then a new window unfolds on the right.
+
+157
+00:19:04,575 --> 00:19:13,151
+If you have a very small screen, it will be all over the screen instead. But now it's on the right here and it's good.
+
+158
+00:19:13,791 --> 00:19:19,935
+And then we get a search box here and then we are looking for Krantz.
+
+159
+00:19:26,335 --> 00:19:33,420
+So, what was he called by first name? Sebastian was his name.
+
+160
+00:19:37,087 --> 00:19:49,907
+Then a Sebastian Krantz born in 1994 gets here and we can see that the business area is eg. Pod radio.
+
+161
+00:19:50,655 --> 00:19:56,150
+And that seems to be the person we are looking for simply.
+
+162
+00:19:56,287 --> 00:20:07.861
+Then we can add him. And then you click on the plus sign and then he will go into the instance of works here.
+
+163
+00:20:09,855 --> 00:20:14,975
+Then we have linked him to this cheese of authority.
+
+164
+00:20:15,487 --> 00:20:18,047
+And it is this name form he should have.
+
+165
+00:20:18,559 --> 00:20:32,127
+And the next field is a field of function. There you talk about the function the person has, and here it is already completed "Author" thus writer.
+
+166
+00:20:32,895 --> 00:20:41,778
+And that is true too and he has not done anything else so we do not have to add any more function code here.
+
+167
+00:20:44,415 --> 00:20:47,999
+So, then we have added that he is written there.
+
+168
+00:20:48,511 --> 00:21:00,146
+But then there was also a co -author too, Cyril Hellman. We want to add him too. So then we do the same procedure here.
+
+169
+00:21:01,567 --> 00:21:15,768
+We click here on the plus and we are looking for Hellman, Cyril. And then we get a person here.
+
+170
+00:21:16,672 --> 00:21:22,816
+There was not as much information here but if you want to be able to right -click him here
+
+171
+00:21:23,072 --> 00:21:28,704
+And open a link in a new tab, and then you enter the authority post.
+
+172
+00:21:30,496 --> 00:21:37,774
+I think I skip to do it. It's a pretty unusual name this so I think it is he anyway.
+
+173
+00:21:38,432 --> 00:21:48,125
+When you do this procedure you also get to the books he has written. We can see that he has written 33 books.
+
+174
+00:21:49,696 --> 00:21:52,000
+But I click him here.
+
+175
+00:21:54,816 --> 00:21:55,840
+So.
+
+176
+00:21:56,096 --> 00:22:06,524
+And then we have the function here. It is only done on the first, primary, participation.
+
+177
+00:22:06,848 --> 00:22:18,077
+On the other you have to add yourself. It doesn't always have to be a co -author. It may be something else. It can be an illustrator or photographer or something like that.
+
+178
+00:22:18,077 --> 00:22:23,556
+This is how you add the function yourself. I click on the plus here.
+
+179
+00:22:24,768 --> 00:22:27,840
+And then I search for writers as he is.
+
+180
+00:22:29,376 --> 00:22:32,960
+That's how. Then I get a function code there, writer.
+
+181
+00:22:34,496 --> 00:22:39,252
+Click on the plus and then he comes in there.
+
+182
+00:22:40,896 --> 00:22:51.021
+Like that, and then this window remains here. If you want to remove that window, it is easiest to just press ESC and it will disappear.
+
+183
+00:22:52,416 --> 00:22:57,792
+Otherwise you can just click on the cross in the upper right and it will disappear as well.
+
+184
+00:23:00,352 --> 00:23:10,232
+Then we were done with participation and function and have added primary participation and participation for the co -author.
+
+185
+00:23:11,616 --> 00:23:15,200
+And then comes the next field. It's language.
+
+186
+00:23:15,456 --> 00:23:22,964
+And there it is pre -filled Sweden, or sorry, Swedish. The language Swedish.
+
+187
+00:23:24,160 --> 00:23:26,976
+And that's right. The book is in Swedish.
+
+188
+00:23:28,000 --> 00:23:30.304
+So we just leave it there.
+
+189
+00:23:32,864 --> 00:23:42,980
+Then we come to genre/form. Genre/form is something you don't have to add anything to, except that fiction.
+
+190
+00:23:43,104 --> 00:23:48,992
+Then you have to choose whether it is a novel or short story or whatever it may be.
+
+191
+00:23:49,248 --> 00:23:51,296
+And then you add this under genre/form.
+
+192
+00:23:51,808 --> 00:23:58,351
+So you don't really have to add anything here but many libraries would like it to be completed
+
+193
+00:23:58,351 --> 00:24:03,328
+Still with a code that is 0, for "not fiction".
+
+194
+00:24:03,584 --> 00:24:09.872
+It is easier for them to distinguish fiction and non -fiction then in their local systems.
+
+195
+00:24:11,264 --> 00:24:17,053
+So I always add this one. To be nice.
+
+196
+00:24:17,152 --> 00:24:23,296
+Either I search for "not fiction" or if I know the code then I can only press 0 here.
+
+197
+00:24:24,832 --> 00:24:32,892
+It simply becomes the same result. I usually do this.
+
+198
+00:24:33,162 --> 00:24:36,608
+So. Then we got it in.
+
+199
+00:24:37,376 --> 00:24:42,720
+And then we have arrived at the classification, and
+
+200
+00:24:43,008 --> 00:24:49,152
+Most research libraries including KB use DDK nowadays.
+
+201
+00:24:50,688 --> 00:24:55,552
+While most public libraries are still using SAB.
+
+202
+00:24:55,808 --> 00:25:04.056
+Each library fills in the classification system they use.
+
+203
+00:25:04,256 --> 00:25:09,376
+So we at KB fill in DDK. But does not fill in any sab.
+
+204
+00:25:09,376 --> 00:25:15,520
+If there is any library using SAB, they fill in SAB but not DDK.
+
+205
+00:25:17,312 --> 00:25:20,128
+Or if they have any other classification system.
+
+206
+00:25:21,920 --> 00:25:30,651
+The code we will fill in here is this one.
+
+207
+00:25:32,928 --> 00:25:44,627
+Since this is not a course in classification, I do not go into the classification so much, but I just fill in this one.
+
+208
+00:25:47,776 --> 00:25:48,800
+That's how.
+
+209
+00:25:50,592 --> 00:25:55.968
+And this code means murder - geographical aspect - Sweden.
+
+210
+00:25:58,528 --> 00:26:06,185
+But I can also do the same on SAB. For the sake of pedagogy.
+
+211
+00:26:07,488 --> 00:26:19,224
+And then we use SAB, ie classification systems for Swedish libraries, and here we fill in OR-C, which is about the equivalent.
+
+212
+00:26:19,385 --> 00:26:22,080
+This means legal cases - Sweden only.
+
+213
+00:26:22,848 --> 00:26:24,896
+Then we have filled in classification here.
+
+214
+00:26:26,432 --> 00:26:33,316
+And then comes the next field which is subject.
+
+215
+00:26:33,856 --> 00:26:39,488
+KB recommends libraries that they should use controlled subject words.
+
+216
+00:26:40,256 --> 00:26:47,400
+And we at KB use Swedish subject words.
+
+217
+00:26:48,448 --> 00:27:01.014
+So then we will add some relevant subject words to this post and the subject words we have chosen are murder, criminal cases and Sweden.
+
+218
+00:27:01,760 --> 00:27:08.506
+We click on the plus here and enter murder.
+
+219
+00:27:10,720 --> 00:27:16,992
+And now there are several different subject word systems here.
+
+220
+00:27:17,376 --> 00:27:23,520
+You will get two murders here and it is Swedish subject words that we want.
+
+221
+00:27:23,776 --> 00:27:27,163
+It can be a little difficult to see sometimes.
+
+222
+00:27:27,872 --> 00:27:32,992
+Here you can see e.g. That there are children there, and here it says SAO there.
+
+223
+00:27:34,784 --> 00:27:37,856
+If I want, I can limit myself too.
+
+224
+00:27:38,368 --> 00:27:41,440
+For example. Subject word - general word word.
+
+225
+00:27:42,464 --> 00:27:45,024
+But then I still get these words of children too.
+
+226
+00:27:46,560 --> 00:27:48.608
+You have to be a little observant here.
+
+227
+00:27:49,120 --> 00:27:54,229
+And I then choose murder, the Sao term.
+
+228
+00:27:55,520 --> 00:28:00,683
+And then I also want legal cases and Sweden here.
+
+229
+00:28:00,896 --> 00:28:03,456
+No sorry, crime cases and Sweden it was.
+
+230
+00:28:04,992 --> 00:28:17,244
+And when I'm already here in the box on the right, I don't have to get out of it but can continue to put on.
+
+231
+00:28:17,244 --> 00:28:21,376
+So I remove murder and enter crime cases here.
+
+232
+00:28:23,424 --> 00:28:24,192
+That's how.
+
+233
+00:28:24,448 --> 00:28:31,017
+And then I see here, say, then I plus on here I get it there ..
+
+234
+00:28:31,616 --> 00:28:35,712
+But then we want to add that there is murder and crime cases in Sweden.
+
+235
+00:28:38,016 --> 00:28:42,890
+I am looking for Sweden here and I get Sweden first.
+
+236
+00:28:45,952 --> 00:28:54,981
+If you have got a lot of strange hits, you can go here and choose geographical subject words.
+
+237
+00:28:56,192 --> 00:29:08.096
+And now not all geographical subject words are in the base so sometimes you have to put it in without it being linked.
+
+238
+00:29:08,736 --> 00:29:14,112
+So, but at least we choose Sweden that came up first here.
+
+239
+00:29:14,368 --> 00:29:16,160
+That's how.
+
+240
+00:29:16,928 --> 00:29:22,284
+It was the last here at the instance of works.
+
+241
+00:29:22,560 --> 00:29:29,540
+The next field is content type text and you just leave it there.
+
+242
+00:29:29,984 --> 00:29:35,096
+And this is also such a note that you do not fill in. In this case.
+
+243
+00:29:36,896 --> 00:29:44,992
+Then we can move on to the last part of this item and it is admin metadata.
+
+244
+00:29:47,648 --> 00:29:51,212
+And then I click there and get these fields to fill in.
+
+245
+00:29:52,000 --> 00:30:06,000
+So, the first .. If you are a library library and catalog at the library level that is stated there, you never really have to go into admin metadata.
+
+246
+00:30:06,000 --> 00:30:09.673
+But I will go through these fields anyway so you know what it is.
+
+247
+00:30:10,403 --> 00:30:27,435
+The first field to come here is bibliography and here you enter a bibliographo if it is relevant to the book.
+
+248
+00:30:28,608 --> 00:30:44,506
+Various bibliographies found in Libris are e.g. NB is understood, and Samb - Swedish Sami bibliography. If this had had any Sami connection in any way
+
+249
+00:30:44,506 --> 00:30:50,314
+Had you been able to put this in. Or it really does the Sami bibliography.
+
+250
+00:30:51,136 --> 00:31:01,744
+For ordinary libraries, they do not have to care about this bibliology here, unless they have any bibliography that they maintain.
+
+251
+00:31:03,424 --> 00:31:14,469
+Then the next. Description level, and here is the library level. It is the most common level you use.
+
+252
+00:31:15,200 --> 00:31:22,939
+Possibly you could use the minimum level as well, but then you put in very rudimentary and it does almost no libraries
+
+253
+00:31:22,939 --> 00:31:26,208
+So most libraries probably always settle at library level.
+
+254
+00:31:26,208 --> 00:31:30,560
+So if you are uncertain, just use the library level and don't think much about it.
+
+255
+00:31:32,352 --> 00:31:35,936
+Post status is created automatically.
+
+256
+00:31:37,472 --> 00:31:39,264
+So you don't touch it.
+
+257
+00:31:39,776 --> 00:31:45,450
+It will say that this item is new when saving it for the first time.
+
+258
+00:31:45,664 --> 00:31:51,759
+But if someone were to go into the mail and do something, it will say it is upgraded.
+
+259
+00:31:52,832 --> 00:31:56,928
+Or it will say that it is "corrected or revised". So is the text.
+
+260
+00:31:57,952 --> 00:32:02.048
+But it is set automatically. It's not something you have to care about.
+
+261
+00:32:03,328 --> 00:32:05,120
+Then so created by.
+
+262
+00:32:05,376 --> 00:32:14,232
+It is thus the library that has created the post. Here you can see that it says S. So it is we at KB who have created this post.
+
+263
+00:32:15,104 --> 00:32:18,176
+And you log in to your logins.
+
+264
+00:32:19,712 --> 00:32:24,320
+So you don't move either. I don't think it can touch it either.
+
+265
+00:32:25,088 --> 00:32:28,160
+And then we come to cataloging rules.
+
+266
+00:32:29,184 --> 00:32:32,256
+According to RDA, we are now cataloging.
+
+267
+00:32:32,512 --> 00:32:40,148
+And then it should be like this. In cataloging rules, you choose Marc/ISBD.
+
+268
+00:32:40,448 --> 00:32:54,544
+We use ISBD characters if needed, or they come automatically when converting to Marc and sometimes you have to insert ISBD characters as well.
+
+269
+00:32:54,784 --> 00:32:58.880
+On this book we cataloged now we have not had to.
+
+270
+00:32:59,648 --> 00:33:03.488
+And then we have cataloging language.
+
+271
+00:33:03,744 --> 00:33:12,722
+And it is Swedish here and it should always be Swedish if we primarily catalog.
+
+272
+00:33:12,960 --> 00:33:15,008
+And it is also automatically set then.
+
+273
+00:33:15,264 --> 00:33:26,659
+So you don't move either. One should not mix the cataloging language with the language on which the book is written because it is already stated in the instance of works.
+
+274
+00:33:26,659 --> 00:33:32,672
+And the last one here, cataloging body. Here is the Marc/Cooperative Cataloging Program
+
+275
+00:33:33,184 --> 00:33:42,263
+And this one will be converted when saving the post, into Libris library/cooperative cataloging program.
+
+276
+00:33:42,656 --> 00:33:50,237
+When you produce this template, very much stands in English but it is then converted when you save the mail.
+
+277
+00:33:51,616 --> 00:33:55.712
+Now we were actually done with this post.
+
+278
+00:33:55,968 --> 00:34:04,145
+The last thing you do when you have to save it is that you click on this tool at the far end here and then you click on "Create mail".
+
+279
+00:34:04,416 --> 00:34:07,232
+This green button with a goat.
+
+280
+00:34:07,744 --> 00:34:10,560
+And we can do that here so we can see what happens.
+
+281
+00:34:12,352 --> 00:34:14,144
+That's how
+
+282
+00:34:15,168 --> 00:34:23,369
+And then you have to put on stocks later, but it is another course where we teach to put on stocks.
+
+283
+00:34:23,616 --> 00:34:34,056
+So now I have shown you how to catalog a book in original language. Primary catalogization.

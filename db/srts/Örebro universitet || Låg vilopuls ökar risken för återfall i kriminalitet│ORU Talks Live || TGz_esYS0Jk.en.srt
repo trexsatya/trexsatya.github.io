@@ -1,0 +1,1459 @@
+1
+00:05:18,895 --> 00:05:23,522
+Hello everyone and welcome to this section of Oru Talks -
+
+2
+00:05:23,555 --> 00:05:25,608
+Here at ... from Örebro University.
+
+3
+00:05:25,622 --> 00:05:28,715
+My name is Anna-Karin and I have ...
+
+4
+00:05:28,969 --> 00:05:32,130
+... today with me Sofi Oskarsson. Welcome Sofi.
+
+5
+00:05:32,155 --> 00:05:33,663
+Thanks! - How's it going?
+
+6
+00:05:33,688 --> 00:05:35.575
+It is good. - Who are you?
+
+7
+00:05:35,582 --> 00:05:38,082
+Who am I? Sofi Oskarsson as I said.
+
+8
+00:05:38,095 --> 00:05:41,415
+I am a doctoral student here at Örebro University I -
+
+9
+00:05:41,435 --> 00:05:44,755
+Criminology, although I have been in psychology in the past -
+
+10
+00:05:44,762 --> 00:05:48.862
+Then I am on Wednesday's doctoral student in criminology. It's great fun.
+
+11
+00:05:48,869 --> 00:05:51,102
+Fun! Congratulations on it. - Thanks!
+
+12
+00:05:51,127 --> 00:05:54.028
+Before we start, we have to talk a little about that -
+
+13
+00:05:54,035 --> 00:05:57,335
+This is not your first live broadcast this week?
+
+14
+00:05:57,349 --> 00:05:59,349
+No, that's right.
+
+15
+00:05:59,620 --> 00:06:01.902
+Without? - My other.
+
+16
+00:06:01,927 --> 00:06:06,760
+Which one was the first? - Yesterday I was on TV4 News Morning -
+
+17
+00:06:06,767 --> 00:06:09.273
+And got to talk a little about my research, -
+
+18
+00:06:09,294 --> 00:06:11,860
+Which was great fun. - Yes I understand that. Exciting.
+
+19
+00:06:11,867 --> 00:06:14,933
+Of course, I also saw it and I think that in TV contexts -
+
+20
+00:06:14,940 --> 00:06:18,080
+so is four minutes for quite some time, but when to talk about -
+
+21
+00:06:18,087 --> 00:06:22,387
+This type of research so it felt like a short while, -
+
+22
+00:06:22,414 --> 00:06:24,627
+Which also felt great that we had this today -
+
+23
+00:06:24,634 --> 00:06:28,260
+Where we talk a little more about your research.
+
+24
+00:06:28,267 --> 00:06:31,788
+Yes exactly. - Tell us about your study that you have.
+
+25
+00:06:31,813 --> 00:06:35,986
+Low resting heart rate and the risk of relapse in crime.
+
+26
+00:06:35,993 --> 00:06:42,970
+Yes ... I published an article earlier this year -
+
+27
+00:06:43,199 --> 00:06:46,139
+which is about low resting heart rate increasing the risk -
+
+28
+00:06:46,164 --> 00:06:48,951
+For relapse in crime, just as you mentioned.
+
+29
+00:06:49,186 --> 00:06:53,245
+And this in itself, low resting heart rate, ie the session between low resting hearts -
+
+30
+00:06:53,252 --> 00:06:56,932
+And crime is nothing new, -
+
+31
+00:06:56,952 --> 00:07:00.019
+Without it, we have known for a long time for many years.
+
+32
+00:07:00,412 --> 00:07:04,954
+But it's not quite as much studied at just -
+
+33
+00:07:04,979 --> 00:07:07,379
+Low resting heart rate and relapse in crime.
+
+34
+00:07:07,846 --> 00:07:10,879
+So I felt this is probably the next step to -
+
+35
+00:07:10,892 --> 00:07:14,645
+Know a little more about resting heart rate in relation to kimiminality -
+
+36
+00:07:14,659 --> 00:07:17,065
+And how we can think about this.
+
+37
+00:07:17,072 --> 00:07:19,219
+Just that, it's a register study. - Yes exactly.
+
+38
+00:07:19,226 --> 00:07:21,499
+Yes, and how does a register study work?
+
+39
+00:07:21,506 --> 00:07:24.545
+A register study works like ...
+
+40
+00:07:24,592 --> 00:07:27,352
+We have many different registers in Sweden,
+
+41
+00:07:27,372 --> 00:07:29,759
+Among other things in Sweden, but there are also registers in -
+
+42
+00:07:29,766 --> 00:07:34,399
+Many other Nordic countries, which is a fantastic asset ...
+
+43
+00:07:34,426 --> 00:07:36,718
+... for research context -
+
+44
+00:07:36,819 --> 00:07:39,432
+And above all, epidemiological studies.
+
+45
+00:07:40,092 --> 00:07:43,865
+But in my case I have looked at the pattern register, -
+
+46
+00:07:43,899 --> 00:07:46,779
+which contains those that have patterned.
+
+47
+00:07:47,699 --> 00:07:50,465
+And during the pattern you measure, among other things, resting hearts -
+
+48
+00:07:50,472 --> 00:07:53.705
+And blood pressure and ... lots of different things.
+
+49
+00:07:53,719 --> 00:07:56,232
+But resting heart rate is one thing you measure there.
+
+50
+00:07:56,419 --> 00:07:58,732
+And by linking it to the criminal record -
+
+51
+00:07:58,739 --> 00:08:02,552
+So we can look at resting heart rate in relation to crime.
+
+52
+00:08:02,559 --> 00:08:05,779
+Right. How many have you looked at?
+
+53
+00:08:05,792 --> 00:08:08,259
+How big is the ground?
+
+54
+00:08:08,466 --> 00:08:11,852
+We look at all men who have been convicted of at least one crime.
+
+55
+00:08:12,112 --> 00:08:16,459
+That was the starting point. And which of those who patterned -
+
+56
+00:08:16,472 --> 00:08:20,599
+And who have registered the rest of rest in the pattern register.
+
+57
+00:08:20,846 --> 00:08:24,525
+And a little over 400,000 men are included in this study.
+
+58
+00:08:24,992 --> 00:08:27,505
+There are very many. - There are very many.
+
+59
+00:08:27,519 --> 00:08:30.305
+And what is low resting heart rate?
+
+60
+00:08:30,312 --> 00:08:32,659
+What do you define as a low resting heart rate?
+
+61
+00:08:32,672 --> 00:08:34,779
+Yes, then ...
+
+62
+00:08:34,786 --> 00:08:36,799
+As you have done before in register studies -
+
+63
+00:08:36,806 --> 00:08:39.305
+When you look at resting heart rate is that you let data control -
+
+64
+00:08:39,312 --> 00:08:41,859
+With how to divide into categories.
+
+65
+00:08:41,872 --> 00:08:44,972
+But as it has fallen out, we look at -
+
+66
+00:08:44,997 --> 00:08:47.012
+Those who have the lowest resting heart rate and then you are somewhere -
+
+67
+00:08:47,019 --> 00:08:49,019
+between 35 and 60 beats per minute.
+
+68
+00:08:49,559 --> 00:08:51,932
+And then compared to those who have high resting hearts -
+
+69
+00:08:51,939 --> 00:08:56,212
+And then you are up to 85 to 140-145 beats per minute.
+
+70
+00:08:56,226 --> 00:09:00,779
+Right. Then I also think spontaneously that you have taken into account -
+
+71
+00:09:00,786 --> 00:09:03.019
+These well -trained people. I heard that ...
+
+72
+00:09:03,032 --> 00:09:06.052
+On TV4 yesterday, they referred to Gunde Svan. He's - after all -
+
+73
+00:09:06,312 --> 00:09:08,739
+Known for its low resting pulse, but ...
+
+74
+00:09:08,759 --> 00:09:10,972
+... These are factors that you have counted on then?
+
+75
+00:09:10,986 --> 00:09:14,219
+Yes exactly. Because we know that affects, just as you say.
+
+76
+00:09:14,232 --> 00:09:19,099
+The same thing as length and weight can also affect what we have for resting heart rate.
+
+77
+00:09:19,492 --> 00:09:24,432
+So you put it into the analysis and adjust for.
+
+78
+00:09:25,607 --> 00:09:28,094
+So we have thought about that. - Right. Now you said "we", -
+
+79
+00:09:28,107 --> 00:09:31,000
+who are we"? Because it is not you who did the study yourself?
+
+80
+00:09:31,007 --> 00:09:34,427
+No, I have a collaboration with many other researchers, -
+
+81
+00:09:34,441 --> 00:09:37,280
+which can be found here at Örebro University, my supervisors.
+
+82
+00:09:37,661 --> 00:09:41,454
+And also at the Karolinska Institute in Stockholm, but also in the USA -
+
+83
+00:09:41,461 --> 00:09:45,747
+in Florida and Upenn. - Right.
+
+84
+00:09:46,061 --> 00:09:49,087
+It is exciting that it is an international cooperation as well.
+
+85
+00:09:49,101 --> 00:09:53,040
+What ... is it as big ...
+
+86
+00:09:53,801 --> 00:09:58,360
+... Impact even in the US and in these other places where you have ...
+
+87
+00:09:58,414 --> 00:10:00.987
+... where you have your partners?
+
+88
+00:10:00,994 --> 00:10:04,314
+It was actually a colleague from Upenn -
+
+89
+00:10:04,321 --> 00:10:08,580
+that encouraged me to talk about this and make a press release, -
+
+90
+00:10:08,587 --> 00:10:11,287
+that "these are interesting research results", -
+
+91
+00:10:11,301 --> 00:10:15,540
+Because they had been on him to make a press release.
+
+92
+00:10:15,547 --> 00:10:18,414
+So it has been noticed there too.
+
+93
+00:10:18,421 --> 00:10:22,627
+To what extent I do not know. - No, exactly.
+
+94
+00:10:22,847 --> 00:10:28,460
+But you ... before this talk we talked before a little neighbor -
+
+95
+00:10:28,467 --> 00:10:30,907
+And then we talked about something called physiopsy ...
+
+96
+00:10:30,914 --> 00:10:34,407
+... psychophysiological responses! It is a whole new concept for me.
+
+97
+00:10:34,414 --> 00:10:36,540
+Can you tell us a little what it is for something, -
+
+98
+00:10:36,547 --> 00:10:38,867
+Because I think we need to clarify that for our viewers -
+
+99
+00:10:38,881 --> 00:10:42,067
+before we go into the connection. - Exactly.
+
+100
+00:10:42,327 --> 00:10:44,907
+Yes, but psychophysiology ...
+
+101
+00:10:45,081 --> 00:10:48,514
+... is such a word that you easily stumble on when to pronounce.
+
+102
+00:10:48,934 --> 00:10:52,874
+Psychophysiology can be said to be the interaction between -
+
+103
+00:10:52,881 --> 00:10:56,374
+What happens around us, our brain and our body.
+
+104
+00:10:56,634 --> 00:10:59,820
+I usually exemplify this with that -
+
+105
+00:10:59,827 --> 00:11:03,376
+If anyone loses anything in the floor that we are not prepared for, -
+
+106
+00:11:03,401 --> 00:11:05.747
+And it melts loudly, then comes our brain -
+
+107
+00:11:05,754 --> 00:11:09.827
+automatically orientate us against the sound. We will register the event -
+
+108
+00:11:09,881 --> 00:11:13,094
+And then we will also be affected in our body by this.
+
+109
+00:11:13,307 --> 00:11:17,774
+We are afraid that there is something we have not prepared for.
+
+110
+00:11:18,167 --> 00:11:21,967
+So we might start to sweat a little in our hands. The pulse might go up a bit -
+
+111
+00:11:21,974 --> 00:11:27,127
+And we react physiologically to what is happening outside us.
+
+112
+00:11:27,152 --> 00:11:30,474
+- Right. It can be said to be psychophysiology.
+
+113
+00:11:30,627 --> 00:11:33,794
+So the joint between the brain, body and what is happening around us.
+
+114
+00:11:33,807 --> 00:11:37,247
+Right. And how is this related to your study?
+
+115
+00:11:37,467 --> 00:11:42,580
+Vilacule is a psychophysiological ... a psychophysiological measure.
+
+116
+00:11:42,954 --> 00:11:45,927
+We think that resting heart rate ...
+
+117
+00:11:46,321 --> 00:11:49,160
+When we talk about resting hearts, you might think of that -
+
+118
+00:11:49,185 --> 00:11:51,594
+“I lie and rest, we measure the pulse.
+
+119
+00:11:51,967 --> 00:11:55,220
+I am calm and at home in my sofa. ” -
+
+120
+00:11:55,234 --> 00:11:57,787
+Or "I lie in bed and just take it easy".
+
+121
+00:11:58,054 --> 00:12:00.894
+So it is not really with the resting heart rate -
+
+122
+00:12:00,901 --> 00:12:03,680
+As we think about it in a research context, -
+
+123
+00:12:03,687 --> 00:12:08,074
+But then we think about it as a situation there ...
+
+124
+00:12:09,534 --> 00:12:11,927
+... the person who gets his heart rate measured -
+
+125
+00:12:11,934 --> 00:12:16,534
+is perhaps in a hospital environment or in a pattern environment -
+
+126
+00:12:16,541 --> 00:12:18,940
+Or in a lab environment, or wherever you are.
+
+127
+00:12:18,947 --> 00:12:23,900
+An environment that is not at home. Someone else measures the pulse on one.
+
+128
+00:12:23,907 --> 00:12:28,434
+So it's a pretty strange situation in many ways.
+
+129
+00:12:28,601 --> 00:12:31,427
+So that's why we think that then you should react a little -
+
+130
+00:12:31,434 --> 00:12:34,700
+On this stimuli that is around us, that we become ...
+
+131
+00:12:34,721 --> 00:12:37,800
+... maybe nervous or that we think it's unpleasant -
+
+132
+00:12:37,807 --> 00:12:43,220
+Or yes, a little stressed you are theoretically in such a situation.
+
+133
+00:12:43,827 --> 00:12:46,640
+So that is why it is then thought that the people who have low resting hearts -
+
+134
+00:12:46,665 --> 00:12:51.605
+Despite such a context, the ability to keep the nerves in check.
+
+135
+00:12:51,612 --> 00:12:54,985
+You are not quite as influenced by what is happening around one.
+
+136
+00:12:55,165 --> 00:12:58.831
+And there would then be a connection between the low resting heart rate -
+
+137
+00:12:58,838 --> 00:13:02.451
+And the risk of falling into crime? - Exactly.
+
+138
+00:13:02,458 --> 00:13:04,824
+What would that connection look like?
+
+139
+00:13:05,405 --> 00:13:09.645
+Yes, as I said we have studied ... or "we" ...
+
+140
+00:13:09,658 --> 00:13:15,098
+Other researchers have studied low resting heart rate in relation to crime for a long time.
+
+141
+00:13:15,125 --> 00:13:18,131
+But usually you do it in a controlled lab environment, -
+
+142
+00:13:18,138 --> 00:13:20,738
+which makes it a lot of time -
+
+143
+00:13:21,545 --> 00:13:24.805
+And so that is behind such a study, so there are quite a few people -
+
+144
+00:13:24,818 --> 00:13:26,818
+which participates in such a study.
+
+145
+00:13:27,045 --> 00:13:29,871
+So the first study that was published -
+
+146
+00:13:29,878 --> 00:13:33,558
+on a much larger selection in the pattern register.
+
+147
+00:13:33,565 --> 00:13:38,458
+It was published in 2015 and was the first large -scale study to be ...
+
+148
+00:13:38,465 --> 00:13:40,898
+... studied this association.
+
+149
+00:13:41,145 --> 00:13:44,091
+Then you saw that low resting heart rate actually increases the risk of crime -
+
+150
+00:13:44,098 --> 00:13:46,378
+And now also relapse for crime.
+
+151
+00:13:46,625 --> 00:13:49,185
+And then you may wonder why it is so.
+
+152
+00:13:49,605 --> 00:13:52,138
+Yes, that was my next question! Why is it like that?
+
+153
+00:13:52,158 --> 00:13:54,985
+Why is it like that? A small background was needed ...
+
+154
+00:13:54,992 --> 00:13:57.945
+But it is good. - Yes, - -
+
+155
+00:13:57,958 --> 00:14:01.958
+Although it is so well studied, we still know very little about -
+
+156
+00:14:01,965 --> 00:14:05.571
+The mechanisms behind this association.
+
+157
+00:14:05,992 --> 00:14:10,145
+But there are two main tracks, theoretical main tracks, -
+
+158
+00:14:10,152 --> 00:14:13,025
+As one usually talks about when one -
+
+159
+00:14:13,032 --> 00:14:16,385
+Talking about precisely the association between low resting heart rate and crime.
+
+160
+00:14:16,392 --> 00:14:20,418
+It is either a theory that is about fear -
+
+161
+00:14:20,858 --> 00:14:24,278
+And that you then ... So you have a low resting heart rate -
+
+162
+00:14:24,292 --> 00:14:26,845
+So maybe you are not as afraid of -
+
+163
+00:14:27,072 --> 00:14:31.305
+The consequences that one's actions can have. One is not really afraid, -
+
+164
+00:14:31,358 --> 00:14:34,505
+"If I do this then maybe it will be like this".
+
+165
+00:14:34,512 --> 00:14:36,911
+You don't have it ...
+
+166
+00:14:36,918 --> 00:14:41,245
+You are not afraid of it, but you think it will solve enough.
+
+167
+00:14:41,985 --> 00:14:44,405
+It's been a way to look at this.
+
+168
+00:14:44,430 --> 00:14:49,238
+The second way that one has thought about is about that -
+
+169
+00:14:49,243 --> 00:14:54,283
+If you have low resting heart rate and it is regulated by the autonomic nervous system -
+
+170
+00:14:54,290 --> 00:14:57,050
+And there is something that happens automatically in our body.
+
+171
+00:14:57,063 --> 00:14:59,916
+We don't have to think about us ...
+
+172
+00:15:00,143 --> 00:15:03,683
+... have a pulse, but it is there. The body takes care of it itself.
+
+173
+00:15:04,323 --> 00:15:07,163
+If you then have a low resting heart then you may have -
+
+174
+00:15:07,170 --> 00:15:10,883
+A little imbalance in the body, that you feel ...
+
+175
+00:15:10,890 --> 00:15:12,956
+I don't know if "discomfort" is the correct word -
+
+176
+00:15:13,137 --> 00:15:16,436
+But there is no really good equivalent in Swedish that -
+
+177
+00:15:16,443 --> 00:15:18,443
+Talk about it in a different way.
+
+178
+00:15:19,103 --> 00:15:21,116
+You feel that you have some discomfort in the body, -
+
+179
+00:15:21,123 --> 00:15:23,450
+You are a little restless maybe.
+
+180
+00:15:23,743 --> 00:15:25,850
+Not always, but in some situations, -
+
+181
+00:15:25,863 --> 00:15:29,936
+And you feel that you need to look out and search for some form of kick -
+
+182
+00:15:30,237 --> 00:15:33,956
+So that you get stimulated and get this one ...
+
+183
+00:15:34,403 --> 00:15:38,270
+... level in the body to a more optimal level -
+
+184
+00:15:38,277 --> 00:15:41,290
+Where you feel that "now it feels good".
+
+185
+00:15:42,283 --> 00:15:44,316
+So it's been another way to look at it.
+
+186
+00:15:44,330 --> 00:15:47,410
+One is either scared ... or you are not afraid -
+
+187
+00:15:47,417 --> 00:15:49,550
+The consequences rather, you are not afraid.
+
+188
+00:15:49,557 --> 00:15:53,330
+Or you seek stimulation through kicks ...
+
+189
+00:15:53,343 --> 00:15:58,810
+... where crime is one thing you think you can do.
+
+190
+00:15:59,243 --> 00:16:03,243
+While we are still in that with looking for a kick in some way ...
+
+191
+00:16:03,257 --> 00:16:05.883
+Because one had also seen that low resting hearts -
+
+192
+00:16:05,890 --> 00:16:11,896
+is common in other types of professions or in other persons that are not -
+
+193
+00:16:12,820 --> 00:16:17,153
+criminals, without any other risk ... - yes, but exactly, -
+
+194
+00:16:17,400 --> 00:16:21,380
+And it may mean that this theory that you are looking for stimulation and kicks -
+
+195
+00:16:21,394 --> 00:16:26,133
+Feels a little more ... maybe it's wherever we should ...
+
+196
+00:16:26,140 --> 00:16:29,940
+In the circles we should think, just because ...
+
+197
+00:16:30,607 --> 00:16:33,100
+I have seen that one has written about -
+
+198
+00:16:33,114 --> 00:16:36,067
+low resting heart rate in people who work as bomb dear, -
+
+199
+00:16:36,080 --> 00:16:40,707
+A very specific occupation. But there may also require that you have -
+
+200
+00:16:40,714 --> 00:16:43,493
+the ability to keep your nerves under control.
+
+201
+00:16:43,500 --> 00:16:46,680
+One cannot go into a situation where one should disarm a bomb -
+
+202
+00:16:46,687 --> 00:16:52,360
+and think about the consequences and fear them that way, -
+
+203
+00:16:52,400 --> 00:16:55,180
+Without you having to calm down.
+
+204
+00:16:55,294 --> 00:16:58,060
+The same thing as ...
+
+205
+00:16:58,234 --> 00:17:01.047
+... people jumping parachute or bungy jump -
+
+206
+00:17:01.060 --> 00:17:03,787
+or is doing extreme sports ...
+
+207
+00:17:03,820 --> 00:17:08,767
+... also has a low resting heart rate. Not all of course, but it occurs.
+
+208
+00:17:08,774 --> 00:17:12.560
+Exactly, and then you have taught me that it is called prosocial behavior.
+
+209
+00:17:12,567 --> 00:17:16,200
+Right? When you do something good about it, -
+
+210
+00:17:16,207 --> 00:17:19,960
+Instead of anti -social behavior such as crime would be in that case.
+
+211
+00:17:19,980 --> 00:17:24,580
+Exactly, I think it could be.
+
+212
+00:17:25,420 --> 00:17:28,027
+But that's how I've speculated on this.
+
+213
+00:17:28,447 --> 00:17:32,347
+And prosocial is, as you say, you might be involved in -
+
+214
+00:17:32,354 --> 00:17:35,287
+activities that are not harmful to anyone else, -
+
+215
+00:17:35,294 --> 00:17:40,727
+Without looking for kicks in a more socially accepted manner, -
+
+216
+00:17:40,940 --> 00:17:44,147
+While anti -social behavior is more about crime -
+
+217
+00:17:44,154 --> 00:17:46,614
+and to make bus.
+
+218
+00:17:46,621 --> 00:17:48,874
+Could one imagine sitting in a live broadcast -
+
+219
+00:17:48,899 --> 00:17:51,572
+Is a prosocial behavior to seek a kick?
+
+220
+00:17:51,852 --> 00:17:55,638
+Yes, but maybe. - Based on my own feeling ...
+
+221
+00:17:56,406 --> 00:18:00,232
+It may sound a bit simplified to say that low resting hearts have a connection -
+
+222
+00:18:00,239 --> 00:18:03,992
+with relapse in crime. There must be other factors as well -
+
+223
+00:18:04,006 --> 00:18:07,485
+which records for that recidivism risk.
+
+224
+00:18:07,759 --> 00:18:11,125
+How do you look at it and how do the thoughts go there?
+
+225
+00:18:11,139 --> 00:18:15,018
+Yes, but it is very important to bring in -
+
+226
+00:18:15,039 --> 00:18:18,745
+The thoughts and reasoning about this, that although we see that -
+
+227
+00:18:18,770 --> 00:18:21,063
+It is an increased risk if you have a low resting heart rate, -
+
+228
+00:18:21,070 --> 00:18:24,750
+So it is not the only thing, so we have not discovered "The Holy Grail", - -
+
+229
+00:18:24,757 --> 00:18:28,510
+Without you need to look at other things too.
+
+230
+00:18:28,523 --> 00:18:30,650
+But as I have reasoned about this -
+
+231
+00:18:30,657 --> 00:18:34,170
+Is that we know ...
+
+232
+00:18:34,177 --> 00:18:39,343
+We can assess the relapse of crime with what we have now, -
+
+233
+00:18:39,357 --> 00:18:41,196
+thus with the risk assessment instruments available -
+
+234
+00:18:41,221 --> 00:18:44,536
+and the risk factors we know from previous research -
+
+235
+00:18:44,550 --> 00:18:46,550
+Increases the risk of relapse in crime.
+
+236
+00:18:46,763 --> 00:18:50,043
+But what can we add as ...
+
+237
+00:18:50,397 --> 00:18:54,123
+... makes us better at risk assessing?
+
+238
+00:18:54,250 --> 00:18:56.803
+Can we bring in another type of measure, -
+
+239
+00:18:56,817 --> 00:18:59,489
+some other type of risk factor that can add something -
+
+240
+00:18:59,497 --> 00:19:04,736
+Beyond what we already know? That has been my thought about this.
+
+241
+00:19:04,843 --> 00:19:07,356
+And so I think, it will too ...
+
+242
+00:19:07,370 --> 00:19:12,070
+Thus, the care of those who -
+
+243
+00:19:12,077 --> 00:19:16,330
+Sitting detained today. Could it be a part of -
+
+244
+00:19:16,343 --> 00:19:18,543
+The preventive care for them?
+
+245
+00:19:18,970 --> 00:19:21,896
+Thus, long -term, yes, and had one asked some of -
+
+246
+00:19:21,921 --> 00:19:25,941
+My co -authors for this article they had said "yes, absolutely".
+
+247
+00:19:26,235 --> 00:19:29,735
+I ... I don't really know.
+
+248
+00:19:29,742 --> 00:19:33,668
+But it is not a completely foreign thought that we -
+
+249
+00:19:34,435 --> 00:19:39,468
+maybe eventually bring resting pulse as part of -
+
+250
+00:19:39,622 --> 00:19:41,668
+the assessment for relapse, -
+
+251
+00:19:41,675 --> 00:19:45,988
+Just because it is quite specific with low resting hearts, -
+
+252
+00:19:46,002 --> 00:19:51,341
+Too low resting heart rate is associated with antisocial behavior, -
+
+253
+00:19:51,708 --> 00:19:55,648
+While high resting heart rate is assisted with many other things.
+
+254
+00:19:55,655 --> 00:19:59,121
+So it is not as specific with high resting heart rate as it is with low resting heart rate.
+
+255
+00:19:59,242 --> 00:20:03,735
+Therefore, it becomes an appealing factor to include in the equation.
+
+256
+00:20:03,982 --> 00:20:06.648
+And it is also relatively easy to measure, -
+
+257
+00:20:06,962 --> 00:20:10,308
+It is not invasive in any way, but it is ...
+
+258
+00:20:10,315 --> 00:20:13,915
+One can count the pulse in a very simple way -
+
+259
+00:20:13,928 --> 00:20:16,928
+And it also makes it appealing.
+
+260
+00:20:18,209 --> 00:20:21,595
+Yes, just because then my next question also becomes: What do we do now?
+
+261
+00:20:21,602 --> 00:20:25,169
+What do you do now with this knowledge and with this one -
+
+262
+00:20:25,176 --> 00:20:28,842
+The discovery, so to speak? What is the next step in this?
+
+263
+00:20:28,876 --> 00:20:34,222
+Yes, the next step, what I am doing and do, that I am curious about ...
+
+264
+00:20:34,229 --> 00:20:37,522
+Now we know that this applies to men, -
+
+265
+00:20:37,529 --> 00:20:40,109
+And most studies have been predominantly on men -
+
+266
+00:20:40,116 --> 00:20:42,582
+Just because we know that men are over -represented in -
+
+267
+00:20:42,607 --> 00:20:45,315
+Crime statistics, we have a hard time coming out.
+
+268
+00:20:45,649 --> 00:20:49,389
+But there are also indications that low resting hearts -
+
+269
+00:20:49,414 --> 00:20:52,322
+Can also increase the risk of committing crimes in women.
+
+270
+00:20:52,502 --> 00:20:55,402
+So I really want to continue to investigate it -
+
+271
+00:20:55,742 --> 00:20:58,222
+and see if we see similar associations -
+
+272
+00:20:58,229 --> 00:21:01,542
+between resting and crime in women.
+
+273
+00:21:02,522 --> 00:21:04,675
+Or does it differ in any way?
+
+274
+00:21:04,682 --> 00:21:07.662
+But theoretically, it shouldn't, but ...
+
+275
+00:21:07,669 --> 00:21:11,762
+And what we know since previous research should look about the same.
+
+276
+00:21:12,922 --> 00:21:18,189
+But we also know that women have a higher resting heart rate on average -
+
+277
+00:21:18,196 --> 00:21:20,895
+than men have, and this is already seen ...
+
+278
+00:21:20,922 --> 00:21:22,815
+... when the kids are young. So at the age of three -
+
+279
+00:21:22,822 --> 00:21:25,869
+So you can see that girls have about six beats per minute, -
+
+280
+00:21:25,876 --> 00:21:28,255
+higher pulse than boys have.
+
+281
+00:21:28,816 --> 00:21:31,935
+And this has been a way to think about ...
+
+282
+00:21:32,056 --> 00:21:35,089
+Could it be one of the explanations for why men commit more crime -
+
+283
+00:21:35,096 --> 00:21:37,895
+than women because they have a lower resting heart rate?
+
+284
+00:21:38,929 --> 00:21:42,249
+I'll just say that, that you have to ask questions in the chat here -
+
+285
+00:21:42,262 --> 00:21:45,109
+To Sofi if you come on something during the way.
+
+286
+00:21:45,116 --> 00:21:47,529
+Now we have talked for about a quarter.
+
+287
+00:21:47,556 --> 00:21:50,909
+But I also think it is important to study such studies -
+
+288
+00:21:50,922 --> 00:21:54,455
+And this kind of research will benefit society in some way.
+
+289
+00:21:55,062 --> 00:21:58,795
+And this might be a huge question to one like you, -
+
+290
+00:21:58,802 --> 00:22:02.302
+But where do you see this taking us, say in 10 years, -
+
+291
+00:22:02,322 --> 00:22:06.409
+What have we done to this study and this type of research then?
+
+292
+00:22:06,675 --> 00:22:11,849
+Yes, so as I would describe psychophysiological research, -
+
+293
+00:22:12,042 --> 00:22:14,541
+So I would say that it is primarily basic research.
+
+294
+00:22:14,555 --> 00:22:16,635
+Basic research is ...
+
+295
+00:22:16,975 --> 00:22:19,461
+... a type of research where we ...
+
+296
+00:22:19,475 --> 00:22:23,721
+... maybe find out one of the building blocks as to why -
+
+297
+00:22:23,735 --> 00:22:25,728
+Some commit crimes and others do not, -
+
+298
+00:22:25,735 --> 00:22:28,855
+and maybe not primarily research results -
+
+299
+00:22:28,875 --> 00:22:33,808
+Who comes out in practice and does something fantastic upset there.
+
+300
+00:22:33,815 --> 00:22:37,108
+But basic research should also lead to other research -
+
+301
+00:22:37,115 --> 00:22:41,835
+that is more practically laid and who also answer questions -
+
+302
+00:22:41,848 --> 00:22:46,421
+That gives us guidance on how we can work with this in practice.
+
+303
+00:22:46,522 --> 00:22:49,288
+So a hope is, of course, that we know more -
+
+304
+00:22:49,302 --> 00:22:52,135
+About low resting heart rate and crime.
+
+305
+00:22:52,142 --> 00:22:56,095
+What is it in what we can use in practice?
+
+306
+00:22:56,108 --> 00:22:58,648
+Is there anything we can use in practice?
+
+307
+00:22:58,662 --> 00:23:03,208
+Does it make us better at risk assessing relapses in crime?
+
+308
+00:23:04,155 --> 00:23:10,501
+Just. We will see if we have received any questions in the chat. We have not received that.
+
+309
+00:23:13,543 --> 00:23:18,469
+If we move on ... We also talked about this with bio feedback.
+
+310
+00:23:18,856 --> 00:23:21,322
+If we get back to it, because we talked about too -
+
+311
+00:23:21,336 --> 00:23:24,129
+If you can train your resting heart rate ...
+
+312
+00:23:24,916 --> 00:23:27,509
+... and keep it in check.
+
+313
+00:23:27,849 --> 00:23:32,882
+When I have lectured on psychophysiology for students, I usually ...
+
+314
+00:23:32,916 --> 00:23:37,342
+To understand what is happening in a lab environment, -
+
+315
+00:23:37,349 --> 00:23:41,069
+So I usually talk about, and this is my supervisor who has taught me ...
+
+316
+00:23:41,083 --> 00:23:43,949
+One can talk about lie detector tests, because everyone knows what it is -
+
+317
+00:23:43,956 --> 00:23:46,342
+from American television series and movies.
+
+318
+00:23:46,649 --> 00:23:49,082
+So you can think about it that it is a bit so it works.
+
+319
+00:23:49,089 --> 00:23:53.302
+We measure hand sweat and pulse in situations there -
+
+320
+00:23:53,316 --> 00:23:56,968
+People are exposed to different things to see how they react.
+
+321
+00:23:57,916 --> 00:24:02.835
+And then you can, you have noticed, exercise.
+
+322
+00:24:02,849 --> 00:24:06,002
+Although this autonomous nervous system works independently -
+
+323
+00:24:06,009 --> 00:24:11,328
+and low resting heart rate is part of the autonomous nervous system, -
+
+324
+00:24:11,336 --> 00:24:15,182
+So you can still learn to control this a little neighbor.
+
+325
+00:24:15,436 --> 00:24:18,668
+And those in Navy Seals in the United States for example are very -
+
+326
+00:24:18,696 --> 00:24:22,615
+Hardly teased to be able to regulate their responses in the body.
+
+327
+00:24:23,689 --> 00:24:27.302
+And there is also a line of research that trades bio feedback -
+
+328
+00:24:27.309 --> 00:24:29.862
+which is also applied in practice in different ways, -
+
+329
+00:24:29,869 --> 00:24:35,342
+Where you can follow your responses to different stimuli in real time.
+
+330
+00:24:35,349 --> 00:24:39,449
+For example, if one has anxiety or phobias -
+
+331
+00:24:39,456 --> 00:24:45,055
+So maybe in a lab environment you will be exposed to what you are afraid of -
+
+332
+00:24:45,062 --> 00:24:48,949
+While seeing how to react in the body, -
+
+333
+00:24:48,956 --> 00:24:53,435
+and then by practicing handling the feeling and reaction in the body -
+
+334
+00:24:53,442 --> 00:24:57.062
+So you can learn to control this a little neighbor.
+
+335
+00:24:57,869 --> 00:25:01,149
+So it's definitely an appealing thought.
+
+336
+00:25:01,520 --> 00:25:05,786
+Could this be something that can be applied to resting heart rate and crime?
+
+337
+00:25:05,800 --> 00:25:08.892
+I don't know, but ... - But maybe you know in a few years.
+
+338
+00:25:08,906 --> 00:25:11,066
+In 10 years we may know a little more. - Yes, but exactly.
+
+339
+00:25:11,080 --> 00:25:14,112
+But if I'm sitting at home now watching this call -
+
+340
+00:25:14,533 --> 00:25:17,586
+And I have low resting hearts, I need to be afraid that I -
+
+341
+00:25:17,606 --> 00:25:20,152
+will commit any crimes, right?
+
+342
+00:25:20,486 --> 00:25:23,879
+No I do not think so.
+
+343
+00:25:24,866 --> 00:25:27,832
+This with the association between low pulse and crime -
+
+344
+00:25:27,860 --> 00:25:30,279
+Is at group level. And i usually see -
+
+345
+00:25:30,293 --> 00:25:32,866
+When I talk about this for students, that many are sneaking down -
+
+346
+00:25:32,873 --> 00:25:36,319
+And take the pulse of themselves while I talk.
+
+347
+00:25:36,686 --> 00:25:40,319
+But no, it's not at the individual level, but we see it at group level -
+
+348
+00:25:40,326 --> 00:25:43,079
+And of course, many have low resting hearts -
+
+349
+00:25:43,093 --> 00:25:45,159
+that will never commit crimes.
+
+350
+00:25:45,346 --> 00:25:48,392
+Maybe you are looking for some other type of kick, possibly, -
+
+351
+00:25:48,400 --> 00:25:52,112
+But it is not that one will commit crimes -
+
+352
+00:25:52,140 --> 00:25:54,759
+Just because you have a low resting heart rate. - No, just that.
+
+353
+00:25:55,133 --> 00:25:57,699
+Very important to mention. - Yes, but it is very important.
+
+354
+00:25:57,706 --> 00:26:00,386
+I think that, just as you say, you directly -
+
+355
+00:26:00,393 --> 00:26:04,499
+checks their own resting heart rate or pulse at this time.
+
+356
+00:26:05,292 --> 00:26:07.161
+Is there anything more that you want to add this -
+
+357
+00:26:07,186 --> 00:26:10,152
+As you think we have not touched on during this call, -
+
+358
+00:26:10,559 --> 00:26:13,959
+Which would like to tell us and our viewers?
+
+359
+00:26:14,113 --> 00:26:18,385
+So I could talk about this for a very long time, but ...
+
+360
+00:26:19,026 --> 00:26:22,960
+No, but I feel pretty satisfied. I think we have touched it -
+
+361
+00:26:22,985 --> 00:26:26,511
+which is essential and important to bring their from this ...
+
+362
+00:26:27,445 --> 00:26:29,291
+... I think. - Yes, what fun.
+
+363
+00:26:29.305 --> 00:26:31,903
+Big thanks for coming here today, Sofi.
+
+364
+00:26:31,928 --> 00:26:36,405
+And we will see you again in a new section of Oru Talks here in the future.
+
+365
+00:26:36,430 --> 00:26:38,430
+Have a good one!

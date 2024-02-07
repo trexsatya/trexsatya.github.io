@@ -1,0 +1,503 @@
+1
+00:00:07,940 --> 00:00:12,800
+In this movie we will take a tour of Libris cataloging tools.
+
+2
+00:00:13,040 --> 00:00:19,840
+We will go through the home page, the main menu, the tool menu and the structure in a description.
+
+3
+00:00:20,100 --> 00:00:24,860
+Libris cataloging is the name of the cataloging tool.
+
+4
+00:00:25,040 --> 00:00:28,880
+Libris cataloging is part of Libris XL
+
+5
+00:00:29,040 --> 00:00:35,200
+which is the name of Libri's new technical infrastructure and was launched in 2018.
+
+6
+00:00:35,660 --> 00:00:38,660
+Libris cataloging is a web tool.
+
+7
+00:00:38,900 --> 00:00:44,100
+It works in all browsers but has proven to work best in Google Chrome.
+
+8
+00:00:44,300 --> 00:00:49,300
+When learning Libris cataloging, use a test environment
+
+9
+00:00:49,480 --> 00:00:54,100
+And you see the address of the test environment in the address window.
+
+10
+00:00:54,520 --> 00:00:59,200
+The test environment contains a copy of the libris database.
+
+11
+00:00:59,460 --> 00:01:02,580
+Here you can freely practice cataloging.
+
+12
+00:01:02,780 --> 00:01:08,000
+What you save here will be cleared away at the next update of the test environment.
+
+13
+00:01:08,560 --> 00:01:13,660
+You will receive login information to the test environment at the basic course.
+
+14
+00:01:14,520 --> 00:01:20,420
+When you are logged in, you can see in the upper right corner which sigel you have active.
+
+15
+00:01:20,680 --> 00:01:24.560
+Sigel is a code designation for a library.
+
+16
+00:01:24,700 --> 00:01:29,800
+If you have access to multiple Sigler, you can change here if necessary.
+
+17
+00:01:32,320 --> 00:01:34,360
+We will look at the home page.
+
+18
+00:01:35,340 --> 00:01:42,340
+Here you will find links to news, introductory material and to Libris Supportforum.
+
+19
+00:01:42,600 --> 00:01:47,820
+You will find our instructional films found in a playlist on Youtube.
+
+20
+00:01:48,320 --> 00:01:51,360
+At the top of the page is a main menu.
+
+21
+00:01:51,520 --> 00:01:57,200
+Here are search that leads to search in libris and search in other sources.
+
+22
+00:01:57,620 --> 00:02:03,200
+It is important to seek carefully before creating something new so as not to create duplicates.
+
+23
+00:02:03,480 --> 00:02:06,780
+We will take a closer look at search in another movie.
+
+24
+00:02:07,040 --> 00:02:12,100
+The heading Create new leads to a page with templates for different material types.
+
+25
+00:02:12,600 --> 00:02:15,940
+Keep in mind that you very rarely need to create something new.
+
+26
+00:02:16,180 --> 00:02:22,940
+There is usually already an item or pre -information in Libris for what you should describe.
+
+27
+00:02:23,160 --> 00:02:26,160
+The next heading is catalog care.
+
+28
+00:02:26,420 --> 00:02:30,420
+Here you will find a feature for moving stocks between items.
+
+29
+00:02:31,020 --> 00:02:33,780
+Then we get helpful.
+
+30
+00:02:34,300 --> 00:02:38,660
+Through the helping heading you come to a page with help texts.
+
+31
+00:02:38,900 --> 00:02:43,480
+This page can be used in parallel with the cataloging tool.
+
+32
+00:02:43,760 --> 00:02:49,420
+Feel free to open it in a new tab and go to the help when you wonder about something.
+
+33
+00:02:51,440 --> 00:02:54,200
+We will look at the headlines in the help.
+
+34
+00:02:55,260 --> 00:03:00.980
+You will find, in the middle of the page, a list of links to further information.
+
+35
+00:03:01,200 --> 00:03:07.720
+Among other things, the important instructions for cataloging according to RDA, which are our catalog rules.
+
+36
+00:03:07,960 --> 00:03:15,600
+During the cataloging tool in the left menu there are some pages that explain how the tool works.
+
+37
+00:03:15,960 --> 00:03:21,760
+The page to use the tool contains many headings that you benefit from.
+
+38
+00:03:22,380 --> 00:03:27,860
+There is a list of shortcuts for PC and Mac.
+
+39
+00:03:28,420 --> 00:03:35,380
+Under general description there are help texts that are common to several types of materials.
+
+40
+00:03:35,660 --> 00:03:41.560
+Admin metadata is administrative metadata found in each entry.
+
+41
+00:03:41,760 --> 00:03:47,320
+The headings work and instance you recognize from previous films.
+
+42
+00:03:47,660 --> 00:03:56,880
+Under works you will find headings such as participation and function, genre/form, classification and subject.
+
+43
+00:03:57,120 --> 00:04:02.560
+These are characteristics that are common to several editions of a work.
+
+44
+00:04:02,860 --> 00:04:13,800
+During the instance there are headings such as publishing, identifier, such as ISBN, scope, dimensions.
+
+45
+00:04:14,220 --> 00:04:17,220
+This is what is specific to the edition.
+
+46
+00:04:17,480 --> 00:04:22,720
+Then we see in the left menu that there are pages for different material types.
+
+47
+00:04:23,240 --> 00:04:29,860
+There are pages about agents and subject words, stocks, terminology
+
+48
+00:04:30,080 --> 00:04:34,600
+And you will find the page with educational material here.
+
+49
+00:04:34,780 --> 00:04:42,480
+We go back to the home page. We will take a closer look at an entry and see what it looks like in the tool.
+
+50
+00:04:42,680 --> 00:04:46,400
+I'm looking for a title, sheet metal food.
+
+51
+00:04:48,640 --> 00:04:52.640
+And choose a printed monograph here in the list.
+
+52
+00:04:52,940 --> 00:04:56,400
+This is a vegetarian cookbook.
+
+53
+00:04:56,620 --> 00:05:01.660
+There is a box that summarizes the information in the description.
+
+54
+00:05:01,880 --> 00:05:05,760
+We see that the book is called sheet metal - green in a long pan.
+
+55
+00:05:06,000 --> 00:05:07.760
+We see ISBN.
+
+56
+00:05:08,220 --> 00:05:13,080
+That there is a origin and information on publication.
+
+57
+00:05:13,280 --> 00:05:17,120
+It is published by Norstedts 2018.
+
+58
+00:05:17,320 --> 00:05:21,840
+If we click on "Show more" we will see the number of pages and more.
+
+59
+00:05:22,740 --> 00:05:29,660
+A little further up the right we see when the post is created and last changed and of which Sigel.
+
+60
+00:05:29,940 --> 00:05:34,940
+We see Posten's ID and we can copy it if needed.
+
+61
+00:05:35,200 --> 00:05:38,720
+A little further down there is information about stocks.
+
+62
+00:05:38,940 --> 00:05:42,040
+We can set stocks if we have not already done so.
+
+63
+00:05:42,260 --> 00:05:48,460
+We can see how many other libraries have set stocks and we can show all stock items.
+
+64
+00:05:50,840 --> 00:05:58,520
+The list of stock items is now displayed in a side panel. To close the side panel, press ESC.
+
+65
+00:05:58,980 --> 00:06:00.860
+Let's move on.
+
+66
+00:06:01,100 --> 00:06:05.540
+The next headlines are instance and admin metadata.
+
+67
+00:06:05,900 --> 00:06:11,960
+There are two views that can be switched between. We start by switching to admin metadata
+
+68
+00:06:12,120 --> 00:06:13,800
+by clicking on it.
+
+69
+00:06:14,160 --> 00:06:20,240
+Here is administrative information about the mail, such as the description level,
+
+70
+00:06:20,800 --> 00:06:26,620
+cataloging rules and information on mechanical changes that have been made.
+
+71
+00:06:27,100 --> 00:06:31,340
+Most of this is done automatically and you do not have to change a lot.
+
+72
+00:06:31,560 --> 00:06:36,260
+But in particular, note that it is important to choose the right description level.
+
+73
+00:06:36,540 --> 00:06:41,040
+Read more about it in the Help text for admin metadata.
+
+74
+00:06:41,640 --> 00:06:44,840
+We switch view back to instance.
+
+75
+00:06:45,140 --> 00:06:49,740
+The instance contains information that is specific to the edition.
+
+76
+00:06:50,060 --> 00:06:56,940
+The instance currently contains the work information embedded locally during the instance of works.
+
+77
+00:06:57,480 --> 00:07:00,100
+We start by expanding the mail.
+
+78
+00:07:00,240 --> 00:07:04,940
+We do this by pressing Alt and Plus at the same time.
+
+79
+00:07:05,780 --> 00:07:13,020
+You can expand and minimize each section also by clicking the arrow at the heading.
+
+80
+00:07:13,400 --> 00:07:17,980
+We first look at the work information during the instance of works.
+
+81
+00:07:18,280 --> 00:07:22,800
+As you know from previous films, the work information is not linked,
+
+82
+00:07:22,980 --> 00:07:26,180
+Without it locally embedded in each instance.
+
+83
+00:07:26,680 --> 00:07:29,700
+We see that this is a text.
+
+84
+00:07:31,080 --> 00:07:35,400
+We will look at what qualities are attached to the work here.
+
+85
+00:07:35,620 --> 00:07:38,960
+First we have the property involvement and function.
+
+86
+00:07:39,260 --> 00:07:44,820
+Here we have stated that primary participation is an agent with the writer function.
+
+87
+00:07:45,360 --> 00:07:48,240
+The agent is an entity.
+
+88
+00:07:48,860 --> 00:07:53,460
+We can right -click the entity and open it in a new tab.
+
+89
+00:07:54,100 --> 00:07:57,180
+Here we see the information about this person.
+
+90
+00:07:58,300 --> 00:08:03,680
+We can link to this entity several times if there are several works from her.
+
+91
+00:08:05,460 --> 00:08:10,220
+The writer function is also an entity that we can link to if needed.
+
+92
+00:08:11,080 --> 00:08:15,680
+In the same way, it works with language and genre/form.
+
+93
+00:08:16,420 --> 00:08:23,620
+Genre describes what something is and this is a cookbook. We have linked to the entity for cookbooks.
+
+94
+00:08:24,120 --> 00:08:28,400
+Classification, on the other hand, does not contain linked entities.
+
+95
+00:08:29,000 --> 00:08:34,380
+Instead, classification lies as a local entity and the information is entered.
+
+96
+00:08:34,960 --> 00:08:39.820
+There is both dewey classification and SAB classification.
+
+97
+00:08:41,540 --> 00:08:43,840
+There are also subject words.
+
+98
+00:08:44,360 --> 00:08:49,740
+Subject words describe what the work is about, unlike genre that describes what it is.
+
+99
+00:08:50,440 --> 00:08:56,460
+This cookbook is about vegetarian food and we have linked to the entity for it.
+
+100
+00:08:57,960 --> 00:09:01.800
+Sometimes you describe agents and subject words without linking.
+
+101
+00:09:02,200 --> 00:09:05,280
+More about that in the movie qualities and entities.
+
+102
+00:09:06,760 --> 00:09:09,580
+There is also a link to the content type text.
+
+103
+00:09:10,120 --> 00:09:16,020
+Then we were done with the work information and we move on to the instance.
+
+104
+00:09:17,360 --> 00:09:20,940
+The body is about what is specific to the edition.
+
+105
+00:09:21,720 --> 00:09:26,320
+Here we enter the identifier as in this case is ISBN.
+
+106
+00:09:26,880 --> 00:09:36,700
+Title, publishing, e.g. Place of publishing, publisher and publishing year.
+
+107
+00:09:37,740 --> 00:09:43,380
+And we also have scope and there we have the number of pages that the book has.
+
+108
+00:09:44,840 --> 00:09:48,680
+We will look at a tool menu that we see here.
+
+109
+00:09:49,160 --> 00:09:52,760
+There are three buttons. First show as.
+
+110
+00:09:53,280 --> 00:09:59,600
+You can see the post in the storage format JSON-LD and a few other linked data formats.
+
+111
+00:10:00,320 --> 00:10:06.880
+During the tool icon there are several choices. You can expand or minimize all properties.
+
+112
+00:10:07,560 --> 00:10:09.600
+You can copy the entire entry.
+
+113
+00:10:10,020 --> 00:10:16,380
+You can also download the mail in Marc format to import it into its local system.
+
+114
+00:10:16,820 --> 00:10:24,060
+You can also download it in JSON LD format or see the information in a Marc view.
+
+115
+00:10:25,040 --> 00:10:30,100
+Then a side panel comes out and to close it we press ESC.
+
+116
+00:10:31,120 --> 00:10:34,200
+Here you will also find the instance.
+
+117
+00:10:35,400 --> 00:10:37,960
+The last button is edit.
+
+118
+00:10:38,380 --> 00:10:43,200
+Here you now get some more choices under the tool menu.
+
+119
+00:10:44,860 --> 00:10:51,440
+You see that under tools you have now received enrich from template, enrich from mail and detailed enrichment
+
+120
+00:10:51,660 --> 00:10:58,360
+And we will go through them in the movie Edit, upgrade and enrich.
+
+121
+00:10:59,160 --> 00:11:06,400
+You can add properties with the plus button. You can cancel and you have two savings buttons.
+
+122
+00:11:06,660 --> 00:11:10,760
+With the first you save and continue to be in editing mode.
+
+123
+00:11:11,080 --> 00:11:14,660
+With the other you save and leave edit mode.
+
+124
+00:11:14,940 --> 00:11:19,040
+When you save an entry, all empty properties disappear.
+
+125
+00:11:19,440 --> 00:11:25,400
+If something is pre -filled, you need to remove it manually if you have not used that property.
+
+126
+00:11:26,200 --> 00:11:32,860
+It was all for this movie. There are more films about different elements in Libris cataloging.
