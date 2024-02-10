@@ -62,13 +62,13 @@
 
     <script>
       function togglePlay(el) {
-        if(window.playingVideo) {
+        if (window.playingVideo) {
           if (ytPlayer.getPlayerState() === 2) {
             ytPlayer.playVideo()
           } else if (ytPlayer.getPlayerState() === 1) {
             ytPlayer.pauseVideo()
           }
-        }  else  {
+        } else {
           if (player.paused) {
             player.play()
           } else {
@@ -123,13 +123,16 @@
     <div>
         <div id="player" style="display:none; margin-top: 2em;"></div>
         <div style="min-height: 150px;float: right;">
-            <div id="subtitle-container" >
+            <div id="subtitle-container">
                 <br>
                 <br>
                 <div id="sv-sub" style="font-weight: bold; font-size: large; color: blue"></div>
                 <br>
                 <br>
-                <div id="en-sub" style=""></div>
+                <div id="en-sub" style="display: none;"></div>
+                <div style="margin-top: 2em;">
+                    <span class="btn btn-secondary" id="toggleEnSubBtn" onclick="$('#en-sub').toggle()"> Toggle English Subtitles </span>
+                </div>
             </div>
             <div style="margin-top: 8em; width: 30%; position: absolute; bottom: 4em; right: 4em;" id="controls">
 
@@ -157,7 +160,8 @@
                 <div style="text-align: center; margin-top: 2em;">
                     <div id="pagination"></div>
                     <br>
-                    <button id="rewindBtn" style="font-weight: bolder;font-size: larger; margin-right: 3em;width: 5em;height: 9em;"
+                    <button id="rewindBtn"
+                            style="font-weight: bolder;font-size: larger; margin-right: 3em;width: 3em;height: 2em;"
                             onclick="rewind()"> <
                     </button>
                     <button onclick="togglePlay(this)" id="playBtn" class="play-btn" disabled>Play</button>
@@ -258,7 +262,7 @@
 
   let renderSubtitles = (currentSub) => {
 
-    if(window.renderedSub === currentSub.number) {
+    if (window.renderedSub === currentSub.number) {
       return
     }
 
@@ -298,7 +302,7 @@
     return new Promise((resolve, reject) => {
       let interval = null
       interval = setInterval(() => {
-        if(Math.abs(window.ytPlayer.getCurrentTime() - t) <= 6) {
+        if (Math.abs(window.ytPlayer.getCurrentTime() - t) <= 6) {
           clearInterval(interval)
           console.log("Seek request completed", t, "currentTime=", window.ytPlayer.getCurrentTime())
           window.seekRequestProcessing = false
@@ -313,7 +317,7 @@
   let prepareSubsForPage = async (pageNumber, setTime) => {
     pageNumber = parseInt(pageNumber)
 
-    pageNumber = window.pageDataSource[pageNumber-1]
+    pageNumber = window.pageDataSource[pageNumber - 1]
     let allSubs = window.subtitles
 
     //Reset
@@ -328,7 +332,7 @@
 
     if (setTime) {
       let newTime = Math.max(currentSub.ts + window.marginStartSubtitle, 0);
-      if(window.playingVideo) {
+      if (window.playingVideo) {
         await seekToYoutubeTime(newTime)
       } else {
         player.setCurrentTime(newTime)
@@ -354,14 +358,14 @@
 
     let optgroupState = {};
 
-    $("body").on('click', '.select2-container--open .select2-results__group', function() {
+    $("body").on('click', '.select2-container--open .select2-results__group', function () {
       $(this).siblings().toggle();
       let id = $(this).closest('.select2-results__options').attr('id');
       let index = $('.select2-results__group').index(this);
       optgroupState[id][index] = !optgroupState[id][index];
     })
 
-    $mp3Choice.on('select2:open', function() {
+    $mp3Choice.on('select2:open', function () {
       $('.select2-dropdown--below').css('opacity', 0);
       setTimeout(() => {
         let groups = $('.select2-container--open .select2-results__group');
@@ -378,7 +382,7 @@
     })
   }
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     fixSectionBox()
   });
 
@@ -390,10 +394,10 @@
     categorisation.forEach(it => {
       let l = it.split(" || ")
       let c = '        '
-      if(l.length === 4){
+      if (l.length === 4) {
         c = l[0]
       }
-      categories[l[l.length-1]] = c
+      categories[l[l.length - 1]] = c
     })
     return categories
   }
@@ -406,7 +410,7 @@
 
     let categories = window.categories
     srtLinks = _(srtLinks).chain()
-      .sortBy(link => categories[link])
+      .sortBy(link => getCategory({link}))
       // .sortBy(function(link) {
       //     let srt = srts.find(it => it.link === link)
       //     return srt.name.split(" || ")[0];
@@ -417,14 +421,23 @@
     let ogs = {}
     let getOptgroup = category => {
       if (!ogs[category]) {
-        ogs[category] = $(`<optgroup label="${category}">`)
+        let label = category
+        let filter = it => it === category
+
+        if(category === 'Okategoriserad') {
+          filter = it => it.trim().length === 0
+        }
+
+        let cnt = Object.values(window.categories).filter(filter).length
+        label += " (" + cnt + ")"
+        ogs[category] = $(`<optgroup label="${label}">`)
       }
       return ogs[category]
     }
     srtLinks.forEach(link => {
       let item = srts.find(it => it.link === link)
       let $opt = $(`<option>${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
-      getOptgroup(categories[item.link]).append($opt)
+      getOptgroup(getCategory(item)).append($opt)
     })
 
     Object.values(ogs).forEach(it => $mp3Choice.append(it))
@@ -435,6 +448,9 @@
     let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/index.json")
     srts = await srts.json()
     window.srts = srts
+
+    srts.forEach(it => getSubtitlesForLink(it['link']))
+
     window.categories = await fetchCategorisation()
 
     populateAllLinks();
@@ -450,11 +466,11 @@
       line = line.trim()
       let matchTime = line.match(/(\d\d:\d\d:\d\d,\d\d\d) --> (\d\d:\d\d:\d\d,\d\d\d)/m)
       let matchId = line.match(/^\d+$/m)
-      if(matchId) {
+      if (matchId) {
         items.push(currentItem)
         currentItem = {id: line}
         currentItem[lang] = ''
-      } else if(matchTime) {
+      } else if (matchTime) {
         currentItem['ts'] = matchTime[1]
         currentItem['te'] = matchTime[2]
       } else {
@@ -466,33 +482,63 @@
     return items.filter(it => it.ts)
   }
 
+  function getCategory(item) {
+    let link = item.link;
+    let category = window.categories[link];
+    category = category && category.trim()
+    return category || 'Okategoriserad';
+  }
+
   function searchText() {
     let searchText = $("#searchInput").val().trim()
 
-    if(searchText.length < 3) {
+    if (searchText.length < 3) {
       populateAllLinks()
       return
     }
-    let items = window.srts.filter(it => it.srt.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)
+
+    function getSrtObject(it) {
+      return window.srts.find(srt => srt.link === it);
+    }
+
+    let items = Object.keys(window.allSubtitles).map(it => {
+      let s = window.allSubtitles[it]
+      let svMatch = s.sv.toLowerCase().indexOf(searchText) >= 0
+      let enMatch = s.en.toLowerCase().indexOf(searchText) >= 0
+      return {link: it, svMatch, enMatch}
+    })
+      .map(it => {
+        let srt = getSrtObject(it.link)
+        return {...it, ...srt}
+      }).filter(it => it.svMatch || it.enMatch)
+
     let $mp3Choice = $('#mp3Choice')
     $mp3Choice.html('<option>--</option>')
 
     let ogs = {}
     let getOptgroup = category => {
-      if(!ogs[category]) {
+      if (!ogs[category]) {
         ogs[category] = $(`<optgroup label="${category}">`)
       }
       return ogs[category]
     }
 
     items.map(item => {
-      let count = (item.srt.toLowerCase().match(new RegExp(searchText,"gi")) || []).length;
+      let subs = window.allSubtitles[item.link]
+      let text = ''
+      if(item.svMatch) {
+        text = subs['sv']
+      } else {
+        text = subs['en']
+      }
+
+      let count = (text.toLowerCase().match(new RegExp(searchText, "gi")) || []).length;
       return ({...item, matches: count})
-    }).toSorted((x,y) => y.matches - x.matches)
+    }).toSorted((x, y) => y.matches - x.matches)
       .forEach(item => {
-      let $opt = $(`<option>(${item.matches}) ${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
-      getOptgroup(window.categories[item.link]).append($opt)
-    })
+        let $opt = $(`<option>(${item.matches}) ${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
+        getOptgroup(getCategory(item)).append($opt)
+      })
 
     Object.values(ogs).forEach(it => $mp3Choice.append(it))
   }
@@ -518,7 +564,13 @@
     return originalSubs;
   }
 
-  async function loadSubtitlesForLink(link) {
+  window.allSubtitles = {}
+  window.srts = []
+
+  async function getSubtitlesForLink(link) {
+    if (window.allSubtitles[link]) {
+      return window.allSubtitles[link]
+    }
     let svName = window.srts.find(it => it.link === link).name + ".sv.srt"
     let enName = window.srts.find(it => it.link === link).name + ".en.srt"
     let sv = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + svName)
@@ -526,12 +578,19 @@
     let en = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + enName)
     en = await en.text()
 
-    if(!sv) {
+    window.allSubtitles[link] = {sv, en}
+    return window.allSubtitles[link]
+  }
+
+  async function loadSubtitlesForLink(link) {
+    let {sv, en} = await getSubtitlesForLink(link)
+
+    if (!sv) {
       alert("SV subtitle not found")
       return
     }
 
-    if(!en) {
+    if (!en) {
       en = {...sv}
     }
 
@@ -555,7 +614,7 @@
 
     let pages = null
     let searchText = $("#searchInput").val().trim().toLowerCase();
-    if(searchText.length > 0) {
+    if (searchText.length > 0) {
       pages = sv.filter(it => it.sv.toLowerCase().indexOf(searchText) >= 0).map(it => it.id)
     }
 
@@ -569,7 +628,7 @@
     //Load subtitle
     let link = $mp3Choice.val()
     let youtubeVideoId = link
-    if(youtubeVideoId.trim().length) {
+    if (youtubeVideoId.trim().length) {
       $('#player').show()
       loadVideo(youtubeVideoId)
       window.playingVideo = true;
@@ -584,7 +643,7 @@
 
   function setSpeed() {
     let newRate = $('.controlgroup input:checked').data('speed');
-    if(playingVideo) {
+    if (playingVideo) {
       ytPlayer.setPlaybackRate(newRate)
     } else {
       player.setPlaybackRate(newRate)
@@ -647,14 +706,14 @@
 
   const ontimeupdate = e => {
     // console.log(currentSub, player.currentTime)
-    if(window.seekRequestProcessing) {
+    if (window.seekRequestProcessing) {
       return
     }
 
     updatePlayPauseButton()
 
     let ct = player.getCurrentTime()
-    if(window.playingVideo) {
+    if (window.playingVideo) {
       ct = window.ytPlayer.getCurrentTime()
     }
 
@@ -675,8 +734,8 @@
       // Go to next subtitle
       // player.pause()
       $('#pagination').pagination('next', data => {
-        console.log('Ontimeupdate: Going to next page', new Date(), "Current Time ",ct, "Data", data)
-        prepareSubsForPage(window.pageDataSource.findIndex(it => it+"" === data + "") + 1, true)
+        console.log('Ontimeupdate: Going to next page', new Date(), "Current Time ", ct, "Data", data)
+        prepareSubsForPage(window.pageDataSource.findIndex(it => it + "" === data + "") + 1, true)
       })
     }
   }
@@ -699,7 +758,7 @@
   player.addEventListener('ended', e => {
     $('#pagination').pagination('go', 1)
     goToCurrentPageNumber()
-    if($('#loopSwitch').is(":checked")) {
+    if ($('#loopSwitch').is(":checked")) {
       console.log('Replaying')
       sleep(2).then(() => $('#playBtn').click())
     }
@@ -717,7 +776,7 @@
     console.log("Should come back to", window.rewindData.from)
     player.setPlaybackRate($('.controlgroup input:checked').data('speed'))
 
-    if(window.playingVideo) {
+    if (window.playingVideo) {
       ytPlayer.seekTo(ytPlayer.getCurrentTime() - 3)
     } else {
       player.setCurrentTime(player.currentTime - 3)
@@ -759,19 +818,20 @@
   let ytVideoWidth = 940, ytHeight = 590;
   let subWidth = 0;
 
-  if(ww >= 1000) {
+  if (ww >= 1000) {
     ytVideoWidth = ww * 0.6;
     subWidth = $(window).width() - (ytVideoWidth + 40)
   } else {
     ytVideoWidth = ww - 10;
     subWidth = ww - 10;
-    ytHeight = wh/2 - 50;
+    ytHeight = wh / 2 - 50;
     $('#controls').css({width: '100%', bottom: '-15em', right: 0})
     $('#player-info').hide()
     $('#speed-control').parent().hide()
 
     $('#mp3Choice').parent().css({width: ww - 20})
   }
+
   function onYouTubeIframeAPIReady() {
     window.ytPlayer = new YT.Player('player', {
       height: ytHeight,
@@ -799,19 +859,20 @@
 
 
   function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING ) {
+    if (event.data == YT.PlayerState.PLAYING) {
       window.ytPlaying = true
     } else {
       window.ytPlaying = false;
     }
   }
+
   function stopVideo() {
     window.ytPlayer.stopVideo();
   }
 
   setInterval(() => {
     //Check time
-    if(window.playingVideo && window.ytPlayer) {
+    if (window.playingVideo && window.ytPlayer) {
       ontimeupdate()
     }
   }, 100)
