@@ -309,6 +309,7 @@
           console.log("Seek request completed", t, "currentTime=", window.ytPlayer.getCurrentTime())
           window.seekRequestProcessing = false
           resolve()
+          window.ytPlayer.seekTo(t)
         } else {
           window.ytPlayer.seekTo(t)
         }
@@ -316,7 +317,7 @@
     })
   }
 
-  let prepareSubsForPage = async (pageNumber, setTime) => {
+  let prepareSubsForPage = async (pageNumber, setTime, manualHandling) => {
     pageNumber = parseInt(pageNumber)
 
     pageNumber = window.pageDataSource[pageNumber - 1]
@@ -335,7 +336,8 @@
     if (setTime) {
       let newTime = Math.max(currentSub.ts + window.marginStartSubtitle, 0);
       if (window.playingVideo) {
-        await seekToYoutubeTime(newTime)
+        await seekToYoutubeTime(newTime - (manualHandling ? 2 : 0))
+        ytPlayer.playVideoAt(newTime)
       } else {
         player.setCurrentTime(newTime)
       }
@@ -678,11 +680,11 @@
     }
   }
 
-  function goToCurrentPageNumber() {
+  function goToCurrentPageNumber(manualHandling) {
     // console.log('Go to current page', new Date())
     let pageNum = $('#pagination').pagination('getCurrentPageNum')
     window.rewindData = null
-    prepareSubsForPage(pageNum, true)
+    prepareSubsForPage(pageNum, true, manualHandling)
   }
 
   let playSelectedFile = function (pages) {
@@ -708,13 +710,13 @@
       }, //page changed
       afterPageOnClick: e => {
         // console.log(e)
-        goToCurrentPageNumber();
+        goToCurrentPageNumber(true);
       },
       afterNextOnClick: e => {
-        goToCurrentPageNumber();
+        goToCurrentPageNumber(true);
       },
       afterPreviousOnClick: e => {
-        goToCurrentPageNumber();
+        goToCurrentPageNumber(true);
       }
     })
 
