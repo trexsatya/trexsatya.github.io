@@ -307,9 +307,12 @@
         if (Math.abs(window.ytPlayer.getCurrentTime() - t) < leeway) {
           clearInterval(interval)
           console.log("Seek request completed", t, "currentTime=", window.ytPlayer.getCurrentTime())
-          window.seekRequestProcessing = false
-          resolve()
-          window.ytPlayer.seekTo(t)
+          setTimeout(() => {
+            window.ytPlayer.seekTo(t)
+            resolve()
+            window.ytPlayer.seekTo(t)
+            window.seekRequestProcessing = false
+          }, 100)
         } else {
           window.ytPlayer.seekTo(t)
         }
@@ -337,7 +340,10 @@
       let newTime = Math.max(currentSub.ts + window.marginStartSubtitle, 0);
       if (window.playingVideo) {
         await seekToYoutubeTime(newTime - (manualHandling ? 2 : 0))
-        ytPlayer.playVideoAt(newTime)
+        if (manualHandling) {
+          ytPlayer.seekTo(newTime)
+        }
+        // ytPlayer.playVideo(newTime)
       } else {
         player.setCurrentTime(newTime)
       }
@@ -660,7 +666,7 @@
       waitUntil(() => window.ytPlayerReady)
         .then(() => {
           console.log("Playing video", link)
-          $mp3Choice.val(link).trigger('change')
+          setTimeout(() => $mp3Choice.val(link).trigger('change'), 500)
         })
     }
   }
