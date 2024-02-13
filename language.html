@@ -426,7 +426,7 @@
         let label = category
         let filter = it => it === category
 
-        if(category === 'Okategoriserad') {
+        if (category === 'Okategoriserad') {
           filter = it => it.trim().length === 0
         }
 
@@ -528,7 +528,7 @@
     items.map(item => {
       let subs = window.allSubtitles[item.link]
       let text = ''
-      if(item.svMatch) {
+      if (item.svMatch) {
         text = subs['sv']
       } else {
         text = subs['en']
@@ -623,12 +623,10 @@
     playSelectedFile(pages)
   }
 
-  $mp3Choice.change(async e => {
+  function playNewVideo(link) {
     clearSubtitles()
-    player.pause()
     stopVideo()
     //Load subtitle
-    let link = $mp3Choice.val()
     let youtubeVideoId = link
     if (youtubeVideoId.trim().length) {
       $('#player').show()
@@ -641,6 +639,34 @@
       window.playingVideo = false;
       loadSubtitlesForLink(link);
     }
+  }
+
+  function waitUntil(condition) {
+    return new Promise((resolve, reject) => {
+      let interval = setInterval(() => {
+        if (condition()) {
+          clearInterval(interval)
+          resolve()
+        }
+      }, 100)
+    })
+  }
+
+  window.onload = e => {
+    let link = window.location.hash.replace("#", "")
+    if (link.length > 2) {
+      waitUntil(() => window.ytPlayerReady)
+        .then(() => {
+          console.log("Playing video", link)
+          $mp3Choice.val(link).trigger('change')
+        })
+    }
+  }
+
+  $mp3Choice.change(async e => {
+    let link = $mp3Choice.val();
+    window.location.hash = link
+    playNewVideo(link)
   })
 
   function setSpeed() {
@@ -857,6 +883,7 @@
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     event.target.playVideo();
+    window.ytPlayerReady = true
   }
 
 
