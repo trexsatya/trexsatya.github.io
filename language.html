@@ -300,21 +300,22 @@
     window.ytPlayer.seekTo(t)
     window.seekRequestProcessing = true
     let leeway = Math.max(6, Math.abs(window.ytPlayer.getDuration() - t))
+    window.ytPlayer.seekTo(t-4)
 
     return new Promise((resolve, reject) => {
       let interval = null
       interval = setInterval(() => {
+        let delta = 0
         if (Math.abs(window.ytPlayer.getCurrentTime() - t) < leeway) {
           clearInterval(interval)
-          console.log("Seek request completed", t, "currentTime=", window.ytPlayer.getCurrentTime())
-          setTimeout(() => {
-            window.ytPlayer.seekTo(t)
-            resolve()
-            window.ytPlayer.seekTo(t)
-            window.seekRequestProcessing = false
-          }, 100)
-        } else {
+          console.log("Seek request completed", fromSeconds(t), "currentTime=", fromSeconds(window.ytPlayer.getCurrentTime()))
           window.ytPlayer.seekTo(t)
+          resolve()
+          window.seekRequestProcessing = false
+          window.proxyYoutubeCurrentTime = t
+        } else {
+          window.ytPlayer.seekTo(t - delta)
+          delta += 1
         }
       }, 10)
     })
@@ -666,15 +667,17 @@
       waitUntil(() => window.ytPlayerReady)
         .then(() => {
           console.log("Playing video", link)
-          setTimeout(() => $mp3Choice.val(link).trigger('change'), 500)
+          $mp3Choice.val(link).trigger('change')
         })
     }
   }
 
   $mp3Choice.change(async e => {
     let link = $mp3Choice.val();
-    window.location.hash = link
-    playNewVideo(link)
+    if(link) {
+      window.location.hash = link
+      playNewVideo(link)
+    }
   })
 
   function setSpeed() {
@@ -740,7 +743,13 @@
     }
   }
 
+  function getCurrentTime() {
+    return ytPlayer.getCurrentTime()
+  }
   const ontimeupdate = e => {
+    if(ytPlayer.getPlayerState() !== 1) {
+      return
+    }
     // console.log(currentSub, player.currentTime)
     if (window.seekRequestProcessing) {
       return
@@ -750,7 +759,7 @@
 
     let ct = player.getCurrentTime()
     if (window.playingVideo) {
-      ct = window.ytPlayer.getCurrentTime()
+      ct = getCurrentTime()
     }
 
     if (window.rewindData) {
@@ -896,7 +905,7 @@
 
 
   function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING) {
+    if(event.data === YT.PlayerState.PLAYING) {
       window.ytPlaying = true
     } else {
       window.ytPlaying = false;
