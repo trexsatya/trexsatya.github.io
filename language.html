@@ -359,6 +359,10 @@
     window.currentSub = currentSub
     window.pageNumber = pageNumber
 
+    if(manualHandling) {
+      renderSubtitles(currentSub)
+    }
+    
     // $('#playBtn').html('Pause')
   }
 
