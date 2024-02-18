@@ -1,9 +1,9 @@
 1
-00:00:00,000 --> 00:00:06.889
+00:00:00,000 --> 00:00:06,889
 I run a project where more people should get out into the forest and learn more about species, biodiversity -
 
 2
-00:00:06,889 --> 00:00:09.661
+00:00:06,889 --> 00:00:09,661
 - And what a real forest looks like.
 
 3
@@ -27,11 +27,11 @@ Where the authorities do not have resources at all to follow up on each harvesti
 So the risk if there are no non -profit forces that are committed to the forest is -
 
 8
-00:00:53,311 --> 00:01:02.138
+00:00:53,311 --> 00:01:02,138
 - Loss of biodiversity, loss of natural forests, loss of forests with high natural values.
 
 9
-00:01:05,573 --> 00:01:09.404
+00:01:05,573 --> 00:01:09,404
 Here we see that it is a spill crow that has been.
 
 10
@@ -63,11 +63,12 @@ So for me it has become a way to make my commitment more sustainable.
 I have several examples here in Västerbotten where it is thanks to the commitment of individuals -
 
 17
-00:01:48,758 --> 00:01:57.231
-- That many forest areas remain. That they were excluded from harvesting and maybe even today is a reserve.
+00:01:48,758 --> 00:01:57,231
+- That many forest areas remain.
+ That they were excluded from harvesting and maybe even today is a reserve.
 
 18
-00:02:00,318 --> 00:02:04.448
+00:02:00,318 --> 00:02:04,448
 My dream is well ..
 
 19
@@ -89,3 +90,4 @@ It is a possible dream.
 23
 00:02:25,201 --> 00:02:28,244
 Not an unreasonable utopia.
+

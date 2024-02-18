@@ -35,16 +35,17 @@ Kant himself meant that his philosophy was a "Copernican revolution" -
 comparable to what Nicolaus Copernicus achieved in astronomy during the 16th century
 
 10
-00:00:54,080 --> 00:00:59.240
+00:00:54,080 --> 00:00:59,240
 By assuming that the sun, not the earth, was the center of the universe.
 
 11
-00:01:00,020 --> 00:01:05.960
+00:01:00,020 --> 00:01:05,960
 So far, Kant meant, assumed that our knowledge must adhere to the objects.
 
 12
 00:01:05,960 --> 00:01:11,460
-But that is not the case. It is the objects that adhere to our knowledge ability.
+But that is not the case.
+ It is the objects that adhere to our knowledge ability.
 
 13
 00:01:12,420 --> 00:01:17,480
@@ -104,14 +105,15 @@ By definition, this means that there is no incorrect knowledge, only knowledge o
 
 27
 00:02:25,380 --> 00:02:31,440
-Traditionally, knowledge theorists are divided into two camps; Empirists and rationalists.
+Traditionally, knowledge theorists are divided into two camps;
+ Empirists and rationalists.
 
 28
 00:02:31,700 --> 00:02:36,000
 According to empiricism, all knowledge is founded in sensation experience,
 
 29
-00:02:36,160 --> 00:02:39.560
+00:02:36,160 --> 00:02:39,560
 A reasoning that can be traced back to Aristotle.
 
 30
@@ -123,7 +125,7 @@ Empiri is based on scientific studies of reality, observations and experiments,
 rather than on pre -set theories or philosophical reasoning.
 
 32
-00:02:53,760 --> 00:03:01.540
+00:02:53,760 --> 00:03:01,540
 A rationalist, on the other hand, claims that knowledge of the world originates from reason, thinking and congenital ideas
 
 33
@@ -159,7 +161,7 @@ This is a theory of knowledge often called critical or transcendental idealism.
 According to Kant, one must distinguish between two kinds of knowledge: experience knowledge and reasonable knowledge.
 
 41
-00:03:47,260 --> 00:03:52.440
+00:03:47,260 --> 00:03:52,440
 Experience knowledge (or empirical knowledge) is something whose truth
 
 42
@@ -171,11 +173,11 @@ We cannot know without reference to experience.
 An example of this is that Paris is the capital of France.
 
 44
-00:04:00,600 --> 00:04:05.660
+00:04:00,600 --> 00:04:05,660
 We know this from experience - we have learned it by using our minds
 
 45
-00:04:05,740 --> 00:04:09.320
+00:04:05,740 --> 00:04:09,320
 For example, we have read it in a book or heard it from our parents.
 
 46
@@ -211,7 +213,7 @@ Without how our consciousness is organized and works.
 Here, Kant also points to the limitation of knowledge.
 
 54
-00:04:53,920 --> 00:04:59.560
+00:04:53,920 --> 00:04:59,560
 He initiates the book "Criticism of Pure Reason" (1781) by claiming
 
 55
@@ -228,7 +230,8 @@ Everything we perceive - whether it is mind impressions, feelings, thoughts or m
 
 58
 00:05:18,000 --> 00:05:26,620
-We perceive through our body's knowledge organ; Our five senses, our brain and our central nervous system.
+We perceive through our body's knowledge organ;
+ Our five senses, our brain and our central nervous system.
 
 59
 00:05:27,160 --> 00:05:30,900
@@ -255,7 +258,7 @@ Thus, on the one hand, there is what exists regardless of us and our perception
 And on the other hand, what we have the opportunity to perceive (the human interpretation of reality).
 
 65
-00:05:58,460 --> 00:06:03.640
+00:05:58,460 --> 00:06:03,640
 There is no reason to believe that these two types of existence are the same.
 
 66
@@ -279,7 +282,7 @@ This filter can be likened to a pair of colored glasses for reason.
 In the same way as a pair of blue -colored glasses, reality is perceived as blue -tinted,
 
 71
-00:06:31,620 --> 00:06:38.560
+00:06:31,620 --> 00:06:38,560
 perceives reason reality as spatial, timely and causal (causal)
 
 72
@@ -291,7 +294,7 @@ perceives reason reality as spatial, timely and causal (causal)
 We cannot possibly have experiences decoupled from the views.
 
 74
-00:06:47,680 --> 00:06:55.880
+00:06:47,680 --> 00:06:55,880
 This, like a priori knowledge, which also forces our impressions in order to understand them for us.
 
 75
@@ -300,7 +303,8 @@ Time and space are like our experience of colors - they are not in reality, they
 
 76
 00:07:03,980 --> 00:07:11,900
-Kant himself expresses this as “thoughts without content are empty; Observations without concepts are blind ”.
+Kant himself expresses this as “thoughts without content are empty;
+ Observations without concepts are blind ”.
 
 77
 00:07:12,420 --> 00:07:17,340
@@ -361,3 +365,4 @@ Issues and religion (Noumenon) can coexist without any mutual contradiction.
 91
 00:08:34,980 --> 00:08:40,860
 He also shows that there is a clearly defined boundary between knowledge and faith.
+

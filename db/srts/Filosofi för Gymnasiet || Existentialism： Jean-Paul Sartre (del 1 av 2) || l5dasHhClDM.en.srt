@@ -3,11 +3,11 @@
 Sartre ...
 
 2
-00:00:01,500 --> 00:00:02.660
+00:00:01,500 --> 00:00:02,660
 Sartre ...
 
 3
-00:00:03,600 --> 00:00:04.840
+00:00:03,600 --> 00:00:04,840
 Sartre!
 
 4
@@ -15,7 +15,7 @@ Sartre!
 Sartre?
 
 5
-00:00:05,740 --> 00:00:07.340
+00:00:05,740 --> 00:00:07,340
 I'll say "Sartre".
 
 6
@@ -31,7 +31,7 @@ In October 1945, Jean-Paul Sartre (1905-1980) gave a lecture entitled "existenti
 The event was an enormous success and the influx of curious was huge.
 
 9
-00:00:33,620 --> 00:00:39.820
+00:00:33,620 --> 00:00:39,820
 The hard pressure to fit in the room caused the ticket door and large parts of the interior to be struck in pieces.
 
 10
@@ -55,7 +55,7 @@ Sartre received his education at a noble school in Paris and later came to work 
 He was a little over 1.50 long, skewed heavily and described himself as ugly.
 
 15
-00:01:04,060 --> 00:01:08.400
+00:01:04,060 --> 00:01:08,400
 Almost always he went dressed in black polo, baskets, dark pants and jacket
 
 16
@@ -103,7 +103,7 @@ Everything we do and perceive is charged with emotions and personal meaning.
 It is our consciousness that determines what is an event and what is background noise.
 
 27
-00:01:57,780 --> 00:02:01.320
+00:01:57,780 --> 00:02:01,320
 Suppose you will meet a friend in a cafe but that she never shows up.
 
 28
@@ -111,7 +111,7 @@ Suppose you will meet a friend in a cafe but that she never shows up.
 Then her absence becomes an event, but only for you.
 
 29
-00:02:05,160 --> 00:02:09.320
+00:02:05,160 --> 00:02:09,320
 None of the other café guests will respond to your friend missing.
 
 30
@@ -151,7 +151,7 @@ We will now take a closer look at different aspects of Sartre's existentialism.
 Existentialism, which became something of a fashion philosophy in the mid-20th century,
 
 39
-00:02:49,300 --> 00:02:52.620
+00:02:49,300 --> 00:02:52,620
 mean that man is free to shape his life himself.
 
 40
@@ -159,7 +159,7 @@ mean that man is free to shape his life himself.
 Sartre, as the main representative of the movement, even went so far that he claimed that man
 
 41
-00:02:58,460 --> 00:03:04.320
+00:02:58,460 --> 00:03:04,320
 Is "doomed to freedom", that is, we not only can but actually have to take a stand.
 
 42
@@ -203,11 +203,11 @@ About how man should be, no in advance given human nature.
 We find that we are there and must decide for ourselves what we want to do about life.
 
 52
-00:03:58,120 --> 00:04:03.820
+00:03:58,120 --> 00:04:03,820
 Imagine, said Sartre, an actor who is suddenly fed on stage without any script,
 
 53
-00:04:03,820 --> 00:04:09.060
+00:04:03,820 --> 00:04:09,060
 Without knowing which play is played, what role he has or who is a director.
 
 54
@@ -243,7 +243,7 @@ Otherwise, it is with the thing that surrounds us.
 If you build a house then you know even before you start the construction what its purpose will be.
 
 62
-00:04:48,200 --> 00:04:52.080
+00:04:48,200 --> 00:04:52,080
 From the beginning, the thing has a definition, an essence.
 
 63
@@ -255,7 +255,7 @@ It is only man who is not something from the beginning, who has no purpose.
 So we humans are not created for anything, we just exist.
 
 65
-00:05:03,200 --> 00:05:08.420
+00:05:03,200 --> 00:05:08,420
 First, we must live, exist, before we can get a definition, an essence.
 
 66
@@ -287,7 +287,7 @@ Then freedom could not be separated from dream or imagination.
 Freedom instead arises in the meeting with the given conditions, what we cannot do anything about.
 
 73
-00:05:46,340 --> 00:05:52.840
+00:05:46,340 --> 00:05:52,840
 That we are born by our parents and with some genetic traits, that we are born in a particular country in a certain period of time
 
 74
@@ -303,7 +303,7 @@ These circumstances are also the starting point of freedom.
 All this, Sartre said, is our fate.
 
 77
-00:06:02,420 --> 00:06:07.960
+00:06:02,420 --> 00:06:07,960
 And freedom arises precisely in the meeting with fate, with our assets and restrictions.
 
 78
@@ -312,7 +312,8 @@ Of course, freedom is not just a state of mind, but it is in internal freedom be
 
 79
 00:06:14,620 --> 00:06:21,940
-Therefore, a prisoner may be freer than his prison guard. Internal freedom is a prerequisite for external freedom.
+Therefore, a prisoner may be freer than his prison guard.
+ Internal freedom is a prerequisite for external freedom.
 
 80
 00:06:22,320 --> 00:06:27,960
@@ -351,7 +352,7 @@ For Sartre, it is the opposite.
 We are thrown out in a world where we exist and "... man is nothing but what she does".
 
 89
-00:07:05,220 --> 00:07:09.300
+00:07:05,220 --> 00:07:09,300
 What is primarily distinguished man from the thing is that we are aware
 
 90
@@ -395,11 +396,11 @@ In existential terms they therefore do not exist, they are just.
 The same thing, says Sarte, applies to the animals.
 
 100
-00:07:57,800 --> 00:08:02.880
+00:07:57,800 --> 00:08:02,880
 They can only be "in themselves", which means that they are guided by their instincts and drives.
 
 101
-00:08:03,320 --> 00:08:08.540
+00:08:03,320 --> 00:08:08,540
 Existing means being able to relate to different modes of action and situations;
 
 102
@@ -443,7 +444,7 @@ It is thus not objective, but every person chooses his own meaning with their ow
 "We are sentenced to freedom," says Sartre.
 
 112
-00:09:01,780 --> 00:09:05.080
+00:09:01,780 --> 00:09:05,080
 Our world lacks inherent norms or right and wrong.
 
 113
@@ -460,7 +461,8 @@ Therefore, we must invent our morals ourselves and act accordingly.
 
 116
 00:09:20,300 --> 00:09:26,820
-“You are free, choose, find. No universal morality can tell you what is right to do;
+“You are free, choose, find.
+ No universal morality can tell you what is right to do;
 
 117
 00:09:26,820 --> 00:09:29,880
@@ -543,8 +545,9 @@ Things therefore, like the humans, are basically meaningless.
 Despite this, we are constantly busy trying to control things.
 
 137
-00:10:54,480 --> 00:10:58.560
-We have plans for things. Only therefore they mean something to us.
+00:10:54,480 --> 00:10:58,560
+We have plans for things.
+ Only therefore they mean something to us.
 
 138
 00:10:58,940 --> 00:11:03,140
@@ -555,7 +558,7 @@ But there are situations where we clearly feel the excess of things.
 How meaningless do not get small memory things, newspaper clippings
 
 140
-00:11:06,880 --> 00:11:09.820
+00:11:06,880 --> 00:11:09,820
 And anonymous photographs in a relative's estate?
 
 141
@@ -569,3 +572,4 @@ The whole existence sometimes becomes like a death estate after God where all th
 143
 00:11:18,880 --> 00:11:23,840
 The world is no longer a creation but a pile of debris, says Sartre.
+

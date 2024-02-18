@@ -1,6 +1,7 @@
 1
 00:00:13,046 --> 00:00:18,618
-Welcome aboard a Visby Corvette. Up here from the dock is run the ship.
+Welcome aboard a Visby Corvette.
+ Up here from the dock is run the ship.
 
 2
 00:00:19,119 --> 00:00:25,091
@@ -47,7 +48,7 @@ The telecommunications staff can also discover other things that broadcast radar
 Like all other work on board, it is a teamwork where everyone is helped.
 
 13
-00:02:01,621 --> 00:02:05.758
+00:02:01,621 --> 00:02:05,758
 On board you live mostly in two- or four-man cabins.
 
 14
@@ -63,8 +64,9 @@ Man works in six-hour guards, six hours of work followed by six hours-
 -When you should eat, exercise, sleep, clean or do something else.
 
 17
-00:02:52,772 --> 00:02:59.845
-On weapons tires there are the sea -target robots. The ship may have up to eight robots on board at the same time.
+00:02:52,772 --> 00:02:59,845
+On weapons tires there are the sea -target robots.
+ The ship may have up to eight robots on board at the same time.
 
 18
 00:02:59,845 --> 00:03:08,254
@@ -87,7 +89,7 @@ Here in the fair we eat and this is also where we watch TV or relax.
 When the ship is at sea, you eat every six hours divided into two different guards.
 
 23
-00:04:02,440 --> 00:04:06.411
+00:04:02,440 --> 00:04:06,411
 The fairs also serve as a health care place at sea.
 
 24
@@ -107,7 +109,7 @@ In the engine room there are both diesel machines, if you want to run up to 15 k
 -And gas turbines when you want to drive faster, just over 30 knots.
 
 28
-00:05:33,432 --> 00:05:39.938
+00:05:33,432 --> 00:05:39,938
 The vessel is powered by water heater that is quieter than ordinary propellers.
 
 29
@@ -117,3 +119,4 @@ There are also generators that manufacture electricity, boilers that make hot wa
 30
 00:05:46,893 --> 00:05:54,420
 -And aggregate that manufactures drinking water from salt water and many other technical equipment.
+

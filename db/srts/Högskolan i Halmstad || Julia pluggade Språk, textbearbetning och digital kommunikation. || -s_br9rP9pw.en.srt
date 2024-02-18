@@ -1,9 +1,9 @@
 1
-00:00:01,867 --> 00:00:03.967
+00:00:01,867 --> 00:00:03,967
 Hi, Julia is my name.
 
 2
-00:00:03,967 --> 00:00:09.133
+00:00:03,967 --> 00:00:09,133
 I am alumni from language, text processing and digital communication program-
 
 3
@@ -11,7 +11,7 @@ I am alumni from language, text processing and digital communication program-
 -To University in Halmstad.
 
 4
-00:00:10,533 --> 00:00:15.067
+00:00:10,533 --> 00:00:15,067
 Right now I'm sitting in Gothenburg in my apartment and working from there.
 
 5
@@ -27,7 +27,7 @@ Thus in the construction industry.
 The best thing about the education was to develop my writing.
 
 8
-00:00:26,000 --> 00:00:29.633
+00:00:26,000 --> 00:00:29,633
 I've always loved to write so it was a lot of fun.
 
 9
@@ -63,7 +63,7 @@ To you who are going to plug this program-
 -What the width offered by the program.
 
 17
-00:00:57,133 --> 00:01:01.933
+00:00:57,133 --> 00:01:01,933
 You can meanwhile find what you want to do then-
 
 18
@@ -76,7 +76,8 @@ It was especially good for me because I didn't really know-
 
 20
 00:01:07,533 --> 00:01:11,300
--What I wanted to work with afterwards. I could come up with that in the meantime.
+-What I wanted to work with afterwards.
+ I could come up with that in the meantime.
 
 21
 00:01:11,900 --> 00:01:14,367
@@ -88,7 +89,8 @@ Something I brought with me from the education-
 
 23
 00:01:17,433 --> 00:01:20,933
-It's something I do every day. I produce a lot of content-
+It's something I do every day.
+ I produce a lot of content-
 
 24
 00:01:20,933 --> 00:01:26,067
@@ -99,7 +101,7 @@ It's something I do every day. I produce a lot of content-
 I have brought a lot of what we have read about communication-
 
 26
-00:01:30,267 --> 00:01:32.567
+00:01:30,267 --> 00:01:32,567
 -And digital concepts for example.
 
 27
@@ -168,10 +170,11 @@ In the future, I want to continue working with communication in different ways.
 
 43
 00:02:39,833 --> 00:02:44,367
-I love to create content, to write above all. I think that is great fun.
+I love to create content, to write above all.
+ I think that is great fun.
 
 44
-00:02:44,367 --> 00:02:48.867
+00:02:44,367 --> 00:02:48,867
 But I also have a great interest in books and reading.
 
 45
@@ -185,3 +188,4 @@ Either on a book publisher or as a writer.
 47
 00:02:55,800 --> 00:02:59,367
 We'll see what the future has to give.
+

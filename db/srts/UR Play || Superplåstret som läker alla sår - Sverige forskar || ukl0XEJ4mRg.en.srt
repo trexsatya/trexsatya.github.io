@@ -11,7 +11,7 @@ Maybe mosquitoes, tree huggers and abrasions.
 But what if the forest can also heal all wounds.
 
 4
-00:00:21,800 --> 00:00:25.560
+00:00:21,800 --> 00:00:25,560
 Many people suffer sometime from a difficult toxic wound.
 
 5
@@ -67,8 +67,9 @@ This means that the skin around is not loosened up and makes the wound larger.
 It's strong.
 
 18
-00:01:33,920 --> 00:01:38.560
-Therefore, the band does not need to be replaced because Daily wear.
+00:01:33,920 --> 00:01:38,560
+Therefore, the band does not need to be replaced because
+ Daily wear.
 
 19
 00:01:38,720 --> 00:01:42,280
@@ -83,11 +84,11 @@ These properties interact to speed up healing-
 -What reduces suffering and lower costs for health care.
 
 22
-00:01:56,640 --> 00:02:01.840
+00:01:56,640 --> 00:02:01,840
 A wound is classified as a difficult to heal if it does not heal in six weeks.
 
 23
-00:02:02,000 --> 00:02:06.600
+00:02:02,000 --> 00:02:06,600
 Hard-held wounds stand for many of the hospital inserts-
 
 24
@@ -167,7 +168,7 @@ Nanocellulose is mainly extracted from biomass from forest raw material
 -But cellulose is nature's most common organic substance-
 
 43
-00:03:54,080 --> 00:04:00.680
+00:03:54,080 --> 00:04:00,680
 -So it can be extracted from something else, such as residual products from the food industry.
 
 44
@@ -175,12 +176,13 @@ Nanocellulose is mainly extracted from biomass from forest raw material
 It gets less food waste and better for the environment.
 
 45
-00:04:04,480 --> 00:04:08.240
+00:04:04,480 --> 00:04:08,240
 We want to use nanopbidret-
 
 46
 00:04:08,400 --> 00:04:12,160
--In combination with e.g. Antimicrobial peptides.
+-In combination with e.g.
+ Antimicrobial peptides.
 
 47
 00:04:12,320 --> 00:04:15,120
@@ -197,3 +199,4 @@ A super patch from the forest.
 50
 00:04:30,080 --> 00:04:34,080
 Swedish texture: Per Lundgren Iyuno for UR
+

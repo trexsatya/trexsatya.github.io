@@ -31,7 +31,7 @@ Well, they all tried to describe the human existence and questions such as:
 "What does it mean to be human?"
 
 9
-00:00:46,780 --> 00:00:48.540
+00:00:46,780 --> 00:00:48,540
 "What is the meaning of life?"
 
 10
@@ -91,15 +91,15 @@ to a free and authentic person who takes responsibility for his or her actions.
 The problem with these all -inclusive theories is that they do not take adequate consideration
 
 24
-00:01:58,320 --> 00:02:00.640
+00:01:58,320 --> 00:02:00,640
 To what it means to be human.
 
 25
-00:02:00,860 --> 00:02:06.420
+00:02:00,860 --> 00:02:06,420
 They assume that meaning and purpose originates from an alternative and objective sphere
 
 26
-00:02:06,420 --> 00:02:09.100
+00:02:06,420 --> 00:02:09,100
 such as heaven or Plato's world of ideas.
 
 27
@@ -139,7 +139,7 @@ Existentialists have pointed to the insight about our death
 As a way to stop following others and create one's own meaning with life.
 
 36
-00:02:53,760 --> 00:02:59.800
+00:02:53,760 --> 00:02:59,800
 The idea that the meaning of life is individual is closely related to another existentialist idea
 
 37
@@ -179,7 +179,7 @@ Whether she wants to act accordingly or not.
 However, he did not think that the individual could affect his essence as this was innate.
 
 46
-00:03:47,120 --> 00:03:52.840
+00:03:47,120 --> 00:03:52,840
 Neither for those who believe that God has designed and created the world is the essence something impactable.
 
 47
@@ -239,7 +239,7 @@ For man, existence comes before the essence.
 Sartre, who was atheist, meant that since there is no god
 
 61
-00:05:01,220 --> 00:05:06.640
+00:05:01,220 --> 00:05:06,640
 So there are no predetermined values either - no fact for right and wrong or good and evil.
 
 62
@@ -257,3 +257,4 @@ In this chapter we will take a closer look at Søren Kierkegaard, Friedrich Niet
 65
 00:05:22,000 --> 00:05:25,020
 Jean-Paul Sartre and Simone de Beauvoir.
+

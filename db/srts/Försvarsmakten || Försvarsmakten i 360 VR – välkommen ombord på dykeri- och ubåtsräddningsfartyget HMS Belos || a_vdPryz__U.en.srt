@@ -27,19 +27,19 @@ Together we work as a team and help to perform the ship in a secure manner-
 -Ofort of business, time of day or weather.
 
 8
-00:00:44,680 --> 00:00:49.033
+00:00:44,680 --> 00:00:49,033
 Belos is equipped with a dynamic positioning system; DP-
 
 9
-00:00:49,033 --> 00:00:55.255
+00:00:49,033 --> 00:00:55,255
 -What is a system for keeping the ship still with the vessel's trusers and propellers.
 
 10
-00:00:56,198 --> 00:01:00.728
+00:00:56,198 --> 00:01:00,728
 The system is used to belos to lie still over a position-
 
 11
-00:01:00,728 --> 00:01:05.726
+00:01:00,728 --> 00:01:05,726
 -There underwater jobs must be performed with divers or underwater vehicles.
 
 12
@@ -63,7 +63,7 @@ Here we have the gun where our three chefs cook the four goals of the day to the
 Often we have with extra staff that make it significantly more portions to be served, but it always fixes our chefs.
 
 17
-00:02:04,283 --> 00:02:09.622
+00:02:04,283 --> 00:02:09,622
 Here we have the Chamber Hall that houses three large pressure chambers that are for treatment-
 
 18
@@ -91,11 +91,11 @@ Here we are inside the chamber center wall to wall with the chamber hall.
 From here we take care of pressure increase and pressure reduction and other monitoring of the chamber system.
 
 24
-00:02:55,524 --> 00:03:01.042
+00:02:55,524 --> 00:03:01,042
 The business is led by chamberwear leaders who have a number of chamber operators to their help-
 
 25
-00:03:01,042 --> 00:03:05.281
+00:03:01,042 --> 00:03:05,281
 -On the outside and chamber caretaker on the inside.
 
 26
@@ -119,15 +119,15 @@ Here we see a seaman's cabin located at the bottom of the ship on the tires wher
 The sailors live in single cabins with a common toilet and shower department.
 
 31
-00:03:44,698 --> 00:03:51.618
+00:03:44,698 --> 00:03:51,618
 A tire up is also a sauna where you can warm up after a cold working day on deck or after a diving assignment
 
 32
-00:03:58,573 --> 00:04:00.573
+00:03:58,573 --> 00:04:00,573
 Here we are down in the engine room.
 
 33
-00:04:01,182 --> 00:04:04.439
+00:04:01,182 --> 00:04:04,439
 Belos is a vessel with diesel electrical progress-
 
 34
@@ -155,11 +155,11 @@ During a guard, machine and control rooms are staffed by an officer and a motor.
 Here we are inside the fair where we can have a cup of coffee and unwind after the work session.
 
 40
-00:04:47,859 --> 00:04:54.066
+00:04:47,859 --> 00:04:54,066
 There is also the opportunity for crew collections and meetings as well as a little finer dinner sitting.
 
 41
-00:04:55,460 --> 00:04:59.249
+00:04:55,460 --> 00:04:59,249
 There is also a TV corner and a small library in the fair.
 
 42
@@ -179,7 +179,7 @@ The clock is staffed by two divers who are raised with relatively heavy equipmen
 The clock's umbilical cord supplies the divers with respiratory gas, hot water to the costumes and power to cameras and lights.
 
 46
-00:05:49,326 --> 00:05:56.741
+00:05:49,326 --> 00:05:56,741
 Belo's dive system can use both air and mixed gas depending on dive depth and can be used down to 90 meters depth.
 
 47
@@ -195,7 +195,7 @@ From the dive center, all underwater activities that Belos can perform.
 In here, the diving leader is for the wet clock diving.
 
 50
-00:06:31,660 --> 00:06:39.043
+00:06:31,660 --> 00:06:39,043
 The dive leader has control at times for downs and ascent and leads the divers' jobs on the dive object.
 
 51
@@ -205,3 +205,4 @@ In the dive center also sits the supervisor for the operations with our underwat
 52
 00:06:47,318 --> 00:06:52,970
 The prey pilots here have their operator sites from which they control our various underwater vehicles.
+

@@ -1,5 +1,5 @@
 1
-00:00:01,560 --> 00:00:03.560
+00:00:01,560 --> 00:00:03,560
 Hello Hello
 
 2
@@ -7,7 +7,7 @@ Hello Hello
 It happened a fun thing this weekend.
 
 3
-00:00:06,680 --> 00:00:09.160
+00:00:06,680 --> 00:00:09,160
 I was at the music festival
 
 4
@@ -67,15 +67,16 @@ a little more
 so i think i might make two or three or four movies about it
 
 18
-00:00:55,740 --> 00:01:00.860
-If I, so to speak, have so much to say about it. We'll see a little
+00:00:55,740 --> 00:01:00,860
+If I, so to speak, have so much to say about it.
+ We'll see a little
 
 19
 00:01:02,200 --> 00:01:04,740
 But since I think I do more than one movie
 
 20
-00:01:04,940 --> 00:01:07.660
+00:01:04,940 --> 00:01:07,660
 So I don't have to say everything at once
 
 21
@@ -83,7 +84,7 @@ So I don't have to say everything at once
 and what I was going to take up first is to
 
 22
-00:01:12,720 --> 00:01:15.560
+00:01:12,720 --> 00:01:15,560
 I think it's very easy to think
 
 23
@@ -123,7 +124,7 @@ all those writing technical things
 which of course are very important
 
 32
-00:01:47,680 --> 00:01:52.540
+00:01:47,680 --> 00:01:52,540
 But I think it's good to think about writing
 
 33
@@ -131,7 +132,7 @@ But I think it's good to think about writing
 So to say, starting with something completely different
 
 34
-00:01:57,020 --> 00:02:00.620
+00:01:57,020 --> 00:02:00,620
 than language and words and grammar and ...
 
 35
@@ -195,7 +196,7 @@ and in order to develop your writing, I think that
 You need to go into a conversation with other people
 
 50
-00:03:04,680 --> 00:03:07.960
+00:03:04,680 --> 00:03:07,960
 What other people say, what other people
 
 51
@@ -251,7 +252,7 @@ Looking at things and reading things
 To get a richer
 
 64
-00:03:53,960 --> 00:03:55.960
+00:03:53,960 --> 00:03:55,960
 Image of the world
 
 65
@@ -259,7 +260,7 @@ Image of the world
 so you read and so on
 
 66
-00:04:00,100 --> 00:04:02.420
+00:04:00,100 --> 00:04:02,420
 In order to develop as a human being
 
 67
@@ -331,7 +332,7 @@ To write so you have to try
 Enrich yourself as a human being by ...
 
 84
-00:05:05,680 --> 00:05:08.080
+00:05:05,680 --> 00:05:08,080
 see the world in many different ways
 
 85
@@ -379,7 +380,7 @@ They put you in your text
 They are part of your writing
 
 96
-00:05:59,560 --> 00:06:02.740
+00:05:59,560 --> 00:06:02,740
 so i start like this in the big picture
 
 97
@@ -431,7 +432,7 @@ If you develop
 Your thoughts and your view of the world so you can also start looking for a richer language that ...
 
 109
-00:07:04,460 --> 00:07:06.840
+00:07:04,460 --> 00:07:06,840
 express your thoughts on
 
 110
@@ -468,4 +469,6 @@ so we'll see you soon in a new video again
 
 118
 00:07:39,600 --> 00:07:42,660
-Have a nice day. Bye.
+Have a nice day.
+ Bye.
+

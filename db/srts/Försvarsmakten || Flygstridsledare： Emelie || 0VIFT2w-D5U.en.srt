@@ -1,5 +1,5 @@
 1
-00:00:04,760 --> 00:00:07.920
+00:00:04,760 --> 00:00:07,920
 An ordinary day at work starts about half past eight in the morning
 
 2
@@ -69,3 +69,4 @@ To feel that I am contributing to Sweden's defense and
 18
 00:01:00,200 --> 00:01:03,200
 The development of Sweden's defense makes me proud.
+

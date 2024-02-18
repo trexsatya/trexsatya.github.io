@@ -1,5 +1,5 @@
 1
-00:00:00,120 --> 00:00:07.880
+00:00:00,120 --> 00:00:07,880
 When during the Renaissance, the ancient ideals were rediscovered, the intellectuals of the 17th century wanted to think new.
 
 2
@@ -131,7 +131,7 @@ In fact, we can't even be sure if we are awake or dreaming, Descartes said.
 Our senses are sufficient to navigate in everyday life,
 
 34
-00:03:00,460 --> 00:03:05.940
+00:03:00,460 --> 00:03:05,940
 But not to form the basis for absolute and undoubted truth.
 
 35
@@ -200,7 +200,8 @@ Descartes summarized this conclusion in a famous Latin phrase: "Cogito Ergo sum"
 
 51
 00:04:24,900 --> 00:04:31,720
-Which is translated to "I think, so I am". This is the foundation of knowledge.
+Which is translated to "I think, so I am".
+ This is the foundation of knowledge.
 
 52
 00:04:32,000 --> 00:04:35,180
@@ -219,7 +220,7 @@ He began by trying to prove God's existence with a variant of the classical onto
 2. Suppose God does not exist.
 
 56
-00:04:51,760 --> 00:04:57.820
+00:04:51,760 --> 00:04:57,820
 3. In that case, one can imagine something that has all the qualities of God, but which also exists.
 
 57
@@ -307,11 +308,11 @@ This problem is now referred to as the body-soul problem, something that philoso
 How can the tank (which is non-material) on lifting your arm affecting your body (which is material/physical)
 
 78
-00:06:58,760 --> 00:07:01.560
+00:06:58,760 --> 00:07:01,560
 To do just that - and vice versa.
 
 79
-00:07:02,000 --> 00:07:09.380
+00:07:02,000 --> 00:07:09,380
 How can consciousness arise from a lump gray matter consisting only of electrochemical properties?
 
 80
@@ -395,15 +396,15 @@ and a point in motion could be described with equations.
 He had just invented the coordinate system.
 
 100
-00:08:54,780 --> 00:09:00.960
+00:08:54,780 --> 00:09:00,960
 Descartes also improved the algebraic notation by introducing exponents
 
 101
-00:09:01,360 --> 00:09:07.540
+00:09:01,360 --> 00:09:07,540
 and the Convention to designate unknown quantities with letters from the end of the alphabet
 
 102
-00:09:07.540 --> 00:09:11,520
+00:09:07,540 --> 00:09:11,520
 and known quantities with letters from the beginning of the alphabet.
 
 103
@@ -443,7 +444,7 @@ And she invited the philosopher to Stockholm to give her private lessons in phil
 He reluctantly accepted but came to suffer severely from the cold winter.
 
 112
-00:10:02,120 --> 00:10:07.560
+00:10:02,120 --> 00:10:07,560
 He himself must have described Sweden as a bears' land between cliffs and ice
 
 113
@@ -517,3 +518,4 @@ Instead placed the skull on a shelf in the science museum in Paris
 130
 00:11:46,600 --> 00:11:53,340
 Where there is still the view- squeezed between a pair of Neanderthal and Cromagnon shells.
+

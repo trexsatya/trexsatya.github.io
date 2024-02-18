@@ -1,554 +1,118 @@
 1
-00:00:00,089 --> 00:00:02,629
-
-he is a young man and reading his cafes
+00:00:00,340 --> 00:00:09,260
+Zenon from Elea (about 490-430 BC) was a natural philosopher best known for the way he argued.
 
 2
-00:00:02,629 --> 00:00:02,639
-he is a young man and reading his cafes
- 
+00:00:09,660 --> 00:00:13,360
+He did this mainly by constructing paradoxes
 
 3
-00:00:02,639 --> 00:00:04,430
-he is a young man and reading his cafes
-of humanity makes the very strong
+00:00:13,360 --> 00:00:16,540
+And some of them have puzzled people ever since.
 
 4
-00:00:04,430 --> 00:00:04,440
-of humanity makes the very strong
- 
+00:00:17,080 --> 00:00:23,580
+He developed these paradoxes as arguments, for example, because movement was impossible
 
 5
-00:00:04,440 --> 00:00:06,650
-of humanity makes the very strong
-crisis all points virtueblue philosopher
+00:00:23,640 --> 00:00:27,340
+And that the reality we perceive must be an illusion.
 
 6
-00:00:06,650 --> 00:00:06,660
-crisis all points virtueblue philosopher
- 
+00:00:27,560 --> 00:00:30,660
+The most well -known example is "Achilles and the turtle".
 
 7
-00:00:06,660 --> 00:00:08,900
-crisis all points virtueblue philosopher
-maintaining this fall in matters of
+00:00:30,960 --> 00:00:36,960
+Zenon uses logic and a method today called Reductio ad absurdum
 
 8
-00:00:08,900 --> 00:00:08,910
-maintaining this fall in matters of
- 
+00:00:37,280 --> 00:00:42,300
+- If a reasoning leads to a contradiction, its opposite must be true.
 
 9
-00:00:08,910 --> 00:00:11,299
-maintaining this fall in matters of
-pau instead of attacking the base enyeama
+00:00:42,460 --> 00:00:46,960
+Most interesting with these paradoxes is how a strictly logical reasoning
 
 10
-00:00:11,299 --> 00:00:11,309
-pau instead of attacking the base enyeama
- 
+00:00:46,960 --> 00:00:50,480
+Seemingly can lead to an incorrect conclusion.
 
 11
-00:00:11,309 --> 00:00:14,420
-pau instead of attacking the base enyeama
-building the paradox we rome finally
+00:00:51,060 --> 00:00:58,080
+Through his paradoxes, Zenon showed that philosophy and science require more of us than what we first take for granted
 
 12
-00:00:14,420 --> 00:00:14,430
-building the paradox we rome finally
- 
+00:00:58,180 --> 00:01:01,080
+- And that's why he deserves a place in philosophy history.
 
 13
-00:00:14,430 --> 00:00:17,020
-building the paradox we rome finally
-plus germany  players and threatening the
+00:01:06,960 --> 00:01:13,060
+What happens if we let a well -trained runner (in Zenon's example Achilles, the protagonist of the Illiad)
 
 14
-00:00:17,020 --> 00:00:17,030
-plus germany  players and threatening the
- 
+00:01:13,060 --> 00:01:18,080
+Compete in a 100-meter race against a turtle?
+ Of course, the runner wins.
 
 15
-00:00:17,030 --> 00:00:19,220
-plus germany  players and threatening the
-cultivators of its paradoxical
+00:01:18,240 --> 00:01:23,760
+But wait a bit, says Zenon.
+ Let me show that strict logic claims the opposite.
 
 16
-00:00:19,220 --> 00:00:19,230
-cultivators of its paradoxical
- 
+00:01:23,940 --> 00:01:29,340
+And the logic does not lie, which is why our perception of reality must be wrong.
 
 17
-00:00:19,230 --> 00:00:23,029
-cultivators of its paradoxical
-its argument the manna alfred russel male
+00:01:29,880 --> 00:01:35,780
+We set up the contestants, but to make the competition a little fairer (and for the paradox to occur)
 
 18
-00:00:23,029 --> 00:00:23,039
-its argument the manna alfred russel male
- 
+00:01:35,840 --> 00:01:38,300
+we give the turtle a certain lead.
 
 19
-00:00:23,039 --> 00:00:25,099
-its argument the manna alfred russel male
-is offered with the two other
+00:01:38,780 --> 00:01:42,900
+In order for Achilles to win, he must first pass the turtle
 
 20
-00:00:25,099 --> 00:00:25,109
-is offered with the two other
- 
+00:01:43,000 --> 00:01:45,860
+- And this assumes that he will first catch it.
 
 21
-00:00:25,109 --> 00:00:27,740
-is offered with the two other
-factors precisely the year the couple of
+00:01:46,020 --> 00:01:49,320
+But this is a logical impossibility, Zenon says, explaining:
 
 22
-00:00:27,740 --> 00:00:27,750
-factors precisely the year the couple of
- 
+00:01:50,040 --> 00:01:55,340
+During the time it takes for Achilles to get to the place the turtle was based on
 
 23
-00:00:27,750 --> 00:00:29,929
-factors precisely the year the couple of
-maintenance example is acquired the radar screens
+00:01:55,400 --> 00:01:58,580
+Has the turtle has moved another distance.
 
 24
-00:00:29,929 --> 00:00:29,939
-maintenance example is acquired the radar screens
- 
+00:01:59,040 --> 00:02:06,020
+At the time it now takes for Achilles to run even this stretch, the turtle has moved another piece.
 
 25
-00:00:29,939 --> 00:00:31,099
-maintenance example is acquired the radar screens
+00:02:06,020 --> 00:02:10,180
+So can continue to reason until the given conclusion becomes
 
 26
-00:00:31,099 --> 00:00:31,109
-
- 
+00:02:10,180 --> 00:02:12,440
+That Achilles will never catch the turtle.
 
 27
-00:00:31,109 --> 00:00:33,110
-
-it is a man in minors blocked when
+00:02:12,840 --> 00:02:17,560
+The distance that separates them over time becomes minimal but never zero.
 
 28
-00:00:33,110 --> 00:00:33,120
-it is a man in minors blocked when
- 
+00:02:18,360 --> 00:02:24,200
+If you clean the reasoning in the paradox you can show that nothing can move at all.
 
 29
-00:00:33,120 --> 00:00:34,430
-it is a man in minors blocked when
-it turns me on my  two cases
-
-30
-00:00:34,430 --> 00:00:34,440
-it turns me on my  two cases
- 
-
-31
-00:00:34,440 --> 00:00:37,729
-it turns me on my  two cases
-the adoption is absurd where we do not set up
-
-32
-00:00:37,729 --> 00:00:37,739
-the adoption is absurd where we do not set up
- 
-
-33
-00:00:37,739 --> 00:00:40,940
-the adoption is absurd where we do not set up
-a hammam ouled el amoud semester 2010
-
-34
-00:00:40,940 --> 00:00:40,950
-a hammam ouled el amoud semester 2010
- 
-
-35
-00:00:40,950 --> 00:00:44,810
-a hammam ouled el amoud semester 2010
-thanks to 60 years but its paradoxical and
-
-36
-00:00:44,810 --> 00:00:44,820
-thanks to 60 years but its paradoxical and
- 
-
-37
-00:00:44,820 --> 00:00:47,299
-thanks to 60 years but its paradoxical and
-restrict the orchestrated soul man tilt
-
-38
-00:00:47,299 --> 00:00:47,309
-restrict the orchestrated soul man tilt
- 
-
-39
-00:00:47,309 --> 00:00:50,290
-restrict the orchestrated soul man tilt
-only stopover is there a son artix license
-
-40
-00:00:50,290 --> 00:00:50,300
-only stopover is there a son artix license
- 
-
-41
-00:00:50,300 --> 00:00:53,360
-only stopover is there a son artix license
-is the paradox of salazie and our
-
-42
-00:00:53,360 --> 00:00:53,370
-is the paradox of salazie and our
- 
-
-43
-00:00:53,370 --> 00:00:55,160
-is the paradox of salazie and our
-philosophy of  life in scope clavet
-
-44
-00:00:55,160 --> 00:00:55,170
-philosophy of  life in scope clavet
- 
-
-45
-00:00:55,170 --> 00:00:58,790
-philosophy of  life in scope clavet
-billion to the refugees and the slabs fire
-
-46
-00:00:58,790 --> 00:00:58,800
-billion to the refugees and the slabs fire
- 
-
-47
-00:00:58,800 --> 00:01:07,040
-billion to the refugees and the slabs fire
-there even placed some philosophy of history
-
-48
-00:01:07,040 --> 00:01:07,050
-
- 
-
-49
-00:01:07,050 --> 00:01:08,730
-
-photo v
-
-50
-00:01:08,730 --> 00:01:08,740
-photo v
- 
-
-51
-00:01:08,740 --> 00:01:11,280
-photo v
-their fear and if we except who
-
-52
-00:01:11,280 --> 00:01:11,290
-their fear and if we except who
- 
-
-53
-00:01:11,290 --> 00:01:14,280
-their fear and if we except who
-follows it everywhere guillaume and tundra
-
-54
-00:01:14,280 --> 00:01:14,290
-follows it everywhere guillaume and tundra
- 
-
-55
-00:01:14,290 --> 00:01:17,550
-follows it everywhere guillaume and tundra
-match on the mound during the 29 points
-
-56
-00:01:17,550 --> 00:01:17,560
-match on the mound during the 29 points
- 
-
-57
-00:01:17,560 --> 00:01:19,770
-match on the mound during the 29 points
-but firm in the tcl
-
-58
-00:01:19,770 --> 00:01:19,780
-but firm in the tcl
- 
-
-59
-00:01:19,780 --> 00:01:23,070
-but firm in the tcl
-during  of my life his strict louga of love
-
-60
-00:01:23,070 --> 00:01:23,080
-during  of my life his strict louga of love
- 
-
-61
-00:01:23,080 --> 00:01:26,039
-during  of my life his strict louga of love
-to the log and that I regretted by doing
-
-62
-00:01:26,039 --> 00:01:26,049
-to the log and that I regretted by doing
- 
-
-63
-00:01:26,049 --> 00:01:27,719
-to the log and that I regretted by doing
-much more tiring barclays reached
-
-64
-00:01:27,719 --> 00:01:27,729
-much more tiring barclays reached
- 
-
-65
-00:01:27,729 --> 00:01:30,779
-much more tiring barclays reached
-the final and it was treated water
-
-66
-00:01:30,779 --> 00:01:30,789
-the final and it was treated water
- 
-
-67
-00:01:30,789 --> 00:01:32,669
-the final and it was treated water
-aaron my fracture at the
-
-68
-00:01:32,669 --> 00:01:32,679
-aaron my fracture at the
- 
-
-69
-00:01:32,679 --> 00:01:35,039
-aaron my fracture at the
-literary terminal and his paradoxical forest scrubs
-
-70
-00:01:35,039 --> 00:01:35,049
-literary terminal and his paradoxical forest scrubs
- 
-
-71
-00:01:35,049 --> 00:01:36,990
-literary terminal and his paradoxical forest scrubs
-early which had  what the step in this
-
-72
-00:01:36,990 --> 00:01:37,000
-early which had  what the step in this
- 
-
-73
-00:01:37,000 --> 00:01:39,779
-early which had  what the step in this
-list force blonde fataki l'escaut
-
-74
-00:01:39,779 --> 00:01:39,789
-list force blonde fataki l'escaut
- 
-
-75
-00:01:39,789 --> 00:01:41,820
-list force blonde fataki l'escaut
-naveen la monf highlights spent at
-
-76
-00:01:41,820 --> 00:01:41,830
-naveen la monf highlights spent at
- 
-
-77
-00:01:41,830 --> 00:01:50,249
-naveen la monf highlights spent at
-the time where strong outbreaks around
-
-78
-00:01:50,249 --> 00:01:50,259
-the time where strong outbreaks around
- 
-
-79
-00:01:50,259 --> 00:01:52,949
-the time where strong outbreaks around
-twenty laps fra that he commented on
-
-80
-00:01:52,949 --> 00:01:52,959
-twenty laps fra that he commented on
- 
-
-81
-00:01:52,959 --> 00:01:54,960
-twenty laps fra that he commented on
-the pilot rescued by a budget which
-
-82
-00:01:54,960 --> 00:01:54,970
-the pilot rescued by a budget which
- 
-
-83
-00:01:54,970 --> 00:01:59,730
-the pilot rescued by a budget which
-still makes by amalgamation a modern style  ty
-
-84
-00:01:59,730 --> 00:01:59,740
-still makes by amalgamation a modern style  ty
- 
-
-85
-00:01:59,740 --> 00:02:01,980
-still makes by amalgamation a modern style  ty
-dennis hopper who inspire them internally
-
-86
-00:02:01,980 --> 00:02:01,990
-dennis hopper who inspire them internally
- 
-
-87
-00:02:01,990 --> 00:02:04,260
-dennis hopper who inspire them internally
-a strict a recourse of parents
-
-88
-00:02:04,260 --> 00:02:04,270
-a strict a recourse of parents
- 
-
-89
-00:02:04,270 --> 00:02:06,630
-a strict a recourse of parents
-broken wire and telegram quickly except like a
-
-90
-00:02:06,630 --> 00:02:06,640
-broken wire and telegram quickly except like a
- 
-
-91
-00:02:06,640 --> 00:02:08,520
-broken wire and telegram quickly except like a
-madman that I address you o'meara who
-
-92
-00:02:08,520 --> 00:02:08,530
-madman that I address you o'meara who
- 
-
-93
-00:02:08,530 --> 00:02:10,499
-madman that I address you o'meara who
-stick to the underwear it simple it not that he
-
-94
-00:02:10,499 --> 00:02:10,509
-stick to the underwear it simple it not that he
- 
-
-95
-00:02:10,509 --> 00:02:13,380
-stick to the underwear it simple it not that he
-went like a strong anger is a
-
-96
-00:02:13,380 --> 00:02:13,390
-went like a strong anger is a
- 
-
-97
-00:02:13,390 --> 00:02:15,300
-went like a strong anger is a
-ex employee of a road limit the
-
-98
-00:02:15,300 --> 00:02:15,310
-ex employee of a road limit the
- 
-
-99
-00:02:15,310 --> 00:02:19,229
-ex employee of a road limit the
-minimum high seas of the north nothing therefore the
-
-100
-00:02:19,229 --> 00:02:19,239
-minimum high seas of the north nothing therefore the
- 
-
-101
-00:02:19,239 --> 00:02:20,430
-minimum high seas of the north nothing therefore the
-bad one has nothing paradoxical for me
-
-102
-00:02:20,430 --> 00:02:20,440
-bad one has nothing paradoxical for me
- 
-
-103
-00:02:20,440 --> 00:02:23,400
-bad one has nothing paradoxical for me
-commits acts there is evaluated at 8
-
-104
-00:02:23,400 --> 00:02:23,410
-commits acts there is evaluated at 8
- 
-
-105
-00:02:23,410 --> 00:02:23,789
-commits acts there is evaluated at 8
-14
-
-106
-00:02:23,789 --> 00:02:23,799
-14
- 
-
-107
-00:02:23,799 --> 00:02:26,940
-14
-these two human and
-
-108
-00:02:26,940 --> 00:02:26,950
-these two human and
- 
-
-109
-00:02:26,950 --> 00:02:28,710
-these two human and
-social problems crabbe mother you have the talent of
-
-110
-00:02:28,710 --> 00:02:28,720
-social problems crabbe mother you have the talent of
- 
-
-111
-00:02:28,720 --> 00:02:30,870
-social problems crabbe mother you have the talent of
-world
+00:02:24,480 --> 00:02:29,560
+Do you see the problem, and how could you respond to this argument?
 

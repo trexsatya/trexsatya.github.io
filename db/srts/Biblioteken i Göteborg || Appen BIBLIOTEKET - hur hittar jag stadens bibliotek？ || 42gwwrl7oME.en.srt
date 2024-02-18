@@ -3,7 +3,7 @@
 Discover the Library app today
 
 2
-00:00:07,940 --> 00:00:09.940
+00:00:07,940 --> 00:00:09,940
 Do you want to get information about the city's library?
 
 3
@@ -23,7 +23,7 @@ Click on a library to get more information
 Want to know more click more information
 
 7
-00:00:40,571 --> 00:00:42.571
+00:00:40,571 --> 00:00:42,571
 Click opening hours
 
 8
@@ -41,3 +41,4 @@ You can also go directly to a list of libraries
 11
 00:01:24,826 --> 00:01:26,826
 Download the Library from App Store or Google Play
+

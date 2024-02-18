@@ -23,7 +23,7 @@ Read something.
 Teach vs taught yourself something
 
 7
-00:00:23,067 --> 00:00:24.067
+00:00:23,067 --> 00:00:24,067
 Teach myself.
 
 8
@@ -51,7 +51,7 @@ Hi, my name is Andreas Ivarsson and I am a professor of psychology.
 The best thing about becoming a professor is that, I think anyway, is yet -
 
 14
-00:00:48,000 --> 00:00:53.567
+00:00:48,000 --> 00:00:53,567
 freer to shape research issues, research groups -
 
 15
@@ -63,8 +63,9 @@ And lead the research in a different way than you did before.
 When I applied to college, the only thing that was important was that I would be able to read -
 
 17
-00:01:03,767 --> 00:01:08.567
-Something with sports. The ambition to stay at the university was not-
+00:01:03,767 --> 00:01:08,567
+Something with sports.
+ The ambition to stay at the university was not-
 
 18
 00:01:08,633 --> 00:01:13,467
@@ -111,11 +112,11 @@ The ambition is to further try to deepen that kind of collaboration for -
 Being able to make a difference where it actually counts.
 
 29
-00:01:59,200 --> 00:02:03.033
+00:01:59,200 --> 00:02:03,033
 Being senior researchers means to a large extent that one becomes involved-
 
 30
-00:02:03,133 --> 00:02:08.433
+00:02:03,133 --> 00:02:08,433
 in different processes, both linked to tutorial as the main supervisor for-
 
 31
@@ -137,3 +138,4 @@ be involved in different types of processes that develop both individuals -
 35
 00:02:27,967 --> 00:02:30,867
 And also the organization.
+

@@ -1,5 +1,5 @@
 1
-00:00:06,233 --> 00:00:08.666
+00:00:06,233 --> 00:00:08,666
 What is psychosis?
 
 2
@@ -31,7 +31,7 @@ may feel persecuted or in danger without a concrete reason.
 Or by hearing voices, which is a type of hallucination
 
 9
-00:00:34,466 --> 00:00:39.866
+00:00:34,466 --> 00:00:39,866
 where people hear sounds or conversations that others cannot hear.
 
 10
@@ -47,7 +47,7 @@ Where reality is experienced differently.
 The most common psychotic disease is schizophrenia
 
 13
-00:00:49,166 --> 00:00:52.466
+00:00:49,166 --> 00:00:52,466
 Which I have also made a separate video about.
 
 14
@@ -59,15 +59,15 @@ But there are also others such as
 reactive psychosis that is a temporary psychosis
 
 16
-00:00:59,516 --> 00:01:02.516
+00:00:59,516 --> 00:01:02,516
 triggered by stressful events,
 
 17
-00:01:02,633 --> 00:01:05.033
+00:01:02,633 --> 00:01:05,033
 Schizoa -efficient syndrome
 
 18
-00:01:05,033 --> 00:01:09.450
+00:01:05,033 --> 00:01:09,450
 that combines schizophrenia symptoms with mood swings,
 
 19
@@ -99,7 +99,7 @@ a disease in itself without rather a group of symptoms that may
 be part of several different mental health conditions.
 
 26
-00:01:36,916 --> 00:01:40.066
+00:01:36,916 --> 00:01:40,066
 It is important to understand that a psychosis is something that can hit
 
 27
@@ -115,11 +115,11 @@ Symptoms may occur as a result of frightening or severe events,
 other diseases or use of certain types of drugs.
 
 30
-00:01:53,216 --> 00:01:56.933
+00:01:53,216 --> 00:01:56,933
 There is help to get and with the right support and treatment, many can live
 
 31
-00:01:56,933 --> 00:02:00.666
+00:01:56,933 --> 00:02:00,666
 A good life despite periods of psychosis.
 
 32
@@ -131,7 +131,7 @@ But what exactly does it mean to have a
 Psychosis and what is it causing?
 
 34
-00:02:06,866 --> 00:02:09.866
+00:02:06,866 --> 00:02:09,866
 A psychosis can develop in different ways.
 
 35
@@ -175,7 +175,7 @@ Delusions, hallucinations and thought disorders.
 Delusions mean
 
 45
-00:02:49,433 --> 00:02:52.616
+00:02:49,433 --> 00:02:52,616
 that your perception of reality is changed
 
 46
@@ -191,7 +191,7 @@ For example, you may experience a strong feeling that you are persecuted,
 Although there is no evidence of this, which is a form of paranoia.
 
 49
-00:03:06,650 --> 00:03:10.066
+00:03:06,650 --> 00:03:10,066
 You may also be convinced that you possess special
 
 50
@@ -247,11 +247,11 @@ You experience and see things that are not in the real world.
 You can hear voices that no one else hears.
 
 63
-00:04:01,950 --> 00:04:04.616
+00:04:01,950 --> 00:04:04,616
 You can see things that are not there,
 
 64
-00:04:04,616 --> 00:04:08.366
+00:04:04,616 --> 00:04:08,366
 feel things on your skin that are not there or even feel
 
 65
@@ -287,7 +287,7 @@ This makes it difficult for you to make decisions and to solve problems,
 Which can make everyday tasks very challenging.
 
 73
-00:04:42,916 --> 00:04:45.566
+00:04:42,916 --> 00:04:45,566
 What causes a psychosis?
 
 74
@@ -311,7 +311,7 @@ Heredity.
 If there are psychotic diseases in the family, the risk of developing a psychosis may be higher.
 
 79
-00:05:03,800 --> 00:05:07.400
+00:05:03,800 --> 00:05:07,400
 Trauma and experiences of trauma, especially
 
 80
@@ -367,7 +367,7 @@ Although certain risk factors may increase the likelihood of some individuals
 is there help to get when someone is undergoing a
 
 93
-00:06:02,783 --> 00:06:07.516
+00:06:02,783 --> 00:06:07,516
 Psychosis becomes the changes in behavior often noticeable to those around them.
 
 94
@@ -419,11 +419,11 @@ If you or someone you know, these tanks or emotions are experiencing.
 You can contact a psychiatric reception, a regular emergency room
 
 106
-00:06:59,366 --> 00:07:03.333
+00:06:59,366 --> 00:07:03,333
 Or if there is an acute risk of self -harm behavior.
 
 107
-00:07:03,416 --> 00:07:05.966
+00:07:03,416 --> 00:07:05,966
 Call 112
 
 108
@@ -435,9 +435,10 @@ I hope you have
 Learned a little more about what a psychosis is for something.
 
 110
-00:07:10,583 --> 00:07:12.566
+00:07:10,583 --> 00:07:12,566
 Feel free to subscribe to the channel.
 
 111
 00:07:12,566 --> 00:07:15,633
 And as always thanks for looking!
+

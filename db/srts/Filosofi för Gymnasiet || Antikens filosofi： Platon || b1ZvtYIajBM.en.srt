@@ -1,9 +1,9 @@
 1
-00:00:00,076 --> 00:00:04.098
+00:00:00,076 --> 00:00:04,098
 Plato is undoubtedly one of the most important thinkers of history
 
 2
-00:00:04,098 --> 00:00:08.116
+00:00:04,098 --> 00:00:08,116
 And with him, philosophy was formed as we know it today.
 
 3
@@ -39,7 +39,7 @@ For seven years he studied his teachings, before Socrates finally executed.
 At that time Plato was the foremost of the disciples,
 
 11
-00:00:52,014 --> 00:00:56.016
+00:00:52,014 --> 00:00:56,016
 And anyone who would also pass on and develop philosophy.
 
 12
@@ -47,7 +47,7 @@ And anyone who would also pass on and develop philosophy.
 With Pythagoras as a model, he decided after Socrates' death to start his own philosophy.
 
 13
-00:01:03,007 --> 00:01:08.055
+00:01:03,007 --> 00:01:08,055
 The school went under the name Academy (by Akademos, a hero in Greek mythology)
 
 14
@@ -75,7 +75,7 @@ Plato also began writing books on the topic of philosophy.
 These texts all revolved around Socrates who discussed moral and political concepts,
 
 20
-00:01:46,054 --> 00:01:51.090
+00:01:46,054 --> 00:01:51,090
 And was presented as dialogues between Socrates and various interlocutors.
 
 21
@@ -83,7 +83,7 @@ And was presented as dialogues between Socrates and various interlocutors.
 It is thanks to these books that we know of Socrates - but here also a problem arises.
 
 22
-00:01:58,056 --> 00:02:03.084
+00:01:58,056 --> 00:02:03,084
 The early books are likely to give a correct portrait of the historical Socrates,
 
 23
@@ -91,7 +91,7 @@ The early books are likely to give a correct portrait of the historical Socrates
 But over time, Plato came to develop philosophy.
 
 24
-00:02:08,014 --> 00:02:12.009
+00:02:08,014 --> 00:02:12,009
 However, he chose to continue to have Socrates as the main character
 
 25
@@ -119,7 +119,7 @@ In the center of Plato's philosophy is the idea of idea -
 A theory clearly influenced by Pythago's idea that speech exists in an abstract world beyond our own.
 
 31
-00:02:45,094 --> 00:02:52.096
+00:02:45,094 --> 00:02:52,096
 But what starts as a speech at Pythagoras will develop into ideas or forms at Plato.
 
 32
@@ -127,11 +127,11 @@ But what starts as a speech at Pythagoras will develop into ideas or forms at Pl
 According to Plato, what we with our senses perceive as reality is not the true reality
 
 33
-00:02:59,092 --> 00:03:08.096
+00:02:59,092 --> 00:03:08,096
 Without only a shadow image of it - this when our soul is locked in a body with imperfect knowledge organs.
 
 34
-00:03:09,064 --> 00:03:12.096
+00:03:09,064 --> 00:03:12,096
 The idea of ideas can be explained by thinking about a circle.
 
 35
@@ -156,22 +156,23 @@ The perfect circle - the idea of the circle - is outside time and space.
 
 40
 00:03:42,012 --> 00:03:50,012
-It is non-material and eternal, and is perfect to its definition. In addition, there is only one circle idea.
+It is non-material and eternal, and is perfect to its definition.
+ In addition, there is only one circle idea.
 
 41
 00:03:50,026 --> 00:03:53,058
 And even though the perfect circle does not exist in our world
 
 42
-00:03:53,058 --> 00:03:57.090
+00:03:53,058 --> 00:03:57,090
 Is it available to us through conscious and intellect.
 
 43
-00:03:58,032 --> 00:04:01.037
+00:03:58,032 --> 00:04:01,037
 According to Plato, there are thus two levels of reality.
 
 44
-00:04:01.096 --> 00:04:08.096
+00:04:01,096 --> 00:04:08,096
 In the reality we experience with our minds-the world of mind-everything is non-perfect and temporary.
 
 45
@@ -187,7 +188,7 @@ And that is not available to our minds - the world of ideas.
 Here everything is perfect and eternal, and here is everything's shape, template or origin.
 
 48
-00:04:24,084 --> 00:04:30.090
+00:04:24,084 --> 00:04:30,090
 Plato now wonders what all people have in common, what it is that makes us just people.
 
 49
@@ -207,12 +208,13 @@ In the same way that the drawn circle has part in the idea of the circle.
 Everything that exists in our world is only worse copies of a perfect abstraction.
 
 53
-00:04:53,022 --> 00:04:59.108
+00:04:53,022 --> 00:04:59,108
 It is because we humans have the ability to see through reason and thinking the idea of things
 
 54
-00:05:00,008 --> 00:05:06.013
-which we can also identify and understand them. This reasoning makes Plato an idealist.
+00:05:00,008 --> 00:05:06,013
+which we can also identify and understand them.
+ This reasoning makes Plato an idealist.
 
 55
 00:05:06,074 --> 00:05:13,088
@@ -243,15 +245,15 @@ We are all these prisoners, said Plato, caught in our world of mind.
 What we believe is reality is, in fact, only shadows of it.
 
 62
-00:05:48,006 --> 00:05:53.062
+00:05:48,006 --> 00:05:53,062
 In a cave, a group of people are imprisoned with their faces facing the inner wall.
 
 63
-00:05:54,022 --> 00:06:00.030
+00:05:54,022 --> 00:06:00,030
 They have been sitting there all their lives, and are bound so they have never seen anything other than this particular wall.
 
 64
-00:06:01,003 --> 00:06:06.037
+00:06:01,003 --> 00:06:06,037
 Based on the opening of the cave, the sun's rays shine in and throw shadows on the wall in front of the prisoners.
 
 65
@@ -259,7 +261,7 @@ Based on the opening of the cave, the sun's rays shine in and throw shadows on t
 These shadows are the only object that the prisoners have ever seen,
 
 66
-00:06:10,066 --> 00:06:12.098
+00:06:10,066 --> 00:06:12,098
 and will for them constitute reality.
 
 67
@@ -291,7 +293,7 @@ We are all these prisoners, said Plato, captures in our own world of mind.
 What we believe is reality is, in fact, only shadows of it.
 
 74
-00:06:58,020 --> 00:07:05.560
+00:06:58,020 --> 00:07:05,560
 Plato's ideas have also influenced Christianity (which at this time did not yet exist).
 
 75
@@ -335,7 +337,7 @@ But the fundamental error with democracy was that it ignored people's difference
 Some people were simply better suited than others to control, Plato said.
 
 85
-00:07:59,360 --> 00:08:03.920
+00:07:59,360 --> 00:08:03,920
 We should remind us here that Plato, who came from aristocratic burden,
 
 86
@@ -383,7 +385,7 @@ Instead, the state would be guided by the Visa, by the philosophers - for only t
 Unlike everyday people who only had performances.
 
 97
-00:08:59,620 --> 00:09:06.820
+00:08:59,620 --> 00:09:06,820
 Only the most intelligent would be trained to philosophers, an education that went on to the age of 35.
 
 98
@@ -423,11 +425,11 @@ These children would then be taken from the parents immediately after birth and 
 No one was told who your child was, so as not to benefit them.
 
 107
-00:09:55,460 --> 00:09:59.860
+00:09:55,460 --> 00:09:59,860
 The children would thus consider all of their own age as their siblings
 
 108
-00:09:59,860 --> 00:10:04.840
+00:09:59,860 --> 00:10:04,840
 And all in adulthood as their parents - and thus want everyone well.
 
 109
@@ -457,3 +459,4 @@ which characterized the 20th century.
 115
 00:10:31,580 --> 00:10:37,640
 He must have tried on several occasions to realize his political utopia, but without much success.
+

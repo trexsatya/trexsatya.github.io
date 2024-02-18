@@ -43,7 +43,7 @@ An example we find in Bishop Augustinus, born in the present Algeria, at that ti
 Inspired by what is called newly plated, an interpretation of Plato's idea theory, he came to bring together
 
 12
-00:00:58,780 --> 00:01:04.720
+00:00:58,780 --> 00:01:04,720
 Philosophy and religion by considering the Platonic ideas as thoughts in God's consciousness.
 
 13
@@ -71,7 +71,7 @@ Another medieval philosopher, and like one of Christianity's great theologians, 
 From a philosophical perspective, he is best known for adapting Aristotle's theories to the Christian faith.
 
 19
-00:01:48,980 --> 00:01:53.560
+00:01:48,980 --> 00:01:53,560
 Aristotle's writings had been forgotten in Europe for 1000 years,
 
 20
@@ -79,7 +79,7 @@ Aristotle's writings had been forgotten in Europe for 1000 years,
 But in the Middle East, his writings had been managed by Arab philosophers.
 
 21
-00:01:58,800 --> 00:02:05.940
+00:01:58,800 --> 00:02:05,940
 During the 13th century, these books had begun to find their way back to Europe in the form of war changes from crusades,
 
 22
@@ -115,7 +115,7 @@ is usually considered a rebirth of the ancient ideals.
 The power of the church decreased and science, literature and art thrived.
 
 30
-00:02:47,960 --> 00:02:53.020
+00:02:47,960 --> 00:02:53,020
 Economic, social and political changes occur in society as a result of inventions
 
 31
@@ -165,3 +165,4 @@ Wanted the intellectuals of the 17th century to find new ways forward.
 42
 00:03:51,040 --> 00:03:55,180
 And with the enlightenment time, modern philosophy was born.
+

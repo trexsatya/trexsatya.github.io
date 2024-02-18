@@ -1,5 +1,5 @@
 1
-00:00:06,000 --> 00:00:09.792
+00:00:06,000 --> 00:00:09,792
 Hi, my name is Shevin and I am an administrator at Försäkringskassan.
 
 2
@@ -32,7 +32,8 @@ Examples of things that make you risk being without compensation
 
 9
 00:00:35,416 --> 00:00:40,416
-can be; that you do not submit activity report in time,
+can be;
+ that you do not submit activity report in time,
 
 10
 00:00:40,500 --> 00:00:45,916
@@ -63,7 +64,7 @@ Increases the number of days you become without compensation.
 First time you get a warning,
 
 17
-00:01:05,750 --> 00:01:09.666
+00:01:05,750 --> 00:01:09,666
 The second time you will be without compensation for a day.
 
 18
@@ -99,7 +100,7 @@ Decisions and decide which days you should not receive compensation for.
 If you have questions about why you do not receive compensation
 
 26
-00:01:44,041 --> 00:01:47.041
+00:01:44,041 --> 00:01:47,041
 Should you contact the Employment Service.
 
 27
@@ -123,7 +124,7 @@ If you are not entitled to compensation for a certain number of days
 Is it important that you continue to apply for compensation as usual.
 
 32
-00:02:05,166 --> 00:02:08.333
+00:02:05,166 --> 00:02:08,333
 For every day you apply and normally would
 
 33
@@ -143,7 +144,7 @@ If you do not submit applications
 Can't we count off a few days and then
 
 37
-00:02:22,000 --> 00:02:26.708
+00:02:22,000 --> 00:02:26,708
 you can be without compensation for a longer period than necessary.
 
 38
@@ -171,7 +172,7 @@ If you had compensation at the same level as your unemployment benefit,
 can it be lowered to SEK 223 \ HKR
 
 44
-00:02:47,916 --> 00:02:51.838
+00:02:47,916 --> 00:02:51,838
 If you get rid of the right to compensation for 45 days.
 
 45
@@ -183,15 +184,15 @@ In that case, you need to work again to meet a new working condition
 Before your compensation can be based on your unemployment benefit again.
 
 47
-00:03:02,666 --> 00:03:04.958
+00:03:02,666 --> 00:03:04,958
 You must submit a special form
 
 48
-00:03:04,958 --> 00:03:07.958
+00:03:04,958 --> 00:03:07,958
 to the a-cash to have this tried.
 
 49
-00:03:08,125 --> 00:03:12.041
+00:03:08,125 --> 00:03:12,041
 The form can be found on the Employment Service's website.
 
 50
@@ -207,7 +208,7 @@ If you are wrong, you can request reconsideration of the Employment Service's de
 You do this in the way described in your decision from the Employment Service.
 
 53
-00:03:25,416 --> 00:03:29.541
+00:03:25,416 --> 00:03:29,541
 If the Employment Service changes its decision, the Swedish Social Insurance Agency will receive information about
 
 54
@@ -221,3 +222,4 @@ What you have applied for before.
 56
 00:03:36,083 --> 00:03:39,000
 You do not have to reapply for reimbursement.
+

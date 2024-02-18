@@ -1,14 +1,15 @@
 1
-00:00:00,256 --> 00:00:03.328
+00:00:00,256 --> 00:00:03,328
 Many programs can usually be read at several different schools.
 
 2
-00:00:03,840 --> 00:00:08.448
+00:00:03,840 --> 00:00:08,448
 Have you decided to read the community program but do not really know which school you want to attend?
 
 3
 00:00:08,984 --> 00:00:13,824
-Absolutely understandable. I will meet some high school students to ask why they chose their school.
+Absolutely understandable.
+ I will meet some high school students to ask why they chose their school.
 
 4
 00:00:14,080 --> 00:00:16,224
@@ -16,7 +17,8 @@ Come along!
 
 5
 00:00:18,080 --> 00:00:21,824
-Why did you just choose your school? Was it something that was extra important to you?
+Why did you just choose your school?
+ Was it something that was extra important to you?
 
 6
 00:00:21,948 --> 00:00:23,792
@@ -32,7 +34,8 @@ And then I thought the situation very well at Kungsholmen.
 
 9
 00:00:30,348 --> 00:00:35,692
-I come from a school with over 1000 students. So coming to a small school felt very nice.
+I come from a school with over 1000 students.
+ So coming to a small school felt very nice.
 
 10
 00:00:36,352 --> 00:00:40,000
@@ -43,7 +46,7 @@ I chose my school because I heard about it through other friends.
 And I thought it was nice to go into town and leave the schools where I have lived before.
 
 12
-00:00:47,872 --> 00:00:54.016
+00:00:47,872 --> 00:00:54,016
 What is important here and the thing for me is that I see several cultures as well as from different countries.
 
 13
@@ -55,11 +58,12 @@ And you can learn a lot from cultures and nationality.
 And in the language you can develop further.
 
 15
-00:01:02,720 --> 00:01:06.660
-Why did you just choose your school? Was it something that was especially important to you?
+00:01:02,720 --> 00:01:06,660
+Why did you just choose your school?
+ Was it something that was especially important to you?
 
 16
-00:01:06,816 --> 00:01:09.990
+00:01:06,816 --> 00:01:09,990
 I chose Queen Blanka Kungsholmen because it is close to me.
 
 17
@@ -95,11 +99,11 @@ That I wanted to attend a good technology school.
 As you understand.
 
 25
-00:01:39,072 --> 00:01:41.888
+00:01:39,072 --> 00:01:41,888
 It is very individual what you choose to appreciate yourself.
 
 26
-00:01:42,656 --> 00:01:44.648
+00:01:42,656 --> 00:01:44,648
 Try to think about what is important to you.
 
 27
@@ -109,3 +113,4 @@ The situation, recommendations or how the teachers are.
 28
 00:01:48,544 --> 00:01:50,080
 One step closer to high school!
+

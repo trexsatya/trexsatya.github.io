@@ -1,9 +1,10 @@
 1
 00:00:05,088 --> 00:00:06,756
-Hello! My name is Julia Andersson-
+Hello!
+ My name is Julia Andersson-
 
 2
-00:00:06,756 --> 00:00:09.384
+00:00:06,756 --> 00:00:09,384
 -And I study work science at Halmstad University.
 
 3
@@ -15,7 +16,7 @@ Right now I'm sitting in house S.
 I chose to read this program as it is one-
 
 5
-00:00:14,264 --> 00:00:17.517
+00:00:14,264 --> 00:00:17,517
 -Bred education that provides many job opportunities.
 
 6
@@ -55,7 +56,7 @@ It has been around before, but are now-
 -More specialized and a little more niche in work science.
 
 15
-00:00:44,169 --> 00:00:47.630
+00:00:44,169 --> 00:00:47,630
 In the third year we get the chance to choose intermediate-
 
 16
@@ -67,15 +68,15 @@ In the third year we get the chance to choose intermediate-
 -Can form the education a little according to how you want it yourself.
 
 18
-00:00:55,096 --> 00:01:00.018
+00:00:55,096 --> 00:01:00,018
 In the future, I would have liked to work with recruitment or other HR issues-
 
 19
-00:01:00,226 --> 00:01:05.231
+00:01:00,226 --> 00:01:05,231
 -In that I like to work in groups and meeting new people.
 
 20
-00:01:05,648 --> 00:01:08.151
+00:01:05,648 --> 00:01:08,151
 Something unique about this program is that man-
 
 21
@@ -101,3 +102,4 @@ One tip is to be on the zero before school start-
 26
 00:01:23,917 --> 00:01:27,921
 Then it will not be as scary to start school later.
+

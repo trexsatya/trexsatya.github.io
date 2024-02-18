@@ -12,7 +12,7 @@ a vacuum cleaner
 
 4
 00:00:35,480 --> 00:00:41,260
-I vacuum.
+I am vacuuming.
 
 5
 00:00:41,780 --> 00:00:54,640
@@ -36,19 +36,19 @@ a dust cloth
 
 10
 00:01:37,620 --> 00:01:42,960
-I'm dusting.
+I dust off.
 
 11
 00:01:53,320 --> 00:02:03,460
-a window scraper
+A window scraper
 
 12
 00:02:13,200 --> 00:02:20,380
-I clean windows.
+I polish windows.
 
 13
 00:02:25,180 --> 00:02:30,340
-and soup breasts
+A garbage brush
 
 14
 00:02:33,660 --> 00:02:39,980
@@ -68,7 +68,7 @@ a detergent
 
 18
 00:03:21,500 --> 00:03:27,100
-and toilet brushes
+A toilet brush
 
 19
 00:03:30,340 --> 00:03:39,680
@@ -76,7 +76,7 @@ I clean the toilet.
 
 20
 00:03:54,640 --> 00:04:04,380
-I clean in the fridge.
+I clean in the refrigerator.
 
 21
 00:04:17,200 --> 00:04:23,640
@@ -84,7 +84,7 @@ a bucket
 
 22
 00:04:28,220 --> 00:04:35,840
-a mop
+A mop
 
 23
 00:05:00,980 --> 00:05:08,940
@@ -96,11 +96,11 @@ I mop the floor in the kitchen.
 
 25
 00:05:21,620 --> 00:05:27,040
-a disc brush
+A dish brush
 
 26
 00:05:28,260 --> 00:05:33,540
-a disc fungus
+A disk sponge
 
 27
 00:05:34,600 --> 00:05:41,160
@@ -120,7 +120,7 @@ See you in the next movie!
 
 31
 00:06:07,940 --> 00:06:11,300
-Do you clean at home?
+Are you cleaning at home?
 
 32
 00:06:11,320 --> 00:06:13,640
@@ -128,5 +128,5 @@ I clean a lot!
 
 33
 00:06:13,840 --> 00:06:15,900
-I have three kids!
+I have three children!
 

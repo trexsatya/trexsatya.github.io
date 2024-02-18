@@ -51,7 +51,7 @@ In here, messages are also sent and received to other vessels.
 Like all other work on board, it is a teamwork where everyone is helped.
 
 14
-00:02:02,889 --> 00:02:06.237
+00:02:02,889 --> 00:02:06,237
 On board a mine clearance vessel you live in two- or five years.
 
 15
@@ -79,7 +79,7 @@ Here in the Sweep Duk there are, among other things, our underwater vehicles.
 They are remote-controlled unmanned underwater vessels-
 
 21
-00:02:55,992 --> 00:03:01.428
+00:02:55,992 --> 00:03:01,428
 -As used to film and harm minor found.
 
 22
@@ -115,7 +115,7 @@ In the engine room there are four main engines that run Voith Schneider the prop
 These allow the ship to maintain a speed of about 15 knots.
 
 30
-00:04:48,688 --> 00:04:52.258
+00:04:48,688 --> 00:04:52,258
 However, when looking for mines you drive a lot more slowly.
 
 31
@@ -123,5 +123,6 @@ However, when looking for mines you drive a lot more slowly.
 There are also generators that make electricity, boilers that make hot water-
 
 32
-00:04:56,696 --> 00:05:02.224
+00:04:56,696 --> 00:05:02,224
 And osmosis units that manufacture drinking water from salt water and many other technical equipment.
+

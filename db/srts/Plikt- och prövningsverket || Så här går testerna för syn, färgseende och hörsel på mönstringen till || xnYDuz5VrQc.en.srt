@@ -8,7 +8,8 @@ You will see a painting, then you should hold for your left eye-
 
 3
 00:00:16,080 --> 00:00:21,160
-- And read a row from left to right. When done, you have to change your hand and eye-
+- And read a row from left to right.
+ When done, you have to change your hand and eye-
 
 4
 00:00:21,320 --> 00:00:25,800
@@ -19,7 +20,7 @@ You will see a painting, then you should hold for your left eye-
 When you are done, you can read a line with both eyes.
 
 6
-00:00:30,280 --> 00:00:35.560
+00:00:30,280 --> 00:00:35,560
 If you have lenses or glasses, you bring them so we can use them during the synthesis test.
 
 7
@@ -36,14 +37,15 @@ In the color release test, we check your color vision.
 
 10
 00:00:50,920 --> 00:00:57,680
-You will see numbers with clearly different color. One, two or no numbers.
+You will see numbers with clearly different color.
+ One, two or no numbers.
 
 11
-00:00:57,840 --> 00:01:00.640
+00:00:57,840 --> 00:01:00,640
 You have three seconds per painting.
 
 12
-00:01:02,160 --> 00:01:05.720
+00:01:02,160 --> 00:01:05,720
 During the hearing test you can sit in a soundproof hearing cage.
 
 13
@@ -61,3 +63,4 @@ You press the button immediately when you hear a ton.
 16
 00:01:20,800 --> 00:01:25,680
 We check one ear at a time and the test starts on your right ear.
+

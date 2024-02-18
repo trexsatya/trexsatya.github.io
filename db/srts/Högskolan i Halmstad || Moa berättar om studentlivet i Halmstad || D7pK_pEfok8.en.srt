@@ -1,6 +1,7 @@
 1
-00:00:00,433 --> 00:00:04.233
-Student life in Halmstad. Student Moa tells.
+00:00:00,433 --> 00:00:04,233
+Student life in Halmstad.
+ Student Moa tells.
 
 2
 00:00:05,133 --> 00:00:10,500
@@ -35,7 +36,7 @@ I like the library very much.
 There I like to sit and plug in peace and quiet.
 
 10
-00:00:34,900 --> 00:00:39.267
+00:00:34,900 --> 00:00:39,267
 Or ask for help when I need to look for something.
 
 11
@@ -57,3 +58,4 @@ I like it very well.
 15
 00:00:52,900 --> 00:00:58,533
 Halmstad University is a very good school that I can highly recommend.
+

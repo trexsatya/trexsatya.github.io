@@ -1,6 +1,7 @@
 1
-00:00:01,640 --> 00:00:06.820
-- Thanks so much. I am also curious about this task.
+00:00:01,640 --> 00:00:06,820
+- Thanks so much.
+ I am also curious about this task.
 
 2
 00:00:06,860 --> 00:00:13,320
@@ -31,11 +32,11 @@ What have I researched in recent years?
 You mentioned some popular concepts: automation, algorithms, digital media.
 
 9
-00:00:55,860 --> 00:00:57.540
+00:00:55,860 --> 00:00:57,540
 What does it really mean?
 
 10
-00:00:57,780 --> 00:01:02.680
+00:00:57,780 --> 00:01:02,680
 When I try to describe my core interests in my research
 
 11
@@ -72,7 +73,8 @@ But you can also think about political issues.
 
 19
 00:02:00,240 --> 00:02:06,240
-What kind of politics? How does it limit citizens?
+What kind of politics?
+ How does it limit citizens?
 
 20
 00:02:06,280 --> 00:02:10,100
@@ -136,14 +138,16 @@ So I want to explore the digital imperative through environments that are percei
 
 35
 00:03:51,160 --> 00:03:55,960
-What are the environments today? Are they at all?
+What are the environments today?
+ Are they at all?
 
 36
-00:03:57,860 --> 00:04:03.060
-Prisons, I thought. There are no digital media, right?
+00:03:57,860 --> 00:04:03,060
+Prisons, I thought.
+ There are no digital media, right?
 
 37
-00:04:04,060 --> 00:04:09.480
+00:04:04,060 --> 00:04:09,480
 The inmates have no access to the Internet, and so on.
 
 38
@@ -171,7 +175,7 @@ monitor them and try to predict conflicts.
 There are different ideas about prisons where new technologies can be developed.
 
 44
-00:05:01,400 --> 00:05:05.880
+00:05:01,400 --> 00:05:05,880
 Some restrictions that exist in society at large are not found in prisons.
 
 45
@@ -199,7 +203,7 @@ There I can clearly see change processes that apply to society at large.
 Another project, which is linked to the library environment and digitalisation,
 
 51
-00:05:43,680 --> 00:05:49.540
+00:05:43,680 --> 00:05:49,540
 is about automated decision -making in the public sector.
 
 52
@@ -207,11 +211,11 @@ is about automated decision -making in the public sector.
 Automation in the public sector where you delegate different decisions
 
 53
-00:05:54,740 --> 00:06:00.840
+00:05:54,740 --> 00:06:00,840
 to algorithms and technological infrastructure.
 
 54
-00:06:01,020 --> 00:06:09.220
+00:06:01,020 --> 00:06:09,220
 I am conducting interviews with people working in the public sector.
 
 55
@@ -244,14 +248,15 @@ How does it feel to work with some infrastructures?
 
 62
 00:06:43,200 --> 00:06:49,140
-What are the restrictions? How can the organization get better?
+What are the restrictions?
+ How can the organization get better?
 
 63
 00:06:49,140 --> 00:06:52,920
 Where do you lose in interpersonal contact?
 
 64
-00:06:57,120 --> 00:07:06.040
+00:06:57,120 --> 00:07:06,040
 When talking to the administrators, they say it is no problem.
 
 65
@@ -283,7 +288,7 @@ An algorithm is ganke much better than a human
 Which has judgment, emotions, and sweat.
 
 72
-00:07:40,120 --> 00:07:45.560
+00:07:40,120 --> 00:07:45,560
 Who has problems, and sees different things at the same time.
 
 73
@@ -299,7 +304,7 @@ Actually, the algorithms may be better than we are.
 It is interesting to see how they wrestle with it.
 
 76
-00:08:02,720 --> 00:08:09.900
+00:08:02,720 --> 00:08:09,900
 On the one hand, the administrators have an idea of themselves with values.
 
 77
@@ -327,11 +332,12 @@ That's what I'm interested in.
 In all my research I have with me the citizen's perspective.
 
 83
-00:08:49,460 --> 00:08:59.860
-I try to approach the clients. How do they experience the change process?
+00:08:49,460 --> 00:08:59,860
+I try to approach the clients.
+ How do they experience the change process?
 
 84
-00:08:59,920 --> 00:09:08.460
+00:08:59,920 --> 00:09:08,460
 How do they feel that the relationship with authorities changes if they meet a digital interface?
 
 85
@@ -355,7 +361,7 @@ There it is difficult to find a way to approach the citizen perspective.
 I interview associations that help to facilitate government contacts.
 
 90
-00:09:52,660 --> 00:09:57.040
+00:09:52,660 --> 00:09:57,040
 Help build trust in authorities, and so on.
 
 91
@@ -423,7 +429,7 @@ In the stories I have taken part in Mirror's aspects of something that may feel 
 A sense of participation in society that breaks down to a first step
 
 107
-00:12:02,780 --> 00:12:08.820
+00:12:02,780 --> 00:12:08,820
 Which can be BankID, which opens access to other tracks.
 
 108
@@ -445,3 +451,4 @@ How can you incorporate it into a larger project that means more than downloadin
 112
 00:12:41,060 --> 00:12:42,280
 Thanks so much.
+

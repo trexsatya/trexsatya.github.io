@@ -1,9 +1,9 @@
 1
-00:00:00,255 --> 00:00:01.255
+00:00:00,255 --> 00:00:01,255
 Hello
 
 2
-00:00:02,015 --> 00:00:04.695
+00:00:02,015 --> 00:00:04,695
 I go on on this
 
 3
@@ -11,7 +11,7 @@ I go on on this
 Social theme
 
 4
-00:00:06,900 --> 00:00:08.555
+00:00:06,900 --> 00:00:08,555
 The theme about
 
 5
@@ -23,7 +23,7 @@ cultural differences, to get in touch with
 with people and talk
 
 7
-00:00:14,375 --> 00:00:16.515
+00:00:14,375 --> 00:00:16,515
 In a new language in a new country
 
 8
@@ -55,7 +55,7 @@ and
 I constantly think that this is
 
 15
-00:00:36,845 --> 00:00:39.845
+00:00:36,845 --> 00:00:39,845
 a language training focus, the question is
 
 16
@@ -63,7 +63,7 @@ a language training focus, the question is
 How we should
 
 17
-00:00:42,335 --> 00:00:45.545
+00:00:42,335 --> 00:00:45,545
 train in Swedish to get better
 
 18
@@ -87,7 +87,7 @@ Look a little bigger and a little further
 than only on words and grammar
 
 23
-00:00:59,335 --> 00:01:02.315
+00:00:59,335 --> 00:01:02,315
 and I think I will use
 
 24
@@ -95,7 +95,7 @@ and I think I will use
 some slightly more difficult words
 
 25
-00:01:05,395 --> 00:01:08.365
+00:01:05,395 --> 00:01:08,365
 When I talk and sometimes I explain them
 
 26
@@ -235,7 +235,7 @@ and can understand some
 and I feel that one
 
 60
-00:02:44,855 --> 00:02:46.805
+00:02:44,855 --> 00:02:46,805
 an obstacle for me
 
 61
@@ -243,19 +243,19 @@ an obstacle for me
 or a challenge, something that
 
 62
-00:02:49,565 --> 00:02:52.545
+00:02:49,565 --> 00:02:52,545
 I would have to work a lot with if I want to
 
 63
-00:02:52,545 --> 00:02:55.605
+00:02:52,545 --> 00:02:55,605
 get better at talking to people in everyday life
 
 64
-00:02:55,605 --> 00:02:59.020
+00:02:55,605 --> 00:02:59,020
 It is to understand which conversation topics
 
 65
-00:02:59,020 --> 00:03:02.080
+00:02:59,020 --> 00:03:02,080
 that works and as I said, conversation topics are,
 
 66
@@ -307,7 +307,7 @@ And I think that if you think a little about it
 Well we take a very simple example
 
 78
-00:03:36,280 --> 00:03:39.615
+00:03:36,280 --> 00:03:39,615
 Many people say we talk about the weather
 
 79
@@ -331,15 +331,15 @@ to talk about the weather
 I'm pretty sure of
 
 84
-00:03:53,855 --> 00:03:56.865
+00:03:53,855 --> 00:03:56,865
 that if you learn some more words and learn to talk
 
 85
-00:03:56,865 --> 00:03:59.755
+00:03:56,865 --> 00:03:59,755
 a bit more like Swedes talk about the weather
 
 86
-00:04:00,105 --> 00:04:02.885
+00:04:00,105 --> 00:04:02,885
 then it will create a little
 
 87
@@ -399,7 +399,7 @@ everyone likes them directly
 Although they talk, for example, very bad Swedish
 
 101
-00:04:44,985 --> 00:04:47.545
+00:04:44,985 --> 00:04:47,545
 Others have a little harder
 
 102
@@ -411,16 +411,17 @@ But in any case, everyone can win at
 to improve one's ability to, for example
 
 104
-00:04:54,525 --> 00:04:55.865
+00:04:54,525 --> 00:04:55,865
 Talk about the weather
 
 105
-00:04:57,135 --> 00:05:00.155
+00:04:57,135 --> 00:05:00,155
 But honestly, it is very boring to
 
 106
 00:05:00,155 --> 00:05:03,295
-Talk about the weather. Maybe you can do for five minutes
+Talk about the weather.
+ Maybe you can do for five minutes
 
 107
 00:05:03,295 --> 00:05:04,295
@@ -471,15 +472,15 @@ What could we talk about more
 What subjects could I take up, what subjects
 
 119
-00:05:36,325 --> 00:05:39.265
+00:05:36,325 --> 00:05:39,265
 may others be interested in
 
 120
-00:05:39,265 --> 00:05:42.035
+00:05:39,265 --> 00:05:42,035
 so that it becomes one
 
 121
-00:05:42,035 --> 00:05:44.505
+00:05:42,035 --> 00:05:44,505
 exchange, that it is not just becoming
 
 122
@@ -491,7 +492,7 @@ I tell you something and the other is not answering
 I have no finished recipe for this
 
 124
-00:05:51,485 --> 00:05:52.515
+00:05:51,485 --> 00:05:52,515
 I just think
 
 125
@@ -511,7 +512,7 @@ so i think there is a lot to gain on
 think through
 
 129
-00:06:04,885 --> 00:06:07.635
+00:06:04,885 --> 00:06:07,635
 what subjects you want to be able to talk about and then work out
 
 130
@@ -547,7 +548,7 @@ I don't understand this
 For people say that Swedes
 
 138
-00:06:30,205 --> 00:06:32.515
+00:06:30,205 --> 00:06:32,515
 not want to be personal and not
 
 139
@@ -564,7 +565,8 @@ huh ???
 
 142
 00:06:38,755 --> 00:06:41,635
-Who doesn't? They are certainly available
+Who doesn't?
+ They are certainly available
 
 143
 00:06:41,635 --> 00:06:44,695
@@ -583,7 +585,7 @@ I would even, just as an example now
 take this with a pinch of salt
 
 147
-00:06:55,075 --> 00:06:57.865
+00:06:55,075 --> 00:06:57,865
 Don't believe I mean this 100%
 
 148
@@ -591,15 +593,15 @@ Don't believe I mean this 100%
 But I would like to reverse the generalization
 
 149
-00:07:01,505 --> 00:07:03.405
+00:07:01,505 --> 00:07:03,405
 and say that almost all
 
 150
-00:07:03,795 --> 00:07:06.625
+00:07:03,795 --> 00:07:06,625
 Immigrants I meet does not seem
 
 151
-00:07:06,625 --> 00:07:09.345
+00:07:06,625 --> 00:07:09,345
 be interested in talking about
 
 152
@@ -659,7 +661,7 @@ contact me personally or take up
 personal things, but my feeling is to
 
 166
-00:07:48,355 --> 00:07:51.015
+00:07:48,355 --> 00:07:51,015
 many people are not so interested too
 
 167
@@ -679,15 +681,15 @@ This prejudice that no Swedes
 want to take up something more personal
 
 171
-00:08:03,535 --> 00:08:05.705
+00:08:03,535 --> 00:08:05,705
 lies in the way
 
 172
-00:08:05,705 --> 00:08:08.715
+00:08:05,705 --> 00:08:08,715
 And it's a shame because I think many of my friends
 
 173
-00:08:08,715 --> 00:08:09.715
+00:08:08,715 --> 00:08:09,715
 in all cases
 
 174
@@ -723,7 +725,7 @@ So talk about it properly
 It can be a bridge into conversation culture
 
 182
-00:08:33,245 --> 00:08:35.505
+00:08:33,245 --> 00:08:35,505
 So I mentioned for example in a video
 
 183
@@ -759,15 +761,15 @@ in my opinion and among my friends, I don't know
 there are certainly different, but I think
 
 191
-00:08:59,775 --> 00:09:02.825
+00:08:59,775 --> 00:09:02,825
 Generally in Swedish culture it is very uninvited
 
 192
-00:09:02,825 --> 00:09:05.665
+00:09:02,825 --> 00:09:05,665
 and disrespectful to directly express
 
 193
-00:09:05,665 --> 00:09:08.895
+00:09:05,665 --> 00:09:08,895
 views on another person's life choice
 
 194
@@ -791,7 +793,7 @@ I'm a little used to, I work at SFI so I have
 understanding, but at the same time I see after all
 
 199
-00:09:23,425 --> 00:09:26.535
+00:09:23,425 --> 00:09:26,535
 how person by person, who comes from a more
 
 200
@@ -803,7 +805,7 @@ It is great to have many children-culture
 such a culture that they miss the chance to
 
 202
-00:09:32,365 --> 00:09:35.065
+00:09:32,365 --> 00:09:35,065
 learn something about how I think by the fact that
 
 203
@@ -819,7 +821,7 @@ and in relation to
 The person Kalle So it closes the discussion
 
 206
-00:09:44,425 --> 00:09:45.865
+00:09:44,425 --> 00:09:45,865
 I just get a little like this
 
 207
@@ -839,11 +841,11 @@ However, had a person asked a personal question
 To me so I would have liked to try to explain
 
 211
-00:09:56,905 --> 00:09:59.635
+00:09:56,905 --> 00:09:59,635
 how I think and why
 
 212
-00:09:59,635 --> 00:10:01.065
+00:09:59,635 --> 00:10:01,065
 My life is like my life is
 
 213
@@ -851,7 +853,7 @@ My life is like my life is
 Then of course it can be sensitive for different reasons
 
 214
-00:10:04,455 --> 00:10:07.545
+00:10:04,455 --> 00:10:07,545
 Ask why someone just has
 
 215
@@ -901,3 +903,708 @@ something that closes the door
 226
 00:10:37,225 --> 00:10:40,175
 and I don't get the desire to continue that call
+
+227
+00:10:40,175 --> 00:10:41,075
+null
+
+228
+00:10:41,075 --> 00:10:42,525
+and it's just one example
+
+229
+00:10:44,315 --> 00:10:45,215
+but
+
+230
+00:10:45,215 --> 00:10:48,125
+I want to take another example that maybe
+
+231
+00:10:48,125 --> 00:10:51,205
+End of this with conversation culture
+
+232
+00:10:51,285 --> 00:10:54,425
+Because it was very interesting
+
+233
+00:10:54,425 --> 00:10:57,485
+my friend Josefin who has a
+
+234
+00:10:57,485 --> 00:10:59,995
+Instagram account called "Swedish with Josefin"
+
+235
+00:11:00,445 --> 00:11:03,215
+and that are teachers
+
+236
+00:11:03,215 --> 00:11:06,255
+But she is also the one that helps people in their spare time and so
+
+237
+00:11:06,255 --> 00:11:09,345
+she came and greeted me
+
+238
+00:11:09,345 --> 00:11:11,335
+at work and
+
+239
+00:11:11,935 --> 00:11:14,955
+We sat in the cafe and cooked and there sat
+
+240
+00:11:14,955 --> 00:11:17,995
+a bunch of Arabic -speaking men above all
+
+241
+00:11:17,995 --> 00:11:20,125
+it was probably one
+
+242
+00:11:20,125 --> 00:11:23,055
+little gang gang sitting there talking
+
+243
+00:11:23,055 --> 00:11:26,055
+and they became very curious and also very happy
+
+244
+00:11:26,055 --> 00:11:28,955
+When Josefin showed that she can talk
+
+245
+00:11:28,955 --> 00:11:32,215
+some Arabic and understand some Arabic
+
+246
+00:11:32,535 --> 00:11:35,485
+and it became a very lively
+
+247
+00:11:35,485 --> 00:11:38,235
+And loud conversation
+
+248
+00:11:38,235 --> 00:11:41,315
+where people interrupted each other and everyone wanted
+
+249
+00:11:41,315 --> 00:11:44,675
+say their opinion and what was interesting was to
+
+250
+00:11:45,695 --> 00:11:48,715
+I looked at Josefin that she thought it
+
+251
+00:11:48,715 --> 00:11:51,745
+was great fun, she really liked
+
+252
+00:11:51,745 --> 00:11:52,745
+with the
+
+253
+00:11:52,825 --> 00:11:55,655
+she was like, one says
+
+254
+00:11:55,655 --> 00:11:57,395
+in its proper element
+
+255
+00:11:58,375 --> 00:12:01,425
+in its proper element, that means that
+
+256
+00:12:01,555 --> 00:12:04,645
+that situation suited her
+
+257
+00:12:04,645 --> 00:12:05,645
+perfect
+
+258
+00:12:06,305 --> 00:12:09,415
+I, on the other hand, in one such
+
+259
+00:12:10,065 --> 00:12:12,865
+In such a call
+
+260
+00:12:12,865 --> 00:12:15,905
+In such a conversation culture where one speaks loudly
+
+261
+00:12:15,905 --> 00:12:18,805
+and talking a lot and everyone seems to be interested
+
+262
+00:12:18,805 --> 00:12:20,975
+of telling their opinion
+
+263
+00:12:21,035 --> 00:12:23,785
+But not so interested in listening
+
+264
+00:12:23,785 --> 00:12:25,395
+So it feels to me anyway
+
+265
+00:12:26,345 --> 00:12:29,325
+I really want to go from there
+
+266
+00:12:29,565 --> 00:12:32,555
+I don't think it's funny and
+
+267
+00:12:34,235 --> 00:12:36,305
+I have to exert myself
+
+268
+00:12:36,305 --> 00:12:39,195
+So I have to say so go outside
+
+269
+00:12:39,195 --> 00:12:41,975
+that which feels comfortable for me
+
+270
+00:12:41,975 --> 00:12:44,835
+and I can do it, it's not
+
+271
+00:12:44,835 --> 00:12:48,215
+it is like a workout for me too to adapt to different
+
+272
+00:12:48,215 --> 00:12:49,615
+people's ways
+
+273
+00:12:50,105 --> 00:12:53,125
+to talk and interact and communicate
+
+274
+00:12:53,705 --> 00:12:54,705
+but
+
+275
+00:12:55,045 --> 00:12:57,855
+I still believe that many would agree
+
+276
+00:12:57,855 --> 00:13:00,725
+that it might be a little smaller
+
+277
+00:13:00,895 --> 00:13:04,085
+common in Swedish conversation culture
+
+278
+00:13:04,725 --> 00:13:07,335
+that seven people (= people) sit and fight
+
+279
+00:13:07,335 --> 00:13:10,695
+about the conversation space and talking in mouth on each other
+
+280
+00:13:11,085 --> 00:13:14,475
+I saw a little movie with an American
+
+281
+00:13:14,545 --> 00:13:17,735
+person, a man who lives in Sweden and he
+
+282
+00:13:17,925 --> 00:13:20,705
+It described that difference
+
+283
+00:13:20,765 --> 00:13:23,925
+Americans speak louder and more in their mouths
+
+284
+00:13:23,925 --> 00:13:26,875
+on each other and Swedes are a little more
+
+285
+00:13:26,995 --> 00:13:28,045
+Silent
+
+286
+00:13:28,395 --> 00:13:31,105
+And maybe a little more waiting
+
+287
+00:13:31,105 --> 00:13:33,515
+Now it's my turn, now it's your turn
+
+288
+00:13:34,525 --> 00:13:37,065
+Lucky, who is talking
+
+289
+00:13:37,225 --> 00:13:39,435
+now i talk later
+
+290
+00:13:39,515 --> 00:13:42,565
+Is it your turn and you talk
+
+291
+00:13:42,565 --> 00:13:44,315
+It is called the take -off
+
+292
+00:13:44,755 --> 00:13:47,845
+How to take tours in a call
+
+293
+00:13:47,845 --> 00:13:50,855
+And I think that is
+
+294
+00:13:50,855 --> 00:13:53,845
+such a thing one can study
+
+295
+00:13:53,845 --> 00:13:57,175
+If one wants to be better at communicating in a new language
+
+296
+00:13:57,175 --> 00:14:00,215
+How to take tours
+
+297
+00:14:00,215 --> 00:14:01,215
+In this language
+
+298
+00:14:02,585 --> 00:14:05,635
+both which sentences one uses
+
+299
+00:14:05,635 --> 00:14:08,395
+to take the word and hand over the word
+
+300
+00:14:08,395 --> 00:14:10,425
+And also a little
+
+301
+00:14:10,425 --> 00:14:12,675
+How to make it more social
+
+302
+00:14:12,675 --> 00:14:15,125
+If you interrupt each other much or
+
+303
+00:14:15,125 --> 00:14:17,815
+Is it more that one hands over the word
+
+304
+00:14:17,815 --> 00:14:20,055
+and get it back a bit like this
+
+305
+00:14:20,975 --> 00:14:23,935
+And as I said, I am Swedish and Josefin is Swedish
+
+306
+00:14:23,935 --> 00:14:24,935
+null
+
+307
+00:14:25,355 --> 00:14:28,075
+We experience this very different
+
+308
+00:14:28,075 --> 00:14:30,475
+We talked about it afterwards
+
+309
+00:14:30,515 --> 00:14:33,025
+So it's also about ...
+
+310
+00:14:33,025 --> 00:14:35,295
+Here will probably the last expression I want to
+
+311
+00:14:36,115 --> 00:14:39,435
+sell in, it's about knowing (a particle verb)
+
+312
+00:14:39,665 --> 00:14:42,365
+know, a particle verb
+
+313
+00:14:42,745 --> 00:14:45,035
+to know the one you are talking to
+
+314
+00:14:47,085 --> 00:14:48,385
+and
+
+315
+00:14:48,785 --> 00:14:51,745
+So you talk to Josefin for example, then it's just
+
+316
+00:14:51,745 --> 00:14:54,265
+to drive on
+
+317
+00:14:54,715 --> 00:14:57,785
+And she will think it's great fun, it will be a good contact
+
+318
+00:14:58,865 --> 00:15:01,765
+If you talk to me then it is
+
+319
+00:15:01,765 --> 00:15:04,605
+or a person who is like me
+
+320
+00:15:04,605 --> 00:15:08,035
+then it is better to be a little more cautious, ask a little
+
+321
+00:15:08,115 --> 00:15:11,115
+Tell a little, so to take some more
+
+322
+00:15:11,120 --> 00:15:13,300
+responsibility for
+
+323
+00:15:13,300 --> 00:15:15,000
+The take -off in the conversation
+
+324
+00:15:15,195 --> 00:15:18,555
+it would, so to speak, work much better because
+
+325
+00:15:19,295 --> 00:15:22,185
+Get a contact with a person like me that is a bit more shy
+
+326
+00:15:22,185 --> 00:15:23,315
+And a little more cautious
+
+327
+00:15:24,315 --> 00:15:25,485
+and so on
+
+328
+00:15:25,865 --> 00:15:28,875
+But there we have a little different things if I try
+
+329
+00:15:28,880 --> 00:15:30,940
+repeat, yes but we have
+
+330
+00:15:30,940 --> 00:15:33,760
+Call cultures there
+
+331
+00:15:34,195 --> 00:15:37,295
+one can speak higher or lower
+
+332
+00:15:37,295 --> 00:15:40,335
+one can cancel more, ie that
+
+333
+00:15:40,335 --> 00:15:42,365
+you take the word from the other
+
+334
+00:15:42,845 --> 00:15:46,175
+one can cancel more or cancel less
+
+335
+00:15:46,415 --> 00:15:48,465
+We have the take
+
+336
+00:15:50,080 --> 00:15:53,720
+Do you talk a lot yourself or try to ask the other
+
+337
+00:15:53,720 --> 00:15:55,620
+We have this to know
+
+338
+00:15:58,300 --> 00:16:00,620
+We have the big question mark
+
+339
+00:16:00,625 --> 00:16:02,935
+Want Swedes to be personal
+
+340
+00:16:02,935 --> 00:16:04,765
+Or don't they want it?
+
+341
+00:16:06,045 --> 00:16:08,865
+can it be about how to
+
+342
+00:16:09,595 --> 00:16:11,775
+Takes up more personal subjects?
+
+343
+00:16:11,775 --> 00:16:12,975
+perhaps
+
+344
+00:16:12,975 --> 00:16:15,765
+How is it where you come from
+
+345
+00:16:15,765 --> 00:16:19,005
+How is it in your culture, in what way is man
+
+346
+00:16:19,005 --> 00:16:21,225
+Personalized with you
+
+347
+00:16:23,255 --> 00:16:25,695
+was that maybe it me
+
+348
+00:16:25,695 --> 00:16:28,735
+Just that .... and really think about this with the topics of conversation
+
+349
+00:16:29,135 --> 00:16:31,415
+conversation topics can be quite
+
+350
+00:16:32,165 --> 00:16:34,865
+important to get a call to
+
+351
+00:16:35,425 --> 00:16:36,435
+flower
+
+352
+00:16:37,035 --> 00:16:39,775
+For example, if I take myself again
+
+353
+00:16:39,775 --> 00:16:43,185
+Do you start talking about music on a curious
+
+354
+00:16:43,185 --> 00:16:45,955
+interacting manner
+
+355
+00:16:45,955 --> 00:16:48,335
+so you will probably get my attention
+
+356
+00:16:48,335 --> 00:16:49,685
+I love music
+
+357
+00:16:50,035 --> 00:16:52,185
+Do you start talking about politics
+
+358
+00:16:52,185 --> 00:16:54,435
+so it won't work as well
+
+359
+00:16:55,725 --> 00:16:58,645
+it depends a little but i can't be able to keep up with
+
+360
+00:16:58,645 --> 00:17:01,495
+so much so i'm a little bit
+
+361
+00:17:01,975 --> 00:17:05,335
+If you start talking about like this, what happens in the government
+
+362
+00:17:05,375 --> 00:17:06,915
+or what is happening
+
+363
+00:17:07,875 --> 00:17:10,615
+In something like this trade agreement between
+
+364
+00:17:10,615 --> 00:17:12,425
+China and Russia
+
+365
+00:17:12,425 --> 00:17:15,385
+it won't work so well on me because i can't so much about it
+
+366
+00:17:15,385 --> 00:17:18,465
+But with another person so maybe it really is
+
+367
+00:17:18,845 --> 00:17:21,045
+The best tip
+
+368
+00:17:21,045 --> 00:17:23,535
+Talk about things you read in the newspaper
+
+369
+00:17:23,535 --> 00:17:26,595
+so will you really find a lot to discuss
+
+370
+00:17:26,595 --> 00:17:29,405
+I definitely know such people
+
+371
+00:17:29,405 --> 00:17:31,225
+who might think it's the most fun to talk about
+
+372
+00:17:31,705 --> 00:17:34,725
+so it is different and there must be but
+
+373
+00:17:34,725 --> 00:17:37,365
+be curious and feel in
+
+374
+00:17:37,365 --> 00:17:39,300
+and as well as try a little
+
+375
+00:17:39,500 --> 00:17:41,900
+What can work with this person?
+
+376
+00:17:42,885 --> 00:17:45,685
+and sometimes you fail and sometimes you succeed
+
+377
+00:17:48,115 --> 00:17:50,445
+and that said for me
+
+378
+00:17:51,260 --> 00:17:53,240
+is this really
+
+379
+00:17:53,240 --> 00:17:54,920
+a matter of learning a new language
+
+380
+00:17:55,815 --> 00:17:58,975
+one can go down to word level and
+
+381
+00:17:58,975 --> 00:18:01,805
+What a grammar and
+
+382
+00:18:01,805 --> 00:18:05,125
+which phrases you use to get a call better
+
+383
+00:18:05,615 --> 00:18:08,415
+But it is constantly linked to these larger ones
+
+384
+00:18:08,415 --> 00:18:11,355
+perspectives, what are we talking about
+
+385
+00:18:11,735 --> 00:18:12,735
+and how
+
+386
+00:18:13,095 --> 00:18:14,095
+We talk
+
+387
+00:18:15,345 --> 00:18:18,235
+in different contexts and how differ
+
+388
+00:18:18,235 --> 00:18:19,505
+between cultures
+
+389
+00:18:20,075 --> 00:18:21,585
+And between people
+
+390
+00:18:22,655 --> 00:18:23,655
+okay
+
+391
+00:18:24,715 --> 00:18:27,765
+I hope this was useful and useful
+
+392
+00:18:27,765 --> 00:18:28,765
+and
+
+393
+00:18:29,265 --> 00:18:32,175
+all reflections and comments
+
+394
+00:18:32,175 --> 00:18:33,805
+are welcome and I
+
+395
+00:18:34,045 --> 00:18:37,345
+My goal is to answer all the comments
+
+396
+00:18:37,345 --> 00:18:38,345
+as
+
+397
+00:18:38,525 --> 00:18:41,425
+have some kind of content but sometimes
+
+398
+00:18:42,085 --> 00:18:45,205
+it takes some time before I can go through
+
+399
+00:18:45,535 --> 00:18:47,965
+But I try to answer all that
+
+400
+00:18:48,285 --> 00:18:51,505
+I am thankful for thoughts and comments and questions
+
+401
+00:18:53,145 --> 00:18:55,295
+Hope to see you again soon
+
+402
+00:18:55,795 --> 00:18:59,005
+and have it so good, hello hello
+

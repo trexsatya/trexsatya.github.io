@@ -1,5 +1,5 @@
 1
-00:00:01,560 --> 00:00:04.560
+00:00:01,560 --> 00:00:04,560
 Russian attacks with hypersonic robots
 
 2
@@ -55,11 +55,11 @@ contained unusually many hypersonic robots
 According to the UK Defense Ministry.
 
 15
-00:00:58,720 --> 00:01:02.600
+00:00:58,720 --> 00:01:02,600
 They go several times the speed of the sound and are then so fast
 
 16
-00:01:02,760 --> 00:01:06.880
+00:01:02,760 --> 00:01:06,880
 and can make course changes during the journey.
 
 17
@@ -111,7 +111,7 @@ But all six reactors must be cooled down to prevent meltdown.
 For over ten hours, the power plant was driven by reserve generators
 
 29
-00:01:55,880 --> 00:01:57.440
+00:01:55,880 --> 00:01:57,440
 before the power came back.
 
 30
@@ -171,7 +171,7 @@ Therefore, for example, this river is very important for the Ukrainian defense.
 Battle of Bachmut has been going on for eight months
 
 44
-00:02:57,080 --> 00:03:00.360
+00:02:57,080 --> 00:03:00,360
 And is described as decisive by both Ukraine and Russia.
 
 45
@@ -183,7 +183,7 @@ If Bachmut falls, many Russian soldiers will be full.
 They will go down in the basements
 
 47
-00:03:06,480 --> 00:03:09.440
+00:03:06,480 --> 00:03:09,440
 Where the wine producers store their sparkling wine.
 
 48
@@ -219,7 +219,7 @@ Because here I think the Ukrainians have prepared defense lines.
 Wagner leader Jevgenij Prigozjin is fighting double battles right now.
 
 56
-00:03:45,360 --> 00:03:49.560
+00:03:45,360 --> 00:03:49,560
 One at the front in Bachmut and one against the Russian military leadership.
 
 57
@@ -231,11 +231,11 @@ Prigozjin has complained that he is not receiving ammunition
 And the support he needs.
 
 59
-00:03:55,280 --> 00:04:00.640
+00:03:55,280 --> 00:04:00,640
 He says at the same time that only they have managed to succeed on the Russian side.
 
 60
-00:04:00,800 --> 00:04:05.440
+00:04:00,800 --> 00:04:05,440
 So he paints himself and the Wagner group as the only ones who can fight
 
 61
@@ -271,7 +271,7 @@ He is an establishment figure and has been with a long time
 and the Ukrainian General Chief of Staff Zaluzjnyj
 
 69
-00:04:36,480 --> 00:04:39.920
+00:04:36,480 --> 00:04:39,920
 says they have read all Gerasimov's writings.
 
 70
@@ -291,7 +291,7 @@ Prigozjin has repeatedly criticized the Russian military rule
 And it is speculated that he is trying to strengthen his political position.
 
 74
-00:04:56,200 --> 00:05:02.360
+00:04:56,200 --> 00:05:02,360
 Prigozjin is an old prisoner who by keeping up with catering
 
 75
@@ -364,7 +364,8 @@ that he establishes himself as a power factor and creates a political army.
 
 92
 00:06:11,200 --> 00:06:16,280
-Or that he is challenged. Because he's located near the front
+Or that he is challenged.
+ Because he's located near the front
 
 93
 00:06:16,440 --> 00:06:20,120
@@ -411,7 +412,7 @@ has overthrown in the Black Sea after a collision with Russian fighter aircraft.
 It came so close to the drone that the propeller was damaged.
 
 104
-00:07:04,440 --> 00:07:09.320
+00:07:04,440 --> 00:07:09,320
 White House describes the Russian action as “dangerous and unprofessional”
 
 105
@@ -444,7 +445,8 @@ Walks this weapon factory at high speed.
 
 112
 00:07:39,840 --> 00:07:44,160
-We run full two shifts. We have a third shift too.
+We run full two shifts.
+ We have a third shift too.
 
 113
 00:07:44,320 --> 00:07:47,640
@@ -463,7 +465,7 @@ To equip and increase the production of 155 mm artillery ammunition.
 From 170,000 like this in 2021 to over one million a year next year.
 
 117
-00:08:02,120 --> 00:08:08.040
+00:08:02,120 --> 00:08:08,040
 Without constant supplement with ammunition and other supplies from the West
 
 118
@@ -492,4 +494,5 @@ to continue to free the country.
 
 124
 00:08:32,720 --> 00:08:34,720
-Texting: SVT Language & Accessibility © Swedish Television AB 2023
+Texting: SVT Language & Accessibility Swedish Television AB 2023
+

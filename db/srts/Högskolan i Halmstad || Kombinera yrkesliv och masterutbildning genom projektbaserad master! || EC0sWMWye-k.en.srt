@@ -1,6 +1,7 @@
 1
 00:00:05,160 --> 00:00:07,480
-Hello! My name is Helena Karlsson-
+Hello!
+ My name is Helena Karlsson-
 
 2
 00:00:07,480 --> 00:00:11,400
@@ -55,7 +56,7 @@ What kind of benefit is the company?
 They
 
 15
-00:01:04,920 --> 00:01:06.080
+00:01:04,920 --> 00:01:06,080
 -The high school
 
 16
@@ -109,3 +110,4 @@ University really works proactive-
 28
 00:01:52,480 --> 00:01:56,680
 -To get the student as much experience as possible.
+

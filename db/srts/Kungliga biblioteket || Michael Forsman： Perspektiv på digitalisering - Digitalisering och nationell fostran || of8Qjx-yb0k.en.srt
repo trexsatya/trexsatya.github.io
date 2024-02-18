@@ -1,5 +1,5 @@
 1
-00:00:00,480 --> 00:00:07.840
+00:00:00,480 --> 00:00:07,840
 - My name is Michael Forsman and I am an associate professor of media and communication science.
 
 2
@@ -11,7 +11,7 @@ I am also the leader of the circle south, something that I look forward to.
 We'll see you this afternoon and talk about the texts.
 
 4
-00:00:17,820 --> 00:00:21.560
+00:00:17,820 --> 00:00:21,560
 I think they were excited, and are linked to what we have heard.
 
 5
@@ -27,7 +27,7 @@ It doesn't feel okay, but I do it anyway.
 In addition, I have a script that I was going to read from.
 
 8
-00:00:40,120 --> 00:00:45.560
+00:00:40,120 --> 00:00:45,560
 I can tell you that the self -test found in Digiteket,
 
 9
@@ -35,19 +35,20 @@ I can tell you that the self -test found in Digiteket,
 the platform that is within the framework of digital first,
 
 10
-00:00:49,200 --> 00:00:55.560
+00:00:49,200 --> 00:00:55,560
 has been developed for you to develop digital skills in the profession.
 
 11
 00:00:55,660 --> 00:00:59,000
-I have done that test. I became a "beginner".
+I have done that test.
+ I became a "beginner".
 
 12
-00:00:59,740 --> 00:01:02.040
+00:00:59,740 --> 00:01:02,040
 It may be good to know.
 
 13
-00:01:02.060 --> 00:01:06.600
+00:01:02,060 --> 00:01:06,600
 Through the test I also got to see what is expected of you.
 
 14
@@ -143,7 +144,7 @@ It is the credo's credo, according to Kant.
 We need to think about concepts and our own thinking.
 
 37
-00:03:06,580 --> 00:03:08.920
+00:03:06,580 --> 00:03:08,920
 I will talk a little about that.
 
 38
@@ -159,7 +160,7 @@ One should watch out for cynicism, nihilism and dogmatics.
 All of them can be linked to skepticism.
 
 41
-00:03:19,420 --> 00:03:25.560
+00:03:19,420 --> 00:03:25,560
 Being skeptical is about opening new perspectives and opportunities.
 
 42
@@ -183,7 +184,7 @@ who were considered to threaten previous forms of knowledge and work.
 However, I am inclined to agree with technology conservative media ecologists.
 
 47
-00:03:53,800 --> 00:04:05.040
+00:03:53,800 --> 00:04:05,040
 For example, Neil Postman, who urged us to switch on our "Bullshit Detecor"
 
 48
@@ -211,7 +212,7 @@ That it is always constructed and understood in a social, cultural context.
 That it is always linked to questions about power.
 
 54
-00:04:32,880 --> 00:04:39.540
+00:04:32,880 --> 00:04:39,540
 As a skeptic should we ask the question: to what problem is this a solution?
 
 55
@@ -224,14 +225,15 @@ What curricula do follow with the technology?
 
 57
 00:04:50,200 --> 00:04:56,860
-What is the price for implementing this? Could it have effects other than those intended?
+What is the price for implementing this?
+ Could it have effects other than those intended?
 
 58
 00:04:57,200 --> 00:04:59,940
 In this way, the skeptical attitude becomes productive.
 
 59
-00:05:00,080 --> 00:05:05.220
+00:05:00,080 --> 00:05:05,220
 I can see that our skeptic track becomes technology progressive
 
 60
@@ -239,7 +241,7 @@ I can see that our skeptic track becomes technology progressive
 And about how technology can better help the profession.
 
 61
-00:05:09,500 --> 00:05:14.560
+00:05:09,500 --> 00:05:14,560
 Alternatively, to have the technology redo the profession in a fruitful way.
 
 62
@@ -271,11 +273,11 @@ I have also worked in teacher education for twenty years.
 Currently I am finishing a project called
 
 69
-00:05:55,220 --> 00:06:01.660
+00:05:55,220 --> 00:06:01,660
 "Media citizen's education and the school's medialization - curricula, teaching materials, teacher education."
 
 70
-00:06:01,900 --> 00:06:07.460
+00:06:01,900 --> 00:06:07,460
 There I and a colleague look at the curriculum 62 and Lgr 11.
 
 71
@@ -351,11 +353,11 @@ Some are to digitize collections, and manage a lot of information.
 Another is that the library gets a new function in society.
 
 89
-00:07:56,660 --> 00:08:02.040
+00:07:56,660 --> 00:08:02,040
 It seems that both processes are in motion.
 
 90
-00:08:03,620 --> 00:08:07.820
+00:08:03,620 --> 00:08:07,820
 "Digitally first - the user in focus" it says on the logo
 
 91
@@ -364,7 +366,8 @@ which is an emblem for the national competence lift for library staff.
 
 92
 00:08:13,780 --> 00:08:20,100
-The logo is stylish, simple and fun. It is available with pink and light green background.
+The logo is stylish, simple and fun.
+ It is available with pink and light green background.
 
 93
 00:08:20,220 --> 00:08:26,940
@@ -376,7 +379,8 @@ A balloon that lifts, a ball that rolls.
 
 95
 00:08:30,000 --> 00:08:35,240
-“The user in focus”. We are all users in society.
+“The user in focus”.
+ We are all users in society.
 
 96
 00:08:35,340 --> 00:08:37,020
@@ -388,7 +392,8 @@ That is why we are all in focus.
 
 98
 00:08:44,680 --> 00:08:47,740
-It also indicates order. First comes digitization.
+It also indicates order.
+ First comes digitization.
 
 99
 00:08:47,820 --> 00:08:52,500
@@ -399,7 +404,7 @@ Here we have to ask ourselves what comes next.
 In this context, other symbols are also used that will make us think right.
 
 101
-00:08:59,420 --> 00:09:02.860
+00:08:59,420 --> 00:09:02,860
 It is about tools, it is something to be created.
 
 102
@@ -499,7 +504,7 @@ It is a concept that you have to include when you think about the contemporary a
 Questions about work and citizenship.
 
 126
-00:10:59,260 --> 00:11:02.440
+00:10:59,260 --> 00:11:02,440
 You can't think about it without thinking digitalization.
 
 127
@@ -595,7 +600,7 @@ This is how it says in the government's digitization strategy:
 “Digital competence means that everyone should be familiar with digital tools and services
 
 150
-00:13:03,320 --> 00:13:09.400
+00:13:03,320 --> 00:13:09,400
 And have the ability to follow and participate in digital development based on their conditions. "
 
 151
@@ -663,11 +668,11 @@ An assumption of what people need to be able to do if they are to be in this cen
 One of these skills is digital competence.
 
 167
-00:14:49,560 --> 00:15:02.060
+00:14:49,560 --> 00:15:02,060
 The concept is often linked to employability, innovation, competitiveness
 
 168
-00:15:02.060 --> 00:15:05,280
+00:15:02,060 --> 00:15:05,280
 And to the demand for lifelong learning.
 
 169
@@ -699,7 +704,7 @@ They become points for policymakers in different contexts based on their interes
 They are not only descriptive, but also prescribing and regulating.
 
 176
-00:15:58,440 --> 00:16:05.800
+00:15:58,440 --> 00:16:05,800
 It is interesting when you meet this type of terminology.
 
 177
@@ -780,7 +785,8 @@ They show up in different contexts, and the authorities have their favorites.
 
 196
 00:17:58,040 --> 00:18:04,840
-The concepts are overlapping. What sets them apart?
+The concepts are overlapping.
+ What sets them apart?
 
 197
 00:18:04,840 --> 00:18:09,480
@@ -815,7 +821,7 @@ And how they can be experienced and grow into new reviews.
 I have certainly missed important aspects along the way.
 
 205
-00:19:00,100 --> 00:19:04.560
+00:19:00,100 --> 00:19:04,560
 Library is a new area of research for me.
 
 206
@@ -849,3 +855,4 @@ What do they signal, and is it red or green for me?
 213
 00:19:52,180 --> 00:19:54,580
 Everyone has to decide on it.
+

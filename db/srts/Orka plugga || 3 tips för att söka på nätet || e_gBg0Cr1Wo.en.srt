@@ -3,7 +3,7 @@
 When searching for facts and information to a task-
 
 2
-00:00:05,680 --> 00:00:07.680
+00:00:05,680 --> 00:00:07,680
 -Is, for example, environmental impact-
 
 3
@@ -27,7 +27,7 @@ When to search for a concept consisting of several words-
 -Can it be good to write the words within quotation marks.
 
 8
-00:00:28,120 --> 00:00:31.560
+00:00:28,120 --> 00:00:31,560
 Then you limit your search to just show out results-
 
 9
@@ -63,7 +63,7 @@ A method that can help you get a wider search-
 By adding a star to the word stem-
 
 17
-00:00:58,840 --> 00:01:02.640
+00:00:58,840 --> 00:01:02,640
 -Do you hit all words with the same beginning as your keyword.
 
 18
@@ -149,3 +149,4 @@ These are some tips to help you find-
 38
 00:02:12,040 --> 00:02:16,040
 Swedish texture: Jenny Berglund Iyuno-Di Group for UR
+

@@ -7,7 +7,7 @@ Hello
 Good evening
 
 3
-00:00:04,460 --> 00:00:08.220
+00:00:04,460 --> 00:00:08,220
 Hope you have a nice Monday night
 
 4
@@ -59,7 +59,7 @@ Then we say you are going to get started
 And I think that, now first
 
 16
-00:00:50,840 --> 00:00:52.840
+00:00:50,840 --> 00:00:52,840
 That said, I want to record more videos
 
 17
@@ -75,7 +75,7 @@ Maybe beginner, or fairly new with Swedish
 and for me it may feel, when i will try to speak in a new language
 
 20
-00:01:05,040 --> 00:01:07.620
+00:01:05,040 --> 00:01:07,620
 And I'm nervous, it's like I have a stop
 
 21
@@ -135,7 +135,7 @@ And then I think it's important to take it a bit at a time
 You can't think, now I'll talk very much
 
 35
-00:01:56,420 --> 00:02:00.020
+00:01:56,420 --> 00:02:00,020
 But if you are afraid to talk, if you are nervous to talk
 
 36
@@ -143,7 +143,7 @@ But if you are afraid to talk, if you are nervous to talk
 So you have to give up ... small
 
 37
-00:02:04,240 --> 00:02:05.740
+00:02:04,240 --> 00:02:05,740
 Challenges
 
 38
@@ -195,7 +195,7 @@ different questions, different answers
 okay
 
 50
-00:02:35,560 --> 00:02:37.560
+00:02:35,560 --> 00:02:37,560
 This I think then, this is my tip today.
 
 51
@@ -217,3 +217,4 @@ where there is any staff or something.
 55
 00:02:48,280 --> 00:02:50,680
 Any person you meet frequently
+

@@ -1,10 +1,11 @@
 1
-00:00:00,000 --> 00:00:01.820
+00:00:00,000 --> 00:00:01,820
 Are you ready to sit and talk a little?
 
 2
 00:00:01,820 --> 00:00:04,639
-Always ready! Are you ready?
+Always ready!
+ Are you ready?
 
 3
 00:00:11,900 --> 00:00:15,580
@@ -39,7 +40,7 @@ Term five is completely optional.
 Then you can choose partly study abroad, an optional course or an internship.
 
 11
-00:00:51,200 --> 00:00:57.060
+00:00:51,200 --> 00:00:57,060
 You can work with a lot of examples as a communicator, you can coach or write speech.
 
 12
@@ -47,7 +48,7 @@ You can work with a lot of examples as a communicator, you can coach or write sp
 It is very much because the program is so wide
 
 13
-00:00:59,079 --> 00:01:02.840
+00:00:59,079 --> 00:01:02,840
 And have so many different components that you fit a lot afterwards.
 
 14
@@ -59,7 +60,7 @@ I am very attracted to the leadership bit.
 And I want to work with some kind of education.
 
 16
-00:01:10,579 --> 00:01:14.560
+00:01:10,579 --> 00:01:14,560
 I've always had a dream of being involved in influencing and inspiring people.
 
 17
@@ -99,9 +100,10 @@ Are you interested in communication,
 want to understand how people communicate between each other
 
 26
-00:01:47,959 --> 00:01:49.560
+00:01:47,959 --> 00:01:49,560
 And how you reach out in the best way?
 
 27
-00:01:49,799 --> 00:01:53.560
+00:01:49,799 --> 00:01:53,560
 Then you should read the language, rhetoric and communicative leadership.
+

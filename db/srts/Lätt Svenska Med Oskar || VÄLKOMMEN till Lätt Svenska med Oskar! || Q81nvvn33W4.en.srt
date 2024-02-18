@@ -1,9 +1,9 @@
 1
-00:00:01,578 --> 00:00:07.626
+00:00:01,578 --> 00:00:07,626
 Hello and warm welcome you should be light Swedish with Oskar.
 
 2
-00:00:07,820 --> 00:00:15.535
+00:00:07,820 --> 00:00:15,535
 My name is Oskar and I do a podcast called easily Swedish with Oskar.
 
 3
@@ -19,7 +19,7 @@ It's like a fun and easy way to learn Swedish.
 You can listen while doing other things.
 
 6
-00:00:24,239 --> 00:00:34.603
+00:00:24,239 --> 00:00:34,603
 You can listen while you go for a walk, while you wash, while cleaning, while driving, while you go by bus.
 
 7
@@ -43,7 +43,7 @@ I think it will be fun to try to do something completely new.
 I can show things,
 
 12
-00:00:52,981 --> 00:00:55.547
+00:00:52,981 --> 00:00:55,547
 I can ... like ... I exist!
 
 13
@@ -55,7 +55,7 @@ I can ... like ... I exist!
 I can show that you sleep, for example.
 
 15
-00:00:59,687 --> 00:01:00.909
+00:00:59,687 --> 00:01:00,909
 ... or whatever it may be.
 
 16
@@ -63,7 +63,7 @@ I can show that you sleep, for example.
 You can play guitar for example.
 
 17
-00:01:03,000 --> 00:01:07.459
+00:01:03,000 --> 00:01:07,459
 And in this first, first clip I want to introduce myself.
 
 18
@@ -111,7 +111,7 @@ which is located two miles north of another city called Karlstad - a larger city
 20 kilometers north of Karlstad.
 
 29
-00:02:04,586 --> 00:02:07.393
+00:02:04,586 --> 00:02:07,393
 There is Forshaga and there I live.
 
 30
@@ -128,7 +128,8 @@ We have twins.
 
 33
 00:02:19,558 --> 00:02:22,350
-Daughters. Twin daughters.
+Daughters.
+ Twin daughters.
 
 34
 00:02:22,663 --> 00:02:28,401
@@ -139,7 +140,7 @@ They turn seven this year.
 Amanda and I have been together for eight years.
 
 36
-00:02:36,647 --> 00:02:45.507
+00:02:36,647 --> 00:02:45,507
 ... so then you may understand that it went pretty quickly from the fact that we suddenly had two children.
 
 37
@@ -155,7 +156,7 @@ But it has been great and we are very happy together.
 We have a lot of fun together.
 
 40
-00:02:55,967 --> 00:03:00.556
+00:02:55,967 --> 00:03:00,556
 We also have a puppy called Sixten.
 
 41
@@ -163,7 +164,7 @@ We also have a puppy called Sixten.
 Sixten is only four months old,
 
 42
-00:03:04,122 --> 00:03:07.355
+00:03:04,122 --> 00:03:07,355
 And we have had him for three weeks now with us,
 
 43
@@ -187,7 +188,7 @@ So it's struggling and fun and we love him.
 I enjoy playing music.
 
 48
-00:03:27.305 --> 00:03:31,742
+00:03:27,305 --> 00:03:31,742
 It began as a love for the piano,
 
 49
@@ -211,7 +212,7 @@ I work on producing music in studio
 And I play music live.
 
 54
-00:03:46,946 --> 00:03:49.833
+00:03:46,946 --> 00:03:49,833
 Most guitar and vocals,
 
 55
@@ -259,7 +260,7 @@ I wanted a little more huge motorcycle.
 You feel, when you are on the highway for example,
 
 66
-00:04:49,625 --> 00:04:52.402
+00:04:49,625 --> 00:04:52,402
 That it goes very, very fast.
 
 67
@@ -267,15 +268,15 @@ That it goes very, very fast.
 Especially on a small motorcycle like Triumph Trident 660.
 
 68
-00:04:57,944 --> 00:04:59.863
+00:04:57,944 --> 00:04:59,863
 And...
 
 69
-00:04:59,863 --> 00:05:05.718
+00:04:59,863 --> 00:05:05,718
 Last summer we did so, me and Amanda - my fiancee - that we went on a holiday.
 
 70
-00:05:05,718 --> 00:05:08.639
+00:05:05,718 --> 00:05:08,639
 A motorcycle holiday to Öland.
 
 71
@@ -291,7 +292,7 @@ Very nice.
 And then we took an old, scruffy ...
 
 74
-00:05:21,822 --> 00:05:29.057
+00:05:21,822 --> 00:05:29,057
 Old and risky - but big - motorcycle called Honda Deauville.
 
 75
@@ -323,7 +324,7 @@ I can't imagine a better motorcycle in any category really.
 It is absolutely amazing,
 
 82
-00:06:02,181 --> 00:06:07.235
+00:06:02,181 --> 00:06:07,235
 And on it we will go on a motorcycle holiday this summer again.
 
 83
@@ -351,7 +352,7 @@ And you are just here and now.
 There is something about sitting outdoors, on a bike as well as ...
 
 89
-00:06:36,832 --> 00:06:39.616
+00:06:36,832 --> 00:06:39,616
 But that goes very, very fast ...
 
 90
@@ -359,7 +360,7 @@ But that goes very, very fast ...
 which is very addictive.
 
 91
-00:06:46,587 --> 00:06:55.955
+00:06:46,587 --> 00:06:55,955
 And the idea of this Youtube channel is, among other things, to take with you on fun trips, and to great places in Sweden.
 
 92
@@ -368,7 +369,8 @@ So from the motorcycle.
 
 93
 00:06:57,181 --> 00:07:00,000
-I'll take you on the motorcycle. You sit something like here.
+I'll take you on the motorcycle.
+ You sit something like here.
 
 94
 00:07:00,313 --> 00:07:01,500
@@ -379,7 +381,7 @@ And so...
 are we going.
 
 96
-00:07:03,479 --> 00:07:06.018
+00:07:03,479 --> 00:07:06,018
 So I hope you will look forward to it.
 
 97
@@ -411,8 +413,9 @@ For example.
 Handball I think is totally okay too, if Sweden plays like that.
 
 104
-00:07:29,881 --> 00:07:35.888
-And yes! In recent years here I have learned Japanese.
+00:07:29,881 --> 00:07:35,888
+And yes!
+ In recent years here I have learned Japanese.
 
 105
 00:07:36,290 --> 00:07:40,630
@@ -427,15 +430,15 @@ Quite so diligently.
 So I know what it's like to learn a new language.
 
 108
-00:07:48,443 --> 00:07:57.907
+00:07:48,443 --> 00:07:57,907
 And I know pretty well what resources, what materials, what tools you need, such ...
 
 109
-00:07:58,248 --> 00:08:05.107
+00:07:58,248 --> 00:08:05,107
 And that, it's a journey that is still going on for me, to learn Japanese.
 
 110
-00:08:05,524 --> 00:08:10.041
+00:08:05,524 --> 00:08:10,041
 But I also know the joy of understanding more and more,
 
 111
@@ -484,18 +487,20 @@ What it can be.
 
 122
 00:08:52,210 --> 00:08:57,074
-How did it go for you? Did you understand everything? Did you understand a little?
+How did it go for you?
+ Did you understand everything?
+ Did you understand a little?
 
 123
 00:08:57,193 --> 00:08:58,318
 It's totally okay.
 
 124
-00:08:58,556 --> 00:09:05.693
+00:08:58,556 --> 00:09:05,693
 If you just understood a little, you can get back to this video in a few weeks
 
 125
-00:09:05,693 --> 00:09:09.333
+00:09:05,693 --> 00:09:09,333
 And see if you can understand more.
 
 126
@@ -509,3 +514,4 @@ Okay, we'll hear again next time.
 128
 00:09:19,487 --> 00:09:20,318
 Bye.
+

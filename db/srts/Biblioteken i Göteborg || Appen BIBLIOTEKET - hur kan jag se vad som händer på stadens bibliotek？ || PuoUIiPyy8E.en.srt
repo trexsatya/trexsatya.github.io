@@ -3,7 +3,7 @@
 Discover the Library app today
 
 2
-00:00:08,041 --> 00:00:10.041
+00:00:08,041 --> 00:00:10,041
 Click what happens to see the library programs
 
 3
@@ -23,7 +23,7 @@ You can search for a specific program
 Start with a library
 
 7
-00:00:49,951 --> 00:00:51.951
+00:00:49,951 --> 00:00:51,951
 Late date
 
 8
@@ -40,8 +40,10 @@ You can also use the search box
 
 11
 00:01:48,503 --> 00:01:50,503
-Do you have questions? Set them directly in our chat
+Do you have questions?
+ Set them directly in our chat
 
 12
 00:02:02,205 --> 00:02:04,205
 Download the Library from App Store or Google Play
+

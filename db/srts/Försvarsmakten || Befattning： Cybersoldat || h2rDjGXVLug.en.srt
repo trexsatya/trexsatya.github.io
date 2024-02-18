@@ -1,5 +1,5 @@
 1
-00:00:04,236 --> 00:00:07.834
+00:00:04,236 --> 00:00:07,834
 We are moving towards a future where we will strengthen the cyber defense -
 
 2
@@ -55,11 +55,11 @@ One should be interested in IT.
 One should have a basic technical background and understanding of computers in general.
 
 15
-00:01:03,171 --> 00:01:05.211
+00:01:03,171 --> 00:01:05,211
 One should have the ability to cooperate -
 
 16
-00:01:05,211 --> 00:01:09.691
+00:01:05,211 --> 00:01:09,691
 - And you should have the ability to give the little extra when needed.
 
 17
@@ -111,11 +111,11 @@ When one starts with your education to a cyber soldier -
 It is a big change to go from being a private individual-
 
 29
-00:01:59,284 --> 00:02:02.084
+00:01:59,284 --> 00:02:02,084
 - To a compound pluton.
 
 30
-00:02:04,545 --> 00:02:08.057
+00:02:04,545 --> 00:02:08,057
 The first thing that happens during GMU is that you have to step into a new world -
 
 31
@@ -155,7 +155,7 @@ Honestly, this is a lot of fun, but I also long for -
 It's "Best of Both World".
 
 40
-00:02:39,443 --> 00:02:41.711
+00:02:39,443 --> 00:02:41,711
 It's fun to shoot, it's fun to scream -
 
 41
@@ -163,15 +163,15 @@ It's fun to shoot, it's fun to scream -
 - And it's fun to be quiet in front of the computer too.
 
 42
-00:02:43,951 --> 00:02:45.951
+00:02:43,951 --> 00:02:45,951
 That works for me.
 
 43
-00:02:46,689 --> 00:02:52.609
+00:02:46,689 --> 00:02:52,609
 When this day is over, the military undergraduate training - ends
 
 44
-00:02:52,609 --> 00:02:54.609
+00:02:52,609 --> 00:02:54,609
 - And we are going into the next stage.
 
 45
@@ -179,15 +179,15 @@ When this day is over, the military undergraduate training - ends
 The next stage, is the job training.
 
 46
-00:02:57,785 --> 00:03:00.385
+00:02:57,785 --> 00:03:00,385
 As before, we work in groups.
 
 47
-00:03:00,385 --> 00:03:03.305
+00:03:00,385 --> 00:03:03,305
 It will require much of your group.
 
 48
-00:03:03,727 --> 00:03:06.207
+00:03:03,727 --> 00:03:06,207
 It will also require much of the platoon.
 
 49
@@ -231,7 +231,7 @@ It contains four KTH college courses-
 One starts with a basic understanding within computer networks as we call it
 
 59
-00:03:43,018 --> 00:03:45.938
+00:03:43,018 --> 00:03:45,938
 Then you move on to computer systems -
 
 60
@@ -255,19 +255,19 @@ In common with reading the three courses -
 - As is the ethical hacking.
 
 65
-00:03:56,590 --> 00:03:59.840
+00:03:56,590 --> 00:03:59,840
 Which is about getting into different systems.
 
 66
-00:04:00,265 --> 00:04:02.385
+00:04:00,265 --> 00:04:02,385
 It is extremely mentally demanding.
 
 67
-00:04:02,385 --> 00:04:07.345
+00:04:02,385 --> 00:04:07,345
 It's long days and there is a lot to take in.
 
 68
-00:04:09,214 --> 00:04:12.094
+00:04:09,214 --> 00:04:12,094
 By the fact that the community and then of course also the Armed Forces -
 
 69
@@ -283,7 +283,7 @@ By the fact that the community and then of course also the Armed Forces -
 Therefore, cyber defense is really needed everywhere.
 
 72
-00:04:24,446 --> 00:04:29.606
+00:04:24,446 --> 00:04:29,606
 Cyber defense is an actor or a nation's overall ability ...
 
 73
@@ -291,7 +291,7 @@ Cyber defense is an actor or a nation's overall ability ...
 ... that through offensive and defensive methods -
 
 74
-00:04:34,326 --> 00:04:37.046
+00:04:34,326 --> 00:04:37,046
 - Defend a critical system.
 
 75
@@ -308,18 +308,19 @@ A defensive ability it is the -
 
 78
 00:04:47,543 --> 00:04:51,956
-- As we almost always use. It's about monitoring -
+- As we almost always use.
+ It's about monitoring -
 
 79
 00:04:51,956 --> 00:04:54,283
 - And discover intrusion into our systems.
 
 80
-00:04:55,006 --> 00:04:58.606
+00:04:55,006 --> 00:04:58,606
 Offensive cyber operations are about obtaining information -
 
 81
-00:04:58,606 --> 00:05:02.046
+00:04:58,606 --> 00:05:02,046
 –If the attacking system, or to make it difficult for the attacker -
 
 82
@@ -371,7 +372,7 @@ This competence to be cybers soldier -
 - Is very important to the Armed Forces.
 
 94
-00:05:48,146 --> 00:05:52.306
+00:05:48,146 --> 00:05:52,306
 It allows us to expand our endurance and capacity.
 
 95
@@ -383,11 +384,11 @@ We have the ability today and we have management bands -
 -And IT defense associations, which know this ability very well today.
 
 97
-00:06:01,748 --> 00:06:05.083
+00:06:01,748 --> 00:06:05,083
 But with the cyber soldier training and the establishment -
 
 98
-00:06:05,083 --> 00:06:07.747
+00:06:05,083 --> 00:06:07,747
 - So we really increase our capacity.
 
 99
@@ -451,5 +452,6 @@ If we look at what is happening in Europe -
 Cyber defense is an equally natural part of the war -
 
 114
-00:07:00,214 --> 00:07:04.245
+00:07:00,214 --> 00:07:04,245
 - As the other battlefields, that is, land, lake or air.
+

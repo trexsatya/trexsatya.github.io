@@ -27,7 +27,7 @@ Under Settings there are also contact information for Libris customer service if
 Under the heading Catalog Care is an instructional text for how to move stocks.
 
 8
-00:01:03,050 --> 00:01:06.407
+00:01:03,050 --> 00:01:06,407
 I start by searching the title in Libris.
 
 9
@@ -59,15 +59,16 @@ Now I see all Sigler who have stocks on the title.
 If I happened to choose the wrong sender, I click on the cross in the corner and choose.
 
 16
-00:01:49,757 --> 00:01:55.907
-Then I choose the recipient. I can only choose the entry that I have not already chosen as a sender.
+00:01:49,757 --> 00:01:55,907
+Then I choose the recipient.
+ I can only choose the entry that I have not already chosen as a sender.
 
 17
 00:01:56,669 --> 00:01:59,167
 Now I see the Sigler who have stocks on this post.
 
 18
-00:02:01,600 --> 00:02:07.744
+00:02:01,600 --> 00:02:07,744
 When I have chosen the recipient, I click on the sigel of my library and then on the "Move stock" button.
 
 19
@@ -76,7 +77,8 @@ When I click on "Moving stock", a pop-up box comes up asking if I want to flag t
 
 20
 00:02:17,353 --> 00:02:23,104
-Here I can do in different ways. If it is so that my library is the only thing that has stocks on this post,
+Here I can do in different ways.
+ If it is so that my library is the only thing that has stocks on this post,
 
 21
 00:02:24,384 --> 00:02:32,285
@@ -95,9 +97,10 @@ When I have deleted a possible double and am finished and want to clear the flag
 If it is a duplicate, but it turns out that other libraries also have stocks on it, so that they also have to move their stock before it can be deleted,
 
 25
-00:02:56,640 --> 00:03:01.066
+00:02:56,640 --> 00:03:01,066
 Then I can send a CXZ message to them and ask them to move their stock.
 
 26
 00:03:01,775 --> 00:03:09,184
 Information on how to send and monitors CXZ messages can be found on KB's website under Libris and Breach lists.
+

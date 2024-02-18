@@ -3,19 +3,19 @@
 Sartre ...
 
 2
-00:00:01,480 --> 00:00:02.720
+00:00:01,480 --> 00:00:02,720
 Sartre ...
 
 3
-00:00:03,680 --> 00:00:04.840
+00:00:03,680 --> 00:00:04,840
 Sartre!
 
 4
-00:00:05,000 --> 00:00:05.600
+00:00:05,000 --> 00:00:05,600
 Sartre?
 
 5
-00:00:05,720 --> 00:00:07.340
+00:00:05,720 --> 00:00:07,340
 I'll say "Sartre".
 
 6
@@ -55,7 +55,7 @@ Man we want to be, also creates a picture of man as we believe she should be.
 Choosing to be that or it means at the same time that you affirm the value of what you choose,
 
 15
-00:01:03,160 --> 00:01:05.880
+00:01:03,160 --> 00:01:05,880
 For you never choose anything bad.
 
 16
@@ -171,7 +171,7 @@ We see ourselves as victims of the circumstances or as tiles in a game.
 Sartre sees it as its most important task to wake us up from this evil faith.
 
 44
-00:03:22,340 --> 00:03:26.560
+00:03:22,340 --> 00:03:26,560
 He sees three ways to deny his freedom through bad faith:
 
 45
@@ -199,11 +199,11 @@ You let things happen and blame on weakness or inability.
 One imagines that circumstances govern, that society, upbringing or the biological heritage
 
 51
-00:03:56,660 --> 00:04:00.660
+00:03:56,660 --> 00:04:00,660
 Has characterized and shaped one's life - that you are your fate.
 
 52
-00:04:01,180 --> 00:04:05.720
+00:04:01,180 --> 00:04:05,720
 Another way to deny one's freedom is by going up in a role,
 
 53
@@ -255,7 +255,7 @@ The big problem with this is that the role exists before playing it.
 If you want to play a play, roles and replicas are already predetermined.
 
 65
-00:05:02,440 --> 00:05:06.600
+00:05:02,440 --> 00:05:06,600
 In the same way, it is with the roles we voluntarily take on everyday life.
 
 66
@@ -299,7 +299,7 @@ We are looking for answers and guidelines that do not exist, says Sartre.
 Nothing wrong with being "average" but the risk is that you end up in a superficial life full of illegitimate acts.
 
 76
-00:05:51,380 --> 00:05:56.560
+00:05:51,380 --> 00:05:56,560
 We humans need to be seen, from the eyes of the environment and assessments.
 
 77
@@ -311,7 +311,7 @@ That is why we strive to appear happy and successful for the surroundings.
 But what really happens when we are caught with something embarrassing,
 
 79
-00:06:06,300 --> 00:06:08.620
+00:06:06,300 --> 00:06:08,620
 When we lose the mask and start to be ashamed?
 
 80
@@ -359,7 +359,7 @@ Only in relation to others we know what our performance is worth.
 Concepts such as beauty, talent and talent become completely meaningless without a yardstick,
 
 91
-00:07:05,320 --> 00:07:07.840
+00:07:05,320 --> 00:07:07,840
 Without a relationship with the fellow human beings.
 
 92
@@ -395,7 +395,7 @@ Someone was there and saw me.
 Suddenly I realize how vulgar my gesture was and I'm ashamed ... ”
 
 100
-00:07:40,980 --> 00:07:47.560
+00:07:40,980 --> 00:07:47,560
 The other is thus needed to understand himself, but the other is also a constant source of discomfort.
 
 101
@@ -411,7 +411,7 @@ But the job you are looking for also wants someone else for.
 The other has plans, he tries to organize his surroundings and control it.
 
 104
-00:08:00,960 --> 00:08:06.660
+00:08:00,960 --> 00:08:06,660
 The risk is great for collisions and conflicts as our projects collide with each other.
 
 105
@@ -452,7 +452,8 @@ At the same time as both parties have a need to control and own.
 
 114
 00:08:54,380 --> 00:09:01,300
-We demand promises of the one we love; You have to be faithful, you have to come back, you must always love me!
+We demand promises of the one we love;
+ You have to be faithful, you have to come back, you must always love me!
 
 115
 00:09:01,560 --> 00:09:04,000
@@ -499,7 +500,7 @@ Something he practiced with his life companion and colleague Simone de Beauvoir.
 According to Sartre, money was a big and contributing factor to why people did not feel free.
 
 126
-00:09:55,260 --> 00:10:00.660
+00:09:55,260 --> 00:10:00,660
 The unfair distribution of money and the misery it contributed to, annoyed him.
 
 127
@@ -507,7 +508,7 @@ The unfair distribution of money and the misery it contributed to, annoyed him.
 He saw capitalism as an inhibitory factor in people's lives
 
 128
-00:10:04,240 --> 00:10:08.660
+00:10:04,240 --> 00:10:08,660
 And something that makes us believe that we have to live in a special way.
 
 129
@@ -547,7 +548,7 @@ Voltaire was a 18th-century, philosopher and debater
 which was forced to flee to England because he has made himself uncomfortable in France.
 
 138
-00:10:56,880 --> 00:11:01.880
+00:10:56,880 --> 00:11:01,880
 Sartre came to be a powerful opponent of the Vietnam War and started together
 
 139
@@ -587,9 +588,10 @@ He succeeded with the piece of art to maintain purpose in a world without inhere
 by focusing on the subjective at the expense of the objective.
 
 148
-00:11:43,580 --> 00:11:51.560
+00:11:43,580 --> 00:11:51,560
 When Sartre died in April 1980, 50,000 people gathered on Paris streets to witness the funeral train
 
 149
 00:11:51,560 --> 00:11:54,040
 And pay tribute to the great thinker.
+

@@ -4,7 +4,11 @@
 
 2
 00:00:07,000 --> 00:00:10,000
-Katarina Bjelke, Director General of the Swedish Research Council 3 00: 00: 11,000 -> 00: 00: 10,114 [what contributes to high quality in research?]
+Katarina Bjelke, Director General of the Swedish Research Council
+
+3
+00:00:11,000 --> 00:00:10,114
+[What contributes to a high quality in research?]
 
 3
 00:00:13,500 --> 00:00:22,000
@@ -40,7 +44,11 @@ If we are to be able to recruit and maintain the foremost researchers, attractiv
 
 11
 00:01:27,500 --> 00:01:40,150
-Postgraduate education is also important to invest in, both for research development and renewal and for the provision of skills not only within the academy but in society in general. 13 00: 01: 44,000 -> 00: 00: 47,900 [how can we ensure long -term prioritization and financing of research infrastructure?]
+Postgraduate education is also important to invest in, both for research development and renewal and for the provision of skills not only within the academy but in society in general.
+
+13
+00:01:44,000 --> 00:00:47,900
+[How can we ensure long -term prioritization and financing of research infrastructure?]
 
 12
 00:01:48,000 --> 00:01:56,100
@@ -75,5 +83,6 @@ Here, a good research culture is basic, with a living discussion on ethical issu
 In this context, it is also important that there are good conditions to be able to reach out with scientific knowledge.
 
 20
-00:03:05,350 --> 00:03:09.100
+00:03:05,350 --> 00:03:09,100
 A world that rests on scientific knowledge is a wiser world.
+

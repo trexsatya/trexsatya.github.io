@@ -1,5 +1,5 @@
 1
-00:00:01,920 --> 00:00:04.640
+00:00:01,920 --> 00:00:04,640
 Once you have broken a leg heals it-
 
 2
@@ -28,11 +28,13 @@ In order to build up the body, not only instructions are needed but building mat
 
 8
 00:00:40,960 --> 00:00:47,080
--and someone who can do the work. It is the task of the proteins.
+-and someone who can do the work.
+ It is the task of the proteins.
 
 9
 00:00:47,240 --> 00:00:52,960
-When protein is created, it is called protein synthesis. It happens in two steps:
+When protein is created, it is called protein synthesis.
+ It happens in two steps:
 
 10
 00:00:53,120 --> 00:00:56,640
@@ -47,7 +49,7 @@ Let's start with the transcription.
 My recipe book represents our DNA-
 
 13
-00:01:03,320 --> 00:01:07.880
+00:01:03,320 --> 00:01:07,880
 -Or available in the Cell Core, our library.
 
 14
@@ -76,14 +78,15 @@ But this information must be preserved in your DNA, so it is not possible.
 
 20
 00:01:41,240 --> 00:01:46,040
-How do you solve this? Well, by copying the information.
+How do you solve this?
+ Well, by copying the information.
 
 21
 00:01:46,200 --> 00:01:51,120
 This is the process we call transcription.
 
 22
-00:01:51,280 --> 00:01:57.840
+00:01:51,280 --> 00:01:57,840
 The part of the DNA to be copied is divided into a single spiral.
 
 23
@@ -91,7 +94,7 @@ The part of the DNA to be copied is divided into a single spiral.
 This binds enzyme and helps to create a copy.
 
 24
-00:02:03,480 --> 00:02:06.880
+00:02:03,480 --> 00:02:06,880
 The copy is called RNA instead of DNA.
 
 25
@@ -107,7 +110,7 @@ It contains another type of sugar-
 If the DNA string consists of G, C, G, A, A-
 
 28
-00:02:22,320 --> 00:02:27.560
+00:02:22,320 --> 00:02:27,560
 -blir copy, RNA: t, C, G, C, U, U-
 
 29
@@ -136,7 +139,8 @@ Now there is a copy of the recipe, the code for the protein's ingredients.
 
 35
 00:02:57,680 --> 00:03:03,920
-The next step is to form the protein itself. Translation should take place.
+The next step is to form the protein itself.
+ Translation should take place.
 
 36
 00:03:04,080 --> 00:03:11,280
@@ -151,7 +155,7 @@ Everything that happens from here is a chemical process.
 When MRNA arrives at the ribosomes, supplementary nitrogen bases should be switched on.
 
 39
-00:03:24,680 --> 00:03:29.840
+00:03:24,680 --> 00:03:29,840
 In the Ribosomes there is another RNA called TRNA-
 
 40
@@ -175,7 +179,7 @@ A chemical process occurs which creates amino acids.
 MRNA contains signals that mean "stop".
 
 45
-00:03:58,560 --> 00:04:02.560
+00:03:58,560 --> 00:04:02,560
 When the interconnection has reached there, the chain is ready.
 
 46
@@ -187,7 +191,7 @@ Now the job is done and both TRNA and MRNA leave the amino acid sequence.
 It takes itself to the golgia apparatus-
 
 48
-00:04:16,440 --> 00:04:21.560
+00:04:16,440 --> 00:04:21,560
 -Where the protein gets its last, specific properties.
 
 49
@@ -196,7 +200,8 @@ This process happens all the time, in every cell, day in and day out.
 
 50
 00:04:27,320 --> 00:04:31,600
-We have a lot to thank the proteins for. They heal your broken bone-
+We have a lot to thank the proteins for.
+ They heal your broken bone-
 
 51
 00:04:31,760 --> 00:04:36,320
@@ -204,8 +209,10 @@ We have a lot to thank the proteins for. They heal your broken bone-
 
 52
 00:04:36,480 --> 00:04:41,720
--And make sure you avoid an ugly hairstyle. After a while, anyway.
+-And make sure you avoid an ugly hairstyle.
+ After a while, anyway.
 
 53
 00:04:54,040 --> 00:04:58,040
 Swedish text: Gabriella Eseland Iyuno Media Group for UR
+

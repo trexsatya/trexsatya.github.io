@@ -1,9 +1,9 @@
 1
-00:00:00,880 --> 00:00:02.880
+00:00:00,880 --> 00:00:02,880
 Hello Hello
 
 2
-00:00:03,560 --> 00:00:05.560
+00:00:03,560 --> 00:00:05,560
 Here's a little tip
 
 3
@@ -91,7 +91,7 @@ What happens nowadays?
 Is it good with you?
 
 24
-00:00:56,780 --> 00:00:58.620
+00:00:56,780 --> 00:00:58,620
 such things
 
 25
@@ -103,7 +103,7 @@ and then it is very tempting
 to answer briefly
 
 27
-00:01:03,980 --> 00:01:05.980
+00:01:03,980 --> 00:01:05,980
 You just like to: Yes, it's good / Yes, it's going well
 
 28
@@ -159,7 +159,7 @@ such things
 then it often becomes a small story
 
 41
-00:01:36,680 --> 00:01:39.060
+00:01:36,680 --> 00:01:39,060
 from me or the other person to
 
 42
@@ -191,15 +191,16 @@ Then they tell you a little about that job
 what new colleagues they have
 
 49
-00:01:57,000 --> 00:01:59.960
-What they do. If there is any difference from the old.
+00:01:57,000 --> 00:01:59,960
+What they do.
+ If there is any difference from the old.
 
 50
 00:02:00,720 --> 00:02:03,340
 Maybe something that is a bit difficult or hard
 
 51
-00:02:03,620 --> 00:02:05.620
+00:02:03,620 --> 00:02:05,620
 or something funny that has happened
 
 52
@@ -287,7 +288,7 @@ So, I think it's
 It can help you build up some such everyday phrases
 
 73
-00:02:59,080 --> 00:03:01.420
+00:02:59,080 --> 00:03:01,420
 that then can do that when you can
 
 74
@@ -295,7 +296,7 @@ that then can do that when you can
 can you take some more steps
 
 75
-00:03:03,540 --> 00:03:06.080
+00:03:03,540 --> 00:03:06,080
 and tell me a little more and find new sentences
 
 76
@@ -379,7 +380,7 @@ ehm, yes, it was
 Please write and
 
 96
-00:03:56,180 --> 00:03:57.840
+00:03:56,180 --> 00:03:57,840
 Tell us what you think about this
 
 97
@@ -401,3 +402,4 @@ or in Swedish anyway
 101
 00:04:08,920 --> 00:04:12,400
 Write and tell us and so we'll see you again soon
+

@@ -11,8 +11,9 @@ We use resources in Libris when describing.
 And the content of this presentation:
 
 4
-00:00:21,000 --> 00:00:29.560
-It will be a review. But not the rules in detail, but an overview of how the content of the RDA is structured.
+00:00:21,000 --> 00:00:29,560
+It will be a review.
+ But not the rules in detail, but an overview of how the content of the RDA is structured.
 
 5
 00:00:29,920 --> 00:00:35,340
@@ -31,7 +32,7 @@ Where to find libris practice for RDA
 And where to find instructions for cataloging.
 
 9
-00:00:48,896 --> 00:00:51.712
+00:00:48,896 --> 00:00:51,712
 RDA nationally and internationally
 
 10
@@ -39,11 +40,11 @@ RDA nationally and internationally
 From autumn 2017 there is a national RDA committee with representatives from research,
 
 11
-00:00:58,624 --> 00:01:02.720
+00:00:58,624 --> 00:01:02,720
 Special and public libraries around the country.
 
 12
-00:01:02,976 --> 00:01:08.608
+00:01:02,976 --> 00:01:08,608
 KB is a member of the European Cooperation Group Eurig,
 
 13
@@ -75,7 +76,7 @@ RDA will be used in primary catalogization in Libris.
 Descriptions in Libris may be made according to different cataloging rules:
 
 20
-00:01:56,740 --> 00:02:02.080
+00:01:56,740 --> 00:02:02,080
 Before RDA, KRS (cataloging rules were followed for Swedish libraries).
 
 21
@@ -103,8 +104,9 @@ The goal is for all continents to be represented and it is a work that is ongoin
 RDA was completed in 2010 and then replaced AACR2 on which our previous cataloging rules, KRS, are based on.
 
 27
-00:02:51,000 --> 00:02:59.860
-The Library of Congress was the first to switch to RDA. They went over 2013.
+00:02:51,000 --> 00:02:59,860
+The Library of Congress was the first to switch to RDA.
+ They went over 2013.
 
 28
 00:03:01,500 --> 00:03:05,340
@@ -131,7 +133,7 @@ If you get information on how to access RDA Toolkit.
 RDA contains data elements, guidelines and instructions to create well -formulated metadata.
 
 34
-00:04:04,480 --> 00:04:09.860
+00:04:04,480 --> 00:04:09,860
 RDA is based on internationally recognized models, especially IFLA's models:
 
 35
@@ -156,7 +158,8 @@ RDA's elements and vocabulary as linked data in RDF can be found in a service ca
 
 40
 00:04:49,540 --> 00:04:55,600
-Element. To each entity a number of elements are attached.
+Element.
+ To each entity a number of elements are attached.
 
 41
 00:04:56,200 --> 00:05:07,120
@@ -187,7 +190,7 @@ Is structured and it becomes easier to navigate in Toolkit.
 KB's RDA instructions also follow the structure of RDA Toolkit.
 
 48
-00:05:52,260 --> 00:05:55.840
+00:05:52,260 --> 00:05:55,840
 RDA is divided into ten sections.
 
 49
@@ -199,7 +202,7 @@ Sections 1-4 include the elements, as well as instructions for the elements, use
 1: Manifestations and copies
 
 51
-00:06:07,100 --> 00:06:09.100
+00:06:07,100 --> 00:06:09,100
 2: works and expressions
 
 52
@@ -235,7 +238,7 @@ A number of appendix that contains rules for upper and lower case, for example,
 Abbreviations and symbols are also available.
 
 60
-00:07:01,380 --> 00:07:07.240
+00:07:01,380 --> 00:07:07,240
 There are also appendix with different types of relationship designations to indicate more
 
 61
@@ -248,7 +251,8 @@ Appendix I-M (Relationships)
 
 63
 00:07:21,340 --> 00:07:27,940
-Relationships between a resource and agents linked to the resource. It is available in appendix I.
+Relationships between a resource and agents linked to the resource.
+ It is available in appendix I.
 
 64
 00:07:29,280 --> 00:07:35,160
@@ -267,7 +271,7 @@ Relationships between works, expressions, manifestations and copies can be found
 For example, a work can be based on another work.
 
 68
-00:07:56,415 --> 00:07:59.999
+00:07:56,415 --> 00:07:59,999
 Relationships between agents can be found in Appendix K.
 
 69
@@ -284,7 +288,8 @@ Unfortunately, there is no content there because these entities never developed 
 
 72
 00:08:24,320 --> 00:08:34,380
-And subject relationships can be found in Appendix M. e.g. A work may be the subject of another work.
+And subject relationships can be found in Appendix M. e.g.
+ A work may be the subject of another work.
 
 73
 00:08:37,120 --> 00:08:40,960
@@ -295,16 +300,17 @@ Appendix I-M (Relationships)
 Libris practice is not to use the relationship designations in the Appendix I-M in RDA.
 
 75
-00:08:49,660 --> 00:08:57.060
+00:08:49,660 --> 00:08:57,060
 The features we use for agents in the new Libris are based on the function codes in Marc21.
 
 76
-00:08:57,600 --> 00:09:05.020
+00:08:57,600 --> 00:09:05,020
 These largely overlap in the appendix in the RDA.
 
 77
 00:09:06,820 --> 00:09:12,460
-It is possible to specify more specific relationships between e.g. Works in Libris.
+It is possible to specify more specific relationships between e.g.
+ Works in Libris.
 
 78
 00:09:16,287 --> 00:09:18,591
@@ -344,7 +350,8 @@ Yes, there may be remarks, quotes from different sources and information transfe
 
 87
 00:10:13,375 --> 00:10:17,215
-"Mechanical" transfer, ie That you write what stands.
+"Mechanical" transfer, ie
+ That you write what stands.
 
 88
 00:10:19,260 --> 00:10:27,640
@@ -364,7 +371,8 @@ We have an example under publishing details:
 
 92
 00:10:45,640 --> 00:10:53,940
-"Take what you see" applies to each individual element, ie. Follow the formulation of the resource, but
+"Take what you see" applies to each individual element, ie.
+ Follow the formulation of the resource, but
 
 93
 00:10:54,340 --> 00:10:57,660
@@ -396,15 +404,18 @@ Identifiers
 
 100
 00:11:40,680 --> 00:11:47,620
-Locally unique and assigned by an organization, so -called. default number.
+Locally unique and assigned by an organization, so -called.
+ default number.
 
 101
 00:11:48,600 --> 00:11:56,600
-For example. Issn, ISBN and EAN.
+For example.
+ Issn, ISBN and EAN.
 
 102
 00:11:57,560 --> 00:12:05,520
-Also publishing number, such as Disc mark and number are counted as identifier.
+Also publishing number, such as
+ Disc mark and number are counted as identifier.
 
 103
 00:12:07,800 --> 00:12:11,900
@@ -436,7 +447,8 @@ In Libris, the description levels remain.
 
 110
 00:12:48,520 --> 00:12:55,640
-In RDA there are really no description levels. Instead, talking about nuclear elements
+In RDA there are really no description levels.
+ Instead, talking about nuclear elements
 
 111
 00:12:55,940 --> 00:12:59,800
@@ -444,11 +456,14 @@ Or core elements as it is called in English.
 
 112
 00:13:00,500 --> 00:13:10,140
-The picture shows the element title (manifestation) in RDA Toolkit. Title has several sub -elements.
+The picture shows the element title (manifestation) in RDA Toolkit.
+ Title has several sub -elements.
 
 113
 00:13:10,660 --> 00:13:21,360
-The main title is a nuclear element. All other titles are optional, e.g. Other title information, variant titles.
+The main title is a nuclear element.
+ All other titles are optional, e.g.
+ Other title information, variant titles.
 
 114
 00:13:26,920 --> 00:13:29,480
@@ -471,11 +486,11 @@ the entity from other similar entities.
 Think about the user's needs and use the catalog's judgment.
 
 119
-00:13:58,540 --> 00:14:00.560
+00:13:58,540 --> 00:14:00,560
 Not least important.
 
 120
-00:14:03,260 --> 00:14:05.060
+00:14:03,260 --> 00:14:05,060
 Libris practice
 
 121
@@ -488,7 +503,8 @@ Additional elements that are mandatory to indicate.
 
 123
 00:14:16,140 --> 00:14:24,380
-KB has defined a number of elements compulsory in Libris. Who they are found in libris practice.
+KB has defined a number of elements compulsory in Libris.
+ Who they are found in libris practice.
 
 124
 00:14:25,280 --> 00:14:37,720
@@ -584,7 +600,8 @@ Here is also stated which elements are nuclear elements and which elements are m
 
 147
 00:17:34,480 --> 00:17:40,600
-according to libris practice. There are also workflows for a number of material types.
+according to libris practice.
+ There are also workflows for a number of material types.
 
 148
 00:17:42,143 --> 00:17:48,287
@@ -595,8 +612,9 @@ Another tool for cataloging is help texts in the cataloging tool.
 which is at the address https://libris.kb.se/katalization/help
 
 150
-00:18:01,020 --> 00:18:08.660
-and they contain, among other things. instructions on how to insert and add properties to the cataloging tool
+00:18:01,020 --> 00:18:08,660
+and they contain, among other things.
+ instructions on how to insert and add properties to the cataloging tool
 
 151
 00:18:09,020 --> 00:18:12,860
@@ -609,3 +627,4 @@ Work is underway with new cataloging instructions adapted to Libris.
 153
 00:18:20,543 --> 00:18:22,335
 Yes, that was all.
+

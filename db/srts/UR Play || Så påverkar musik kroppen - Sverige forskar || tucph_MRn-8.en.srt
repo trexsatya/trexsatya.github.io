@@ -7,7 +7,7 @@ When you listen to music-
 -Tare your heart rhythm to the pace of music.
 
 3
-00:00:16,560 --> 00:00:22.560
+00:00:16,560 --> 00:00:22,560
 The music can touch in the same way that the human hand can touch us.
 
 4
@@ -35,11 +35,11 @@ At the Royal Academy of Music, the research team collaborates with Karolinska-
 -to understand how the music affects us-
 
 10
-00:00:59,280 --> 00:01:01.720
+00:00:59,280 --> 00:01:01,720
 -And what benefit the music plays.
 
 11
-00:01:01,880 --> 00:01:06.040
+00:01:01,880 --> 00:01:06,040
 We are interested in the effects of the music.
 
 12
@@ -71,7 +71,7 @@ The music not only puts our emotions rocking.
 It also triggers a number of biological reactions in the body.
 
 19
-00:01:49,280 --> 00:01:52.840
+00:01:49,280 --> 00:01:52,840
 Pulse, respiratory rate, hormones ...
 
 20
@@ -79,7 +79,7 @@ Pulse, respiratory rate, hormones ...
 Even the bowel movements are affected.
 
 21
-00:01:57,000 --> 00:02:01.040
+00:01:57,000 --> 00:02:01,040
 It is very interesting with these study-
 
 22
@@ -108,7 +108,8 @@ Good for avoiding complications during surgery.
 
 28
 00:02:43,400 --> 00:02:48,920
-It stimulates the brain at e.g. Dementia and stroke.
+It stimulates the brain at e.g.
+ Dementia and stroke.
 
 29
 00:02:55,520 --> 00:02:57,520
@@ -119,7 +120,7 @@ When the music meets ear-
 -and reaching the brain's sorting center, thalamus-
 
 31
-00:03:02,160 --> 00:03:05.080
+00:03:02,160 --> 00:03:05,080
 -There the signals go two roads.
 
 32
@@ -163,7 +164,7 @@ But also the fire, the heat, the touch that creates peace and quiet.
 The second way goes slow-
 
 42
-00:03:54,240 --> 00:03:57.560
+00:03:54,240 --> 00:03:57,560
 -And leads up to the cerebral cortex and frontal lobe.
 
 43
@@ -211,11 +212,11 @@ Next step: Map how the music can be used to diagnose health.
 What is exciting is that our bodies give us pre-signals.
 
 54
-00:04:57,040 --> 00:05:04.040
+00:04:57,040 --> 00:05:04,040
 There are orchestras in our bodies that we can tone to, read ...
 
 55
-00:05:04,200 --> 00:05:09.600
+00:05:04,200 --> 00:05:09,600
 We might be able to read warning signals on stress much earlier-
 
 56
@@ -225,3 +226,4 @@ We might be able to read warning signals on stress much earlier-
 57
 00:05:20,720 --> 00:05:24,640
 Swedish texture: Petra Vancea Iyuno for UR
+

@@ -1,6 +1,7 @@
 1
 00:00:17,152 --> 00:00:18,257
-Hello! My name is Olof Osterman.
+Hello!
+ My name is Olof Osterman.
 
 2
 00:00:18,352 --> 00:00:25,222
@@ -11,7 +12,7 @@ I work on the National Bibliography at the Royal Library, and I am the one to do
 How to catalog a translated book.
 
 4
-00:00:31,488 --> 00:00:34.560
+00:00:31,488 --> 00:00:34,560
 How to primarily catalogs a translated book I should say.
 
 5
@@ -47,11 +48,11 @@ So it is always important that you actually do a search first, both on ISBN numb
 So that you can really know that this book is not cataloged before.
 
 13
-00:01:43,424 --> 00:01:51.020
+00:01:43,424 --> 00:01:51,020
 But since this is an exercise, we pretend as if this book is not cataloged before.
 
 14
-00:01:51,872 --> 00:01:59.507
+00:01:51,872 --> 00:01:59,507
 When we catalogs we start from a template and then we have these headings here.
 
 15
@@ -59,11 +60,12 @@ When we catalogs we start from a template and then we have these headings here.
 And then I click here at Create New.
 
 16
-00:02:04,928 --> 00:02:08.768
-And then I'll use this template. The book template.
+00:02:04,928 --> 00:02:08,768
+And then I'll use this template.
+ The book template.
 
 17
-00:02:11,328 --> 00:02:12.608
+00:02:11,328 --> 00:02:12,608
 So I click on it.
 
 18
@@ -88,14 +90,16 @@ On the one hand, it is the instance of works since then it is the body itself th
 
 23
 00:02:40,768 --> 00:02:48,823
-And then we have admin metadata there. But I fill in the instance part first. What is the manifestation.
+And then we have admin metadata there.
+ But I fill in the instance part first.
+ What is the manifestation.
 
 24
 00:02:49,984 --> 00:02:59,973
 And then we will start by filling in the ISBN number which is the first field in the body part.
 
 25
-00:03:00,480 --> 00:03:03.808
+00:03:00,480 --> 00:03:03,808
 And it is below identifier.
 
 26
@@ -104,18 +108,20 @@ And ISBN is the most common identifier for printed books.
 
 27
 00:03:23,776 --> 00:03:29,920
-That's how. And the next field is distinctive addition and it is not a nuclear element so it
+That's how.
+ And the next field is distinctive addition and it is not a nuclear element so it
 
 28
 00:03:30,176 --> 00:03:34,016
-You do not need to fill in if you do not want to. But if one thinks that
+You do not need to fill in if you do not want to.
+ But if one thinks that
 
 29
 00:03:35,552 --> 00:03:41,696
 You need it so you can fill it in and we at NB fill in this field.
 
 30
-00:03:41,952 --> 00:03:46.304
+00:03:41,952 --> 00:03:46,304
 We can fill in that this book is hardcover
 
 31
@@ -127,11 +133,11 @@ That's how.
 If it had been stapled, we would have written a booklet instead.
 
 33
-00:03:56,544 --> 00:04:05.302
+00:03:56,544 --> 00:04:05,302
 And then there will be three fields that are just standard fields that we don't care about.
 
 34
-00:04:05.302 --> 00:04:09.810
+00:04:05,302 --> 00:04:09,810
 They are always in bibliographic items for printed books.
 
 35
@@ -148,19 +154,22 @@ So I fill in what is here.
 
 38
 00:04:30,591 --> 00:04:37,549
-And then there is endurance. It is the title of this book.
+And then there is endurance.
+ It is the title of this book.
 
 39
 00:04:37,759 --> 00:04:48,030
 And then we have another field, other title information, and here you can fill in the subtitle which is also in this book.
 
 40
-00:04:48,767 --> 00:05:01.748
+00:04:48,767 --> 00:05:01,748
 And then we have the subtitle the stretchable boundaries for your physical ability.
 
 41
 00:05:03,871 --> 00:05:10,894
-And you follow the title page as it looks. You also describe the title page. It is important.
+And you follow the title page as it looks.
+ You also describe the title page.
+ It is important.
 
 42
 00:05:11,295 --> 00:05:14,879
@@ -176,7 +185,8 @@ Since this is a translated book, we also want to include the translator's name.
 
 45
 00:05:33,567 --> 00:05:44,749
-And usually the translator usually participates in the title page. It is the most common, but in this case we embrace the translator's name on the back of the title page.
+And usually the translator usually participates in the title page.
+ It is the most common, but in this case we embrace the translator's name on the back of the title page.
 
 46
 00:05:45,000 --> 00:05:50,668
@@ -187,7 +197,7 @@ So we specify the task as it is on the back of the title page.
 And we also do this in this field of origin.
 
 48
-00:05:55,327 --> 00:06:02.930
+00:05:55,327 --> 00:06:02,930
 But since these two people have two different functions, the first, Alex Hutchinson, is a writer and the second
 
 49
@@ -196,14 +206,16 @@ If translators are then we want to be special these two with an ISBD intersectio
 
 50
 00:06:10,687 --> 00:06:19,380
-If this other origin task had been in another field, we would not have had to do so. Then it could have been created automatically.
+If this other origin task had been in another field, we would not have had to do so.
+ Then it could have been created automatically.
 
 51
 00:06:19,380 --> 00:06:27,282
-But now we have to do it because they are the same field. So we put in an ISBD internal point that is semicolon here.
+But now we have to do it because they are the same field.
+ So we put in an ISBD internal point that is semicolon here.
 
 52
-00:06:28,351 --> 00:06:32.703
+00:06:28,351 --> 00:06:32,703
 And so we enter as it says on the back of the title page,
 
 53
@@ -223,7 +235,7 @@ So it's these two that are enough for it.
 Then the origin is completed there and then the next task will be a paving task and then we have to look here in the book again.
 
 57
-00:07:02,143 --> 00:07:08.031
+00:07:02,143 --> 00:07:08,031
 Then we see here on the back of the title page that it says the first edition, the first print.
 
 58
@@ -247,7 +259,7 @@ It is not really a circulation task, although in this case it is related to a co
 The next task is publishing.
 
 63
-00:07:43,871 --> 00:07:51.540
+00:07:43,871 --> 00:07:51,540
 And then we put this in during primary publication and we have already stated country.
 
 64
@@ -255,12 +267,13 @@ And then we put this in during primary publication and we have already stated co
 And that's right so it's just there.
 
 65
-00:07:55,391 --> 00:08:02.681
+00:07:55,391 --> 00:08:02,681
 And then we have space and here the publisher's publishing site will be located.
 
 66
 00:08:03,583 --> 00:08:10,392
-And then we look for here in the book. There is nothing on the title page.
+And then we look for here in the book.
+ There is nothing on the title page.
 
 67
 00:08:10,495 --> 00:08:15,871
@@ -287,12 +300,13 @@ But since there is no actual publishing site, we must cling Stockholm.
 This is a nuclear element so you have to have a place of publication.
 
 73
-00:09:00,159 --> 00:09:06.047
+00:09:00,159 --> 00:09:06,047
 We add the publisher's name in agent - term.
 
 74
 00:09:06,559 --> 00:09:16,623
-And since the title page is the primary source, we start from it. There it says Nature & Culture and we write as it says.
+And since the title page is the primary source, we start from it.
+ There it says Nature & Culture and we write as it says.
 
 75
 00:09:21,663 --> 00:09:24,735
@@ -315,11 +329,11 @@ And we probably have no real publishing year here.
 But I can see that it is printed in 2019 and it is copyright 2019 also so then we know it is released in 2019.
 
 80
-00:09:52,895 --> 00:09:54.431
+00:09:52,895 --> 00:09:54,431
 So we put in that one
 
 81
-00:09:54,687 --> 00:10:02.551
+00:09:54,687 --> 00:10:02,551
 And then there was no real publishing year so we have to base our publishing year on the print year instead, 2019.
 
 82
@@ -332,7 +346,8 @@ That's how
 
 84
 00:10:11,583 --> 00:10:23,785
-And since we base the release year on the print year, we also want to include it in the post. Then we only write in 2019 here during manufacture.
+And since we base the release year on the print year, we also want to include it in the post.
+ Then we only write in 2019 here during manufacture.
 
 85
 00:10:24,383 --> 00:10:29,503
@@ -340,22 +355,23 @@ The copyright year that comes next we will skip.
 
 86
 00:10:30,527 --> 00:10:38,528
-Scope, where you specify how many pages there are in the book. It was 275 pages.
+Scope, where you specify how many pages there are in the book.
+ It was 275 pages.
 
 87
 00:10:41,535 --> 00:10:44,664
 And then we have measured.
 
 88
-00:10:45,119 --> 00:10:52.849
+00:10:45,119 --> 00:10:52,849
 It is not a nuclear element so it is not something you have to add, but we at NB usually add it.
 
 89
-00:10:53,311 --> 00:11:01.527
+00:10:53,311 --> 00:11:01,527
 24 cm was the book, and what applies is that you always round up.
 
 90
-00:11:01,759 --> 00:11:04.063
+00:11:01,759 --> 00:11:04,063
 Other physical details.
 
 91
@@ -380,7 +396,8 @@ The next task, or field, is note.
 
 96
 00:11:34,015 --> 00:11:40,759
-Notes are not needed either. We don't have any remarks so we need to add it regarding this book
+Notes are not needed either.
+ We don't have any remarks so we need to add it regarding this book
 
 97
 00:11:40,759 --> 00:11:47,163
@@ -388,14 +405,16 @@ Without being content with the information we have received through the bibliogr
 
 98
 00:11:47,327 --> 00:11:54,694
-So there. Then we are done with the instance itself. The manifestation itself.
+So there.
+ Then we are done with the instance itself.
+ The manifestation itself.
 
 99
 00:11:55,775 --> 00:12:00,250
 Then we can go up again to the instance of works.
 
 100
-00:12:00,383 --> 00:12:01.919
+00:12:00,383 --> 00:12:01,919
 And unfold this.
 
 101
@@ -404,7 +423,8 @@ Here under participation and function, authors are specified in authorized form.
 
 102
 00:12:09,274 --> 00:12:16,282
-Or the form they should have in index for authors. Often in inverted form.
+Or the form they should have in index for authors.
+ Often in inverted form.
 
 103
 00:12:17,279 --> 00:12:26,251
@@ -412,7 +432,8 @@ The book has a writer listed on the title page so it is the person who becomes p
 
 104
 00:12:27,809 --> 00:12:35,137
-And what we do then is that we click on the plus here and search for his name and see if he is authorized. And if he is
+And what we do then is that we click on the plus here and search for his name and see if he is authorized.
+ And if he is
 
 105
 00:12:35,137 --> 00:12:39,398
@@ -420,14 +441,15 @@ Should we link to that form.
 
 106
 00:12:40,063 --> 00:12:46,207
-Hutchinson Alex. And here we get no results.
+Hutchinson Alex.
+ And here we get no results.
 
 107
 00:12:48,110 --> 00:12:57,273
 Had this been a Swedish person, we would have made an authority post on him and then linked to the person.
 
 108
-00:12:57,273 --> 00:13:04.418
+00:12:57,273 --> 00:13:04,418
 But when it comes to foreign names, we do not care about making authority posts on them.
 
 109
@@ -456,19 +478,22 @@ Then we get some fields that we can fill in.
 
 115
 00:13:34,591 --> 00:13:48,653
-So we fill in Hutchinson here on surname and Alex on the first name. Then we settle for that.
+So we fill in Hutchinson here on surname and Alex on the first name.
+ Then we settle for that.
 
 116
 00:13:48,851 --> 00:13:52,767
 They may be non-authorized here in the mail.
 
 117
-00:13:53,535 --> 00:14:02.927
-And the function. There is a standard value already here Author, ie writers, and that is true so it must remain.
+00:13:53,535 --> 00:14:02,927
+And the function.
+ There is a standard value already here Author, ie writers, and that is true so it must remain.
 
 118
 00:14:03,775 --> 00:14:14,059
-But then we had another person. We had a translator named Lars Ahlström
+But then we had another person.
+ We had a translator named Lars Ahlström
 
 119
 00:14:15,000 --> 00:14:28,235
@@ -476,7 +501,9 @@ And when it comes to professional books, you do not have to enter any translator
 
 120
 00:14:29,119 --> 00:14:42,344
-But if the translator were to be authorized, you can do so. Then you can add him to the mail. But he must be authorized.
+But if the translator were to be authorized, you can do so.
+ Then you can add him to the mail.
+ But he must be authorized.
 
 121
 00:14:42,687 --> 00:14:51,545
@@ -487,7 +514,7 @@ If you need to add any translator, Swedish translator, who is not authorized, th
 Then add him.
 
 123
-00:14:53,951 --> 00:15:00.095
+00:14:53,951 --> 00:15:00,095
 We can check if he is here, Lars Ahlström.
 
 124
@@ -520,7 +547,8 @@ Then we have Lars Ahlström, born in 1949, and where there is no direct informat
 
 131
 00:15:37,471 --> 00:15:47,351
-Then we also have a Lars Ahlström, born in 1963, who is a translator. He is described as a translator so probably he is.
+Then we also have a Lars Ahlström, born in 1963, who is a translator.
+ He is described as a translator so probably he is.
 
 132
 00:15:48,230 --> 00:15:58,548
@@ -552,7 +580,8 @@ In any case, I think it's this person.
 
 139
 00:16:38,143 --> 00:16:43,497
-So I click it there and I choose him here. So there.
+So I click it there and I choose him here.
+ So there.
 
 140
 00:16:44,543 --> 00:16:49,113
@@ -563,7 +592,7 @@ And then we'll add a feature to him
 And then we click here and he was a translator so you can only write translators.
 
 142
-00:16:58,623 --> 00:17:02.727
+00:16:58,623 --> 00:17:02,727
 And then we add this one, so we got him in there.
 
 143
@@ -604,7 +633,8 @@ Then we write "have title".
 
 152
 00:17:55,967 --> 00:17:58,527
-So. And it comes up there.
+So.
+ And it comes up there.
 
 153
 00:17:59,039 --> 00:18:02,879
@@ -612,7 +642,8 @@ Then I click it there and then I get this up again.
 
 154
 00:18:03,903 --> 00:18:13,028
-The instance of works here. And then we can remove that window there by pressing ESC and it just disappears.
+The instance of works here.
+ And then we can remove that window there by pressing ESC and it just disappears.
 
 155
 00:18:14,143 --> 00:18:17,704
@@ -624,7 +655,9 @@ And then we get these fields to fill in.
 
 157
 00:18:20,799 --> 00:18:32,370
-Then we can look for in the book what is there. If there are any weirdness or if it is actually standing there. Yes, the title of the original is included, Endure.
+Then we can look for in the book what is there.
+ If there are any weirdness or if it is actually standing there.
+ Yes, the title of the original is included, Endure.
 
 158
 00:18:32,831 --> 00:18:35,647
@@ -656,7 +689,9 @@ And this is a book that has been published in the UK from the beginning so maybe
 
 165
 00:19:31,352 --> 00:19:37,886
-And see if it is there. Otherwise, there are other catalogs too, e.g. Classify.
+And see if it is there.
+ Otherwise, there are other catalogs too, e.g.
+ Classify.
 
 166
 00:19:38,111 --> 00:19:40,415
@@ -668,14 +703,16 @@ And then we will add another field that has to do with this being a translation.
 
 168
 00:19:47,327 --> 00:19:56,444
-And the next field is language. Here is a language already. But since it is the Swedish translation we catalog
+And the next field is language.
+ Here is a language already.
+ But since it is the Swedish translation we catalog
 
 169
 00:19:56,444 --> 00:20:01,476
 Should this post have language: Swedish.
 
 170
-00:20:01,663 --> 00:20:08.208
+00:20:01,663 --> 00:20:08,208
 But we want to tell you that it is translated from English and that is what we should do now.
 
 171
@@ -700,11 +737,13 @@ So.
 
 176
 00:20:31,871 --> 00:20:37,339
-And then we have to click on here. on this plus.
+And then we have to click on here.
+ on this plus.
 
 177
-00:20:37,759 --> 00:20:51.067
-Plus there and here you should not do any search. Here you should choose to create local entity and works.
+00:20:37,759 --> 00:20:51,067
+Plus there and here you should not do any search.
+ Here you should choose to create local entity and works.
 
 178
 00:20:51,583 --> 00:20:53,375
@@ -716,10 +755,11 @@ Then you get several fields here.
 
 180
 00:20:58,239 --> 00:21:04,383
-But, what we should do here it is just that we should add the language English. That it is translated from English.
+But, what we should do here it is just that we should add the language English.
+ That it is translated from English.
 
 181
-00:21:05,663 --> 00:21:07.711
+00:21:05,663 --> 00:21:07,711
 So this is where we will click.
 
 182
@@ -751,7 +791,7 @@ Such, but if we move on here.
 Genre/form can also be added if you wish.
 
 189
-00:21:53,792 --> 00:21:56.608
+00:21:53,792 --> 00:21:56,608
 Then you can add that there is fiction here.
 
 190
@@ -775,12 +815,14 @@ And since this is a translated book, we should have the same classification as t
 It is very rare that we deviate from how the original is classified.
 
 195
-00:22:25,000 --> 00:22:35.901
-So what you do then is to look for in the different countries' national bibliographies. In this case, we would look at British Library what it looks like there.
+00:22:25,000 --> 00:22:35,901
+So what you do then is to look for in the different countries' national bibliographies.
+ In this case, we would look at British Library what it looks like there.
 
 196
 00:22:36,032 --> 00:22:46,251
-And choose that class. Do not question it but take that class if it would not be completely wrong.
+And choose that class.
+ Do not question it but take that class if it would not be completely wrong.
 
 197
 00:22:46,528 --> 00:22:54,033
@@ -820,14 +862,15 @@ And then you also start from the original, or the original, and look for what it
 
 206
 00:23:47,739 --> 00:23:53,065
-What subject words are there? This is how you put on similar subject words.
+What subject words are there?
+ This is how you put on similar subject words.
 
 207
 00:23:53,065 --> 00:23:59,232
 And in this post we have chosen to add Swedish subject words:
 
 208
-00:23:59,488 --> 00:24:04.096
+00:23:59,488 --> 00:24:04,096
 Physical exercise, physical fitness and mental exercise.
 
 209
@@ -847,8 +890,9 @@ And the next will be physical fitness.
 That's how.
 
 213
-00:24:28,928 --> 00:24:34.304
-And you see here that it is SAO. In this string.
+00:24:28,928 --> 00:24:34,304
+And you see here that it is SAO.
+ In this string.
 
 214
 00:24:36,096 --> 00:24:43,807
@@ -863,8 +907,9 @@ You don't have to enter the whole word either, it is enough to just write like t
 And here you have to be a little ... really check that you click in right.
 
 217
-00:25:01,696 --> 00:25:08.815
-Here, the word of children came up before the SAO subject word. This is the one we should have here.
+00:25:01,696 --> 00:25:08,815
+Here, the word of children came up before the SAO subject word.
+ This is the one we should have here.
 
 218
 00:25:11,168 --> 00:25:12,192
@@ -896,7 +941,8 @@ And you are primarily cataloging, then the values that are in admin metadata are
 
 225
 00:25:53,225 --> 00:26:02,982
-There is nothing you need to go in and change. One has all the values, that it is described at library level, that we used RDA
+There is nothing you need to go in and change.
+ One has all the values, that it is described at library level, that we used RDA
 
 226
 00:26:02,982 --> 00:26:10,752
@@ -927,7 +973,7 @@ There I go through these fields.
 Then this instructional film was finished, or I will save the post first, of course.
 
 233
-00:26:49,216 --> 00:26:55.517
+00:26:49,216 --> 00:26:55,517
 So I click here on Create Post here in the toolbar.
 
 234
@@ -935,7 +981,7 @@ So I click here on Create Post here in the toolbar.
 That's how.
 
 235
-00:26:59,968 --> 00:27:08.608
+00:26:59,968 --> 00:27:08,608
 And if you want, you can look through the mail a little quickly and see if everything is ok here.
 
 236
@@ -945,3 +991,4 @@ It was an instruction on how to make a catalog of a translated book.
 237
 00:27:19,936 --> 00:27:22,752
 Then I thank me.
+

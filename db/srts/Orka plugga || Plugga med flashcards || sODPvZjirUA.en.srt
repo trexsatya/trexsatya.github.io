@@ -3,11 +3,11 @@
 Should you learn glosses using Flashcards
 
 2
-00:00:04,480 --> 00:00:06.880
+00:00:04,480 --> 00:00:06,880
 so would I like to tip you that you are writing
 
 3
-00:00:06,880 --> 00:00:08.240
+00:00:06,880 --> 00:00:08,240
 one word on one side.
 
 4
@@ -71,7 +71,7 @@ And check if you answered correctly by looking at the back.
 - If you answer correctly, you put it in a 'can-high'
 
 19
-00:00:56,160 --> 00:00:59.720
+00:00:56,160 --> 00:00:59,720
 If you answered wrong, put it in a "cannot-high"
 
 20
@@ -79,8 +79,9 @@ If you answered wrong, put it in a "cannot-high"
 Then train on the patches that ended up in "Can't-Högen"
 
 21
-00:01:03,440 --> 00:01:09.960
-When all the patches end up in "Kan-Högen". Take a break and test yourself at a later date.
+00:01:03,440 --> 00:01:09,960
+When all the patches end up in "Kan-Högen".
+ Take a break and test yourself at a later date.
 
 22
 00:01:11,360 --> 00:01:13,720
@@ -89,3 +90,4 @@ When all the patches end up in "Kan-Högen". Take a break and test yourself at a
 23
 00:01:13,720 --> 00:01:17,000
 Try starting with the back first, ie Facit!
+

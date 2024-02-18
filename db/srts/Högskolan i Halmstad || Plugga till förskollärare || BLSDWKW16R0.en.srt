@@ -1,5 +1,5 @@
 1
-00:00:05,267 --> 00:00:06.933
+00:00:05,267 --> 00:00:06,933
 My name is \ halaa elshebeny-
 
 2
@@ -16,7 +16,8 @@ I chose this program because I enjoy working with younger children.
 
 5
 00:00:21,000 --> 00:00:24,800
-I worked before as a system tester. But felt that I will-
+I worked before as a system tester.
+ But felt that I will-
 
 6
 00:00:24,800 --> 00:00:28,440
@@ -39,16 +40,17 @@ The best thing about the program is that it is very broad and interesting-
 We read, among other things, about children's care, learning-
 
 11
-00:00:43,080 --> 00:00:45.840
+00:00:43,080 --> 00:00:45,840
 -And development that together form a whole.
 
 12
-00:00:46,320 --> 00:00:49.640
+00:00:46,320 --> 00:00:49,640
 We get several occasions to be out on internship-
 
 13
-00:00:49,680 --> 00:00:53.040
--And practice at preschools. And it's called VFU.
+00:00:49,680 --> 00:00:53,040
+-And practice at preschools.
+ And it's called VFU.
 
 14
 00:00:53,640 --> 00:00:57,400
@@ -77,3 +79,4 @@ I also want to invest in creating a good environment-
 20
 00:01:16,360 --> 00:01:20,080
 -And meet the needs of the children.
+

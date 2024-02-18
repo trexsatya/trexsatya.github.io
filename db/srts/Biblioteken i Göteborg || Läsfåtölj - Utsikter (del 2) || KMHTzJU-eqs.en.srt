@@ -47,11 +47,11 @@ From perspective to Nils Ferlin:
 The wind is grievous,
 
 13
-00:00:55,800 --> 00:00:57.560
+00:00:55,800 --> 00:00:57,560
 The cold string:
 
 14
-00:00:59,140 --> 00:01:01.440
+00:00:59,140 --> 00:01:01,440
 Please be good for a small stable!
 
 15
@@ -103,8 +103,9 @@ And snap on buttons of pearl.
 Then it will be to say at mill and crusher:
 
 27
-00:01:47,400 --> 00:01:49.560
-A strange man! - An acquaintance to us.
+00:01:47,400 --> 00:01:49,560
+A strange man!
+ - An acquaintance to us.
 
 28
 00:01:49,560 --> 00:01:51,980
@@ -139,7 +140,7 @@ Freezes themselves - just like we,
 And never get big and famous and free.
 
 36
-00:02:25,660 --> 00:02:27.560
+00:02:25,660 --> 00:02:27,560
 Without just allowed to go there -
 
 37
@@ -183,11 +184,12 @@ Portent
 said one to the end
 
 47
-00:03:03,300 --> 00:03:05.340
-- A racker to shine! - -
+00:03:03,300 --> 00:03:05,340
+- A racker to shine!
+ - -
 
 48
-00:03:06,620 --> 00:03:08.820
+00:03:06,620 --> 00:03:08,820
 Now the grace time was blown out,
 
 49
@@ -247,7 +249,7 @@ Until someone came one day and sad:
 Now it's even a month.
 
 63
-00:03:58,340 --> 00:04:01.660
+00:03:58,340 --> 00:04:01,660
 Then they shone up and called:
 
 64
@@ -303,7 +305,7 @@ For, they said -
 at fat flare on gorgered cigars,
 
 77
-00:04:47,460 --> 00:04:51.080
+00:04:47,460 --> 00:04:51,080
 Plästa and coming us with whips and guitars.
 
 78
@@ -323,7 +325,7 @@ That comet comes three times in the quarter.
 He is still here, he is still there and curvature worse.
 
 82
-00:05:05,151 --> 00:05:07.967
+00:05:05,151 --> 00:05:07,967
 - We toast for the day that is
 
 83
@@ -336,7 +338,7 @@ Now i will pray to be able to sing a song
 
 85
 00:05:22,840 --> 00:05:24,120
-on Yiddish
+in Yiddish
 
 86
 00:05:24,860 --> 00:05:31,960
@@ -443,7 +445,7 @@ Forgive a splash of bitter joy,
 a show to guitar,
 
 112
-00:09:57,500 --> 00:09:59.800
+00:09:57,500 --> 00:09:59,800
 The strong us to healing
 
 113
@@ -451,11 +453,11 @@ The strong us to healing
 Like the young pores of the beach.
 
 114
-00:10:03,400 --> 00:10:06.080
+00:10:03,400 --> 00:10:06,080
 A song to you, my sister,
 
 115
-00:10:06,460 --> 00:10:09.020
+00:10:06,460 --> 00:10:09,020
 When all the ground awaits ours!
 
 116
@@ -487,7 +489,7 @@ Lovely spring came every year in roses dressed,
 Although the twilight of the grief sought us and bleached the color of the cheek.
 
 123
-00:10:39,743 --> 00:10:42.047
+00:10:39,743 --> 00:10:42,047
 A day on knees for the king,
 
 124
@@ -533,3 +535,4 @@ All the roses of meadows shout,
 134
 00:11:14,780 --> 00:11:17,760
 Come out to us and slept!
+

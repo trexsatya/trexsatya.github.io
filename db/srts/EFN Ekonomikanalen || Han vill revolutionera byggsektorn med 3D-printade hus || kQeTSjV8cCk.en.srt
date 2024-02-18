@@ -1,5 +1,5 @@
 1
-00:00:04,720 --> 00:00:09.560
+00:00:04,720 --> 00:00:09,560
 Our vision is to be able to buy a plot-
 
 2
@@ -28,7 +28,8 @@ I felt it was terribly hard to build.
 
 8
 00:00:49,680 --> 00:00:55,000
-Everything takes a long time. There must be a more effective way to do it.
+Everything takes a long time.
+ There must be a more effective way to do it.
 
 9
 00:01:02,440 --> 00:01:10,360
@@ -52,7 +53,8 @@ The view of this technology from the large construction companies-
 
 14
 00:01:36,280 --> 00:01:40,760
--Is that they are very interested. Many have been here and looked.
+-Is that they are very interested.
+ Many have been here and looked.
 
 15
 00:01:40,840 --> 00:01:46,080
@@ -80,8 +82,10 @@ We want to buy a plot, print a house, furnish it-
 
 21
 00:02:23,280 --> 00:02:27,200
--And sell it to someone who wants to buy it. Make all the way.
+-And sell it to someone who wants to buy it.
+ Make all the way.
 
 22
 00:02:27,280 --> 00:02:30,320
 You test the whole process.
+

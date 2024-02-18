@@ -1,5 +1,5 @@
 1
-00:00:00,820 --> 00:00:08.820
+00:00:00,820 --> 00:00:08,820
 Perhaps the most famous of the nature philosophers is Pythagoras, which lived about 570-500 BC.
 
 2
@@ -12,7 +12,7 @@ At his call, Pythagoras as a 20-year-old went to Egypt to study, among other thi
 
 4
 00:00:25,820 --> 00:00:34,860
-Among the lessons of the trip are what we today feel like Pythagora's kit - A2 + B2 = C2.
+Among the lessons of the trip are what we today feel like Pythagora's kit - A2 B2 C2.
 
 5
 00:00:35,280 --> 00:00:37,920
@@ -103,7 +103,7 @@ Then one would follow strict living rules to focus on mathematics.
 Among other things, it was never possible to pick up a dropped object, touching white chickens,
 
 27
-00:02:49,200 --> 00:02:55.840
+00:02:49,200 --> 00:02:55,840
 stir in the fire with iron objects, speak in darkness, raise animals with crooked chlorine,
 
 28
@@ -111,7 +111,7 @@ stir in the fire with iron objects, speak in darkness, raise animals with crooke
 Break bread, step over the fence, pick flower bouquets or hike along a country road.
 
 29
-00:03:03,280 --> 00:03:09.900
+00:03:03,280 --> 00:03:09,900
 These rules were a way for the Pythagoreans to maintain and demonstrate self -control.
 
 30
@@ -151,11 +151,11 @@ and in between, our soul had to be stored somewhere
 Pythagoras was also the first with the idea that the earth was round and revolved around the sun,
 
 39
-00:03:56,780 --> 00:04:00.880
+00:03:56,780 --> 00:04:00,880
 The universe spherical and the planets of the planets circular.
 
 40
-00:04:01,380 --> 00:04:09.080
+00:04:01,380 --> 00:04:09,080
 This idea meant that one could now start calculating and predicting the movements and positions of the celestial bodies.
 
 41
@@ -265,3 +265,4 @@ And not from the heart as you thought earlier.
 67
 00:06:59,920 --> 00:07:02,480
 In other words, an impressive summary.
+

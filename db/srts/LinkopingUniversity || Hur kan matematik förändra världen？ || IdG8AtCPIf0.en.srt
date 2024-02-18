@@ -1,6 +1,7 @@
 1
-00:00:05,376 --> 00:00:07.168
-Hey! My name is Björn Runow.
+00:00:05,376 --> 00:00:07,168
+Hey!
+ My name is Björn Runow.
 
 2
 00:00:07,424 --> 00:00:10,240
@@ -47,7 +48,7 @@ And in this talk, the idea is that I first and foremost will-
 Who has made me realize that it is as a mathematics teacher just I want to work.
 
 13
-00:00:43,520 --> 00:00:45.568
+00:00:43,520 --> 00:00:45,568
 And then I'll tell you about some examples from min-
 
 14
@@ -75,11 +76,11 @@ Okay.
 We start here with-
 
 20
-00:00:59,136 --> 00:01:00.160
+00:00:59,136 --> 00:01:00,160
 -Some activities I've done.
 
 21
-00:01:01,440 --> 00:01:05.600
+00:01:01,440 --> 00:01:05,600
 I started at college after taking a four -year break
 
 22
@@ -139,7 +140,7 @@ And I thought it was great fun.
 And something that I have always wrestled with-
 
 36
-00:01:46,675 --> 00:01:49.568
+00:01:46,675 --> 00:01:49,568
 -In time I have been doing math teaching-
 
 37
@@ -155,24 +156,25 @@ While between high school and college-
 -W so I kept up with a part with private education.
 
 40
-00:01:58,016 --> 00:02:00.320
+00:01:58,016 --> 00:02:00,320
 And I always thought it was a bit ineffective.
 
 41
-00:02:00,832 --> 00:02:03.987
+00:02:00,832 --> 00:02:03,987
 Two hours of my invested time became two hours of help for someone else-
 
 42
-00:02:03,987 --> 00:02:05.696
+00:02:03,987 --> 00:02:05,696
 -So there was no scalability on the whole.
 
 43
-00:02:05,952 --> 00:02:07.935
+00:02:05,952 --> 00:02:07,935
 Through my commitment to math hero-
 
 44
 00:02:07,935 --> 00:02:11,560
--I now got help to help lots more. And I thought that was fucking fun.
+-I now got help to help lots more.
+ And I thought that was fucking fun.
 
 45
 00:02:12,096 --> 00:02:14,912
@@ -239,7 +241,7 @@ Like you who are looking at this may benefit from.
 Right now this channel has about 7000 subscribers,
 
 61
-00:02:59,314 --> 00:03:01.263
+00:02:59,314 --> 00:03:01,263
 And soon one and a half million views.
 
 62
@@ -283,7 +285,7 @@ And its potential.
 I studied mechanics to understand how forces affect our physical world.
 
 72
-00:03:33,248 --> 00:03:37.840
+00:03:33,248 --> 00:03:37,840
 I have studied statistics to understand how to predict future events,
 
 73
@@ -315,7 +317,7 @@ And since then I have also learned a great deal about control technology-
 -which in many and much is about trying to get things self-driving-
 
 80
-00:03:59,280 --> 00:04:00.640
+00:03:59,280 --> 00:04:00,640
 -or autonomous.
 
 81
@@ -323,11 +325,11 @@ And since then I have also learned a great deal about control technology-
 And that said, what I think is so awesome with math-
 
 82
-00:04:03,456 --> 00:04:06.016
+00:04:03,456 --> 00:04:06,016
 -This is that it is the language used to describe-
 
 83
-00:04:06,272 --> 00:04:08.064
+00:04:06,272 --> 00:04:08,064
 -All these different applications.
 
 84
@@ -391,7 +393,7 @@ It has to do with our bachelor's project,
 As I did on the I-line, or the industrial economy line.
 
 99
-00:04:46,463 --> 00:04:49.840
+00:04:46,463 --> 00:04:49,840
 And I did it in system technology and the assignment was to-
 
 100
@@ -403,11 +405,11 @@ And I did it in system technology and the assignment was to-
 And then we would equip it with sensors and make it be able to-
 
 102
-00:04:58,495 --> 00:04:59.826
+00:04:58,495 --> 00:04:59,826
 -Take exits.
 
 103
-00:04:59,826 --> 00:05:01.567
+00:04:59,826 --> 00:05:01,567
 Run on paces.
 
 104
@@ -419,7 +421,7 @@ Able to go an optimized route.
 It could keep the distance to a vehicle present.
 
 106
-00:05:06,431 --> 00:05:09.600
+00:05:06,431 --> 00:05:09,600
 Such things that one should typically be able to do on a highway.
 
 107
@@ -487,11 +489,11 @@ Based on the picture that the robot sees here we use the edge detection-
 And then you get the picture in the upper left, this black and white.
 
 123
-00:06:05,567 --> 00:06:07.437
+00:06:05,567 --> 00:06:07,437
 Based on it so we can then use-
 
 124
-00:06:07,437 --> 00:06:09.680
+00:06:07,437 --> 00:06:09,680
 -The time a little more math and image processing,
 
 125
@@ -547,11 +549,11 @@ So by then regulating our control rash outside-
 -What the difference is between v1 and v2,
 
 138
-00:06:56,125 --> 00:06:59.560
+00:06:56,125 --> 00:06:59,560
 So we can ensure that the car is always heading straight ahead.
 
 139
-00:06:59,839 --> 00:07:02.400
+00:06:59,839 --> 00:07:02,400
 I thought this with math and image processing was very fun-
 
 140
@@ -559,7 +561,7 @@ I thought this with math and image processing was very fun-
 -So I decided to take a master within it.
 
 141
-00:07:04,703 --> 00:07:06.720
+00:07:04,703 --> 00:07:06,720
 And i was just going to tell you a little shortly over-
 
 142
@@ -639,7 +641,7 @@ And if you don't, so the straw ends up outside,
 Then there is a risk that the latter in the process will fall off.
 
 161
-00:08:05,119 --> 00:08:08.041
+00:08:05,119 --> 00:08:08,041
 And here it is also interesting to detect points-
 
 162
@@ -679,7 +681,7 @@ Yes.
 What I used here, it was a so -called deep neural network.
 
 171
-00:08:36,095 --> 00:08:39.935
+00:08:36,095 --> 00:08:39,935
 And I then processed a color image in mass, lots of different layers-
 
 172
@@ -715,11 +717,11 @@ This color image we are looking at,
 It is a picture from a mall with lots of people in itself.
 
 180
-00:08:58,879 --> 00:09:01.695
+00:08:58,879 --> 00:09:01,695
 These little white areas in the black image-
 
 181
-00:09:01,951 --> 00:09:05.320
+00:09:01,951 --> 00:09:05,320
 -There are indications of where these people's heads are.
 
 182
@@ -751,7 +753,7 @@ Or where we have a slightly different variant of the straw-
 -Or it may not be clear.
 
 189
-00:09:25,759 --> 00:09:27.807
+00:09:25,759 --> 00:09:27,807
 And then you see in the pictures under-
 
 190
@@ -763,7 +765,7 @@ And then you see in the pictures under-
 -Here I believe that the start, bend and endpoints exist.
 
 192
-00:09:36,255 --> 00:09:39.071
+00:09:36,255 --> 00:09:39,071
 And in this case, we can see that the model is actually performing quite well.
 
 193
@@ -787,7 +789,7 @@ And-
 Up to the left you see a straw that is skewed format,
 
 198
-00:09:49,311 --> 00:09:52.815
+00:09:49,311 --> 00:09:52,815
 and at the top right you see a straw that has the wrong orientation-
 
 199
@@ -795,7 +797,7 @@ and at the top right you see a straw that has the wrong orientation-
 -Against what it really should have.
 
 200
-00:09:54,943 --> 00:09:57.503
+00:09:54,943 --> 00:09:57,503
 And we see here that the model is struggling to prick out-
 
 201
@@ -811,7 +813,7 @@ And also where these points should detect.
 You see it in the form of the red crosses.
 
 204
-00:10:06,207 --> 00:10:07.231
+00:10:06,207 --> 00:10:07,231
 Finally then.
 
 205
@@ -879,7 +881,7 @@ If it is so that you have read civil or college engineer-
 -So that you get the right to teach within the school.
 
 221
-00:10:53,311 --> 00:10:55.821
+00:10:53,311 --> 00:10:55,821
 And I am currently reading KPU at Liu.
 
 222
@@ -895,11 +897,11 @@ And so far, my experience of education-
 Clearly above expectation actually.
 
 225
-00:11:02,271 --> 00:11:03.905
+00:11:02,271 --> 00:11:03,905
 Okay, then you've been told a bit of-
 
 226
-00:11:03,905 --> 00:11:06.680
+00:11:03,905 --> 00:11:06,680
 -What you can do at university when you plug mathematics,
 
 227
@@ -909,3 +911,4 @@ And what opportunities exist if you plug mathematics.
 228
 00:11:10,207 --> 00:11:12,360
 Good luck with your future study choice!
+

@@ -3,7 +3,7 @@
 Hello again
 
 2
-00:00:05,900 --> 00:00:08.340
+00:00:05,900 --> 00:00:08,340
 I was going to record a new video
 
 3
@@ -103,11 +103,11 @@ And then I don't mean any big one-year plan but more how you train day by day
 And then I just think about
 
 27
-00:01:56,060 --> 00:02:00.800
+00:01:56,060 --> 00:02:00,800
 So, all the chances you have to train something
 
 28
-00:02:01,660 --> 00:02:03.660
+00:02:01,660 --> 00:02:03,660
 by telling something
 
 29
@@ -171,7 +171,7 @@ It really doesn't matter
 All these small situations, things that happen in your life.
 
 44
-00:03:06,840 --> 00:03:09.800
+00:03:06,840 --> 00:03:09,800
 You can use this to train Swedish
 
 45
@@ -219,11 +219,11 @@ Or take one of your friends and say that now I want to try to tell something in 
 Can you listen a little to me then I will try to tell
 
 56
-00:04:00,260 --> 00:04:02.260
+00:04:00,260 --> 00:04:02,260
 what happened yesterday, or last week
 
 57
-00:04:03,540 --> 00:04:06.660
+00:04:03,540 --> 00:04:06,660
 or something you should do in the future
 
 58
@@ -279,7 +279,7 @@ This is where you can become more efficient and learn faster
 if you
 
 71
-00:04:54,180 --> 00:04:58.060
+00:04:54,180 --> 00:04:58,060
 for example in the evening when you get home and you have done something
 
 72
@@ -291,7 +291,7 @@ Sit down for a while with lexicon
 And look up five or ten more important words that
 
 74
-00:05:06,200 --> 00:05:09.440
+00:05:06,200 --> 00:05:09,440
 you need to tell us about this thing
 
 75
@@ -335,19 +335,20 @@ and that said, it can be about telling you something in two, or three or five mi
 The important thing is that you
 
 85
-00:05:51,480 --> 00:05:54.620
+00:05:51,480 --> 00:05:54,620
 actively trying to find words you need
 
 86
-00:05:55,260 --> 00:05:59.820
+00:05:55,260 --> 00:05:59,820
 To tell you something that has happened to you in person in your life
 
 87
 00:06:03,160 --> 00:06:06,200
-Why is it so important to tell things? Yes...
+Why is it so important to tell things?
+ Yes...
 
 88
-00:06:07,080 --> 00:06:09.080
+00:06:07,080 --> 00:06:09,080
 I've been thinking a lot about this ...
 
 89
@@ -379,7 +380,7 @@ It can ... and also just ....
 In everyday life to tell you that you had problems with the car or that you bought a nice shower yesterday
 
 96
-00:06:47,060 --> 00:06:49.060
+00:06:47,060 --> 00:06:49,060
 And you got it cheap ...
 
 97
@@ -399,7 +400,7 @@ To get in touch with each other and get closer to each other and ...
 Then you can step by step
 
 101
-00:07:07,000 --> 00:07:09.760
+00:07:07,000 --> 00:07:09,760
 train yourself to get better at doing it
 
 102
@@ -435,11 +436,11 @@ become more yourself in Swedish
 When you are new or not great in a language, then you are not really yourself
 
 110
-00:07:53,760 --> 00:07:56.060
+00:07:53,760 --> 00:07:56,060
 So I can feel for myself, so I can feel anyway
 
 111
-00:07:57,220 --> 00:08:01.440
+00:07:57,220 --> 00:08:01,440
 And to practice telling, it's a way to
 
 112
@@ -451,7 +452,7 @@ be able to step by step
 be more yourself in your new language
 
 114
-00:08:07,960 --> 00:08:09.960
+00:08:07,960 --> 00:08:09,960
 In this case Swedish
 
 115
@@ -480,7 +481,8 @@ and tell me something about what you were talking about
 
 121
 00:08:44,200 --> 00:08:47,080
-Think about it! There is an incredible force
+Think about it!
+ There is an incredible force
 
 122
 00:08:47,820 --> 00:08:52,680
@@ -491,20 +493,21 @@ in telling simple things, to develop their language
 But you have to look for the situations and opportunities
 
 124
-00:08:57,860 --> 00:09:00.580
+00:08:57,860 --> 00:09:00,580
 and you have to look for the words and expressions
 
 125
-00:09:00,580 --> 00:09:02.560
+00:09:00,580 --> 00:09:02,560
 that allows you to tell
 
 126
-00:09:04,840 --> 00:09:06.840
+00:09:04,840 --> 00:09:06,840
 So that's my tip
 
 127
-00:09:07,260 --> 00:09:09.960
-Prepare a little! It doesn't take long.
+00:09:07,260 --> 00:09:09,960
+Prepare a little!
+ It doesn't take long.
 
 128
 00:09:10,640 --> 00:09:13,340
@@ -571,7 +574,7 @@ and there you can read
 About more tips on how to work out
 
 144
-00:10:01.060 --> 00:10:03,280
+00:10:01,060 --> 00:10:03,280
 and just practice words and lyrics too
 
 145
@@ -584,4 +587,7 @@ so it becomes easier to understand what I say
 
 147
 00:10:12,420 --> 00:10:15,220
-Have a great time. See you again soon. Bye!
+Have a great time.
+ See you again soon.
+ Bye!
+

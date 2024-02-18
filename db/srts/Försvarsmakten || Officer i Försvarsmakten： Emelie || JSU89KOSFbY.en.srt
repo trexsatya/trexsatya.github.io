@@ -1,9 +1,9 @@
 1
-00:00:00,360 --> 00:00:04.440
+00:00:00,360 --> 00:00:04,440
 I wanted to become an officer when I was a air force youth.
 
 2
-00:00:04,560 --> 00:00:07.240
+00:00:04,560 --> 00:00:07,240
 We had to ride the Hercules plane for the first time.
 
 3
@@ -19,7 +19,7 @@ Here I want to be.
 The pursuit of always getting better
 
 6
-00:00:17,600 --> 00:00:21.560
+00:00:17,600 --> 00:00:21,560
 and in the same vein be able to develop other people
 
 7
@@ -49,3 +49,4 @@ My name is Emelie.
 13
 00:00:40,360 --> 00:00:46,960
 I work as a specialist officer at the Transport Flight Unit, Såtenäs.
+

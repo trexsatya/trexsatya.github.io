@@ -1,9 +1,9 @@
 1
-00:00:00,300 --> 00:00:02.333
+00:00:00,300 --> 00:00:02,333
 About the Social Insurance Office.
 
 2
-00:00:02,333 --> 00:00:06.466
+00:00:02,333 --> 00:00:06,466
 The Social Insurance Agency, one of Sweden's largest authorities
 
 3
@@ -43,7 +43,7 @@ It describes how we who are employed at the Social Insurance Office should relat
 ourselves to the power and responsibility we have as employees in the state.
 
 12
-00:00:42,366 --> 00:00:44.933
+00:00:42,366 --> 00:00:44,933
 The state value base originated in
 
 13
@@ -55,11 +55,11 @@ The first chapter of the form of government and applies to all government employ
 To understand what this means
 
 15
-00:00:52,333 --> 00:00:55.866
+00:00:52,333 --> 00:00:55,866
 Should we briefly go through each concept.
 
 16
-00:00:55,933 --> 00:00:59.733
+00:00:55,933 --> 00:00:59,733
 Democracy is about everyone's equal rights and value
 
 17
@@ -67,7 +67,7 @@ Democracy is about everyone's equal rights and value
 And about the possibility of being involved and decide.
 
 18
-00:01:03,300 --> 00:01:07.266
+00:01:03,300 --> 00:01:07,266
 It is we who vote who decide who should govern the country.
 
 19
@@ -127,11 +127,11 @@ and other governing documents.
 Citizens' right
 
 33
-00:01:58,433 --> 00:02:02.966
+00:01:58,433 --> 00:02:02,966
 to free opinion formation, freedom of expression and access to information
 
 34
-00:02:03,033 --> 00:02:06.833
+00:02:03,033 --> 00:02:06,833
 is crucial for democracy to work.
 
 35
@@ -183,7 +183,7 @@ Efficiency is about managing the state's funds,
 But even about handling cases quickly and easy.
 
 47
-00:02:48,433 --> 00:02:51.433
+00:02:48,433 --> 00:02:51,433
 At the same time as the laws are followed.
 
 48
@@ -199,15 +199,15 @@ as simple as possible for the people we meet,
 that we have flexible processes and good accessibility.
 
 51
-00:03:01.066 --> 00:03:03.266
+00:03:01,066 --> 00:03:03,266
 Good service simplifies for all
 
 52
-00:03:03,266 --> 00:03:07.133
+00:03:03,266 --> 00:03:07,133
 And make us save on our resources.
 
 53
-00:03:07,200 --> 00:03:09.600
+00:03:07,200 --> 00:03:09,600
 An authority is obliged to be factual
 
 54
@@ -271,7 +271,7 @@ Operations have support in the legal system.
 Two laws that are good to know are the Administration Act
 
 69
-00:04:05,166 --> 00:04:06.666
+00:04:05,166 --> 00:04:06,666
 that form the basis of how one
 
 70
@@ -303,7 +303,7 @@ If there is scope for interpretation on how the legislation is to be applied is
 it practice, that is, indicative decisive
 
 77
-00:04:33,833 --> 00:04:38.033
+00:04:33,833 --> 00:04:38,033
 from the Supreme Administrative Court, which becomes governing.
 
 78
@@ -315,11 +315,11 @@ The decision becomes normative for how the legislation will later be interpreted
 Here is part of the insurance and remuneration such as social insurance
 
 80
-00:04:47,633 --> 00:04:49.033
+00:04:47,633 --> 00:04:49,033
 encompasses.
 
 81
-00:04:49,033 --> 00:04:51.633
+00:04:49,033 --> 00:04:51,633
 For example, there are compensation for families with children,
 
 82
@@ -331,15 +331,15 @@ sick and people with disabilities.
 In addition, the Social Insurance Agency pays out
 
 84
-00:04:57,966 --> 00:05:02.666
+00:04:57,966 --> 00:05:02,666
 Several of the remuneration decided by the Employment Service.
 
 85
-00:05:02,733 --> 00:05:05.266
+00:05:02,733 --> 00:05:05,266
 Every year, the Social Insurance Agency takes approximately
 
 86
-00:05:05,266 --> 00:05:08.966
+00:05:05,266 --> 00:05:08,966
 21 \ Hillillions decisions on grants and remuneration.
 
 87
@@ -379,8 +379,9 @@ They are called settlement -based benefits.
 Other Insurance assumes that you work or have
 
 96
-00:05:37,466 --> 00:05:42.666
-Worked in Sweden. These are the work -based benefits.
+00:05:37,466 --> 00:05:42,666
+Worked in Sweden.
+ These are the work -based benefits.
 
 97
 00:05:42,666 --> 00:05:47,700
@@ -407,7 +408,7 @@ Just over half of the payments go
 to the sick and people with disabilities.
 
 103
-00:06:04,833 --> 00:06:08.833
+00:06:04,833 --> 00:06:08,833
 Just over a third to children and families and the remaining part
 
 104
@@ -447,7 +448,7 @@ loss of income due to illness.
 About 600 \ H000 people receive sickness benefit each year.
 
 113
-00:06:44,033 --> 00:06:49.266
+00:06:44,033 --> 00:06:49,266
 Most people are sick for a shorter period and then return to their work.
 
 114
@@ -459,7 +460,7 @@ For some, there is a need for rehabilitation
 action during sick leave.
 
 116
-00:06:54,000 --> 00:06:57.633
+00:06:54,000 --> 00:06:57,633
 We will delve into the rules on sickness benefit in the film called
 
 117
@@ -467,7 +468,7 @@ We will delve into the rules on sickness benefit in the film called
 Sickness benefit and preventive sickness benefit.
 
 118
-00:07:02,266 --> 00:07:03.933
+00:07:02,266 --> 00:07:03,933
 Activity compensation is one
 
 119
@@ -499,7 +500,7 @@ It can be work -oriented, medical
 Or of a leisure nature and it should have a positive impact on the person.
 
 126
-00:07:34,233 --> 00:07:37.933
+00:07:34,233 --> 00:07:37,933
 One can also receive activity compensation for extended schooling
 
 127
@@ -523,7 +524,7 @@ If you will not be able to work more or just be able to work part -time.
 Sickness compensation can be granted from the age of 30
 
 132
-00:07:59,133 --> 00:08:02.933
+00:07:59,133 --> 00:08:02,933
 Until you can take out old -age pension.
 
 133
@@ -567,11 +568,11 @@ For those over 61 years there is a special rule that means that work ability
 only tested against such work as the person has experience with
 
 143
-00:08:43,633 --> 00:08:47.833
+00:08:43,633 --> 00:08:47,833
 and worked with over the past 15 years.
 
 144
-00:08:48,066 --> 00:08:52.066
+00:08:48,066 --> 00:08:52,066
 The Swedish Social Insurance Agency meets citizens and partners
 
 145
@@ -583,11 +584,11 @@ in digital meetings when appropriate.
 Digital meetings make it easier for more people to participate
 
 147
-00:08:58,600 --> 00:09:01.333
+00:08:58,600 --> 00:09:01,333
 and thus increases accessibility.
 
 148
-00:09:01,333 --> 00:09:05.866
+00:09:01,333 --> 00:09:05,866
 If there is a need, we can have meetings where we meet physically.
 
 149
@@ -625,3 +626,4 @@ There it is possible to if necessary
 157
 00:09:34,000 --> 00:09:38,066
 Leave a message to insurance investigators in a specific case.
+

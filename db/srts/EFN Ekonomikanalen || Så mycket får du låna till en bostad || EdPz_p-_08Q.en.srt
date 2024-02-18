@@ -1,5 +1,5 @@
 1
-00:00:03,080 --> 00:00:07.600
+00:00:03,080 --> 00:00:07,600
 You must have 15 % of the value of the home as a cash contribution.
 
 2
@@ -19,7 +19,7 @@ For example, lower interest rates and amortization.
 This is how it is.
 
 6
-00:00:24,280 --> 00:00:29.640
+00:00:24,280 --> 00:00:29,640
 Generally, you can borrow 5 to 6 times your gross income.
 
 7
@@ -69,3 +69,4 @@ If you can, avoid getting many credit information taken on you.
 18
 00:01:16,320 --> 00:01:19,760
 It can adversely affect your credit rating.
+

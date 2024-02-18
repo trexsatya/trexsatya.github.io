@@ -1,9 +1,9 @@
 1
-00:00:05,124 --> 00:00:06.968
+00:00:05,124 --> 00:00:06,968
 After the Second World War
 
 2
-00:00:06,968 --> 00:00:09.621
+00:00:06,968 --> 00:00:09,621
 Want the Soviet Union to increase its influence.
 
 3
@@ -43,7 +43,7 @@ of the supply paths to the Democratic West Berlin.
 The United States and Western Europe are starting to get nervous.
 
 12
-00:00:39,067 --> 00:00:42.467
+00:00:39,067 --> 00:00:42,467
 What is the Soviet Union's next goal?
 
 13
@@ -71,11 +71,11 @@ The Soviet Union will be considered an attack on them all.
 The agreement is called the North Atlantic Treaty and
 
 19
-00:01:06,300 --> 00:01:09.900
+00:01:06,300 --> 00:01:09,900
 The countries that sign form North Atlantic Treaties
 
 20
-00:01:09,900 --> 00:01:12.106
+00:01:09,900 --> 00:01:12,106
 the organization or NATO.
 
 21
@@ -143,7 +143,7 @@ is democratic by its name so everything is determined by it
 East German Communist Party.
 
 37
-00:01:58,284 --> 00:02:01.638
+00:01:58,284 --> 00:02:01,638
 US and their allies want West Germany
 
 38
@@ -151,11 +151,11 @@ US and their allies want West Germany
 forming a separate army and joins NATO
 
 39
-00:02:04,525 --> 00:02:07.096
+00:02:04,525 --> 00:02:07,096
 In this way they can help defend
 
 40
-00:02:07,096 --> 00:02:09.634
+00:02:07,096 --> 00:02:09,634
 Western Europe against the Soviet Union.
 
 41
@@ -211,11 +211,11 @@ Like NATO, the Warsaw Pact Countries are required to come to each other
 defense if they are attacked by an enemy.
 
 54
-00:02:56,800 --> 00:03:00.245
+00:02:56,800 --> 00:03:00,245
 Pact also establishes a military headquarters in
 
 55
-00:03:00,245 --> 00:03:02.662
+00:03:00,245 --> 00:03:02,662
 Moscow for all signing countries,
 
 56
@@ -265,3 +265,4 @@ opposite sides can easily escalate to
 67
 00:03:45,200 --> 00:03:47,000
 A much greater conflict.
+

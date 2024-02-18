@@ -51,15 +51,15 @@ You can feel bad and get a fever and chill, it is common and nothing is dangerou
 You start bleeding two to four hours after taking the tablets,
 
 14
-00:00:58,720 --> 00:01:00.920
+00:00:58,720 --> 00:01:00,920
 But sometimes it can take longer.
 
 15
-00:01:01,760 --> 00:01:04.560
+00:01:01,760 --> 00:01:04,560
 Take the last tablets after three hours.
 
 16
-00:01:04,560 --> 00:01:07.800
+00:01:04,560 --> 00:01:07,800
 You take the tablets whether you have started to bleed or not.
 
 17
@@ -113,3 +113,4 @@ You do the test to make sure you are not pregnant anymore.
 29
 00:01:59,000 --> 00:02:04,200
 It is important that you start with contraceptives immediately after the abortion, if you are going to have sex.
+

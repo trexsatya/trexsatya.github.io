@@ -1,13 +1,13 @@
 1
-00:00:01,345 --> 00:00:02.345
+00:00:01,345 --> 00:00:02,345
 Hello Hello
 
 2
-00:00:02,995 --> 00:00:05.945
+00:00:02,995 --> 00:00:05,945
 Here's a tip if you want
 
 3
-00:00:05,945 --> 00:00:08.465
+00:00:05,945 --> 00:00:08,465
 Understanding people better
 
 4
@@ -55,7 +55,7 @@ It happens quite often
 that I meet SFI students
 
 15
-00:00:42,715 --> 00:00:45.065
+00:00:42,715 --> 00:00:45,065
 that has lived in Gothenburg
 
 16
@@ -63,11 +63,11 @@ that has lived in Gothenburg
 Pretty long
 
 17
-00:00:47,015 --> 00:00:49.615
+00:00:47,015 --> 00:00:49,615
 and still become unsure if i
 
 18
-00:00:49,615 --> 00:00:52.665
+00:00:49,615 --> 00:00:52,665
 Says, for example, Avenyn or Götaplats
 
 19
@@ -79,7 +79,7 @@ Or Nordstan
 it is different but it happens and
 
 21
-00:00:58,195 --> 00:01:01.195
+00:00:58,195 --> 00:01:01,195
 When that happens, so I say the name of a
 
 22
@@ -87,7 +87,7 @@ When that happens, so I say the name of a
 very ordinary large place
 
 23
-00:01:03,795 --> 00:01:06.465
+00:01:03,795 --> 00:01:06,465
 in Gothenburg as everyone
 
 24
@@ -111,7 +111,7 @@ It creates a feeling that this one
 the person is not interested in
 
 29
-00:01:20,635 --> 00:01:22.575
+00:01:20,635 --> 00:01:22,575
 the place he or she lives on
 
 30
@@ -123,15 +123,15 @@ while if the person knows it
 so it creates a feeling that
 
 32
-00:01:29,395 --> 00:01:32.565
+00:01:29,395 --> 00:01:32,565
 by proximity, that yes, we both live in Gothenburg
 
 33
-00:01:32,565 --> 00:01:35.065
+00:01:32,565 --> 00:01:35,065
 and of course we know what
 
 34
-00:01:35,065 --> 00:01:37.845
+00:01:35,065 --> 00:01:37,845
 Different places in Gothenburg are called
 
 35
@@ -155,7 +155,7 @@ Take a few pages in a book
 thus a writing book and
 
 40
-00:01:52,965 --> 00:01:55.855
+00:01:52,965 --> 00:01:55,855
 and write at the top there
 
 41
@@ -163,7 +163,7 @@ and write at the top there
 places where I live or names
 
 42
-00:01:59,185 --> 00:02:00.795
+00:01:59,185 --> 00:02:00,795
 In places where I live
 
 43
@@ -171,12 +171,13 @@ In places where I live
 and so start asking people a bit and gather on you
 
 44
-00:02:04,585 --> 00:02:08.005
+00:02:04,585 --> 00:02:08,005
 So think about a little, what's the name?
 
 45
 00:02:08,005 --> 00:02:10,925
-What's the name? And what calls
+What's the name?
+ And what calls
 
 46
 00:02:10,925 --> 00:02:13,965
@@ -195,7 +196,7 @@ so
 yes, right, and then the other
 
 50
-00:02:24,765 --> 00:02:27.515
+00:02:24,765 --> 00:02:27,515
 then that ... it is also very common
 
 51
@@ -223,7 +224,7 @@ one thinks everyone understands what one means
 And that's why it can be difficult to understand if you listen then
 
 57
-00:02:46,515 --> 00:02:49.555
+00:02:46,515 --> 00:02:49,555
 On people, for example, from Gothenburg
 
 58
@@ -231,7 +232,7 @@ On people, for example, from Gothenburg
 and they talk and use abbreviations
 
 59
-00:02:52,475 --> 00:02:54.505
+00:02:52,475 --> 00:02:54,505
 or slang words for different things
 
 60
@@ -243,11 +244,11 @@ and thus, if you
 uses the same, or as well as talking in the same way
 
 62
-00:03:01,475 --> 00:03:04.265
+00:03:01,475 --> 00:03:04,265
 like those who come from
 
 63
-00:03:04,265 --> 00:03:07.025
+00:03:04,265 --> 00:03:07,025
 the place does, so you will again create more proximity
 
 64
@@ -324,18 +325,19 @@ Or "he works at Sahlgrenska"
 
 82
 00:03:53,955 --> 00:03:57,345
-Yes, what does that mean? Well, he works at Sahlgrenska Hospital
+Yes, what does that mean?
+ Well, he works at Sahlgrenska Hospital
 
 83
-00:03:57,915 --> 00:04:01.165
+00:03:57,915 --> 00:04:01,165
 Sahlgrenska Hospital 'there may also be places
 
 84
-00:04:01,265 --> 00:04:02.485
+00:04:01,265 --> 00:04:02,485
 so
 
 85
-00:04:02,865 --> 00:04:05.785
+00:04:02,865 --> 00:04:05,785
 I often call the library
 
 86
@@ -367,7 +369,7 @@ The system or company
 There are very few Swedes
 
 93
-00:04:26,285 --> 00:04:29.515
+00:04:26,285 --> 00:04:29,515
 that says: "I'll go to Systembolaget"
 
 94
@@ -375,11 +377,11 @@ that says: "I'll go to Systembolaget"
 without saying the “system” or “company”
 
 95
-00:04:33,505 --> 00:04:36.565
+00:04:33,505 --> 00:04:36,565
 There are certainly a lot of different such examples
 
 96
-00:04:36,565 --> 00:04:39.965
+00:04:36,565 --> 00:04:39,965
 I think like this: cinemas or restaurants
 
 97
@@ -391,11 +393,11 @@ Or cafes
 squares, statues
 
 99
-00:04:45,035 --> 00:04:47.815
+00:04:45,035 --> 00:04:47,815
 fountains, that is, there is a mass
 
 100
-00:04:47,815 --> 00:04:49.885
+00:04:47,815 --> 00:04:49,885
 different things that may have
 
 101
@@ -411,7 +413,7 @@ that comes from the site uses
 My colleague who comes from Stockholm
 
 104
-00:04:59,895 --> 00:05:02.915
+00:04:59,895 --> 00:05:02,915
 said, for example
 
 105
@@ -419,7 +421,7 @@ said, for example
 "Yeah, are you going to Stockan"
 
 106
-00:05:05,195 --> 00:05:08.165
+00:05:05,195 --> 00:05:08,165
 Log that is short for Stockholm then
 
 107
@@ -431,7 +433,7 @@ Yes, many such things
 so
 
 109
-00:05:13,065 --> 00:05:15.905
+00:05:13,065 --> 00:05:15,905
 simply check it up, ask
 
 110
@@ -439,11 +441,11 @@ simply check it up, ask
 People around you, it is also a fun way
 
 111
-00:05:18,725 --> 00:05:21.565
+00:05:18,725 --> 00:05:21,565
 to get in touch with people because if you show interest
 
 112
-00:05:21,565 --> 00:05:24.605
+00:05:21,565 --> 00:05:24,605
 for that place people come from and live on
 
 113
@@ -479,7 +481,7 @@ so to say, locals
 talking about that place
 
 121
-00:05:46,700 --> 00:05:51.535
+00:05:46,700 --> 00:05:51,535
 Yes, that's what I wanted to say here
 
 122
@@ -491,7 +493,7 @@ Please write a comment about you what is it called
 Learn something new, I can most
 
 124
-00:05:58,115 --> 00:06:00.985
+00:05:58,115 --> 00:06:00,985
 Name of places in Gothenburg where I live
 
 125
@@ -503,7 +505,7 @@ so it could be a bit of fun if you find some
 funny nicknames or abbreviations
 
 127
-00:06:06,495 --> 00:06:08.535
+00:06:06,495 --> 00:06:08,535
 from the place where you live
 
 128
@@ -521,3 +523,4 @@ Have a good time so long so we'll see you again soon
 131
 00:06:17,845 --> 00:06:18,845
 Bye
+

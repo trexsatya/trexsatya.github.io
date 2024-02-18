@@ -31,11 +31,11 @@ Onomichi Zosen of Hiroshima in Japan and was about 93 meters long,
 Passengers and 66 crew members.
 
 9
-00:00:48,466 --> 00:00:51.916
+00:00:48,466 --> 00:00:51,916
 The ship operated the distance between the city of Tacloban
 
 10
-00:00:51,916 --> 00:00:57.633
+00:00:51,916 --> 00:00:57,633
 and the capital of Manilla in the Philippines, located on the island of Luzon
 
 11
@@ -87,11 +87,11 @@ Receive 1518 passengers and people are still crowded to come along.
 And it is especially common before festivals as at this time,
 
 23
-00:01:57,466 --> 00:02:01.466
+00:01:57,466 --> 00:02:01,466
 Only a few days before Christmas.
 
 24
-00:02:01,466 --> 00:02:05.416
+00:02:01,466 --> 00:02:05,416
 When Doña Paz left the harbor after her stop in the Catbalog
 
 25
@@ -139,7 +139,7 @@ Vector the port of Limay in the province of Batan in the Philippines
 to get to destination even a masbate.
 
 36
-00:02:57,416 --> 00:03:01.416
+00:02:57,416 --> 00:03:01,416
 The ship Mt Vector had 13 people in the herd
 
 37
@@ -191,7 +191,7 @@ Some things that are important to know at this time are the following.
 Inside the vessel Doña Paz it was extremely crowded and most of the passengers tried to sleep.
 
 49
-00:04:03,200 --> 00:04:09.383
+00:04:03,200 --> 00:04:09,383
 People slept in the corridors on top of the deck and almost all the cabins were overcrowded there.
 
 50
@@ -227,7 +227,7 @@ And on board MT Vector it wasn't much better.
 They were heavily understaffed with only 13 men.
 
 58
-00:04:49,133 --> 00:04:55.883
+00:04:49,133 --> 00:04:55,883
 They had no training in dealing with crisis situations, inadequate navigation equipment and that
 
 59
@@ -271,7 +271,7 @@ In connection with the collision they ignited
 which led to an immediate and powerful explosion.
 
 69
-00:05:49,616 --> 00:05:52.066
+00:05:49,616 --> 00:05:52,066
 The explosion was so violent that
 
 70
@@ -279,7 +279,7 @@ The explosion was so violent that
 It immediately settled both vessels on fire.
 
 71
-00:05:56,600 --> 00:05:59.633
+00:05:56,600 --> 00:05:59,633
 The passengers had nowhere to go.
 
 72
@@ -327,7 +327,7 @@ who found themselves some nautical miles from the collision, the explosion heard
 and saw a fire bullet that towed up several hundred meters
 
 83
-00:06:41,866 --> 00:06:45.866
+00:06:41,866 --> 00:06:45,866
 in the air.
 
 84
@@ -335,7 +335,7 @@ in the air.
 They arrived at the site
 
 85
-00:06:47,016 --> 00:06:51.016
+00:06:47,016 --> 00:06:51,016
 A few hours later and managed to save 26 people.
 
 86
@@ -343,11 +343,11 @@ A few hours later and managed to save 26 people.
 24 of them were from Doña Paz and two were from MT Vector.
 
 87
-00:06:57,050 --> 00:07:02.433
+00:06:57,050 --> 00:07:02,433
 They were taken ashore where they received medical care.
 
 88
-00:07:02,516 --> 00:07:06.083
+00:07:02,516 --> 00:07:06,083
 Doña Paz sank 2 hours after the collision
 
 89
@@ -379,7 +379,7 @@ Because most of the passengers are encapsulated
 Inside that Japan, the total death number is unknown.
 
 96
-00:07:42,866 --> 00:07:52.416
+00:07:42,866 --> 00:07:52,416
 But estimates show a figure that about 4385 people died in the accident.
 
 97
@@ -391,7 +391,7 @@ Since no SOS signal was sent
 Out it took about 8 hours before the Philippine Coast Guard learned about the accident
 
 99
-00:08:01,366 --> 00:08:05.366
+00:08:01,366 --> 00:08:05,366
 and another 8 hours before the rescue service was sent out.
 
 100
@@ -431,7 +431,7 @@ We can only speculate what went through the head
 on the passengers aboard Doña Paz who was stuck in their cabins
 
 109
-00:08:53,666 --> 00:08:57.866
+00:08:53,666 --> 00:08:57,866
 When the ship was standing in flames and sank.
 
 110
@@ -461,3 +461,4 @@ What do you say to their child
 116
 00:09:29,266 --> 00:09:32,366
 When you know there is no way out?
+

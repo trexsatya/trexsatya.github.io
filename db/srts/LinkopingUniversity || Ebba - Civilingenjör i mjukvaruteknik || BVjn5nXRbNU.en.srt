@@ -1,9 +1,9 @@
 1
-00:00:01,536 --> 00:00:05.888
+00:00:01,536 --> 00:00:05,888
 My name is Ebba and I read a civil engineer in software technology at LiU.
 
 2
-00:00:06,144 --> 00:00:07.424
+00:00:06,144 --> 00:00:07,424
 I'm in my fourth year.
 
 3
@@ -16,11 +16,13 @@ But just on software technology you read a lot of programming, several different
 
 5
 00:00:16,128 --> 00:00:21,248
-What I think is fun about programming is that it is very concrete. You get a response from your computer.
+What I think is fun about programming is that it is very concrete.
+ You get a response from your computer.
 
 6
 00:00:21,504 --> 00:00:25,344
-But it is also very creative. You can solve a problem in very many different ways,
+But it is also very creative.
+ You can solve a problem in very many different ways,
 
 7
 00:00:25,856 --> 00:00:28,160
@@ -36,11 +38,13 @@ They have taken 3D scans, inside the actual mines, up in Kiruna.
 
 10
 00:00:40,192 --> 00:00:43,776
-As they read to data file. And we developed an algorithm that can,
+As they read to data file.
+ And we developed an algorithm that can,
 
 11
 00:00:45,056 --> 00:00:49,664
-Our node graph generates itself. Then they can do simulations
+Our node graph generates itself.
+ Then they can do simulations
 
 12
 00:00:49,920 --> 00:00:51,712
@@ -59,7 +63,7 @@ It got very cool because it is actually used by LKAB's system today.
 I think anyone can search!
 
 16
-00:01:02,208 --> 00:01:06.816
+00:01:02,208 --> 00:01:06,816
 It is a bit sad that there is a stereotype today, which you see a lot in movies and TV series.
 
 17
@@ -77,3 +81,4 @@ This is not the case in reality, but we are social and we have great fun.
 20
 00:01:20,896 --> 00:01:22,688
 So you should not hesitate to search.
+

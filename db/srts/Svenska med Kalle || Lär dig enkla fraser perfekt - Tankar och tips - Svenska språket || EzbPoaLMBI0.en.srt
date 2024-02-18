@@ -3,7 +3,7 @@
 Hello Hello
 
 2
-00:00:02,860 --> 00:00:06.320
+00:00:02,860 --> 00:00:06,320
 This will be a short movie I hope
 
 3
@@ -23,7 +23,7 @@ so can you read what I say at the same time
 I just made a short movie
 
 7
-00:00:23,320 --> 00:00:26.560
+00:00:23,320 --> 00:00:26,560
 About the phrase: "Where should I ..."
 
 8
@@ -40,7 +40,8 @@ Where you can ask "Where should I ask ....?"
 
 11
 00:00:33,440 --> 00:00:35,440
-"Where should I leave ....?" and so on
+"Where should I leave ....?"
+ and so on
 
 12
 00:00:36,500 --> 00:00:40,040
@@ -63,7 +64,7 @@ with your understanding too
 and with
 
 17
-00:00:49,580 --> 00:00:52.640
+00:00:49,580 --> 00:00:52,640
 to become better at talking in general
 
 18
@@ -79,7 +80,7 @@ as you can use frequently
 so good you can only
 
 21
-00:01:01,860 --> 00:01:03.860
+00:01:01,860 --> 00:01:03,860
 Try to learn by the way
 
 22
@@ -155,7 +156,7 @@ and i have quite a few videos now
 where I teach just a little bit
 
 40
-00:02:04,060 --> 00:02:06.060
+00:02:04,060 --> 00:02:06,060
 maybe a sentence or
 
 41
@@ -211,7 +212,7 @@ or hits a friend
 so try using this phrase
 
 54
-00:02:35,860 --> 00:02:37.560
+00:02:35,860 --> 00:02:37,560
 for
 
 55
@@ -247,7 +248,7 @@ your feeling that you can
 every time you say anything
 
 63
-00:02:57,160 --> 00:03:00.100
+00:02:57,160 --> 00:03:00,100
 and that it feels good, it feels simple
 
 64
@@ -339,11 +340,11 @@ where I teach any simple thing
 But you can really take any movie
 
 86
-00:03:58,560 --> 00:04:00.560
+00:03:58,560 --> 00:04:00,560
 and focus on a phrase
 
 87
-00:04:00,920 --> 00:04:02.920
+00:04:00,920 --> 00:04:02,920
 and learn it perfectly
 
 88
@@ -355,7 +356,7 @@ That was just what I wanted to say now
 good luck with the training
 
 90
-00:04:07,260 --> 00:04:09.260
+00:04:07,260 --> 00:04:09,260
 Don't give up, keep fighting
 
 91
@@ -364,4 +365,6 @@ So your Swedish will be better all the time
 
 92
 00:04:13,200 --> 00:04:16,000
-Have a good one! Bye :-)
+Have a good one!
+ Bye :-)
+

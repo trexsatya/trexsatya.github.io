@@ -3,7 +3,7 @@
 Hi, my name is Tobias and I work as a prosecutor in Eskilstuna.
 
 2
-00:00:04,099 --> 00:00:06.099
+00:00:04,099 --> 00:00:06,099
 I love my job as a prosecutor!
 
 3
@@ -61,3 +61,4 @@ And it has facilitated incredibly, in my everyday puzzle with toddlers, pick -up
 16
 00:01:05,219 --> 00:01:07,500
 Do like me, become a prosecutor!
+

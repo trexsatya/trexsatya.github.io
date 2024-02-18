@@ -1,9 +1,9 @@
 1
-00:00:01,200 --> 00:00:07.720
+00:00:01,200 --> 00:00:07,720
 "That's one small step for man, one giant leap for mankind."
 
 2
-00:00:08,280 --> 00:00:17.560
+00:00:08,280 --> 00:00:17,560
 In 1969, the year when man for the first time set foot on the moon, an important step for AI research was also taken in Sweden.
 
 3
@@ -16,14 +16,15 @@ A research area that was often met with skepticism.
 
 5
 00:00:31,280 --> 00:00:40,320
-In 1975, Linköping University was founded. An environment filled with new construction spirit and with a great desire for renewal.
+In 1975, Linköping University was founded.
+ An environment filled with new construction spirit and with a great desire for renewal.
 
 6
 00:00:40,920 --> 00:00:47,480
 At LiU, Erik was given the opportunity to create broad basic education specially adapted for AI.
 
 7
-00:00:47,960 --> 00:00:49.560
+00:00:47,960 --> 00:00:49,560
 It required courage!
 
 8
@@ -71,11 +72,11 @@ How can doctors get support from AI in their assessments?
 How are people affected when they meet AI?
 
 19
-00:01:50,320 --> 00:01:57.560
+00:01:50,320 --> 00:01:57,560
 And how can AI treat all people equally, without preconceived sentences, so that man can feel confidence in robots
 
 20
-00:01:57,680 --> 00:02:01.640
+00:01:57,680 --> 00:02:01,640
 For example in elderly care, preschool or at a job interview?
 
 21
@@ -85,3 +86,4 @@ Swedish AI research has a natural place at Linköping University.
 22
 00:02:08,720 --> 00:02:16,120
 By helping man and AI to coexist and collaborate, we lift our eyes to seek renewal!
+

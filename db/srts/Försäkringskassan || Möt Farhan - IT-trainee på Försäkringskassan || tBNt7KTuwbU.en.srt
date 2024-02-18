@@ -1,5 +1,5 @@
 1
-00:00:04,480 --> 00:00:07.920
+00:00:04,480 --> 00:00:07,920
 My name is Farhan and read software technology at the university.
 
 2
@@ -11,7 +11,7 @@ Now I work as an IT trainee here at Försäkringskassan,
 And this is my first job after education.
 
 4
-00:00:14,719 --> 00:00:16.519
+00:00:14,719 --> 00:00:16,519
 I looked at several different jobs,
 
 5
@@ -51,7 +51,7 @@ But I am very interested in system development and think it is exciting tasks,
 And when it is exciting, it is easy to go to work.
 
 14
-00:00:48,679 --> 00:00:52.320
+00:00:48,679 --> 00:00:52,320
 What surprised me in the beginning is that the Social Insurance Office is so great
 
 15
@@ -63,13 +63,14 @@ And have so much technology.
 That is why it is important to be good at problem solution and be able to collaborate with others.
 
 17
-00:00:59,079 --> 00:01:02.800
+00:00:59,079 --> 00:01:02,800
 We usually work in teams and therefore it is important to understand each other,
 
 18
-00:01:03,119 --> 00:01:07.079
+00:01:03,119 --> 00:01:07,079
 And what is good is that everyone within the teams tries to help all the time.
 
 19
 00:01:07,719 --> 00:01:11,519
 If you are interested in IT, there is always a job here that fits.
+

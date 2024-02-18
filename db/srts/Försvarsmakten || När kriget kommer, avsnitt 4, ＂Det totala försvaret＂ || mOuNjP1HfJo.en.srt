@@ -27,19 +27,19 @@ It is used by the Swedish Defense Research Institute to easily and pedagogically
 I have lectured to many pedantic and critical people.
 
 8
-00:01:34,894 --> 00:01:42.027
+00:01:34,894 --> 00:01:42,027
 Here you show how our through -digitized society can be disturbed and what consequences it can have.
 
 9
-00:01:53,415 --> 00:01:57.080
+00:01:53,415 --> 00:01:57,080
 Cyber attacks ... You have a computer, I have a computer.
 
 10
-00:01:57,676 --> 00:02:03.912
+00:01:57,676 --> 00:02:03,912
 I want to influence you in any way or your business-
 
 11
-00:02:04,444 --> 00:02:09.657
+00:02:04,444 --> 00:02:09,657
 —with my computer asks your computer to do something you don't want it to do-
 
 12
@@ -63,7 +63,7 @@ If someone goes on the traffic lights, the hospital's emergency clinics can be q
 And what happens if a bridge gets stuck in a raised position due to malicious code?
 
 17
-00:02:44,562 --> 00:02:47.709
+00:02:44,562 --> 00:02:47,709
 We believe that cyber attacks will be used as a complement.
 
 18
@@ -75,7 +75,7 @@ You do this to make it easier for other types of operations.
 There is nothing that is used completely isolated and separately.
 
 20
-00:02:59,846 --> 00:03:06.040
+00:02:59,846 --> 00:03:06,040
 Cyber attacks will not only affect the Armed Forces but also civil society.
 
 21
@@ -127,7 +127,7 @@ Thus, if the transport is broken, there are no goods available.
 Everything will end, and it quickly.
 
 33
-00:04:34,830 --> 00:04:37.571
+00:04:34,830 --> 00:04:37,571
 Very many supply chains are "just in time".
 
 34
@@ -135,7 +135,7 @@ Very many supply chains are "just in time".
 In "Just in Time" concept you see stock, storage and reserves and extra resources as an unnecessary cost.
 
 35
-00:04:46,608 --> 00:04:52.413
+00:04:46,608 --> 00:04:52,413
 This means that everything should preferably be directly in production or truck between different units.
 
 36
@@ -143,7 +143,7 @@ This means that everything should preferably be directly in production or truck 
 It is clear that a small tuva often steals a large load.
 
 37
-00:04:57,000 --> 00:04:59.402
+00:04:57,000 --> 00:04:59,402
 It is a risk of crisis preparedness.
 
 38
@@ -155,7 +155,7 @@ During the initial phase of the Corona crisis, we saw that everyone wanted the s
 That private individuals hamstrade goods are a thing-
 
 40
-00:05:23,450 --> 00:05:29.026
+00:05:23,450 --> 00:05:29,026
 -But political cooperation across borders, did it work?
 
 41
@@ -203,7 +203,7 @@ What we are self -sufficient at?
 We have plenty of resources within the country.
 
 52
-00:06:36,888 --> 00:06:39.430
+00:06:36,888 --> 00:06:39,430
 Cultivable soil and animals.
 
 53
@@ -211,11 +211,11 @@ Cultivable soil and animals.
 We are self -sufficient in principle when it comes to cereals, eggs and chickens, and some more.
 
 54
-00:06:46,863 --> 00:06:56.088
+00:06:46,863 --> 00:06:56,088
 On the other hand, these products are dependent on the fact that tractors have diesel, that we have fertilizers and other inputs for agriculture.
 
 55
-00:06:56,917 --> 00:06:59.913
+00:06:56,917 --> 00:06:59,913
 Actually, we are not self -sufficient on anything.
 
 56
@@ -240,10 +240,11 @@ If the central electricity grid is extinguished in a sufficiently large area, ba
 
 61
 00:07:50,089 --> 00:07:55,649
-We lose the lighting, we lose the heat. We lose telecommunications.
+We lose the lighting, we lose the heat.
+ We lose telecommunications.
 
 62
-00:07:55,960 --> 00:07:59.812
+00:07:55,960 --> 00:07:59,812
 We lose health care, we lose agriculture.
 
 63
@@ -251,7 +252,7 @@ We lose health care, we lose agriculture.
 We lose all types of bank transmission systems.
 
 64
-00:08:03,580 --> 00:08:07.067
+00:08:03,580 --> 00:08:07,067
 Without the electricity, we no longer have a functioning society.
 
 65
@@ -275,7 +276,7 @@ When one cannot, want or can defend themselves further-
 There are many parts of society that are important in order to live a normal life under decent forms that we are used to.
 
 70
-00:08:45,658 --> 00:08:52.304
+00:08:45,658 --> 00:08:52,304
 What is ultimately important from my perspective is the desire to defend the country.
 
 71
@@ -311,7 +312,7 @@ Then it becomes a good so -called threshold effect.
 Military threshold effect is something that Sweden as a nation should provide.
 
 79
-00:09:32,742 --> 00:09:35.529
+00:09:32,742 --> 00:09:35,529
 It is a total defense affair to have this.
 
 80
@@ -319,7 +320,7 @@ It is a total defense affair to have this.
 The threshold effect prevents an opponent from conducting business that he would like to do-
 
 81
-00:09:42,586 --> 00:09:47.630
+00:09:42,586 --> 00:09:47,630
 -To the cost and price becomes too great.
 
 82
@@ -328,14 +329,14 @@ When we talk about the threshold effect, we connect it before the war starts.
 
 83
 00:09:55,189 --> 00:09:59,744
-That is, we will make sure that the war does not come, and that is the best defense.
+That is, we will make sure that the war does not come, and it is the best defense.
 
 84
-00:10:01.068 --> 00:10:04,769
+00:10:01,068 --> 00:10:04,769
 We shall carry out operations daily to reject violations-
 
 85
-00:10:04,769 --> 00:10:09.219
+00:10:04,769 --> 00:10:09,219
 -But we will also discover various abuse and attack in the gray zone.
 
 86
@@ -357,3 +358,4 @@ In the next section:
 90
 00:10:46,362 --> 00:10:50,090
 What is really worth defending?
+

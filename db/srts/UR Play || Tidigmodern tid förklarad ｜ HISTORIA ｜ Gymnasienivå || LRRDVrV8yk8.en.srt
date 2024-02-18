@@ -1,5 +1,5 @@
 1
-00:00:01,880 --> 00:00:07.560
+00:00:01,880 --> 00:00:07,560
 If you were European in the 16th century you thought the earth was lying in the middle of the universe-
 
 2
@@ -27,7 +27,7 @@ The exciting with early modern time-
 In the early modern period, man understands for the first time-
 
 8
-00:00:40,240 --> 00:00:44.560
+00:00:40,240 --> 00:00:44,560
 -How she looks inside and that there are more than three continents-
 
 9
@@ -39,7 +39,7 @@ In the early modern period, man understands for the first time-
 What do all discoveries get for consequences-
 
 11
-00:00:54,760 --> 00:00:59.080
+00:00:54,760 --> 00:00:59,080
 -For Europe's development and people?
 
 12
@@ -79,11 +79,11 @@ It is a period of refraction-
 During this time, the early modern state emerges.
 
 21
-00:01:50,520 --> 00:01:55.560
+00:01:50,520 --> 00:01:55,560
 In the Middle Ages, Europe consisted of small kingdoms.
 
 22
-00:01:55,720 --> 00:02:01.080
+00:01:55,720 --> 00:02:01,080
 Now we get larger states, which can better control their resources.
 
 23
@@ -139,7 +139,7 @@ The magnet is drawn against the earth's magnetic north pole.
 One who has one of those is Christofer Columbus-
 
 36
-00:03:04,160 --> 00:03:09.480
+00:03:04,160 --> 00:03:09,480
 -He whose journey is so important that it marks the start of the era.
 
 37
@@ -168,10 +168,11 @@ He thinks he came to Asia.
 
 43
 00:03:39,880 --> 00:03:45,800
-But where has Columbus ended up? The compass has not shown error-
+But where has Columbus ended up?
+ The compass has not shown error-
 
 44
-00:03:45,960 --> 00:03:51.040
+00:03:45,960 --> 00:03:51,040
 -What has emerged a new continent: America.
 
 45
@@ -187,8 +188,9 @@ He never understood it was a new continent-
 -With maybe 60-70 million inhabitants.
 
 48
-00:04:04,400 --> 00:04:09.120
-For them came the so -called The discovery to change everything.
+00:04:04,400 --> 00:04:09,120
+For them came the so -called
+ The discovery to change everything.
 
 49
 00:04:09,280 --> 00:04:11,960
@@ -227,15 +229,15 @@ The new continent leads to a revolution in science.
 People are starting to investigate, with the goal of learning more about their surroundings.
 
 58
-00:04:56,680 --> 00:05:01.080
+00:04:56,680 --> 00:05:01,080
 The scientific revolution involves both discoveries-
 
 59
-00:05:01,240 --> 00:05:04.600
+00:05:01,240 --> 00:05:04,600
 -and a new way to discover the world.
 
 60
-00:05:04,760 --> 00:05:07.880
+00:05:04,760 --> 00:05:07,880
 A way to examine the nature-
 
 61
@@ -335,12 +337,13 @@ Religion also affects how society is organized-
 The standing society can be illustrated like this.
 
 85
-00:07:03,520 --> 00:07:07.720
+00:07:03,520 --> 00:07:07,720
 The head is the nobility, the heart the priests and legs the peasants.
 
 86
 00:07:07,880 --> 00:07:13,320
-The legs should not make any decisions. The head should do that.
+The legs should not make any decisions.
+ The head should do that.
 
 87
 00:07:13,480 --> 00:07:18,240
@@ -379,11 +382,11 @@ Here the monk Martin Luther nails 95 points at the church in Wittenberg.
 They change the church and Europe for all time.
 
 96
-00:08:01,480 --> 00:08:06.040
+00:08:01,480 --> 00:08:06,040
 Luther believes that someone may be right against the pope and church-
 
 97
-00:08:06,200 --> 00:08:08.560
+00:08:06,200 --> 00:08:08,560
 -If they have support from the Bible.
 
 98
@@ -399,7 +402,7 @@ Luther sets fire to the letter, and then it goes fast.
 The dissatisfaction spreads like a wildfeld
 
 101
-00:08:21,560 --> 00:08:25.560
+00:08:21,560 --> 00:08:25,560
 -And the Roman Catholic Church split.
 
 102
@@ -455,7 +458,7 @@ It becomes a Catholic and a Protestant Europe-
 -And it that has united continent more than boundaries and language is now gone.
 
 115
-00:09:28,000 --> 00:09:34.560
+00:09:28,000 --> 00:09:34,560
 Europe's states are fighting with each other during almost the entire 17th century.
 
 116
@@ -467,7 +470,7 @@ War is a European specialty, but now they are stepped up.
 They become religiously charged, longer and bloodier.
 
 118
-00:09:43,920 --> 00:09:48.560
+00:09:43,920 --> 00:09:48,560
 Europe is dominated by the Habsburg Emperor
 
 119
@@ -483,7 +486,7 @@ It leads to thirty-year war-
 -Which starts with a quarrel in Prague 1618 between Protestants and Catholics.
 
 122
-00:10:04,520 --> 00:10:09.680
+00:10:04,520 --> 00:10:09,680
 The Protestants throw out two Catholic governors through the window.
 
 123
@@ -544,7 +547,7 @@ The king falls, but Sweden ends up on the winning side with France-
 
 137
 00:11:20,600 --> 00:11:24,520
--When the Westphalian peace ends in 1648.
+-When the Westphalian Peace closed
 
 138
 00:11:24,680 --> 00:11:29,640
@@ -680,7 +683,8 @@ When the Riksdag 1766 faces freedom of the press, you do it as a response-
 
 171
 00:14:10,960 --> 00:14:16,840
-Religious writings are exempt. They are not allowed to speak freely om-
+Religious writings are exempt.
+ They are not allowed to speak freely om-
 
 172
 00:14:17,000 --> 00:14:21,000
@@ -699,7 +703,7 @@ But how should a state be ruled if we can decide?
 The enlightenment philosophers have three ways.
 
 176
-00:14:36,920 --> 00:14:41.560
+00:14:36,920 --> 00:14:41,560
 Montesquieu presents a power distribution principle-
 
 177
@@ -852,7 +856,8 @@ Many of the thoughts, ideas and discoveries of this time are still alive today.
 
 214
 00:17:56,480 --> 00:18:02,640
-The tracks we can see today include our tax system and secularisation-
+The tracks we can see today include
+ our tax system and secularisation-
 
 215
 00:18:02,800 --> 00:18:10,280
@@ -861,3 +866,4 @@ The tracks we can see today include our tax system and secularisation-
 216
 00:18:10,440 --> 00:18:14,440
 Swedish texture: Per Lundgren Iyuno-Di Group for UR
+

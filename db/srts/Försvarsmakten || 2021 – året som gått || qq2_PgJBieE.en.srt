@@ -3,7 +3,7 @@
 2021 has been a year that has gone very well-
 
 2
-00:00:04,146 --> 00:00:07.866
+00:00:04,146 --> 00:00:07,866
 - True that the pandemic characterized both society and us.
 
 3
@@ -63,7 +63,7 @@ The bandages will contribute to a more sustainable organization -
 - Where we will continue to train more conscripts.
 
 17
-00:00:59,906 --> 00:01:04.346
+00:00:59,906 --> 00:01:04,346
 And we get a clear geographical presence in strategically important areas.
 
 18
@@ -91,7 +91,7 @@ With the introduction, Sweden has an opportunity to coordinate the air defense -
 With our new recruits, re -established regiments and new equipment -
 
 24
-00:01:30,106 --> 00:01:35.026
+00:01:30,106 --> 00:01:35,026
 - We actively actively actively actively in 2021 to build the defense of the future.
 
 25
@@ -107,7 +107,7 @@ During the southern front, a reduced brigade was practiced under a division's le
 Thus, we showed our partners and potential opponents -
 
 28
-00:01:46,906 --> 00:01:52.226
+00:01:46,906 --> 00:01:52,226
 - That we build a stronger army and thus a safer Sweden.
 
 29
@@ -119,7 +119,7 @@ Through exercises like Swenex, the foundation is laid for safety in the immediat
 The Navy also practices with others, such as the Air Force and the Coast Guard -
 
 31
-00:02:03,306 --> 00:02:07.946
+00:02:03,306 --> 00:02:07,946
 - And has several important international collaborations, especially with the Finnish Navy.
 
 32
@@ -143,7 +143,7 @@ The number of conscripts during undergraduate education increases -
 And the Air Force grows in abilities through education and exercises.
 
 37
-00:02:29,946 --> 00:02:34.306
+00:02:29,946 --> 00:02:34,306
 Such as the recently implemented air defense exercise.
 
 38
@@ -155,7 +155,7 @@ During the autumn, the special associations have been together with American spe
 Autumn also meant a historical manager's change -
 
 40
-00:02:43,786 --> 00:02:48.866
+00:02:43,786 --> 00:02:48,866
 - In the large multinational special associations Task Force Takuba in Mali.
 
 41
@@ -167,11 +167,11 @@ The strength is now led by a Swedish colonel from the special associations.
 The Battle Power Home Guard has now resumed its educational activities after the pandemin -
 
 43
-00:02:58,626 --> 00:03:02.843
+00:02:58,626 --> 00:03:02,843
 - And started work on the supply of new equipment and new abilities.
 
 44
-00:03:03,866 --> 00:03:08.106
+00:03:03,866 --> 00:03:08,106
 ÖB has decided to introduce a new central management in 2023
 
 45
@@ -203,7 +203,7 @@ With our international collaborations, our exercise operations and ÖB's decisio
 Our international efforts are important for the defense of Sweden.
 
 52
-00:03:44,426 --> 00:03:49.945
+00:03:44,426 --> 00:03:49,945
 Our efforts in Mali are difficult and demanding, but of great importance to Africa and Europe.
 
 53
@@ -215,11 +215,11 @@ The effort for several years in Afghanistan has also made a difference.
 Our part in the evacuation from Afghanistan was an operation of the ultimate class.
 
 55
-00:04:00,786 --> 00:04:04.906
+00:04:00,786 --> 00:04:04,906
 The Armed Forces play a central role in total defense development.
 
 56
-00:04:05,066 --> 00:04:09.226
+00:04:05,066 --> 00:04:09,226
 How the total defense is to be developed has been made clear in action:
 
 57
@@ -245,3 +245,4 @@ With clarifications on the development of the total defense and our central role
 62
 00:04:30,146 --> 00:04:34,986
 So that Sweden is better equipped for tomorrow's threat.
+

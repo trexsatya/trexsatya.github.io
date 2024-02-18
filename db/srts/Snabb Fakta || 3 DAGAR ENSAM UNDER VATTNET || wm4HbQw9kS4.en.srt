@@ -11,7 +11,7 @@ The boat towed at the time a large oil tank vessel when the waves outside the bo
 Suddenly, a big wave hit the small towing boat and the towing line is torn off.
 
 4
-00:00:50,440 --> 00:01:02.860
+00:00:50,440 --> 00:01:02,860
 This got the boat to edge and it was turned upside down in the water and now began to sink down to the bottom.
 
 5
@@ -123,16 +123,17 @@ All he could do now was to wait and hope someone would find him.
 60 hours later.
 
 32
-00:04:55,460 --> 00:05:01.800
+00:04:55,460 --> 00:05:01,800
 A dive team is down to the depth where the boat was located to retrieve the bodies from the crew.
 
 33
-00:05:01,800 --> 00:05:08.420
+00:05:01,800 --> 00:05:08,420
 They look for themselves in the boat and it was difficult to navigate because the boat was up and down.
 
 34
 00:05:08,420 --> 00:05:17,540
-All of a sudden one of the divers sees something in the water. One hand extends towards the diver.
+All of a sudden one of the divers sees something in the water.
+ One hand extends towards the diver.
 
 35
 00:05:17,540 --> 00:05:23,580
@@ -140,7 +141,8 @@ The diver grabs his hand and his hand grips back.
 
 36
 00:05:23,580 --> 00:05:27,960
-"He's alive! He lives, ”the diver shouts on the radio.
+"He's alive!
+ He lives, ”the diver shouts on the radio.
 
 37
 00:05:27,960 --> 00:05:30,960
@@ -155,7 +157,7 @@ Both were equally surprised.
 The diver had not expected anyone to survive and Harrison had almost given up hope of being saved.
 
 40
-00:05:49,860 --> 00:05:59.920
+00:05:49,860 --> 00:05:59,920
 Unfortunately, after Harrison spent almost 3 days at 30 meters depth, he could not only take him to the surface.
 
 41
@@ -176,10 +178,11 @@ The nitrogen inside the body then turns to a gaseous form and forms bubbles in t
 
 45
 00:06:41,700 --> 00:06:54,880
-It can lead to loss of sensation, paralysis and even brain damage. In the worst case, this leads to a coma and that the person dies.
+It can lead to loss of sensation, paralysis and even brain damage.
+ In the worst case, this leads to a coma and that the person dies.
 
 46
-00:06:54,880 --> 00:07:08.260
+00:06:54,880 --> 00:07:08,260
 Harrison had to spend about 2 and a half days in a decompression chamber to get used to his body at the pressure on the surface.
 
 47
@@ -207,7 +210,7 @@ Then I wake up with a jerk and scream.
 Of the 12 people on board, Harrison was the only survivor.
 
 53
-00:08:01,780 --> 00:08:05.800
+00:08:01,780 --> 00:08:05,800
 He describes it himself as a miracle.
 
 54
@@ -221,3 +224,4 @@ And as always ..
 56
 00:08:12,040 --> 00:08:16,300
 Thanks for watching!
+

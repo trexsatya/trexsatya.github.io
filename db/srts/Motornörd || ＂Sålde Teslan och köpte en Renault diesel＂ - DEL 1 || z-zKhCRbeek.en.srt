@@ -1,5 +1,5 @@
 1
-00:00:00,150 --> 00:00:04.940
+00:00:00,150 --> 00:00:04,940
 This project is the train luggage you never did when you were 25.
 
 2
@@ -8,11 +8,13 @@ This is the luxury version of train winding.
 
 3
 00:00:13,260 --> 00:00:14,769
-Hello Hello! Hello!
+Hello Hello!
+ Hello!
 
 4
 00:00:14,869 --> 00:00:17,110
-How does the owners learn? It is just fine.
+How does the owners learn?
+ It is just fine.
 
 5
 00:00:17,430 --> 00:00:18,879
@@ -67,20 +69,21 @@ on rebuilding now to a stealth rv.
 The reason is that I want it so white, boring and neutral that just goes
 
 18
-00:00:55,639 --> 00:00:58.909
+00:00:55,639 --> 00:00:58,909
 because I park in the middle of central big cities
 
 19
-00:00:59,009 --> 00:01:01.840
+00:00:59,009 --> 00:01:01,840
 in the middle of Berlin without attracting attention.
 
 20
-00:01:02,430 --> 00:01:04.430
+00:01:02,430 --> 00:01:04,430
 No windows.
 
 21
-00:01:04,980 --> 00:01:08.860
-Nothing. A white, boring van.
+00:01:04,980 --> 00:01:08,860
+Nothing.
+ A white, boring van.
 
 22
 00:01:08,959 --> 00:01:12,970
@@ -127,7 +130,7 @@ Only only electric vehicles apply to me now.
 So I sold my Tesla and bought a diesel Renault instead.
 
 33
-00:02:00,940 --> 00:02:03.849
+00:02:00,940 --> 00:02:03,849
 That is exactly the opposite to what I really want.
 
 34
@@ -135,7 +138,7 @@ That is exactly the opposite to what I really want.
 There are very few electric motorhomes so far,
 
 35
-00:02:09,020 --> 00:02:11.309
+00:02:09,020 --> 00:02:11,309
 So it will be the next project to build one.
 
 36
@@ -267,7 +270,7 @@ And the standard height in Europe without labeling, without signs.
 It's four meters so you don't have too high a truck.
 
 68
-00:04:06,389 --> 00:04:09.039
+00:04:06,389 --> 00:04:09,039
 One of the reason I chose this car
 
 69
@@ -335,7 +338,7 @@ Last ramp just sat in one on when I bought it?
 I have no need to lift up a tons pallets with stuff
 
 85
-00:05:04,869 --> 00:05:09.470
+00:05:04,869 --> 00:05:09,470
 Without what I have done is that I have torn away all that device
 
 86
@@ -395,11 +398,11 @@ When you fold it down.
 The top is a teak copy that you created yourself.
 
 100
-00:06:00,179 --> 00:06:05.639
+00:06:00,179 --> 00:06:05,639
 A six square meter balcony here is the normal height
 
 101
-00:06:05,739 --> 00:06:09.989
+00:06:05,739 --> 00:06:09,989
 on behind the lift, but I have lowered it 50 centimeters
 
 102
@@ -447,11 +450,11 @@ What should you have in the boxes?
 The primary one becomes the battery pack so I have again with hydraulic cylinders
 
 113
-00:06:57,019 --> 00:07:01.630
+00:06:57,019 --> 00:07:01,630
 that opens it up and so I have a 48 volt system
 
 114
-00:07:01,790 --> 00:07:07.699
+00:07:01,790 --> 00:07:07,699
 As the solar panels charge and I have again ordered it.
 
 115
@@ -507,7 +510,7 @@ Quality as you see 20 centimeters of insulation
 And therefore needs the shed that is rain cover that it is.
 
 128
-00:08:02,720 --> 00:08:08.049
+00:08:02,720 --> 00:08:08,049
 But it is not insulated so that press training on the roof and so on.
 
 129
@@ -567,7 +570,7 @@ And what doesn't work you have the opportunity to change.
 Therefore, it will be version 1.0 and 2.0.
 
 143
-00:09:03,510 --> 00:09:07.440
+00:09:03,510 --> 00:09:07,440
 So now we are in the box that I call it.
 
 144
@@ -607,7 +610,7 @@ I started with 120.
 I didn't think I got room with anymore but I discover now
 
 153
-00:09:41,280 --> 00:09:43.630
+00:09:41,280 --> 00:09:43,630
 That a 140 bed works just fine.
 
 154
@@ -627,7 +630,7 @@ We have shelves by page that are quite narrow
 and that the time between is still space
 
 158
-00:10:00,119 --> 00:10:02.119
+00:10:00,119 --> 00:10:02,119
 To be able to touch it.
 
 159
@@ -687,7 +690,7 @@ Which is also very good quality.
 I will have a GoPro with 4K.
 
 173
-00:10:55,159 --> 00:11:00.090
+00:10:55,159 --> 00:11:00,090
 It creates such a realistic picture of the outside that you are deceiving oneself
 
 174
@@ -695,11 +698,11 @@ It creates such a realistic picture of the outside that you are deceiving onesel
 To think it's a window.
 
 175
-00:11:02,210 --> 00:11:06.659
+00:11:02,210 --> 00:11:06,659
 It is important and in the same way important about the cloud ceiling modules.
 
 176
-00:11:08,179 --> 00:11:12.090
+00:11:08,179 --> 00:11:12,090
 That they may be included in the interior also to create a volume feel.
 
 177
@@ -796,7 +799,8 @@ So I have a recycling than a shower where you reuse
 
 200
 00:12:31,869 --> 00:12:34,630
-the water. Then it becomes a very small volume
+the water.
+ Then it becomes a very small volume
 
 201
 00:12:34,729 --> 00:12:37,869
@@ -875,7 +879,7 @@ But there is still skinny consumption of the amount of water.
 The kitchen is also a prototype?
 
 220
-00:13:43,549 --> 00:13:45.549
+00:13:43,549 --> 00:13:45,549
 Yes absolutely.
 
 221
@@ -947,7 +951,7 @@ That I have no sink in where I live.
 So it must be a bucket instead so that one a little provisional
 
 238
-00:14:40,609 --> 00:14:42.609
+00:14:40,609 --> 00:14:42,609
 Moves the stuff back and forth.
 
 239
@@ -971,7 +975,7 @@ So time, what is allowed to control.
 The bed is important.
 
 244
-00:14:56,400 --> 00:15:00.539
+00:14:56,400 --> 00:15:00,539
 It is many hours a day you use so it should be stuck.
 
 245
@@ -999,7 +1003,7 @@ The table must be a solid it is a laser cut chipboard
 with hidden suspension so it will be very stable
 
 251
-00:15:25,109 --> 00:15:27.109
+00:15:25,109 --> 00:15:27,109
 But no table legs.
 
 252
@@ -1080,7 +1084,8 @@ And I think exactly what are they?
 
 271
 00:16:44,739 --> 00:16:46,690
-Cheap? I thought they were really nice.
+Cheap?
+ I thought they were really nice.
 
 272
 00:16:46,789 --> 00:16:50,489
@@ -1103,7 +1108,7 @@ You can break on pretty much because there are so small volumes,
 So small to work with.
 
 277
-00:17:02,760 --> 00:17:05.949
+00:17:02,760 --> 00:17:05,949
 So here are internal dimensions that I work with
 
 278
@@ -1112,7 +1117,8 @@ And that's something I didn't know.
 
 279
 00:17:07,339 --> 00:17:11,229
-By the way. You have 250 in the maximum width of trucks
+By the way.
+ You have 250 in the maximum width of trucks
 
 280
 00:17:11,920 --> 00:17:16,119
@@ -1383,7 +1389,7 @@ If I lived in it for two months and discover that deficiencies and errors are co
 So it is quite easy to find back to Sweden and fix it.
 
 347
-00:21:24,969 --> 00:21:27.609
+00:21:24,969 --> 00:21:27,609
 Works everything as it is intended then I just move on
 
 348
@@ -1419,11 +1425,11 @@ Yes, I have started a Youtube channel for step one
 And follow the building.
 
 356
-00:21:58,599 --> 00:22:01.699
+00:21:58,599 --> 00:22:01,699
 Step two is when finished and goes out in Europe.
 
 357
-00:22:02,599 --> 00:22:05.660
+00:22:02,599 --> 00:22:05,660
 The content will change and become a travel report.
 
 358
@@ -1431,7 +1437,7 @@ The content will change and become a travel report.
 And the goal is a bit like you do and that is to find interesting,
 
 359
-00:22:13,290 --> 00:22:15.709
+00:22:13,290 --> 00:22:15,709
 odd characters with local knowledge.
 
 360
@@ -1479,7 +1485,7 @@ I intend to do that, because there is more left to show not.
 You are so welcome to it.
 
 371
-00:22:57,849 --> 00:22:59.849
+00:22:57,849 --> 00:22:59,849
 We may say on recycled.
 
 372
@@ -1487,5 +1493,6 @@ We may say on recycled.
 We hear, we do.
 
 373
-00:23:01,109 --> 00:23:01.609
+00:23:01,109 --> 00:23:01,609
 Bye!
+

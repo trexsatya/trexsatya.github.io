@@ -16,7 +16,8 @@ In most cases, there is already a post in Libris for what you should describe.
 
 5
 00:00:32,768 --> 00:00:38,912
-Search carefully before creating new to avoid duplicates. Follow the instructions and guidelines
+Search carefully before creating new to avoid duplicates.
+ Follow the instructions and guidelines
 
 6
 00:00:39,168 --> 00:00:41,472
@@ -28,10 +29,11 @@ You will find links to instructions on the Edit and upgrade page in the assistan
 
 8
 00:00:48,128 --> 00:00:54,272
-Once you have applied and got a hit, check out what level the item has. You see it as an icon in the summary.
+Once you have applied and got a hit, check out what level the item has.
+ You see it as an icon in the summary.
 
 9
-00:00:55,040 --> 00:00:59.648
+00:00:55,040 --> 00:00:59,648
 You also see it in admin metadata below description level.
 
 10
@@ -75,7 +77,7 @@ or use the shortcut Ctrl + E.
 You can add properties with the plus signs during instance, during instance of works
 
 20
-00:01:58,528 --> 00:02:00.320
+00:01:58,528 --> 00:02:00,320
 and under admin metadata.
 
 21
@@ -103,7 +105,7 @@ I choose a book.
 A number of properties were now added from the template, both during instance and during instance of works
 
 27
-00:02:29,760 --> 00:02:32.060
+00:02:29,760 --> 00:02:32,060
 and under admin metadata.
 
 28
@@ -123,7 +125,7 @@ It is also possible to enrich from another entry.
 Under tools you have the enrich from mail option.
 
 32
-00:02:54,080 --> 00:02:58.688
+00:02:54,080 --> 00:02:58,688
 Here are two options, from ID or from file.
 
 33
@@ -144,7 +146,8 @@ Here we have a finished mail
 
 37
 00:03:17,900 --> 00:03:24,800
-And we find ID to the post in the summary. We copy the ID.
+And we find ID to the post in the summary.
+ We copy the ID.
 
 38
 00:03:28,360 --> 00:03:34,100
@@ -163,7 +166,7 @@ Of course, we must check carefully if these information is correct and change to
 But you get in many cases
 
 42
-00:03:56,544 --> 00:04:01.408
+00:03:56,544 --> 00:04:01,408
 Good tasks to start from and that you can then continue to work on.
 
 43
@@ -180,7 +183,8 @@ And here we choose tools, download JSON-LD and we choose to save it as a file
 
 46
 00:04:20,280 --> 00:04:24,200
-as we name. I call the file a template file.
+as we name.
+ I call the file a template file.
 
 47
 00:04:29,320 --> 00:04:31,620
@@ -207,7 +211,7 @@ And here we choose template file.
 Now a number of properties from the template file were added to in the pre -mail
 
 53
-00:04:55,160 --> 00:05:00.940
+00:04:55,160 --> 00:05:00,940
 And just as we said before, you have to check it carefully and edit it
 
 54
@@ -227,7 +231,7 @@ And you can then enrich them from a template file.
 It is also possible to enrich with one property at a time from one post to another.
 
 58
-00:05:22.303 --> 00:05:28,191
+00:05:22,303 --> 00:05:28,191
 Then you go to tools, detailed enrichment, and here you need id
 
 59
@@ -251,7 +255,7 @@ Then we come to a view where we can hand pick property for property.
 And we see here the post we want to enrich from and the post we want to enrich to.
 
 64
-00:05:58,143 --> 00:06:01.471
+00:05:58,143 --> 00:06:01,471
 However, it does not work during the instance of works.
 
 65
@@ -281,3 +285,4 @@ Once you have checked all the information and saved, you can set stocks.
 71
 00:06:38,540 --> 00:06:40,900
 Watch the movies about stocks.
+

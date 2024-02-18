@@ -3,7 +3,7 @@
 Electronics Center in Halmstad where companies and researchers meet to develop the electronics of the future together
 
 2
-00:00:07,740 --> 00:00:12.560
+00:00:07,740 --> 00:00:12,560
 Test chamber for more efficient product development
 
 3
@@ -25,3 +25,4 @@ Promotes innovation, education and research in electronics and IoT
 7
 00:00:30,020 --> 00:00:31,680
 hh.se/ech
+

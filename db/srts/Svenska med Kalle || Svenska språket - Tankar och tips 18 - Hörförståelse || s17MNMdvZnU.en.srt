@@ -27,7 +27,7 @@ or at least attempt
 Give examples of
 
 8
-00:00:17.540 --> 00:00:19,540
+00:00:17,540 --> 00:00:19,540
 How I talk
 
 9
@@ -71,7 +71,7 @@ so i was going to tell you a little about
 What I have done today
 
 19
-00:00:49,280 --> 00:00:52.220
+00:00:49,280 --> 00:00:52,220
 and what to do later in the day
 
 20
@@ -91,7 +91,7 @@ on sfi so i'm free
 in the morning
 
 24
-00:01:00,760 --> 00:01:02.760
+00:01:00,760 --> 00:01:02,760
 And then I always clean up
 
 25
@@ -171,11 +171,11 @@ And read a little
 To get a little break
 
 44
-00:02:00,660 --> 00:02:02.660
+00:02:00,660 --> 00:02:02,660
 It gets pretty late when you have evening course
 
 45
-00:02:03,060 --> 00:02:05.420
+00:02:03,060 --> 00:02:05,420
 So it's nice to get out a bit and get fresh air
 
 46
@@ -247,11 +247,11 @@ and that it is
 For most people I think
 
 63
-00:02:59,900 --> 00:03:03.040
+00:02:59,900 --> 00:03:03,040
 that this is what we need to practice most at
 
 64
-00:03:04,160 --> 00:03:06.620
+00:03:04,160 --> 00:03:06,620
 And it is both about understanding
 
 65
@@ -345,3 +345,4 @@ and will be seen soon again
 87
 00:04:10,560 --> 00:04:12,540
 Take care, bye.
+

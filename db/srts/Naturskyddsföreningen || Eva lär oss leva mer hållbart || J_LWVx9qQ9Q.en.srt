@@ -3,11 +3,11 @@
 My name is Eva Eiderström.
 
 2
-00:00:02,096 --> 00:00:06.105
+00:00:02,096 --> 00:00:06,105
 I work at the Swedish Society for Nature Conservation and I work in a department called "Shop Environmentally friendly".
 
 3
-00:00:06,668 --> 00:00:09.623
+00:00:06,668 --> 00:00:09,623
 We work very much with important issues for all of us.
 
 4
@@ -51,7 +51,7 @@ So we have been around for quite some time.
 We still try to encourage people to do what you can.
 
 14
-00:00:54,675 --> 00:01:00.135
+00:00:54,675 --> 00:01:00,135
 Not to make demands that you do everything right, because it is quite unreasonable.
 
 15
@@ -59,7 +59,7 @@ Not to make demands that you do everything right, because it is quite unreasonab
 And if it gets harder, at least do something right.
 
 16
-00:01:03,677 --> 00:01:07.088
+00:01:03,677 --> 00:01:07,088
 There are both cheap and expensive eco -labeled products.
 
 17
@@ -103,7 +103,7 @@ Actually, by extension, a way to try to reduce the entire large resource consump
 - That we use things for a very long time and then replace them with something new.
 
 27
-00:01:55,190 --> 00:02:02.438
+00:01:55,190 --> 00:02:02,438
 It is very exciting and it would be very fun if it took off and favored in different ways in society.
 
 28
@@ -119,11 +119,11 @@ But that it was scaled up and became the new norm would in some way be very, ver
 And it would also mean that climate emissions dropped dramatically as this entire resource sales -
 
 31
-00:02:23,203 --> 00:02:26.305
+00:02:23,203 --> 00:02:26,305
 - As we do, a lot of resources cost.
 
 32
-00:02:26.305 --> 00:02:33,370
+00:02:26,305 --> 00:02:33,370
 And then when we have used them, they suddenly become hopelessly mixed and we cannot benefit from them again.
 
 33
@@ -133,3 +133,4 @@ Instead of using them for as long as possible and finding ways to make sure we d
 34
 00:02:40,539 --> 00:02:42,639
 - Without just replacing parts and so on.
+

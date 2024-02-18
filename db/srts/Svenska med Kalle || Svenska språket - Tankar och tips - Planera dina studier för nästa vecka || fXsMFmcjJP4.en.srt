@@ -1,5 +1,5 @@
 1
-00:00:01,095 --> 00:00:04.115
+00:00:01,095 --> 00:00:04,115
 Hello and good morning everyone.
 
 2
@@ -48,18 +48,22 @@ a small
 
 13
 00:00:39,380 --> 00:00:42,240
-No, not a test is not. How to explain challenge? I do not know.
+No, not a test is not.
+ How to explain challenge?
+ I do not know.
 
 14
 00:00:42,240 --> 00:00:43,980
-No, not a test is not. How to explain challenge? I do not know.
+No, not a test is not.
+ How to explain challenge?
+ I do not know.
 
 15
 00:00:43,980 --> 00:00:46,180
 It's called "Challenge" in English.
 
 16
-00:00:46,385 --> 00:00:47.415
+00:00:46,385 --> 00:00:47,415
 And many
 
 17
@@ -75,7 +79,7 @@ Many Swedish use the word "challenge" even when they speak Swedish
 But the Swedish word is challenge anyway
 
 20
-00:00:58,940 --> 00:01:02.105
+00:00:58,940 --> 00:01:02,105
 and my little challenge (coming) there are two steps
 
 21
@@ -83,11 +87,11 @@ and my little challenge (coming) there are two steps
 sometime today
 
 22
-00:01:05,475 --> 00:01:08.465
+00:01:05,475 --> 00:01:08,465
 Take ten minutes
 
 23
-00:01:08,465 --> 00:01:09.465
+00:01:08,465 --> 00:01:09,465
 and sit down
 
 24
@@ -127,7 +131,7 @@ It can be as simple as deciding that you should read
 read for 30 minutes each day
 
 33
-00:01:36,955 --> 00:01:38.945
+00:01:36,955 --> 00:01:38,945
 read for 30 minutes each day
 
 34
@@ -135,15 +139,15 @@ read for 30 minutes each day
 or maybe work out a bit with your favorite app
 
 35
-00:01:43,345 --> 00:01:46.545
+00:01:43,345 --> 00:01:46,545
 or you can plan to go to a language café
 
 36
-00:01:46,795 --> 00:01:49.815
+00:01:46,795 --> 00:01:49,815
 Or maybe you have a small study schedule for each day
 
 37
-00:01:49,815 --> 00:01:52.835
+00:01:49,815 --> 00:01:52,835
 or so maybe you have a small study schedule for each day with different things
 
 38
@@ -151,7 +155,7 @@ or so maybe you have a small study schedule for each day with different things
 It depends on how you exercise and how much time you have
 
 39
-00:01:56,715 --> 00:01:57.905
+00:01:56,715 --> 00:01:57,905
 but
 
 40
@@ -163,15 +167,15 @@ try making some form of plan
 try making some form of plan
 
 42
-00:02:02,485 --> 00:02:05.115
+00:02:02,485 --> 00:02:05,115
 maybe set some goals too
 
 43
-00:02:05,745 --> 00:02:08.755
+00:02:05,745 --> 00:02:08,755
 I will learn 20 new words
 
 44
-00:02:08,755 --> 00:02:09.755
+00:02:08,755 --> 00:02:09,755
 or
 
 45
@@ -195,7 +199,7 @@ and what goals you have with learning Swedish
 and what goals you have with learning Swedish
 
 50
-00:02:24,265 --> 00:02:27.065
+00:02:24,265 --> 00:02:27,065
 Some form of plan, planning, set up some goals
 
 51
@@ -215,7 +219,7 @@ And then step 2, if you wish, you will be very happy to share
 And then step 2, if you wish, you will be very happy to share
 
 55
-00:02:36,975 --> 00:02:39.945
+00:02:36,975 --> 00:02:39,945
 your plan or your goals
 
 56
@@ -255,7 +259,7 @@ If you have reached your goal or if you have followed your planning
 If you have reached your goal or if you have followed your planning
 
 65
-00:03:04,555 --> 00:03:07.205
+00:03:04,555 --> 00:03:07,205
 So, I'll do the same for my Somali, I'll be sitting a bit today someday
 
 66
@@ -335,13 +339,15 @@ Okay this was all for this time, see you again soon
 Okay this was all for this time, see you again soon
 
 85
-00:03:58,575 --> 00:04:01.745
+00:03:58,575 --> 00:04:01,745
 And have a nice Sunday and ...
 
 86
-00:04:02,005 --> 00:04:04.745
+00:04:02,005 --> 00:04:04,745
 A good start to the week to come
 
 87
-00:04:05,735 --> 00:04:07.515
-Have a nice day! Bye.
+00:04:05,735 --> 00:04:07,515
+Have a nice day!
+ Bye.
+

@@ -1,5 +1,5 @@
 1
-00:00:03,708 --> 00:00:05.625
+00:00:03,708 --> 00:00:05,625
 An ordinary day starts with me looking over
 
 2
@@ -7,7 +7,7 @@ An ordinary day starts with me looking over
 What orders have been received.
 
 3
-00:00:07.708 --> 00:00:11,458
+00:00:07,708 --> 00:00:11,458
 Then we jointly go out and control the systems.
 
 4
@@ -51,11 +51,11 @@ I have always had a technical interest
 so it is perfect to work with a great variety
 
 14
-00:00:37,375 --> 00:00:38.541
+00:00:37,375 --> 00:00:38,541
 of systems.
 
 15
-00:00:38,541 --> 00:00:41.541
+00:00:38,541 --> 00:00:41,541
 I get a good mix of the technical and military.
 
 16
@@ -87,9 +87,10 @@ that my job makes a difference
 For myself and others.
 
 23
-00:00:58,500 --> 00:00:59.708
+00:00:58,500 --> 00:00:59,708
 My name is ludvig
 
 24
-00:00:59,708 --> 00:01:01.625
+00:00:59,708 --> 00:01:01,625
 And I am a management system officer.
+

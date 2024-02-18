@@ -19,7 +19,7 @@ In this project, we work with information -driven care.
 That is a way to contribute to solutions that can help-
 
 6
-00:00:32,133 --> 00:00:35.033
+00:00:32,133 --> 00:00:35,033
 -Health care in its transformation.
 
 7
@@ -31,7 +31,7 @@ Join us and I'll tell you more.
 Heart failure affects about two percent of Sweden's population.
 
 9
-00:00:46,600 --> 00:00:51.567
+00:00:46,600 --> 00:00:51,567
 Many patients are in hospitals several times for a short period of time.
 
 10
@@ -39,19 +39,19 @@ Many patients are in hospitals several times for a short period of time.
 In order for healthcare personnel to be able to take the right decision-
 
 11
-00:00:54,433 --> 00:00:57.033
+00:00:54,433 --> 00:00:57,033
 -How they take in a large amount of information.
 
 12
-00:00:57,033 --> 00:01:01.767
+00:00:57,033 --> 00:01:01,767
 With the help of AI tools, historical information can be compiled-
 
 13
-00:01:01,767 --> 00:01:04.867
+00:01:01,767 --> 00:01:04,867
 -And contribute to a risk assessment.
 
 14
-00:01:04,960 --> 00:01:09.840
+00:01:04,960 --> 00:01:09,840
 In the Harp project we investigate in the project team how we can develop-
 
 15
@@ -72,4 +72,6 @@ The project is part of CAISR Health and is implemented together-
 
 19
 00:01:25,600 --> 00:01:29,100
-Do you want to know more? Get in touch!
+Do you want to know more?
+ Get in touch!
+

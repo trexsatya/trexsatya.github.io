@@ -1,9 +1,9 @@
 1
-00:00:06,627 --> 00:00:09.900
+00:00:06,627 --> 00:00:09,900
 LiU Impact Factory is our investment in social innovations
 
 2
-00:00:09,900 --> 00:00:12.809
+00:00:09,900 --> 00:00:12,809
 There we recruit teams that have sustainable ideas,
 
 3
@@ -71,11 +71,11 @@ and perspective, which is usually not allowed to be heard in public
 the conversation, should arrive.
 
 19
-00:01:01,990 --> 00:01:05.763
+00:01:01,990 --> 00:01:05,763
 We are currently running a project called Listening Post Norrköping
 
 20
-00:01:05,763 --> 00:01:09.718
+00:01:05,763 --> 00:01:09,718
 where we try to develop methods for journalists to more easily come
 
 21
@@ -123,7 +123,7 @@ And so we have an office at Coffice in Norrköping,
 which is part of Norrköping Science Park.
 
 32
-00:01:44,990 --> 00:01:48.509
+00:01:44,990 --> 00:01:48,509
 Coffice has also been a very inspiring
 
 33
@@ -131,7 +131,7 @@ Coffice has also been a very inspiring
 context, where we have had to meet other people
 
 34
-00:01:53,718 --> 00:01:57.671
+00:01:53,718 --> 00:01:57,671
 who has the ambition to do their own thing.
 
 35
@@ -139,11 +139,11 @@ who has the ambition to do their own thing.
 For two people like me and Mattias, who have also had
 
 36
-00:02:02,252 --> 00:02:05.432
+00:02:02,252 --> 00:02:05,432
 that ambition, but not had that experience, then it is
 
 37
-00:02:05,432 --> 00:02:09.944
+00:02:05,432 --> 00:02:09,944
 Great to be surrounded by like -minded people.
 
 38
@@ -185,3 +185,4 @@ Social innovations may sound new now, but it will
 47
 00:02:41,853 --> 00:02:44,643
 Become part of the new normal in the future.
+

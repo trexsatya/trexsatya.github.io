@@ -47,11 +47,11 @@ The seventh you will receive your compensation the same month on the 26th.
 If your application comes in to the Social Insurance Office after the seventh
 
 13
-00:00:53,083 --> 00:00:57.958
+00:00:53,083 --> 00:00:57,958
 Do you receive compensation on the 26th month after.
 
 14
-00:00:58,041 --> 00:01:01.083
+00:00:58,041 --> 00:01:01,083
 Your application must be at the Social Insurance Office no later than
 
 15
@@ -127,11 +127,11 @@ You do not have to pay tax on it.
 Development compensation is different depending on whether you have completed
 
 33
-00:02:01,750 --> 00:02:06.708
+00:02:01,750 --> 00:02:06,708
 High school or not and the amounts are updated every year.
 
 34
-00:02:06,791 --> 00:02:07.791
+00:02:06,791 --> 00:02:07,791
 On our site
 
 35
@@ -167,7 +167,7 @@ When you apply for compensation, you should report what days you
 have participated in your program and what days you have been absent,
 
 43
-00:02:39,708 --> 00:02:44.708
+00:02:39,708 --> 00:02:44,708
 For example, if you have been ill or been home with a sick child.
 
 44
@@ -187,11 +187,11 @@ You must report sick leave the first day you are sick.
 If you are sick for more than a week you need too
 
 48
-00:02:57,291 --> 00:03:00.291
+00:02:57,291 --> 00:03:00,291
 submit a medical certificate to the Employment Service.
 
 49
-00:03:00,333 --> 00:03:03.083
+00:03:00,333 --> 00:03:03,083
 The Employment Service's website contains information
 
 50
@@ -245,3 +245,4 @@ The Social Insurance Office checks that the information has been correct.
 62
 00:03:46,750 --> 00:03:48,916
 Good luck on the road to your new job!
+

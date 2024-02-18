@@ -11,7 +11,7 @@ My name is Henrik Andershed and I am a professor of criminology and
 Psychology at Örebro University.
 
 4
-00:00:22.540 --> 00:00:24,860
+00:00:22,540 --> 00:00:24,860
 In this section, we will talk about the incredibly important question:
 
 5
@@ -35,11 +35,11 @@ It is probably that many people with psychopathy do not have a feeling of illnes
 The people I have met primarily in the Prison and Probation Service.
 
 10
-00:00:48,180 --> 00:00:51.820
+00:00:48,180 --> 00:00:51,820
 And where they have received a psychopathic diagnosis.
 
 11
-00:00:52,460 --> 00:00:56.060
+00:00:52,460 --> 00:00:56,060
 Should I guess that 9 out of 10 of the cases are very surprising.
 
 12
@@ -51,7 +51,7 @@ And don't feel at home in that description either.
 It says that there are quite often people who fail in insight.
 
 14
-00:01:04,180 --> 00:01:07.840
+00:01:04,180 --> 00:01:07,840
 If you fail in insight, you do not think you have the problem.
 
 15
@@ -92,7 +92,8 @@ To begin to feel empathy?
 
 24
 00:01:38,400 --> 00:01:40,400
-Is that we mean? That we should cure psychopathy ourselves?
+Is that we mean?
+ That we should cure psychopathy ourselves?
 
 25
 00:01:40,400 --> 00:01:43,500
@@ -115,7 +116,7 @@ Should we work with behavior change?
 Ok, you might have psychopathic personality
 
 30
-00:01:57,280 --> 00:01:59.820
+00:01:57,280 --> 00:01:59,820
 But we do not want it to have these consequences.
 
 31
@@ -127,7 +128,7 @@ There are two potentially quite different approaches
 And focus in treatment.
 
 33
-00:02:06,760 --> 00:02:09.920
+00:02:06,760 --> 00:02:09,920
 Cure the disorder itself or perhaps accept
 
 34
@@ -135,11 +136,11 @@ Cure the disorder itself or perhaps accept
 disturbance but work with behavior instead.
 
 35
-00:02:12,440 --> 00:02:15.560
+00:02:12,440 --> 00:02:15,560
 To get the person not to commit crimes.
 
 36
-00:02:15,560 --> 00:02:17.560
+00:02:15,560 --> 00:02:17,560
 What has been seriously tested in research.
 
 37
@@ -187,11 +188,11 @@ that shows that we can reduce violence and crime
 Among these people.
 
 48
-00:02:58,960 --> 00:03:00.960
+00:02:58,960 --> 00:03:00,960
 So far, we get in no huge effects.
 
 49
-00:03:01,420 --> 00:03:05.660
+00:03:01,420 --> 00:03:05,660
 But it also does not get on criminal non-psychopaths.
 
 50
@@ -216,11 +217,13 @@ in the person necessarily.
 
 55
 00:03:23,200 --> 00:03:25,720
-If you abuse alcohol. Work on the abuse.
+If you abuse alcohol.
+ Work on the abuse.
 
 56
 00:03:25,720 --> 00:03:28,200
-If you have problems in the labor market. Work on it.
+If you have problems in the labor market.
+ Work on it.
 
 57
 00:03:28,940 --> 00:03:30,940
@@ -263,15 +266,15 @@ But that it would be impossible we have shown that it is probably not.
 If we see that treatment is problematic.
 
 67
-00:04:03,340 --> 00:04:05.340
+00:04:03,340 --> 00:04:05,340
 Maybe not impossible.
 
 68
-00:04:05,340 --> 00:04:07.340
+00:04:05,340 --> 00:04:07,340
 What about the question then:
 
 69
-00:04:07,340 --> 00:04:09.340
+00:04:07,340 --> 00:04:09,340
 Can we prevent psychopathy?
 
 70
@@ -347,11 +350,11 @@ To be able to identify those children early and help them.
 It is definitely not about stamping children and calling them psychopaths.
 
 88
-00:05:00,580 --> 00:05:04.420
+00:05:00,580 --> 00:05:04,420
 Without it is about seeing early risk indicators.
 
 89
-00:05:04,420 --> 00:05:06.420
+00:05:04,420 --> 00:05:06,420
 Can we then help those children.
 
 90
@@ -359,7 +362,7 @@ Can we then help those children.
 For example, it may be that we see in a child that there is a lot of lack in empathy.
 
 91
-00:05:12,540 --> 00:05:16.560
+00:05:12,540 --> 00:05:16,560
 And we also see that it can relate to being very aggressive.
 
 92
@@ -419,7 +422,7 @@ When you get very angry.
 That it does not fall into a act of violence.
 
 106
-00:06:04,280 --> 00:06:06.820
+00:06:04,280 --> 00:06:06,820
 That you can learn to inhibit and control yourself.
 
 107
@@ -475,19 +478,20 @@ Thus, individual psychopathy -like features.
 It is not psychopathy.
 
 120
-00:06:57,900 --> 00:07:00.960
+00:06:57,900 --> 00:07:00,960
 Then the individual features can be problematic.
 
 121
-00:07:00,960 --> 00:07:03.940
+00:07:00,960 --> 00:07:03,940
 If they are related to physical aggressiveness.
 
 122
 00:07:03,940 --> 00:07:07,000
-Or other threateningness. Or whatever it may be,
+Or other threateningness.
+ Or whatever it may be,
 
 123
-00:07:07,560 --> 00:07:09.460
+00:07:07,560 --> 00:07:09,460
 I still think the advice should be if you worry so much
 
 124
@@ -537,3 +541,4 @@ It is important that we give nuanced images of crime.
 135
 00:07:41,160 --> 00:07:44,720
 Instead of what happens in your information flows every day.
+

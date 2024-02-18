@@ -1,5 +1,5 @@
 1
-00:00:00,000 --> 00:00:00.860
+00:00:00,000 --> 00:00:00,860
 Hello
 
 2
@@ -11,7 +11,7 @@ In this movie I will try to give some tips
 on how you can work out
 
 4
-00:00:06,240 --> 00:00:07.760
+00:00:06,240 --> 00:00:07,760
 And repeat
 
 5
@@ -47,7 +47,7 @@ For example, that you record words in school, on the lesson
 and then when you get home
 
 13
-00:00:27,860 --> 00:00:29.860
+00:00:27,860 --> 00:00:29,860
 so do you read through the words one more time
 
 14
@@ -68,7 +68,8 @@ and you can do that in slightly different ways
 
 18
 00:00:41,020 --> 00:00:43,500
-This is how I have an example. I'll try to show.
+This is how I have an example.
+ I'll try to show.
 
 19
 00:00:44,300 --> 00:00:46,300
@@ -91,7 +92,7 @@ I write all the words once
 And then I start over from the beginning
 
 24
-00:01:00,760 --> 00:01:02.600
+00:01:00,760 --> 00:01:02,600
 And then I write all the words again.
 
 25
@@ -99,11 +100,11 @@ And then I write all the words again.
 Then I write all the words one more time
 
 26
-00:01:06,280 --> 00:01:07.920
+00:01:06,280 --> 00:01:07,920
 so that you change words
 
 27
-00:01:07,960 --> 00:01:09.960
+00:01:07,960 --> 00:01:09,960
 And at the same time writes
 
 28
@@ -124,7 +125,9 @@ just not repeat them many times
 
 32
 00:01:23,400 --> 00:01:27,420
-Or you just write a list. You write each word five times. It also works.
+Or you just write a list.
+ You write each word five times.
+ It also works.
 
 33
 00:01:29,720 --> 00:01:31,720
@@ -167,15 +170,15 @@ For when using the words
 Then they will get better in memory.
 
 43
-00:01:59,620 --> 00:02:01.620
+00:01:59,620 --> 00:02:01,620
 Then you should not forget
 
 44
-00:02:01,660 --> 00:02:03.660
+00:02:01,660 --> 00:02:03,660
 To read texts
 
 45
-00:02:03,660 --> 00:02:05.660
+00:02:03,660 --> 00:02:05,660
 And listen to
 
 46
@@ -247,7 +250,7 @@ Flashcard, it's short, we usually say that in English
 It is, for example, if I have, here is "Chair" in English
 
 63
-00:02:59,840 --> 00:03:01.840
+00:02:59,840 --> 00:03:01,840
 and on the other side stands “a chair”
 
 64
@@ -255,7 +258,7 @@ and on the other side stands “a chair”
 So you write on your mother tongue
 
 65
-00:03:05,760 --> 00:03:07.760
+00:03:05,760 --> 00:03:07,760
 And on the other side you write the Swedish word
 
 66
@@ -307,15 +310,15 @@ It is also a great way to train words, for example if you are not at home and do
 So we had read the words, write the words
 
 78
-00:03:58,300 --> 00:04:00.880
+00:03:58,300 --> 00:04:00,880
 Using the words when talking and writing
 
 79
-00:04:01,880 --> 00:04:04.660
+00:04:01,880 --> 00:04:04,660
 read texts so you see the words many times
 
 80
-00:04:04,800 --> 00:04:06.800
+00:04:04,800 --> 00:04:06,800
 Listen to texts
 
 81
@@ -353,3 +356,4 @@ on how to learn the words.
 89
 00:04:28,620 --> 00:04:30,620
 Hello and see you again soon.
+

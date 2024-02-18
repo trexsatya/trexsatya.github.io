@@ -1,5 +1,5 @@
 1
-00:00:00,560 --> 00:00:03.040
+00:00:00,560 --> 00:00:03,040
 Life at sea becomes very family friendly.
 
 2
@@ -7,7 +7,7 @@ Life at sea becomes very family friendly.
 You sit and work day in and day out.
 
 3
-00:00:07,120 --> 00:00:09.840
+00:00:07,120 --> 00:00:09,840
 You walk in a certain slopes.
 
 4
@@ -20,7 +20,8 @@ Where you have to switch really well.
 
 6
 00:00:15,520 --> 00:00:19,040
-It drives me. It makes me want to act.
+It drives me.
+ It makes me want to act.
 
 7
 00:00:19,160 --> 00:00:21,920
@@ -51,5 +52,6 @@ One can lie in the binge and reflect on
 That this guard we did something for Sweden.
 
 14
-00:00:41,120 --> 00:00:45.840
+00:00:41,120 --> 00:00:45,840
 My name is Helena and I work as a second on HMS Ven.
+

@@ -1,5 +1,5 @@
 1
-00:00:04,400 --> 00:00:08.839
+00:00:04,400 --> 00:00:08,839
 The actual prerequisite for the officers to be able to do their jobs and because
 
 2
@@ -39,7 +39,7 @@ We need to be able to update and clog Safety Hole
 While we work in a system where it must not be wrong.
 
 11
-00:00:39,439 --> 00:00:42.640
+00:00:39,439 --> 00:00:42,640
 If an incident were to arise, we will release everything else that we have
 
 12
@@ -57,3 +57,4 @@ We have a great responsibility and I feel proud of the job,
 15
 00:00:58,159 --> 00:01:03,439
 To feel that we make people's everyday life work and do good, for real.
+

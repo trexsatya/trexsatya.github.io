@@ -1,17 +1,17 @@
 1
-00:00:00,485 --> 00:00:01.565
+00:00:00,485 --> 00:00:01,565
 Hello Hello
 
 2
-00:00:02,495 --> 00:00:05.615
+00:00:02,495 --> 00:00:05,615
 I got an interesting question
 
 3
-00:00:05,625 --> 00:00:08.395
+00:00:05,625 --> 00:00:08,395
 After my movie about
 
 4
-00:00:08,400 --> 00:00:09.540
+00:00:08,400 --> 00:00:09,540
 to write review
 
 5
@@ -51,7 +51,7 @@ first say
 I do not write directly stories myself
 
 14
-00:00:35,685 --> 00:00:38.515
+00:00:35,685 --> 00:00:38,515
 Sometimes I write small stories
 
 15
@@ -79,7 +79,7 @@ and I believe that
 This question was primarily about
 
 21
-00:00:53,285 --> 00:00:55.575
+00:00:53,285 --> 00:00:55,575
 fantasy stories, that one finds on
 
 22
@@ -87,11 +87,11 @@ fantasy stories, that one finds on
 something that is not true
 
 23
-00:00:58,345 --> 00:01:00.695
+00:00:58,345 --> 00:01:00,695
 But what is a bit fun is to
 
 24
-00:01:00,695 --> 00:01:03.945
+00:01:00,695 --> 00:01:03,945
 My son has worked with stories at school
 
 25
@@ -99,7 +99,7 @@ My son has worked with stories at school
 and he is now thirteen years so he goes in sixth grade
 
 26
-00:01:07.805 --> 00:01:10,115
+00:01:07,805 --> 00:01:10,115
 So I asked him
 
 27
@@ -143,7 +143,7 @@ I will talk a little more about that, after I raised
 my son's tips and
 
 37
-00:01:39,365 --> 00:01:42.515
+00:01:39,365 --> 00:01:42,515
 what they have said in school then, as they have trained at
 
 38
@@ -155,7 +155,7 @@ It is that a story must have a good
 heading, a good title
 
 40
-00:01:49,145 --> 00:01:52.105
+00:01:49,145 --> 00:01:52,105
 It must be interesting or exciting
 
 41
@@ -167,15 +167,15 @@ it must arouse the reader's curiosity
 so that the one as
 
 43
-00:01:56,465 --> 00:01:59.505
+00:01:56,465 --> 00:01:59,505
 sees the headline becomes interested
 
 44
-00:01:59,505 --> 00:02:01.095
+00:01:59,505 --> 00:02:01,095
 of reading more
 
 45
-00:02:01,705 --> 00:02:04.825
+00:02:01,705 --> 00:02:04,825
 so a good title, a good heading, it's number one
 
 46
@@ -183,7 +183,7 @@ so a good title, a good heading, it's number one
 late
 
 47
-00:02:06,565 --> 00:02:09.525
+00:02:06,565 --> 00:02:09,525
 Should you have a good introduction
 
 48
@@ -192,7 +192,7 @@ one can sometimes say appropriations too
 
 49
 00:02:12,835 --> 00:02:15,225
-or introduction = beginning
+or introduction beginning
 
 50
 00:02:15,855 --> 00:02:18,445
@@ -235,11 +235,11 @@ the reader in your story
 And of course you can do that in many different ways
 
 60
-00:02:43,365 --> 00:02:45.605
+00:02:43,365 --> 00:02:45,605
 But it's something you need to think about
 
 61
-00:02:45,605 --> 00:02:48.805
+00:02:45,605 --> 00:02:48,805
 When you write, and it's something you can work out on
 
 62
@@ -247,7 +247,7 @@ When you write, and it's something you can work out on
 and it's something you can think about when reading others
 
 63
-00:02:51,485 --> 00:02:53.045
+00:02:51,485 --> 00:02:53,045
 persons' texts
 
 64
@@ -259,11 +259,11 @@ how do they start their texts so that
 It will be interesting to continue reading
 
 66
-00:03:01,255 --> 00:03:04.305
+00:03:01,255 --> 00:03:04,305
 Just that, then
 
 67
-00:03:04,305 --> 00:03:06.895
+00:03:04,305 --> 00:03:06,895
 So do you need it
 
 68
@@ -307,11 +307,11 @@ Something dramatic maybe
 Or something horrible
 
 78
-00:03:33,095 --> 00:03:36.065
+00:03:33,095 --> 00:03:36,065
 or something exciting, there can be different things
 
 79
-00:03:36,535 --> 00:03:39.505
+00:03:36,535 --> 00:03:39,505
 or there must be an interesting problem
 
 80
@@ -319,7 +319,7 @@ or there must be an interesting problem
 in the story, perhaps that
 
 81
-00:03:43,325 --> 00:03:45.855
+00:03:43,325 --> 00:03:45,855
 The protagonist is facing
 
 82
@@ -327,7 +327,7 @@ The protagonist is facing
 a difficult challenge or
 
 83
-00:03:48,965 --> 00:03:52.015
+00:03:48,965 --> 00:03:52,015
 the two most important people in the story
 
 84
@@ -343,7 +343,7 @@ so that there is something that makes
 The reader thinks: How is this going to go
 
 87
-00:04:04,120 --> 00:04:05.860
+00:04:04,120 --> 00:04:05,860
 How is this going to go?
 
 88
@@ -403,7 +403,7 @@ some form of development, it's like
 important in a traditional, a classic
 
 102
-00:04:53,085 --> 00:04:55.245
+00:04:53,085 --> 00:04:55,245
 An interesting story
 
 103
@@ -419,15 +419,15 @@ violate these rule
 And, for example, write a very boring
 
 106
-00:05:02,175 --> 00:05:04.095
+00:05:02,175 --> 00:05:04,095
 story like
 
 107
-00:05:04,095 --> 00:05:06.865
+00:05:04,095 --> 00:05:06,865
 Still is interesting in a different way
 
 108
-00:05:07,005 --> 00:05:08.755
+00:05:07,005 --> 00:05:08,755
 But if we are to take the foundation
 
 109
@@ -459,7 +459,7 @@ they have trained that, it is important to have
 same tempo, the same time
 
 116
-00:05:26,595 --> 00:05:29.525
+00:05:26,595 --> 00:05:29,525
 in your story, so you have to choose
 
 117
@@ -495,15 +495,15 @@ So I tell you as if it is happening now or
 that I choose to recount
 
 125
-00:05:53,495 --> 00:05:56.305
+00:05:53,495 --> 00:05:56,305
 in preteritum so that
 
 126
-00:05:56,305 --> 00:05:59.435
+00:05:56,305 --> 00:05:59,435
 Kalle went into the kitchen, on the table sat a cat
 
 127
-00:05:59,435 --> 00:06:01.615
+00:05:59,435 --> 00:06:01,615
 the cat jumped down on the floor
 
 128
@@ -559,7 +559,7 @@ and I don't have that much to add really
 because all of these points he takes up and that they train on
 
 141
-00:06:41,665 --> 00:06:42.885
+00:06:41,665 --> 00:06:42,885
 in school
 
 142
@@ -571,7 +571,7 @@ is what I really think
 So: Why do I write a story?
 
 144
-00:06:49,365 --> 00:06:52.245
+00:06:49,365 --> 00:06:52,245
 Well, because I want to make my reader
 
 145
@@ -583,19 +583,19 @@ Curious, I want to do
 My reader engaged
 
 147
-00:06:56,485 --> 00:06:59.895
+00:06:56,485 --> 00:06:59,895
 I want my reader to think it's exciting
 
 148
-00:07:00,035 --> 00:07:03.025
+00:07:00,035 --> 00:07:03,025
 I want the reader to think
 
 149
-00:07:03,025 --> 00:07:05.545
+00:07:03,025 --> 00:07:05,545
 oops, what happens later
 
 150
-00:07:05,545 --> 00:07:06.545
+00:07:05,545 --> 00:07:06,545
 How does this end
 
 151
@@ -619,7 +619,7 @@ and that I can add
 There is
 
 156
-00:07:21,295 --> 00:07:24.305
+00:07:21,295 --> 00:07:24,305
 Yes, one thing, is that in addition to
 
 157
@@ -663,11 +663,11 @@ as usual
 it must not be the main character
 
 167
-00:07:53,295 --> 00:07:55.805
+00:07:53,295 --> 00:07:55,805
 Sometimes the main character can be completely
 
 168
-00:07:55,805 --> 00:07:58.405
+00:07:55,805 --> 00:07:58,405
 ordinary but that it
 
 169
@@ -675,11 +675,11 @@ ordinary but that it
 partly happening unusual things
 
 170
-00:08:02,245 --> 00:08:04.845
+00:08:02,245 --> 00:08:04,845
 for an ordinary person and that
 
 171
-00:08:05,595 --> 00:08:08.085
+00:08:05,595 --> 00:08:08,085
 An ordinary person has
 
 172
@@ -735,7 +735,7 @@ in relation to the brother who had one
 Especially problems then
 
 185
-00:08:44,585 --> 00:08:47.605
+00:08:44,585 --> 00:08:47,605
 The situation and events were interesting
 
 186
@@ -759,7 +759,7 @@ interesting events but also keep in mind that
 have interesting characters
 
 191
-00:09:03,295 --> 00:09:06.245
+00:09:03,295 --> 00:09:06,245
 and also think about your language
 
 192
@@ -807,7 +807,7 @@ play with such things
 You can too
 
 203
-00:09:36,845 --> 00:09:39.535
+00:09:36,845 --> 00:09:39,535
 Switching to describe things
 
 204
@@ -823,31 +823,31 @@ in the room and then you can go in
 and tell us what people think and feel and so
 
 207
-00:09:50,305 --> 00:09:53.505
+00:09:50,305 --> 00:09:53,505
 so it can also make it more interesting to
 
 208
-00:09:53,715 --> 00:09:55.455
+00:09:53,715 --> 00:09:55,455
 read a story
 
 209
-00:09:55,455 --> 00:09:57.665
+00:09:55,455 --> 00:09:57,665
 because you also have with inner life
 
 210
-00:09:58,045 --> 00:10:00.525
+00:09:58,045 --> 00:10:00,525
 what people feel and think
 
 211
-00:10:00,595 --> 00:10:04.065
+00:10:00,595 --> 00:10:04,065
 After all, it is usually people we are interested in
 
 212
-00:10:04,625 --> 00:10:07.045
+00:10:04,625 --> 00:10:07,045
 What do people think
 
 213
-00:10:07,045 --> 00:10:09.915
+00:10:07,045 --> 00:10:09,915
 What do people know what do people do
 
 214
@@ -903,7 +903,7 @@ and I came on one last
 Interesting thing
 
 227
-00:10:45,755 --> 00:10:48.565
+00:10:45,755 --> 00:10:48,565
 As my son actually said and that is to practice writing
 
 228
@@ -923,7 +923,7 @@ talk with each other
 so there is also something you can practice on
 
 232
-00:10:59,195 --> 00:11:02.035
+00:10:59,195 --> 00:11:02,035
 write dialogue, to let people
 
 233
@@ -948,7 +948,8 @@ Long courses
 
 238
 00:11:15,685 --> 00:11:18,195
-One year, two years; three years
+One year, two years;
+ three years
 
 239
 00:11:18,195 --> 00:11:20,465
@@ -1001,3 +1002,4 @@ good luck with the writing
 251
 00:11:56,165 --> 00:11:57,165
 bye
+

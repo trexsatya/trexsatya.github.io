@@ -23,11 +23,11 @@ And then we have had individual logging that has been discussed and one of them 
 - After it was appealed by the Nature Conservation Association and protect the forest.
 
 7
-00:00:45,294 --> 00:00:51.430
+00:00:45,294 --> 00:00:51,430
 There came the verdict a year and a half ago that not only affects this area -
 
 8
-00:00:51,430 --> 00:00:55.408
+00:00:51,430 --> 00:00:55,408
 - On how to handle the protected how to handle the protected species but also throughout Sweden.
 
 9
@@ -35,7 +35,7 @@ There came the verdict a year and a half ago that not only affects this area -
 And other EU countries must also follow that judgment.
 
 10
-00:01:00,499 --> 00:01:05.897
+00:01:00,499 --> 00:01:05,897
 The judgment is called “protect the forest judgment” and now it is used by-
 
 11
@@ -47,7 +47,7 @@ The judgment is called “protect the forest judgment” and now it is used by-
 With these issues that were in court processes and with authorities and so involved.
 
 13
-00:01:21,391 --> 00:01:29.941
+00:01:21,391 --> 00:01:29,941
 It was that we had a good documentation and that we presented it in a good way that made it possible to accept it.
 
 14
@@ -67,7 +67,7 @@ Visualize it in a good way so that it becomes clear what it is about.
 It is not enough to have just a lot of species lists and such, but you have to somehow -
 
 18
-00:01:52,283 --> 00:02:00.431
+00:01:52,283 --> 00:02:00,431
 - Clarify and then you can choose some species and show effects and such with that particular species.
 
 19
@@ -89,3 +89,4 @@ And that society and the various activities -
 23
 00:02:25,007 --> 00:02:33,304
 - It themselves makes sure that in connection with various issues, nature is maintained to a sufficient extent.
+

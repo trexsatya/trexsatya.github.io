@@ -43,7 +43,7 @@ Sometimes it becomes that you prioritize the family instead and go home after th
 It is probably a little depending on what kind of course you read
 
 12
-00:00:53,437 --> 00:00:58.880
+00:00:53,437 --> 00:00:58,880
 Or education how much you are out at university or how much you have distance studies from home
 
 13
@@ -51,11 +51,11 @@ Or education how much you are out at university or how much you have distance st
 For me reading to teachers so I try to get up at 8 in the morning
 
 14
-00:01:05,024 --> 00:01:06.304
+00:01:05,024 --> 00:01:06,304
 Get my kids off to school
 
 15
-00:01:06,735 --> 00:01:08.608
+00:01:06,735 --> 00:01:08,608
 Then I'm ready to get started
 
 16
@@ -79,7 +79,7 @@ Between 8 and 5 in order to be able to get evenings and weekends free to devote 
 Yes when you start plugging it makes little difference with the economy
 
 21
-00:01:36,768 --> 00:01:40.608
+00:01:36,768 --> 00:01:40,608
 It may not be as much luxury holiday and spontaneous shopping anymore
 
 22
@@ -103,11 +103,11 @@ The job is in as well as still left
 To do
 
 27
-00:01:55,712 --> 00:02:00.159
+00:01:55,712 --> 00:02:00,159
 But then it's up to me if I want to sit in the evenings and weekends and do it
 
 28
-00:02:00,514 --> 00:02:05.669
+00:02:00,514 --> 00:02:05,669
 There is still some flexibility when I do my studies that did not exist when I was working
 
 29
@@ -141,3 +141,4 @@ And no,
 36
 00:02:30,838 --> 00:02:32,877
 It's just grab it and search
+

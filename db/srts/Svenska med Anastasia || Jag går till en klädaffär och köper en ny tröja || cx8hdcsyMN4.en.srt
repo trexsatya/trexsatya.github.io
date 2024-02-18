@@ -1,18 +1,21 @@
 1
 00:00:01,290 --> 00:00:02,872
-Hey! How is it?
+Hello!
+ How is it?
 
 2
 00:00:02,873 --> 00:00:07,264
-That's good, thank you! How are you?
+That's good, thank you!
+ How are you?
 
 3
 00:00:07,395 --> 00:00:10,192
-That's just fine, thank you! Where are you going?
+It's just good, thank you!
+ Where are you going?
 
 4
 00:00:10,263 --> 00:00:12,972
-I'm going to a clothing store.
+I'll go to a clothing store.
 
 5
 00:00:12,973 --> 00:00:15,277
@@ -20,7 +23,7 @@ I'm going to buy a sweater.
 
 6
 00:00:15,321 --> 00:00:17,574
-I need a new shirt.
+I need a new sweater.
 
 7
 00:00:17,575 --> 00:00:19,006
@@ -36,7 +39,7 @@ Come then!
 
 10
 00:00:48,367 --> 00:00:52,759
-A child is crying.
+A child cries.
 
 11
 00:01:02,211 --> 00:01:04,236
@@ -44,7 +47,8 @@ Need help?
 
 12
 00:01:04,293 --> 00:01:07,710
-No thanks! I am just looking.
+No thanks!
+ I am just looking.
 
 13
 00:01:13,925 --> 00:01:18,818
@@ -52,11 +56,11 @@ I walk around the store and look at all the clothes.
 
 14
 00:01:27,611 --> 00:01:29,345
-It was beautiful!
+It was good looking!
 
 15
 00:01:29,346 --> 00:01:31,346
-What do you think of this?
+What do you think about this?
 
 16
 00:01:31,347 --> 00:01:33,765
@@ -80,15 +84,16 @@ Where is the fitting room?
 
 21
 00:01:57,001 --> 00:02:00,671
-The rehearsal room is over there!
+The test room is located over there!
 
 22
 00:02:01,061 --> 00:02:03,883
-Where? Ok, then we go there.
+Where?
+ OK, then we go there.
 
 23
 00:02:07,774 --> 00:02:11,685
-a test room
+a fitting room
 
 24
 00:02:17,376 --> 00:02:21,185
@@ -100,7 +105,7 @@ What is the size?
 
 26
 00:02:25,469 --> 00:02:29,569
-It's size L.
+It is size L.
 
 27
 00:02:31,065 --> 00:02:33,000
@@ -108,7 +113,7 @@ Does it fit?
 
 28
 00:02:33,001 --> 00:02:36,077
-No, it does not fit well.
+No, it doesn't fit well.
 
 29
 00:02:36,078 --> 00:02:37,091
@@ -120,7 +125,7 @@ It's too big, look!
 
 31
 00:02:42,001 --> 00:02:45,115
-I'm trying another size.
+I try another size.
 
 32
 00:02:47,323 --> 00:02:51,201
@@ -132,7 +137,7 @@ Does it fit?
 
 34
 00:02:55,479 --> 00:02:58,529
-No, it does not fit well.
+No, it doesn't fit well.
 
 35
 00:02:58,530 --> 00:03:00,188
@@ -144,11 +149,11 @@ It's too small!
 
 37
 00:03:05,102 --> 00:03:07,671
-I try a different size.
+I try a pineapple size.
 
 38
 00:03:07,799 --> 00:03:11,242
-I will try size M.
+I'll try size M.
 
 39
 00:03:13,180 --> 00:03:14,868
@@ -160,7 +165,8 @@ Yes it fits well.
 
 41
 00:03:18,914 --> 00:03:22,002
-Look! Is not it nice?
+Look!
+ Is not it nice?
 
 42
 00:03:22,104 --> 00:03:24,104
@@ -176,7 +182,8 @@ It's the right size!
 
 45
 00:03:28,704 --> 00:03:32,893
-It's very beautiful! I take it!
+It's really pretty!
+ I take it!
 
 46
 00:03:35,919 --> 00:03:37,805
@@ -188,7 +195,7 @@ It costs SEK 299
 
 48
 00:03:43,267 --> 00:03:48,000
-and there is a discount!
+And that's a discount!
 
 49
 00:03:48,917 --> 00:03:52,208
@@ -208,7 +215,7 @@ Are you happy now?
 
 53
 00:04:07,097 --> 00:04:09,742
-Yes, I'm very happy!
+Yes, I'm really happy!
 
 54
 00:04:09,850 --> 00:04:13,255

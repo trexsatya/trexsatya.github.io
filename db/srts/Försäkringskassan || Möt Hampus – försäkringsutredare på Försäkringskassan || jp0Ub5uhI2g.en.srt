@@ -1,5 +1,5 @@
 1
-00:00:04,799 --> 00:00:07.519
+00:00:04,799 --> 00:00:07,519
 I value professionalism.
 
 2
@@ -55,9 +55,10 @@ Stubborn organization where you as an employee could not affect so much,
 But we have a lot of cooperation between the teams and an incredibly good
 
 15
-00:00:59,159 --> 00:01:01.320
+00:00:59,159 --> 00:01:01,320
 And close cooperation in your own team.
 
 16
 00:01:01,320 --> 00:01:06,920
 We share responsibility for everything to be done and you are never alone.
+

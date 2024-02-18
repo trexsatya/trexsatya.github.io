@@ -1,6 +1,7 @@
 1
 00:00:01,360 --> 00:00:03,520
-Lucky! Set it back!
+Lucky!
+ Set it back!
 
 2
 00:00:03,640 --> 00:00:04,879
@@ -11,7 +12,7 @@ Come here!
 Lycke, come here!
 
 4
-00:00:06,200 --> 00:00:07.240
+00:00:06,200 --> 00:00:07,240
 No no no!
 
 5
@@ -33,3 +34,4 @@ Always review your details-
 9
 00:00:16,920 --> 00:00:19,519
 -When you apply for compensation from the insurance fund.
+

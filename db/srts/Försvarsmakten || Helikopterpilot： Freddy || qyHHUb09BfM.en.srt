@@ -39,7 +39,7 @@ We follow the same routine.
 It is weather brief, air traffic conductor review
 
 11
-00:00:41,640 --> 00:00:43.560
+00:00:41,640 --> 00:00:43,560
 Air pass and debrief.
 
 12
@@ -55,7 +55,7 @@ One week we do.
 Then maybe we have a week of survival
 
 15
-00:00:56,960 --> 00:01:00.360
+00:00:56,960 --> 00:01:00,360
 Where you find yourself in a raft in the archipelago.
 
 16
@@ -95,11 +95,11 @@ So there is a lot to read too.
 The flight itself is quite unpublished
 
 25
-00:01:57,800 --> 00:02:00.840
+00:01:57,800 --> 00:02:00,840
 But we have to keep a good shape.
 
 26
-00:02:01,000 --> 00:02:04.600
+00:02:01,000 --> 00:02:04,600
 So training is a big part too.
 
 27
@@ -119,8 +119,8 @@ between cobbles and cuts
 The sun sparkles and
 
 31
-00:02:20,480 --> 00:02:22.560
-You see the waves go a bit.
+00:02:20,480 --> 00:02:22,560
+You see the waves go a little.
 
 32
 00:02:22,800 --> 00:02:24,240
@@ -129,3 +129,4 @@ It is also wonderful of course.
 33
 00:02:25,560 --> 00:02:29,120
 My name is Freddy and I am a helicopter pilot.
+

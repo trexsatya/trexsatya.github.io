@@ -1,5 +1,5 @@
 1
-00:00:00,960 --> 00:00:05.920
+00:00:00,960 --> 00:00:05,920
 We often imagine antiquity in a single color-
 
 2
@@ -47,7 +47,7 @@ So what happened under the colorful antique-
 -and what was it like to live then?
 
 13
-00:01:02,400 --> 00:01:07.800
+00:01:02,400 --> 00:01:07,800
 Early European history can be divided into three eras.
 
 14
@@ -95,11 +95,11 @@ Greece is divided into city states.
 They are independent and consist of a city with surrounding landscapes.
 
 25
-00:02:00,120 --> 00:02:02.840
+00:02:00,120 --> 00:02:02,840
 Most are farmers.
 
 26
-00:02:03,000 --> 00:02:08.360
+00:02:03,000 --> 00:02:08,360
 If they are self -governing - why are we talking about a Greece?
 
 27
@@ -139,7 +139,7 @@ Although much holds the city states together, much else separates them.
 They have their own laws and political systems.
 
 36
-00:02:54,560 --> 00:02:58.560
+00:02:54,560 --> 00:02:58,560
 In addition, they are constantly at war with each other.
 
 37
@@ -148,7 +148,8 @@ Two arch enemies are the leading city states Athens and Sparta.
 
 38
 00:03:03,880 --> 00:03:07,520
-We take a closer look at them. First Athens.
+We take a closer look at them.
+ First Athens.
 
 39
 00:03:07,680 --> 00:03:12,520
@@ -191,7 +192,7 @@ They had no right of voting or the right to speak in this system.
 It is a democratic principle, but not a democracy like today.
 
 49
-00:03:59,920 --> 00:04:05.840
+00:03:59,920 --> 00:04:05,840
 Elections were not seen as a democratic institution, because they could be influenced.
 
 50
@@ -239,7 +240,7 @@ While Athens focuses on democracy, life in Sparta looks different.
 It is one of the few monarchies in Greece-
 
 61
-00:04:58,760 --> 00:05:03.320
+00:04:58,760 --> 00:05:03,320
 -But above all the view of society and the war distinguishes them.
 
 62
@@ -283,7 +284,7 @@ One would live spartan.
 You looked down at material wealth, so you would live poor.
 
 72
-00:05:53,880 --> 00:05:59.960
+00:05:53,880 --> 00:05:59,960
 The city states differ, but nothing unites as an external enemy.
 
 73
@@ -331,11 +332,11 @@ Finally he reigns over today's Greece, Turkey-
 He dies young, probably after heavy alcohol consumption.
 
 84
-00:06:57,520 --> 00:07:01.800
+00:06:57,520 --> 00:07:01,800
 He seems to have been driven by eagerness.
 
 85
-00:07:01,960 --> 00:07:05.880
+00:07:01,960 --> 00:07:05,880
 A willingness to lower the world.
 
 86
@@ -383,8 +384,9 @@ Slaves have no rights, and often married women away when they are twelve.
 The marriage was mainly something man in
 
 97
-00:07:55,760 --> 00:08:02.040
--A social and economic reasons. Love did not matter that much.
+00:07:55,760 --> 00:08:02,040
+-A social and economic reasons.
+ Love did not matter that much.
 
 98
 00:08:02,200 --> 00:08:06,280
@@ -399,7 +401,7 @@ The goal was to breed the heirs-
 Then you could have other relationships-
 
 101
-00:08:14,320 --> 00:08:19.560
+00:08:14,320 --> 00:08:19,560
 -When we might be described as gay or bisexual.
 
 102
@@ -435,11 +437,11 @@ After all, they controlled your wife, their children and their slaves.
 The woman should be everything the man is not: passive and without control.
 
 110
-00:08:55,000 --> 00:09:00.920
+00:08:55,000 --> 00:09:00,920
 A slave has no norms or ideals, because it is not seen as a human being.
 
 111
-00:09:01,080 --> 00:09:07.720
+00:09:01,080 --> 00:09:07,720
 This is included in part two - the Roman antiquity.
 
 112
@@ -479,12 +481,14 @@ The Mediterranean starts to be called "Our Sea"-
 -And you control areas up to today's United Kingdom.
 
 121
-00:09:54,960 --> 00:10:00.120
+00:09:54,960 --> 00:10:00,120
 In addition to the Greek areas, they also take their gods.
 
 122
 00:10:00,280 --> 00:10:05,960
-They get new, Roman names. Hello then, Zeus. Welcome, Jupiter.
+They get new, Roman names.
+ Hello then, Zeus.
+ Welcome, Jupiter.
 
 123
 00:10:06,120 --> 00:10:10,920
@@ -499,7 +503,7 @@ How does the life change to belong to the Roman Empire?
 A principle is that Rome does not interfere in local affairs-
 
 126
-00:10:22,960 --> 00:10:25.560
+00:10:22,960 --> 00:10:25,560
 -or the religious life.
 
 127
@@ -631,8 +635,9 @@ Caesar is chosen as a consul, but you cannot be re -elected.
 His position is not quite in the system.
 
 159
-00:13:06,000 --> 00:13:09.720
-How does he solve it? By force.
+00:13:06,000 --> 00:13:09,720
+How does he solve it?
+ By force.
 
 160
 00:13:09,880 --> 00:13:14,920
@@ -644,7 +649,8 @@ In the end, Caesar stands in the capital with the sign "Veni, Vidi, Vici".
 
 162
 00:13:20,120 --> 00:13:25,160
-"I came I saw I conquered." Caesar is proclaimed dictator.
+"I came I saw I conquered."
+ Caesar is proclaimed dictator.
 
 163
 00:13:25,320 --> 00:13:29,480
@@ -679,7 +685,7 @@ Then the empire takes over.
 Rome is governed by an emperor, and everyone gets the title Augustus.
 
 171
-00:14:03,440 --> 00:14:07.800
+00:14:03,440 --> 00:14:07,800
 Now follows a period of 200 years of peace.
 
 172
@@ -727,7 +733,7 @@ Constantine perhaps expects the potential of Christianity
 -Som something that can hold together the now rather fragmentary empire.
 
 183
-00:15:05,600 --> 00:15:09.840
+00:15:05,600 --> 00:15:09,840
 By the end of the 300s, other religious expressions are banned
 
 184
@@ -771,7 +777,7 @@ The Great Empire is split into two: Västrom and Östrom.
 -As lives on for a thousand years.
 
 194
-00:15:59,440 --> 00:16:05.560
+00:15:59,440 --> 00:16:05,560
 For Västrom things go worse, and the last emperor loses power.
 
 195
@@ -847,7 +853,7 @@ The idea of a Roman Empire power has inspired rulers.
 Napoleon, Mussolini and Hitler used Roman symbols.
 
 213
-00:17:33,240 --> 00:17:39.560
+00:17:33,240 --> 00:17:39,560
 From the first democratic steps in Greece to the military empire in Rome.
 
 214
@@ -855,7 +861,7 @@ From the first democratic steps in Greece to the military empire in Rome.
 In ancient times, different types of rule and view of power may take place.
 
 215
-00:17:45,880 --> 00:17:52.560
+00:17:45,880 --> 00:17:52,560
 Whatever you want to legitimize, you can often find it in antiquity.
 
 216
@@ -865,3 +871,4 @@ Almost like a sandbox of experiences.
 217
 00:17:57,520 --> 00:18:01,520
 Swedish texture: Per Lundgren Iyuno-Di Group for UR
+

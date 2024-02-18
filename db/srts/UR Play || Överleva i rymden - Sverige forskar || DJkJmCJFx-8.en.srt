@@ -3,7 +3,7 @@
 We have always been fascinated by space-
 
 2
-00:00:04,480 --> 00:00:09.720
+00:00:04,480 --> 00:00:09,720
 -But if life can live there has long been a mystery.
 
 3
@@ -24,7 +24,8 @@ A human being survives seconds without space suit-
 
 7
 00:00:29,840 --> 00:00:34,400
--for example. The bacterium that produced the air we breathe.
+-for example.
+ The bacterium that produced the air we breathe.
 
 8
 00:00:34,560 --> 00:00:40,320
@@ -43,7 +44,7 @@ I investigate how microscopic life can survive in extreme environments.
 In astrobiology, research on life in the universe.
 
 12
-00:01:05,360 --> 00:01:09.800
+00:01:05,360 --> 00:01:09,800
 You are particularly interested in extremes:
 
 13
@@ -55,7 +56,7 @@ Microscopic organisms that live under extreme conditions-
 -like the ice on Antarctic or inside volcanoes.
 
 15
-00:01:20,360 --> 00:01:27.560
+00:01:20,360 --> 00:01:27,560
 These environments are similar to those on other planets, such as Mars.
 
 16
@@ -83,11 +84,11 @@ It can be through an asteroid, as on the time of dinosaurs-
 No man has yet set foot on Mars, the race is underway.
 
 22
-00:01:59,560 --> 00:02:04.600
+00:01:59,560 --> 00:02:04,600
 Natuschka Lee is researching the European Space Organization Esa-
 
 23
-00:02:04,760 --> 00:02:09.960
+00:02:04,760 --> 00:02:09,960
 -It to demonstrate life in space in general and Mars in particular-
 
 24
@@ -116,10 +117,11 @@ So we hope to simulate how organisms from the earth can react-
 
 30
 00:02:41,760 --> 00:02:47,720
--Or genuine space conditions, e.g. If they ended up on Mars.
+-Or genuine space conditions, e.g.
+ If they ended up on Mars.
 
 31
-00:02:47,880 --> 00:02:51.080
+00:02:47,880 --> 00:02:51,080
 Many survived cosmic radiation-
 
 32
@@ -128,10 +130,11 @@ Many survived cosmic radiation-
 
 33
 00:02:57,160 --> 00:02:58,880
-I.a. bear animal
+I.a.
+ bear animal
 
 34
-00:02:59,040 --> 00:03:04.440
+00:02:59,040 --> 00:03:04,440
 — which can turn off its metabolism and can withstand the radiation-
 
 35
@@ -213,3 +216,4 @@ The hope is to use them-
 54
 00:04:40,680 --> 00:04:44,680
 Swedish texture: Per Lundgren Iyuno for UR
+

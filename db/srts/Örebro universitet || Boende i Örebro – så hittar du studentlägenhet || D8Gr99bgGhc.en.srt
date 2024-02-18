@@ -1,9 +1,9 @@
 1
-00:00:01,477 --> 00:00:04.740
+00:00:01,477 --> 00:00:04,740
 Here in Örebro it is easy for you as a student to get a home.
 
 2
-00:00:04,740 --> 00:00:09.163
+00:00:04,740 --> 00:00:09,163
 Many students choose to live in the university area, close to campus.
 
 3
@@ -51,7 +51,7 @@ This is her second student apartment during her time as a student in Örebro.
 The apartment is at 25 square meters
 
 14
-00:00:46,871 --> 00:00:51.048
+00:00:46,871 --> 00:00:51,048
 And Isabelle pays about SEK 4,900 in monthly rent.
 
 15
@@ -63,11 +63,11 @@ What she likes best about her apartment is that it is so close to the university
 But also for gym and grocery stores.
 
 17
-00:01:00,502 --> 00:01:02.619
+00:01:00,502 --> 00:01:02,619
 If you prefer to live more centrally
 
 18
-00:01:02,619 --> 00:01:05.811
+00:01:02,619 --> 00:01:05,811
 Of course, it is also possible to live near the town.
 
 19
@@ -123,19 +123,19 @@ Their apartment is a third of 65 square meters
 And costs about SEK 8,400 a month.
 
 32
-00:01:56,000 --> 00:02:00.055
+00:01:56,000 --> 00:02:00,055
 What Jacob likes best with the area is the tranquility and proximity to nature.
 
 33
-00:02:00,752 --> 00:02:02.687
+00:02:00,752 --> 00:02:02,687
 As you understand, there are several different ways
 
 34
-00:02:02,687 --> 00:02:04.238
+00:02:02,687 --> 00:02:04,238
 Living as a student in Örebro.
 
 35
-00:02:05,909 --> 00:02:09.077
+00:02:05,909 --> 00:02:09,077
 But how have the students gone about getting these apartments?
 
 36
@@ -195,7 +195,7 @@ So Öbo has a so -called housing guarantee.
 This means that you who fail to find any apartment
 
 50
-00:02:50,381 --> 00:02:52.613
+00:02:50,381 --> 00:02:52,613
 may receive a time -limited agreement
 
 51
@@ -211,9 +211,10 @@ Read more about how the housing guarantee works at obo.se.
 Now you have got a little better control over
 
 54
-00:03:04,177 --> 00:03:06.716
+00:03:04,177 --> 00:03:06,716
 What it is like to live as a student in Örebro.
 
 55
-00:03:06,716 --> 00:03:07.880
+00:03:06,716 --> 00:03:07,880
 Welcome here!
+

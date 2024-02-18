@@ -1,10 +1,11 @@
 1
-00:00:00,000 --> 00:00:03.867
+00:00:00,000 --> 00:00:03,867
 Especially in the summer, nothing stops Halmstad!
 
 2
-00:00:04,267 --> 00:00:07.267
-Student life in Halmstad. Student Emil tells.
+00:00:04,267 --> 00:00:07,267
+Student life in Halmstad.
+ Student Emil tells.
 
 3
 00:00:08,000 --> 00:00:13,233
@@ -67,13 +68,14 @@ Being on the zero was the best thing that has happened in Halmstad-
 That was the reason I wanted to be with and zero-
 
 18
-00:00:59,233 --> 00:01:01.833
+00:00:59,233 --> 00:01:01,833
 -For I know how much it gives the new students.
 
 19
-00:01:01,833 --> 00:01:07.267
+00:01:01,833 --> 00:01:07,267
 As far as I know, the new zeros have had a great start so far.
 
 20
-00:01:07,267 --> 00:01:08.867
+00:01:07,267 --> 00:01:08,867
 Search for Halmstad University!
+

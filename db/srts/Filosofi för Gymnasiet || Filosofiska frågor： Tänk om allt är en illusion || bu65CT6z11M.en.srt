@@ -31,7 +31,7 @@ Or a butterfly that dreams that I am a monk. "
 Even in ancient Greece, philosophers were wondering if the world was perhaps only an illusion,
 
 9
-00:00:55,280 --> 00:00:59.960
+00:00:55,280 --> 00:00:59,960
 And Plato claimed that everything we perceived was only shadow pictures of reality.
 
 10
@@ -59,7 +59,7 @@ We will take a closer look at the so -called simulation argument.
 Theory is based on statistical probability, and is based on the assumption
 
 16
-00:01:33,280 --> 00:01:36.560
+00:01:33,280 --> 00:01:36,560
 that computer technology will continue to develop.
 
 17
@@ -83,12 +83,13 @@ But who knows what we have the opportunity for 1,000, 100,000 or millions of yea
 Bostrom sees three future scenario:
 
 22
-00:02:01,740 --> 00:02:06.800
+00:02:01,740 --> 00:02:06,800
 The first means that the human species die out before we have developed the possibility of simulating
 
 23
 00:02:06,800 --> 00:02:12,220
-human consciousness. Everything is peace and joy, and no simulation will happen.
+human consciousness.
+ Everything is peace and joy, and no simulation will happen.
 
 24
 00:02:13,080 --> 00:02:18,640
@@ -104,7 +105,8 @@ This scenario sees Bostrom himself as the least likely when a technology like th
 
 27
 00:02:28,040 --> 00:02:31,740
-humanity. But that is, after all, an opportunity.
+humanity.
+ But that is, after all, an opportunity.
 
 28
 00:02:32,440 --> 00:02:38,060
@@ -123,15 +125,15 @@ Simulation on your computer and see how the "people" develop and ponder the myst
 Which of the above options do you see as most likely?
 
 32
-00:02:54,660 --> 00:03:00.160
+00:02:54,660 --> 00:03:00,160
 If you have answered option three, you have also just "proven" that we are all in such a simulation.
 
 33
-00:03:00,580 --> 00:03:06.820
+00:03:00,580 --> 00:03:06,820
 For what would the probability be that we belong to the real world, when there may be thousands,
 
 34
-00:03:06,820 --> 00:03:09.800
+00:03:06,820 --> 00:03:09,800
 Not to say millions of simulated worlds?
 
 35
@@ -159,7 +161,7 @@ Maybe they are met by us who have lived "right" by a "welcome to level 2" after 
 Maybe God is just a teenager in front of his computer.
 
 41
-00:03:36,320 --> 00:03:42.060
+00:03:36,320 --> 00:03:42,060
 In fact, some researchers believe that we are no further than a few decades from being able to simulate conscious life.
 
 42
@@ -179,5 +181,6 @@ Instead of simulating the world in detail, you only need to simulate what can ac
 Other galaxies and planets need not be simulated in greater detail than light flashes are perceived from the earth,
 
 46
-00:04:02,660 --> 00:04:07.920
+00:04:02,660 --> 00:04:07,920
 And the microscopic world only needs to be simulated in detail when someone actually looks at it.
+

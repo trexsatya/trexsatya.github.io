@@ -1,5 +1,5 @@
 1
-00:00:01,120 --> 00:00:05.800
+00:00:01,120 --> 00:00:05,800
 American tanks with controversial ammunition will soon be in place.
 
 2
@@ -11,7 +11,7 @@ From the Russian side, this is raised as if it were nuclear weapons, which is co
 At the same time, Ukraine continues to make progress along the front.
 
 4
-00:00:15,200 --> 00:00:17.560
+00:00:15,200 --> 00:00:17,560
 Here are presents, Russian damages!
 
 5
@@ -47,7 +47,7 @@ From robotyne, one spreads in both eastern and western direction, towards Verbov
 - Which is located nearby to move on to the next Russian line of defense.
 
 13
-00:00:58,840 --> 00:01:03.440
+00:00:58,840 --> 00:01:03,440
 This is an important step, maybe a breakthrough.
 
 14
@@ -88,7 +88,8 @@ Russia, since they withdrew from the grain agreement a month ago -
 
 23
 00:01:40,240 --> 00:01:45,760
-–And Cereal exports, which is a large source of income for Ukraine.
+–And
+ Cereal exports, which is a large source of income for Ukraine.
 
 24
 00:01:45,920 --> 00:01:49,680
@@ -99,7 +100,7 @@ The attacks against the cities of Izmail and Reni attracted considerable attenti
 - As the cities are located right on the border with Natoland Romania.
 
 26
-00:01:54,680 --> 00:01:57.840
+00:01:54,680 --> 00:01:57,840
 And the countries had different views on what really happened.
 
 27
@@ -107,12 +108,13 @@ And the countries had different views on what really happened.
 The drone attacks performed by the Russian Federation -
 
 28
-00:02:02,080 --> 00:02:08.080
+00:02:02,080 --> 00:02:08,080
 - No direct threat to our national territory.
 
 29
 00:02:08,240 --> 00:02:12,680
-For us, it is clearly what happened. We have evidence.
+For us, it is clearly what happened.
+ We have evidence.
 
 30
 00:02:12,840 --> 00:02:15,800
@@ -131,7 +133,7 @@ That one chooses to hit goals that is so incredibly close to Natoland Romania -
 –But also expecting the weapons to have enough precision -
 
 34
-00:02:30,520 --> 00:02:35.560
+00:02:30,520 --> 00:02:35,560
 - To not end up wrong, but it is high risk.
 
 35
@@ -140,14 +142,15 @@ Ukraine's Ministry of Defense has been plagued by several corruption scandals.
 
 36
 00:02:43,200 --> 00:02:49,160
-I.a. Should you have paid SEK 210 million for winter jackets that cannot withstand cold.
+I.a.
+ Should you have paid SEK 210 million for winter jackets that cannot withstand cold.
 
 37
 00:02:49,320 --> 00:02:54,720
 You have also bought food for the army for three times as high as normal.
 
 38
-00:02:54,880 --> 00:02:59.640
+00:02:54,880 --> 00:02:59,640
 That there is corruption in Ukraine, it is well known, but it is also well known -
 
 39
@@ -155,7 +158,7 @@ That there is corruption in Ukraine, it is well known, but it is also well known
 - That you have an extensive endeavor to fight this corruption.
 
 40
-00:03:04,480 --> 00:03:08.600
+00:03:04,480 --> 00:03:08,600
 This week, one of the country's richest businessmen for money laundering - was charged
 
 41
@@ -163,7 +166,7 @@ This week, one of the country's richest businessmen for money laundering - was c
 - And several high -ranking officials have been allowed to resign after corruption charges.
 
 42
-00:03:13,480 --> 00:03:17.560
+00:03:13,480 --> 00:03:17,560
 Most recently the country's defense minister Oleksij Reznikov.
 
 43
@@ -255,12 +258,13 @@ On the part of the West, Ukraine should of course be best supported and in that 
 It includes control and audit -
 
 65
-00:04:53,640 --> 00:04:56.560
+00:04:53,640 --> 00:04:56,560
 - That can be implemented together with the Ukrainian authorities.
 
 66
 00:04:56,720 --> 00:05:01,280
-They are also keen on this. Former Defense Minister Reznikov-
+They are also keen on this.
+ Former Defense Minister Reznikov-
 
 67
 00:05:01,440 --> 00:05:07,160
@@ -280,7 +284,8 @@ In mid-September, the first Abrams tanks are expected from the USA-
 
 71
 00:05:23,920 --> 00:05:28,400
-- Delivered to Ukraine. It states sources for Politico, who say -
+- Delivered to Ukraine.
+ It states sources for Politico, who say -
 
 72
 00:05:28,560 --> 00:05:33,360
@@ -335,11 +340,11 @@ That which can form a danger with radioactivity -
 They are dangerous, especially for the crew of the vehicle hit -
 
 85
-00:06:28,320 --> 00:06:32.560
+00:06:28,320 --> 00:06:32,560
 - But they probably have other problems to think about when they are met.
 
 86
-00:06:33,520 --> 00:06:37.560
+00:06:33,520 --> 00:06:37,560
 North Korea's leader Kim Jong-Un is expected to visit Russia and Vladimir Putin-
 
 87
@@ -356,11 +361,13 @@ Russia has very few friends left and North Korea is one of the countries -
 
 90
 00:06:52,920 --> 00:06:59,760
-- To help Russia. I guess Russia mainly wants artillery ammunition -
+- To help Russia.
+ I guess Russia mainly wants artillery ammunition -
 
 91
-00:06:59,920 --> 00:07:05.840
--Rocket Artillery amnition. Maybe robots, but it's not quite as likely.
+00:06:59,920 --> 00:07:05,840
+-Rocket Artillery amnition.
+ Maybe robots, but it's not quite as likely.
 
 92
 00:07:06,000 --> 00:07:10,200
@@ -401,3 +408,4 @@ It may not get any immediate effect -
 101
 00:07:46,760 --> 00:07:51,360
 - But Russia wants to ensure that you can hold on for a long time.
+

@@ -1,5 +1,5 @@
 1
-00:00:01,960 --> 00:00:08.840
+00:00:01,960 --> 00:00:08,840
 When talking about proteins you usually think of food such as meat and egg-
 
 2
@@ -27,7 +27,7 @@ They are called the body's building blocks as they build up bones, tissues and m
 They are found everywhere in the body-
 
 8
-00:00:43,200 --> 00:00:47.840
+00:00:43,200 --> 00:00:47,840
 -And is of great importance for the body's functions and structure.
 
 9
@@ -79,7 +79,7 @@ The protein gets specific properties-
 The combinations are almost endless.
 
 21
-00:01:42,960 --> 00:01:49.560
+00:01:42,960 --> 00:01:49,560
 When the chain is done, it is folded together and the protein gets its unique structure.
 
 22
@@ -87,8 +87,9 @@ When the chain is done, it is folded together and the protein gets its unique st
 In order for protein to be formed, the amino acids must be found in our bodies.
 
 23
-00:01:55,480 --> 00:02:02.240
-We cannot make all ourselves. We get nine pieces through the food.
+00:01:55,480 --> 00:02:02,240
+We cannot make all ourselves.
+ We get nine pieces through the food.
 
 24
 00:02:02,400 --> 00:02:07,320
@@ -96,7 +97,8 @@ In the past, it was believed that proteins were unique to a specific tissue.
 
 25
 00:02:07,480 --> 00:02:11,760
-That they were just there. But that theory is littered.
+That they were just there.
+ But that theory is littered.
 
 26
 00:02:11,920 --> 00:02:18,360
@@ -131,11 +133,11 @@ Hormones are formed in glands and transported to different organ-
 Receptors are protein that captures external signals-
 
 34
-00:02:58,080 --> 00:03:00.800
+00:02:58,080 --> 00:03:00,800
 -And sends them into the cell.
 
 35
-00:03:00,960 --> 00:03:05.720
+00:03:00,960 --> 00:03:05,720
 Antibodies Flag marks intruders in the body-
 
 36
@@ -172,7 +174,8 @@ They are very important for processes that can otherwise take hours or days.
 
 44
 00:03:43,320 --> 00:03:48,320
-They are shortened thanks to our enzymes. What can we learn from this?
+They are shortened thanks to our enzymes.
+ What can we learn from this?
 
 45
 00:03:48,480 --> 00:03:52,400
@@ -187,9 +190,10 @@ If the cells fail to produce sufficient amounts, the body is affected.
 If you have a lack of growth hormone you do not grow normally-
 
 48
-00:04:03,840 --> 00:04:09.320
+00:04:03,840 --> 00:04:09,320
 -And if you have a lack of insulin, you develop the disease diabetes.
 
 49
 00:04:20,480 --> 00:04:24,480
 Swedish text: Gabriella Eseland Iyuno Media Group for UR
+

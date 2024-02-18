@@ -15,7 +15,7 @@ My research is very much about digitization and-
 My name is Pernilla Nilsson and I am Professor I-
 
 5
-00:00:25,467 --> 00:00:29.067
+00:00:25,467 --> 00:00:29,067
 -The Didactics here at Halmstad University.
 
 6
@@ -55,15 +55,15 @@ It is especially fun that the University of Halmstad's first research program-
 -Soping on learning in digital society.
 
 15
-00:00:58,333 --> 00:01:01.633
+00:00:58,333 --> 00:01:01,633
 I have the privilege of being a research program manager for-
 
 16
-00:01:01,633 --> 00:01:03.867
+00:01:01,633 --> 00:01:03,867
 -This program and together with colleagues-
 
 17
-00:01:03,967 --> 00:01:07.167
+00:01:03,967 --> 00:01:07,167
 -Detrap the research around this area.
 
 18
@@ -83,7 +83,7 @@ Leads we shorten our research program and it is about-
 These different research areas are very interesting because to-
 
 22
-00:01:23,767 --> 00:01:29.967
+00:01:23,767 --> 00:01:29,967
 -We know that the government in 2017 came up with a strategy for to-
 
 23
@@ -123,7 +123,7 @@ If we notice that some methods we use in school-
 -learning as we expect perhaps not really fulfilled
 
 32
-00:02:04,500 --> 00:02:08.967
+00:02:04,500 --> 00:02:08,967
 So we also need to reflect on why we use digital tools.
 
 33
@@ -155,7 +155,7 @@ I supervise five doctoral students today which is an important part of the teach
 What I have always tried to do as a professor is to create-
 
 40
-00:02:36,867 --> 00:02:38.867
+00:02:36,867 --> 00:02:38,867
 -conditions for others to grow.
 
 41
@@ -175,15 +175,15 @@ The role of professor is both supportive but there is also a great deal-
 -and develop research at the university.
 
 45
-00:02:55,300 --> 00:03:00.400
+00:02:55,300 --> 00:03:00,400
 There "learning in a digital society", that is, leads a good example-
 
 46
-00:03:00,400 --> 00:03:05.633
+00:03:00,400 --> 00:03:05,633
 -To how we can collaborate within the framework of interesting common research issues-
 
 47
-00:03:05,633 --> 00:03:07.633
+00:03:05,633 --> 00:03:07,633
 -and develop research together.
 
 48
@@ -197,3 +197,4 @@ I think that is a very important role for a professor-
 50
 00:03:18,833 --> 00:03:21,833
 Research where different perspectives meet
+

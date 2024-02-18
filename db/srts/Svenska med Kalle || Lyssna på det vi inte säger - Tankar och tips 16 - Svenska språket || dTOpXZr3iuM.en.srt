@@ -1,9 +1,9 @@
 1
-00:00:00,080 --> 00:00:02.080
+00:00:00,080 --> 00:00:02,080
 Hello Hello
 
 2
-00:00:02,080 --> 00:00:04.040
+00:00:02,080 --> 00:00:04,040
 Anyone who trains Swedish
 
 3
@@ -63,11 +63,11 @@ When a Swedish person
 speaking Swedish
 
 17
-00:00:46,980 --> 00:00:48.060
+00:00:46,980 --> 00:00:48,060
 Quickly
 
 18
-00:00:49,560 --> 00:00:51.560
+00:00:49,560 --> 00:00:51,560
 and
 
 19
@@ -83,7 +83,7 @@ listen to
 that's all we don't say
 
 22
-00:01:00,080 --> 00:01:02.080
+00:01:00,080 --> 00:01:02,080
 anything we take away
 
 23
@@ -91,7 +91,7 @@ anything we take away
 that disappears
 
 24
-00:01:05.540 --> 00:01:07,980
+00:01:05,540 --> 00:01:07,980
 or as we reduce
 
 25
@@ -140,7 +140,9 @@ I have a child [Jaaettbarn]
 
 36
 00:01:42,720 --> 00:01:44,720
-Yes. About so. I have one child.
+Yes.
+ About so.
+ I have one child.
 
 37
 00:01:44,720 --> 00:01:46,200
@@ -200,7 +202,8 @@ At least like this
 
 51
 00:02:21,800 --> 00:02:23,800
-This is how I talk. This is how I say.
+This is how I talk.
+ This is how I say.
 
 52
 00:02:24,720 --> 00:02:25,620
@@ -247,7 +250,7 @@ I don't know [yes ve'nä]
 There is
 
 63
-00:02:50,680 --> 00:02:52.560
+00:02:50,680 --> 00:02:52,560
 Many many examples
 
 64
@@ -263,7 +266,7 @@ All the letters you read
 on the paper
 
 67
-00:02:59,480 --> 00:03:01.880
+00:02:59,480 --> 00:03:01,880
 and therefore it is very important to
 
 68
@@ -271,7 +274,7 @@ and therefore it is very important to
 Exercise you
 
 69
-00:03:03,840 --> 00:03:05.060
+00:03:03,840 --> 00:03:05,060
 on that
 
 70
@@ -343,15 +346,15 @@ and which letters disappear
 when we talk
 
 87
-00:03:55,560 --> 00:03:57.560
+00:03:55,560 --> 00:03:57,560
 You can also do it if you look
 
 88
-00:03:57,560 --> 00:03:59.420
+00:03:57,560 --> 00:03:59,420
 For example, on my videos
 
 89
-00:04:00,020 --> 00:04:02.800
+00:04:00,020 --> 00:04:02,800
 When I have both talk and text
 
 90
@@ -359,7 +362,7 @@ When I have both talk and text
 So look at how we write the sentence
 
 91
-00:04:07,420 --> 00:04:09.700
+00:04:07,420 --> 00:04:09,700
 and then listen how I say it
 
 92
@@ -376,7 +379,8 @@ When Swedes talk quickly
 
 95
 00:04:19,860 --> 00:04:22,320
-Okay. That was my tip for today.
+Okay.
+ That was my tip for today.
 
 96
 00:04:22,380 --> 00:04:24,380
@@ -392,4 +396,6 @@ And then we will see you again soon.
 
 99
 00:04:29,260 --> 00:04:31,260
-Thanks so much. Bye!
+Thanks so much.
+ Bye!
+

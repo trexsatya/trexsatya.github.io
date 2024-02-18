@@ -1,9 +1,9 @@
 1
-00:00:03,125 --> 00:00:04.833
+00:00:03,125 --> 00:00:04,833
 A day at work begins with
 
 2
-00:00:04,833 --> 00:00:06.416
+00:00:04,833 --> 00:00:06,416
 that I meet up my guard team
 
 3
@@ -59,7 +59,7 @@ and tempovary,
 Therefore, it is important to be able to quickly change tempo
 
 16
-00:00:38,583 --> 00:00:40.041
+00:00:38,583 --> 00:00:40,041
 If something happens.
 
 17
@@ -95,13 +95,14 @@ means that I every day
 is part of something bigger.
 
 25
-00:00:58,791 --> 00:01:00.041
+00:00:58,791 --> 00:01:00,041
 My name is Saga
 
 26
-00:01:00,083 --> 00:01:01.041
+00:01:00,083 --> 00:01:01,041
 and I work as
 
 27
-00:01:01.041 --> 00:01:03,375
+00:01:01,041 --> 00:01:03,375
 Maritime surveillance operator.
+

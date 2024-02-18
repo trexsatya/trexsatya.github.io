@@ -1,9 +1,9 @@
 1
-00:00:01,160 --> 00:00:05.080
+00:00:01,160 --> 00:00:05,080
 Having made a movie with Crazy Pictures has been ...
 
 2
-00:00:06,920 --> 00:00:07.760
+00:00:06,920 --> 00:00:07,760
 One...
 
 3
@@ -51,7 +51,7 @@ Although we have had more resources than we ever had
 So the ambition has also been so much bigger.
 
 14
-00:00:57,120 --> 00:01:00.800
+00:00:57,120 --> 00:01:00,800
 When it is a take there may be a car for 70 kilometers per hour and gossip.
 
 15
@@ -59,7 +59,7 @@ When it is a take there may be a car for 70 kilometers per hour and gossip.
 We initially thought there would be very digital effects
 
 16
-00:01:04,040 --> 00:01:08.440
+00:01:04,040 --> 00:01:08,440
 But it has become more and more that we could do a lot on the spot.
 
 17
@@ -111,21 +111,22 @@ This will be our largest field survey ever.
 My wish is that people have an amazing movie experience.
 
 29
-00:01:53,560 --> 00:01:56.560
+00:01:53,560 --> 00:01:56,560
 That you get to know these characters, that you got to be on an adventure
 
 30
-00:01:56,720 --> 00:02:00.800
+00:01:56,720 --> 00:02:00,800
 But also that you come out and look up at the sky and ...
 
 31
-00:02:02,480 --> 00:02:03.840
+00:02:02,480 --> 00:02:03,840
 Wonder.
 
 32
-00:02:07,480 --> 00:02:08.840
+00:02:07,480 --> 00:02:08,840
 Want to know a home run?
 
 33
 00:02:10,880 --> 00:02:12,920
 I don't think we are here alone.
+

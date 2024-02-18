@@ -1,5 +1,5 @@
 1
-00:00:00,460 --> 00:00:05.720
+00:00:00,460 --> 00:00:05,720
 The most insightful of the natural philosophers are the so -called atomists,
 
 2
@@ -32,22 +32,23 @@ Is how does it come to the same material, plants and animals over and over again
 
 9
 00:00:44,340 --> 00:00:49,520
-Take an oak tree as an example; Each individual tree is perishable,
+Take an oak tree as an example;
+ Each individual tree is perishable,
 
 10
 00:00:49,520 --> 00:00:54,320
 But it consists of the same material as all other oaks that ever exist.
 
 11
-00:00:55,060 --> 00:01:01.560
+00:00:55,060 --> 00:01:01,560
 The properties of the material oak must therefore be descended from something eternal and unchanging,
 
 12
-00:01:01,640 --> 00:01:05.040
+00:01:01,640 --> 00:01:05,040
 Something that comes from within the material itself.
 
 13
-00:01:05,440 --> 00:01:08.860
+00:01:05,440 --> 00:01:08,860
 He thought that everything is made up of microscopic atoms
 
 14
@@ -75,7 +76,7 @@ What properties a thing has been determined by the atoms that build up the objec
 Even the soul consists according to democitosis of atoms, especially smooth, light and rounded,
 
 20
-00:01:38,260 --> 00:01:42.060
+00:01:38,260 --> 00:01:42,060
 which are scattered over the body and dissolved in death.
 
 21
@@ -117,3 +118,4 @@ Democritos atoms are most recently reminiscent of what we today call molecules
 30
 00:02:25,060 --> 00:02:29,880
 - Thus, a set of atoms that together create a Ting's characteristics.
+

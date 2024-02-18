@@ -31,7 +31,7 @@ Yes, the doctors, they said I was exhausted, but they put
 No diagnosis on it.
 
 9
-00:00:59,760 --> 00:01:01.920
+00:00:59,760 --> 00:01:01,920
 I had a lot of performance anxiety and then became
 
 10
@@ -39,7 +39,7 @@ I had a lot of performance anxiety and then became
 that I thought exactly all the time about what I did and how
 
 11
-00:01:05,480 --> 00:01:08.080
+00:01:05,480 --> 00:01:08,080
 it would be submitted and every little thing would be
 
 12
@@ -123,7 +123,7 @@ So yeah, I've never felt worse.
 Partly I was glad I was home and I
 
 32
-00:01:59,040 --> 00:02:02.920
+00:01:59,040 --> 00:02:02,920
 let go of school, which made me like satisfied
 
 33
@@ -195,7 +195,7 @@ for them.
 It went well for my siblings to go to school, so why went
 
 50
-00:03:01,760 --> 00:03:02.600
+00:03:01,760 --> 00:03:02,600
 that good for me?
 
 51
@@ -291,7 +291,7 @@ It was a time when it went over from comparing to
 That you went.
 
 74
-00:04:06,960 --> 00:04:09.880
+00:04:06,960 --> 00:04:09,880
 It was against someone, that was all the time became one
 
 75
@@ -363,11 +363,11 @@ Now that I've got a functioning schooling so have
 Like everything has started to work it with talking to people
 
 92
-00:04:57,560 --> 00:05:00.600
+00:04:57,560 --> 00:05:00,600
 And the medicine also helps in a large part.
 
 93
-00:05:00,960 --> 00:05:04.040
+00:05:00,960 --> 00:05:04,040
 After I started at my new school, I felt that I got
 
 94
@@ -375,7 +375,7 @@ After I started at my new school, I felt that I got
 more self -confidence because I was able to be with more on
 
 95
-00:05:06,920 --> 00:05:09.440
+00:05:06,920 --> 00:05:09,440
 the lessons and then I hung with more teaching and
 
 96
@@ -397,3 +397,4 @@ with my goals in life and then I managed to fight further and
 100
 00:05:19,360 --> 00:05:21,160
 come to school more often and stuff like that.
+

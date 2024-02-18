@@ -1,9 +1,9 @@
 1
-00:00:03,833 --> 00:00:04.791
+00:00:03,833 --> 00:00:04,791
 In my job
 
 2
-00:00:04,791 --> 00:00:06.833
+00:00:04,791 --> 00:00:06,833
 Do I make sure that air combat leaders and pilots
 
 3
@@ -11,7 +11,7 @@ Do I make sure that air combat leaders and pilots
 can talk to each other.
 
 4
-00:00:08,750 --> 00:00:11.541
+00:00:08,750 --> 00:00:11,541
 During a flight, information must be able to flow between
 
 5
@@ -39,7 +39,7 @@ In order to do that I need to understand both
 the tactical and the technical.
 
 11
-00:00:30,208 --> 00:00:32.041
+00:00:30,208 --> 00:00:32,041
 I get an insight into everyone's details
 
 12
@@ -63,5 +63,6 @@ And I see the air situation throughout Sweden.
 My name is Hampus
 
 17
-00:00:49,666 --> 00:00:52.666
+00:00:49,666 --> 00:00:52,666
 And I'm a management system officer.
+

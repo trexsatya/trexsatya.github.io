@@ -35,7 +35,7 @@ On behalf of digitally first with the user in focus
 which focuses on algorithm consciousness in the meeting between generations.
 
 10
-00:00:59,904 --> 00:01:09.624
+00:00:59,904 --> 00:01:09,624
 Although algorithms today are a very central part of our increasingly connected everyday life
 
 11
@@ -71,7 +71,7 @@ In order to better understand people digital action and thereby create the condi
 Librarians' digital skills development
 
 19
-00:01:44,960 --> 00:01:46.708
+00:01:44,960 --> 00:01:46,708
 within the MIK area
 
 20
@@ -83,7 +83,7 @@ ie the field of media and information skills
 This means that
 
 22
-00:01:54,688 --> 00:01:55.968
+00:01:54,688 --> 00:01:55,968
 This is research project
 
 23
@@ -91,7 +91,7 @@ This is research project
 which can be put into a larger context of the research that has been conducted by our research group in Lund for many years
 
 24
-00:02:04,928 --> 00:02:07.744
+00:02:04,928 --> 00:02:07,744
 that has a focus on just source and search criticism
 
 25
@@ -99,7 +99,7 @@ that has a focus on just source and search criticism
 and search in a digital everyday life
 
 26
-00:02:10,816 --> 00:02:12.096
+00:02:10,816 --> 00:02:12,096
 Algorithms
 
 27
@@ -139,11 +139,11 @@ Because we have been interested in that
 investigate how children and adults together reason and reflect
 
 36
-00:03:00,480 --> 00:03:04.247
+00:03:00,480 --> 00:03:04,247
 About their digital everyday life we have done family interviews.
 
 37
-00:03:04,832 --> 00:03:07.422
+00:03:04,832 --> 00:03:07,422
 We have done 14 family interviews
 
 38
@@ -167,7 +167,7 @@ that algorithms affect internet use
 What does source criticism mean
 
 43
-00:03:32,480 --> 00:03:35.808
+00:03:32,480 --> 00:03:35,808
 For different generation, young and older
 
 44
@@ -199,7 +199,7 @@ It is clear in the study that Internet use characterizes both the children and t
 everyday in a variety of ways
 
 51
-00:04:25,983 --> 00:04:27.519
+00:04:25,983 --> 00:04:27,519
 from morning to night
 
 52
@@ -223,7 +223,7 @@ In the study reflecting on in
 significantly higher
 
 57
-00:04:49,279 --> 00:04:51.071
+00:04:49,279 --> 00:04:51,071
 than the younger participants do.
 
 58
@@ -231,7 +231,7 @@ than the younger participants do.
 For several of the adults this is
 
 59
-00:04:54,842 --> 00:05:00.287
+00:04:54,842 --> 00:05:00,287
 Something they mean takes too much time
 
 60
@@ -239,7 +239,7 @@ Something they mean takes too much time
 They would like to reduce their internet use and then in particular
 
 61
-00:05:06,310 --> 00:05:09.759
+00:05:06,310 --> 00:05:09,759
 when it comes to social media services like Facebook.
 
 62
@@ -267,7 +267,7 @@ and it can be hard to stop
 Here appears that the algorithms and the various recommendation systems can contribute to
 
 68
-00:05:37,274 --> 00:05:39.967
+00:05:37,274 --> 00:05:39,967
 To create a sense of freedom.
 
 69
@@ -279,7 +279,7 @@ They keep users
 in the various services.
 
 71
-00:05:47,903 --> 00:05:52.026
+00:05:47,903 --> 00:05:52,026
 When it comes to algorithms, many of the participants are
 
 72
@@ -287,11 +287,11 @@ When it comes to algorithms, many of the participants are
 feel that they have hardly knowledge of what algorithms are
 
 73
-00:05:55,839 --> 00:06:01.215
+00:05:55,839 --> 00:06:01,215
 But in the conversations, it turned out that you have knowledge of what algorithms do
 
 74
-00:06:01,727 --> 00:06:04.031
+00:06:01,727 --> 00:06:04,031
 their consequences
 
 75
@@ -299,7 +299,7 @@ their consequences
 It is about understanding how
 
 76
-00:06:07,615 --> 00:06:09.407
+00:06:07,615 --> 00:06:09,407
 one's own internet behavior
 
 77
@@ -331,7 +331,7 @@ This more critical view of the
 adults are also reflected in the conversations in terms of questions about
 
 84
-00:06:37,055 --> 00:06:39.615
+00:06:37,055 --> 00:06:39,615
 integrity and monitoring online.
 
 85
@@ -351,15 +351,15 @@ While several of the younger ones are more benevolent to, for example, targeted 
 It emerges
 
 89
-00:06:57,791 --> 00:07:03.935
+00:06:57,791 --> 00:07:03,935
 Still, there is a lot of uncertainty about how data tracks are stored
 
 90
-00:07:04,191 --> 00:07:05.727
+00:07:04,191 --> 00:07:05,727
 and handled
 
 91
-00:07:05,983 --> 00:07:09.055
+00:07:05,983 --> 00:07:09,055
 and that the services and technical infrastructure
 
 92
@@ -399,19 +399,19 @@ In many participants in the study, an interest in the questions is aroused
 During the course of the conversation
 
 101
-00:07:55,391 --> 00:07:59.009
+00:07:55,391 --> 00:07:59,009
 More and easily accessible knowledge is asked for the subject.
 
 102
-00:08:02.047 --> 00:08:04.863
+00:08:02,047 --> 00:08:04,863
 In the conversations with the families, it also becomes clear
 
 103
-00:08:05,375 --> 00:08:06.911
+00:08:05,375 --> 00:08:06,911
 that there are major differences
 
 104
-00:08:07,423 --> 00:08:13.567
+00:08:07,423 --> 00:08:13,567
 between and within the families in how to relate to and reflect on
 
 105
@@ -447,7 +447,7 @@ than search criticism
 that is, why information is presented to us
 
 113
-00:08:43,263 --> 00:08:44.031
+00:08:43,263 --> 00:08:44,031
 That way
 
 114
@@ -459,7 +459,7 @@ as it does.
 In terms of library
 
 116
-00:08:53,759 --> 00:08:55.551
+00:08:53,759 --> 00:08:55,551
 for all participants
 
 117
@@ -467,19 +467,19 @@ for all participants
 Young as adults
 
 118
-00:08:58,111 --> 00:08:59.647
+00:08:58,111 --> 00:08:59,647
 is a library
 
 119
-00:09:00,927 --> 00:09:02.975
+00:09:00,927 --> 00:09:02,975
 to a large extent associated with that
 
 120
-00:09:03,231 --> 00:09:04.767
+00:09:03,231 --> 00:09:04,767
 borrow books
 
 121
-00:09:06.303 --> 00:09:10,797
+00:09:06,303 --> 00:09:10,797
 A challenge lies in the mission of public librarians
 
 122
@@ -491,7 +491,7 @@ to educate in digital skills
 towards users who are unconscious or
 
 124
-00:09:19,103 --> 00:09:22.531
+00:09:19,103 --> 00:09:22,531
 about the library's educational assignment
 
 125
@@ -531,11 +531,11 @@ The library can also help
 Develop people's imagination
 
 134
-00:09:56,735 --> 00:10:01.343
+00:09:56,735 --> 00:10:01,343
 In relation to the invisible digital information infrastructure
 
 135
-00:10:01,855 --> 00:10:09.311
+00:10:01,855 --> 00:10:09,311
 that in so many ways affects how we perceive and understand our surroundings today
 
 136
@@ -571,15 +571,15 @@ today
 It is not just about technical knowledge
 
 144
-00:10:55,615 --> 00:10:59.711
+00:10:55,615 --> 00:10:59,711
 Without a broader ability and critical knowledge
 
 145
-00:10:59,967 --> 00:11:04.846
+00:10:59,967 --> 00:11:04,846
 that includes cultural, social and political aspects
 
 146
-00:11:06,111 --> 00:11:09.951
+00:11:06,111 --> 00:11:09,951
 We also recommend that public libraries
 
 147
@@ -623,19 +623,19 @@ It is a challenge to change the image of libraries and librarians
 Collected expertise.
 
 157
-00:11:56,543 --> 00:11:58.847
+00:11:56,543 --> 00:11:58,847
 A way of working educational
 
 158
-00:11:59,103 --> 00:12:01.151
+00:11:59,103 --> 00:12:01,151
 In direct contact with users
 
 159
-00:12:01,407 --> 00:12:07.551
+00:12:01,407 --> 00:12:07,551
 may be to put a critical pedagogy into practice and thereby work
 
 160
-00:12:07,807 --> 00:12:09.343
+00:12:07,807 --> 00:12:09,343
 both reading promotion and with mik
 
 161
@@ -643,7 +643,7 @@ both reading promotion and with mik
 Here we advocate reflective conversations, for example within the context of
 
 162
-00:12:17,535 --> 00:12:18.303
+00:12:17,535 --> 00:12:18,303
 circle business.
 
 163
@@ -683,7 +683,7 @@ do we mean that in order to enable the librarian
 to work more with outward-directed MIK operations
 
 172
-00:12:56,959 --> 00:13:01.823
+00:12:56,959 --> 00:13:01,823
 But also with this type of reflective conversation in circle business
 
 173
@@ -723,11 +723,11 @@ If the invisible information infrastructure and need to make it visible,
 algorithms,
 
 182
-00:13:56,095 --> 00:14:00.703
+00:13:56,095 --> 00:14:00,703
 And how libraries can work with folk education in a digital contemporary.
 
 183
-00:14:02,751 --> 00:14:05.567
+00:14:02,751 --> 00:14:05,567
 With these recommendations
 
 184
@@ -741,3 +741,4 @@ Feel free to go in and read our report on digitally first website.
 186
 00:14:15,362 --> 00:14:17,362
 Thanks!
+

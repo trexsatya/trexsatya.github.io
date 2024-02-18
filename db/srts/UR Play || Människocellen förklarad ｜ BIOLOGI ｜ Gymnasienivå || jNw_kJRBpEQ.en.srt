@@ -1,5 +1,5 @@
 1
-00:00:01,640 --> 00:00:06.560
+00:00:01,640 --> 00:00:06,560
 Did you know that every cell is an individual organism?
 
 2
@@ -35,16 +35,17 @@ In spite of differences in appearance and mission-
 I will address the cell's most important components called organelles.
 
 10
-00:01:00,360 --> 00:01:05.080
+00:01:00,360 --> 00:01:05,080
 To simplify, I intend to describe the cell as a round city.
 
 11
-00:01:05,880 --> 00:01:09.640
+00:01:05,880 --> 00:01:09,640
 If the city was a cell it would have been minimal.
 
 12
 00:01:09,800 --> 00:01:17,040
-On average, a cell is a thousand millimeters in diameter. It's small.
+On average, a cell is a thousand millimeters in diameter.
+ It's small.
 
 13
 00:01:17,200 --> 00:01:24,360
@@ -203,5 +204,6 @@ It is thanks to the process that we can move, grow and think.
 The cell a complicated organism and without it life would not exist.
 
 52
-00:04:58,960 --> 00:05:02.960
+00:04:58,960 --> 00:05:02,960
 Swedish text: Gabriella Eseland Iyuno Media Group for UR
+

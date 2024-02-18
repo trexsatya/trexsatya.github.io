@@ -4,7 +4,7 @@ Good morning!
 
 2
 00:00:04,380 --> 00:00:08,227
-The time is 7.40.
+It is 7.40.
 
 3
 00:00:09,001 --> 00:00:12,404
@@ -12,7 +12,7 @@ I'm sitting in the car.
 
 4
 00:00:13,628 --> 00:00:21,238
-I'm going to pick up my package.
+I'll pick up my package.
 
 5
 00:00:23,733 --> 00:00:25,345
@@ -20,7 +20,7 @@ Follow!
 
 6
 00:00:39,825 --> 00:00:41,825
-What beautiful flowers!
+What nice flowers!
 
 7
 00:01:10,154 --> 00:01:13,648
@@ -28,7 +28,7 @@ Press to start!
 
 8
 00:01:28,842 --> 00:01:32,096
-Your package is in the cupboard.
+Your package is in the cabinet.
 
 9
 00:01:32,212 --> 00:01:33,813
@@ -44,7 +44,7 @@ Size of your package.
 
 12
 00:02:09,316 --> 00:02:13,391
-Enter your PIN code to retrieve your package.
+Wrap your PIN to retrieve your package.
 
 13
 00:02:15,586 --> 00:02:17,586
@@ -52,11 +52,11 @@ Where do I have the PIN code?
 
 14
 00:02:41,588 --> 00:02:43,588
-That's where my package is.
+There is my package.
 
 15
 00:02:54,552 --> 00:02:57,396
-a large package.
+A large package.
 
 16
 00:03:01,858 --> 00:03:05,101
@@ -80,5 +80,5 @@ Thanks for watching!
 
 21
 00:03:30,565 --> 00:03:33,831
-See you in the next video, hello then!
+See you in the next video, Hello then!
 

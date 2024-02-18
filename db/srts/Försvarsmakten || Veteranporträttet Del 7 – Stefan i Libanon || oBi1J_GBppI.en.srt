@@ -31,11 +31,11 @@ We were based in the Sinai desert in Egypt, and suddenly Israel invades southern
 The UN quickly decides in the Security Council to form a new UN force: Unifil.
 
 9
-00:00:58,120 --> 00:01:00.720
+00:00:58,120 --> 00:01:00,720
 We are regrouped into southern Lebanon.
 
 10
-00:01:27,720 --> 00:01:32.560
+00:01:27,720 --> 00:01:32,560
 In Lebanon it was a war -like situation where there was a fight in several different places -
 
 11
@@ -55,11 +55,11 @@ Already in the first week there was a shock message.
 We were then told that a patrol -
 
 15
-00:01:58,240 --> 00:02:01.840
+00:01:58,240 --> 00:02:01,840
 - As was out driving with a terrain car had gone on a mine.
 
 16
-00:02:02,400 --> 00:02:06.040
+00:02:02,400 --> 00:02:06,040
 The boss in that patrol, fan junker Karl-Oskar Johansson-
 
 17
@@ -204,7 +204,8 @@ The rear window disappears, it turns some bullets into the plate -
 
 52
 00:04:29,640 --> 00:04:32,120
-- And I feel I have been met. But it is a superficial injury.
+- And I feel I have been met.
+ But it is a superficial injury.
 
 53
 00:04:32,200 --> 00:04:35,960
@@ -227,7 +228,7 @@ When traveling in this type of area -
 - And they want to be where they really affect.
 
 58
-00:05:00,120 --> 00:05:04.840
+00:05:00,120 --> 00:05:04,840
 It can be journalists, aid workers or doctors -
 
 59
@@ -267,7 +268,7 @@ It has certainly shaped me a lot as a human being, the experiences -
 - And you learn a lot about yourself when you end up in stressful situations.
 
 68
-00:06:01,640 --> 00:06:05.880
+00:06:01,640 --> 00:06:05,880
 Then you are put to the test and learn a lot about yourself.
 
 69
@@ -323,12 +324,13 @@ It was a restructuring period.
 Before Christmas I went, for the first time ever -
 
 82
-00:07:04,760 --> 00:07:09.160
+00:07:04,760 --> 00:07:09,160
 - For I had time left and bonus points to do away with, and looked where I could get?
 
 83
 00:07:09,320 --> 00:07:11,240
-I looked where I could come? Yes, Beirut.
+I looked where I could come?
+ Yes, Beirut.
 
 84
 00:07:11,640 --> 00:07:16,640
@@ -361,3 +363,4 @@ My name is Stefan Borg.
 91
 00:07:41,200 --> 00:07:42,320
 I am a foreign veteran.
+

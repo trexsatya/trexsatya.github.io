@@ -3,7 +3,7 @@
 To receive the alumni of the year at Halmstad University -
 
 2
-00:00:05,280 --> 00:00:06.920
+00:00:05,280 --> 00:00:06,920
 - In fact, it is very much for me.
 
 3
@@ -51,7 +51,7 @@ I was very active in Halmstadspexet, in Småland's Nation -
 - networks I got with me from there has actually been -
 
 14
-00:00:39,620 --> 00:00:42.640
+00:00:39,620 --> 00:00:42,640
 - More worth sometimes than what the education itself was.
 
 15
@@ -87,11 +87,11 @@ Had I not received that help and get started with the company so -
 - I hadn't been where I'm today.
 
 23
-00:01:04,700 --> 00:01:05.640
+00:01:04,700 --> 00:01:05,640
 It made us -
 
 24
-00:01:05,940 --> 00:01:08.660
+00:01:05,940 --> 00:01:08,660
 —There in the campus area for another five years when we -
 
 25
@@ -135,7 +135,7 @@ Therefore, it is important to keep ties to the university -
 - The innovation in Halland comes.
 
 35
-00:01:33,360 --> 00:01:35.540
+00:01:33,360 --> 00:01:35,540
 With my role in the region -
 
 36
@@ -167,7 +167,7 @@ I think-
 —The value of studying at a college such as -
 
 43
-00:01:56,160 --> 00:02:00.240
+00:01:56,160 --> 00:02:00,240
 —Halmstad that is a little smaller than many of the others -
 
 44
@@ -179,7 +179,7 @@ I think-
 - The colleges and universities have.
 
 46
-00:02:06,700 --> 00:02:09.940
+00:02:06,700 --> 00:02:09,940
 Maintain that network and bring it out into the professional life.
 
 47
@@ -193,3 +193,4 @@ you come out into the professional life
 49
 00:02:13,580 --> 00:02:16,080
 So you have a lot to gain from it.
+

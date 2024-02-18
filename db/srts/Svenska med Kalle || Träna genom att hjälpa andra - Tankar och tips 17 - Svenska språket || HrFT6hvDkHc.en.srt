@@ -1,9 +1,9 @@
 1
-00:00:00,340 --> 00:00:02.340
+00:00:00,340 --> 00:00:02,340
 Hello
 
 2
-00:00:03,120 --> 00:00:06.540
+00:00:03,120 --> 00:00:06,540
 Hope you've had a great weekend
 
 3
@@ -56,7 +56,7 @@ Explain the same thing to a friend
 
 15
 00:00:43,680 --> 00:00:45,680
-It may be at school
+It may be in school
 
 16
 00:00:46,480 --> 00:00:48,480
@@ -75,7 +75,7 @@ who also trains Swedish
 so
 
 20
-00:00:58,580 --> 00:01:00.580
+00:00:58,580 --> 00:01:00,580
 One way is to
 
 21
@@ -83,7 +83,7 @@ One way is to
 If you study Swedish together with a friend
 
 22
-00:01:05,980 --> 00:01:07.980
+00:01:05,980 --> 00:01:07,980
 So you can
 
 23
@@ -131,11 +131,11 @@ You should explain what your movie is all about
 And this is a great way to ...
 
 34
-00:01:49,780 --> 00:01:51.620
+00:01:49,780 --> 00:01:51,620
 Then you must first
 
 35
-00:01:52,620 --> 00:01:55.820
+00:01:52,620 --> 00:01:55,820
 strain yourself and be sure
 
 36
@@ -143,11 +143,11 @@ strain yourself and be sure
 that you understand
 
 37
-00:01:58,160 --> 00:02:00.160
+00:01:58,160 --> 00:02:00,160
 what is the movie about
 
 38
-00:02:00,600 --> 00:02:02.600
+00:02:00,600 --> 00:02:02,600
 and then
 
 39
@@ -155,7 +155,7 @@ and then
 So when you explain to your buddy
 
 40
-00:02:06,680 --> 00:02:08.680
+00:02:06,680 --> 00:02:08,680
 so it becomes both to
 
 41
@@ -223,7 +223,7 @@ It can also just be words
 You can decide to learn
 
 57
-00:03:03,180 --> 00:03:05.020
+00:03:03,180 --> 00:03:05,020
 Ten new words
 
 58
@@ -251,8 +251,9 @@ and use the words
 so...
 
 64
-00:03:24,780 --> 00:03:27.560
-Learn each other! Help each other!
+00:03:24,780 --> 00:03:27,560
+Learn each other!
+ Help each other!
 
 65
 00:03:27,640 --> 00:03:29,640
@@ -276,4 +277,6 @@ and trains a lot of Swedish
 
 70
 00:03:42,900 --> 00:03:44,900
-Have a good one! Bye.
+Have a good one!
+ Bye.
+

@@ -1,5 +1,5 @@
 1
-00:00:00,740 --> 00:00:05.820
+00:00:00,740 --> 00:00:05,820
 Western philosophy was born in ancient Greece about 600 BC.
 
 2
@@ -55,7 +55,7 @@ Drought and illness, war and accident, birth and death - everything was due to t
 These myths would be managed and were not allowed to be questioned or changed.
 
 15
-00:01:15,440 --> 00:01:21.560
+00:01:15,440 --> 00:01:21,560
 Wisdom was long to be able to reproduce the myths correctly and interpret them so that existence became understandable.
 
 16
@@ -127,7 +127,7 @@ The first thinkers, the so -called natural philosophers or pre -democrats, tried
 which was not based on divine influence, a first step towards Logos.
 
 33
-00:02:56,160 --> 00:03:00.360
+00:02:56,160 --> 00:03:00,360
 The term philosopher is used during antiquity as a collective name
 
 34
@@ -175,11 +175,11 @@ Eventually Greece developed into an economic and military superpower
 with Athens as the dominant city state.
 
 45
-00:03:56,320 --> 00:04:01.840
+00:03:56,320 --> 00:04:01,840
 Here, culture and free debate flourished in a way that was unparalleled in the ancient world.
 
 46
-00:04:02,500 --> 00:04:07.460
+00:04:02,500 --> 00:04:07,460
 To this cultural center, thinkers sought from all of the Greek civilization
 
 47
@@ -205,3 +205,4 @@ The conditions for philosophy were now in place and it would not
 52
 00:04:31,340 --> 00:04:36,320
 Lasting long before Socrates, Plato and Aristotle take place on stage.
+

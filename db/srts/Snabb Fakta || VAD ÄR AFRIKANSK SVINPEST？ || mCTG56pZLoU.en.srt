@@ -1,5 +1,5 @@
 1
-00:00:06,300 --> 00:00:08.020
+00:00:06,300 --> 00:00:08,020
 September 6
 
 2
@@ -47,7 +47,7 @@ is a viral disease that originally comes from Africa.
 The disease mainly affects tam pigs and wild boar and can spread
 
 13
-00:00:55,020 --> 00:01:00.400
+00:00:55,020 --> 00:01:00,400
 between the animals through direct contact or through contaminated items.
 
 14
@@ -55,7 +55,7 @@ between the animals through direct contact or through contaminated items.
 What is meant by that is that the virus
 
 15
-00:01:02,520 --> 00:01:07.800
+00:01:02,520 --> 00:01:07,800
 is a very resistant virus that survives long in the environment,
 
 16
@@ -75,7 +75,7 @@ African swine fever does not infect humans or other animals,
 But as they survive for a long time in the environment, people can be born the infection.
 
 20
-00:01:26,220 --> 00:01:30.060
+00:01:26,220 --> 00:01:30,060
 For example, if a person has gone into stool or if a gear
 
 21
@@ -111,7 +111,7 @@ And it would be very expensive to fight.
 Infected animals exhibit a variety of symptoms
 
 29
-00:01:58,940 --> 00:02:02.740
+00:01:58,940 --> 00:02:02,740
 such as high fever, loss of appetite.
 
 30
@@ -175,7 +175,7 @@ we flush until today by 2023 so have
 Cases of African swine plague were reported for the first time in Sweden.
 
 45
-00:02:59,540 --> 00:03:02.660
+00:02:59,540 --> 00:03:02,660
 We do not yet know exactly how the disease has
 
 46
@@ -231,7 +231,7 @@ The best way to prevent dissemination is through strict hygiene actions,
 monitoring and control of animal transport.
 
 59
-00:03:55,680 --> 00:04:01.420
+00:03:55,680 --> 00:04:01,420
 I hope you have learned a little more about what African swine plague is for something.
 
 60
@@ -241,3 +241,4 @@ Feel free to subscribe to my channel.
 61
 00:04:03,800 --> 00:04:07,300
 And as always, thank you for watching!
+

@@ -1,13 +1,13 @@
 1
-00:00:00,140 --> 00:00:01.560
+00:00:00,140 --> 00:00:01,560
 When you committed this murder.
 
 2
-00:00:01,620 --> 00:00:02.940
+00:00:01,620 --> 00:00:02,940
 How did you feel afterwards?
 
 3
-00:00:02,940 --> 00:00:04.940
+00:00:02,940 --> 00:00:04,940
 Have you felt any debt and regret after that?
 
 4
@@ -15,7 +15,7 @@ Have you felt any debt and regret after that?
 Have you cried after that?
 
 5
-00:00:06,940 --> 00:00:08.940
+00:00:06,940 --> 00:00:08,940
 Have you cried in your life at all?
 
 6
@@ -55,7 +55,7 @@ And I educate the criminologists of the future here at Örebro University.
 This section will be about psychopathy.
 
 15
-00:00:51,220 --> 00:00:52.940
+00:00:51,220 --> 00:00:52,940
 And especially about the questions:
 
 16
@@ -71,7 +71,7 @@ How can we measure it?
 How common is it?
 
 19
-00:00:58,360 --> 00:01:00.360
+00:00:58,360 --> 00:01:00,360
 Is it in both men and women?
 
 20
@@ -116,7 +116,8 @@ The second is the emotional dimension.
 
 30
 00:01:41,420 --> 00:01:44,020
-Lack of empathy. Superficial emotional life.
+Lack of empathy.
+ Superficial emotional life.
 
 31
 00:01:44,020 --> 00:01:46,020
@@ -135,7 +136,7 @@ The lifesty dimension is about being very impulsive.
 Sensation seekers, voltage -seeking and irresponsible.
 
 35
-00:01:59,560 --> 00:02:02.040
+00:01:59,560 --> 00:02:02,040
 In some definitions, you also take a fourth dimension.
 
 36
@@ -179,7 +180,7 @@ That we observe a single psychopathic trait.
 Or that we think this person fails in empathic ability.
 
 46
-00:02:50,560 --> 00:02:52.560
+00:02:50,560 --> 00:02:52,560
 It is not necessarily psychopathy.
 
 47
@@ -187,7 +188,7 @@ It is not necessarily psychopathy.
 It can be psychopathy because part of psychopathy is empathy.
 
 48
-00:03:00,040 --> 00:03:06.840
+00:03:00,040 --> 00:03:06,840
 But it is not possible to conclude that a person is a psychopath due to lack of empathy.
 
 49
@@ -227,7 +228,7 @@ And inside the walls we see a figure between 15-30 percent.
 It says something about psychopathic personality.
 
 58
-00:04:05,980 --> 00:04:08.940
+00:04:05,980 --> 00:04:08,940
 It is clearly over -represented among people who are prosecuted for crime.
 
 59
@@ -267,7 +268,7 @@ We think there is about a woman of ten men
 Among people who have psychopathy.
 
 68
-00:04:59,480 --> 00:05:05.320
+00:04:59,480 --> 00:05:05,320
 Many people probably think that psychopaths are a fairly homogeneous group.
 
 69
@@ -415,15 +416,15 @@ So of course you have thought about how can do the best way.
 For example, the question is not asked to a suspected psychopath:
 
 105
-00:07:58,960 --> 00:08:00.960
+00:07:58,960 --> 00:08:00,960
 Do you think you are a warm -hearted person?
 
 106
-00:08:01,520 --> 00:08:05.600
+00:08:01,520 --> 00:08:05,600
 It is a pretty naive question that probably all people answer yes.
 
 107
-00:08:05,600 --> 00:08:07.600
+00:08:05,600 --> 00:08:07,600
 Although it may not be so.
 
 108
@@ -499,7 +500,7 @@ So you try to access it more indirectly.
 What is there in the behavior that indicates that empathy is intact?
 
 126
-00:08:59,820 --> 00:09:05.560
+00:08:59,820 --> 00:09:05,560
 What is it in the behavior that says that you have self -control and are not very impulsive.
 
 127
@@ -551,7 +552,7 @@ Because then you have no act you can compare with.
 Then you have to ask the people to answer a questionnaire.
 
 139
-00:09:55,860 --> 00:10:00.440
+00:09:55,860 --> 00:10:00,440
 In, for example, in the YPI instrument that is for young people
 
 140
@@ -655,11 +656,11 @@ Because this can be about a person with psychopathy.
 I have made psychopathicheck list assessments in the Prison and Probation Service.
 
 165
-00:11:51,780 --> 00:11:55.560
+00:11:51,780 --> 00:11:55,560
 There I have met quite a few people who have reached criteria for psychopathy.
 
 166
-00:11:56,080 --> 00:12:00.320
+00:11:56,080 --> 00:12:00,320
 In the beginning you are struck by the fact that these people actually exist.
 
 167
@@ -771,7 +772,7 @@ Which is not so good.
 Thank you for being with us today.
 
 194
-00:13:41,560 --> 00:13:44.560
+00:13:41,560 --> 00:13:44,560
 Like if you think what we do is good.
 
 195
@@ -791,7 +792,7 @@ I have been researching crimes for more than 20 years now.
 And I educate the criminologists of the future here at Örebro University.
 
 199
-00:13:57,660 --> 00:14:01.060
+00:13:57,660 --> 00:14:01,060
 I also train professional police officers and officials
 
 200
@@ -820,10 +821,11 @@ Have you thought that you have a role in preventing crime?
 
 206
 00:14:28,220 --> 00:14:30,220
-You can have a role. I can have a role.
+You can have a role.
+ I can have a role.
 
 207
-00:14:30,860 --> 00:14:32.560
+00:14:30,860 --> 00:14:32,560
 It is not just the police who have that role.
 
 208
@@ -833,3 +835,4 @@ Together we can create a safer society.
 209
 00:14:36,200 --> 00:14:38,620
 This series is about it.
+

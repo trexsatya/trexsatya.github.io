@@ -1,6 +1,7 @@
 1
 00:00:09,728 --> 00:00:14,848
-Hello! My name is Olof Osterman and I work on the national bibliography.
+Hello!
+ My name is Olof Osterman and I work on the national bibliography.
 
 2
 00:00:15,104 --> 00:00:24,320
@@ -15,11 +16,12 @@ Such an item also called CIP Post, Cataloging in Publication.
 Thus, an entry that has been drawn up before the physical book has come out and contains rudimentary information that is updated.
 
 5
-00:00:42,752 --> 00:00:55.446
-The book we will be based on is the great seedling by Jens Nordqvist. It is about plant breeding during the 20th century.
+00:00:42,752 --> 00:00:55,446
+The book we will be based on is the great seedling by Jens Nordqvist.
+ It is about plant breeding during the 20th century.
 
 6
-00:00:55,446 --> 00:00:56.818
+00:00:55,446 --> 00:00:56,818
 It looks like this.
 
 7
@@ -64,15 +66,17 @@ And in this card you can see that there is a F here in the upper left, which mea
 
 17
 00:02:14,674 --> 00:02:20,744
-That this item only contains it. It is not updated in any way.
+That this item only contains it.
+ It is not updated in any way.
 
 18
 00:02:21,312 --> 00:02:31,226
 But to be really sure there are no other items or maybe any previous edition that one can use
 
 19
-00:02:31,226 --> 00:02:45.575
-So I also search for something in the title that is pregnant. The seedlings included in this title I can also search to see what I get.
+00:02:31,226 --> 00:02:45,575
+So I also search for something in the title that is pregnant.
+ The seedlings included in this title I can also search to see what I get.
 
 20
 00:02:46,400 --> 00:02:49,472
@@ -120,7 +124,7 @@ But we start by expanding all the fields.
 
 31
 00:04:01,920 --> 00:04:08,799
-You can either do this with Alt + or just use the tool here.
+You can either do this with Alt or just use the tool here.
 
 32
 00:04:09,856 --> 00:04:18,718
@@ -143,8 +147,9 @@ Then we have a distinctive addition that says that the book is hardcover and tha
 And the following three fields are just standard fields so I don't have to worry about them.
 
 37
-00:04:52,607 --> 00:05:03.801
-But then comes next ... I'll pick up this little neighbor. So, so it looks a little better.
+00:04:52,607 --> 00:05:03,801
+But then comes next ... I'll pick up this little neighbor.
+ So, so it looks a little better.
 
 38
 00:05:04,383 --> 00:05:17,295
@@ -160,7 +165,8 @@ There it says the big seedling.
 
 41
 00:05:23,839 --> 00:05:31,305
-And we also have a subtitle here; starvation, looting and murder in the century of plant breeding.
+And we also have a subtitle here;
+ starvation, looting and murder in the century of plant breeding.
 
 42
 00:05:32,031 --> 00:05:38,175
@@ -200,14 +206,15 @@ And then we have a circulation task and if there is a storage poison in the book
 
 51
 00:06:37,567 --> 00:06:47,562
-It doesn't, and then you just leave it shiny. It then disappears when you save.
+It doesn't, and then you just leave it shiny.
+ It then disappears when you save.
 
 52
 00:06:48,319 --> 00:06:50,879
 The next field is publishing.
 
 53
-00:06:51,135 --> 00:07:00.882
+00:06:51,135 --> 00:07:00,882
 And here we have publishing country and we have the publisher's name and we have a publication year here.
 
 54
@@ -224,7 +231,8 @@ But now I have used this template, but since there was already values in this fi
 
 57
 00:07:30,815 --> 00:07:39,672
-So then I have to add them myself. And then I click on the plus in primary publication.
+So then I have to add them myself.
+ And then I click on the plus in primary publication.
 
 58
 00:07:41,311 --> 00:07:49,819
@@ -235,7 +243,7 @@ And I have choosing a place.
 And then I get a plus sign that I either just press Enter or press again.
 
 60
-00:07:57,951 --> 00:08:05.216
+00:07:57,951 --> 00:08:05,216
 And then I'll choose a place down here under Create local entity.
 
 61
@@ -252,7 +260,8 @@ But on the back of the title page, they have stated that historical media is loc
 
 64
 00:08:24,831 --> 00:08:32,297
-Then I can just write it there, and then I write Lund just because it says in the book. Had it not done that, I would have had to cling.
+Then I can just write it there, and then I write Lund just because it says in the book.
+ Had it not done that, I would have had to cling.
 
 65
 00:08:33,279 --> 00:08:37,375
@@ -272,7 +281,8 @@ Then we have to start from the two and then we will add dates and then we will p
 
 69
 00:09:02,207 --> 00:09:11,106
-Because there is no real publication year in the book. There were only pressure years and copyright years, but then we start from the print year.
+Because there is no real publication year in the book.
+ There were only pressure years and copyright years, but then we start from the print year.
 
 70
 00:09:11,935 --> 00:09:14,495
@@ -291,15 +301,16 @@ And this is added here during manufacture, so here we only write in 2020.
 This book is printed in Falun by Scandbook and it is also in the book.
 
 74
-00:09:32,671 --> 00:09:38.815
-It is not a core element so you do not have to add it. NB adds it to Swedish publishing.
+00:09:32,671 --> 00:09:38,815
+It is not a core element so you do not have to add it.
+ NB adds it to Swedish publishing.
 
 75
 00:09:39,876 --> 00:09:46,159
 So we add Falun, Scandbook, as it says in the book, and 2020.
 
 76
-00:09:46,239 --> 00:09:49.567
+00:09:46,239 --> 00:09:49,567
 But other libraries don't have to.
 
 77
@@ -307,8 +318,9 @@ But other libraries don't have to.
 Copyright years you do not need to add if you have the right pressure year here.
 
 78
-00:10:01,343 --> 00:10:07.487
-Next field, expected publishing time. This is a field that
+00:10:01,343 --> 00:10:07,487
+Next field, expected publishing time.
+ This is a field that
 
 79
 00:10:07,743 --> 00:10:13,887
@@ -332,15 +344,18 @@ And the next field
 
 84
 00:10:35,391 --> 00:10:39,743
-Range. For printed books, this is the pagination.
+Range.
+ For printed books, this is the pagination.
 
 85
 00:10:40,511 --> 00:10:46,143
-Here are 333 pages. This is a field that you have to pay attention to as well.
+Here are 333 pages.
+ This is a field that you have to pay attention to as well.
 
 86
 00:10:46,655 --> 00:10:54,879
-Here it can often be incorrect information. But in this case, the book is actually true.
+Here it can often be incorrect information.
+ But in this case, the book is actually true.
 
 87
 00:10:55,000 --> 00:10:57,407
@@ -355,7 +370,7 @@ And then there will be another field, dimensions.
 There is nothing that is a nuclear element.
 
 90
-00:11:05,259 --> 00:11:07.563
+00:11:05,259 --> 00:11:07,563
 NB usually puts it in.
 
 91
@@ -364,7 +379,8 @@ What applies then is to ... for other libraries then it applies if this seems to
 
 92
 00:11:17,673 --> 00:11:27,987
-That it seems to be 23 cm when you look at the book and think it seems to be true, you can just leave it. Just accepted it.
+That it seems to be 23 cm when you look at the book and think it seems to be true, you can just leave it.
+ Just accepted it.
 
 93
 00:11:28,127 --> 00:11:39,679
@@ -380,10 +396,11 @@ That's how.
 
 96
 00:11:49,375 --> 00:11:57,283
-Other physical details. The most common other physical details for books are illustrations
+Other physical details.
+ The most common other physical details for books are illustrations
 
 97
-00:11:57,283 --> 00:12:03.818
+00:11:57,283 --> 00:12:03,818
 So I have to browse this a little quickly and see if there are any illustrations in the book.
 
 98
@@ -400,15 +417,19 @@ There are illustrations.
 
 101
 00:12:13,421 --> 00:12:20,095
-That is what we specify when there are illustrations. We just print it.
+That is what we specify when there are illustrations.
+ We just print it.
 
 102
 00:12:20,863 --> 00:12:27,859
-Serial membership. Then you have to look for if the book may be included in some series. It doesn't.
+Serial membership.
+ Then you have to look for if the book may be included in some series.
+ It doesn't.
 
 103
 00:12:27,859 --> 00:12:35,208
-So we just let that field be. It will disappear then when we update the post.
+So we just let that field be.
+ It will disappear then when we update the post.
 
 104
 00:12:36,479 --> 00:12:38,783
@@ -428,7 +449,9 @@ Then I finished with the instance itself and then I move on to the instance of w
 
 108
 00:13:06,175 --> 00:13:12,193
-The type of work is text. Correct. You do nothing about that.
+The type of work is text.
+ Correct.
+ You do nothing about that.
 
 109
 00:13:12,319 --> 00:13:14,879
@@ -436,7 +459,8 @@ Then we have participation and function.
 
 110
 00:13:15,647 --> 00:13:26,508
-There we have already completed Jens Nordqvist. But what to always do is to check if Jens Nordqvist is authorized
+There we have already completed Jens Nordqvist.
+ But what to always do is to check if Jens Nordqvist is authorized
 
 111
 00:13:26,508 --> 00:13:29,624
@@ -459,7 +483,7 @@ It says that he is a journalist and business area history.
 If I want, I can check out what kind of books he has written before, but I have already done that so I know it is this person.
 
 116
-00:13:58,655 --> 00:14:08.706
+00:13:58,655 --> 00:14:08,706
 So I just click on this link here and then these local entities are replaced with a link instead.
 
 117
@@ -472,10 +496,11 @@ And then we have function, writer, that's right.
 
 119
 00:14:18,879 --> 00:14:25,353
-Late language, Swedish. The book is written in Swedish so that is true.
+Late language, Swedish.
+ The book is written in Swedish so that is true.
 
 120
-00:14:26.303 --> 00:14:33,205
+00:14:26,303 --> 00:14:33,205
 Genre/form, not fictional work and Marc is correct.
 
 121
@@ -544,11 +569,13 @@ So we start by adding the three people and the first is Vavilov, a Soviet plant 
 
 137
 00:16:37,887 --> 00:16:41,582
-And he has here. So.
+And he has here.
+ So.
 
 138
 00:16:41,983 --> 00:16:46,591
-I have looked him up before. Russian botanist and geneticist also stands there.
+I have looked him up before.
+ Russian botanist and geneticist also stands there.
 
 139
 00:16:47,615 --> 00:16:51,711
@@ -556,14 +583,15 @@ Then we have a German, Brücher, Heinz.
 
 140
 00:16:56,063 --> 00:17:00,233
-So, now let's see. It may be good to write like that.
+So, now let's see.
+ It may be good to write like that.
 
 141
 00:17:02,463 --> 00:17:04,511
 There we got him up.
 
 142
-00:17:04,767 --> 00:17:06.815
+00:17:04,767 --> 00:17:06,815
 Then we add him too.
 
 143
@@ -572,15 +600,20 @@ And then an American is also called Borlang, Norman.
 
 144
 00:17:15,263 --> 00:17:21,151
-Strange, now I didn't get him up. Borlaug should probably be by the way. Now I looked wrong here.
+Strange, now I didn't get him up.
+ Borlaug should probably be by the way.
+ Now I looked wrong here.
 
 145
 00:17:25,759 --> 00:17:28,831
-There we have him. American plant breeders.
+There we have him.
+ American plant breeders.
 
 146
 00:17:30,623 --> 00:17:40,192
-So. There we have the three people. But then we also want to add some general subject words as well.
+So.
+ There we have the three people.
+ But then we also want to add some general subject words as well.
 
 147
 00:17:41,119 --> 00:17:52,520
@@ -588,11 +621,14 @@ And then we start by adding plant breeding, but we want a plant breeding with a 
 
 148
 00:17:54,175 --> 00:18:04,850
-Then we will see if there is plant breeding history. It wasn't. Then we will make us add a compound term here instead.
+Then we will see if there is plant breeding history.
+ It wasn't.
+ Then we will make us add a compound term here instead.
 
 149
 00:18:05,183 --> 00:18:13,524
-This instructional film is not really about subject words so I take it a little quickly instead. There are other movies for that.
+This instructional film is not really about subject words so I take it a little quickly instead.
+ There are other movies for that.
 
 150
 00:18:13,631 --> 00:18:17,983
@@ -600,7 +636,8 @@ Here you add that it is included in Swedish subject words.
 
 151
 00:18:20,799 --> 00:18:26,943
-In that system. And then you should add the term components and then we will add plant breeding history here.
+In that system.
+ And then you should add the term components and then we will add plant breeding history here.
 
 152
 00:18:28,479 --> 00:18:32,887
@@ -608,7 +645,8 @@ So then we write plant breeding.
 
 153
 00:18:35,391 --> 00:18:39,999
-So, then we take it. And then we add the aspect of history as well.
+So, then we take it.
+ And then we add the aspect of history as well.
 
 154
 00:18:42,303 --> 00:18:46,143
@@ -616,14 +654,16 @@ Here it can be good to add history SAO.
 
 155
 00:18:47,167 --> 00:18:51,519
-And then we will add it as an subdivision. This one then.
+And then we will add it as an subdivision.
+ This one then.
 
 156
 00:18:51,775 --> 00:18:58,035
-It should be an aspect of plant breeding. Not this general subject word history.
+It should be an aspect of plant breeding.
+ Not this general subject word history.
 
 157
-00:18:58,943 --> 00:19:02.015
+00:18:58,943 --> 00:19:02,015
 Then it looks like this.
 
 158
@@ -652,11 +692,13 @@ It also occurs in this book so there are also those that I can imagine adding
 
 164
 00:20:02,482 --> 00:20:09,599
-But I'm waiting to do it. I can do it late afterwards, after this instructional film, because that's not what this is about.
+But I'm waiting to do it.
+ I can do it late afterwards, after this instructional film, because that's not what this is about.
 
 165
 00:20:10,879 --> 00:20:14,719
-But I can add to the 20th century as well. I can do that.
+But I can add to the 20th century as well.
+ I can do that.
 
 166
 00:20:15,743 --> 00:20:19,071
@@ -664,7 +706,10 @@ Now I actually have to get out of this box and start over here again.
 
 167
 00:20:27,775 --> 00:20:33,663
-Then we'll see here. Then I will have Swedish subject words. I see that there. It's this one then.
+Then we'll see here.
+ Then I will have Swedish subject words.
+ I see that there.
+ It's this one then.
 
 168
 00:20:36,735 --> 00:20:42,451
@@ -672,22 +717,25 @@ So, then I put some subject words in this post.
 
 169
 00:20:44,671 --> 00:20:49,279
-The next field is content type. Text. That's right.
+The next field is content type.
+ Text.
+ That's right.
 
 170
 00:20:50,815 --> 00:20:53,887
 We do not need to add anything about language.
 
 171
-00:20:54,911 --> 00:21:00.538
-It is written in Swedish and it is already stated in the post. Here.
+00:20:54,911 --> 00:21:00,538
+It is written in Swedish and it is already stated in the post.
+ Here.
 
 172
-00:21:01,823 --> 00:21:07.455
+00:21:01,823 --> 00:21:07,455
 Then I am done with the instance of works and then I can switch to admin metadata instead.
 
 173
-00:21:07,967 --> 00:21:09.247
+00:21:07,967 --> 00:21:09,247
 So I click here.
 
 174
@@ -696,11 +744,13 @@ The first thing that shows up is bibliography and most libraries are not respons
 
 175
 00:21:25,632 --> 00:21:30,496
-So we just leave this field. We at NB add NB as bibliography.
+So we just leave this field.
+ We at NB add NB as bibliography.
 
 176
 00:21:31,008 --> 00:21:39,349
-We have two other fields here as well, control number and identifier. There are only two standard values that you leave.
+We have two other fields here as well, control number and identifier.
+ There are only two standard values that you leave.
 
 177
 00:21:40,480 --> 00:21:50,105
@@ -708,15 +758,18 @@ But then we come to the description level and here it is very important to chang
 
 178
 00:21:50,105 --> 00:21:56,002
-or any other higher level. Either minimum level or national bibliographic level.
+or any other higher level.
+ Either minimum level or national bibliographic level.
 
 179
-00:21:56,352 --> 00:22:02.496
-But most library catalogs at library level. At that level.
+00:21:56,352 --> 00:22:02,496
+But most library catalogs at library level.
+ At that level.
 
 180
 00:22:02,752 --> 00:22:12,009
-So we change here to library level. If you miss doing so, it may be that this post's information will be overwritten.
+So we change here to library level.
+ If you miss doing so, it may be that this post's information will be overwritten.
 
 181
 00:22:12,224 --> 00:22:19,708
@@ -724,7 +777,8 @@ That there will be data flows that overwrite this information in the post.
 
 182
 00:22:19,904 --> 00:22:28,989
-There will be updates perhaps from someone else. Probably from book info or any such actor.
+There will be updates perhaps from someone else.
+ Probably from book info or any such actor.
 
 183
 00:22:29,348 --> 00:22:36,055
@@ -732,7 +786,10 @@ So it is very important to change to a higher level of description here.
 
 184
 00:22:37,056 --> 00:22:47,100
-Here you have even A warning in the next field, system technical note. Here it says, for example. that it is a machine -generated entry
+Here you have even
+ A warning in the next field, system technical note.
+ Here it says, for example.
+ that it is a machine -generated entry
 
 185
 00:22:47,100 --> 00:22:54,836
@@ -744,7 +801,9 @@ Now we have done it so now this warning is not relevant anymore so now we can on
 
 187
 00:23:06,752 --> 00:23:16,614
-Then we have post status. It is also something that is only automatically set. You don't have to think about that.
+Then we have post status.
+ It is also something that is only automatically set.
+ You don't have to think about that.
 
 188
 00:23:16,614 --> 00:23:20,832
@@ -752,15 +811,18 @@ Created by, this one is created by book info.
 
 189
 00:23:21,088 --> 00:23:27,232
-They were called the Book Round before. That is why they have that sigen, book.
+They were called the Book Round before.
+ That is why they have that sigen, book.
 
 190
 00:23:27,488 --> 00:23:30,816
-It just remains there. Nor should we change it.
+It just remains there.
+ Nor should we change it.
 
 191
 00:23:31,072 --> 00:23:37,858
-Last changed it also says that it is bookr. So book info.
+Last changed it also says that it is bookr.
+ So book info.
 
 192
 00:23:37,858 --> 00:23:50,123
@@ -775,8 +837,10 @@ And if someone else would go in and make any change and save, it will be those w
 And it is also something that is only automatically set.
 
 195
-00:24:01,024 --> 00:24:09.030
-Next field, cataloging rules. Here it says that ISBD intersection is available. That's right.
+00:24:01,024 --> 00:24:09,030
+Next field, cataloging rules.
+ Here it says that ISBD intersection is available.
+ That's right.
 
 196
 00:24:09,216 --> 00:24:18,968
@@ -800,22 +864,26 @@ And then we will add a local entity here.
 
 201
 00:24:41,216 --> 00:24:50,986
-And then we click on this and then I get some options here, and then you should choose this option, cataloging rules. Just that.
+And then we click on this and then I get some options here, and then you should choose this option, cataloging rules.
+ Just that.
 
 202
-00:24:51,968 --> 00:24:59.713
+00:24:51,968 --> 00:24:59,713
 Not one of the other options, but this is the case, cataloging rules, so we click there.
 
 203
-00:25:00,160 --> 00:25:08.407
-And so we just enter RDA. This is what we use as cataloging rules. That system.
+00:25:00,160 --> 00:25:08,407
+And so we just enter RDA.
+ This is what we use as cataloging rules.
+ That system.
 
 204
 00:25:10,400 --> 00:25:16,288
-And the other, cataloging body, system names, cataloging languages. They are also correct.
+And the other, cataloging body, system names, cataloging languages.
+ They are also correct.
 
 205
-00:25:16,544 --> 00:25:20.091
+00:25:16,544 --> 00:25:20,091
 So there is nothing you need to do about it.
 
 206
@@ -836,10 +904,11 @@ And then we click on the plus here.
 
 210
 00:25:53,920 --> 00:25:59,282
-Then we get a new field there. Click the plus again, or just press Enter.
+Then we get a new field there.
+ Click the plus again, or just press Enter.
 
 211
-00:25:59,631 --> 00:26:06.022
+00:25:59,631 --> 00:26:06,022
 And here we will create a local entity, so we click down here.
 
 212
@@ -848,7 +917,9 @@ And it's a library that has updated this post so we click library there.
 
 213
 00:26:13,376 --> 00:26:21,060
-And get a box where it stands sigel. We fill in our Sigel. S in this case for KB.
+And get a box where it stands sigel.
+ We fill in our Sigel.
+ S in this case for KB.
 
 214
 00:26:21,312 --> 00:26:23,872
@@ -877,3 +948,4 @@ Then the next step will be to put on a stock, but it is another instructional fi
 220
 00:27:05,344 --> 00:27:12,317
 So then I thank you for the attention and end here.
+

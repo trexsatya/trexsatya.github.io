@@ -51,7 +51,7 @@ Speaking of what we are going through right now.
 Per-Erik Andersson,
 
 14
-00:00:59,640 --> 00:01:01.640
+00:00:59,640 --> 00:01:01,640
 Born 1940.
 
 15
@@ -127,7 +127,7 @@ I'm so much in Malung
 So I can withdraw money there.
 
 33
-00:02:04,040 --> 00:02:05.840
+00:02:04,040 --> 00:02:05,840
 But that's not good.
 
 34
@@ -139,7 +139,7 @@ Non-profit organizations,
 that sells lotteries,
 
 36
-00:02:10,660 --> 00:02:12.560
+00:02:10,660 --> 00:02:12,560
 How should they carry on?
 
 37
@@ -211,7 +211,7 @@ Living here anyway.
 Then you can also feel this way,
 
 54
-00:03:03,040 --> 00:03:06.368
+00:03:03,040 --> 00:03:06,368
 I mean, Stockholm last Friday.
 
 55
@@ -271,7 +271,7 @@ How and when, he or she is going to die.
 If I'm going to die next year in a climb, so ...
 
 69
-00:04:07,800 --> 00:04:09.340
+00:04:07,800 --> 00:04:09,340
 I am not afraid.
 
 70
@@ -299,7 +299,7 @@ I can die
 in a car accident
 
 76
-00:04:26,495 --> 00:04:28.031
+00:04:26,495 --> 00:04:28,031
 or a flight crash.
 
 77
@@ -311,7 +311,7 @@ I believe life is more dangerous
 In a city
 
 79
-00:04:33,919 --> 00:04:35.711
+00:04:33,919 --> 00:04:35,711
 than up in the mountain.
 
 80
@@ -327,7 +327,7 @@ We feel happy
 that we live here
 
 83
-00:04:47,487 --> 00:04:49.535
+00:04:47,487 --> 00:04:49,535
 and not in Stockholm
 
 84
@@ -347,11 +347,11 @@ There is still security here.
 We are not close to terrorists.
 
 88
-00:05:04,127 --> 00:05:05.151
+00:05:04,127 --> 00:05:05,151
 It was horrible,
 
 89
-00:05:05,663 --> 00:05:07.711
+00:05:05,663 --> 00:05:07,711
 What happened in Stockholm.
 
 90
@@ -387,7 +387,7 @@ The most important thing was to
 I felt that
 
 98
-00:05:46,860 --> 00:05:51.080
+00:05:46,860 --> 00:05:51,080
 It stands too little about such villages in the media
 
 99
@@ -411,7 +411,7 @@ In the process of becoming one who didn't really know what was happening in Oseb
 I grew up there
 
 104
-00:06:05,800 --> 00:06:09.100
+00:06:05,800 --> 00:06:09,100
 But in 2007 my parents sold the house.
 
 105
@@ -475,7 +475,7 @@ It's men and women,
 They come from a lot of different places -
 
 120
-00:07:01,760 --> 00:07:03.640
+00:07:01,760 --> 00:07:03,640
 some have lived there all their lives
 
 121
@@ -511,7 +511,7 @@ So this with that very many people
 have left the countryside and moved into cities,
 
 129
-00:07:28,400 --> 00:07:29.893
+00:07:28,400 --> 00:07:29,893
 Just as I've done,
 
 130
@@ -559,7 +559,7 @@ But somewhere there was something that was lost
 with this move.
 
 141
-00:08:05,260 --> 00:08:06.620
+00:08:05,260 --> 00:08:06,620
 I think that's why
 
 142
@@ -631,7 +631,7 @@ The bridge is very much in the book -
 you can't drive a car, you can't really have
 
 159
-00:08:57,420 --> 00:09:00.940
+00:08:57,420 --> 00:09:00,940
 Some traffic on it now but sheep goes and cycles across the bridge anyway.
 
 160
@@ -639,11 +639,11 @@ Some traffic on it now but sheep goes and cycles across the bridge anyway.
 The cars drive down to the bridge,
 
 161
-00:09:03,280 --> 00:09:03.918
+00:09:03,280 --> 00:09:03,918
 goes out,
 
 162
-00:09:03,918 --> 00:09:05.740
+00:09:03,918 --> 00:09:05,740
 takes pictures of the river,
 
 163
@@ -679,11 +679,11 @@ There are plans for,
 or like this,
 
 171
-00:09:29,900 --> 00:09:32.560
+00:09:29,900 --> 00:09:32,560
 It should be a printer course about Osebol
 
 172
-00:09:32,820 --> 00:09:34.560
+00:09:32,820 --> 00:09:34,560
 At the Folk High School in Stöllet
 
 173
@@ -767,7 +767,7 @@ But not just Osebol may
 Without the entire countryside in Norra Klarälvdalen.
 
 193
-00:10:30,520 --> 00:10:32.060
+00:10:30,520 --> 00:10:32,060
 Yes
 
 194
@@ -947,7 +947,7 @@ Yes, but I think,
 A thing that I think,
 
 238
-00:13:07,160 --> 00:13:09.040
+00:13:07,160 --> 00:13:09,040
 As I have read more of lately,
 
 239
@@ -1021,3 +1021,4 @@ In a while in the evening, for example.
 256
 00:13:56,260 --> 00:13:57,540
 So that's my tip.
+

@@ -1,6 +1,7 @@
 1
-00:00:00,460 --> 00:00:05.560
-Hello! Here you who are employed with sick pay can get help to apply for sickness benefit.
+00:00:00,460 --> 00:00:05,560
+Hello!
+ Here you who are employed with sick pay can get help to apply for sickness benefit.
 
 2
 00:00:06,160 --> 00:00:11,080
@@ -23,7 +24,7 @@ You can choose whether you want to apply for sickness benefit via computer, mobi
 The film describes how to do in eight steps that take about three minutes.
 
 7
-00:00:34,627 --> 00:00:38.307
+00:00:34,627 --> 00:00:38,307
 Your application for sickness benefit is divided into three fields -
 
 8
@@ -40,7 +41,8 @@ Click "Go On" to confirm your changes.
 
 11
 00:00:58,480 --> 00:01:04,000
-Here you can see your personal and contact details. Make sure the information is correct.
+Here you can see your personal and contact details.
+ Make sure the information is correct.
 
 12
 00:01:07,940 --> 00:01:15,400
@@ -79,7 +81,7 @@ And how you would have worked if you had been healthy.
 Specify the extent to which you apply for sickness benefit.
 
 21
-00:01:56,008 --> 00:01:59.308
+00:01:56,008 --> 00:01:59,308
 Now all three fields are filled and green marked.
 
 22
@@ -97,3 +99,4 @@ Now you can follow your case on my pages.
 25
 00:02:16,460 --> 00:02:19,680
 Thank you for applying for sickness benefit via My pages!
+

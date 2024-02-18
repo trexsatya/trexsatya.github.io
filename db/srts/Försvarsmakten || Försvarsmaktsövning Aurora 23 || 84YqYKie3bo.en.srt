@@ -3,7 +3,7 @@
 The Armed Forces defend Sweden-
 
 2
-00:00:03,480 --> 00:00:09.840
+00:00:03,480 --> 00:00:09,840
 -The country's interest, our freedom and our right to live as we choose ourselves.
 
 3
@@ -31,7 +31,7 @@ Everyone must know their role, and what to do if we are attacked.
 Therefore, we carry out Armed Forces exercise Aurora 23-
 
 9
-00:00:47,080 --> 00:00:51.840
+00:00:47,080 --> 00:00:51,840
 -Together with Sweden's international partners.
 
 10
@@ -61,3 +61,4 @@ We practice our training fields and we practice in the community we will defend.
 16
 00:01:35,400 --> 00:01:38,200
 Together we defend Sweden.
+

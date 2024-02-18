@@ -4,11 +4,11 @@ Good morning!
 
 2
 00:00:04,129 --> 00:00:07,535
-It is half past five in the morning.
+It is half past six in the morning.
 
 3
 00:00:07,779 --> 00:00:09,779
-We're going home.
+We are going home.
 
 4
 00:00:09,957 --> 00:00:14,034
@@ -24,7 +24,7 @@ It's dark and cold outside.
 
 7
 00:00:25,941 --> 00:00:30,069
-We check out of the hotel.
+We check out from the hotel.
 
 8
 00:00:32,843 --> 00:00:36,856
@@ -36,15 +36,15 @@ This is a bus stop.
 
 10
 00:00:41,309 --> 00:00:44,863
-We are at the bus stop.
+We stand on the bus stop.
 
 11
 00:00:45,001 --> 00:00:48,000
-We're waiting for the bus.
+We are waiting for the bus.
 
 12
 00:00:48,301 --> 00:00:53,124
-We'll take a bus to Barcelona.
+We are going to take a bus to Barcelona.
 
 13
 00:00:53,362 --> 00:00:57,273
@@ -68,7 +68,7 @@ Now we're going to fly.
 
 18
 00:01:27,001 --> 00:01:29,562
-We're going to fly to Sweden.
+We will fly to Sweden.
 
 19
 00:01:32,365 --> 00:01:35,690
@@ -80,7 +80,7 @@ But we can use magic.
 
 21
 00:01:44,666 --> 00:01:49,456
-I know a magic rhyme.
+I can a magical frame.
 
 22
 00:01:58,116 --> 00:02:01,110
@@ -88,11 +88,12 @@ We want to come home now!
 
 23
 00:02:05,884 --> 00:02:09,094
-It does not work. One more time!
+It does not work.
+ One more time!
 
 24
 00:02:20,475 --> 00:02:22,475
-What did I say ?!
+What have I said?!
 
 25
 00:02:24,359 --> 00:02:26,359
@@ -100,11 +101,11 @@ We are home!
 
 26
 00:02:29,917 --> 00:02:32,159
-We're home now.
+We are home now.
 
 27
 00:02:32,256 --> 00:02:35,492
-But of course I'm kidding.
+But of course I am kidding.
 
 28
 00:02:48,001 --> 00:02:51,262
@@ -116,11 +117,12 @@ Then we have to fly as usual.
 
 30
 00:02:57,310 --> 00:03:00,380
-Let's check in.
+Come we check in.
 
 31
 00:03:11,056 --> 00:03:16,133
-What do we do on the flight? Write in the comments!
+What do we do on the flight?
+ Write in comments!
 
 32
 00:03:23,106 --> 00:03:25,870
@@ -140,11 +142,11 @@ We flew for 4 hours.
 
 36
 00:03:41,672 --> 00:03:45,315
-We took the bus home.
+We took a bus home.
 
 37
 00:03:46,739 --> 00:03:49,134
-Now we're home.
+Now we are at home.
 
 38
 00:03:49,135 --> 00:03:51,135
@@ -152,5 +154,5 @@ It's evening.
 
 39
 00:03:51,229 --> 00:03:54,541
-It's 4 p.m.
+It is at 16.00.
 

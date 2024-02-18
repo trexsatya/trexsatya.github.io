@@ -1,5 +1,5 @@
 1
-00:00:05,133 --> 00:00:08.067
+00:00:05,133 --> 00:00:08,067
 My name is Jasmine Tuvesson and I study Mechatronics Engineer-
 
 2
@@ -47,15 +47,15 @@ I chose the University of Halmstad because it is close to my family members-
 -Personally, I like a little smaller schools when you get the family feeling.
 
 13
-00:00:55,333 --> 00:00:59.333
+00:00:55,333 --> 00:00:59,333
 The best thing about my education is the ability to learn one-
 
 14
-00:00:59,333 --> 00:01:03.733
+00:00:59,333 --> 00:01:03,733
 -Sid range of these technical modules.
 
 15
-00:01:03,900 --> 00:01:08.167
+00:01:03,900 --> 00:01:08,167
 And then I refer to electronics, mechanics and computer science.
 
 16
@@ -67,7 +67,7 @@ I have been able to be in Germany as an exchange student.
 With the help of Halmstad University, they have helped me with an internship there.
 
 18
-00:01:19,567 --> 00:01:22.567
+00:01:19,567 --> 00:01:22,567
 So I have made an exchange half-spring-
 
 19
@@ -83,7 +83,7 @@ I would like to work in the industry.
 After doing my internship in Germany, I will now also read my master there.
 
 22
-00:01:40,833 --> 00:01:46.567
+00:01:40,833 --> 00:01:46,567
 I will read Industrial Security and Safety.
 
 23
@@ -95,7 +95,7 @@ Possibly I would like to work at a medical facility.
 And then help to produce medical technology for hospitals or-
 
 25
-00:02:03,100 --> 00:02:04.667
+00:02:03,100 --> 00:02:04,667
 -The dentist clinics and so on.
 
 26
@@ -103,9 +103,10 @@ And then help to produce medical technology for hospitals or-
 If you have what is required and if you want to become an engineer-
 
 27
-00:02:09,500 --> 00:02:15.567
+00:02:09,500 --> 00:02:15,567
 -So it is a very good start to get a good education and ...
 
 28
 00:02:18,567 --> 00:02:21,567
 -A good working life.
+

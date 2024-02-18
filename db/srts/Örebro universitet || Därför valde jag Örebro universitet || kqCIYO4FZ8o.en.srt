@@ -35,7 +35,7 @@ The important thing for me was that I saw a future.
 When I had read the training clearly
 
 10
-00:00:37,497 --> 00:00:39.845
+00:00:37,497 --> 00:00:39,845
 So I could work on what I read.
 
 11
@@ -47,7 +47,7 @@ I didn't really know if I would actually take Örebro University.
 Then I went up the subway.
 
 13
-00:00:44,184 --> 00:00:47.661
+00:00:44,184 --> 00:00:47,661
 Then I saw the ads and then I thought I had to start there.
 
 14
@@ -67,15 +67,15 @@ It is a very central city in our elongated country.
 So it's very close to most people.
 
 18
-00:00:58,117 --> 00:01:00.825
+00:00:58,117 --> 00:01:00,825
 I also think this is one of the reasons why you choose Örebro.
 
 19
-00:01:00,825 --> 00:01:02.420
+00:01:00,825 --> 00:01:02,420
 Then you do not go home so often.
 
 20
-00:01:02,420 --> 00:01:06.816
+00:01:02,420 --> 00:01:06,816
 So, the city, when I looked at Google Maps and so -
 
 21
@@ -83,7 +83,7 @@ So, the city, when I looked at Google Maps and so -
 After all, it wasn't like this -
 
 22
-00:01:08,156 --> 00:01:09.606
+00:01:08,156 --> 00:01:09,606
 It's not a big city, after all,
 
 23
@@ -143,7 +143,7 @@ I think the education at Örebro University is very good.
 There is a lot of help to be obtained.
 
 37
-00:01:38,065 --> 00:01:40.603
+00:01:38,065 --> 00:01:40,603
 Something I like with Campus is to
 
 38
@@ -175,11 +175,11 @@ Still, I thought it was pretty easy to make friends.
 People were very likely to become friends, or what to say.
 
 45
-00:02:02,294 --> 00:02:05.694
+00:02:02,294 --> 00:02:05,694
 The balance between the activities that one may do during the introduction,
 
 46
-00:02:05,694 --> 00:02:08.768
+00:02:05,694 --> 00:02:08,768
 and that you have things almost every day,
 
 47
@@ -197,3 +197,4 @@ But it's fun!
 50
 00:02:17,836 --> 00:02:18,863
 It's really fun!
+

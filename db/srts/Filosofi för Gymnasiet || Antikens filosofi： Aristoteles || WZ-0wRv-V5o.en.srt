@@ -35,7 +35,7 @@ After Plato's death, he came to leave the academy to start his own school - lyce
 which over time came to be a much larger and wider than its predecessor.
 
 10
-00:00:55,700 --> 00:01:00.940
+00:00:55,700 --> 00:01:00,940
 In their early writings you see a clear admiration for Plato's thoughts,
 
 11
@@ -79,11 +79,11 @@ Rafael has collected many of the great Greek philosophers.
 In the middle we see Plato, pointing up at the abstract world of ideas.
 
 21
-00:01:56,620 --> 00:02:05.240
+00:01:56,620 --> 00:02:05,240
 He is an idealist and believes that everything is basically ideas, and in order to understand the truth we must first understand the ideas.
 
 22
-00:02:05,240 --> 00:02:09.120
+00:02:05,240 --> 00:02:09,120
 At his side, his student, Aristotle, goes,
 
 23
@@ -111,7 +111,7 @@ These two ingredients cannot exist without each other
 - Matter cannot exist without form and form cannot exist without matter.
 
 29
-00:02:45,460 --> 00:02:51.860
+00:02:45,460 --> 00:02:51,860
 In all reproduction, it was the man who supplied form while the woman stands for matter.
 
 30
@@ -159,7 +159,7 @@ To explain this, Aristotle also introduced the concept of "potential".
 Built into all matter, there was the potential to become some things.
 
 41
-00:03:52,520 --> 00:03:58.860
+00:03:52,520 --> 00:03:58,860
 In an acorns there is the potential to become an oak, however, not to become a dog.
 
 42
@@ -167,7 +167,7 @@ In an acorns there is the potential to become an oak, however, not to become a d
 When something has adopted its form, the potential has been updated.
 
 43
-00:04:04,980 --> 00:04:07.840
+00:04:04,980 --> 00:04:07,840
 The thing has now become what it can be.
 
 44
@@ -203,11 +203,11 @@ This despite the fact that he was not allowed to vote himself because he was not
 But defends the then prevailing view of women and slaves as lower standing.
 
 52
-00:04:55,400 --> 00:05:00.800
+00:04:55,400 --> 00:05:00,800
 Democracy was a matter only for free men, he said.
 
 53
-00:05:01,360 --> 00:05:04.620
+00:05:01,360 --> 00:05:04,620
 He assumed that man was a social being,
 
 54
@@ -243,15 +243,15 @@ In the book "The Nikomachian ethics" Aristotle describes its view of ethics and 
 According to Aristotle, man has a special position in nature.
 
 62
-00:05:54,480 --> 00:05:59.420
+00:05:54,480 --> 00:05:59,420
 We are not controlled by instincts but by reason and free will.
 
 63
-00:05:59,800 --> 00:06:04.860
+00:05:59,800 --> 00:06:04,860
 We also have no congenital knowledge of right and wrong, good or bad,
 
 64
-00:06:04,860 --> 00:06:09.080
+00:06:04,860 --> 00:06:09,080
 Without this, we must learn through training.
 
 65
@@ -319,7 +319,7 @@ Thus, there is a clear link between Aristotle and the natural philosophers.
 Throughout his life, he immersed himself in research in a way that is unparalleled in Western history,
 
 81
-00:08:05,520 --> 00:08:09.040
+00:08:05,520 --> 00:08:09,040
 And his influence is difficult to overestimate.
 
 82
@@ -351,7 +351,7 @@ that everything has a built -in purpose, an intention.
 To be able to conduct his science, he needed deeper insight into how correct conclusions worked.
 
 89
-00:08:59,240 --> 00:09:07.020
+00:08:59,240 --> 00:09:07,020
 The rules for this were not yet known, after which Aristotle created what is today known as logic.
 
 90
@@ -383,11 +383,11 @@ His categorization of plants and animals were prevailing
 Until Carl von Linné launched his systematization during the 18th century.
 
 97
-00:09:55,220 --> 00:10:02.080
+00:09:55,220 --> 00:10:02,080
 To manage his research, he categorized philosophy in four different categories:
 
 98
-00:10:02,080 --> 00:10:06.800
+00:10:02,080 --> 00:10:06,800
 Physics, metaphysics, logic and ethics.
 
 99
@@ -409,3 +409,4 @@ What is preserved is mainly lecture manuscript (47 pieces),
 103
 00:10:30,340 --> 00:10:34,540
 But unfortunately, all of his books have disappeared.
+

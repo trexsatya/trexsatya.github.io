@@ -11,7 +11,7 @@ I am currently reading year three at Linköping University.
 Student life is absolutely fantastic.
 
 4
-00:00:08,192 --> 00:00:09.472
+00:00:08,192 --> 00:00:09,472
 Then I would say that the education is absolutely fantastic.
 
 5
@@ -23,7 +23,7 @@ Precisely because our professors and doctoral students want us to burn for it as
 That way, they feel for the subject.
 
 7
-00:00:18,944 --> 00:00:22.528
+00:00:18,944 --> 00:00:22,528
 We get the opportunity to build an artificial intelligence
 
 8
@@ -31,7 +31,7 @@ We get the opportunity to build an artificial intelligence
 to Starcraft II.
 
 9
-00:00:25,344 --> 00:00:29.440
+00:00:25,344 --> 00:00:29,440
 And it is really cool, because then you are divided into a group,
 
 10
@@ -56,10 +56,11 @@ The methods available, in a fun way.
 
 15
 00:00:47,616 --> 00:00:55,552
-After 10,000 rounds, it began to improve. It wins 80% of times instead of 40%.
+After 10,000 rounds, it began to improve.
+ It wins 80% of times instead of 40%.
 
 16
-00:00:56,576 --> 00:00:59.648
+00:00:56,576 --> 00:00:59,648
 Yes, as a civil engineer you are very flexible.
 
 17
@@ -67,7 +68,7 @@ Yes, as a civil engineer you are very flexible.
 What we mainly learn is how to pick up information very quickly.
 
 18
-00:01:03,488 --> 00:01:09.632
+00:01:03,488 --> 00:01:09,632
 In today's society, many software programmers are needed, because we are moving towards a more digitized society.
 
 19
@@ -93,3 +94,4 @@ Once you are in the middle of it, then almost wish it was longer.
 24
 00:01:28,832 --> 00:01:33,184
 For the years go so fast.
+

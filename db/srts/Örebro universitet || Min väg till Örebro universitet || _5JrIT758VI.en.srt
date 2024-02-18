@@ -11,7 +11,7 @@ I have to test it.
 It's actually a good question.
 
 4
-00:00:13,411 --> 00:00:15.046
+00:00:13,411 --> 00:00:15,046
 The student yes ...
 
 5
@@ -39,7 +39,7 @@ I plug language, rhetoric and communicative leadership at Örebro University.
 My name is Erika.
 
 11
-00:00:38,825 --> 00:00:41.063
+00:00:38,825 --> 00:00:41,063
 I am studying at Örebro University.
 
 12
@@ -51,7 +51,7 @@ I plug in subject teachers in sports and history.
 My name is Rojan.
 
 14
-00:00:45,568 --> 00:00:47.857
+00:00:45,568 --> 00:00:47,857
 I am studying the law program at Örebro University.
 
 15
@@ -75,7 +75,7 @@ I have always thought that math is very funny,
 Which made me read nature in high school.
 
 20
-00:00:58,880 --> 00:01:03.451
+00:00:58,880 --> 00:01:03,451
 I studied community with a focus on behavioral science in high school.
 
 21
@@ -123,7 +123,7 @@ After I took the student, I chose to take a year,
 To work and travel and so on.
 
 32
-00:01:38,304 --> 00:01:39.840
+00:01:38,304 --> 00:01:39,840
 But it ended with three years.
 
 33
@@ -135,7 +135,7 @@ I needed three years to find what I wanted to do and what I wanted to search.
 During these three years I did like so many others.
 
 35
-00:01:48,032 --> 00:01:51.089
+00:01:48,032 --> 00:01:51,089
 I traveled through Australia and Asia
 
 36
@@ -147,11 +147,11 @@ And also had to settle in Norway and work there for a while,
 Before I applied to the university.
 
 38
-00:01:57,459 --> 00:02:00.058
+00:01:57,459 --> 00:02:00,058
 Because I knew I wanted to keep up with law in the future,
 
 39
-00:02:00,058 --> 00:02:03.648
+00:02:00,058 --> 00:02:03,648
 But also that I thought that law was the most interesting in high school,
 
 40
@@ -159,11 +159,11 @@ But also that I thought that law was the most interesting in high school,
 So I chose to apply to the university right after high school.
 
 41
-00:02:06,523 --> 00:02:08.525
+00:02:06,523 --> 00:02:08,525
 And once I came in, I thought that
 
 42
-00:02:08,525 --> 00:02:11.305
+00:02:08,525 --> 00:02:11,305
 It had just been worth continuing to study.
 
 43
@@ -231,15 +231,15 @@ What I got stuck for in the program was mainly communication.
 I have an interest in both talking and a great interest in writing.
 
 59
-00:02:58,688 --> 00:03:01.031
+00:02:58,688 --> 00:03:01,031
 The engineering courses interested me a little extra
 
 60
-00:03:01.031 --> 00:03:05.438
+00:03:01,031 --> 00:03:05,438
 when they were very wide and had many opportunities after graduation.
 
 61
-00:03:05,600 --> 00:03:07.923
+00:03:05,600 --> 00:03:07,923
 Industrial Economics I chose to
 
 62
@@ -311,7 +311,7 @@ And that makes the students achieve their goals.
 In the future I dream of getting a job
 
 79
-00:03:54,000 --> 00:03:57.057
+00:03:54,000 --> 00:03:57,057
 at a company where I can grow and develop as an engineer,
 
 80
@@ -323,9 +323,10 @@ and also be involved in developing
 A technical solution that can change society.
 
 82
-00:04:01,908 --> 00:04:05.397
+00:04:01,908 --> 00:04:05,397
 So the conclusion of this was to dare to search and dare to test
 
 83
 00:04:05,397 --> 00:04:08,585
 To see if you find an education that suits yourself.
+

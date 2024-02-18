@@ -3,7 +3,7 @@
 Several million people have received their electricity support and it feels
 
 2
-00:00:03,720 --> 00:00:07.760
+00:00:03,720 --> 00:00:07,760
 powerful that the e-service that I and my team have developed were of importance
 
 3
@@ -63,7 +63,7 @@ Like input fields and buttons that we could reuse.
 It was a bit like picking up different legobits, part of a building
 
 17
-00:00:58,200 --> 00:01:02.800
+00:00:58,200 --> 00:01:02,800
 Which made it possible for us to pay out SEK 17.5 billion in electricity support.
 
 18
@@ -79,7 +79,7 @@ the needs of users, in this case the electricity grid companies, and which
 Technical possibilities that exist.
 
 21
-00:04:07,360 --> 00:04:08.720
+00:04:07,360 --> 00:04:08,720
 It should be easy for the user to do
 
 22
@@ -131,7 +131,7 @@ We'll find out the users' needs, in this
 the case of the electricity grid companies, and what technical possibilities exist.
 
 34
-00:04:58,320 --> 00:05:00.800
+00:04:58,320 --> 00:05:00,800
 It should be easy to make right and difficult to make mistakes.
 
 35
@@ -149,3 +149,4 @@ Part of a building that made it
 38
 00:05:09,280 --> 00:05:13,040
 possible for us to pay out SEK 17 and a half billion in support.
+

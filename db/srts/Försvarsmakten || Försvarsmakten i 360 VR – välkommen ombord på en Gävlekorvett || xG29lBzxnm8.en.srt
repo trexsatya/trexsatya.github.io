@@ -1,6 +1,7 @@
 1
 00:00:11,411 --> 00:00:15,758
-Welcome aboard a Gävlekorvett. Up here on the dock, the ship is run.
+Welcome aboard a Gävlekorvett.
+ Up here on the dock, the ship is run.
 
 2
 00:00:16,550 --> 00:00:21,421
@@ -15,7 +16,7 @@ There are also lookouts on the ship who, with the help of binoculars, support th
 -With what is around the ship, and supports the combat management center.
 
 5
-00:00:32,565 --> 00:00:35.301
+00:00:32,565 --> 00:00:35,301
 Often there is the ship's manager here.
 
 6
@@ -36,7 +37,7 @@ From here the battle is led.
 
 10
 00:01:18,278 --> 00:01:23,149
-In the combat management system, information from Radar, Sonar and other sensors is presented.
+In the combat management system, information is presented from radar, sonar and other sensors.
 
 11
 00:01:23,783 --> 00:01:28,000
@@ -67,7 +68,7 @@ The ship is equipped with a 57 millimeter alms cannon-
 On board, officers live in two, three or four years.
 
 18
-00:02:02,176 --> 00:02:04.657
+00:02:02,176 --> 00:02:04,657
 The sailors live in a cabin with 18 bing sites.
 
 19
@@ -137,3 +138,4 @@ There are also generators that make electricity, boilers that make hot water-
 35
 00:03:48,728 --> 00:03:51,295
 -and much other technical equipment.
+

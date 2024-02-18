@@ -24,7 +24,7 @@ I like coffee.
 
 7
 00:00:39,360 --> 00:00:44,240
-I like to drink coffee in the morning.
+I enjoy drinking coffee in the morning.
 
 8
 00:00:49,220 --> 00:00:53,500
@@ -36,7 +36,7 @@ I wash clothes in a washing machine.
 
 10
 00:01:03,280 --> 00:01:08,360
-I have a washer and dryer.
+I have a washing machine and a dryer.
 
 11
 00:01:09,480 --> 00:01:11,840
@@ -48,7 +48,7 @@ The laundry is wet.
 
 13
 00:01:15,440 --> 00:01:22,540
-I hang the laundry to dry.
+I hang up the laundry for it to dry.
 
 14
 00:01:29,520 --> 00:01:31,660
@@ -60,11 +60,11 @@ I'm ironing clothes.
 
 16
 00:01:52,120 --> 00:01:57,780
-a flower + a flower =
+a flower a flower
 
 17
 00:01:58,260 --> 00:01:59,820
-several flowers
+Several flowers
 
 18
 00:02:00,880 --> 00:02:04,140
@@ -96,7 +96,7 @@ I am cleaning.
 
 25
 00:03:07,480 --> 00:03:11,420
-I vacuum the floor.
+I'm vacuuming the floor.
 
 26
 00:03:11,840 --> 00:03:14,300
@@ -104,7 +104,7 @@ I am cleaning.
 
 27
 00:03:28,440 --> 00:03:32,440
-My son does his homework.
+My son does homework.
 
 28
 00:03:33,140 --> 00:03:36,480
@@ -112,7 +112,7 @@ He does his homework.
 
 29
 00:03:37,100 --> 00:03:42,140
-I help him with his homework.
+I help him with the homework.
 
 30
 00:03:45,360 --> 00:03:47,900
@@ -120,7 +120,7 @@ I help.
 
 31
 00:03:48,980 --> 00:03:53,240
-I will help you with your homework.
+I'll help you with the homework.
 
 32
 00:04:06,260 --> 00:04:11,440
@@ -128,7 +128,7 @@ What a boring weekend!
 
 33
 00:04:12,240 --> 00:04:15,720
-a boring weekend
+A boring weekend
 
 34
 00:04:16,560 --> 00:04:20,400
@@ -144,7 +144,7 @@ I washed clothes.
 
 37
 00:04:31,780 --> 00:04:36,360
-I ironed clothes.
+I stroked clothes.
 
 38
 00:04:37,220 --> 00:04:41,740
@@ -160,7 +160,7 @@ I cooked.
 
 41
 00:04:53,620 --> 00:04:59,360
-I helped my son with his homework.
+I helped my son with the homework.
 
 42
 00:05:01,120 --> 00:05:04,160
@@ -168,9 +168,9 @@ Now I'm tired.
 
 43
 00:05:04,960 --> 00:05:10,820
-Now I'm going to sleep.
+Now I'll go to sleep.
 
 44
 00:05:14,360 --> 00:05:19,900
-I hope next weekend is a fun weekend.
+I hope next weekend will be a fun weekend.
 

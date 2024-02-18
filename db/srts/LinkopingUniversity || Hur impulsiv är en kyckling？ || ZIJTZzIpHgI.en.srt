@@ -3,11 +3,11 @@
 Is it allowed to be a flour mask?
 
 2
-00:00:03,222 --> 00:00:05.805
+00:00:03,222 --> 00:00:05,805
 Chickens are quickly learning new things
 
 3
-00:00:05.805 --> 00:00:08.655
+00:00:05,805 --> 00:00:08,655
 When there is a flour mask to get.
 
 4
@@ -39,7 +39,7 @@ Then the pipe is presented on this joint.
 The chicken learns that it must retrieve the flour mask from the side of the pipe.
 
 11
-00:00:33,096 --> 00:00:35.096
+00:00:33,096 --> 00:00:35,096
 When they can, we do the test ourselves.
 
 12
@@ -77,3 +77,4 @@ Video: Anna Nilsen & Karin Söderlund Leifler
 20
 00:01:00,044 --> 00:01:02,150
 (Logo) Linköping University
+

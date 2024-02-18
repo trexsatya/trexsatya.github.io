@@ -15,8 +15,9 @@ Adding linked and local entities and managing entities.
 We will return to our cookbook example.
 
 5
-00:00:28,160 --> 00:00:34.304
-Some properties are linked to works and others to the instance. There are also properties that are tied
+00:00:28,160 --> 00:00:34,304
+Some properties are linked to works and others to the instance.
+ There are also properties that are tied
 
 6
 00:00:34,560 --> 00:00:36,864
@@ -39,7 +40,7 @@ If you are in the instance, which we are now, then the plus sign means "add prop
 Thus, properties specific to the edition.
 
 11
-00:00:58,112 --> 00:01:01.440
+00:00:58,112 --> 00:01:01,440
 We can try removing a property and adding it again.
 
 12
@@ -47,7 +48,7 @@ We can try removing a property and adding it again.
 We remove scope.
 
 13
-00:01:08,360 --> 00:01:12.540
+00:01:08,360 --> 00:01:12,540
 And we go to add properties.
 
 14
@@ -83,19 +84,21 @@ Some properties are instead linked to works.
 The work information is under instance of works so far because we do not
 
 22
-00:01:54,688 --> 00:01:59.040
-have started to break out works. We expand the instance of works
+00:01:54,688 --> 00:01:59,040
+have started to break out works.
+ We expand the instance of works
 
 23
 00:02:00,064 --> 00:02:05,184
-And we try to remove a trait here as well. We remove the subject.
+And we try to remove a trait here as well.
+ We remove the subject.
 
 24
 00:02:05,440 --> 00:02:07,232
 I click Remove.
 
 25
-00:02:07,744 --> 00:02:12.096
+00:02:07,744 --> 00:02:12,096
 And to now add topic again during instance of works
 
 26
@@ -139,11 +142,11 @@ When you search for entities in the side window, you have the opportunity to del
 The search and you have some opportunities to sort the hit list.
 
 36
-00:03:02,780 --> 00:03:06.620
+00:03:02,780 --> 00:03:06,620
 We're Tabs up to Add and Press Enter
 
 37
-00:03:07,648 --> 00:03:09.952
+00:03:07,648 --> 00:03:09,952
 And now the property has been added again.
 
 38
@@ -175,7 +178,7 @@ We go back to the form.
 We try with the property involvement and function
 
 45
-00:03:44,768 --> 00:03:46.304
+00:03:44,768 --> 00:03:46,304
 under the instance of works.
 
 46
@@ -188,11 +191,13 @@ We go to add properties during the instance of works and we seek out participati
 
 48
 00:03:59,620 --> 00:04:05,760
-We use tab and enter to add the property. Then we come to a list
+We use tab and enter to add the property.
+ Then we come to a list
 
 49
 00:04:06,020 --> 00:04:12,160
-Where we can choose type. We choose primary participation because it was just a writer here.
+Where we can choose type.
+ We choose primary participation because it was just a writer here.
 
 50
 00:04:13,800 --> 00:04:21,880
@@ -215,7 +220,7 @@ We go to Add Function, searching the side window for the entity writer,
 We are stabbed and press Enter to add.
 
 55
-00:04:46,719 --> 00:04:52.095
+00:04:46,719 --> 00:04:52,095
 The principle is that we link to entities that already exist, such as a person.
 
 56
@@ -223,19 +228,19 @@ The principle is that we link to entities that already exist, such as a person.
 If necessary, we can create new agents for new people and you can watch a movie about it.
 
 57
-00:04:58,239 --> 00:05:00.543
+00:04:58,239 --> 00:05:00,543
 The film Create new agent - person.
 
 58
-00:05:00,799 --> 00:05:06.943
+00:05:00,799 --> 00:05:06,943
 Sometimes there is no entity to link to, and we have no information as a basis for creating a new entity.
 
 59
-00:05:07.711 --> 00:05:10,271
+00:05:07,711 --> 00:05:10,271
 Then we may need to create a local entity.
 
 60
-00:05:10,527 --> 00:05:12.575
+00:05:10,527 --> 00:05:12,575
 I'll show what it looks like.
 
 61
@@ -247,8 +252,9 @@ We remove the linked entity
 and i now click Add Entity at Agent
 
 63
-00:05:22.303 --> 00:05:28,191
-And then I go to create local entity at the bottom of the side window. I choose person,
+00:05:22,303 --> 00:05:28,191
+And then I go to create local entity at the bottom of the side window.
+ I choose person,
 
 64
 00:05:29,471 --> 00:05:34,079
@@ -300,7 +306,8 @@ If we here want to add other title information under the cover title we may go t
 
 76
 00:06:38,060 --> 00:06:45,600
-Add properties under cover title. Then we can seek out the property other title information
+Add properties under cover title.
+ Then we can seek out the property other title information
 
 77
 00:06:45,740 --> 00:06:48,840
@@ -311,11 +318,11 @@ And put us forward and add it.
 And then we can enter the other title information if there is one.
 
 79
-00:06:55,740 --> 00:07:01.880
+00:06:55,740 --> 00:07:01,880
 It is also possible to copy an entity to the clipboard and to duplicate it.
 
 80
-00:07:02,143 --> 00:07:05.727
+00:07:02,143 --> 00:07:05,727
 Click on the three dots that mean manage.
 
 81
@@ -327,8 +334,9 @@ If you copy to the clipboard, the tool feels where the entity can be pasted.
 A paste in icon then appears in the places where it is now possible to paste the clipboard.
 
 83
-00:07:24,415 --> 00:07:30.047
-For example, you can Copy an entity from one post and paste it into another.
+00:07:24,415 --> 00:07:30,047
+For example, you can
+ Copy an entity from one post and paste it into another.
 
 84
 00:07:31,071 --> 00:07:36,703
@@ -337,3 +345,4 @@ You can also duplicate an entity which can be useful in some contexts
 85
 00:07:41,060 --> 00:07:48,520
 To delete a property or entity click the trash at the property or entity.
+

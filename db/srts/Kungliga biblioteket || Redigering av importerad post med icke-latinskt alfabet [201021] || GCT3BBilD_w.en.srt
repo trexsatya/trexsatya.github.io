@@ -1,6 +1,8 @@
 1
 00:00:13,824 --> 00:00:19,968
-Hello! My name is Fatima Klanco Al Mulki. I work at the Royal Library.
+Hello!
+ My name is Fatima Klanco Al Mulki.
+ I work at the Royal Library.
 
 2
 00:00:20,224 --> 00:00:24,832
@@ -12,7 +14,8 @@ The described approach applies to version 1.19 of Libris cataloging and may chan
 
 4
 00:00:34,560 --> 00:00:43,764
-I have chosen a book that is in Arabic. I have searched for the Arabic translation of August Strindbergs a dream game.
+I have chosen a book that is in Arabic.
+ I have searched for the Arabic translation of August Strindbergs a dream game.
 
 5
 00:00:44,800 --> 00:00:48,741
@@ -20,7 +23,8 @@ I start by looking at admin metadata and review it.
 
 6
 00:00:48,877 --> 00:00:57,344
-You do not have to follow that order, it is different how you usually edit your items. My way is to start with admin metadata.
+You do not have to follow that order, it is different how you usually edit your items.
+ My way is to start with admin metadata.
 
 7
 00:00:57,600 --> 00:01:03,744
@@ -36,7 +40,8 @@ I change it to library level.
 
 10
 00:01:18,000 --> 00:01:29,481
-System technical note. There is already the property so I can duplicate that entity by clicking on these three dots
+System technical note.
+ There is already the property so I can duplicate that entity by clicking on these three dots
 
 11
 00:01:29,600 --> 00:01:47,156
@@ -52,7 +57,8 @@ Text with non-Latin writing for Latin writing.
 
 14
 00:01:59,373 --> 00:02:08,599
-Exceptions to this are made for church writing. KB/LIBRIS practice is to Slavic and most non-Slavic works
+Exceptions to this are made for church writing.
+ KB/LIBRIS practice is to Slavic and most non-Slavic works
 
 15
 00:02:08,599 --> 00:02:15,430
@@ -67,16 +73,17 @@ The libraries that are in particular need it may instead choose to transcribe ac
 And if necessary, supplement with AL-LC Romanization Table, Non-Slavic Languages (in Cyrillic Script) for the extra characters that may occur in non-Slavic languages.
 
 18
-00:02:37,815 --> 00:02:47.741
+00:02:37,815 --> 00:02:47,741
 Exceptions are made for Mongolian where the extra signs ө, ө are romanized as Swedish island, island and ү, ү as ü, ü.
 
 19
-00:02:48,819 --> 00:02:53.830
+00:02:48,819 --> 00:02:53,830
 In addition, we have exceptions for Greek writing.
 
 20
 00:02:53,830 --> 00:03:02,225
-Works with Greek writing follow two different principles. Old Greek texts and newly texts.
+Works with Greek writing follow two different principles.
+ Old Greek texts and newly texts.
 
 21
 00:03:02,343 --> 00:03:15,911
@@ -95,7 +102,7 @@ You can find more detailed information including links to the various schedules 
 The important thing is that in this field you specify which table you use.
 
 25
-00:03:42,443 --> 00:03:59.835
+00:03:42,443 --> 00:03:59,835
 This is how I write that we use the Library of Congress ... so there.
 
 26
@@ -103,7 +110,7 @@ This is how I write that we use the Library of Congress ... so there.
 The importing library Sigel ends up at imports automatically in created by and we should not change that.
 
 27
-00:04:10,624 --> 00:04:20.305
+00:04:10,624 --> 00:04:20,305
 I see under cataloging rules that it is an RDA post and I will then remember to follow those rules as I continue with the editing.
 
 28
@@ -123,16 +130,17 @@ The cataloging language I see here that it is Arabic.
 And since it is an imported post I would not have had to change it as long as it is true but
 
 32
-00:04:49,023 --> 00:04:55.040
+00:04:49,023 --> 00:04:55,040
 Here I know that the number of pages, for example, will stand in Arabic so to avoid
 
 33
-00:04:55,040 --> 00:05:00.465
+00:04:55,040 --> 00:05:00,465
 Transliterate it also I choose to change here to Swedish.
 
 34
 00:05:11,295 --> 00:05:20,384
-In imported items it says that the library that imports the mail is what has created the post. We do not change it but instead we put in
+In imported items it says that the library that imports the mail is what has created the post.
+ We do not change it but instead we put in
 
 35
 00:05:21,374 --> 00:05:27,861
@@ -151,7 +159,7 @@ So we write our library's sigel here.
 So, now it's time to insert information about modifications.
 
 39
-00:05:49,695 --> 00:05:54.303
+00:05:49,695 --> 00:05:54,303
 You use the plus sign here to the right.
 
 40
@@ -160,11 +168,13 @@ Like this
 
 41
 00:06:01,727 --> 00:06:11,128
-Add. And then you choose the one at the bottom: Non-Latin characters are available in both original and translated form.
+Add.
+ And then you choose the one at the bottom: Non-Latin characters are available in both original and translated form.
 
 42
 00:06:13,138 --> 00:06:22,754
-But before I leave admin metadata, I need to add another property. Because I catalog for KB
+But before I leave admin metadata, I need to add another property.
+ Because I catalog for KB
 
 43
 00:06:23,209 --> 00:06:29,184
@@ -216,14 +226,18 @@ And I start with the description and see that it is true.
 
 55
 00:07:41,092 --> 00:07:53,438
-Now we check that the ISBN is correct. Publishing method: Monographic resource. It should always be monographic resource because we catalog a monograph.
+Now we check that the ISBN is correct.
+ Publishing method: Monographic resource.
+ It should always be monographic resource because we catalog a monograph.
 
 56
-00:07:53,438 --> 00:08:02.303
-Media type, carrying type, that's correct. And there we see that they are in English. This means that when we save the mail they will be automatically linked
+00:07:53,438 --> 00:08:02,303
+Media type, carrying type, that's correct.
+ And there we see that they are in English.
+ This means that when we save the mail they will be automatically linked
 
 57
-00:08:02.303 --> 00:08:08.447
+00:08:02,303 --> 00:08:08,447
 Right to the Swedish variant.
 
 58
@@ -232,19 +246,22 @@ Now we are at the title and here we see that the title is in the original writin
 
 59
 00:08:21,503 --> 00:08:31,143
-According to Libris practice, we will use the original writing. We put the original title as a variant title as follows:
+According to Libris practice, we will use the original writing.
+ We put the original title as a variant title as follows:
 
 60
 00:08:34,736 --> 00:08:44,640
-So. And I choose to move the original title to this box.
+So.
+ And I choose to move the original title to this box.
 
 61
 00:08:45,297 --> 00:08:54,434
 In addition, because it is about a writing species written from right to left, I check that the direction of writing is correct by the
 
 62
-00:08:54,434 --> 00:09:00.385
-Right -click and choose the right one. So.
+00:08:54,434 --> 00:09:00,385
+Right -click and choose the right one.
+ So.
 
 63
 00:09:01,695 --> 00:09:08,773
@@ -280,7 +297,8 @@ In imported items, the other title information may be incorrect in the capacity 
 
 71
 00:10:10,559 --> 00:10:16,703
-It can be extra difficult if you do not understand the language. A reminder only that you are attentive.
+It can be extra difficult if you do not understand the language.
+ A reminder only that you are attentive.
 
 72
 00:10:16,959 --> 00:10:31,094
@@ -288,14 +306,16 @@ And to remedy it, you would move that information to other title information.
 
 73
 00:10:32,474 --> 00:10:38,530
-Like this. But that was not the case in my example.
+Like this.
+ But that was not the case in my example.
 
 74
 00:10:39,999 --> 00:10:50,860
-Now we look at the release. We see that primary publication is correct
+Now we look at the release.
+ We see that primary publication is correct
 
 75
-00:10:51,007 --> 00:10:53.567
+00:10:51,007 --> 00:10:53,567
 The country is correct.
 
 76
@@ -323,7 +343,7 @@ But it is because the data is retrieved from different fields in the Marc21 form
 More information about this can be found in the help texts.
 
 82
-00:12:04,006 --> 00:12:09.343
+00:12:04,006 --> 00:12:09,343
 Our publishing details are correct so we don't change it.
 
 83
@@ -336,10 +356,11 @@ The cataloging language in admin metadata for Swedish so we write here in Swedis
 
 85
 00:12:32,639 --> 00:12:44,774
-We see that the manifestation is part of a series. So we put the right information here too.
+We see that the manifestation is part of a series.
+ So we put the right information here too.
 
 86
-00:12:45,015 --> 00:12:50.303
+00:12:45,015 --> 00:12:50,303
 For more information about serial membership, read in the help texts.
 
 87
@@ -359,19 +380,20 @@ Now we go here.
 The title in instance of works should be the preferred title for the work and since this is a translation it should be the original title
 
 91
-00:13:24,447 --> 00:13:29.003
+00:13:24,447 --> 00:13:29,003
 And we must therefore check that it is in line with Swedish practice.
 
 92
 00:13:29,727 --> 00:13:38,264
-We see that it is not correct. It should be a dream game.
+We see that it is not correct.
+ It should be a dream game.
 
 93
 00:13:42,527 --> 00:13:48,000
 And there is also no filing value.
 
 94
-00:13:52,649 --> 00:13:54.303
+00:13:52,649 --> 00:13:54,303
 It should be 4.
 
 95
@@ -404,7 +426,8 @@ I remove it and convert to writers.
 
 102
 00:15:02,655 --> 00:15:08,540
-Here we have the translator. The second participation.
+Here we have the translator.
+ The second participation.
 
 103
 00:15:11,359 --> 00:15:22,665
@@ -423,7 +446,7 @@ And then I pick his name from here in translated form and write down ...
 So.
 
 107
-00:16:01.023 --> 00:16:03,327
+00:16:01,023 --> 00:16:03,327
 And the function is translator.
 
 108
@@ -460,7 +483,8 @@ And here I know we should choose drama.
 
 116
 00:17:17,567 --> 00:17:24,000
-And we should pay attention to lists. That we choose the right one.
+And we should pay attention to lists.
+ That we choose the right one.
 
 117
 00:17:25,503 --> 00:17:33,834
@@ -475,7 +499,7 @@ So there.
 As for subject words, if they had already existed, we would have left them.
 
 120
-00:17:50,079 --> 00:18:01.824
+00:17:50,079 --> 00:18:01,824
 But here I produce Swedish subject words according to the Swedish original.
 
 121
@@ -501,3 +525,4 @@ Now we are done with the editing and can click Create Post after a final check, 
 126
 00:18:41,535 --> 00:18:49,379
 It remains to be posted on the mail and to see how to see the movie about stock registration.
+

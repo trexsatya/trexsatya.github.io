@@ -3,7 +3,7 @@
 Back!
 
 2
-00:00:01,360 --> 00:00:03.560
+00:00:01,360 --> 00:00:03,560
 Now we keep track of how the high school choice goes to
 
 3
@@ -111,7 +111,7 @@ at high school.se.
 Good there, high school!
 
 29
-00:00:59,680 --> 00:01:00.840
+00:00:59,680 --> 00:01:00,840
 What program do you go?
 
 30
@@ -123,7 +123,7 @@ I go to the IT program.
 Why did you just choose that program?
 
 32
-00:01:04,120 --> 00:01:08.880
+00:01:04,120 --> 00:01:08,880
 I've always had a great interest in games and such.
 
 33
@@ -195,19 +195,19 @@ The most important thing to think about
 is what you are motivated by and are interested in.
 
 50
-00:01:59,880 --> 00:02:00.960
+00:01:59,880 --> 00:02:00,960
 And what you think is fun!
 
 51
-00:02:01,720 --> 00:02:03.640
+00:02:01,720 --> 00:02:03,640
 If you are reading something that you are
 
 52
-00:02:03,640 --> 00:02:05.320
+00:02:03,640 --> 00:02:05,320
 interested and motivated by
 
 53
-00:02:05,320 --> 00:02:07.960
+00:02:05,320 --> 00:02:07,960
 So it often generates good results.
 
 54
@@ -277,3 +277,4 @@ Choose what you want!
 70
 00:02:45,440 --> 00:02:48,000
 Another step closer to high school!
+

@@ -1,5 +1,5 @@
 1
-00:00:06,150 --> 00:00:08.833
+00:00:06,150 --> 00:00:08,833
 It was on Sunday 18 June
 
 2
@@ -39,11 +39,11 @@ A Pakistani British businessman and his son Suleman Dawood, 19 years,
 Hamish Harding, 58 years, a British businessman, pilot and space tourist,
 
 11
-00:00:49,883 --> 00:00:55.816
+00:00:49,883 --> 00:00:55,816
 and Paul-Henri Nargeolet, 77 years, member of the French Institute for Marine Research
 
 12
-00:00:55,966 --> 00:00:57.016
+00:00:55,966 --> 00:00:57,016
 And director for
 
 13
@@ -51,7 +51,7 @@ And director for
 underwater research for E/M Group and RMS Titanic Inc.
 
 14
-00:01:01,800 --> 00:01:04.800
+00:01:01,800 --> 00:01:04,800
 He was on titanium as a guide.
 
 15
@@ -107,15 +107,15 @@ We will find out today.
 Titan was built by the company Oceangate
 
 28
-00:01:55,616 --> 00:02:00.600
+00:01:55,616 --> 00:02:00,600
 which was founded in 2009 by Stockton Rush and Guillermo Söhnlein.
 
 29
-00:02:00,900 --> 00:02:06.016
+00:02:00,900 --> 00:02:06,016
 The company offers, among other things, diving tours down to the Titanic wreck.
 
 30
-00:02:06,266 --> 00:02:09.866
+00:02:06,266 --> 00:02:09,866
 Titan actually made his first diving down to Titanic in
 
 31
@@ -171,11 +171,11 @@ Two vertical and two horizontal.
 These could steer the boat forward, backward,
 
 44
-00:02:59,000 --> 00:03:02.333
+00:02:59,000 --> 00:03:02,333
 up and down and rotate it.
 
 45
-00:03:03,450 --> 00:03:05.850
+00:03:03,450 --> 00:03:05,850
 The maximum speed was 3 knots,
 
 46
@@ -219,7 +219,7 @@ Because GPS
 not working underwater so sent the crew on the surface
 
 56
-00:03:44,866 --> 00:03:49.016
+00:03:44,866 --> 00:03:49,016
 instead text messages down to titanium about their position
 
 57
@@ -231,7 +231,7 @@ via a so -called ultra short baseline system.
 What risks were there then with such a scuba diving?
 
 59
-00:03:56,900 --> 00:04:00.533
+00:03:56,900 --> 00:04:00,533
 To begin with, everything happened out on international water
 
 60
@@ -239,7 +239,7 @@ To begin with, everything happened out on international water
 Which meant that you did not have to have any special security rules.
 
 61
-00:04:04,500 --> 00:04:09.466
+00:04:04,500 --> 00:04:09,466
 Titanium was not approved as seaworthy by any authority or organization
 
 62
@@ -283,7 +283,7 @@ There is a rule that you do not do that way, but I did.
 End quote.
 
 72
-00:04:48,533 --> 00:04:52.916
+00:04:48,533 --> 00:04:52,916
 In 2018, David Lochridge wrote the then head of Oceangates
 
 73
@@ -291,7 +291,7 @@ In 2018, David Lochridge wrote the then head of Oceangates
 marine operations, a report in which he expressed his concern about titanium
 
 74
-00:04:58,283 --> 00:05:02.033
+00:04:58,283 --> 00:05:02,033
 He wanted the submarine to be inspected and be certified
 
 75
@@ -299,7 +299,7 @@ He wanted the submarine to be inspected and be certified
 by an authority, but Oceangate did not want it.
 
 76
-00:05:05,600 --> 00:05:08.850
+00:05:05,600 --> 00:05:08,850
 They refused to pay for such an inspection.
 
 77
@@ -336,7 +336,8 @@ Carbon fiber is an extremely strong and lightweight material that is known for i
 
 85
 00:05:41,900 --> 00:05:47,516
-tensile strength. Thus, the ability to withstand forces that pull the material apart.
+tensile strength.
+ Thus, the ability to withstand forces that pull the material apart.
 
 86
 00:05:47,866 --> 00:05:52,283
@@ -347,7 +348,7 @@ However, it is not as strong when it comes to pressure strength
 which is the ability to withstand the power that compresses the material.
 
 88
-00:05:56,783 --> 00:06:00.566
+00:05:56,783 --> 00:06:00,566
 At extremely high pressure that one encounters down in the sea
 
 89
@@ -384,7 +385,8 @@ But at these extreme pressure down in the sea, the parts can
 
 97
 00:06:32,866 --> 00:06:36,683
-Two materials meet. When titanium and carbon fiber meet -
+Two materials meet.
+ When titanium and carbon fiber meet -
 
 98
 00:06:37,166 --> 00:06:39,750
@@ -399,7 +401,7 @@ If it is not carefully designed and constructed, this may lead to a disaster
 And this is now we have to talk about water pressure.
 
 101
-00:06:51,166 --> 00:06:55.016
+00:06:51,166 --> 00:06:55,016
 Up at the surface, the pressure is what is called an atmosphere.
 
 102
@@ -463,7 +465,7 @@ But not just from above but from all directions.
 Back to June 18, 2023.
 
 117
-00:07:57,416 --> 00:08:00.416
+00:07:57,416 --> 00:08:00,416
 When the time is on its way down to Titanic
 
 118
@@ -471,7 +473,7 @@ When the time is on its way down to Titanic
 When 1 hour and 45 minutes had been lost Titan contact
 
 119
-00:08:05,300 --> 00:08:10.016
+00:08:05,300 --> 00:08:10,016
 With the crew on the surface and now a fight against the clock began.
 
 120
@@ -515,15 +517,15 @@ And you could also manually release weights
 to help the submarine return to the surface.
 
 130
-00:08:48,266 --> 00:08:53.033
+00:08:48,266 --> 00:08:53,033
 There was also a special material on the outside designed to be dissolved
 
 131
-00:08:53,033 --> 00:08:59.033
+00:08:53,033 --> 00:08:59,033
 In the salt water after 10 hours and release sandbags from the underside of the submarine,
 
 132
-00:08:59,366 --> 00:09:02.366
+00:08:59,366 --> 00:09:02,366
 which would help return to the surface.
 
 133
@@ -567,7 +569,7 @@ so is the most likely explanation that the pressure based on
 Got the hull to crack and the entire submarine imploded.
 
 143
-00:09:50,066 --> 00:09:53.066
+00:09:50,066 --> 00:09:53,066
 And what is an implosion?
 
 144
@@ -644,7 +646,8 @@ It was a brief summary
 
 162
 00:10:59,416 --> 00:11:02,900
-by the company Oceangate. The accident with titanium ..
+by the company Oceangate.
+ The accident with titanium ..
 
 163
 00:11:03,316 --> 00:11:06,316
@@ -657,3 +660,4 @@ Feel free to subscribe to this channel so you don't miss when I release more vid
 165
 00:11:12,000 --> 00:11:15,333
 And as always, thank you for watching!
+
