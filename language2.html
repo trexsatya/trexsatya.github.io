@@ -457,8 +457,8 @@
         return items.filter(it => it.start && it.start.ordinal)
       }
 
-      function getSubs(text) {
-        return {data: srtToJson(text), path: 'x/y'}
+      function getSubs(text, file) {
+        return {data: srtToJson(text), path: file}
       }
 
       window.allSubtitles = {}
@@ -492,7 +492,7 @@
           let svMatch = window.allSubtitles[it].sv.match(new RegExp(window.searchText));
           let enMatch = window.allSubtitles[it].en.match(new RegExp(window.searchText));
           if (svMatch || enMatch) {
-            let v = {en_subs: getSubs(window.allSubtitles[it].en), sv_subs: getSubs(window.allSubtitles[it].sv)}
+            let v = {en_subs: getSubs(window.allSubtitles[it].en, it), sv_subs: getSubs(window.allSubtitles[it].sv, it)}
             if (svMatch) v.sv_match = true;
             else v.en_match = true;
             return v;
@@ -615,29 +615,7 @@
     }
   }
 
-  function getSelectionParentElement() {
-    let parentEl = null, sel;
-    if (window.getSelection) {
-      sel = window.getSelection();
-      if (sel.rangeCount) {
-        parentEl = sel.getRangeAt(0).commonAncestorContainer;
-        if (parentEl.nodeType !== 1) {
-          parentEl = parentEl.parentNode;
-        }
-      }
-    } else if ((sel = document.selection) && sel.type !== "Control") {
-      parentEl = sel.createRange().parentElement();
-    }
-    return parentEl;
-  }
 
-  function recordAudio(seconds) {
-    fetch("http://localhost:5000/record?seconds=" + Math.ceil(seconds), postRequestConfig(null))
-      .then(it => it.json())
-      .then(it => {
-        console.log(it)
-      })
-  }
 </script>
 
 
