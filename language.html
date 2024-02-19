@@ -977,20 +977,28 @@
     return words;
   }
 
-  function getMatchingWords(list, search, functionToGetLine) {
+  function getMatchingWords(list, search, functionToGetLines) {
     let wordToItemsMap = {}
     list.forEach(item => {
-      let matches = functionToGetLine(item).map(it => getWords(it.text, search))
+      let lines = functionToGetLines(item);
+      let matchingWord = lines.map(it => getWords(it.text, search))
         .flat().map(it => it.trim().toLowerCase())
         .filter(it => it.match(new RegExp(search.toLowerCase(), "i")))
 
-      _.uniq(matches).forEach(match => {
+      _.uniq(matchingWord).forEach(match => {
         if (!wordToItemsMap[match]) {
           wordToItemsMap[match] = []
         }
         wordToItemsMap[match].push(item)
       })
+
+      let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(search.toLowerCase(), "i")))
+      if(matchesSearchText) {
+        wordToItemsMap[search] = wordToItemsMap[search] || []
+        wordToItemsMap[search].push(item)
+      }
     })
+
     return wordToItemsMap;
   }
 
