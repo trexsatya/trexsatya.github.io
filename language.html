@@ -515,8 +515,8 @@
 
   loadAllSubtitles()
 
-  function srtToJson(text) {
-    let lang = 'text'
+  function srtToJson(text, lang) {
+    if (!lang) lang = 'text'
     let items = []
     let currentItem = {}
     currentItem[lang] = ''
@@ -526,11 +526,13 @@
       let matchId = line.match(/^\d+$/m)
       if (matchId) {
         items.push(currentItem)
-        currentItem = {index: line}
+        currentItem = {index: line, id: line}
         currentItem[lang] = ''
       } else if (matchTime) {
         currentItem['start'] = { ordinal: toSeconds(matchTime[1]) }
         currentItem['end'] = { ordinal: toSeconds(matchTime[2]) }
+        currentItem['ts'] = matchTime[1]
+        currentItem['te'] = matchTime[2]
       } else {
         currentItem[lang] += (line + "\n")
       }
@@ -670,13 +672,7 @@
 
     player.setSrc(link)
 
-    let pages = null
-    let searchText = $("#searchInput").val().trim().toLowerCase();
-    if (searchText.length > 0) {
-      pages = sv.filter(it => it.sv.toLowerCase().indexOf(searchText) >= 0).map(it => it.id)
-    }
-
-    playSelectedFile(pages)
+    playSelectedFile()
   }
 
   function playNewVideo(link) {
@@ -1167,9 +1163,9 @@
       $(e.target).parents('.srt-line').addClass('selected')
 
       let url = $(e.target).data("url")
-      let dt = $(e.target).parent().data()
+      let dt = $(e.target).parents('.srt-line').data()
 
-      let times = getTimes($(e.target).parent(), dt.file)
+      let times = getTimes($(e.target).parents('.srt-line'), dt.file)
 
       let btn = $(e.target)
       // $(btn).addClass('disabled')
@@ -1178,6 +1174,7 @@
         loadVideo(url)
         window.youtubePlayInterval = {...times}
         console.log(`Playing from ${fromSeconds(times.start)} to ${fromSeconds(times.end)}`)
+        $('#player').show()
       }
 
       // dampenBgMusic().promise.then(x => play())
