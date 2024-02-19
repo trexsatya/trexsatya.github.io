@@ -492,7 +492,7 @@
           let svMatch = window.allSubtitles[it].sv.match(new RegExp(window.searchText));
           let enMatch = window.allSubtitles[it].en.match(new RegExp(window.searchText));
           if (svMatch || enMatch) {
-            let v = {en_subs: getSubs(window.allSubtitles[it].en, it), sv_subs: getSubs(window.allSubtitles[it].sv, it)}
+            let v = {en_subs: getSubs(window.allSubtitles[it].en, it + ".en.srt"), sv_subs: getSubs(window.allSubtitles[it].sv, it + ".sv.srt")}
             if (svMatch) v.sv_match = true;
             else v.en_match = true;
             return v;
