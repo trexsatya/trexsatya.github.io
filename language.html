@@ -506,7 +506,7 @@
     srts = await srts.json()
     window.srts = srts
 
-    srts.forEach(it => getSubtitlesForLink(it['link']))
+    srts.forEach(it => getSubtitlesForLink(it['link'], it['source']))
 
     window.categories = await fetchCategorisation()
 
@@ -627,7 +627,7 @@
   window.allSubtitles = {}
   window.srts = []
 
-  async function getSubtitlesForLink(link) {
+  async function getSubtitlesForLink(link, source) {
     if (window.allSubtitles[link]) {
       return window.allSubtitles[link]
     }
@@ -638,7 +638,7 @@
     let en = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + enName)
     en = await en.text()
 
-    window.allSubtitles[link] = {sv, en}
+    window.allSubtitles[link] = {sv, en, source}
     return window.allSubtitles[link]
   }
 
@@ -1050,8 +1050,6 @@
 
     let {mainSub, secondarySub} = getMainSubAndSecondarySub(file, line);
 
-
-
     return $(`<div class="srt-line" data-index="${line.index}" data-file="${file.path}">
                                     <span class="add-prev-btn btn"> + </span>
                                     <span class="remove-next-btn btn"> - </span>
@@ -1179,6 +1177,11 @@
       // $(btn).addClass('disabled')
 
       let play = () => {
+
+        if(dt.file.source !== 'YouTube') {
+          window.open(`https://www.svtplay.se/video/${url}?position=${times.start}`,'_newtab')
+          return
+        }
         loadVideo(url)
         window.youtubePlayInterval = {...times}
         console.log(`Playing from ${fromSeconds(times.start)} to ${fromSeconds(times.end)}`)
@@ -1196,15 +1199,18 @@
     })
   } // end render
 
-  function getSubs(text, file, url) {
-    return {data: srtToJson(text), path: file, url: url}
+  function getSubs(text, file, url, source) {
+    return {data: srtToJson(text), path: file, url, source}
   }
   function fetchFromLocal() {
     return Object.keys(window.allSubtitles).map(it => {
       let svMatch = window.allSubtitles[it].sv.match(new RegExp(window.searchText));
       let enMatch = window.allSubtitles[it].en.match(new RegExp(window.searchText));
       if (svMatch || enMatch) {
-        let v = {en_subs: getSubs(window.allSubtitles[it].en, it + ".en.srt", it), sv_subs: getSubs(window.allSubtitles[it].sv, it + ".sv.srt", it)}
+        let v = {
+          en_subs: getSubs(window.allSubtitles[it].en, it + ".en.srt", it, window.allSubtitles[it].source),
+          sv_subs: getSubs(window.allSubtitles[it].sv, it + ".sv.srt", it, window.allSubtitles[it].source)
+        }
         if (svMatch) v.sv_match = true;
         else v.en_match = true;
         return v;
