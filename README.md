@@ -6,9 +6,11 @@ cd $1
 OUT_FORMAT="%(uploader)s || %(title)s || %(id)s.%(ext)s"
 echo "Downloading into directory "$1
 echo "Downloading from urls in "$TO_DOWNLOAD
-yt-dlp --write-subs --sub-langs sv --convert-subs srt --skip-download -o "$OUT_FORMAT" -a $TO_DOWNLOAD
+# yt-dlp --write-subs --sub-langs sv --convert-subs srt --skip-download -o "$OUT_FORMAT" -a $TO_DOWNLOAD
+# yt-dlp --write-subs --sub-langs sv --skip-download -o "$OUT_FORMAT" -a $TO_DOWNLOAD
 
-yt-dlp  -o "$OUT_FORMAT" --audio-format mp3 -x -a $TO_DOWNLOAD
+# yt-dlp  -o "$OUT_FORMAT" --audio-format mp3 -x -a $TO_DOWNLOAD
+yt-dlp  -o "$OUT_FORMAT" -S vcodec:h264,res,acodec:m4a -a $TO_DOWNLOAD
 ```
 Python:
 ```
