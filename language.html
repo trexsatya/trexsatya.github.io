@@ -969,12 +969,10 @@
     return n
   }
 
-  function getWords(text, searchText) {
+  function getWords(text) {
     const segmentor = new Intl.Segmenter([], {granularity: 'word'});
     const segmentedText = segmentor.segment(text);
-    let words = Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim().length > 1);
-    words.push(searchText)
-    return words;
+    return Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim().length > 1);
   }
 
   function getMatchingWords(list, search, functionToGetLines) {
@@ -1066,7 +1064,17 @@
                                  <br>`).data({line: line, file: file})
   }
 
+  window.showDuplicates = false
   function populateSRTFindings(wordToItemsMap, $result) {
+    let alreadyAdded = {}
+
+    function appendIfNotAlreadyAdded($file, line, file, item, items) {
+      let key = `${file.source}-${file.url}-${line.index}`
+      if(alreadyAdded[key] && !window.showDuplicates) return
+      $file.append(htmlForSrtLine(line, file, item.sv_subs.url, items));
+      alreadyAdded[key] = true
+    }
+
     Object.keys(wordToItemsMap).toSorted().forEach(word => {
       let items = wordToItemsMap[word]
       let wordBlock = $(`<div ><h5 class="accordion">${word}</h5></div>`)
@@ -1082,10 +1090,15 @@
           let $file = $(`<div class="srt-file" title="${fileName}">
                             <h4 data-file="${file.path}" style="display: none;"> ${word} </h4>
                         </div>`)
-          let matchingLines = file.data.filter(it => it.text.toLowerCase().match(word))
+          let matchingLines = file.data.filter(it => {
+            if(window.searchText.trim() !== window.searchText) {
+              return it.text.toLowerCase().match(word)
+            }
+            return getWords(it.text).includes(word)
+          })
 
           _.take(matchingLines, numberOfItemsToShow()).forEach(line => {
-            $file.append(htmlForSrtLine(line, file, item.sv_subs.url, items));
+            appendIfNotAlreadyAdded($file, line, file, item, items);
           })
 
           wordBlock.append($file)
