@@ -31,7 +31,7 @@
     <!--    <script src="/typed.min.js"></script>-->
 
     <script type="text/javascript" src="/diff-match-patch.js"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>-->
     <link href="/select2.min.css" rel="stylesheet"/>
     <link href="/pagination.css" rel="stylesheet"/>
     <link href="/bootstrap.min.css" rel="stylesheet"/>
@@ -302,8 +302,8 @@
     $('#en-sub').html('')
   }
 
-  function getWikiLink(word) {
-    return `<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(word)}" target="_blank">${word}</a></span>`;
+  function getWikiLink(word, uri=null) {
+    return `<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(uri || word)}" target="_blank">${word}</a></span>`;
   }
 
   function populateWikiLinks(text, $el) {
@@ -318,7 +318,7 @@
   }
 
   let renderSubtitles = (currentSub) => {
-    if(!currentSub) return;
+    if (!currentSub) return;
     if (window.renderedSub === currentSub.number) {
       return
     }
@@ -341,7 +341,7 @@
     window.ytPlayer.seekTo(t)
     window.seekRequestProcessing = true
     let leeway = Math.max(6, Math.abs(window.ytPlayer.getDuration() - t))
-    window.ytPlayer.seekTo(t-4)
+    window.ytPlayer.seekTo(t - 4)
 
     return new Promise((resolve, reject) => {
       let interval = null
@@ -400,7 +400,7 @@
     window.currentSub = currentSub
     window.pageNumber = pageNumber
 
-    if(manualHandling) {
+    if (manualHandling) {
       renderSubtitles(currentSub)
     }
 
@@ -528,8 +528,8 @@
         currentItem = {index: line, id: line}
         currentItem[lang] = ''
       } else if (matchTime) {
-        currentItem['start'] = { ordinal: toSeconds(matchTime[1]) }
-        currentItem['end'] = { ordinal: toSeconds(matchTime[2]) }
+        currentItem['start'] = {ordinal: toSeconds(matchTime[1])}
+        currentItem['end'] = {ordinal: toSeconds(matchTime[2])}
         currentItem['ts'] = matchTime[1]
         currentItem['te'] = matchTime[2]
       } else {
@@ -716,7 +716,7 @@
 
   $mp3Choice.change(async e => {
     let link = $mp3Choice.val();
-    if(link) {
+    if (link) {
       window.location.hash = link
       playNewVideo(link)
     }
@@ -788,8 +788,9 @@
   function getCurrentTime() {
     return ytPlayer.getCurrentTime()
   }
+
   const ontimeupdate = e => {
-    if(ytPlayer.getPlayerState() !== 1) {
+    if (ytPlayer.getPlayerState() !== 1) {
       return
     }
     // console.log(currentSub, player.currentTime)
@@ -816,10 +817,10 @@
       }
     }
 
-    if(window.youtubePlayInterval) {
+    if (window.youtubePlayInterval) {
       let s = window.youtubePlayInterval.start
       let e = window.youtubePlayInterval.end
-      if(ct > e) {
+      if (ct > e) {
         ytPlayer.pauseVideo()
         window.youtubePlayInterval = null
       }
@@ -911,7 +912,7 @@
 
   function getTimes(el, fl) {
     let lines = $(el).find(".line").map((i, e) => $(e).data()).toArray()
-      .map(it => it.index).map(idx => fl.data.find(it => it.index +'' === idx +''))
+      .map(it => it.index).map(idx => fl.data.find(it => it.index + '' === idx + ''))
 
     return {
       start: lines[0].start.ordinal, end: lines[lines.length - 1].end.ordinal
@@ -920,6 +921,7 @@
 
   function highlightedText(text, populateWikiLinks = false) {
     text = _.trim(text, "-:_")
+    text = text.replaceAll("\n", " ")
     let hText = text
     try {
       let match = text.match(new RegExp(window.searchText, "i"))
@@ -928,15 +930,28 @@
       let secondPart = text.substring(index + match[0].length);
       let highlightedPart = text.substring(index, index + match[0].length);
 
-      if(populateWikiLinks) {
-        firstPart = getWords(firstPart).map(getWikiLink).join(" ")
-        secondPart = getWords(secondPart).map(getWikiLink).join(" ")
-        if(window.searchText.indexOf(" ") < 0) {
-          highlightedPart = getWords(highlightedPart).map(getWikiLink).join(" ")
+      if (populateWikiLinks) {
+        let regExp = new RegExp(`(.*)[ ]+((.*)${window.searchText})(.*)`)
+        match = text.match(regExp);
+        if (match) {
+          firstPart = match[1]
+          secondPart = match[4]
+          highlightedPart = match[2]
+        } else {
+          regExp = new RegExp(`((.*)${window.searchText})(.*)`)
+          match = text.match(regExp);
+          if (match) {
+            firstPart = ''
+            secondPart = match[3]
+            highlightedPart = match[1]
+          }
         }
       }
 
-      hText = firstPart + "<span class='highlight'>" + highlightedPart + "</span>" + secondPart;
+      firstPart = firstPart.split(" ").flatMap(getWords).map(getWikiLink).join(" ")
+      secondPart = secondPart.split(" ").flatMap(getWords).map(getWikiLink).join(" ")
+      highlightedPart = highlightedPart.split(" ").flatMap(getWords).map(getWikiLink).join(" ")
+      hText = firstPart + " <span class='highlight'>" + highlightedPart + "</span> " + secondPart;
     } catch (e) {
       // console.log(e)
     }
@@ -1002,7 +1017,7 @@
       })
 
       let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(search.toLowerCase(), "i")))
-      if(matchesSearchText) {
+      if (matchesSearchText) {
         wordToItemsMap[search] = wordToItemsMap[search] || []
         wordToItemsMap[search].push(item)
       }
@@ -1076,12 +1091,13 @@
   }
 
   window.showDuplicates = false
+
   function populateSRTFindings(wordToItemsMap, $result) {
     let alreadyAdded = {}
 
     function appendIfNotAlreadyAdded($file, line, file, item, items) {
       let key = `${file.source}-${file.url}-${line.index}`
-      if(alreadyAdded[key] && !window.showDuplicates) return
+      if (alreadyAdded[key] && !window.showDuplicates) return
       $file.append(htmlForSrtLine(line, file, item.sv_subs.url, items));
       alreadyAdded[key] = true
     }
@@ -1102,7 +1118,7 @@
                             <h4 data-file="${file.path}" style="display: none;"> ${word} </h4>
                         </div>`)
           let matchingLines = file.data.filter(it => {
-            if(window.searchText.indexOf(' ') >= 0) {
+            if (window.searchText.indexOf(' ') >= 0) {
               return it.text.toLowerCase().match(word)
             }
             return getWords(it.text).includes(word)
@@ -1202,8 +1218,8 @@
 
       let play = () => {
 
-        if(dt.file.source !== 'YouTube') {
-          window.open(`https://www.svtplay.se/video/${url}?position=${times.start}`,'_newtab')
+        if (dt.file.source !== 'YouTube') {
+          window.open(`https://www.svtplay.se/video/${url}?position=${times.start}`, '_newtab')
           return
         }
         loadVideo(url)
@@ -1226,6 +1242,7 @@
   function getSubs(text, file, url, source) {
     return {data: srtToJson(text), path: file, url, source}
   }
+
   function fetchFromLocal() {
     return Object.keys(window.allSubtitles).map(it => {
       let svMatch = window.allSubtitles[it].sv.match(new RegExp(window.searchText));
@@ -1250,11 +1267,11 @@
     let txt = searchText || $searchText.val().toLowerCase()
     // $searchText.val(txt)
 
-    if(txt.length < 3) return
+    if (txt.length < 3) return
 
     window.searchText = txt;
 
-    if(Object.keys(window.allSubtitles).length) {
+    if (Object.keys(window.allSubtitles).length) {
       console.log("Loading from local")
       window.searchResult = fetchFromLocal()
     } else {
@@ -1382,14 +1399,14 @@
     event.target.playVideo();
     window.ytPlayerReady = true
 
-    if(window.youtubePlayInterval) {
+    if (window.youtubePlayInterval) {
       seekToYoutubeTime(window.youtubePlayInterval.start)
     }
   }
 
 
   function onPlayerStateChange(event) {
-    if(event.data === YT.PlayerState.PLAYING) {
+    if (event.data === YT.PlayerState.PLAYING) {
       window.ytPlaying = true
     } else {
       window.ytPlaying = false;
