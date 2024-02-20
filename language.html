@@ -302,6 +302,21 @@
     $('#en-sub').html('')
   }
 
+  function getWikiLink(word) {
+    return `<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(word)}" target="_blank">${word}</a></span>`;
+  }
+
+  function populateWikiLinks(text, $el) {
+    $el.html('')
+    getWords(text).forEach(word => {
+      let wordLink = $(getWikiLink(word));
+      wordLink.click(e => {
+        pauseVideo()
+      })
+      $el.append(wordLink)
+    })
+  }
+
   let renderSubtitles = (currentSub) => {
     if(!currentSub) return;
     if (window.renderedSub === currentSub.number) {
@@ -316,23 +331,7 @@
     $('#currentTime').html(fromSeconds(currentVideoTime()) + ' / [' + currentSub.ts_o + '-' + currentSub.te_o + ']')
     $('#currentSpeed').html(player.getPlaybackRate() + ' / ' + currentSub.speed)
 
-    $('#sv-sub').html('')
-    currentSub.sv.replaceAll("\n", " ").split(" ").map(it => it.trim()).filter(it => it.length > 0).forEach(word => {
-      let sanitizedWord = word
-      if (['-', '–', '!', '.', ','].some(it => sanitizedWord.startsWith(it))) {
-        sanitizedWord = sanitizedWord.substr(1)
-      }
-
-      if (['-', '–', '!', '?', '.', ','].some(it => sanitizedWord.endsWith(it))) {
-        sanitizedWord = sanitizedWord.substr(0, sanitizedWord.length - 1)
-      }
-
-      let wordLink = $(`<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(sanitizedWord)}" target="_blank">${word}</a></span>`);
-      wordLink.click(e => {
-        pauseVideo()
-      })
-      $('#sv-sub').append(wordLink)
-    })
+    populateWikiLinks(currentSub.sv, $('#sv-sub'));
 
     $('#en-sub').html(currentSub.en)
   }
@@ -919,13 +918,25 @@
     }
   }
 
-  function highlightedText(text) {
+  function highlightedText(text, populateWikiLinks = false) {
     text = _.trim(text, "-:_")
     let hText = text
     try {
       let match = text.match(new RegExp(window.searchText, "i"))
       let index = match.index
-      hText = text.substring(0, index) + "<span class='highlight'>" + text.substring(index, index + match[0].length) + "</span>" + text.substring(index + match[0].length);
+      let firstPart = text.substring(0, index);
+      let secondPart = text.substring(index + match[0].length);
+      let highlightedPart = text.substring(index, index + match[0].length);
+
+      if(populateWikiLinks) {
+        firstPart = getWords(firstPart).map(getWikiLink).join(" ")
+        secondPart = getWords(secondPart).map(getWikiLink).join(" ")
+        if(window.searchText.indexOf(" ") < 0) {
+          highlightedPart = getWords(highlightedPart).map(getWikiLink).join(" ")
+        }
+      }
+
+      hText = firstPart + "<span class='highlight'>" + highlightedPart + "</span>" + secondPart;
     } catch (e) {
       // console.log(e)
     }
@@ -1028,12 +1039,13 @@
     let mainSub, secondarySub = {};
     if (file.path.endsWith(".sv.srt")) {
       mainSub = line;
-      mainSub.text = highlightedText(mainSub.text)
+      mainSub.text = highlightedText(mainSub.text, true)
       let found = window.searchResult.find(it => it['en_subs'] && it['en_subs'].path === file.path.replaceAll(".sv.srt", ".en.srt"));
       if (found) secondarySub = found.en_subs.data.find(it => it.index === line.index)
     } else {
       mainSub = window.searchResult.find(it => it['sv_subs'] && it['sv_subs'].path === file.path.replaceAll(".en.srt", ".sv.srt"))
         .sv_subs.data.find(it => it.index === line.index)
+      mainSub.text = getWords(mainSub.text).map(getWikiLink).join(" ")
       secondarySub = line;
       secondarySub.text = highlightedText(secondarySub.text)
     }
@@ -1045,7 +1057,6 @@
 
   function htmlForSrtLine(_line, file, url) {
     let line = {..._line}
-
     let {mainSub, secondarySub} = getMainSubAndSecondarySub(file, line);
 
     return $(`<div class="srt-line" data-index="${line.index}" data-file="${file.path}">
@@ -1091,7 +1102,7 @@
                             <h4 data-file="${file.path}" style="display: none;"> ${word} </h4>
                         </div>`)
           let matchingLines = file.data.filter(it => {
-            if(window.searchText.trim() !== window.searchText) {
+            if(window.searchText.indexOf(' ') >= 0) {
               return it.text.toLowerCase().match(word)
             }
             return getWords(it.text).includes(word)
@@ -1237,7 +1248,7 @@
     }
     let $searchText = $("#searchText");
     let txt = searchText || $searchText.val().toLowerCase()
-    $searchText.val(txt)
+    // $searchText.val(txt)
 
     if(txt.length < 3) return
 
