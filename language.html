@@ -1758,7 +1758,9 @@
       nm += ".starred.json"
       let lines = $('.starred-sub').map((i, e) => $(e).text()).toArray()
 
-      if(window.mediaBeingPlayed.source === 'local') {
+      let _ms = window.mediaBeingPlayed.source
+
+      if(_ms === 'local') {
         let s = prompt('Source of media:')
         if(!s || !s.trim()) return
         window.mediaBeingPlayed['source'] = s.trim()  
