@@ -335,15 +335,15 @@
 
     let ct = getCurrentTime()
 
-    if (window.rewindData) {
-      if (ct >= window.rewindData.from) {
-        window.rewindData = null
-        console.log("Resetting speed", ct)
-        // audioPlayer.setDuration(window.currentSub.speed)
-      } else {
-        // return
-      }
-    }
+    // if (window.rewindData) {
+    //   if (ct >= window.rewindData.from) {
+    //     window.rewindData = null
+    //     console.log("Resetting speed", ct)
+    //     // audioPlayer.setDuration(window.currentSub.speed)
+    //   } else {
+    //     // return
+    //   }
+    // }
 
     if(ct > window.currentSub.te) {
        window.currentSubIndex += 1;
@@ -450,13 +450,20 @@
 
   function populateWikiLinks(text, $el) {
     $el.html('')
-    getWords(text).forEach(word => {
-      let wordLink = $(getWikiLink(word));
+
+    text.split(/[ \n]/).flatMap(it => {
+      let ws = getWords(it)
+      if(ws.length > 1) {
+        return ws.map(_w => getWikiLink(_w))
+      }
+      return getWikiLink(it, ws[0])
+    }).forEach(it => {
+      let wordLink = $(it);
       wordLink.click(e => {
         pauseVideo()
       })
       $el.append(wordLink)
-    })
+    });
   }
 
   window.starredLines = []
@@ -483,16 +490,25 @@
   function populateSearchWords(sub, $el) {
     $el.html('')
     let n = 1;
-    getWords(sub.sv).forEach(word => {
-      let wordLink = $(`<span style="cursor: pointer;"> ${word}</span>`);
+
+    let wordLink = (word, uri = null) => $(`<span style="cursor: pointer;" data-uri="${uri || word}"> ${word}</span>`);
+
+    sub.sv.split(/[ \n]/).flatMap(it => {
+      let ws = getWords(it)
+      if(ws.length > 1) {
+        return ws.map(_w => wordLink(_w))
+      }
+      return wordLink(it, ws[0])
+    }).forEach(it => {
+      let wordLink = $(it);
       wordLink.click(e => {
         pauseVideo()
-        $('#searchText').val(word).trigger('change')
+        $('#searchText').val($(e.target).data('uri')).trigger('change')
         addStarredLine(sub.index, sub.ts)
-      });
+      })
       $el.append(wordLink)
       n++;
-    })
+    });
   }
 
   let lastSub = null
@@ -1496,7 +1512,6 @@
           }
           loadYoutubeVideo(url)
         } else {
-          setMediaTime
           if (window.playingVideo) {
             videoPlayer.setCurrentTime(times.start)
             videoPlayer.play()
@@ -1725,14 +1740,14 @@
 
   setInterval(() => {
     //Check time
-    if (window.playingAudio || window.playingAudio || window.playingVideo) {
+    if (window.playingYoutubeVideo || window.playingAudio || window.playingVideo) {
       ontimeupdate()
     }
   }, 100)
 
   if(!isDesktop()) {
     $(".fl-left").css({width: '100%'})
-    $(".fl-right").css({left: 0})
+    $(".fl-right").css({left: 0, width: '100%'})
     $('#starredLines').parent().css({
       marginTop: 0,
       bottom: 0
@@ -1740,6 +1755,8 @@
     $('#toggleEnSubBtn').parent().css({
       textAlign: 'center'
     })
+
+    $('#player-info').css({ marginTop: 0, left: '40%'})
   }
 
   function export2txt(data, fileName) {
@@ -1768,9 +1785,15 @@
 
       let data = JSON.stringify({...window.mediaBeingPlayed, lines})
 
-      let r = await fetch('http://localhost:5000/srt-favorites', {method: 'POST', body: data, mode: 'no-cors', headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
-      console.log(await r.json())
-      export2txt(data, nm)
+      try {
+        let r = await fetch('http://localhost:5000/srt-favorites', {method: 'POST', body: data, mode: 'no-cors', headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
+        // console.log(await r.json())
+        export2txt(data, nm)
+      } catch(e) {
+        console.log(e)
+        alert("Failed to save")
+      }
+      
   }
 </script>
 </body>
