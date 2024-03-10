@@ -480,6 +480,8 @@
       ts = window.subtitles.find(it => it.index === index).ts
     }
     x.click(e => {
+       $('.starred-sub').removeClass('active')
+       x.addClass('active')
        setMediaTime(ts, true)
        // playMedia()
     })
@@ -959,7 +961,9 @@
     $('#subtitle-container').css({
       left: ytVideoWidth,
       marginLeft: '1em',
-      width: subWidth
+      width: subWidth,
+      maxHeight: '300px',
+      overflow: 'scroll'
     })
   }
 
@@ -971,10 +975,12 @@
 
     if (source === 'link') {
       $('#youtubePlayer').show()
+      $('#localVideoContainer').hide()
       loadYoutubeVideo(link)
       window.playingYoutubeVideo = true;
     } else if (source === 'local') {
       $('#youtubePlayer').hide()
+      $('#localVideoContainer').show()
       window.playingYoutubeVideo = false;
       if (mediaFile.name.endsWith(".mp3")) {
         audioPlayer.setSrc(URL.createObjectURL(mediaFile))
@@ -1006,7 +1012,7 @@
 
       let d = res.find(it => it.link === link)
       console.log(d)
-      d.lines.forEach(it => addStarredLine(it))
+      d.lines && d.lines.forEach(it => addStarredLine(it))
   } 
 
   function waitUntil(condition) {
@@ -1202,42 +1208,50 @@
     }
   }
 
+  function getWikiLinks(text) {
+    return text.split(/[ \n]/).flatMap(it => {
+          let ws = getWords(it)
+          if(ws.length > 1) {
+            return ws.map(_w => getWikiLink(_w))
+          }
+          return getWikiLink(it, ws[0])
+        }).join(" ")
+  }
+
   function highlightedText(text, populateWikiLinks = false) {
     text = _.trim(text, "-:_")
     text = text.replaceAll("\n", " ")
     let hText = text
+
+    let fn = getWikiLinks;
+
     try {
       let match = text.match(new RegExp(window.searchText, "i"))
       let index = match.index
-      let firstPart = text.substring(0, index);
-      let secondPart = text.substring(index + match[0].length);
-      let highlightedPart = text.substring(index, index + match[0].length);
 
-      let maybeSpaceAfter = text.charAt(index + match[0].length) === ' ' ? ' ' : '';
-      let maybeSpaceBefore = text.charAt(index - 1) === ' ' ? ' ' : '';
+      let x = -1, y = -1;
+      for (var i = index - 1; i >= 0; i--) {
+        let c = text[i]
+        if(c == " " || c == "\n") {
+          x = i;
+          break;
+        }
+      }
 
-      // if (populateWikiLinks) {
-      //   let regExp = new RegExp(`(.*)[ ]+((.*)${window.searchText})(.*)`)
-      //   match = text.match(regExp);
-      //   if (match) {
-      //     firstPart = match[1]
-      //     secondPart = match[4]
-      //     highlightedPart = match[2]
-      //   } else {
-      //     regExp = new RegExp(`((.*)${window.searchText})(.*)`)
-      //     match = text.match(regExp);
-      //     if (match) {
-      //       firstPart = ''
-      //       secondPart = match[3]
-      //       highlightedPart = match[1]
-      //     }
-      //   }
-      //   firstPart = firstPart.split(" ").flatMap(getWords).map(getWikiLink).join(" ")
-      //   secondPart = secondPart.split(" ").flatMap(getWords).map(getWikiLink).join(" ")
-      //   highlightedPart = highlightedPart.split(" ").flatMap(getWords).map(getWikiLink).join(" ")
-      // }
 
-      hText = (firstPart + maybeSpaceBefore) + "<span class='highlight'>" + highlightedPart + "</span>" + (maybeSpaceAfter + secondPart);
+      for (var i = index + 1; i < text.length; i++) {
+        let c = text[i]
+        if(c == " " || c == "\n") {
+          y = i;
+          break;
+        }
+      }
+
+      let firstPart = text.substring(0, x);
+      let secondPart = text.substring(y);
+      let highlightedPart = text.substring(x, y);
+
+      hText = (fn(firstPart) + ' ') + "<span class='highlight'>" + fn(highlightedPart) + "</span>" + (' ' + fn(secondPart));
     } catch (e) {
       // console.log(e)
     }
@@ -1347,7 +1361,7 @@
       mainSub = window.searchResult.find(it => it['sv_subs'] && it['sv_subs'].path === file.path.replaceAll(".en.srt", ".sv.srt"))
         .sv_subs.data.find(it => it.index === line.index)
       mainSub = {...mainSub}
-      mainSub.text = getWords(mainSub.text).map(getWikiLink).join(" ")
+      mainSub.text = getWikiLinks(mainSub.text)
       secondarySub = {...line};
       secondarySub.text = highlightedText(secondarySub.text)
     }
@@ -1705,7 +1719,9 @@
     $('#subtitle-container').css({
       left: ytVideoWidth,
       marginLeft: '1em',
-      width: subWidth
+      width: subWidth,
+      maxHeight: '300px',
+      overflow: 'scroll'
     })
   }
 
@@ -1789,6 +1805,9 @@
         let r = await fetch('http://localhost:5000/srt-favorites', {method: 'POST', body: data, mode: 'no-cors', headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
         // console.log(await r.json())
         // export2txt(data, nm)
+        if(r.status != 200) {
+          alert("Failed to save. Status=" + r.status)
+        }
       } catch(e) {
         console.log(e)
         alert("Failed to save")
