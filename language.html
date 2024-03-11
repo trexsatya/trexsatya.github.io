@@ -256,7 +256,8 @@
                                                                                         style="padding-left: 1em;"></span>
     <span
             id="currentSpeed" style="padding-left: 1em;"></span>
-    <button onclick="saveStarredLines()">Save Starred Lines</button>
+    <button onclick="saveStarredLines()" style="display: none;">Save Starred Lines</button>
+    <button onclick="saveRevision()" style="display: none;">Save Revision</button>
 </div>
 
 <div id="message" style="display: none"></div>
@@ -1802,7 +1803,7 @@
       let data = JSON.stringify({...window.mediaBeingPlayed, lines})
 
       try {
-        let r = await fetch('http://localhost:5000/srt-favorites', {method: 'POST', body: data, mode: 'no-cors', headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
+        let r = await fetch('http://localhost:5000/srt-favorites', {method: 'POST', body: data, headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
         // console.log(await r.json())
         // export2txt(data, nm)
         if(r.status != 200) {
@@ -1813,6 +1814,38 @@
         alert("Failed to save")
       }
       
+  }
+
+  async function saveRevision() {
+      let nm = window.allSubtitles[window.mediaBeingPlayed.link].fileName 
+      nm += ".starred.json"
+      let dates = []
+
+      let _ms = window.mediaBeingPlayed.source
+
+      if(_ms === 'local') {
+        let s = prompt('Source of media:')
+        if(!s || !s.trim()) return
+        window.mediaBeingPlayed['source'] = s.trim()  
+      }
+
+      let data = JSON.stringify({...window.mediaBeingPlayed, dates})
+
+      try {
+        let r = await fetch('http://localhost:5000/srt-revision', {method: 'POST', body: data, headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
+        if(r.status != 200) {
+          alert("Failed to save. Status=" + r.status)
+        }
+      } catch(e) {
+        console.log(e)
+        alert("Failed to save")
+      }
+      
+  }
+
+  if(window.location.hostname === 'localhost') {
+    $('#saveRevision').show()
+    $('#saveStarredLines').show()
   }
 </script>
 </body>
