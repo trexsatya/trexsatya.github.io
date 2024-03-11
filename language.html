@@ -256,8 +256,8 @@
                                                                                         style="padding-left: 1em;"></span>
     <span
             id="currentSpeed" style="padding-left: 1em;"></span>
-    <button onclick="saveStarredLines()" style="display: none;">Save Starred Lines</button>
-    <button onclick="saveRevision()" style="display: none;">Save Revision</button>
+    <button id="saveStarredLinesBtn" onclick="saveStarredLines()" style="display: none;">Save Starred Lines</button>
+    <button id="saveRevisionBtn" onclick="saveRevision()" style="display: none;">Save Revision</button>
 </div>
 
 <div id="message" style="display: none"></div>
@@ -1844,8 +1844,8 @@
   }
 
   if(window.location.hostname === 'localhost') {
-    $('#saveRevision').show()
-    $('#saveStarredLines').show()
+    $('#saveRevisionBtn').show()
+    $('#saveStarredLinesBtn').show()
   }
 </script>
 </body>
