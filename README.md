@@ -33,3 +33,91 @@ Write-SRT
 ```
 javascript: {  function fixTiming(x) {    for(let i = 1; i < x.length; i++) {      let item = x[i];      let prev = x[i-1];      if(!prev['te']) {        prev['te'] = parseInt(item['ts']);      }    }  }  function convertToTimestamp(n) {    let hr = Math.floor(n / 3600), min = Math.floor(n / 60), sec = n % 60;    hr = (hr + '').padStart(2, '0'); min = (min+'').padStart(2, '0'); sec = (sec+'').padStart(2, '0');    return `${hr}:${min}:${sec},000`;  }  function convertToSrt(x) {    let srt = '';    for(let i = 0; i < x.length; i++) {      let item = x[i];      let ts = convertToTimestamp(item['ts']);      let te = convertToTimestamp(item['te']);      let text = item['text'];      srt += `${i+1}\n${ts} --> ${te}\n${text}\n\n`;    }    return srt;  }  fixTiming(window.subtitles);  console.log(convertToSrt(window.subtitles))}
 ```
+To extract images from webpages so that it can be used as wallpapers:
+```
+items = $('#inner_content-10-38').children().toArray()
+let acc = [] 
+for(let i=0; i < items.length; i++) {
+   let item = items[i]
+   let $el = $('<div>').addClass('autocreated') 
+   if($(item).is('h3')) {
+       console.log('h3 found', acc)
+       if(acc.length) {
+           $('#inner_content-10-38').append($el)
+           acc.forEach(it => $(it).appendTo($el));
+       }
+       acc = []
+       $el = $('<div>').addClass('autocreated') 
+   } else {
+       console.log('pushing to acc')
+       acc.push(item)
+   }
+}
+
+items = $('.autocreated').toArray()
+
+async function saveImg(it){
+  let canvas = await html2canvas(it)
+    //console.log(canvas.toDataURL("image/jpeg"))
+    fetch('http://localhost:5000/save_img', {
+        method: 'POST',
+        body: JSON.stringify({img: canvas.toDataURL("image/jpeg")}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
+update = n => {}
+function schedule(data, timeInSeconds, taskRunner, onComplete, finishNowCondition) {
+  data = data.map(x => x); //clone
+  let totalDataItems = data.length
+  let fn = null;
+  fn = (x, idx) => setTimeout(() => {
+    let first = data.splice(0, 1);
+
+    if (finishNowCondition && finishNowCondition(first)) {
+      //-1 => Finished because finishNowCondition satisfied
+      console.log("Maybe finishing early on index, last consumed data item at index: " + (idx) + " out of total: " + (totalDataItems - 1))
+      return
+    }
+    if (first.length) {
+      let task = typeof (first[0]) == 'function' ? first[0] : () => taskRunner(first[0], idx)
+      let result = task()
+      update();
+      if (result instanceof Promise) {
+        result.then(it => {
+          if (window.stopAnimationSignal) {
+            window.animationScriptFunction = () => fn(100, idx) //Store function
+            console.log("Waiting for signal. Call resumeAnimationScript()")
+          } else {
+            fn(100, idx + 1)
+          }
+
+        })
+      } else if (result !== false) {
+        let delay = timeInSeconds * 1000
+        if (typeof (result) == 'number') delay = result * 1000
+
+        if (result === -1 || window.stopAnimationSignal) {
+          if (window.animationScriptFunction) {
+            console.log('There is already a function for animation script!!!')
+          } else {
+            window.animationScriptFunction = () => fn(delay, idx + 1) //Store function
+            console.log("Waiting for signal. Call resumeAnimationScript()")
+            $('#btnResumeAnimation').show();
+          }
+        } else {
+          fn(delay, idx + 1)
+        }
+      } else {
+        console.log("Ended because function returned false!")
+      }
+    } else {
+      if (onComplete) onComplete();
+    }
+  }, x);
+  fn(0, 0);
+}
+schedule(items, 3, x => saveImg(x))
+```
