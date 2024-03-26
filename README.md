@@ -33,8 +33,10 @@ Write-SRT
 ```
 javascript: {  function fixTiming(x) {    for(let i = 1; i < x.length; i++) {      let item = x[i];      let prev = x[i-1];      if(!prev['te']) {        prev['te'] = parseInt(item['ts']);      }    }  }  function convertToTimestamp(n) {    let hr = Math.floor(n / 3600), min = Math.floor(n / 60), sec = n % 60;    hr = (hr + '').padStart(2, '0'); min = (min+'').padStart(2, '0'); sec = (sec+'').padStart(2, '0');    return `${hr}:${min}:${sec},000`;  }  function convertToSrt(x) {    let srt = '';    for(let i = 0; i < x.length; i++) {      let item = x[i];      let ts = convertToTimestamp(item['ts']);      let te = convertToTimestamp(item['te']);      let text = item['text'];      srt += `${i+1}\n${ts} --> ${te}\n${text}\n\n`;    }    return srt;  }  fixTiming(window.subtitles);  console.log(convertToSrt(window.subtitles))}
 ```
-To extract images from webpages so that it can be used as wallpapers:
+## To extract images from webpages so that it can be used as wallpapers:
 ```
+https://www.cdnpkg.com/html2canvas/file/html2canvas.min.js/
+
 items = $('#inner_content-10-38').children().toArray()
 let acc = [] 
 for(let i=0; i < items.length; i++) {
