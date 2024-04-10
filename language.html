@@ -1048,6 +1048,8 @@
 
   function setSpeed() {
     let newRate = $('.controlgroup input:checked').data('speed');
+    newRate = parseFloat(newRate);
+    
     if (window.playingYoutubeVideo) {
       ytPlayer.setPlaybackRate(newRate)
     } else if (window.playingAudio) {
@@ -1328,6 +1330,7 @@
   }
 
   function populateNonSRTFindings(wordToItemsMap, $result) {
+    let numberOfResults = 0
     Object.keys(wordToItemsMap).toSorted().forEach(word => {
       let items = wordToItemsMap[word]
       let wordBlock = $(`<div><h5 class="accordion">${word}</h5></div>`)
@@ -1345,10 +1348,14 @@
           div.data({text: chunk})
           $line.append(div)
         })
+
+        numberOfResults += 1
         wordBlock.append($line).append('<br>')
       })
       $result.append(wordBlock)
     })
+
+    return numberOfResults
   }
 
   function getMainSubAndSecondarySub(file, line) {
@@ -1395,11 +1402,12 @@
 
   function populateSRTFindings(wordToItemsMap, $result) {
     let alreadyAdded = {}
-
+    let numberOfResults = 0
     function appendIfNotAlreadyAdded($file, line, file, item, items) {
       let key = `${file.source}-${file.url}-${line.index}`
       if (alreadyAdded[key] && !window.showDuplicates) return
       $file.append(htmlForSrtLine(line, file, item.sv_subs.url, items));
+      numberOfResults += 1
       alreadyAdded[key] = true
     }
 
@@ -1433,6 +1441,8 @@
         })
       $result.append(wordBlock)
     })
+
+    return numberOfResults
   }
 
   window.youtubePlayInterval = null
@@ -1443,17 +1453,25 @@
     let $result = $('#result');
     $result.html('')
 
+    let resultSize = 0
     let wordToItemsMap = getMatchingWords(list.filter(it => it.en_match ? it.en_subs : it.sv_subs),
                                           search,
                                             item => item.en_match ? item.en_subs.data : item.sv_subs.data);
-    populateSRTFindings(wordToItemsMap, $result);
+    resultSize += populateSRTFindings(wordToItemsMap, $result);
 
     $result.append("<hr>")
 
     wordToItemsMap = getMatchingWords(list.filter(it => it.text), search, item => [item]);
-    populateNonSRTFindings(wordToItemsMap, $result);
+    resultSize += populateNonSRTFindings(wordToItemsMap, $result);
 
     renderAccordions()
+
+    if(resultSize === 0) {
+      $result.html(`
+<h3>No results found for ${search}</h3>
+Try Wiki ${getWikiLinks(search)}
+`)
+    }
 
     $(".srt-file h4").dblclick(e => {
       window.preferredFile = $(e.target).data().file
