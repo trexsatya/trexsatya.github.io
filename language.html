@@ -168,13 +168,19 @@
 
     <div style="float: left; width: 59%; position: relative;" class="fl-left">
         <div style="padding-top: 1em; ">
-            <input type="text" id="searchText" placeholder="Search text"
+            <input type="search" id="searchText" placeholder="Search text"
                    onchange="searchTextChanged()"
             >
             <input type="number" id="numberOfFindingsToShow" placeholder="Show X items" value="2">
             <button onclick="$('#result').toggle()">Toggle Search Results</button>
             <select id="searchedWords" onchange="searchedWordSelected()" style="width: 220px;">
             </select>
+            <input type="checkbox" id="toggleSearchesControlCheckbox" aria-label="searches">
+            <div id="searchesControl" style="display: none">
+                <button onclick="localStorage.removeItem('searches')">Clear Searches</button>
+                <button onclick="loadSearches()">ReLoad Searches</button>
+                <button onclick="exportSearches()">Export Searches</button>
+            </div>
             <br>
             <br>
             <div id="result" style="overflow: scroll; height: 300px;">
@@ -264,6 +270,33 @@
 
 <script>
   $('#searchedWords').select2();
+
+  $('#toggleSearchesControlCheckbox').change(e => {
+    $('#searchesControl').toggle()
+  })
+
+  function loadSearches() {
+    let searches = JSON.parse(localStorage.getItem('searches') || '[]')
+    $('#searchedWords').html('')
+    searches.forEach(it => {
+      let op = new Option(it, it, true, true)
+      $('#searchedWords').append(op)
+    })
+  }
+
+  function exportSearches() {
+    let searches = JSON.parse(localStorage.getItem('searches') || '[]')
+    export2txt(searches.join("\n"), "searches.txt");
+  }
+
+  function saveSearch(word) {
+    let searches = JSON.parse(localStorage.getItem('searches') || '[]')
+    if (searches.indexOf(word) < 0) {
+      searches.push(word)
+    }
+    localStorage.setItem('searches', JSON.stringify(searches))
+  }
+
   function searchTextChanged(e) {
     let el = $('#searchedWords')
     let w = $('#searchText').val()
@@ -271,6 +304,7 @@
     if(w.trim().length && el.find("option[value='" + w + "']").length === 0) {
        let op = new Option(w, w, true, true)
        el.append(op)
+       saveSearch(w)
     }
     fetchSRTs(this);
   }
