@@ -1439,10 +1439,11 @@
     let numberOfResults = 0
     function appendIfNotAlreadyAdded($file, line, file, item, items) {
       let key = `${file.source}-${file.url}-${line.index}`
-      if (alreadyAdded[key] && !window.showDuplicates) return
+      if (alreadyAdded[key] && !window.showDuplicates) return 0
       $file.append(htmlForSrtLine(line, file, item.sv_subs.url, items));
       numberOfResults += 1
       alreadyAdded[key] = true
+      return 1
     }
 
     Object.keys(wordToItemsMap).toSorted().forEach(word => {
@@ -1467,9 +1468,18 @@
             return getWords(it.text).includes(word)
           })
 
+          let n = 0
           _.take(matchingLines, numberOfItemsToShow()).forEach(line => {
-            appendIfNotAlreadyAdded($file, line, file, item, items);
+            n += appendIfNotAlreadyAdded($file, line, file, item, items);
           })
+
+          if(n === 0 && wordBlock.html().indexOf('No results found for ') < 0) {
+            $file.html(`
+                        <h6>No results found for ${window.searchText}</h6>
+                        <div>Try Wiki ${getWikiLinks(window.searchText)}</div>
+                        <br>
+                      `);
+          }
 
           wordBlock.append($file)
         })
@@ -1480,6 +1490,13 @@
   }
 
   window.youtubePlayInterval = null
+
+  function resultNotFound(search) {
+    return `
+<h3>No results found for ${search}</h3>
+Try Wiki ${getWikiLinks(search)}
+`;
+  }
 
   function render(list, search) {
     if(!list) return
@@ -1501,10 +1518,7 @@
     renderAccordions()
 
     if(resultSize === 0) {
-      $result.html(`
-<h3>No results found for ${search}</h3>
-Try Wiki ${getWikiLinks(search)}
-`)
+      $result.html(resultNotFound(search))
     }
 
     $(".srt-file h4").dblclick(e => {
