@@ -1,0 +1,288 @@
+1
+00:00:07,936 --> 00:00:14,080
+We will go through how to edit, upgrade and enrich in Libris cataloging.
+
+2
+00:00:15,360 --> 00:00:22,460
+We will look at editing a description, upgrade of advance information and preliminary information,
+
+3
+00:00:23,040 --> 00:00:27,140
+Enrich from template and from mail and detailed enrichment.
+
+4
+00:00:27,904 --> 00:00:32,256
+In most cases, there is already a post in Libris for what you should describe.
+
+5
+00:00:32,768 --> 00:00:38,912
+Search carefully before creating new to avoid duplicates.
+ Follow the instructions and guidelines
+
+6
+00:00:39,168 --> 00:00:41,472
+When you edit and upgrade items.
+
+7
+00:00:41,728 --> 00:00:47,872
+You will find links to instructions on the Edit and upgrade page in the assistance section.
+
+8
+00:00:48,128 --> 00:00:54,272
+Once you have applied and got a hit, check out what level the item has.
+ You see it as an icon in the summary.
+
+9
+00:00:55,040 --> 00:00:59,648
+You also see it in admin metadata below description level.
+
+10
+00:00:59,904 --> 00:01:05,792
+If the item is at the national bibliographic level, like this item, it usually does not need to be changed.
+
+11
+00:01:06,560 --> 00:01:11,424
+If the post is at a minimum or library level, it may need to be supplemented.
+
+12
+00:01:11,680 --> 00:01:19,420
+An entry at the level of advance information or preliminary needs to be upgraded before you place stocks.
+
+13
+00:01:20,200 --> 00:01:25,400
+When you upgrade the entry, you must change to another approved level before saving,
+
+14
+00:01:25,580 --> 00:01:28,060
+Otherwise, your changes can be overwritten.
+
+15
+00:01:28,320 --> 00:01:34,208
+Read more in the help text for admin metadata below description level
+
+16
+00:01:35,232 --> 00:01:41,120
+and under nuclear elements and mandatory elements, description levels.
+
+17
+00:01:41,888 --> 00:01:47,520
+To edit, click the edit icon in the tool menu
+
+18
+00:01:47,776 --> 00:01:50,848
+or use the shortcut Ctrl + E.
+
+19
+00:01:52,128 --> 00:01:58,272
+You can add properties with the plus signs during instance, during instance of works
+
+20
+00:01:58,528 --> 00:02:00,320
+and under admin metadata.
+
+21
+00:02:00,832 --> 00:02:04,160
+Watch the movie Properties and entities.
+
+22
+00:02:04,416 --> 00:02:10,304
+Feel free to use the enriching feature from template to add multiple properties at the same time.
+
+23
+00:02:10,816 --> 00:02:14,656
+You can find it under tools, enrich from template.
+
+24
+00:02:15,424 --> 00:02:19,264
+Here you get a list of templates that you can choose to enrich from.
+
+25
+00:02:19,776 --> 00:02:21,312
+I choose a book.
+
+26
+00:02:22,600 --> 00:02:29,600
+A number of properties were now added from the template, both during instance and during instance of works
+
+27
+00:02:29,760 --> 00:02:32,060
+and under admin metadata.
+
+28
+00:02:34,120 --> 00:02:41,540
+You can then work on these characteristics and fill in the tasks, link to entities, etc.
+
+29
+00:02:41,800 --> 00:02:44,640
+Then save the post and place stocks.
+
+30
+00:02:44,960 --> 00:02:48,340
+It is also possible to enrich from another entry.
+
+31
+00:02:49,220 --> 00:02:53,320
+Under tools you have the enrich from mail option.
+
+32
+00:02:54,080 --> 00:02:58,688
+Here are two options, from ID or from file.
+
+33
+00:02:59,968 --> 00:03:02,272
+If you choose from ID
+
+34
+00:03:03,040 --> 00:03:08,672
+So you get the opportunity to enrich the pre -mail with properties from another entry.
+
+35
+00:03:09,696 --> 00:03:13,024
+So you need an ID for the second post.
+
+36
+00:03:15,080 --> 00:03:17,640
+Here we have a finished mail
+
+37
+00:03:17,900 --> 00:03:24,800
+And we find ID to the post in the summary.
+ We copy the ID.
+
+38
+00:03:28,360 --> 00:03:34,100
+Then we paste it into the pre -mail, enrich from ID
+
+39
+00:03:35,300 --> 00:03:41,440
+And now a number of properties were added from the finished item to the pre -mail.
+
+40
+00:03:42,460 --> 00:03:52,340
+Of course, we must check carefully if these information is correct and change to correct information.
+
+41
+00:03:53,480 --> 00:03:55,780
+But you get in many cases
+
+42
+00:03:56,544 --> 00:04:01,408
+Good tasks to start from and that you can then continue to work on.
+
+43
+00:04:02,176 --> 00:04:06,272
+It is also possible to enrich the post from a file.
+
+44
+00:04:07,296 --> 00:04:12,160
+We go to a more full record that we want to enrich from
+
+45
+00:04:12,920 --> 00:04:20,080
+And here we choose tools, download JSON-LD and we choose to save it as a file
+
+46
+00:04:20,280 --> 00:04:24,200
+as we name.
+ I call the file a template file.
+
+47
+00:04:29,320 --> 00:04:31,620
+We go back to the pre -mail.
+
+48
+00:04:32,380 --> 00:04:36,600
+And now we want to enrich this from the template file.
+
+49
+00:04:36,780 --> 00:04:39,040
+Then we go to tools,
+
+50
+00:04:39,551 --> 00:04:42,623
+Enrich from mail, from file.
+
+51
+00:04:43,647 --> 00:04:45,695
+And here we choose template file.
+
+52
+00:04:49,540 --> 00:04:54,820
+Now a number of properties from the template file were added to in the pre -mail
+
+53
+00:04:55,160 --> 00:05:00,940
+And just as we said before, you have to check it carefully and edit it
+
+54
+00:05:01,180 --> 00:05:03,600
+Who needs to be edited before saving.
+
+55
+00:05:04,120 --> 00:05:12,080
+This way of working can be useful if you are going to make a number of items that look almost the same.
+
+56
+00:05:12,840 --> 00:05:15,400
+And you can then enrich them from a template file.
+
+57
+00:05:15,903 --> 00:05:21,279
+It is also possible to enrich with one property at a time from one post to another.
+
+58
+00:05:22,303 --> 00:05:28,191
+Then you go to tools, detailed enrichment, and here you need id
+
+59
+00:05:28,447 --> 00:05:31,007
+For the item you want to enrich from.
+
+60
+00:05:31,775 --> 00:05:36,383
+We go to the more complete post and copy ID from there.
+
+61
+00:05:37,151 --> 00:05:43,295
+Then we go back and paste the ID under detailed enrichment into the pre -mail.
+
+62
+00:05:44,831 --> 00:05:49,695
+Then we come to a view where we can hand pick property for property.
+
+63
+00:05:51,487 --> 00:05:57,119
+And we see here the post we want to enrich from and the post we want to enrich to.
+
+64
+00:05:58,143 --> 00:06:01,471
+However, it does not work during the instance of works.
+
+65
+00:06:03,007 --> 00:06:08,383
+Incidentally, you can expand or replace properties.
+
+66
+00:06:09,407 --> 00:06:12,223
+We try to expand.
+
+67
+00:06:13,000 --> 00:06:18,120
+We pick up on the origin from one item to the other.
+
+68
+00:06:19,360 --> 00:06:25,540
+And we try to replace a task with another task.
+
+69
+00:06:26,040 --> 00:06:32,180
+Of course, you have to check that all information is correct before you save the mail.
+
+70
+00:06:32,700 --> 00:06:38,260
+Once you have checked all the information and saved, you can set stocks.
+
+71
+00:06:38,540 --> 00:06:40,900
+Watch the movies about stocks.
+

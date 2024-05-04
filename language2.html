@@ -114,12 +114,6 @@
           }
         };
       }
-
-      async function extractMP3(url, body) {
-        let resp = await fetch(url, postRequestConfig(body));
-        console.log(resp)
-      }
-
       function chunkifySentence(text, max_chars) {
         let words = text.split(" ")
         let res = []
@@ -137,7 +131,6 @@
         res.push(current)
         return res
       }
-
 
       function getTimes(el, fl) {
         let lines = $(el).find(".line").map((i, e) => $(e).data()).toArray()

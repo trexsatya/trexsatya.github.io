@@ -1,0 +1,186 @@
+1
+00:00:01,800 --> 00:00:05,520
+När du ska söka efter fakta 
+och information till en uppgift-
+
+2
+00:00:05,680 --> 00:00:07,680
+-om till exempel miljöpåverkan-
+
+3
+00:00:07,840 --> 00:00:11,480
+-kan det vara bra att känna till 
+grundläggande söktekniker.
+
+4
+00:00:11,640 --> 00:00:15,000
+Dessa hjälper dig att få 
+ett så bra resultat som möjligt.
+
+5
+00:00:15,160 --> 00:00:19,040
+Här kommer tre tips på 
+hur du kan optimera din sökning.
+
+6
+00:00:21,200 --> 00:00:24,280
+När du ska söka på ett begrepp 
+som består av flera ord-
+
+7
+00:00:24,440 --> 00:00:27,960
+-kan det vara bra att skriva 
+orden inom citationstecken.
+
+8
+00:00:28,120 --> 00:00:31,560
+Då begränsar du din sökning 
+till att enbart visa resultat-
+
+9
+00:00:31,720 --> 00:00:33,720
+-som innehåller orden i följd.
+
+10
+00:00:33,880 --> 00:00:38,280
+Skriver du "global uppvärmning", får 
+du upp resultat med begreppet.
+
+11
+00:00:38,440 --> 00:00:42,520
+Söker du istället på "global 
+uppvärmning" utan citationstecken-
+
+12
+00:00:42,680 --> 00:00:46,200
+-kan vissa sökmotorer visa resultat 
+där antingen "global"-
+
+13
+00:00:46,360 --> 00:00:48,800
+-eller "uppvärmning" finns med.
+
+14
+00:00:50,000 --> 00:00:53,080
+En metod som kan hjälpa dig 
+att få en bredare sökning-
+
+15
+00:00:53,240 --> 00:00:55,800
+-i vissa sökmotorer är trunkering.
+
+16
+00:00:55,960 --> 00:00:58,680
+Genom att lägga till 
+en stjärna i ordstammen-
+
+17
+00:00:58,840 --> 00:01:02,640
+-får du träff på alla ord 
+med samma början som ditt sökord.
+
+18
+00:01:02,800 --> 00:01:05,960
+Till exempel, 
+söker du på "miljö*"-
+
+19
+00:01:06,120 --> 00:01:09,160
+-kan du få sökträffar 
+som "miljö", "miljön"-
+
+20
+00:01:09,320 --> 00:01:12,840
+-"miljöfrågor", "miljöpåverkan", 
+o.s.v.
+
+21
+00:01:13,960 --> 00:01:18,280
+I många sökmotorer kan du styra 
+hur du vill kombinera dina sökord-
+
+22
+00:01:18,440 --> 00:01:21,080
+-genom att använda dig 
+av boolesk sökning.
+
+23
+00:01:21,240 --> 00:01:23,280
+Det innebär 
+att du skriver orden:
+
+24
+00:01:23,440 --> 00:01:26,440
+"and", "or", eller "not" 
+mellan dina sökord.
+
+25
+00:01:26,600 --> 00:01:28,600
+Om du till exempel 
+ska söka på-
+
+26
+00:01:28,760 --> 00:01:31,240
+-miljöpåverkan i Sverige 
+kan du skriva:
+
+27
+00:01:31,400 --> 00:01:37,120
+"Miljöpåverkan OR klimatförändring OR 
+koldioxidutsläpp AND Sverige".
+
+28
+00:01:37,280 --> 00:01:39,480
+För att sökmotorn 
+ska veta vilka ord-
+
+29
+00:01:39,640 --> 00:01:42,200
+-som ska sökas 
+tillsammans med ordet "OR"-
+
+30
+00:01:42,360 --> 00:01:45,720
+-stänger du 
+in orden i en parentes.
+
+31
+00:01:45,880 --> 00:01:48,760
+Då får du sökträffar 
+som innehåller "Sverige"-
+
+32
+00:01:48,920 --> 00:01:51,240
+-samt något 
+av orden "miljöpåverkan"-
+
+33
+00:01:51,400 --> 00:01:54,720
+-"klimatförändring" 
+och "koldioxidutsläpp".
+
+34
+00:01:54,880 --> 00:01:58,880
+Alltså, för att optimera 
+din sökning kan du använda dig av:
+
+35
+00:01:59,040 --> 00:02:02,480
+Frassökning, 
+trunkering och boolesk sökning.
+
+36
+00:02:02,640 --> 00:02:05,400
+Det här är några tips 
+som hjälper dig att hitta-
+
+37
+00:02:05,560 --> 00:02:10,080
+-det du söker efter på internet 
+och kan göra att du sparar tid.
+
+38
+00:02:12,040 --> 00:02:16,040
+Svensktextning: Jenny Berglund 
+Iyuno-SDI Group för UR
+
