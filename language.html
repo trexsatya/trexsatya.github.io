@@ -480,6 +480,7 @@
   }
 
   function getWikiLink(word, uri = null) {
+    word = word.toLowerCase()
     return `<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(uri || word)}" target="_blank">${word}</a></span>`;
   }
 
