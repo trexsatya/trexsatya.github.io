@@ -40,8 +40,8 @@ Får jag se?
 
 7
 00:00:46.400 --> 00:00:51.480
-<c.teletext.sang><c.sang>Ju mer vi är tillsammans
-<c.sang>ju gladare vi blir
+Ju mer vi är tillsammans
+ju gladare vi blir
 
 
 
@@ -696,7 +696,7 @@ ska bli härligt att sköta sig.
 
 105
 00:10:49.560 --> 00:10:54.480
-<c.teletext.urfjarran>Prova att lägga ut huset
+Prova att lägga ut huset
 på Gula sidorna.
 
 
@@ -710,7 +710,7 @@ Det tar tid att sälja hus här ute.
 
 107
 00:11:01.520 --> 00:11:05.720
-<c.teletext.urfjarran>Ja, så är det nog.
+Ja, så är det nog.
 
 
 
@@ -729,7 +729,7 @@ eller nåt jävla titanium.
 
 110
 00:11:46.120 --> 00:11:49.080
-<c.teletext.ljudskylt><c.ljud>DÖRRKNACKNING
+DÖRRKNACKNING
 
 
 
@@ -927,7 +927,7 @@ Jag vill hyra en slamsugare ikväll.
 
 140
 00:15:23.440 --> 00:15:27.960
-<c.teletext.urfjarran>Vi har inga tomma bilar ikväll.
+Vi har inga tomma bilar ikväll.
 
 
 
@@ -974,7 +974,7 @@ Vad säger du nu då, Tony?
 
 147
 00:17:02.440 --> 00:17:05.480
-<c.teletext.ljudskylt><c.ljud>PRUTTLJUD
+PRUTTLJUD
 
 
 

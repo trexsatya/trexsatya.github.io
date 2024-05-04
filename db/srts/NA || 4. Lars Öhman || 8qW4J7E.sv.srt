@@ -1,18 +1,18 @@
 1
 00:00:17.720 --> 00:00:20.760
-<c.ljud>VÄCKARKLOCKA
+VÄCKARKLOCKA
 
 
 
 2
 00:00:38.360 --> 00:00:41.360
-<c.ljud>EN DROPPE
+EN DROPPE
 
 
 
 3
 00:01:02.200 --> 00:01:05.880
-<c.ljud>SLAMMER
+SLAMMER
 
 
 
@@ -698,7 +698,7 @@ gnäller och tror att han vet allt.
 
 105
 00:11:04.480 --> 00:11:08.680
-<c.ljud>SNARKNINGAR
+SNARKNINGAR
 
 
 
@@ -731,19 +731,19 @@ som nån jetmotor i vardagsrummet.
 
 110
 00:11:40.120 --> 00:11:42.120
-<c.sang>Morning has...
+Morning has...
 
 
 
 111
 00:11:42.280 --> 00:11:45.400
-<c.ljud>BANKANDE
+BANKANDE
 
 
 
 112
 00:11:50.880 --> 00:11:53.680
-<c.ljud>BANKNINGARNA FORTSÄTTER
+BANKNINGARNA FORTSÄTTER
 
 
 
@@ -1233,13 +1233,13 @@ Nu skulle morsan se dig.
 
 186
 00:19:11.280 --> 00:19:14.080
-<c.ljud>SNARKNINGAR
+SNARKNINGAR
 
 
 
 187
 00:19:31.760 --> 00:19:35.760
-<c.ljud>DUNSAR OCH SÅGLJUD
+DUNSAR OCH SÅGLJUD
 
 
 
@@ -1715,62 +1715,62 @@ Hej då, pojkarna mina.
 
 260
 00:27:40.040 --> 00:27:42.800
-<c.sang>Ayatollah's in Iran
-<c.sang>Russians in Afghanistan
+Ayatollah's in Iran
+Russians in Afghanistan
 
 
 
 261
 00:27:42.960 --> 00:27:46.000
-<c.sang>Wheel of Fortune, Sally Ride,
-<c.sang>heavy metal, suicide
+Wheel of Fortune, Sally Ride,
+heavy metal, suicide
 
 
 
 262
 00:27:46.160 --> 00:27:49.320
-<c.sang>Foreign debts, homeless vets,
-<c.sang>Aids, crack, Bernie Goetz
+Foreign debts, homeless vets,
+Aids, crack, Bernie Goetz
 
 
 
 263
 00:27:49.480 --> 00:27:52.640
-<c.sang>Hypodermics on the shores
-<c.sang>China's under martial law
+Hypodermics on the shores
+China's under martial law
 
 
 
 264
 00:27:52.800 --> 00:27:55.920
-<c.sang>Rock and roller cola wars
-<c.sang>I can't take it anymore
+Rock and roller cola wars
+I can't take it anymore
 
 
 
 265
 00:27:56.080 --> 00:27:58.800
-<c.sang>We didn't start the fire
+We didn't start the fire
 
 
 
 266
 00:27:58.960 --> 00:28:02.560
-<c.sang>It was always burning
-<c.sang>since the world's been turning
+It was always burning
+since the world's been turning
 
 
 
 267
 00:28:02.720 --> 00:28:05.480
-<c.sang>We didn't start the fire
+We didn't start the fire
 
 
 
 268
 00:28:05.640 --> 00:28:08.440
-<c.sang>But when we are gone
-<c.sang>will it still burn on, and on...
+But when we are gone
+will it still burn on, and on...
 
 
 

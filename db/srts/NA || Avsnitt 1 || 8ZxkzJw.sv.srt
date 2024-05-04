@@ -390,8 +390,8 @@ Tack så mycket Emelie. – Robin?
 
 59
 00:04:46.920 --> 00:04:51.200
-<c.teletext.sang><c.sang>Seni gidi findikkiran
-<c.sang>Yilani deliginden çikaran
+Seni gidi findikkiran
+Yilani deliginden çikaran
 
 
 
@@ -1610,8 +1610,8 @@ panelister blir Assia och Kaliffa.
 
 240
 00:20:16.800 --> 00:20:21.960
-<c.teletext.sang><c.sang>De mekar, de mekar två, de mekar tre
-<c.sang>Fire!
+De mekar, de mekar två, de mekar tre
+Fire!
 
 
 
@@ -1675,7 +1675,7 @@ but we had the best album."
 
 250
 00:20:59.920 --> 00:21:02.440
-<c.teletext.sang><c.sang>"De mekar en, de mekar två!"
+"De mekar en, de mekar två!"
 
 
 
@@ -2071,7 +2071,7 @@ Längst, bäst och godast
 
 309
 00:26:16.680 --> 00:26:18.880
-<c.teletext.sang><c.sang>Helt seriöst!
+Helt seriöst!
 
 
 

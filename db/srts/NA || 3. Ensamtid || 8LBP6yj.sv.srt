@@ -308,7 +308,7 @@ att röra sig mot sängkammaren.
 
 49
 00:05:16.080 --> 00:05:19.080
-<c.teletext.ljudskylt><c.ljud>MOBILSIGNAL
+MOBILSIGNAL
 
 
 
@@ -341,7 +341,7 @@ snart livet av mig. Vad gör du?
 
 54
 00:05:37.840 --> 00:05:39.800
-<c.teletext.ljudskylt><c.ljud>GNÄGGANDE
+GNÄGGANDE
 
 
 
@@ -578,7 +578,7 @@ Nu ska han få se på fan.
 
 90
 00:09:43.320 --> 00:09:46.280
-<c.teletext.ljudskylt><c.ljud>MOBILSIGNAL
+MOBILSIGNAL
 
 
 
@@ -654,7 +654,7 @@ Fy fan. – Jerker, stick iväg däråt.
 
 102
 00:10:46.160 --> 00:10:49.200
-<c.teletext.ljudskylt><c.ljud>MOBILSIGNAL
+MOBILSIGNAL
 
 
 
@@ -730,7 +730,7 @@ Det är ingen fara.
 
 114
 00:11:52.840 --> 00:11:55.840
-<c.teletext.ljudskylt><c.ljud>MOBILSIGNAL
+MOBILSIGNAL
 
 
 
@@ -964,7 +964,7 @@ Ha en trevlig dag.
 
 150
 00:15:11.920 --> 00:15:14.920
-<c.teletext.ljudskylt><c.ljud>MOBILSIGNAL
+MOBILSIGNAL
 
 
 
@@ -1034,7 +1034,7 @@ Kom igen här nu.
 
 161
 00:16:19.280 --> 00:16:22.320
-<c.teletext.ljudskylt><c.ljud>GLAS KROSSAS
+GLAS KROSSAS
 
 
 

@@ -41,7 +41,7 @@ en nota på 2 000 från förra månaden.
 
 7
 00:01:13.200 --> 00:01:16.880
-<c.ljud>TERMINALEN LARMAR
+TERMINALEN LARMAR
 
 
 
@@ -61,7 +61,7 @@ en nota på 2 000 från förra månaden.
 
 10
 00:01:27.640 --> 00:01:30.040
-<c.ljud>TERMINALEN LARMAR
+TERMINALEN LARMAR
 
 
 
@@ -107,7 +107,7 @@ Alltså...
 
 17
 00:02:05.640 --> 00:02:10.080
-<c.ljud>"BAD MOON RISING" PÅ RADIO
+"BAD MOON RISING" PÅ RADIO
 
 
 
@@ -688,7 +688,7 @@ hålla i huvudet med taxor och skit...
 
 104
 00:10:59.120 --> 00:11:01.480
-<c.ljud>JAMANDE
+JAMANDE
 
 
 
@@ -1183,13 +1183,13 @@ på axeln, entreprenör Leif Öhman.
 
 178
 00:19:31.000 --> 00:19:33.880
-<c.ljud>TUPP GAL
+TUPP GAL
 
 
 
 179
 00:19:34.040 --> 00:19:36.920
-<c.ljud>BILLY HULKAR
+BILLY HULKAR
 
 
 
@@ -1236,7 +1236,7 @@ Ens enda anställd
 
 186
 00:20:09.840 --> 00:20:14.640
-<c.ljud>RINGSIGNAL
+RINGSIGNAL
 
 
 
@@ -1316,7 +1316,7 @@ vad för fans... Usch!
 
 198
 00:21:19.720 --> 00:21:21.720
-<c.ljud>SMÄLL
+SMÄLL
 
 
 
@@ -1369,7 +1369,7 @@ Det är lugnt.
 
 206
 00:22:11.520 --> 00:22:14.680
-<c.ljud>BILEN LÅTER ILLA
+BILEN LÅTER ILLA
 
 
 

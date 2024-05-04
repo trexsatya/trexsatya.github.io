@@ -1,38 +1,38 @@
 1
 00:00:56.240 --> 00:00:59.560
-–Skiva: <c.sang>Stilla natt...
-<c.sang>–Stilla natt!
+–Skiva: Stilla natt...
+–Stilla natt!
 
 
 
 2
 00:00:59.720 --> 00:01:03.400
-<c.sang>Heliga natt!
+Heliga natt!
 
 
 
 3
 00:01:03.560 --> 00:01:06.040
-<c.sang>ALLT... Allt...
+ALLT... Allt...
 
 
 
 4
 00:01:06.200 --> 00:01:10.240
-–Skiva: <c.sang>Allt är frid...
-<c.sang>–Allt är frid!
+–Skiva: Allt är frid...
+–Allt är frid!
 
 
 
 5
 00:01:10.400 --> 00:01:13.800
-<c.sang>Stjärnan blid
+Stjärnan blid
 
 
 
 6
 00:01:13.960 --> 00:01:19.360
-<c.sang>skiner på barn...på barn...
+skiner på barn...på barn...
 – Hej, älskling. Är du uppe?
 
 
@@ -190,7 +190,7 @@ Bara du och jag...och barnen.
 
 29
 00:03:25.600 --> 00:03:30.720
-<c.sang>Hej, mitt vinterland, nu är jag här!
+Hej, mitt vinterland, nu är jag här!
 
 
 
@@ -279,7 +279,7 @@ Vi firar en svensk, gammaldags jul.
 42
 00:04:34.360 --> 00:04:39.440
 –Ja, vi ser på teve...
-<c.sang>–Stilla natt...
+–Stilla natt...
 
 
 
@@ -299,7 +299,7 @@ Pääministeri Ingvar Carlsson...
 
 45
 00:04:50.800 --> 00:04:54.160
-<c.sang>–Hosianna...
+–Hosianna...
 –Vad är detta?!
 
 
@@ -502,7 +502,7 @@ Jag ska inte säga nåt elakt tillbaka.
 
 75
 00:07:52.920 --> 00:07:55.920
-<c.teletext.ljudskylt><c.ljud>DÖRRKLOCKA
+DÖRRKLOCKA
 
 
 
@@ -1162,7 +1162,7 @@ Ni ska ha en fin barndom att minnas.
 
 172
 00:17:42.600 --> 00:17:45.600
-<c.teletext.ljudskylt><c.ljud>DÖRRKLOCKA
+DÖRRKLOCKA
 
 
 
@@ -1674,8 +1674,8 @@ Det är bara jul en gång om året.
 
 247
 00:24:53.880 --> 00:24:58.240
-<c.teletext.sang><c.sang>Nu är det jul igen,
-<c.sang>och nu är det jul igen...
+Nu är det jul igen,
+och nu är det jul igen...
 
 
 

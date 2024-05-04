@@ -1,26 +1,26 @@
 1
 00:00:04.920 --> 00:00:09.960
-<c.huvudpratare>Norrland
-<c.huvudpratare>– tystnadens och lugnets landsdel–
+Norrland
+– tystnadens och lugnets landsdel–
 
 
 
 2
 00:00:10.120 --> 00:00:13.760
-<c.huvudpratare>–med sina höga berg och djupa dalar.
+–med sina höga berg och djupa dalar.
 
 
 
 3
 00:00:13.920 --> 00:00:20.400
-<c.huvudpratare>Men för två bröder i Sörbäcken
-<c.huvudpratare>är vardagen varken lugn eller tyst.
+Men för två bröder i Sörbäcken
+är vardagen varken lugn eller tyst.
 
 
 
 4
 00:00:22.600 --> 00:00:26.720
-<c.huvudpratare>Deras namn är Leif och Billy.
+Deras namn är Leif och Billy.
 
 
 
@@ -337,7 +337,7 @@ Nu ska du få träffa Leif-inator.
 
 51
 00:05:21.040 --> 00:05:24.600
-<c.teletext.ljudskylt><c.ljud>DET KNACKAR PÅ DÖRREN
+DET KNACKAR PÅ DÖRREN
 
 
 
@@ -450,7 +450,7 @@ Herregud.
 
 68
 00:07:03.720 --> 00:07:07.720
-<c.teletext.ljudskylt><c.ljud>DET KNACKAR PÅ DÖRREN
+DET KNACKAR PÅ DÖRREN
 
 
 
@@ -588,7 +588,7 @@ ett tecken. Vad som helst.
 
 89
 00:09:04.920 --> 00:09:08.120
-<c.teletext.urfjarran>Ge oss ett tecken.
+Ge oss ett tecken.
 
 
 

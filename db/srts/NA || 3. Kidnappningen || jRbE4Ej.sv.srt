@@ -14,7 +14,7 @@
 
 3
 00:00:16.640 --> 00:00:20.320
-<c.teletext.ljudskylt><c.ljud>TELEFONEN RINGER
+TELEFONEN RINGER
 
 
 
@@ -235,20 +235,20 @@ Luta dig tillbaka och njut av korven.
 
 36
 00:03:57.200 --> 00:04:00.160
-<c.teletext.urfjarran>Nu lokala nyheter.
+Nu lokala nyheter.
 
 
 
 37
 00:04:00.320 --> 00:04:05.960
-<c.teletext.urfjarran>En kvinna i 80-årsåldern har anmälts
+En kvinna i 80-årsåldern har anmälts
 försvunnen av hemtjänsten.
 
 
 
 38
 00:04:06.120 --> 00:04:10.240
-<c.teletext.urfjarran>Polisen har gjort en efterlysning.
+Polisen har gjort en efterlysning.
 
 
 
@@ -342,7 +342,7 @@ När chansen ges bör man ta den.
 
 52
 00:05:46.880 --> 00:05:49.840
-<c.teletext.ljudskylt><c.ljud>SIRENER
+SIRENER
 
 
 
@@ -404,7 +404,7 @@ Ring och hör vad han håller på med.
 
 61
 00:06:46.400 --> 00:06:49.720
-<c.teletext.ljudskylt><c.ljud>TELEFONEN RINGER
+TELEFONEN RINGER
 
 
 

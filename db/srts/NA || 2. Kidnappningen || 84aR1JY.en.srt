@@ -22,7 +22,7 @@ Irja ... No!
 
 6
 00:00:37.760 --> 00:00:41.320
-C.Teletext. sound signc. sound mobile signal
+Mobile signal
 
 7
 00:00:41.480 --> 00:00:46.240
@@ -499,15 +499,15 @@ Wait here, Billy.
 
 110
 00:13:26.000 --> 00:13:29.040
-C.Teletext.kudskylk.kudtv sound
+TV sound
 
 111
 00:13:32.640 --> 00:13:35.680
-C.Teletext.kjudskylk. sounddörren opens
+The door opens
 
 112
 00:13:39.280 --> 00:13:42.280
-C.Teletext. sound signc. sound crunch sound
+Vomit sound
 
 113
 00:13:42.440 --> 00:13:46.520
@@ -681,7 +681,7 @@ Good job, the brother.
 
 150
 00:19:14.800 --> 00:19:18.800
-C.Teletext. sound signc. sound crunch sound
+Vomit sound
 
 151
 00:19:34.840 --> 00:19:39.440

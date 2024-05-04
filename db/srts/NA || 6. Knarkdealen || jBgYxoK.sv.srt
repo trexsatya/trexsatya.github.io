@@ -727,7 +727,7 @@ får man löpa linan ut. Det går bra.
 110
 00:12:50.000 --> 00:12:56.320
 –Kom igen nu, brorsan!
-–Vi fixar det. <c.ljud>LEIFS MAGE MULLRAR
+–Vi fixar det. LEIFS MAGE MULLRAR
 
 
 
@@ -740,7 +740,7 @@ får man löpa linan ut. Det går bra.
 
 112
 00:13:02.200 --> 00:13:09.200
-<c.ljud>BILLYS MAGE MULLRAR
+BILLYS MAGE MULLRAR
 
 
 

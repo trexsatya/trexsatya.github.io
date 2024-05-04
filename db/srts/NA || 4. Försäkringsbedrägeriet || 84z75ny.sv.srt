@@ -439,49 +439,49 @@ Leif... Herregud.
 
 66
 00:06:56.040 --> 00:07:00.360
-<c.teletext.sang><c.sang>Grannen är hack i häl, han påstår
-<c.sang>att jag stjäl från hans äppelträd
+Grannen är hack i häl, han påstår
+att jag stjäl från hans äppelträd
 
 
 
 67
 00:07:00.520 --> 00:07:04.080
-<c.teletext.sang><c.sang>Jag vill ju väl
-<c.sang>men måste göra något åt vår misär
+Jag vill ju väl
+men måste göra något åt vår misär
 
 
 
 68
 00:07:04.240 --> 00:07:08.280
-<c.teletext.sang><c.sang>Far han är proletär och jobbar sent
-<c.sang>men har inte råd med käk
+Far han är proletär och jobbar sent
+men har inte råd med käk
 
 
 
 69
 00:07:08.440 --> 00:07:12.760
-<c.teletext.sang><c.sang>så klart jag har mina skäl och
-<c.sang>för övrigt är ju grannen miljonär
+så klart jag har mina skäl och
+för övrigt är ju grannen miljonär
 
 
 
 70
 00:07:12.920 --> 00:07:18.360
-<c.teletext.sang><c.sang>Jag måste springa, för om grannen
-<c.sang>hinner ifatt får det ett tråkigt slut
+Jag måste springa, för om grannen
+hinner ifatt får det ett tråkigt slut
 
 
 
 71
 00:07:21.120 --> 00:07:26.440
-<c.teletext.sang><c.sang>Du kan ringa nästa vecka,
-<c.sang>då har jag kanske sluppit ut.
+Du kan ringa nästa vecka,
+då har jag kanske sluppit ut.
 
 
 
 72
 00:07:31.760 --> 00:07:34.840
-<c.teletext.ljudskylt><c.ljud>LJUD FRÅN TEVEN
+LJUD FRÅN TEVEN
 
 
 
@@ -568,7 +568,7 @@ Lägg av, Leif! Släpp telefonen!
 
 85
 00:08:38.080 --> 00:08:41.920
-<c.teletext.ljudskylt><c.ljud>TELEFONEN RINGER
+TELEFONEN RINGER
 
 
 
@@ -797,7 +797,7 @@ Fan!
 
 119
 00:12:08.960 --> 00:12:11.920
-<c.teletext.ljudskylt><c.ljud>POLISSIRENER
+POLISSIRENER
 
 
 

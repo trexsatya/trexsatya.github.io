@@ -135,7 +135,7 @@ Det är klart! 2 000 spänn.
 
 21
 00:01:51.840 --> 00:01:58.200
-<c.teletext.urfjarran>Dags för nyheter. Spänningen mellan
+Dags för nyheter. Spänningen mellan
 Sverige, Finland och Ryssland ökar.
 
 
@@ -156,14 +156,14 @@ Där vet ingen vilka vi är.
 
 24
 00:02:11.880 --> 00:02:18.160
-<c.teletext.urfjarran>Det är ännu oklart vad Ryssland vill
+Det är ännu oklart vad Ryssland vill
 med denna markering.
 
 
 
 25
 00:02:20.440 --> 00:02:27.360
-<c.teletext.urfjarran>Privatpersoner rekommenderas
+Privatpersoner rekommenderas
 att hålla sig från gränsområdena.
 
 
@@ -312,7 +312,7 @@ Och marken är finare i Finland.
 
 47
 00:04:55.920 --> 00:04:59.920
-<c.teletext.ljudskylt><c.ljud>WALKIE-TALKIEN SPRAKAR
+WALKIE-TALKIEN SPRAKAR
 
 
 
@@ -573,14 +573,14 @@ Vi ska upp tidigt.
 
 86
 00:08:43.080 --> 00:08:48.680
-<c.teletext.urfjarran>God eftermiddag. Nyheter! Spänningen
+God eftermiddag. Nyheter! Spänningen
 gentemot våra grannar i öst ökar.
 
 
 
 87
 00:08:48.840 --> 00:08:56.080
-<c.teletext.urfjarran>Ryssland tar allvarligt på
+Ryssland tar allvarligt på
 den finsk-svenska upprustningen.
 
 
@@ -631,14 +631,14 @@ Vad fan?!
 
 95
 00:09:44.520 --> 00:09:49.240
-<c.teletext.urfjarran>Läget mellan Sverige, Finland
+Läget mellan Sverige, Finland
 och Ryssland förvärras.
 
 
 
 96
 00:09:49.400 --> 00:09:54.040
-<c.teletext.urfjarran>Ryssland säger att Finland
+Ryssland säger att Finland
 har beskjutit en rysk bataljon.
 
 
@@ -671,7 +671,7 @@ Nu packar vi ihop här.
 
 101
 00:10:15.040 --> 00:10:18.240
-<c.teletext.ljudskylt><c.ljud>WALKIE-TALKIEN FÅR IN RYSKA RÖSTER
+WALKIE-TALKIEN FÅR IN RYSKA RÖSTER
 
 
 
@@ -695,7 +695,7 @@ Vad fan.
 
 105
 00:10:33.560 --> 00:10:37.560
-<c.teletext.ljudskylt><c.ljud>PRATAR LÅTSASRYSKA
+PRATAR LÅTSASRYSKA
 
 
 

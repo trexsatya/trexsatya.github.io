@@ -483,7 +483,7 @@ Det blir nog bra med det. Sov nu.
 
 72
 00:08:33.880 --> 00:08:37.400
-<c.teletext.ljudskylt><c.ljud>VI I 5:ANS SIGNATURMELODI
+VI I 5:ANS SIGNATURMELODI
 
 
 
@@ -1103,7 +1103,7 @@ Jag går och letar!
 
 166
 00:18:03.520 --> 00:18:08.120
-<c.ljud>SIRENER
+SIRENER
 
 
 
@@ -1141,7 +1141,7 @@ Det är jämnt inför sista frågan.
 
 172
 00:18:45.720 --> 00:18:49.680
-<c.teletext.ljudskylt><c.ljud>HEJARAMSA
+HEJARAMSA
 
 
 

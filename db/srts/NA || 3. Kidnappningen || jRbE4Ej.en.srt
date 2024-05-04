@@ -10,7 +10,7 @@
 
 3
 00:00:16.640 --> 00:00:20.320
-C.Teletext.kjudskylk. sound phone rings
+THE PHONE IS RINGING
 
 4
 00:00:21.360 --> 00:00:25.480
@@ -167,15 +167,15 @@ Sit back and enjoy the sausage.
 
 36
 00:03:57.200 --> 00:04:00.160
-C.Teletext.urfjarrannu local news.
+Now local news.
 
 37
 00:04:00.320 --> 00:04:05.960
-C.Teletext.urfjarranen Woman in her 80s has been reported missing by the home service.
+A woman in her 80s has been reported disappeared by the home service.
 
 38
 00:04:06.120 --> 00:04:10.240
-C.Teletext.urfjarran Police has made a search.
+The police have made a search.
 
 39
 00:04:15.520 --> 00:04:22.120
@@ -236,7 +236,7 @@ When given the chance, you should take it.
 
 52
 00:05:46.880 --> 00:05:49.840
-C.Teletext.kjudskylk.kudsirener
+SIRENS
 
 53
 00:05:50.000 --> 00:05:55.840
@@ -280,7 +280,7 @@ He drives like a damn fool.
 
 61
 00:06:46.400 --> 00:06:49.720
-C.Teletext.kjudskylk. sound phone rings
+THE PHONE IS RINGING
 
 62
 00:06:50.720 --> 00:06:56.800

@@ -34,7 +34,7 @@ Irja... Nej! Irja!!
 
 6
 00:00:37.760 --> 00:00:41.320
-<c.teletext.ljudskylt><c.ljud>MOBILSIGNAL
+MOBILSIGNAL
 
 
 
@@ -727,19 +727,19 @@ Vänta här, Billy.
 
 110
 00:13:26.000 --> 00:13:29.040
-<c.teletext.ljudskylt><c.ljud>TV-LJUD
+TV-LJUD
 
 
 
 111
 00:13:32.640 --> 00:13:35.680
-<c.teletext.ljudskylt><c.ljud>DÖRREN ÖPPNAS
+DÖRREN ÖPPNAS
 
 
 
 112
 00:13:39.280 --> 00:13:42.280
-<c.teletext.ljudskylt><c.ljud>KRÄKLJUD
+KRÄKLJUD
 
 
 
@@ -985,7 +985,7 @@ Bra jobbat, brorsan.
 
 150
 00:19:14.800 --> 00:19:18.800
-<c.teletext.ljudskylt><c.ljud>KRÄKLJUD
+KRÄKLJUD
 
 
 

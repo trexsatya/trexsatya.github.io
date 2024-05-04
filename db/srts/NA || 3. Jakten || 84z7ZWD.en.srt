@@ -1,6 +1,6 @@
 1
 00:00:12.120 --> 00:00:15.720
-c. sound mobile signal "Crazy Frog"
+Mobile Signal "Crazy Frog"
 
 2
 00:00:15.880 --> 00:00:19.640
@@ -158,7 +158,7 @@ Okay, are you on the passports?
 
 34
 00:03:18.600 --> 00:03:21.440
-C.Teletext.urfjarran - JO.
+-Yes.
  - Yeah.
 
 35
@@ -174,11 +174,11 @@ Yes.
 
 37
 00:03:30.000 --> 00:03:33.120
-C. soundlord
+Animal sound
 
 38
 00:03:33.520 --> 00:03:38.120
-C. soundstigmer animal sound
+Stronger animal sound
 
 39
 00:03:38.320 --> 00:03:42.840
@@ -187,11 +187,11 @@ Wait.
 
 40
 00:03:43.000 --> 00:03:46.840
-c. sound imitates animal sounds
+Imitating animal sounds
 
 41
 00:03:47.000 --> 00:03:51.040
-C.Teletext.urfjarranet Anyone where the sound comes from?
+Does anyone know where the sound comes from?
 
 42
 00:03:52.200 --> 00:03:57.680
@@ -227,7 +227,7 @@ Damn people don't know how to hunt.
 
 49
 00:04:27.520 --> 00:04:30.280
-c. sound imitates animal sound
+Imitating animal sound
 
 50
 00:04:30.560 --> 00:04:34.360
@@ -240,7 +240,7 @@ Go for it!
 
 52
 00:04:45.520 --> 00:04:49.080
-The C. sound dog barks
+THE DOG BARKS
 
 53
 00:04:54.520 --> 00:04:59.280
@@ -249,20 +249,20 @@ Rocko has got track.
 
 54
 00:04:59.440 --> 00:05:02.480
-C.Teletext.urfjarranbilly, pass up.
+Billy, pass up.
  He's coming to you.
 
 55
 00:05:05.760 --> 00:05:08.960
-c. sound imitates animal sound
+Imitating animal sound
 
 56
 00:05:27.920 --> 00:05:30.800
-C. sound rifle shot
+Rifle shot
 
 57
 00:05:30.960 --> 00:05:36.160
-C.Teletext.urfjarranbilly here.
+Billy here.
  Shot a moose calf.
  Located 75 meters in front of my pass.
 
@@ -272,7 +272,7 @@ Cursed!
 
 59
 00:05:38.320 --> 00:05:40.920
-C.Teletext.urfjarranden lies.
+It is located.
  Over and out.
 
 60
@@ -367,7 +367,7 @@ Don't you think I see it?
 
 78
 00:07:06.760 --> 00:07:10.040
-C. sound rifle shot
+Rifle shot
 
 79
 00:07:11.440 --> 00:07:14.440
@@ -491,7 +491,7 @@ So, run away!
 
 104
 00:10:00.480 --> 00:10:03.680
-C. sound dog shell
+Dog skull
 
 105
 00:10:06.520 --> 00:10:09.600
@@ -508,7 +508,7 @@ Closer.
 
 108
 00:10:35.560 --> 00:10:38.840
-C. sound imitates moose
+IMMITATES MOVE
 
 109
 00:10:39.000 --> 00:10:41.480
@@ -681,11 +681,11 @@ Come on now, we hear!
 
 145
 00:14:06.480 --> 00:14:11.920
-C.TELETEXT.Sangc.sanghelan goes C.Sangsjung Hopp Faderallan Lallan Lion
+Helan goes singing hope the Fatherllan Lallan lion
 
 146
 00:14:12.080 --> 00:14:16.840
-C.Teletext.sangc.sanghelan goes C.Sangsjung Hopp Faderallan lion
+Helan goes singing hope Fatherllan lion
 
 147
 00:14:17.000 --> 00:14:21.640
@@ -694,7 +694,7 @@ Idiots!
 
 148
 00:14:26.880 --> 00:14:31.080
-C. sounded animals murmur
+An animal growls
 
 149
 00:14:31.240 --> 00:14:34.760
@@ -711,7 +711,7 @@ And then the old man said: Hi, I had no legs.
 
 152
 00:15:02.800 --> 00:15:05.800
-C. sound rifle shot
+Rifle shot
 
 153
 00:15:05.960 --> 00:15:09.400
@@ -757,7 +757,7 @@ Who is the big hunter now, huh?
 
 162
 00:15:59.000 --> 00:16:03.840
-c.kudleif Ylar like a wolf
+Leif Ylar like a wolf
 
 163
 00:16:07.000 --> 00:16:12.120

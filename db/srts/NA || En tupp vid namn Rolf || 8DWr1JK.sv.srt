@@ -1,6 +1,6 @@
 1
 00:00:54.560 --> 00:00:58.640
-<c.teletext.ljudskylt><c.ljud>KRAS
+KRAS
 
 
 
@@ -211,7 +211,7 @@ mer serviceinriktade brevbärare.
 
 32
 00:04:46.000 --> 00:04:49.840
-<c.ljud>SARA SKRATTAR
+SARA SKRATTAR
 
 
 

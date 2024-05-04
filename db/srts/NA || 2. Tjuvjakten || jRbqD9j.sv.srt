@@ -216,7 +216,7 @@ En mätt man är en lycklig man.
 
 34
 00:04:13.400 --> 00:04:18.560
-<c.teletext.ljudskylt><c.ljud>KNACKNINGAR
+KNACKNINGAR
 
 
 
@@ -401,7 +401,7 @@ Kolla!
 
 62
 00:07:20.160 --> 00:07:23.280
-<c.teletext.ljudskylt><c.ljud>ÄLGEN BRÖLAR
+ÄLGEN BRÖLAR
 
 
 
@@ -697,7 +697,7 @@ De har kukat ur helt!
 
 107
 00:12:54.800 --> 00:13:02.360
-<c.teletext.urfjarran>Ja, vi har redan en patrull där
+Ja, vi har redan en patrull där
 i ett annat ärende.
 
 
@@ -750,7 +750,7 @@ Snart kommer det igång.
 
 115
 00:13:44.760 --> 00:13:48.680
-<c.ljud>BRÖL
+BRÖL
 
 
 

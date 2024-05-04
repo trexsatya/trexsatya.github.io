@@ -26,7 +26,7 @@ Hello then, Max.
 
 7
 00:01:18.880 --> 00:01:21.640
-C.Teletext. sound signc. sound fracture
+KNOCK
 
 8
 00:01:20.640 --> 00:01:23.240
@@ -375,7 +375,7 @@ The competition dress?
 
 79
 00:10:05.240 --> 00:10:09.200
-C.Teletext.kudskylk.kuddörrklockan
+The doorbell
 
 80
 00:10:06.840 --> 00:10:12.800

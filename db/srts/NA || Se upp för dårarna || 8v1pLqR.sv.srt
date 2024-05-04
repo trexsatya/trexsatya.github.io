@@ -683,7 +683,7 @@ Så klart får du hålla bagen. Lyssna.
 
 103
 00:13:34.240 --> 00:13:36.240
-<c.ljud>PIP-PIP
+PIP-PIP
 
 
 
@@ -1187,7 +1187,7 @@ Ja tack.
 
 178
 00:21:10.880 --> 00:21:13.880
-<c.ljud>YTTERDÖRREN ÖPPNAS
+YTTERDÖRREN ÖPPNAS
 
 
 
@@ -2089,7 +2089,7 @@ Du är skön, du, fröken Enecke.
 
 314
 00:38:17.200 --> 00:38:20.200
-<c.ljud>SNARKNINGAR
+SNARKNINGAR
 
 
 
@@ -2162,7 +2162,7 @@ att bli bra. Försök att sova nu.
 
 325
 00:40:19.560 --> 00:40:22.480
-<c.ljud>RINGSIGNAL
+RINGSIGNAL
 
 
 
@@ -2293,14 +2293,14 @@ Nej, det är du! Kom!
 
 344
 00:43:05.040 --> 00:43:11.280
-<c.sang>En underbar morgon
-<c.sang>En underbar morgon har vi här
+En underbar morgon
+En underbar morgon har vi här
 
 
 
 345
 00:43:11.440 --> 00:43:14.200
-<c.sang>Det är du, det är jag...
+Det är du, det är jag...
 
 
 
@@ -2989,7 +2989,7 @@ Fan, jag måste ta en dusch.
 
 448
 00:55:25.200 --> 00:55:28.200
-<c.ljud>TEKANNAN PIPER
+TEKANNAN PIPER
 
 
 
@@ -3220,7 +3220,7 @@ Tjocke Mehmet!
 
 483
 01:00:48.720 --> 01:00:52.680
-<c.ljud>DÖRRKLOCKAN
+DÖRRKLOCKAN
 
 
 
@@ -3515,7 +3515,7 @@ Kör hårt, du kan gå långt!
 
 528
 01:05:37.480 --> 01:05:42.200
-<c.ljud>YASMIN HOSTAR
+YASMIN HOSTAR
 
 
 
@@ -3637,7 +3637,7 @@ men ni sitter löst. Tyvärr.
 
 546
 01:07:38.160 --> 01:07:41.360
-<c.ljud>"DEN BLOMSTERTID NU KOMMER"
+"DEN BLOMSTERTID NU KOMMER"
 
 
 
@@ -4115,7 +4115,7 @@ har kollapsat.
 
 618
 01:16:52.600 --> 01:16:55.560
-<c.ljud>SIRENER
+SIRENER
 
 
 
@@ -4525,7 +4525,7 @@ Hake.
 
 680
 01:24:01.640 --> 01:24:04.600
-<c.ljud>MÅNGA PIP
+MÅNGA PIP
 
 
 
@@ -4570,7 +4570,7 @@ In med benen.
 
 687
 01:24:41.960 --> 01:24:44.440
-<c.ljud>MÅNGA PIP
+MÅNGA PIP
 
 
 
@@ -4996,7 +4996,7 @@ Du har räddat mitt liv.
 
 752
 01:32:44.000 --> 01:32:47.200
-<c.ljud>PORTEN ÖPPNAS HOS BÅDA
+PORTEN ÖPPNAS HOS BÅDA
 
 
 

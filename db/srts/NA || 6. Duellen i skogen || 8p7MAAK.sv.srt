@@ -1,12 +1,12 @@
 1
 00:00:03.000 --> 00:00:08.600
-<c.teletext.sang><c.sang>Sista dansen, sista chansen
+Sista dansen, sista chansen
 
 
 
 2
 00:00:10.160 --> 00:00:13.840
-<c.teletext.ljudskylt><c.ljud>SNARKAR
+SNARKAR
 
 
 
@@ -53,7 +53,7 @@ Kom nu.
 
 9
 00:01:23.360 --> 00:01:27.000
-<c.teletext.ljudskylt><c.ljud>PRUTTLJUD
+PRUTTLJUD
 
 
 
@@ -129,7 +129,7 @@ Upp med dig, knäppskalle!
 
 21
 00:02:46.240 --> 00:02:50.240
-<c.teletext.ljudskylt><c.ljud>VÄSER
+VÄSER
 
 
 
@@ -818,19 +818,19 @@ Bär mig, jag är förlamad.
 
 125
 00:14:36.040 --> 00:14:40.840
-<c.teletext.sang><c.sang>Chilla ner och ta det lugnt
+Chilla ner och ta det lugnt
 
 
 
 126
 00:14:41.000 --> 00:14:46.080
-<c.teletext.sang><c.sang>Tagga ner en liten stund
+Tagga ner en liten stund
 
 
 
 127
 00:14:46.240 --> 00:14:52.120
-<c.teletext.sang><c.sang>Andas in och sen ut en sekund...
+Andas in och sen ut en sekund...
 
 
 

@@ -1,7 +1,7 @@
 1
 00:00:00.000 --> 00:00:04.000
-<c.teletext.ljudskylt><c.ljud>SVEN-ERICS
-<c.ljud>"VARJE LITEN DRÖM"
+SVEN-ERICS
+"VARJE LITEN DRÖM"
 
 
 
@@ -151,7 +151,7 @@ under hela seansen.
 
 24
 00:03:12.120 --> 00:03:16.120
-<c.teletext.ljudskylt><c.ljud>OTÄCKT SKRATT
+OTÄCKT SKRATT
 
 
 
@@ -175,7 +175,7 @@ Samma gamla jävla skitgrejer.
 
 28
 00:03:49.280 --> 00:03:53.320
-<c.teletext.ljudskylt><c.ljud>SKRAMMEL
+SKRAMMEL
 
 
 

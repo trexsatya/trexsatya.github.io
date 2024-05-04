@@ -249,15 +249,15 @@ Vi är inte arbetsskygga. Vi tar det.
 
 38
 00:03:54.320 --> 00:03:57.360
-<c.sang>Jesus is a friend of mine
-<c.sang>Jesus is my friend
+Jesus is a friend of mine
+Jesus is my friend
 
 
 
 39
 00:03:57.520 --> 00:04:01.600
-<c.sang>Jesus is a friend of mine
-<c.sang>I have a friend in Jesus
+Jesus is a friend of mine
+I have a friend in Jesus
 
 
 
@@ -318,48 +318,48 @@ psalmböcker och tänder ljus.
 
 48
 00:04:57.200 --> 00:05:03.720
-<c.sang>It's been a hard day's night
-<c.sang>and I've been working like a dog
+It's been a hard day's night
+and I've been working like a dog
 
 
 
 49
 00:05:03.880 --> 00:05:10.520
-<c.sang>It's been a hard day's night,
-<c.sang>I should be sleeping like a log
+It's been a hard day's night,
+I should be sleeping like a log
 
 
 
 50
 00:05:10.680 --> 00:05:14.040
-<c.sang>But when I get home to you
-<c.sang>I find the things that you do
+But when I get home to you
+I find the things that you do
 
 
 
 51
 00:05:14.200 --> 00:05:17.400
-<c.sang>will make me feel alright
+will make me feel alright
 
 
 
 52
 00:05:17.560 --> 00:05:24.560
-<c.sang>You know I work all day
-<c.sang>to get you money, to buy you things
+You know I work all day
+to get you money, to buy you things
 
 
 
 53
 00:05:24.720 --> 00:05:27.760
-<c.sang>and it's worth it
-<c.sang>just to hear you say:
+and it's worth it
+just to hear you say:
 
 
 
 54
 00:05:27.920 --> 00:05:32.440
-<c.sang>You know, I feel alright
+You know, I feel alright
 
 
 
@@ -404,7 +404,7 @@ Satan. Hallå? – Leif, nu går det!
 
 61
 00:06:28.320 --> 00:06:32.320
-<c.teletext.ljudskylt><c.ljud>DET EKAR HÖGT
+DET EKAR HÖGT
 
 
 
@@ -629,13 +629,13 @@ du kan slå igång första psalmen.
 
 95
 00:10:20.920 --> 00:10:25.640
-<c.sang>Guds stjärna ska lysa...
+Guds stjärna ska lysa...
 
 
 
 96
 00:10:21.960 --> 00:10:25.640
-<c.teletext.ljudskylt><c.ljud>GLAD MUSIK
+GLAD MUSIK
 
 
 
@@ -653,7 +653,7 @@ Vi tackar orgelmannen för den fina...
 
 99
 00:10:37.640 --> 00:10:42.920
-<c.teletext.ljudskylt><c.ljud>HOCKEY-PAUSMUSIK
+HOCKEY-PAUSMUSIK
 
 
 
@@ -700,8 +700,8 @@ och tar vårt sista farväl.
 
 106
 00:11:25.960 --> 00:11:31.000
-<c.teletext.ljudskylt><c.ljud>JS BACH
-<c.ljud>"TOCCATA OCH FUGA I D-MOLL"
+JS BACH
+"TOCCATA OCH FUGA I D-MOLL"
 
 
 

@@ -1216,20 +1216,20 @@ Sista panelisten är Hanna.
 
 182
 00:14:48.200 --> 00:14:53.200
-<c.teletext.sang><c.sang>Vamos lá!
-<c.sang>Para-papa-papa-papa-papa-pa
+Vamos lá!
+Para-papa-papa-papa-papa-pa
 
 
 
 183
 00:14:53.360 --> 00:14:56.480
-<c.teletext.sang><c.sang>Para-papa-papa-papa-papa-pa
+Para-papa-papa-papa-papa-pa
 
 
 
 184
 00:14:56.640 --> 00:14:58.000
-<c.teletext.sang><c.sang>Pa-para-pa-para...
+Pa-para-pa-para...
 
 
 
@@ -2144,20 +2144,20 @@ Arash sin första hit "Boro Boro"?
 
 320
 00:27:08.520 --> 00:27:13.840
-<c.sang>–Boro Boro...
+–Boro Boro...
 –Jag trodde nån av er nynnade!
 
 
 
 321
 00:27:14.000 --> 00:27:16.960
-<c.teletext.sang><c.sang>Ha! Ha! Ha! Ha!
+Ha! Ha! Ha! Ha!
 
 
 
 322
 00:27:17.120 --> 00:27:20.080
-<c.sang>Boro Boro...
+Boro Boro...
 
 
 

@@ -1,6 +1,6 @@
 1
 00:00:12.120 --> 00:00:15.720
-<c.ljud>MOBILSIGNAL "CRAZY FROG"
+MOBILSIGNAL "CRAZY FROG"
 
 
 
@@ -224,7 +224,7 @@ Okej, är ni på passen?
 
 34
 00:03:18.600 --> 00:03:21.440
-<c.teletext.urfjarran>–Jo.
+–Jo.
 –Jajamen.
 
 
@@ -244,13 +244,13 @@ Yes. Leffe Öhman is in position.
 
 37
 00:03:30.000 --> 00:03:33.120
-<c.ljud>DJURLÄTE
+DJURLÄTE
 
 
 
 38
 00:03:33.520 --> 00:03:38.120
-<c.ljud>STARKARE DJURLÄTE
+STARKARE DJURLÄTE
 
 
 
@@ -262,13 +262,13 @@ Avvakta. Nåt jävla ljud här.
 
 40
 00:03:43.000 --> 00:03:46.840
-<c.ljud>IMITERAR DJURLÄTEN
+IMITERAR DJURLÄTEN
 
 
 
 41
 00:03:47.000 --> 00:03:51.040
-<c.teletext.urfjarran>Vet nån var ljudet kommer ifrån?
+Vet nån var ljudet kommer ifrån?
 
 
 
@@ -320,7 +320,7 @@ Fan att folk inte vet hur man jagar.
 
 49
 00:04:27.520 --> 00:04:30.280
-<c.ljud>IMITERAR DJURLÄTE
+IMITERAR DJURLÄTE
 
 
 
@@ -338,7 +338,7 @@ Kör hårt!
 
 52
 00:04:45.520 --> 00:04:49.080
-<c.ljud>HUNDEN SKÄLLER
+HUNDEN SKÄLLER
 
 
 
@@ -351,25 +351,25 @@ Verkar röra sig mot Billy.
 
 54
 00:04:59.440 --> 00:05:02.480
-<c.teletext.urfjarran>Billy, pass upp. Han kommer mot dig.
+Billy, pass upp. Han kommer mot dig.
 
 
 
 55
 00:05:05.760 --> 00:05:08.960
-<c.ljud>IMITERAR DJURLÄTE
+IMITERAR DJURLÄTE
 
 
 
 56
 00:05:27.920 --> 00:05:30.800
-<c.ljud>GEVÄRSSKOTT
+GEVÄRSSKOTT
 
 
 
 57
 00:05:30.960 --> 00:05:36.160
-<c.teletext.urfjarran>Billy här. Sköt en älgkalv.
+Billy här. Sköt en älgkalv.
 Ligger 75 meter framför mitt pass.
 
 
@@ -382,7 +382,7 @@ Förbannat!
 
 59
 00:05:38.320 --> 00:05:40.920
-<c.teletext.urfjarran>Den ligger. Klart slut.
+Den ligger. Klart slut.
 
 
 
@@ -510,7 +510,7 @@ Men ska man få en kvist...
 
 78
 00:07:06.760 --> 00:07:10.040
-<c.ljud>GEVÄRSSKOTT
+GEVÄRSSKOTT
 
 
 
@@ -685,7 +685,7 @@ Så, spring iväg!
 
 104
 00:10:00.480 --> 00:10:03.680
-<c.ljud>HUNDSKALL
+HUNDSKALL
 
 
 
@@ -709,7 +709,7 @@ Närmare. Kom igen, din feta jävel.
 
 108
 00:10:35.560 --> 00:10:38.840
-<c.ljud>IMITERAR ÄLGLÄTE
+IMITERAR ÄLGLÄTE
 
 
 
@@ -949,15 +949,15 @@ Kom igen nu, får vi höra!
 
 145
 00:14:06.480 --> 00:14:11.920
-<c.teletext.sang><c.sang>Helan går
-<c.sang>sjung hopp faderallan lallan lej
+Helan går
+sjung hopp faderallan lallan lej
 
 
 
 146
 00:14:12.080 --> 00:14:16.840
-<c.teletext.sang><c.sang>Helan går
-<c.sang>sjung hopp faderallan lej
+Helan går
+sjung hopp faderallan lej
 
 
 
@@ -969,7 +969,7 @@ Idioter! Låta som en varg...
 
 148
 00:14:26.880 --> 00:14:31.080
-<c.ljud>ETT DJUR MORRAR
+ETT DJUR MORRAR
 
 
 
@@ -995,7 +995,7 @@ Hej, jag hade inga ben.
 
 152
 00:15:02.800 --> 00:15:05.800
-<c.ljud>GEVÄRSSKOTT
+GEVÄRSSKOTT
 
 
 
@@ -1059,7 +1059,7 @@ Vem är storjägaren nu, va?
 
 162
 00:15:59.000 --> 00:16:03.840
-<c.ljud>LEIF YLAR SOM EN VARG
+LEIF YLAR SOM EN VARG
 
 
 

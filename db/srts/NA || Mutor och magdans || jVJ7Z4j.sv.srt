@@ -14,7 +14,7 @@ Gifte du dig med rätt...
 
 3
 00:01:51.280 --> 00:01:55.120
-<c.ljud>TELEFONEN RINGER
+TELEFONEN RINGER
 
 
 
@@ -456,7 +456,7 @@ Jag vill inget illa.
 
 68
 00:09:16.120 --> 00:09:23.720
-<c.sang>Skönt är att skita i meterdjup snö
+Skönt är att skita i meterdjup snö
 Nej, det funkar inte. Hon har rätt.
 
 
@@ -1236,7 +1236,7 @@ De blir miljonärer!
 
 182
 00:22:06.280 --> 00:22:09.680
-<c.teletext.urfjarran>Pappa, hur backar man med bilen?
+Pappa, hur backar man med bilen?
 
 
 

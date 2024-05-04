@@ -221,29 +221,29 @@ Jaha... Förlåt.
 
 34
 00:03:41.600 --> 00:03:47.240
-<c.sang>Bye bye, fina tider
-<c.sang>Du får gå vart än du vill
+Bye bye, fina tider
+Du får gå vart än du vill
 
 
 
 35
 00:03:47.400 --> 00:03:53.440
-<c.sang>Men bara om du lovar
-<c.sang>att det är för att du vill
+Men bara om du lovar
+att det är för att du vill
 
 
 
 36
 00:03:53.600 --> 00:03:59.320
-<c.sang>Om det nånstans bottnar
-<c.sang>i att du faktiskt är rädd
+Om det nånstans bottnar
+i att du faktiskt är rädd
 
 
 
 37
 00:03:59.480 --> 00:04:06.400
-<c.sang>för att släppa in mig
-<c.sang>Ja, då är det inte rätt
+för att släppa in mig
+Ja, då är det inte rätt
 
 
 
@@ -429,7 +429,7 @@ Lägg er ner!
 
 65
 00:07:51.080 --> 00:07:54.080
-<c.ljud>FLERA SKOTT
+FLERA SKOTT
 
 
 
@@ -754,29 +754,29 @@ Här, ta korven. Ta korven!
 
 114
 00:14:17.040 --> 00:14:19.760
-<c.sang>In the summertime
-<c.sang>when the weather is hot
+In the summertime
+when the weather is hot
 
 
 
 115
 00:14:19.920 --> 00:14:22.680
-<c.sang>You can stretch right up
-<c.sang>and touch the sky
+You can stretch right up
+and touch the sky
 
 
 
 116
 00:14:22.840 --> 00:14:28.560
-<c.sang>When the weather's fine, you got
-<c.sang>women, you got women on your mind
+When the weather's fine, you got
+women, you got women on your mind
 
 
 
 117
 00:14:28.720 --> 00:14:33.440
-<c.sang>Have a drink, have a drive
-<c.sang>Go out and see what you can find
+Have a drink, have a drive
+Go out and see what you can find
 
 
 
@@ -1138,7 +1138,7 @@ som gör att folk känner igen mig.
 
 172
 00:21:05.360 --> 00:21:08.320
-<c.ljud>GLAS KROSSAS
+GLAS KROSSAS
 
 
 
@@ -1404,7 +1404,7 @@ och ett annat gäng följde efter dem.
 
 212
 00:26:28.880 --> 00:26:31.880
-<c.ljud>DÖRRKNACKNING
+DÖRRKNACKNING
 
 
 

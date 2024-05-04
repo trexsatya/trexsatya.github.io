@@ -162,7 +162,7 @@ kan ingen ta hand om gården.
 
 25
 00:02:25.760 --> 00:02:28.720
-<c.ljud>HOSTATTACK
+HOSTATTACK
 
 
 
@@ -554,45 +554,45 @@ på gården, Billy.
 
 84
 00:07:56.440 --> 00:08:04.520
-<c.teletext.sang><c.sang>När du rör vid min arm
-<c.sang>får jag ömhet
+När du rör vid min arm
+får jag ömhet
 
 
 
 85
 00:08:05.760 --> 00:08:13.880
-<c.teletext.sang><c.sang>När jag ser hur du ler
-<c.sang>med din skönhet
+När jag ser hur du ler
+med din skönhet
 
 
 
 86
 00:08:15.000 --> 00:08:19.320
-<c.teletext.sang><c.sang>När du säger att allt
+När du säger att allt
 
 
 
 87
 00:08:19.480 --> 00:08:24.120
-<c.teletext.sang><c.sang>kommer ordna sig till slut
+kommer ordna sig till slut
 
 
 
 88
 00:08:24.280 --> 00:08:28.680
-<c.teletext.sang><c.sang>När jag ser att du älskar
+När jag ser att du älskar
 
 
 
 89
 00:08:28.840 --> 00:08:33.320
-<c.teletext.sang><c.sang>får jag kärlek
+får jag kärlek
 
 
 
 90
 00:08:33.480 --> 00:08:42.360
-<c.teletext.sang><c.sang>När du ligger hos mig får jag närhet
+När du ligger hos mig får jag närhet
 
 
 
@@ -604,7 +604,7 @@ Satan!
 
 92
 00:08:45.240 --> 00:08:50.760
-<c.teletext.sang><c.sang>Du viskar till mig ord om trohet
+Du viskar till mig ord om trohet
 
 
 
@@ -616,8 +616,8 @@ Vad fan!
 
 94
 00:08:53.280 --> 00:08:59.120
-<c.teletext.sang><c.sang>När du ser allt det vackra
-<c.sang>i världen som du gör
+När du ser allt det vackra
+i världen som du gör
 
 
 
@@ -629,19 +629,19 @@ Lillbrorsan och jag...
 
 96
 00:09:02.520 --> 00:09:05.560
-<c.teletext.sang><c.sang>När du ger allt du äger
+När du ger allt du äger
 
 
 
 97
 00:09:05.720 --> 00:09:11.280
-<c.teletext.sang><c.sang>får jag kärlek
+får jag kärlek
 
 
 
 98
 00:09:12.640 --> 00:09:15.680
-<c.ljud>UPPTAGET-TON
+UPPTAGET-TON
 
 
 
@@ -660,22 +660,22 @@ Förbannat, Billy. Nu är det nog!
 
 101
 00:10:20.240 --> 00:10:24.080
-<c.teletext.sang><c.sang>I natt, i natt
-<c.sang>kom och ge, kom och ta
+I natt, i natt
+kom och ge, kom och ta
 
 
 
 102
 00:10:24.240 --> 00:10:27.240
-<c.teletext.sang><c.sang>Kom och dansa med mig
-<c.sang>du är allt jag vill ha
+Kom och dansa med mig
+du är allt jag vill ha
 
 
 
 103
 00:10:27.400 --> 00:10:33.080
-<c.teletext.sang><c.sang>Ingenting vi gör är tabu
-<c.sang>inget stoppar oss nu
+Ingenting vi gör är tabu
+inget stoppar oss nu
 
 
 
@@ -711,20 +711,20 @@ Tjena, Tjockis-Leffe.
 
 109
 00:11:07.520 --> 00:11:12.480
-<c.teletext.sang><c.sang>En naken man är en naken man
+En naken man är en naken man
 
 
 
 110
 00:11:12.640 --> 00:11:18.840
-<c.teletext.sang><c.sang>Jag klär
-<c.sang>jag klär av mig naken
+Jag klär
+jag klär av mig naken
 
 
 
 111
 00:11:19.000 --> 00:11:22.000
-<c.teletext.sang><c.sang>Här är jag
+Här är jag
 
 
 
