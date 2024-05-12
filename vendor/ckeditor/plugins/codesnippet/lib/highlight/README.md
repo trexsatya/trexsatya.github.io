@@ -13,6 +13,7 @@ Link the library and a stylesheet from your page and hook highlighting to
 the page load event:
 
 ```html
+
 <link rel="stylesheet" href="styles/default.css">
 <script src="highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
