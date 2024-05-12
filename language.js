@@ -228,8 +228,8 @@ window.youtubePlayInterval = null
 
 function fixMobileView() {
   if (!isDesktop()) {
-    $(".fl-left").css({width: '100%'})
-    $(".fl-right").css({left: 0, width: '100%', marginTop: '0.3em'})
+    $(".fl-left").css({width: '100%', clear: 'both'})
+    $(".fl-right").css({left: 0, width: '100%', marginTop: '0.3em', clear: 'both'})
     $('#starredLines').parent().css({
       marginTop: 0,
       bottom: 0
