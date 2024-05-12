@@ -226,6 +226,22 @@ window.srts = []
 window.showDuplicates = false
 window.youtubePlayInterval = null
 
+function fixMobileView() {
+  if (!isDesktop()) {
+    $(".fl-left").css({width: '100%'})
+    $(".fl-right").css({left: 0, width: '100%', marginTop: '0.3em'})
+    $('#starredLines').parent().css({
+      marginTop: 0,
+      bottom: 0
+    })
+    $('#toggleEnSubBtn').parent().css({
+      textAlign: 'center'
+    })
+
+    $('#player-info').css({marginTop: 0, left: '40%'})
+  }
+}
+
 $('document').ready(e => {
   $('#mp3Choice').change(async e => {
     let link = $('#mp3Choice').val();
@@ -275,6 +291,8 @@ $('document').ready(e => {
 
   hidePlayer(audioPlayer)
   hidePlayer(videoPlayer)
+
+  fixMobileView()
 })
 
 function pauseVideo() {
@@ -860,6 +878,7 @@ async function playNewMedia(link, source, mediaFile) {
 
   $('#toggleEnSubBtn').show()
   $('#mediaRelatedContainer').show()
+  $('#toggleSearchBtn').show()
 }
 
 async function loadStarredLines(link, source) {
@@ -1126,7 +1145,7 @@ function getWords(text) {
 function getMatchingWords(list, search, functionToGetLines) {
   let wordToItemsMap = {}
   list.forEach(item => {
-    let lines = functionToGetLines(item);
+    let lines = functionToGetLines(item).data;
     let matchingWord = lines.map(it => getWords(it.text, search))
       .flat().map(it => it.trim().toLowerCase())
       .filter(it => it.match(new RegExp(search.toLowerCase(), "i")))
@@ -1223,7 +1242,7 @@ function htmlForSrtLine(_line, file, url) {
                                  <br>`).data({line: line, file: file})
 }
 
-function populateSRTFindings(wordToItemsMap, $result) {
+function populateSRTFindings(wordToItemsMap, $result, getSubs) {
   let alreadyAdded = {}
   let numberOfResults = 0
 
@@ -1240,7 +1259,7 @@ function populateSRTFindings(wordToItemsMap, $result) {
     let items = wordToItemsMap[word]
     let wordBlock = $(`<div ><h5 class="accordion">${word}</h5></div>`)
 
-    let getSubs = it => it['en_match'] ? it['en_subs'] : it['sv_subs']
+    // let getSubs = it => it['en_match'] ? it['en_subs'] : it['sv_subs']
 
     _.take(items, numberOfItemsToShow()).filter(getSubs)
       .toSorted((x, y) => getSubs(x).path === window.preferredFile ? -1 : 1)
@@ -1286,6 +1305,10 @@ Try Wiki ${getWikiLinks(search)}
 `;
 }
 
+function getSelectedLang() {
+  return $('#toggleLangCb').prop('checked') ? 'sv' : 'en';
+}
+
 function render(searchResults, search) {
   if (!searchResults) return
 
@@ -1294,16 +1317,17 @@ function render(searchResults, search) {
 
   let resultSize = 0
 
-  let selectedLang = $('#toggleLangCb').prop('checked') ? 'sv' : 'en'
+  let selectedLang = getSelectedLang()
+
+  let functionToGetLines = result => result.sv_match ? result.sv_subs : result.en_subs
 
   let searchResultsFiltered = searchResults.filter(it => {
     if (selectedLang === 'sv' && it.sv_match) return it.sv_subs
     if (selectedLang === 'en' && it.en_match) return it.en_subs
     return false
   });
-  let wordToItemsMap = getMatchingWords(searchResultsFiltered, search,
-    result => result.sv_match ? result.sv_subs.data : result.en_subs.data);
-  resultSize += populateSRTFindings(wordToItemsMap, $result);
+  let wordToItemsMap = getMatchingWords(searchResultsFiltered, search, functionToGetLines);
+  resultSize += populateSRTFindings(wordToItemsMap, $result, functionToGetLines);
 
   $result.append("<hr>")
 
@@ -1626,19 +1650,6 @@ setInterval(() => {
   }
 }, 100)
 
-if (!isDesktop()) {
-  $(".fl-left").css({width: '100%'})
-  $(".fl-right").css({left: 0, width: '100%'})
-  $('#starredLines').parent().css({
-    marginTop: 0,
-    bottom: 0
-  })
-  $('#toggleEnSubBtn').parent().css({
-    textAlign: 'center'
-  })
-
-  $('#player-info').css({marginTop: 0, left: '40%'})
-}
 
 function export2txt(data, fileName) {
   const a = document.createElement("a");
