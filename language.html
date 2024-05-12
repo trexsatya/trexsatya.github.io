@@ -396,7 +396,7 @@
 
             <button onclick="$('#result').toggle()" class="button-3">Toggle Search</button>
             <div id="searchesControl" style="display: none; padding-top: 3px;">
-                <button onclick="localStorage.removeItem('searches')" class="button-24">Clear Searches</button>
+                <button onclick="clearSearches()" class="button-24">Clear Searches</button>
                 <button onclick="loadSearches()" class="button-10">ReLoad Searches</button>
                 <button onclick="exportSearches()" class="button-62">Export Searches</button>
                 <button onclick="importSearches()" class="button-62">Import Searches</button>
@@ -503,11 +503,13 @@
       let op = new Option(it, it, true, true)
       $('#searchedWords').append(op)
     })
+    $('#toggleSearchesControlCheckbox').click()
   }
 
   function exportSearches() {
     let searches = JSON.parse(localStorage.getItem('searches') || '[]')
     export2txt(searches.join("\n"), "searches.txt");
+    $('#toggleSearchesControlCheckbox').click()
   }
 
   function importSearches() {
@@ -524,8 +526,13 @@
       reader.readAsText(file.files[0])
     }
     file.click()
+    $('#toggleSearchesControlCheckbox').click()
   }
 
+  function clearSearches() {
+    localStorage.removeItem('searches')
+    $('#toggleSearchesControlCheckbox').click()
+  }
   function saveSearch(word) {
     let searches = JSON.parse(localStorage.getItem('searches') || '[]')
     if (searches.indexOf(word) < 0) {
