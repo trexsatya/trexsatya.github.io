@@ -21,6 +21,8 @@
     <link href="/pagination.css" rel="stylesheet"/>
     <link href="/bootstrap.min.css" rel="stylesheet"/>
     <link href="/bootstrap-grid.min.css" rel="stylesheet"/>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <script src="/select2.min.js"></script>
     <script src="/lodash.js"></script>
@@ -137,6 +139,215 @@
         font-size: smaller;
         margin-top: 2px;
       }
+
+      .button-62 {
+        background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+        border: 0;
+        border-radius: 12px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 2.5;
+        outline: transparent;
+        padding: 0 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow .2s ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+      }
+
+      .button-62:not([disabled]):focus {
+        box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+      }
+
+      .button-62:not([disabled]):hover {
+        box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+      }
+
+      .button-10 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 14px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        border-radius: 6px;
+        border: none;
+
+        color: #fff;
+        background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+        background-origin: border-box;
+        box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-10:focus {
+        box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+        outline: 0;
+      }
+
+      .button-3 {
+        appearance: none;
+        background-color: #2ea44f;
+        border: 1px solid rgba(27, 31, 35, .15);
+        border-radius: 6px;
+        box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 6px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+
+      .button-3:focus:not(:focus-visible):not(.focus-visible) {
+        box-shadow: none;
+        outline: none;
+      }
+
+      .button-3:hover {
+        background-color: #2c974b;
+      }
+
+      .button-3:focus {
+        box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+        outline: none;
+      }
+
+      .button-3:disabled {
+        background-color: #94d3a2;
+        border-color: rgba(27, 31, 35, .1);
+        color: rgba(255, 255, 255, .8);
+        cursor: default;
+      }
+
+      .button-3:active {
+        background-color: #298e46;
+        box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+      }
+
+      .button-24 {
+        background: #FF4742;
+        border: 1px solid #FF4742;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 16px;
+        min-height: 40px;
+        outline: 0;
+        padding: 12px 14px;
+        text-align: center;
+        text-rendering: geometricprecision;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+      }
+
+      .button-24:hover,
+      .button-24:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: #FF4742;
+      }
+
+      .button-24:active {
+        opacity: .5;
+      }
+
+      [class*="button-"] {
+        display: inline;
+      }
+
+      .checkbox-wrapper-22 .switch {
+        display: inline-block;
+        height: 34px;
+        position: relative;
+        width: 60px;
+        top: 12px;
+      }
+
+      .checkbox-wrapper-22 .switch input {
+        display: none;
+      }
+
+      .checkbox-wrapper-22 .slider {
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+      }
+
+      .checkbox-wrapper-22 .slider:before {
+        background-color: #fff;
+        bottom: 4px;
+        content: "";
+        height: 26px;
+        left: 4px;
+        position: absolute;
+        transition: .4s;
+        width: 26px;
+      }
+
+      .checkbox-wrapper-22 input:checked + .slider {
+        background-color: #66bb6a;
+      }
+
+      .checkbox-wrapper-22 input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      .checkbox-wrapper-22 .slider.round {
+        border-radius: 34px;
+      }
+
+      .checkbox-wrapper-22 .slider.round:before {
+        border-radius: 50%;
+      }
+
+      .add-prev-btn, .remove-next-btn, .add-next-btn, .remove-prev-btn {
+        cursor: pointer;
+        border: 1px solid green;
+        padding: 1px 8px;
+        border-radius: 50%;
+      }
+
+      .secondary-line a {
+        color: grey;
+      }
+
+      #toggleEnSubBtn {
+        border-radius: 4%;
+      }
     </style>
 </head>
 
@@ -168,18 +379,27 @@
 
     <div style="float: left; width: 59%; position: relative;" class="fl-left">
         <div style="padding-top: 1em; ">
-            <input type="search" id="searchText" placeholder="Search text"
-                   onchange="searchTextChanged()"
-            >
-            <input type="number" id="numberOfFindingsToShow" placeholder="Show X items" value="2">
-            <button onclick="$('#result').toggle()">Toggle Search Results</button>
+            <input type="search" id="searchText" placeholder="Search text" onchange="searchTextChanged()">
+            <input type="number" id="numberOfFindingsToShow" placeholder="Show X items" value="2" style="width: 4em;">
+
+            <input class="tgl tgl-flip" id="toggleLangCb" type="checkbox" checked data-toggle="toggle" data-size="small" data-on="SV" data-off="EN"/>
+
             <select id="searchedWords" onchange="searchedWordSelected()" style="width: 220px;">
             </select>
-            <input type="checkbox" id="toggleSearchesControlCheckbox" aria-label="searches">
-            <div id="searchesControl" style="display: none">
-                <button onclick="localStorage.removeItem('searches')">Clear Searches</button>
-                <button onclick="loadSearches()">ReLoad Searches</button>
-                <button onclick="exportSearches()">Export Searches</button>
+
+            <div class="checkbox-wrapper-22" style="display: inline;">
+                <label class="switch" for="toggleSearchesControlCheckbox">
+                    <input type="checkbox" id="toggleSearchesControlCheckbox" aria-label="searches">
+                    <div class="slider round"></div>
+                </label>
+            </div>
+
+            <button onclick="$('#result').toggle()" class="button-3">Toggle Search</button>
+            <div id="searchesControl" style="display: none; padding-top: 3px;">
+                <button onclick="localStorage.removeItem('searches')" class="button-24">Clear Searches</button>
+                <button onclick="loadSearches()" class="button-10">ReLoad Searches</button>
+                <button onclick="exportSearches()" class="button-62">Export Searches</button>
+                <button onclick="importSearches()" class="button-62">Import Searches</button>
             </div>
             <br>
             <br>
@@ -193,17 +413,17 @@
             <div id="localVideoContainer">
                 <video id="localVideo" src="" style="display: none;"></video>
             </div>
-            
+
         </div>
 
         <div style="width: 100%;">
             <div id="youtubePlayer" style="display:none; margin-top: 2em;"></div>
-         
+
         </div>
     </div>
 
     <div style="float: left; left: 2%; width: 40%; position: relative;" class="fl-right">
-      <div style="min-height: 650px;">
+        <div style="min-height: 650px; display: none;" id="mediaRelatedContainer">
             <div id="subtitle-container">
                 <br>
                 <br>
@@ -213,13 +433,14 @@
                 <br>
                 <div id="en-sub" style="display: none;"></div>
                 <div style="margin-top: 2em;">
-                    <span class="btn btn-light" id="toggleEnSubBtn" onclick="$('#en-sub').toggle()"> Toggle English Subtitles </span>
+                    <span class="btn btn-light" id="toggleEnSubBtn" onclick="$('#en-sub').toggle()"
+                          style="display: none;"> Toggle English Subtitles </span>
                 </div>
-               
+
             </div>
             <div style="margin-top: 8em; position: absolute; bottom: 0; right: 4em;" id="controls">
                 <div style="margin-top: 2em;" id="starredLines">
-                    
+
                 </div>
                 <div class="" style="padding-top: 9em;">
                     <div>
@@ -254,7 +475,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 <br/>
 <div style="color: grey; margin-top: 1em; position: absolute; top: 1px; left: 60%;" id="player-info">
@@ -269,7 +490,7 @@
 <div id="message" style="display: none"></div>
 
 <script>
-  $('#searchedWords').select2();
+  $('#searchedWords').select2({placeholder: 'Searches'});
 
   $('#toggleSearchesControlCheckbox').change(e => {
     $('#searchesControl').toggle()
@@ -289,6 +510,22 @@
     export2txt(searches.join("\n"), "searches.txt");
   }
 
+  function importSearches() {
+    let file = document.createElement('input')
+    file.type = 'file'
+    file.accept = '.txt'
+    file.onchange = e => {
+      let reader = new FileReader()
+      reader.onload = e => {
+        let searches = reader.result.split("\n")
+        localStorage.setItem('searches', JSON.stringify(searches))
+        loadSearches()
+      }
+      reader.readAsText(file.files[0])
+    }
+    file.click()
+  }
+
   function saveSearch(word) {
     let searches = JSON.parse(localStorage.getItem('searches') || '[]')
     if (searches.indexOf(word) < 0) {
@@ -300,11 +537,11 @@
   function searchTextChanged(e) {
     let el = $('#searchedWords')
     let w = $('#searchText').val()
-    
-    if(w.trim().length && el.find("option[value='" + w + "']").length === 0) {
-       let op = new Option(w, w, true, true)
-       el.append(op)
-       saveSearch(w)
+
+    if (w.trim().length && el.find("option[value='" + w + "']").length === 0) {
+      let op = new Option(w, w, true, true)
+      el.append(op)
+      saveSearch(w)
     }
     fetchSRTs(this);
   }
@@ -354,7 +591,7 @@
     element.className = isError ? 'error' : 'info'
   }
 
-  
+
   let ontimeupdate = e => {
     if (isNotPlaying()) {
       return
@@ -380,9 +617,9 @@
     //   }
     // }
 
-    if(ct > window.currentSub.te) {
-       window.currentSubIndex += 1;
-       window.currentSub = window.subtitles[window.currentSubIndex]
+    if (ct > window.currentSub.te) {
+      window.currentSubIndex += 1;
+      window.currentSub = window.subtitles[window.currentSubIndex]
     }
 
     markIntervalPlayDone(ct);
@@ -395,7 +632,7 @@
     setSpeed();
   }
 
-  $('#speed-control').change(e => { 
+  $('#speed-control').change(e => {
     setSpeed()
   })
 
@@ -489,7 +726,7 @@
 
     text.split(/[ \n]/).flatMap(it => {
       let ws = getWords(it)
-      if(ws.length > 1) {
+      if (ws.length > 1) {
         return ws.map(_w => getWikiLink(_w))
       }
       return getWikiLink(it, ws[0])
@@ -505,21 +742,21 @@
   window.starredLines = []
 
   function addStarredLine(index, ts) {
-    if(window.starredLines.indexOf(index) >= 0) return
+    if (window.starredLines.indexOf(index) >= 0) return
 
-    window.starredLines.push(index)  
+    window.starredLines.push(index)
 
     let x = $(`<span data-index="${index}">${index}</span>`)
-                .addClass('starred-sub')
+      .addClass('starred-sub')
 
-    if(!ts) {
+    if (!ts) {
       ts = window.subtitles.find(it => it.index === index).ts
     }
     x.click(e => {
-       $('.starred-sub').removeClass('active')
-       x.addClass('active')
-       setMediaTime(ts, true)
-       // playMedia()
+      $('.starred-sub').removeClass('active')
+      x.addClass('active')
+      setMediaTime(ts, true)
+      // playMedia()
     })
 
     $('#starredLines').append(x)
@@ -533,7 +770,7 @@
 
     sub.sv.split(/[ \n]/).flatMap(it => {
       let ws = getWords(it)
-      if(ws.length > 1) {
+      if (ws.length > 1) {
         return ws.map(_w => wordLink(_w))
       }
       return wordLink(it, ws[0])
@@ -553,13 +790,13 @@
   let renderSubtitles = () => {
     let currentSub = window.currentSub
 
-    if(lastSub && currentSub != lastSub) {
+    if (lastSub && currentSub != lastSub) {
       populateWikiLinks(currentSub.sv, $('#sv-sub'));
       populateSearchWords(currentSub, $('#sv-sub-mirror'));
 
-      $('#en-sub').html(currentSub.en)  
+      $('#en-sub').html(currentSub.en)
       $('#currentTime').html(currentSub.index)
-    } 
+    }
     lastSub = currentSub
   }
 
@@ -590,9 +827,9 @@
   }
 
   function setCurrentSub(newTime) {
-    for(let i=0 ; i < window.subtitles.length; i++) {
+    for (let i = 0; i < window.subtitles.length; i++) {
       let it = window.subtitles[i]
-      if(it.ts <= newTime && newTime < it.te) {
+      if (it.ts <= newTime && newTime < it.te) {
         window.currentSub = it;
         window.currentSubIndex = i;
         break;
@@ -600,7 +837,7 @@
     }
   }
 
-  async function setMediaTime(newTime, manualHandling=false) {
+  async function setMediaTime(newTime, manualHandling = false) {
     if (window.playingYoutubeVideo) {
       // Hackish for youtube
       await seekToYoutubeTime(newTime - (manualHandling ? 2 : 0))
@@ -758,9 +995,10 @@
   }
 
   try {
-    loadAllSubtitles()  
+    loadAllSubtitles()
     $('.controlgroup').controlgroup()
-  } catch(e) {}
+  } catch (e) {
+  }
 
   function srtToJson(text, lang) {
     if (!lang) lang = 'text'
@@ -870,7 +1108,7 @@
 
     for (let i = 0; i < originalSubs.length - 1; i++) {
       originalSubs[i]['te_o'] = originalSubs[i + 1]['ts_o']
-      originalSubs[i]['te'] = originalSubs[i + 1]['ts'] 
+      originalSubs[i]['te'] = originalSubs[i + 1]['ts']
       // originalSubs[i]['number'] = i + 1
     }
 
@@ -922,8 +1160,8 @@
     if (combinedJson) {
       await loadCombinedSrts(combinedJson);
 
-      if(indexJson) {
-        let index = await new Response(indexJson).json() 
+      if (indexJson) {
+        let index = await new Response(indexJson).json()
         index.forEach(it => {
           window.allSubtitles[it.link].source = it.source
           window.allSubtitles[it.link].fileName = it.name
@@ -937,7 +1175,7 @@
     let svSrtFile = files.find(it => it.name.match(/.sv.srt$/))
     let enSrtFile = files.find(it => it.name.match(/.en.srt$/))
 
-    if(videoFile) {
+    if (videoFile) {
       videoPlayer.setSrc(URL.createObjectURL(videoFile))
     }
 
@@ -945,7 +1183,7 @@
     let sv = await new Response(svSrtFile).text()
     let en = await new Response(enSrtFile).text()
 
-    window.allSubtitles[link] = {sv, en, source: 'local', fileName: svSrtFile.name.replaceAll(".sv.srt", "") }
+    window.allSubtitles[link] = {sv, en, source: 'local', fileName: svSrtFile.name.replaceAll(".sv.srt", "")}
 
     playNewMedia(link, 'local', videoFile || audioFile)
   }
@@ -957,7 +1195,7 @@
     }
 
     if (!en) {
-      en = sv 
+      en = sv
     }
 
     window.srtLoaded = sv
@@ -1036,20 +1274,23 @@
     }
     loadSubtitlesForLink(sv, en);
     window.mediaBeingPlayed = {link, source}
-    
+
     $('#currentMedia').html(`${link}, ${source}`)
 
     loadStarredLines(link, source)
+
+    $('#toggleEnSubBtn').show()
+    $('#mediaRelatedContainer').show()
   }
 
   async function loadStarredLines(link, source) {
-      let res = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/srt_favorites.json")
-      res = await res.json()
+    let res = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/srt_favorites.json")
+    res = await res.json()
 
-      let d = res.find(it => it.link === link)
-      console.log(d)
-      d.lines && d.lines.forEach(it => addStarredLine(it))
-  } 
+    let d = res.find(it => it.link === link)
+    console.log(d)
+    d.lines && d.lines.forEach(it => addStarredLine(it))
+  }
 
   function waitUntil(condition) {
     return new Promise((resolve, reject) => {
@@ -1084,7 +1325,7 @@
   function setSpeed() {
     let newRate = $('.controlgroup input:checked').data('speed');
     newRate = parseFloat(newRate);
-    
+
     if (window.playingYoutubeVideo) {
       ytPlayer.setPlaybackRate(newRate)
     } else if (window.playingAudio) {
@@ -1096,9 +1337,9 @@
 
   function range(start, count, filter, fn) {
 
-    if(!arguments.length) console.log('range(start, count)')
+    if (!arguments.length) console.log('range(start, count)')
 
-    if(arguments.length === 3){
+    if (arguments.length === 3) {
       fn = filter;
       filter = x => true
     }
@@ -1108,7 +1349,7 @@
         return index + start;
       });
 
-    if(fn) return ar.filter(filter).map(x => fn(x))
+    if (fn) return ar.filter(filter).map(x => fn(x))
     else return ar;
   }
 
@@ -1198,7 +1439,7 @@
   }
 
   window.addEventListener('keydown', e => {
-    if(e.which === 32 && e.target == document.body) {
+    if (e.which === 32 && e.target == document.body) {
       e.preventDefault()
     }
   })
@@ -1214,9 +1455,9 @@
 
 <script>
   function splitSentences(text) {
-      const segmentor = new Intl.Segmenter([], {granularity: 'sentence'});
-      const segmentedText = segmentor.segment(text);
-      return Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim().length > 1);
+    const segmentor = new Intl.Segmenter([], {granularity: 'sentence'});
+    const segmentedText = segmentor.segment(text);
+    return Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim().length > 1);
   }
 
   function chunkifySentence(text, max_chars) {
@@ -1248,12 +1489,12 @@
 
   function getWikiLinks(text) {
     return text.split(/[ \n]/).flatMap(it => {
-          let ws = getWords(it)
-          if(ws.length > 1) {
-            return ws.map(_w => getWikiLink(_w))
-          }
-          return getWikiLink(it, ws[0])
-        }).join(" ")
+      let ws = getWords(it)
+      if (ws.length > 1) {
+        return ws.map(_w => getWikiLink(_w))
+      }
+      return getWikiLink(it, ws[0])
+    }).join(" ")
   }
 
   function highlightedText(text, populateWikiLinks = false) {
@@ -1270,7 +1511,7 @@
       let x = -1, y = -1;
       for (var i = index - 1; i >= 0; i--) {
         let c = text[i]
-        if(c == " " || c == "\n") {
+        if (c == " " || c == "\n") {
           x = i;
           break;
         }
@@ -1279,7 +1520,7 @@
 
       for (var i = index + 1; i < text.length; i++) {
         let c = text[i]
-        if(c == " " || c == "\n") {
+        if (c == " " || c == "\n") {
           y = i;
           break;
         }
@@ -1424,12 +1665,18 @@
                                     <span class="remove-prev-btn btn"> - </span>
                                     <span class="add-next-btn btn"> + </span>
                                     <span class="play-btn-container">
-                                        <span class="info times"> ${fromSeconds(line.start.ordinal)}-${fromSeconds(line.end.ordinal)} </span>
-                                        <img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;background-color: inherit;" class="play-btn" data-url="${url}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle media-info" viewBox="0 0 16 16" style="cursor: pointer;">
+                                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                        </svg>
+                                        <span class="info" style="display: none;">
+                                               <span class="info times"> ${fromSeconds(line.start.ordinal)}-${fromSeconds(line.end.ordinal)} </span>
+                                        </span>
+                                        <img src="/img/icons/play_icon.png" alt="" style="width: 35px;height: 35px;cursor: pointer;background-color: inherit;" class="play-btn" data-url="${url}">
                                     </span>
                                     <br>
                                  </div>
-                                 <div class="line secondary-line" data-index="${line.index}"> ${secondarySub.text} [${source} ${file.fetchedFrom === 'local' ? file.url: ''}]</div>
+                                 <div class="line secondary-line" data-index="${line.index}"> ${secondarySub.text} [${source} ${file.fetchedFrom === 'local' ? file.url : ''}]</div>
                                  <br>`).data({line: line, file: file})
   }
 
@@ -1438,6 +1685,7 @@
   function populateSRTFindings(wordToItemsMap, $result) {
     let alreadyAdded = {}
     let numberOfResults = 0
+
     function appendIfNotAlreadyAdded($file, line, file, item, items) {
       let key = `${file.source}-${file.url}-${line.index}`
       if (alreadyAdded[key] && !window.showDuplicates) return 0
@@ -1466,7 +1714,7 @@
             if (window.searchText.indexOf(' ') >= 0) {
               return it.text.toLowerCase().match(word)
             }
-            return getWords(it.text).includes(word)
+            return getWords(it.text.toLowerCase()).includes(word.toLowerCase())
           })
 
           let n = 0
@@ -1474,7 +1722,7 @@
             n += appendIfNotAlreadyAdded($file, line, file, item, items);
           })
 
-          if(n === 0 && wordBlock.html().indexOf('No results found for ') < 0) {
+          if (n === 0 && wordBlock.html().indexOf('No results found for ') < 0) {
             $file.html(`
                         <h6>No results found for ${window.searchText}</h6>
                         <div>Try Wiki ${getWikiLinks(window.searchText)}</div>
@@ -1499,26 +1747,33 @@ Try Wiki ${getWikiLinks(search)}
 `;
   }
 
-  function render(list, search) {
-    if(!list) return
+  function render(searchResults, search) {
+    if (!searchResults) return
 
     let $result = $('#result');
     $result.html('')
 
     let resultSize = 0
-    let wordToItemsMap = getMatchingWords(list.filter(it => it.en_match ? it.en_subs : it.sv_subs),
-                                          search,
-                                            item => item.en_match ? item.en_subs.data : item.sv_subs.data);
+
+    let selectedLang = $('#toggleLangCb').prop('checked') ? 'sv' : 'en'
+
+    let searchResultsFiltered = searchResults.filter(it => {
+      if(selectedLang === 'sv' && it.sv_match) return it.sv_subs
+      if(selectedLang === 'en' && it.en_match) return it.en_subs
+      return false
+    });
+    let wordToItemsMap = getMatchingWords(searchResultsFiltered, search,
+                                            result => result.sv_match ? result.sv_subs.data : result.en_subs.data);
     resultSize += populateSRTFindings(wordToItemsMap, $result);
 
     $result.append("<hr>")
 
-    wordToItemsMap = getMatchingWords(list.filter(it => it.text), search, item => [item]);
+    wordToItemsMap = getMatchingWords(searchResults.filter(it => it.text), search, item => [item]);
     resultSize += populateNonSRTFindings(wordToItemsMap, $result);
 
     renderAccordions()
 
-    if(resultSize === 0) {
+    if (resultSize === 0) {
       $result.html(resultNotFound(search))
     }
 
@@ -1622,25 +1877,33 @@ Try Wiki ${getWikiLinks(search)}
     return {data: srtToJson(text), path: file, url, source, fetchedFrom: fetchedFrom}
   }
 
+  class SearchResult {
+    constructor(en_subs, sv_subs, en_match, sv_match) {
+      this.en_subs = en_subs;
+      this.sv_subs = sv_subs;
+      this.sv_match = sv_match;
+      this.en_match = en_match;
+    }
+  }
+
   function fetchFromLocal() {
     return Object.keys(window.allSubtitles)
       .filter(it => window.allSubtitles[it].sv && window.allSubtitles[it].en)
       .map(it => {
-      let svText = window.allSubtitles[it].sv;
-      let enText = window.allSubtitles[it].en;
+        let svText = window.allSubtitles[it].sv;
+        let enText = window.allSubtitles[it].en;
 
-      let svMatch = svText && svText.match(new RegExp(window.searchText, "i"));
-      let enMatch = enText && enText.match(new RegExp(window.searchText, "i"));
-      if (svMatch || enMatch) {
-        let v = {
-          en_subs: getSubs(enText, it + ".en.srt", it, window.allSubtitles[it].source, window.allSubtitles[it].fetchedFrom),
-          sv_subs: getSubs(svText, it + ".sv.srt", it, window.allSubtitles[it].source, window.allSubtitles[it].fetchedFrom)
+        let svMatch = svText && svText.match(new RegExp(window.searchText, "i"));
+        let enMatch = enText && enText.match(new RegExp(window.searchText, "i"));
+        if (svMatch || enMatch) {
+          return new SearchResult(
+            getSubs(enText, it + ".en.srt", it, window.allSubtitles[it].source, window.allSubtitles[it].fetchedFrom),
+            getSubs(svText, it + ".sv.srt", it, window.allSubtitles[it].source, window.allSubtitles[it].fetchedFrom),
+            !!enMatch,
+            !!svMatch,
+          )
         }
-        if (svMatch) v.sv_match = true;
-        else v.en_match = true;
-        return v;
-      }
-    }).filter(it => it);
+      }).filter(it => it);
   }
 
   async function fetchSRTs(searchText) {
@@ -1670,6 +1933,10 @@ Try Wiki ${getWikiLinks(search)}
   $('#numberOfFindingsToShow')[0].onchange = e => {
     render(window.searchResult, window.searchText)
   }
+
+  $('#toggleLangCb').change(e => {
+    render(window.searchResult, window.searchText)
+  })
 
   function renderAccordions() {
     console.log('Rendering accordions')
@@ -1829,7 +2096,7 @@ Try Wiki ${getWikiLinks(search)}
     }
   }, 100)
 
-  if(!isDesktop()) {
+  if (!isDesktop()) {
     $(".fl-left").css({width: '100%'})
     $(".fl-right").css({left: 0, width: '100%'})
     $('#starredLines').parent().css({
@@ -1840,7 +2107,7 @@ Try Wiki ${getWikiLinks(search)}
       textAlign: 'center'
     })
 
-    $('#player-info').css({ marginTop: 0, left: '40%'})
+    $('#player-info').css({marginTop: 0, left: '40%'})
   }
 
   function export2txt(data, fileName) {
@@ -1855,62 +2122,70 @@ Try Wiki ${getWikiLinks(search)}
   }
 
   async function saveStarredLines() {
-      let nm = window.allSubtitles[window.mediaBeingPlayed.link].fileName 
-      nm += ".starred.json"
-      let lines = $('.starred-sub').map((i, e) => $(e).text()).toArray()
+    let nm = window.allSubtitles[window.mediaBeingPlayed.link].fileName
+    nm += ".starred.json"
+    let lines = $('.starred-sub').map((i, e) => $(e).text()).toArray()
 
-      let _ms = window.mediaBeingPlayed.source
+    let _ms = window.mediaBeingPlayed.source
 
-      if(_ms === 'local') {
-        let s = prompt('Source of media:')
-        if(!s || !s.trim()) return
-        window.mediaBeingPlayed['source'] = s.trim()  
+    if (_ms === 'local') {
+      let s = prompt('Source of media:')
+      if (!s || !s.trim()) return
+      window.mediaBeingPlayed['source'] = s.trim()
+    }
+
+    let data = JSON.stringify({...window.mediaBeingPlayed, lines})
+
+    try {
+      let r = await fetch('http://localhost:5000/srt-favorites', {
+        method: 'POST',
+        body: data,
+        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}
+      })
+      // console.log(await r.json())
+      // export2txt(data, nm)
+      if (r.status != 200) {
+        alert("Failed to save. Status=" + r.status)
       }
+    } catch (e) {
+      console.log(e)
+      alert("Failed to save")
+    }
 
-      let data = JSON.stringify({...window.mediaBeingPlayed, lines})
-
-      try {
-        let r = await fetch('http://localhost:5000/srt-favorites', {method: 'POST', body: data, headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
-        // console.log(await r.json())
-        // export2txt(data, nm)
-        if(r.status != 200) {
-          alert("Failed to save. Status=" + r.status)
-        }
-      } catch(e) {
-        console.log(e)
-        alert("Failed to save")
-      }
-      
   }
 
   async function saveRevision() {
-      let nm = window.allSubtitles[window.mediaBeingPlayed.link].fileName 
-      nm += ".starred.json"
-      let dates = []
+    let nm = window.allSubtitles[window.mediaBeingPlayed.link].fileName
+    nm += ".starred.json"
+    let dates = []
 
-      let _ms = window.mediaBeingPlayed.source
+    let _ms = window.mediaBeingPlayed.source
 
-      if(_ms === 'local') {
-        let s = prompt('Source of media:')
-        if(!s || !s.trim()) return
-        window.mediaBeingPlayed['source'] = s.trim()  
+    if (_ms === 'local') {
+      let s = prompt('Source of media:')
+      if (!s || !s.trim()) return
+      window.mediaBeingPlayed['source'] = s.trim()
+    }
+
+    let data = JSON.stringify({...window.mediaBeingPlayed, dates})
+
+    try {
+      let r = await fetch('http://localhost:5000/srt-revision', {
+        method: 'POST',
+        body: data,
+        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}
+      })
+      if (r.status != 200) {
+        alert("Failed to save. Status=" + r.status)
       }
+    } catch (e) {
+      console.log(e)
+      alert("Failed to save")
+    }
 
-      let data = JSON.stringify({...window.mediaBeingPlayed, dates})
-
-      try {
-        let r = await fetch('http://localhost:5000/srt-revision', {method: 'POST', body: data, headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
-        if(r.status != 200) {
-          alert("Failed to save. Status=" + r.status)
-        }
-      } catch(e) {
-        console.log(e)
-        alert("Failed to save")
-      }
-      
   }
 
-  if(window.location.hostname === 'localhost') {
+  if (window.location.hostname === 'localhost') {
     $('#saveRevisionBtn').show()
     $('#saveStarredLinesBtn').show()
   }
