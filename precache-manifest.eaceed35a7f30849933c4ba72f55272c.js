@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/chunk-vendors.a27905aa.css"
   },
   {
-    "revision": "f73364e9cffc20298820a1efdd56c27a",
+    "revision": "4ddebe7b1ea9c48497c20dfa3a7e7612",
     "url": "/data-structures.js"
   },
   {
@@ -72,11 +72,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-vendors.0ad7f1e1.js"
   },
   {
-    "revision": "0698df695ec509005e4535c95d5d4693",
+    "revision": "864654f23d2a5f5046fc35bac4d4181a",
     "url": "/language.html"
   },
   {
-    "revision": "c1a426627195e3e8699aee1ff36da14d",
+    "revision": "b657d7feb556aa20340292dd56f13d61",
     "url": "/language.js"
   },
   {

@@ -39,18 +39,26 @@ function playMedia() {
 }
 
 function loadSearches() {
-  let searches = JSON.parse(localStorage.getItem('searches') || '[]')
+  let searches = getSearchesFromStorage()
   $('#searchedWords').html('')
-  searches.forEach(it => {
-    let op = new Option(it, it, true, true)
+  _.forEach(searches, (count, word) => {
+    let op = new Option( `${word} (${count})`, word, true, true)
     $('#searchedWords').append(op)
   })
   $('#toggleSearchesControlCheckbox').click()
 }
 
+function getSearchesFromStorage() {
+  return JSON.parse(localStorage.getItem('searches') || '{}');
+}
+
+function saveSearchesIntoStorage(searches) {
+  localStorage.setItem('searches', JSON.stringify(searches))
+}
+
 function exportSearches() {
-  let searches = JSON.parse(localStorage.getItem('searches') || '[]')
-  export2txt(searches.join("\n"), "searches.txt");
+  let searches = getSearchesFromStorage()
+  export2txt(Object.keys(searches).join("\n"), "searches.txt");
   $('#toggleSearchesControlCheckbox').click()
 }
 
@@ -61,14 +69,14 @@ function importSearches() {
   file.onchange = e => {
     let reader = new FileReader()
     reader.onload = e => {
-      let searches = reader.result.split("\n")
-      localStorage.setItem('searches', JSON.stringify(searches))
+      let searches = {}
+      reader.result.split("\n").forEach(w => searches[w] = '')
+      saveSearchesIntoStorage(searches);
       loadSearches()
     }
     reader.readAsText(file.files[0])
   }
   file.click()
-  $('#toggleSearchesControlCheckbox').click()
 }
 
 function clearSearches() {
@@ -76,24 +84,32 @@ function clearSearches() {
   $('#toggleSearchesControlCheckbox').click()
 }
 
-function saveSearch(word) {
-  let searches = JSON.parse(localStorage.getItem('searches') || '[]')
-  if (searches.indexOf(word) < 0) {
-    searches.push(word)
+function saveSearch(word, count) {
+  count = count || 0
+  let searches = getSearchesFromStorage()
+  let newItem = true
+  if(Object.keys(searches).includes(word)) {
+    newItem = false
   }
-  localStorage.setItem('searches', JSON.stringify(searches))
+  searches[word] = count
+  saveSearchesIntoStorage(searches)
+  return newItem
 }
 
-function searchTextChanged(e) {
+async function searchTextChanged(e) {
   let el = $('#searchedWords')
   let w = $('#searchText').val()
 
-  if (w.trim().length && el.find("option[value='" + w + "']").length === 0) {
-    let op = new Option(w, w, true, true)
-    el.append(op)
-    saveSearch(w)
+  let wordsToItems = await fetchSRTs(this);
+
+  let count = wordsToItems[w] && wordsToItems[w].length
+  count = count || 0
+  let newItem = saveSearch(w, wordsToItems[w] && wordsToItems[w].length)
+  if (!newItem) {
+    let op = el.find(`option[value="${w}"]`).html(`${w} (${count})`)
+    op.remove()
   }
-  fetchSRTs(this);
+  el.append(new Option(`${w} (${count})`, w, true, true))
 }
 
 function searchedWordSelected() {
@@ -153,7 +169,7 @@ let ontimeupdate = e => {
     return
   }
 
-  updatePlayPauseButton()
+  updatePlayBtn()
 
   let ct = getCurrentTime()
 
@@ -181,11 +197,6 @@ let ontimeupdate = e => {
 
   setSpeed();
 }
-
-let $speedControl = $('#speed-control');
-$speedControl.change(e => {
-  setSpeed()
-})
 
 let addListeners = it => {
   // it.addEventListener('timeupdate', ontimeupdate)
@@ -259,6 +270,10 @@ $('document').ready(e => {
     }
   }
 
+  $('#speed-control').change(e => {
+    setSpeed()
+  })
+
   $('#numberOfFindingsToShow').change(e => {
     render(window.searchResult, window.searchText)
   })
@@ -309,6 +324,7 @@ let currentMediaTime = () => {
   }
   return parseFloat(parseFloat(ct + '').toFixed(2))
 }
+
 let clearSubtitles = () => {
   $('#sv-sub').html('')
   $('#en-sub').html('')
@@ -318,8 +334,9 @@ let clearSubtitles = () => {
 }
 
 function getWikiLink(word, uri = null) {
-  word = word.toLowerCase()
-  return `<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(uri || word)}" target="_blank">${word}</a></span>`;
+  let uriComponent = uri || word;
+  uriComponent = uriComponent.toLowerCase()
+  return `<span> <a href="https://sv.wiktionary.org/wiki/${encodeURIComponent(uriComponent)}" target="_blank">${word}</a></span>`;
 }
 
 function populateWikiLinks(text, $el) {
@@ -453,43 +470,9 @@ async function setMediaTime(newTime, manualHandling = false) {
   renderSubtitles()
 }
 
-// let prepareSubsForPage = async (pageNumber, setTime, manualHandling) => {
-//   pageNumber = parseInt(pageNumber)
-
-//   if (window.playingYoutubeVideo) {
-//     pageNumber = window.pageDataSource[pageNumber - 1]
-//   }
-
-//   let allSubs = window.subtitles
-
-//   //Reset
-//   let subs = [allSubs.find(it => it.id + "" === pageNumber + "")].flatMap(sub => [
-//     // {...sub, speed: 0.6}
-//     // , {...sub, speed: 0.8}
-//     {...sub, speed: 1.0}
-//   ])
-
-//   let currentSub = subs.shift()
-//   if (!currentSub.ts) {
-//     return
-//   }
-//   console.log("Preparing subs for page", pageNumber, currentSub)
-
-//   if (setTime) {
-//     await setMediaTime(currentSub, manualHandling);
-//   }
-
-//   window.subs = subs
-//   window.currentSub = currentSub
-//   window.pageNumber = pageNumber
-
-//   if (manualHandling) {
-//     renderSubtitles(currentSub)
-//   }
-// }
-
 function fixSectionBox() {
-  $('#mp3Choice').select2();
+  let $mp3Choice = $('#mp3Choice');
+  $mp3Choice.select2();
 
   let optgroupState = {};
 
@@ -500,7 +483,7 @@ function fixSectionBox() {
     optgroupState[id][index] = !optgroupState[id][index];
   })
 
-  $('#mp3Choice').on('select2:open', function () {
+  $mp3Choice.on('select2:open', function () {
     $('.select2-dropdown--below').css('opacity', 0);
     setTimeout(() => {
       let groups = $('.select2-container--open .select2-results__group');
@@ -539,7 +522,8 @@ async function fetchCategorisation() {
 
 function populateAllLinks() {
   // let $mp3Choice = $('#mp3Choice');
-  $('#mp3Choice').html('').append($(`<option>-</option>`).attr('value', ''))
+  let $mp3Choice = $('#mp3Choice');
+  $mp3Choice.html('').append($(`<option>-</option>`).attr('value', ''))
   let srts = window.srts
   let srtLinks = Array.from(new Set(window.srts.map(it => it.link)));
 
@@ -575,7 +559,7 @@ function populateAllLinks() {
     getOptgroup(getCategory(item)).append($opt)
   })
 
-  Object.values(ogs).forEach(it => $('#mp3Choice').append(it))
+  Object.values(ogs).forEach(it => $mp3Choice.append(it))
   return srts;
 }
 
@@ -655,8 +639,8 @@ function searchText() {
       return {...it, ...srt}
     }).filter(it => it.svMatch || it.enMatch)
 
-  // let $mp3Choice = $('#mp3Choice')
-  $('#mp3Choice').html('<option>--</option>')
+  let $mp3Choice = $('#mp3Choice');
+  $mp3Choice.html('<option>--</option>')
 
   let ogs = {}
   let getOptgroup = category => {
@@ -683,7 +667,7 @@ function searchText() {
       getOptgroup(getCategory(item)).append($opt)
     })
 
-  Object.values(ogs).forEach(it => $('#mp3Choice').append(it))
+  Object.values(ogs).forEach(it => $mp3Choice.append(it))
 }
 
 function storeSubtitles(subs) {
@@ -925,26 +909,6 @@ function setSpeed() {
   }
 }
 
-function updatePlayPauseButton() {
-  let isPaused, isPlaying;
-  if (window.playingYoutubeVideo) {
-    isPaused = ytPlayer.getPlayerState() === 2;
-    isPlaying = ytPlayer.getPlayerState() === 1;
-  } else if (window.playingAudio) {
-    isPaused = audioPlayer.paused
-    isPlaying = !audioPlayer.paused
-  } else if (window.playingVideo) {
-    isPaused = videoPlayer.paused
-    isPlaying = !videoPlayer.paused
-  }
-
-  if (isPaused) {
-    $('#playBtn').html('Play')
-  } else if (isPlaying) {
-    $('#playBtn').html('Pause')
-  }
-}
-
 window.audioCurrentTimeMargin = -5;
 
 function getCurrentTime() {
@@ -1040,7 +1004,7 @@ function chunkifySentence(text, max_chars) {
   return res
 }
 
-function getTimes(el, fl) {
+function getTimesForSubtitleChunk(el, fl) {
   let lines = $(el).find(".line").map((i, e) => $(e).data()).toArray()
     .map(it => it.index).map(idx => fl.data.find(it => it.index + '' === idx + ''))
 
@@ -1142,26 +1106,32 @@ function getWords(text) {
   return Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim().length > 1);
 }
 
-function getMatchingWords(list, search, functionToGetLines) {
+function fileContainsExactWord(file, word) {
+  return file.data.map(it => it.text).map(getWords).flat().map(it => it.toLowerCase()).includes(word.toLowerCase())
+}
+
+function getMatchingWords(list, search) {
   let wordToItemsMap = {}
   list.forEach(item => {
-    let lines = functionToGetLines(item).data;
+    let lines = item.data;
+    let searchText = search.toLowerCase();
     let matchingWord = lines.map(it => getWords(it.text, search))
       .flat().map(it => it.trim().toLowerCase())
-      .filter(it => it.match(new RegExp(search.toLowerCase(), "i")))
+      .filter(it => it.match(new RegExp(searchText, "i")))
 
     _.uniq(matchingWord).forEach(match => {
-      if (!wordToItemsMap[match]) {
-        wordToItemsMap[match] = []
+      if(fileContainsExactWord(item, match)) {
+        wordToItemsMap[match] = computeIfAbsent(wordToItemsMap, match, it => []).concat(item)
       }
-      wordToItemsMap[match].push(item)
     })
 
-    let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(search.toLowerCase(), "i")))
-    if (matchesSearchText) {
-      wordToItemsMap[search] = wordToItemsMap[search] || []
-      wordToItemsMap[search].push(item)
-    }
+    // if(!wordToItemsMap[searchText]) {
+    //   let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
+    //   if (matchesSearchText) {
+    //     wordToItemsMap[search] = wordToItemsMap[search] || []
+    //     wordToItemsMap[search].push(item)
+    //   }
+    // }
   })
 
   return wordToItemsMap;
@@ -1242,14 +1212,14 @@ function htmlForSrtLine(_line, file, url) {
                                  <br>`).data({line: line, file: file})
 }
 
-function populateSRTFindings(wordToItemsMap, $result, getSubs) {
+function populateSRTFindings(wordToItemsMap, $result) {
   let alreadyAdded = {}
   let numberOfResults = 0
 
-  function appendIfNotAlreadyAdded($file, line, file, item, items) {
+  function appendIfNotAlreadyAdded($file, line, file) {
     let key = `${file.source}-${file.url}-${line.index}`
     if (alreadyAdded[key] && !window.showDuplicates) return 0
-    $file.append(htmlForSrtLine(line, file, item.sv_subs.url, items));
+    $file.append(htmlForSrtLine(line, file, file.url));
     numberOfResults += 1
     alreadyAdded[key] = true
     return 1
@@ -1258,13 +1228,11 @@ function populateSRTFindings(wordToItemsMap, $result, getSubs) {
   Object.keys(wordToItemsMap).toSorted().forEach(word => {
     let items = wordToItemsMap[word]
     let wordBlock = $(`<div ><h5 class="accordion">${word}</h5></div>`)
+    items = items.toSorted((x, y) => x.path === window.preferredFile ? -1 : 1)
 
-    // let getSubs = it => it['en_match'] ? it['en_subs'] : it['sv_subs']
-
-    _.take(items, numberOfItemsToShow()).filter(getSubs)
-      .toSorted((x, y) => getSubs(x).path === window.preferredFile ? -1 : 1)
+    _.take(items, numberOfItemsToShow())
       .forEach(item => {
-        let file = getSubs(item)
+        let file = item
         let parts = file.path.split("/")
         let fileName = parts[parts.length - 1]
         let $file = $(`<div class="srt-file" title="${fileName}">
@@ -1279,7 +1247,7 @@ function populateSRTFindings(wordToItemsMap, $result, getSubs) {
 
         let n = 0
         _.take(matchingLines, numberOfItemsToShow()).forEach(line => {
-          n += appendIfNotAlreadyAdded($file, line, file, item, items);
+          n += appendIfNotAlreadyAdded($file, line, file);
         })
 
         if (n === 0 && wordBlock.html().indexOf('No results found for ') < 0) {
@@ -1321,18 +1289,19 @@ function render(searchResults, search) {
 
   let functionToGetLines = result => result.sv_match ? result.sv_subs : result.en_subs
 
-  let searchResultsFiltered = searchResults.filter(it => {
+  let searchResultsFiltered = searchResults.map(it => {
     if (selectedLang === 'sv' && it.sv_match) return it.sv_subs
     if (selectedLang === 'en' && it.en_match) return it.en_subs
-    return false
-  });
-  let wordToItemsMap = getMatchingWords(searchResultsFiltered, search, functionToGetLines);
-  resultSize += populateSRTFindings(wordToItemsMap, $result, functionToGetLines);
+    return null
+  }).filter(it => it);
+
+  let wordToItemsMap = getMatchingWords(searchResultsFiltered, search);
+  resultSize += populateSRTFindings(wordToItemsMap, $result);
 
   $result.append("<hr>")
 
-  wordToItemsMap = getMatchingWords(searchResults.filter(it => it.text), search, item => [item]);
-  resultSize += populateNonSRTFindings(wordToItemsMap, $result);
+  // wordToItemsMap = getMatchingWords(searchResults.filter(it => it.text), search, item => [item]);
+  // resultSize += populateNonSRTFindings(wordToItemsMap, $result);
 
   renderAccordions()
 
@@ -1399,7 +1368,7 @@ function render(searchResults, search) {
     let url = $(e.target).data("url")
     let dt = $(e.target).parents('.srt-line').data()
 
-    let times = getTimes($(e.target).parents('.srt-line'), dt.file)
+    let times = getTimesForSubtitleChunk($(e.target).parents('.srt-line'), dt.file)
 
     let btn = $(e.target)
     // $(btn).addClass('disabled')
@@ -1434,6 +1403,8 @@ function render(searchResults, search) {
   $(".normal-line .play-btn").click(e => {
     playSelectedText(e);
   })
+
+  return wordToItemsMap;
 } // end render
 
 function getSubs(text, file, url, source, fetchedFrom) {
@@ -1490,7 +1461,7 @@ async function fetchSRTs(searchText) {
     let res = await fetch("http://localhost:5000/find?text=" + txt)
     window.searchResult = await res.json();
   }
-  render(window.searchResult, window.searchText)
+  return render(window.searchResult, window.searchText)
 }
 
 function renderAccordions() {
@@ -1583,7 +1554,7 @@ function getDimensionsForPlayer() {
     ytHeight = wh / 2 - 150;
     $('#controls').css({width: '100%', bottom: '-15em', right: 0})
     $('#youtubePlayer-info').hide()
-    $speedControl.parent().hide()
+    $('#speed-control').parent().hide()
 
     $('#mp3Choice').parent().css({width: ww - 20})
   }

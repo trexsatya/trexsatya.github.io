@@ -15,6 +15,14 @@ function range(start, count, filter, fn) {
   if(fn) return ar.filter(filter).map(x => fn(x))
   else return ar;
 }
+
+function computeIfAbsent(map, key, fn) {
+  if(!map[key]) {
+    map[key] = fn()
+  }
+  return map[key]
+}
+
 function CircularCursor(arr) {
   this.items = arr
   this.currentIndex = -1
