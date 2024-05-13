@@ -42,7 +42,7 @@ function loadSearches() {
   let searches = getSearchesFromStorage()
   $('#searchedWords').html('')
   _.forEach(searches, (count, word) => {
-    let op = new Option( `${word} (${count})`, word, true, true)
+    let op = new Option(`${word} (${count})`, word, true, true)
     $('#searchedWords').append(op)
   })
   $('#toggleSearchesControlCheckbox').click()
@@ -88,7 +88,7 @@ function saveSearch(word, count) {
   count = count || 0
   let searches = getSearchesFromStorage()
   let newItem = true
-  if(Object.keys(searches).includes(word)) {
+  if (Object.keys(searches).includes(word)) {
     newItem = false
   }
   searches[word] = count
@@ -258,6 +258,7 @@ $('document').ready(e => {
     let link = $('#mp3Choice').val();
     if (link) {
       window.location.hash = link
+      window.mediaSelected = {link: link, source: 'link'}
       playNewMedia(link, 'link')
     }
   })
@@ -357,6 +358,15 @@ function populateWikiLinks(text, $el) {
   });
 }
 
+function changeMediaIfNeededTo(media) {
+  let notAlradyBeingPlayed = window.playingYoutubeVideo && !_.isEqual(window.mediaBeingPlayed, media);
+  let canBePlayed = window.playingYoutubeVideo && !_.isEqual(window.mediaBeingPlayed, media);
+  if (notAlradyBeingPlayed && window.mediaBeingPlayed.source === 'link') {
+    return loadYoutubeVideo(media.link)
+  }
+  return new Promise(resolve => resolve())
+}
+
 function addStarredLine(index, ts) {
   if (window.starredLines.indexOf(index) >= 0) return
 
@@ -368,11 +378,11 @@ function addStarredLine(index, ts) {
   if (!ts) {
     ts = window.subtitles.find(it => it.index === index).ts
   }
-  x.click(e => {
+  x.click(async e => {
     $('.starred-sub').removeClass('active')
     x.addClass('active')
-    setMediaTime(ts, true)
-    // playMedia()
+    await changeMediaIfNeededTo(window.mediaSelected)
+    await setMediaTime(ts, true)
   })
 
   $('#starredLines').append(x)
@@ -1112,27 +1122,30 @@ function fileContainsExactWord(file, word) {
 
 function getMatchingWords(list, search) {
   let wordToItemsMap = {}
+  let searchText = search.toLowerCase();
+
   list.forEach(item => {
     let lines = item.data;
-    let searchText = search.toLowerCase();
     let matchingWord = lines.map(it => getWords(it.text, search))
       .flat().map(it => it.trim().toLowerCase())
       .filter(it => it.match(new RegExp(searchText, "i")))
 
     _.uniq(matchingWord).forEach(match => {
-      if(fileContainsExactWord(item, match)) {
+      if (fileContainsExactWord(item, match)) {
         wordToItemsMap[match] = computeIfAbsent(wordToItemsMap, match, it => []).concat(item)
       }
     })
-
-    // if(!wordToItemsMap[searchText]) {
-    //   let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
-    //   if (matchesSearchText) {
-    //     wordToItemsMap[search] = wordToItemsMap[search] || []
-    //     wordToItemsMap[search].push(item)
-    //   }
-    // }
   })
+
+  if (!wordToItemsMap[searchText]) {
+    list.forEach(item => {
+      let lines = item.data;
+      let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
+      if (matchesSearchText) {
+        wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(item)
+      }
+    })
+  }
 
   return wordToItemsMap;
 }
@@ -1185,26 +1198,64 @@ function getMainSubAndSecondarySub(file, line) {
   return {mainSub, secondarySub};
 }
 
+let playClickedMedia = (url, times, source) => {
+  if (!window.playingAudio && !window.playingVideo) {
+    if (source !== 'YouTube') {
+      window.open(`https://www.svtplay.se/video/${url}?position=${times.start}`, '_newtab')
+      return
+    }
+    loadYoutubeVideo(url)
+  } else {
+    if (window.playingVideo) {
+      videoPlayer.setCurrentTime(times.start)
+      videoPlayer.play()
+    } else if (window.playingAudio) {
+      audioPlayer.setCurrentTime(times.start)
+      audioPlayer.play()
+    }
+  }
+
+  window.youtubePlayInterval = {...times}
+  console.log(`Playing from ${fromSeconds(times.start)} to ${fromSeconds(times.end)}`)
+}
+
+function showInfo(id, source, time_start, time_end) {
+  let fileName = window.allSubtitles[id].fileName
+  let url = `https://www.svtplay.se/video/${id}?position=${time_start}`
+  if(source === 'YouTube') {
+    url = `https://www.youtube.com/watch?v=${id}&t=${time_start}&autoplay=1`
+  }
+
+  $('#info-dialog-content').html(`
+    <h3><a href="${url}" target="_blank">${fileName}</a></h3>
+    <h4>${source}</h4>
+    <h4>${fromSeconds(time_start)} - ${fromSeconds(time_end)}</h4>
+  `).dialog()
+}
+
 function htmlForSrtLine(_line, file, url) {
   let line = {..._line}
   let {mainSub, secondarySub} = getMainSubAndSecondarySub(file, line);
 
+  let id = uuid()
   let source = file.source || '';
-  return $(`<div class="srt-line" data-index="${line.index}" data-file="${file.path}">
+  let time_start = parseInt(Math.floor(line.start.ordinal)); //fromSeconds(line.start.ordinal);
+  let time_end = parseInt(Math.ceil(line.end.ordinal)); //fromSeconds(line.end.ordinal);
+  return $(`<div class="srt-line" data-index="${line.index}" data-file="${file.path}" id="${id}">
                                     <span class="add-prev-btn btn"> + </span>
                                     <span class="remove-next-btn btn"> - </span>
                                     <span class="line main-line" data-index="${line.index}"> ${mainSub.text} </span>
                                     <span class="remove-prev-btn btn"> - </span>
                                     <span class="add-next-btn btn"> + </span>
                                     <span class="play-btn-container">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle media-info" viewBox="0 0 16 16" style="cursor: pointer;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" onclick="showInfo('${file.url}', '${file.source}', '${time_start}', '${time_end}')" class="bi bi-info-circle media-info" viewBox="0 0 16 16" style="cursor: pointer;">
                                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                                               <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
                                         </svg>
                                         <span class="info" style="display: none;">
-                                               <span class="info times"> ${fromSeconds(line.start.ordinal)}-${fromSeconds(line.end.ordinal)} </span>
+                                               <span class="info times"> ${time_start}-${time_end} </span>
                                         </span>
-                                        <img src="/img/icons/play_icon.png" alt="" style="width: 35px;height: 35px;cursor: pointer;background-color: inherit;" class="play-btn" data-url="${url}">
+                                        <img src="/img/icons/play_icon.png" alt="" style="width: 30px;height: 30px;cursor: pointer;background-color: inherit;" class="play-btn" data-url="${url}">
                                     </span>
                                     <br>
                                  </div>
@@ -1370,32 +1421,8 @@ function render(searchResults, search) {
 
     let times = getTimesForSubtitleChunk($(e.target).parents('.srt-line'), dt.file)
 
-    let btn = $(e.target)
-    // $(btn).addClass('disabled')
-
-    let play = () => {
-      if (!window.playingAudio && !window.playingVideo) {
-        if (dt.file.source !== 'YouTube') {
-          window.open(`https://www.svtplay.se/video/${url}?position=${times.start}`, '_newtab')
-          return
-        }
-        loadYoutubeVideo(url)
-      } else {
-        if (window.playingVideo) {
-          videoPlayer.setCurrentTime(times.start)
-          videoPlayer.play()
-        } else if (window.playingAudio) {
-          audioPlayer.setCurrentTime(times.start)
-          audioPlayer.play()
-        }
-      }
-
-      window.youtubePlayInterval = {...times}
-      console.log(`Playing from ${fromSeconds(times.start)} to ${fromSeconds(times.end)}`)
-    }
-
     // dampenBgMusic().promise.then(x => play())
-    play()
+    playClickedMedia(url, times, dt.file.source)
     // $( "#audioPlayerPopup" ).dialog('open')
     // $('#audioPlayerPopup').css({width: '100%'})
   })
@@ -1526,12 +1553,14 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function loadYoutubeVideo(videoId) {
   let iframe = ytPlayer.getIframe()
   $('#youtubePlayer').show()
-  try {
-    let currentVideoId = iframe.src.split("embed/")[1].split("?")[0]
-    iframe.src = `${iframe.src}`.replaceAll(currentVideoId, videoId)
-  } catch (e) {
-    console.log(e)
-  }
+  return new Promise((resolve, reject) => {
+    try {
+      let currentVideoId = iframe.src.split("embed/")[1].split("?")[0]
+      iframe.src = `${iframe.src}`.replaceAll(currentVideoId, videoId)
+    } catch (e) {
+      console.log(e)
+    }
+  })
 }
 
 function isDesktop() {
