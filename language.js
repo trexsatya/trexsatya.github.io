@@ -308,6 +308,8 @@ $('document').ready(e => {
   hidePlayer(audioPlayer)
   hidePlayer(videoPlayer)
 
+  let $searchText = $('#searchText');
+  $searchText.on(`focus`, () => $searchText.val(''));
   fixMobileView()
 })
 
