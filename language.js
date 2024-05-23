@@ -249,6 +249,7 @@ function fixMobileView() {
       textAlign: 'center'
     })
 
+    $('.play-btn-container').css({marginLeft: '22%'})
     $('#player-info').css({marginTop: 0, left: '40%'})
   }
 }
@@ -1304,6 +1305,10 @@ function renderLines(id, url) {
   `
 
   $container.html(html)
+
+  if(!isDesktop()) {
+    $('.play-btn-container').css({marginLeft: '22%'})
+  }
 }
 
 function populateSRTFindings(wordToItemsMap, $result) {
