@@ -1376,6 +1376,10 @@ function render(searchResults, search) {
   let wordToItemsMap = getMatchingWords(searchResultsFiltered, search);
   populateSRTFindings(wordToItemsMap, $result);
 
+  if(Object.keys(wordToItemsMap).length === 0) {
+    $result.html(resultNotFound(window.searchText))
+  }
+
   $result.append("<hr>")
 
   // wordToItemsMap = getMatchingWords(searchResults.filter(it => it.text), search, item => [item]);
