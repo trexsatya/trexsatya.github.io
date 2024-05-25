@@ -1131,11 +1131,15 @@ function getMatchingWords(list, search) {
 
   list.forEach(item => {
     let lines = item.data;
-    let matchingWord = lines.map(it => getWords(it.text, search))
-      .flat().map(it => it.trim().toLowerCase())
-      .filter(it => it.match(new RegExp(searchText, "i")))
+    let words = lines.map(it => getWords(it.text, search)).flat().map(it => it.trim().toLowerCase());
+    let matchingWords = words
+      .filter(word => {
+        let endsWith = searchText.endsWith(" ") && !searchText.startsWith(" ") && word.endsWith(searchText.trim());
+        let startsWith = searchText.startsWith(" ") && !searchText.endsWith(" ") && word.startsWith(searchText.trim());
+        return word.match(new RegExp(searchText, "i")) || endsWith || startsWith;
+      })
 
-    _.uniq(matchingWord).forEach(match => {
+    _.uniq(matchingWords).forEach(match => {
       if (fileContainsExactWord(item, match)) {
         wordToItemsMap[match] = computeIfAbsent(wordToItemsMap, match, it => []).concat(item)
       }
@@ -1306,13 +1310,12 @@ function renderLines(id, url) {
 
   $container.html(html)
 
-  if(!isDesktop()) {
+  if (!isDesktop()) {
     $('.play-btn-container').css({marginLeft: '22%'})
   }
 }
 
 function populateSRTFindings(wordToItemsMap, $result) {
-
   Object.keys(wordToItemsMap).toSorted().forEach(word => {
     let items = wordToItemsMap[word]
     let wordBlock = $(`<div ><h5 class="accordion">${word}</h5></div>`)
@@ -1345,6 +1348,10 @@ function populateSRTFindings(wordToItemsMap, $result) {
           renderLines(id, file.url)
         })
       })
+
+      if (items.length === 0) {
+        wordBlock.append(resultNotFound(window.searchText))
+      }
   })
 }
 
@@ -1376,7 +1383,7 @@ function render(searchResults, search) {
   let wordToItemsMap = getMatchingWords(searchResultsFiltered, search);
   populateSRTFindings(wordToItemsMap, $result);
 
-  if(Object.keys(wordToItemsMap).length === 0) {
+  if (Object.keys(wordToItemsMap).length === 0) {
     $result.html(resultNotFound(window.searchText))
   }
 
