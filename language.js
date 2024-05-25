@@ -1150,10 +1150,15 @@ function getMatchingWords(list, search) {
     list.forEach(item => {
       let lines = item.data;
       let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
-      if (matchesSearchText) {
+      let notAlreadyIncluded = Object.keys(wordToItemsMap).find(it => it.indexOf(searchText) < 0)
+      if (matchesSearchText && notAlreadyIncluded) {
         wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(item)
       }
     })
+  }
+
+  if(wordToItemsMap[searchText] === undefined) {
+    wordToItemsMap[searchText] = []
   }
 
   return wordToItemsMap;
@@ -1251,8 +1256,8 @@ function renderLines(id, url) {
   let fromLineIndex = parseInt($container.data('fromIndex'))
   let toLineIndex = parseInt($container.data('toIndex'))
 
-  if (fromLineIndex < 0) {
-    fromLineIndex = 0
+  if (fromLineIndex < 1) {
+    fromLineIndex = 1
   }
 
   if (toLineIndex < fromLineIndex) {
@@ -1262,9 +1267,11 @@ function renderLines(id, url) {
   let lang = getSelectedLang()
   let file = window.searchResult.find(it => it.url === url)[lang === 'sv' ? 'sv_subs' : 'en_subs']
 
-
-  let time_start = parseInt(Math.floor(file.data[fromLineIndex].start.ordinal)); //fromSeconds(line.start.ordinal);
-  let time_end = parseInt(Math.ceil(file.data[toLineIndex].end.ordinal)); //fromSeconds(line.end.ordinal);
+  let getSub = x => file.data.find(it => it.index + '' === x + '');
+  let st = getSub(fromLineIndex);
+  let end = getSub(toLineIndex)
+  let time_start = parseInt(Math.floor(st.start.ordinal)); //fromSeconds(line.start.ordinal);
+  let time_end = parseInt(Math.ceil(end.end.ordinal)); //fromSeconds(line.end.ordinal);
 
   let html = `
 <hr>
@@ -1292,8 +1299,9 @@ function renderLines(id, url) {
 
   let mainSubText = ''
   let secondarySubText = ''
-  file.data.slice(fromLineIndex, toLineIndex + 1).forEach(it => {
-    let {mainSub, secondarySub} = getMainSubAndSecondarySub(file, ({...it}));
+  range(fromLineIndex, toLineIndex - fromLineIndex + 1).forEach(idx => {
+    let sub = getSub(idx)
+    let {mainSub, secondarySub} = getMainSubAndSecondarySub(file, ({...sub}));
     mainSubText += ` ${mainSub.text}`
     secondarySubText += ` ${secondarySub.text}`
   })
@@ -1342,7 +1350,7 @@ function populateSRTFindings(wordToItemsMap, $result) {
         matchingLines.forEach(it => {
           let id = uuid()
           let $lines = $(`<div id="${id}" style="padding-top: 4px; padding-bottom: 8px;"></div>`)
-          $lines.data({fromIndex: it.index - 1, toIndex: it.index - 1})
+          $lines.data({fromIndex: it.index , toIndex: it.index })
           $fileBlock.append($lines)
 
           renderLines(id, file.url)
@@ -1350,7 +1358,7 @@ function populateSRTFindings(wordToItemsMap, $result) {
       })
 
       if (items.length === 0) {
-        wordBlock.append(resultNotFound(window.searchText))
+        wordBlock.html(`<div style="padding: 1em;"> ${getWikiLinks(word)} not found. Try Wiki! </div>`)
       }
   })
 }
