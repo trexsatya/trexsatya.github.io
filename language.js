@@ -1110,7 +1110,7 @@ function playSelectedText(e) {
 function numberOfItemsToShow() {
   let n = parseInt(numberOfFindingsToShow.value);
   if (n === -1) {
-    return 1000
+    return 100000
   }
   return n
 }
@@ -1125,39 +1125,44 @@ function fileContainsExactWord(file, word) {
   return file.data.map(it => it.text).map(getWords).flat().map(it => it.toLowerCase()).includes(word.toLowerCase())
 }
 
+class MatchResult {
+  constructor(word, line, url, source) {
+    this.url = url;
+    this.line = line;
+    this.word = word;
+    this.source = source;
+  }
+}
+
 function getMatchingWords(list, search) {
   let wordToItemsMap = {}
   let searchText = search.toLowerCase();
 
   list.forEach(item => {
     let lines = item.data;
-    let words = lines.map(it => getWords(it.text, search)).flat().map(it => it.trim().toLowerCase());
-    let matchingWords = words
-      .filter(word => {
-        let endsWith = searchText.endsWith(" ") && !searchText.startsWith(" ") && word.endsWith(searchText.trim());
-        let startsWith = searchText.startsWith(" ") && !searchText.endsWith(" ") && word.startsWith(searchText.trim());
-        return word.match(new RegExp(searchText, "i")) || endsWith || startsWith;
-      })
-
-    _.uniq(matchingWords).forEach(match => {
-      if (fileContainsExactWord(item, match)) {
-        wordToItemsMap[match] = computeIfAbsent(wordToItemsMap, match, it => []).concat(item)
-      }
+    lines.forEach(line => {
+      let words = getWords(line.text, search).map(it => it.trim().toLowerCase())
+      let endsWith = word => searchText.endsWith(" ") && !searchText.startsWith(" ") && word.endsWith(searchText.trim());
+      let startsWith = word => searchText.startsWith(" ") && !searchText.endsWith(" ") && word.startsWith(searchText.trim());
+      words.filter(word => word.match(new RegExp(searchText, "i")) || endsWith(word) || startsWith(word))
+        .forEach(word => {
+          wordToItemsMap[word] = computeIfAbsent(wordToItemsMap, word, it => []).concat(new MatchResult(word, line, item.url, item.source))
+        })
     })
   })
 
-  if (!wordToItemsMap[searchText]) {
+  if (!wordToItemsMap[searchText.trim()]) {
     list.forEach(item => {
       let lines = item.data;
       let matchesSearchText = lines.some(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
-      let notAlreadyIncluded = Object.keys(wordToItemsMap).find(it => it.indexOf(searchText) < 0)
+      let notAlreadyIncluded = Object.keys(wordToItemsMap).find(it => it.indexOf(searchText.trim()) < 0)
       if (matchesSearchText && notAlreadyIncluded) {
         wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(item)
       }
     })
   }
 
-  if(wordToItemsMap[searchText] === undefined) {
+  if(wordToItemsMap[searchText.trim()] === undefined) {
     wordToItemsMap[searchText] = []
   }
 
@@ -1333,33 +1338,23 @@ function populateSRTFindings(wordToItemsMap, $result) {
     _.take(items, numberOfItemsToShow())
       .forEach(item => {
         let file = item
-        let parts = file.path.split("/")
-        let fileName = parts[parts.length - 1]
-        let $fileBlock = $(`<div class="srt-file" title="${fileName}">
-                            <h4 data-file="${file.path}" style="display: none;"> ${word} </h4>
+        let $fileBlock = $(`<div class="srt-file" title="${item['name']}">
+                            <h4 data-file="${item.url}" style="display: none;"> ${word} </h4>
                         </div>`)
-        let matchingLines = file.data.filter(it => {
-          if (window.searchText.indexOf(' ') >= 0) {
-            return it.text.toLowerCase().match(word)
-          }
-          return getWords(it.text.toLowerCase()).includes(word.toLowerCase())
-        })
 
         wordBlock.append($fileBlock)
 
-        matchingLines.forEach(it => {
-          let id = uuid()
-          let $lines = $(`<div id="${id}" style="padding-top: 4px; padding-bottom: 8px;"></div>`)
-          $lines.data({fromIndex: it.index , toIndex: it.index })
-          $fileBlock.append($lines)
+        let id = uuid()
+        let $lines = $(`<div id="${id}" style="padding-top: 4px; padding-bottom: 8px;"></div>`)
+        $lines.data({fromIndex: item.line.index , toIndex: item.line.index })
+        $fileBlock.append($lines)
 
-          renderLines(id, file.url)
-        })
+        renderLines(id, file.url)
       })
 
-      if (items.length === 0) {
-        wordBlock.html(`<div style="padding: 1em;"> ${getWikiLinks(word)} not found. Try Wiki! </div>`)
-      }
+    if (items.length === 0) {
+      wordBlock.html(`<div style="padding: 1em;"> ${getWikiLinks(word)} not found. Try Wiki! </div>`)
+    }
   })
 }
 
