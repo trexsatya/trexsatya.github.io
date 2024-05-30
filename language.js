@@ -1151,16 +1151,16 @@ function getMatchingWords(list, search) {
     })
   })
 
-  if (!wordToItemsMap[searchText.trim()]) {
-    list.forEach(item => {
-      let lines = item.data;
-      let matchesSearchText = lines.find(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
-      let alreadyIncluded = Object.keys(wordToItemsMap).find(it => it.indexOf(searchText.trim()) > 0)
-      if (matchesSearchText && !alreadyIncluded) {
-        wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(new MatchResult(searchText, matchesSearchText, item.url, item.source))
-      }
-    })
-  }
+  // if (!wordToItemsMap[searchText.trim()]) {
+  //   list.forEach(item => {
+  //     let lines = item.data;
+  //     let matchesSearchText = lines.find(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
+  //     let alreadyIncluded = Object.keys(wordToItemsMap).find(it => it.indexOf(searchText.trim()) > 0)
+  //     if (matchesSearchText && !alreadyIncluded) {
+  //       wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(new MatchResult(searchText, matchesSearchText, item.url, item.source))
+  //     }
+  //   })
+  // }
 
   if(wordToItemsMap[searchText.trim()] === undefined) {
     wordToItemsMap[searchText] = []
