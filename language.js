@@ -63,6 +63,20 @@ function exportSearches() {
 }
 
 function importSearches() {
+   $("#import-dialog").dialog()
+}
+
+function importSearchesFromVocab() {
+   let category = $("#vocabularySelect").val()
+   let searches = window.vocabulary[category]
+
+   let words = {}
+   searches.forEach(w => words[w] = '')
+   saveSearchesIntoStorage(words)
+   loadSearches()
+}
+
+function importSearchesFromFile() {
   let file = document.createElement('input')
   file.type = 'file'
   file.accept = '.txt'
@@ -110,6 +124,39 @@ async function searchTextChanged(e) {
     op.remove()
   }
   el.append(new Option(`${w} (${count})`, w, true, true))
+}
+
+function parseVocabularyFile(text) {
+  let lines = text.split("\n")
+  let categories = {}
+  let currentCategory = null
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i]
+    if(line.startsWith("#")) {
+      currentCategory = line.replace("#", "").trim()
+      categories[currentCategory] = []
+    } else {
+      if(line.trim().length > 1) {
+        categories[currentCategory].push(line)
+      }
+    }
+  }
+
+  return categories
+}
+
+function fetchVocabulary() {
+  fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/vocabulary.txt")
+    .then(res => res.text())
+    .then(text => {
+      window.vocabulary = parseVocabularyFile(text)
+      let $vocabularySelect = $('#vocabularySelect')
+      $vocabularySelect.html('<option>-</option>')
+      Object.keys(window.vocabulary).forEach(it => {
+        let op = new Option(it, it)
+        $vocabularySelect.append(op)
+      })
+    })
 }
 
 function searchedWordSelected() {
@@ -255,6 +302,8 @@ function fixMobileView() {
 }
 
 $('document').ready(e => {
+  fetchVocabulary()
+
   $('#mp3Choice').change(async e => {
     let link = $('#mp3Choice').val();
     if (link) {
@@ -515,6 +564,7 @@ function fixSectionBox() {
 
 $(document).ready(function () {
   fixSectionBox()
+  $("#vocabularySelect").select2()
 });
 
 async function fetchCategorisation() {
@@ -1150,17 +1200,6 @@ function getMatchingWords(list, search) {
         })
     })
   })
-
-  // if (!wordToItemsMap[searchText.trim()]) {
-  //   list.forEach(item => {
-  //     let lines = item.data;
-  //     let matchesSearchText = lines.find(it => it.text.toLowerCase().match(new RegExp(searchText, "i")))
-  //     let alreadyIncluded = Object.keys(wordToItemsMap).find(it => it.indexOf(searchText.trim()) > 0)
-  //     if (matchesSearchText && !alreadyIncluded) {
-  //       wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(new MatchResult(searchText, matchesSearchText, item.url, item.source))
-  //     }
-  //   })
-  // }
 
   if(wordToItemsMap[searchText.trim()] === undefined) {
     wordToItemsMap[searchText] = []
