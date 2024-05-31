@@ -1,6 +1,4 @@
------------
-Word-Group: Ställning
------------
+#Word-Group: Ställning
 omställning
 inställning
 tillställning
@@ -15,9 +13,7 @@ frågeställning
 anställning
 tandställnig
 
------------
-Word-Group: Sätta
------------
+#Word-Group: Sätta
 ersättning
 oersättlig
 fortsätter
@@ -53,9 +49,8 @@ plattsättare
 talesätt
 sätt fart
 
------------
-Word-Group: Stå
------------
+
+#Word-Group: Stå
 anstå
 avstå
 avstånd
@@ -92,9 +87,8 @@ stång
 hävstång
 ledstång
 
------------
-Everyday things and descriptions
------------
+
+#Everyday things and descriptions
 resebyrån
 Belysning
 stång
@@ -129,21 +123,16 @@ ynka sig
 putsa
 kar
 
------------
-Transport Related
------------
+#Transport Related
 kärra
 
------------
-Food related
------------
+
+#Food related
 spis
 
 
------------
-House related
------------
+#House related
 
------------
-Fun related
------------
+
+#Fun related
+
