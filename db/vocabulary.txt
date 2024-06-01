@@ -123,11 +123,24 @@ ynka sig
 putsa
 kar
 
+#Everyday actions
+släcka
+tända
+Anknyta
+Tilllägga
+Tilla
+
+ansluta sig
+surna
+gå med
+Fylla på
+
+
 #Transport Related
 kärra
 
 
-#Food related
+#Food, Kitchen related
 spis
 Shorba - buljong
 Mata
@@ -340,3 +353,394 @@ Fläddermöss
 kråka
 Anka
 
+#Non-ordinary things
+rasa
+haverera
+haveri
+brista
+brast
+spricka
+spruta
+kapa
+knökfull
+pärl
+avsäga
+yrväder
+oväder
+Böta
+Bestraffning
+unna
+stank
+odör
+svek
+handbojor
+tjusig
+Betongklump
+svimma
+flimra
+Repressalier
+hämnd
+vedergällning
+hämnas
+smycke
+Lins
+inskränka
+uteslutande 
+Sno
+snatteri
+
+spöke
+kallsup
+
+relegera
+stäng av
+
+skadeskjuten
+Nedslå
+få skarpsår
+blåmärken
+brännskador 
+Svedja
+svida
+sveda
+Svedd
+Skav
+kula
+
+#Body, bodily action
+sväva
+skonsamt
+rycka, knycka
+sära på skinkorna
+Harkla
+hosta
+Gurgla 
+svälja
+Klunka
+Lunka
+Taska
+Bestiga
+klättra 
+Kliva
+Snubbla
+ramla
+Nudda
+vissla
+kittlig
+Klia
+kittla
+riva 
+rev
+springa
+röra på sig
+Spana
+Lat
+slöa
+dåsa
+nicka
+Putta
+Hoppa och skutta
+studsa
+Snubbla och ramla
+Trilla
+rulla
+angripa
+pungspark
+markera
+gapa
+knocka
+Räcka upp
+Nafsa
+Tugga
+Nypa
+Tjuvnypa
+Reta
+
+kletig
+
+ögonfrans
+hårbotten
+
+i sykte
+stirra, 
+
+tafsa på
+härma
+efterlikna
+
+Dunka
+tappa taget
+slinta 
+slant
+halka
+knäcktes benen
+
+Fläkta sig
+solfjäder
+Vifta
+Skumpa
+Blåsa
+prutta
+
+rapa
+grymta
+bräka 
+
+vidröra
+beröra
+pilla
+peta
+klappa
+slå
+smaka
+
+svälla
+spruta
+spreta 
+
+lämma ur
+i luven på varandra
+Veka sig
+vricka
+
+snor
+slem
+hängpung
+
+handled
+handleder
+skakis
+
+Vänd om
+baklänges
+
+famn
+
+Rida
+red
+
+#Feelings, Mood, Mental state, situations
+bekymrad
+vänja sig
+van vid
+tillfredsställande
+ivrighet
+trög
+Kladdigt
+utanförskap 
+läskig
+läbbig
+Knasig
+Fånig
+Knasboll
+Tokig
+knäpp
+fixering
+Skrämma
+dan
+ängslig
+rädd
+skrämd
+förskräckt
+stå ut med
+Distrahera
+tossig
+Påfrestande
+återhämta sig
+åtagande
+utfästelse
+
+#Personal, person-related
+härsklysten
+djärv
+
+lustig
+putslustig
+skämtsam
+angelägenhet
+trofast/trogen
+ärlig
+Enträgen
+smitig
+flitig
+Stjärtgosse
+bög 
+Stjärt
+högmod
+ärekränkt
+vanära
+vanheder 
+förolämpa
+förolämpning
+vördas 
+Ärelysten
+
+godtrogen
+lätttrogen
+lättlurad
+överlägsen
+
+puma
+
+snatteri
+vriden
+sned
+
+stel
+stiff
+
+Mäklare
+
+lekman
+
+#Job, Work etc
+biträddande
+befordra
+bödel 
+
+
+#Phrases
+upp och ner
+ut och in
+det är full rulle
+Krasst sagt
+rättare sagt 
+
+det rullar på
+på blixtbesök
+skenbart
+uppenbart
+av outgrundligt skäl
+omge sig med
+
+ringer en lite klocka
+sjuvan
+
+erkänna uppriktigt
+
+tänkte inombords
+tänkte inuti
+utan att tveka
+Jag vill ju honom väl
+
+för övrigt
+dessutom
+i övrigt
+
+mötte det modigt
+löste det galant
+förutfattad mening
+försonad (.*) med
+förtjust i
+hyste(.*)längtan efter
+
+visst är det fantastisk
+passé
+som du var inne på
+har pågått ganska länge 
+det är lite trist
+hur gick det till
+inte framkolig
+i grund och botten
+grundlig
+gynnsam
+lätta på
+Kom igen!
+Sånt ska inte ske
+var knökfull
+säga ifrån
+slänga en replik
+slentrian
+förgäves
+komma på nåt
+skryta 
+det gör inte så mycket 
+vara besatt i 
+tillskott
+i tur och ordning 
+gör dig i ordning 
+rackarunge
+busfrö 
+Måttlig
+och sånt
+Avslöja
+förtrolig
+
+överlämna
+anförtro sig
+mota
+göra
+av med
+Släppa av
+bege
+beivras
+Få bukt med
+Ta itu med
+åtgärda
+hängiga och slängiga
+varsin
+vardera
+hinna med
+överträffa
+förlopp
+i min enfald
+taggad
+peppad
+klara, färdiga, gå
+Fjärilar i magen
+Råttar i magen
+
+omständlig
+Trängsel
+Piss iväg
+chas
+Sticker jag
+
+dök upp
+
+få I gång 
+
+bit för bit
+så småningom
+
+tar man fram
+
+bege sig
+bege sig in
+företrädde
+framträdde
+uppträdde
+
+Anstränga sig
+
+Varva
+Turas om
+Växla
+bolla
+
+kackar i eget bo
+det är en fröjd 
+
+många bäckar små
+hastigt avsult
+passa på
+
+sen urminnes tiden
+sköta .* hygien
+vidga .* perspektiv
+njuter av
+förnedra
+
+kan liknas vid
+
+spänna
+Många bäckar små gör en stor å
+lider mot till slut
+
+rätteligen
+
+ägna si åt 
+
+fjortis
+sätta ribban högt
+sänka ribban lite
