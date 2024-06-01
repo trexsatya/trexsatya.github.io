@@ -89,6 +89,7 @@ ledstång
 
 
 #Everyday things and descriptions
+veckla
 resebyrån
 Belysning
 stång
@@ -98,6 +99,7 @@ riktlinje
 skynda sig
 skvätta
 stänka
+sprudla
 riklig
 plottrigt
 stökig
@@ -122,6 +124,12 @@ ynka
 ynka sig
 putsa
 kar
+sax
+klippa
+vinkelslip
+undermålig
+gegga
+idyll
 
 #Everyday actions
 släcka
@@ -129,7 +137,7 @@ tända
 Anknyta
 Tilllägga
 Tilla
-
+lira
 ansluta sig
 surna
 gå med
@@ -141,6 +149,8 @@ kärra
 
 
 #Food, Kitchen related
+brödrost
+smet
 spis
 Shorba - buljong
 Mata
@@ -155,8 +165,15 @@ Stänkare
 skölja ner
 proppa
 proppmätt
+vindruvor
+förtära
+snaska
+fralla
+rackabajsare
 
 #House related
+trappa
+räcke
 torn
 kokvrå
 gäst
@@ -203,6 +220,7 @@ kran
 
 
 #Fun related
+uteservering
 vattenrutchkan
 rackarunge
 busfrö 
@@ -254,10 +272,15 @@ Kolsvart
 Nedsläcka
 
 #Health, physical appearance
+frilla
+frisyr
+peruk
+banta
 redlighet
 skötsam
 stökig
 smutsig 
+sjaskig
 Nyttig
 förtvina
 vissna
@@ -287,6 +310,8 @@ bälte
 känga
 
 #Plants, garden, Nature etc
+lantställe
+utsikt
 gärdsgård
 trädgård
 stängsel
@@ -295,7 +320,7 @@ trästång
 sågat
 virke
 hässjor
-
+fågelläte
 kuperad
 bergig
 Stup
@@ -352,8 +377,15 @@ fladdermus
 Fläddermöss
 kråka
 Anka
+töm
 
 #Non-ordinary things
+strypa
+smita
+smet
+uppehåll
+otäck
+rån
 rasa
 haverera
 haveri
@@ -408,6 +440,15 @@ Skav
 kula
 
 #Body, bodily action
+mumla
+morra
+grymta
+brumma
+möka
+viska
+banka
+rabbla
+volta
 sväva
 skonsamt
 rycka, knycka
@@ -426,6 +467,7 @@ Snubbla
 ramla
 Nudda
 vissla
+pipa
 kittlig
 Klia
 kittla
@@ -475,12 +517,14 @@ slant
 halka
 knäcktes benen
 
-Fläkta sig
+Fläkta
 solfjäder
 Vifta
 Skumpa
 Blåsa
 prutta
+
+hångla
 
 rapa
 grymta
@@ -519,10 +563,16 @@ famn
 Rida
 red
 
-#Feelings, Mood, Mental state, situations
+#Feelings, Mental state
+skraj
+förväntan
+disträ
+förbryllad
+ljuvlig
 bekymrad
 vänja sig
 van vid
+gnäll
 tillfredsställande
 ivrighet
 trög
@@ -552,8 +602,11 @@ utfästelse
 
 #Personal, person-related
 härsklysten
+trångsynt
+vidsynt
 djärv
-
+slampa
+truten
 lustig
 putslustig
 skämtsam
@@ -574,7 +627,8 @@ förolämpa
 förolämpning
 vördas 
 Ärelysten
-
+motbjudande
+frånstötande
 godtrogen
 lätttrogen
 lättlurad
@@ -738,12 +792,13 @@ Många bäckar små gör en stor å
 lider mot till slut
 
 rätteligen
-
+toffla
 ägna si åt 
-
+bräka
 fjortis
 sätta ribban högt
 sänka ribban lite
+mynna
 
 #Miscellaneous
 förehavande
@@ -785,10 +840,11 @@ husblatte
 husneger
 
 Sprej
-
+skryta
 Vandrarhem
 Varaktig
 nischa
+busa
 
 Tvåa
 Trea
