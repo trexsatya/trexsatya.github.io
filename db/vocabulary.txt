@@ -89,6 +89,7 @@ ledstång
 
 
 #Everyday things and descriptions
+loppis
 veckla
 resebyrån
 Belysning
@@ -231,6 +232,7 @@ folklig
 Töntig
 slaskig
 löjlig
+skämmig
 abonnemang
 
 #Space-time
@@ -380,7 +382,10 @@ Anka
 töm
 
 #Non-ordinary things
+våldtäkt
+jordbävning
 strypa
+kväva
 smita
 smet
 uppehåll
@@ -417,6 +422,7 @@ hämnas
 smycke
 Lins
 inskränka
+hämma
 uteslutande 
 Sno
 snatteri
@@ -440,6 +446,8 @@ Skav
 kula
 
 #Body, bodily action
+pluta
+svanka
 mumla
 morra
 grymta
@@ -564,6 +572,8 @@ Rida
 red
 
 #Feelings, Mental state
+ångest
+sotis
 skraj
 förväntan
 disträ
@@ -601,6 +611,8 @@ Påfrestande
 utfästelse
 
 #Personal, person-related
+korkad
+fegis
 härsklysten
 trångsynt
 vidsynt
@@ -632,6 +644,7 @@ frånstötande
 godtrogen
 lätttrogen
 lättlurad
+snåljåp
 överlägsen
 
 puma
@@ -845,6 +858,10 @@ Vandrarhem
 Varaktig
 nischa
 busa
+seg
+fullborda
+vig
+givande
 
 Tvåa
 Trea
