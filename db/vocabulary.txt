@@ -89,6 +89,7 @@ ledstång
 
 
 #Everyday things and descriptions
+våtdräkt
 loppis
 veckla
 vika
@@ -137,11 +138,17 @@ gegga
 idyll
 riva
 klösa
+enkät
+lönförhöjning
+extraknäck
+passerkort
+docka
 
 #Everyday actions
 släcka
 tända
 Anknyta
+lossa
 Tilllägga
 Tilla
 lira
@@ -149,13 +156,18 @@ ansluta sig
 surna
 gå med
 Fylla på
-
+bevara
+stagnera
+läcka
+försova
 
 #Transport Related
 kärra
 
 
 #Food, Kitchen related
+bananskal
+skal
 brödrost
 smet
 spis
@@ -177,6 +189,8 @@ förtära
 snaska
 fralla
 rackabajsare
+smaska
+ostbåge
 
 #House related
 trappa
@@ -318,6 +332,7 @@ bälte
 känga
 
 #Plants, garden, Nature etc
+gödsel
 lantställe
 utsikt
 gärdsgård
@@ -388,6 +403,8 @@ Anka
 töm
 
 #Non-ordinary things
+själsfrände
+stridit mot
 våldtäkt
 jordbävning
 strypa
@@ -451,7 +468,13 @@ Svedd
 Skav
 kula
 
+
 #Body, bodily action
+smeka
+smaska
+snark
+rattar
+smaklökar
 pluta
 svanka
 mumla
@@ -578,6 +601,14 @@ Rida
 red
 
 #Feelings, Mental state
+obetalbar
+närvarande
+frånvarande
+mållös
+trist
+trösta
+beklaga
+taskig
 ångest
 sotis
 skraj
@@ -617,6 +648,8 @@ Påfrestande
 utfästelse
 
 #Personal, person-related
+självfixerad
+sparsam
 korkad
 fegis
 härsklysten
@@ -665,6 +698,7 @@ stiff
 Mäklare
 
 lekman
+donna
 
 #Job, Work etc
 biträddande
@@ -699,14 +733,14 @@ Jag vill ju honom väl
 för övrigt
 dessutom
 i övrigt
-
+lägg av
 mötte det modigt
 löste det galant
 förutfattad mening
 försonad (.*) med
 förtjust i
 hyste(.*)längtan efter
-
+styr av
 visst är det fantastisk
 passé
 som du var inne på
@@ -738,7 +772,7 @@ Måttlig
 och sånt
 Avslöja
 förtrolig
-
+piffa upp
 överlämna
 anförtro sig
 mota
@@ -768,7 +802,8 @@ Trängsel
 Piss iväg
 chas
 Sticker jag
-
+ömma
+öm
 dök upp
 
 få I gång 
@@ -818,6 +853,7 @@ fjortis
 sätta ribban högt
 sänka ribban lite
 mynna
+hålla reda
 
 #Miscellaneous
 förehavande
@@ -864,10 +900,12 @@ Vandrarhem
 Varaktig
 nischa
 busa
+blåsning
 seg
 fullborda
 vig
 givande
+dolme
 
 Tvåa
 Trea
