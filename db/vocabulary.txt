@@ -89,7 +89,12 @@ ledstång
 
 
 #Everyday things and descriptions
+fullsatt
+svårlösta
+spik
+knappnål
 våtdräkt
+rost
 loppis
 veckla
 vika
@@ -143,8 +148,15 @@ lönförhöjning
 extraknäck
 passerkort
 docka
+redskap
+punktlig
+slagen
 
 #Everyday actions
+begå
+tramsa
+slita
+övning
 släcka
 tända
 Anknyta
@@ -160,12 +172,17 @@ bevara
 stagnera
 läcka
 försova
+utrusta
+värna
 
 #Transport Related
 kärra
 
 
 #Food, Kitchen related
+krog
+frasig
+knaprig
 bananskal
 skal
 brödrost
@@ -193,6 +210,7 @@ smaska
 ostbåge
 
 #House related
+gjuta
 trappa
 räcke
 torn
@@ -294,6 +312,7 @@ Kolsvart
 Nedsläcka
 
 #Health, physical appearance
+frisk
 frilla
 frisyr
 peruk
@@ -332,6 +351,13 @@ bälte
 känga
 
 #Plants, garden, Nature etc
+fura
+hal
+halka
+stock
+äng
+spade
+spadar
 gödsel
 lantställe
 utsikt
@@ -393,6 +419,7 @@ Solnedgång
 Skymning
 
 #Animals
+goja
 svindel 
 ekorre
 hare
@@ -401,8 +428,27 @@ Fläddermöss
 kråka
 Anka
 töm
+snigel
+schakal
+varg
+ål
+vovve
+räv
+rådjur
 
-#Non-ordinary things
+#Non-ordinary things/actions
+åkalla
+förhandling
+fnöske
+slingrig
+anföra
+upplopp
+lågkonjunktur
+skarpt läge
+överge
+refräng
+avmarsch
+stöld
 själsfrände
 stridit mot
 våldtäkt
@@ -449,7 +495,7 @@ hämma
 uteslutande 
 Sno
 snatteri
-
+skyldig
 spöke
 kallsup
 
@@ -470,6 +516,11 @@ kula
 
 
 #Body, bodily action
+trampa
+töja
+tänja
+flin
+sävlig
 smeka
 smaska
 snark
@@ -601,6 +652,11 @@ Rida
 red
 
 #Feelings, Mental state
+mör
+spänna
+tvivel
+tvivla
+vred
 obetalbar
 närvarande
 frånvarande
@@ -647,7 +703,29 @@ Påfrestande
 åtagande
 utfästelse
 
+#Inter-personal
+strunta
+anklaga
+döma
+konkurrent
+huta
+
 #Personal, person-related
+slug
+listig
+sträng
+fräcka
+oförskämd
+ohövlig
+karaktärsdrag
+egenskaper
+hejare
+mör
+seg
+spröd
+dåre
+envis
+trägen
 självfixerad
 sparsam
 korkad
@@ -704,7 +782,8 @@ donna
 biträddande
 befordra
 bödel 
-
+dräng
+underleverantör
 
 #Phrases
 upp och ner
@@ -781,6 +860,9 @@ av med
 Släppa av
 bege
 beivras
+rimmar illa
+gå på knäna
+
 Få bukt med
 Ta itu med
 åtgärda
@@ -805,7 +887,7 @@ Sticker jag
 ömma
 öm
 dök upp
-
+vädra morgonluft
 få I gång 
 
 bit för bit
@@ -820,7 +902,7 @@ framträdde
 uppträdde
 
 Anstränga sig
-
+tjuvaktig
 Varva
 Turas om
 Växla
@@ -832,19 +914,20 @@ det är en fröjd
 många bäckar små
 hastigt avsult
 passa på
+på sprang
 
 sen urminnes tiden
 sköta .* hygien
 vidga .* perspektiv
 njuter av
 förnedra
-
+Peppar, peppar, ta i trä
 kan liknas vid
-
+trampa vatten
 spänna
 Många bäckar små gör en stor å
 lider mot till slut
-
+som smort
 rätteligen
 toffla
 ägna si åt 
@@ -854,6 +937,11 @@ sätta ribban högt
 sänka ribban lite
 mynna
 hålla reda
+dateras bak till
+munläder
+spåras bak till
+stötta på
+silversked
 
 #Miscellaneous
 förehavande
@@ -883,17 +971,19 @@ gällande
 Bortskämd
 Avklarat
 lärorik
-
+flacka
+flacka runt
 sittplats
 
 skum
 skummar
 
 medverk
-
+skör
 husblatte
 husneger
-
+spegelblank
+skinande
 Sprej
 skryta
 Vandrarhem
@@ -906,6 +996,10 @@ fullborda
 vig
 givande
 dolme
+anseende
+ramsa
+härstamma
+knappast
 
 Tvåa
 Trea
