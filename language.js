@@ -42,7 +42,7 @@ function loadSearches() {
   let searches = getSearchesFromStorage()
   $('#searchedWords').html('')
   _.forEach(searches, (count, word) => {
-    let op = new Option(`${word} (${count})`, word, true, true)
+    let op = new Option(`${word}`, word, true, true)
     $('#searchedWords').append(op)
   })
   $('#toggleSearchesControlCheckbox').click()
@@ -114,16 +114,15 @@ async function searchTextChanged(e) {
   let el = $('#searchedWords')
   let w = $('#searchText').val()
 
-  let wordsToItems = await fetchSRTs(this);
-
-  let count = wordsToItems[w] && wordsToItems[w].length
-  count = count || 0
-  let newItem = saveSearch(w, wordsToItems[w] && wordsToItems[w].length)
-  if (!newItem) {
-    let op = el.find(`option[value="${w}"]`).html(`${w} (${count})`)
-    op.remove()
-  }
-  el.append(new Option(`${w} (${count})`, w, true, true))
+  await fetchSRTs(this);
+  // let count = wordsToItems[w] && wordsToItems[w].length
+  // count = count || 0
+  // let newItem = saveSearch(w, wordsToItems[w] && wordsToItems[w].length)
+  // if (!newItem) {
+  //   let op = el.find(`option[value="${w}"]`).html(`${w} (${count})`)
+  //   op.remove()
+  // }
+  // el.append(new Option(`${w} (${count})`, w, true, true))
 }
 
 function parseVocabularyFile(text) {
