@@ -91,6 +91,9 @@ ledstång
 #Everyday things and descriptions
 loppis
 veckla
+vika
+linda
+veva
 resebyrån
 Belysning
 stång
@@ -107,6 +110,7 @@ stökig
 rörigt
 kvarteret
 Häftig
+ljuvlig
 lucka
 ruta
 streck
@@ -131,6 +135,8 @@ vinkelslip
 undermålig
 gegga
 idyll
+riva
+klösa
 
 #Everyday actions
 släcka
