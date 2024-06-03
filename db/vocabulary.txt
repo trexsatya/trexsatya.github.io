@@ -103,6 +103,7 @@ veva
 resebyrån
 Belysning
 stång
+stake
 skyltar
 Obefintlig
 riktlinje
@@ -143,6 +144,7 @@ gegga
 idyll
 riva
 klösa
+kratsa
 enkät
 lönförhöjning
 extraknäck
@@ -210,6 +212,7 @@ smaska
 ostbåge
 
 #House related
+kaminlucka
 gjuta
 trappa
 räcke
@@ -274,6 +277,9 @@ skämmig
 abonnemang
 
 #Space-time
+vinkelrätt
+lådrätt
+vågrät
 utför
 Uppförsback
 framsida
@@ -288,7 +294,8 @@ fjärran
 utanpå
 närbelägen
 avlägsen
-
+trång
+snäv
 Pil
 nedåt 
 medellängd
@@ -418,7 +425,8 @@ vissen
 Solnedgång
 Skymning
 
-#Animals
+#Animals, Birds
+sval
 goja
 svindel 
 ekorre
