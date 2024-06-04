@@ -89,6 +89,15 @@ ledstång
 
 
 #Everyday things and descriptions
+mäktig
+varsla
+gympa
+bur
+burar
+lättsam
+formalia
+formalitet
+dänga
 fullsatt
 svårlösta
 spik
@@ -111,6 +120,7 @@ skynda sig
 skvätta
 stänka
 sprudla
+klibbig
 riklig
 plottrigt
 stökig
@@ -153,14 +163,25 @@ docka
 redskap
 punktlig
 slagen
+tilltalsord
+pulla
+gumman
+donna
+prestationsångest
+sludder
+slöjd
 
 #Everyday actions
+förse
+bespara
 begå
+haffa
 tramsa
 slita
 övning
 släcka
 tända
+planka
 Anknyta
 lossa
 Tilllägga
@@ -179,9 +200,13 @@ värna
 
 #Transport Related
 kärra
-
+punka
+punktering
 
 #Food, Kitchen related
+rispuffarna
+göda
+påtår
 krog
 frasig
 knaprig
@@ -212,6 +237,8 @@ smaska
 ostbåge
 
 #House related
+bygglov
+proppskåpet
 kaminlucka
 gjuta
 trappa
@@ -277,6 +304,10 @@ skämmig
 abonnemang
 
 #Space-time
+slät
+stötig
+vinklar
+framsäte
 vinkelrätt
 lådrätt
 vågrät
@@ -319,6 +350,7 @@ Kolsvart
 Nedsläcka
 
 #Health, physical appearance
+spaet
 frisk
 frilla
 frisyr
@@ -356,8 +388,13 @@ näsduk
 livrem
 bälte 
 känga
+filt
+ögonbindel
+randig
 
 #Plants, garden, Nature etc
+avenyn
+tjäle
 fura
 hal
 halka
@@ -445,6 +482,16 @@ räv
 rådjur
 
 #Non-ordinary things/actions
+vanvårdad
+krossa
+svärdklinga
+krycka
+kryckor
+täljhäst
+vigsel
+abbonera
+spå
+slaganfall
 åkalla
 förhandling
 fnöske
@@ -475,6 +522,7 @@ brista
 brast
 spricka
 spruta
+sprutor
 kapa
 knökfull
 pärl
@@ -524,6 +572,16 @@ kula
 
 
 #Body, bodily action
+hjärtklappning
+hjärtsvikt
+fossing
+gränsle
+kliva
+stiga
+matstrupe
+pulsåder
+munskydd
+utslog
 trampa
 töja
 tänja
@@ -572,6 +630,7 @@ rev
 springa
 röra på sig
 Spana
+span
 Lat
 slöa
 dåsa
@@ -660,6 +719,8 @@ Rida
 red
 
 #Feelings, Mental state
+gåshud
+gosig
 pirrig
 mör
 spänna
@@ -788,11 +849,13 @@ lekman
 donna
 
 #Job, Work etc
+vårdtagare
 biträddande
 befordra
 bödel 
 dräng
 underleverantör
+syrra
 
 #Phrases
 upp och ner
@@ -924,6 +987,7 @@ många bäckar små
 hastigt avsult
 passa på
 på sprang
+i akt
 
 sen urminnes tiden
 sköta .* hygien
@@ -951,6 +1015,8 @@ munläder
 spåras bak till
 stötta på
 silversked
+spilla tid
+i kapp
 
 #Miscellaneous
 förehavande
@@ -1009,7 +1075,9 @@ anseende
 ramsa
 härstamma
 knappast
+betona
+
 
 Tvåa
 Trea
-
+fyrfaldig
