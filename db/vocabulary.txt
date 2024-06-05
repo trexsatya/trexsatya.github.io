@@ -90,7 +90,7 @@ ledstång
 
 #Everyday things and descriptions
 mäktig
-varsla
+
 gympa
 bur
 burar
@@ -172,6 +172,8 @@ sludder
 slöjd
 
 #Everyday actions
+varsla
+förebåda
 förse
 bespara
 begå
