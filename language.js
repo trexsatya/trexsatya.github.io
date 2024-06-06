@@ -63,17 +63,17 @@ function exportSearches() {
 }
 
 function importSearches() {
-   $("#import-dialog").dialog()
+  $("#import-dialog").dialog()
 }
 
 function importSearchesFromVocab() {
-   let category = $("#vocabularySelect").val()
-   let searches = window.vocabulary[category]
+  let category = $("#vocabularySelect").val()
+  let searches = window.vocabulary[category]
 
-   let words = {}
-   searches.forEach(w => words[w] = '')
-   saveSearchesIntoStorage(words)
-   loadSearches()
+  let words = {}
+  searches.forEach(w => words[w] = '')
+  saveSearchesIntoStorage(words)
+  loadSearches()
 }
 
 function importSearchesFromFile() {
@@ -131,11 +131,11 @@ function parseVocabularyFile(text) {
   let currentCategory = null
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i]
-    if(line.startsWith("#")) {
+    if (line.startsWith("#")) {
       currentCategory = line.replace("#", "").trim()
       categories[currentCategory] = []
     } else {
-      if(line.trim().length > 1) {
+      if (line.trim().length > 1) {
         categories[currentCategory].push(line)
       }
     }
@@ -1170,10 +1170,6 @@ function getWords(text) {
   return Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim().length > 1);
 }
 
-function fileContainsExactWord(file, word) {
-  return file.data.map(it => it.text).map(getWords).flat().map(it => it.toLowerCase()).includes(word.toLowerCase())
-}
-
 class MatchResult {
   constructor(word, line, url, source) {
     this.url = url;
@@ -1197,10 +1193,14 @@ function getMatchingWords(list, search) {
         .forEach(word => {
           wordToItemsMap[word] = computeIfAbsent(wordToItemsMap, word, it => []).concat(new MatchResult(word, line, item.url, item.source))
         })
+      let word = searchText.toLowerCase().trim()
+      if (word.indexOf(" ") > 0 && line.text.toLowerCase().indexOf(word) >= 0) {
+        wordToItemsMap[word] = computeIfAbsent(wordToItemsMap, word, it => []).concat(new MatchResult(word, line, item.url, item.source))
+      }
     })
   })
 
-  if(wordToItemsMap[searchText.trim()] === undefined) {
+  if (wordToItemsMap[searchText.trim()] === undefined) {
     wordToItemsMap[searchText] = []
   }
 
@@ -1384,7 +1384,7 @@ function populateSRTFindings(wordToItemsMap, $result) {
 
         let id = uuid()
         let $lines = $(`<div id="${id}" style="padding-top: 4px; padding-bottom: 8px;"></div>`)
-        $lines.data({fromIndex: item.line.index , toIndex: item.line.index })
+        $lines.data({fromIndex: item.line.index, toIndex: item.line.index})
         $fileBlock.append($lines)
 
         renderLines(id, file.url)
@@ -1764,3 +1764,79 @@ if (window.location.hostname === 'localhost') {
   $('#saveRevisionBtn').show()
   $('#saveStarredLinesBtn').show()
 }
+
+
+function tests() {
+  let enSubs = {
+    data: [
+      {
+        index: 1,
+        id: 1,
+        start: {ordinal: 0},
+        end: {ordinal: 1},
+        text: "XYZ!"
+      },
+      {
+        index: 2,
+        id: 2,
+        start: {ordinal: 1},
+        end: {ordinal: 2},
+        text: "abc"
+      }
+    ],
+    path: "path1.en.srt",
+    source: "source1",
+    url: "url1"
+  }
+
+  let svSubs1 = {
+    data: [
+      {
+        index: 1,
+        id: 1,
+        start: {ordinal: 0},
+        end: {ordinal: 1},
+        text: "I grund och botten, är det enkelt!"
+      },
+      {
+        index: 2,
+        id: 2,
+        start: {ordinal: 1},
+        end: {ordinal: 2},
+        text: "Nånstans i världen, finns det en plats!"
+      }
+    ],
+    path: "path1.sv.srt",
+    source: "source1",
+    url: "url1"
+  }
+
+  let svSubs2 = {
+    data: [
+      {
+        index: 1,
+        id: 1,
+        start: {ordinal: 1},
+        end: {ordinal: 2},
+        text: "Grund och botten, ja!"
+      },
+      {
+        index: 2,
+        id: 2,
+        start: {ordinal: 1},
+        end: {ordinal: 2},
+        text: "Ja, det är sant. Grund och botten!"
+      }
+    ],
+    path: "path2.sv.srt",
+    source: "source1",
+    url: "url2"
+  }
+
+  let searchResults = [new SearchResult("source1", "url1", enSubs, svSubs1, false, true)]
+  let wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund och botten")
+  log(wordToItemsMap["grund och botten"])
+  assert(wordToItemsMap["grund och botten"].length === 3, "Words with spaces should be matched")
+}
+
+tests()

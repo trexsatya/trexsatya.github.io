@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.64d937e6e6d44ac36b041fc8e5d74540.js"
+  "/precache-manifest.d960ac51623f87289423368ac4b51127.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "cupitor-frontend"});

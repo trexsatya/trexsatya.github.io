@@ -1,0 +1,204 @@
+1
+00:00:00.333 --> 00:00:05.199
+Välkommen till veckans torsdagstips i Excel, med mig David Stavegård
+
+
+2
+00:00:05.200 --> 00:00:08.966
+ Det är dags att köra igång med en Excelfil igen, och nu har vi fått en uppgift
+
+
+3
+00:00:08.966 --> 00:00:12.966
+Gör ett histogram över lönefördelningen - det här är ju fiktiva namn,
+
+
+4
+00:00:12.966 --> 00:00:16.966
+fiktiva löner, det är bara för att du ska få se hur man gör histogram, har du koll på det?
+
+
+5
+00:00:16.966 --> 00:00:18.366
+Ta en titt här får du se...
+
+
+6
+00:00:18.366 --> 00:00:22.366
+Man går helt enkelt in på inforga, väljer statistiska grafer och väljer
+
+
+7
+00:00:22.366 --> 00:00:26.366
+histogram - och pang så har vi fått ut det.
+
+
+8
+00:00:26.366 --> 00:00:30.366
+Histogram fungerar ju så att den samlar ett antal olika värden i grupp
+
+
+9
+00:00:30.366 --> 00:00:32.832
+och räknar hur många är det?
+
+
+10
+00:00:32.833 --> 00:00:38.466
+Så här har vi alltså mellan 22 500 och 31 300
+
+
+11
+00:00:38.466 --> 00:00:42.466
+Hur många av lönerna ligger därimellan? Högerklickar man och väljer lägg till
+
+
+12
+00:00:42.466 --> 00:00:45.432
+dataettiketter, så räknar den dessutom ut hur många de är. 
+
+
+13
+00:00:45.433 --> 00:00:49.433
+Men, det blir ju inte så jättebra, det blir ju lite konstiga siffror här. Excel försökte vara smart.
+
+
+14
+00:00:49.433 --> 00:00:53.433
+Du är smartare. Därför kör vi så här.
+
+
+15
+00:00:53.433 --> 00:00:58.066
+Högerklicka och välj formatera axeln, och tittar på alternativ för axel...
+
+
+16
+00:00:58.066 --> 00:01:02.066
+Här finns en liten luring: ser du att man kan scrolla här nere?
+
+
+17
+00:01:02.066 --> 00:01:06.832
+Det är inte så ofta man behöver göra det - men om vi i stället öppnar upp den här lite.
+
+
+18
+00:01:06.833 --> 00:01:10.833
+Så man ser värdena här ute redan från början...
+
+
+19
+00:01:10.833 --> 00:01:14.833
+Så ska du få se - automatiskt är det Excel föreslår
+
+
+20
+00:01:14.833 --> 00:01:20.366
+Intervallbredd, här man kan säga att vi vill ha ett intervall på 3000 kr i lön.
+
+
+21
+00:01:20.366 --> 00:01:25.299
+Då riktar den ut alla intervallen med 3000 i steglängd.
+
+
+22
+00:01:25.300 --> 00:01:29.800
+Eller så kan vi säga antal intervall, ja, vi kanske vill ha 3 intervall
+
+
+23
+00:01:29.800 --> 00:01:33.200
+det kanske blir lite lite, men kanske åtta intervall.
+
+
+24
+00:01:33.200 --> 00:01:37.833
+Då ritar den ut hur många som har lön i de här intervallen
+
+
+25
+00:01:37.833 --> 00:01:41.833
+Sen är det så här, det finns några som ligger längst ner, 
+
+
+26
+00:01:41.833 --> 00:01:46.199
+som vi kanske inte bryr oss om exakt var de ligger, och likadant de som ligger högst upp
+
+
+27
+00:01:46.200 --> 00:01:50.166
+de kanske vi inte heller bryr oss om exakt, för det blir lite plottrigt så där va...
+
+
+28
+00:01:50.166 --> 00:01:54.166
+Så istället kan man säga "intervall för högsta värden" om vi skulle skriva 
+
+
+29
+00:01:54.166 --> 00:01:58.166
+60 000 här, då tar den med alla som är 
+
+
+30
+00:01:58.166 --> 00:02:02.666
+större än 60 000 och räknar dem i samma stapel, och likadant "intervall för de lägsta"
+
+
+31
+00:02:02.666 --> 00:02:06.666
+Om vi säger till exempel 30 000 här, 
+
+
+32
+00:02:06.666 --> 00:02:10.666
+då tar den med alla som har upp till 30000 och räknar dem...
+
+
+33
+00:02:10.666 --> 00:02:15.599
+så blir det lite lättare att förstå det här, sen kan man snygga till den här grafen litegranna.
+
+
+34
+00:02:21.466 --> 00:02:25.466
+Ja, nått sånt här kan man få fram då, och så här jobbar man alltså med 
+
+
+35
+00:02:25.466 --> 00:02:30.732
+histogram i Excel, det är väldigt fiffigt, man kan ändra  
+
+
+36
+00:02:30.733 --> 00:02:33.466
+Man går bara in här och säger hur många intervall man vill ha eller 
+
+
+37
+00:02:33.466 --> 00:02:37.466
+eller vilken intervallbredd man vill ha. Det här behöver man ju inte bara göra på lön,
+
+
+38
+00:02:37.466 --> 00:02:41.466
+det här kan du göra på skostorlekar, längder, åldrar, inte vet jag?
+
+
+39
+00:02:41.466 --> 00:02:43.866
+Go wild, helt enkelt! 
+
+
+40
+00:02:43.866 --> 00:02:47.866
+Jag heter David Stavegård, stort tack för att se sett på det här, vi ses nästa torsdag igen,
+
+
+41
+00:02:47.866 --> 00:02:49.299
+precis som alltid. 
+
