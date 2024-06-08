@@ -90,7 +90,8 @@ ledstång
 
 #Everyday things and descriptions
 mäktig
-
+missvisande
+röja
 gympa
 bur
 burar
@@ -211,6 +212,7 @@ punka
 punktering
 
 #Food, Kitchen related
+ättika
 rispuffarna
 göda
 påtår
