@@ -89,7 +89,11 @@ ledstång
 
 
 #Everyday things and descriptions
+motsatta ändar
 hylla
+finurlig
+knepig
+fyndig
 uppvakta
 hälsa
 beteende
@@ -809,6 +813,9 @@ huta
 
 #Personal, person-related
 blyg
+lydig
+klumpig
+osmidig
 slug
 listig
 sträng
@@ -908,7 +915,7 @@ tänkte inombords
 tänkte inuti
 utan att tveka
 Jag vill ju honom väl
-
+öga mot öga
 för övrigt
 dessutom
 i övrigt
@@ -932,6 +939,10 @@ grundlig
 gynnsam
 lätta på
 Kom igen!
+spela sina kort
+ha en gås oplockad
+lite ljuga pryder tal
+var sak har sin tid
 Sånt ska inte ske
 var knökfull
 säga ifrån
@@ -989,7 +1000,7 @@ Sticker jag
 dök upp
 vädra morgonluft
 få I gång 
-
+glimten i ögat
 bit för bit
 så småningom
 
