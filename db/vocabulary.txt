@@ -89,6 +89,12 @@ ledstång
 
 
 #Everyday things and descriptions
+hylla
+uppvakta
+hälsa
+beteende
+Genväg
+överdrift
 mäktig
 missvisande
 röja
@@ -173,8 +179,12 @@ sludder
 slöjd
 
 #Everyday actions
+pryda
+försköna
+skingra
 svinna
 varsla
+fjäska
 förebåda
 förse
 bespara
@@ -211,8 +221,9 @@ kärra
 punka
 punktering
 
-#Food, Kitchen related
+#Food, Drink, Kitchen related
 ättika
+berusade
 rispuffarna
 göda
 påtår
@@ -402,6 +413,8 @@ filt
 randig
 
 #Plants, garden, Nature etc
+pion
+vind
 avenyn
 tjäle
 fura
@@ -472,6 +485,9 @@ Solnedgång
 Skymning
 
 #Animals, Birds
+gås
+säl
+myra
 sval
 goja
 svindel 
@@ -531,6 +547,7 @@ brista
 brast
 spricka
 spruta
+blossa
 sprutor
 kapa
 knökfull
@@ -783,6 +800,7 @@ Påfrestande
 utfästelse
 
 #Inter-personal
+tvist
 strunta
 anklaga
 döma
@@ -790,6 +808,7 @@ konkurrent
 huta
 
 #Personal, person-related
+blyg
 slug
 listig
 sträng
