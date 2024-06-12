@@ -1,3 +1,63 @@
+#Bostad 
+Hyresgäst/-er Hyresvärd
+Hyresavtal
+signerande parter
+Kallvatten, varmvatten, Hushållsel
+Kostnad tillkommer
+efter uppmätt förbrukning
+debiteras retroaktivt
+på hyresavin
+Fasta avgifter
+utöver
+rörliga avgiften
+uppsägningstid
+skriftligen
+Blankett för uppsägning
+månadsskifte
+Förhandling
+Med organisation av hyresgäster ovan avses Hyresgästföreningen
+olägenhet i lägenhet :-)
+hinder eller men uppstår i lägenhet
+i nyttjanderätten
+utan hyresgästens vållande
+skälig nedsättning
+bristfälligt skick
+riktlinjer
+Trångboddhet
+förhindra osunda boendeförhållanden
+bedömning
+angående hur många
+lämpligen kan bo
+i förekommande fall
+Avvikelser
+enskild
+bokföring
+Folkbokföring
+ha för avsikt
+stadigvarande bo
+upplåta
+hyresnämndens
+tillhandahåller
+Till bostaden hör förrådsutrymme
+medger Hyresvärden att inneha reserv/huvud-nyckel
+tillhållarlås
+dörröga
+omfattas inte av hyresvärdens service
+nyckeltub
+Persienner
+markiser
+lamellgardin
+brandvarnare
+monterat
+ansvarar hyresgästen för kontroll samt byte av batteri
+Ändringsarbeten
+utföra ändringsarbeten utöver vad som följer av hyreslagen
+göra hål i kakel eller klinker, fog, fasad
+
+
+#Appliances
+
+
 #Word-Group: Ställning
 omställning
 inställning
@@ -327,7 +387,7 @@ löjlig
 skämmig
 abonnemang
 
-#Space-time
+#Space-time, measurement
 slät
 stötig
 vinklar
@@ -361,6 +421,14 @@ sned
 hoptryckt
 Korträckviddiga
 disposition 
+uppemot
+i den mån
+belopp
+tal
+antal
+till
+tag
+
 
 #Miscallaneous
 eld
