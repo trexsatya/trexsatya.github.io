@@ -294,6 +294,8 @@ ledstång
 
 
 #Everyday things and descriptions
+devalvering
+revalvering
 motsatta ändar
 hylla
 finurlig
@@ -815,6 +817,8 @@ kula
 
 
 #Body, bodily action
+sucka
+utbrista
 hjärtklappning
 hjärtsvikt
 fossing
@@ -895,7 +899,7 @@ Tugga
 Nypa
 Tjuvnypa
 Reta
-
+hala
 kletig
 
 ögonfrans
