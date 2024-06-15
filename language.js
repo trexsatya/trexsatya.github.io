@@ -1346,7 +1346,9 @@ function renderLines(id, url) {
     let sub = getSub(idx)
     let {mainSub, secondarySub} = getMainSubAndSecondarySub(file, ({...sub}));
     mainSubText += ` ${mainSub.text}`
-    secondarySubText += ` ${secondarySub.text}`
+    if(secondarySub) {
+      secondarySubText += ` ${secondarySub.text}`
+    }
   })
 
   html += `
@@ -1367,6 +1369,9 @@ function renderLines(id, url) {
 }
 
 function populateSRTFindings(wordToItemsMap, $result) {
+  $result.html(`<div style=""> Wiki: ${getWikiLinks(window.searchText)} 丨
+        <a href="https://www.google.com/search?q=${window.searchText}&udm=2" target="_blank">Images</a> </div> <br>`)
+
   Object.keys(wordToItemsMap).toSorted().forEach(word => {
     let items = wordToItemsMap[word]
     let wordBlock = $(`<div ><h5 class="accordion">${word}</h5></div>`)
@@ -1389,10 +1394,6 @@ function populateSRTFindings(wordToItemsMap, $result) {
 
         renderLines(id, file.url)
       })
-
-    if (items.length === 0) {
-      wordBlock.html(`<div style="padding: 1em;"> ${getWikiLinks(word)} not found. Try Wiki! </div>`)
-    }
   })
 }
 
