@@ -358,7 +358,11 @@ $('document').ready(e => {
   hidePlayer(videoPlayer)
 
   let $searchText = $('#searchText');
-  $searchText.on(`focus`, () => $searchText.val(''));
+  $searchText.on(`focus`, () => {
+    if($("#toggleClearTextOnClickCheckbox").is(":checked")) {
+      $searchText.val('')
+    }
+  });
   fixMobileView()
 })
 
