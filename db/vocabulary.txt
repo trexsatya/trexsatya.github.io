@@ -1,7 +1,9 @@
 #Orden med flera meningar 
 Föreställning
 Men
-
+gök
+göka
+bock
 
 #Bostad 
 skåp och lådor
@@ -225,6 +227,33 @@ stigröret
 muffen
 klämma
 
+nätkontakt
+tillbehör
+fästplåtsats
+plint
+läs noga
+pelarsats
+färgakta
+kulör
+ömtålig
+siden
+ylle
+fjäder
+duntäcken
+sängöverkast
+ånga
+skrynklighet
+skötselråd
+
+skåptorrt
+trumma
+tillval
+pekplatta
+vik plaggerna ut och in
+tätning
+tvättmedelsfack
+låt luckan stå på glänt
+mögelbildning
 
 
 #Word-Group: Ställning
@@ -875,7 +904,7 @@ banka
 rabbla
 volta
 sväva
-skonsamt
+skonsam
 rycka, knycka
 sära på skinkorna
 Harkla
