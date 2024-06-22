@@ -297,6 +297,8 @@ function fixMobileView() {
 
     $('.play-btn-container').css({marginLeft: '22%'})
     $('#player-info').css({marginTop: 0, left: '40%'})
+
+    $('#btns-2 .select2').css({width: '210px'})
   }
 }
 
