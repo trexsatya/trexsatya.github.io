@@ -117,12 +117,10 @@ async function searchTextChanged(e) {
   await fetchSRTs(this);
   // let count = wordsToItems[w] && wordsToItems[w].length
   // count = count || 0
-  // let newItem = saveSearch(w, wordsToItems[w] && wordsToItems[w].length)
-  // if (!newItem) {
-  //   let op = el.find(`option[value="${w}"]`).html(`${w} (${count})`)
-  //   op.remove()
-  // }
-  // el.append(new Option(`${w} (${count})`, w, true, true))
+  let newItem = saveSearch(w, null)
+  if(newItem) {
+    el.append(new Option(`${w}`, w, false, false))
+  }
 }
 
 function parseVocabularyFile(text) {
