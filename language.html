@@ -370,13 +370,6 @@
 <body style="padding: 0.5em;">
 
 <div>
-
-    <!--    Subtitles: <input type="file" onChange="loadSubtitle(this.files[0])" title="Subtitles" accept="application/JSON">-->
-    <!--    <br>-->
-    <!--    <br>-->
-    <!--    Audio: <input id="video-file" type="file" title="Video"/>-->
-
-
     <input type="checkbox" id="useLocalMediaCheckbox"
            onchange="$('#mp3ChoiceContainer').toggle();$('#localMediaContainer').toggle();">
     <div id="mp3ChoiceContainer">
@@ -439,12 +432,14 @@
             <div id="info-dialog" title="Media Info" style="display: none;">
                 <div id="info-dialog-content"></div>
             </div>
-            <button onclick="$('#result').toggle()" class="button-3" style="display:none;" id="toggleSearchBtn">
+            <button onclick="$('#result').toggle()" class="btn btn-light" style="display:none;" id="toggleSearchBtn">
                 Toggle Search Results
             </button>
-            <div id="result" style="overflow: scroll; height: 300px;clear: both; padding-top: 1em;
+            <div style="padding-top: 1em;margin-top: 1em;">
+                <div id="result" style="overflow: scroll; height: 300px;clear: both;
                     border: 1px solid green; border-right: none;">
 
+                </div>
             </div>
         </div>
 
@@ -473,7 +468,8 @@
         </div>
     </div>
 
-    <div style="float: left; left: 2%; width: 40%; position: relative; border-left: 1px solid blue; margin-bottom: 12em;" class="fl-right">
+    <div style="float: left; left: 2%; width: 40%; position: relative; border-left: 1px solid blue; margin-bottom: 12em;"
+         class="fl-right">
         <div style="min-height: 650px; display: none;" id="mediaRelatedContainer">
             <div id="subtitle-container">
                 <br>
