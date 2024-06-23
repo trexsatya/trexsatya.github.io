@@ -302,6 +302,11 @@ function fixMobileView() {
   }
 }
 
+function removeHash () {
+  history.pushState("", document.title, window.location.pathname
+    + window.location.search);
+}
+
 $('document').ready(e => {
   fetchVocabulary()
 
@@ -311,6 +316,8 @@ $('document').ready(e => {
       window.location.hash = link
       window.mediaSelected = {link: link, source: 'link'}
       playNewMedia(link, 'link')
+    } else {
+      removeHash()
     }
   })
 
