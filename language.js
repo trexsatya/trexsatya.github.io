@@ -299,6 +299,7 @@ function fixMobileView() {
     $('#player-info').css({marginTop: 0, left: '40%'})
 
     $('#btns-2 .select2').css({width: '210px'})
+    $('#mp3ChoiceContainer .select2').css({width: '78%'})
   }
 }
 
@@ -311,6 +312,15 @@ $('document').ready(e => {
       window.location.hash = link
       window.mediaSelected = {link: link, source: 'link'}
       playNewMedia(link, 'link')
+    }
+  })
+
+  $('#onlySubsCheckbox').change(e => {
+    if ($('#onlySubsCheckbox').is(':checked')) {
+      showOnlySubtitle()
+    } else {
+      // $('#playerControls').show()
+      // $('#subControls').hide()
     }
   })
 
@@ -361,7 +371,7 @@ $('document').ready(e => {
 
   let $searchText = $('#searchText');
   $searchText.on(`focus`, () => {
-    if($("#toggleClearTextOnClickCheckbox").is(":checked")) {
+    if ($("#toggleClearTextOnClickCheckbox").is(":checked")) {
       $searchText.val('')
     }
   });
@@ -539,7 +549,6 @@ async function setMediaTime(newTime, manualHandling = false) {
 
 function fixSectionBox() {
   let $mp3Choice = $('#mp3Choice');
-  $mp3Choice.select2();
 
   let optgroupState = {};
 
@@ -861,6 +870,21 @@ async function loadSubtitlesForLink(sv, en) {
   // console.log(en)
   console.log(combined)
   storeSubtitles(combined)
+
+  try {
+    $('#subtitlePagination').pagination('destroy')
+  } catch (e) {
+    // Maybe not initialized
+  }
+  $('#subtitlePagination').pagination({
+    dataSource: range(1, window.subtitles.length),
+    pageSize: 1,
+    callback: function (data, pagination) {
+      let pageNum = data[0]
+      window.currentSub = window.subtitles[pageNum - 1]
+      renderSubtitles()
+    }
+  }) //End pagination
 }
 
 function hidePlayer(player) {
@@ -890,39 +914,65 @@ function showVideoPlayer() {
   })
 }
 
+function showOnlySubtitle() {
+  stopMedia()
+  $('#youtubePlayer').hide()
+  $('#localVideoContainer').hide()
+  $('#localMediaContainer').hide()
+  window.playingYoutubeVideo = false;
+  window.playingVideo = false;
+  window.playingAudio = false;
+  $('#playerControls').hide()
+  $('#subControls').show()
+
+  $('#mediaRelatedContainer').css({minHeight: 530})
+}
+
 async function playNewMedia(link, source, mediaFile) {
   clearSubtitles()
   stopMedia(source)
   let {sv, en} = await getSubtitlesForLink(link, source)
+
   //Load subtitle
 
-  if (source === 'link') {
-    $('#youtubePlayer').show()
-    $('#localVideoContainer').hide()
-    loadYoutubeVideo(link)
-    window.playingYoutubeVideo = true;
-  } else if (source === 'local') {
-    $('#youtubePlayer').hide()
-    $('#localVideoContainer').show()
-    window.playingYoutubeVideo = false;
-    if (mediaFile.name.endsWith(".mp3")) {
-      audioPlayer.setSrc(URL.createObjectURL(mediaFile))
-      audioPlayer.play()
-      window.playingAudio = true;
-      window.playingVideo = false;
-      hidePlayer(window.videoPlayer)
-      showAudioPlayer()
-    } else if (mediaFile.name.endsWith(".mp4")) {
-      videoPlayer.setSrc(URL.createObjectURL(mediaFile))
-      window.playingAudio = false;
-      window.playingVideo = true;
-      videoPlayer.play()
-      hidePlayer(window.audioPlayer)
-      showVideoPlayer()
+  function _playMedia() {
+    if (source === 'link') {
+      $('#youtubePlayer').show()
+      $('#localVideoContainer').hide()
+      loadYoutubeVideo(link)
+      window.playingYoutubeVideo = true;
+    } else if (source === 'local') {
+      $('#youtubePlayer').hide()
+      $('#localVideoContainer').show()
+      window.playingYoutubeVideo = false;
+      if (mediaFile.name.endsWith(".mp3")) {
+        audioPlayer.setSrc(URL.createObjectURL(mediaFile))
+        audioPlayer.play()
+        window.playingAudio = true;
+        window.playingVideo = false;
+        hidePlayer(window.videoPlayer)
+        showAudioPlayer()
+      } else if (mediaFile.name.endsWith(".mp4")) {
+        videoPlayer.setSrc(URL.createObjectURL(mediaFile))
+        window.playingAudio = false;
+        window.playingVideo = true;
+        videoPlayer.play()
+        hidePlayer(window.audioPlayer)
+        showVideoPlayer()
+      }
     }
+    window.mediaBeingPlayed = {link, source}
+    $('#playerControls').show()
+    $('#subControls').hide()
   }
+
+  if (!$('#onlySubsCheckbox').is(':checked')) {
+    _playMedia();
+  } else {
+    showOnlySubtitle();
+  }
+
   loadSubtitlesForLink(sv, en);
-  window.mediaBeingPlayed = {link, source}
 
   $('#currentMedia').html(`${link}, ${source}`)
 
@@ -1352,7 +1402,7 @@ function renderLines(id, url) {
     let sub = getSub(idx)
     let {mainSub, secondarySub} = getMainSubAndSecondarySub(file, ({...sub}));
     mainSubText += ` ${mainSub.text}`
-    if(secondarySub) {
+    if (secondarySub) {
       secondarySubText += ` ${secondarySub.text}`
     }
   })
@@ -1622,7 +1672,7 @@ function getDimensionsForPlayer() {
     ytVideoWidth = ww - 50;
     subWidth = ww - 10;
     ytHeight = wh / 2 - 150;
-    $('#controls').css({width: '100%', bottom: '-15em', right: 0})
+    $('#mediaControls').css({width: '100%', bottom: '-15em', right: 0})
     $('#youtubePlayer-info').hide()
     $('#speed-control').parent().hide()
 
@@ -1675,11 +1725,11 @@ function onPlayerStateChange(event) {
 }
 
 function stopMedia(source) {
-  if (source === 'link' && window.playingYoutubeVideo) {
+  if (window.playingYoutubeVideo) {
     window.ytPlayer.pauseVideo();
-  } else if (source === 'local' && window.playingAudio) {
+  } else if (window.playingAudio) {
     audioPlayer.pause()
-  } else if (source === 'local' && window.playingVideo) {
+  } else if (window.playingVideo) {
     videoPlayer.pause()
   }
 }
