@@ -300,6 +300,7 @@ function fixMobileView() {
 
     $('#btns-2 .select2').css({width: '210px'})
     $('#mp3ChoiceContainer .select2').css({width: '78%'})
+    $('#btns-2').css({marginBottom: '1em'})
   }
 }
 
@@ -910,7 +911,8 @@ function showVideoPlayer() {
     marginLeft: '1em',
     width: subWidth,
     maxHeight: '300px',
-    overflow: 'scroll'
+    overflow: 'scroll',
+    paddingRight: '1em'
   })
 }
 
@@ -965,7 +967,7 @@ async function playNewMedia(link, source, mediaFile) {
     $('#playerControls').show()
     $('#subControls').hide()
   }
-
+  $('#result').hide()
   if (!$('#onlySubsCheckbox').is(':checked')) {
     _playMedia();
   } else {
@@ -1701,7 +1703,8 @@ function onYouTubeIframeAPIReady() {
     marginLeft: '1em',
     width: subWidth,
     maxHeight: '300px',
-    overflow: 'scroll'
+    overflow: 'scroll',
+    paddingRight: '1em'
   })
 }
 
