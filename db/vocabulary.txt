@@ -6,6 +6,7 @@ göka
 bock
 stake
 larva
+snuva
 
 
 #Bostad 
@@ -1131,6 +1132,7 @@ konkurrent
 huta
 
 #Personal, person-related
+pondus
 blyg
 lydig
 klumpig
@@ -1293,6 +1295,9 @@ beivras
 rimmar illa
 gå på knäna
 
+sålla agnarna från vetet
+vidga dina vyer
+tuta i
 Få bukt med
 Ta itu med
 åtgärda
