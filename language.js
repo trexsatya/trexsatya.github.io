@@ -303,8 +303,7 @@ function fixMobileView() {
 }
 
 function removeHash () {
-  history.pushState("", document.title, window.location.pathname
-    + window.location.search);
+  window.location = window.location.href.split('#')[0]
 }
 
 $('document').ready(e => {
