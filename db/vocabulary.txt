@@ -493,6 +493,7 @@ sludder
 slöjd
 
 #Everyday actions
+pröjsa
 pryda
 försköna
 skingra
@@ -920,6 +921,7 @@ kula
 
 
 #Body, bodily action
+slinta
 sucka
 utbrista
 hjärtklappning
@@ -1134,6 +1136,7 @@ huta
 #Personal, person-related
 pondus
 blyg
+töntig
 lydig
 klumpig
 osmidig
