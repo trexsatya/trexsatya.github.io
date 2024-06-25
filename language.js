@@ -813,11 +813,11 @@ async function loadCombinedSrts(combinedJson) {
 async function loadLocalFiles() {
   let files = Array.from(localFiles.files);
   let combinedJson = files.find(it => it.name.match(/combined.json$/))
-  let indexJson = files.find(it => it.name.match(/index.json$/))
+
 
   if (combinedJson) {
     await loadCombinedSrts(combinedJson);
-
+    let indexJson = files.find(it => it.name.match(/index.json$/))
     if (indexJson) {
       let index = await new Response(indexJson).json()
       index.forEach(it => {
@@ -828,26 +828,31 @@ async function loadLocalFiles() {
     return
   }
 
+  let sv = null, en = null;
   let audioFile = files.find(it => it.name.match(/.mp3$/))
   let videoFile = files.find(it => it.name.match(/.mp4$/))
   let svSrtFile = files.find(it => it.name.match(/.sv.srt$/))
   let enSrtFile = files.find(it => it.name.match(/.en.srt$/))
 
+  sv = svSrtFile && await new Response(svSrtFile).text()
+  en = enSrtFile && await new Response(enSrtFile).text()
+
   if (videoFile) {
     videoPlayer.setSrc(URL.createObjectURL(videoFile))
   }
 
-  let link = _.last((audioFile || videoFile).name.replace(".mp3", "").replaceAll(".mp4", "").split(" || ")).trim()
-  let sv = await new Response(svSrtFile).text()
-  let en = await new Response(enSrtFile).text()
+  let mediaNameWithoutExtension = (audioFile || videoFile).name.replace(".mp3", "").replaceAll(".mp4", "");
+  let link = _.last(mediaNameWithoutExtension.split(" || ")).trim()
 
-  window.allSubtitles[link] = {
-    sv,
-    en,
-    source: 'local',
-    fileName: svSrtFile.name.replaceAll(".sv.srt", "")
+  if(sv && en) {
+    window.allSubtitles[link] = {
+      sv,
+      en,
+      source: 'local',
+      fileName: mediaNameWithoutExtension
+    }
   }
-
+  
   playNewMedia(link, 'local', videoFile || audioFile)
 }
 
