@@ -842,7 +842,7 @@ async function loadLocalFiles() {
   }
 
   let mediaNameWithoutExtension = (audioFile || videoFile).name.replace(".mp3", "").replaceAll(".mp4", "");
-  let link = _.last(mediaNameWithoutExtension.split(" || ")).trim()
+  let link = _.last(mediaNameWithoutExtension.split(/ [|-]{2} /)).trim()
 
   if(sv && en) {
     window.allSubtitles[link] = {
@@ -852,7 +852,7 @@ async function loadLocalFiles() {
       fileName: mediaNameWithoutExtension
     }
   }
-  
+
   playNewMedia(link, 'local', videoFile || audioFile)
 }
 
