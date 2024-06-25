@@ -370,7 +370,9 @@ $('document').ready(e => {
       addListeners(mediaElement)
     }
   })
+  let videoWidth = isDesktop() ? -1 : $(window).width();
   let videoPlayer = new MediaElementPlayer('localVideo', {
+    videoWidth: videoWidth,
     iconSprite: '/img/icons/mejs-controls.svg',
     defaultSpeed: 0.75,
     speeds: ['0.50', '0.75', '1.00', '0.75'],
@@ -1707,7 +1709,7 @@ function getDimensionsForPlayer() {
     ytVideoWidth = ww * 0.6;
     subWidth = $(window).width() - (ytVideoWidth + 40)
   } else {
-    ytVideoWidth = ww - 50;
+    ytVideoWidth = ww - 15;
     subWidth = ww - 10;
     ytHeight = wh / 2 - 150;
     $('#mediaControls').css({width: '100%', bottom: '-15em', right: 0})
