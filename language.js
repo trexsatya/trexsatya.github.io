@@ -118,7 +118,7 @@ async function searchTextChanged(e) {
   // let count = wordsToItems[w] && wordsToItems[w].length
   // count = count || 0
   let newItem = saveSearch(w, null)
-  if(newItem) {
+  if (newItem) {
     el.append(new Option(`${w}`, w, false, false))
   }
 }
@@ -282,28 +282,40 @@ window.showDuplicates = false
 window.youtubePlayInterval = null
 
 function fixMobileView() {
-  if (!isDesktop()) {
-    $(".fl-left").css({width: '100%', clear: 'both'})
-    $(".fl-right").css({left: 0, width: '100%', marginTop: '0.3em', clear: 'both'})
-    $('#starredLines').parent().css({
-      marginTop: 0,
-      bottom: 0
-    })
-    $('#toggleEnSubBtn').parent().css({
-      textAlign: 'center'
-    })
-
-    $('.play-btn-container').css({marginLeft: '22%'})
-    $('#player-info').css({marginTop: 0, left: '40%'})
-
-    $('#btns-2 .select2').css({width: '210px'})
-    $('#mp3ChoiceContainer .select2').css({width: '78%'})
-    $('#btns-2').css({marginBottom: '1em'})
+  if (isDesktop()) {
+    return
   }
+
+  $(".fl-left").css({width: '100%', clear: 'both'})
+  $(".fl-right").css({left: 0, width: '100%', marginTop: '0.3em', clear: 'both'})
+  $('#starredLines').parent().css({
+    marginTop: 0,
+    bottom: 0
+  })
+  $('#toggleEnSubBtn').parent().css({
+    textAlign: 'center'
+  })
+
+  $('.play-btn-container').css({marginLeft: '22%'})
+  $('#player-info').css({marginTop: 0, left: '40%'})
+
+  $('#btns-2 .select2').css({width: '210px'})
+  $('#mp3ChoiceContainer .select2').css({width: '78%'})
+  $('#btns-2').css({marginBottom: '1em'})
+
+  $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton(), left: '35%'})
 }
 
-function removeHash () {
+function removeHash() {
   window.location = window.location.href.split('#')[0]
+}
+
+function getTopOffsetForCollapseButton() {
+  if (isDesktop()) {
+    return '8em'
+  } else {
+    return '12em'
+  }
 }
 
 $('document').ready(e => {
@@ -380,6 +392,20 @@ $('document').ready(e => {
       $searchText.val('')
     }
   });
+
+  $('#collapseMainControl').click(e => {
+    $('#mainControlInputs').toggle();
+
+    let $collapseUpSign = $('#collapseUpSign');
+    $collapseUpSign.toggle()
+    $('#collapseDownSign').toggle()
+    if ($collapseUpSign.is(':visible')) {
+      $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton()})
+    } else {
+      $('#collapseMainControl').parent().css({top: '0.1em'})
+    }
+  })
+
   fixMobileView()
 })
 
@@ -844,7 +870,7 @@ async function loadLocalFiles() {
   let mediaNameWithoutExtension = (audioFile || videoFile).name.replace(".mp3", "").replaceAll(".mp4", "");
   let link = _.last(mediaNameWithoutExtension.split(/ [|-]{2} /)).trim()
 
-  if(sv && en) {
+  if (sv && en) {
     window.allSubtitles[link] = {
       sv,
       en,
@@ -976,6 +1002,7 @@ async function playNewMedia(link, source, mediaFile) {
     $('#playerControls').show()
     $('#subControls').hide()
   }
+
   $('#result').hide()
   if (!$('#onlySubsCheckbox').is(':checked')) {
     _playMedia();
