@@ -303,7 +303,7 @@ function fixMobileView() {
   $('#mp3ChoiceContainer .select2').css({width: '78%'})
   $('#btns-2').css({marginBottom: '1em'})
 
-  $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton(), left: '35%'})
+  $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton(), left: '48%'})
   $('#result').parent().css({marginTop: '3.8em'})
 }
 
@@ -315,7 +315,7 @@ function getTopOffsetForCollapseButton() {
   if (isDesktop()) {
     return '8em'
   } else {
-    return '12em'
+    return '11.5em'
   }
 }
 
@@ -1509,7 +1509,7 @@ function render(searchResults, search) {
   if (!searchResults) return
 
   let $result = $('#result');
-  $result.html('')
+  $result.html('').show()
 
   let selectedLang = getSelectedLang()
 

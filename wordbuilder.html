@@ -885,7 +885,7 @@
     if (html.length) {
       html.forEach(it => $wordlist.append(it))
     } else {
-      words.split("\n").forEach(line => {
+      words.split("\n").map(it => chunkifySentence(it, 130)).flat().forEach(line => {
         let ws = line.split(" ").map(x => `<span>${x}</span>`).join(" ")
         ws = ws.replaceAll("\n", "<br>").replaceAll("-", "+")
           .replaceAll(" ", "&nbsp;")
