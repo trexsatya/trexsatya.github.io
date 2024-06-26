@@ -23,3 +23,6 @@ As of now, only the videos that I found interesting are available. But in the fu
 
 User Interface
 --------------
+Here's how the tool looks like when you first open it:
+![Main-Interface](/img/Main-Interface.png)
+
