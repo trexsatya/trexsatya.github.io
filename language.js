@@ -227,7 +227,7 @@ let ontimeupdate = e => {
   //   }
   // }
 
-  if (ct > window.currentSub.te) {
+  if (window.currentSub && ct > window.currentSub.te) {
     window.currentSubIndex += 1;
     window.currentSub = window.subtitles[window.currentSubIndex]
   }
@@ -554,6 +554,8 @@ async function seekToYoutubeTime(t) {
 }
 
 function setCurrentSub(newTime) {
+  if(!window.subtitles) return
+
   for (let i = 0; i < window.subtitles.length; i++) {
     let it = window.subtitles[i]
     if (it.ts <= newTime && newTime < it.te) {
@@ -816,7 +818,10 @@ async function getSubtitlesForLink(link, source) {
   if (window.allSubtitles[link]) {
     return window.allSubtitles[link]
   }
-  let name = window.srts.find(it => it.link === link).name
+  let srt = window.srts.find(it => it.link === link);
+  if(!srt) return
+
+  let name = srt.name
   let svName = name + ".sv.srt"
   let enName = name + ".en.srt"
   let sv = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + svName)
@@ -971,7 +976,6 @@ function showOnlySubtitle() {
 async function playNewMedia(link, source, mediaFile) {
   clearSubtitles()
   stopMedia(source)
-  let {sv, en} = await getSubtitlesForLink(link, source)
 
   //Load subtitle
 
@@ -1013,6 +1017,7 @@ async function playNewMedia(link, source, mediaFile) {
     showOnlySubtitle();
   }
 
+  let {sv, en} = await getSubtitlesForLink(link, source)
   loadSubtitlesForLink(sv, en);
 
   $('#currentMedia').html(`${link}, ${source}`)
@@ -1701,7 +1706,7 @@ function isDesktop() {
 }
 
 function getDimensionsForPlayer() {
-  let wh = $(window).height(), ww = $(window).width();
+  let wh = window.innerHeight, ww = window.innerWidth;
 
   let ytVideoWidth = 940, ytHeight = 590;
   let subWidth = 0;
