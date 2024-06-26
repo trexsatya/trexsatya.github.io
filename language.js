@@ -304,6 +304,7 @@ function fixMobileView() {
   $('#btns-2').css({marginBottom: '1em'})
 
   $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton(), left: '35%'})
+  $('#result').parent().css({marginTop: '3.8em'})
 }
 
 function removeHash() {
