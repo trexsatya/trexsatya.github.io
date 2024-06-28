@@ -430,9 +430,9 @@
                 <div id="info-dialog" title="Media Info" style="display: none;">
                     <div id="info-dialog-content"></div>
                 </div>
-<!--                <button onclick="$('#result').toggle()" class="btn btn-light" style="visibility: hidden;" id="toggleSearchBtn">-->
-<!--                    Toggle Search Results-->
-<!--                </button>-->
+                <!--                <button onclick="$('#result').toggle()" class="btn btn-light" style="visibility: hidden;" id="toggleSearchBtn">-->
+                <!--                    Toggle Search Results-->
+                <!--                </button>-->
                 <div style="padding-top: 1em;margin-top: 1em;">
                     <div id="result" style="overflow: scroll; height: 300px;clear: both;
                     border: 1px solid green; border-right: none;">
@@ -445,8 +445,15 @@
         <div style="position: absolute;top: 8em;left: 32%;">
             <button id="collapseMainControl" style="border: none;">
                 <div>
-                    <svg width="24" id="collapseUpSign" height="24" viewBox="0 0 24 24" role="presentation"><path d="M11.221 9.322l-2.929 2.955a1.009 1.009 0 000 1.419.986.986 0 001.405 0l2.298-2.317 2.307 2.327a.989.989 0 001.407 0 1.01 1.01 0 000-1.419l-2.94-2.965A1.106 1.106 0 0011.991 9c-.279 0-.557.107-.77.322z" fill="currentColor" fill-rule="evenodd"></path></svg>
-                    <svg width="24" id="collapseDownSign" style="display: none;" height="24" viewBox="0 0 24 24" role="presentation"><path d="M8.292 10.293a1.009 1.009 0 000 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 000-1.419.987.987 0 00-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 00-1.406 0z" fill="currentColor" fill-rule="evenodd"></path></svg>
+                    <svg width="24" id="collapseUpSign" height="24" viewBox="0 0 24 24" role="presentation">
+                        <path d="M11.221 9.322l-2.929 2.955a1.009 1.009 0 000 1.419.986.986 0 001.405 0l2.298-2.317 2.307 2.327a.989.989 0 001.407 0 1.01 1.01 0 000-1.419l-2.94-2.965A1.106 1.106 0 0011.991 9c-.279 0-.557.107-.77.322z"
+                              fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                    <svg width="24" id="collapseDownSign" style="display: none;" height="24" viewBox="0 0 24 24"
+                         role="presentation">
+                        <path d="M8.292 10.293a1.009 1.009 0 000 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 000-1.419.987.987 0 00-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 00-1.406 0z"
+                              fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
                 </div>
             </button>
         </div>
@@ -500,9 +507,13 @@
                 <div style="margin-top: 2em;" id="starredLines">
 
                 </div>
-                <div id="playerControls">
-                    <div class="" style="padding-top: 9em;">
-                        <div>
+                <div id="playerControls" style="    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black;
+    border-radius: 5%;">
+                    <div class="" style="">
+                        <div style="text-align: center;">
                             <div class="controlgroup" id="speed-control">
                                 <label for="speed-1">0.5</label>
                                 <input type="radio" name="speedOption" id="speed-1" data-speed="0.5">
@@ -512,8 +523,9 @@
                                 <input type="radio" name="speedOption" id="speed-3" data-speed="0.8">
                                 <label for="speed-4">1.0</label>
                                 <input type="radio" name="speedOption" id="speed-4" checked data-speed="1.0">
+                                <label for="speed-control">x Speed</label>
                             </div>
-                            <label for="speed-control">x Speed</label>
+
                         </div>
                         <br>
                         <div class="form-check form-switch" style="display: none;">
@@ -537,7 +549,7 @@
 
 </div>
 <br/>
-<div style="color: grey; margin-top: 1em; position: absolute; top: 1px; left: 60%;" id="player-info">
+<div style="z-index: -1;color: grey; margin-top: 1em; position: absolute; top: 1px; left: 60%;" id="player-info">
     <span style="margin-left: 2em;">Media:</span> <span id="currentMedia"></span> <span id="currentTime"
                                                                                         style="padding-left: 1em;"></span>
     <span
