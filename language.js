@@ -5,6 +5,10 @@ Array.prototype.last = function () {
   return _.last(this)
 };
 
+window.onbeforeunload = function(event) {
+  return confirm("Confirm refresh");
+};
+
 function togglePlay(el) {
   if (window.playingYoutubeVideo) {
     if (ytPlayer.getPlayerState() === 2) {
