@@ -5,9 +5,16 @@ Array.prototype.last = function () {
   return _.last(this)
 };
 
-window.onbeforeunload = function(event) {
+window.onbeforeunload = function (event) {
   return confirm("Confirm refresh");
 };
+
+async function loadJokes() {
+  let jokes = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/skämts/1.txt")
+  jokes = await jokes.text()
+  jokes = jokes.split(/[0-9]+\.jpg\n     ------------\n/).map(it => it.trim()).filter(it => it.length > 20)
+  window.jokes = jokes
+}
 
 function togglePlay(el) {
   if (window.playingYoutubeVideo) {
@@ -558,7 +565,7 @@ async function seekToYoutubeTime(t) {
 }
 
 function setCurrentSub(newTime) {
-  if(!window.subtitles) return
+  if (!window.subtitles) return
 
   for (let i = 0; i < window.subtitles.length; i++) {
     let it = window.subtitles[i]
@@ -685,11 +692,27 @@ async function loadAllSubtitles() {
   srts = await srts.json()
   window.srts = srts
 
-  srts.forEach(it => getSubtitlesForLink(it['link'], it['source']))
+  srts.forEach(async function x(it) {
+    await getSubtitlesForLink(it['link'], it['source'])
+  })
 
   window.categories = await fetchCategorisation()
 
+  await loadJokesAsSubtitles()
   populateAllLinks();
+}
+
+async function loadJokesAsSubtitles() {
+  try {
+    await loadJokes()
+    window.jokes.forEach((joke, i) => {
+      let sv = `1\n00:00:00.001 --> 00:03:00.000\n${joke}`
+      let en = '1\n00:00:00.001 --> 00:03:00.000\n'
+      let link = `joke-${i}`
+      window.allSubtitles[link] = {sv, en, source: 'jokes', fileName: link}
+    })
+  } catch (e) {
+  }
 }
 
 try {
@@ -823,7 +846,7 @@ async function getSubtitlesForLink(link, source) {
     return window.allSubtitles[link]
   }
   let srt = window.srts.find(it => it.link === link);
-  if(!srt) return
+  if (!srt) return
 
   let name = srt.name
   let svName = name + ".sv.srt"
@@ -1422,6 +1445,11 @@ function renderLines(id, url) {
   let time_start = parseInt(Math.floor(st.start.ordinal)); //fromSeconds(line.start.ordinal);
   let time_end = parseInt(Math.ceil(end.end.ordinal)); //fromSeconds(line.end.ordinal);
 
+  let showInfoBtn = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" onclick="showInfo('${file.url}', '${file.source}', '${time_start}', '${time_end}')" class="bi bi-info-circle media-info" viewBox="0 0 16 16" style="cursor: pointer;">
+           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+           <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+     </svg>`
+
   let html = `
 <hr>
 <div class="buttons">
@@ -1430,10 +1458,7 @@ function renderLines(id, url) {
 
   <span class="play-btn-container" style="text-align: center; margin-left: 46%;">
      <span class="info">${file.source}</span>
-     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" onclick="showInfo('${file.url}', '${file.source}', '${time_start}', '${time_end}')" class="bi bi-info-circle media-info" viewBox="0 0 16 16" style="cursor: pointer;">
-           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-           <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-     </svg>
+     ${url.startsWith('joke-') ? '' : showInfoBtn}
      <span class="info" style="display: none;">
             <span class="info times"> ${time_start}-${time_end} </span>
      </span>
