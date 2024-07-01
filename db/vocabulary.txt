@@ -402,6 +402,7 @@ ledstång
 
 
 #Everyday things and descriptions
+pruta
 devalvering
 revalvering
 motsatta ändar
@@ -743,6 +744,9 @@ filt
 randig
 
 #Plants, garden, Nature etc
+kratta
+harva
+grus
 pion
 vind
 avenyn
@@ -837,6 +841,11 @@ räv
 rådjur
 
 #Non-ordinary things/actions
+skända
+kränka
+fräck
+fräckis
+knipa
 vanvårdad
 krossa
 svärdklinga
@@ -1078,6 +1087,9 @@ Rida
 red
 
 #Feelings, Mental state
+tjurig
+grining
+gnällig
 gåshud
 gosig
 pirrig
@@ -1223,6 +1235,8 @@ bödel
 dräng
 underleverantör
 syrra
+sotare
+hallick
 
 #Phrases
 upp och ner
