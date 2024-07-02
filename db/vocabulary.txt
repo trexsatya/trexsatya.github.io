@@ -1240,10 +1240,9 @@ Arbetsförmedlare
 Arbetsgivare
 Arbetsledare
 Arbetsledare kyrkogårdsförvaltning
-Arbetsmarknadsanalytiker
-Arbetsmarknadshandläggare
+
 Arbetsmarknadskonsulent
-Arbetsmiljöingenjör
+
 Arbetsmiljöinspektör
 Arbetsvägledare
 Arkivarie
@@ -1254,7 +1253,7 @@ Bemanningsplanerare
 Bemötandeombudsmannen
 Besöksbokare
 Bibliotekarie
-Biblioteksassistent
+
 Bovärd/husvärd
 Budgetrådgivare 
 Butikskontrollant
@@ -1267,24 +1266,20 @@ Demograf
 Departementssekreterare
 Designassistent
 Diplomat
-Distributionsadministratör
+
 Domstolshandläggare
 
 Driftledare
-Driftledare-Fastigheter
 Ekonom
 Ekonomiansvarig
 Ekonomiassistent
-Ekonomichef
-Ekonomihandläggare
+
+
 Ekonomikommentator
 Ekonomiyrken
 Enhetschef
 Entreprenör / Egenföretagare
-EU-ambassadör
-EURES-rådgivare
 Europavetare
-Expert på cirkulär ekonomi
 Extratjänstanställd
 Fastighetsansvarig
 Fastighetsförvaltare
@@ -1293,9 +1288,9 @@ Fastighetsvärd
 Finansiell rådgivare
 Flyttsamordnare
 Folkbokföringshandläggare
-Forskarassistent
+
 Forskare
-Framtidsforskare
+
 Föreningskonsulent
 Företagsledare
 Företagsmäklare
@@ -1304,8 +1299,7 @@ Förrättningsassistent
 Försäkringsläkare
 Försäkringsmäklare
 Försäkringsrådgivare
-Försäkringstandläkare
-Förvaltningschef
+
 Genealog
 
 Gymnasiekompetensyrken
@@ -1319,12 +1313,10 @@ Internationell samordnare
 Intervjuare
 Jobbsökarexpert
 Kapitalförvaltare
-KIP-ingenjör
-KMA-samordnare
-Kommunchef
+
 Kommunikationschef
 Kommunvägledare
-Konsulatassistent
+
 Konsult
 Kontorsvärd/värdinna
 Koordinator
@@ -1333,55 +1325,44 @@ Kundserviceansvarig
 Kundtjänstmedarbetare
 Kvalitetsutvecklare
 Lagermedarbetare
-Logistikchef
-Logistikkonsult
+
 Löneadministratör
 Löneexpert
 Lönekonsult
-Lönespecialist
-Managementkonsult
+
 Marknadskoordinator
 Materialansvarig i landslaget
 Medieekonom
 Miljöutredare
 Miljövårdsyrken
-Multijournalist
-Nationalekonom
+
+
 Nämndsekreterare
 Näringslivsutvecklare
 Omvärldsanalytiker
-Organisationsutvecklare
-Pensionsrådgivare
-Personaladministratör
-Personalansvarig
-Personalchef
-Personalhandläggare
-Personalplanerare
+
 Personalredogörare
 Personalsekreterare
-Personalspecialist
+
 Personaltjänsteman
-Personalvetare
+
 Personlig sekreterare
 Politiker
 Pressansvarig
 Presskommunikatör
 Privatekonom
-Processledare
+
 Processägare
-Produktionsutvecklare
-Projektadministratör
-Projektassistent
-Projektcontroller
-Projektekonom
+
+
 Projekteringsledare
 Projektkoordinator
 Projektör
-Rebrandingexpert
+
 Receptionist
-Redovisningsassistent
+
 Redovisningsekonom
-Redovisningskonsult
+
 Regionutvecklare
 Registrator
 Reglerade yrken
@@ -1389,25 +1370,23 @@ Rehabiliteringskoordinator
 Reklamombudsman
 Rekryterare
 Revisor
-Revisorsassistent
-Riskkapitalist
+
 Rådgivare
 Sakkunnig / rådgivare / förhandlare 
-Samhällsplanerare
+
 Samhällsutvecklare
-Samhällsvetare
+
 Samordnare
 Schemaläggare
 Sekreterare
 Skadereglerare
-Skattekonsult
+
 Skatterevisor
-Skolforskare
+
 Skolintendent
 Skolledare/Rektor
 Skrivningsvakt
 Socialadministratör
-SOS-operatör
 Speditör
 Stadsbyggnadskoordinator
 Statistiker
@@ -1415,31 +1394,25 @@ Statsvetare
 Stenograf
 Studieförmedlare
 Studiestödsutredare 
-Sverigechef
-Säkerhetschef
-Säljare i optikbranschen
+
 Talskrivare
 Teamledare
-Telefonist
-Telefonkommunikatör
-Textilekonom
-Trainee
+
 Tullinformatör
 Undervisningsråd
-Underwriter
+
 Upphandlare
 Uppräkningspersonal
 Urbanplanerare
 Utbildningsadministratör
-Utbildningshandläggare
-Utbildningsjobbare
+
+
 Uthyrare
 Utländsk akademiker
 Utredare
-Utredare på Försäkringskassan
-Utredare på Skatteverket
+
 Utvecklingschef
-VerksamhetsIedare/chef
+VerksamhetsIedare
 Verksamhetsutvecklare
 Verkställande direktör - VD
 Vårdadministratör
@@ -1457,9 +1430,9 @@ hallick
 Anläggare
 Anläggningsarbetare
 Anläggningsdykare
-Anläggningsprojektör-BIM
+
 Beläggningsarbetare
-Bergarbetare
+
 Bergsprängare
 Besiktningsman
 Betongarbetare
@@ -1468,17 +1441,14 @@ Borrtekniker
 Broexpert
 Bygg- och anläggningsmaskinförare
 Byggarbetsledare
-Byggchef
-Byggledare
+
 Bygglovsprojektör
 Byggnadsantikvarie
-Byggnadsarbetare
-Byggnadskonstruktör
+
 Byggnadsplåtslagare
 Byggnadssnickare
 Byggproduktionsledare
-Byggprojektledare
-Byggprojektör
+
 Båtbyggare
 Djurstallsplanerare
 Elkrafttekniker
@@ -1498,11 +1468,9 @@ Maskinförare
 Maskinoperatör
 Murare
 Målare
-Platschef
-Platschef inom bygg
+
 Plattsättare
 Plåtslagare
-Projektmanager inom bygg
 Rivningsarbetare
 Rörläggare
 Samhällsbyggare
@@ -1531,7 +1499,7 @@ Djurmassör
 Djurröntgentekniker
 Djursjukskötare
 Equiterapeut
-Hundpsykolog
+
 Hästodontolog
 Hästtandvårdare
 Veterinär
@@ -1565,8 +1533,7 @@ Flygledare
 Flygmekaniker
 Flygplansmontör
 Flygplansplåtslagare
-Flygplatschef
-Flygplatsinspektör
+
 Flygtekniker
 Flyttarbetare
 Fordonslackerare
@@ -1581,7 +1548,7 @@ Kontaktledningstekniker
 Kryssningsvärd
 Lageransvarig
 Lagerarbetare
-Lagerchef
+
 Lastbils- och maskinmekaniker
 Lastbilschaufför / lastbilsförare
 Lastbilsmekaniker
@@ -1644,50 +1611,34 @@ Voi hunter
 VTS-operatör
 Yrkesförare
 
-Account manager
-Affärsanalytiker
-Affärsrådgivare
-Affärsutvecklare
+
 Aktiemäklare
 Annonssäljare
 Antikhandlare
 Apoteksassistent
-Auktionist
+
 Auktionstjänsteman
 Avgiftsförvaltare
-B2B säljare
 Bensinstationsbiträde
 Bilförsäljare
 Biografyrken
-Brand manager
-Branding expert
-Bridal consultant
 Bröllopskoordinator
-Businesskonsult/investerare
 Butiksbiträde
-Butikschef
-Butikskommunikatör
+
 Butiksplockare
 Butikssäljare
 Båtförsäljare
 Centrumledare
-Copywriter
-Customer Success Manager (CSM)
+
 Demonstratör
 Digital marknadsförare
-Digital Visual Merchandiser
-Diplomerad Gymnasieekonom
 Doftexpert
-e-Commerce Manager
-E-handelslogistiker
-Ekonomikonsult
-Eventkoordinator
+
 Fastighetsmäklare
 Fondförvaltare
-Forskare för handeln
 Färskvaruansvarig
-Företagsekonom
-Företagssäljare
+
+
 Försäkringsförmedlare
 Försäljningschef
 Glassbilsförare
@@ -1695,54 +1646,37 @@ Grönsakshandlare
 Hundmatstestare
 Inköpare / Inköpschef
 Inköpsassistent
-International broker
-Internationell säljare
+
 Jordgubbsförsäljare
 Kassabiträde, kassapersonal
 Knalle
-Konsthandlare
-Kryptokonsult
+
+
 Kundmottagare
 Lagerplanerare
 Lantbruksekonom
-Lifestyle manager
-Marknadsanalytiker
-Marknadsassistent
-Marknadschef
+
 Marknadsförare
 Marknadskommunikatör
 Marknadsundersökare
-Mediasäljare
-Medierådgivare
-Miljöekonom
-Mission designer
-Mystery shopper
+
 Näringslivsrådgivare
 Orderplockare
-Personal shopper
-Pizzabud
+
 Reklamfilmare
 Reklamutdelare
 Resesäljare
-SEM-specialist
-Sherryambassadör
-Sportagent
+
 Springvikarie
 Styrelseproffs
 Säljare
-Säljare hos grossist
-Säljare i företag
-Säljare på Systembolaget
-Säljcoach
-Teknisk säljare
-Telefonförsäljare
+
 Trendanalytiker
 Verkmästare på bilverkstad
-Visual Merchandiser
 Värderare
 
 Attributmakare
-Bilglastekniker
+
 Bilsadelmakare
 Bokbindare
 Borstbindare
@@ -1792,7 +1726,7 @@ Metallrestauratör
 Metalltryckare
 Modellsnickare
 Modist
-Musikinstrumentmakare
+
 Musikinstrumentrestauratör
 Målningsrestauratör
 Möbelrenoverare
@@ -1806,10 +1740,10 @@ Plymmakare
 Pälssömmerska
 Repslagare
 Sadelmakare
-Scenograf
+
 Schatullmakare
 Segelmakare
-Silversmed
+
 Skeppstimmerman
 Skomakare
 Skräddare
@@ -1831,14 +1765,14 @@ Täljare
 Urmakare
 Väskmakare
 Vävare
-Xylograf
+
 Ädelstensslipare
 
 Affineur
 Agent inkommande turism
 Allt-i-allo
 Bagare
-Barchef
+
 Barista
 Bartender
 Bussresearrangör
@@ -1851,21 +1785,14 @@ Cigarrexpert
 Concierge
 Croupier
 Diskare
-Dryckesexpert
-Evenemangspersonal
-Food och beverage manager
+
 Fromager
-Front Desk Manager
-Frukostvärd / värdinna
 Färdigmatlagare
 Gastronom
 Gatuköksbiträde
 Glassmästare
 Guide
-Hotellchef
-Hotellmanager
-Hotellreceptionist
-Hotellyrken
+
 Hovmästare
 Hundspannsguide
 Husfru
@@ -1878,7 +1805,6 @@ Krögare
 Köksbiträde
 Kökschef
 Köksmästare
-Lifestyle Concierge
 Mathantverkare
 Mathistoriker
 Matinformatör
@@ -1887,7 +1813,7 @@ Nattportier
 Parkvärd
 Patisserist
 Peditaxiförare
-Pizzabagare
+
 Provsmakare
 Resebyråtjänsteman
 Reseledare
@@ -1899,32 +1825,28 @@ Rotissör
 Servitör/Servitris
 Skolmåltidsbiträde
 Snabbrestaurangbiträde
-Sommarjobbare
+
 Sommelier
 Specialbagare
 Språkresearrangör
 Storköksbiträde
-Turistchef
-Turistinformatör
+
 Tårtmakare
 Utklädd
 Viltslaktare
 Whiskeykännare
 Ystare
 Äventyrare
-Äventyrsguide
 
 Akupunktör
 Akutsjuksköterska
-Alkohol- och drogterapeut
 Allergikonsulent
-Ambulanssjuksköterska
+
 Ambulanssjukvårdare
 Anaplastolog / Ansiktsprotetiker
 Anestesisjuksköterska
 Apotekare
-Apotekstekniker
-Arbetsterapeut
+
 Arbetsterapibiträde
 Audionom
 Bariatriker
@@ -1935,21 +1857,20 @@ Barnsömnspecialist
 Beroendeterapeut
 Biomedicinsk analytiker
 Boendestödjare / boendeassistent
-Chefssjuksköterska
+
 Dermatolog
 Diabetessjuksköterska
-Dietist
+
 Distriktsläkare
 Distriktssköterska
-DNA-coach
 Doula
-Embryolog
+
 Farmaceut
 Fitnessinstruktör
 Flygläkare
 Folkhälsoplanerare
 Folkhälsosamordnare
-Friskvårdskonsulent
+
 Friskvårdsterapeut
 Fysioterapeut
 Fytoterapeut
@@ -1959,13 +1880,13 @@ Gipstekniker inom sjukvården
 Gym-personal
 Gyminstruktör
 Gynekolog
-Habiliteringsassistent
+
 Habiliteringspersonal
 Hematolog
 Hemtjänstpersonal
 Histotekniker
 Hjälpmedelskonsulent
-Hjälpmedelstekniker
+
 Homeopat 
 Hälso- och sjukvårdsinspektör
 Hälsoinformatör
@@ -1983,18 +1904,10 @@ Legitimationsyrken
 Logoped
 Läkare
 Läkarsekreterare
-Medical detection utvecklare
-Medicinsk genetiker
-Medicinsk make up artist
-Medicinsk sekreterare
-Medicinsk tränare
-Medicinteknisk ingenjör
-Miljöpsykolog
-Mindfulnessinstruktör
-Musikterapeut
+
 Naprapat
 Neonatalläkare
-Nutritionist
+
 Obduktionstekniker
 Oftalmolog
 Okularist
@@ -2011,28 +1924,24 @@ Osteopat
 Pacemakersjuksköterska
 Patolog
 Pedodontist
-Peer supporter
 Perfusionist
-Personlig assistent
 Personlig Tränare, PT
 Podiater
 Psykiatriker
 Psykiatrisjuksköterska
 Psykolog
 Psykoterapeut
-PTP-psykolog
 Radiolog
 Receptarie
-Rehabassistent
+
 Röntgensjuksköterska
 Sektionschef inom vården
 Servicemedarbetare inom sjukvården
-Sjukhusclown
+
 Sjukhusfysiker
 Sjukhustransportör
 Sjukhusyrken
 Sjuksköterska
-Sjuksköterska inom digital vård
 Sjuksköterska inom psykiatri
 Sjuksköterska inom äldrevård
 Sjuksköterska, medicin och kirurgi
@@ -2041,11 +1950,7 @@ Skolsköterska
 Skötare inom psykiatrisk vård
 Sonograf
 Specialistläkare
-Specialistsjuksköterska
-Specialisttandläkare
-Specialistundersköterska
 Specialistundersköterska med neuropsykiatrikompetens
-ST-läkare
 Steriltekniker
 Sårsjuksköterska
 Sömncoach
@@ -2074,7 +1979,7 @@ Handpaketerare
 Industrisömmerska
 Ingenjör inom stål- och metallindustrin
 Operatör
-Processoperatör
+
 Processoperatör inom livsmedelsindustrin
 Processoperatör stål och metallindustri
 Slaktare
@@ -2096,14 +2001,13 @@ Cykelreparatör / cykelmekaniker
 Distributionselektriker
 Driftoptimerare
 Drifttekniker
-Drifttekniker inom Fastighet
 Däckmontör
 Elmontör
 Elnätsspecialist
 Eltekniker
 Fastighetsskötare
-Fastighetstekniker
-Fastighetsyrken
+
+
 Finmekaniker
 Fordonsmontör
 Formmaskinoperatör inom plastindustrin
@@ -2116,7 +2020,7 @@ Industrilackerare
 Industrirörmontör
 Installations- och serviceelektriker
 Installationsingenjör
-Installationsledare
+
 Isolerare
 Järnvägstekniker
 Kaffetekniker
