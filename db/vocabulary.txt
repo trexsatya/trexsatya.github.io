@@ -645,6 +645,39 @@ skämmig
 abonnemang
 
 #Space-time, measurement
+på lördag
+
+i morse
+i lördags
+i år
+i somras
+i vintras
+i höstas
+i våras
+
+imorgon
+på morgonen
+
+(bara år är -et ord)
+
+vid den här laget
+
+en i taget
+dygnet runt
+
+en gång till
+än en gång
+
+under en tid
+under tiden
+
+sen dess
+länge sen
+alltsedan
+
+till
+tag
+
 slät
 stötig
 vinklar
@@ -656,6 +689,7 @@ utför
 Uppförsback
 framsida
 baksida
+
 övre
 Undre
 Övervåning
@@ -666,10 +700,32 @@ fjärran
 utanpå
 närbelägen
 avlägsen
+
+andra hållet
+
 trång
 snäv
 Pil
+
+uppe 
+nere
+
+uppåt
 nedåt 
+framåt
+bakåt
+framför
+ovanför
+nedför
+
+längst ner
+längst fram
+längst bak
+längst ut till höger
+längst ner till höger
+längst bort
+där borta
+
 medellängd
 
 vriden
@@ -683,9 +739,6 @@ i den mån
 belopp
 tal
 antal
-till
-tag
-
 
 #Miscallaneous
 husblatte
@@ -3267,9 +3320,6 @@ blöt
 bombsäker
 
 bomma igen
-bondbränna
-bondkaffe
-bondlurk
 bondläpp
 bondpojk
 bonna
