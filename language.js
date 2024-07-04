@@ -10,10 +10,49 @@ window.onbeforeunload = function (event) {
 };
 
 async function loadJokes() {
-  let jokes = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/skämts/1.txt")
-  jokes = await jokes.text()
-  jokes = jokes.split(/[0-9]+\.jpg\n     ------------\n/).map(it => it.trim()).filter(it => it.length > 20)
-  window.jokes = jokes
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/jokes/1.txt")
+  response = await response.text()
+  response = response.split(/[0-9]+\.jpg\n     ------------\n/).map(it => it.trim()).filter(it => it.length > 20)
+  window.jokes = response
+}
+
+async function loadSayings() {
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/sayings/1.txt")
+  response = await response.text()
+  window.sayings = []
+  response.split("---------------").map(it => it.trim()).forEach(it => {
+    let splits = it.split("\n")
+    window.sayings.push({
+      name: splits[0],
+      text: _.drop(splits, 1).join("\n")
+    })
+  })
+}
+
+async function loadMetaphors() {
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/metaphors/1.txt")
+  response = await response.text()
+  window.metaphors = []
+  response.split("---------------").map(it => it.trim()).forEach(it => {
+    let splits = it.split("\n")
+    window.metaphors.push({
+      name: splits[0],
+      text: _.drop(splits, 1).join("\n")
+    })
+  })
+}
+
+async function loadIdioms() {
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/idioms/1.txt")
+  response = await response.text()
+  window.idioms = []
+  response.split("---------------").map(it => it.trim()).forEach(it => {
+    let splits = it.split("\n")
+    window.idioms.push({
+      name: splits[0],
+      text: _.drop(splits, 1).join("\n")
+    })
+  })
 }
 
 function togglePlay(el) {
@@ -397,9 +436,6 @@ $('document').ready(e => {
   window.audioPlayer = audioPlayer
   window.videoPlayer = videoPlayer
 
-  hidePlayer(audioPlayer)
-  hidePlayer(videoPlayer)
-
   let $searchText = $('#searchText');
   $searchText.on(`focus`, () => {
     if ($("#toggleClearTextOnClickCheckbox").is(":checked")) {
@@ -626,6 +662,8 @@ function fixSectionBox() {
 $(document).ready(function () {
   fixSectionBox()
   $("#vocabularySelect").select2()
+  hidePlayer(audioPlayer)
+  hidePlayer(videoPlayer)
 });
 
 async function fetchCategorisation() {
@@ -1308,6 +1346,12 @@ class MatchResult {
   }
 }
 
+function expandRegex(txt) {
+  txt = txt.replaceAll("*ngn", "(jag|du|han|hon|ni|de|vi|dom)")
+  txt = txt.replaceAll("*sig", "(mig|dig|honom|henne|er|sig)")
+  return txt
+}
+
 function getMatchingWords(list, search) {
   let wordToItemsMap = {}
   let searchText = search.toLowerCase();
@@ -1332,6 +1376,21 @@ function getMatchingWords(list, search) {
   if (wordToItemsMap[searchText.trim()] === undefined) {
     wordToItemsMap[searchText] = []
   }
+
+  if (wordToItemsMap[searchText].length) {
+    return wordToItemsMap;
+  }
+
+  searchText = expandRegex(searchText)
+  list.forEach(item => {
+    let lines = item.data;
+    lines.forEach(line => {
+      let matches = line.text.match(new RegExp(searchText, "i"))
+      if (matches) {
+        wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(new MatchResult(searchText, line, item.url, item.source))
+      }
+    })
+  })
 
   return wordToItemsMap;
 }
@@ -1618,8 +1677,8 @@ function fetchFromLocal() {
       let svText = window.allSubtitles[it].sv;
       let enText = window.allSubtitles[it].en;
 
-      let svMatch = svText && svText.match(new RegExp(window.searchText, "i"));
-      let enMatch = enText && enText.match(new RegExp(window.searchText, "i"));
+      let svMatch = svText && svText.match(new RegExp(expandRegex(window.searchText), "i"));
+      let enMatch = enText && enText.match(new RegExp(expandRegex(window.searchText), "i"));
       if (svMatch || enMatch) {
         return new SearchResult(
           window.allSubtitles[it].source,
@@ -1937,6 +1996,13 @@ function tests() {
         start: {ordinal: 1},
         end: {ordinal: 2},
         text: "Nånstans i världen, finns det en plats!"
+      },
+      {
+        index: 3,
+        id: 3,
+        start: {ordinal: 1},
+        end: {ordinal: 2},
+        text: "Som du var inne på"
       }
     ],
     path: "path1.sv.srt",
@@ -1959,6 +2025,13 @@ function tests() {
         start: {ordinal: 1},
         end: {ordinal: 2},
         text: "Ja, det är sant. Grund och botten!"
+      },
+      {
+        index: 3,
+        id: 3,
+        start: {ordinal: 1},
+        end: {ordinal: 2},
+        text: "Som han var inne på"
       }
     ],
     path: "path2.sv.srt",
@@ -1966,7 +2039,6 @@ function tests() {
     url: "url2"
   }
 
-  let searchResults = [new SearchResult("source1", "url1", enSubs, svSubs1, false, true)]
   let wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund och botten")
   log(wordToItemsMap["grund och botten"])
   assert(wordToItemsMap["grund och botten"].length === 3, "Words with spaces should be matched")
