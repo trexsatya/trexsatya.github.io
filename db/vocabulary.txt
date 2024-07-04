@@ -2991,15 +2991,22 @@ Värmetekniker
 upp och ner
 ut och in
 det är full rulle
+
 Krasst sagt
 rättare sagt 
+ärligt talat
+som nämndes
+som sagt
+som *ngn var inne på
+allvarligt talat
+aldrig hört talas om
 
 det rullar på
 på blixtbesök
 skenbart
 uppenbart
 av outgrundligt skäl
-omge sig med
+omge *sig med
 
 ringer en lite klocka
 sjuvan
@@ -3024,7 +3031,7 @@ hyste(.*)längtan efter
 styr av
 visst är det fantastisk
 passé
-som du var inne på
+
 har pågått ganska länge 
 det är lite trist
 hur gick det till
