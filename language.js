@@ -20,7 +20,7 @@ function _poulateData(where, response) {
   response.split("---------------").map(it => it.trim()).forEach(it => {
     let splits = it.split("\n")
     where.push({
-      name: splits[0],
+      name: _.trim(splits[0]),
       text: _.drop(splits, 1).join("\n")
     })
   })
@@ -753,8 +753,8 @@ async function loadAllSubtitles() {
 
 function loadAsSubtitles(data, tag) {
   try {
-    data.forEach((joke, i) => {
-      let sv = `1\n00:00:00.001 --> 00:03:00.000\n${joke}`
+    data.forEach((item, i) => {
+      let sv = `1\n00:00:00.001 --> 00:03:00.000\n${item.text || item}`
       let en = '1\n00:00:00.001 --> 00:03:00.000\n'
       let link = `${tag}-${i}`
       window.allSubtitles[link] = {sv, en, source: tag, fileName: link}
