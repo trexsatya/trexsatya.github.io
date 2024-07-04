@@ -1344,7 +1344,7 @@ function numberOfItemsToShow() {
 function getWords(text) {
   const segmentor = new Intl.Segmenter([], {granularity: 'word'});
   const segmentedText = segmentor.segment(text);
-  return Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim().length > 1);
+  return Array.from(segmentedText, ({segment}) => segment);
 }
 
 class MatchResult {
@@ -1519,6 +1519,7 @@ function renderLines(id, url) {
            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
      </svg>`
 
+  let isNotALink = url.startsWith('jokes-') || url.startsWith('sayings-') || url.startsWith('metaphors-') || url.startsWith('idioms-');
   let html = `
 <hr>
 <div class="buttons">
@@ -1527,7 +1528,7 @@ function renderLines(id, url) {
 
   <span class="play-btn-container" style="text-align: center; margin-left: 46%;">
      <span class="info">${file.source}</span>
-     ${url.startsWith('joke-') ? '' : showInfoBtn}
+     ${isNotALink ? '' : showInfoBtn}
      <span class="info" style="display: none;">
             <span class="info times"> ${time_start}-${time_end} </span>
      </span>
