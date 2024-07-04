@@ -10,49 +10,41 @@ window.onbeforeunload = function (event) {
 };
 
 async function loadJokes() {
-  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/jokes/1.txt")
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/jokes/1.txt")
   response = await response.text()
   response = response.split(/[0-9]+\.jpg\n     ------------\n/).map(it => it.trim()).filter(it => it.length > 20)
   window.jokes = response
 }
 
-async function loadSayings() {
-  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/sayings/1.txt")
-  response = await response.text()
-  window.sayings = []
+function _poulateData(where, response) {
   response.split("---------------").map(it => it.trim()).forEach(it => {
     let splits = it.split("\n")
-    window.sayings.push({
+    where.push({
       name: splits[0],
       text: _.drop(splits, 1).join("\n")
     })
   })
+}
+
+async function loadSayings() {
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/sayings/1.txt")
+  response = await response.text()
+  window.sayings = []
+  _poulateData(window.sayings, response)
 }
 
 async function loadMetaphors() {
-  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/metaphors/1.txt")
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/metaphors/1.txt")
   response = await response.text()
   window.metaphors = []
-  response.split("---------------").map(it => it.trim()).forEach(it => {
-    let splits = it.split("\n")
-    window.metaphors.push({
-      name: splits[0],
-      text: _.drop(splits, 1).join("\n")
-    })
-  })
+  _poulateData(window.metaphors, response)
 }
 
 async function loadIdioms() {
-  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/idioms/1.txt")
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/idioms/1.txt")
   response = await response.text()
   window.idioms = []
-  response.split("---------------").map(it => it.trim()).forEach(it => {
-    let splits = it.split("\n")
-    window.idioms.push({
-      name: splits[0],
-      text: _.drop(splits, 1).join("\n")
-    })
-  })
+  _poulateData(window.idioms, response)
 }
 
 function togglePlay(el) {
@@ -192,18 +184,19 @@ function parseVocabularyFile(text) {
   return categories
 }
 
-function fetchVocabulary() {
-  fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/vocabulary.txt")
-    .then(res => res.text())
-    .then(text => {
-      window.vocabulary = parseVocabularyFile(text)
-      let $vocabularySelect = $('#vocabularySelect')
-      $vocabularySelect.html('<option>-</option>')
-      Object.keys(window.vocabulary).forEach(it => {
-        let op = new Option(it, it)
-        $vocabularySelect.append(op)
-      })
-    })
+function populateVocabulary() {
+  let $vocabularySelect = $('#vocabularySelect')
+  $vocabularySelect.html('<option>-</option>')
+  Object.keys(window.vocabulary).forEach(it => {
+    let op = new Option(it, it)
+    $vocabularySelect.append(op)
+  })
+}
+
+async function fetchVocabulary() {
+  let res = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/vocabulary.txt")
+  res = await res.text()
+  window.vocabulary = parseVocabularyFile(res)
 }
 
 function searchedWordSelected() {
@@ -370,7 +363,6 @@ function getTopOffsetForCollapseButton() {
 }
 
 $('document').ready(e => {
-  fetchVocabulary()
 
   $('#mp3Choice').change(async e => {
     let link = $('#mp3Choice').val();
@@ -667,7 +659,7 @@ $(document).ready(function () {
 });
 
 async function fetchCategorisation() {
-  let categorisation = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/categorisation.txt")
+  let categorisation = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/srts/categorisation.txt")
   categorisation = await categorisation.text()
   categorisation = categorisation.split("\n")
   let categories = {}
@@ -726,7 +718,7 @@ function populateAllLinks() {
 }
 
 async function loadAllSubtitles() {
-  let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/index.json")
+  let srts = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/srts/index.json")
   srts = await srts.json()
   window.srts = srts
 
@@ -736,18 +728,36 @@ async function loadAllSubtitles() {
 
   window.categories = await fetchCategorisation()
 
-  await loadJokesAsSubtitles()
+  await loadJokes()
+  loadAsSubtitles(window.jokes, 'jokes')
+
+  await loadSayings()
+  loadAsSubtitles(window.sayings, 'sayings')
+
+  await loadMetaphors()
+  loadAsSubtitles(window.metaphors, 'metaphors')
+
+  await loadIdioms()
+  loadAsSubtitles(window.idioms, 'idioms')
+
   populateAllLinks();
+
+  await fetchVocabulary()
+
+  window.vocabulary['Sayings'] = window.sayings.map(it => it.name)
+  window.vocabulary['Metaphors'] = window.metaphors.map(it => it.name)
+  window.vocabulary['Idioms'] = window.idioms.map(it => it.name)
+
+  populateVocabulary()
 }
 
-async function loadJokesAsSubtitles() {
+function loadAsSubtitles(data, tag) {
   try {
-    await loadJokes()
-    window.jokes.forEach((joke, i) => {
+    data.forEach((joke, i) => {
       let sv = `1\n00:00:00.001 --> 00:03:00.000\n${joke}`
       let en = '1\n00:00:00.001 --> 00:03:00.000\n'
-      let link = `joke-${i}`
-      window.allSubtitles[link] = {sv, en, source: 'jokes', fileName: link}
+      let link = `${tag}-${i}`
+      window.allSubtitles[link] = {sv, en, source: tag, fileName: link}
     })
   } catch (e) {
   }
@@ -889,9 +899,9 @@ async function getSubtitlesForLink(link, source) {
   let name = srt.name
   let svName = name + ".sv.srt"
   let enName = name + ".en.srt"
-  let sv = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + svName)
+  let sv = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/srts/" + svName)
   sv = await sv.text()
-  let en = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/" + enName)
+  let en = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/srts/" + enName)
   en = await en.text()
 
   window.allSubtitles[link] = {sv, en, source, fileName: name}
@@ -1095,7 +1105,7 @@ async function playNewMedia(link, source, mediaFile) {
 }
 
 async function loadStarredLines(link, source) {
-  let res = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/srts/srt_favorites.json")
+  let res = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/srts/srt_favorites.json")
   res = await res.json()
 
   let d = res.find(it => it.link === link)
