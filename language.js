@@ -1396,7 +1396,7 @@ function getMatchingWords(list, search) {
     let lines = item.data;
     lines.forEach(line => {
       let matches = line.text.match(new RegExp(searchText, "i"))
-      if (matches) {
+      if (matches && !Object.keys(wordToItemsMap).some(it => it.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)) {
         wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(new MatchResult(searchText, line, item.url, item.source))
       }
     })
