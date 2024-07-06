@@ -1387,7 +1387,7 @@ function getMatchingWords(list, search) {
     wordToItemsMap[searchText] = []
   }
 
-  if (wordToItemsMap[searchText].length) {
+  if (wordToItemsMap[searchText.trim()].length) {
     return wordToItemsMap;
   }
 
