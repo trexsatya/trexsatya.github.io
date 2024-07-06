@@ -3167,9 +3167,6 @@ säga ifrån
 slänga en replik
 slentrian
 
-förgäves
-gå till spillo
-
 driva *ngn till vansinne
 
 komma på nåt
@@ -3325,9 +3322,15 @@ munläder
 stötta på
 silversked
 
+tramsa
+fördriva tid
 spilla tid
 ödsla tid
 förgäves 
+gå till spillo
+
+sälla upp
+sälla sig
 
 gödsla
 
