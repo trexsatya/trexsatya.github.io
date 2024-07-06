@@ -668,6 +668,9 @@ dygnet runt
 en gång till
 än en gång
 
+omgående
+på en gång
+
 under en tid
 under tiden
 
@@ -677,13 +680,27 @@ alltsedan
 
 till
 tag
+antal
+
+till och från
+då och då
+till en början
+till slut
+
+sjuvan
+sexa
+svensexa
+huggsexa
+femma
+tvåa
+etta
 
 slät
 stötig
 vinklar
 framsäte
 vinkelrätt
-lådrätt
+lodrätt
 vågrät
 utför
 Uppförsback
@@ -718,6 +735,10 @@ framför
 ovanför
 nedför
 
+gå lite på tvärs
+
+se fram emot
+
 längst ner
 längst fram
 längst bak
@@ -728,6 +749,13 @@ där borta
 
 medellängd
 
+komma igenom
+komma i mål
+komma i kapp
+komma ihop sig
+
+ligg steget före
+
 vriden
 sned
 
@@ -735,10 +763,39 @@ hoptryckt
 Korträckviddiga
 disposition 
 uppemot
+
 i den mån
+i hög utsträckning
+till viss grad
+i stort sett
+i vissa fall
+dels
+till viss del
+till största delen
+mestadels
+
+Såvitt jag vet
+
+till syvende och sist
+
+tills vidare 
+från och med nu
+än så länge
+hittills
+
+se fram emot
+
+ett antal
+massor med
+
 belopp
-tal
-antal
+
+vinkel
+syfta på
+
+fälla upp
+fälla ner
+på nära håll
 
 #Miscallaneous
 husblatte
@@ -1196,6 +1253,7 @@ Påfrestande
 återhämta sig
 åtagande
 utfästelse
+spricka av spänning
 
 #Inter-personal
 tvist
@@ -2986,12 +3044,55 @@ Vinschoperatör
 VVS-konstruktör
 Värmetekniker
 
-
 #Phrases
+utifrån det
+ta med i beräkning
+
+ändra sig
+
+ställas in
+
+svälta ihjäl
+
+sanna mina ord
+
+sånt som
+lika bra
+
+för att inte tala om
+i genomsnitt 
+gemenligen
+i allmänhet
+i regel
+
+Akta er
+
+häkta på
+
+slå upp
+slå ner
+
+utgörs av
+består av
+
+Såvitt jag vet
+
+när det kniper
+
+straff eller välsignelse
+
+frälsare eller fiende
+
+krya på dig
+lycka till
+till en början
+går mot sin slut
+
 upp och ner
 ut och in
 det är full rulle
 
+minst sagt
 Krasst sagt
 rättare sagt 
 ärligt talat
@@ -3002,14 +3103,29 @@ allvarligt talat
 aldrig hört talas om
 
 det rullar på
+
 på blixtbesök
+blixtsnabbt 
+snilleblixt
+blixtlås
+
+suverän
+toppen
+anständig
+majestik
+schyst
+
 skenbart
 uppenbart
 av outgrundligt skäl
 omge *sig med
 
+uppenbarligen
+förhoppningsvis
+
+det är sällsynt
+
 ringer en lite klocka
-sjuvan
 
 erkänna uppriktigt
 
@@ -3050,11 +3166,16 @@ var knökfull
 säga ifrån
 slänga en replik
 slentrian
+
 förgäves
+gå till spillo
+
+driva *ngn till vansinne
+
 komma på nåt
 skryta 
 det gör inte så mycket 
-vara besatt i 
+
 tillskott
 i tur och ordning 
 gör dig i ordning 
@@ -3089,8 +3210,14 @@ hinna med
 överträffa
 förlopp
 i min enfald
+
 taggad
 peppad
+har bromsat in
+kom igen, pigga upp
+
+håll fast vid den tanken
+
 klara, färdiga, gå
 Fjärilar i magen
 Råttar i magen
@@ -3101,6 +3228,10 @@ Piss iväg
 chas
 Sticker jag
 
+till syvende och sist
+
+tills vidare 
+från och med nu
 
 öm
 ömsint 
@@ -3142,6 +3273,8 @@ kackar i eget bo
 
 det är en fröjd 
 vara förtjust i
+få dille på
+vara besatt i 
 
 många bäckar små
 hastigt avsult
@@ -3197,8 +3330,6 @@ spilla tid
 förgäves 
 
 gödsla
-
-i kapp
 
 #Miscellaneous
 förehavande
