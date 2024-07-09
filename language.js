@@ -1364,18 +1364,20 @@ function expandRegex(txt) {
 
 function getMatchingWords(list, search) {
   let wordToItemsMap = {}
-  let searchText = search.toLowerCase();
+  let searchText = _.trim(search.toLowerCase(), '|');
+  let transformedSearchText = expandRegex(searchText)
 
   list.forEach(item => {
     let lines = item.data;
     lines.forEach(line => {
       let words = getWords(line.text, search).map(it => it.trim().toLowerCase())
-      let endsWith = word => searchText.endsWith(" ") && !searchText.startsWith(" ") && word.endsWith(searchText.trim());
-      let startsWith = word => searchText.startsWith(" ") && !searchText.endsWith(" ") && word.startsWith(searchText.trim());
-      words.filter(word => word.match(new RegExp(searchText, "i")) || endsWith(word) || startsWith(word))
+      let endsWith = word => transformedSearchText.endsWith(" ") && !transformedSearchText.startsWith(" ") && word.endsWith(transformedSearchText.trim());
+      let startsWith = word => transformedSearchText.startsWith(" ") && !transformedSearchText.endsWith(" ") && word.startsWith(transformedSearchText.trim());
+      words.filter(word => word.match(new RegExp(transformedSearchText, "i")) || endsWith(word) || startsWith(word))
         .forEach(word => {
           wordToItemsMap[word] = computeIfAbsent(wordToItemsMap, word, it => []).concat(new MatchResult(word, line, item.url, item.source))
         })
+      // Whole search text as a word
       let word = searchText.toLowerCase().trim()
       if (word.indexOf(" ") > 0 && line.text.toLowerCase().indexOf(word) >= 0) {
         wordToItemsMap[word] = computeIfAbsent(wordToItemsMap, word, it => []).concat(new MatchResult(word, line, item.url, item.source))
@@ -1391,18 +1393,26 @@ function getMatchingWords(list, search) {
     return wordToItemsMap;
   }
 
+  let wordToItemsMap2 = {}
   searchText = expandRegex(searchText)
   list.forEach(item => {
     let lines = item.data;
     lines.forEach(line => {
       let matches = line.text.match(new RegExp(searchText, "i"))
-      if (matches && !Object.keys(wordToItemsMap).some(it => it.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)) {
-        wordToItemsMap[searchText] = computeIfAbsent(wordToItemsMap, searchText, it => []).concat(new MatchResult(searchText, line, item.url, item.source))
+      let alreadyIncludedInResults = it => it.toLowerCase().indexOf(searchText.toLowerCase()) >= 0
+        && wordToItemsMap[it.toLowerCase()].length > 0;
+
+      if (matches && !Object.keys(wordToItemsMap).some(alreadyIncludedInResults)) {
+        let matchedPart = matches[0].toLowerCase()
+        wordToItemsMap2[matchedPart] = computeIfAbsent(wordToItemsMap2, matchedPart, it => []).concat(new MatchResult(matchedPart, line, item.url, item.source))
       }
     })
   })
 
-  return wordToItemsMap;
+  if(searchText.indexOf("|") > 0) {
+    delete wordToItemsMap[searchText.toLowerCase()]
+  }
+  return Object.assign(wordToItemsMap, wordToItemsMap2);
 }
 
 function populateNonSRTFindings(wordToItemsMap, $result) {
@@ -1570,7 +1580,13 @@ function renderLines(id, url) {
 }
 
 function populateSRTFindings(wordToItemsMap, $result) {
-  Object.keys(wordToItemsMap).toSorted().forEach(word => {
+  let words = _(Object.keys(wordToItemsMap)).chain().sortBy(function(word) {
+    return word;
+  }).sortBy((x, y) => {
+    if(window.searchText.toLowerCase().indexOf(x) >= 0) return -1
+  }).value();
+
+  words.forEach(word => {
     let items = wordToItemsMap[word]
     let wordBlock = $(`<div ><h5 class="accordion">${word}</h5></div>`)
     items = items.toSorted((x, y) => x.path === window.preferredFile ? -1 : 1)
@@ -1774,6 +1790,8 @@ function renderAccordions() {
       }
     });
   }
+
+  $('.accordion').first().click()
 }
 
 // 2. This code loads the IFrame Player API code asynchronously.
@@ -1970,6 +1988,18 @@ if (window.location.hostname === 'localhost') {
 
 
 function tests() {
+  let idx = 0
+  function data(txt) {
+    let i = idx++
+    return {
+      index: i,
+      id: i,
+      start: {ordinal: 0},
+      end: {ordinal: 1},
+      text: txt
+    }
+  }
+
   let enSubs = {
     data: [
       {
@@ -1994,27 +2024,12 @@ function tests() {
 
   let svSubs1 = {
     data: [
-      {
-        index: 1,
-        id: 1,
-        start: {ordinal: 0},
-        end: {ordinal: 1},
-        text: "I grund och botten, är det enkelt!"
-      },
-      {
-        index: 2,
-        id: 2,
-        start: {ordinal: 1},
-        end: {ordinal: 2},
-        text: "Nånstans i världen, finns det en plats!"
-      },
-      {
-        index: 3,
-        id: 3,
-        start: {ordinal: 1},
-        end: {ordinal: 2},
-        text: "Som du var inne på"
-      }
+      data("I grund och botten, är det enkelt!"),
+      data("Nånstans i världen, finns det en plats!"),
+      data("Som du var inne på"),
+      data("bara bott"),
+      data("bara bott, ingeting annan!"),
+      data("här har vi prefixedbott")
     ],
     path: "path1.sv.srt",
     source: "source1",
@@ -2023,27 +2038,9 @@ function tests() {
 
   let svSubs2 = {
     data: [
-      {
-        index: 1,
-        id: 1,
-        start: {ordinal: 1},
-        end: {ordinal: 2},
-        text: "Grund och botten, ja!"
-      },
-      {
-        index: 2,
-        id: 2,
-        start: {ordinal: 1},
-        end: {ordinal: 2},
-        text: "Ja, det är sant. Grund och botten!"
-      },
-      {
-        index: 3,
-        id: 3,
-        start: {ordinal: 1},
-        end: {ordinal: 2},
-        text: "Som han var inne på"
-      }
+      data("Grund och botten, ja!"),
+      data("Ja, det är sant. Grund och botten!"),
+      data("Som han var inne på")
     ],
     path: "path2.sv.srt",
     source: "source1",
@@ -2053,6 +2050,27 @@ function tests() {
   let wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund och botten")
   log(wordToItemsMap["grund och botten"])
   assert(wordToItemsMap["grund och botten"].length === 3, "Words with spaces should be matched")
+
+  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund ")
+  log(wordToItemsMap["grund"], wordToItemsMap["grund "])
+  assert(wordToItemsMap["grund"].length === 3, "Words ending with spaces should be matched")
+
+  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "*ngn var inne på")
+  log(wordToItemsMap)
+  // assert(wordToItemsMap["*ngn var inne på"].length === 2, "Words with special regex should be matched")
+
+  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund .* botten")
+  assert(wordToItemsMap["grund och botten"].length === 3, "Search by regex should be matched")
+
+  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "bott")
+  assert(wordToItemsMap["bott"].length === 2
+            && !wordToItemsMap["bott"].some(it => it.line.text.indexOf("botten") >= 0)
+            && !wordToItemsMap["bott"].some(it => it.line.text.indexOf("prefixedbott") >= 0), "There should be no duplicates")
 }
 
-tests()
+
+try {
+  tests()
+} catch (e) {
+  alert("Error in tests: " + e)
+}
