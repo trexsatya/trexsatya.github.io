@@ -8,6 +8,7 @@ minne|minnet|minnen|minnena|åminnelse|minnas
 glömsk|glömma|glömskhet
 medveten|medvetande|medvetenhet|medvetslös|medvetet
 märka|märker|märkte|märkt|uppmärksamma|<*lägga märke till|
+uppfatta|notera|uppfattning|uppfattningar|
 kolla|titta|se|ta en tit|
 behov|behöva|behöver|behövde|behövt|kräva|krävde|krävt|fordra|krav|
 begära|begärde|begärt|begär|lystnad|lysten|sug|sugen|
@@ -18,24 +19,6 @@ gravid|befruktade|
 andning|
 avslappning|<*slappna av|<*koppla av|vila|
 egenskap|drag|
-
-#Pain, suffering, damage
-Skada|Skadan|Skador
-hugga|hugger|högg|huggit|klyva|klyver|klyvde|klöv|kluvit|klyv|
-såga|kapa|malla|
-Sår|Såret|Sår|plåga|plågor|
-Så|sår|sådde|sått
-såra|skada|skära|skäror|skär|skar|skurit|skär|Sarga|
-Plåga|lida|lider|led|lidit|våndas|våndades|våndats|mola|ömma|öm
-vårda|sköta|skötare|sköterska|äldreomsorg|
-Plåstra
-möda|mödor|ansträngning|ansträngningar|
-våldtagen|tvingad|tvång|påtvånga|
-röva|plundra|ta ifrån|råna|rov(sl-pl)|
-slåss|slagsmål|slå|handgemäng|
-kväva|kvävde|kvävt|kvävning|
-drunkna|
-
 
 #Feelings
 Ledsen|ledsna
@@ -54,6 +37,44 @@ avsmak|avsky
 lugn|lugna|
 stressad|nervös|ängslig
 förväntansfull|spänd|
+allvar(sl-pl)|allvaret|allvarlig|
+skrämsel|
+
+chockerande|
+
+#Physical activities
+kånka|bära|bär|bar|burit|buren|
+
+#Mental Capabilities
+tanke|tro|
+mening|meningar|avsikt|avsikter|syfte|syften(pl)|syftet|motiv(sl-pl)|motivet|
+mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|
+avse|hänvisa|<*syfta på|
+aning|teori|förmodan|antagande|
+anta|antog|antagit|gissa
+bedömning|bedöma|bedömer|bedömde|bedömt|omdöme|omdömen(pl)|omdömet|
+utlåtande|åsikt|synpunkt|synpunkter|synsätt(sl-pl)|synsättet|
+analysera|
+sträva|
+klok|smart|påhittig|uppfinningsrik
+slug|rävslug|listig|klipsk
+
+#Pain, suffering, damage
+Skada|Skadan|Skador
+hugga|hugger|högg|huggit|klyva|klyver|klyvde|klöv|kluvit|klyvt|klyv|
+såga|kapa|malla|
+Sår|Såret|Sår|plåga|plågor|
+Så|sår|sådde|sått
+såra|skada|skära|skäror|skär|skar|skurit|skär|Sarga|
+Plåga|lida|lider|led|lidit|våndas|våndades|våndats|mola|ömma|öm
+vårda|sköta|skötare|sköterska|äldreomsorg|
+Plåstra
+möda|mödor|ansträngning|ansträngningar|
+våldtagen|tvingad|tvång|påtvånga|
+röva|plundra|ta ifrån|råna|rov(sl-pl)|
+slåss|slagsmål|slå|handgemäng|
+kväva|kvävde|kvävt|kvävning|
+drunkna|
 
 #Space, Time, Measurement
 kvantitativ
@@ -84,17 +105,21 @@ sen dess|länge sen|alltsedan
 en till|ett tag
 antal
 
-till och från
-då och då
-till en början
-till slut
+till och från|då och då|till en början|till slut
 
 sjuva|sexa|femma|tvåa|etta
 
-slät
-stötig
-vinklar
+slät|jämn|platt|platt
+grov|sträv
+
+rak|vriden|sned|skev|lutande|böjd|backe|lutande|
+vågig|krokig|svängd|krökt|
+krullig|krusig|lockig|
+veckad
+
+vinkel|vinklar
 vinkelrätt|lodrätt|vågrät
+
 utför
 Uppförsback|nedförsback
 framsida|baksida
@@ -116,33 +141,31 @@ komma igenom
 komma i mål
 komma i kapp
 
-läge
-
 snabb|
 
 utanpå|utsidan
 
 håll(sl-pl)|andra hållet
 
-trång|trängsel|
-snäv
+trång|trängsel|snäv|smal
+bred|vid|
+tunn|tanig|mager|underviktig
+tjock|fet|
+
+inskränkt|begränsad
+
 Pil
 
+<*gå lite på tvärs
 
-gå lite på tvärs
+<*se fram emot
 
-se fram emot
-
-
-
-medellängd
-
-
-
+storlek
+lite|mindre|minst|medellängd|
+lite grand|lite grann|en bit|
+stor|större|storst|
 
 ligg steget före
-
-vriden|sned
 
 hoptryckt
 Korträckviddiga
@@ -150,7 +173,7 @@ disposition
 uppemot
 
 i den mån|till viss grad|dels|till viss del|i vissa fall|
-i hög utsträckning|i stort sett|till största delen|mestadels
+i hög utsträckning|storligen|i stort sett|till största delen|mestadels
 
 Såvitt jag vet
 
@@ -185,6 +208,7 @@ ett och annat
 en hel del
 massor med
 
+måltid|
 
 #Phases, Motion
 fortsätta|
@@ -238,14 +262,7 @@ naken|nakna|
 tjockis|överviktig|underviktig|
 skägg(sl-pl)|skägget|mustasch|mustascher|
 
-#Physical activities
-kånka|bära|bär|bar|burit|buren|
-
-#Mental Capabilities
-klok|smart|påhittig|uppfinningsrik
-slug|rävslug|listig|klipsk
-aning|teori|förmodan|antagande|
-anta|antog|antagit|gissa
+slipprig|slemmig|hal|
 
 #Animals and characteristics
 Björn|Björnar
@@ -295,7 +312,7 @@ interagera|interagera|inverka|påverka|påverkan|effekt|
 inflytande|inflytelse|växelverka|interaktiv|
 återgälda|i gengäld|motprestation|
 utbyte|
-
+anfalla|anfaller|anföll|anfallit|angripa|angriper|angrep|angripit|attackera|
 
 #Mental habits, conditions, personalities
 egensinnig|envis|
@@ -305,11 +322,15 @@ punktlig|
 pondus|karisma|
 hycklare|
 lat|oföretagsam|slö
-flitig|energisk|
+flitig|energisk|alert|livlig|livfull|
 inställning|inställningar|hållning|attityd|attityder|
 kreativ|påhittig|originell|
 fantasilös|
 närvaro|frånvaro|
+flexibel|böjlig|vig
+intresserad|
+ärlig|oärlig|
+våldsam|aggressiv|angripande|
 
 #Basic Necessities
 klä ut sig|kläder|klä på sig|klädsel
@@ -326,6 +347,8 @@ inlagd|
 efterrätt|förrätt|
 sprit|
 sup|supar|tuting|tutingar|
+spannmål|säd|sädesslag(sl-pl)|sädesslaget|korn|
+skrovmål|
 
 #Clothes
 kalsong|kalsonger|underbyxa|underbyxor|trosa|trosor|
@@ -380,6 +403,8 @@ framsäte|baksäte|sätet|
 avdelning|avdelningar|
 befattning|befattning|post|poster|ämbete|ämbeten(pl)|ämbetet|
 organisera|anordna|arrangera
+arbetsgivare|arbetstagare|löntagare|
+delad|
 
 #Entertainment
 skiva|skvivor|platta|plattor
@@ -403,10 +428,14 @@ bevis|examen|
 knähund|rövslickare|
 
 #Miscelleneous
+skäl(sl-pl)|skälet|orsak|orsaker|anledning|anledningar|grund(sl-pl)|grundet|
 besynnerlig|konstig|egendomlig|underlig|
+annorlunda|avvikende|normal|vanlig|gängse|
+vedertagen|rådande|
 vidunderlig|underbar|fantastisk|
 oerhörd|otrolig|storslagen|enastående
 oemotståndlig|sällsynt|rar|
+avskräckande|
 överväldigande|
 undermålig|
 översvämma|flöda|
@@ -422,14 +451,23 @@ huggsexa
 omständlig|jobbig|omständig|
 utförlig|utförlig|grundlig|invecklad|
 nyanserad
-omständighet|situation
+omständighet|situation|läge
 
 sakförhållande|faktum|
 själ|själar|ande|andar|
 spöke|spöket|spöken(pl)|
 
+dålig|värre|värste|dålig|värsta|sämre|sämst|sämsta|
+
 lämpad|lämplig|passande|skickad|behörig
 lämplighet|behörighet|kompetens|skicklighet|
 
+missbruka|knarka|
+
+modersmål|folkmål|
+
+obegriplig|ofattbar|oförklarlig|oförståelig
+
 #Swedish idiomatic way
 det <*bli gott med
+
