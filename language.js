@@ -1364,7 +1364,8 @@ function expandRegex(txt) {
 
 function getMatchingWords(list, search) {
   let wordToItemsMap = {}
-  let searchText = _.trim(search.toLowerCase(), '|');
+  let searchText = _.trim(search.toLowerCase(), '|')
+    .split("|").filter(it => it.length > 0).join("|")
   let transformedSearchText = expandRegex(searchText)
 
   list.forEach(item => {
@@ -1389,10 +1390,6 @@ function getMatchingWords(list, search) {
     wordToItemsMap[searchText] = []
   }
 
-  if (wordToItemsMap[searchText.trim()].length) {
-    return wordToItemsMap;
-  }
-
   let wordToItemsMap2 = {}
   searchText = expandRegex(searchText)
   list.forEach(item => {
@@ -1409,10 +1406,23 @@ function getMatchingWords(list, search) {
     })
   })
 
-  if(searchText.indexOf("|") > 0) {
-    delete wordToItemsMap[searchText.toLowerCase()]
+  if (!wordToItemsMap[searchText.trim()] || wordToItemsMap[searchText.trim()].length === 0) {
+    wordToItemsMap = Object.assign(wordToItemsMap, wordToItemsMap2)
   }
-  return Object.assign(wordToItemsMap, wordToItemsMap2);
+
+  let matchingWords = Object.keys(wordToItemsMap)
+  matchingWords.sort((a, b) => b.length - a.length)
+
+  let _matchResultId = it => ` ${it.url} ${it.source} ${it.line.index}`
+  for (let i = 0; i < matchingWords.length; i++) {
+    let prevMatches = matchingWords.slice(0, i).map(it => wordToItemsMap[it]).flat().map(_matchResultId)
+    let word = matchingWords[i]
+    wordToItemsMap[word] = wordToItemsMap[word].filter(it => {
+      return !prevMatches.includes(_matchResultId(it))
+    })
+  }
+
+  return wordToItemsMap;
 }
 
 function populateNonSRTFindings(wordToItemsMap, $result) {
@@ -1580,8 +1590,14 @@ function renderLines(id, url) {
 }
 
 function populateSRTFindings(wordToItemsMap, $result) {
+  let similarity = (x) => {
+    if(!x) return 0
+    return window.searchText.toLowerCase().split("|").filter(it => it).map(word => stringSimilarity.compareTwoStrings(x, word)).reduce((a, b) => Math.max(a, b), 0)
+  }
   let words = _(Object.keys(wordToItemsMap)).chain().sortBy(function(word) {
     return word;
+  }).sortBy((x, y) => {
+    return similarity(y) - similarity(x)
   }).sortBy((x, y) => {
     if(window.searchText.toLowerCase().indexOf(x) >= 0) return -1
   }).value();
@@ -1987,8 +2003,9 @@ if (window.location.hostname === 'localhost') {
 }
 
 
-function tests() {
+function test_data() {
   let idx = 0
+
   function data(txt) {
     let i = idx++
     return {
@@ -2046,23 +2063,28 @@ function tests() {
     source: "source1",
     url: "url2"
   }
+  return [svSubs1, svSubs2];
+}
 
-  let wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund och botten")
+function tests() {
+  let testData = test_data();
+
+  let wordToItemsMap = getMatchingWords(testData, "grund och botten")
   log(wordToItemsMap["grund och botten"])
   assert(wordToItemsMap["grund och botten"].length === 3, "Words with spaces should be matched")
 
-  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund ")
+  wordToItemsMap = getMatchingWords(testData, "grund ")
   log(wordToItemsMap["grund"], wordToItemsMap["grund "])
   assert(wordToItemsMap["grund"].length === 3, "Words ending with spaces should be matched")
 
-  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "*ngn var inne på")
+  wordToItemsMap = getMatchingWords(testData, "*ngn var inne på")
   log(wordToItemsMap)
   // assert(wordToItemsMap["*ngn var inne på"].length === 2, "Words with special regex should be matched")
 
-  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "grund .* botten")
+  wordToItemsMap = getMatchingWords(testData, "grund .* botten")
   assert(wordToItemsMap["grund och botten"].length === 3, "Search by regex should be matched")
 
-  wordToItemsMap = getMatchingWords([svSubs1, svSubs2], "bott")
+  wordToItemsMap = getMatchingWords(testData, "bott")
   assert(wordToItemsMap["bott"].length === 2
             && !wordToItemsMap["bott"].some(it => it.line.text.indexOf("botten") >= 0)
             && !wordToItemsMap["bott"].some(it => it.line.text.indexOf("prefixedbott") >= 0), "There should be no duplicates")
