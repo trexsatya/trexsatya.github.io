@@ -259,7 +259,7 @@ kullerbytta|kullerbyttor|
 #Basic Necessities
 klä ut <*sig|kläder|klä på <*sig|klädsel|klänning|klänningar|
 överdrag(sl-pl)|underlägg|
-äta|äter|åt|ätit|ät|förtära|inmundiga|konsumera
+ äta | äter | åt | ätit | ät |förtära|inmundiga|konsumera
 suga|sög|sugit|absorbera|uppsluka
 
 köpa|beställa|
