@@ -348,7 +348,7 @@ muta|mutor|
 plats|platser|rum(sl-pl)|utrymme|utrymmen(pl)|
 tid|tider|tidsrymd|tidsrymder|dags|
 omgång|omgången|omgångar|
-utsträck|mätning|mått|mängd|
+utsträck|mätning|mått|mängd|utbredning
 rumsadverb|
 
 timme|timmar|minuter|sekunder|
@@ -949,6 +949,44 @@ belopp(sl-pl)|
 bakterie|bakterier|virus(sl-pl)|
 djur(sl-pl)|
 
+ bi | bin |arg som ett bi|flitig som ett bi
+djur|slita som ett djur|
+myra|myror|flitig som en myra|jobba som en myra
+fågel|fåglar|fri som en fågel|äta som en fågel
+gris|grisar|smutsig som en gris|äta som en gris|envis som en röd gris|skrika som en stucken gris|tjock som en julegris|se ut som en svinstia
+häst|hästar|stark som en häst|springa som en häst|arbeta som en häst|äta som en häst|skälla som en häst|ljuga som en häst travar
+fågelholk|fågelholkar|se ut som en fågelholk
+hök|hökar|se som en hök
+guldfisk|minne som en guldfisk
+gås|gäss|dum som en gås|högljudd som en gås
+hare|harar|snabb som en hare|rädd som en hare
+vessla|vesslor|snabb som en vessla
+hund|hundar|trogen som en hund|vifta på svansen som en hund|skälla som en hund|bita som en hund|sitta som en hund|skälla som en
+katt|katter|nyfiken som en katt|kura som en katt|spinnande som en katt|kasta sig som en katt|som hund och katt|vig som en katt
+krokodil|krokodiler|gråta krokodiltårar
+korp|korpar|svart som en korp|skrika som en korp
+kråka|kråkor|skrika som en kråka
+åsna|åsnor|dum som en åsna|envis som en åsna|stå som en åsna mellan två hötappar
+kaja|kajor|full som en kaja|fyllekaja
+kanin|kaniner|föröka sig som kaniner
+lamm|from som ett lamm|tyst som ett lamm|följa som ett lamm|oskyldig som ett lamm
+lejon|stark som ett lejon|modig som ett lejon|bröla som ett lejon
+oxe|oxar|stark som en oxe|sova som en klubbade oxe
+säl|sälar|sova som en klubbad säl
+lärka|lärkor|pigg som en lärka
+mört|mörtar|pigg som en mört
+mus|möss|tyst som en mus|
+näktergal|näktergalar|sjunga som en näktergal
+orm|ormar|hissa som en orm|listig som en orm|krypa som en orm|slingra sig som en orm
+uggla|ugglor|klok som en uggla
+räv|rävar|listig som en räv|slug som en räv|sitta som i en rävsax (fälla)
+råtta|råttor|som katt och råtta
+snigel|sniglar|seg som en snigel|långsam som en snigel
+tupp|tuppar|stolt som en tupp|galen som en tupp
+varg|vargar|hungrig som en varg|tjuta som en varg
+ål|ålar|hal som en ål
+pingvin|pingviner|klumpig som en pingvin|glad som en pingvin
+
 boskap|boskapen|kreatur(sl-pl)|hjord|hjordar|
 
 tjur|tjurar|
@@ -1264,51 +1302,49 @@ utrikes|
 #Food, Drink, kitchen, Eating
 mat|maten|födan|livsmedel(sl-pl)|matvara|matvaror|måltid|födoämne|födoämnen(pl)|
 mata|föda|födas|föda|föder|födde|fött|föd|nära|närmre|närmare|närmst|närmast|nära|när|
-matlagning|
+matlagning|tillreda|tillredning|
+hälsosam|nyttig|till nytta
+missväxt|undernäring|
 
-mjöl|
+ugn|ugnar|kakelugn|
+spis|spisar|
+brödrost|brödrostar|
+köksfläkt|köksfläktar|spisfläkt|
+köksbänk|köksbänkar|
+köksredskap
+mortel|mortlar
+mortelstav|pistill|pistiller
+
+bestick(sl-pl)|
+sked|skedar|gaffel|gafflar|
+bricka|brickor|tallrik|tallrikar|fat(sl-pl)|
+balja|baljor|skål|skålar|
+kanna|kannor|kärl(sl-pl)|kopp|koppar|glas(sl-pl)|
+
+sädesslag(sl-pl)|
+frukt|frukter|
+grönsak|grönsak
+
+ört|örter|
+krydda|kryddor|
+
+mjöl|mjöler|mjölerna
 deg|degen|degar
 
-biskvi|biskvin|biskvier|
-kaka|kakor|
-
-balja|baljor
-
-hälsosam|nyttig|
-
-blaskig dryck|
-
-läsk|läsker|läskedryck|
+stärkelse|
+sötningsmedel|
+förädlad|
 
 skala|skal|skaller|hölje|höljen(pl)|
 husk|
+pulverisera|
 
 hälla|
 tillsätta|tillägga|blanda i|
 röra|
 vispa|
 pålägg(sl-pl)|
-
-grynig|kornig|
-
-smörja|smörjas|smörja|smorde|smord|
-
-spånka|supa|dricka|dricker|drack|druckit|
-blandsaft|saft|
-röka|rökte|rökt|rök|
-macka|mackor|smörgås|smörgås|brödskiva|brödskivor|
 inlagd|
-efterrätt|förrätt|
-sprit|
-sup|supar|tuting|tutingar|
-spannmål|säd|sädesslag(sl-pl)|sädesslaget|korn|
-skrovmål|
-mariekex|
-brödrost|
-köksfläkt|köksfläktar|spisfläkt|
-bestick(sl-pl)|
-sked|skedar|gaffel|gafflar|
-bricka|brickor|tallrik|tallrikar|fat(sl-pl)|
 
 svalna|kallna|svalka|avkyla|
 värma|värmas|värma|värmer|värmde|värmt|värm|
@@ -1317,39 +1353,39 @@ koka|
 steka|steker|stekte|stekt|stek|stekning|stekningar|
 fritera|friterar|friterade|friterat|fritera|fritering|friteringar|frityr|frityrkokning|frityrkokningar|
 fritös|fritöser|
-ugn|ugnar|
-spis|spisar|
-
-kakelugn|
-
-tugga|tuggor|
-
-stärkelse|
-
-missväxt|undernäring|
-
-förädlad|
 
 pösa|pöser|pöste|pöst|pösig|uppblåst|
 
-tratt|trattar|
-kaffebryggare(sl-pl)|
+smörja|smörjas|smörja|smorde|smord|
 
-ört|örter|
-krydda|kryddor|
+grynig|kornig|
+mosa|mosar|mosade|mosat|mos|sörja
 
-tillreda|tillredning|
+blaskig dryck|
 
-sädesslag(sl-pl)|
-frukt|frukter|
-grönsak|grönsak
+läsk|läsker|läskedryck|
 
+spånka|supa|dricka|dricker|drack|druckit|
 mousserande vin|
+sprit|
+sup|supar|tuting|tutingar|
+blandsaft|saft|
+röka|rökte|rökt|rök|
+macka|mackor|smörgås|smörgås|brödskiva|brödskivor|
 
-mortel|mortlar
-mortelstav|pistill|pistiller
+biskvi|biskvin|biskvier|
+kaka|kakor|
+mariekex|kex|kexer|
 
-pulverisera
+efterrätt|förrätt|
+
+spannmål|säd|sädesslag(sl-pl)|sädesslaget|korn|
+skrovmål|
+
+tugga|tuggor|
+
+kaffebryggare(sl-pl)|
+tratt|trattar|
 
 #Clothes
 plagg|
@@ -1495,9 +1531,25 @@ järn|
 kolsyra|
 
 #Nature, Plants, Trees
+natur|naturen|skog|skogar|skogsdunge|skogsdungar|skogsdung
 grönskande|
 träd(sl-pl)|trädet|gran|kvist|
 växt|växter|
+vildväxande|
+
+vindpust
+
+ädellövträd|
+ alm | almar |
+ ask | askar |
+ bok | bokar |
+ ek | ekar |
+ lönn | lönnar |
+
+ asp | aspar |
+björk|björkar|
+ädellöv|
+
 stjärna|stjärnor|himmel|
 rymd|rymder|
 skrud|
@@ -1750,7 +1802,7 @@ utjämna|
 arbetsbörda|
 
 #Tools, machines
-redskap|verktig|apparat|anordning|maskin|maskiner|
+redskap(sl-pl)|apparat|apparater|anordning|anordningar|maskin|maskiner|utrustning|instrument|instrument|verktyg|verktyg|
 persedel|persedlar
 
 sax|saxar|peang|skalpell|skalpeller
@@ -1809,6 +1861,8 @@ svärd(sl-pl)|
 spjut(sl-pl)|
 
 plåt|plåtar|bakplåt|
+
+paraply|paraplyt|paraplyer|
 
 beslag(sl-pl)|
 
