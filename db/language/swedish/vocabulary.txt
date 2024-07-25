@@ -1398,19 +1398,19 @@ kaffebryggare(sl-pl)|
 tratt|trattar|
 
 #Clothes
-plagg|
+plagg|kläder|klädsel|
+ klä|klär|klädde|klätt|klä|k
 
 handske|handskar|vante|vantar
 
 filt|filtar|pläd|plädar
 schal|schalar|sjal|sjalar
+täcke|täcken(pl)|täckena|
 
 kalsong|kalsonger|underbyxa|underbyxor|trosa|trosor|
 mössa|mössor|duschmössa|
 luva|luvor|
 krage|kragar|
-
-täcke|täcken(pl)|täckena|
 
 blöja|blöjor|
 
@@ -2007,8 +2007,8 @@ bevisa|betyga|intyga|
 förespråka|
 föredra|främja
 
-skämt|
-ironi|
+skämt(sl-pl)|
+ironi|ironier|
 skvallra|surra|skvaller|skvalleret|sladder|struntprat|tjafs|sludder|svammel
 skryta|skryter|skröt|skrutit|skryt|
 
