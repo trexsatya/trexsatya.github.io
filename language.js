@@ -1840,10 +1840,17 @@ function fixPlaceholders(txt) {
     .replaceAll(" (ngn)", " [^ ]*")
     .replaceAll(" (ngt)", " [^ ]*")
 
-  let matches = txt.match(/.*(\(.*\)).*/)
-  if (matches && matches.length === 2) {
-    txt = txt.replaceAll(matches[1], "")
+  let fn = () => {
+    let matches = txt.match(/.*(\(.*\)).*/)
+    if (matches && matches.length === 2) {
+      txt = txt.replaceAll(matches[1], "")
+    }
   }
+
+  while (txt.indexOf("(") >= 0) {
+    fn()
+  }
+
   return txt
 }
 
