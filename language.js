@@ -1603,6 +1603,10 @@ function renderLines(id, url) {
      </svg>`
 
   let isNotALink = url.startsWith('jokes-') || url.startsWith('sayings-') || url.startsWith('metaphors-') || url.startsWith('idioms-');
+  let playMediaBtn = isLocalhost() ?
+      `<img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn" onclick="playMediaSlice('${url}', '${time_start}', '${time_end}')">`
+      : ''
+
   let html = `
 <hr>
 <div class="buttons">
@@ -1615,7 +1619,7 @@ function renderLines(id, url) {
      <span class="info" style="display: none;">
             <span class="info times"> ${time_start}-${time_end} </span>
      </span>
-     <img src="/img/icons/play_icon.png" alt="" style="width: 20px;height: 20px;cursor: pointer;" class="play-btn" onclick="playMediaSlice('${url}', '${time_start}', '${time_end}')">
+     ${playMediaBtn}
   </span>
   <span style="float: right;">
     <span class="remove-prev-btn btn" onclick="changeIndices('${id}', ${fromLineIndex}, ${toLineIndex - 1}); renderLines('${id}', '${url}')"> - </span>
@@ -2160,7 +2164,11 @@ async function saveRevision() {
 
 }
 
-if (window.location.hostname === 'localhost') {
+function isLocalhost() {
+  return window.location.hostname === 'localhost'
+}
+
+if (isLocalhost()) {
   $('#saveRevisionBtn').show()
   $('#saveStarredLinesBtn').show()
 }
