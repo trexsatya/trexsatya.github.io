@@ -150,8 +150,12 @@
         border-radius: 50%;
       }
 
-      .info-dialog-content, .ui-dialog-content {
-        width: 100%;
+      #info-dialog-content, .ui-dialog-content {
+        width: 100% !important;
+      }
+
+      .select2-dropdown {
+        z-index: 90000;
       }
     </style>
 
@@ -293,7 +297,14 @@
       }
     </script>
     <style>
+        .bottom-left {
+          top: 382px;
+        }
 
+        .top-left {
+          top: 10px;
+          height: 100%;
+        }
     </style>
 </head>
 
@@ -304,7 +315,7 @@
     </div>
 
 
-    <div style="max-height: 300px; overflow: scroll; position: fixed; height: 380px; width: 50%;">
+    <div style="max-height: 300px; overflow: scroll; position: fixed; height: 380px; width: 50%;" id="wikiContainer">
         <label class="switch" style="vertical-align: middle;">
             Search on Dbl Click
             <input type="checkbox" id="searchOnDblClickWikiCheckbox" checked>
@@ -315,18 +326,48 @@
             </iframe>
         </div>
     </div>
-    <div style="position: fixed; top: 382px; width: 50%; ">
-        <input type="text" id="searchText" placeholder="Search text"
-               onchange="searchInSrts(this)"
-        >
-        <input type="number" id="numberOfFindingsToShow" placeholder="Show X items" value="200">
-        <button onclick="expandAll()">Expand All</button>
-        <button onclick="collapseAll()">Collapse All</button>
-        <div id="result" style="overflow: scroll; height: 300px;">
-        </div>
+    <div style="position: fixed; width: 50%; " class="bottom-left" id="searchResultContainer">
+        <div style="padding-top: 1em; ">
+            <div id="btns-1" style="float: left; width: 49%;" class="fl-left">
+                <input type="search" id="searchText" placeholder="Search text" onchange="searchTextChanged()"
+                       style="width: 68%;">
+                <input type="number" id="numberOfFindingsToShow" placeholder="Show X items" value="10"
+                       style="width: 14%;">
+                <button onclick="toggleWikiSection()" class="button-10">Wiki</button>
+            </div>
+            <div id="btns-2" style="float: left; width: 50%; margin-top: -9px;" class="fl-right">
+                <select id="searchedWords" onchange="searchedWordSelected()" style="width: 220px;">
+                </select>
 
-        <div id="info-dialog" title="Media Info" style="display: none;">
-            <div id="info-dialog-content"></div>
+                <div class="checkbox-wrapper-22" style="display: inline;">
+                    <label class="switch" for="toggleSearchesControlCheckbox">
+                        <input type="checkbox" id="toggleSearchesControlCheckbox" aria-label="searches">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+
+                <div class="checkbox-wrapper-22" style="display: inline;">
+                    <label class="switch" for="toggleClearTextOnClickCheckbox">
+                        <input type="checkbox" id="toggleClearTextOnClickCheckbox" aria-label="clear on click">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div id="searchesControl" style="display: none; padding-top: 3px;">
+                <button onclick="clearSearches()" class="button-24">Clear Searches</button>
+                <button onclick="loadSearches()" class="button-10">ReLoad Searches</button>
+                <button onclick="exportSearches()" class="button-62">Export Searches</button>
+                <button onclick="importSearches()" class="button-62">Import Searches</button>
+            </div>
+            <br>
+            <br>
+            <div style="padding-top: 1em;margin-top: 1em;">
+                <div id="result" style="overflow: scroll; height: 300px;clear: both;
+                    border: 1px solid green; border-right: none;">
+
+                </div>
+            </div>
         </div>
     </div>
 
@@ -366,7 +407,26 @@
 
     </div>
 </div>
+<div id="info-dialog" title="Media Info" style="display: none;">
+    <div id="info-dialog-content"></div>
+</div>
+<div id="import-dialog" title="Import Words" style="display: none;">
+    <div id="import-dialog-content">
+        Vocab: <select id="vocabularySelect" style="width: 100%;" onchange="importSearchesFromVocab()">
+        <option value="">-</option>
+    </select>
+        OR -
+        <button onclick="importSearchesFromFile()" class="button-10">From File</button>
+    </div>
+</div>
+
 <script>
+  $('#searchedWords').select2({placeholder: 'Searches'});
+
+  $('#toggleSearchesControlCheckbox').change(e => {
+    $('#searchesControl').toggle()
+  })
+
   $('#numberOfFindingsToShow')[0].onchange = e => {
     render(window.searchResult, window.searchText)
   }
@@ -378,6 +438,7 @@
         window.allMediaFileNames = it
       })
   }
+
   loadMediaFilenames()
 
   $('#bgMusicVolume').slider({value: 35})
@@ -418,6 +479,19 @@
     // setTimeout(() => {
     //   swedishAudio.play()
     // }, rn * 1000)
+  }
+
+  function toggleWikiSection() {
+    let $wikiContainer = $('#wikiContainer');
+    $wikiContainer.toggle()
+    let $searchResultContainer = $('#searchResultContainer');
+    if (!$wikiContainer.is(':visible')) {
+      $searchResultContainer.removeClass('bottom-left').addClass('top-left')
+      $('#result').css({height: '90%'})
+    } else {
+      $searchResultContainer.addClass('bottom-left').removeClass('top-left')
+      $('#result').css({height: 300})
+    }
   }
 
   function analyseSoundAndSilence() {

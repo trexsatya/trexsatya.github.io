@@ -181,6 +181,13 @@ function importSearchesFromVocab() {
   loadSearches()
 }
 
+function loadWholeVocabulary() {
+  let searches = Object.values(window.vocabulary).flat()
+
+  saveSearchesIntoStorage(searches)
+  loadSearches()
+}
+
 function importSearchesFromFile() {
   let file = document.createElement('input')
   file.type = 'file'
