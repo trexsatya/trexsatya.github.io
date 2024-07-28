@@ -433,6 +433,13 @@ function getTopOffsetForCollapseButton() {
 }
 
 $('document').ready(e => {
+  document.addEventListener('long-press', function(e) {
+    if($(e.target).is("a")) {
+      e.preventDefault()
+      let w = $(e.target).text()
+      window.open(`https://www.google.com/search?q=${encodeURI(w)}&udm=2`, '_blank').focus();
+    }
+  });
 
   $('#mp3Choice').change(async e => {
     let link = $('#mp3Choice').val();
