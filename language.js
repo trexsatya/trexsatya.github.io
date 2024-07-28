@@ -1691,10 +1691,11 @@ function populateSRTFindings(wordToItemsMap, $result) {
 
     let mediaFileNames = window.allMediaFileNames || []
 
+    items = items.toSorted((x, y) => {
+      if (mediaFileNames.some(it => _.includes(it, x.url))) return -1
+    })
+
     _.take(items, numberOfItemsToShow())
-      .toSorted((x, y) => {
-        if (mediaFileNames.some(it => _.includes(it, x.url))) return -1
-      })
       .forEach(item => {
         let file = item
         let $fileBlock = $(`<div class="srt-file" title="${item['name']}">
