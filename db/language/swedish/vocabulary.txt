@@ -150,6 +150,7 @@ häpnasväckande|
 
 förvirrad|vimsig|
 förvirring|förvirringar|
+ambivalens|ambivalensen|obeslutsam|kluvenhet|tveksamhet|tveksamheter|tvekan|vankelmodig|rådlös|villrådig|
 
 Ledsen|ledsna
 vemod|melankoli|tungsinne|tungsint|svårmodig
@@ -187,7 +188,7 @@ skrämmande|avskräckande|ruskig|ryslig|otäck|läskig|hemsk|fasansfull|fruktans
 gåshud
 stressad|nervös|ängslig|frusterad|pressat
 förväntansfull|spänd|
-allvar(sl-pl)|allvaret|allvarlig|
+allvar(sl-pl)|allvaret|allvarlig|högtidlig|solenn|seriös|allvarligt|allvarlighet|
 skrämsel|
 pirra|pirrig|
 
@@ -1322,6 +1323,9 @@ självömkande|
 
 lustig|skojig|lättsam|
 
+pratig|pratsam|munvig
+vältalig|retorisk|retoriskt begåvad|retoriskt begåvade|elokvent|vältalighet|retorik|retoriker|retoriker|
+
 oantastlig|
 obestridlig|ovedersäglig|oförneklig|
 
@@ -1343,7 +1347,6 @@ kreativ|påhittig|originell|finurlig|fyndig|knepig|fiffig
 fantasilös|
 närvaro|närvaron|frånvaro|frånvaron|närvarande|
 intresserad|
-ärlig|oärlig|
 våldsam|aggressiv|angripande|
 
 idiot|idioter|idioti|dum|pucko|puckon(pl)|korkad|trög|slö|ointelligent|dåre|dårar|tok|tokar|
@@ -1354,6 +1357,8 @@ grym|
 
 granne|grannar|
 utrikes|
+
+grundare (av nåt)(sl-pl)|grundarn|instiftare(sl-pl)|skapare(sl-pl)|skaparn|upphovsmakare(sl-pl)|upphovsmakarn|
 
 #Food, Drink, kitchen, Eating
 mat|maten|födan|livsmedel(sl-pl)|matvara|matvaror|måltid|födoämne|födoämnen(pl)|
@@ -2220,7 +2225,7 @@ abdikera|avgå|avsäga|frånträda|avträda
 tillträda|tillträder|tillträdde|tillträtt|tillträd|
 
 avlägsna <*sig|
-avstå från|
+avstå från|avhållsam|
 
 uppge (infon)|ange (infon)|
 
@@ -2243,7 +2248,8 @@ kallelse|kall|livsupgift|
 naturlig
 äkta|oförfalskad|ren|rena rama|
 ren och skär|
-oäkta|ohelig|onaturlig
+oäkta|ohelig|onaturlig|tillgjord|
+förkonstlad|uppstyltad|högtravande|konstlad|konstgjord|
 
 ihålig|
 
@@ -2436,8 +2442,9 @@ pipa|
 tramsa|fjanta|larva|
 strula|krångla|trassla
 
+ärlig|
 fuska|
-ljuga|ljuger|ljög|ljugit|
+oärlig|tala med kluven tunga|ljuga|ljuger|ljög|ljugit|ljug|lögn|lögner|lögnaktig|lögnaktighet|
 lura|vilseleda|bedra|bedrar|bedrog|bedragit|svindla
 narra|
 
