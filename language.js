@@ -1440,17 +1440,23 @@ function expandRegex(txt) {
 }
 
 function getMatchingWords(list, search) {
+  let startTime = new Date().getTime()
   let wordToItemsMap = {}
   let searchText = _.trim(search.toLowerCase(), "|")
     .split("|").filter(it => it.length > 0).join("|")
   let transformedSearchText = expandRegex(searchText)
 
+  let isNotTooShort = w => w.trim().length > 2
+
   list.forEach(item => {
     let lines = item.data;
     lines.forEach(line => {
+      if(new Date().getTime() - startTime > 20000) {
+        return wordToItemsMap;
+      }
       let words = getWords(line.text, search).map(it => it.trim().toLowerCase())
-      let endsWith = word => transformedSearchText.endsWith(" ") && !transformedSearchText.startsWith(" ") && word.endsWith(transformedSearchText.trim());
-      let startsWith = word => transformedSearchText.startsWith(" ") && !transformedSearchText.endsWith(" ") && word.startsWith(transformedSearchText.trim());
+      let endsWith = word => isNotTooShort(transformedSearchText) && transformedSearchText.endsWith(" ") && !transformedSearchText.startsWith(" ") && word.endsWith(transformedSearchText.trim());
+      let startsWith = word => isNotTooShort(transformedSearchText) && transformedSearchText.startsWith(" ") && !transformedSearchText.endsWith(" ") && word.startsWith(transformedSearchText.trim());
       words.filter(word => word.match(new RegExp(transformedSearchText, "i")) || endsWith(word) || startsWith(word))
         .forEach(word => {
           wordToItemsMap[word] = computeIfAbsent(wordToItemsMap, word, it => []).concat(new MatchResult(word, line, item.url, item.source))
@@ -1468,7 +1474,10 @@ function getMatchingWords(list, search) {
   }
 
   let wordToItemsMap2 = {}
-  searchText = searchText.trim()
+  if(isNotTooShort(searchText)) {
+    searchText = searchText.trim()
+  }
+
   list.forEach(item => {
     let lines = item.data;
     lines.forEach(line => {
@@ -2274,6 +2283,9 @@ function tests() {
   assert(wordToItemsMap["bott"].length === 2
     && !wordToItemsMap["bott"].some(it => it.line.text.indexOf("botten") >= 0)
     && !wordToItemsMap["bott"].some(it => it.line.text.indexOf("prefixedbott") >= 0), "There should be no duplicates")
+
+  wordToItemsMap = getMatchingWords(testData, " i ")
+  assert(wordToItemsMap[" i "].length === 1, "Small Words with spaces should be matched")
 }
 
 
@@ -2294,4 +2306,5 @@ try {
   tests()
 } catch (e) {
   alert("Error in tests: " + e)
+  console.log(e)
 }
