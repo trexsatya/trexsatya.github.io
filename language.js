@@ -1688,21 +1688,40 @@ function getWordsOrdered(words) {
   let ordered = [window.searchText]
 
   _.remove(words, it => it === window.searchText)
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 8f6454f8 (More words)
   getSearchedWords().forEach(w => {
     if(_.remove(words, it => it.trim() === w.trim()).length) {
       ordered.push(w)
     }
   })
 
+<<<<<<< HEAD
   getSearchedWords().forEach(w => {
     let found = words.filter(it => it.trim().startsWith(w.trim()) || it.trim().endsWith(w.trim()))
+=======
+  let relatedWords = (w, predicate) =>  {
+    let found = words.filter(predicate)
+>>>>>>> 8f6454f8 (More words)
     if(found) {
       found = _.sortBy(found, it => it.length)
       ordered = ordered.concat(found)
       _.remove(words, it => _.includes(found, it))
     }
+<<<<<<< HEAD
   })
+=======
+  }
+
+  getSearchedWords().forEach(w => {
+    relatedWords(w, it => it.trim().startsWith(w.trim()))
+    relatedWords(w, it => it.trim().endsWith(w.trim()))
+  })
+
+>>>>>>> 8f6454f8 (More words)
   return ordered
 }
 
@@ -1895,12 +1914,20 @@ function fixPlaceholders(txt) {
 }
 
 function expandWords(txt) {
+   let t = _expandWords(txt)
+   if(!t || t.trim() === '') {
+     return txt.replaceAll("<*", "")
+   }
+   return t
+}
+
+function _expandWords(txt) {
   if (txt.indexOf("<*") < 0) {
     return fixPlaceholders(txt)
   }
 
   let expansions = getExpansionForWords()
-  let terms = txt.split("|")
+  let terms = txt.split("|").map(it => _.includes(it, "<*") && !_.includes(it, " ")? it + " " : it)
   let fn = () => {
     w = terms.shift()
     if (!w) return
