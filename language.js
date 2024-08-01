@@ -1684,23 +1684,35 @@ function getSearchedWords() {
   return window.searchText.toLowerCase().split("|").filter(it => it.trim().length);
 }
 
+function getWordsOrdered(words) {
+  let ordered = [window.searchText]
+
+  _.remove(words, it => it === window.searchText)
+  
+  getSearchedWords().forEach(w => {
+    if(_.remove(words, it => it.trim() === w.trim()).length) {
+      ordered.push(w)
+    }
+  })
+
+  getSearchedWords().forEach(w => {
+    let found = words.filter(it => it.trim().startsWith(w.trim()) || it.trim().endsWith(w.trim()))
+    if(found) {
+      found = _.sortBy(found, it => it.length)
+      ordered = ordered.concat(found)
+      _.remove(words, it => _.includes(found, it))
+    }
+  })
+  return ordered
+}
+
 function populateSRTFindings(wordToItemsMap, $result) {
   let similarity = (x) => {
     if (!x) return 0
     return getSearchedWords().map(word => stringSimilarity.compareTwoStrings(x, word)).reduce((a, b) => Math.max(a, b), 0)
   }
-  let words = _(Object.keys(wordToItemsMap)).chain()
-    .sortBy(function (word) {
-      return word;
-    }).sortBy((x, y) => {
-      return similarity(y) - similarity(x)
-    }).sortBy((x, y) => {
-      let idxX = getSearchedWords().indexOf(x);
-      let idxY = getSearchedWords().indexOf(y);
-      if (idxX >= 0) return idxX - idxY
-    }).sortBy(w => {
-      if (w === window.searchText) return -1
-    }).value();
+
+  let words = getWordsOrdered(Object.keys(wordToItemsMap))
 
   words.forEach(word => {
     let items = wordToItemsMap[word]
