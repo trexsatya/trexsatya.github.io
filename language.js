@@ -1688,32 +1688,20 @@ function getWordsOrdered(words) {
   let ordered = [window.searchText]
 
   _.remove(words, it => it === window.searchText)
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 8f6454f8 (More words)
   getSearchedWords().forEach(w => {
     if(_.remove(words, it => it.trim() === w.trim()).length) {
       ordered.push(w)
     }
   })
 
-<<<<<<< HEAD
-  getSearchedWords().forEach(w => {
-    let found = words.filter(it => it.trim().startsWith(w.trim()) || it.trim().endsWith(w.trim()))
-=======
   let relatedWords = (w, predicate) =>  {
     let found = words.filter(predicate)
->>>>>>> 8f6454f8 (More words)
     if(found) {
       found = _.sortBy(found, it => it.length)
       ordered = ordered.concat(found)
       _.remove(words, it => _.includes(found, it))
     }
-<<<<<<< HEAD
-  })
-=======
   }
 
   getSearchedWords().forEach(w => {
@@ -1721,7 +1709,6 @@ function getWordsOrdered(words) {
     relatedWords(w, it => it.trim().endsWith(w.trim()))
   })
 
->>>>>>> 8f6454f8 (More words)
   return ordered
 }
 
