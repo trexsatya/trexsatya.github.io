@@ -139,7 +139,8 @@ function playMedia() {
 function loadSearches() {
   let searches = getSearchesFromStorage()
   $('#searchedWords').html('')
-  _.forEach(searches, (searchTerms) => {
+
+  schedule(searches,.0001, searchTerms => {
     let displayText = searchTerms
     let isSeparator = false
     if (searchTerms.trim().length === 0) {
@@ -153,6 +154,7 @@ function loadSearches() {
     }
     $('#searchedWords').append(op)
   })
+
   $('#toggleSearchesControlCheckbox').click()
 }
 
@@ -1889,6 +1891,7 @@ function fetchFromLocal() {
 }
 
 function removeHintsInBrackets(txt) {
+  let original = txt;
   txt = txt.replaceAll("(sl-pl)", "")
     .replaceAll("(pl)", "")
     .replaceAll(" (ngt) ", " .*")
@@ -1897,6 +1900,12 @@ function removeHintsInBrackets(txt) {
     .replaceAll(" (ngt)", " [^ ]*")
 
   let fn = () => {
+    if(txt.indexOf("(") < 0) return
+    if(txt.indexOf("(") >= 0 && txt.indexOf(")") < 0) {
+      alert("Invalid brackets in" + original)
+      txt = txt.replaceAll("(", "")
+      return
+    }
     let matches = txt.match(/.*(\(.*\)).*/)
     if (matches && matches.length === 2) {
       txt = txt.replaceAll(matches[1], "")
@@ -1912,10 +1921,13 @@ function removeHintsInBrackets(txt) {
 
 function expandWords(txt) {
   txt = getSearchedTerms(txt).join("|")
+  let startTime = new Date().getTime()
+
   let t = _expandWords(txt)
   if (!t || t.trim() === '') { //Fallback
     return txt.replaceAll("<*", "")
   }
+
   return t
 }
 
