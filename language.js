@@ -404,7 +404,8 @@ function fixMobileView() {
 
   $(".fl-left").css({width: '100%', clear: 'both'})
   $(".fl-right").css({left: 0, width: '100%', marginTop: '0.3em', clear: 'both'})
-  $('#starredLines').parent().css({
+  let $starredLines = $('#starredLines');
+  $starredLines.parent().css({
     marginTop: 0,
     bottom: 0
   })
@@ -422,7 +423,12 @@ function fixMobileView() {
   $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton(), left: '48%'})
   $('#result').parent().css({marginTop: '3.8em'})
 
-  $('#mediaControls').css({position: 'fixed', bottom: 0, width: '100%', zIndex: 1000})
+  $('#mediaControls').css({position: 'fixed', bottom: 0, right: 0, width: '100%', zIndex: 1000})
+  $starredLines.hide()
+  let $starredLinesSelect = $('#starredLinesSelect');
+  if($starredLinesSelect.find("option").length > 0) {
+    $starredLinesSelect.show()
+  }
 }
 
 function removeHash() {
@@ -531,6 +537,13 @@ $('document').ready(e => {
   })
 
   fixMobileView()
+
+  $('#starredLinesSelect').change(e => {
+    let index = $('#starredLinesSelect').val()
+    let ts = window.subtitles.find(it => it.index === index).ts
+    let el = $(`.starred-sub[data-index="${index}"]`)
+    starredLineSelected(el, index, ts)()
+  })
 })
 
 function pauseVideo() {
@@ -553,6 +566,7 @@ let clearSubtitles = () => {
   $('#en-sub').html('')
   $('#en-sub-mirror').html('')
   $('#starredLines').html('')
+  $('#starredLinesSelect').html('')
   window.starredLines = []
 }
 
@@ -589,6 +603,18 @@ function changeMediaIfNeededTo(media) {
   return new Promise(resolve => resolve())
 }
 
+function starredLineSelected(el, index, ts) {
+  if (!ts) {
+    ts = window.subtitles.find(it => it.index === index).ts
+  }
+  return async e => {
+    $('.starred-sub').removeClass('active')
+    el.addClass('active')
+    await changeMediaIfNeededTo(window.mediaSelected)
+    await setMediaTime(ts, true)
+  };
+}
+
 function addStarredLine(index, ts) {
   if (window.starredLines.indexOf(index) >= 0) return
 
@@ -597,17 +623,11 @@ function addStarredLine(index, ts) {
   let x = $(`<span data-index="${index}">${index}</span>`)
     .addClass('starred-sub')
 
-  if (!ts) {
-    ts = window.subtitles.find(it => it.index === index).ts
-  }
-  x.click(async e => {
-    $('.starred-sub').removeClass('active')
-    x.addClass('active')
-    await changeMediaIfNeededTo(window.mediaSelected)
-    await setMediaTime(ts, true)
-  })
+  x.click(starredLineSelected(x, index, ts))
 
   $('#starredLines').append(x)
+
+  $('#starredLinesSelect').append(new Option(index, index)).show()
 }
 
 function populateSearchWords(sub, $el) {
@@ -1192,7 +1212,7 @@ async function loadStarredLines(link, source) {
 
   let d = res.find(it => it.link === link)
   console.log(d)
-  d.lines && d.lines.forEach(it => addStarredLine(it))
+  d && d.lines && d.lines.forEach(it => addStarredLine(it))
 }
 
 function waitUntil(condition) {
@@ -2095,7 +2115,7 @@ function getDimensionsForPlayer() {
     ytVideoWidth = ww - 15;
     subWidth = ww - 10;
     ytHeight = wh / 2 - 150;
-    $('#mediaControls').css({width: '100%', bottom: '-15em', right: 0})
+    // $('#mediaControls').css({width: '100%', bottom: '-15em', right: 0})
     $('#youtubePlayer-info').hide()
     $('#speed-control').parent().hide()
 

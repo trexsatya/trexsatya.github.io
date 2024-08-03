@@ -79,6 +79,7 @@ jobba|
 gymma|träna|
 
 fråga|frågor|
+ be (om)| ber | bad | bett |ansöka|ansöker|ansökte|ansökt|ansökan|ansökningar|an<*hålla|hem<*ställa|begära|begär|begärde|begärt|
 svar(sl-pl)|
 meddelande|meddelanden(pl)|
 
@@ -375,7 +376,7 @@ drunkna|
 
 bryta|bryter|bröt|brutit|bruten|knäcka|knäcker|knäckte|knäckt|bräcka|bräcker|bräckte|bräckt|
 spräcka|spräcker|spräckte|spräckt|spricka|sprickor|spricker|sprack|spruckit|
-krossa|söndergöra|förstöra|rubba|förstör|förstörde|förstört|sabba|sabotera|fördärva| riva (ner,upp)|river| rev | rivit|van<*ställa|fördärv|
+krossa|söndergöra|förstöra|rubba|förstör|förstörde|förstört|sabba|sabotera|fördärva| riva (ner,upp)|river| rev | rivit|van<*ställa|fördärv|paja|
 rämna|falla|
 
 slita|sliter|slet|slitit|slit|utsliten|
@@ -405,7 +406,8 @@ länge sedan|
 
 på lördag
 på morgonen
-dagbräckning|dagbräckningen|gryning|gryningar|dagning|dagningar
+dagbräckning|dagbräckningen|gryning|gryningar|dagning|dagningar| gry | gryr |grydde|grytt|gryende|dagas|
+skymma|mörkna|skymning|skymningar|skymmer|skymde|skymt|mörklägga|fördunkla|fördunkling|fördunklingar
 i morse|i lördags|i år|i somras|i vintras|i höstas|i våras
 
 förra|föregående|senaste|sen|senare|senast|
@@ -1374,6 +1376,7 @@ slag(sl-pl)|
 försona|gottgöra|begrava stridsyxan|
 samsas|samsades|samsats|enas|enades|enats|ense|
 
+fria|frieri|
 bröllop(sl-pl)|vigsel|vigslar|giftermål|äktenskap|gifte|
 gifta|viga|sambo|
 älskarinna|älskarinnor|älskare(sl-pl)|älskarn|
@@ -2277,7 +2280,9 @@ skiva|skvivor|platta|plattor
 rutschkana|rutschkanor|ränna|rännor|
 
 
-#Law, Rules, Regulation, Punishments
+#Crimes, Law, Rules, Regulation, Punishments
+inbrott(sl-pl)|
+
 lag|lagar|regel|reglar|straff(sl-pl)|straffet|
 bestraffning|slag(sl-pl)|smäll|stöt|
 bestraffa|aga|snärta|piska|spöa| klå |klår|klådde|klått|straffa|straffning|
@@ -2668,7 +2673,7 @@ huggsexa
 invecklad|
 nyanserad|nyans|
 
-slippa|slipper|slapp|sluppit|undgå|undvika|undviker|undvek|undvikit|<*komma undan|kringgå
+slippa|slipper|slapp|sluppit|undgå|undvika|undviker|undvek|undvikit|<*komma undan|kringgå|ducka|
 slingra(gall. ansvar)|
 
 omständighet|omständigheter|situation|situationer|läge|lägen(pl)|
