@@ -677,7 +677,7 @@ prick|prickar|
 kant|kanter|rand|rander|bård|bårder|
 fåll|
 
-linje|linjer|
+linje|linjer|stryk|stryka|strykning|strykningar|
 kurva|kurvor|
 
 streck(sl-pl)|
@@ -1197,7 +1197,8 @@ nynna|gnola|tralla
 
 harkla
 
-understryka|betona|inskärpa|inskärper|inskärpte|inskärpt|inskärp|framhålla|framhäva|framhäver|framhävde|framhävt|framhäv|framhävande|<*lyfta fram
+understryka|understryker|underströk|understrukit|betona|inskärpa|inskärper|inskärpte|inskärpt|inskärp|framhålla|framhäva|framhäver|framhävde|framhävt|framhäv|framhävande|<*lyfta fram
+inprägla|inpränta| etsa|accentuera|
 
 ståhej|ståhejet|kaosartad atmosfär
 
@@ -2133,6 +2134,7 @@ hacka|hackor|
 
 penna|pennor|bläckpenna
 blyerts|blyertsen|
+penseldrag(sl-pl)|
 
 fjäder|fjädrar|fjädring|fjädringar
 
