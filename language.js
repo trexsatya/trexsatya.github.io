@@ -11,7 +11,7 @@ window.onbeforeunload = function (event) {
 
 function getExpansionForWords() {
   let list = `ta=ta,tar,tog,tagit
-en=en,et,na
+en=en,et,na,ne
 sig=sig,dig,mig,oss,honom,henne,er,sig
 få=få,får,fick,fått
 lägga=lägga,lägger,lade,lagt
@@ -421,6 +421,8 @@ function fixMobileView() {
 
   $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton(), left: '48%'})
   $('#result').parent().css({marginTop: '3.8em'})
+
+  $('#mediaControls').css({position: 'fixed', bottom: 0, width: '100%', zIndex: 1000})
 }
 
 function removeHash() {
