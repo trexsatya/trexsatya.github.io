@@ -85,11 +85,11 @@ meddelande|meddelanden(pl)|
 
 #Mental Capabilities, abstractions
 mening|meningar|avsikt|avsikter|syfte|syften(pl)|syftet|motiv(sl-pl)|motivet|
-ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
 eftersträva|eftersträvar|eftersträvade|eftersträvat|eftersträvande|
 föresats|föresatser|
-mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|
-avse|avser|avsåg|avsett|avseende|avsedd||hänvisa|<*syfta på|angå|åter<*ge|hänvisning|återgivning|återgivningar|
+mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionärer|idealbild|
+ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
+avse|avser|avsåg|avsett|avseende|avsedd||hänvisa|<*syfta på|angå|åter<*ge|hänvisning|återgivning|återgivningar|sikta|rikta|
 kännedom|vetskap|vetande|vetenskap|vetenskapen|vetenskaper|kunskap|
 
 företeelse|företeelser|fenomen(s-pl)|händelse|händelser|tilldragelse|tilldragelser|
@@ -134,10 +134,14 @@ slug|rävslug|listig|klipsk|
 illfundig|
 
 fantasi|inbilla|<*föreställa <*sig|
+fanatisk|
+önska|önskan|önskemål|önskning|önskningar|dröm|drömmar|drömma|drömmer|drömde|drömt|drömsk|drömskt|drömska|drömsk|drömmande|svärmisk|
+hoppas|förhoppning|hopp|förväntning|förväntan|förväntningar|
 
 känneteckna|prägla|
 prägel|präglar|avtryck(sl-pl)|stämpel|stämplar|
-mönster(sl-pl)|mall|mallar|förlaga|förlagor|schablon|schabloner|
+mönster(sl-pl)|mall|mallar|förlaga|förlagor|schablon|schabloner|föredöme|modell|modeller|exempel|exemplar
+förebild|<*se upp till|exemplarisk
 
 slumpmässig|godtycklig|godtycke
 
@@ -354,7 +358,7 @@ påfrestning|påfrestningar|belastning|belastningar|
 pressande|påfrestande|
 
 våldtagen|tvingad|tvång(sl-pl)|påtvånga|
-röva|plundra|ta ifrån|råna|rov(sl-pl)|
+röva|erövra|plundra|kapa|ta ifrån|råna|rov(sl-pl)|
 
 slå|drämma(starkare)|<*ge <*sig på|
 
@@ -392,7 +396,7 @@ muta|mutor|
 plats|platser|rum(sl-pl)|utrymme|utrymmen(pl)|
 tid|tider|tidsrymd|tidsrymder|dags|
 omgång|omgången|omgångar|
-utsträck|mätning|mått|mängd|mängder|utbredning
+utsträck|mätning|mått|mängd|mängder|utbredning|
 rumsadverb|
 
 timme|timmar|minuter|sekunder|
@@ -696,6 +700,7 @@ kant|kanter|rand|rander|bård|bårder|hörn|
 fåll|
 
 linje|linjer|stryk|stryka|strykning|strykningar|
+sträcka|sträckor|
 kurva|kurvor|
 
 streck(sl-pl)|
@@ -1325,11 +1330,12 @@ rivalitet|rivaliteter|
 tävlan|tävlan(bestämd)|tävlingar|konkurrens|konkurrenser
 
 samarbete|samverkan|samarbeta|samverka|
-chef|chefer|ledare|
+chef|chefer|ledare|befäl(sl-pl)|befälhavare|
 leda|ledas|leda|leder|ledde|lett|led|hövding|hövdingar|spåra|
 förman|förmän|föreståndare(sl-pl)|kurator|kuratorer
 härskare|diktator|egenmäktig
 ledsagare|vägvisare|vägledare|
+slav|träl|slavar|trälar|slavinnor|trälinnor|trälar|trälar|trälinnor|trälinnor
 lyda|lyder|lydde|löd|lytt|lidit|lyd|
 medfölja|åtfölja|
 
@@ -1410,7 +1416,7 @@ uppmana|uppmaning|uppmaningar|påbud(sl-pl)|dekret|
 
 #Mental habits, conditions, personalities
 eremit|
-känslokall|skoningslös|obarmhärtigt
+känslokall|skoningslös|obarmhärtigt|stram|
 
 vänsäll|folkkär|
 berömd|(komma) i ropet|populär|känd|kändis|omtyckt|
@@ -1424,7 +1430,7 @@ elak|ond|illasinnad|lömsk|försåtlig|nedrig|
 
 töntig|tafatt|klumpig|
 
-sträng|
+sträng|stram|
 
 sötnos|sötnosar
 
@@ -1438,7 +1444,7 @@ feg|fegis| mes|mesig|
 mallig|högmodig|högfärdig|
 kaxig|
 anspråksfull|pretentiös|pretto|
-djärv|modig|orädd|
+djärv|modig|orädd|frejdig|frimodig|
 
 rebellisk|upprorisk|trotsig
 olydig|stygg|busig|vanartig|ouppfostrad|rackarunge|rackare(sl-pl)|rackarn|stojig|
@@ -1800,6 +1806,8 @@ tall|tallar|
 björk|björkar|
 ädellöv|
 
+hampa|
+
 blåstång|
 havsalg|tång|tångar|sjögräs
 
@@ -1914,6 +1922,7 @@ utedass(sl-pl)|skärgårdsmaja|
 #Managing things, situations
 hantera|ta hand om|behandla|hantering|hanteringar|omhänderta|omhändertagen|
 underlätta|
+styra|styrning|styrningar|styrare|styrsel|styre|
 förvalta|
 upplägg(sl-pl)|
 organisera|strukturera|
@@ -2027,9 +2036,17 @@ avdelning|avdelningar|
 befattning|befattning|post|poster|ämbete|ämbeten(pl)|ämbetet|
 organisera|anordna|arrangera|skipa
 skaffa|få|förvärva|värva|haffa(slang)|
+roffa|greppa|<*ta tag i|
 erhålla|
 arbetsgivare|arbetstagare|löntagare|
 delad|
+
+tag|grep|fatt
+taga (ålder.)|gripa|griper|grep|gripit|grip|fatta
+få tag på|få fatt i|
+
+fånga|
+slänga|slänger|slängde|slängt|släng|kasta
 
 förteckning|förteckningar|katalog|kataloger|tabell|tabeller|lista|listor|översikt|översikter|
 
@@ -2100,7 +2117,7 @@ miss<*ta |misstaga|<*ta miste|misstag(sl-pl)|missuppfatta|
 
 instruera|handleda|handleder|handledde|handlett|anvisa
 anvisad|angiven|utpekad|utvald|utnämnd|
-anvisning|anvisningar|
+anvisning|anvisningar|ledning|ledningar|
 påvisa|demonstrera|uppvisa|förevisa|presentera|lägga fram|framlägga
 proponera|föreslå|föreslår|föreslog|föreslagit|förslag|
 
@@ -2113,7 +2130,7 @@ förmedla|
 vidarebefordra|
 överföra|
 
-<*ta i beslag|konfiskera|<*ta över|överta
+<*ta i beslag|konfiskera|<*ta över|överta|<*lägga beslag på|
 
 förhandling|förhandlingar|
 
@@ -2161,7 +2178,7 @@ snöre|snören(pl)|snöra|snörar|snörade|snörat|
 rep(sl-pl)|lina|linor
 vajer|vajern|vajrar|
 kabel|kablar
-band(sl-pl)|
+band(sl-pl)|snodd|snoddar|
 remsa|remsor|rem|remmen|remmar|strimmel|strimlar|
 ögonbindel|ögonbindlar
 
@@ -2183,6 +2200,7 @@ hacka|hackor|
 penna|pennor|bläckpenna
 blyerts|blyertsen|
 penseldrag(sl-pl)|
+linjal|linjaler|måttstock|måttstockar|måttband|måttband|gradskiva|gradskivor|vinkelhake|vinkelhakar|
 
 fjäder|fjädrar|fjädring|fjädringar
 
@@ -2283,13 +2301,13 @@ rutschkana|rutschkanor|ränna|rännor|
 #Crimes, Law, Rules, Regulation, Punishments
 inbrott(sl-pl)|
 
-lag|lagar|regel|reglar|straff(sl-pl)|straffet|
+lag|lagar|regel|reglar|styre|styren(pl)|straff(sl-pl)|straffet|
 bestraffning|slag(sl-pl)|smäll|stöt|
 bestraffa|aga|snärta|piska|spöa| klå |klår|klådde|klått|straffa|straffning|
 fängelse|böter|spö|
 arrestera|häkta|häktor|häkte|handklovar
 bevis|examen|
-stjäla|stjäl|stal|stulit|stöld|råna|snatta|snutta|tillgripa|tillgriper|tillgrep|tillgripit|tillgrip|
+stjäla|stjäl|stal|stulit|stöld|råna|snatta|snatteri(småstöld)|snatterier|nalla|snutta|tillgripa|tillgriper|tillgrep|tillgripit|tillgrip|knycka|knycker|knyckte|knyckt|knyck|sno|snor|snodde|snott|
 röva|plundra|ta ifrån|frånta|råna|rov(sl-pl)|
 frihetsberöva|
 beivra|
@@ -2332,6 +2350,7 @@ slöjd|slöjder|hantverk
 vaktis|vaktmästare(sl-pl)|vaktmästarn
 
 vävare|väverska|tyg|textil|textiler|väv|vävar|väva|väver|vävde|vävt|vävning|vävningar|textilfibrer(sl-pl)|flätverk|
+garn|garner|tråd|trådar|
 
 rådgivare(sl-pl)|rådgivarn|
 
@@ -2477,13 +2496,6 @@ kulminera|
 frottera|massera
 
 outtalad|
-
-tag|grep|fatt
-taga (ålder.)|gripa|griper|grep|gripit|grip|fatta
-få tag på|få fatt i|
-
-fånga|
-slänga|slänger|slängde|slängt|släng|kasta
 
 lömsk|opålitlig|otrovärdig|farlig|försåtlig
 
