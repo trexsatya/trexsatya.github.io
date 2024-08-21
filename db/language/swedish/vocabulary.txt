@@ -24,15 +24,18 @@ stinka|stinkas|stinker|stank|stink|
 smaka|smak|smakning
 höra|hör|hörde|hört|lyssna|hörsel|lyssning|lystra|lystring|lyssning|
  se | ser |såg|sett|blick|blicka|blickar|blickade|blickat|syn|syna|synar|synade|synat|synning
+glimt|skymt|skymta|blickfång|
 vidröra|vidrör|vidrörde|vidrört|känna|känner|kände|känt|känsel|känsla|känslor
 
 medveten|medvetande|medvetenhet|medvetslös|medvetet|svimma|dåna|
 ovetande|omedveten|obemärkt|obemärkthet|
 samvete|
 plikt|plikter|skyldighet|skyldigheter|ansvar|ansvarig
+<*ta på sig (ngt. ansvar)|erbjuda sig (att)|
 inblick|inblickar|insikt|insikter|
 insyn|
 märka|märker|märkte|märkt|uppmärksamma|<*lägga märke till|förnimma|förnimmer|förnam|förnummit|förnim|
+det som slår mig (mest)|
 varse<*bli|varsebliva|<*bli varse|notera|anteckna|observera|varsna|
 fokusera|koncentrera|
 uppfatta|notera|uppfattning|uppfattningar|
@@ -46,7 +49,8 @@ försumma|förbi<*se|förringa|spela ned|nedvärdera|ringakta|efter<*sätta|för
 vansköta|vanvårda|missköta|misskötsel
 
 behov|behöva|behöver|behövde|behövt|kräva|krävde|krävt|påbjuda|fordra|fordran|fordringar|
-krav(sl-pl)|begär(sl-pl)|kriterium|kriterier|maning|maningar|efterfråga|
+krav(sl-pl)|begär(sl-pl)|kriterium|kriterier|maning|maningar|
+efterfråga|efterlysa|efterlysning|efterfrågan|efterfrågningar|efterlyst|
 begära|begärde|begärt|begär|lystnad|lysten|sug(sl-pl)|sugen|begiven|hågad
 
 vanemässig|vana|vanor|
@@ -84,7 +88,7 @@ slakta|
 rörelse|rörelser|<*röra <*sig|
 vila|pausa|paus|pauser|rasta|
 ledighet|fritid|
-sova|slockna|tupplur|somna|
+sova|slockna|tupplur|somna|slumra
 blunda
 stupa|
 vakna|vaken|väcka|väcker|väckte|väckt|väckning|väckningar|
@@ -112,6 +116,7 @@ föresats|föresatser|
 mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionärer|idealbild|
 ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
 avse|avser|avsåg|avsett|avseende|avsedd||hänvisa|<*syfta på|angå|åter<*ge|hänvisning|återgivning|återgivningar|
+angående|gällande|beträffande
 tillskriva|tillräkna|
 med flit|avsiktlig|med vett och vilja|uppsåtlig|
 sikta|rikta|<*handla om|rikta|inrikta|inriktning|
@@ -131,6 +136,7 @@ uppgift|uppgifter|information|informationer|faktum|faktumet|fakta(pl)|fakta(pl-b
 
 intelligens|intelligenser|förstånd(sl-pl)|förnuft|förnuftet|
 tanke|tankar|tänka|tänker|tänkte|tänkt|tänk|spekulera|spekulant|spekulanter|tycka|an<*se|
+<*få intryck|
 tro|tror|trodde|
 aning|aningar|teori|teorin|teorier|förmodan|förmodan(bestämd)|förmodanden(pl)|antagande|antaganden(pl)|
 anta|antog|antagit|gissa|ponera|förmoda
@@ -140,9 +146,13 @@ fördomsfull|fördom|fördomar|förutfattad|
 fördomsfri|fördomsfrihet|
 utlåtande|åsikt|synpunkt|synpunkter|synsätt(sl-pl)|synsättet|påstående|synvinkel|synvinklar|ståndpunkt|perspektiv(sl-pl)|
 
+tidsanda|
+
 jämföra|skilja|skillnad|skillnader|urskilja|urskillning|sålla|sålla agnarna från vetet|filtrera|
 analysera|överväga|avväga|betänka|betänker|betänkte|betänkt|betänk|
 dra paralleller mellan|
+generalisera|generalisering|dra alla över en kam|
+precisera|precisering|tydlig<*göra|specificera|specificering|
 resonera|logik|logiker|logisk|logiskt|logikern|logiker|rationell
 ifrågasätta|betvivla|
 kartläggning|kartläggningar|inventering|inventeringar|
@@ -151,7 +161,7 @@ förknippa|koppla|associera|koppling|kopplingar|behäftad|
 betrakta|anse
 recensera|recension|recensioner|
 granska|skärskåda
-besiktiga|undersöka|inspektera|undersökning|inspektion|besiktning|besiktningar|visitation|
+besikta|besiktiga|undersöka|inspektera|undersökning|inspektion|besiktning|besiktningar|visitation|
 till beskådan|
 kontrollera|tygla|tygel|kontroll
 <*utgå från|förutsätta|förutsättning|
@@ -163,14 +173,15 @@ detaljerad|detalj|detaljer|
 
 planera|plan|
 bereda|förbereda|beredd|beredelse|beredelser|
+prepping|
 
-anmärka|
+anmärka|påpeka|
 
 sträva|
 
 klok|smart|påhittig|uppfinningsrik|vettig|förståndig|
  vett |förnuft|omdöme|förstånd|
-slug|rävslug|listig|klipsk|beräknande|listig som en räv|
+slug|rävslug|listig|klipsk|beräknande|listig som en räv|fiffig|påhittig|smart|
 illfundig|
 
 fantasi|inbilla|<*föreställa <*sig|
@@ -186,10 +197,13 @@ kännetecken(sl-pl)|markör|markörer|
 känneteckna|prägla|
 prägel|präglar|avtryck(sl-pl)|stämpel|stämplar|
 mönster(sl-pl)|mall|mallar|förlaga|förlagor|schablon|schabloner|föredöme|modell|modeller|exempel|exemplar
-förebild|<*se upp till|exemplarisk
+förebild|<*se upp till|exemplarisk|
+ledstjärna|
 
 slumpmässig|godtycklig|godtycke
+ på måfå| på slump|
 slump|chans|chanser|
+kasta tärningar|
 
 egenskap|egenskaper|drag(sl-pl)|lynne|lynnen(pl)|särdrag|
 sinnelag|natur|mentalitet|läggning|läggningar|
@@ -213,6 +227,8 @@ ställd|häpen|förvånad|svarslös|villrådig|förvånansvärd|förvånansvärt
 storögd|
 häpnasväckande|
 
+tigande
+
 förvirrad|vimsig|snurrig|förbryllad|virrig
 vimmelkantig|
 förvirring|förvirringar|
@@ -222,6 +238,7 @@ ambivalens|ambivalensen|obeslutsam|kluvenhet|tveksamhet|tveksamheter|tvekan|vank
 ledsen|
 vemod|melankoli|tungsinne|tungsint|svårmodig
 dyster|sorgsen|molnig|dystrare|dystrast|sorglig|sorgligt|sorgsenhet|
+beklaga sorg|
 tristess|tråkig|trist
 depression|nedstämd|deppig|deprimerad|nedstämdhet|nervsammanbrott|nedslagen|nedslående|nedslå|
 trumpen|trumpet|trumpna|sur|surt|tjurig|tungsint|grinig
@@ -234,6 +251,7 @@ spännande|spänning|spänna|spänning|spänningar|stimulerande|upphetsande|uppr
 peppad|
 
 genera|pinsam|skämmas|skämmig|genant|
+generad|
 besviken
 misslynt|misshaglig|misshag|
 
@@ -264,7 +282,8 @@ ruskig|ruggig|fasansfull|fruktansvärd|förskräcklig|förfärlig|kuslig|makaber
 gåshud
 stressad|nervös|ängslig|frusterad|pressat|upphetsad|hetsa upp|
 förväntansfull|spänd|
-allvar(sl-pl)|allvaret|allvarlig|högtidlig|solenn|seriös|allvarligt|allvarlighet|
+allvar(sl-pl)|allvaret|allvarlig|högtidlig|solenn|s eriös|allvarligt|allvarlighet|
+gravallvarlig|allvarstyngd|allvarstyngt|allvarstyngda|
 skrämsel|
 pirra|pirrig|
 
@@ -307,7 +326,7 @@ intresserad|
 strävan|
 lust|håg|
 entusiasm|entusiasmen|förtjusning|förtjusningar|hänryckning|
-iver|ambition|glöd|glöder|ivrig|
+iver|ivern|ambition|glöd|glöder|ivrig|
 engagemang|engagera|
 upptagen|sysselsatt|
 
@@ -339,6 +358,7 @@ ande|andar|själ|själar|psyke|psyken(pl)|
 betuttad|förälskad|förtjust (i ngt)|
 gripen|hänförd|
 
+<*falla pladask|
 kär|kärlek|förälskad|
 längta|längtan|sakna|
 svartsjuk|sotis
@@ -350,6 +370,7 @@ missunnsamhet|avundsjuka|avundsjukor|avundsjuk|avis(slang)|aviser|
 #Physical activities
 kånka|bära|bär|bar|burit|buren|burna|
 titta|stirra|glo|glor|glodde|glott|glo|
+titta storögt|titta med stora ögon|stint|betrakta(ngt) stint|uppspärrade ögon|
 blänga|blänger|blängde|blängt|bläng|
 snegla|titta med ögonvrå|glutta|tjuvkika|smygkika
 
@@ -358,6 +379,7 @@ blinka|
 buga|bocka|knixa|niga|niger|neg|nigit|nig|
 vika|
 hopkrupen|kura ihop|
+hopsjunken
 
 kullerbytta|kullerbyttor|
 
@@ -365,6 +387,10 @@ kullerbytta|kullerbyttor|
 skidbacke|skidbackar|
 
 saltomortal|volt|voltar|frivolt
+
+kurragömma|
+
+spökboll|
 
 #Basic Necessities
 livnära (sig på)|livnär|livnärde|livnärt|livnär|livnärande|livnäring|(ge) uppehälle|
@@ -412,6 +438,8 @@ fingerpulla|tafsa|
 
 onani|onanera|masturbera|pulla|runka|
 
+brunst|parningsdrift|parningslek|brunstig|parningsvillig
+
 #Damages, Negative Things/Actions
 Skada|Skadan|Skador
 hugga|hugger|högg|huggit|stympa|lemlästa|klyva|klyver|klyvde|klöv|kluvit|klyvt|klyv|avsåga|<*såga av|
@@ -438,13 +466,15 @@ lindra|mildra|blidka|förmildra|lindring|lindringar|lisa|lisor|stilla|beveka|
 möda|mödor|ansträngning|ansträngningar|
 <*bemöda <*sig|anstränga|anstränger|ansträngde|ansträngt|
 påfrestning|påfrestningar|belastning|belastningar|
-pressande|påfrestande|stressande
+pressande|påfrestande|stressande|slitsam
 
 trycka|pressa
 klämma|
 kränga(däck t.e)|krängning|krängningar|
 
-våldtagen|tvingad|tvång(sl-pl)|påtvånga|tvinga
+instucken|
+
+tvingad|tvång(sl-pl)|påtvånga|tvinga
 röva|erövra|plundra|kapa|ta ifrån|råna|rov(sl-pl)|
 övervåld(sl-pl)|
 
@@ -454,6 +484,8 @@ smiska|daska|
 örfila|
 aga|spöa|piska|piskor|pisk|piska och morot|piskan och moroten|moroten och piskan|snärta|
 uppfostra|uppfostran
+
+skämma bort|bortskämd|pjoska|pjåska|dalta|klema bort|
 
 mucka|
 smälla|smäller|smällde|smällt|smäll|
@@ -479,7 +511,7 @@ krascha|störta
 rämna|falla|sönderfalla|
 stupa|
 
-slita|sliter|slet|slitit|slit|utsliten|uttjänt
+slita|sliter|slet|slitit|slit|utsliten|uttjänt|slitning|
 nedgång|
 skrapa|skrapor|skava|
 slipa|slipmaskin|nöta|nöter|nötte|nött|nöt|gnida|gnider|gned|gnidit|gnugga|
@@ -505,15 +537,20 @@ timme|timmar|minuter|sekunder|
 stegvis|steg för steg|gradvis|successiv|etappvis
 
 på förhand|i förväg|i efterhand|
+i förskott|på förskott|
 
 lång|längre|längst|inte längre|
 långt (avstånd)|länge (tidsperiod)|
 länge sedan|
+för länge sedan|för några år sedan|
+
+ett lite slag|en liten stund|
 
 avstånd|
 marginal|
 
 långvarig|kronisk|
+åratal|
 kortvarig|kortlivad|kortvarighet|
 
 riktning|riktningar|håll(sl-pl)|
@@ -540,6 +577,9 @@ en gång till|än en gång
 gång på gång|åter och åter|återkommande|återkommande
 en till|ett tag
 till och från|då och då|till en början|till slut
+
+hur dags|det är dags för|det är dags att|
+så här dags|
 
 under en tid|under tiden
 sen dess|länge sen|alltsedan
@@ -612,6 +652,7 @@ mild|blid|
 måtta|återhållsamhet|hejd
 
 nästan|nästintill|ungefär|drygt|kring|runt
+på en höft|
 
 fullkomlig|total|perfekt|Klockrent|
 
@@ -625,8 +666,10 @@ en och annan
 ett och annat
 en hel del
 
+jämna tal|udda tal
+
 både|båda|såväl|bägge|bådadera|ömse|på ömse hål|på ömse sidor|
-alla | samtliga|varenda|vartenda|
+alla | samtliga|varenda|vartenda|allesammans|allesamman|
 
 droppe|droppar|en droppe i havet
 
@@ -665,7 +708,8 @@ ned|ner|neder|nedre|nere|nederst|
 inre|innerste|innerst|innersta|kärna|kärnor|
 yttre|ytterste|yttersta|ytterst|
 mellre|mellerste|mellersta|medel|medlare|medlast|
-uppåt|nedåt|framåt|bakåt|baklänges|framför|främre|bakre|eftre|inåt|utåt|inifrån|utifrån
+uppåt|nedåt|framåt|bakåt|baklänges|framför|
+främre|bakre|eftre|inåt|utåt|inifrån|utifrån
 fram till|tillbaks till|tillbaka till
 upp|ner|fram|bak|längst <*plats|främst|bakerst|efterst|uppflugen
 topp|toppar|botten|bottnar|
@@ -757,7 +801,7 @@ väst|väster|västra|västerut|
 
 trång|trängsel|snäv|smal
 bred|vid|
-tunn|tanig|mager|underviktig|tunt|benget(ned)|hårfin|subtil|
+tunn|tanig|mager|magra|underviktig|tunt|benget(ned)|hårfin|subtil|
 tjock|fet|
 
 inskränkt|begränsad
@@ -785,6 +829,7 @@ disposition
 uppemot
 
 till syvende och sist|egentligen
+när allt kommer omkring|
 tills vidare|
 från och med nu|än så länge|hittills|ännu|  än |
 
@@ -878,6 +923,8 @@ rad|rader|sträck(sl-pl)|
 kolumn|kolumner|
 tabell|tabeller|
 
+stapel|staplar|trave|travar|travar|stapla|
+
 randig
 prickig
 rutig
@@ -911,6 +958,7 @@ fluktuera|variera|växla|omväxla|
 omvandla|omvandling|förvandla|
 
 utspela|ske|sker|skedde|skett|inträffa|till<*dra sig|<*äga rum|
+ <*bli av |
 
 ursprung(sl-pl)|källa|källan|källor|tillblivelse|tillblivelsen|uppkomst|upphov(sl-pl)|skapelse|skapelser|
 tillvaro|tillväxt|levnad
@@ -931,7 +979,8 @@ fantombild|
 tillverka|framställa
 framta|framtagen|framtaget| <*ta fram |
 
-börja|starta|påbörja|<*sätta i gång|<*sätta igång|utgå|föda|<*slå på|<*köra igång|<*köra i gång|
+börja|starta|påbörja|<*sätta i gång|<*sätta igång|
+utgå|föda|<*slå på|<*köra igång|<*köra i gång|<*få fart på|
 nybörjare|novis|nykomling
 nyanländ|
 början|födsel|födslar|födelse|födelser|förlossning|förlossningar|
@@ -962,9 +1011,14 @@ vistas|vistas|vistades|vistats|vistande|<*befinna <*sig|uppehålla|uppehåller|u
 rymmas|ryms|rymmes|rymdes|rymts|
 hysa|hyser|hyste|hyst|hys|härbärgera|
 
+(vara) på väg (att)|(vara) på gång (att)|
+pågående|pågå|pågick|pågått|pågång|pågångar|
+fortgående|fortgå|fortgick|fortgått|fortgång|fortgångar|
+
 stanna|
 
 anpassa|anpassning|anpassningar|anpassa sig|anpassar sig|anpassade sig|anpassat sig|
+samordna|koordinera
 utveckla|förändra|inveckla|invecklad|sofistikerad|avancera|framskrida|förändring|
 bygga|bygger|byggde|byggt|konstruera|
 uppväxa|uppväxer|uppväxte|uppvuxit|uppväxt|<*växa upp|uppvuxen|
@@ -973,7 +1027,8 @@ växa|frodas|frodades|frodats|blomstra|fram<*växa|
 slopa|avskaffa|avveckla|fasa ut|
 rasera|<*riva ned|rivning
 omstörta|
-kullkasta|förhindra|omintetgöra|omöjliggöra
+kullkasta|förhindra|omintetgöra|omöjliggöra|
+avvärja|avvärjer|avvärjde|avvärjt|avvärj|
 förgöra|förinta|tillintetgöra|utrota|utplåna
 
 omvända|omvänder|omvände|omvänt|omvänd|omvändelse|
@@ -998,13 +1053,16 @@ bromsa|inskränka|begränsa|
 stoppa|hejda|hämma|hämning|bromsa|hindra|hinder|stävja|stjälpa|stjälper|stjälpte|stjälpt|hämsko|stoppning|stoppningar|
 domna|förlamas|bedövas|
 förgå|förlora|försvinna|skingra|lätt fånget, lätt förgånget|
+puts väck|borttrolla|
 gå ut|utträda|utträder|utträdde|utträtt|utträde|utträden(pl)|utgång|lämna|utfart|avfart|avfarter|
- dö |dör|dog|dött|avlida|avlider|avled|avlidit|
+ dö |dör|dog|dött|avlida|avlider|avled|avlidit|<*ga bort|
+avliden|bortgången
  om<*komma(i olycka t.e.)|förolyckas
 död|dödar|avliva|mörda|mord(sl-pl)|mordet|<*slå ihjäl|frånfälle|frånfällen(pl)
 <*gå under|undergång|
 vissna|bli vissen|
-avsluta|
+röta|ruttna|förruttna|förruttnelse|förruttnelser|
+avsluta|utagerad|avslutning|avslut|avslutad
 avslutning|epilog|
 avsked|farväl|skilsmässa|
 
@@ -1026,7 +1084,9 @@ tillhöra|tillhör|tillhörde|tillhört|tillhörighet|
 besitta|inneha
 
 inkludera|innefatta|innehålla|inbegripa|omfatta|<*bestå av|
-exkludera|utesluta|bannlysa|förvisa|bortvisa|utvisa|utslagen|eliminera|uteslutning|uteslutningar|exkludering|exkluderingar|
+exkludera|utesluta|bannlysa|förvisa|bortvisa|utvisa|utslagen|
+eliminera|uteslutning|uteslutningar|exkludering|exkluderingar|
+ <*ta bort|undanröja|
 
 släcka|slockna|
 <*stänga av|
@@ -1072,6 +1132,7 @@ urgröpt|urholkad|försvagat|undergräva|undergrävning|undergrävningar|
 förstärkat|kraftsamla|kraftsamling|förstärka|förstärker|förstärkte|förstärkt|förstärkning|förstärkningar|
 
 föra|för|förde|fört|forsla|leda|transportera|flytta|åka|frakta
+föra med sig (ngt)|
 
 ersätta|ersättare(sl-pl)|suppleant|suppleanter|kompensera|
 uppväga|balansera|
@@ -1094,6 +1155,7 @@ resenär|resenärer|passagerare(sl-pl)|
 besöka|visitera|
 
 falla|faller|föll|fallit|fall|ramla|störta|rasa|
+dunsa|dimpa|duns|dunsar|
 resa|
 droppa
 
@@ -1109,6 +1171,8 @@ dopp|doppa
 
 rycka|rycker|ryckte|ryckt|ryck|
 
+rycka av|
+
 ströva|ströv|ströveri|flanera|vanka|vandra|Spatserar|
 vandring|vandringar|rundvandring|
 traska|hasa|
@@ -1116,11 +1180,13 @@ stövla|
 klampa|
 irra|flacka|
 springa|löpa|löper|löpte|löpt|löp|rinna|ränna|rusa|
+rusning
 löprunda|löprundor|
 armhävning|armhävningar|
 vada|
 hasta|skynda|barka|
 glida|glider|gled|glidit|slinka|slinker|slank|slunkit|slippa|slipper|slapp|sluppit|slinta|slinter|slant|sluntit|slint|
+<*glida fram|
 halka|sladda|Slira|
 krypa|kryper|kröp|krupit|kryp|kravla|krälar
 stryka|stryker|strök|strukit|stryk|klappa|smeka|smeker|smekte|smekt|smek|spöa|
@@ -1130,7 +1196,8 @@ stega|kliva|kliver|klev|klivit|kliv|klivande
 
 lyfta|lyfter|lyfte|lyft|kasa upp
 klättra|
-sänka|höja|höjning|chockhöjning|sänkning|sänk| höj|sänker|höjer|sänkte|höjde|sänkt|höjt|sjunka|sjunker|sjönk|sjunkit|dala|
+sänka|höja|höjning|chockhöjning|sänkning|sänk| höj|sänker|höjer|
+sänkte|höjde|sänkt|höjt|sjunka|sjunker|sjönk|sjunkit|dala|
 flyta|flyter|flöt|flutit|flyt|
 putta|stöta|stöter|stötte|stött|skjuta|fjädra|skjuter|sköt|skjutit|sparka|knuffa|puffa|
 smäll|smällar|stöt|stötar|slag(sl-pl)|krock|krockar|
@@ -1180,6 +1247,7 @@ ful|
 prålig|utsmyckad|dekorerad|
 prål|prålet|prakt|flärd|bjäfs|pomp|pompa|pompa och ståt|
 pryda|pryder|prydde|prytt|pryd|smycka|försköna|dekorera|snygga till|
+sminka|smink|sminker|kosmetika|
 prydlig|prydnad|utsmyckning
 vinjett(i bok framst)|
 
@@ -1247,6 +1315,12 @@ vrak|
 symtom(sl-pl)|symtomen|sjukdomsyttring|sjukdomsyttringar|
 insjukna|tillfriskna
 
+förkyld|förkylning|förkylningar|
+hosta|hostning|hostningar|
+nysa|nys|nysningar|
+snora|snuva|snuvning|snuvningar|
+spotta
+
 drog|droger|
 
 problem(sl-pl)|
@@ -1263,6 +1337,7 @@ slaganfall|stroke
 
 dövstum|stum|döv|dövhet|stumhet|dövstumhet
 blind|synskadad|
+blända|bländad|bländning|bländningar|blända av|
 
 klåda|klia|kliande|kladda
 
@@ -1298,6 +1373,9 @@ förlamad|förlama|paralysera|lam<*slå|
 
 starr|grå starr
 
+tablett|tabletter|piller(sl-pl)
+
+
 #Finance, economy, business
 intäkt|intäkter|inkomst|inkomster|
 omsättning|omsättningar
@@ -1311,6 +1389,7 @@ mom|
 försäljning|
 
 efterfrågan|efterfrågning|efterfrågningar|köpbehov
+rusning
 utbud(sl-pl)|
 
 inkomst|
@@ -1326,6 +1405,8 @@ tam|tama|domesticerad|vild|vilda|vilt|tämja|tämjer|tamde|tamt|tämjd|
 
 bete|beta|
 bytesdjur|
+
+skadedjur|ohyra|
 
  get |bock|getter|bockar|
  bi | bin |arg som ett bi|flitig som ett bi
@@ -1456,6 +1537,8 @@ grind|grindar|port|portar|dörr|dörrar|
  bom|bommar|vägbom|gräns|gränser|mur|murar|spärr|spärrar|räcke|räcken(pl)|skrank(sl-pl)|balustrad (på byggnad)|balustrader|barriär|barriärer|
 vall|vallar|
 
+avgränsa|avgränsning
+
 tillflykt|ty <*sig|tyr <*sig|tydde <*sig|tytt <*sig|
 flykting|internflykting
 
@@ -1466,6 +1549,7 @@ asyl|asyler|
 låta|låter|lät|låtit|låt|
 röst|röster|stämma|stämmor|ljud(sl-pl)|ton(sl-pl)|
 ljudnivå|ljudnivåer|ljudvolym|ljudvolymen|volym
+läte(ex.fågelläte)|
 hes | sträv |grov|raspig| rasp
 surra
 viska
@@ -1483,11 +1567,18 @@ blixtra|tordön|
 
 gräla|
 ropa|vråla|skrika|skrikas|skriker|skrek|skrikit|skrik|rop (sl-pl)|vrål(sl-pl)| ryt (sl-pl)|ryta|skrikor|gapa|
+lockrop|
+utbrista|utbrister|utbrast|utbrustit|utbrist|
 skälla|skäller|skällde|skällt|skäll|skällning|skällningar|domdera|domdering|
 
 skratta|fnittra|fnissa|grina|flabba|garva|gnägga
 
-tjuta|tjuter|tjöt|tjut|pipa|gråta|gråter|grät|gråtit|gnälla|gnäller|gnällig|gnällde|gnällt|kvida|gny|gnyr|gnydde|gnytt|gnytt|
+stamma|
+
+tjuta|tjuter|tjöt|tjut|pipa|gråta|gråter|grät|gråtit|
+gnälla|gnäller|gnällig|gnällde|gnällt|kvida|gny|gnyr|gnydde|gnytt|gnytt|
+snyfta|snyftning|snyft|
+snörvla|snörvel
 väsa|väser|väste|väst|
 frusta|
 stöna|
@@ -1580,6 +1671,8 @@ trafikled|förbifartsled|förbifart|förbifarter|
 
  bro |broar|tunnel|tunnlar|gångtunnel|gångtunnlar|underfart|underfarter|viadukt|viadukter|akvedukt|akvedukter
 
+tullavgift|tull|tullar|
+
 #Common talks
 småprat|
 heja|hälsa|
@@ -1597,6 +1690,8 @@ hem(sl-pl) |hemma|
 
 umgås|umgänge|tillsammans|
 kompisar|vänner|
+själsfrände
+
 harem|
 
 gäst|värd|
@@ -1621,6 +1716,7 @@ folkmassan|flock|
 
 fira|
 fest|fester|kalas(sl-pl)|kalaset|party|
+hålligång|festande|skoj|
 bal|balar|maskeradbal|kostymbal|
 tillställning|tillställningar|evenemang(sl-pl)|evenemanget|arrangemang(sl-pl)|
 födelsedag|
@@ -1637,10 +1733,12 @@ tävlan|tävlan(bestämd)|tävlingar|konkurrens|konkurrenser
 samarbete|samverkan|samarbeta|samverka|
 chef|chefer|ledare|befäl(sl-pl)|befälhavare|
 leda|ledas|leda|leder|ledde|lett|led|hövding|hövdingar|spåra|
+försprång|försteg|
 förman|förmän|föreståndare(sl-pl)|kurator|kuratorer
 härskare|diktator|egenmäktig
 på eget bevåg|
 ledsagare|vägvisare|vägledare|
+följe|följen(pl)|
 föregångare|företrädare|
 slav|träl|slavar|trälar|slavinnor|trälinnor|trälar|trälar|trälinnor|trälinnor
 lyda|lyder|lydde|löd|lytt|lidit|lyd|
@@ -1650,6 +1748,7 @@ knähund|rövslickare|
 
 upphöja|hylla|
 vördnad|aktning|respekt|vörda|vördnadsbjudande
+högakta|högaktning|högaktningsfull
 
 förtryck|förtrycket|underkurva|
 
@@ -1690,13 +1789,16 @@ diskutera|dryfta|debattera|argumentera|disputera
 
 intervju|intervjuer|intervjua|
 
-överenskommelse|enighet|samstämmighet|konsensus|samförstånd|samsyn|
+överenskommelse|enighet|samstämmighet|konsensus|samförstånd|samsyn|(vara) sams |
 avtal(sl-pl)|ratificera|ratificering|avtala
+pakt|fördrag|
 överensstämma|överensstämmer|överensstämmde|överensstämt|överensstäm|
 meningsskiljaktighet|meningsskiljaktigheter|
 disparat|oförenlig|olikartad
 
-bråka|bråk(sl-pl)|fejd|fejder|gräl|strid|strider|tvist|tvister|tvista|mellanhavande|mellanhavanden(pl)|konflikt|konflikter|
+bråka|bråk(sl-pl)|fejd|fejder|gräl|strid|strider|tvist|tvister|tvista|
+osämja|mellanhavande|mellanhavanden(pl)|konflikt|konflikter|tvedräkt|
+missämja|
 kraftmätning|maktkamp|maktkamper|
 slag(sl-pl)|
 försona|gottgöra|begrava stridsyxan|
@@ -1710,6 +1812,11 @@ förlova(sig)|trolova(sig)|förlovning|
 fästman|fästmän|fästmö|fästmör|
 brudpar|
 smekmånad|bröllopsresa|bröllopsresor|
+
+skild|skilsmässa|skilsmässor|skilja|skiljer|skilde|skilt|skilsmässos
+ensamstående förälder|ensamstående föräldrar|
+sambo|sambor|samboende|samboende|samboende|samboförhållande|samboförhållanden|
+samboavtal|samboavtal|
 
 änka|änkor|änkeman|gräsänkling|gräsänklingar|
 
@@ -1745,7 +1852,7 @@ uppror(sl-pl)|
 
 befalla|påbjuda|påbjuden|beordra|
 befallning|kommando|
-uppmana|uppmaning|uppmaningar|påbud(sl-pl)|dekret|
+uppmana|uppmaning|uppmaningar|inrådan|påbud(sl-pl)|dekret|
 
 #Mental habits, conditions, personalities
 eremit|
@@ -1796,7 +1903,7 @@ lymmel|ofog(sl-pl)|bus(sl-pl)|hyss(sl-pl)|stoj|
 trotsa|motstå|
 lyda|
 
-oförskämd|oartig|ohövlig|uppkäftig|oblyg|ohyfsad|plump|
+oförskämd|oartig|ohövlig|uppkäftig|oblyg|ohyfsad|plump|hyfsat|
 skamlös|oanständig|fräck|hänsynlös|vilde|fara fram som ett yrväder|
 spydig|uppkäftig|provocerande|
 
@@ -1813,6 +1920,8 @@ lustig|skojig|lättsam|
 
 pratig|pratsam|munvig
 vältalig|retorisk|retoriskt begåvad|retoriskt begåvade|elokvent|vältalighet|retorik|retoriker|retoriker|
+
+tystlåten|
 
 oantastlig|
 obestridlig|ovedersäglig|oförneklig|
@@ -1850,6 +1959,7 @@ mata|föda|födas|föda|föder|födde|fött|föd|tilltugg|snacks(sl-pl)
 meny|menyer|maträtt|maträtter|matlista|matlistor|menylista|menylistor
 matlagning|tillreda|tillredning|
 hälsosam|nyttig|till nytta
+smarrig|smaskig|mumsig|smaklig|mumma|smaskens|välsmakande
 missväxt|undernäring|
 
 kök(sl-pl) |
@@ -1968,7 +2078,11 @@ plagg|kläder|klädsel|dräkt|dräkter|
 <*ta på sig|<*ta av sig|
 möbel|möbeln|möbler|
 
+förkläde|förkläden(pl)|förklä|
+
 handske|handskar|vante|vantar|muff|muffar|
+
+insticka|sticka|
 
 mysbyxa|
 
@@ -2050,6 +2164,13 @@ kåk |kåkar|ruckel(sl-pl)|rucklet|
 fönster(sl-pl)|
 
 kammare|kammarn|kammrar|rum(sl-pl)|
+
+inredning|inredningar|inreda|inreder|inredde|inrett|inred|inredningsslitage|
+möblera|möblerar|möblerade|möblerat|möblering|möbleringar|
+möbel|soffa|soffor|bord|bordar|stol|stolar|hylla|hyllor
+bock|bockar|bänk|bänkar
+
+bets|betsa|betsning|betsningar|färg|färga|färgning|färgningar|färgningsslitage|
 
 sluss|slussar|
 
@@ -2144,23 +2265,32 @@ tuss|tussar|tofs|tofsar|
 avlagring|
 
 snor|nasalt mucus|
+hissa näsan|snyta sig|snyter|snytte|snytt|snytning|
 
 dutta
 
 spotta (ut)|
 
-#Body Parts & Actions
+#Body Parts, Accessories and Actions
 skelett(sl-pl)|stomme|
 
 bål|bålar|torso|torson|torsoner|kropp|kroppar|
 
 ansikte|ansikten(pl)|nylle|nyllen(pl)|fejs(sl-pl)|
 
+nagel|naglar
+
+läpp|läppar
+läppstift(sl-pl)|
+cerat(sl-pl)|
+
 hals|halsar|
+halsduk|halsdukar
 
 tarm|tarmar
 
-axel|axlar|
+vev|vevar|
+axel|axlar|vevaxel|vevaxlar|vevstake|vevstakar|vevstång|vevstångar|
 
 pungkula|pungkulor|testikel|testiklar|
 förhud
@@ -2180,7 +2310,6 @@ lem|lemmar|
 skenben(sl-pl)|
 
 skal|
-skall|
 Knä|knät|knän|knäna|Knäböja|knäled|knäskål|knäveck
 skenben
 lår|
@@ -2215,6 +2344,7 @@ puckel|pucklar|
 
 snut|snutar|
 näsa|näsor|
+näsduk|näsdukar|
 trut|trutar|mun|munnar
 näbb|näbbar|
 
@@ -2234,8 +2364,13 @@ blodkärl|
 
 hudnyans|
 
+skalle|skallar
 hår(sl-pl)|
+kamma|kam|kammar|
 luv|lugg|
+flintskallig|skallig|skallighet|skallighet|
+flintskalle|flintis|flintar|flintarna|
+hjässa|hjässor|
 
 tårvätska|
 
@@ -2274,6 +2409,7 @@ klimat(sl-pl)|miljö|miljöer|atmosfär|
 berg|fjäll(sl-pl)|
 klippa|klippor|kulle|kullar| ås | åsar |
 dal|dalar|däld|dälder|
+grotta|grottor|
 
 tundralandskap|tundra|
 
@@ -2301,6 +2437,8 @@ tall|tallar|
 björk|björkar|
 ädellöv|
 
+platan|plataner
+
 hampa|
 
 blåstång|
@@ -2309,6 +2447,8 @@ havsalg|tång|tångar|sjögräs
 grodd|groddar|skott(sl-pl)|
 
 kåda|kådor|harts|hartser|grankåda|
+
+rökelse|rökelseer|
 
 stjärna|stjärnor|himmel|himlen|
 rymd|rymder|
@@ -2438,7 +2578,8 @@ flinta|
 stenblock|
 
 #Managing things, situations
-hantera|ta hand om|behandla|hantering|hanteringar|omhänderta|omhändertagen|behandling|behandlingar|
+hantera|behandla|hantering|hanteringar|omhänderta|omhändertagen|behandling|behandlingar|
+omhänderta|<*ta hand om|
 bemöta|bemöter|bemötte|bemött|
 underlätta|
 styra|ratta|styrning|styrningar|styrare|styrsel|styre|tygla|
@@ -2466,7 +2607,7 @@ formel|
 recept|
 
 lätt|lättsam|enkel|enkla|lätt som en plätt|busenkel|baggis|baggisar|
-invecklad|trassla|intrasslad|krångla|krånglig|krångel|
+invecklad|trassla|intrasslad|krångla|krånglig|krångel|trasslig|snårig
 omständlig|jobbig|omständig|strula|mödosam|besvärlig|
 råka i klister|råka i klistret|hamna i klister|hamna i klistret|
 svår|krävande|jobbig|tuff|tuffing|hetsig|hektisk|stressig|
@@ -2478,6 +2619,7 @@ kamp|kamper|strid|
 motverka|
 
 skön|härlig|behaglig|ljuvlig|trevlig|ljuv|trevsam|tilltalande|
+angenäm|piffig|
 
 olägenhet|olägenheter|men(sl-pl)|mennet|mennen(pl)|
 obekväm|obehaglig|oangenäm|
@@ -2521,7 +2663,7 @@ stadfästa|
 antagning|mottagning|<*ta emot|
 bevilja|bifalla|tillåta|låta|godkänna|unna|påbjuda|
 avslag|förbud|nekande|avslå|vägra|förbjuda|avböja|
-kasta|slänga|slänger|slängde|slängt|flimpa|dumpa|
+kasta|slänga|slänger|slängde|slängt|flimpa|dumpa|bortkasta|
 slanga(vätska med slang)|slang|slangar|
 kassera|skrota|drälla|dräller|drällde|drällt|
 vägra|neka|avvisa|avslå|vägran|underkänna|nobba|
@@ -2556,12 +2698,17 @@ låna| lån(sl-pl) |
 skuld|skulder|skuldsättning|skuld<*sätta|
 skuldsanering|skuldsaneringar|
 
-samla|samling|grupp|grupper|flock|flockar|skara|skaror|set(sl-pl)|uppsättning|uppsättningar|plocka|plockning|
+samla|samling|grupp|grupper|flock|flockar|skara|skaror|set(sl-pl)|
+uppsättning|uppsättningar|plocka|plockning|
+sammanställa
 anhopning|anhopa|hopa|hopar|
 klunga|klungor|
 knippa|knippor|knippe|knippen|bunt|buntar|
 kärve|
 sprida|sprider|spridde|	spred|spritt|spridit|sprid|
+
+avskilja|separera|
+(vara) ifrån varann|
 
 klara|klara <*sig|
 installera|inställning
@@ -2624,10 +2771,9 @@ skyla|skyler|skylde|skylt|skyl|skyld|gömma|gömmas|gömma|gömmer|gömde|gömt|
 maskera|
 bakom kulisserna|
 finna|hitta|leta|
-snoka(smygligt)|böka(som en svin, i marken)|rota|
+snoka(smygligt)|böka(som en svin, i marken)|rota|luska|
 abonnera|hyra|anlita|prenumerera|abonnemang(sl-pl)|
 arrendera (bara för mark)|arrendator|arrendatorer|arrendeinnehavare|arrendegivare(ant.)|
-
 
 bassning|bassningar|tillrättavisning|tillrättavisningar|
 
@@ -2664,6 +2810,7 @@ kommande|annalkande|antågande|antåg|stunda(till)|
 
 täppa|täpper|täppte|täppt|tapp|tappar|propp|proppar|
 täcka|täcker|täckte|täckt|täckning|täckningar|täcke|täcken(pl)|
+tätna över|
 lock(sl-pl)|
 
 tät|packad|ogenomtränglig|kompakt|
@@ -2681,7 +2828,7 @@ hänsyn(sl-pl)|beaktande|med hänsyn till|ta hänsyn till|beakta
 miss<*ta |misstaga|<*ta miste|misstag(sl-pl)|missuppfatta|förvillelse|
 förväxla|
 
-<*ta reda på|<*få reda på|felsöka
+<*ta reda på|luska|<*få reda på|felsöka
 <*slå upp|uppslagning|uppslagningar|uppslag(sl-pl)|
 
 instruera|handleda|handleder|handledde|handlett|anvisa
@@ -2699,8 +2846,10 @@ underhålla|underhåller|underhöll|underhållit|underhåll|underhållning|under
 lyckas|framgång|genombrott(sl-pl)|
 välstånd|välfärd|
 befordran|befordringar|framsteg(sl-pl)|
+framstegsvänlig|
 
 misslyckas|misslyckades|misslyckats|
+kamma noll|
 underlåtenhet|underlåta|underlåter|underlät|underlåtit|misslyckande|misslyckanden|
 <*gå i stöpet|rinna ut i sanden|
 <*gå om intet|
@@ -2761,6 +2910,7 @@ yxa|yxor|mejsel|mejslar|spade|spadar|skopa|skopor|
 spett|spettar|
 hacka|hackor|
 tång|tänger|
+spak|spakar|bromsspak|
 
 munskydd(sl-pl)|mask
 
@@ -2778,6 +2928,7 @@ rep(sl-pl)|lina|linor|tamp|tampar|tågvirke|tågvirken|tåg|tågar|
 vajer|vajern|vajrar|
 kabel|kablar
 band(sl-pl)|snodd|snoddar|
+strimma|strimmor|
 remsa|remsor|rem|remmen|remmar|strimmel|strimlar|
 ögonbindel|ögonbindlar
 
@@ -2953,11 +3104,32 @@ gärningsman|gärningsmän|gärningsmännen|
 mord(sl-pl)|dråp(sl-pl)|
 dräpa|dräpare|dråpare
 
+våldtäkt|våldta
+
 #Lines of work, occupations & related words
 företag(sl-pl)|bolag(sl-pl)|firm|firmor|
 fabrik|fabriker|verkstad|verkstäder|
 kontor|kontorist|kontorister|
+regeringskansli
 anställning|anställningar|sysselsättning|sysselsättningar|arbete|arbeten(pl)|jobb(sl-pl)|
+anställa|
+sparka|avskeda|entlediga|
+permittera|friställa|
+permission|ledighet|
+<*säga upp|
+
+fotograf|fotografer|fotografi|fotografier|fotografering|
+foto|fotot|foton|
+ta kort|fotografera|fota|
+
+chaufför|chaufförer|förare(sl-pl)|chaffis|chaffisar|
+
+snickare|snickeri
+möbler|
+
+ekonom|ekonomer|ekonomi|ekonomisk|ekonomiskt|ekonomiska|
+
+biolog|biologer|biologi|biologisk|biologiskt|biologiska|
 
 mäklare(sl-pl)|mäklarn|förmedlare|förmedlarn|förmedling|förmedlingar|
 
@@ -2966,26 +3138,33 @@ mertidsarbete|mertidsarbeten(pl)|övertid|övertider|
 
 näringsidkare|
 gästgiveri|krog|krogar|pub|pubar|restaurang|restaurang|taverna|tavernor|värdshus|vinstuga|vinstugor|
+vägkrog|vägkrogar
 kafé|kaféer|konditori|konditorier|bageri|bagerier|bageri|bager
 
 finansiär|finansiärer|finansman|finansmän|finansiering|finansieringar|finansierare|finansierare|
 
-kock|kokerska|
+kock|kockar|kokerska|
 
 domare|domstol|döma|hovrätt|hovrätter|
 
+sjuksköterska|sjuksköterskor|sjuksyster|sjuksystrar|
+undersköterska|undersköterskor|vårdare(sl-pl)|uska|uskor|
 läkare|läka|bota|läkemedel|botemedel|
 veterinär|veterinärer|djurläkare|djurläkare|
 
 charkuteri|chark|charkuterier|kött(sl-pl)|
 
-frisör|klippa|raka|
+servitör|servitörer
+servera|duka fram|
+
+frisör|frisörer|klippa|raka|
 
 forskare|forskarn|forskning|forskningar|forska|
 
 präst|präster|själasörjare|prälle(skämtsam)|prällar|
 
 betjänt|betjänter|tjänare(sl-pl)|tjänarn|
+serva|servning|passa upp på|betjäna|betjäning|
 dräng|piga|pigor|drängar|
 
 poet|poeter|rimma|rim(sl-pl) |ramsa|ramsor|vers|verser|dikt|dikter|poesi|poetisk|poetiskt|poetiska|
@@ -3022,7 +3201,9 @@ kurator|kuratorer|
 
 revisor|revisorn|revisorer|revision|granskning|
 
-advokat|fullmäktig|ombud|
+advokat|advokater|fullmäktig|ombud|
+
+ingenjör|ingenjörer
 
 hallick|hallickar|koppleri|
 sutenör|
@@ -3061,7 +3242,9 @@ hysterisk|
 skämt(sl-pl)|
 ironi|ironier|
 satir|satirer|
-skvallra|surra|skvaller|skvalleret|sladder|struntprat|tjafs|sludder|svammel|tissla|tassla|
+skvallra|surra|skvaller|skvalleret|sladder|struntprat|tjafs|sludder|
+svammel|tissla|tassla|svamla|svamlig|svamlande
+babbla|babbel|pladdra|pladder|
 skryta|skryter|skröt|skrutit|skryt|<*slå sig för bröstet|
 rykte|rykten(pl)|myt|myter|sägen|sägner|legend|legender|saga|sagor|fabel
 mytomspunnen|legendomspunnen|sägenomspunnen|
@@ -3078,17 +3261,20 @@ fördjupa|
 fundera|grubbla|reflektera|eftersinna|grunna|begrunda|grubbleri|grubblerier|reflektion|reflektioner|eftertanke|eftertankar|
 övertänka
 
+försjunken i tankar|absorberad i tankar|
+fördjupad|
+
 berömma|beröm|berömmer|berömde|berömt|berömd|berömdhet|berömmelse|berömmelse|berömlig|komplimang|komplimanger|artighetsfras|artighetsfraser|
 rosa|ros|prisa|lovorda|
 uppskatta|beundra|uppskattning|hedra|hylla|
 värdesätta|värdera|värdering|värderingar|
-gratulera|applådera|applåd|applåder|
+gratulera|applådera|applåd|applåder|hyllning
 fjäska|rövslicka|lisma|smickra|smöra|smicker|<*ställa sig in|inställsam|lismande|smila in sig|
 
 flirta|flörta|flört|
 
 klaga|klagomål|anklagelse
-skylla|skyller|skyllde|skyllt|skyll|beskylla|anklaga|
+skylla|skyller|skyllde|skyllt|skyll|beskylla|anklaga|förebrå
 klandra|skyll <*sig själv|självförebråelse|självkritik|självkritisk|
 skuldkänsla|skuldkänslor|skuld|skulder|
 
@@ -3100,11 +3286,13 @@ reta|håna|häckla|provocera|
 klandra|kritisera|
 kritik|utskällning|<*få sina fiskar varma|
 
+tillrättavisa|näpsa
+
 fiktiv|påhittad|overklig|
 
 påhitt|påfund|idé|idéer|tanke|tankar|infall|huggskott|nyck|nycker|
 nyckfull|lynnig|ombytlig|oberäknelig|där vinnet går in går vettet|oförutsägbar|
-påhitta|<*komma på|
+påhitta|<*komma på|<*lista ut|<*komma med|
 uppfinna|fynd(sl-pl)|
 uppfining|genombrott|
 upptäcka|
@@ -3133,6 +3321,7 @@ i alla fall|ändå|hur som helst|trots allt|åtminstone|
 oavsett|oberoende av|utan hänsyn till|
 
 jämngod|likvärdig|lika bra|
+jämställa|jämbördighet|jämbördig|
 
 #Miscelleneous
 blandad|mångsidig|diverse
@@ -3278,6 +3467,7 @@ egendom|egendom
  rik |förmögen|rik som ett troll|rikedom|
 slösaktig|generös|givmild|förmögen|rik|rikedom|rikedomar|flott|
 panka|fattig|
+utblottad|utfattig|barskrapad|utarmad|utarma|
 
 slå igenom|
 
@@ -3351,6 +3541,7 @@ vädja|besvärja|anropa|exorcism|påkalla(uppmärksamhet)|anrop(sl-pl)|
 vallfärda|vallfärdande|
 
 vänja <*sig|van vid|avvänja|avvänjer|avvande|avvant|avvänj|
+vänja sig vid tanken|
 överge|
 
 vimsa|
@@ -3413,6 +3604,8 @@ lärlingsskap|
 
 skolväsen(sl-pl)|skolväsende|
 
+förskola|föris|dagis|daghem|dagisar|daghem|
+
 utbilda|utbildning|utbildningar|
 elev|elever|
 
@@ -3448,6 +3641,7 @@ allmänbildning
 fäste|fästen(pl)|grepp(sl-pl)|
 
 skäl(sl-pl)|skälet|orsak|orsaker|anledning|anledningar|grund(sl-pl)|grundet|bevekelsegrund|bevekelsegrunder|motiv(sl-pl)|
+ledning|
 orsaka|<*leda till|åsamka(-ve)|ge upphov|medföra|framkalla|frambringa|frammana|frambesvärja|
 ut<*lösa|föranleda|föranleder|föranledde|föranlett|föranled|föranledning|föranledningar|
 bringa|bragt|
@@ -3459,6 +3653,8 @@ enda|enbart|endast|idel|uteslutande|bara|blott|enkom|exklusivt|exklusiv|unik|ens
 ensamrätt|ensamrätter|
 annorlunda|avvikende|anomali|anomalier|avvikelse|avvikande
 normal|vanlig|gängse|
+
+obekant|främmande|främmad|
 
 hyfs|sed|seder|sedvänja|sedvänjor|norm|normer|konvention|konventioner
 tradition|traditioner|traditionell
@@ -3478,9 +3674,6 @@ undermålig|
 
 ängel|änglar|
 demon|demoner|ond ande|djävul
-
-foto|fotot|foton|
-ta kort|fotografera|fota|
 
 posera|posering|poseringar|posör|posörer|
 
@@ -3512,6 +3705,7 @@ slippa|slipper|slapp|sluppit|undgå|undvika|undviker|undvek|undvikit|<*komma und
 slingra(gall. ansvar)|
 
 omständighet|omständigheter|situation|situationer|läge|lägen(pl)|
+stå till|
 
 sammanhang(sl-pl)|kontext|kontexter|
 
@@ -3525,18 +3719,19 @@ godtagbar|acceptabel| <*gå an |nöjaktig|tillfredsställande|tillräcklig|fullg
 fullvärdig|
 bra|sjyst|häftig|hyfsad|hygglig|anständig|rimlig|skälig|
 hövisk|anständig|skaplig|
-galant|suverän|utmärkt|kanon|jättebra
+galant|suverän|utmärkt|kanon|jättebra|toppen
+avteckna sig mot|sticka ut mot|sticka ut|skilja sig ut |
 spektakulär|uppseendeväckande|
 paradnummer(sl-pl)|
 
 sisådär|sådär|medelmåttig|medelmåttigt|medelmåttlig|medelmåttlighet|medelmåttligheter|genomsnittlig
 
-lämpad|lämplig|passande|skickad|behörig|ändamålsenlig|praktisk|
+lämpad|lämplig|passande|skickad|behörig|ändamålsenlig|praktisk|läglig
 tillbörlig|vederbörlig|
 lämplighet|behörighet|kompetens|skicklig|skicklighet|fallenhet|fallenheter|begåvning|begåvningar|duktig|kunnig
 duga|kunna|
 förmåga|förmågor|färdighet|färdigheter|
-geni|genit|genier
+geni|genit|genier|genial|snillrik|
 
 giltig|valid|gällande|tillämplig
 
@@ -3583,31 +3778,37 @@ lura|vilseleda|bedra|bedrar|bedrog|bedragit|svindla
 narra|
 
 hemlighet|hemlis|
+hemlighålla|undanhålla|förtiga|fördölja|
+förtegen|hemlighetsfull|hemlig|hemlighetsmakeri|hemlighetsmakerier|förbehållsam|
 avslöja|röja
 blotta|exponera|
 
 konspiration|listig plan|intrig|intriger|komplott|komplotter|sammansvärjning|sammansvärjningar|ränk|ränker
 
 redogöra|framlägga|åter<*ge|redovisa|upp<*ge|av<*ge rapport|
+redogörelse|bevisföring
 
 anmäla|anmälning|anmälningar|anmälan|anmäl|anmälde|anmält|rapportera|rapport|rapporter|rapportering|rapporteringar|
 rapportör|utredare|utreda|utredning|
 
 
 avgöra|avgör|avgjorde|avgjort|bestämma|bestämmer|bestämde|bestämt|fastställa|fastslå|besluta|beslutar|beslöt|beslutit|
+tärningen är kastad|
 vägval(sl-pl)|
 orubblig|slutgiltig|
 konstatera|
 bekräfta|försäkra|lova|svära|svär|svor|svurit|svär|svuren|löfte|löften(pl)|bedyra (esp. oskyldighet)|
-förneka|avfärda|tillbakavisa|överskyla|dementera|vederlägga|
+förneka|avfärda|tillbakavisa|överskyla|dementera|vederlägga|förnekelse
 neka|vägra
 med<*ge|acceptera|er<*känna|till<*stå|vid<*gå|
+ <*gå med på |
 belägga|verifiera|försäkra
 belägg(sl-pl)|bevis(sl-pl)|stöd(sl-pl)|
 betyg(sl-pl)|bevis(sl-pl)|intyg(sl-pl)
 bevisa|betyga|intyga|
 
 tvivla|tvivel|vela|tveka|betvivla|
+osäker|famla i blindo|
 otvivelaktig|
 onekligen|visserligen|säkert|tvärsäker|(helt) säker|
 verkligen|i själva verket|faktiskt|sannerligen|minsann|förvisso|på riktig|
@@ -3699,9 +3900,9 @@ vare sig|
 tack vare|
 därtill|förutom|utöver|
 dessutom|också|även|ytterligare|till råga på allt|
+till och med|rentav |rent av |
 inte en kotte|inte ett dugg|
 så likt (ngt) som möjligt|så fort som möjligt
-ett lite slag|en liten stund|
 göra sig till|förfalska|fejka|(uppträda) tilgjort|
 grymt
 gör susen|
@@ -3727,7 +3928,8 @@ var det bra så (va'debraså)|
 
 
 #IT, Software, Hardware
-dator|datorn|datorer
+dator|datorn|datorer|
+läsplatta|läsplattor|
 fetstil
 server|servrar
 klient|klienter
