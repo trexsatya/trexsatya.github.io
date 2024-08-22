@@ -566,6 +566,9 @@ på morgonen
 dagbräckning|dagbräckningen|gryning|gryningar|dagning|dagningar| gry | gryr |grydde|grytt|gryende|dagas|
 skymma|mörkna|skymning|skymningar|skymmer|skymde|skymt|mörklägga|fördunkla|fördunkling|fördunklingar
 i morse|i lördags|i år|i somras|i vintras|i höstas|i våras|i fjol|
+i morgon|i övermorgon|i sommar|i vinter|i höst|i vår|i år|
+i förrgår|i förra veckan|i förra månaden|i förra året|i förrgår|i förra veckan|i förra månaden|i förra året
+till helgen|till veckan|till månaden|till året|till sommaren|till vintern|till hösten|till våren|till jul|till påsk
 
 förra|föregående|senaste|sen|senare|senast|
 efterföljande|(ex:året) därpå|
