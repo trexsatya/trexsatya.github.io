@@ -528,57 +528,81 @@ smussla|smussel|fuffens|
 
 tigga|tigger|tiggde|tiggt|tigg|bettla|tiggeri|tiggerier|tiggare|tiggare|tiggande|tiggande|
 
-#Space, Time, Measurement
-plats|platser|rum(sl-pl)|utrymme|utrymmen(pl)|
+#Time
 tid|tider|tidsrymd|tidsrymder|dags|
 omgång|omgången|omgångar|
-utsträck|mätning|mått|mängd|mängder|utbredning|
-rumsadverb|
+tidspunkt|tidspunkter|
+gång|stund|
 
 timme|timmar|minuter|sekunder|
-äntligen|omsider|småningom|till slut|med tiden|slutligen|i slutändan|
-stegvis|steg för steg|gradvis|successiv|etappvis
+morgon|morgnar|kväll|kvällar|natt|nätter|dag|dagar|vecka|veckor|månad|månader| år (sl-pl)|
 
-på förhand|i förväg|i efterhand|
-i förskott|på förskott|
+(tidpunkt)förra|föregående|denna|detta|senaste|nästa|
+efterföljande|(ex:året)därpå|
+senaste|sen|senare|senast|nyligen|nyss|nyss nämnd|nyss förbi|nyss passerad|nyss avslutad|nyss slutad|
+nyss|nyligen|häromsistens|
+under en tid|under tiden
+sen dess|länge sen|alltsedan
+före|förr|förr i tiden|innan|tidigare|före detta|
+förra|förre|föregående|senaste|nästa|efterföljande|
+nästa|kommande|följande
+sist|sistnämnda|sistnämnde
+nuvarande|befintlig|numera|nuförtiden|nuet|nutid|
+ifrågavarande|aktuell|
+dåvarande|förfluten|förflutet|förflutna|förgången|förgånget|
+dåtiden|i dagsläget|förfluten|förgången|förtid|sentida||urtid|forntid|
+framtida|framtiden|framtid|
 
+(bestämd)på lördag|på morgonen|på kvällen|på natten|på dagen|på veckan|på månaden|på året|på sommaren|på vintern|på hösten|på våren|på jul|på påsk|
+(regelbundet)på somrarna|på vintrarna|på höstarna|på våren|på åren|på sommaren|på vintern|på hösten|på våren|på jul|på påsk
+(förra -)i lördags|i somras|i vintras|i höstas|i våras|i fjol|förra året|förra månaden|förra veckan|
+(denna-fortlöpande)i morse|i kväll|i natt|i helgen|i veckan|i sommar|i vinter|i höst|i vår|i år|
+i förrgår|i förra veckan|i förra månaden|i förra året|i förrgår|i förra veckan|i förra månaden|i förra året
+i morgon|i övermorgon|i morgon bitti|i morgonbitti|
+till helgen|till veckan|till månaden|till året|till sommaren|till vintern|till hösten|till våren|till jul|till påsk
+
+(hur mycket)ett lite slag|en liten stund|
 lång|längre|längst|inte längre|
 långt (avstånd)|länge (tidsperiod)|
 länge sedan|
 för länge sedan|för några år sedan|
 
-ett lite slag|en liten stund|
+(hur länge; "for")i en halv timme|(negation e.g. inte/aldrig)på tre år|på en vecka|på länge|
+(hur fort; inom)på en kvart|på ett halvår|på en dag|
+(hur ofta ex. en gång) i sekunden|i veckan|i månaden|om dagen|om året|dygnet|per sekund|per dag|per år|
 
-avstånd|
-marginal|
+(planering)på förhand|i förväg|i efterhand|
+i förskott|på förskott|
+i efterskott|på efterskott|
+snar|snart|strax
+försenad|tidig|dröja|dröjer|dröjd|dröj|försening|förseningar|
+schema|scheman(pl)|schemalägga|schemaläggning|schemaläggningar|schemalagd|schemalagt|
+rutin|rutiner
+tidsplan|tidsplaner|
+tidsram|tidsramar|
+tidsfrist|tidsfrister|
+tidsgräns|tidsgränser|
+tidsåtgång|tidsåtgångar|
 
-långvarig|kronisk|
+omgående|på en gång|genast|direkt|omedelbart|ögonblickligen|strax
+
+(tidssträckning)långvarig|kronisk|
 åratal|
 kortvarig|kortlivad|kortvarighet|
+ålder|åldern|åldrar|
+epok|epoker|tidsperiod|tidsperioder|tidsålder|tidsåldrar|
+termin|terminer|frist|frister
+andrum|
+intervall(sl-pl)
 
-riktning|riktningar|håll(sl-pl)|
-ingång|insläpp|utgång|ingångar|utgångar|infart|utfart|infarter|utfarter|
-
-morgon|morgnar|kväll|kvällar|natt|nätter|dag|dagar|vecka|veckor|månad|månader| år (sl-pl)|
-
-på lördag
-på morgonen
 dagbräckning|dagbräckningen|gryning|gryningar|dagning|dagningar| gry | gryr |grydde|grytt|gryende|dagas|
 skymma|mörkna|skymning|skymningar|skymmer|skymde|skymt|mörklägga|fördunkla|fördunkling|fördunklingar
-i morse|i lördags|i år|i somras|i vintras|i höstas|i våras|i fjol|
-i morgon|i övermorgon|i sommar|i vinter|i höst|i vår|i år|
-i förrgår|i förra veckan|i förra månaden|i förra året|i förrgår|i förra veckan|i förra månaden|i förra året
-till helgen|till veckan|till månaden|till året|till sommaren|till vintern|till hösten|till våren|till jul|till påsk
 
-förra|föregående|senaste|sen|senare|senast|
-efterföljande|(ex:året) därpå|
-försenad|tidig|dröja|dröjer|dröjd|dröj|
-snar|snart|strax
-omgående|på en gång|genast|direkt|omedelbart|ögonblickligen|strax
-imorgon
+äntligen|omsider|småningom|till slut|med tiden|slutligen|i slutändan|
+stegvis|steg för steg|gradvis|successiv|etappvis
+
 vid den här laget
 en i taget
-dygnet runt
 en gång till|än en gång
 gång på gång|åter och åter|återkommande|återkommande
 en till|ett tag
@@ -588,37 +612,8 @@ hur dags|det är dags för|det är dags att|
 så här dags|
 det blir dags|det drar ihop sig till|
 
-under en tid|under tiden
-sen dess|länge sen|alltsedan
-före|förr|förr i tiden|innan|tidigare|före detta|
-förra|förre|föregående|senaste|nästa|efterföljande|
-
-ligg steget före
-
-förrän|fram till|fram till dess|
-
+dygnet runt
 emellartid|ibland
-
-samtida|samtidor|samtidig|samtid|
-numera|nuförtiden|nuet|nutid|
-dåtiden|i dagsläget|förfluten|förgången|förtid|sentida||urtid|forntid|
-framtida|framtiden|framtid|
-
-tidspunkt|tidspunkter|
-ålder|åldern|åldrar|
-epok|epoker|tidsperiod|tidsperioder|
-termin|terminer|frist|frister
-andrum|
-intervall(sl-pl)
-
-schema|scheman(pl)|
-rutin|rutiner
-
-nyss|nyligen|häromsistens|
-
-nuvarande|befintlig|
-ifrågavarande|aktuell|
-dåvarande|förfluten|förflutet|förflutna|förgången|förgånget|
 
 bast(sl-pl)|år(sl-pl)|
 decennium|årtionde|
@@ -626,13 +621,28 @@ sekel|århundrade
 millennium|årtusende
 
 aldrig|inte någonsin|
-
 jämt|alltid|
+frekvent|ofta|
 tillfälle|tillfällen(pl)|tillfällig|
 flyktig|provisorisk|övergående
-gång|stund|
-samtidig|
+
+samtidig|samtida|samtidor|samtidig|samtid|
 sammanträffande|sammanträffanden(pl)|tillfällighet|tillfälligheter
+
+#Space, Measurement
+plats|platser|rum(sl-pl)|utrymme|utrymmen(pl)|
+utsträck|mätning|mått|mängd|mängder|utbredning|
+rumsadverb|
+
+avstånd|
+marginal|
+
+riktning|riktningar|håll(sl-pl)|
+ingång|insläpp|utgång|ingångar|utgångar|infart|utfart|infarter|utfarter|
+
+ligg steget före
+
+förrän|fram till|fram till dess|
 
 kvantitativ|antal|belopp(sl-pl)(pengar)|summa|summor|klumpsumma|klumpanslag
 mån|utsträckning|grad|grader|nivå|nivåer|läge|lägen(pl)|
