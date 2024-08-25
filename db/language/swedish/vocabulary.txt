@@ -555,7 +555,7 @@ framtida|framtiden|framtid|
 
 (bestämd)på lördag|på morgonen|på kvällen|på natten|på dagen|på veckan|på månaden|på året|på sommaren|på vintern|på hösten|på våren|på jul|på påsk|
 (regelbundet)på somrarna|på vintrarna|på höstarna|på våren|på åren|på sommaren|på vintern|på hösten|på våren|på jul|på påsk
-(förra -)i lördags|i somras|i vintras|i höstas|i våras|i fjol|förra året|förra månaden|förra veckan|
+(förra -)i lördags|i somras|i vintras|i höstas|i våras|i natt|i fjol|förra året|förra månaden|förra veckan|
 (denna-fortlöpande)i morse|i kväll|i natt|i helgen|i veckan|i sommar|i vinter|i höst|i vår|i år|
 i förrgår|i förra veckan|i förra månaden|i förra året|i förrgår|i förra veckan|i förra månaden|i förra året
 i morgon|i övermorgon|i morgon bitti|i morgonbitti|
