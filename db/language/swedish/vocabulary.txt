@@ -5,7 +5,9 @@ känna|känner|kände|känt|känn
 
 leva|lever|levde|levt|lev|
 vara|är|var|varit|varande
-vilja|vill|ville|velat|uppsåt|avsikt|
+vilja|vill|ville|velat|
+uppsåt|avsikt|föresats|av<*se|avseende|avsedd||hänvisa|
+<*syfta på|angå|åter<*ge|hänvisning|återgivning|återgivningar|
 
 härkomst|härkomsten|härstamning|härstamningar|börd|börden|ursprung(sl-pl)|
 härröra (från)|härrör|härrörde|härrört
@@ -116,7 +118,6 @@ eftersträva|eftersträvar|eftersträvade|eftersträvat|eftersträvande|
 föresats|föresatser|
 mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionärer|idealbild|
 ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
-avse|avser|avsåg|avsett|avseende|avsedd||hänvisa|<*syfta på|angå|åter<*ge|hänvisning|återgivning|återgivningar|
 angående|gällande|beträffande
 tillskriva|tillräkna|
 med flit|avsiktlig|med vett och vilja|uppsåtlig|
@@ -404,6 +405,8 @@ klä ut <*sig|kläder|klä på <*sig|klädsel|klänning|klänningar|
 suga|sög|sugit|absorbera|uppsluka
 
 köpa|be<*ställa|handla|shoppa|
+butik|butiker|affär|affärer|köpcentrum|galleria|gallerior|kiosk|kiosker|
+stormarknad|stormarknader|varuhus|varuhusen|köpcenter|loppis|loppisar|
 skänka|<*ge bort|donera|donerar|donerade|donerat|donation|donationer|
 sälja|säljer|sålde|sålt|sälj|säljare|utsålt|till salu|till försäljning|försäljning|försäljningar|försäljare|försäljare|
 
@@ -713,25 +716,56 @@ ställning
 överallt|alla håll och kanter|
 
 förbi|gå förbi|passera|passage|passager|förflyta|
-
 ovan|över|övre|överst|översta|överst|ovanpå|ovanför
 under|undre|underst|understa|underst|
 ned|ner|neder|nedre|nere|nederst|nedanför|
 inre|innerste|innerst|innersta|kärna|kärnor|
 yttre|ytterste|yttersta|ytterst|
 mellre|mellerste|mellersta|medel|medlare|medlast|
-uppåt|nedåt|framåt|bakåt|baklänges|framför|
+uppåt|nedåt|framåt|bakåt|baklänges|framför|bakom|
 främre|bakre|eftre|inåt|utåt|inifrån|utifrån
 fram till|tillbaks till|tillbaka till
 upp|ner|fram|bak|längst <*plats|främst|bakerst|efterst|uppflugen
 topp|toppar|botten|bottnar|
 ovanför|nedför
 Övervåning|nedervåning
-innanför|senare|
+innanför|utanför
+blommar står i fönstret|stå(eller sitta) i fönstret|stå på fönsterbrädan|stå på fönsterbrädan|utanför fönstret|
+lampan hänger i taket|hänga i taket|sitta i taket|
+<*ligga i sängen|
+ligg till höger om|
+tvärsigenom|tvärs igenom|tvärs över|tvärsöver|
+
 avlägsen|fjärran|borta
 längst bort|där borta|undan|
 närliggande|närbelägen|närbeläget|närbelägna|
 närhet|närheten|
+
+nära|närmre|närmare|närmst|närmast|inom räckhåll| till hands|före<*ligga|utom räckhåll|
+sidan|bredvid|intill|nära|närbelägen|intilliggande
+vid sidan om|
+bortom|bortanför
+hitom|hitanför
+utmed|längs (med)|
+motsatt|tvärt emot|
+mittemot|rakt över på andra sidan|
+utanför|innanför
+runtom
+utför|
+uppför|
+Uppförsback|nedförsback
+framsida|baksida
+ände|ändar|
+
+till sjöss|till havs|på sjön|på havet
+
+tillsammans|isär|åtskild|
+kopplad|hör ihop|hänger ihop|samband|
+enhetlig|
+
+mellanrum(sl-pl)|tomrum|
+glapp(sl-pl)|klyfta|klyftor|
+glipa|
 
 breddgrad|latitud|polhöjd
 längdgrad|longitud|
@@ -764,39 +798,8 @@ underskrida|understiga|
 överskott(sl-pl)|överflöd|överflödet|
 underskott|
 
-nära|närmre|närmare|närmst|närmast|inom räckhåll| till hands|före<*ligga|utom räckhåll|
-sidan|bredvid|intill|nära|närbelägen|intilliggande
-vid sidan om|
-bortom|bortanför
-hitom|hitanför
-utmed|längs (med)|
-motsatt|tvärt emot|
-mittemot|rakt över på andra sidan|
-
-utanför|innanför
-runtom
-utför|
-uppför|
-Uppförsback|nedförsback
-framsida|baksida
-ände|ändar|
-
-tvärsigenom|tvärs igenom|
-
 invärtes|inuti|inombords|
 utvärtes|utomhus|utom
-
-till sjöss|till havs|på sjön|på havet
-
-tillsammans|isär|åtskild|
-kopplad|hör ihop|hänger ihop|samband|
-enhetlig|
-
-mellanrum(sl-pl)|
-tomrum|
-
-glapp(sl-pl)|klyfta|klyftor|
-glipa|
 
 extern|
 intern|
@@ -1650,7 +1653,9 @@ nynna|gnola|tralla
 
 harkla
 
-understryka|understryker|underströk|understrukit|betona|inskärpa|inskärper|inskärpte|inskärpt|inskärp|framhålla|framhäva|framhäver|framhävde|framhävt|framhäv|framhävande|<*lyfta fram
+understryka|understryker|underströk|understrukit|betona|
+inskärpa|inskärper|inskärpte|inskärpt|inskärp|framhålla|
+framhäva|framhäver|framhävde|framhävt|framhäv|framhävande|<*lyfta fram
 inprägla|inpränta| etsa|accentuera|
 
 ståhej|ståhejet|kaosartad atmosfär
@@ -2706,8 +2711,7 @@ hämta|lämna|leverera|
 överlämna|överlåta|upplåta|delegera|anförtro|
 delegation|delegationer|delegat|delegering|
 avyttring|avyttringar|försäljning|försäljningar|
-Paket|förpackning|inpacka|packa ihop
-kuvert|omslag|
+
 knytta|knyter|knöt|knutit|binda|binder|band(sl-pl)|bundit|
 kombinera|sammanfläta|sammanbunden|sammankopplad|
 linda|inlinda|insvepa|insveper|insvepte|insvept|insvep|vira|slingra
@@ -2738,7 +2742,11 @@ kartong|kartonger|
 låda|lådor|kar(sl-pl)|karet|
 fodral(sl-pl)|
 flaska|flaskor|butelj|buteljer|kruka|krukor|
+ ask | askar|dosa|dosor|
+tub|tuber
 kista|kistor|
+Paket|Paketer|förpackning|inpacka|packa ihop
+kuvert|omslag|
 
 fylla|fyller|fyllde|fyllt|fyll|fyllande|
 mätta|mättad|mätt|
@@ -3036,7 +3044,7 @@ spjut(sl-pl)|
 
 plåt|plåtar|bakplåt|
 
-paraply|paraplyt|paraplyer|
+paraply|paraplyt|paraplyer|parasoll(sl-pl)|
 
 beslag(sl-pl)|
 
@@ -3051,9 +3059,10 @@ ratt|rattar|
 stege|lejdare|
 trappa|
 
-tub|
-kontaktlim|
+kontaktlim|lim(sl-pl) |
 klibbig|kladdig|kletig|klet|kleta|häftmassa|limma
+klister|klistermärke|klistermärken|klistra|
+lapp|lappar|etikett|etiketter|dekal|dekaler|
 
 stav|stäver|trästav|tvärslå|
 påle|pålar|stolpe|stolpar
