@@ -681,13 +681,12 @@ fullkomlig|total|perfekt|Klockrent|
 
 sammanlagt|totalt sett|
 
-ett antal
+ett antal|ett par|en grupp|en hel del|
 massor med|ofantlig
 en massa
 en del|somliga|vissa|några|
 en och annan
 ett och annat
-en hel del
 
 jämna tal|udda tal
 
@@ -904,18 +903,19 @@ ytlig|grund|grunt|djup(ant.)|
 hål(sl-pl)|
 
 slät|jämn|len|platt|platt|plan|flack|smidig|glatt
-grov|grövre|grövst|sträv|upphöjning|upphöjningar|skrovlig|knölig|
+rak|
+grov|grövre|grövst|sträv|upphöjning|upphöjningar|skrovlig|knölig|stum|
 knotig|knölig|knölig|knöl|knölar|
 knut|knutar|knop(sl-pl)|
 kuperad|backig|ojämn|
 krater|kratrar|
-stup|brant|tvärbrant|
-rak|vriden|sned|skev|lutande|böjd|backe|lutande|
+stup|brant|tvärbrant|sluttning|slutta|slänt|
+vriden|sned|skev|lutande|böjd|backe|lutande|
 vrida|vrida på|
 vågig|krokig|svängd|krökt|buktig
 krullig|krusig|lockig|krusa|kräppa|
 krulla|
-veckad
+veckad|
 
 snöflinga|snöflingor|
 
@@ -1226,6 +1226,7 @@ armhävning|armhävningar|
 vada|
 hasta|skynda|barka|
 glida|glider|gled|glidit|slinka|slinker|slank|slunkit|slippa|slipper|slapp|sluppit|slinta|slinter|slant|sluntit|slint|
+rutscha|kana|
 <*glida fram|
 halka|sladda|Slira|
 krypa|kryper|kröp|krupit|kryp|kravla|krälar

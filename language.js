@@ -661,7 +661,12 @@ function populateSearchWords(sub, $el) {
     let wordLink = $(it);
     wordLink.click(e => {
       pauseVideo()
-      $('#searchText').val($(e.target).data('uri')).trigger('change')
+      let word = $(e.target).data('uri')
+      if(isLocalhost()) {
+        window.location.hash = word
+      } else {
+        $('#searchText').val(word).trigger('change')
+      }
       addStarredLine(sub.index, sub.ts)
     })
     $el.append(wordLink)
@@ -1849,7 +1854,7 @@ function render(searchResults, search) {
   let $result = $('#result');
   $result.html('').show()
 
-  if(window.unprocessedSearchText && window.unprocessedSearchText !== search) {
+  if(window.unprocessedSearchText) {
     $result.append(`<p class="search-text-info">${window.unprocessedSearchText.replaceAll("|", " | ")}</p>`)
   }
 
