@@ -73,7 +73,14 @@ async function loadJokes() {
   window.jokes = response
 }
 
-function _poulateData(where, response) {
+async function loadBookExtracts() {
+  let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/book-extracts/1.txt")
+  response = await response.text()
+  response = response.split("---------------").map(it => it.trim()).filter(it => it.length > 20)
+  window.bookExtracts = response
+}
+
+function _populateData(where, response) {
   response.split("---------------").map(it => it.trim()).forEach(it => {
     let splits = it.split("\n")
     where.push({
@@ -87,21 +94,21 @@ async function loadSayings() {
   let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/sayings/1.txt")
   response = await response.text()
   window.sayings = []
-  _poulateData(window.sayings, response)
+  _populateData(window.sayings, response)
 }
 
 async function loadMetaphors() {
   let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/metaphors/1.txt")
   response = await response.text()
   window.metaphors = []
-  _poulateData(window.metaphors, response)
+  _populateData(window.metaphors, response)
 }
 
 async function loadIdioms() {
   let response = await fetch("https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/language/swedish/idioms/1.txt")
   response = await response.text()
   window.idioms = []
-  _poulateData(window.idioms, response)
+  _populateData(window.idioms, response)
 }
 
 function togglePlay(el) {
@@ -493,6 +500,12 @@ $('document').ready(e => {
       e.preventDefault()
       e.stopPropagation()
     }
+    if(e.key === "ArrowLeft" || e.which === 37) {
+      rewind()
+    }
+    if(e.key === "ArrowRight" || e.which === 39) {
+      fastForward()
+    }
   }
 
   $('#speed-control').change(e => {
@@ -504,7 +517,7 @@ $('document').ready(e => {
   })
 
   $('#toggleLangCb').change(e => {
-    render(window.searchResult, window.searchText)
+    fetchSRTs(window.searchText)
   })
 
   let audioPlayer = new MediaElementPlayer('localAudio', {
@@ -852,6 +865,9 @@ async function loadAllSubtitles() {
 
   await loadJokes()
   loadAsSubtitles(window.jokes, 'jokes')
+
+  await loadBookExtracts()
+  loadAsSubtitles(window.bookExtracts, 'book-extracts')
 
   await loadSayings()
   loadAsSubtitles(window.sayings, 'sayings')
@@ -1328,19 +1344,27 @@ function updatePlayBtn() {
   }
 }
 
-function rewind() {
+function changePlaybackTimestamp(amount) {
   if (window.playingYoutubeVideo) {
-    ytPlayer.seekTo(ytPlayer.getCurrentTime() - 3)
+    ytPlayer.seekTo(ytPlayer.getCurrentTime() + amount)
   } else if (window.playingAudio) {
-    audioPlayer.setCurrentTime(audioPlayer.currentTime - 3)
+    audioPlayer.setCurrentTime(audioPlayer.currentTime + amount)
   } else if (window.playingVideo) {
-    videoPlayer.setCurrentTime(videoPlayer.currentTime - 3)
+    videoPlayer.setCurrentTime(videoPlayer.currentTime + amount)
   }
   renderSubtitles()
 }
 
+function rewind() {
+  changePlaybackTimestamp(-3);
+}
+
+function fastForward() {
+  changePlaybackTimestamp(3);
+}
+
 window.addEventListener('keydown', e => {
-  if (e.which === 32 && e.target == document.body) {
+  if (e.which === 32 && e.target === document.body) {
     e.preventDefault()
   }
 })
@@ -1796,7 +1820,10 @@ function populateSRTFindings(wordToItemsMap, $result) {
     $result.append(wordBlock)
 
     let mediaFileNames = window.allMediaFileNames || []
-
+    // So that at least one item for each type (e.g. idiom, joke etc.) is included
+    let grouped = _.zip(...Object.values(_.groupBy(items, 'source')));
+    grouped = _.sortBy(grouped, it => it.filter(it => it).length).reverse()
+    items = grouped.flat().filter(it => it)
     items = items.toSorted((x, y) => {
       if (mediaFileNames.some(it => _.includes(it, x.url))) return -1
     })
@@ -1848,23 +1875,36 @@ function getSelectedLang() {
   return $('#toggleLangCb').prop('checked') ? 'sv' : 'en';
 }
 
-function render(searchResults, search) {
-  if (!searchResults) return
+function searchSubtitleText(text, key) {
+  key = key || 'sv'
+  return Object.values(allSubtitles).map(it => it[key]).filter(it => it.includes(text))
+}
+
+function filterByLanguage(searchResults) {
+  let selectedLang = getSelectedLang()
+  return searchResults.map(it => {
+    if (selectedLang === 'sv' && it.sv_match) return it.sv_subs
+    if (selectedLang === 'en' && it.en_match) return it.en_subs
+    return null
+  }).filter(it => it);
+}
+
+function render(searchResults, search, className) {
+  if (!searchResults) return {}
 
   let $result = $('#result');
   $result.html('').show()
+  if(className === "secondary") {
+    $result.css({backgroundColor: '#e3cece'})
+  } else {
+    $result.css({backgroundColor: 'white'})
+  }
 
   if(window.unprocessedSearchText) {
     $result.append(`<p class="search-text-info">${window.unprocessedSearchText.replaceAll("|", " | ")}</p>`)
   }
 
-  let selectedLang = getSelectedLang()
-
-  let searchResultsFiltered = searchResults.map(it => {
-    if (selectedLang === 'sv' && it.sv_match) return it.sv_subs
-    if (selectedLang === 'en' && it.en_match) return it.en_subs
-    return null
-  }).filter(it => it);
+  let searchResultsFiltered = filterByLanguage(searchResults);
 
   let wordToItemsMap = getMatchingWords(searchResultsFiltered, search);
   populateSRTFindings(wordToItemsMap, $result);
@@ -1925,8 +1965,8 @@ class SearchResult {
   }
 }
 
-function fetchFromLocal() {
-  let lookingFor = expandWords(window.searchText.trim())
+function fetchFromDownloadedFiles(lookingFor) {
+  lookingFor = expandWords(lookingFor)
 
   return Object.keys(window.allSubtitles)
     .filter(it => window.allSubtitles[it].sv && window.allSubtitles[it].en)
@@ -2042,14 +2082,14 @@ async function fetchSRTs(searchText) {
 
   window.allSubtitles = window.allSubtitles || {}
 
-  if (Object.keys(window.allSubtitles).length) {
-    console.log("Loading from local")
-    window.searchResult = fetchFromLocal()
-  } else {
-    let res = await fetch("http://localhost:5000/find?text=" + txt)
-    window.searchResult = await res.json();
+  console.log("Loading from local")
+  window.searchResult = fetchFromDownloadedFiles(window.searchText.trim());
+  let words = render(window.searchResult, window.searchText, "primary")
+  if(words[window.searchText].length === 0) {
+    window.searchText = window.searchText.trim().slice(0, -2)
+    window.searchResult = fetchFromDownloadedFiles(window.searchText);
+    render(window.searchResult, window.searchText, "secondary")
   }
-  return render(window.searchResult, window.searchText)
 }
 
 function renderAccordions() {

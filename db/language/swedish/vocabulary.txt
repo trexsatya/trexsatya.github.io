@@ -329,6 +329,7 @@ intresserad|
 strävan|
 lust|håg|
 entusiasm|entusiasmen|förtjusning|förtjusningar|hänryckning|
+passion|passioner|livslåga|låga|lågor|
 iver|ivern|ambition|glöd|glöder|ivrig|
 engagemang|engagera|
 upptagen|sysselsatt|
@@ -687,6 +688,7 @@ en massa
 en del|somliga|vissa|några|
 en och annan
 ett och annat
+allt fler|
 
 jämna tal|udda tal
 
@@ -899,6 +901,7 @@ vinkelrätt|lodrätt|vågrät
 tvärsnitt(sl-pl)|
 
 ytlig|grund|grunt|djup(ant.)|
+underlag(sl-pl)|
 
 hål(sl-pl)|
 
@@ -1330,9 +1333,9 @@ stark
 biffig|bitig|rossig|muskulös|atletisk|
 
 styv|oböjlig|
+hård|stum|stel|stelhet|stelna|
 flexibel|böjlig|vig|smidig
 spänstig|
-hård|stum|stel|stelhet|stelna|
 len|mjuk|
 
 bräcklig|skör|spröd|ömtålig|
@@ -1342,7 +1345,7 @@ munvig|
 kroppsvig|
 
 dåsig|sömnig| lat |
-utmattad|utsliten|trött|tagen|<*gå på knäna|utmattning
+utmattad|utsliten|trött|tagen|<*gå på knäna|utmattning|uttröttad|tagen|
 orkeslös|svag|klen|svek|oföretagsam|overksam|urlakad|kraftlös|slutkörd|
 toffelhjälte(mot sin hustru/flickvän)|tofflare|toffelhjältar|
 utvilad|pigg|pigga|piggt|piggt|piggar|piggar upp|hurtig|rask|sprallig|frisk|(vara) på gång|
@@ -1448,6 +1451,7 @@ utgift|kostnad|utlägg|betalning|avgift|
 betala|bekosta|er<*lägga|finansiera|försörja|försörjning|försörjningar
 lösesumma|lösesummor|lösen
 gratis|kostnadsfri|billig|dyr|prisvärd|dyrbar|kostsam|
+påkostad|kosta på|
 värdefull|ovärderlig|ovärdig|oskattbar
 spara|lagra|småsparare|
 slösa|<*slänga bort|elda för kråkorna|
@@ -1459,6 +1463,8 @@ garanti|garantier|garantera|garanterar|garanterade|garanterat|
 borga|borgen|borgenär|
 borgenär|kreditor|fordringsägare
 gäldenär|debitor|
+
+beskatta|skatt|skatter|
 
 importera|
 
@@ -1889,13 +1895,15 @@ ensamstående förälder|ensamstående föräldrar|
 sambo|sambor|samboende|samboende|samboende|samboförhållande|samboförhållanden|
 samboavtal|samboavtal|
 
+hustru|hustrur|fru|fruar|frun
 änka|änkor|änkeman|gräsänkling|gräsänklingar|
 
 styvdotter|styvdöttrar|bonusdotter|
-svägerska|svåger|
+svägerska|svägerskor|svåger|svågrar|
 syrra|syrran|syrror|syster|systrar
 kusin|kusiner|
 broder|bröder|
+faster|fastrar|moster|mostrar|farbror|farbröder|morbror|morbröder|
 
 förfader|anfader|förfäder|anfäder
 förälder|föräldrar|
@@ -2079,6 +2087,8 @@ förädlad|
 skala|skal|skaller|hölje|höljen(pl)|
 husk|
 pulverisera|mala|mal|maler|malde|malt|finfördela|dispergera|dispergering|pulvervätning
+grovmala|finmala|malning|malningar|förmala|finfördela
+massa|
 
 hälla|
 tillsätta|tillägga|blanda i|
@@ -2673,6 +2683,9 @@ organisera|strukturera|
 omtanke|omtankar|sörja|
 
 händig|händighet|
+praktisk|
+
+medelst|genom|med hjälp av
 
 konsumera|förbruka|förbrukning|förbrukningar|konsumtion|konsumtioner|
 
@@ -3165,6 +3178,7 @@ reglera|reglering|regleringar|
 
 lag|lagar|regel|reglar|styre|styren(pl)|straff(sl-pl)|straffet|
 grundlag|grundlagar|konstitution|konstitutioner|
+princip|principer|norm|normer|lagstiftning|lagstiftningar|stadga|stadgor|grundregel|grundregler|
 bestraffning|slag(sl-pl)|smäll|stöt|
 bestraffa|aga|snärta|piska|spöa| klå |klår|klådde|klått|straffa|straffning|
 fängelse|böter|spö|finka|fängsla|fängsling|
@@ -3467,6 +3481,7 @@ beslag|beslag<*ta|beslagtagning|beslagtagningar|
 konfiskera|konfiskering|konfiskeringar|
 
 stackars|stackarn|stackare(sl-pl)|
+synd med|vad synd|
 
 frigolit|
 
@@ -3865,7 +3880,7 @@ företräde|företräden(pl)|
 
 försökskanin|provköra|
 
-gåva|gåvor|present|presenter|skänk|skänkar|
+gåva|gåvor|present|presenter|skänk|skänkar|förläna|
 muta|mutor|
 
 begåvning|begåvningar|talang|talanger|
