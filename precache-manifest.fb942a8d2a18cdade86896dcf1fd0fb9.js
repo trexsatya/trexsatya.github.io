@@ -72,11 +72,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-vendors.0ad7f1e1.js"
   },
   {
-    "revision": "767a795bd00da37cf49e656de9dfc546",
+    "revision": "ca872af4271881193126d71ffd25ef45",
     "url": "/language.html"
   },
   {
-    "revision": "fa7991a3122d0e26d11bb464b68cb76e",
+    "revision": "6d79a37ec1e9407d04e39cec8d8ae333",
     "url": "/language.js"
   },
   {
@@ -10376,7 +10376,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/webfonts/fa-solid-900.woff2"
   },
   {
-    "revision": "c78a9a7f8a0b18c1849a4b4c43f760eb",
+    "revision": "1929ada1216dff6041bcacd65a405422",
     "url": "/wordbuilder.html"
   }
 ]);

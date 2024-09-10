@@ -1879,25 +1879,33 @@ slag(sl-pl)|
 försona|gottgöra|begrava stridsyxan|<*bli sams|
 samsas|samsades|samsats|enas|enades|enats|ense|
 
-fria|frieri|
-bröllop(sl-pl)|vigsel|vigslar|giftermål|äktenskap|gifte|
-gifta|viga|sambo|
-älskarinna|älskarinnor|älskare(sl-pl)|älskarn|
-förlova(sig)|trolova(sig)|förlovning|
-fästman|fästmän|fästmö|fästmör|
-brudpar|
-smekmånad|bröllopsresa|bröllopsresor|
-
-skild|skilsmässa|skilsmässor|skilja|skiljer|skilde|skilt|skilsmässos
-ensamstående förälder|ensamstående föräldrar|
+#Relationships
+singel|singlar|
+flickvän|flickvänner|pojkvän|pojkvänner|tjej|tjejer|kille|killar|
 sambo|sambor|samboende|samboende|samboende|samboförhållande|samboförhållanden|
 samboavtal|samboavtal|
+partner(sl-pl)|partnerskap|partnerskap|
+älskarinna|älskarinnor|älskare(sl-pl)|älskarn|
+
+förlova(sig)|trolova(sig)|förlovning|
+fästman|fästmän|fästmö|fästmör|
+fria|frieri|
+bröllop(sl-pl)|vigsel|vigslar|giftermål|äktenskap|gifte|
+<*gifta sig|viga|in<*gå äktenskap|
+brudpar|
+smekmånad|bröllopsresa|bröllopsresor|
 
 hustru|hustrur|fru|fruar|frun
 änka|änkor|änkeman|gräsänkling|gräsänklingar|
 
+skild|skilsmässa|skilsmässor|skilja|skiljer|skilde|skilt|separera|
+ensamstående förälder|ensamstående föräldrar|
+
 styvdotter|styvdöttrar|bonusdotter|
 svägerska|svägerskor|svåger|svågrar|
+svärmor|svärmödrar|svärfar|svärfäder|
+svärdotter|svärdöttrar|svärson|svärsoner|
+
 syrra|syrran|syrror|syster|systrar
 kusin|kusiner|
 broder|bröder|
@@ -1906,10 +1914,11 @@ faster|fastrar|moster|mostrar|farbror|farbröder|morbror|morbröder|
 förfader|anfader|förfäder|anfäder
 förälder|föräldrar|
 
+#Performances, shows, events
 tjata|gnata|tjafsa|snacka|
 snurra
 
-åskådare(sl-pl)|åskådarn|
+åskådare(sl-pl)|åskådarn|tittare|publik|publiken
 
 framstående|högtstående|eminent|
 
@@ -3220,19 +3229,28 @@ våldtäkt|våldta
 studie|studier|inlärning|inlärningar|lärdom|lärdomar|
 kunskap|kunskaper|kunskapande|kunskapsinhämtning|
 utbilda|utbildning|utbildningar|
+plugga|plugg|
 lära|lära sig|lärande|inlära|inlärande|inläranden|
 läran|läror|undervisning|undervisningar|
 undervisa|
 skola|skolor|
 lärling|lärlingsskap|
 
-lärare|
-elev|elever|
-
 skolväsen(sl-pl)|skolväsende|
 
 förskola|föris|dagis|daghem|dagisar|daghem|
-gymnasium|gymnasier|gymnasiet|högskola|högskolor|college(sl-pl)|universitet(sl-pl)|
+grundskola|grundskolor|grundskolan|
+mellanstadiet|gymnasium|gymnasier|gymnasiet|högskola|högskolor|college(sl-pl)|universitet(sl-pl)|
+<*gå på gymnasiet(etc)|<*gå ut gymnasiet(etc)|avgångsklass|
+årskurs|årskurser|
+kurs|kurser|lektion|lektioner|föreläsning|föreläsningar|undervisningstimme|undervisningstimmar|
+ämne|ämnen|skolämne|skolämnen|kursplan|kursplaner|läroplan|läroplaner|
+termin|terminer|terminstart|terminsstart|terminsslut|terminsslut|
+skolstart|skolstarts|skolavslutning|skolavslutningar|
+
+lärare|undervisare|lärarinna|lärarinnor|lärarinne|
+undervisa i (nån ämne)|
+elev|elever|
 
 skolk|skolka|
 <*gå på lektioner|<*delta i lektioner regelbundet
@@ -3246,6 +3264,8 @@ antagning|antagningar|antagningssystem|antagningsprov|antagningsprov|antagningsp
 
 utbytesstudent|utbytesstudenter|
 praktik|
+
+campus(sl-pl)|
 
 #Lines of work, occupations & related words
 arbete|arbeten(pl)|yrke|yrken(pl)|jobb(sl-pl)|verksamhet|verksamheter|sysselsättning|sysselsättningar|
