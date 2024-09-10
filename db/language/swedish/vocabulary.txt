@@ -149,8 +149,6 @@ fördomsfull|fördom|fördomar|förutfattad|
 fördomsfri|fördomsfrihet|
 utlåtande|åsikt|synpunkt|synpunkter|synsätt(sl-pl)|synsättet|påstående|synvinkel|synvinklar|ståndpunkt|perspektiv(sl-pl)|
 
-tidsanda|
-
 jämföra|skilja|skillnad|skillnader|urskilja|urskillning|sålla|sålla agnarna från vetet|filtrera|
 analysera|överväga|avväga|betänka|betänker|betänkte|betänkt|betänk|
 dra paralleller mellan|
@@ -452,8 +450,7 @@ brunst|parningsdrift|parningslek|brunstig|parningsvillig
 Skada|Skadan|Skador
 hugga|hugger|högg|huggit|stympa|lemlästa|klyva|klyver|klyvde|klöv|kluvit|klyvt|klyv|avsåga|<*såga av|
 såga|kapa|malla|
-Sår|Såret|Sår|plåga|plågor|
-Så|sår|sådde|sått
+Sår|Såret|Sår|plåga|plågor|sårig
 såra|skada|skära|skäror|skär|skar|skurit|skär|Sarga|bita|biter|bet|bitit|bit|bett(sl-pl)|biten|
 repa|repor|skråma|skråmor|skavsår|rispa|rispor|
 Plåga|lida|lider|led|lidit|våndas|våndades|våndats|mola|ömma|öm
@@ -3219,18 +3216,55 @@ dräpa|dräpare|dråpare
 
 våldtäkt|våldta
 
+#Studies
+studie|studier|inlärning|inlärningar|lärdom|lärdomar|
+kunskap|kunskaper|kunskapande|kunskapsinhämtning|
+utbilda|utbildning|utbildningar|
+lära|lära sig|lärande|inlära|inlärande|inläranden|
+läran|läror|undervisning|undervisningar|
+undervisa|
+skola|skolor|
+lärling|lärlingsskap|
+
+lärare|
+elev|elever|
+
+skolväsen(sl-pl)|skolväsende|
+
+förskola|föris|dagis|daghem|dagisar|daghem|
+gymnasium|gymnasier|gymnasiet|högskola|högskolor|college(sl-pl)|universitet(sl-pl)|
+
+skolk|skolka|
+<*gå på lektioner|<*delta i lektioner regelbundet
+
+prov|provning|examen|examina(pl)|tentamen|tentamina(pl)|tentor|tentorna|
+betyg|betygssättning|betygssättningar|betygsättning|betygsättningar|betygsättare|betygsättare|
+
+misslyckades på provet|
+
+antagning|antagningar|antagningssystem|antagningsprov|antagningsprov|antagningspoäng|
+
+utbytesstudent|utbytesstudenter|
+praktik|
+
 #Lines of work, occupations & related words
+arbete|arbeten(pl)|yrke|yrken(pl)|jobb(sl-pl)|verksamhet|verksamheter|sysselsättning|sysselsättningar|
+arbetslös|<*söka jobb|jobba|arbeta|pensionär|pensionärer|
+anställa|anställning|anställningar|anställer|anställde|anställt|
+<*säga upp|avskeda|permittera|friställa|entlediga|sparka|
+byta jobb|
+åstadkomma|prestation|prestationer|prestera|uppnå|ernå|
+bedrift|bedrifter|dåd(sl-pl)|gärning|gärningar|
+göromål|syssla|sysslor|uppgift|uppgifter|åtagande|åtaganden|uppdrag|uppdrag|
 företag(sl-pl)|bolag(sl-pl)|firm|firmor|
 fabrik|fabriker|verkstad|verkstäder|
+
 åkeri|åkerier|
 kontor|kontorist|kontorister|
 regeringskansli
-anställning|anställningar|sysselsättning|sysselsättningar|arbete|arbeten(pl)|jobb(sl-pl)|
-anställa|
 sparka|avskeda|entlediga|
 permittera|friställa|
 permission|ledighet|
-<*säga upp|
 
 fotograf|fotografer|fotografi|fotografier|fotografering|
 foto|fotot|foton|
@@ -3382,6 +3416,7 @@ fördjupad|
 berömma|beröm|berömmer|berömde|berömt|berömd|berömdhet|berömmelse|berömmelse|berömlig|komplimang|komplimanger|artighetsfras|artighetsfraser|
 rosa|ros|prisa|lovorda|
 uppskatta|beundra|uppskattning|hedra|hylla|
+<*hålla av|<*tycka om|gilla
 värdesätta|värdera|värdering|värderingar|
 gratulera|applådera|applåd|applåder|hyllning
 fjäska|rövslicka|lisma|smickra|smöra|smicker|<*ställa sig in|inställsam|lismande|smila in sig|
@@ -3722,21 +3757,6 @@ värdesaker|värdeföremål
 driv|drivet|
 låga|lågan|lågor|
 
-lära|läran|läror|undervisning|undervisningar|
-lära|undervisa|
-inlära|inlärning|lärdom|
-lärling|
-lärlingsskap|
-
-skolväsen(sl-pl)|skolväsende|
-
-förskola|föris|dagis|daghem|dagisar|daghem|
-
-utbilda|utbildning|utbildningar|
-elev|elever|
-
-praktik|
-
 lov|tillåtelse|tillåtelser|tillstånd|
 olovligen|
 
@@ -3779,6 +3799,7 @@ obekant|främmande|främmad|
 
 hyfs|sed|seder|sedvänja|sedvänjor|norm|normer|konvention|konventioner
 tradition|traditioner|traditionell
+tidsanda|
 
 vedertagen|rådande|sedlig|
 vidunderlig|underbar|fantastisk|
@@ -3800,10 +3821,6 @@ posera|posering|poseringar|posör|posörer|
 
 oskyldig|oskyldighet|oskuldsfull|oskuldsfullhet|oskuld|oskulder|
 skuld|skulder|
-
-åstadkomma|prestation|prestationer|prestera|uppnå|ernå|
-bedrift|bedrifter|dåd(sl-pl)|gärning|gärningar|
-göromål|syssla|sysslor|
 
 erövra|besegra|vinna (över)|spöa(ngn)|
 kuva|betvinga|underkuva|nedkämpa|nedslå|

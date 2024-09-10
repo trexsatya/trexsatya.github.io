@@ -1897,7 +1897,8 @@ function getSurrounding(index, list, size = 5) {
 }
 
 function renderVocabularyFindings(search) {
-  let categories = Object.keys(window.vocabulary).filter(cat => window.vocabulary[cat].find(it => getWords(it).includes("plågor")))
+  let categories = Object.keys(window.vocabulary)
+    .filter(cat => window.vocabulary[cat].find(it => getWords(it).includes(search)))
   let words = categories.map(it => window.vocabulary[it]).flat()
   let indexesOfAppearance = words.map((e, i) =>
     getWords(e).map(it => it.toLowerCase()).includes(search.toLowerCase()) ? i : null)
