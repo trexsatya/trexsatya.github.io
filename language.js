@@ -148,7 +148,7 @@ function loadSearches() {
   let searches = getSearchesFromStorage()
   $('#searchedWords').html('')
 
-  schedule(searches,.0001, searchTerms => {
+  schedule(searches, .0001, searchTerms => {
     let displayText = searchTerms
     let isSeparator = false
     if (searchTerms.trim().length === 0) {
@@ -221,7 +221,7 @@ function clearSearches() {
 }
 
 function saveSearch(word, count) {
-  if(!word) return
+  if (!word) return
   count = count || 0
   let searches = getSearchesFromStorage()
   let newItem = true
@@ -243,7 +243,7 @@ async function doSearch(searchThis, el) {
   await fetchSRTs(searchThis);
   // let count = wordsToItems[searchThis] && wordsToItems[searchThis].length
   // count = count || 0
-  if(!el) return
+  if (!el) return
 
   let newItem = saveSearch(searchThis, null)
   if (newItem) {
@@ -448,7 +448,7 @@ function fixMobileView() {
   $('#mediaControls').css({position: 'fixed', bottom: 0, right: 0, width: '100%', zIndex: 1000})
   $starredLines.hide()
   let $starredLinesSelect = $('#starredLinesSelect');
-  if($starredLinesSelect.find("option").length > 0) {
+  if ($starredLinesSelect.find("option").length > 0) {
     $starredLinesSelect.show()
   }
 }
@@ -500,10 +500,10 @@ $('document').ready(e => {
       e.preventDefault()
       e.stopPropagation()
     }
-    if(e.key === "ArrowLeft" || e.which === 37) {
+    if (e.key === "ArrowLeft" || e.which === 37) {
       rewind()
     }
-    if(e.key === "ArrowRight" || e.which === 39) {
+    if (e.key === "ArrowRight" || e.which === 39) {
       fastForward()
     }
   }
@@ -675,7 +675,7 @@ function populateSearchWords(sub, $el) {
     wordLink.click(e => {
       pauseVideo()
       let word = $(e.target).data('uri')
-      if(isLocalhost()) {
+      if (isLocalhost()) {
         window.location.hash = word
       } else {
         $('#searchText').val(word).trigger('change')
@@ -1800,14 +1800,14 @@ function getWordsOrdered(words) {
 
 function populateSRTFindings(wordToItemsMap, $result) {
   let words = getWordsOrdered(Object.keys(wordToItemsMap))
-  if(window.searchText.includes("|")) {
+  if (window.searchText.includes("|")) {
     words = words.filter(it => it.trim() !== window.searchText.trim())
   }
 
   words.forEach(word => {
     let items = wordToItemsMap[word] || []
     let title = word
-    if(word.trim().length !== word.length) {
+    if (word.trim().length !== word.length) {
       title = `"${word}"`
     }
 
@@ -1889,18 +1889,48 @@ function filterByLanguage(searchResults) {
   }).filter(it => it);
 }
 
+function getSurrounding(index, list, size = 5) {
+  list = list.map((item, index) => ({item, index}))
+  let idx = list.findIndex(it => it.index === index)
+  if (idx < 0) return []
+  return list.slice(Math.max(0, idx - size), Math.min(list.length, idx + (size+1)))
+}
+
+function renderVocabularyFindings(search) {
+  let categories = Object.keys(window.vocabulary).filter(cat => window.vocabulary[cat].find(it => getWords(it).includes("plågor")))
+  let words = categories.map(it => window.vocabulary[it]).flat()
+  let indexesOfAppearance = words.map((e, i) =>
+    getWords(e).map(it => it.toLowerCase()).includes(search.toLowerCase()) ? i : null)
+    .filter(it => it)
+  let vocab = $('#vocabularyResult')
+  vocab.html('')
+  indexesOfAppearance.forEach(idx => {
+    let vocabItem = $('<div class="vocabulary-segment"></div>')
+    getSurrounding(idx, words).forEach(it => {
+      let $line = $(`<div class="vocabulary-line">${it.item.replaceAll("|", " | ")}</div>`)
+      if(it.index === idx) {
+        $line.addClass('highlighted')
+      }
+      vocabItem.append($line)
+    })
+    vocab.append(vocabItem)
+  })
+  $('.vocabulary-segment').each((i, e) => $(e).find('.highlighted')[0].scrollIntoView())
+}
+
 function render(searchResults, search, className) {
+  renderVocabularyFindings(search)
   if (!searchResults) return {}
 
   let $result = $('#result');
   $result.html('').show()
-  if(className === "secondary") {
+  if (className === "secondary") {
     $result.css({backgroundColor: '#e3cece'})
   } else {
     $result.css({backgroundColor: 'white'})
   }
 
-  if(window.unprocessedSearchText) {
+  if (window.unprocessedSearchText) {
     $result.append(`<p class="search-text-info">${window.unprocessedSearchText.replaceAll("|", " | ")}</p>`)
   }
 
@@ -1915,7 +1945,7 @@ function render(searchResults, search, className) {
 
   $result.append("<hr>")
 
-  if(window.location.pathname.includes("wordbuilder")){
+  if (window.location.pathname.includes("wordbuilder")) {
     wordToItemsMap = getMatchingWords(searchResults.filter(it => it.nonSrt), search, item => [item]);
     populateNonSRTFindings(wordToItemsMap, $result);
   }
@@ -1999,8 +2029,8 @@ function removeHintsInBrackets(txt) {
     .replaceAll(" (ngt)", " [^ ]*")
 
   let fn = () => {
-    if(txt.indexOf("(") < 0) return
-    if(txt.indexOf("(") >= 0 && txt.indexOf(")") < 0) {
+    if (txt.indexOf("(") < 0) return
+    if (txt.indexOf("(") >= 0 && txt.indexOf(")") < 0) {
       alert("Invalid brackets in" + original)
       txt = txt.replaceAll("(", "")
       return
@@ -2085,7 +2115,7 @@ async function fetchSRTs(searchText) {
   console.log("Loading from local")
   window.searchResult = fetchFromDownloadedFiles(window.searchText.trim());
   let words = render(window.searchResult, window.searchText, "primary")
-  if(words[window.searchText].length === 0) {
+  if (window.searchText.trim().length > 4 && Object.values(words).flat().length === 0) {
     window.searchText = window.searchText.trim().slice(0, -2)
     window.searchResult = fetchFromDownloadedFiles(window.searchText);
     render(window.searchResult, window.searchText, "secondary")
@@ -2134,7 +2164,7 @@ function renderAccordions() {
       let panel = this.nextElementSibling;
       if (panel && panel.style.display === "block") {
         panel.style.display = "none";
-      } else if(panel) {
+      } else if (panel) {
         panel.style.display = "block";
       }
     });

@@ -49,6 +49,7 @@ spana|span|spaning|spaningar|utkik(sl-pl)|spejande|speja|
 
 bortse(från)|strunta(i)|åsido<*sätta|
 försumma|förbi<*se|förringa|spela ned|nedvärdera|ringakta|efter<*sätta|försumbar|försummelse|
+försmå|rata|förakta|
 vansköta|vanvårda|missköta|misskötsel
 
 behov|behöva|behöver|behövde|behövt|kräva|krävde|krävt|påbjuda|fordra|fordran|fordringar|
@@ -1196,12 +1197,6 @@ hamna|landa|råka|möta|träffa|stöta på|
 resenär|resenärer|passagerare(sl-pl)|
 
 besöka|visitera|
-
-falla|faller|föll|fallit|fall|ramla|störta|rasa|
-dunsa|dimpa|duns|dunsar|
-resa|
-droppa
-
 träffa|
 missa|
 utförande|
@@ -1262,7 +1257,12 @@ studsa|studs|
 hoppa|
 vingla|vackla
 fladdra|
+falla|faller|föll|fallit|fall|ramla|störta|rasa|
+dunsa|dimpa|duns|dunsar|
+droppa
 trilla|
+välta|välter|välte|vält|vältning|vältningar|
+resa (sig)|reser|reste|rest|resning|resningar|
 
 tomt|tomten|tomter|fastighet|kvarter|kvarter(sl-pl)|
 omgivning|omgivningar|omvärld|omnejd
@@ -1798,6 +1798,7 @@ tillställning|tillställningar|evenemang(sl-pl)|evenemanget|arrangemang(sl-pl)|
 födelsedag|
 
 <*förhålla <*sig| <*bete <*sig|<*uppföra <*sig|uppträda|
+uppförande|beteende|beteenden|beteendemönster|beteendemönster|
 bordsskick|
 
 fiende|ärkefiende|motståndare|motstånd
@@ -1951,6 +1952,7 @@ illvilja|
 synd|synder|syndig
 
 töntig|tafatt|klumpig|
+löjlig|
 
 sträng|stram|strikt|
 
@@ -2028,6 +2030,7 @@ intresserad|
 våldsam|aggressiv|angripande|
 
 idiot|idioter|idioti|dum|pucko|puckon(pl)|korkad|trög|slö|ointelligent|dåre|dårar| tok |tokar|
+fån|fåne|
 
 usel|usla|klantig|oduglig|värdelös|odåga|odågor|
 
