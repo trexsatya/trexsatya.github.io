@@ -1495,7 +1495,7 @@ function numberOfItemsToShow() {
 function getWords(text) {
   const segmentor = new Intl.Segmenter([], {granularity: 'word'});
   const segmentedText = segmentor.segment(text);
-  return Array.from(segmentedText, ({segment}) => segment);
+  return Array.from(segmentedText, ({segment}) => segment).filter(it => it.trim() !== "|");
 }
 
 class MatchResult {
@@ -1754,7 +1754,9 @@ function renderLines(id, url) {
 }
 
 function getSearchedTerms(search) {
-  search = search || window.searchText
+  if(search === null || search === undefined) {
+    search = window.searchText
+  }
   let terms = _.trim(search.toLowerCase(), SEPARATOR_PIPE)
     .split(SEPARATOR_PIPE)
     .filter(it => it.trim().length > 0)
@@ -1901,20 +1903,22 @@ function renderVocabularyFindings(search) {
   let categories = Object.keys(window.vocabulary)
     .filter(cat => window.vocabulary[cat].find(it => getWords(it).includes(search)))
   let words = categories.map(it => window.vocabulary[it]).flat()
-  let indexesOfAppearance = words.map((e, i) =>
-    getWords(e).map(it => it.toLowerCase()).includes(search.toLowerCase()) ? i : null)
+  let indexesOfAppearance = words.map((vocabLine, i) =>
+    getWords(expandWords(vocabLine)).filter(it => it.trim().length > 2).map(it => it.toLowerCase()).includes(search.toLowerCase()) ? i : null)
     .filter(it => it)
   let vocab = $('#vocabularyResult')
   vocab.html('')
   indexesOfAppearance.forEach(idx => {
     let vocabItem = $('<div class="vocabulary-segment"></div>')
+    let vocabItemContent = $('<div class="vocabulary-segment-content"></div>')
     getSurrounding(idx, words).forEach(it => {
       let $line = $(`<div class="vocabulary-line">${it.item.replaceAll(SEPARATOR_PIPE, " | ")}</div>`)
       if(it.index === idx) {
         $line.addClass('highlighted')
       }
-      vocabItem.append($line)
+      vocabItemContent.append($line)
     })
+    vocabItem.append(vocabItemContent)
     vocab.append(vocabItem)
   })
   $('.vocabulary-segment').each((i, e) => $(e).find('.highlighted')[0].scrollIntoView())
@@ -1978,6 +1982,8 @@ function render(searchResults, search, className) {
   $(".normal-line .play-btn").click(e => {
     playSelectedText(e);
   })
+
+  $('#resultsContainer').accordion({collapsible: true})
 
   return wordToItemsMap;
 } // end render
@@ -2050,6 +2056,13 @@ function removeHintsInBrackets(txt) {
   return txt
 }
 
+/**
+ * `<*gå an (something)|göra` becomes `gå an |går an |gick an |gått an |göra`
+ * Extra info in brackets () is removed
+ * and if there is mapping available for word with `<*` then it is replaced with mappings
+ * @returns{string} expanded text
+ * @param{string} txt
+ */
 function expandWords(txt) {
   txt = getSearchedTerms(txt).join(SEPARATOR_PIPE)
   let startTime = new Date().getTime()
