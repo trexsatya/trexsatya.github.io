@@ -459,7 +459,7 @@ Skada|Skadan|Skador
 hugga|hugger|högg|huggit|stympa|lemlästa|klyva|klyver|klyvde|klöv|kluvit|klyvt|klyv|avsåga|<*såga av|
 såga|kapa|malla|
 Sår|Såret|Sår|plåga|plågor|sårig
-såra|skada|skära|skäror|skär|skar|skurit|skär|Sarga|bita|biter|bet|bitit|bit|bett(sl-pl)|biten|
+såra|skada|skära|skäror|skär|skar|skurit|skär|Sarga|bita|biter|bet|bitit|bit|bett(sl-pl)|biten|stick(sl-pl)|
 repa|repor|skråma|skråmor|skavsår|rispa|rispor|
 Plåga|lida|lider|led|lidit|våndas|våndades|våndats|mola|ömma|öm
 smärta|svidande|öm|
@@ -2948,7 +2948,7 @@ förteckning|förteckningar|katalog|kataloger|tabell|tabeller|lista|listor|över
 inrättning|anläggning|institution
 stiftelse|stiftelser|
 
-gympa|gymnastik|
+gympa(oräkenbart)|gymnastik|gym(sl-pl)|
 
 möjlighet|möjlig|rimlig|görlig|eventuell|
 visa|förevisa|uppvisa|uppvisning

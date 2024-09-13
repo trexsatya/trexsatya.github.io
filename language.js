@@ -1754,7 +1754,7 @@ function renderLines(id, url) {
 }
 
 function getSearchedTerms(search) {
-  if(search === null || search === undefined) {
+  if (search === null || search === undefined) {
     search = window.searchText
   }
   let terms = _.trim(search.toLowerCase(), SEPARATOR_PIPE)
@@ -1896,16 +1896,25 @@ function getSurrounding(index, list, size = 5) {
   list = list.map((item, index) => ({item, index}))
   let idx = list.findIndex(it => it.index === index)
   if (idx < 0) return []
-  return list.slice(Math.max(0, idx - size), Math.min(list.length, idx + (size+1)))
+  return list.slice(Math.max(0, idx - size), Math.min(list.length, idx + (size + 1)))
 }
 
 function renderVocabularyFindings(search) {
+  search = search.toLowerCase().trim()
+
+  function wordIsInVocabularyLine(vocabLine) {
+    return getWords(expandWords(vocabLine)).filter(it => it.trim().length > 2).map(it => it.toLowerCase().trim()).includes(search);
+  }
+
   let categories = Object.keys(window.vocabulary)
-    .filter(cat => window.vocabulary[cat].find(it => getWords(it).includes(search)))
+    .filter(cat => window.vocabulary[cat].find(wordIsInVocabularyLine))
+
   let words = categories.map(it => window.vocabulary[it]).flat()
+
   let indexesOfAppearance = words.map((vocabLine, i) =>
-    getWords(expandWords(vocabLine)).filter(it => it.trim().length > 2).map(it => it.toLowerCase()).includes(search.toLowerCase()) ? i : null)
+    wordIsInVocabularyLine(vocabLine) ? i : null)
     .filter(it => it)
+
   let vocab = $('#vocabularyResult')
   vocab.html('')
   indexesOfAppearance.forEach(idx => {
@@ -1913,7 +1922,7 @@ function renderVocabularyFindings(search) {
     let vocabItemContent = $('<div class="vocabulary-segment-content"></div>')
     getSurrounding(idx, words).forEach(it => {
       let $line = $(`<div class="vocabulary-line">${it.item.replaceAll(SEPARATOR_PIPE, " | ")}</div>`)
-      if(it.index === idx) {
+      if (it.index === idx) {
         $line.addClass('highlighted')
       }
       vocabItemContent.append($line)
