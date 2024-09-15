@@ -412,9 +412,18 @@ klä av|Blotta|blottlägga|
  äta | äter | åt | ätit | ät |mumsa|förtära|inmundiga|konsumera|käka
 suga|sög|sugit|absorbera|uppsluka
 
-köpa|be<*ställa|handla|shoppa|
+köpa|be<*ställa|handla|shoppa|shoppingstrejk
 butik|butiker|affär|affärer|köpcentrum|galleria|gallerior|kiosk|kiosker|
 stormarknad|stormarknader|varuhus|varuhusen|köpcenter|loppis|loppisar|
+begagnad|beggad|second hand|secondhand|antik|antikaffär|antikaffärer|
+begagnad|beggad|
+skrälle|skrällen(pl)|
+gammal|gamla|gamle|
+forntid|forntider|
+omodern|mossig|föråldrad|förlegad|urmodig|ålderdomlig
+modern|alamodisk|nutida|aktuell|trendig|på modet|trending|
+sprillans ny|
+
 skänka|<*ge bort|donera|donerar|donerade|donerat|donation|donationer|
 sälja|säljer|sålde|sålt|sälj|säljare|utsålt|till salu|till försäljning|försäljning|försäljningar|försäljare|försäljare|
 
@@ -1132,14 +1141,6 @@ avsked|farväl|skilsmässa|
 
 anlända|an<*komma|ankomst|ankomster|<*komma fram|
 avresa|avresor|
-
-begagnad|beggad|
-skrälle|skrällen(pl)|
-gammal|gamla|gamle|
-forntid|forntider|
-omodern|mossig|föråldrad|förlegad|urmodig|ålderdomlig
-modern|alamodisk|nutida|aktuell|trendig|på modet|trending|
-sprillans ny|
 
 ingripa|ingriper|ingrepp|ingripit|ingrip|intervenera|medla|medlare|
 
@@ -2218,9 +2219,12 @@ kofta|koftor|kappa|kappor|rock|rockar|jacka|jackor|kavaj|kavajer|väst|västar|
 
 tröja|tröjor|
 
-filt|filtar|pläd|plädar
-schal|schalar|sjal|sjalar
+filt|filtar|pläd|plädar|duntäcke
 täcke|täcken(pl)|täckena|
+schal|schalar|sjal|sjalar
+kudde|kuddar
+
+lakan(sl-pl)|
 
 kalsong|kalsonger|underbyxa|underbyxor|trosa|trosor|byxa|byxor|bralla|brallor|
 mössa|mössor|duschmössa|
@@ -3062,6 +3066,7 @@ förlikning|förlikningar|förlikas|förlikas|
 försoning|försoningar|försona|försonar|försonade|försonat|
 
 återupprätta|återställa|återställning|restaurera|
+rekonstruera|uppbygga|uppbyggd|uppbyggt|uppbyggande|uppbyggnad|uppbyggnader|
 reproducera|åter<*ge|
 upprusta|renovera|
 återhämta <*sig|återhämning|<*ta igen <*sig|
