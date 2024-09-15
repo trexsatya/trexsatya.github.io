@@ -10,6 +10,13 @@ def save_new_version(version):
     with open(VOCAB_VERSION_TXT, "w") as f:
         f.write(version)
 
+def commit_new_version(version):
+    p = subprocess.Popen(f"git add {VOCAB_VERSION_TXT} && git commit -m 'Update vocabulary version to {version}' {VOCAB_VERSION_TXT}".split(),
+                     stdout=subprocess.PIPE)
+    retval = p.wait()
+    if retval != 0:
+        raise Exception("Failed to commit new version")
+
 def ensure_new_version(path):
     with open(path) as f:
         first_line = f.readline().strip()
