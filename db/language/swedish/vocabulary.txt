@@ -1,5 +1,5 @@
-@version=5
-#Common to living things
+@version=6
+#Common to living thing
 känsel|Känsla|Känslan|känslor|känslomässig
 känna|känner|kände|känt|känn
  må| mår|mådde|mått
