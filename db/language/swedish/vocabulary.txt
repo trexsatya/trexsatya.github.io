@@ -1,4 +1,4 @@
-@version=7
+@version=8
 #Common to living things
 känsel|Känsla|Känslan|känslor|känslomässig
 känna|känner|kände|känt|känn
@@ -180,6 +180,8 @@ detaljerad|detalj|detaljer|
 planera|plan|
 bereda|förbereda|beredd|beredelse|beredelser|
 prepping|
+
+plötslig|spontan
 
 anmärka|påpeka|
 
@@ -413,18 +415,9 @@ klä av|Blotta|blottlägga|
  äta | äter | åt | ätit | ät |mumsa|förtära|inmundiga|konsumera|käka
 suga|sög|sugit|absorbera|uppsluka
 
-köpa|be<*ställa|handla|shoppa|shoppingstrejk
+köpa|be<*ställa|handla|shoppa|
 butik|butiker|affär|affärer|köpcentrum|galleria|gallerior|kiosk|kiosker|
 stormarknad|stormarknader|varuhus|varuhusen|köpcenter|loppis|loppisar|
-begagnad|beggad|second hand|secondhand|antik|antikaffär|antikaffärer|
-begagnad|beggad|
-skrälle|skrällen(pl)|
-gammal|gamla|gamle|
-forntid|forntider|
-omodern|mossig|föråldrad|förlegad|urmodig|ålderdomlig
-modern|alamodisk|nutida|aktuell|trendig|på modet|trending|
-sprillans ny|
-
 skänka|<*ge bort|donera|donerar|donerade|donerat|donation|donationer|
 sälja|säljer|sålde|sålt|sälj|säljare|utsålt|till salu|till försäljning|försäljning|försäljningar|försäljare|försäljare|
 
@@ -597,7 +590,7 @@ i efterskott|på efterskott|
 snar|snart|strax
 försenad|tidig|dröja|dröjer|dröjd|dröj|försening|förseningar|
 schema|scheman(pl)|schemalägga|schemaläggning|schemaläggningar|schemalagd|schemalagt|
-rutin|rutiner
+rutin|rutiner|slentrian
 tidsplan|tidsplaner|
 tidsram|tidsramar|
 tidsfrist|tidsfrister|
@@ -637,7 +630,7 @@ dygnet runt
 emellartid|ibland
 
 bast(sl-pl)|år(sl-pl)|
-decennium|årtionde|
+decennium|decennier|årtionde|
 sekel|århundrade
 millennium|årtusende
 
@@ -701,7 +694,7 @@ kringliggande|omkringliggande|omkringliggande|omkringliggande|omgivande|
 närhet|närheten|
 
 nära|närmre|närmare|närmst|närmast|inom räckhåll| till hands|före<*ligga|utom räckhåll|
-sidan|bredvid|intill|nära|närbelägen|intilliggande
+sidan|bredvid|intill|inpå (väldigt)|nära|närbelägen|intilliggande
 vid sidan om|
 bortom|bortanför
 hitom|hitanför
@@ -1143,6 +1136,14 @@ avsked|farväl|skilsmässa|
 anlända|an<*komma|ankomst|ankomster|<*komma fram|
 avresa|avresor|
 
+begagnad|beggad|
+skrälle|skrällen(pl)|
+gammal|gamla|gamle|
+forntid|forntider|
+omodern|mossig|föråldrad|förlegad|urmodig|ålderdomlig
+modern|alamodisk|nutida|aktuell|trendig|på modet|trending|
+sprillans ny|
+
 ingripa|ingriper|ingrepp|ingripit|ingrip|intervenera|medla|medlare|
 
 tillhöra|tillhör|tillhörde|tillhört|tillhörighet|
@@ -1152,7 +1153,7 @@ besitta|inneha
 inkludera|innefatta|innehålla|inbegripa|omfatta|<*bestå av|
 innanmäte|
 exkludera|utesluta|bannlysa|förvisa|bortvisa|utvisa|utslagen|
-eliminera|uteslutning|uteslutningar|exkludering|exkluderingar|
+eliminera|uteslutning|uteslutningar|exkludering|exkluderingar|utanförskap|
  <*ta bort|undanröja|
 
 släcka|slockna|
@@ -1212,7 +1213,7 @@ cirkulera|
 
 pröva|prova|testa|försöka|försökte|försökt|försök|
 prov|provning|tentamen|tentamina|tenta|tentor|förhör|examenation|
-plötslig|
+
 dansa|
 stampa|
 be<*ge <*sig|fara|färdas|färdades|färdats
@@ -1227,6 +1228,8 @@ missa|
 utförande|
 passa|
 springa ifatt|komma ifatt|
+
+Visa (runt)|visning|genomgång|
 
 smita|rymma|rymmer|rymmde|rymt|fly|flyr|flydde|flytt|
 
@@ -1243,7 +1246,7 @@ stövla|
 klampa|
 irra|flacka|
 springa|löpa|löper|löpte|löpt|löp|rinna|ränna|rusa|
-rusning
+rusning|språng
 löprunda|löprundor|
 armhävning|armhävningar|
 vada|
@@ -1275,6 +1278,7 @@ kröka|kröker|krökte|krökt|krök|böja|böjer|böjde|böjt|böj|
 
 rubba|rubbning|
 skaka|ruska|skälva|darra|skumpa|guppa|gunga|
+Nicka (till)|
 rysa|ryser|ryste|rös|ryst|rys|
 darrning|
 skalv|
@@ -1428,7 +1432,8 @@ huvudvärk|
 ledsmärt|ledsmärtor|ledbesvär(sl-pl)|
 
 sår(sl-pl)|blodvite|blodviten(pl)|blöda|blöder|blödde|blött|blöd|blödning|blödningar|blodig|
-hudutslag(sl-pl)|
+hudutslag(sl-pl)|eksem(sl-pl)|
+Var|varig|
 lymfknutor
 skorpa|skorpor|sårskorpa|sårskorpor|
 
@@ -1725,6 +1730,7 @@ ståhej|ståhejet|kaosartad atmosfär
 glittra|blänka|glisa|glänsa|skina|lysa|stråla|
 blinga|
 glans|glöd|lyster
+Gnista|gnistor|gnistra
 strålande|lysande|glänsande|gnistrande|
 glöda|glöder|glödde|glött|glöd|glödande|
 
@@ -1861,6 +1867,7 @@ högakta|högaktning|högaktningsfull
 Värdighet|dignitet|
 
 förtryck|förtrycket|underkurva|
+Hets|förföljelse|
 
 utnyttja|
 
@@ -1881,7 +1888,7 @@ samspel|interaktion|interaktioner|
 
 interagera|interagera|inverka|påverka|påverkan|effekt|drabb<*as av|drabba|verkan|verkningar|orsak och verkan|
 genomsyra|
-inflytande|inflytelse|växelverka|interaktiv|
+inflytande|inflytelse|nedslag|växelverka|interaktiv|
 återgälda|i gengäld|motprestation|
 utbyte|
 anfalla|anfaller|anföll|anfallit|angripa|angriper|angrep|angripit|attackera|
@@ -2435,7 +2442,7 @@ snöslask|
 
 damma av|
 
-aska|askor|
+aska|askor|askfat(sl-pl)|askkopp|askkoppar|
 
 kratta|krattning|krattningar|räfsa|räfsning|räfsningar|
 
@@ -2753,7 +2760,7 @@ vattna|
 odla|
 gröd|grödor|skörd|skördar|skörda|
 
-gödsel|gödselmedel|gödsla|gödslar|gödslade|gödsling|gödslingar|
+gödsel|gödselmedel|gödsla|gödslar|gödslade|gödsling|gödslingar|dynga|dyngor
 göda(ett djur)|
 
 utedass(sl-pl)|skärgårdsmaja|
@@ -3961,7 +3968,8 @@ oskyldig|oskyldighet|oskuldsfull|oskuldsfullhet|oskuld|oskulder|
 skuld|skulder|
 
 erövra|besegra|vinna (över)|spöa(ngn)|
-kuva|betvinga|underkuva|nedkämpa|nedslå|
+kuva|betvinga|underkuva|nedkämpa|nedslå|segra
+Seger|segrar|viktoria|viktorior|triumf|triumfer
 förlora|mista|mister|miste|mistade|mist|mistat|förlust|förluster|
 bortfall(sl-pl)|avbräck(sl-pl)|åderlåtning|motgång|bakslag|
 misslyckande|missräkning|missräkningar|fiasko|fiaskon|flopp|floppar|bottennapp|bottennappar|
@@ -4225,3 +4233,4 @@ kon|
 bindestreck|
 drivrutin|drivrutiner
 brandvägg|brandväggar
+
