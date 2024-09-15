@@ -1,4 +1,4 @@
-version=1.0
+version=2.0
 #Common to living things
 känsel|Känsla|Känslan|känslor|känslomässig
 känna|känner|kände|känt|känn

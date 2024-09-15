@@ -1,2 +1,2 @@
 
-python ./../../git-hooks/enforce-new-version.py
+python3 git-hooks/enforce-new-version.py
