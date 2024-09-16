@@ -260,7 +260,7 @@ async function searchTextChanged(e) {
 }
 
 function parseVocabularyFile(text) {
-  let lines = text.split("\n")
+  let lines = _.drop(text.split("\n"), 1)
   let categories = {}
   let currentCategory = null
   for (let i = 0; i < lines.length; i++) {
@@ -443,8 +443,7 @@ function fixMobileView() {
   $('#mp3ChoiceContainer .select2').css({width: '78%'})
   $('#btns-2').css({marginBottom: '1em'})
 
-  $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton(), left: '48%'})
-  $('#result').parent().css({marginTop: '3.8em'})
+  // $('#result').parent().css({marginTop: '3.8em'})
 
   $('#mediaControls').css({position: 'fixed', bottom: 0, right: 0, width: '100%', zIndex: 1000})
   $starredLines.hide()
@@ -558,10 +557,10 @@ $('document').ready(e => {
     let $collapseUpSign = $('#collapseUpSign');
     $collapseUpSign.toggle()
     $('#collapseDownSign').toggle()
-    if ($collapseUpSign.is(':visible')) {
-      $('#collapseMainControl').parent().css({top: getTopOffsetForCollapseButton()})
+    if (!$collapseUpSign.is(':visible') && window.mediaBeingPlayed) {
+      $('#resultContainer').hide()
     } else {
-      $('#collapseMainControl').parent().css({top: '0.1em'})
+      $('#resultContainer').show()
     }
   })
 
@@ -659,6 +658,10 @@ function addStarredLine(index, ts) {
   $('#starredLinesSelect').append(new Option(index, index)).show()
 }
 
+function expandSearchResults() {
+
+}
+
 function populateSearchWords(sub, $el) {
   $el.html('')
   let n = 1;
@@ -676,10 +679,11 @@ function populateSearchWords(sub, $el) {
     wordLink.click(e => {
       pauseVideo()
       let word = $(e.target).data('uri')
-      if (isLocalhost()) {
+      if (window.location.toString().includes("wordbuilder")) {
         window.location.hash = word
       } else {
         $('#searchText').val(word).trigger('change')
+        expandSearchResults()
       }
       addStarredLine(sub.index, sub.ts)
     })
@@ -1228,7 +1232,7 @@ async function playNewMedia(link, source, mediaFile) {
     $('#subControls').hide()
   }
 
-  $('#result').hide()
+  $('#resultContainer').hide()
   if (!$('#onlySubsCheckbox').is(':checked')) {
     _playMedia();
   } else {
@@ -1992,8 +1996,12 @@ function render(searchResults, search, className) {
     playSelectedText(e);
   })
 
-  $('#resultsContainer').accordion({collapsible: true})
-
+  $('#resultContainer').show();
+  let $collapseDownSign = $('#collapseDownSign');
+  if($collapseDownSign.is(':visible')) {
+    $collapseDownSign.hide();
+    $('#collapseUpSign').show();
+  }
   return wordToItemsMap;
 } // end render
 
@@ -2248,7 +2256,7 @@ function getDimensionsForPlayer() {
     ytHeight = wh / 2 - 150;
     // $('#mediaControls').css({width: '100%', bottom: '-15em', right: 0})
     $('#youtubePlayer-info').hide()
-    $('#speed-control').parent().hide()
+    // $('#speed-control').parent().hide()
 
     $('#mp3Choice').parent().css({width: ww - 20})
   }

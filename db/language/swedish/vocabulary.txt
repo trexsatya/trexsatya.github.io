@@ -1,4 +1,4 @@
-@version=8
+@version=9
 #Common to living things
 känsel|Känsla|Känslan|känslor|känslomässig
 känna|känner|kände|känt|känn
@@ -420,6 +420,7 @@ butik|butiker|affär|affärer|köpcentrum|galleria|gallerior|kiosk|kiosker|
 stormarknad|stormarknader|varuhus|varuhusen|köpcenter|loppis|loppisar|
 skänka|<*ge bort|donera|donerar|donerade|donerat|donation|donationer|
 sälja|säljer|sålde|sålt|sälj|säljare|utsålt|till salu|till försäljning|försäljning|försäljningar|försäljare|försäljare|
+vara|varor|produkter|produkt|produkter|artikel|artiklar
 
 #Sex, reproduction, romance
 sex|samlag|ligga|knull|
@@ -2921,6 +2922,7 @@ fylla|fyller|fyllde|fyllt|fyllning
 
 uppsätta|uppsätter|uppsatte|uppsatt|montera|installera|placera|<*sätta upp|upprätta|rigga|
 hänga|
+galge|galgar
 inbädda|inbäddning|inbäddningar|
 infoga|infogning|infogningar|foga in|inpassa|inpassning|inpassningar|
 
@@ -3283,6 +3285,7 @@ hålligång|festande|skoj|
 bal|balar|maskeradbal|kostymbal|
 tillställning|tillställningar|evenemang(sl-pl)|evenemanget|arrangemang(sl-pl)|
 födelsedag|
+gäst|gäster|inbjuden|inbjudna|inbjudning|inbjudningar|
 
 film|filmer
 skådespel|skådespelare|skådespelerska|skådespelerskor|skådespelerske|
