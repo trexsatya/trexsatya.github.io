@@ -1,4 +1,3 @@
-@version=10
 #Common to living things
 känsel|Känsla|Känslan|känslor|känslomässig
 känna|känner|kände|känt|känn
@@ -58,7 +57,7 @@ vansköta|vanvårda|missköta|misskötsel
 behov|behöva|behöver|behövde|behövt|kräva|krävde|krävt|påbjuda|fordra|fordran|fordringar|anspråk(sl-pl)|
 krav(sl-pl)|begär(sl-pl)|kriterium|kriterier|maning|maningar|
 efterfråga|efterlysa|efterlysning|efterfrågan|efterfrågningar|efterlyst|
-begära|begärde|begärt|begär|lystnad|lysten|sug(sl-pl)|sugen|begiven|hågad
+begära|begärde|begärt|begär|lystnad|lysten|sug(sl-pl)|sugen|begiven|hågad|åtrå
 
 vanemässig|vana|vanor|
 
@@ -2309,7 +2308,7 @@ citronella
 
 kjol|kjolar|maxikjol
 
-# Buildings, houses etc
+#Buildings, houses etc
 boende|boendeform|
 bostad|bostäder|bostadshus|bostadsområde|bostadsområden|
 byggnad|byggnader
@@ -4299,3 +4298,1440 @@ bindestreck|
 drivrutin|drivrutiner
 brandvägg|brandväggar
 
+
+#Sayings
+Alla är vi barn i början
+Alla goda ting är tre
+Alla känner apan, men apan känner ingen
+Alla vägar bär till Rom
+Allt är inte guld som glimmar
+Anfall är bästa försvar
+Arga katter får rivet skinn
+Arbete befrämjar hälsa och välstånd
+Av barn och dårar får man höra sanningen
+Av skadan blir man vis
+Att skiljas är att dö en smula
+Behandla andra såsom du själv vill bli behandlad
+Bara döda fiskar följer strömmen
+Bit inte den hand som föder dig
+Blod är tjockare än vatten
+Blott Sverige svenska krusbär har
+Blyga pojkar får aldrig kyssa vackra flickor
+Borta bra men hemma bäst
+Bra karl reder sig själv
+Bränt barn skyr elden
+Bättre att förekomma än förekommas
+Bättre att stämma i bäcken än i ån
+Bättre brödlös än rådlös
+Bättre en fågel i handen än tio i skogen
+Bättre ensam än i dåligt sällskap
+Bättre ett ärligt nej än ett falskt ja
+Bättre fly än illa fäkta
+Bättre föregå än föregås
+Bättre lyss till den sträng som brast än aldrig spänna en båge
+Bättre sent än aldrig
+Bättre älskat och förlorat än att aldrig ha älskat
+Delad glädje är dubbel glädje, delad sorg är halv sorg
+Den drucknes tal är den nyktres tankar
+Den enes död är den andres bröd
+Den fege dör tusentals gånger, den modige dör bara en
+Den råd lyder är vis, men oråd ska ingen lyda
+Den som gapar efter mycket mister ofta hela stycket
+Den som ger sig in i leken får leken tåla
+Den som gräver en grop åt andra faller ofta själv däri
+Den som inte arbetar ska inte heller äta
+Den som lever får se
+Den som sover syndar icke
+Den som spar han har
+Den som söker han finner
+Den som tiger samtycker
+Den spik som sticker ut blir slagen
+Den som väntar på något gott väntar aldrig för länge
+Den som är satt i skuld är icke fri
+Det angår också dig när det brinner i grannens vägg
+Det börjar med en knappnål och slutar med en silverskål
+Det dunkelt sagda är det dunkelt tänkta
+Det finns inget dåligt väder, bara dåliga kläder
+Det har varit i säck innan det har kommit i påse
+Det man förlorar på gungorna tar man igen på karusellen
+Det man inte har i huvudet, får man ha i benen
+Det man inte vet, det lider man inte av
+Det ordnar sig med blommorna, bara kärringen dör
+Det ska böjas i tid, det som krokigt ska bli
+Det som göms i snö kommer upp i tö
+Det som inte dödar, härdar
+Det viktigaste är inte att vinna utan att kämpa väl
+Det är alltid mörkast före gryningen
+Det är inte ens fel när två träter
+Det är mänskligt att fela
+Det är saligare att giva än att taga
+Djävulen finns i detaljerna
+Dra inte alla över en kam
+Droppen kan urholka stenen
+Du kan inte ta dig an havet före sjön
+Där vinet går in går vettet ut
+Döm inte hunden efter håren
+Efter regn kommer solsken
+Egen härd är guld värd
+Eget beröm luktar illa
+En dålig hantverkare klagar på sina verktyg
+En kedja är inte starkare än sin svagaste länk
+En olycka kommer sällan ensam
+En svala gör ingen sommar
+En vandring på tusen mil börjar alltid med ett steg
+Ensam är stark
+Envar sin egen lyckas smed
+Ett gott skratt förlänger livet
+Ett mjukt svar stillar vreden
+Ett rent samvete är bästa huvudkudde
+Envis som synden
+Finns det hjärterum så finns det stjärterum
+Fint folk kommer alltid sent
+Friskt vågat hälften vunnet
+Framgång ger vänner, motgång testar dem
+Först till kvarn får först mala
+Gammal kärlek rostar aldrig
+Gammal är äldst
+Ge dig inte på berg när det finns småsten
+Genom sig själv känner man andra
+Genväg är ofta senväg
+Ger man någon lillfingret så tar de hela handen
+Gråt inte över spilld mjölk
+Gräset är alltid grönare på andra sidan
+Gräv där du står
+Gräv inte upp större sten än du kan bära
+Gud tar och Gud ger
+Guld förblindar många, kärleken förblindar alla
+Gå inte över ån efter vatten
+Har man bra skor, kan man gå långt
+Har man tagit fan i båten får man ro honom i land
+Har man sagt A får man säga B
+Hellre fria en skyldig än fälla en oskyldig
+Hoppet är det sista som lämnar människan
+Hungern är den bästa kryddan
+Hur man än vänder sig har man ändan bak
+Hut går hem
+Hälsan tiger still
+Hämnden är ljuv
+Hämnden är en rätt som bäst avnjuts kall
+Högmod går före fall
+I de lugnaste vattnen går de största fiskarna
+I krig och kärlek är allting tillåtet
+I mörker är alla katter grå
+I nöden prövas vännen
+Idel solsken gör öken
+Ingen kan allt, men alla kan något
+Ingen ko på isen
+Ingen rök utan eld
+Ingen är profet i sitt eget land/i sin egen hemstad
+Ingenting är nytt under solen
+Inget är så bra att det inte kan göras bättre
+Inget ont som inte har något gott med sig
+Inget varar för evigt
+Inga träd växer till himlen
+Ingen fara på taket, så länge skorstenen står
+Ju fler kockar, desto sämre soppa
+Ju närmare källan, desto klarare vatten
+Ju senare på kvällen, desto vackrare folk
+Kasta inte yxan i sjön
+Kaka söker maka
+Kasta inte pärlor åt svinen
+Kasta inte sten i glashus
+Kasta inte ut barnet med badvattnet
+Klaga inte över för litet vind – lär dig segla
+Kläder efter väder
+Kläderna gör mannen
+Kommer tid kommer råd
+Kärleken går dit den vill och inte dit den borde
+Kärleken är blind
+Kärt barn har många namn
+Köp inte grisen i säcken
+Lagom är bäst
+Lagt kort ligger; och vatten finns i kran
+Lat man bär hellre ihjäl sig än går två gånger
+Lat skräddare tar lång tråd
+Lika barn leka bäst
+Lite ljuga pryder tal
+Liten tuva stjälper ofta stort lass
+Litet men gott, sa mannen som patta katten
+Livet är kort, konsten är lång
+Lugn som en filbunke
+Lugnet före stormen
+Lyckan står den djärve bi
+Lyckan kommer lyckan går
+Låta maten tysta mun
+Låt inte gräset gro under fötterna
+Låt inte vargen vakta fåren
+Lägg inte alla ägg i samma korg
+Lär dig av andras misstag, du hinner inte själv begå dem alla
+Lärdom är mer värt än guld
+Lätt fånget, lätt förgånget
+Lättare döljer en vis sin visdom än en dåre sin dårskap
+Lögnaren blir bara trodd en gång
+Magen mättas förr än ögat
+Man blir aldrig gammal, bara äldre
+Man får ta seden dit man kommer
+Man får ta saken i egna händer
+Man får vad man betalar för
+Man har aldrig roligare än vad man gör sig
+Man hör vad man vill höra
+Man kan inte både ha och äta kakan
+Man kan inte lära gamla hundar sitta
+Man lär sig av misstagen
+Man lär så länge man lever
+Man måste lära sig krypa innan man kan gå
+Man måste rätta munnen efter matsäcken
+Man saknar inte kon förrän båset är tomt
+Man ska inte bjuda bagarbarn på bullar
+Man ska inte buga för dumheten bara för att den är gammal
+Man ska inte ropa varg i onödan
+Man ska inte sälja skinnet förrän björnen är skjuten
+Man ska inte lita på nattgammal is
+Man ska inte lägga näsan i blöt
+Man ska inte sätta bocken som trädgårdsmästare
+Man ska smida medan järnet är varmt
+Man ska skilja på sak och person
+Man tröttnar aldrig på att arbeta åt sig själv
+Man är alltid sig själv närmast
+Medan gräset gror, dör kon
+Min dräng har också en dräng
+Morgonstund har guld i mund
+Mycket vill ha mer
+Många bäckar små, gör en stor å
+Måla inte fan på väggen
+Människan spår, Gud rår
+Nya kvastar sopar bäst
+När den rike magrar, dör den fattige
+När det regnar på prästen, så droppar det på klockaren
+När det regnar manna från himlen har den fattige ingen sked
+När fan blir gammal blir han religiös
+När Gud kommer med döden kommer Fan med arvingarna
+När katten är borta dansar råttorna på bordet
+När man talar om trollen så står de i farstun
+När nöden är som störst är hjälpen som närmast
+Nära skjuter ingen hare
+Nöden har ingen lag
+Nöden är uppfinningarnas moder
+Olika falla ödets lotter
+Om en blind leder en blind, så faller de båda i gropen
+Om man inte får den man älskar, får man älska den man får
+Om kvällen får den late brått
+Omväxling förnöjer
+Ont krut förgås inte så lätt
+Ont ska med ont fördrivas
+Otack är världens lön
+Osvuret är bäst
+Pengar luktar inte
+Pengar växer inte på träd
+Pengar öppnar alla portar utom himmelens
+Prisa ej dag förrän sol gått ner
+På rullande sten växer ingen mossa
+Prinsessor dansar inte lyckligare
+Politiker är som krokodiler, stora i käften men saknar öron
+Repetition är kunskapens moder
+Rom byggdes inte på en dag
+Ropa inte hej förrän du är över bäcken
+Rent mjöl i påsen
+Sagt ord och kastad sten kan inte tas tillbaka
+Sent skall syndaren vakna
+Själv göra, själv ha
+Själv är bästa dräng
+Skadeglädjen är den enda sanna glädjen
+Skam den som ger sig
+Skenet bedrar
+Skomakare, bliv vid din läst
+Skomakarens barn går i trasiga skor
+Skrattar bäst, som skrattar sist
+Skilja agnarna från vetet
+Skillnaden mellan män och pojkar är priset på leksakerna
+Skita i det blå skåpet
+Skjut inte upp till morgondagen, det du kan göra idag
+Skåda inte en given häst i munnen
+Slutet gott, allting gott
+Smaken är som baken, delad
+Små grytor har också öron
+Små smulor är också bröd
+Små sår och fattiga vänner ska man inte förakta
+Snålheten bedrar visheten
+Som de gamla sjunga, så kvittra de unga
+Som man bäddar får man ligga
+Som man ropar i skogen får man svar
+Som man sår får man skörda
+Som man är klädd blir man hädd
+Sopa rent framför sin egen dörr
+Sovande bonde får drömmande dräng
+Spill inte krut på döda kråkor
+Spotta inte i motvind
+Stor i orden, liten på jorden
+Surt, sa räven om rönnbären
+Svultna svin rotar mest
+Synden straffar sig själv
+Så länge det finns liv finns det hopp
+Sådan fader sådan son
+Sådan herre, sådan dräng
+Såga inte av den gren du själv sitter på
+Sälj inte skinnet förrän björnen är skjuten
+Sälj ägget, inte hönan
+Solen lyser även på liten stuga
+Tala är silver, tiga är guld
+Tala inte med en dåre om en sten, om du inte vill ha den i huvudet
+Tala inte om dig själv för andra, det blir gjort efter du gått
+Ta dagen som den kommer
+Tiden läker alla sår
+Tillfället gör tjuven
+Tomma tunnor skramlar mest
+Tron kan försätta berg
+Trägen vinner
+Två fel gör inte ett rätt
+Tålamod är konsten att hoppas
+Tänd inte den eld som du inte kan släcka
+Undantaget som bekräftar regeln
+Undret över alla under
+Upp flyga orden, tanken stilla står
+Upp som en sol, ner som en pannkaka
+Upprepning är kunskapens moder
+Var dag har nog av sin egen plåga
+Var fågel sjunger efter sin egen näbb
+Var och en blir salig på sin fason
+Var sak har sin tid
+Var skall sleven vara om inte i grytan?
+Var smed har sin sed
+Varnad är väpnad
+Varav hjärtat är fullt talar munnen
+Varje moln har en silverkant
+Vill man vara fin får man lida pin
+Visdomen har långa öron och kort tunga
+Våld är den enfaldiges sista utväg
+Väck inte den björn som sover
+Vägen till helvetet är kantad med goda föresatser
+Vägen till mannens hjärta går genom magen
+Åsnan känns igen på öronen, den dumme på sina ord
+Ändamålet helgar medlen
+Äpplet faller inte långt från trädet
+Äras den som äras bör
+Ärlighet varar längst
+Äta bör man annars dör man
+Även den bäste kan fela
+Även den som går sakta kommer fram
+Även dåren tros vis om han tiger
+Även en blind höna kan finna ett korn
+Även små grytor har öron
+Även solen har sina fläckar
+Även en trasig klocka visar rätt två gånger per dygn
+Övning ger färdighet
+Ögonen vill ha mer än magen
+Öga för öga, tand för tand
+#Metaphors
+Arg som ett bi
+Blank som en spegel
+Blek som ett lik
+Darra som ett asplöv
+Diskret som en elefant i en porslinsbutik
+Dum som en gås
+Dum som en åsna
+Dyka upp som gubben i lådan
+Envis som en röd gris
+Envis som en åsna
+Envis som synden
+Som en droppe i havet
+Som en fis i vinden (eller rymden)
+Som en piss i Mississippi
+Falla som dominobrickor
+Falla som en fura
+Fara fram som ett yrväder
+Fattig som en kyrkråtta
+Fint som snus
+Flitig som en myra
+Flitig som ett bi
+Fri som en fågel
+Frisk som en nötkärna
+From som ett lamm
+Frysa som en hund
+Full som en kaja
+Full som ett ägg
+Föröka sig som kaniner
+På lösa boliner
+Glad som en speleman
+Gå som en dans
+Gå som katten kring het gröt
+Gå som på räls
+Gå som på smorda bakplåtar
+Gå som smort
+Gå som tåget
+Gå åt som smör i solsken
+Ha pengar som gräs
+Hal som en ål
+Hungrig som en varg
+Hård som flinta
+Hälla vatten på en gås
+Högt som ett berg
+Hög som ett hus
+Klart som korvspad
+Klok som en uggla (eller pudel)
+Komma som ett brev på posten
+Känna sig som femte hjulet under vagnen
+Kär som en klockarkatt
+Köra som en biltjuv
+Lika lätt som att hitta som en nål i en höstack
+Lika som bär
+Listig som en orm
+Listig som en räv
+Liten som en ärta
+Ljuga som en borstbindare
+Ljuga som en häst travar
+Lugn som en filbunke
+Lydig som en hund
+Långsam som en snigel
+Läcka som ett såll
+Lätt som en plätt
+Minne som en guldfisk
+Modig som ett lejon
+Må som en prins
+Oskyldig som ett lamm
+Passa som hand i handske
+Pigg som en lärka
+Pigg som en mört
+Platt som en pannkaka
+Rak som en fura
+Rasa som ett korthus
+Rik som ett troll
+Rädd som en hare
+Röd som en pion
+Se som en hök
+Se ut som en fågelholk
+Se ut som en svinstia
+Se ut som en säck potatis
+Seg som sirap
+Sega gubbar
+Sitta som en smäck
+Sitta som i en rävsax
+Sitta som på nålar
+Sjunga som en näktergal
+Sjunka som en sten
+Skir som en nyutsprungen ros
+Skita i det blå skåpet
+Skrika som en stucken gris
+Skyldig som synden
+Skör som kristall
+Slingra sig som en orm
+Slita som ett djur
+Slug som en räv
+Slå ner som en bomb
+Slö som en hösäck
+Smal som en vidja
+Smidig som ett kylskåp
+Smutsig som en gris
+Snabb som blixten
+Snabb som en skottspole
+Snabb som en vessla
+Snabb som vinden
+Som en blöt hund
+Som en skållad råtta
+Som en öppen bok
+Som tuppen i hönsgården
+Sova som en klubbad oxe
+Sova som en klubbad säl
+Sova som en stock
+Sprida sig som ringar på vattnet
+Spy som en hund
+Stark som en björn
+Stark som en oxe
+Stel som en pinne
+Stolt som en tupp
+Stor som ett hus
+Stå som en åsna mellan två hötappar
+Sur som en citron
+Sur som ättika
+Svart som natten
+Svart som sot
+Säkert som amen i kyrkan
+Sätta sin sista potatis
+Söt som socker
+Tala som en bok
+Tiga som muren
+Tjock som en julegris
+Torrt som fnöske
+Trivas som fisken i vattnet
+Trogen som en hund
+Tungt som bly
+Tyst som en mus
+Tyst som i graven
+Undvika som pesten
+Upp som en sol, ner som en pannkaka
+Uppföra sig som om man ägde stället
+Vacker som en dag
+Vara som en koloss på lerfötter
+Vara som ett gift
+Vara som hund och katt
+Vara som katt och råtta
+Vig som en katt
+Vig som ett kylskåp
+Vilja av stål
+Vit som ett lakan
+Yster som en kalv på grönbete
+Åldras som mjölk
+Åldras som vin
+Äta som en fågel
+Äta som en gris
+Äta som en häst
+#Idioms
+Alla tiders
+Ana ugglor i mossen
+Andra bullar
+Armbåga sig fram
+Använda apostlahästarna
+Ankdamm
+Av det rätta virket
+Av samma skrot och korn
+Avsked på grått papper
+Bakom flötet
+Bakom lyckta dörrar
+Bakom lås och bom
+Balansera på slak lina
+Balsam för själen
+Barka åt skogen
+Barn av sin tid
+Basunera ut
+Begära någons huvud på ett fat
+Behandla någon med silkesvantar
+Beväpnad till tänderna
+Bita av någon
+Bita i det sura äpplet
+Bita i gräset
+Bjuda med armbågen
+Bjuda till
+Bli blåst på konfekten
+Bli vid sin läst
+Blod på händerna
+Blodad tand
+Bollen är rund
+Brinna för något
+Brinner i knutarna
+Bränna sina broar
+Bulla upp
+Bygger bo i huvudet
+Bygga broar
+Bygga luftslott
+Både ha och äta kakan
+Bära eller brista
+Bära hundhuvudet
+Börja på ny kula
+Cirkeln är sluten
+Damma av något
+Dansa efter någon annans pipa
+Dans på rosor
+Den breda vägen
+Den dagen, den sorgen
+Den fula ankungen
+Den gubben gick inte
+Det blev pannkaka av alltihop
+Det blir inte roligare än så här
+Det fina i kråksången
+Det flyger inga stekta sparvar i munnen på en
+Det går utför
+Det knallar och går
+Det kan du hoppa upp och sätta dig på
+Det man inte har i huvudet får man ha i benen
+Det är kört
+Don efter person
+Dra alla över en kam
+Dra benen efter sig
+Dra det längsta strået
+Dra det kortaste strået
+Dra dit pepparn växer
+Dra det tyngsta lasset
+Dra ett streck över allt
+Dra i trådarna
+Dra mig baklänges
+Dra något gammalt över sig
+Dra på trissor
+Dra sitt strå till stacken
+Dra timmerstockar
+Dra undan mattan för någon
+Dra åt svångremmen
+Dra öronen åt sig
+Dragen vid näsan
+Driva något till sin spets
+Droppe i havet
+Dummare än tåget
+Där tvistar de lärde
+Döden i grytan
+Efter många om och men
+Eld i baken
+Eld och lågor
+Elda för kråkorna
+Elefanten i rummet
+En annan femma
+En fågel har kvittrat
+En gång för alla
+En skruv lös
+En vacker dag
+Enligt konstens alla regler
+Ess i rockärmen
+Ett kok stryk
+Ett ljus i mörkret
+Ett slag i luften
+Ett strå vassare
+Falla mellan stolarna
+Falla någon på läppen
+Fan och hans moster
+Fara med osanning
+Fara och flyga
+Fara å färde
+Fatta galoppen
+Fin i kanten
+Finns det hjärterum så finns det stjärterum
+Fina fisken
+Fiska i grumligt vatten
+Fjärilar i magen
+Fjäder i hatten
+Flaggan i topp
+Flyga i luften
+Flåsa någon i nacken
+Frid och fröjd
+Från hjärtat
+Från vettet
+Ful fisk
+Full i fan
+Full rulle
+Få en släng av sleven
+Få en syl i vädret
+Få frispel
+Få fötter
+Få nys om något
+Få något om bakfoten
+Få sina fiskar varma
+Få tummen ur arslet
+Få vatten på sin kvarn
+Få veta att man lever
+Få ändan ur vagnen
+Född i farstun
+Född med en silversked i munnen
+Följa någon annans fotspår
+För allt smör i Småland
+För allt vad tygen håller
+För fulla muggar
+För kung och fosterland
+Föra någon bakom ljuset
+Försöka ta ner månen
+Gammal ost
+Gammal som gatan
+Ge järnet
+Ge någon en känga
+Ge någon fria tyglar
+Ge svar på tal
+Glida in på en räkmacka
+Glad som en lärka
+Glimten i ögat
+God hand med
+Gnugga geniknölarna
+Gnugga händerna
+Goddag yxskaft
+Gripa efter ett halmstrån
+Gripa något ur luften
+Grov i munnen
+Gråa hår
+Gråta blod
+Grädde på moset
+Gräsrotsnivå
+Gräva ned stridsyxan
+Gräva sin egen grav
+Gräva upp stridsyxan
+Gröna fingrar
+Guldstjärna
+Gå av stapeln
+Gå bakom knuten
+Gå bakom ryggen på någon
+Gå bet på något
+Gå bort
+Gå dit näsan pekar
+Gå i graven
+Gå i stöpet
+Gå i taket
+Gå in i väggen
+Gå med håven
+Gå någon på nerverna
+Gå på knäna
+Gå på pumpen
+Gå till botten med något
+Gå under
+Gå under jorden
+Gå under klubban
+Gå åt pipan
+Gå åt skogen
+Gå över lik
+Gå över ån efter vatten
+Göra en höna av en fjäder
+Göra upp räkningen
+Ha en gås oplockad med någon
+Ha ett finger med i spelet
+Ha något i kikaren
+Ha något på tungan
+Ha på fötterna
+Ha sitt på det torra
+Ha tummen i ögat på någon
+Ha ögon i nacken
+Ha ögonen med sig
+Hack i häl
+Haj på något
+Halka in på ett bananskal
+Hals över huvud
+Hamna i blåsväder
+Handen på hjärtat
+Handsken är kastad
+Hatten av
+Hela baletten
+Herre på täppan
+Het potatis
+Het på gröten
+Hett om öronen
+Hjärtat på rätta stället
+Hoppa i galen tunna
+Hoppa över skaklarna
+Ha ett horn i sidan till någon
+Hosta upp
+Hugga i sten
+Hugget som stucket
+Huvudet på skaft
+Huvudet upp och fötterna ned
+Hålla i trådarna
+Hålla låda
+Hålla någon kort
+Hålla masken
+Hålla någon på halster
+Hålla någon på sträckbänken
+Hålla någon stången
+Hålla någon om ryggen
+Hålla någon under armarna
+Hålla skenet uppe
+Hålla sig i skinnet
+Hålla sig på mattan
+Hålla sig på sin kant
+Hålla ställningarna
+Hålla tand för tunga
+Hålla tummarna för någon
+Hålla tungan rätt i mun
+Hålla ångan uppe
+Hålla ögonen på något
+Hålla ögonen öppna
+Häcken full
+Hälla vatten på en gås
+Hälsa hem
+Hänga ihop som ler och långhalm
+Hänga läpp
+Hänga ut någon
+Här blir inga barn gjorda
+Här ligger en hund begraven
+Hög tid
+Högsta hönset
+Högt i tak
+Höja någon till skyarna
+Höja på ögonbrynen
+Höjt över allt tvivel
+Höra från hästens mun
+Höra gräset gro
+I bara mässingen
+I blåsten
+I de lugnaste vatten
+I det blå
+I det närmaste
+I en annan värld
+I ett nötskal
+I farten
+I godan ro
+I grevens tid
+I hatten
+I hetluften
+I krokarna
+I kölvattnet
+I ljusan låga
+I mina rötter
+I mångt och mycket
+I någons kläder
+I någons tankar
+I rampljuset
+I rasande fart
+I ropet
+I ryggmärgen
+I rätta händer
+I rödaste rappet
+I sakta mak
+I senaste laget
+I sin glans dagar
+I sin linda
+I sina bästa år
+I sinom tid
+I sista minuten
+i sitt anletes svett
+I sitt esse
+I sitt rätta element
+I sjunde himlen
+I skamvrån
+I skottgluggen
+I stort sett
+I stridens hetta
+I sus och dus
+I tid och otid
+I valet och kvalet
+Icke sa Nicke
+Illa kvickt
+In genom ena örat och ut genom andra
+Ingen fara på taket
+Inte gå av för hackor
+Ingen ko på isen
+Inte en levande själ
+Inte en kotte
+Inte ett jota
+Inte ett öga var torrt
+Inte göra en fluga förnär
+Inte ligga sömnlös
+Inte mycket att hänga i julgranen
+Inte hugget i sten
+Inte spotta i glaset
+Inte vara född i farstun
+Intet är nytt under solen
+Intresseklubben antecknar
+Is i magen
+Jaga någon med blåslampa
+Jämföra äpplen och päron
+Kaka på kaka
+Kalla fötter
+Kalla handen
+Kalla kårar
+Kamma noll
+Kamma hem något
+Kapitalt misslyckande
+Karl för sin hatt
+Kasta en blick
+Kasta in handduken
+Kasta ljus över något
+Kasta loss
+Kasta paj
+Kasta pengar i sjön
+Kasta pärlor för svin
+Kasta sten i glashus
+Kasta vatten
+Katt bland hermelinerna
+Katt på hett plåttak
+Kattens lek med råttan
+Kavla upp ärmarna
+Kejsarens nya kläder
+Klammeri med rättvisan
+Klapp på axeln
+Klappat och klart
+Klart som korvspad
+Klen i anden
+Klen tröst
+Klockrent
+Klok som en pudel
+Knaka i fogarna
+Knappt om utrymme
+Kniven mot strupen
+Knyta näven i fickan
+Knyta sig
+Knyta ihop säcken
+Knäpp på näsan
+Koka soppa på en spik
+Komma undan med blotta förskräckelsen
+Kors i taket
+Kosta skjortan
+Kratta manegen
+Krossa någons hjärta
+Krypa till korset
+Kryssa mellan Skylla och Karybdis
+Kräla i stoftet
+Krösus
+Kusten är klar
+Kyss Karlsson
+Kyss mig i arslet
+Känna hur vinden blåser
+Känna någon på pulsen
+Köpa grisen i säcken
+Kör i vind
+Kör så det ryker
+Köra huvudet i väggen
+Köra någon på porten
+Körd i grus
+Kött på benen
+Lacka ur
+Lag och ordning
+Lagens långa arm
+Larva sig
+Leka med elden
+Leta efter en nål i en höstack
+Leta efter något med ljus och lykta
+Leva loppan
+Leva på hoppet
+Leva som man lär
+Leva ur hand i mun
+Lida mot sitt slut
+Ligga bakom
+Ligga hästlängder före
+Ligga i
+Ligga illa till
+Ligga i lä
+Ligga i selen
+Ligga i startgroparna
+Ligga lågt
+Ligga någon till last
+Ligga någon varmt om hjärtat
+Ligga på
+Ligga på sofflocket
+Lika goda kålsupare
+Lika som bär
+Lite här och var
+Liv i luckan
+Livet på en pinne
+Ljuga sig blå
+Ljuga som hästar travar
+Ljuger så han tror sig själv
+Ljuset i slutet av tunneln
+Lova guld och gröna skogar
+Lova runt och hålla tunt
+Lova vitt och brett
+Lugn i stormen
+Lugna puckar
+Lusläsa
+Luspank
+Luspudel
+Lyckans ost
+Lyfta på hatten för
+Lyfta sig själv i håret
+Lysa med sin frånvaro
+Lyset är på men det är ingen hemma
+Låta barn vara barn
+Låta maten tysta mun
+Låta målvakten stå i mål
+Låta rättvisan ha sin gång
+Låta udda vara jämnt
+Låtsas som det regnar
+Lägg ägg
+Lägga alla ägg i samma korg
+Lägga benen på ryggen
+Lägga fingrarna emellan
+Lägga korten på bordet
+Lägga kraft bakom orden
+Lägga lök på laxen
+Lägga locket på
+Lägga manken till
+Lägga något på hyllan
+Lägga något på is
+Lägga något på minnet
+Lägga näsan i blöt
+Lägga orden i munnen på någon
+Lägga på en rem
+Lägga på ett kol
+Lägga rabarber på något
+Lägga sig ner och dö
+Lägga sig under kniven
+Lägga ut en snara för någon
+Lägga vantarna på något
+Lämna någon i sticket
+Lära någon veta hut
+Läsa lagen för någon
+Läsa lusen av någon
+Läsa mellan raderna
+Lögn och förbannad dikt
+Löpa linan ut
+Mala på
+Man mot man
+Man tager vad man haver
+Mannaminne
+Matjord i fickorna
+Med armarna i kors
+Med buller och bång
+Med båda fötterna på jorden
+Med byxorna nere
+Med fingrarna i syltburken
+Med hull och hår
+Med mössan i hand
+Med någons goda minne
+Med på ett hörn
+Med på noterna
+Med på tåget
+Med varm hand
+Medaljens baksida
+Mellan fyra ögon
+Mellan varven
+Missa tåget
+Moment 22
+Mota Olle i grind
+Mumla i skägget
+Munkavle
+Mycket ska man höra innan öronen faller av
+Mycket snack och lite verkstad
+Mycket vatten har flutit under broarna sedan dess
+Mycket väsen för ingenting
+Myror i byxorna
+Myror i huvudet
+Måla fan på väggen
+Måla in sig i ett hörn
+Många bollar i luften
+Många hövdingar, men få indianer
+Många järn i elden
+Många strängar på sin lyra
+Måttet är rågat
+Möta sitt Waterloo
+Mötas på halva vägen
+Nagel i ögat
+Nu trillade polletten ner
+Nu är det klippt
+Nu är det kokta fläsket stekt
+Nu är goda råd dyra
+Något i hästväg
+Något som katten släpat in
+När andan faller på
+När det kommer till kritan
+När Adam var länsman
+När man talar om trollen så står de i farstun
+Nära och kära
+Nära ögat
+Näsan ovanför vattenbrynet
+Nöd och näppe
+Nöt att knäcka
+Om bakfoten
+Om inte om hade funnits
+Ond cirkel
+Ord står mot ord
+Ord och inga visor
+Ordning och reda, pengar på fredag
+Osa katt
+Oskrivet blad
+Pang på rödbetan
+Peka med hela handen
+Peppar, peppar, ta i trä
+Pest eller kolera
+Pigg som en mört
+Prata bredvid mun
+Prata goja
+Prata i nattmössan
+Prata i munnen på varandra
+Prata smörja
+Pricken över i:et.
+Pudelns kärna
+På allas läppar
+På bar backe
+På den säkra sidan
+På det hala
+På det hela taget
+På efterkälken
+På egna ben
+På en höft
+På ett bräde
+På fem röda
+På fri fot
+På G
+På glid
+På god fot med någon
+På halsen
+På hjärnan
+På hugget
+På håret
+På höga hästar
+På kanelen
+På kornet
+På krigsstigen
+På löpande band
+På måfå
+På papperet
+På pin kiv
+På pricken
+På rak arm
+På resande fot
+På rätt köl
+På samma våglängd
+På sin mammas gata
+På sin höjd
+På sin vakt
+På smällen
+På språng
+På stående fot
+På tapeten
+På tu man hand
+På upphällningen
+På vid gavel
+På vift
+På vippen
+Pö om pö
+Raska gossar
+Regnet står som spön i backen
+Rena rama
+Rent mjöl i påsen
+Resa ragg
+Reta gallfeber på någon
+Rida ut en storm
+Rim och reson
+Rimmar illa
+Rinna ut i sanden
+Ris och ros
+Rubb och stubb
+Rulla hatt
+Rulla på
+Rulla tummarna
+Rund under fötterna
+Rycka upp sig
+Rymma fältet
+Råda bot på något
+Råg i ryggen
+Råka i luven på varandra
+Råttorna lämnar ett sjunkande skepp
+Ränderna går aldrig ur
+Rätt ska vara rätt
+Rätt och riktigt
+Rätta munnen efter matsäcken
+Räv bakom örat
+Röd tråd
+Röra om i grytan
+Rösta med fötterna
+Rött öre
+Sagt och gjort
+Saken är biff
+Sakta i backarna
+Sakta men säkert
+Samla i ladorna
+Sandlådenivå
+Sanningens minut
+Satsa på fel häst
+Satt sin sista potatis
+Se dagens ljus
+Se färg torka
+Se längre än näsan räcker
+Se mellan fingrarna
+Se om sitt hus
+Se spöken mitt på ljusa dagen
+Inte se röken av
+Se rött
+Se sanningen i vitögat
+Se sig om i månen efter något
+Se skogen för alla träd
+Se ut som sju svåra år
+Sent ska syndarna vakna
+Serverat som på silverfat
+Sig själv närmast
+Sila mygg och svälja kameler
+Simma med strömmen
+Simma mot strömmen
+Sin beskärda del
+Sin egen lyckas smed
+Sist men inte minst
+Sista spiken i kistan
+Sitta hemma och uggla
+Sitta i klistret
+Sitta i knät på någon
+Sitta i samma båt
+Sitta i väggarna
+Sitta inne
+Sitta och häcka
+Sitta och mögla
+Sitta på pottkanten
+Sitta på två stolar samtidigt
+Sitta still i båten
+Sitta säkert i sadeln
+Sjunga på sista versen
+Skaka galler
+Skaka något ur ärmen
+Skarpaste kniven i lådan
+Skarpt läge
+Skelett i garderoben
+Skilja agnarna från vetet
+Skinn på näsan
+Skitprat
+Skjuta mygg med kanoner
+Skjuta sig själv i foten
+Skratta hela vägen till banken
+Sjunga för full hals
+Skrika i högan sky
+Skriva under på något
+Skrivet i stjärnorna
+Skräckblandad förtjusning
+Skräda orden
+Skynda långsamt
+Skänk från ovan
+Skämmas ögonen ur sig
+Skörda sina frukter
+Skörda offer
+Slag i luften
+Slicka någon i arslet
+Slira på sanningen
+Slit den med hälsan
+Slita ont
+Sluta leden
+Slå dank
+Slå dig i backen på
+Slå dövörat till
+Slå en sjua
+Slå ett slag för något
+Slå huvudet på spiken
+Slå i taket
+Slå in öppna dörrar
+Slå klackarna i taket
+Slå knut på sig själv
+Slå lock för öronen
+Slå någon gul och blå
+Slå någon sönder och samman
+Slå näven i bordet
+Slå på stora trumman
+Slå på stort
+Slå sig för bröstet
+Slå sina påsar ihop
+Slå vakt om något
+Slå vantarna i bordet
+Slås av något
+Släkten är värst
+Släta över något
+Smakar det så kostar det
+Smida medan järnet är varmt
+Sminka en gris
+Smockan hänger i luften
+Smolk i glädjebägaren
+Små grytor har också öron
+Smäll på fingrarna
+Sola sig i sin egen glans
+Som fan läser Bibeln
+Som klippt och skuren för något
+Sopa golvet med någon
+Sopa problemet under mattan
+Sopa rent framför sin egen dörr
+Sova på saken
+Spara på krutet
+Spara inte på krutet
+Spel bakom kulisserna
+Spela Allan
+Spela andrafiolen
+Spela ett högt spel
+Spela i samma division
+Spela sina kort väl
+Spetsa öronen
+Spindeln i nätet
+Spotta i nävarna
+Sprids som askan för vinden
+Spritt språngandes naken
+Spänna bågen för högt
+Stick i stäv mot
+Sticka huvudet i sanden
+Sticka i ögonen
+Sticka under stol med
+Sticka ut hakan
+Stiga åt huvudet
+Stirra sig blind på något
+Stolt som en tupp
+Storm i ett vattenglas
+Stormsteg
+Strama tyglar
+Strida om påvens skägg
+Stryka någon medhårs
+Strö salt i såren
+Styv i korken
+Styv i nacken
+Stå för fiolerna
+Stå handfallen
+Stå och väga
+Stå pall för något
+Stå på näsan
+Stå på spel
+Stå på sig
+Stå på öronen
+Stå sitt kast
+Stå någon upp i halsen
+Stå vid skampålen
+Stånga sig blodig
+Ställa någon mot väggen
+Ställa till svars
+Stöpt i samma form
+Stöta och blöta något
+Stöta på patrull
+Suga på karamellen
+Summa summarum
+Surrad vid masten
+Svagaste länken i kedjan
+Svansen mellan benen
+Svarta fåret
+Svarte Petter
+Svälja det beska pillret
+Svära i kyrkan
+Sväva i ovisshet
+Sväva på moln
+Sväva på rosa moln
+Syna i sömmarna
+Så gott som
+Så in i Norden
+Så in i vassen
+Så sant som det är sagt
+Så ska en slipsten dras
+Sålt smöret och tappat pengarna
+Såga någon vid fotknölarna
+Sånt är livet
+Säga till på skarpen
+Säker på sin sak
+Sätta bocken till trädgårdsmästare
+Sätta fingret på något
+Sätta in nådastöten
+Sätta käppar i hjulet
+Sätta ner foten
+Sätta någon på en piedestal
+Sätta någon på plats
+Sätta något på kartan
+Sätta något på spel
+Sätta punkt för något
+Sätta sig på tvären
+Sätta sprätt på pengarna
+Sätta värde på något
+Ta bladet från munnen
+Ta bollen
+Ta det kallt
+Ta det med en klackspark
+Ta det med ro
+Ta det piano
+Ta det vackert
+Ta en i det andra benet också
+Ta en kula för någon
+Ta en ände med förskräckelse
+Ta för sig
+Ta för stora ord i sin mun
+Ta gift på något
+Ta hus i helvete
+Ta i med hårdhandskarna
+Ta i så man spricker
+Ta igen på gungorna vad man förlorat på karusellen
+Ta något med en nypa salt
+Ta något för givet
+Ta någon på orden
+Ta saken i egna händer
+Ta seden dit man kommer
+Ta sig en funderare
+Ta sig för stora friheter
+Ta sig i kragen
+Ta sig vatten över huvudet
+Ta skeden i vacker hand
+Ta skruv
+Ta tempen
+Ta till storsläggan
+Ta tjuren vid hornen
+Tacka sin lyckliga stjärna
+Tagen på sängen
+Tala för döva öron
+Tala klarspråk
+Tala med bönder på bönders vis
+Tala med kluven tunga
+Tala till punkt
+Tala ur skägget
+Tappa ansiktet
+Tappa greppet
+Tappa hakan
+Tappad bakom en vagn
+Tids nog
+Till råga på allt
+Till syvende och sist
+Tillbaka på ruta ett
+Titta för djupt i glaset
+Titta snett på någon
+Tomma ord
+Tomt i ladan
+Toppa laget
+Torr bakom öronen
+Trampa i klaveret
+Trampa på en öm tå
+Trampa spiken i botten
+Trampa vatten
+Tredje gången gillt
+Tretton på dussinet
+Trolla med knäna
+Tror, det gör man i kyrkan
+Tummen mitt i handen
+Tupp i halsen
+Två flugor i en smäll
+Två tomma händer
+Tvätta pengar
+Tystnaden talar för sig själv
+Två sidor av samma mynt
+Tårta på tårta
+Tälja guld med pennkniv
+Tända på alla cylindrar
+Tänk först och tala sen
+Tänka på refrängen
+Tärningen är kastad
+Ulv i fårakläder
+Undantaget som bekräftar regeln
+Under bordet
+Under isen
+Under lupp
+Underbart är kort
+Uppe med tuppen
+Uppfinna hjulet på nytt
+Uppåt väggarna
+Ur askan i elden
+Ur fas
+Ur gängorna
+Utan en tråd på kroppen
+Utan mål och mening
+Utan ände
+Ute efter något
+Ute i kylan
+Ute och cyklar
+Ute på djupt vatten
+Ute på hal is
+Utom sig
+Vaknat på fel sida
+Vakta sin tunga
+Var och en blir salig på sin tro
+Vara den som är den
+Vara grönt
+Varje moln har en silverkant
+Varken bu eller bä
+Varken hackat eller malet
+Varm i kläderna
+Varm om hjärtat
+Vass tunga
+Vassa armbågar
+Vass penna
+Vatten under broarna
+Veta hur en slipsten ska dras
+Veta hut
+Veta var skon klämmer
+Vid sina sinnens fulla bruk
+Vilja sjunka genom jorden
+Vind för våg
+Vind i seglen
+Visa framfötterna
+Visa sig från sin goda sida
+Visa sig på styva linan
+Visa tänderna
+Visa var skåpet ska stå
+Vit lögn
+Vit vecka
+Vädra morgonluft
+Väga sina ord på guldvåg
+Vägs ände
+Väggarna har öron
+Välsmort munläder
+Vända andra kinden till
+Vända blad
+Vända kappan efter vinden
+Vända på klacken
+Vända på slantarna
+Vända på steken
+Vända på varje sten
+Väntans tider
+Värdshus förbi
+Värt papperet det är skrivet på
+Vässa sina knivar
+Växa så det knakar
+Yr i bollen
+Yr i mössan
+Åka på en blåsning
+Återfå fattningen
+Återgå till sitt ursprung
+Åt fanders
+Åt pipsvängen
+Äkta hälft
+Ända in i Hälsingland
+Ända ut i fingerspetsarna
+Äpplet faller inte långt från trädet
+Ära den som äras bör
+Äta någon ur hus och hem
+Äta upp
+Även du min Brutus
+Öppna armar
+Öppna korpgluggarna
+Över min döda kropp
+Örnkoll
