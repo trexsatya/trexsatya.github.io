@@ -16,6 +16,7 @@
     <script type="text/javascript" src="/vendor/mediaelement-plugins/speed/speed.min.js"></script>
     <script type="text/javascript" src="/vendor/mediaelement-plugins/speed/speed-i18n.js"></script>
     <script type="text/javascript" src="/vendor/long-press-event.min.js"></script>
+    <script type="text/javascript" src="/vendor/ckeditor/ckeditor.js"></script>
 
     <script type="text/javascript" src="/vendor/diff-match-patch.js"></script>
     <link href="/vendor/select2.min.css" rel="stylesheet"/>
@@ -459,10 +460,8 @@
                 </div>
 
                 <div id="searchesControl" style="display: none; padding-top: 3px;">
-                    <button onclick="clearSearches()" class="button-24">Clear Searches</button>
-                    <button onclick="loadSearches()" class="button-10">ReLoad Searches</button>
-                    <button onclick="exportSearches()" class="button-62">Export Searches</button>
                     <button onclick="importSearches()" class="button-62">Import Searches</button>
+                    <button onclick="openAddToVocabDialog()" class="button-62">Add To Vocab</button>
                 </div>
                 <br>
                 <br>
@@ -511,6 +510,17 @@
             </div>
         </div>
 
+        <div id="addToVocabularyDialog" style="display: none">
+            <div>
+                <select id="addToVocabularyDialogSelect" style="width: 98%;"></select>
+            </div>
+            <div style="margin-top: 0.5em;">
+                <button onclick="addToVocab()">Save</button>
+            </div>
+            <div style="margin-top: 0.5em;">
+                <textarea id="vocabularySegmentTextarea" style="height: 90%;width: 98%;"></textarea>
+            </div>
+        </div>
         <div id="localMedia" style="float: left; margin-top: 1.5em;">
             <audio id="localAudio" src="" width="700" height="500" style="display: none;"></audio>
 

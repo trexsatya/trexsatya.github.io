@@ -237,6 +237,55 @@ function saveSearch(word, count) {
   return newItem
 }
 
+function populateVocabText() {
+   let category = $("#addToVocabularyDialogSelect").val()
+    let text = window.vocabulary[category].join("\n")
+    $("#vocabularySegmentTextarea").val(text)
+}
+
+function openAddToVocabDialog() {
+  let w = window.innerWidth*0.9
+  let h = window.innerHeight*0.8
+  $("#addToVocabularyDialog").dialog({width: w, height: h}).show()
+  populateVocabularyHeadings($('#addToVocabularyDialogSelect'))
+}
+
+function addToVocab() {
+  let text = $("#vocabularySegmentTextarea").val()
+  let category = $("#addToVocabularyDialogSelect").val()
+  window.vocabulary[category] = text.split("\n")
+  populateVocabularyHeadings($('#vocabularySelect'))
+  makeHttpCallToUpdateVocab()
+}
+
+function getXXX() {
+  let xxx = localStorage.getItem("xxx")
+  if(!xxx) {
+    xxx = prompt("Enter the XXX")
+    localStorage.setItem("xxx", xxx)
+  }
+  return xxx
+}
+
+window.AWS_API = "http://ec2-13-60-227-150.eu-north-1.compute.amazonaws.com/api"
+async function makeHttpCallToUpdateVocab() {
+  let data = Object.keys(window.vocabulary)
+    .map(k => `#${k}\n${window.vocabulary[k].join("\n")}`).join("\n")
+  try {
+    let res = await fetch(`${window.AWS_API}/save-vocab`, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Content-Type': 'text/plain',
+        'X-Auth': getXXX()
+      }
+    })
+    res = await res.text()
+  } catch (e) {
+    localStorage.setItem("xxx", null)
+  }
+}
+
 async function doSearch(searchThis, el) {
   if ((typeof searchThis) !== 'string') {
     searchThis = null
@@ -260,7 +309,7 @@ async function searchTextChanged(e) {
 }
 
 function parseVocabularyFile(text) {
-  let lines = _.drop(text.split("\n"), 1)
+  let lines = text.split("\n")
   let categories = {}
   let currentCategory = null
   for (let i = 0; i < lines.length; i++) {
@@ -276,8 +325,8 @@ function parseVocabularyFile(text) {
   return categories
 }
 
-function populateVocabulary() {
-  let $vocabularySelect = $('#vocabularySelect')
+function populateVocabularyHeadings(target) {
+  let $vocabularySelect = target
   $vocabularySelect.html('<option>-</option>')
   Object.keys(window.vocabulary).forEach(it => {
     let op = new Option(it, it)
@@ -365,7 +414,7 @@ let ontimeupdate = e => {
   //   }
   // }
 
-  if (window.currentSub && ct > window.currentSub.te) {
+  if (window.currentSub && ct > window.currentSub.te + window.marginStartSubtitle) {
     window.currentSubIndex += 1;
     window.currentSub = window.subtitles[window.currentSubIndex]
     debugLog("Current player time", ct, "Changed to subtitle", toStringSubtitle(window.currentSub))
@@ -407,9 +456,6 @@ if (isIOS()) {
   window.marginStartSubtitle = -1
   window.marginEndSubtitle = 0
 }
-
-window.marginStartSubtitle = 0
-window.marginEndSubtitle = 0
 
 window.marginStartSubtitle = -0.1
 window.marginEndSubtitle = 1
@@ -794,6 +840,9 @@ function fixSectionBox() {
 $(document).ready(function () {
   fixSectionBox()
   $("#vocabularySelect").select2()
+  $("#addToVocabularyDialogSelect").select2().change(e => {
+    populateVocabText()
+  })
   hidePlayer(audioPlayer)
   hidePlayer(videoPlayer)
 });
@@ -891,7 +940,7 @@ async function loadAllSubtitles() {
   window.vocabulary['Metaphors'] = window.metaphors.map(it => it.name)
   window.vocabulary['Idioms'] = window.idioms.map(it => it.name)
 
-  populateVocabulary()
+  populateVocabularyHeadings($('#vocabularySelect'))
 }
 
 function loadAsSubtitles(data, tag) {
