@@ -267,7 +267,7 @@ function getXXX() {
   return xxx
 }
 
-window.AWS_API = "http://ec2-13-60-227-150.eu-north-1.compute.amazonaws.com/api"
+window.AWS_API = "https://api.satyendra.website/api"
 async function makeHttpCallToUpdateVocab() {
   let data = Object.keys(window.vocabulary)
     .map(k => `#${k}\n${window.vocabulary[k].join("\n")}`).join("\n")
@@ -996,60 +996,6 @@ function getCategory(item) {
   return category || 'Okategoriserad';
 }
 
-function searchText() {
-  let searchText = $("#searchInput").val().trim()
-
-  if (searchText.length < 3) {
-    populateAllLinks()
-    return
-  }
-
-  function getSrtObject(it) {
-    return window.srts.find(srt => srt.link === it);
-  }
-
-  let items = Object.keys(window.allSubtitles).map(it => {
-    let s = window.allSubtitles[it]
-    let svMatch = s.sv.toLowerCase().indexOf(searchText) >= 0
-    let enMatch = s.en.toLowerCase().indexOf(searchText) >= 0
-    return {link: it, svMatch, enMatch}
-  })
-    .map(it => {
-      let srt = getSrtObject(it.link)
-      return {...it, ...srt}
-    }).filter(it => it.svMatch || it.enMatch)
-
-  let $mp3Choice = $('#mp3Choice');
-  $mp3Choice.html('<option>--</option>')
-
-  let ogs = {}
-  let getOptgroup = category => {
-    if (!ogs[category]) {
-      ogs[category] = $(`<optgroup label="${category}">`)
-    }
-    return ogs[category]
-  }
-
-  items.map(item => {
-    let subs = window.allSubtitles[item.link]
-    let text = ''
-    if (item.svMatch) {
-      text = subs['sv']
-    } else {
-      text = subs['en']
-    }
-
-    let count = (text.toLowerCase().match(new RegExp(searchText, "gi")) || []).length;
-    return ({...item, matches: count})
-  }).toSorted((x, y) => y.matches - x.matches)
-    .forEach(item => {
-      let $opt = $(`<option>(${item.matches}) ${item.name.replace(".en.srt", "").replace(".sv.srt", "")}</option>`).attr('value', item.link)
-      getOptgroup(getCategory(item)).append($opt)
-    })
-
-  Object.values(ogs).forEach(it => $mp3Choice.append(it))
-}
-
 function storeSubtitles(subs) {
   let strategy = "Normal-Slow"
 
@@ -1634,6 +1580,12 @@ function getMatchingWords(list, search) {
     })
   }
 
+  getSearchedTerms(transformedSearchText).forEach(it => {
+      if(!wordToItemsMap[it] && !isRegExp(it)) {
+        wordToItemsMap[it] = []
+      }
+  })
+
   return wordToItemsMap;
 }
 
@@ -1810,6 +1762,7 @@ function getSearchedTerms(search) {
   if (search === null || search === undefined) {
     search = window.searchText
   }
+  if(!search) return []
   let terms = _.trim(search.toLowerCase(), SEPARATOR_PIPE)
     .split(SEPARATOR_PIPE)
     .filter(it => it.trim().length > 0)
@@ -1817,10 +1770,6 @@ function getSearchedTerms(search) {
     .map(it => {
       let leftSpace = it.startsWith(" "), rightSpace = it.endsWith(" ");
       let w = it.trim()
-      if (w.endsWith("en")) {
-        w = w.substring(0, w.length - 2)
-        w = w + "<*en"
-      }
       return (leftSpace ? " " : "") + w + (rightSpace ? " " : "")
     });
   return _.uniq(terms.filter(it => it));
@@ -1999,7 +1948,7 @@ function render(searchResults, search, className) {
   }
 
   if (window.unprocessedSearchText) {
-    $result.append(`<p class="search-text-info">${window.unprocessedSearchText.replaceAll(SEPARATOR_PIPE, " | ")}</p>`)
+    $result.append(`<p class="search-text-info">${getSearchedTerms(unprocessedSearchText).filter(it => !isRegExp(it)).map(it => getWikiLink(it)).join(" | ")}</p>`)
   }
 
   let searchResultsFiltered = filterByLanguage(searchResults);
@@ -2203,6 +2152,14 @@ async function fetchSRTs(searchText) {
   }
 }
 
+function isRegExp(text) {
+  let isRegex = false;
+  if ([".", "*", "?"].some(it => _.includes(text, it))) {
+    isRegex = true;
+  }
+  return isRegex;
+}
+
 function renderAccordions() {
   console.log('Rendering accordions')
 
@@ -2251,11 +2208,7 @@ function renderAccordions() {
     });
   }
 
-  let isRegex = false;
-  if ([".", "*", "?"].some(it => _.includes(window.searchText, it))) {
-    isRegex = true;
-  }
-  if (isRegex) {
+  if (isRegExp(window.searchText)) {
     $('.accordion:nth(1)').click()
   } else {
     $('.accordion').first().click()
