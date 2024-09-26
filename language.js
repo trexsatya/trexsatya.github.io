@@ -1962,9 +1962,10 @@ function render(searchResults, search, className) {
 
   $result.append("<hr>")
 
+  let wordToItemsMapNonSrt = {}
   if (window.location.pathname.includes("wordbuilder")) {
-    wordToItemsMap = getMatchingWords(searchResults.filter(it => it.nonSrt), search, item => [item]);
-    populateNonSRTFindings(wordToItemsMap, $result);
+    wordToItemsMapNonSrt = getMatchingWords(searchResults.filter(it => it.nonSrt), search, item => [item]);
+    populateNonSRTFindings(wordToItemsMapNonSrt, $result);
   }
 
   renderAccordions()
@@ -2000,6 +2001,7 @@ function render(searchResults, search, className) {
     $collapseDownSign.hide();
     $('#collapseUpSign').show();
   }
+  // return Object.assign({}, wordToItemsMap, wordToItemsMapNonSrt);
   return wordToItemsMap;
 } // end render
 
@@ -2146,7 +2148,7 @@ async function fetchSRTs(searchText) {
   window.searchResult = fetchFromDownloadedFiles(window.searchText.trim());
   let words = render(window.searchResult, window.searchText, "primary")
   if (!window.searchText.includes(SEPARATOR_PIPE) && window.searchText.trim().length > 4 && Object.values(words).flat().length === 0) {
-    window.searchText = window.searchText.trim().slice(0, -2)
+    window.searchText = window.searchText + "|" +window.searchText.trim().slice(0, -2)
     window.searchResult = fetchFromDownloadedFiles(window.searchText);
     render(window.searchResult, window.searchText, "secondary")
   }
