@@ -1948,7 +1948,9 @@ function render(searchResults, search, className) {
   }
 
   if (window.unprocessedSearchText) {
-    $result.append(`<p class="search-text-info">${getSearchedTerms(unprocessedSearchText).filter(it => !isRegExp(it)).map(it => getWikiLink(it)).join(" | ")}</p>`)
+    $result.append(`<p class="search-text-info">${
+      unprocessedSearchText.split(SEPARATOR_PIPE).map(it => getWikiLink(it)).join(" | ")
+    }</p>`)
   }
 
   let searchResultsFiltered = filterByLanguage(searchResults);

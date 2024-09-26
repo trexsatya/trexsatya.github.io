@@ -127,7 +127,7 @@ mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionäre
 ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
 angående|gällande|beträffande
 tillskriva|tillräkna|
-med flit|avsiktlig|med vett och vilja|uppsåtlig|
+med flit|flitig|avsiktlig|med vett och vilja|uppsåtlig|
 sikta|rikta|<*handla om|rikta|inrikta|inriktning|
 kännedom|vetskap|vetande|vetenskap|vetenskapen|vetenskaper|kunskap|
 
@@ -143,7 +143,7 @@ ideell|
 lekamlig|kroppslig|fysisk|
 krass|materialistisk|jordbunden|
 
-uppgift|uppgifter|information|informationer|faktum|faktumet|fakta(pl)|fakta(pl-bestämd)|
+uppgift|uppgifter|information|informationer|faktum|faktumet|fakta(pl-bestämd)|
 
 intelligens|intelligenser|förstånd(sl-pl)|förnuft|förnuftet|
 tanke|tankar|tänka|tänker|tänkte|tänkt|tänk|spekulera|spekulant|spekulanter|tycka|an<*se|
@@ -1056,6 +1056,7 @@ formulera|
 skissa|skiss|skisser|
 kontur|konturer|
 måla|kludda(dåligt måla)|kludd|kluddar|klotter|klottra|kladda|
+spackling|spackla|spackel
 bestryka|grundmåla
 rista|ristning|hällristning|
 karva|
@@ -1350,7 +1351,7 @@ ful|
 prålig|utsmyckad|dekorerad|broderad|utsirad|utsirning|utsirningar|utsmyckning|utsmyckningar|
 prål|prålet|prakt|flärd|bjäfs|pomp|pompa|pompa och ståt|
 pryda|pryder|prydde|prytt|pryd|pynt|smycka|försköna|dekorera|snygga till|
-sminka|smink|sminker|kosmetika|puder|pudra|kosmetisk|
+sminka|smink|sminker|kosmetika|puder|pudra|kosmetisk|spackla sig(nedsättande)|
 prydlig|prydnad|utsmyckning|pynt
 vinjett(i bok framst)|
 
