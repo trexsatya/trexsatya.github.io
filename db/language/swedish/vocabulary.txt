@@ -407,6 +407,103 @@ hopsjunken
 
 kullerbytta|kullerbyttor|
 
+föra|för|förde|fört|forsla|leda|transportera|flytta|åka|frakta
+föra med sig (ngt)|
+trä (över/genom/på nåt)|trär|trädde|trätt|
+
+ersätta|ersättare(sl-pl)|suppleant|suppleanter|kompensera|
+uppväga|balansera|
+
+lugna|
+vifta|fläkta|blåsa|vinka(åt/till)|
+svinga|svänga|svänger|svängde|svängt|sväng|
+dingla|gunga|gungning|
+cirkulera|
+
+pröva|prova|testa|försöka|försökte|försökt|försök|
+prov|provning|tentamen|tentamina|tenta|tentor|förhör|examenation|
+
+dansa|
+stampa|
+be<*ge <*sig|fara|färdas|färdades|färdats
+tripp|tripper|resa|resor|tur|turer|färd|färder|utflykt|utflykter|åktur|utflyktsmål|upptäcktsresa|upptäcktsfärd|
+hamna|landa|råka|möta|träffa|stöta på|
+stöta på|<*springa ihop med|
+resenär|resenärer|passagerare(sl-pl)|
+
+besöka|visitera|
+träffa|
+missa|
+utförande|
+passa|
+springa ifatt|komma ifatt|
+
+Visa (runt)|visning|genomgång|husesyn|visningstur|visningsturer|visningsrunda|visningsrundor|
+
+smita|rymma|rymmer|rymmde|rymt|fly|flyr|flydde|flytt|
+
+dopp|doppa
+
+rycka|rycker|ryckte|ryckt|ryck|
+
+rycka av|
+
+ströva|ströv|ströveri|flanera|vanka|vandra|spatserar|
+vandring|vandringar|rundvandring|
+traska|hasa|
+stövla|
+klampa|
+irra|flacka|
+springa|löpa|löper|löpte|löpt|löp|rinna|ränna|rusa|sprungen|bortsprungen|
+rusning|språng
+löprunda|löprundor|
+armhävning|armhävningar|
+vada|
+hasta|skynda|barka|Jäkta|
+glida|glider|gled|glidit|slinka|slinker|slank|slunkit|slippa|slipper|slapp|sluppit|slinta|slinter|slant|sluntit|slint|
+rutscha|kana|
+<*glida fram|
+halka|sladda|Slira|
+krypa|kryper|kröp|krupit|kryp|kravla|krälar
+stryka|stryker|strök|strukit|stryk|klappa|smeka|smeker|smekte|smekt|smek|
+peta|petting|pilla|påta|pyssla|knåpa|
+
+halta|
+
+stega|kliva|kliver|klev|klivit|kliv|klivande
+
+lyfta (på)|lyfter|lyfte|lyft|kasa upp|häva|höja|
+klättra|
+sänka|höja|höjning|chockhöjning|sänkning|sänk| höj|sänker|höjer|
+sänkte|höjde|sänkt|höjt|sjunka|sjunker|sjönk|sjunkit|dala|
+flyta|flyter|flöt|flutit|flyt|
+putta|stöta|stöter|stötte|stött|skjuta|fjädra|skjuter|sköt|skjutit|sparka|knuffa|puffa|
+bolma|
+smäll|smällar|stöt|stötar|slag(sl-pl)|krock|krockar|smäll s|
+sprängning|spränga|spränger|sprängde|sprängt|spräng|
+<*skjuta upp|anstå|uppskjutning|uppskjutningar|uppskjuten|uppskov|
+svepa|sveper|svepte|svept|svischa|susa|rusa|susning|
+dra|släpa|<*dra med sig|dras med|
+kröka|kröker|krökte|krökt|krök|böja|böjer|böjde|böjt|böj|
+
+rubba|rubbning|
+skaka|ruska|skälva|darra|skumpa|guppa|gunga|
+Nicka (till)|
+rysa|ryser|ryste|rös|ryst|rys|
+darrning|
+skalv|
+studsa|studs|
+hoppa|
+<*ta ett varv|
+vingla|vackla
+fladdra|
+falla|faller|föll|fallit|fall|ramla|störta|rasa|snubbla|snava|snubbeltråd|
+dunsa|dimpa|duns|dunsar|
+droppa
+trilla|
+välta|välter|välte|vält|vältning|vältningar|
+resa (sig)|reser|reste|rest|resning|resningar|<*resa på sig|
+
 #Games, sports
 skidbacke|skidbackar|
 
@@ -833,8 +930,7 @@ ett antal|ett par|en grupp|en hel del|
 massor med|ofantlig
 en massa
 en del|somliga|vissa|några|
-en och annan
-ett och annat
+en och annan|ett och annat
 allt fler|
 
 jämna tal|udda tal
@@ -1087,7 +1183,7 @@ dyka|dyker|dök|dykte|dykt|
 
 <*dyka upp|framträdda|framträder|framträdde|framträtt
 öppna|öppet|
-öppning|inskärning|slits|hål|tapp|tappar
+öppning|inskärning|slits|hål|glugg|gluggar|tapp|tappar|
 hålslagare|
 
 återuppta|
@@ -1154,6 +1250,7 @@ död|dödar|avliva|mörda|mord(sl-pl)|mordet|<*slå ihjäl|frånfälle|frånfäl
 <*gå under|undergång|
 vissna|bli vissen|
 röta|ruttna|förruttna|förruttnelse|förruttnelser|
+jäsa|jäser|jäste|jäst|jäsning|jäsningar|fermentera|
 avsluta|utagerad|avslutning|avslut|avslutad
 avslutning|epilog|
 avsked|farväl|skilsmässa|
@@ -1223,103 +1320,6 @@ styrka|styrkor|
 brist|bristen|brister|
 urgröpt|urholkad|försvagat|undergräva|undergrävning|undergrävningar|
 förstärkat|kraftsamla|kraftsamling|förstärka|förstärker|förstärkte|förstärkt|förstärkning|förstärkningar|
-
-föra|för|förde|fört|forsla|leda|transportera|flytta|åka|frakta
-föra med sig (ngt)|
-trä (över/genom/på nåt)|trär|trädde|trätt|
-
-ersätta|ersättare(sl-pl)|suppleant|suppleanter|kompensera|
-uppväga|balansera|
-
-lugna|
-vifta|fläkta|blåsa|vinka(åt/till)|
-svinga|svänga|svänger|svängde|svängt|sväng|
-dingla|gunga|gungning|
-cirkulera|
-
-pröva|prova|testa|försöka|försökte|försökt|försök|
-prov|provning|tentamen|tentamina|tenta|tentor|förhör|examenation|
-
-dansa|
-stampa|
-be<*ge <*sig|fara|färdas|färdades|färdats
-tripp|tripper|resa|resor|tur|turer|färd|färder|utflykt|utflykter|åktur|utflyktsmål|upptäcktsresa|upptäcktsfärd|
-hamna|landa|råka|möta|träffa|stöta på|
-stöta på|<*springa ihop med|
-resenär|resenärer|passagerare(sl-pl)|
-
-besöka|visitera|
-träffa|
-missa|
-utförande|
-passa|
-springa ifatt|komma ifatt|
-
-Visa (runt)|visning|genomgång|husesyn|visningstur|visningsturer|visningsrunda|visningsrundor|
-
-smita|rymma|rymmer|rymmde|rymt|fly|flyr|flydde|flytt|
-
-dopp|doppa
-
-rycka|rycker|ryckte|ryckt|ryck|
-
-rycka av|
-
-ströva|ströv|ströveri|flanera|vanka|vandra|spatserar|
-vandring|vandringar|rundvandring|
-traska|hasa|
-stövla|
-klampa|
-irra|flacka|
-springa|löpa|löper|löpte|löpt|löp|rinna|ränna|rusa|sprungen|bortsprungen|
-rusning|språng
-löprunda|löprundor|
-armhävning|armhävningar|
-vada|
-hasta|skynda|barka|Jäkta|
-glida|glider|gled|glidit|slinka|slinker|slank|slunkit|slippa|slipper|slapp|sluppit|slinta|slinter|slant|sluntit|slint|
-rutscha|kana|
-<*glida fram|
-halka|sladda|Slira|
-krypa|kryper|kröp|krupit|kryp|kravla|krälar
-stryka|stryker|strök|strukit|stryk|klappa|smeka|smeker|smekte|smekt|smek|
-peta|petting|pilla|påta|pyssla|knåpa|
-
-halta|
-
-stega|kliva|kliver|klev|klivit|kliv|klivande
-
-lyfta (på)|lyfter|lyfte|lyft|kasa upp|häva|höja|
-klättra|
-sänka|höja|höjning|chockhöjning|sänkning|sänk| höj|sänker|höjer|
-sänkte|höjde|sänkt|höjt|sjunka|sjunker|sjönk|sjunkit|dala|
-flyta|flyter|flöt|flutit|flyt|
-putta|stöta|stöter|stötte|stött|skjuta|fjädra|skjuter|sköt|skjutit|sparka|knuffa|puffa|
-bolma|
-smäll|smällar|stöt|stötar|slag(sl-pl)|krock|krockar|smäll s|
-sprängning|spränga|spränger|sprängde|sprängt|spräng|
-<*skjuta upp|anstå|uppskjutning|uppskjutningar|uppskjuten|uppskov|
-svepa|sveper|svepte|svept|svischa|susa|rusa|susning|
-dra|släpa|<*dra med sig|dras med|
-kröka|kröker|krökte|krökt|krök|böja|böjer|böjde|böjt|böj|
-
-rubba|rubbning|
-skaka|ruska|skälva|darra|skumpa|guppa|gunga|
-Nicka (till)|
-rysa|ryser|ryste|rös|ryst|rys|
-darrning|
-skalv|
-studsa|studs|
-hoppa|
-<*ta ett varv|
-vingla|vackla
-fladdra|
-falla|faller|föll|fallit|fall|ramla|störta|rasa|snubbla|snava|snubbeltråd|
-dunsa|dimpa|duns|dunsar|
-droppa
-trilla|
-välta|välter|välte|vält|vältning|vältningar|
-resa (sig)|reser|reste|rest|resning|resningar|<*resa på sig|
 
 tomt|tomten|tomter|fastighet|kvarter|kvarter(sl-pl)|
 omgivning|omgivningar|omvärld|omnejd|omgivande
@@ -2158,7 +2158,7 @@ ugn|ugnar|kakelugn|
 spis|spisar|
 
 elda|
-brinna|brinner|brann|brunnit|brinn|
+brinna|brinner|brann|brunnit|brinn|flamma|
 brasa|brasor|eld|bål(sl-pl)|
 
 brödrost|brödrostar|
@@ -2677,6 +2677,7 @@ berg|fjäll(sl-pl)|
 klippa|klippor|kulle|kullar| ås | åsar |
 dal|dalar|däld|dälder|
 grotta|grottor|
+urberg|
 
 tundralandskap|tundra|
 
@@ -2686,6 +2687,7 @@ tundralandskap|tundra|
 vindpust|
 luft(Oräknebart)|vind|vindar|storm|storma
 oväder|åska|åskväder|åskmoln|åskmoln|åskknall|åskknallar|åsknedslag|åsknedslag|åskregn|åskregn|åskmuller|tordön|
+lavin|
 
 smällkall|
 
@@ -2739,7 +2741,7 @@ gräsplätt|gräsplätter|
 hage|hagar|äng|ängar|ängsmark|ängsmarker|
 åker|åkrar|fält(sl-pl)|åkermark
 hagmark|vall|vallar|
-slätt|slätter|prärie|prärier|savann|savanner|grässtäpp|
+slätt|slätter|hed|hedar|prärie|prärier|savann|savanner|grässtäpp|
 gräsyta|gräsytor|
 grästorv|grässvål|grässvålar|
 vass|vassar|vassrugge|vassruggar|
