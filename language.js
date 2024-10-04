@@ -238,14 +238,14 @@ function saveSearch(word, count) {
 }
 
 function populateVocabText() {
-   let category = $("#addToVocabularyDialogSelect").val()
-    let text = window.vocabulary[category].join("\n")
-    $("#vocabularySegmentTextarea").val(text)
+  let category = $("#addToVocabularyDialogSelect").val()
+  let text = window.vocabulary[category].join("\n")
+  $("#vocabularySegmentTextarea").val(text)
 }
 
 function openAddToVocabDialog() {
-  let w = window.innerWidth*0.9
-  let h = window.innerHeight*0.8
+  let w = window.innerWidth * 0.9
+  let h = window.innerHeight * 0.8
   $("#addToVocabularyDialog").dialog({width: w, height: h}).show()
   populateVocabularyHeadings($('#addToVocabularyDialogSelect'))
 }
@@ -260,7 +260,7 @@ function addToVocab() {
 
 function getXXX() {
   let xxx = localStorage.getItem("xxx")
-  if(!xxx) {
+  if (!xxx) {
     xxx = prompt("Enter the XXX")
     localStorage.setItem("xxx", xxx)
   }
@@ -268,6 +268,7 @@ function getXXX() {
 }
 
 window.AWS_API = "https://api.satyendra.website/api"
+
 async function makeHttpCallToUpdateVocab() {
   let data = Object.keys(window.vocabulary)
     .map(k => `#${k}\n${window.vocabulary[k].join("\n")}`).join("\n")
@@ -1581,9 +1582,9 @@ function getMatchingWords(list, search) {
   }
 
   getSearchedTerms(transformedSearchText).forEach(it => {
-      if(!wordToItemsMap[it] && !isRegExp(it)) {
-        wordToItemsMap[it] = []
-      }
+    if (!wordToItemsMap[it] && !isRegExp(it)) {
+      wordToItemsMap[it] = []
+    }
   })
 
   return wordToItemsMap;
@@ -1762,7 +1763,7 @@ function getSearchedTerms(search) {
   if (search === null || search === undefined) {
     search = window.searchText
   }
-  if(!search) return []
+  if (!search) return []
   let terms = _.trim(search.toLowerCase(), SEPARATOR_PIPE)
     .split(SEPARATOR_PIPE)
     .filter(it => it.trim().length > 0)
@@ -1816,7 +1817,7 @@ function populateSRTFindings(wordToItemsMap, $result) {
       title = `"${word}"`
     }
 
-    let wordBlock = $(`<div ><h5 class="accordion">${title}</h5></div>`)
+    let wordBlock = $(`<div ><h5 class="accordion ${items.length ? '': 'no-result'}">${title}</h5></div>`)
     items = items.toSorted((x, y) => x.path === window.preferredFile ? -1 : 1)
 
     wordBlock.append(`<div style=""> Wiki: ${getWikiLinks(word)} 丨
@@ -1905,7 +1906,12 @@ function renderVocabularyFindings(search) {
   search = search.toLowerCase().trim()
 
   function wordIsInVocabularyLine(vocabLine) {
-    return getWords(expandWords(vocabLine)).filter(it => it.trim().length > 2).map(it => it.toLowerCase().trim()).includes(search);
+    try {
+      return getWords(expandWords(vocabLine)).filter(it => it.trim().length > 2).map(it => it.toLowerCase().trim()).includes(search);
+    } catch (e) {
+      console.log(vocabLine, e)
+      return false
+    }
   }
 
   let categories = Object.keys(window.vocabulary)
@@ -1999,7 +2005,7 @@ function render(searchResults, search, className) {
 
   $('#resultContainer').show();
   let $collapseDownSign = $('#collapseDownSign');
-  if($collapseDownSign.is(':visible')) {
+  if ($collapseDownSign.is(':visible')) {
     $collapseDownSign.hide();
     $('#collapseUpSign').show();
   }
@@ -2100,7 +2106,7 @@ function _expandWords(txt) {
   }
 
   let expansions = getExpansionForWords()
-  let terms = txt.split(SEPARATOR_PIPE).map(it => _.includes(it, "<*") && !_.includes(it, " ") ? it + " " : it)
+  let terms = txt.split(SEPARATOR_PIPE).map(it => _.includes(it, "<*") && !it.endsWith(" ") ? it + " " : it)
   let fn = () => {
     w = terms.shift()
     if (!w) return
@@ -2150,7 +2156,7 @@ async function fetchSRTs(searchText) {
   window.searchResult = fetchFromDownloadedFiles(window.searchText.trim());
   let words = render(window.searchResult, window.searchText, "primary")
   if (!window.searchText.includes(SEPARATOR_PIPE) && window.searchText.trim().length > 4 && Object.values(words).flat().length === 0) {
-    window.searchText = window.searchText + "|" +window.searchText.trim().slice(0, -2)
+    window.searchText = window.searchText + "|" + window.searchText.trim().slice(0, -2)
     window.searchResult = fetchFromDownloadedFiles(window.searchText);
     render(window.searchResult, window.searchText, "secondary")
   }
