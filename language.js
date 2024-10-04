@@ -2218,11 +2218,7 @@ function renderAccordions() {
     });
   }
 
-  if (isRegExp(window.searchText)) {
-    $('.accordion:nth(1)').click()
-  } else {
-    $('.accordion').first().click()
-  }
+  $(".accordion").filter((i, it) => !$(it).hasClass("no-result")).first().click()
 }
 
 // 2. This code loads the IFrame Player API code asynchronously.
