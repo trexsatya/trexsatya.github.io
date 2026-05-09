@@ -1,0 +1,903 @@
+1
+00:00:00,000 --> 00:00:02,010
+muy buenas y bienvenidos una vez más a
+
+2
+00:00:02,010 --> 00:00:03,629
+beta tech si este es el primer vídeo que
+
+3
+00:00:03,629 --> 00:00:05,069
+habéis del canal invita t que hablamos
+
+4
+00:00:05,069 --> 00:00:06,930
+sobre software y tecnología por lo que
+
+5
+00:00:06,930 --> 00:00:08,849
+si te interesa el desarrollo estás en el
+
+6
+00:00:08,849 --> 00:00:10,830
+lugar indicado después de subir algunos
+
+7
+00:00:10,830 --> 00:00:12,389
+vídeos de programación orientada a
+
+8
+00:00:12,389 --> 00:00:14,370
+objetos me he dado cuenta de que todo
+
+9
+00:00:14,370 --> 00:00:15,870
+esto del diseño de sistemas tanto
+
+10
+00:00:15,870 --> 00:00:17,340
+internos de software como de
+
+11
+00:00:17,340 --> 00:00:19,560
+arquitectura os gusta bastante así que
+
+12
+00:00:19,560 --> 00:00:21,000
+me alegra decir que este va a ser el
+
+13
+00:00:21,000 --> 00:00:22,650
+primer vídeo de una serie de vídeos
+
+14
+00:00:22,650 --> 00:00:25,230
+sobre patrones de diseño la idea es
+
+15
+00:00:25,230 --> 00:00:27,269
+sencilla intentar hacer un vídeo por
+
+16
+00:00:27,269 --> 00:00:29,250
+cada patrón juntarlos todos en una lista
+
+17
+00:00:29,250 --> 00:00:31,170
+de reproducción y poder decir que hemos
+
+18
+00:00:31,170 --> 00:00:33,180
+recopilado en vídeo todos los patrones
+
+19
+00:00:33,180 --> 00:00:35,070
+de diseño pero antes de meternos en una
+
+20
+00:00:35,070 --> 00:00:37,920
+serie que ya os aviso no va a ser corta
+
+21
+00:00:37,920 --> 00:00:39,780
+creo que es mejor explicar primero qué
+
+22
+00:00:39,780 --> 00:00:41,760
+son los patrones de diseño porque
+
+23
+00:00:41,760 --> 00:00:44,340
+existen y ver un poco cómo se clasifican
+
+24
+00:00:44,340 --> 00:00:46,079
+más que nada no creo que sirva de mucho
+
+25
+00:00:46,079 --> 00:00:48,000
+ponernos a explicar cada uno de estos
+
+26
+00:00:48,000 --> 00:00:49,800
+conceptos sin tener primero una
+
+27
+00:00:49,800 --> 00:00:51,870
+introducción así que vayamos ya al curro
+
+28
+00:00:51,870 --> 00:00:53,760
+y expliquemos de una vez por todas qué
+
+29
+00:00:53,760 --> 00:00:55,469
+leches es esto de los patrones de diseño
+
+30
+00:00:55,469 --> 00:00:57,420
+podemos decir que un patrón de diseño es
+
+31
+00:00:57,420 --> 00:00:59,730
+una receta un plan de acción una
+
+32
+00:00:59,730 --> 00:01:02,399
+descripción de un problema junto con una
+
+33
+00:01:02,399 --> 00:01:04,170
+forma de solucionarlo en otras
+
+34
+00:01:04,170 --> 00:01:05,610
+profesiones como por ejemplo en la
+
+35
+00:01:05,610 --> 00:01:06,330
+arquitectura
+
+36
+00:01:06,330 --> 00:01:08,610
+se utilizan muchos patrones elementos
+
+37
+00:01:08,610 --> 00:01:10,970
+reutilizables para solucionar problemas
+
+38
+00:01:10,970 --> 00:01:13,320
+recurrentes que se encuentran pues en el
+
+39
+00:01:13,320 --> 00:01:15,090
+día a día cuando se dicen en edificios
+
+40
+00:01:15,090 --> 00:01:16,950
+por ejemplo ejemplos de estos patrones
+
+41
+00:01:16,950 --> 00:01:19,260
+podrían ser los arcos para aguantar
+
+42
+00:01:19,260 --> 00:01:21,330
+grandes cargas o los puentes para
+
+43
+00:01:21,330 --> 00:01:23,910
+sobrepasar obstáculos de esta forma los
+
+44
+00:01:23,910 --> 00:01:25,860
+arquitectos pueden diseñar soluciones
+
+45
+00:01:25,860 --> 00:01:28,230
+más complejas combinando estos elementos
+
+46
+00:01:28,230 --> 00:01:30,480
+unos con otros los desarrolladores
+
+47
+00:01:30,480 --> 00:01:32,790
+también tienen herramientas similares a
+
+48
+00:01:32,790 --> 00:01:33,990
+lo largo de la historia ha habido
+
+49
+00:01:33,990 --> 00:01:35,640
+problemas en el desarrollo de software
+
+50
+00:01:35,640 --> 00:01:38,280
+que han ido apareciendo una y otra vez y
+
+51
+00:01:38,280 --> 00:01:40,500
+que casualmente se solucionaban de una
+
+52
+00:01:40,500 --> 00:01:42,300
+forma similar estos problemas eran
+
+53
+00:01:42,300 --> 00:01:44,010
+suficientemente generales como para
+
+54
+00:01:44,010 --> 00:01:45,660
+poder aparecer en diferentes situaciones
+
+55
+00:01:45,660 --> 00:01:47,760
+con diferentes lenguajes y con
+
+56
+00:01:47,760 --> 00:01:50,190
+diferentes arquitecturas y de hecho la
+
+57
+00:01:50,190 --> 00:01:51,660
+mayoría de soluciones se detienen
+
+58
+00:01:51,660 --> 00:01:53,400
+también de una forma general por lo
+
+59
+00:01:53,400 --> 00:01:55,200
+tanto son recetas que os servirán en
+
+60
+00:01:55,200 --> 00:01:57,030
+muchos entornos diferentes por ejemplo
+
+61
+00:01:57,030 --> 00:01:59,670
+tanto en front-end como mba que en
+
+62
+00:01:59,670 --> 00:02:02,610
+resumen un patrón de diseño define una
+
+63
+00:02:02,610 --> 00:02:04,860
+solución a un problema recurrente y esta
+
+64
+00:02:04,860 --> 00:02:06,720
+solución se puede replicar e implementar
+
+65
+00:02:06,720 --> 00:02:08,820
+de varias formas dependiendo de la
+
+66
+00:02:08,820 --> 00:02:10,310
+tecnología
+
+67
+00:02:10,310 --> 00:02:12,290
+o del lenguaje para definir estos
+
+68
+00:02:12,290 --> 00:02:13,760
+patrones normalmente se utilizan
+
+69
+00:02:13,760 --> 00:02:16,069
+gráficos como los patrones acostumbran a
+
+70
+00:02:16,069 --> 00:02:18,080
+ser construcciones de clases y
+
+71
+00:02:18,080 --> 00:02:19,910
+definición de relaciones entre las
+
+72
+00:02:19,910 --> 00:02:22,040
+mismas estos gráficos son normalmente
+
+73
+00:02:22,040 --> 00:02:25,220
+diagramas u ml o similares en esta serie
+
+74
+00:02:25,220 --> 00:02:26,840
+de vídeos intentaré explicar con
+
+75
+00:02:26,840 --> 00:02:28,849
+ejemplos y de la forma más entendible
+
+76
+00:02:28,849 --> 00:02:30,880
+posible estas relaciones de clases
+
+77
+00:02:30,880 --> 00:02:32,660
+explicando los problemas que se
+
+78
+00:02:32,660 --> 00:02:34,730
+solucionan cada patrón y en algunos
+
+79
+00:02:34,730 --> 00:02:37,040
+casos las consecuencias o complicaciones
+
+80
+00:02:37,040 --> 00:02:38,930
+que pueden emerger de utilizarlos
+
+81
+00:02:38,930 --> 00:02:41,510
+entonces como he dicho este vídeo va a
+
+82
+00:02:41,510 --> 00:02:43,459
+ser el punto de introducción y por lo
+
+83
+00:02:43,459 --> 00:02:45,380
+tanto creo que es necesario enseñaros la
+
+84
+00:02:45,380 --> 00:02:47,750
+clasificación de los diferentes patrones
+
+85
+00:02:47,750 --> 00:02:50,000
+de diseño de forma básica cómo se
+
+86
+00:02:50,000 --> 00:02:52,010
+agrupan entre ellos y es que normalmente
+
+87
+00:02:52,010 --> 00:02:53,930
+los patrones se clasifican en tres
+
+88
+00:02:53,930 --> 00:02:56,660
+campos generales los patrones creacional
+
+89
+00:02:56,660 --> 00:02:59,060
+es los patrones estructurales y los
+
+90
+00:02:59,060 --> 00:03:01,580
+patrones de comportamiento los patrones
+
+91
+00:03:01,580 --> 00:03:03,080
+que nacionales son aquellos que se
+
+92
+00:03:03,080 --> 00:03:04,760
+encargan de solucionar problemas que
+
+93
+00:03:04,760 --> 00:03:06,500
+implican la creación de objetos
+
+94
+00:03:06,500 --> 00:03:08,870
+su objetivo es dar soluciones para poder
+
+95
+00:03:08,870 --> 00:03:11,239
+crear instancias concretas de ciertos
+
+96
+00:03:11,239 --> 00:03:13,400
+objetos por ejemplo si tenemos una
+
+97
+00:03:13,400 --> 00:03:15,700
+jerarquía de clases compleja útil
+
+98
+00:03:15,700 --> 00:03:17,290
+tipo de patrones nos puede ayudar a
+
+99
+00:03:17,290 --> 00:03:18,760
+mantener nuestro código libre de
+
+100
+00:03:18,760 --> 00:03:21,370
+infinitos ipsi infinitos switches o el
+
+101
+00:03:21,370 --> 00:03:22,750
+set para que se entienda mejor el
+
+102
+00:03:22,750 --> 00:03:24,670
+problema imaginaros que estáis
+
+103
+00:03:24,670 --> 00:03:26,319
+desarrollando un videojuego tenéis
+
+104
+00:03:26,319 --> 00:03:28,450
+varios tipos de enemigo es un videojuego
+
+105
+00:03:28,450 --> 00:03:29,950
+donde los enemigos aparecen en el mapa
+
+106
+00:03:29,950 --> 00:03:31,840
+pues de forma aleatoria y por lo tanto
+
+107
+00:03:31,840 --> 00:03:33,760
+quieres que tanto el tipo de enemigo
+
+108
+00:03:33,760 --> 00:03:36,849
+como su posición se decida en tiempo de
+
+109
+00:03:36,849 --> 00:03:39,069
+ejecución todos los enemigos heredan de
+
+110
+00:03:39,069 --> 00:03:41,590
+la clase enemigo por lo que para decidir
+
+111
+00:03:41,590 --> 00:03:43,599
+qué enemigo concreto queremos utilizar
+
+112
+00:03:43,599 --> 00:03:45,580
+tienes en varias partes de tu código
+
+113
+00:03:45,580 --> 00:03:48,459
+lógica para saber qué clase usar esto
+
+114
+00:03:48,459 --> 00:03:50,049
+puede acabar siendo un problema porque
+
+115
+00:03:50,049 --> 00:03:51,880
+no será nada fácil añadir un enemigo
+
+116
+00:03:51,880 --> 00:03:53,950
+nuevo tendrás que tocar muchas partes
+
+117
+00:03:53,950 --> 00:03:55,959
+del código para que acabe funcionando y
+
+118
+00:03:55,959 --> 00:03:57,370
+lo mismo pasará si en algún momento
+
+119
+00:03:57,370 --> 00:03:59,769
+quieres eliminar algún tipo de enemigo
+
+120
+00:03:59,769 --> 00:04:01,750
+ahí es donde entraría en los patrones
+
+121
+00:04:01,750 --> 00:04:04,390
+creación alex y en este caso concreto el
+
+122
+00:04:04,390 --> 00:04:07,030
+patrón se llama factor y también nos
+
+123
+00:04:07,030 --> 00:04:08,530
+ayudan en caso de que tengamos por
+
+124
+00:04:08,530 --> 00:04:10,510
+ejemplo un objeto muy complejo de
+
+125
+00:04:10,510 --> 00:04:12,430
+construir la creación de este objeto
+
+126
+00:04:12,430 --> 00:04:14,290
+puede ser muy complicada y nos dan
+
+127
+00:04:14,290 --> 00:04:16,060
+patrones que nos pueden ayudar tanto a
+
+128
+00:04:16,060 --> 00:04:18,489
+simplificar esta creación como a hacerla
+
+129
+00:04:18,489 --> 00:04:20,289
+más entendible siguiendo con el ejemplo
+
+130
+00:04:20,289 --> 00:04:21,780
+del videojuego puede
+
+131
+00:04:21,780 --> 00:04:23,610
+pensar que crear el mapa del nivel puede
+
+132
+00:04:23,610 --> 00:04:25,830
+ser muy difícil la clase mapa tiene
+
+133
+00:04:25,830 --> 00:04:27,510
+muchos parámetros y por lo tanto
+
+134
+00:04:27,510 --> 00:04:30,120
+construirla no es sencillo otro problema
+
+135
+00:04:30,120 --> 00:04:31,800
+que podemos solucionar en este caso
+
+136
+00:04:31,800 --> 00:04:34,560
+utilizando el patrón wílder la siguiente
+
+137
+00:04:34,560 --> 00:04:36,270
+familia de patrones que vamos a ver es
+
+138
+00:04:36,270 --> 00:04:38,340
+la de patrones estructurales estos
+
+139
+00:04:38,340 --> 00:04:39,930
+patrones nos ayudan a la hora de
+
+140
+00:04:39,930 --> 00:04:41,760
+configurar relaciones entre objetos
+
+141
+00:04:41,760 --> 00:04:43,860
+siguiendo todavía con el ejemplo del
+
+142
+00:04:43,860 --> 00:04:46,169
+videojuego hemos visto que tenemos pues
+
+143
+00:04:46,169 --> 00:04:48,419
+un conjunto de enemigos la clase enemigo
+
+144
+00:04:48,419 --> 00:04:51,720
+a su vez es una entidad del juego de la
+
+145
+00:04:51,720 --> 00:04:53,730
+misma forma que los npcs y los power
+
+146
+00:04:53,730 --> 00:04:55,590
+apps definimos una entidad del juego
+
+147
+00:04:55,590 --> 00:04:57,780
+como algo que tiene cierta lógica y que
+
+148
+00:04:57,780 --> 00:04:59,730
+se va actualizando en cada iteración del
+
+149
+00:04:59,730 --> 00:05:01,740
+game club por lo tanto tenemos que cada
+
+150
+00:05:01,740 --> 00:05:03,750
+vez que se ejecuta el game loop cada vez
+
+151
+00:05:03,750 --> 00:05:05,700
+que la iteración hace una pasada nos
+
+152
+00:05:05,700 --> 00:05:07,890
+plateamos todas las entidades del juego
+
+153
+00:05:07,890 --> 00:05:10,110
+y llamamos a la función de actualizar su
+
+154
+00:05:10,110 --> 00:05:12,120
+lógica de esta forma todas las entidades
+
+155
+00:05:12,120 --> 00:05:14,669
+van moviéndose dependiendo de su estado
+
+156
+00:05:14,669 --> 00:05:16,710
+los enemigos te buscan los npcs te
+
+157
+00:05:16,710 --> 00:05:19,140
+esperan y los power apps pues aparecen o
+
+158
+00:05:19,140 --> 00:05:20,910
+desaparecen pero ahora pongamos el caso
+
+159
+00:05:20,910 --> 00:05:23,070
+en que hay un enemigo que lo que hace es
+
+160
+00:05:23,070 --> 00:05:24,990
+crear más enemigos es un enemigo que
+
+161
+00:05:24,990 --> 00:05:26,610
+genera unos pequeños minions a su
+
+162
+00:05:26,610 --> 00:05:27,430
+alrededor para
+
+163
+00:05:27,430 --> 00:05:29,020
+que vayan a atacar estos minions
+
+164
+00:05:29,020 --> 00:05:31,570
+obviamente son también entidades y por
+
+165
+00:05:31,570 --> 00:05:33,190
+lo tanto se tienen que actualizar cada
+
+166
+00:05:33,190 --> 00:05:34,960
+vez que se ejecuta el bucle del juego
+
+167
+00:05:34,960 --> 00:05:36,940
+pero queremos que es el enemigo grandote
+
+168
+00:05:36,940 --> 00:05:38,770
+se muere todos sus millones pues también
+
+169
+00:05:38,770 --> 00:05:40,960
+se mueran por lo tanto estos minions
+
+170
+00:05:40,960 --> 00:05:43,390
+dependen de alguna forma del ciclo de
+
+171
+00:05:43,390 --> 00:05:45,460
+vida de su creador así que no nos sirve
+
+172
+00:05:45,460 --> 00:05:48,010
+con que de alguna forma mágica se añadan
+
+173
+00:05:48,010 --> 00:05:49,870
+al listado de entidades globales del
+
+174
+00:05:49,870 --> 00:05:51,460
+juego esto es un problema que podemos
+
+175
+00:05:51,460 --> 00:05:52,870
+solucionar utilizando el patrón
+
+176
+00:05:52,870 --> 00:05:54,850
+composite que nos da una forma especial
+
+177
+00:05:54,850 --> 00:05:56,190
+de organizar nuestras entidades
+
+178
+00:05:56,190 --> 00:05:58,870
+asumiendo que cada entidad puede tener
+
+179
+00:05:58,870 --> 00:06:01,450
+entidades dentro suyo de forma recursiva
+
+180
+00:06:01,450 --> 00:06:03,640
+y finalmente tenemos los patrones de
+
+181
+00:06:03,640 --> 00:06:05,590
+comportamiento que nos ayudan a realizar
+
+182
+00:06:05,590 --> 00:06:08,350
+interacción entre clases u objetos de
+
+183
+00:06:08,350 --> 00:06:10,020
+forma que podamos distribuir las
+
+184
+00:06:10,020 --> 00:06:11,980
+responsabilidades de cada uno de estos
+
+185
+00:06:11,980 --> 00:06:13,990
+elementos de una forma mucho más
+
+186
+00:06:13,990 --> 00:06:16,450
+organizada en nuestro videojuego cada
+
+187
+00:06:16,450 --> 00:06:18,040
+enemigo ataca de una forma diferente
+
+188
+00:06:18,040 --> 00:06:19,690
+unos van corriendo hacia ti para
+
+189
+00:06:19,690 --> 00:06:21,730
+golpearte y otros lanzan proyectiles
+
+190
+00:06:21,730 --> 00:06:23,500
+desde lejos una forma sencilla de
+
+191
+00:06:23,500 --> 00:06:26,020
+implementar esto sería definir dentro de
+
+192
+00:06:26,020 --> 00:06:28,360
+la lógica de cada enemigo estos patrones
+
+193
+00:06:28,360 --> 00:06:30,130
+de ataque de forma que todos los
+
+194
+00:06:30,130 --> 00:06:32,350
+enemigos del mismo tipo siempre atacan
+
+195
+00:06:32,350 --> 00:06:34,210
+igual pero imaginemos que queremos
+
+196
+00:06:34,210 --> 00:06:36,460
+un poco más el juego queremos añadir un
+
+197
+00:06:36,460 --> 00:06:38,620
+nuevo enemigo más temible que tiene
+
+198
+00:06:38,620 --> 00:06:40,870
+mucha más vida que es más grande pero
+
+199
+00:06:40,870 --> 00:06:42,669
+que aunque cueste mucho más de matar
+
+200
+00:06:42,669 --> 00:06:44,860
+seguir el mismo patrón de ataque que el
+
+201
+00:06:44,860 --> 00:06:46,150
+primero que habíamos visto simplemente
+
+202
+00:06:46,150 --> 00:06:49,030
+corre hacia ti para golpearte podríamos
+
+203
+00:06:49,030 --> 00:06:50,710
+duplicar todo el código y meterlo en el
+
+204
+00:06:50,710 --> 00:06:52,960
+nuevo enemigo pero como sabéis a los
+
+205
+00:06:52,960 --> 00:06:55,030
+desarrolladores no nos gusta repetir el
+
+206
+00:06:55,030 --> 00:06:57,130
+trabajo este es un caso perfecto en el
+
+207
+00:06:57,130 --> 00:06:59,110
+que utilizar el patrón estrategia nos
+
+208
+00:06:59,110 --> 00:07:01,180
+daría una solución muy útil que nos
+
+209
+00:07:01,180 --> 00:07:02,910
+permitiría desacoplar los
+
+210
+00:07:02,910 --> 00:07:05,080
+comportamientos los tipos de ataque de
+
+211
+00:07:05,080 --> 00:07:07,419
+los enemigos dándonos la opción de ser
+
+212
+00:07:07,419 --> 00:07:10,150
+mucho más variables en nuestro vídeo a
+
+213
+00:07:10,150 --> 00:07:11,889
+partir de aquí no queda ya otra que
+
+214
+00:07:11,889 --> 00:07:13,389
+empezar a explicar los patrones de
+
+215
+00:07:13,389 --> 00:07:15,729
+diseño la idea es que este vídeo sea el
+
+216
+00:07:15,729 --> 00:07:17,710
+límite de la serie por lo tanto iré
+
+217
+00:07:17,710 --> 00:07:19,750
+dejando en la descripción todos los
+
+218
+00:07:19,750 --> 00:07:21,009
+vídeos sobre patrones de diseño
+
+219
+00:07:21,009 --> 00:07:23,050
+clasificándolos obviamente por su
+
+220
+00:07:23,050 --> 00:07:25,000
+familia si os gusta esta iniciativa por
+
+221
+00:07:25,000 --> 00:07:26,710
+favor suscribiros a mi canal y dejarme
+
+222
+00:07:26,710 --> 00:07:28,449
+un buen light y no olvidéis dejarme un
+
+223
+00:07:28,449 --> 00:07:30,759
+comentario diciendo que patrón de diseño
+
+224
+00:07:30,759 --> 00:07:32,500
+queréis ver primero espero que esta
+
+225
+00:07:32,500 --> 00:07:34,900
+serie os ayude y si mucho más nos vemos
+
+226
+00:07:34,900 --> 00:07:38,550
+en el próximo vídeo adiós

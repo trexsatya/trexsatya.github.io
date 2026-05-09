@@ -1,0 +1,979 @@
+1
+00:00:00,000 --> 00:00:02,070
+muy buenas y bienvenidos un día más a
+
+2
+00:00:02,070 --> 00:00:03,750
+beta tech para los que seáis nuevos en
+
+3
+00:00:03,750 --> 00:00:05,670
+el canal aquí hablamos de software y de
+
+4
+00:00:05,670 --> 00:00:08,189
+tecnología y concretamente en esta serie
+
+5
+00:00:08,189 --> 00:00:10,650
+hablamos sobre patrones de diseño vamos
+
+6
+00:00:10,650 --> 00:00:13,410
+a explicar uno a uno cada patrón viendo
+
+7
+00:00:13,410 --> 00:00:15,540
+sus utilidades y explicando los con
+
+8
+00:00:15,540 --> 00:00:17,490
+ejemplos si aún no sabéis lo que es un
+
+9
+00:00:17,490 --> 00:00:19,230
+patrón de diseño os dejo el inicio de la
+
+10
+00:00:19,230 --> 00:00:20,910
+serie por aquí arriba y en la
+
+11
+00:00:20,910 --> 00:00:22,859
+descripción y hoy vamos a hablar del
+
+12
+00:00:22,859 --> 00:00:25,590
+patrón strategy este patrón es un patrón
+
+13
+00:00:25,590 --> 00:00:27,630
+de comportamiento por lo que es un
+
+14
+00:00:27,630 --> 00:00:29,820
+patrón que sirve para encapsular lógica
+
+15
+00:00:29,820 --> 00:00:31,830
+el objetivo del patrón es poder tener
+
+16
+00:00:31,830 --> 00:00:34,620
+diferentes algoritmos diferentes lógicas
+
+17
+00:00:34,620 --> 00:00:36,960
+encapsuladas para así tener la capacidad
+
+18
+00:00:36,960 --> 00:00:39,780
+de poder cambiar de una a otra de una
+
+19
+00:00:39,780 --> 00:00:41,940
+forma muy elegante pero para entenderlo
+
+20
+00:00:41,940 --> 00:00:44,219
+elegante vamos a ver un ejemplo básico
+
+21
+00:00:44,219 --> 00:00:46,469
+con un videojuego concretamente lo
+
+22
+00:00:46,469 --> 00:00:48,719
+veremos con pokemon o una versión un
+
+23
+00:00:48,719 --> 00:00:50,250
+poco incipiente de lo que sería un juego
+
+24
+00:00:50,250 --> 00:00:51,870
+de pokémon en nuestra versión del juego
+
+25
+00:00:51,870 --> 00:00:54,570
+tenemos varios tipos de ataque tenemos
+
+26
+00:00:54,570 --> 00:00:56,699
+ataques especiales ataques físicos
+
+27
+00:00:56,699 --> 00:00:59,370
+ataques que pueden causar cierto cambio
+
+28
+00:00:59,370 --> 00:01:01,170
+de estado en el pokemon enemigo o
+
+29
+00:01:01,170 --> 00:01:02,820
+incluso ataques que cambian el clima
+
+30
+00:01:02,820 --> 00:01:04,920
+cambia en el estado de la batalla el
+
+31
+00:01:04,920 --> 00:01:05,960
+estado de lo que
+
+32
+00:01:05,960 --> 00:01:08,210
+sería el entorno de juego los ataques
+
+33
+00:01:08,210 --> 00:01:10,580
+por lo tanto causan un efecto hacen algo
+
+34
+00:01:10,580 --> 00:01:12,350
+hacer daño al rival puede ser uno de
+
+35
+00:01:12,350 --> 00:01:14,090
+estos efectos por ejemplo otro podría
+
+36
+00:01:14,090 --> 00:01:16,310
+ser hacer que el pokemon rival huya si
+
+37
+00:01:16,310 --> 00:01:18,050
+empezamos a programar sin pensar un poco
+
+38
+00:01:18,050 --> 00:01:19,580
+antes vamos a acabar con un código
+
+39
+00:01:19,580 --> 00:01:22,100
+similar a este donde comprobamos cada
+
+40
+00:01:22,100 --> 00:01:24,080
+tipo de ataque cada efecto que puede
+
+41
+00:01:24,080 --> 00:01:26,149
+realizar y ejecutamos las instrucciones
+
+42
+00:01:26,149 --> 00:01:28,250
+correspondientes el ataque provoca un
+
+43
+00:01:28,250 --> 00:01:30,200
+cambio de estado tenemos el código para
+
+44
+00:01:30,200 --> 00:01:32,420
+ello si el ataque en cambio cambia el
+
+45
+00:01:32,420 --> 00:01:34,970
+clima en el 50% de los casos tenemos
+
+46
+00:01:34,970 --> 00:01:37,009
+pues también su código ahí enchufado
+
+47
+00:01:37,009 --> 00:01:39,080
+pero todo esto puede volverse muy feo
+
+48
+00:01:39,080 --> 00:01:41,539
+rápidamente la última vez que lo mide en
+
+49
+00:01:41,539 --> 00:01:44,060
+pokemon existían más de 700 ataques
+
+50
+00:01:44,060 --> 00:01:46,220
+diferentes como podemos programar esto
+
+51
+00:01:46,220 --> 00:01:48,830
+sin volvernos locos sin llenar nuestro
+
+52
+00:01:48,830 --> 00:01:51,320
+código de yves para cada caso especial y
+
+53
+00:01:51,320 --> 00:01:52,910
+no vale el uso del switch que nos
+
+54
+00:01:52,910 --> 00:01:55,100
+conocemos una posible solución es el
+
+55
+00:01:55,100 --> 00:01:57,170
+patrón estratégico como hemos venido
+
+56
+00:01:57,170 --> 00:01:59,030
+diciendo el patrón strategy permite
+
+57
+00:01:59,030 --> 00:02:01,610
+ejecutar diferentes lógicas la clave
+
+58
+00:02:01,610 --> 00:02:03,920
+está en crear objetos que representen
+
+59
+00:02:03,920 --> 00:02:05,659
+estas estrategias estas estrategias
+
+60
+00:02:05,659 --> 00:02:07,759
+obviamente siguen un mismo patrón es
+
+61
+00:02:07,759 --> 00:02:09,890
+decir implementan una interfaz o heredan
+
+62
+00:02:09,890 --> 00:02:11,900
+de una clase abstracta por lo que son
+
+63
+00:02:11,900 --> 00:02:12,680
+utilizables
+
+64
+00:02:12,680 --> 00:02:14,689
+de forma polimórfica que es lo que
+
+65
+00:02:14,689 --> 00:02:16,280
+intentamos conseguir en el caso de
+
+66
+00:02:16,280 --> 00:02:17,989
+pokemon por ejemplo podríamos definir
+
+67
+00:02:17,989 --> 00:02:19,670
+una interfaz que define la función
+
+68
+00:02:19,670 --> 00:02:22,129
+ejecutar ataque esta función recibe por
+
+69
+00:02:22,129 --> 00:02:24,439
+parámetro un objeto que obviamente pues
+
+70
+00:02:24,439 --> 00:02:26,120
+tiene que ser como el input de esta
+
+71
+00:02:26,120 --> 00:02:28,280
+función que en nuestro caso es la
+
+72
+00:02:28,280 --> 00:02:30,290
+instancia de la propia batalla podemos
+
+73
+00:02:30,290 --> 00:02:32,329
+asumir que en este objeto donde tenemos
+
+74
+00:02:32,329 --> 00:02:34,489
+pues la batalla tenemos los pokemon que
+
+75
+00:02:34,489 --> 00:02:36,349
+están actualmente luchando la
+
+76
+00:02:36,349 --> 00:02:38,389
+configuración del clima el tipo de
+
+77
+00:02:38,389 --> 00:02:40,879
+terreno vamos un conjunto de variables
+
+78
+00:02:40,879 --> 00:02:43,310
+que definen el estado actual del combate
+
+79
+00:02:43,310 --> 00:02:45,799
+con esta abstracción definida tenemos ya
+
+80
+00:02:45,799 --> 00:02:47,629
+todas las herramientas para aplicar el
+
+81
+00:02:47,629 --> 00:02:49,760
+patrón la parte importante del patrón es
+
+82
+00:02:49,760 --> 00:02:51,409
+que la función que va a ejecutar los
+
+83
+00:02:51,409 --> 00:02:53,480
+ataques no depende de ningún ataque
+
+84
+00:02:53,480 --> 00:02:56,000
+concreto le da igual que ataques se haya
+
+85
+00:02:56,000 --> 00:02:58,069
+seleccionado depende de la abstracción
+
+86
+00:02:58,069 --> 00:03:01,010
+por lo tanto cualquier clase que heredé
+
+87
+00:03:01,010 --> 00:03:03,379
+o implemente esta extracción puede ser
+
+88
+00:03:03,379 --> 00:03:06,019
+utilizada de forma indiferente por
+
+89
+00:03:06,019 --> 00:03:08,209
+ejemplo si queremos un ataque que cambie
+
+90
+00:03:08,209 --> 00:03:10,219
+el clima a lluvia podemos implementar
+
+91
+00:03:10,219 --> 00:03:12,049
+una estrategia que haga eso mismo si
+
+92
+00:03:12,049 --> 00:03:13,700
+queremos uno que baje la defensa del
+
+93
+00:03:13,700 --> 00:03:15,200
+enemigo por ejemplo lo podemos
+
+94
+00:03:15,200 --> 00:03:17,510
+implementar de la misma forma en otra
+
+95
+00:03:17,510 --> 00:03:18,670
+clase
+
+96
+00:03:18,670 --> 00:03:20,740
+en función del ataque que selecciones
+
+97
+00:03:20,740 --> 00:03:23,020
+podremos utilizar una u otra estrategia
+
+98
+00:03:23,020 --> 00:03:25,360
+y lo mejor de todo es que nos podemos
+
+99
+00:03:25,360 --> 00:03:27,190
+inventar cualquier tipo de ataque que
+
+100
+00:03:27,190 --> 00:03:29,560
+haga lo que haga no tendremos que
+
+101
+00:03:29,560 --> 00:03:32,319
+modificar por ninguna razón la función
+
+102
+00:03:32,319 --> 00:03:34,270
+que los utiliza con esta flexibilidad
+
+103
+00:03:34,270 --> 00:03:36,970
+ganamos muchísimas cosas y una vez
+
+104
+00:03:36,970 --> 00:03:39,250
+montada la estructura ya no hay nada que
+
+105
+00:03:39,250 --> 00:03:40,959
+nos limiten lo que podemos hacer en los
+
+106
+00:03:40,959 --> 00:03:42,400
+ataques que podemos programar que
+
+107
+00:03:42,400 --> 00:03:43,840
+queremos programar un ataque que congela
+
+108
+00:03:43,840 --> 00:03:46,180
+el rival nos baje la defensa y de golpe
+
+109
+00:03:46,180 --> 00:03:47,890
+ponga lluvia podemos hacer una
+
+110
+00:03:47,890 --> 00:03:49,660
+estrategia que queremos hacer otro que
+
+111
+00:03:49,660 --> 00:03:51,670
+baje la velocidad del enemigo y la queme
+
+112
+00:03:51,670 --> 00:03:53,980
+también podemos hacerlos a medida que
+
+113
+00:03:53,980 --> 00:03:55,630
+nos van ocurriendo ataques es muy
+
+114
+00:03:55,630 --> 00:03:57,430
+sencillo irlos programando y lo más
+
+115
+00:03:57,430 --> 00:03:59,950
+importante no implica en ningún cambio
+
+116
+00:03:59,950 --> 00:04:02,049
+en lo que sería el código general del
+
+117
+00:04:02,049 --> 00:04:04,390
+combate por lo que eso te quita muchos
+
+118
+00:04:04,390 --> 00:04:05,830
+dolores de cabeza algunos de vosotros
+
+119
+00:04:05,830 --> 00:04:07,450
+además os habréis dado cuenta de que
+
+120
+00:04:07,450 --> 00:04:09,819
+esto se puede combinar con otro patrón y
+
+121
+00:04:09,819 --> 00:04:11,709
+que a la que queremos complicar aún más
+
+122
+00:04:11,709 --> 00:04:13,600
+nuestros ataques empieza a quedarse un
+
+123
+00:04:13,600 --> 00:04:15,489
+poquito cojo dejarme un comentario si
+
+124
+00:04:15,489 --> 00:04:17,709
+viendo este código sabéis qué patrones
+
+125
+00:04:17,709 --> 00:04:19,269
+se podrían utilizar en caso de que
+
+126
+00:04:19,269 --> 00:04:21,160
+quisiéramos por ejemplo tener ataques
+
+127
+00:04:21,160 --> 00:04:23,440
+con efectos múltiples y poder combinar
+
+128
+00:04:23,440 --> 00:04:24,770
+estos efectos
+
+129
+00:04:24,770 --> 00:04:26,120
+libre siguiendo con el patrón
+
+130
+00:04:26,120 --> 00:04:28,009
+estratégico se puede jugar mucho con él
+
+131
+00:04:28,009 --> 00:04:29,900
+y para ver un poco más algunos otros
+
+132
+00:04:29,900 --> 00:04:32,030
+usos fuera de los videojuegos vamos a
+
+133
+00:04:32,030 --> 00:04:34,699
+poner otro ejemplo los blogs la mayoría
+
+134
+00:04:34,699 --> 00:04:36,409
+de aplicaciones sacan lo que algún sitio
+
+135
+00:04:36,409 --> 00:04:39,139
+normalmente a la consola pero qué pasa
+
+136
+00:04:39,139 --> 00:04:40,370
+si de golpe queremos que nuestro
+
+137
+00:04:40,370 --> 00:04:42,259
+programa no tiene los logs a la consola
+
+138
+00:04:42,259 --> 00:04:44,690
+sino a un ficheros o incluso que los
+
+139
+00:04:44,690 --> 00:04:46,550
+mande a algún servidor mediante lo que
+
+140
+00:04:46,550 --> 00:04:49,039
+se h ttp o sockets visto de cierta forma
+
+141
+00:04:49,039 --> 00:04:51,620
+el hecho de crear blogs de imprimir algo
+
+142
+00:04:51,620 --> 00:04:54,319
+podría considerarse una estrategia que
+
+143
+00:04:54,319 --> 00:04:55,849
+pasaría así en vez de llamar
+
+144
+00:04:55,849 --> 00:04:57,800
+directamente a la función de bloquear en
+
+145
+00:04:57,800 --> 00:05:00,440
+consola englobar amos esta lógica en un
+
+146
+00:05:00,440 --> 00:05:01,580
+patrón estratégico
+
+147
+00:05:01,580 --> 00:05:02,900
+podríamos definir una interfaz llamada
+
+148
+00:05:02,900 --> 00:05:04,849
+el blogger que tiene como función el
+
+149
+00:05:04,849 --> 00:05:06,409
+hecho de escribir una función tuyo que
+
+150
+00:05:06,409 --> 00:05:08,210
+sabe que se llame white o blogs y
+
+151
+00:05:08,210 --> 00:05:09,860
+queremos que todo funcione como hasta
+
+152
+00:05:09,860 --> 00:05:12,020
+ahora implementamos la función en una
+
+153
+00:05:12,020 --> 00:05:13,970
+clase llamada console blogger que hace
+
+154
+00:05:13,970 --> 00:05:15,919
+el consell blog como el primera consola
+
+155
+00:05:15,919 --> 00:05:17,810
+esta implementación hace lo de antes
+
+156
+00:05:17,810 --> 00:05:19,669
+pero si ahora queremos cambiar y
+
+157
+00:05:19,669 --> 00:05:21,590
+escribir a un fichero podemos
+
+158
+00:05:21,590 --> 00:05:24,199
+implementar simplemente otro logger yo
+
+159
+00:05:24,199 --> 00:05:26,659
+que se lo podemos llamar el file over
+
+160
+00:05:26,659 --> 00:05:28,849
+all over a fichero o lo que queramos de
+
+161
+00:05:28,849 --> 00:05:30,590
+esta forma no tenemos que cambiar el
+
+162
+00:05:30,590 --> 00:05:31,700
+comportamiento d
+
+163
+00:05:31,700 --> 00:05:34,490
+programa hemos delegado toda esta lógica
+
+164
+00:05:34,490 --> 00:05:36,290
+al conjunto de estrategias de los
+
+165
+00:05:36,290 --> 00:05:37,670
+bloggers hemos explicado el patrón
+
+166
+00:05:37,670 --> 00:05:39,800
+estratégico y ahora podemos bloquear lo
+
+167
+00:05:39,800 --> 00:05:41,840
+que queramos donde queramos el diagrama
+
+168
+00:05:41,840 --> 00:05:44,360
+u ml de este patrón no es muy complejo y
+
+169
+00:05:44,360 --> 00:05:45,830
+lo podemos ver ahora mismo en pantalla
+
+170
+00:05:45,830 --> 00:05:48,140
+por un lado tenemos el contexto del
+
+171
+00:05:48,140 --> 00:05:50,750
+contexto que sería la cosa o la función
+
+172
+00:05:50,750 --> 00:05:52,850
+o la clase o lo que sea que utilizan
+
+173
+00:05:52,850 --> 00:05:55,340
+nuestras estrategias y la interfaz de
+
+174
+00:05:55,340 --> 00:05:57,530
+base de la interfaz o la clase abstracta
+
+175
+00:05:57,530 --> 00:05:59,300
+de estas estrategias define lo que sería
+
+176
+00:05:59,300 --> 00:06:01,970
+las firmas no las funciones que tienen
+
+177
+00:06:01,970 --> 00:06:04,430
+que implementar todas estas lógicas para
+
+178
+00:06:04,430 --> 00:06:06,290
+poder ser utilizadas de forma polinómica
+
+179
+00:06:06,290 --> 00:06:08,630
+cada estrategia individual es una clase
+
+180
+00:06:08,630 --> 00:06:10,640
+que implementa estas funcionalidades en
+
+181
+00:06:10,640 --> 00:06:12,560
+el ejemplo de pokemon el contexto sería
+
+182
+00:06:12,560 --> 00:06:14,330
+la ejecución del turno de la batalla la
+
+183
+00:06:14,330 --> 00:06:16,880
+función que implementa la lógica del
+
+184
+00:06:16,880 --> 00:06:18,860
+turno y cada estrategia sería la
+
+185
+00:06:18,860 --> 00:06:20,840
+implementación del ataque concreto en el
+
+186
+00:06:20,840 --> 00:06:22,610
+ejemplo del blogger el contexto sería
+
+187
+00:06:22,610 --> 00:06:23,780
+cualquier clase de nuestra aplicación
+
+188
+00:06:23,780 --> 00:06:26,120
+que quiere pues obviamente sacar algo
+
+189
+00:06:26,120 --> 00:06:28,100
+algún tipo de fichero oa consola o
+
+190
+00:06:28,100 --> 00:06:29,840
+escribir algo en general y cada
+
+191
+00:06:29,840 --> 00:06:32,300
+estrategia sería pues cada lógica de
+
+192
+00:06:32,300 --> 00:06:34,040
+escribir algo en pantalla el hecho de
+
+193
+00:06:34,040 --> 00:06:35,780
+llamar la consola lo que sería una
+
+194
+00:06:35,780 --> 00:06:38,090
+estrategia por ejemplo el caso de hacer
+
+195
+00:06:38,090 --> 00:06:38,390
+una
+
+196
+00:06:38,390 --> 00:06:41,210
+http para enviar los logs algún servicio
+
+197
+00:06:41,210 --> 00:06:43,310
+online también podría ser otra y lo
+
+198
+00:06:43,310 --> 00:06:45,170
+mejor es que son independientes como he
+
+199
+00:06:45,170 --> 00:06:47,360
+dicho antes el contexto no necesita
+
+200
+00:06:47,360 --> 00:06:48,980
+saber qué implementación concreta se
+
+201
+00:06:48,980 --> 00:06:51,170
+está utilizando como he dicho el patrón
+
+202
+00:06:51,170 --> 00:06:53,240
+strategy es una gran forma de delegar
+
+203
+00:06:53,240 --> 00:06:55,010
+funcionalidades que pueden ir cambiando
+
+204
+00:06:55,010 --> 00:06:56,810
+a lo largo del tiempo siempre que
+
+205
+00:06:56,810 --> 00:06:58,280
+tengamos a cierta lógica que puede
+
+206
+00:06:58,280 --> 00:06:58,910
+cambiar
+
+207
+00:06:58,910 --> 00:07:00,800
+vale la pena pararse un momento a pensar
+
+208
+00:07:00,800 --> 00:07:03,500
+si podemos utilizar este patrón otro
+
+209
+00:07:03,500 --> 00:07:04,880
+ejemplo que me viene a la cabeza así
+
+210
+00:07:04,880 --> 00:07:06,680
+rápido que de hecho en un ejemplo que me
+
+211
+00:07:06,680 --> 00:07:08,450
+encontrado hace poco en el trabajo es un
+
+212
+00:07:08,450 --> 00:07:09,830
+caso donde estamos desarrollando un
+
+213
+00:07:09,830 --> 00:07:11,270
+software que resuelve problemas de
+
+214
+00:07:11,270 --> 00:07:12,800
+optimización para resolver estos
+
+215
+00:07:12,800 --> 00:07:14,330
+problemas de optimización hay varios
+
+216
+00:07:14,330 --> 00:07:16,160
+métodos rivales algoritmos se pueden
+
+217
+00:07:16,160 --> 00:07:17,960
+resolver con algoritmos pues de búsqueda
+
+218
+00:07:17,960 --> 00:07:19,910
+local como el high flying o incluso con
+
+219
+00:07:19,910 --> 00:07:22,100
+familias de algoritmos genéticos la idea
+
+220
+00:07:22,100 --> 00:07:24,080
+era que pudiéramos cambiar de algoritmo
+
+221
+00:07:24,080 --> 00:07:26,600
+de una forma sencilla y fácil para así
+
+222
+00:07:26,600 --> 00:07:28,700
+poder sacar métricas de cada uno y
+
+223
+00:07:28,700 --> 00:07:30,860
+comparar las diferentes soluciones
+
+224
+00:07:30,860 --> 00:07:32,690
+básicamente utilizamos el patrón
+
+225
+00:07:32,690 --> 00:07:34,130
+estrategia y donde cada estrategia
+
+226
+00:07:34,130 --> 00:07:36,620
+individual son los diferentes algoritmos
+
+227
+00:07:36,620 --> 00:07:38,930
+de optimización y por lo tanto podríamos
+
+228
+00:07:38,930 --> 00:07:41,360
+cambiar entre unos y otros sin afectar a
+
+229
+00:07:41,360 --> 00:07:43,490
+ninguna otra parte del código se puede
+
+230
+00:07:43,490 --> 00:07:44,660
+ver también como si estuvierais
+
+231
+00:07:44,660 --> 00:07:45,110
+desarrollo
+
+232
+00:07:45,110 --> 00:07:47,210
+una familia de plugins son como partes
+
+233
+00:07:47,210 --> 00:07:48,770
+donde tú puedes colocar unas cosas o
+
+234
+00:07:48,770 --> 00:07:50,390
+colocar otras y encajan como un puzzle
+
+235
+00:07:50,390 --> 00:07:52,070
+por lo tanto acabas haciendo que tu
+
+236
+00:07:52,070 --> 00:07:53,960
+programa sea muy modular que puedas
+
+237
+00:07:53,960 --> 00:07:55,760
+combinar las diferentes partes para
+
+238
+00:07:55,760 --> 00:07:57,350
+conseguir diferentes funcionalidades
+
+239
+00:07:57,350 --> 00:07:59,510
+espero que os haya gustado el vídeo si
+
+240
+00:07:59,510 --> 00:08:01,220
+ha sido así no dudéis en suscribiros y
+
+241
+00:08:01,220 --> 00:08:02,990
+en darle a la campanita ya que se vienen
+
+242
+00:08:02,990 --> 00:08:05,150
+más patrones en esta serie y sin mucho
+
+243
+00:08:05,150 --> 00:08:05,450
+más
+
+244
+00:08:05,450 --> 00:08:07,760
+muchas gracias por verme nos vemos en el
+
+245
+00:08:07,760 --> 00:08:11,110
+próximo vídeo adiós

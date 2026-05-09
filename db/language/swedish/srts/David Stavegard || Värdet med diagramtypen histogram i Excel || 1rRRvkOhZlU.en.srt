@@ -1,0 +1,167 @@
+1
+00:00:00.333 --> 00:00:05.199
+Welcome to this week's Thursday tip in Excel, with me David Stavegård
+
+2
+00:00:05.200 --> 00:00:08.966
+It's time to get started with an excel file again, and now we've been given a task
+
+3
+00:00:08.966 --> 00:00:12.966
+Make a histogram over the wage distribution This is, after all, fictional names,
+
+4
+00:00:12.966 --> 00:00:16.966
+fictional wages, it's just for you to see how to do histograms, you have control over
+
+5
+00:00:16.966 --> 00:00:18.366
+Take a look here you'll see ...
+
+6
+00:00:18.366 --> 00:00:22.366
+You simply go into info, choose statistical graphs and choose
+
+7
+00:00:22.366 --> 00:00:26.366
+Histogram and pang we have got it out.
+
+8
+00:00:26.366 --> 00:00:30.366
+Histogram works so that it collects a number of different values in groups
+
+9
+00:00:30.366 --> 00:00:32.832
+and counts how many are
+
+10
+00:00:32.833 --> 00:00:38.466
+So here we have between 22,500 and 31,300
+
+11
+00:00:38.466 --> 00:00:42.466
+How many of the salaries are in between right -clicks you and choose add
+
+12
+00:00:42.466 --> 00:00:45.432
+Data labels, so it also calculates how many they are.
+
+13
+00:00:45.433 --> 00:00:49.433
+But, it won't be that great, there will be some strange numbers here.
+ Excel tried to be smart.
+
+14
+00:00:49.433 --> 00:00:53.433
+You're smarter.
+ That's why we drive like this.
+
+15
+00:00:53.433 --> 00:00:58.066
+Right -click and select Format the shoulder, and look at options for shoulder ...
+
+16
+00:00:58.066 --> 00:01:02.066
+Here's a little luring: Do you see that you can scroll down here
+
+17
+00:01:02.066 --> 00:01:06.832
+It's not that often you have to do it, but if we open this a little instead.
+
+18
+00:01:06.833 --> 00:01:10.833
+So you see the values out here from the beginning ...
+
+19
+00:01:10.833 --> 00:01:14.833
+So you should get to see automatically it is Excel suggests
+
+20
+00:01:14.833 --> 00:01:20.366
+Interval width, here you can say that we want an interval of SEK 3000 in salary.
+
+21
+00:01:20.366 --> 00:01:25.299
+Then it turns out all the intervals by 3000 in step length.
+
+22
+00:01:25.300 --> 00:01:29.800
+Or we can say number of intervals, yes, we may want 3 intervals
+
+23
+00:01:29.800 --> 00:01:33.200
+It might be a little bit, but maybe eight intervals.
+
+24
+00:01:33.200 --> 00:01:37.833
+Then it draws out how many have salary in these intervals
+
+25
+00:01:37.833 --> 00:01:41.833
+Then it is like this, there are some that are at the bottom,
+
+26
+00:01:41.833 --> 00:01:46.199
+as we may not care about exactly where they are located, and the same
+
+27
+00:01:46.200 --> 00:01:50.166
+We may not care about them either, because it gets a little plot like that ...
+
+28
+00:01:50.166 --> 00:01:54.166
+So instead you can say "interval for the highest values" if we were to write
+
+29
+00:01:54.166 --> 00:01:58.166
+60,000 here, then it takes with everyone who is
+
+30
+00:01:58.166 --> 00:02:02.666
+greater than 60,000 and counts them in the same bar, and the same 'intervals for the lowest'
+
+31
+00:02:02.666 --> 00:02:06.666
+For example, if we say 30,000 here,
+
+32
+00:02:06.666 --> 00:02:10.666
+Then it takes with everyone who has up to 30000 and counts them ...
+
+33
+00:02:10.666 --> 00:02:15.599
+So it becomes a little easier to understand this, then you can look good for this graph litigran.
+
+34
+00:02:21.466 --> 00:02:25.466
+Yes, something like this you can get then, and this is how you work with
+
+35
+00:02:25.466 --> 00:02:30.732
+Histogram in Excel, it's very neat, one can change
+
+36
+00:02:30.733 --> 00:02:33.466
+You just go in here and say how many intervals you want or
+
+37
+00:02:33.466 --> 00:02:37.466
+Or what interval width you want.
+ You don't just have to do this on pay, this is not just a matter of pay,
+
+38
+00:02:37.466 --> 00:02:41.466
+This can do this on shoe sizes, lengths, ages, I don't know
+
+39
+00:02:41.466 --> 00:02:43.866
+Go wild, simply
+
+40
+00:02:43.866 --> 00:02:47.866
+My name is David Stavegård, big thanks for looking at this, we will see you next Thursday, again,
+
+41
+00:02:47.866 --> 00:02:49.299
+Just as always.
+

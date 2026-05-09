@@ -1,0 +1,979 @@
+1
+00:00:00,080 --> 00:00:01,920
+In software engineering,
+
+2
+00:00:01,920 --> 00:00:04,120
+design patterns are a general and
+
+3
+00:00:04,120 --> 00:00:06,520
+reusable solution to common problems that
+
+4
+00:00:06,520 --> 00:00:08,320
+occur in a particular context
+
+5
+00:00:08,320 --> 00:00:10,040
+when designing
+
+6
+00:00:10,040 --> 00:00:12,200
+applications.  These are not a
+
+7
+00:00:12,200 --> 00:00:14,000
+final solution that is then transformed into
+
+8
+00:00:14,000 --> 00:00:16,279
+source code, but rather a description or
+
+9
+00:00:16,279 --> 00:00:18,480
+template that you can use at
+
+10
+00:00:18,480 --> 00:00:21,260
+any given time.
+
+11
+00:00:21,260 --> 00:00:24,199
+[Music]
+
+12
+00:00:24,199 --> 00:00:26,080
+Hello world and welcome to this video.
+
+13
+00:00:26,080 --> 00:00:27,519
+Design patterns are the
+
+14
+00:00:27,519 --> 00:00:29,640
+formalization of good practices that a
+
+15
+00:00:29,640 --> 00:00:31,320
+software engineer can use
+
+16
+00:00:31,320 --> 00:00:33,480
+to solve common problems.  In
+
+17
+00:00:33,480 --> 00:00:35,160
+object-oriented programming,
+
+18
+00:00:35,160 --> 00:00:37,040
+design patterns typically
+
+19
+00:00:37,040 --> 00:00:39,200
+show relationships and interactions
+
+20
+00:00:39,200 --> 00:00:41,200
+among different objects and classes,
+
+21
+00:00:41,200 --> 00:00:43,000
+although patterns that imply
+
+22
+00:00:43,000 --> 00:00:45,039
+mutability are not useful when
+
+23
+00:00:45,039 --> 00:00:47,000
+using a strict functional paradigm
+
+24
+00:00:47,000 --> 00:00:48,640
+.  Some patterns might
+
+25
+00:00:48,640 --> 00:00:50,680
+even be classified as unnecessary or
+
+26
+00:00:50,680 --> 00:00:53,000
+useless depending on the paradigm,
+
+27
+00:00:53,000 --> 00:00:54,760
+language, or libraries we are
+
+28
+00:00:54,760 --> 00:00:56,719
+using, since these might already have
+
+29
+00:00:56,719 --> 00:00:58,879
+specific solutions to
+
+30
+00:00:58,879 --> 00:01:01,199
+solve those problems.  In this video,
+
+31
+00:01:01,199 --> 00:01:02,920
+we'll look at six
+
+32
+00:01:02,920 --> 00:01:04,879
+design patterns, but don't think of
+
+33
+00:01:04,879 --> 00:01:06,439
+them as silver bullets.
+
+34
+00:01:06,439 --> 00:01:08,640
+Using any of these patterns could
+
+35
+00:01:08,640 --> 00:01:10,560
+be a terrible idea depending on your
+
+36
+00:01:10,560 --> 00:01:12,400
+context.  But before I tell you about the
+
+37
+00:01:12,400 --> 00:01:14,520
+six design patterns and what problems
+
+38
+00:01:14,520 --> 00:01:16,640
+they solve, I have to tell you that
+
+39
+00:01:16,640 --> 00:01:18,600
+the like button just wrote
+
+40
+00:01:18,600 --> 00:01:20,720
+spaghetti code.  And this is a terrible
+
+41
+00:01:20,720 --> 00:01:22,040
+practice in software development,
+
+42
+00:01:22,040 --> 00:01:23,680
+so to teach that bastard
+
+43
+00:01:23,680 --> 00:01:25,400
+not to keep writing
+
+44
+00:01:25,400 --> 00:01:27,960
+spaghetti code, you have to hit him an
+
+45
+00:01:27,960 --> 00:01:29,720
+even number of times until he turns blue.
+
+46
+00:01:29,720 --> 00:01:31,079
+When the like button turns
+
+47
+00:01:31,079 --> 00:01:33,000
+blue, he'll have learned that he shouldn't
+
+48
+00:01:33,000 --> 00:01:34,520
+continue writing spaghetti code.
+
+49
+00:01:34,520 --> 00:01:36,399
+And if you hit the like button, you'll make
+
+50
+00:01:36,399 --> 00:01:38,399
+our development community
+
+51
+00:01:38,399 --> 00:01:40,040
+a whole lot better, because the like button will
+
+52
+00:01:40,040 --> 00:01:41,840
+have been directed toward writing
+
+53
+00:01:41,840 --> 00:01:43,759
+better quality code.  And since that
+
+54
+00:01:43,759 --> 00:01:45,399
+damn thing is in blue, let's continue with
+
+55
+00:01:45,399 --> 00:01:46,799
+our video.  In
+
+56
+00:01:46,799 --> 00:01:49,040
+software engineering, the Singleton pattern restricts
+
+57
+00:01:49,040 --> 00:01:51,960
+the instantiation of a class to only a
+
+58
+00:01:51,960 --> 00:01:54,079
+single instance.  This is useful when you
+
+59
+00:01:54,079 --> 00:01:55,880
+need only one instance of a
+
+60
+00:01:55,880 --> 00:01:58,000
+class to coordinate actions
+
+61
+00:01:58,000 --> 00:02:00,280
+between different systems.  If your system
+
+62
+00:02:00,280 --> 00:02:02,719
+only has one database, singleton.
+
+63
+00:02:02,719 --> 00:02:04,920
+If you have only one API, singleton.  If
+
+64
+00:02:04,920 --> 00:02:06,399
+you need to connect to a service
+
+65
+00:02:06,399 --> 00:02:09,200
+like AWS and only one instance of
+
+66
+00:02:09,200 --> 00:02:11,440
+it, Singleton.  Depending on the
+
+67
+00:02:11,440 --> 00:02:13,200
+language, you may not need to
+
+68
+00:02:13,200 --> 00:02:15,160
+implement a singleton class.  In
+
+69
+00:02:15,160 --> 00:02:17,319
+Node JS you can implement an object
+
+70
+00:02:17,319 --> 00:02:19,760
+literal and export it.  This will behave
+
+71
+00:02:19,760 --> 00:02:21,680
+just like a singleton, since the
+
+72
+00:02:21,680 --> 00:02:23,680
+Node engine has implemented a cache with
+
+73
+00:02:23,680 --> 00:02:25,680
+the exported variables, so it
+
+74
+00:02:25,680 --> 00:02:27,760
+will always be the same.  But in case of
+
+75
+00:02:27,760 --> 00:02:29,800
+Java, which has a
+
+76
+00:02:29,800 --> 00:02:31,560
+stricter implementation, it should be implemented as
+
+77
+00:02:31,560 --> 00:02:33,720
+follows.  First the class is created
+
+78
+00:02:33,720 --> 00:02:35,800
+.  Then you define a property
+
+79
+00:02:35,800 --> 00:02:38,200
+called Singleton, which will hold the
+
+80
+00:02:38,200 --> 00:02:40,720
+instance we created.  We then define
+
+81
+00:02:40,720 --> 00:02:43,200
+a constructor called Singleton.  That
+
+82
+00:02:43,200 --> 00:02:45,360
+constructor will be responsible for building the
+
+83
+00:02:45,360 --> 00:02:47,239
+object that we will need in the
+
+84
+00:02:47,239 --> 00:02:49,599
+future.  Then we create a method called
+
+85
+00:02:49,599 --> 00:02:51,360
+get instance, which will be responsible for
+
+86
+00:02:51,360 --> 00:02:52,840
+returning the instance of our
+
+87
+00:02:52,840 --> 00:02:54,879
+singleton.  In object-oriented programming
+
+88
+00:02:54,879 --> 00:02:56,720
+, the decorator pattern is a
+
+89
+00:02:56,720 --> 00:02:58,040
+pattern that allows you to add
+
+90
+00:02:58,040 --> 00:03:00,640
+functionality to an object without altering
+
+91
+00:03:00,640 --> 00:03:02,879
+the behavior of other
+
+92
+00:03:02,879 --> 00:03:04,959
+object instances of the same class.  It solves the
+
+93
+00:03:04,959 --> 00:03:06,599
+problem of adding or removing
+
+94
+00:03:06,599 --> 00:03:08,560
+responsibilities to an object at
+
+95
+00:03:08,560 --> 00:03:11,480
+runtime and is a flexible alternative to
+
+96
+00:03:11,480 --> 00:03:13,720
+subclassing.  And a
+
+97
+00:03:13,720 --> 00:03:16,159
+Java implementation would look something like this.  If we're
+
+98
+00:03:16,159 --> 00:03:18,519
+going to sell coffee, we'll need to
+
+99
+00:03:18,519 --> 00:03:21,120
+know its price and we'll also
+
+100
+00:03:21,120 --> 00:03:23,879
+need to know its ingredients. Of
+
+101
+00:03:23,879 --> 00:03:26,239
+course, coffee has coffee, but we
+
+102
+00:03:26,239 --> 00:03:28,319
+might also want to sell coffee with
+
+103
+00:03:28,319 --> 00:03:30,640
+milk.  And instead of creating a new
+
+104
+00:03:30,640 --> 00:03:33,159
+class and reimplementing the methods, it would
+
+105
+00:03:33,159 --> 00:03:36,000
+be better to take the rate that already exists
+
+106
+00:03:36,000 --> 00:03:38,760
+and pass it through the constructor to a
+
+107
+00:03:38,760 --> 00:03:41,799
+milk class.  This class creates methods with the
+
+108
+00:03:41,799 --> 00:03:44,439
+same names, but calls
+
+109
+00:03:44,439 --> 00:03:46,599
+the methods of the coffee object first.  And when
+
+110
+00:03:46,599 --> 00:03:49,159
+someone asks for the price, we add the
+
+111
+00:03:49,159 --> 00:03:51,560
+value of the milk.  And when someone
+
+112
+00:03:51,560 --> 00:03:53,799
+requests ingredients, we
+
+113
+00:03:53,799 --> 00:03:58,519
+also add milk as an ingredient.
+
+114
+00:03:58,519 --> 00:04:00,640
+In software engineering, the
+
+115
+00:04:00,640 --> 00:04:02,840
+mediator pattern defines an object, which
+
+116
+00:04:02,840 --> 00:04:05,280
+encapsulates how other objects will
+
+117
+00:04:05,280 --> 00:04:08,200
+interact.  This pattern is considered a
+
+118
+00:04:08,200 --> 00:04:10,280
+behavioral pattern, as it can
+
+119
+00:04:10,280 --> 00:04:12,959
+alter how the application runs.
+
+120
+00:04:12,959 --> 00:04:15,560
+A mediator pattern in JavaScript is defined
+
+121
+00:04:15,560 --> 00:04:17,239
+as follows.  First,
+
+122
+00:04:17,239 --> 00:04:19,199
+we define an ifi, which stands for
+
+123
+00:04:19,199 --> 00:04:22,520
+immediate invoked expression.  To this we
+
+124
+00:04:22,520 --> 00:04:24,440
+add a variable, which will contain
+
+125
+00:04:24,440 --> 00:04:26,800
+the events that can be dispatched or
+
+126
+00:04:26,800 --> 00:04:29,479
+listened to.  Next, we create a function
+
+127
+00:04:29,479 --> 00:04:31,919
+called subscribe.  This will be responsible for
+
+128
+00:04:31,919 --> 00:04:34,120
+receiving the event and also the function
+
+129
+00:04:34,120 --> 00:04:36,039
+that will be executed.  This must be
+
+130
+00:04:36,039 --> 00:04:37,960
+recorded in our
+
+131
+00:04:37,960 --> 00:04:39,919
+events variable.  Next we create a function
+
+132
+00:04:39,919 --> 00:04:42,199
+called dispatch.  This will receive the
+
+133
+00:04:42,199 --> 00:04:44,520
+event being dispatched and also
+
+134
+00:04:44,520 --> 00:04:46,440
+the data that will be passed as an argument
+
+135
+00:04:46,440 --> 00:04:48,479
+to the function we will subscribe to.  This
+
+136
+00:04:48,479 --> 00:04:50,840
+function will go through all the events that
+
+137
+00:04:50,840 --> 00:04:53,199
+are registered and if it finds
+
+138
+00:04:53,199 --> 00:04:55,280
+one or more than one, it will execute the
+
+139
+00:04:55,280 --> 00:04:57,720
+functions and pass the data to each
+
+140
+00:04:57,720 --> 00:04:59,919
+of them.  Then we return these
+
+141
+00:04:59,919 --> 00:05:02,360
+functions and with that we have built
+
+142
+00:05:02,360 --> 00:05:04,479
+our mediator.  The difference between a
+
+143
+00:05:04,479 --> 00:05:06,479
+mediator and an observer is that the
+
+144
+00:05:06,479 --> 00:05:08,880
+mediator requires a separate object to
+
+145
+00:05:08,880 --> 00:05:11,120
+handle communications
+
+146
+00:05:11,120 --> 00:05:13,560
+between all objects, while the
+
+147
+00:05:13,560 --> 00:05:16,199
+observer modifies the object it is supposed to
+
+148
+00:05:16,199 --> 00:05:18,560
+listen to.  The observing pattern does not
+
+149
+00:05:18,560 --> 00:05:21,479
+have this intermediary.  Redux
+
+150
+00:05:21,479 --> 00:05:23,319
+implements the mediator pattern.  In
+
+151
+00:05:23,319 --> 00:05:25,080
+software engineering, the
+
+152
+00:05:25,080 --> 00:05:27,120
+adapter pattern allows an object that is not
+
+153
+00:05:27,120 --> 00:05:28,759
+designed to work with an
+
+154
+00:05:28,759 --> 00:05:31,759
+interface to be modified so that it
+
+155
+00:05:31,759 --> 00:05:34,280
+can work with it.  In Python
+
+156
+00:05:34,280 --> 00:05:36,160
+we can define an adapter pattern by
+
+157
+00:05:36,160 --> 00:05:39,000
+creating two classes.  First, we create an
+
+158
+00:05:39,000 --> 00:05:41,440
+Android class and an iPhone class.
+
+159
+00:05:41,440 --> 00:05:44,319
+Android recharges with USB and iPhone
+
+160
+00:05:44,319 --> 00:05:46,400
+recharges with Lightning.  I can create a
+
+161
+00:05:46,400 --> 00:05:48,199
+charger class that receives the phone
+
+162
+00:05:48,199 --> 00:05:50,199
+that needs to be charged, but this
+
+163
+00:05:50,199 --> 00:05:52,639
+would only work with USB.  So in order for
+
+164
+00:05:52,639 --> 00:05:54,840
+the iPhone to be able to charge, I can create
+
+165
+00:05:54,840 --> 00:05:57,360
+an iPhone adapter class that receives the
+
+166
+00:05:57,360 --> 00:05:59,199
+iPhone and when its method
+
+167
+00:05:59,199 --> 00:06:01,440
+to charge the phone with USB is called,
+
+168
+00:06:01,440 --> 00:06:04,039
+it charges it with Lightning.  This
+
+169
+00:06:04,039 --> 00:06:06,479
+way, this adapted iPhone could be
+
+170
+00:06:06,479 --> 00:06:08,919
+used with the Android charger.
+
+171
+00:06:08,919 --> 00:06:11,400
+The MBC pattern, also known as
+
+172
+00:06:11,400 --> 00:06:13,360
+Model View Controller, is
+
+173
+00:06:13,360 --> 00:06:15,240
+commonly used to develop
+
+174
+00:06:15,240 --> 00:06:18,120
+user interfaces by dividing the logic into three
+
+175
+00:06:18,120 --> 00:06:21,120
+interconnected elements.  The model,
+
+176
+00:06:21,120 --> 00:06:22,520
+which contains the logic of your
+
+177
+00:06:22,520 --> 00:06:24,599
+application, will be responsible for calling the
+
+178
+00:06:24,599 --> 00:06:27,000
+different data and contains the
+
+179
+00:06:27,000 --> 00:06:29,479
+business rules.  The view is the
+
+180
+00:06:29,479 --> 00:06:31,880
+visual representation of the data being collected.
+
+181
+00:06:31,880 --> 00:06:33,880
+This is what the user and
+
+182
+00:06:33,880 --> 00:06:36,120
+controller will see.  It is responsible for receiving the
+
+183
+00:06:36,120 --> 00:06:38,240
+data, transforming it into something useful for
+
+184
+00:06:38,240 --> 00:06:41,000
+the model, receiving the data from the model and
+
+185
+00:06:41,000 --> 00:06:43,440
+then constructing the response for the
+
+186
+00:06:43,440 --> 00:06:46,120
+user.  An example of MBC can be
+
+187
+00:06:46,120 --> 00:06:48,840
+easily seen in Node js with Express, where
+
+188
+00:06:48,840 --> 00:06:51,120
+we create an endpoint responsible for receiving
+
+189
+00:06:51,120 --> 00:06:53,000
+requests from our user.  With
+
+190
+00:06:53,000 --> 00:06:55,120
+that request we will search for the data
+
+191
+00:06:55,120 --> 00:06:57,280
+that he needs.  We then return
+
+192
+00:06:57,280 --> 00:06:59,720
+this data to the user and of course
+
+193
+00:06:59,720 --> 00:07:02,120
+handle exceptions if
+
+194
+00:07:02,120 --> 00:07:04,800
+they exist.  If there is an HTML,
+
+195
+00:07:04,800 --> 00:07:06,280
+we render it with the data
+
+196
+00:07:06,280 --> 00:07:08,120
+we collected, but in this case
+
+197
+00:07:08,120 --> 00:07:10,280
+we return the data as if it were a
+
+198
+00:07:10,280 --> 00:07:12,400
+Rest API, so our view in
+
+199
+00:07:12,400 --> 00:07:14,840
+quotes in this case is a Jason.  The
+
+200
+00:07:14,840 --> 00:07:16,639
+Flux pattern was developed by
+
+201
+00:07:16,639 --> 00:07:19,000
+Facebook a few years ago in response
+
+202
+00:07:19,000 --> 00:07:22,199
+to existing patterns and it
+
+203
+00:07:22,199 --> 00:07:24,039
+complements the functionality of the
+
+204
+00:07:24,039 --> 00:07:25,759
+library they also created.
+
+205
+00:07:25,759 --> 00:07:28,039
+called React Flux.  It is also a
+
+206
+00:07:28,039 --> 00:07:29,960
+framework with the same name, but the
+
+207
+00:07:29,960 --> 00:07:31,960
+important thing about this pattern, unlike
+
+208
+00:07:31,960 --> 00:07:34,680
+the MBC, is that it is a
+
+209
+00:07:34,680 --> 00:07:37,199
+circular cycle where the user triggers
+
+210
+00:07:37,199 --> 00:07:39,919
+an event from the view.  This performs
+
+211
+00:07:39,919 --> 00:07:42,440
+some actions that then update the
+
+212
+00:07:42,440 --> 00:07:44,879
+state of our application and after
+
+213
+00:07:44,879 --> 00:07:47,400
+the state has been updated, our
+
+214
+00:07:47,400 --> 00:07:49,759
+application renders again,
+
+215
+00:07:49,759 --> 00:07:52,159
+thus updating the view.
+
+216
+00:07:52,159 --> 00:07:53,759
+Hopefully, after watching this
+
+217
+00:07:53,759 --> 00:07:55,319
+video, you'll get a sense of the
+
+218
+00:07:55,319 --> 00:07:57,000
+patterns that exist, but don't think
+
+219
+00:07:57,000 --> 00:07:58,759
+these are the best or
+
+220
+00:07:58,759 --> 00:08:00,520
+silver bullets.  These are simply
+
+221
+00:08:00,520 --> 00:08:02,240
+tools that you can add
+
+222
+00:08:02,240 --> 00:08:03,680
+to your arsenal.  And if you want to learn more
+
+223
+00:08:03,680 --> 00:08:05,360
+about more design patterns
+
+224
+00:08:05,360 --> 00:08:07,440
+out there,
+
+225
+00:08:07,440 --> 00:08:09,280
+I have a course on design patterns in the description of this video.
+
+226
+00:08:09,280 --> 00:08:11,319
+We look at some of these and many
+
+227
+00:08:11,319 --> 00:08:12,960
+other patterns that you can use in your
+
+228
+00:08:12,960 --> 00:08:14,560
+everyday life.  And of course, when you
+
+229
+00:08:14,560 --> 00:08:16,159
+'re studying, you can do so by
+
+230
+00:08:16,159 --> 00:08:18,159
+listening to my music, as it helps
+
+231
+00:08:18,159 --> 00:08:20,000
+improve concentration and will make
+
+232
+00:08:20,000 --> 00:08:22,000
+your studies and work more
+
+233
+00:08:22,000 --> 00:08:23,599
+productive.  And this was this week's video
+
+234
+00:08:23,599 --> 00:08:25,120
+.  If you liked it, remember to hit
+
+235
+00:08:25,120 --> 00:08:26,560
+that damn like button a lot.
+
+236
+00:08:26,560 --> 00:08:28,680
+Remember, he wrote spaghetti code.  If
+
+237
+00:08:28,680 --> 00:08:30,479
+you loved it, please consider subscribing to this
+
+238
+00:08:30,479 --> 00:08:32,159
+channel.  Leave me a comment below
+
+239
+00:08:32,159 --> 00:08:33,839
+about what other types of videos you'd like
+
+240
+00:08:33,839 --> 00:08:35,719
+me to make.  And if you'd like to delve deeper
+
+241
+00:08:35,719 --> 00:08:37,080
+into a subject,
+
+242
+00:08:37,080 --> 00:08:39,080
+you'll of course also find links
+
+243
+00:08:39,080 --> 00:08:40,919
+to all my courses below.  Until
+
+244
+00:08:40,919 --> 00:08:44,260
+next time and bye world.
+
+245
+00:08:44,260 --> 00:08:58,869
+[Music]

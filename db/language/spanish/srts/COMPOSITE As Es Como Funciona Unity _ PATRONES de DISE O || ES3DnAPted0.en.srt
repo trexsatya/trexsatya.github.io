@@ -1,0 +1,755 @@
+1
+00:00:00,040 --> 00:00:01,719
+very good and welcome one more day to
+
+2
+00:00:01,719 --> 00:00:03,600
+betatech for those of you who are new to the
+
+3
+00:00:03,600 --> 00:00:05,240
+channel here we talk about software and
+
+4
+00:00:05,240 --> 00:00:07,319
+technology and specifically in this series
+
+5
+00:00:07,319 --> 00:00:09,440
+we talk about design patterns we are going
+
+6
+00:00:09,440 --> 00:00:11,840
+to explain one by one each pattern looking at
+
+7
+00:00:11,840 --> 00:00:13,719
+their uses and explaining them with
+
+8
+00:00:13,719 --> 00:00:15,759
+examples but if you still don't know what
+
+9
+00:00:15,759 --> 00:00:17,640
+a design pattern is I'll leave the index of
+
+10
+00:00:17,640 --> 00:00:19,320
+the series up here and also in the
+
+11
+00:00:19,320 --> 00:00:21,199
+description so you can take a look and
+
+12
+00:00:21,199 --> 00:00:23,800
+today we are going to talk about the composite pattern
+
+13
+00:00:23,800 --> 00:00:25,279
+it is a very useful pattern and it is used
+
+14
+00:00:25,279 --> 00:00:26,599
+a lot when developing
+
+15
+00:00:26,599 --> 00:00:28,880
+graphic environments or video games since it
+
+16
+00:00:28,880 --> 00:00:31,000
+greatly simplifies the way of thinking about
+
+17
+00:00:31,000 --> 00:00:33,200
+three-dimensional scenes if you are even a
+
+18
+00:00:33,200 --> 00:00:35,480
+little bit familiar with Unity you will know
+
+19
+00:00:35,480 --> 00:00:37,280
+that each element of the game is what is
+
+20
+00:00:37,280 --> 00:00:39,960
+known as an entity or a Game object
+
+21
+00:00:39,960 --> 00:00:42,399
+the character the enemies the stage
+
+22
+00:00:42,399 --> 00:00:44,280
+each element of the game is an entity
+
+23
+00:00:44,280 --> 00:00:46,800
+each one with its own properties and
+
+24
+00:00:46,800 --> 00:00:48,320
+a very useful thing that Unity allows you to do
+
+25
+00:00:48,320 --> 00:00:50,840
+is nest these entities within
+
+26
+00:00:50,840 --> 00:00:53,480
+others give them a hierarchy you can
+
+27
+00:00:53,480 --> 00:00:55,399
+have the character as an entity and
+
+28
+00:00:55,399 --> 00:00:57,719
+below it have child entities such as
+
+29
+00:00:57,719 --> 00:01:00,000
+weapons or other elements
+
+30
+00:01:00,000 --> 00:01:01,879
+related to the character this
+
+31
+00:01:01,879 --> 00:01:03,039
+allows you to transfer the
+
+32
+00:01:03,039 --> 00:01:05,400
+transformations from the parent to
+
+33
+00:01:05,400 --> 00:01:07,560
+For example, you can move the children in
+
+34
+00:01:07,560 --> 00:01:10,040
+relation to the parent, the composite pattern is
+
+35
+00:01:10,040 --> 00:01:11,720
+precisely one of the possible
+
+36
+00:01:11,720 --> 00:01:13,320
+solutions to implement this
+
+37
+00:01:13,320 --> 00:01:15,640
+behavior, it basically consists of
+
+38
+00:01:15,640 --> 00:01:18,040
+having a generic data type from which
+
+39
+00:01:18,040 --> 00:01:20,320
+other elements of the same type can hang,
+
+40
+00:01:20,320 --> 00:01:22,920
+basically, it is about setting up a
+
+41
+00:01:22,920 --> 00:01:25,280
+tree-shaped hierarchy so
+
+42
+00:01:25,280 --> 00:01:27,240
+that each entity can be made up of
+
+43
+00:01:27,240 --> 00:01:29,320
+other entities of the same type, which in
+
+44
+00:01:29,320 --> 00:01:30,920
+turn can be made up of other entities of the same
+
+45
+00:01:30,920 --> 00:01:33,040
+type, which in turn can be made up of other entities of the same type, which in turn can be made up of other entities of the same type, which in
+
+47
+00:01:34,880 --> 00:01:37,040
+turn
+
+48
+00:01:37,040 --> 00:01:38,640
+can be made up of other
+
+49
+00:01:38,640 --> 00:01:41,119
+entities of the same type, you understand what I mean, it
+
+50
+00:01:41,119 --> 00:01:43,759
+is, in short, a recursive structure.
+
+51
+00:01:43,759 --> 00:01:45,280
+But before going into detail about how
+
+52
+00:01:45,280 --> 00:01:47,280
+this pattern is specifically used,
+
+53
+00:01:47,280 --> 00:01:48,600
+let me thank the
+
+54
+00:01:48,600 --> 00:01:51,200
+sponsor of this video. arc arc is
+
+55
+00:01:51,200 --> 00:01:52,479
+a platform designed for
+
+56
+00:01:52,479 --> 00:01:54,200
+developers who are looking for
+
+57
+00:01:54,200 --> 00:01:56,159
+remote work. They have a
+
+58
+00:01:56,159 --> 00:01:57,880
+web scraping platform that is
+
+59
+00:01:57,880 --> 00:02:00,000
+constantly looking for the best
+
+60
+00:02:00,000 --> 00:02:02,039
+remote offers on different portals and
+
+61
+00:02:02,039 --> 00:02:03,399
+allows you to compare the different
+
+62
+00:02:03,399 --> 00:02:04,960
+offers so that you can apply to the ones that
+
+63
+00:02:04,960 --> 00:02:07,079
+best fit you. In addition, with arc, you
+
+64
+00:02:07,079 --> 00:02:08,800
+can answer some small quizzes
+
+65
+00:02:08,800 --> 00:02:10,160
+to demonstrate your skills as a
+
+66
+00:02:10,160 --> 00:02:11,959
+programmer and in this way you can
+
+67
+00:02:11,959 --> 00:02:13,800
+skip certain stages in the
+
+68
+00:02:13,800 --> 00:02:15,720
+selection processes, such as some
+
+69
+00:02:15,720 --> 00:02:18,160
+technical interviews, since  in the end ark
+
+70
+00:02:18,160 --> 00:02:20,360
+itself validates your knowledge and in case that
+
+71
+00:02:20,360 --> 00:02:21,920
+wasn't enough they
+
+72
+00:02:21,920 --> 00:02:24,160
+also have a community a
+
+73
+00:02:24,160 --> 00:02:25,920
+community that will allow you to share
+
+74
+00:02:25,920 --> 00:02:27,680
+experiences and resolve doubts about
+
+75
+00:02:27,680 --> 00:02:29,879
+remote work I want to thank ar for
+
+76
+00:02:29,879 --> 00:02:31,640
+reigning this video and if you want to know more I'll
+
+77
+00:02:31,640 --> 00:02:33,239
+leave the link in the description and in
+
+78
+00:02:33,239 --> 00:02:34,959
+the pinned comment you know that
+
+79
+00:02:34,959 --> 00:02:36,519
+right now I'm working remotely and
+
+80
+00:02:36,519 --> 00:02:37,599
+therefore when
+
+81
+00:02:37,599 --> 00:02:39,120
+opportunities like this appear that
+
+82
+00:02:39,120 --> 00:02:40,920
+may also be useful to you I like to
+
+83
+00:02:40,920 --> 00:02:43,400
+share them and without much further ado let's continue
+
+84
+00:02:43,400 --> 00:02:46,040
+with the video well let's go now
+
+85
+00:02:46,040 --> 00:02:48,360
+to the example of the video game imagine that
+
+86
+00:02:48,360 --> 00:02:50,280
+each entity has a
+
+87
+00:02:50,280 --> 00:02:52,040
+rendering function which
+
+88
+00:02:52,040 --> 00:02:53,879
+basically draws the entity on the
+
+89
+00:02:53,879 --> 00:02:56,120
+screen renders it either in three
+
+90
+00:02:56,120 --> 00:02:58,280
+dimensions or in two dimensions now
+
+91
+00:02:58,280 --> 00:03:00,040
+we think that what we want to implement
+
+92
+00:03:00,040 --> 00:03:02,080
+is a very large enemy type these
+
+93
+00:03:02,080 --> 00:03:03,680
+enemies are not that are made up of
+
+94
+00:03:03,680 --> 00:03:06,200
+several parts such as the torso
+
+95
+00:03:06,200 --> 00:03:08,200
+and the limbs and each part has
+
+96
+00:03:08,200 --> 00:03:10,040
+a different logic we can
+
+97
+00:03:10,040 --> 00:03:11,640
+then think of that the enemy is a set
+
+98
+00:03:11,640 --> 00:03:13,760
+of pieces or a set of smaller enemies
+
+99
+00:03:13,760 --> 00:03:15,920
+as I say it can have the
+
+100
+00:03:15,920 --> 00:03:18,640
+main body and a left leg that throws
+
+101
+00:03:18,640 --> 00:03:21,000
+fire and a right leg that throws
+
+102
+00:03:21,000 --> 00:03:23,480
+poisoned water each piece with its logic The
+
+103
+00:03:23,480 --> 00:03:25,159
+example  specifically it doesn't matter much but
+
+104
+00:03:25,159 --> 00:03:26,519
+in the end the thing is that at the
+
+105
+00:03:26,519 --> 00:03:28,280
+code level we don't want to
+
+106
+00:03:28,280 --> 00:03:30,360
+always have to carry all the objects
+
+107
+00:03:30,360 --> 00:03:32,360
+separately with us or have to
+
+108
+00:03:32,360 --> 00:03:34,080
+call the functions of each
+
+109
+00:03:34,080 --> 00:03:35,760
+individual part every time we want to do
+
+110
+00:03:35,760 --> 00:03:37,680
+something every time we want to move the
+
+111
+00:03:37,680 --> 00:03:39,720
+enemy we have to move all its
+
+112
+00:03:39,720 --> 00:03:41,640
+parts what we want to do is to be able to
+
+113
+00:03:41,640 --> 00:03:43,879
+call a general function and have it
+
+114
+00:03:43,879 --> 00:03:45,920
+be in charge of transmitting it to its
+
+115
+00:03:45,920 --> 00:03:47,920
+children in the case of the render we
+
+116
+00:03:47,920 --> 00:03:50,120
+want to render the big enemy we don't
+
+117
+00:03:50,120 --> 00:03:51,720
+want to render each part
+
+118
+00:03:51,720 --> 00:03:54,040
+separately for this we can implement
+
+119
+00:03:54,040 --> 00:03:56,879
+precisely the composite pattern creating
+
+120
+00:03:56,879 --> 00:03:59,360
+an entity called big enemy that
+
+121
+00:03:59,360 --> 00:04:01,760
+is formed within it by
+
+122
+00:04:01,760 --> 00:04:04,120
+different smaller entities in
+
+123
+00:04:04,120 --> 00:04:06,599
+this way as the big enemy is in
+
+124
+00:04:06,599 --> 00:04:08,959
+itself already an entity we can use it
+
+125
+00:04:08,959 --> 00:04:10,959
+as if it were a simple entity
+
+126
+00:04:10,959 --> 00:04:12,799
+one more entity within the set of
+
+127
+00:04:12,799 --> 00:04:15,200
+entities that we have and the system
+
+128
+00:04:15,200 --> 00:04:18,120
+from the outside does not need to know nor should
+
+129
+00:04:18,120 --> 00:04:19,880
+know that it is a
+
+130
+00:04:19,880 --> 00:04:22,040
+composite entity it will be the responsibility of the
+
+131
+00:04:22,040 --> 00:04:24,320
+parent entity to manage the logic and
+
+132
+00:04:24,320 --> 00:04:26,800
+the functions of the child entities in
+
+133
+00:04:26,800 --> 00:04:28,560
+my case I used precisely
+
+134
+00:04:28,560 --> 00:04:30,759
+this pattern for the first time in the
+
+135
+00:04:30,759 --> 00:04:32,759
+video game subject to make an enemy that
+
+136
+00:04:32,759 --> 00:04:35,120
+was basically an octopus the octopus had
+
+137
+00:04:35,120 --> 00:04:37,199
+a tentacle with several spheres worth
+
+138
+00:04:37,199 --> 00:04:39,360
+each  sphere was an entity that could
+
+139
+00:04:39,360 --> 00:04:41,280
+kill the player and the player had to
+
+140
+00:04:41,280 --> 00:04:43,199
+kill each of these spheres
+
+141
+00:04:43,199 --> 00:04:45,240
+individually before being able to face the
+
+142
+00:04:45,240 --> 00:04:47,639
+octopus so each of these spheres
+
+143
+00:04:47,639 --> 00:04:49,759
+individually were a
+
+144
+00:04:49,759 --> 00:04:52,000
+simple entity they had no children but
+
+145
+00:04:52,000 --> 00:04:54,280
+they were all part of the parent entity of
+
+146
+00:04:54,280 --> 00:04:56,639
+the octopus therefore we as
+
+147
+00:04:56,639 --> 00:04:58,639
+developers could move the octopus
+
+148
+00:04:58,639 --> 00:05:00,639
+freely since the spheres always went
+
+149
+00:05:00,639 --> 00:05:02,880
+with it in addition this structure allows
+
+150
+00:05:02,880 --> 00:05:04,759
+the children to behave
+
+151
+00:05:04,759 --> 00:05:06,639
+differently depending on the properties
+
+152
+00:05:06,639 --> 00:05:08,680
+of the parent we could make the
+
+153
+00:05:08,680 --> 00:05:10,639
+rest of the spheres increase the speed
+
+154
+00:05:10,639 --> 00:05:12,680
+when the octopus sees that it has less
+
+155
+00:05:12,680 --> 00:05:14,120
+spheres alive because each one goes
+
+156
+00:05:14,120 --> 00:05:15,880
+faster or each one is bigger you
+
+157
+00:05:15,880 --> 00:05:17,600
+can do a thousand tricks but the
+
+158
+00:05:17,600 --> 00:05:19,240
+important thing is that all this logic
+
+159
+00:05:19,240 --> 00:05:21,600
+resides in the octopus for the
+
+160
+00:05:21,600 --> 00:05:24,199
+external system the octopus is the octopus it does not matter
+
+161
+00:05:24,199 --> 00:05:27,680
+if it has 5, 20 or 30 spheres anyway
+
+162
+00:05:27,680 --> 00:05:29,160
+changing a bit of the subject of
+
+163
+00:05:29,160 --> 00:05:31,639
+octopuses and the sea the uml diagram of this
+
+164
+00:05:31,639 --> 00:05:33,680
+pattern is quite simple since in the
+
+165
+00:05:33,680 --> 00:05:35,680
+end everything inherits from the same thing in our
+
+166
+00:05:35,680 --> 00:05:37,280
+case we would have the
+
+167
+00:05:37,280 --> 00:05:39,880
+entity abstraction and the concrete class the class that
+
+168
+00:05:39,880 --> 00:05:42,000
+inherits or that implements this entity is
+
+169
+00:05:42,000 --> 00:05:44,520
+the  octopus then we would also have another
+
+170
+00:05:44,520 --> 00:05:46,800
+concrete class which would be the Sphere which
+
+171
+00:05:46,800 --> 00:05:48,960
+is also obviously a daughter or an
+
+172
+00:05:48,960 --> 00:05:51,440
+implementation of the entity class the
+
+173
+00:05:51,440 --> 00:05:53,440
+octopus because it has as property a
+
+174
+00:05:53,440 --> 00:05:55,360
+set of entities which in this case are
+
+175
+00:05:55,360 --> 00:05:57,199
+going to be our spheres obviously and
+
+176
+00:05:57,199 --> 00:05:58,680
+therefore every time the octopus
+
+177
+00:05:58,680 --> 00:06:00,680
+executes a function of any type it
+
+178
+00:06:00,680 --> 00:06:02,600
+can also process the
+
+179
+00:06:02,600 --> 00:06:04,639
+corresponding message to its children without a doubt it
+
+180
+00:06:04,639 --> 00:06:06,800
+is one of the patterns that I like the most
+
+181
+00:06:06,800 --> 00:06:08,360
+on a personal level since in addition to being
+
+182
+00:06:08,360 --> 00:06:10,240
+very easy to understand it provides a lot of
+
+183
+00:06:10,240 --> 00:06:12,360
+flexibility it allows you to generate
+
+184
+00:06:12,360 --> 00:06:14,000
+super clean code since in the end it is an
+
+185
+00:06:14,000 --> 00:06:16,000
+extraction that unifies the behavior
+
+186
+00:06:16,000 --> 00:06:18,280
+of all your entities in a very
+
+187
+00:06:18,280 --> 00:06:20,400
+simple and very clear way to use and as
+
+188
+00:06:20,400 --> 00:06:22,280
+usual I hope you liked this video
+
+189
+00:06:22,280 --> 00:06:24,240
+without much more we will see you in
+
+190
+00:06:24,240 --> 00:06:28,120
+the next one until another

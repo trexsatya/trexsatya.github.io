@@ -1,0 +1,134 @@
+1
+00:00:02.727 --> 00:00:06.274
+Hej, i den här filmen tänkte jag visa två saker:
+
+
+2
+00:00:06.274 --> 00:00:09.251
+Den första är hur du får internet i din lägenhet och
+
+
+3
+00:00:09.251 --> 00:00:14.000
+och den andra är hur du får tillgång till grundutbudet av tv-kanaler.
+
+
+4
+00:00:14.000 --> 00:00:16.000
+Vi börjar med internet.
+
+
+5
+00:00:16.261 --> 00:00:19.315
+För att få internet så behöver du ha ett abonnemang
+
+
+6
+00:00:19.315 --> 00:00:22.311
+hos någon av de tillgängliga leverantörerna.
+
+
+7
+00:00:22.601 --> 00:00:26.408
+När du har fått hem din utrustning så är det dags att börja koppla in.
+
+
+8
+00:00:26.408 --> 00:00:28.882
+Först ska vi öppna mediaskåpet.
+
+
+9
+00:00:28.882 --> 00:00:32.255
+Ett tips är att använda något platt och smalt.
+
+
+10
+00:00:33.377 --> 00:00:36.110
+Här inne i mediaskåpet finns en fiberbox.
+
+
+11
+00:00:36.110 --> 00:00:40.291
+På undersidan av fiberboxen finns flera nätverksuttag.
+
+
+12
+00:00:40.862 --> 00:00:45.309
+Oavsett om du ska använda en router eller bara en nätverkskabel
+
+
+13
+00:00:45.309 --> 00:00:47.309
+så behöver du göra det här steget.
+
+
+14
+00:00:49.678 --> 00:00:53.557
+Här underifrån kopplar du in en av dina nätverkskablar
+
+
+15
+00:00:53.557 --> 00:00:57.414
+och här till höger finns en så kallad patch-panel.
+
+
+16
+00:00:58.139 --> 00:01:04.907
+Numren som står på panelen motsvarar numren som står på uttagen i dina olika rum.
+
+
+17
+00:01:05.565 --> 00:01:08.256
+Jag vill, till exempel, ha min router i sovrummet.
+
+
+18
+00:01:08.740 --> 00:01:14.763
+I detta fall väljer jag uttag nummer fem eller sex som jag ska använda mig av.
+
+
+19
+00:01:17.355 --> 00:01:21.734
+När jag kopplar in uttag nummer fem på patch-panelen i mediaskåpet
+
+
+20
+00:01:21.734 --> 00:01:26.423
+är det viktigt att jag kopplar in nätverkskabeln i nummer fem i sovrummet.
+
+
+21
+00:01:31.868 --> 00:01:35.643
+Under siffran på uttaget finns en lucka du ska öppna.
+
+
+22
+00:01:35.720 --> 00:01:40.399
+Här kopplar du in nätverkskabeln och ansluter den till routern.
+
+
+23
+00:01:46.763 --> 00:01:50.924
+Men hur ska du göra för att få tillgång till grundutbudet av tv-kanaler?
+
+
+24
+00:01:51.137 --> 00:01:53.137
+Jo, det ska jag berätta för dig.
+
+
+25
+00:01:53.572 --> 00:01:58.666
+Som boende i Stadskvarteret har du tillgång till Tele2:s grundutbud av tv-kanaler.
+
+
+26
+00:01:58.956 --> 00:02:01.942
+Det enda du behöver göra är att kontakta Tele2 för att få
+
+
+27
+00:02:01.942 --> 00:02:05.770
+för att få tv-hubben hemskickad till dig kostnadsfritt.
+

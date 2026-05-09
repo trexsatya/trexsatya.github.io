@@ -1,0 +1,931 @@
+1
+00:00:00,000 --> 00:00:01,680
+it is always important to have good
+
+2
+00:00:01,680 --> 00:00:03,720
+control of the instances that we are
+
+3
+00:00:03,720 --> 00:00:05,370
+using in our project but what would
+
+4
+00:00:05,370 --> 00:00:07,799
+happen if we could delimit a single
+
+5
+00:00:07,799 --> 00:00:10,170
+instance in the entire application to
+
+6
+00:00:10,170 --> 00:00:12,780
+certain objects in our project
+
+7
+00:00:12,780 --> 00:00:14,610
+this practice is known as the use
+
+8
+00:00:14,610 --> 00:00:17,369
+of the singleton pattern join me and let's go
+
+9
+00:00:17,369 --> 00:00:18,660
+to the code
+
+10
+00:00:18,660 --> 00:00:24,149
+[Music]
+
+11
+00:00:25,600 --> 00:00:27,640
+and today it's time to see the first
+
+12
+00:00:27,640 --> 00:00:29,650
+design pattern of the course known as
+
+13
+00:00:29,650 --> 00:00:31,870
+singleton and I would like to share with you two
+
+14
+00:00:31,870 --> 00:00:34,210
+pages in which this course is also
+
+15
+00:00:34,210 --> 00:00:36,280
+going to be based and that you can take
+
+16
+00:00:36,280 --> 00:00:38,530
+advantage of to strengthen the concepts that I
+
+17
+00:00:38,530 --> 00:00:40,390
+am going to explain and the first page is
+
+18
+00:00:40,390 --> 00:00:42,580
+source making in which on the
+
+19
+00:00:42,580 --> 00:00:44,110
+left hand side you will find a section
+
+20
+00:00:44,110 --> 00:00:46,690
+that says designs pater and it is separated
+
+21
+00:00:46,690 --> 00:00:48,850
+by what is the geo efe of make a
+
+22
+00:00:48,850 --> 00:00:50,860
+fork you have patterns that national
+
+23
+00:00:50,860 --> 00:00:53,320
+structural and behavioral 7
+
+24
+00:00:53,320 --> 00:00:55,930
+some examples the definition and also
+
+25
+00:00:55,930 --> 00:00:58,360
+the code so that you can check it out in
+
+26
+00:00:58,360 --> 00:01:00,250
+other programming languages for
+
+27
+00:01:00,250 --> 00:01:01,900
+example here we have the code in java in
+
+28
+00:01:01,900 --> 00:01:04,780
+php in python and among others another
+
+29
+00:01:04,780 --> 00:01:07,270
+well known page is tutorials point that
+
+30
+00:01:07,270 --> 00:01:09,130
+also has a section for
+
+31
+00:01:09,130 --> 00:01:11,890
+design patterns and explains many patterns
+
+32
+00:01:11,890 --> 00:01:14,770
+so that you can review their
+
+33
+00:01:14,770 --> 00:01:17,650
+ml diagram and an implementation  basic then I
+
+34
+00:01:17,650 --> 00:01:20,140
+recommend these two pages for you to
+
+35
+00:01:20,140 --> 00:01:22,240
+review throughout the
+
+36
+00:01:22,240 --> 00:01:24,400
+course check it out along with the examples
+
+37
+00:01:24,400 --> 00:01:27,340
+that are going to be created here on the channel the
+
+38
+00:01:27,340 --> 00:01:28,810
+following pattern as you are seeing here
+
+39
+00:01:28,810 --> 00:01:31,149
+this image ml connotation this class
+
+40
+00:01:31,149 --> 00:01:32,140
+that is above is
+
+41
+00:01:32,140 --> 00:01:35,080
+only intended to run the
+
+42
+00:01:35,080 --> 00:01:37,840
+application but it is not important in the
+
+43
+00:01:37,840 --> 00:01:40,390
+definition of the pattern itself this is the
+
+44
+00:01:40,390 --> 00:01:42,430
+important thing the single obviously a variable
+
+45
+00:01:42,430 --> 00:01:44,979
+called instance of the same type single or
+
+46
+00:01:44,979 --> 00:01:47,530
+and we also have a constructor a
+
+47
+00:01:47,530 --> 00:01:49,450
+method that instant that in the end will
+
+48
+00:01:49,450 --> 00:01:51,970
+return an object of the same class
+
+49
+00:01:51,970 --> 00:01:53,830
+single offset that is why you have a
+
+50
+00:01:53,830 --> 00:01:56,590
+return here so the objective of the
+
+51
+00:01:56,590 --> 00:01:58,540
+singleton pattern as you are seeing
+
+52
+00:01:58,540 --> 00:02:03,460
+here is to have a single instance of a
+
+53
+00:02:03,460 --> 00:02:06,100
+class throughout the application is that
+
+54
+00:02:06,100 --> 00:02:07,539
+all users use that
+
+55
+00:02:07,539 --> 00:02:09,850
+same instance but because you may
+
+56
+00:02:09,850 --> 00:02:11,709
+ask I will put the following
+
+57
+00:02:11,709 --> 00:02:14,170
+scenario imagine that you have
+
+58
+00:02:14,170 --> 00:02:16,959
+a list of countries to display
+
+59
+00:02:16,959 --> 00:02:20,410
+okay that list of countries is very
+
+60
+00:02:20,410 --> 00:02:22,900
+unlikely almost zero the possibility that they
+
+61
+00:02:22,900 --> 00:02:25,840
+can change the names then it would not make
+
+62
+00:02:25,840 --> 00:02:27,940
+sense to return to each
+
+63
+00:02:27,940 --> 00:02:29,850
+user that is achieved in our system
+
+64
+00:02:29,850 --> 00:02:32,920
+a memory space that is to say an object
+
+65
+00:02:32,920 --> 00:02:35,860
+which has the list of countries yes we
+
+66
+00:02:35,860 --> 00:02:38,079
+have 100 thousand users you will see  100
+
+67
+00:02:38,079 --> 00:02:38,980
+thousand objects
+
+68
+00:02:38,980 --> 00:02:42,159
+and they use the same information then it would
+
+69
+00:02:42,159 --> 00:02:46,150
+not make sense it would be better to have a
+
+70
+00:02:46,150 --> 00:02:48,879
+single object in which it has been
+
+71
+00:02:48,879 --> 00:02:51,549
+distanced only once and for each
+
+72
+00:02:51,549 --> 00:02:53,700
+user that needs this information
+
+73
+00:02:53,700 --> 00:02:56,170
+simply ask for the object that has already
+
+74
+00:02:56,170 --> 00:02:57,519
+been instantiated do perhaps by another
+
+75
+00:02:57,519 --> 00:03:00,280
+user obtain the same information
+
+76
+00:03:00,280 --> 00:03:02,379
+so 100,000 users are going to use
+
+77
+00:03:02,379 --> 00:03:05,410
+a single object and this in performance in
+
+78
+00:03:05,410 --> 00:03:07,900
+memory consumption is going to be much
+
+79
+00:03:07,900 --> 00:03:10,000
+better for this case I have brought an
+
+80
+00:03:10,000 --> 00:03:12,340
+example simulating the benefit if we
+
+81
+00:03:12,340 --> 00:03:14,890
+apply it to the jd issue you see in the
+
+82
+00:03:14,890 --> 00:03:17,319
+database we have a connection class
+
+83
+00:03:17,319 --> 00:03:19,150
+as you are seeing here an object called an
+
+84
+00:03:19,150 --> 00:03:21,549
+instance of the connection class which is the
+
+85
+00:03:21,549 --> 00:03:24,160
+same class that you are seeing here
+
+86
+00:03:24,160 --> 00:03:26,519
+we have it with a static and private scope
+
+87
+00:03:26,519 --> 00:03:29,349
+because gentlemen why because as we are going to
+
+88
+00:03:29,349 --> 00:03:31,180
+access its static methods without
+
+89
+00:03:31,180 --> 00:03:33,190
+going through an instance I need to
+
+90
+00:03:33,190 --> 00:03:34,930
+put the keyword static if you
+
+91
+00:03:34,930 --> 00:03:37,810
+do not know the use of this word
+
+92
+00:03:37,810 --> 00:03:39,579
+static I recommend you check the
+
+93
+00:03:39,579 --> 00:03:41,260
+basic tutorials of the channel in which
+
+94
+00:03:41,260 --> 00:03:43,569
+the differences between
+
+95
+00:03:43,569 --> 00:03:45,310
+instance methods and class methods are explained
+
+96
+00:03:45,310 --> 00:03:47,380
+and it will be very clear to you why
+
+97
+00:03:47,380 --> 00:03:49,270
+the reserved word static is used
+
+98
+00:03:49,270 --> 00:03:51,910
+I am going to create a constructor with a
+
+99
+00:03:51,910 --> 00:03:54,160
+private scope and this is the key to avoid
+
+100
+00:03:54,160 --> 00:03:56,760
+creating additional instances  look
+
+101
+00:03:56,760 --> 00:03:59,200
+when we put
+
+102
+00:03:59,200 --> 00:04:01,390
+private scope later when we want to
+
+103
+00:04:01,390 --> 00:04:04,030
+create an object we will not be able to
+
+104
+00:04:04,030 --> 00:04:07,599
+use the new operator if we will not be
+
+105
+00:04:07,599 --> 00:04:10,989
+able to do it then how do we obtain the
+
+106
+00:04:10,989 --> 00:04:12,489
+instance if the constructor is
+
+107
+00:04:12,489 --> 00:04:15,730
+private very easy I created a static type method
+
+108
+00:04:15,730 --> 00:04:17,139
+also so that it can be
+
+109
+00:04:17,139 --> 00:04:20,739
+accessed called get instance and here
+
+110
+00:04:20,739 --> 00:04:23,080
+I check if the instance is equal void
+
+111
+00:04:23,080 --> 00:04:26,200
+means that an object does not exist we are going
+
+112
+00:04:26,200 --> 00:04:29,229
+to distance what is fine and if for
+
+113
+00:04:29,229 --> 00:04:30,790
+some reason someone wants to continue
+
+114
+00:04:30,790 --> 00:04:33,490
+calling this method but a
+
+115
+00:04:33,490 --> 00:04:35,650
+previous user already instantiates it they would no longer enter
+
+116
+00:04:35,650 --> 00:04:38,380
+this step it would simply return the
+
+117
+00:04:38,380 --> 00:04:40,930
+instance that the previous user already
+
+118
+00:04:40,930 --> 00:04:42,760
+made these two methods are
+
+119
+00:04:42,760 --> 00:04:44,889
+simply test methods so that
+
+120
+00:04:44,889 --> 00:04:47,889
+you can see that I can access the
+
+121
+00:04:47,889 --> 00:04:49,780
+methods defined for
+
+122
+00:04:49,780 --> 00:04:51,850
+the class let's imagine that here we are
+
+123
+00:04:51,850 --> 00:04:53,590
+connecting to the database and here
+
+124
+00:04:53,590 --> 00:04:55,750
+disconnecting us then I have
+
+125
+00:04:55,750 --> 00:04:58,180
+my app class here thanks to the fact that I have put
+
+126
+00:04:58,180 --> 00:05:01,240
+the constructor in private scope I
+
+127
+00:05:01,240 --> 00:05:03,520
+cannot use the constructor as
+
+128
+00:05:03,520 --> 00:05:04,389
+simple as that
+
+129
+00:05:04,389 --> 00:05:06,130
+because it is not visible you can see
+
+130
+00:05:06,130 --> 00:05:09,130
+here it is in private scope and that is the
+
+131
+00:05:09,130 --> 00:05:11,770
+advantage of making it private because if we
+
+132
+00:05:11,770 --> 00:05:13,320
+had it in the traditional way
+
+133
+00:05:13,320 --> 00:05:16,810
+public you will see that here we will be
+
+134
+00:05:16,810 --> 00:05:18,910
+able to create an instance one by one
+
+135
+00:05:18,910 --> 00:05:20,110
+example and that each one instantiates two
+
+136
+00:05:20,110 --> 00:05:22,180
+then it wouldn't make sense because it would be
+
+137
+00:05:22,180 --> 00:05:24,550
+breaking the pattern so one
+
+138
+00:05:24,550 --> 00:05:26,470
+of the important steps is to place the
+
+139
+00:05:26,470 --> 00:05:28,540
+constructor as a private scope if we
+
+140
+00:05:28,540 --> 00:05:29,950
+want to have the instance, that is to say we
+
+141
+00:05:29,950 --> 00:05:31,810
+want to have an object of this
+
+142
+00:05:31,810 --> 00:05:34,120
+connection class we are going to rely on the
+
+143
+00:05:34,120 --> 00:05:35,919
+name of the class and connection in the
+
+144
+00:05:35,919 --> 00:05:39,760
+class itself and through the point I can
+
+145
+00:05:39,760 --> 00:05:42,940
+access the class method called
+
+146
+00:05:42,940 --> 00:05:44,830
+instance because this method has
+
+147
+00:05:44,830 --> 00:05:47,530
+static and allows me to directly
+
+148
+00:05:47,530 --> 00:05:51,430
+enter it yes and this as you already know
+
+149
+00:05:51,430 --> 00:05:53,290
+that it returns an instance no
+
+150
+00:05:53,290 --> 00:05:54,729
+agreement if it has been
+
+151
+00:05:54,729 --> 00:05:56,110
+previously distanced or not we are going to
+
+152
+00:05:56,110 --> 00:05:58,720
+have here in the variable ce already the
+
+153
+00:05:58,720 --> 00:06:00,670
+reference in memory of the
+
+154
+00:06:00,670 --> 00:06:02,590
+distanced object and that is why I can do
+
+155
+00:06:02,590 --> 00:06:05,860
+point connect and point disconnect we are going to
+
+156
+00:06:05,860 --> 00:06:08,730
+right click
+
+157
+00:06:09,780 --> 00:06:12,420
+frogs I connected to the database and I
+
+158
+00:06:12,420 --> 00:06:14,520
+disconnected from the database ok it
+
+159
+00:06:14,520 --> 00:06:17,610
+would have been very different if I had to
+
+160
+00:06:17,610 --> 00:06:20,520
+put public and here do it this
+
+161
+00:06:20,520 --> 00:06:23,190
+way I would have the same result here
+
+162
+00:06:23,190 --> 00:06:25,020
+yes gentlemen it would have the same result
+
+163
+00:06:25,020 --> 00:06:27,030
+but another user could do the
+
+164
+00:06:27,030 --> 00:06:29,160
+following no connection is one equal nor
+
+165
+00:06:29,160 --> 00:06:31,860
+connection and here I made one together connect I
+
+166
+00:06:31,860 --> 00:06:35,130
+made 1 point disconnect but here
+
+167
+00:06:35,130 --> 00:06:38,930
+how many instances would we have 2 1 2
+
+168
+00:06:38,930 --> 00:06:41,250
+so if we take this to a
+
+169
+00:06:41,250 --> 00:06:42,690
+larger scale when  we have many
+
+170
+00:06:42,690 --> 00:06:44,790
+users we are going to have many objects
+
+171
+00:06:44,790 --> 00:06:47,820
+for this same behavior so that is
+
+172
+00:06:47,820 --> 00:06:51,150
+why the singleton pattern is used and
+
+173
+00:06:51,150 --> 00:06:53,070
+having this advantage now what you are
+
+174
+00:06:53,070 --> 00:06:56,130
+seeing at the bottom instance
+
+175
+00:06:56,130 --> 00:06:58,080
+of connection is simply a plus
+
+176
+00:06:58,080 --> 00:07:00,270
+so you can see that what is being
+
+177
+00:07:00,270 --> 00:07:03,150
+returned from this method is really
+
+178
+00:07:03,150 --> 00:07:06,000
+an object of the connection class that is why I
+
+179
+00:07:06,000 --> 00:07:08,820
+have here I know that it is the variable it is an
+
+180
+00:07:08,820 --> 00:07:11,070
+instance of connection which is the class
+
+181
+00:07:11,070 --> 00:07:13,620
+this is going to return a value bull no longer
+
+182
+00:07:13,620 --> 00:07:15,479
+had falls and that is why you are seeing at
+
+183
+00:07:15,479 --> 00:07:16,230
+the bottom
+
+184
+00:07:16,230 --> 00:07:19,050
+true at the bottom you can see
+
+185
+00:07:19,050 --> 00:07:21,960
+a quote that says another example which is
+
+186
+00:07:21,960 --> 00:07:23,670
+practically the same implementation
+
+187
+00:07:23,670 --> 00:07:25,230
+of the pattern but with this topic of the
+
+188
+00:07:25,230 --> 00:07:27,690
+lists that I am telling you that is
+
+189
+00:07:27,690 --> 00:07:29,760
+in the advanced java 7 tutorials
+
+190
+00:07:29,760 --> 00:07:32,250
+if I am not mistaken and also people who
+
+191
+00:07:32,250 --> 00:07:33,720
+come from the world of spring and some of
+
+192
+00:07:33,720 --> 00:07:35,040
+my students who will take a
+
+193
+00:07:35,040 --> 00:07:36,690
+sprint course with me know that by default
+
+194
+00:07:36,690 --> 00:07:38,850
+sprint manages all its objects
+
+195
+00:07:38,850 --> 00:07:42,030
+called vince of singleton scope
+
+196
+00:07:42,030 --> 00:07:43,410
+when one does a
+
+197
+00:07:43,410 --> 00:07:45,810
+dependency injection it brings the
+
+198
+00:07:45,810 --> 00:07:48,210
+singleton instance of this object and as they are
+
+199
+00:07:48,210 --> 00:07:50,040
+usually used there to be able to
+
+200
+00:07:50,040 --> 00:07:52,080
+access data repositories as
+
+201
+00:07:52,080 --> 00:07:53,190
+all users want to access the
+
+202
+00:07:53,190 --> 00:07:54,990
+same repository  data bring the
+
+203
+00:07:54,990 --> 00:07:57,390
+same instance to be able to do its
+
+204
+00:07:57,390 --> 00:07:58,890
+operation another of the data that I
+
+205
+00:07:58,890 --> 00:08:01,950
+need as a conclusion is the
+
+206
+00:08:01,950 --> 00:08:04,440
+singleton design pattern allows to have a single
+
+207
+00:08:04,440 --> 00:08:07,320
+instance of a class to be
+
+208
+00:08:07,320 --> 00:08:09,240
+used throughout the application the
+
+209
+00:08:09,240 --> 00:08:10,320
+benefit is in performance
+
+210
+00:08:10,320 --> 00:08:12,810
+especially in memory the disadvantage
+
+211
+00:08:12,810 --> 00:08:14,700
+of this pattern is that we cannot abuse
+
+212
+00:08:14,700 --> 00:08:16,860
+it we are not going to do singleton
+
+213
+00:08:16,860 --> 00:08:18,570
+throughout the application there will be times
+
+214
+00:08:18,570 --> 00:08:21,550
+where a new instance is required to be
+
+215
+00:08:21,550 --> 00:08:24,370
+able to distinguish that the operation of the
+
+216
+00:08:24,370 --> 00:08:27,130
+user under not only sees it may vary in
+
+217
+00:08:27,130 --> 00:08:29,710
+some values we will talk precisely
+
+218
+00:08:29,710 --> 00:08:31,480
+about that implementation in a
+
+219
+00:08:31,480 --> 00:08:34,180
+design pattern known as prototype and also
+
+220
+00:08:34,180 --> 00:08:36,430
+the world of spring does not support do not
+
+221
+00:08:36,430 --> 00:08:37,840
+forget that this code will be
+
+222
+00:08:37,840 --> 00:08:40,000
+available in the git hub of the course so
+
+223
+00:08:40,000 --> 00:08:41,620
+see you in the next tutorial
+
+224
+00:08:41,620 --> 00:08:44,560
+that we will talk about the factory pattern and
+
+225
+00:08:44,560 --> 00:08:46,780
+then abstract factory if you liked
+
+226
+00:08:46,780 --> 00:08:48,670
+this tutorial give it a thumbs up
+
+227
+00:08:48,670 --> 00:08:50,740
+share it with your friends do not forget to
+
+228
+00:08:50,740 --> 00:08:51,850
+subscribe in the button below
+
+229
+00:08:51,850 --> 00:08:53,950
+follow me the social networks that are in
+
+230
+00:08:53,950 --> 00:08:55,420
+the description of the video leave your
+
+231
+00:08:55,420 --> 00:08:57,400
+comment and I will wait for you in a next
+
+232
+00:08:57,400 --> 00:08:58,640
+tutorial
+
+233
+00:08:58,640 --> 00:09:08,049
+[Music]

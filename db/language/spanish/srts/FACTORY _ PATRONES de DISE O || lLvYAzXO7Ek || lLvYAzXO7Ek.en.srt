@@ -1,0 +1,771 @@
+1
+00:00:00,000 --> 00:00:02,070
+Very good and welcome one more day to
+
+2
+00:00:02,070 --> 00:00:04,529
+beta tech for those of you who are new to
+
+3
+00:00:04,529 --> 00:00:06,660
+the channel here we talk about software and
+
+4
+00:00:06,660 --> 00:00:09,389
+technology and specifically in this series
+
+5
+00:00:09,389 --> 00:00:12,389
+We talked about design patterns, let's go
+
+6
+00:00:12,389 --> 00:00:14,700
+to explain one by one each pattern of
+
+7
+00:00:14,700 --> 00:00:16,529
+design seeing its utilities of
+
+8
+00:00:16,529 --> 00:00:18,930
+explaining them with examples if not yet
+
+9
+00:00:18,930 --> 00:00:20,580
+Do you know what a design pattern is?
+
+10
+00:00:20,580 --> 00:00:21,990
+I leave the beginning of the series here
+
+11
+00:00:21,990 --> 00:00:24,060
+above and in the description and if not yet
+
+12
+00:00:24,060 --> 00:00:25,470
+You are subscribed to beta take I think
+
+13
+00:00:25,470 --> 00:00:27,000
+now is a good time to do it
+
+14
+00:00:27,000 --> 00:00:29,460
+This way you will receive notifications about each
+
+15
+00:00:29,460 --> 00:00:31,800
+new video that will be uploaded and for the
+
+16
+00:00:31,800 --> 00:00:33,899
+so you can follow each moment
+
+17
+00:00:33,899 --> 00:00:35,940
+new pattern that's what we're going to do in this series
+
+18
+00:00:35,940 --> 00:00:37,500
+and the pattern that we are going to see in this
+
+19
+00:00:37,500 --> 00:00:39,780
+video is the factoring pattern that is therefore
+
+20
+00:00:39,780 --> 00:00:41,340
+that I have seen has been one of the patterns
+
+21
+00:00:41,340 --> 00:00:43,020
+most in demand since I announced that
+
+22
+00:00:43,020 --> 00:00:44,760
+I wanted to make this series
+
+23
+00:00:44,760 --> 00:00:46,620
+So to understand the usefulness of a
+
+24
+00:00:46,620 --> 00:00:48,719
+pattern like this I think the best is
+
+25
+00:00:48,719 --> 00:00:50,610
+that we encounter the problem of
+
+26
+00:00:50,610 --> 00:00:52,649
+face so let's do a little
+
+27
+00:00:52,649 --> 00:00:54,149
+exercise and let's get to work
+
+28
+00:00:54,149 --> 00:00:56,399
+develop a part of a video game
+
+29
+00:00:56,399 --> 00:00:58,710
+that I think you like quite a bit as in
+
+30
+00:00:58,710 --> 00:01:00,420
+throughout the video game the enemies are a
+
+31
+00:01:00,420 --> 00:01:02,820
+of the most important parts to have
+
+32
+00:01:02,820 --> 00:01:04,710
+different varieties of enemies gives you
+
+33
+00:01:04,710 --> 00:01:05,239
+funny
+
+34
+00:01:05,239 --> 00:01:07,640
+game and allows to surprise the player or
+
+35
+00:01:07,640 --> 00:01:09,380
+even increasing the difficulty of the
+
+36
+00:01:09,380 --> 00:01:11,570
+game adding more and more enemies
+
+37
+00:01:11,570 --> 00:01:13,670
+difficult as you progress
+
+38
+00:01:13,670 --> 00:01:16,460
+at the levels therefore in our
+
+39
+00:01:16,460 --> 00:01:18,380
+video game we end up having a set
+
+40
+00:01:18,380 --> 00:01:21,110
+of classes each class would be then
+
+41
+00:01:21,110 --> 00:01:22,640
+a type of enemy to give examples
+
+42
+00:01:22,640 --> 00:01:25,580
+We have for example the bumba class
+
+43
+00:01:25,580 --> 00:01:28,220
+cupa class and bu class
+
+44
+00:01:28,220 --> 00:01:30,470
+all these classes as they are enemies is
+
+45
+00:01:30,470 --> 00:01:33,080
+say logical entities of the game
+
+46
+00:01:33,080 --> 00:01:35,119
+entities that do something that moves
+
+47
+00:01:35,119 --> 00:01:36,860
+that interact with the player who
+
+48
+00:01:36,860 --> 00:01:39,080
+interact with the map would inherit from
+
+49
+00:01:39,080 --> 00:01:41,420
+the same class let's put the entity class
+
+50
+00:01:41,420 --> 00:01:43,220
+the entity class would be a class that
+
+51
+00:01:43,220 --> 00:01:45,470
+defines anything that has logic or
+
+52
+00:01:45,470 --> 00:01:47,209
+that has some interaction with the
+
+53
+00:01:47,209 --> 00:01:49,580
+This game allows us to apply
+
+54
+00:01:49,580 --> 00:01:51,709
+polymorphism therefore every time
+
+55
+00:01:51,709 --> 00:01:53,360
+we have to update the list of
+
+56
+00:01:53,360 --> 00:01:55,490
+game we can treat all the
+
+57
+00:01:55,490 --> 00:01:57,709
+entities equally following the
+
+58
+00:01:57,709 --> 00:01:59,600
+video game development and to do it
+
+59
+00:01:59,600 --> 00:02:01,549
+Even more interesting we want to avoid that
+
+60
+00:02:01,549 --> 00:02:03,770
+the player memorizes the location of
+
+61
+00:02:03,770 --> 00:02:05,899
+We want to surprise each type of enemy
+
+62
+00:02:05,899 --> 00:02:08,599
+You never know what enemies you are going to face
+
+63
+00:02:08,599 --> 00:02:10,429
+find below
+
+64
+00:02:10,429 --> 00:02:12,950
+somehow we have to generate
+
+65
+00:02:12,950 --> 00:02:15,230
+enemies randomly this
+
+66
+00:02:15,230 --> 00:02:17,450
+It means that at some point in our
+
+67
+00:02:17,450 --> 00:02:19,790
+code in some function we would have
+
+68
+00:02:19,790 --> 00:02:21,980
+some kind of logic to create our
+
+69
+00:02:21,980 --> 00:02:24,980
+enemies but how do we build ours
+
+70
+00:02:24,980 --> 00:02:28,010
+enemies we use new kumba new kuta no
+
+71
+00:02:28,010 --> 00:02:30,139
+we can instantiate an entity because we do not
+
+72
+00:02:30,139 --> 00:02:32,329
+it is no concrete class it is a class
+
+73
+00:02:32,329 --> 00:02:34,310
+abstract, let's say that in some way
+
+74
+00:02:34,310 --> 00:02:36,379
+we have to choose our enemies
+
+75
+00:02:36,379 --> 00:02:39,409
+we have to decide which medium to use in
+
+76
+00:02:39,409 --> 00:02:41,480
+this case and how we want to surprise the
+
+77
+00:02:41,480 --> 00:02:43,700
+player we have decided to do it in a way
+
+78
+00:02:43,700 --> 00:02:46,250
+random so we introduce one
+
+79
+00:02:46,250 --> 00:02:48,230
+function with some logic with numbers
+
+80
+00:02:48,230 --> 00:02:50,090
+random to select our
+
+81
+00:02:50,090 --> 00:02:52,760
+constructor decide what we call new
+
+82
+00:02:52,760 --> 00:02:55,760
+something we are creating an algorithm for
+
+83
+00:02:55,760 --> 00:02:58,430
+instance enemies this seems to work
+
+84
+00:02:58,430 --> 00:03:00,139
+and our players really like it
+
+85
+00:03:00,139 --> 00:03:02,510
+who enjoy watching how each time they
+
+86
+00:03:02,510 --> 00:03:04,579
+a different enemy comes the problem
+
+87
+00:03:04,579 --> 00:03:06,530
+It arises when we start receiving complaints
+
+88
+00:03:06,530 --> 00:03:08,750
+of players who want more difficulty
+
+89
+00:03:08,750 --> 00:03:10,969
+who want the game to be harder
+
+90
+00:03:10,969 --> 00:03:13,669
+want to see more challenges we would have several
+
+91
+00:03:13,669 --> 00:03:15,349
+options for example the option of
+
+92
+00:03:15,349 --> 00:03:17,300
+modify our current code
+
+93
+00:03:17,300 --> 00:03:19,340
+give our enemies more chances
+
+94
+00:03:19,340 --> 00:03:21,410
+stronger to appear but this
+
+95
+00:03:21,410 --> 00:03:22,910
+would affect all players by
+
+96
+00:03:22,910 --> 00:03:24,710
+same and we don't want to change it to
+
+97
+00:03:24,710 --> 00:03:26,690
+players who are already enjoying it
+
+98
+00:03:26,690 --> 00:03:29,030
+are happy with their random version
+
+99
+00:03:29,030 --> 00:03:31,310
+from the program this is where we start now
+
+100
+00:03:31,310 --> 00:03:33,710
+to see little things to see problems since
+
+101
+00:03:33,710 --> 00:03:35,690
+Somehow we want to encapsulate and
+
+102
+00:03:35,690 --> 00:03:38,120
+reuse the different strategies of
+
+103
+00:03:38,120 --> 00:03:39,680
+creation of enemies that we have
+
+104
+00:03:39,680 --> 00:03:42,140
+We want to encapsulate the strategies of
+
+105
+00:03:42,140 --> 00:03:44,480
+manufacturing of these enemies
+
+106
+00:03:44,480 --> 00:03:46,310
+This is where the application of the
+
+107
+00:03:46,310 --> 00:03:48,680
+pattern factor and the factor and would be the
+
+108
+00:03:48,680 --> 00:03:50,450
+responsible for maintaining logic
+
+109
+00:03:50,450 --> 00:03:52,760
+in charge of building enemies would be
+
+110
+00:03:52,760 --> 00:03:55,250
+a class that we can reuse and very
+
+111
+00:03:55,250 --> 00:03:57,100
+important we can use in a way
+
+112
+00:03:57,100 --> 00:03:59,300
+polymorphic and in the end it is the grace of
+
+113
+00:03:59,300 --> 00:04:01,100
+have this whole pattern from the start
+
+114
+00:04:01,100 --> 00:04:03,200
+In our case, for example, we could
+
+115
+00:04:03,200 --> 00:04:05,150
+have two factors one that we can
+
+116
+00:04:05,150 --> 00:04:07,160
+call random enemy factory and that
+
+117
+00:04:07,160 --> 00:04:08,930
+returns enemies completely
+
+118
+00:04:08,930 --> 00:04:11,000
+random and another that we could call
+
+119
+00:04:11,000 --> 00:04:13,970
+random difficult enemy factory that we
+
+120
+00:04:13,970 --> 00:04:16,519
+returns only the most powerful even
+
+121
+00:04:16,519 --> 00:04:18,200
+we could have extreme cases like
+
+122
+00:04:18,200 --> 00:04:20,299
+a bomb factory that gives us back
+
+123
+00:04:20,299 --> 00:04:22,760
+always bombs all the factors follow
+
+124
+00:04:22,760 --> 00:04:23,270
+the same
+
+125
+00:04:23,270 --> 00:04:25,580
+interface because they all inherit from
+
+126
+00:04:25,580 --> 00:04:28,009
+an abstraction that defines the method
+
+127
+00:04:28,009 --> 00:04:30,110
+we could call him a creator of enemies
+
+128
+00:04:30,110 --> 00:04:32,900
+treated from here to incorporate
+
+129
+00:04:32,900 --> 00:04:34,669
+a new mechanism for creating
+
+130
+00:04:34,669 --> 00:04:36,949
+enemies would be enough to create a new one
+
+131
+00:04:36,949 --> 00:04:39,020
+factory class that will inherit from it
+
+132
+00:04:39,020 --> 00:04:41,270
+interface and implementing that mechanism
+
+133
+00:04:41,270 --> 00:04:43,759
+in the create enemy method this is very
+
+134
+00:04:43,759 --> 00:04:45,139
+important and is what allows us
+
+135
+00:04:45,139 --> 00:04:47,030
+use polymorphism since each time
+
+136
+00:04:47,030 --> 00:04:48,770
+that we need to use something to
+
+137
+00:04:48,770 --> 00:04:50,870
+expose enemies we will use the
+
+138
+00:04:50,870 --> 00:04:52,699
+parent class of the factory so
+
+139
+00:04:52,699 --> 00:04:54,530
+we will be able to modify the implementations
+
+140
+00:04:54,530 --> 00:04:57,710
+concrete when and how we want
+
+141
+00:04:57,710 --> 00:04:58,909
+Now we want all games to be
+
+142
+00:04:58,909 --> 00:05:01,759
+parties we had a bumba factor and that
+
+143
+00:05:01,759 --> 00:05:04,099
+We all want enemies but from
+
+144
+00:05:04,099 --> 00:05:06,500
+we randomly pass the random enemy
+
+145
+00:05:06,500 --> 00:05:09,020
+factor and we have generalized the mechanism
+
+146
+00:05:09,020 --> 00:05:11,240
+from spawn near enemies to an interface
+
+147
+00:05:11,240 --> 00:05:14,509
+In general, in fact, we have no limit on what
+
+148
+00:05:14,509 --> 00:05:15,800
+what we can do from here
+
+149
+00:05:15,800 --> 00:05:18,050
+we can pass parameters to a factor and
+
+150
+00:05:18,050 --> 00:05:20,240
+for example passing percentages of each
+
+151
+00:05:20,240 --> 00:05:22,039
+enemy or for example make an invoice
+
+152
+00:05:22,039 --> 00:05:23,629
+to receive a minimum level as
+
+153
+00:05:23,629 --> 00:05:25,940
+parameter to choose enemies from a
+
+154
+00:05:25,940 --> 00:05:27,230
+level up
+
+155
+00:05:27,230 --> 00:05:29,330
+We have therefore created a
+
+156
+00:05:29,330 --> 00:05:31,520
+very powerful tool that allows us
+
+157
+00:05:31,520 --> 00:05:33,230
+make many changes to our game
+
+158
+00:05:33,230 --> 00:05:36,260
+and what is more important is so
+
+159
+00:05:36,260 --> 00:05:38,660
+general that does not affect any other
+
+160
+00:05:38,660 --> 00:05:40,640
+part of the code since all the
+
+161
+00:05:40,640 --> 00:05:43,610
+dependencies are between interfaces and
+
+162
+00:05:43,610 --> 00:05:45,440
+Basically this is the factor pattern and
+
+163
+00:05:45,440 --> 00:05:47,300
+There isn't much more if we look at the diagram
+
+164
+00:05:47,300 --> 00:05:49,910
+vl formal pattern we can see that it is
+
+165
+00:05:49,910 --> 00:05:52,130
+exactly what we have drawn with the
+
+166
+00:05:52,130 --> 00:05:54,260
+example of the video game we have the class
+
+167
+00:05:54,260 --> 00:05:56,480
+abstract products that would be ours
+
+168
+00:05:56,480 --> 00:05:58,400
+entity class and the complete class
+
+169
+00:05:58,400 --> 00:06:00,050
+product that would be our enemies
+
+170
+00:06:00,050 --> 00:06:02,570
+concretely the credit class would be the
+
+171
+00:06:02,570 --> 00:06:04,670
+father of all our chopped factors
+
+172
+00:06:04,670 --> 00:06:07,070
+with creed kreator it would be for example the
+
+173
+00:06:07,070 --> 00:06:09,350
+bomba factor is well random enemy factor
+
+174
+00:06:09,350 --> 00:06:11,270
+and we must try to avoid confusion
+
+175
+00:06:11,270 --> 00:06:13,610
+this pattern with the abstract pattern
+
+176
+00:06:13,610 --> 00:06:16,160
+factory and although similar they make things
+
+177
+00:06:16,160 --> 00:06:18,260
+different the pattern of abstracts
+
+178
+00:06:18,260 --> 00:06:20,570
+factory allows you to create different types
+
+179
+00:06:20,570 --> 00:06:22,550
+of objects related to each other
+
+180
+00:06:22,550 --> 00:06:24,920
+families of objects, that is to say a
+
+181
+00:06:24,920 --> 00:06:26,690
+abstract factor and does not have only one
+
+182
+00:06:26,690 --> 00:06:28,670
+creation method has several
+
+183
+00:06:28,670 --> 00:06:30,470
+we will go into more detail on this
+
+184
+00:06:30,470 --> 00:06:32,200
+pattern in another video in the series
+
+185
+00:06:32,200 --> 00:06:34,420
+worry to finish I hope you
+
+186
+00:06:34,420 --> 00:06:35,740
+I hope you liked it and that you understood
+
+187
+00:06:35,740 --> 00:06:38,050
+Why the factory pattern is useful and how
+
+188
+00:06:38,050 --> 00:06:40,450
+You can implement it yourself if
+
+189
+00:06:40,450 --> 00:06:42,130
+I continue like this please subscribe and give it
+
+190
+00:06:42,130 --> 00:06:44,020
+like at least in some way we can
+
+191
+00:06:44,020 --> 00:06:46,090
+give more visibility to this series and without
+
+192
+00:06:46,090 --> 00:06:48,400
+We'll see you much more in the next video.
+
+193
+00:06:48,400 --> 00:06:50,760
+bye

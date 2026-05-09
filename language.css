@@ -1,0 +1,752 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(webfonts/Beattingvile.woff);
+    font-weight: bold;
+}
+
+/* ── Toolbar ──────────────────────────────────────── */
+.lang-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 4px 0;
+}
+
+.lang-toolbar-center {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+
+.lang-search-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.lang-search-top-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.lang-toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-search-input {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 130px;
+    padding: 4px 28px 4px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.lang-search-input-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    min-width: 130px;
+}
+
+.lang-search-input-wrap .lang-search-input {
+    width: 100%;
+}
+
+.lang-search-input-clear {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    line-height: 14px;
+    padding: 0;
+    border: none;
+    background: #ced4da;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-search-input-clear:hover {
+    background: #6c757d;
+}
+
+/* Hide the native WebKit search-clear "x" so we don't show two clear buttons. */
+.lang-search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Clear (X) button injected into the select2 dropdown's search field. */
+.select2-search--dropdown {
+    position: relative;
+}
+.select2-search-clear {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    line-height: 14px;
+    padding: 0;
+    border: none;
+    background: #ced4da;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.select2-search-clear:hover {
+    background: #6c757d;
+}
+.select2-search-clear.is-visible {
+    display: flex;
+}
+/* Suppress the native WebKit clear icon inside select2's search field too. */
+.select2-search__field::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.lang-search-select-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+
+.lang-search-select-row .select2,
+.lang-search-select-row .select2-container {
+    width: 100% !important;
+}
+
+.lang-tool-btn {
+    padding: 5px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background: #f8f9fa;
+    cursor: pointer;
+    font-size: 0.85em;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.lang-tool-btn:hover {
+    background: #e2e6ea;
+    border-color: #adb5bd;
+}
+
+.lang-tool-btn--icon {
+    padding: 5px 7px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.lang-toolbar-separator {
+    width: 1px;
+    height: 22px;
+    background: #ced4da;
+    margin: 0 2px;
+    flex-shrink: 0;
+}
+
+.search-vocab-popover-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+/* Option panel that appears when the user clicks a subtitle word. */
+.subtitle-word-popover {
+    position: absolute;
+    z-index: 10000;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 140px;
+}
+.subtitle-word-popover[hidden] { display: none; }
+.subtitle-word-popover button {
+    text-align: left;
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    line-height: 1.2;
+}
+.subtitle-word-popover button:hover {
+    background: #f1f3f5;
+}
+
+.search-vocab-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    padding: 4px;
+    gap: 2px;
+}
+
+.search-vocab-menu-item {
+    text-align: left;
+    width: 100%;
+}
+
+.vocabulary-segment.similar-tier-0 { background: #f3e8ff; }
+.vocabulary-segment.similar-tier-2 { background: #e8f1fb; }
+.vocabulary-segment.similar-tier-3-d1 { background: #fff7d6; }
+.vocabulary-segment.similar-tier-3-d2 { background: #fde9e3; }
+
+.similar-segment-header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* Stick to the top of the viewport while the user scrolls through the
+       expanded body, so the matched line stays in view. */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+}
+.vocabulary-segment.similar-tier-0 .similar-segment-header { background: #f3e8ff; }
+.vocabulary-segment.similar-tier-2 .similar-segment-header { background: #e8f1fb; }
+.vocabulary-segment.similar-tier-3-d1 .similar-segment-header { background: #fff7d6; }
+.vocabulary-segment.similar-tier-3-d2 .similar-segment-header { background: #fde9e3; }
+/* Chevron next to the collapsible header — uses a FontAwesome `<i>` so the
+   glyph is guaranteed to render regardless of system font. The element is
+   inserted by the JS that builds each header and rotates 90° when the
+   parent has `.is-open`. */
+.similar-chevron {
+    color: #444;
+    margin-right: 6px;
+    flex: 0 0 auto;
+    transition: transform 0.12s ease;
+    transform-origin: 35% 50%;
+    font-size: 0.85em;
+}
+.similar-segment-header.is-open .similar-chevron,
+.l-accordion.active .similar-chevron {
+    transform: rotate(90deg);
+}
+
+/* Sticky headings for the SRT findings accordion (#result). */
+#result .l-accordion {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+}
+
+/* Pin the similar / different-prefix dialogs to the viewport. jQuery UI
+   uses position: absolute by default, which means re-opening the dialog
+   after the user scrolls anchors it at the original document offset
+   rather than the current viewport — the page jumps down to it and back
+   up on close. position: fixed keeps it locked to the viewport. */
+.ui-dialog:has(> #similarMoreDialog),
+.ui-dialog:has(> #diffPrefixDialog) {
+    position: fixed !important;
+}
+
+/* ── Drop-down panels ─────────────────────────────── */
+.lang-panel {
+    margin-top: 4px;
+    padding: 8px 12px 2em;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 0.88em;
+}
+
+.lang-panel-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.88em;
+    color: #495057;
+    cursor: default;
+    gap: 4px;
+    user-select: none;
+}
+
+
+.l-accordion {
+    background-color: #eee;
+    color: #7d7676;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    padding-left: 1rem;
+}
+
+div.l-accordion h2, div.l-accordion h1, div.l-accordion h3, div.l-accordion h4, div.l-accordion h5, div.l-accordion h6 {
+    padding-bottom: 1%;
+    margin-top: 0;
+    margin-right: 5vw;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.l-accordion.even * {
+    color: #248cb1;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .l-accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.l-accordion + * {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.article {
+    font-size: 0.8rem;
+}
+
+.title-popup {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.no-result {
+    color: #cdc0c0;
+}
+
+#playBtn {
+    border-radius: 10%;
+    height: 3em;
+    /* width: 3em; */
+    cursor: pointer;
+}
+
+#starredLinesSelect {
+    margin-right: 2em;
+    height: 3em;
+    margin-bottom: 5px;
+    border: 1px solid green;
+    border-width: 3px;
+}
+
+.play-btn {
+    background: blue;
+    color: white;
+}
+
+.pause-btn {
+    background: red;
+    color: white;
+}
+
+body {
+    touch-action: manipulation;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.Comment {
+    border-left: 1px solid black;
+    padding-left: 4px;
+}
+
+.btn:hover {
+    background-color: cyan;
+}
+
+.highlight, .highlighted-selection {
+    background-color: yellow;
+}
+
+.srt-line.selected {
+    background-color: cyan;
+}
+
+.line:nth-child(even) {
+   background-color: cyan;
+}
+
+.line {
+    padding: 5px 10px;
+}
+
+.main-line {
+    color: blue;
+}
+
+.secondary-line {
+    color: grey;
+}
+
+.info {
+    color: grey;
+}
+
+.starred-sub {
+    left: 1em;
+    float: left;
+    border-radius: 1em;
+    padding: 5px;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+    font-size: smaller;
+    margin-top: 2px;
+}
+
+.button-62 {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-10 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-10:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
+.button-3 {
+    appearance: none;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
+.button-3:hover {
+    background-color: #2c974b;
+}
+
+.button-3:focus {
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+}
+
+.button-3:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+.button-3:active {
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.button-24 {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.button-24:active {
+    opacity: .5;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+[class*="button-"] {
+    display: inline;
+    margin-top: 6px;
+}
+
+.checkbox-wrapper-22 .switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    top: 12px;
+}
+
+.checkbox-wrapper-22 .switch input {
+    display: none;
+}
+
+.checkbox-wrapper-22 .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.checkbox-wrapper-22 .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+.checkbox-wrapper-22 input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+.checkbox-wrapper-22 input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.checkbox-wrapper-22 .slider.round {
+    border-radius: 34px;
+}
+
+.checkbox-wrapper-22 .slider.round:before {
+    border-radius: 50%;
+}
+
+.add-prev-btn, .remove-next-btn, .add-next-btn, .remove-prev-btn {
+    cursor: pointer;
+    border: 1px solid green;
+    padding: 1px 8px;
+    border-radius: 50%;
+}
+
+.add-prev-btn, .remove-next-btn {
+    float: left;
+}
+
+.secondary-line a {
+    color: grey;
+}
+
+#toggleEnSubBtn {
+    border-radius: 4%;
+}
+
+#result a {
+    text-decoration: none;
+}
+
+.search-text-info {
+    padding: 1em;
+    color: green;
+    font-size: small;
+}
+
+.vocabulary-line {
+    padding: 0.3em 0.3em 0.3em 1em;
+}
+
+.vocabulary-line.highlighted {
+    background-color: #f1f1a7;
+}
+
+.vocabulary-line:nth-child(even) {
+    color: green;
+}
+
+.vocabulary-line:nth-child(odd) {
+    color: blueviolet;
+}
+
+.vocabulary-segment-content {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.vocabulary-segment {
+    margin-bottom: 1em;
+    border-bottom: 1px solid grey;
+}
+
+#vocabularyResult {
+    margin-bottom: 1em;
+    border-top: 1px solid black;
+}

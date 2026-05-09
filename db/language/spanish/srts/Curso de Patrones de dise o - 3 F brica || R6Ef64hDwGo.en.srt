@@ -1,0 +1,687 @@
+1
+00:00:00,000 --> 00:00:02,010
+and now it's my turn to review the
+
+2
+00:00:02,010 --> 00:00:04,400
+factory pattern let's go to code
+
+3
+00:00:04,400 --> 00:00:10,349
+[Music]
+
+4
+00:00:11,769 --> 00:00:13,629
+as I mentioned in the sources for
+
+5
+00:00:13,629 --> 00:00:15,639
+this course we're going to see the
+
+6
+00:00:15,639 --> 00:00:18,340
+factory pattern of the factory pattern well we can
+
+7
+00:00:18,340 --> 00:00:20,050
+analyze the diagram that is being
+
+8
+00:00:20,050 --> 00:00:22,360
+indicated here look we have a
+
+9
+00:00:22,360 --> 00:00:24,939
+figure interface and we have three
+
+10
+00:00:24,939 --> 00:00:27,270
+implementations of this interface
+
+11
+00:00:27,270 --> 00:00:30,219
+circle square and rectangle then we
+
+12
+00:00:30,219 --> 00:00:32,890
+have a class that is the factory and
+
+13
+00:00:32,890 --> 00:00:34,480
+well this comes to be the test class
+
+14
+00:00:34,480 --> 00:00:36,940
+to execute our application itself the
+
+15
+00:00:36,940 --> 00:00:39,280
+important thing would be all this
+
+16
+00:00:39,280 --> 00:00:42,399
+together with this factory class let's
+
+17
+00:00:42,399 --> 00:00:44,650
+understand that the factory design pattern
+
+18
+00:00:44,650 --> 00:00:46,300
+its objective is to return
+
+19
+00:00:46,300 --> 00:00:48,610
+instances of a particular class
+
+20
+00:00:48,610 --> 00:00:50,700
+by means of some identifier
+
+21
+00:00:50,700 --> 00:00:53,320
+so for example if I need to
+
+22
+00:00:53,320 --> 00:00:55,570
+have an instance of the person class
+
+23
+00:00:55,570 --> 00:00:57,820
+I am going to tell the factory I need
+
+24
+00:00:57,820 --> 00:01:00,760
+an object of the person class if I
+
+25
+00:01:00,760 --> 00:01:03,910
+need for example of the ticket class
+
+26
+00:01:03,910 --> 00:01:06,460
+I have to go first through the factory and
+
+27
+00:01:06,460 --> 00:01:08,229
+the factory will be responsible for
+
+28
+00:01:08,229 --> 00:01:10,360
+returning that instance to me that is to say I am not
+
+29
+00:01:10,360 --> 00:01:12,460
+going to directly distance the object
+
+30
+00:01:12,460 --> 00:01:13,869
+and for that a peculiar demonstrative example is not brought
+
+31
+00:01:13,869 --> 00:01:15,819
+so that you can
+
+32
+00:01:15,819 --> 00:01:18,070
+understand this let's look we have
+
+33
+00:01:18,070 --> 00:01:20,830
+an app class here that comes to be the
+
+34
+00:01:20,830 --> 00:01:23,050
+execution of my method you can
+
+35
+00:01:23,050 --> 00:01:26,620
+see that I say now which  mysql h2 but I
+
+36
+00:01:26,620 --> 00:01:28,360
+'m entering a concept called
+
+37
+00:01:28,360 --> 00:01:33,490
+factory and I get a connection based on
+
+38
+00:01:33,490 --> 00:01:36,520
+some identifier and this returns
+
+39
+00:01:36,520 --> 00:01:38,710
+an instance and I can now use
+
+40
+00:01:38,710 --> 00:01:40,810
+the methods of that instance
+
+41
+00:01:40,810 --> 00:01:42,580
+so that this is understood first we are going
+
+42
+00:01:42,580 --> 00:01:45,040
+to explain the safe interface that in this
+
+43
+00:01:45,040 --> 00:01:48,550
+case would be replaced by the interface and
+
+44
+00:01:48,550 --> 00:01:51,910
+connection ok and connection for me
+
+45
+00:01:51,910 --> 00:01:54,190
+would be the interface in which I am going to
+
+46
+00:01:54,190 --> 00:01:56,259
+define two methods to connect and
+
+47
+00:01:56,259 --> 00:01:57,940
+disconnect to the database and then I
+
+48
+00:01:57,940 --> 00:02:00,759
+have my own implementations of this
+
+49
+00:02:00,759 --> 00:02:03,270
+interface such as for example mysql connection
+
+50
+00:02:03,270 --> 00:02:05,710
+oracle connection post greg connection
+
+51
+00:02:05,710 --> 00:02:08,830
+sql connection and an empty connection
+
+52
+00:02:08,830 --> 00:02:11,890
+ok then in the mysql connection
+
+53
+00:02:11,890 --> 00:02:13,959
+I am going to define some criteria to
+
+54
+00:02:13,959 --> 00:02:15,790
+link the database
+
+55
+00:02:15,790 --> 00:02:17,769
+and here I can indicate the default values
+
+56
+00:02:17,769 --> 00:02:19,480
+and simply as I am
+
+57
+00:02:19,480 --> 00:02:21,219
+implementing this connection interface I
+
+58
+00:02:21,219 --> 00:02:23,469
+overwrite the connect and
+
+59
+00:02:23,469 --> 00:02:25,510
+disconnect methods at my discretion ok
+
+60
+00:02:25,510 --> 00:02:27,790
+you can put there the code that best
+
+61
+00:02:27,790 --> 00:02:30,250
+suits you that you need most for
+
+62
+00:02:30,250 --> 00:02:32,200
+connection now with very similar if I
+
+63
+00:02:32,200 --> 00:02:34,150
+am simply changing the
+
+64
+00:02:34,150 --> 00:02:35,890
+configuration parameters this can be
+
+65
+00:02:35,890 --> 00:02:37,480
+linked with some properties file it
+
+66
+00:02:37,480 --> 00:02:38,920
+depends on you but what I want to
+
+67
+00:02:38,920 --> 00:02:40,989
+exemplify here is the use of the
+
+68
+00:02:40,989 --> 00:02:43,239
+pattern look we have the dessert connection the
+
+69
+00:02:43,239 --> 00:02:47,349
+same other values sqlserver  and an
+
+70
+00:02:47,349 --> 00:02:49,209
+empty connection where we indicate that
+
+71
+00:02:49,209 --> 00:02:51,909
+no provider was specified well
+
+72
+00:02:51,909 --> 00:02:54,250
+then according to the diagram we would already have
+
+73
+00:02:54,250 --> 00:02:56,010
+this part and its implementations
+
+74
+00:02:56,010 --> 00:02:58,780
+now we need the factory the
+
+75
+00:02:58,780 --> 00:03:01,569
+factory or the factory would be this
+
+76
+00:03:01,569 --> 00:03:04,299
+connection factory class in which what I am
+
+77
+00:03:04,299 --> 00:03:07,659
+doing is having a public method that
+
+78
+00:03:07,659 --> 00:03:10,329
+returns a connection interface and here
+
+79
+00:03:10,329 --> 00:03:12,340
+because we put connection interface the
+
+80
+00:03:12,340 --> 00:03:14,260
+objective of this pattern is to return an
+
+81
+00:03:14,260 --> 00:03:16,510
+instance as requested by the user
+
+82
+00:03:16,510 --> 00:03:18,459
+so how we are making a
+
+83
+00:03:18,459 --> 00:03:20,349
+database connection factory
+
+84
+00:03:20,349 --> 00:03:22,060
+is that context to
+
+85
+00:03:22,060 --> 00:03:24,819
+return some implementation that
+
+86
+00:03:24,819 --> 00:03:28,750
+obviously depends on this interface and
+
+87
+00:03:28,750 --> 00:03:31,270
+connection if I put sqlserver connection
+
+88
+00:03:31,270 --> 00:03:33,250
+here it would be returning an
+
+89
+00:03:33,250 --> 00:03:35,709
+implementation only of sql if I
+
+90
+00:03:35,709 --> 00:03:37,540
+establish dessert it would only be
+
+91
+00:03:37,540 --> 00:03:40,180
+returning dessert so in order to
+
+92
+00:03:40,180 --> 00:03:41,800
+have that independence from
+
+93
+00:03:41,800 --> 00:03:43,269
+any engine that I can return
+
+94
+00:03:43,269 --> 00:03:46,239
+according to some identifier it is necessary to
+
+95
+00:03:46,239 --> 00:03:48,130
+place an interface with that I make
+
+96
+00:03:48,130 --> 00:03:50,110
+the code flexible and well I am going to
+
+97
+00:03:50,110 --> 00:03:52,000
+call a connection method that would be
+
+98
+00:03:52,000 --> 00:03:55,090
+similar here get safe which would be to
+
+99
+00:03:55,090 --> 00:03:58,110
+obtain figure simply first
+
+100
+00:03:58,110 --> 00:04:00,880
+receive a parameter that I am going to indicate
+
+101
+00:04:00,880 --> 00:04:03,310
+some database engine and evaluated if
+
+102
+00:04:03,310 --> 00:04:04,870
+the engine comes did not read it I am going to
+
+103
+00:04:04,870 --> 00:04:07,630
+return an empty connection if the engine
+
+104
+00:04:07,630 --> 00:04:10,390
+is equal to mysql then I am going to
+
+105
+00:04:10,390 --> 00:04:13,330
+return an instance of  mysql
+
+106
+00:04:13,330 --> 00:04:15,819
+connection mysql which is this
+
+107
+00:04:15,819 --> 00:04:17,010
+class
+
+108
+00:04:17,010 --> 00:04:19,410
+and therefore to distance the constructor is not executed
+
+109
+00:04:19,410 --> 00:04:20,820
+and I already have the values
+
+110
+00:04:20,820 --> 00:04:22,650
+initializes 2 so that I can
+
+111
+00:04:22,650 --> 00:04:24,050
+later make a connect or disconnect
+
+112
+00:04:24,050 --> 00:04:27,210
+according to the convenience that I need the same
+
+113
+00:04:27,210 --> 00:04:29,430
+way for oracle I return an instance of
+
+114
+00:04:29,430 --> 00:04:31,350
+now which for dessert the same seems to be
+
+115
+00:04:31,350 --> 00:04:33,510
+worth the same and so for each
+
+116
+00:04:33,510 --> 00:04:35,520
+database engine that I may need if
+
+117
+00:04:35,520 --> 00:04:37,140
+any does not meet the criteria I can
+
+118
+00:04:37,140 --> 00:04:39,450
+return an empty connection the class that
+
+119
+00:04:39,450 --> 00:04:42,030
+executes all this would be app where in
+
+120
+00:04:42,030 --> 00:04:44,070
+the main method an instance of a factory
+
+121
+00:04:44,070 --> 00:04:46,740
+created the factory and then used the same
+
+122
+00:04:46,740 --> 00:04:49,170
+factory to indicate a connection and
+
+123
+00:04:49,170 --> 00:04:51,570
+passed it the identifier that I need if I
+
+124
+00:04:51,570 --> 00:04:52,980
+want to connect on this occasion now
+
+125
+00:04:52,980 --> 00:04:55,590
+with would be the one that now with I can now have
+
+126
+00:04:55,590 --> 00:04:57,780
+its connect and disconnect if I
+
+127
+00:04:57,780 --> 00:05:00,150
+want from mysql the same and if I want from
+
+128
+00:05:00,150 --> 00:05:02,550
+h2 the same then in that way when
+
+129
+00:05:02,550 --> 00:05:04,590
+executing the application we will see that we have
+
+130
+00:05:04,590 --> 00:05:07,890
+different instances according to
+
+131
+00:05:07,890 --> 00:05:09,690
+the identifier that we
+
+132
+00:05:09,690 --> 00:05:12,240
+need
+
+133
+00:05:12,240 --> 00:05:13,590
+then you can see at the bottom
+
+134
+00:05:13,590 --> 00:05:15,090
+that it says it connected now with it it
+
+135
+00:05:15,090 --> 00:05:16,349
+disconnected from now which
+
+136
+00:05:16,349 --> 00:05:18,780
+mysql connected and the same for the following
+
+137
+00:05:18,780 --> 00:05:19,740
+cases
+
+138
+00:05:19,740 --> 00:05:22,349
+in this case as h2 is not within the
+
+139
+00:05:22,349 --> 00:05:25,050
+factory set it says that it is not
+
+140
+00:05:25,050 --> 00:05:26,880
+specified  the provider now this is a
+
+141
+00:05:26,880 --> 00:05:28,229
+demonstrative exercise in which
+
+142
+00:05:28,229 --> 00:05:29,580
+you can also apply to another
+
+143
+00:05:29,580 --> 00:05:32,340
+context if you have any
+
+144
+00:05:32,340 --> 00:05:35,910
+need to define objects according to
+
+145
+00:05:35,910 --> 00:05:37,919
+some characteristics you can have that
+
+146
+00:05:37,919 --> 00:05:40,139
+class already implemented and simply by
+
+147
+00:05:40,139 --> 00:05:41,729
+calling it through the factory you
+
+148
+00:05:41,729 --> 00:05:43,740
+can have the instance and what is the
+
+149
+00:05:43,740 --> 00:05:45,720
+benefit of this the benefit is
+
+150
+00:05:45,720 --> 00:05:48,030
+mainly the flexibility that
+
+151
+00:05:48,030 --> 00:05:50,190
+the code gives us by not depending on
+
+152
+00:05:50,190 --> 00:05:52,440
+any particular instance because
+
+153
+00:05:52,440 --> 00:05:54,210
+because we will simply have to
+
+154
+00:05:54,210 --> 00:05:56,069
+go through the factory first and the factory would
+
+155
+00:05:56,069 --> 00:05:58,470
+give us the implementation that we
+
+156
+00:05:58,470 --> 00:06:00,690
+need and so we could change one
+
+157
+00:06:00,690 --> 00:06:03,150
+piece for another depending on the context of the
+
+158
+00:06:03,150 --> 00:06:04,949
+application in the next tutorial
+
+159
+00:06:04,949 --> 00:06:06,810
+we will see the abstract factory pattern or abstract factory
+
+160
+00:06:06,810 --> 00:06:09,060
+or abstract factory
+
+161
+00:06:09,060 --> 00:06:11,009
+as you want to call it in which we are going to
+
+162
+00:06:11,009 --> 00:06:13,650
+have a factory of factory and we will be
+
+163
+00:06:13,650 --> 00:06:15,449
+able to obtain objects according to the
+
+164
+00:06:15,449 --> 00:06:17,940
+factory that we are looking for if you liked
+
+165
+00:06:17,940 --> 00:06:18,750
+this tutorial
+
+166
+00:06:18,750 --> 00:06:20,760
+give it a thumbs up share it with your
+
+167
+00:06:20,760 --> 00:06:22,500
+friends don't forget to subscribe in the
+
+168
+00:06:22,500 --> 00:06:24,270
+button below follow me on
+
+169
+00:06:24,270 --> 00:06:25,680
+social networks that are in the description of the
+
+170
+00:06:25,680 --> 00:06:28,170
+video leave your comment and I'll wait for you in
+
+171
+00:06:28,170 --> 00:06:29,790
+a next tutorial
+
+172
+00:06:29,790 --> 00:06:39,240
+[Music]

@@ -1,0 +1,1031 @@
+1
+00:00:00,000 --> 00:00:01,890
+this video is sponsored by app
+
+2
+00:00:01,890 --> 00:00:03,689
+cloud test their servers with
+
+3
+00:00:03,689 --> 00:00:05,549
+storage faster than any
+
+4
+00:00:05,549 --> 00:00:08,670
+ssd for free and get $25
+
+5
+00:00:08,670 --> 00:00:10,019
+credit with the promo code
+
+6
+00:00:10,019 --> 00:00:13,110
+beta tec hello and welcome one
+
+7
+00:00:13,110 --> 00:00:15,030
+more day to beta tech for those of you who are
+
+8
+00:00:15,030 --> 00:00:16,740
+new to the channel here we talk about
+
+9
+00:00:16,740 --> 00:00:18,750
+software and technology and specifically
+
+10
+00:00:18,750 --> 00:00:21,060
+in this series we talk about
+
+11
+00:00:21,060 --> 00:00:24,300
+design patterns we are going to explain one by one each
+
+12
+00:00:24,300 --> 00:00:26,640
+design pattern looking at their uses and
+
+13
+00:00:26,640 --> 00:00:28,619
+explaining them with examples if you still don't
+
+14
+00:00:28,619 --> 00:00:30,480
+know what a design pattern is I'll
+
+15
+00:00:30,480 --> 00:00:32,099
+leave the index of the series
+
+16
+00:00:32,099 --> 00:00:34,710
+up here and in the description and today we are going to
+
+17
+00:00:34,710 --> 00:00:36,180
+talk about one of the most
+
+18
+00:00:36,180 --> 00:00:39,090
+famous patterns a pattern that is surely one of the
+
+19
+00:00:39,090 --> 00:00:40,950
+most searched for on google and that
+
+20
+00:00:40,950 --> 00:00:43,020
+also has quite a bit of controversy we are
+
+21
+00:00:43,020 --> 00:00:45,600
+talking about the singleton pattern and
+
+22
+00:00:45,600 --> 00:00:47,039
+regarding the controversy I want to make
+
+23
+00:00:47,039 --> 00:00:48,570
+a small note before going
+
+24
+00:00:48,570 --> 00:00:50,910
+directly into the subject in this video I am going to
+
+25
+00:00:50,910 --> 00:00:53,520
+talk about the singleton on a technical level what it
+
+26
+00:00:53,520 --> 00:00:55,920
+is and what it is for so I am not going to
+
+27
+00:00:55,920 --> 00:00:57,449
+get into the discussion about whether it is a
+
+28
+00:00:57,449 --> 00:00:59,969
+pattern if it is an anti-pattern if it is right
+
+29
+00:00:59,969 --> 00:01:02,039
+or wrong to use it or anything like that I'll
+
+30
+00:01:02,039 --> 00:01:03,510
+leave you at the end of the video and in  the
+
+31
+00:01:03,510 --> 00:01:06,020
+description some small comments
+
+32
+00:01:06,020 --> 00:01:09,049
+it's about a little bit because some people
+
+33
+00:01:09,049 --> 00:01:10,850
+think it's good and other people think it
+
+34
+00:01:10,850 --> 00:01:13,369
+'s wrong so without much further ado let's
+
+35
+00:01:13,369 --> 00:01:15,740
+see what singleton is trying to achieve and
+
+36
+00:01:15,740 --> 00:01:18,399
+how it does it
+
+37
+00:01:18,430 --> 00:01:21,489
+[Music]
+
+38
+00:01:35,480 --> 00:01:37,340
+the objective of using the
+
+39
+00:01:37,340 --> 00:01:39,260
+singleton pattern is to ensure that there is
+
+40
+00:01:39,260 --> 00:01:41,750
+only one instance of a
+
+41
+00:01:41,750 --> 00:01:43,970
+specific class in fact what is
+
+42
+00:01:43,970 --> 00:01:45,830
+achieved by implementing this pattern is
+
+43
+00:01:45,830 --> 00:01:48,830
+that it is impossible to instantiate more than one
+
+44
+00:01:48,830 --> 00:01:50,690
+instance of this class more than one object that is to
+
+45
+00:01:50,690 --> 00:01:53,330
+say it is not a pattern that is used
+
+46
+00:01:53,330 --> 00:01:55,400
+when for some reason you want to have
+
+47
+00:01:55,400 --> 00:01:57,320
+only one instance of a specific class
+
+48
+00:01:57,320 --> 00:02:00,110
+but when you want to absolutely not be able to
+
+49
+00:02:00,110 --> 00:02:03,320
+have more than one part of
+
+50
+00:02:03,320 --> 00:02:04,580
+making sure that we are always
+
+51
+00:02:04,580 --> 00:02:06,500
+using the same instance
+
+52
+00:02:06,500 --> 00:02:08,180
+singleton provides
+
+53
+00:02:08,180 --> 00:02:11,330
+global accessibility to this instance so that we
+
+54
+00:02:11,330 --> 00:02:13,550
+can get access to it from any
+
+55
+00:02:13,550 --> 00:02:15,740
+part of our program there are many
+
+56
+00:02:15,740 --> 00:02:17,420
+cases where you may simply want to
+
+57
+00:02:17,420 --> 00:02:20,180
+have an object of a class and really
+
+58
+00:02:20,180 --> 00:02:22,760
+nothing will happen nothing prevents you from having in
+
+59
+00:02:22,760 --> 00:02:25,190
+your project a class that only has one
+
+60
+00:02:25,190 --> 00:02:27,170
+instance in most cases you do not
+
+61
+00:02:27,170 --> 00:02:29,330
+need it to explicitly be a
+
+62
+00:02:29,330 --> 00:02:31,760
+singleton in fact there are very few
+
+63
+00:02:31,760 --> 00:02:33,770
+use cases where it is actually recommended to
+
+64
+00:02:33,770 --> 00:02:35,510
+use this pattern so despite
+
+65
+00:02:35,510 --> 00:02:37,340
+being a fairly simple pattern to
+
+66
+00:02:37,340 --> 00:02:40,260
+implement I think it is used in
+
+67
+00:02:40,260 --> 00:02:42,629
+texts  wrong a possible
+
+68
+00:02:42,629 --> 00:02:45,000
+use case for this pattern and perhaps the only one is
+
+69
+00:02:45,000 --> 00:02:46,620
+to manage resources that
+
+70
+00:02:46,620 --> 00:02:48,390
+can only be accessed individually
+
+71
+00:02:48,390 --> 00:02:51,000
+resources which you need to control
+
+72
+00:02:51,000 --> 00:02:53,159
+from the entire application the
+
+73
+00:02:53,159 --> 00:02:54,959
+common example that is always explained is that of a
+
+74
+00:02:54,959 --> 00:02:57,180
+log file where you need you can
+
+75
+00:02:57,180 --> 00:02:59,010
+manage this access to the file
+
+76
+00:02:59,010 --> 00:03:01,650
+in a centralized way and surely you do not
+
+77
+00:03:01,650 --> 00:03:02,879
+want to have multiple instances
+
+78
+00:03:02,879 --> 00:03:04,409
+writing to the same file
+
+79
+00:03:04,409 --> 00:03:06,989
+although let's be honest in other
+
+80
+00:03:06,989 --> 00:03:08,400
+videos we have seen how depending on the
+
+81
+00:03:08,400 --> 00:03:10,260
+architecture of your application it can be
+
+82
+00:03:10,260 --> 00:03:12,420
+perfectly normal to have multiple
+
+83
+00:03:12,420 --> 00:03:14,670
+instances of a log manager because
+
+84
+00:03:14,670 --> 00:03:16,709
+in the end it depends a lot on the use and your
+
+85
+00:03:16,709 --> 00:03:18,959
+intuition of whether you think that in the future you will only
+
+86
+00:03:18,959 --> 00:03:21,299
+need one instance the fact
+
+87
+00:03:21,299 --> 00:03:23,280
+of using a singleton or not but then
+
+88
+00:03:23,280 --> 00:03:26,280
+if what you do singleton is to avoid being
+
+89
+00:03:26,280 --> 00:03:28,650
+able to create more than one instance as it
+
+90
+00:03:28,650 --> 00:03:30,629
+does as programming you get
+
+91
+00:03:30,629 --> 00:03:33,000
+that behavior in the end if I have
+
+92
+00:03:33,000 --> 00:03:34,739
+a class and I call the constructor of that
+
+93
+00:03:34,739 --> 00:03:37,349
+class several times I am making several
+
+94
+00:03:37,349 --> 00:03:39,690
+instances this is not how you program a
+
+95
+00:03:39,690 --> 00:03:42,000
+singleton to avoid that this can
+
+96
+00:03:42,000 --> 00:03:44,159
+happen now we will explain how
+
+97
+00:03:44,159 --> 00:03:45,930
+a single toner would be implemented in
+
+98
+00:03:45,930 --> 00:03:46,680
+detail
+
+99
+00:03:46,680 --> 00:03:48,480
+but before explaining
+
+100
+00:03:48,480 --> 00:03:50,430
+the code specifically let me thank the
+
+101
+00:03:50,430 --> 00:03:52,519
+sponsor of this video  app cloud
+
+102
+00:03:52,519 --> 00:03:54,689
+offers both an app and a
+
+103
+00:03:54,689 --> 00:03:56,370
+super intuitive yet very
+
+104
+00:03:56,370 --> 00:03:58,319
+powerful control panel that allows you to automate the
+
+105
+00:03:58,319 --> 00:04:00,299
+scalability of your products in addition
+
+106
+00:04:00,299 --> 00:04:01,950
+all its servers have the
+
+107
+00:04:01,950 --> 00:04:04,230
+maximum ps technology that offers
+
+108
+00:04:04,230 --> 00:04:05,730
+faster disk speeds than
+
+109
+00:04:05,730 --> 00:04:07,889
+any ssd you can try flash for
+
+110
+00:04:07,889 --> 00:04:09,510
+free using the beta
+
+111
+00:04:09,510 --> 00:04:11,189
+text code and I'll leave it in the description and you will
+
+112
+00:04:11,189 --> 00:04:13,170
+also receive 25 dollars of credit
+
+113
+00:04:13,170 --> 00:04:14,450
+to use on the platform
+
+114
+00:04:14,450 --> 00:04:16,590
+implementing the singleton pattern is
+
+115
+00:04:16,590 --> 00:04:18,329
+achieved by playing with a very
+
+116
+00:04:18,329 --> 00:04:20,220
+funny little trick that can make you feel a
+
+117
+00:04:20,220 --> 00:04:22,830
+bit like a hacker sometimes it's about
+
+118
+00:04:22,830 --> 00:04:25,380
+making the constructor private by
+
+119
+00:04:25,380 --> 00:04:27,750
+making the constructor private
+
+120
+00:04:27,750 --> 00:04:30,030
+we make it inaccessible from
+
+121
+00:04:30,030 --> 00:04:32,580
+outside so that it is inaccessible from outside
+
+122
+00:04:32,580 --> 00:04:34,949
+the class therefore we gain control
+
+123
+00:04:34,949 --> 00:04:36,930
+over the instance of it or rather it
+
+124
+00:04:36,930 --> 00:04:40,020
+is the class itself that
+
+125
+00:04:40,020 --> 00:04:42,270
+gains control over how
+
+126
+00:04:42,270 --> 00:04:44,669
+its own objects are instantiated that is to say in
+
+127
+00:04:44,669 --> 00:04:46,800
+other words we block anyone
+
+128
+00:04:46,800 --> 00:04:49,080
+from outside the class itself from being able to
+
+129
+00:04:49,080 --> 00:04:50,840
+create instances of it
+
+130
+00:04:50,840 --> 00:04:53,150
+we prevent you from being able to write the normal
+
+131
+00:04:53,150 --> 00:04:55,850
+neither a class name nor a singleton you
+
+132
+00:04:55,850 --> 00:04:57,830
+cannot go around instantiating as
+
+133
+00:04:57,830 --> 00:05:00,260
+if nothing was happening the way in which
+
+134
+00:05:00,260 --> 00:05:02,990
+instance  you will make that specific class is
+
+135
+00:05:02,990 --> 00:05:05,449
+with another function normally this other
+
+136
+00:05:05,449 --> 00:05:06,949
+function is used there market
+
+137
+00:05:06,949 --> 00:05:08,810
+instance or something similar something that
+
+138
+00:05:08,810 --> 00:05:10,250
+indicates that you are obtaining the
+
+139
+00:05:10,250 --> 00:05:12,590
+instance of the singleton and this function will be in
+
+140
+00:05:12,590 --> 00:05:14,930
+charge internally of
+
+141
+00:05:14,930 --> 00:05:17,630
+constructing this instance this function
+
+142
+00:05:17,630 --> 00:05:20,150
+being part of the class can call the
+
+143
+00:05:20,150 --> 00:05:22,220
+private constructor without problem and
+
+144
+00:05:22,220 --> 00:05:24,290
+therefore can do one thing check
+
+145
+00:05:24,290 --> 00:05:26,660
+if any other instance
+
+146
+00:05:26,660 --> 00:05:29,630
+created previously already exists it checks if
+
+147
+00:05:29,630 --> 00:05:31,550
+an instance of this class already exists and if so
+
+148
+00:05:31,550 --> 00:05:34,430
+the function always returns it if it does
+
+149
+00:05:34,430 --> 00:05:37,340
+not exist before returning it it creates
+
+150
+00:05:37,340 --> 00:05:39,860
+a new one it creates it for the first time with
+
+151
+00:05:39,860 --> 00:05:41,990
+this that we achieve we achieve that there is
+
+152
+00:05:41,990 --> 00:05:44,600
+always only one instance
+
+153
+00:05:44,600 --> 00:05:46,910
+created of this class since if we try
+
+154
+00:05:46,910 --> 00:05:49,370
+to instantiate it again as the
+
+155
+00:05:49,370 --> 00:05:51,169
+only method with which we can do it
+
+156
+00:05:51,169 --> 00:05:54,230
+the distance with tests if they already existed
+
+157
+00:05:54,230 --> 00:05:56,660
+and we are always obtaining the first one
+
+158
+00:05:56,660 --> 00:05:59,450
+that we have created also with the fact of
+
+159
+00:05:59,450 --> 00:06:01,730
+having made this function static ty
+
+160
+00:06:01,730 --> 00:06:04,370
+instance we gain global access to this
+
+161
+00:06:04,370 --> 00:06:05,900
+function since it is not part of any
+
+162
+00:06:05,900 --> 00:06:08,210
+specific instance it is part of the
+
+163
+00:06:08,210 --> 00:06:10,670
+class itself therefore from any side
+
+164
+00:06:10,670 --> 00:06:12,530
+of our project we can obtain the
+
+165
+00:06:12,530 --> 00:06:14,360
+instance of this class that obviously
+
+166
+00:06:14,360 --> 00:06:16,460
+also has to be static it is the
+
+167
+00:06:16,460 --> 00:06:19,130
+responsibility of the singleton class to
+
+168
+00:06:19,130 --> 00:06:21,620
+save this instance to maintain
+
+169
+00:06:21,620 --> 00:06:24,320
+this static instance so that the
+
+170
+00:06:24,320 --> 00:06:26,480
+get instance function can access
+
+171
+00:06:26,480 --> 00:06:29,420
+it check if it exists or not and with
+
+172
+00:06:29,420 --> 00:06:31,010
+this we would have a singleton set up
+
+173
+00:06:31,010 --> 00:06:32,510
+the truth is that it is relatively
+
+174
+00:06:32,510 --> 00:06:34,730
+easy to write every time we
+
+175
+00:06:34,730 --> 00:06:36,620
+want to get the instance within
+
+176
+00:06:36,620 --> 00:06:38,570
+the getty instance function what we do
+
+177
+00:06:38,570 --> 00:06:40,010
+is check if it is already an instance of a1
+
+178
+00:06:40,010 --> 00:06:42,050
+and we are going to return it in this way
+
+179
+00:06:42,050 --> 00:06:44,570
+we always have the same we only have
+
+180
+00:06:44,570 --> 00:06:48,380
+a single copy a single object a
+
+181
+00:06:48,380 --> 00:06:51,710
+single instance of this class in the end
+
+182
+00:06:51,710 --> 00:06:53,720
+in summary what a singleton does is
+
+183
+00:06:53,720 --> 00:06:55,820
+encapsulate the instance creation process I do
+
+184
+00:06:55,820 --> 00:06:57,560
+n't know how many times I have said
+
+185
+00:06:57,560 --> 00:07:00,940
+already instance in this video
+
+186
+00:07:01,280 --> 00:07:03,530
+and encapsulate the object creation process
+
+187
+00:07:03,530 --> 00:07:06,440
+to a global function and removing it does
+
+188
+00:07:06,440 --> 00:07:08,210
+not take away like the power to be able to
+
+189
+00:07:08,210 --> 00:07:09,830
+make instances it takes away the constructor
+
+190
+00:07:09,830 --> 00:07:11,780
+of the class to prevent you from being able to create
+
+191
+00:07:11,780 --> 00:07:14,000
+more objects in a class that tells you hey
+
+192
+00:07:14,000 --> 00:07:16,610
+I have already created one I am going to give you the
+
+193
+00:07:16,610 --> 00:07:18,950
+same I am not going to create more for you it prevents you from being
+
+194
+00:07:18,950 --> 00:07:20,630
+able to instantiate more than one class the
+
+195
+00:07:20,630 --> 00:07:23,150
+practice is how to delegate the ownership of
+
+196
+00:07:23,150 --> 00:07:25,760
+a global variable to a class and
+
+197
+00:07:25,760 --> 00:07:28,130
+check if the object already exists over and over
+
+198
+00:07:28,130 --> 00:07:29,990
+again as I said at the beginning
+
+199
+00:07:29,990 --> 00:07:31,790
+singleton is a structure that creates
+
+200
+00:07:31,790 --> 00:07:34,370
+quite controversial in the end we always
+
+201
+00:07:34,370 --> 00:07:36,140
+try to avoid global variables
+
+202
+00:07:36,140 --> 00:07:38,630
+and it seems that this pattern is nothing more
+
+203
+00:07:38,630 --> 00:07:40,820
+than a global variable within a
+
+204
+00:07:40,820 --> 00:07:43,070
+class there is a super interesting talk
+
+205
+00:07:43,070 --> 00:07:45,260
+but a bit long it is about 50
+
+206
+00:07:45,260 --> 00:07:47,810
+minutes titled global state and
+
+207
+00:07:47,810 --> 00:07:49,970
+singletons given by me choose to see and in
+
+208
+00:07:49,970 --> 00:07:52,520
+2008 I leave the link here and in the
+
+209
+00:07:52,520 --> 00:07:54,590
+description in this talk
+
+210
+00:07:54,590 --> 00:07:56,300
+some possible dangers of using a
+
+211
+00:07:56,300 --> 00:07:58,910
+singleton are discussed and why sometimes it is thought that it is
+
+212
+00:07:58,910 --> 00:08:01,280
+wrong to use them between them and what I
+
+213
+00:08:01,280 --> 00:08:03,169
+agree with the most is the argument
+
+214
+00:08:03,169 --> 00:08:05,240
+that using this pattern complicates
+
+215
+00:08:05,240 --> 00:08:07,280
+my testing unnecessarily
+
+216
+00:08:07,280 --> 00:08:09,350
+normally when you make
+
+217
+00:08:09,350 --> 00:08:11,210
+unitary text you want to be able to have control
+
+218
+00:08:11,210 --> 00:08:13,490
+over the instances that you are generating
+
+219
+00:08:13,490 --> 00:08:15,050
+in order to
+
+220
+00:08:15,050 --> 00:08:17,120
+configure the tests to the extent that you
+
+221
+00:08:17,120 --> 00:08:18,590
+want it to do this that is the
+
+222
+00:08:18,590 --> 00:08:20,300
+other that this gives me this object
+
+223
+00:08:20,300 --> 00:08:22,970
+blah blah blah we have said it with a singleton it is
+
+224
+00:08:22,970 --> 00:08:24,440
+always returned in the same
+
+225
+00:08:24,440 --> 00:08:26,030
+instance so you have to do
+
+226
+00:08:26,030 --> 00:08:28,880
+many inelegant things some
+
+227
+00:08:28,880 --> 00:08:30,500
+tricks to be able to obtain
+
+228
+00:08:30,500 --> 00:08:32,810
+special instances
+
+229
+00:08:32,810 --> 00:08:35,270
+manipulated instances to be able to control the text that is to
+
+230
+00:08:35,270 --> 00:08:37,190
+say as much as in your project
+
+231
+00:08:37,190 --> 00:08:39,289
+you want there to be only one instance of
+
+232
+00:08:39,289 --> 00:08:41,000
+something the chances are that in reality you
+
+233
+00:08:41,000 --> 00:08:43,610
+need  at least two the one
+
+234
+00:08:43,610 --> 00:08:45,140
+used in the natural execution of your
+
+235
+00:08:45,140 --> 00:08:47,540
+code and the one used in
+
+236
+00:08:47,540 --> 00:08:50,030
+unit tests and yes I know that there are ways to
+
+237
+00:08:50,030 --> 00:08:52,610
+democratize or replace classes at
+
+238
+00:08:52,610 --> 00:08:54,440
+runtime and do things like
+
+239
+00:08:54,440 --> 00:08:56,810
+this but they are still patches that
+
+240
+00:08:56,810 --> 00:08:59,120
+surely would not be necessary if you did
+
+241
+00:08:59,120 --> 00:09:01,700
+not use this structure ultimately I
+
+243
+00:09:02,510 --> 00:09:04,520
+leave this video here because I think it
+
+244
+00:09:04,520 --> 00:09:05,839
+is very interesting and you can
+
+245
+00:09:05,839 --> 00:09:08,030
+go much deeper into this topic there is
+
+246
+00:09:08,030 --> 00:09:09,170
+a set of talks that are
+
+247
+00:09:09,170 --> 00:09:10,640
+quite good I hope that this
+
+248
+00:09:10,640 --> 00:09:12,410
+explanation has been useful to us and I
+
+249
+00:09:12,410 --> 00:09:13,610
+encourage you to let me know
+
+250
+00:09:13,610 --> 00:09:15,350
+if you want singleton is an anti-
+
+251
+00:09:15,350 --> 00:09:17,060
+pattern I do not think we can have a
+
+252
+00:09:17,060 --> 00:09:18,800
+pleasant debate on this subject seeing
+
+253
+00:09:18,800 --> 00:09:21,050
+different opinions and possible
+
+254
+00:09:21,050 --> 00:09:23,390
+use cases that you may have found
+
+255
+00:09:23,390 --> 00:09:25,610
+throughout these projects I encourage you to
+
+256
+00:09:25,610 --> 00:09:27,380
+tell us what you think about it in
+
+257
+00:09:27,380 --> 00:09:29,140
+the comments and without much more
+
+258
+00:09:29,140 --> 00:09:31,279
+thank you very much for watching me and I will see you
+
+259
+00:09:31,279 --> 00:09:34,990
+in the next video goodbye

@@ -1,0 +1,254 @@
+1
+00:00:01,920 --> 00:00:04,640
+När du har brutit ett ben läker det-
+
+2
+00:00:04,800 --> 00:00:10,040
+-tränar du så får du muskler, 
+är du förkyld bildas det antikroppar-
+
+3
+00:00:10,200 --> 00:00:16,040
+-och om frisören klippt en ful frisyr 
+vet du att håret växer ut igen.
+
+4
+00:00:16,200 --> 00:00:19,880
+Det kan du tacka proteinsyntesen för.
+
+5
+00:00:26,240 --> 00:00:29,000
+Vårt DNA är som ett bibliotek-
+
+6
+00:00:29,160 --> 00:00:34,320
+-som innehåller instruktioner på hur 
+kroppen ska byggas upp och fungera.
+
+7
+00:00:34,480 --> 00:00:40,800
+För att bygga upp kroppen behövs inte 
+bara instruktioner utan byggmaterial-
+
+8
+00:00:40,960 --> 00:00:47,080
+-och någon som kan utföra arbetet. 
+Det är proteinernas uppgift.
+
+9
+00:00:47,240 --> 00:00:52,960
+När protein skapas kallas det 
+proteinsyntes. Det sker i två steg:
+
+10
+00:00:53,120 --> 00:00:56,640
+Transkription och translation.
+
+11
+00:00:56,800 --> 00:00:59,480
+Låt oss börja med transkriptionen.
+
+12
+00:00:59,640 --> 00:01:03,160
+Min receptbok representerar vårt DNA-
+
+13
+00:01:03,320 --> 00:01:07,880
+-som finns i cellkärnan, 
+vårt bibliotek.
+
+14
+00:01:08,040 --> 00:01:12,600
+De olika sidorna i boken 
+är våra gener.
+
+15
+00:01:12,760 --> 00:01:17,480
+De gula sidorna 
+representerar gener som är aktiva-
+
+16
+00:01:17,640 --> 00:01:23,720
+-och innehåller recept för de protein 
+som ska skapas i olika celler.
+
+17
+00:01:25,120 --> 00:01:31,040
+För att bygga proteinet måste 
+receptet ut ur själva cellkärnan-
+
+18
+00:01:31,200 --> 00:01:35,240
+-och det logiska 
+vore om receptet revs ut.
+
+19
+00:01:35,400 --> 00:01:41,080
+Men denna information måste bevaras 
+i ditt DNA, så det är inte möjligt.
+
+20
+00:01:41,240 --> 00:01:46,040
+Hur löser man då detta? 
+Jo, genom att kopiera informationen.
+
+21
+00:01:46,200 --> 00:01:51,120
+Det är den processen 
+vi kallar transkription.
+
+22
+00:01:51,280 --> 00:01:57,840
+Den del av DNA:t som ska kopieras 
+delas till en enkelspiral.
+
+23
+00:01:58,640 --> 00:02:03,320
+Dit binder enzym 
+och hjälper till att skapa en kopia.
+
+24
+00:02:03,480 --> 00:02:06,880
+Kopian kallas RNA i stället för DNA.
+
+25
+00:02:07,040 --> 00:02:10,240
+Den innehåller 
+en annan typ av socker-
+
+26
+00:02:10,400 --> 00:02:17,600
+-och kvävebasen tymin är utbytt 
+mot en kvävebas som heter uracil.
+
+27
+00:02:17,760 --> 00:02:22,160
+Om DNA-strängen 
+består av G, C, G, A, A-
+
+28
+00:02:22,320 --> 00:02:27,560
+-blir kopian, RNA:t, C, G, C, U, U-
+
+29
+00:02:27,720 --> 00:02:31,720
+-eftersom uracil ersätter tymin.
+
+30
+00:02:31,880 --> 00:02:37,280
+Den typ av RNA som bildas vid 
+kopieringen kallas "messenger RNA".
+
+31
+00:02:37,440 --> 00:02:40,280
+Det förkortas mRNA.
+
+32
+00:02:40,440 --> 00:02:43,680
+Den bär på ett budskap-
+
+33
+00:02:43,840 --> 00:02:48,840
+-själva receptet 
+för det protein som ska tillverkas.
+
+34
+00:02:50,640 --> 00:02:57,520
+Nu finns det en kopia på receptet, 
+koden för proteinets ingredienser.
+
+35
+00:02:57,680 --> 00:03:03,920
+Nästa steg är att bilda själva 
+proteinet. Translationen ska ske.
+
+36
+00:03:04,080 --> 00:03:11,280
+Detta sker i ribosomerna, cellens 
+fabriker, som har ingredienserna.
+
+37
+00:03:11,440 --> 00:03:15,960
+Allting som sker härifrån 
+är en kemisk process.
+
+38
+00:03:16,120 --> 00:03:23,600
+När mRNA anlänt till ribosomerna ska 
+kompletterande kvävebaser kopplas på.
+
+39
+00:03:24,680 --> 00:03:29,840
+I ribosomerna finns ytterligare 
+ett RNA kallat tRNA-
+
+40
+00:03:30,000 --> 00:03:34,320
+-"transfer RNA", 
+som hjälper till med det.
+
+41
+00:03:34,480 --> 00:03:41,240
+tRNA innehåller tre kvävebaser 
+som kodar för en specifik aminosyra.
+
+42
+00:03:42,240 --> 00:03:48,320
+Dessa matchas och kopplas ihop 
+med mRNA:s kedja av kvävebaser.
+
+43
+00:03:48,480 --> 00:03:53,200
+En kemisk process sker 
+vilket skapar aminosyror.
+
+44
+00:03:53,360 --> 00:03:58,400
+I mRNA 
+finns signaler som betyder "stopp".
+
+45
+00:03:58,560 --> 00:04:02,560
+När hopkopplingen nått dit 
+är kedjan klar.
+
+46
+00:04:02,720 --> 00:04:10,200
+Nu är jobbet gjort och både tRNA 
+och mRNA lämnar aminosyrasekvensen.
+
+47
+00:04:11,440 --> 00:04:16,280
+Den tar sig själv 
+till golgiapparaten-
+
+48
+00:04:16,440 --> 00:04:21,560
+-där proteinet får sina sista, 
+specifika egenskaper.
+
+49
+00:04:21,720 --> 00:04:27,160
+Den här processen sker hela tiden, 
+i varje cell, dag ut och dag in.
+
+50
+00:04:27,320 --> 00:04:31,600
+Vi har mycket att tacka proteinerna 
+för. De läker ditt brutna ben-
+
+51
+00:04:31,760 --> 00:04:36,320
+-är involverade i immunförsvaret, 
+bygger dina muskler-
+
+52
+00:04:36,480 --> 00:04:41,720
+-och ser till att du slipper en ful 
+frisyr. Efter ett tag, i alla fall.
+
+53
+00:04:54,040 --> 00:04:58,040
+Svensktextning: Gabriella Eseland 
+Iyuno Media Group för UR
+

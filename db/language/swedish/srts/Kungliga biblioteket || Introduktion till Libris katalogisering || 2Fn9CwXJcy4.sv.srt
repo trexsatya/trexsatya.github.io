@@ -1,0 +1,504 @@
+1
+00:00:07,940 --> 00:00:12,800
+I den här filmen ska vi ta en rundtur i Libris katalogiseringsverktyg.
+
+2
+00:00:13,040 --> 00:00:19,840
+Vi ska gå igenom startsidan, huvudmenyn, verktygsmenyn och strukturen i en beskrivning.
+
+3
+00:00:20,100 --> 00:00:24,860
+Libris katalogisering är namnet på katalogiseringsverktyget.
+
+4
+00:00:25,040 --> 00:00:28,880
+Libris katalogisering är en del av Libris XL
+
+5
+00:00:29,040 --> 00:00:35,200
+som är namnet på Libris nya tekniska infrastruktur och lanserades 2018.
+
+6
+00:00:35,660 --> 00:00:38,660
+Libris katalogisering är ett webbverktyg.
+
+7
+00:00:38,900 --> 00:00:44,100
+Det fungerar i alla webbläsare men har visat sig fungera bäst i Google Chrome.
+
+8
+00:00:44,300 --> 00:00:49,300
+När du lär dig Libris katalogisering ska du använda en testmiljö
+
+9
+00:00:49,480 --> 00:00:54,100
+och du ser adressen till testmiljön i adressfönstret.
+
+10
+00:00:54,520 --> 00:00:59,200
+Testmiljön innehåller en kopia av Librisdatabasen.
+
+11
+00:00:59,460 --> 00:01:02,580
+Här kan du fritt öva på att katalogisera.
+
+12
+00:01:02,780 --> 00:01:08,000
+Det du sparar här kommer att rensas bort vid nästa uppdatering av testmiljön.
+
+13
+00:01:08,560 --> 00:01:13,660
+Inloggningsuppgifter till testmiljön får du på grundkursen.
+
+14
+00:01:14,520 --> 00:01:20,420
+När du är inloggad ser du uppe i högra hörnet vilken sigel som du har aktiv.
+
+15
+00:01:20,680 --> 00:01:24,560
+Sigel är en kodbeteckning för ett bibliotek.
+
+16
+00:01:24,700 --> 00:01:29,800
+Om du har tillgång till flera sigler kan du vid behov byta sigel här.
+
+17
+00:01:32,320 --> 00:01:34,360
+Vi ska titta på startsidan.
+
+18
+00:01:35,340 --> 00:01:42,340
+Här hittar du länkar till nyheter, introduktionsmaterial och till Libris supportforum.
+
+19
+00:01:42,600 --> 00:01:47,820
+Du hittar våra instruktionsfilmer som finns i en spellista på Youtube.
+
+20
+00:01:48,320 --> 00:01:51,360
+Överst på sidan finns en huvudmeny.
+
+21
+00:01:51,520 --> 00:01:57,200
+Här finns Sök som leder till sök i Libris och sök i andra källor.
+
+22
+00:01:57,620 --> 00:02:03,200
+Det är viktigt att söka noga innan man skapar något nytt för att inte skapa dubbletter.
+
+23
+00:02:03,480 --> 00:02:06,780
+Vi ska titta närmare på sök i en annan film.
+
+24
+00:02:07,040 --> 00:02:12,100
+Rubriken Skapa ny leder till en sida med mallar för olika materialtyper.
+
+25
+00:02:12,600 --> 00:02:15,940
+Tänk på att du mycket sällan behöver skapa något nytt.
+
+26
+00:02:16,180 --> 00:02:22,940
+Det finns oftast redan en post eller förhandsinformation i Libris för det du ska beskriva.
+
+27
+00:02:23,160 --> 00:02:26,160
+Nästa rubrik är Katalogvård.
+
+28
+00:02:26,420 --> 00:02:30,420
+Här hittar du en funktion för att flytta bestånd mellan poster.
+
+29
+00:02:31,020 --> 00:02:33,780
+Så kommer vi till Hjälp.
+
+30
+00:02:34,300 --> 00:02:38,660
+Via hjälprubriken kommer du till en sida med hjälptexter.
+
+31
+00:02:38,900 --> 00:02:43,480
+Den här sidan kan du använda parallellt med katalogiseringverktyget.
+
+32
+00:02:43,760 --> 00:02:49,420
+Öppna den gärna i en ny flik och gå till hjälpen när du undrar över någonting.
+
+33
+00:02:51,440 --> 00:02:54,200
+Vi ska titta på rubrikerna i hjälpen.
+
+34
+00:02:55,260 --> 00:03:00,980
+Du hittar, i mitten på sidan, en lista med länkar till vidare information.
+
+35
+00:03:01,200 --> 00:03:07,720
+Bland annat de viktiga anvisningarna för katalogisering enligt RDA som är våra katalogregler.
+
+36
+00:03:07,960 --> 00:03:15,600
+Under katalogiseringsverktyget i vänstermenyn finns några sidor som förklarar hur verktyget fungerar.
+
+37
+00:03:15,960 --> 00:03:21,760
+Sidan Att använda verktyget innehåller många rubriker som du har nytta av.
+
+38
+00:03:22,380 --> 00:03:27,860
+Det finns en lista på kortkommandon för PC och Mac.
+
+39
+00:03:28,420 --> 00:03:35,380
+Under Generell beskrivning finns hjälptexter som är gemensamma för flera materialtyper.
+
+40
+00:03:35,660 --> 00:03:41,560
+Adminmetadata är administrativ metadata som finns i varje post.
+
+41
+00:03:41,760 --> 00:03:47,320
+Rubrikerna Verk och Instans känner du igen från tidigare filmer.
+
+42
+00:03:47,660 --> 00:03:56,880
+Under Verk hittar du rubriker som Medverkan och funktion, Genre/form, Klassifikation och Ämne.
+
+43
+00:03:57,120 --> 00:04:02,560
+Det här är egenskaper som är gemensamma för flera utgåvor av ett verk.
+
+44
+00:04:02,860 --> 00:04:13,800
+Under Instans finns rubriker som Utgivning, Identifikator, till exempel ISBN, Omfång, Mått.
+
+45
+00:04:14,220 --> 00:04:17,220
+Det är sånt som är specifikt för utgåvan.
+
+46
+00:04:17,480 --> 00:04:22,720
+Sedan ser vi i vänstermenyn att det finns sidor för olika materialtyper.
+
+47
+00:04:23,240 --> 00:04:29,860
+Det finns sidor om agenter och ämnesord, bestånd, terminologi
+
+48
+00:04:30,080 --> 00:04:34,600
+och du hittar sidan med utbildningsmaterial här.
+
+49
+00:04:34,780 --> 00:04:42,480
+Vi går tillbaka till startsidan. Vi ska titta närmare på en post och se hur den ser ut i verktyget.
+
+50
+00:04:42,680 --> 00:04:46,400
+Jag söker upp en titel, Plåtmat.
+
+51
+00:04:48,640 --> 00:04:52,640
+Och väljer en tryckt monografi här i listan.
+
+52
+00:04:52,940 --> 00:04:56,400
+Det här är en vegetarisk kokbok.
+
+53
+00:04:56,620 --> 00:05:01,660
+Det finns en ruta som sammanfattar uppgifterna i beskrivningen.
+
+54
+00:05:01,880 --> 00:05:05,760
+Vi ser att boken heter Plåtmat - grönt i en långpanna.
+
+55
+00:05:06,000 --> 00:05:07,760
+Vi ser ISBN.
+
+56
+00:05:08,220 --> 00:05:13,080
+Att det finns en upphovsuppgift och uppgifter om utgivning.
+
+57
+00:05:13,280 --> 00:05:17,120
+Den är utgiven av Norstedts 2018.
+
+58
+00:05:17,320 --> 00:05:21,840
+Om vi klickar på "visa fler" ser vi antal sidor med mera.
+
+59
+00:05:22,740 --> 00:05:29,660
+Lite längre upp till höger ser vi när posten är skapad och senast ändrad och av vilken sigel.
+
+60
+00:05:29,940 --> 00:05:34,940
+Vi ser postens ID och vi kan kopiera det vid behov.
+
+61
+00:05:35,200 --> 00:05:38,720
+Lite längre ner finns uppgifter om bestånd.
+
+62
+00:05:38,940 --> 00:05:42,040
+Vi kan lägga bestånd om vi inte redan har gjort det.
+
+63
+00:05:42,260 --> 00:05:48,460
+Vi kan se hur många andra bibliotek som har lagt bestånd och vi kan visa alla beståndsposter.
+
+64
+00:05:50,840 --> 00:05:58,520
+Listan på beståndsposter visas nu i en sidopanel. För att stänga sidopanelen, tryck Esc.
+
+65
+00:05:58,980 --> 00:06:00,860
+Vi går vidare.
+
+66
+00:06:01,100 --> 00:06:05,540
+Nästa rubriker är Instans och Adminmetadata.
+
+67
+00:06:05,900 --> 00:06:11,960
+Det är två vyer som man kan växla emellan. Vi börjar med att växla till Adminmetadata
+
+68
+00:06:12,120 --> 00:06:13,800
+genom att klicka på det.
+
+69
+00:06:14,160 --> 00:06:20,240
+Här finns administrativa uppgifter om posten, till exempel beskrivningsnivå,
+
+70
+00:06:20,800 --> 00:06:26,620
+katalogiseringsregler och uppgifter om maskinella ändringar som har gjorts.
+
+71
+00:06:27,100 --> 00:06:31,340
+Det mesta här sköts automatiskt och du behöver inte ändra mycket.
+
+72
+00:06:31,560 --> 00:06:36,260
+Men observera särskilt att det är viktigt att välja rätt beskrivningsnivå.
+
+73
+00:06:36,540 --> 00:06:41,040
+Läs mer om det i hjälptexten för adminmetadata.
+
+74
+00:06:41,640 --> 00:06:44,840
+Vi växlar vy tillbaka till Instans.
+
+75
+00:06:45,140 --> 00:06:49,740
+Instansen innehåller uppgifter som är specifika för utgåvan.
+
+76
+00:06:50,060 --> 00:06:56,940
+I instansen finns för närvarande verksinformationen inbäddad lokalt under Instans av verk.
+
+77
+00:06:57,480 --> 00:07:00,100
+Vi börjar med att expandera posten.
+
+78
+00:07:00,240 --> 00:07:04,940
+Det gör vi genom att trycka på Alt och plus samtidigt.
+
+79
+00:07:05,780 --> 00:07:13,020
+Man kan expandera och minimera varje avsnitt också genom att klicka på pilen vid rubriken.
+
+80
+00:07:13,400 --> 00:07:17,980
+Vi tittar först på verksinformationen under Instans av verk.
+
+81
+00:07:18,280 --> 00:07:22,800
+Som du vet från tidigare filmer så är verksinformationen inte länkad,
+
+82
+00:07:22,980 --> 00:07:26,180
+utan den ligger lokalt inbäddad i varje instans.
+
+83
+00:07:26,680 --> 00:07:29,700
+Vi ser att det här är ett textverk.
+
+84
+00:07:31,080 --> 00:07:35,400
+Vi ska titta på vilka egenskaper som är knutna till verket här.
+
+85
+00:07:35,620 --> 00:07:38,960
+Först har vi egenskapen Medverkan och funktion.
+
+86
+00:07:39,260 --> 00:07:44,820
+Här har vi angett att primär medverkan är en agent med funktionen författare.
+
+87
+00:07:45,360 --> 00:07:48,240
+Agenten är en entitet.
+
+88
+00:07:48,860 --> 00:07:53,460
+Vi kan högerklicka på entiteten och öppna den i en ny flik.
+
+89
+00:07:54,100 --> 00:07:57,180
+Här ser vi uppgifterna om den här personen.
+
+90
+00:07:58,300 --> 00:08:03,680
+Vi kan länka till den här entiteten flera gånger om det kommer flera verk av henne.
+
+91
+00:08:05,460 --> 00:08:10,220
+Funktionen författare är också en entitet som vi kan länka till vid behov.
+
+92
+00:08:11,080 --> 00:08:15,680
+På samma sätt fungerar det med språk och genre/form.
+
+93
+00:08:16,420 --> 00:08:23,620
+Genre beskriver vad något är och det här är en kokbok. Vi har länkat till entiteten för kokböcker.
+
+94
+00:08:24,120 --> 00:08:28,400
+Klassifikation däremot innehåller inte länkade entiteter.
+
+95
+00:08:29,000 --> 00:08:34,380
+Klassifikation ligger i stället som en lokal entitet och man skriver in informationen.
+
+96
+00:08:34,960 --> 00:08:39,820
+Det finns både Dewey-klassifikation och SAB-klassifikation.
+
+97
+00:08:41,540 --> 00:08:43,840
+Det finns också ämnesord.
+
+98
+00:08:44,360 --> 00:08:49,740
+Ämnesord beskriver vad verket handlar om, till skillnad från genre som beskriver vad det är.
+
+99
+00:08:50,440 --> 00:08:56,460
+Den här kokboken handlar om vegetarisk mat och vi har länkat till entiteten för det.
+
+100
+00:08:57,960 --> 00:09:01,800
+Ibland beskriver man agenter och ämnesord utan att länka.
+
+101
+00:09:02,200 --> 00:09:05,280
+Mer om det i filmen Egenskaper och entiteter.
+
+102
+00:09:06,760 --> 00:09:09,580
+Det finns också en länk till innehållstypen text.
+
+103
+00:09:10,120 --> 00:09:16,020
+Sen var vi klara med verksinformationen och vi går vidare till Instans.
+
+104
+00:09:17,360 --> 00:09:20,940
+Instans handlar om det som är specifikt för utgåvan.
+
+105
+00:09:21,720 --> 00:09:26,320
+Här anger vi identifikator som i det här fallet är ISBN.
+
+106
+00:09:26,880 --> 00:09:36,700
+Titel, utgivning, t.ex. utgivningsort, utgivare och utgivningsår.
+
+107
+00:09:37,740 --> 00:09:43,380
+Och vi har också omfång och där har vi antal sidor som boken har.
+
+108
+00:09:44,840 --> 00:09:48,680
+Vi ska titta lite på en verktygsmeny som vi ser här.
+
+109
+00:09:49,160 --> 00:09:52,760
+Det finns tre knappar. Först Visa som.
+
+110
+00:09:53,280 --> 00:09:59,600
+Du kan se posten i lagringsformatet JSON-LD och ett par andra länkade dataformat.
+
+111
+00:10:00,320 --> 00:10:06,880
+Under Verktygsikonen finns flera val. Man kan expandera eller minimera alla egenskaper.
+
+112
+00:10:07,560 --> 00:10:09,600
+Man kan kopiera hela posten.
+
+113
+00:10:10,020 --> 00:10:16,380
+Man kan också ladda ner posten i MARC-format för att importera den i sitt lokala system.
+
+114
+00:10:16,820 --> 00:10:24,060
+Det går också att ladda ner den i JSON-LD-format eller se informationen i en MARC-vy.
+
+115
+00:10:25,040 --> 00:10:30,100
+Då kommer det fram en sidopanel och för att stänga den trycker vi Esc.
+
+116
+00:10:31,120 --> 00:10:34,200
+Här hittar du också Ta bort instans.
+
+117
+00:10:35,400 --> 00:10:37,960
+Den sista knappen är Redigera.
+
+118
+00:10:38,380 --> 00:10:43,200
+Här får du nu några fler val under verktygsmenyn.
+
+119
+00:10:44,860 --> 00:10:51,440
+Du ser att under Verktyg har du nu fått Berika från mall, Berika från post och Detaljerad berikning
+
+120
+00:10:51,660 --> 00:10:58,360
+och de ska vi gå igenom i filmen Redigera, uppgradera och berika.
+
+121
+00:10:59,160 --> 00:11:06,400
+Du kan lägga till egenskaper med plusknappen. Du kan avbryta och du har två sparaknappar.
+
+122
+00:11:06,660 --> 00:11:10,760
+Med den första sparar du och fortsätter att vara i redigeringsläge.
+
+123
+00:11:11,080 --> 00:11:14,660
+Med den andra sparar du och lämnar redigeringsläge.
+
+124
+00:11:14,940 --> 00:11:19,040
+När du sparar en post försvinner alla tomma egenskaper.
+
+125
+00:11:19,440 --> 00:11:25,400
+Om något är förifyllt behöver du ta bort det manuellt om du inte har använt den egenskapen.
+
+126
+00:11:26,200 --> 00:11:32,860
+Det var allt för den här filmen. Det finns fler filmer om olika moment i Libris katalogisering.
+

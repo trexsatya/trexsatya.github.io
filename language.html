@@ -1,0 +1,466 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <script src="/vendor/jquery.js"></script>
+    <script></script>
+    <script src="/vendor/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/vendor/jquery-ui.min.css">
+    <script type="text/javascript" src="/vendor/split-type.js"></script>
+    <script type="text/javascript" src="/vendor/pagination.min.js"></script>
+    <script type="text/javascript" src="/vendor/bootstrap.min.js"></script>
+    <link href="/index.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/vendor/string-similarity.js"></script>
+    <script type="text/javascript" src="/vendor/mediaelement.js"></script>
+    <link href="/vendor/mediaelement-player.css" rel="stylesheet">
+    <script type="text/javascript" src="/vendor/mediaelement-plugins/speed/speed.min.js"></script>
+    <script type="text/javascript" src="/vendor/mediaelement-plugins/speed/speed-i18n.js"></script>
+    <script type="text/javascript" src="/vendor/long-press-event.min.js"></script>
+    <script type="text/javascript" src="/vendor/ckeditor/ckeditor.js"></script>
+
+    <script type="text/javascript" src="/vendor/diff-match-patch.js"></script>
+    <link href="/vendor/select2.min.css" rel="stylesheet"/>
+    <link href="/vendor/pagination.css" rel="stylesheet"/>
+    <link href="/vendor/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendor/bootstrap-grid.min.css" rel="stylesheet"/>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <script src="/vendor/select2.min.js"></script>
+    <script src="/vendor/lodash.js"></script>
+    <script src="/github-utils.js"></script>
+    <script type="module" src="/data-structures.js"></script>
+    <script type="module" src="/spanish.js"></script>
+    <script type="module" src="/language.js"></script>
+    <link href="/language.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/vendor/fontawesome-all.css">
+    <style>
+
+    </style>
+    <script>
+        function isDesktop() {
+            const ww = $(window).width()
+            return ww >= 1000
+        }
+
+        function getDimensionsForPlayer() {
+            const wh = window.innerHeight, ww = window.innerWidth;
+
+            let ytVideoWidth = 940, ytHeight = 590;
+            let subWidth = 0;
+
+            if (isDesktop()) {
+                ytVideoWidth = '100%';
+                subWidth = $(window).width() - (ytVideoWidth + 40)
+            } else {
+                ytVideoWidth = ww - 15;
+                subWidth = ww - 10;
+                ytHeight = wh / 2 - 150;
+                // $('#mediaControls').css({width: '100%', bottom: '-15em', right: 0})
+                $('#youtubePlayer-info').hide()
+                // $('#speed-control').parent().hide()
+
+                $('#mp3Choice').parent().css({width: ww - 20})
+            }
+            return {ytVideoWidth, ytHeight, subWidth};
+        }
+
+        const {ytVideoWidth, ytHeight, subWidth} = getDimensionsForPlayer();
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            event.target.playVideo();
+            window.ytPlayerReady = true
+
+            if (window.youtubePlayInterval) {
+                seekToYoutubeTime(window.youtubePlayInterval.start)
+            }
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                window.ytPlaying = true
+            } else {
+                window.ytPlaying = false;
+            }
+        }
+
+        window.onYouTubeIframeAPIReady = () => {
+            window.ytPlayer = new YT.Player("youtubePlayer", {
+                height: ytHeight,
+                width: ytVideoWidth,
+                videoId: 'K8P_USOppfs',
+                playerVars: {
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+            $('#subtitle-container').css({
+                left: ytVideoWidth,
+                marginLeft: '1em',
+                width: subWidth,
+                maxHeight: '85%',
+                overflow: 'scroll',
+                paddingRight: '1em'
+            })
+        }
+    </script>
+    <style>
+        #scrollButton {
+            position: fixed;
+            bottom: 4px;
+            right: 3px;
+            z-index: 9999;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .link, .link-special {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="padding: 0.5em;">
+
+<button id="scrollButton" style="display: none;"  data-direction="down">&#x25BC;</button>
+<div>
+    <div style="float: left; width: 59%; position: relative;" class="fl-left">
+        <div id="mainControlInputs" style="clear: both">
+            <!-- Primary toolbar: always visible -->
+            <div class="lang-toolbar">
+                <!-- Previous search -->
+                <button class="lang-tool-btn lang-tool-btn--icon" id="prevSearchBtn" title="Previous search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                    </svg>
+                </button>
+                <div class="lang-toolbar-center">
+                <!-- Settings gear button -->
+                <button class="lang-tool-btn lang-tool-btn--icon" id="toggleSettingsPanelBtn" title="Settings" onclick="$('#settingsPanel').slideToggle(120)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.47l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                    </svg>
+                </button>
+                <!-- Media film-reel button -->
+                <button class="lang-tool-btn lang-tool-btn--icon" id="toggleMediaPanelBtn" title="Media" onclick="$('#mediaControlPanel').slideToggle(120)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                </button>
+                <!-- Section toggle buttons -->
+                <span class="lang-toolbar-separator"></span>
+                <button id="toggleMainControl" class="lang-tool-btn lang-tool-btn--icon" title="Toggle controls" data-toggle-state="expanded" data-view-id="mainControlBody">
+                    <svg width="18" data-role="collapseUpSign" height="18" viewBox="0 0 24 24" role="presentation"><use href="#collapseUpPath"/></svg>
+                    <svg width="18" data-role="expandDownSign" style="display:none" height="18" viewBox="0 0 24 24" role="presentation"><use href="#expandDownPath"/></svg>
+                </button>
+                <button id="toggleResultContainer" class="lang-tool-btn lang-tool-btn--icon" title="Toggle results" data-toggle-state="collapsed" data-view-id="resultContainer">
+                    <svg width="18" data-role="collapseUpSign" style="display:none" height="18" viewBox="0 0 24 24" role="presentation"><use href="#collapseUpPath"/></svg>
+                    <svg width="18" data-role="expandDownSign" height="18" viewBox="0 0 24 24" role="presentation"><use href="#expandDownPath"/></svg>
+                </button>
+                <button id="toggleMediaRelatedContainer" class="lang-tool-btn lang-tool-btn--icon" title="Toggle player" data-toggle-state="collapsed" data-view-id="mediaRelatedContainer">
+                    <svg width="18" data-role="collapseUpSign" style="display:none" height="18" viewBox="0 0 24 24" role="presentation"><use href="#collapseUpPath"/></svg>
+                    <svg width="18" data-role="expandDownSign" height="18" viewBox="0 0 24 24" role="presentation"><use href="#expandDownPath"/></svg>
+                </button>
+                <button id="toggleMediaContainer" class="lang-tool-btn lang-tool-btn--icon" title="Toggle video" data-toggle-state="collapsed" data-view-id="mediaContainer">
+                    <svg width="18" data-role="collapseUpSign" style="display:none" height="18" viewBox="0 0 24 24" role="presentation"><use href="#collapseUpPath"/></svg>
+                    <svg width="18" data-role="expandDownSign" height="18" viewBox="0 0 24 24" role="presentation"><use href="#expandDownPath"/></svg>
+                </button>
+                </div>
+                <!-- Next search -->
+                <button class="lang-tool-btn lang-tool-btn--icon" id="nextSearchBtn" title="Next search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mainControlBody">
+                <div class="lang-search-row">
+                    <div class="lang-search-top-row">
+                        <span class="lang-search-input-wrap">
+                            <input type="search" id="searchText" placeholder="Search…" class="lang-search-input">
+                            <button type="button" id="searchTextClearBtn" class="lang-search-input-clear" title="Clear" aria-label="Clear" style="display:none;">×</button>
+                        </span>
+                        <div class="search-vocab-popover-wrap">
+                            <button class="lang-tool-btn" id="searchVocabularyByPrefixBtn" title="Search vocabulary…">…</button>
+                            <div id="searchVocabularyMenu" class="search-vocab-menu" style="display:none;">
+                                <button type="button" class="lang-tool-btn search-vocab-menu-item" data-mode="prefix">Search by prefix</button>
+                                <button type="button" class="lang-tool-btn search-vocab-menu-item" data-mode="similar">Search Similar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="btns-2" class="lang-search-select-row" style="margin-bottom: 0;">
+                        <select id="searchedWords" style="width: 100%;"></select>
+                        <div id="vocabLoadingBar" style="width:100%;height:3px;background:#eee;margin-top:2px;overflow:hidden;">
+                            <div id="vocabLoadingBarFill" style="width:0;height:100%;background:#4dba87;transition:width .2s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings panel: hidden by default -->
+                <div id="settingsPanel" class="lang-panel" style="display: none;">
+                <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                    <label class="lang-panel-label">
+                        Show
+                        <input type="number" id="numberOfFindingsToShow" value="10" style="width: 46px; margin-left: 4px;">
+                    </label>
+                    <label class="lang-panel-label" title="Max results for Search Similar">
+                        Similar
+                        <input type="number" id="numberOfSimilarFindings" value="30" min="1" max="200" style="width: 46px; margin-left: 4px;">
+                    </label>
+                    <label class="lang-panel-label">
+                        Lang
+                        <input class="tgl tgl-flip" id="toggleLangCb" type="checkbox" data-toggle="toggle"
+                               data-size="small" data-on="EN" data-off="SV" style="margin-left: 4px;"/>
+                    </label>
+                    
+                    <label class="lang-panel-label" title="Clear search text on click">
+                        Clear on click
+                        <div class="checkbox-wrapper-22" style="display: inline; margin-left: 4px;">
+                            <label class="switch" for="toggleClearTextOnClickCheckbox">
+                                <input type="checkbox" id="toggleClearTextOnClickCheckbox" aria-label="clear on click">
+                                <div class="slider round"></div>
+                            </label>
+                        </div>
+                    </label>
+                    <button id="addToVocabBtn" onclick="openAddToVocabDialog()" class="button-62" disabled>Add To Vocab</button>
+                    <button id="saveStarredLinesBtn" onclick="saveStarredLines()" style="display: none;">Save Starred Lines</button>
+                    <button id="saveRevisionBtn" onclick="saveRevision()" style="display: none;">Save Revision</button>
+                </div>
+                <div id="searchesControl" style="padding-top: 16px;">
+                    
+                </div>
+                
+                </div>
+
+                <!-- Media panel: hidden by default -->
+                <div id="mediaControlPanel" class="lang-panel" style="display: none;">
+                <label class="lang-panel-label" style="margin-bottom: 6px;">
+                    <input type="checkbox" id="useLocalMediaCheckbox"
+                           onchange="$('#mp3ChoiceContainer').toggle();$('#localMediaContainer').toggle();">
+                    Local file
+                </label>
+                <div id="mp3ChoiceContainer" style="margin-top: 4px;">
+                    <label for="mp3Choice">Select Media:</label>
+                    <select id="mp3Choice" style="width: 80%">
+                        <option value="">-</option>
+                    </select>
+                    <label class="switch" style="vertical-align: middle;">
+                        <input type="checkbox" id="onlySubsCheckbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div id="localMediaContainer" style="display: none; margin-top: 4px;">
+                    <input type="file" accept="video/*,audio/*,.srt,.json" multiple="multiple" id="localFiles"
+                           onchange="loadLocalFiles()">
+                </div>
+                </div>
+
+                <div id="info-dialog" title="Media Info" style="display: none;">
+                    <div id="info-dialog-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="clear: both">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <defs>
+                    <symbol id="collapseUpPath" viewBox="0 0 24 24">
+                        <path
+                            d="M11.221 9.322l-2.929 2.955a1.009 1.009 0 000 1.419.986.986 0 001.405 0l2.298-2.317 2.307 2.327a.989.989 0 001.407 0 1.01 1.01 0 000-1.419l-2.94-2.965A1.106 1.106 0 0011.991 9c-.279 0-.557.107-.77.322z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </symbol>
+                    <symbol id="expandDownPath" viewBox="0 0 24 24">
+                        <path
+                            d="M8.292 10.293a1.009 1.009 0 000 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 000-1.419.987.987 0 00-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 00-1.406 0z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </symbol>
+                </defs>
+            </svg>
+            <div id="resultContainer" style="display: none;">
+                <div id="vocabularyResult">
+
+                </div>
+                <div id="result" style="overflow: scroll; height: 85%;clear: both;
+                    border: 1px solid green; border-right: none;">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="import-dialog" title="Import Words" style="display: none;">
+            <div id="import-dialog-content">
+                Vocab: <select id="vocabularySelect" style="width: 100%;" onchange="importSearchesFromVocab()">
+                <option value="">-</option>
+            </select>
+                OR
+                <button onclick="loadWholeVocabulary()" class="button-10">Whole Vocabulary</button>
+                OR -
+                <button onclick="importSearchesFromFile()" class="button-10">From File</button>
+            </div>
+        </div>
+
+        <div id="addToVocabularyDialog" style="display: none">
+            <div>
+                <label style="font-size:0.85em;">Reference word:</label>
+                <select id="addToVocabularyDialogSelect" style="width: 98%;"></select>
+            </div>
+            <div style="margin-top: 0.5em;">
+                <label style="font-size:0.85em;">Insert: </label>
+                <select id="vocabInsertPosition" onchange="onVocabInsertPositionChange(this)">
+                    <option value="above">above selected word</option>
+                    <option value="below" selected>below selected word</option>
+                    <option value="inline">inline selected word</option>
+                </select>
+            </div>
+            <div style="margin-top: 0.5em;">
+                <label style="font-size:0.85em;" title="Append the lines below to this category (creating it if it doesn't exist). When set, the reference word and Insert position are ignored.">Or new/existing category: </label>
+                <input id="vocabNewCategory" type="text" placeholder="leave empty to use selected reference" style="width: 60%;">
+            </div>
+            <div style="margin-top: 0.5em;display:flex;gap:4px;flex-wrap:wrap;">
+                <button type="button" onclick="insertIntoVocabSegment('|')" style="font-family:monospace;min-width:32px;">|</button>
+                <button type="button" onclick="insertIntoVocabSegment('(', ')')" style="font-family:monospace;min-width:36px;">( )</button>
+                <button type="button" onclick="insertIntoVocabSegment('[', ']')" style="font-family:monospace;min-width:36px;">[ ]</button>
+                <button type="button" onclick="insertIntoVocabSegment('<*')" style="font-family:monospace;min-width:36px;" title="Expansion token (e.g. &lt;*jobba)">&lt;*</button>
+            </div>
+            <div style="margin-top: 0.5em;">
+                <input id="vocabularySegmentTextarea" style="height: 50%;width: 98%;" placeholder="New word(s), one per line"></input>
+            </div>
+            <div style="margin-top: 0.5em; display: flex; gap: 6px; align-items: center;">
+                <button type="button" onclick="addToVocab(false)" title="Apply this entry and clear the textarea so you can add another. Nothing is committed until you Save &amp; Close.">Add another</button>
+                <button type="button" onclick="addToVocab(true)">Save &amp; Close</button>
+                <span id="vocabPendingHint" style="display:none;font-size:0.75em;color:#a06000;">unsaved changes pending — Save &amp; Close to commit</span>
+            </div>
+        </div>
+        <div id="localMedia" style="float: left; margin-top: 1.5em;">
+            <audio id="localAudio" src="" width="700" height="500" style="display: none;"></audio>
+
+            <div id="localVideoContainer">
+                <video id="localVideo" src="" style="display: none;"></video>
+            </div>
+
+        </div>
+
+        <div id="mediaContainer" style="width: 100%;display:none;">
+            <button id="togglePlayerControlsBtn">...</button>
+            <button id="hidePlayer">[X]</button>
+            <div id="youtubePlayer" style="margin-top: 2em;">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div style="float: left; left: 2%; width: 40%; position: relative; border-left: 1px solid blue; margin-bottom: 12em;"
+         class="fl-right">
+        <div style="display: none;" id="mediaRelatedContainer">
+            <div style="margin-top: 8em; position: absolute; bottom: 0; right: 4em;background-color: springgreen; padding-top: 1rem;" id="mediaControls">
+                <div style="margin-top: 2em;display: none;" id="starredLines">
+
+                </div>
+                <div id="playerControls"
+                     style="width: 100%;border-top: 1px solid black;border-radius: 5%;margin-top: 0.5rem; padding-top: 0.5rem;">
+                    <div class="" style="">
+                        <div style="text-align: center;">
+                            <div class="controlgroup" id="speed-control">
+                                <label for="speed-1">0.5</label>
+                                <input type="radio" name="speedOption" id="speed-1" data-speed="0.5">
+                                <label for="speed-2">0.7</label>
+                                <input type="radio" name="speedOption" id="speed-2" data-speed="0.7">
+                                <label for="speed-3">0.8</label>
+                                <input type="radio" name="speedOption" id="speed-3" data-speed="0.8">
+                                <label for="speed-4">1.0</label>
+                                <input type="radio" name="speedOption" id="speed-4" checked data-speed="1.0">
+                                <label for="speed-control">x Speed</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-check form-switch" style="display: none;">
+                            <label class="form-check-label" for="loopSwitch">Loop </label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="loopSwitch">
+                        </div>
+
+                    </div>
+                    <div style="text-align: center; padding-right: 2em;">
+                        <select id="starredLinesSelect" style="display: none; margin-right: 2em;"></select>
+                        <button id="rewindBtn"
+                                style="font-weight: bolder;font-size: larger; margin-right: 1em;width: 3em;height: 2.5em;"> <
+                        </button>
+                        <button id="playBtn" class="play-btn">Play</button>
+                        <button id="hideMediaRelatedContainer"
+                            style="font-weight: bolder;font-size: larger; margin-left: 10px;width: 3em;height: 2.5em;"> X
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="subtitle-container" style="min-height: 600px;">
+            <br>
+            <br>
+            <div id="sv-sub" style="font-size: large;"></div>
+            <div id="sv-sub-mirror" style="font-size: smaller; color: grey"></div>
+            <br>
+            <br>
+            <div id="en-sub" style="display: none;"></div>
+            <div style="margin-top: 2em;">
+                    <span class="btn btn-light" id="toggleEnSubBtn" onclick="$('#en-sub').toggle()"
+                          style="display: none;"> Toggle English Subtitles </span>
+            </div>
+
+        </div>
+        <div id="subControls" style="padding-left: 1em;display: none; position: fixed; bottom: 5px;">
+            <div id="subtitlePagination"></div>
+        </div>
+    </div>
+
+</div>
+<br/>
+<div style="z-index: -1;color: grey; margin-top: 1em; position: absolute; top: 1px; left: 60%;" id="player-info">
+    <span style="margin-left: 2em;display: none;">Media:</span> <span id="currentMedia"></span> <span id="currentTime"
+                                                                                        style="padding-left: 1em;"></span>
+    <span
+        id="currentSpeed" style="padding-left: 1em;"></span>
+</div>
+
+<div id="message" style="display: none"></div>
+
+<script>
+    window.showInfoWithoutPopup = true;
+    $('#mp3Choice').select2();
+    (function() {
+        function styleCategory(option) {
+            if (!option || !option.id) return option && option.text;
+            if (typeof option.id === 'string' && option.id.indexOf('__cat__:') === 0) {
+                return $(`<span style="color:#888;font-style:italic;">${option.text}</span>`);
+            }
+            return option.text;
+        }
+        $('#searchedWords').select2({
+            placeholder: 'Searches',
+            allowClear: true,
+            templateResult: styleCategory,
+            templateSelection: styleCategory
+        });
+    })();
+
+    $('#toggleSearchesControlCheckbox').change(e => {
+        $('#searchesControl').toggle()
+    })
+
+    $('#subtitlePagination').pagination()
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,2908 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <script src="/vendor/jquery.js"></script>
+    <script></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="/vendor/diff-match-patch.js"></script>
+    <script type="text/javascript" src="/vendor/fabric.v6.js"></script>
+    <script type="text/javascript" src="/vendor/rx.all.min.js"></script>
+    <script type="text/javascript" src="/vendor/rx.all.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.lettering.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.fittext.js"></script>
+    <script type="text/javascript" src="/vendor/rulez.min.js"></script>
+    <script type="text/javascript" src="/vendor/varajs/vara.js"></script>
+    <script type="text/javascript" src="/vendor/gsap/minified/gsap.min.js"></script>
+    <script type="text/javascript" src="/vendor/ckeditor/ckeditor.js"></script>
+    <script src="/vendor/raphael.js"></script>
+    <script src="https://unpkg.com/geometric@2.2.3/build/geometric.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="/vendor/tree.js"></script>
+    <!-- <script src="../../vendor/jquery.min.js"></script> -->
+    <script src="/vendor/jquery.easing.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.textillate.js"></script>
+    <!--    <script src="/typed.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="/vendor/select2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/velocity-animate@2.0/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG">
+    </script>
+    <script src="/vendor/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script type="module">
+        import * as DS from '/data-structures.js';
+        Object.assign(window, DS);
+    </script>
+    <script type="text/javascript" src="/algo.visual.toolbox.js"></script>
+    <script type="text/javascript" src="/fabric.play.js"></script>
+    <script type="text/javascript" src="/jquery.play.js"></script>
+    <script type="text/javascript" src="/play.js"></script>
+    <script type="text/javascript" src="/whiteboard.js"></script>
+    <script type="text/javascript" src="/whiteboard.undo.js"></script>
+    <script type="text/javascript" src="/whiteboard.tools.js"></script>
+    <!-- <script type="text/javascript" src="/treant.js"></script> -->
+
+    <link rel="stylesheet" href="/vendor/animate.css">
+    <link rel="stylesheet" href="/vendor/treant.css">
+    <link href="/vendor/select2.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/play.css">
+    <link rel="stylesheet" href="/whiteboard.css">
+    <link rel="stylesheet" href="/vendor/fontawesome-all.css">
+
+    <script type="text/javascript">
+        Array.prototype.max = function () {
+            return Math.max.apply(null, this);
+        };
+    </script>
+    <style>
+        #mathjaxDialog {
+            background: blue;
+            color: white;
+            display: none;
+            z-index: 500000;
+            position: absolute;
+            left: 30%;
+            top: 30%;
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            padding: 1%;
+        }
+
+        @media (max-width: 767px) {
+            #mathjaxDialog {
+                left: 2%;
+                width: 99%;
+            }
+        }
+
+        .key {
+            width: 40px;
+            height: 40px;
+            display: block;
+            background-color: #333;
+            text-align: left;
+            padding-left: 8px;
+            line-height: 29px;
+            border-radius: 2px;
+            float: left;
+            margin-left: 2px;
+            margin-bottom: 2px;
+            cursor: pointer;
+            transition: box-shadow 0.7s ease;
+        }
+
+        .section-a {
+            width: 650px;
+            height: 260px;
+            float: left;
+        }
+
+        .section-b {
+            width: 150px;
+            height: 260px;
+            float: left;
+        }
+
+        .function {
+            font-size: 12px;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .small {
+            font-size: 10px;
+            line-height: 13px;
+            text-align: center;
+            padding: 0 5px;
+            padding-top: 2px;
+            height: 28px !important;
+        }
+
+        .space1 {
+            margin-right: 43px !important;
+        }
+
+        .space2 {
+            margin-right: 25px !important;
+        }
+
+        .dual {
+            font-size: 14px;
+            line-height: 20px;
+            width: 30px;
+        }
+
+        .backspace {
+            width: 84px;
+            font-size: 12px;
+        }
+
+        .tab {
+            width: 50px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .letter {
+            width: 30px;
+        }
+
+        .slash {
+            width: 64px;
+        }
+
+        .caps {
+            width: 70px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        .enter {
+            width: 92px;
+            line-height: 40px;
+            text-align: center;
+            padding-left: 0;
+        }
+
+        .shift.left {
+            width: 90px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .shift.right {
+            width: 104px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .ctrl {
+            width: 50px;
+            line-height: 40px;
+            font-size: 13px;
+        }
+
+        .space {
+            width: 234px;
+        }
+
+        .arrows {
+            position: relative;
+            top: 42px;
+        }
+
+        .sec-func .key {
+            width: 32px;
+            font-size: 10px;
+            text-align: left;
+            line-height: 40px;
+            float: left;
+        }
+
+        .sec-func div.dual {
+            line-height: 20px;
+        }
+
+        .arrows .key {
+            text-align: center;
+            padding-left: 7px;
+            margin-left: 2px;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .key:hover {
+            box-shadow: 0px 0px 10px #14B524;
+            z-index: 1000;
+        }
+
+        #overlay {
+            --x: 50px;
+            --y: 50px;
+            --h: 100px;
+            --w: 100px;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgb(56 46 46 / 70%);
+            clip-path: polygon(0% 0%,
+            0% 100%,
+            var(--x) 100%,
+            var(--x) var(--y),
+            calc(var(--x) + var(--w)) var(--y),
+            calc(var(--x) + var(--w)) calc(var(--y) + var(--h)),
+            var(--x) calc(var(--y) + var(--h)),
+            var(--x) 100%,
+            100% 100%,
+            100% 0%);
+        }
+
+        * {
+            --node-content-bg: #282b2e;
+            --node-content-fg: white;
+        }
+
+        .cke_panel {
+            z-index: 500000 !important;
+        }
+
+        /* Background grid canvas styling */
+        #gridCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -100;
+            pointer-events: none;
+        }
+
+        /* Canvas layering */
+        .canvas-container {
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("keydown", function (e) {
+            if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
+                e.preventDefault();
+                //Control F
+                $('.commands-select').select2('open');
+            }
+        })
+
+    </script>
+
+    <script>
+        function logItem(name, val, type, handlers) {
+            handlers = handlers || {}
+            window['globalVariableNames'][name] = val;
+            const li = $(`<li> <i class="actionable fas fa-trash"></i> ${name}: ${type} </li>`);
+            $(li).find("i").click(e => {
+                handlers.delete(name)
+                $(li).remove()
+            });
+            $('#item-variables').append(li)
+        }
+    </script>
+    <!--    <script src="/play2.js"></script>-->
+    <script>
+
+    </script>
+
+
+</head>
+
+<body>
+<span style="position:fixed;top:2rem;right: 1rem">
+        Lyr: <span id="layerInfo" style="color: blue">PC</span>;
+        Uid: <span id="selectedObjId" style="color: blue"></span>;
+    </span>
+
+<svg id="horizRuler" xmlns="http://www.w3.org/2000/svg" style="height: 40px; position: fixed; top: 0;"></svg>
+<svg id="vertRuler" xmlns="http://www.w3.org/2000/svg" style="height: 1000px;position: absolute; left: 0;"></svg>
+<script>
+    var someSvgElement = document.getElementById('horizRuler');
+    let rulez = new Rulez({
+        element: someSvgElement,
+    });
+    rulez.render();
+
+    var someSvgElement = document.getElementById('vertRuler');
+    rulez = new Rulez({
+        element: someSvgElement,
+        layout: 'vertical',
+        textDefaults: {
+            rotation: 90
+        }
+    });
+    rulez.render();
+</script>
+<div id="node-content-holder" style="display: none;position: absolute;right: 0;z-index: 500000; width: 50%;height: 100%;background-color: var(--node-content-bg)">
+    <div>
+        Edit Mode: <input type="checkbox" id="editContentCheckbox" name="editMode_NodeContent" value="editMode" onchange="handleEditContentCheckbox(this)">
+        &nbsp;&nbsp;<button onclick="saveNodeContent();$('#node-content-holder').hide()">Done</button>
+        &nbsp;&nbsp;<button onclick="$('#node-content-holder').hide()">Cancel</button>
+    </div>
+    <div style="">
+        <div id="node-content-editor-container">
+            <textarea id="node-content-editor" style="height: 100%;"></textarea>
+        </div>
+
+        <div id="node-content" style="height: 100%;color: var(--node-content-fg)"></div>
+    </div>
+</div>
+
+<div id="CMOGDAT-dialog" title="Enter required data" class="dialog">
+    <input placeholder="Ex: [1, 2], [2, 3]" name="data" value="[1,2,3], [4,5,6]" style="width: 80%">
+    <button type="submit" onclick="createMatrix('#CMOGDAT-dialog')">OK</button>
+    <br> <br>
+    <input placeholder="Location on screen" value="400,80" name="location">
+</div>
+
+<div id="CAOGSD-dialog" title="Enter required data" class="dialog">
+    <input placeholder="Ex: 1, 2, 3" name="data" value="1,2,3" style="width: 80%">
+    <button type="submit" onclick="createArray('#CAOGSD-dialog')">OK</button>
+    <br> <br>
+    <input placeholder="Location on screen" value="400,80" name="location">
+</div>
+
+<div id="overlay"></div>
+<div id="inspector-dialog" title="Inspector" class="dialog">
+    <select id="objectIdsSelect" onchange="selectObject(selectedObjectId())"></select>
+    <div>
+        <div>UID: <span id="uid-span"></span></div>
+        <div>
+            <button id="" onclick="hideObject(selectedObjectId())">Hide</button>
+            &nbsp;&nbsp;<button id="" onclick="showObject(selectedObjectId())">Show</button>
+            &nbsp;&nbsp;<button id="" onclick="deleteObject(selectedObjectId())">Delete</button>
+        </div>
+        <div>
+
+        </div>
+    </div>
+</div>
+
+<div class="top-bar" style="width: 40%; z-index: 3400; position: fixed; top: 0; left: 25%; opacity: 0.5;">
+    <select class="commands-select" name="command" style="width: 100%;">
+        <option value="NULL"></option>
+        <option value="CMOGDAT">Create Matrix Of Given Data</option>
+        <option value="CMOGDIM">Create Matrix Of Given Dimension</option>
+        <option value="CAOGSD">Create Array Of Given Data</option>
+        <option value="CAOGSZ">Create Array Of Given Size</option>
+        <option value="LDANIM">Load Animation</option>
+    </select>
+
+    <button id="btnStart">REC</button>
+    <button id="btnStop" style="display: none;">STOP</button>
+    <button id="btnPause" style="display: none;">PAUSE</button>
+    <button id="btnResume" style="display: none;">RESUME</button>
+    <button id="btnResumeAnimation" style="display: none" onclick="resumeAnimationScript()">ANIM-SCRIPT</button>
+</div>
+
+<div style="position: fixed; right: -37px; top: 10%;z-index: 3000; color: green">
+    <ul id="item-variables">
+
+    </ul>
+</div>
+
+<!--    <video width="100%" height="100%" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0;" src="/videos/smoke.mp4" autoplay muted>-->
+<!--    </video>-->
+<nav id="edit-table-cell-toolbar" style="display: none; position: fixed; z-index: 3000; background: #e2dbdb; padding: 10px; ">
+    <ul class="" style="list-style: none;">
+        <li class="">
+            Value: <input type="text" name="value" onchange="">
+        </li>
+        <li class="">
+            BG-Color: <input type="color" name="background" onchange="">
+        </li>
+        <li class="">
+            FG-Color: <input type="color" name="color" onchange="">
+        </li>
+        <li class="">
+            <button onclick="$('#edit-table-cell-toolbar').hide()">Close</button>
+            <button onclick="" class="reset">Reset</button>
+        </li>
+
+    </ul>
+</nav>
+
+<script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function () {
+        $('.commands-select').select2();
+    });
+    $('.commands-select').on('select2:open', function (e) {
+        const data = e.params.data;
+        console.log(data);
+        window.commandSelectionIsGoingOn = true;
+    });
+
+    $('.commands-select').on('select2:close', function (e) {
+        const data = e.params.data;
+        console.log(data);
+        window.commandSelectionIsGoingOn = false;
+    });
+
+    $('.commands-select').on('select2:select', function (e) {
+        const data = e.params.data;
+        console.log(data);
+        if (data.id === 'LDANIM') {
+            fetch("http://localhost:5000/animation-script")
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+        } else {
+            $(`#${data.id}-dialog`).dialog({
+                width: 800,
+                height: 400,
+            })
+        }
+
+        window.commandSelectionIsGoingOn = false;
+        $('.commands-select').val('NULL')
+        $('.commands-select').trigger('change'); //Reset
+    });
+</script>
+<canvas id="gridCanvas"></canvas>
+<canvas id="playerCanvas"></canvas>
+<canvas id="overlayCanvas" style="position: absolute;"></canvas>
+<span id="recording-info" style="    margin-left: 42%;top: 0; position: fixed;"></span>
+<div id="textillateContainer" style="width: 100%; height: 100%;position: absolute; top: 0; left: 0;">
+    <div id="cinemaText"></div>
+    <div id="typed-strings" style="display: none">
+        <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+        <p>It <em>types</em> out sentences.</p>
+    </div>
+</div>
+
+<div id="editor" style="position: absolute;top:0; left: 50%;width: 49%; z-index: 30000; height: 100%; display: none">
+</div>
+<script>
+    const editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/python");
+    editor.setFontSize(23);
+</script>
+
+<script type="text/javascript">
+    const API_HOST = 'http://livintolearn.com/api';
+    window.location.hash.replace("#", "");
+
+    window.onbeforeunload = function () {
+        return 'Are you sure you want to leave?';
+    };
+
+    window.objectIds = new Set()
+    window.pc = new fabric.Canvas('playerCanvas')
+    window._ = {
+        textboxes: []
+    }
+    window.oc = new fabric.Canvas('overlayCanvas', {
+        isDrawingMode: true
+    });
+    // Initialize grid canvas
+    window.gridCanvas = document.getElementById('gridCanvas');
+    window.gridCtx = gridCanvas.getContext('2d');
+    gridCanvas.width = window.innerWidth;
+    gridCanvas.height = window.innerHeight;
+    // Initialize free drawing brush for overlay canvas
+    window.oc.freeDrawingBrush = new fabric.PencilBrush(window.oc);
+    window.oc.freeDrawingBrush.width = 3;
+    window.oc.freeDrawingBrush.color = '#000000';
+    window.txt = $("#textillateContainer")
+    pc.setWidth(window.innerWidth)
+    pc.setHeight(window.innerHeight)
+    oc.setWidth(window.innerWidth)
+    oc.setHeight(window.innerHeight)
+
+    $('.canvas-container').css({
+        position: 'absolute'
+    });
+    superimposeOverlayCanvas()
+    moveToFront('pc')
+
+    function customData(obj) {
+        if (!obj.customData) obj.customData = {};
+        return obj.customData
+    }
+
+    window.CKEDITOR.replace('node-content-editor', {
+        entities: true,
+        extraPlugins: 'mathematica,codesnippet,title',
+        allowedContent: true,
+    });
+
+    const element = document.documentElement;
+    const colorBg = getComputedStyle(element).getPropertyValue('--node-content-bg');
+    const colorFg = getComputedStyle(element).getPropertyValue('--node-content-fg');
+
+    CKEDITOR.on('instanceReady', function(e) {
+        // First time
+        e.editor.document.getBody().setStyle('background-color', colorBg).setStyle('color', colorFg);
+        // in case the user switches to source and back
+        e.editor.on('contentDom', function() {
+            e.editor.document.getBody().setStyle('background-color', colorBg).setStyle('color', colorFg);
+        });
+    });
+</script>
+
+<div id="drawing-toolbar" style="display: inline-block; margin-left: 10px;position: absolute; left: 0; top: 50; z-index: 1000000; height: 0"
+     class="ui-draggable ui-draggable-handle">
+    <img id="toolbarToggle1" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;" onclick="$('#toolbar1-buttons').toggle();"
+         src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png">
+
+    <div id="toolbar1-buttons">
+        Eraser:<span style=""> <label class="switch">
+          <input type="checkbox" id="eraser">
+          <span class="slider round"></span>
+            </label>
+        </span>
+        Drawing Mode:
+        <label class="switch">
+            <input type="checkbox" id="flip-drawing">
+            <span class="slider round"></span>
+        </label>
+        <br><br>
+        <button id="undo" class="btn btn-info" onclick="undoDrawing(event)">Undo</button>
+        <span> &nbsp;&nbsp;&nbsp;</span>
+        <button id="redo" class="btn btn-info" onclick="redoDrawing(event)">Redo</button>
+        <br>
+
+        <br>
+        <label for="drawing-mode-selector">Mode:</label>
+        <select id="drawing-mode-selector">
+            <option>Pencil</option>
+            <option>Circle</option>
+            <option>Spray</option>
+            <option>Pattern</option>
+
+            <option>hline</option>
+            <option>vline</option>
+            <option>square</option>
+            <option>diamond</option>
+            <option>texture</option>
+        </select><br>
+        <br>
+        <label for="drawing-line-width">Line width:</label>
+        <span class="info">2</span><input type="number" value="3" id="drawing-line-width"><br>
+
+        <br>
+        <label for="drawing-color">Line color:</label>
+        <input type="color" value="#005E7A" id="drawing-color"><br>
+        <br>
+        <button id="clear-canvas" class="btn btn-info">Clear</button>
+
+        <br><br>
+        <label for="drawing-shadow-color">Shadow color:</label>
+        <input type="color" value="#005E7A" id="drawing-shadow-color"><br>
+        <br>
+        <label for="drawing-shadow-width">Shadow width:</label>
+        <span class="info">0</span><input type="number" value="0" id="drawing-shadow-width"><br>
+
+        <br>
+        <label for="drawing-shadow-offset">Shadow offset:</label>
+        <span class="info">0</span><input type="number" value="0" id="drawing-shadow-offset"><br>
+        <br>
+    </div>
+</div>
+
+<div id="rollbackConfirmationDialog" title="Rollback Recording!" style="display: none;">
+    <p>Select the time where to rollback:</p>
+    <div class="slider"></div>
+    <br><br>
+    <div>
+        Selected Value: <span class="info"></span>
+
+    </div>
+</div>
+
+<div id="recordingFileChooserDialog" title="Choose Recording Files!" style="display: none; z-index: 5000">
+    <p>Choose Files:</p>
+    <input type="file" accept="text/plain" onchange="openFile(event)" id="recordingFiles" multiple="multiple">
+
+    <div>
+        OR
+    </div>
+
+</div>
+
+<div id="playbackControls" style="display: none; position:fixed; bottom:0;width:100%;">
+    <table style="width:100%">
+        <tr>
+            <th style="width: 20%;"><span class="time" style="float: right;margin-right: 30px;"></span></th>
+            <th style="width: 60%;">
+                <div class="slider"></div>
+            </th>
+            <th><span class="time" style="float: left;margin-left:30px"></span></th>
+        </tr>
+    </table>
+
+</div>
+
+<div id="toolbar" style="display: inline-block; margin-left: 10px;position: absolute; right: -10; top: 50; z-index: 1000000; height: 0">
+    <img id="toolbarToggle" style="margin-bottom: 20px;margin-right: 10px;width:25px; height: 25px;" onclick="$('#drawing-mode-options').toggle();"
+         src="https://storage.googleapis.com/cupitor-220103.appspot.com/images/drawer_icon.png"></img>
+
+    <select id="savePoints" style="margin-right: 30px;float: right;" onchange="restoreCanvas()">
+        <option>0</option>
+    </select>
+
+
+    <div id="drawing-mode-options" style="background: rgba(15, 14, 14, 0.4);padding-left: 10px;padding-top: 10px;">
+        <button id="delete-selected" class="btn btn-info" onclick="deleteSelectedObjects()">Delete</button>
+    
+        <br> <br>
+
+        <button class="btn btn-info" onclick="copy(pc)">Copy</button>
+        <button class="btn btn-info" onclick="paste(pc)">Paste</button>
+        <button class="btn btn-info" onclick="group(pc)">Group</button>
+        <button class="btn btn-info" onclick="degroup(pc)">Ungroup</button>
+
+        <br><br>
+
+        <button id="create-array" class="btn btn-info" onclick="window.insertArray=true; turnOffDrawing();" style="margin-right:10px;">Array</button>
+
+        <button id="insert-matex" class="btn btn-info" onclick="window.signalMatexInsertion=true;turnOffDrawing();">Matex</button>
+        <button id="insert-image" class="btn btn-info" onclick="window.signalImageInsertion=true;turnOffDrawing();">Image</button>
+        <br><br>
+        <button id="save" style="margin-right:10px;" onclick="saveCanvas()">Save</button>
+        <button id="newCanvas" onclick="newCanvas()"> New</button>
+        <button id="viewScript" onclick="openScriptDialog()">&#128196; Script</button>
+        <div>
+            <label style="font-size:0.9em;margin-left:6px;"><input type="checkbox" id="recordScriptToggle" checked onchange="toggleRecordScript(this.checked)"> Record Script</label>
+            <label style="font-size:0.9em;margin-left:6px;" title="Sample intermediate positions during a drag so replay follows the curved path you drew, not a straight line."><input type="checkbox" id="recordPathToggle"> Record Path</label>
+        </div>
+        
+        <br><br>
+
+        <br><br>
+        <span id="instruction" style="width:150px"></span>
+
+    </div>
+</div>
+<script>
+    window.recordedScriptLines = window.recordedScriptLines || []
+    const pushRecordedScriptLine = x => {
+        if (!Array.isArray(window.recordedScriptLines)) window.recordedScriptLines = [];
+        window.recordedScriptLines.push(x);
+    }
+    window.recordScriptFn = pushRecordedScriptLine
+    function toggleRecordScript(on) {
+        window.recordScriptFn = on ? pushRecordedScriptLine : null;
+    }
+
+    const drawingModeEl = $('#drawing-mode'),
+        drawingOptionsEl = $('#drawing-mode-options'),
+        drawingColorEl = $('#drawing-color'),
+        drawingShadowColorEl = $('#drawing-shadow-color'),
+        drawingLineWidthEl = $('#drawing-line-width'),
+        drawingShadowWidth = $('#drawing-shadow-width'),
+        drawingShadowOffset = $('#drawing-shadow-offset'),
+        clearEl = $('#clear-canvas'),
+        eraserEl = $('#eraser');
+
+    clearEl.click(function () {
+        const yes = confirm('Are you sure?');
+        if (yes) clear('oc');
+    });
+
+    drawingColorEl.change(function (e) {
+        if (oc.freeDrawingBrush) {
+            oc.freeDrawingBrush.color = this.value;
+        }
+    });
+
+    function turnOffDrawing() {
+        if (flipDrawindEl.is(':checked')) {
+            flipDrawindEl.click();
+        }
+    }
+
+    eraserEl.change(e => {
+        if (eraserEl.is(':checked')) {
+            //Store
+            window.saved = window.saved || {};
+            window.saved.eraserStoredData = window.saved.eraserStoredData || {}
+
+            window.saved.eraserStoredData.drawingColor = drawingColorEl.val()
+            window.saved.eraserStoredData.drawingLineWidth = drawingLineWidthEl.val()
+
+            if (window.theme === 'black') {
+                drawingColorEl.val('#000000')
+            } else {
+                drawingColorEl.val('#ffffff')
+            }
+            if (oc.freeDrawingBrush) {
+                oc.freeDrawingBrush.color = drawingColorEl.val();
+            }
+
+            drawingLineWidthEl.val(15);
+            if (oc.freeDrawingBrush) {
+                oc.freeDrawingBrush.width = parseInt(drawingLineWidthEl.val(), 10) || 15;
+            }
+
+        } else {
+            //Restore
+            drawingColorEl.val(window.saved.eraserStoredData.drawingColor);
+            drawingLineWidthEl.val(window.saved.eraserStoredData.drawingLineWidth);
+
+            if (oc.freeDrawingBrush) {
+                oc.freeDrawingBrush.color = drawingColorEl.val();
+                oc.freeDrawingBrush.width = parseInt(drawingLineWidthEl.val(), 10) || 5;
+            }
+        }
+    });
+
+    drawingShadowColorEl.change(function () {
+        if (oc.freeDrawingBrush && oc.freeDrawingBrush.shadow) {
+            oc.freeDrawingBrush.shadow.color = this.value;
+        }
+    });
+    drawingLineWidthEl.change(function () {
+        if (oc.freeDrawingBrush) {
+            oc.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
+        }
+        this.previousSibling.innerHTML = this.value;
+    });
+    drawingShadowWidth.change(function () {
+        if (oc.freeDrawingBrush && oc.freeDrawingBrush.shadow) {
+            oc.freeDrawingBrush.shadow.blur = parseInt(this.value, 10) || 0;
+        }
+        this.previousSibling.innerHTML = this.value;
+    });
+    drawingShadowOffset.change(function () {
+        if (oc.freeDrawingBrush && oc.freeDrawingBrush.shadow) {
+            oc.freeDrawingBrush.shadow.offsetX = parseInt(this.value, 10) || 0;
+            oc.freeDrawingBrush.shadow.offsetY = parseInt(this.value, 10) || 0;
+        }
+        this.previousSibling.innerHTML = this.value;
+    });
+
+    if (oc.freeDrawingBrush) {
+        oc.freeDrawingBrush.color = drawingColorEl.val() || 'black';
+        oc.freeDrawingBrush.width = parseInt(drawingLineWidthEl.val(), 10) || 1;
+        oc.freeDrawingBrush.shadow = new fabric.Shadow({
+            blur: parseInt(drawingShadowWidth.val(), 10) || 0,
+            offsetX: 0,
+            offsetY: 0,
+            affectStroke: true,
+            color: drawingShadowColorEl.val() || 'black',
+        });
+    }
+    ;
+</script>
+<script type="text/javascript">
+    localStorage.setItem('pc', JSON.stringify({}))
+    localStorage.setItem('oc', JSON.stringify({}))
+    if (location.hash.indexOf('debug') >= 0) alert(window.innerWidth + "," + window.innerHeight)
+    if (window.innerWidth < window.innerHeight) {
+        $('#toolbar').css({
+            position: 'absolute',
+            bottom: 0
+        })
+    }
+
+    $('body').scroll(function (e) {
+        console.log('resized')
+
+    });
+
+    $(document).ready(e => {
+
+        $('#toolbar').draggable();
+    });
+
+
+    $('#create-text').click(e => {
+        window.insertText = true;
+        turnOffDrawing();
+    })
+    $('#create-small-text').click(e => {
+        window.insertSmallText = true;
+        turnOffDrawing();
+    })
+
+    $('#create-rect-text').click(e => {
+        window.insertRectText = true;
+        turnOffDrawing();
+    })
+
+    const flipDrawindEl = $('#flip-drawing');
+    flipDrawindEl.click(e => {
+        if (flipDrawindEl.is(':checked')) {
+            moveToFront('oc')
+        } else {
+            moveToFront('pc')
+        }
+    })
+    pc.on('selection:created', handleSelection);
+    pc.on('selection:updated', handleSelection);
+    function handleSelection(e) {
+        const obj = e.selected ? e.selected[0] : e.target;
+        if (!obj) return;
+        $('#selectedObjId').html(obj.uid)
+        if (window.connectionMode) {
+            if (!window.firstOfConnection) firstOfConnection = obj
+            else {
+                makeConnection(e)
+                flipConnectionMode()
+            }
+        }
+    }
+
+    pc.on('object:removed', e => {
+        //console.log(e.target);
+        const obj = e.target;
+        if (obj.treeConnection && obj.treeConnection.outgoing) {
+            obj.treeConnection.outgoing.lines.forEach(l => {
+                pc.remove(l);
+            })
+        }
+    })
+
+    window.isFabricObjectMoving = false
+    window.currentPathSamples = null
+    const PATH_SAMPLE_MIN_DIST = 3 // px between samples
+    pc.on('object:moving', function (e) {
+        window.isFabricObjectMoving = true;
+        window.movingFabricObject = e.target;
+        if(!window.movingFabricObject.uid) {
+            // Assume it's a selection/group of objects
+            window.movingFabricGroup = e.target;
+            window.movingFabricObject = null
+        }
+        // Record path samples for single-object drags when toggle is on
+        if (window.movingFabricObject && $('#recordPathToggle').is(':checked')) {
+            const t = window.movingFabricObject
+            if (!window.currentPathSamples) {
+                window.currentPathSamples = [{left: t.left, top: t.top, t: Date.now()}]
+            } else {
+                const last = window.currentPathSamples[window.currentPathSamples.length - 1]
+                const dx = t.left - last.left, dy = t.top - last.top
+                if (dx*dx + dy*dy >= PATH_SAMPLE_MIN_DIST*PATH_SAMPLE_MIN_DIST) {
+                    window.currentPathSamples.push({left: t.left, top: t.top, t: Date.now()})
+                }
+            }
+        }
+    });
+
+    pc.on('mouse:up', function (event) {
+        if (window.isFabricObjectMoving) {
+            window.isFabricObjectMoving = false;
+            // Your code to handle the end of the move event
+            if(window.movingFabricGroup) {
+                let allAnimations = window.movingFabricGroup._objects.map(it => `animate('${it.uid}', ${JSON.stringify(getActualProperties(it, true))}, {})`)
+                recordScript(`Promise.all([${allAnimations.join(",")}])`)
+            } else if (window.currentPathSamples && window.currentPathSamples.length >= 2) {
+                const samples = window.currentPathSamples
+                // Append final resting position so replay lands exactly where the user released
+                const finalProps = getActualProperties(movingFabricObject, true)
+                samples.push({left: finalProps.left, top: finalProps.top, t: Date.now()})
+                recordScript(`animatePath('${movingFabricObject.uid}', ${JSON.stringify(samples)}, {})`)
+            } else {
+                recordScript(`animate('${movingFabricObject.uid}', ${JSON.stringify(getActualProperties(movingFabricObject, true))}, {})`)
+            }
+
+            window.movingFabricObject = null;
+            window.movingFabricGroup = null;
+            window.currentPathSamples = null;
+        }
+    });
+
+    pc.on('object:moving', e => {
+        const t = e.target;
+        t._objects?.forEach(updateTreeItem)
+        updateTreeItem(t);
+    });
+
+    // Capture text edits on IText/Textbox (including sticky-note inner text).
+    // editing:exited fires once per edit session with the final text on e.target.
+    // Skip when a more specific handler already records the edit (e.g. textInQuad
+    // labels record via setQuadLabel).
+    pc.on('text:editing:exited', function (e) {
+        const t = e.target;
+        if (!t || !t.uid) return;
+        if (t.customData && t.customData.skipSetTextRecording) return;
+        recordScript(`setText(${JSON.stringify(t.uid)}, ${JSON.stringify(t.text)})`);
+    });
+
+    pc.on('object:modified', function (e) {
+        const t = e.target;
+        //console.log(t, "modified");
+        t._objects?.forEach(l => updateTreeItem(l, t.aCoords))
+        updateTreeItem(t);
+        // Record scale / rotate / vertex-edit (moves are already captured via mouse:up)
+        if (t.uid && e.action && e.action !== 'drag') {
+            const r2 = n => typeof n === 'number' ? Math.round(n * 100) / 100 : n;
+            if (t.customData && t.customData.type === 'textInQuad') {
+                recordScript(`reshapeQuad('${t.uid}', ${JSON.stringify(t.points)}, ${JSON.stringify(getActualProperties(t, true))})`);
+            } else if (t instanceof fabric.CurvableLine) {
+                // Store absolute scene coords so replay is independent of any prior body-drag.
+                const sceneOf = (px, py) => new fabric.Point(px - t.pathOffset.x, py - t.pathOffset.y)
+                    .transform(t.calcTransformMatrix());
+                const s1 = sceneOf(t.x1, t.y1), s2 = sceneOf(t.x2, t.y2), sc = sceneOf(t.cx, t.cy);
+                recordScript(`reshapeLine('${t.uid}', [${r2(s1.x)},${r2(s1.y)},${r2(s2.x)},${r2(s2.y)}], ${r2(sc.x)}, ${r2(sc.y)})`);
+            } else if (t instanceof fabric.Line) {
+                // fabric.Line / LineArrow (tree connectors): record raw endpoints.
+                recordScript(`reshapeLineXY('${t.uid}', ${r2(t.x1)}, ${r2(t.y1)}, ${r2(t.x2)}, ${r2(t.y2)})`);
+            } else {
+                recordScript(`animate('${t.uid}', ${JSON.stringify(getActualProperties(t, true))}, {})`);
+            }
+        }
+    });
+
+    $('#drawing-mode-options').hide();
+    $('#toolbar1-buttons').hide();
+
+    oc.on('mouse:up', function (e) {
+        $('#drawing-mode-options').hide();
+        $('#toolbar1-buttons').hide();
+    })
+
+    // Record freehand drawings
+    oc.on('path:created', function (e) {
+        if (e.path) {
+            const path = e.path;
+
+            // Ensure path has a UID for tracking
+            if (!path.uid) {
+                path.uid = semanticUid('path');
+            }
+
+            // Add to undo manager (only if not performing undo/redo action)
+            if (window.undoManager && !window.undoManager.isPerformingAction) {
+                window.undoManager.push(Commands.addPath(oc, path));
+            }
+
+            // Record for playback (if recording is active)
+            if (window.recordScriptFn) {
+                const pathData = {
+                    left: path.left,
+                    top: path.top,
+                    fill: path.fill,
+                    stroke: path.stroke,
+                    strokeWidth: path.strokeWidth,
+                    strokeLineCap: path.strokeLineCap,
+                    strokeLineJoin: path.strokeLineJoin,
+                    strokeDashArray: path.strokeDashArray,
+                    opacity: path.opacity,
+                    scaleX: path.scaleX || 1,
+                    scaleY: path.scaleY || 1,
+                    angle: path.angle || 0,
+                    uid: path.uid
+                };
+
+                recordScript(`oc.add(createFreehandPath('${path.path}', ${JSON.stringify(pathData)}));`);
+            }
+        }
+    });
+
+    // Ensure drawing only works when overlay canvas is in front
+    function updateDrawingState() {
+        if (window._penToolActive && window.oc) {
+            if (window.layerOnFront === 'oc') {
+                window.oc.isDrawingMode = true;
+            } else {
+                window.oc.isDrawingMode = false;
+            }
+        }
+    }
+
+    // Override moveToFront to control drawing mode
+    const originalMoveToFront = window.moveToFront;
+    window.moveToFront = function(layer) {
+        originalMoveToFront(layer);
+        updateDrawingState();
+    };
+    pc.on('mouse:up', function (e) {
+        $('#drawing-mode-options').hide();
+        $('#toolbar1-buttons').hide();
+
+        if (!e.e) e.e = {}
+        if (!e.e.clientX) e.e.clientX = 10;
+        if (!e.e.clientY) e.e.clientY = 10;
+
+        if (window.insertText) {
+            let opts_ = {
+                top: e.e.clientY,
+                left: e.e.clientX
+            };
+            opts_.uid = semanticUid('textbox')
+            const tb = textbox(opts_)
+            pc.add(tb)
+            let id = tb.uid
+            recordScript(`_['${id}'] = textbox(${JSON.stringify(opts_)}); pc.add(_['${id}']); `)
+            pc.setActiveObject(tb)
+            _.textboxes.push(tb)
+            window.insertText = false;
+        }
+        if (window.insertSmallText) {
+            let opts = {
+                top: e.e.clientY,
+                left: e.e.clientX,
+                width: 25
+            };
+            opts.uid = semanticUid('textbox')
+            let tb = textbox(opts)
+            pc.add(tb)
+            pc.setActiveObject(tb)
+            _.textboxes.push(tb)
+            let id = tb.uid
+            recordScript(`_['${id}'] = textbox(${JSON.stringify(opts)}); pc.add(_['${id}']); `)
+            window.insertSmallText = false;
+        }
+        if (window.signalMatexInsertion) {
+            window.signalMatexInsertion = false;
+            window.matexInsertionPoint = {
+                top: e.e.clientY,
+                left: e.e.clientX
+            }
+            document.getElementById('mathjaxDialog').style.display = 'block';
+        }
+        if (window.signalImageInsertion) {
+            window.signalImageInsertion = false;
+            $('#imageInputDialog').show();
+        }
+
+        if (window.insertRectText) {
+            window.insertRectText = false;
+            const text = prompt('Enter text')
+            if (!text) return;
+            let optsText = {}
+            let optsRect = {}
+            let x = e.e.clientX;
+            let y = e.e.clientY;
+            let id = semanticUid('textrect');
+            const tb = textInRect(text, x, y, optsText, optsRect, id)
+            tb.hasControls = false;
+            pc.add(tb)
+
+            recordScript(`_['${id}'] = textInRect(${JSON.stringify(text)}, ${x}, ${y}, ${JSON.stringify(optsText)}, ${JSON.stringify(optsRect)}, '${id}'); pc.add(_['${id}']);`)
+        }
+
+        if (window.insertArray) {
+            window.insertArray = false;
+            var text = prompt('Enter text')
+            if (!text) return;
+
+            const ar = showArray(text.split(','), e.e.clientX, e.e.clientY, pc, {});
+            pc.getObjects().forEach(o => o.hasControls = false);
+        }
+
+        if (window.arrowButtonClicked) {
+            if (window.arrowButtonClicked.first) {
+                const a = window.arrowButtonClicked.first;
+                let x1 = a.x;
+                let y1 = a.y;
+                let x2 = e.e.clientX;
+                let y2 = e.e.clientY;
+                let opts_ = {
+                    stroke: ($('#drawing-color').val() || 'black')
+                };
+                opts_.uid = semanticUid('arrow')
+                let arrow_ = arrow(x1, y1, x2, y2, opts_);
+                pc.add(arrow_)
+                window.arrowButtonClicked = null;
+                let id = arrow_.uid
+                recordScript(`_['${id}'] = arrow(${x1}, ${y1}, ${x2}, ${y2}, ${JSON.stringify(opts_)}); pc.add(_['${id}']);`)
+            } else {
+                window.arrowButtonClicked.first = {
+                    x: e.e.clientX,
+                    y: e.e.clientY
+                }
+            }
+        }
+    })
+    const mapping = {
+        'l': 'clear-canvas',
+        'Delete': 'delete-selected',
+        'Backspace': 'delete-selected',
+        'd': 'flip-drawing',
+        'T': 'create-text',
+        'h': 'hide',
+        'b': 'bluen',
+        'e': 'execute-next',
+        'w': 'whiten'
+    };
+
+    $(document).keydown(e => {
+        const selectedObj = pc.getActiveObject()
+        const selectedObjId = selectedObj?.uid;
+
+        if ($('.commands-select').is(":focus") || window.commandSelectionIsGoingOn) {
+            console.log('select is in focus. returning.')
+        }
+        if (e.keyCode === 32 && e.target === document.body) {
+            e.preventDefault();
+        }
+
+        if (document.getElementById('mathjaxDialog').style.display === 'block') return false;
+        if (selectedObj?.type === 'textbox' && selectedObj.isEditing) return;
+
+        // Escape: stop any in-flight anim/spotlight first, then release tool.
+        if (e.key === 'Escape') {
+            if (window._activeAnim) {
+                stopActiveAnim();
+            } else {
+                if (typeof stopAnim === 'function') stopAnim();
+            }
+            if (window.toolManager) window.toolManager.activate('select');
+            return;
+        }
+
+        // --- Enhanced keyboard shortcuts ---
+        // Undo: Ctrl+Z
+        if (e.key === 'z' && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
+            e.preventDefault();
+            undoManager.undo();
+            return;
+        }
+        // Redo: Ctrl+Shift+Z or Ctrl+Y
+        if ((e.key === 'z' && (e.ctrlKey || e.metaKey) && e.shiftKey) ||
+            (e.key === 'y' && (e.ctrlKey || e.metaKey))) {
+            e.preventDefault();
+            undoManager.redo();
+            return;
+        }
+        // Select all: Ctrl+A
+        if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            pc.discardActiveObject();
+            const objs = pc.getObjects().filter(o => o.selectable !== false);
+            if (objs.length > 0) {
+                const sel = new fabric.ActiveSelection(objs, { canvas: pc });
+                pc.setActiveObject(sel);
+                pc.requestRenderAll();
+            }
+            return;
+        }
+        // Group: Ctrl+G
+        if (e.key === 'g' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            group(pc);
+            return;
+        }
+        // Tool hotkeys (only when no text editing and no modifier keys)
+        if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+            switch (e.key.toLowerCase()) {
+                case 'v': toolManager.activate('select'); return;
+                case 'h': if (!selectedObj) { toolManager.activate('hand'); return; } break;
+                case 'p': toolManager.activate('pen'); return;
+                case 's': if (!selectedObj) { toolManager.activate('rect'); return; } break;
+                case 'n': toolManager.activate('sticky'); return;
+                case 'g': gridManager.toggle(); return;
+            }
+        }
+        // Zoom canvas when no object selected: +/-
+        if (!selectedObj && (e.key === '=' || e.key === '+') && !e.ctrlKey) {
+            viewportManager.zoomToPoint({x: innerWidth/2, y: innerHeight/2}, viewportManager.zoom * 1.2);
+            return;
+        }
+        if (!selectedObj && e.key === '-' && !e.ctrlKey) {
+            viewportManager.zoomToPoint({x: innerWidth/2, y: innerHeight/2}, viewportManager.zoom * 0.8);
+            return;
+        }
+        // Ctrl+0: Reset zoom
+        if (e.key === '0' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            viewportManager.resetView();
+            return;
+        }
+
+        if (mapping[e.key]) $("#" + mapping[e.key]).click()
+
+        if (e.keyCode === 187 && selectedObj) { //zoom in selected
+            if(selectedObj.treeConnection) {
+                recordScript(`expandTreeItems('${selectedObjId}')`)
+                expandTreeItems(selectedObj)
+            } else {
+                recordScript(`zoomSelectedObject('${selectedObjId}', true)`)
+                zoomSelectedObject(selectedObj, true)
+            }
+        }
+
+        if (e.keyCode === 189 && selectedObj) { //zoom out selected
+            if(selectedObj.treeConnection) {
+                recordScript(`collapseTreeItems('${selectedObjId}')`)
+                collapseTreeItems(selectedObj)
+            } else {
+                recordScript(`zoomSelectedObject('${selectedObjId}', false)`)
+                zoomSelectedObject(selectedObj, false)
+            }
+        }
+
+        if (e.key === 't') {
+            // The legacy #makeTree / #create-small-text buttons were removed
+            // from the toolbar; call the underlying handlers directly.
+            if (selectedObj) {
+                if (typeof onMakeTreeClick === 'function') onMakeTreeClick();
+            } else {
+                window.insertSmallText = true;
+                if (typeof turnOffDrawing === 'function') turnOffDrawing();
+            }
+        }
+        if (e.key === 'r') {
+            $('#horizRuler').toggle()
+            $('#vertRuler').toggle()
+        }
+        if (e.key === 'h') {
+            hideObject(selectedObj)
+            recordScript(`hideObject('${selectedObjId}')`)
+        }
+        if(e.key === 'i' && e.ctrlKey) {
+            $('#inspector-dialog').dialog({
+                width: 400,
+                height: 400,
+            })
+        }
+        if(e.key === 'c' && e.ctrlKey) {
+            const  selected = pc.getActiveObject()
+            if(selected) {
+                window.nodeContents = window.nodeContents || {};
+                const content = window.nodeContents[selected.uid] || ''
+                CKEDITOR.instances['node-content-editor'].setData(content)
+                $('#node-content-holder').show()
+                let $editContentCheckbox = $('#editContentCheckbox')[0];
+                $editContentCheckbox.checked = false
+                updateNodeContentAsPerCheckbox($editContentCheckbox)
+            }
+        }
+        if (e.keyCode === 32) {
+            // toggleRecording()
+        }
+
+        if (e.keyCode === 46) {
+            $('#delete-selected').click()
+        }
+        switch (e.keyCode) {
+            case 37: //left
+                if (selectedObj) moveActiveObject('left', -10)
+                else {
+                    if (window.playingMode) {
+                        stopPlayback = true
+                        playerTimer -= 10
+                        if (playerTimer < playerTimerStart) playerTimer = playerTimerStart;
+                        $('#recording-info').html('Jumped To: ' + playerTimer)
+                    }
+                }
+                break
+            case 67:
+                if (e.ctrlKey) copy(pc)
+                break;
+            case 86:
+                if (e.ctrlKey) paste(pc)
+                break;
+            case 39: //right
+                if (selectedObj) moveActiveObject('left', 10)
+                else {
+                    if (window.playingMode) {
+                        stopPlayback = true
+                        playerTimer += 10
+                        if (playerTimer > playerTimerTotal) playerTimer = playerTimerTotal;
+                        $('#recording-info').html('Jumped To: ' + playerTimer)
+                    }
+                }
+                break
+            case 40: //down
+                moveActiveObject('top', 10)
+                break
+            case 38: //up
+                moveActiveObject('top', -10)
+                break
+            case 69: //'e'
+                editSelectedObject()
+                break
+            case 188: //Comma,
+                if (e.ctrlKey)
+                    moveToFront('pc')
+                break
+            case 190: //Dot.
+                if (e.ctrlKey)
+                    moveToFront('oc')
+                break
+            case 84: //t
+                if (e.ctrlKey) {
+                    e.preventDefault()
+                    moveToFront('txt')
+                }
+                return false
+            default:
+                break
+        }
+    })
+</script>
+
+
+<div id="imageInputDialog"
+     style="background: blue; color: white; display: none; z-index: 500000;position: absolute;left: 30%;top: 30%;width: 400px;height: 400px;border: 1px solid black;padding: 1%;">
+    <input autofocus type="text" id="imageInputUrl" onkeyup="renderMath(event)">
+
+    <input type="file" id="imageInputFile">
+
+    <button onclick="handleImageInputDialogButtons('OK')">OK</button>
+    <button onclick="handleImageInputDialogButtons('')">Close</button>
+</div>
+
+<!-- Clear Before Play Dialog -->
+<div id="clearBeforePlayDialog" style="display:none;position:fixed;inset:0;z-index:9999998;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;">
+    <div style="background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.35);min-width:320px;padding:18px 22px;font-family:system-ui,sans-serif;">
+        <div style="font-weight:600;font-size:14px;margin-bottom:12px;">Clear before playing?</div>
+        <label style="display:block;margin:6px 0;font-size:13px;"><input type="checkbox" id="clearBeforePlay-pc" checked> Player canvas</label>
+        <label style="display:block;margin:6px 0;font-size:13px;"><input type="checkbox" id="clearBeforePlay-oc" checked> Overlay drawings</label>
+        <label style="display:block;margin:6px 0;font-size:13px;"><input type="checkbox" id="clearBeforePlay-txt" checked> Text layer</label>
+        <div style="margin-top:14px;display:flex;gap:8px;justify-content:flex-end;">
+            <button onclick="closeClearBeforePlayDialog()" style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:12px;cursor:pointer;">Cancel</button>
+            <button onclick="confirmClearAndPlayStepwise()" style="padding:4px 10px;border:1px solid #1976D2;border-radius:4px;background:#fff;color:#1976D2;font-size:12px;cursor:pointer;">&#9197; Play Stepwise</button>
+            <button onclick="confirmClearAndPlay()" style="padding:4px 10px;border:1px solid #2e7d32;border-radius:4px;background:#2e7d32;color:#fff;font-size:12px;cursor:pointer;">&#9654; Play</button>
+        </div>
+    </div>
+</div>
+
+<!-- Stepwise Playback Panel -->
+<div id="stepwisePlayDialog" style="display:none;position:fixed;right:20px;bottom:20px;z-index:9999998;background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.35);width:520px;max-height:60vh;flex-direction:column;font-family:system-ui,sans-serif;border:1px solid #ddd;">
+    <div style="background:#f5f5f5;border-bottom:1px solid #ddd;padding:10px 14px;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-weight:600;font-size:13px;color:#333;">&#9197; Stepwise &mdash; <span id="stepwiseIndex">0</span> / <span id="stepwiseTotal">0</span></span>
+        <button onclick="closeStepwiseDialog()" style="border:none;background:transparent;font-size:18px;cursor:pointer;line-height:1;" title="Close">&times;</button>
+    </div>
+    <div id="stepwiseLines" style="overflow:auto;padding:8px 12px;font-family:ui-monospace,Menlo,monospace;font-size:11px;flex:1;background:#fafafa;border-bottom:1px solid #eee;max-height:40vh;"></div>
+    <div style="padding:10px 14px;display:flex;gap:8px;justify-content:flex-end;align-items:center;">
+        <span id="stepwiseStatus" style="font-size:11px;color:#888;margin-right:auto;"></span>
+        <button onclick="stepwiseRunToEnd()" style="padding:5px 12px;border:1px solid #1976D2;border-radius:4px;background:#fff;color:#1976D2;font-size:12px;cursor:pointer;">&#9654; Run to End</button>
+        <button id="stepwiseNextBtn" onclick="stepwiseNext()" style="padding:5px 12px;border:1px solid #2e7d32;border-radius:4px;background:#2e7d32;color:#fff;font-size:12px;cursor:pointer;">&#9193; Next</button>
+    </div>
+</div>
+
+<!-- Script Viewer / Editor Dialog -->
+<div id="scriptViewerDialog" style="display:none;position:fixed;inset:0;z-index:9999998;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;">
+    <div style="background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.35);width:96vw;height:94vh;display:flex;flex-direction:column;font-family:system-ui,sans-serif;">
+        <div style="background:#f5f5f5;border-bottom:1px solid #ddd;padding:12px 16px;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-weight:600;font-size:14px;color:#333;">&#128196; Recorded Script</span>
+            <div style="display:flex;gap:8px;">
+                <button onclick="playScriptFromDialog()" style="padding:4px 10px;border:1px solid #2e7d32;border-radius:4px;background:#2e7d32;color:#fff;font-size:12px;cursor:pointer;">&#9654; Play</button>
+                <button onclick="exportScript()" style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:12px;cursor:pointer;">Export</button>
+                <button onclick="$('#importDialog').show()" style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:12px;cursor:pointer;">Import</button>
+                <button onclick="clearScriptDialog()" style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:12px;cursor:pointer;">Clear</button>
+                <button onclick="copyScriptDialog()" style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:12px;cursor:pointer;">Copy All</button>
+                <button onclick="saveScriptEdits()" style="padding:4px 10px;border:1px solid #1976D2;border-radius:4px;background:#1976D2;color:#fff;font-size:12px;cursor:pointer;">Save Edits</button>
+                <button onclick="closeScriptDialog()" style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:12px;cursor:pointer;font-size:16px;line-height:1;">&times;</button>
+            </div>
+        </div>
+        <div style="padding:12px 16px;font-size:11px;color:#888;border-bottom:1px solid #eee;">
+            Each line is one recorded operation. Edit freely — click <em>Save Edits</em> to apply changes back to the recording.
+        </div>
+        <div id="scriptViewerEditor" style="flex:1;min-height:350px;width:100%;"></div>
+        <div style="padding:10px 16px;background:#f9f9f9;border-top:1px solid #eee;border-radius:0 0 10px 10px;font-size:11px;color:#aaa;">
+            <span id="scriptLineCount">0 lines</span>
+        </div>
+    </div>
+</div>
+
+<div id="importDialog"
+     style="background: blue; color: white; display: none; z-index: 9999999;position: absolute;left: 30%;top: 30%;width: 400px;height: 400px;border: 1px solid black;padding: 1%;">
+    <input type="file" id="importInputFile">
+
+    <button onclick="handleImportDialogButtons('OK')">OK</button>
+    <button onclick="handleImportDialogButtons('')">Close</button>
+</div>
+
+<div id="mathjaxDialog" style="">
+    <script>
+        function renderMath(e) {
+            if (e.keyCode == 13) {
+                const pt = window.matexInsertionPoint || { left: 100, top: 100 };
+                addMath(document.getElementById('mathtext').value, pt.left, pt.top);
+                document.getElementById('mathjaxDialog').style.display = 'none';
+            } else if (e.keyCode == 27) {
+                document.getElementById('mathjaxDialog').style.display = 'none';
+            } else {
+                document.getElementById('representation').innerHTML = "\\(" + document.getElementById('mathtext').value + "\\)";
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'representation']);
+            }
+        }
+    </script>
+    <input autofocus type="text" id="mathtext" onkeyup="renderMath(event)">
+
+    <div id="representation" style="margin-top: 20; padding: 15;"></div>
+
+    <div class="keyboard">
+        <div class="key letter">
+            0
+        </div>
+        <div class="key letter">
+            1
+        </div>
+        <div class="key letter">
+            2
+        </div>
+        <div class="key letter">
+            3
+        </div>
+        <div class="key letter">
+            4
+        </div>
+        <div class="key letter">
+            5
+        </div>
+        <div class="key letter">
+            6
+        </div>
+        <div class="key letter">
+            7
+        </div>
+        <div class="key letter">
+            8
+        </div>
+        <div class="key letter">
+            9
+        </div>
+        <div class="key letter">
+            +
+        </div>
+        <div class="key letter">
+            -
+        </div>
+        <div class="key letter">
+            *
+        </div>
+        <div class="key letter">
+            /
+        </div>
+        <div class="key letter">
+            (
+        </div>
+        <div class="key letter">
+            )
+        </div>
+        <div class="key letter" data-mathjax="\{">
+            {
+        </div>
+        <div class="key letter" data-mathjax="\}">
+            }
+        </div>
+        <div class="key letter">
+            [
+        </div>
+        <div class="key letter">
+            ]
+        </div>
+        <div class="key letter">
+            ^
+        </div>
+        <div class="key letter">
+            !
+        </div>
+        <div class="key letter">
+            @
+        </div>
+        <div class="key letter" data-mathjax="\#">
+            #
+        </div>
+        <div class="key letter">
+            $
+        </div>
+        <div class="key letter" data-mathjax="\%">
+            %
+        </div>
+        <div class="key letter" data-mathjax="\&">
+            &
+        </div>
+        <div class="key letter">
+            ?
+        </div>
+        <div class="key letter">
+            =
+        </div>
+        <div class="key letter">
+            /
+        </div>
+
+        <div class="key letter">
+            \
+        </div>
+        <div class="key letter">
+            ~
+        </div>
+        <div class="key letter" data-mathjax="\alpha ">
+            &alpha;
+        </div>
+        <div class="key letter" data-mathjax="\beta ">
+            &beta;
+        </div>
+        <div class="key letter" data-mathjax="\gamma ">
+            &gamma;
+        </div>
+        <div class="key letter" data-mathjax="\Gamma ">
+            &Gamma;
+        </div>
+        <div class="key letter" data-mathjax="\delta ">
+            &delta;
+        </div>
+        <div class="key letter" data-mathjax="\Delta ">
+            &Delta;
+        </div>
+        <div class="key letter" data-mathjax="\epsilon ">
+            &epsilon;
+        </div>
+
+
+        <input type="text" list="mathjaxFunctions" id="mathjaxFunctionInput" onchange="insertMathFromSelect(this)" style="margin-top: 10px;"/>
+        <datalist id="mathjaxFunctions">
+            <option value="\infty">Infinity</option>
+
+            <option value="\sum {}">sum</option>
+            <option value="\text {}">text</option>
+
+            <option value="\forall">forall</option>
+            <option value="\exists">exists</option>
+            <option value="\lor">or</option>
+            <option value="\land">and</option>
+            <option value="\pm">plus minus</option>
+            <option value="\neq">not equal</option>
+            <option value="\geq">greater eq</option>
+            <option value="\ll">much less</option>
+            <option value="\gg">much greater</option>
+            <option value="\approx">approx</option>
+            <option value="\supset">proper superset</option>
+            <option value="\supseteq">superset</option>
+            <option value="\subset">proper subset</option>
+            <option value="\subseteq">subset</option>
+            <option value="\emptyset">empty set</option>
+            <option value="\cup"> union</option>
+            <option value="\cap"> intersection</option>
+
+            <option value="\hat { }"> hat</option>
+            <option value="\sqrt[root]{ }"> square root</option>
+            <option value="\partial"> partial</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
+            <option value="\cap"> intersection</option>
+
+
+            <option value="\frac { }{ }">Fraction</option>
+            <option value="\in">In</option>
+            <option value="\left">Left</option>
+            <option value="\right">Right</option>
+            <option value="\overbrace {}">Overbrace</option>
+            <option value="\underbrace {}">Underbrace</option>
+
+            <option value="\boldsymbol">Bold</option>
+
+        </datalist>
+    </div>
+
+    <script type="text/javascript">
+        function insertMathFromSelect(el) {
+
+        }
+
+        function insertAtCursor(myField, myValue) {
+            //IE support
+            if (document.selection) {
+                myField.focus();
+                sel = document.selection.createRange();
+                sel.text = myValue;
+            }
+            //MOZILLA and others
+            else if (myField.selectionStart || myField.selectionStart == '0') {
+                const startPos = myField.selectionStart;
+                const endPos = myField.selectionEnd;
+                myField.value = myField.value.substring(0, startPos)
+                    + myValue
+                    + myField.value.substring(endPos, myField.value.length);
+                myField.selectionStart = startPos + myValue.length;
+                myField.selectionEnd = startPos + myValue.length;
+            } else {
+                myField.value += myValue;
+            }
+
+            myField.focus();
+        } //end function
+
+
+        $('.keyboard .key').click(e => {
+            const key = $(e.target).text().trim();
+            insertAtCursor($('#mathtext')[0], $(e.target).data('mathjax') || key);
+
+        });
+
+        $('#mathjaxFunctionInput').keyup(e => {
+
+            if (e.keyCode == 13) {
+                insertAtCursor($('#mathtext')[0], $(e.target).val());
+            }
+
+        });
+
+    </script>
+</div>
+</div>
+
+<script>
+    //applyBlackTheme();
+    $('#cinemaText').draggable();
+
+    //---------------------------Screen Recording
+    function startCapture(displayMediaOptions) {
+        let captureStream = null;
+
+        return navigator.mediaDevices.getDisplayMedia(displayMediaOptions)
+            .catch(err => {
+                console.error("Error:" + err);
+                return null;
+            });
+    }
+
+    function stopCapture(evt) {
+        let tracks = videoElem.srcObject.getTracks();
+
+        tracks.forEach(track => track.stop());
+        videoElem.srcObject = null;
+    }
+
+
+    //let start = document.getElementById('btnStart');
+    //let stop = document.getElementById('btnStop');
+    //let vidSave = document.getElementById('vid2');
+
+    window.mediaRecorder = null
+    window.recordingChunks = []
+
+    $('#btnStart').on('click', (ev) => {
+        if (window.mediaRecorder) {
+            window.mediaRecorder.stop()
+            window.mediaRecorder = null;
+            window.recordingChunks = []
+        }
+        startCapture({
+            video: true,
+            audio: true
+        }).then(mediaStreamObj => {
+            window.mediaRecorder = new MediaRecorder(mediaStreamObj);
+            window.mediaRecorder.start();
+            $("#btnStart").hide();
+            $("#btnStop").show();
+            $("#btnPause").show();
+            console.log(window.mediaRecorder.state);
+
+            window.mediaRecorder.ondataavailable = function (ev) {
+                window.recordingChunks.push(ev.data);
+            };
+            window.mediaRecorder.onstop = (ev) => {
+                let blob = new Blob(window.recordingChunks, {'type': window.recordingChunks[0].type});
+                console.log("type=" + window.recordingChunks[0].type)
+                window.recordingChunks = [];
+                const videoURL = window.URL.createObjectURL(blob);
+//            vidSave.src = videoURL;
+                //window.location.replace(videoURL)
+                const link = document.createElement("a"); // Or maybe get it from the current document
+                link.href = videoURL;
+                link.target = "_blank"
+                link.download = "aDefaultFileName.webm";
+                link.innerHTML = "Click here to download the file";
+
+                link.style.position = 'fixed';
+                link.style.bottom = 0;
+                link.style.zIndex = 9000;
+                document.body.appendChild(link);
+            }
+        });
+    });
+
+    $("#btnPause").click(e => {
+        if (window.mediaRecorder) {
+            window.mediaRecorder.pause()
+            console.log(window.mediaRecorder.state);
+            $("#btnPause").hide();
+            $("#btnResume").show();
+        }
+    });
+
+    $("#btnResume").click(e => {
+        if (window.mediaRecorder) {
+            window.mediaRecorder.resume();
+            console.log(window.mediaRecorder.state);
+            $("#btnPause").show();
+            $("#btnResume").hide();
+        }
+    });
+
+
+    $('#btnStop').on('click', (ev) => {
+        if (window.mediaRecorder) window.mediaRecorder.stop();
+        console.log(mediaRecorder.state);
+        $("#btnStop").hide();
+        $("#btnPause").hide();
+        $("#btnResume").hide();
+        $("#btnStart").show();
+    });
+    canvas = pc;
+</script>
+
+<!-- Whiteboard Toolbar -->
+<div id="whiteboard-toolbar">
+    <button class="wb-tool active" data-tool="select" title="Select (V)" onclick="toolManager.activate('select')">
+        <i class="fas fa-mouse-pointer"></i>
+    </button>
+    <button class="wb-tool" data-tool="hand" title="Hand / Pan (H)" onclick="toolManager.activate('hand')">
+        <i class="fas fa-hand-paper"></i>
+    </button>
+    <button class="wb-tool" data-tool="pen" title="Pen (P)" onclick="toolManager.activate('pen')">
+        <i class="fas fa-pen"></i>
+    </button>
+    <div class="wb-tool" data-tool="shape" title="Shapes (S)" onclick="toggleShapeMenu()">
+        <i class="fas fa-shapes"></i>
+        <div class="wb-shape-menu" id="shape-menu">
+            <button onclick="event.stopPropagation(); toolManager.activate('rect'); closeShapeMenu()"><i class="fas fa-square"></i> </button>
+            <button onclick="event.stopPropagation(); toolManager.activate('circle'); closeShapeMenu()"><i class="fas fa-circle"></i> </button>
+            <button onclick="event.stopPropagation(); toolManager.activate('diamond'); closeShapeMenu()"><i class="fas fa-diamond"></i></button>
+            <button onclick="event.stopPropagation(); toolManager.activate('quad'); closeShapeMenu()" title="Tiltable quad (drag corners for 3D effect)"><i class="fas fa-vector-square"></i></button>
+            <button onclick="event.stopPropagation(); toolManager.activate('line'); closeShapeMenu()" title="Line (drag to draw; handles extend endpoints)"><i class="fas fa-minus"></i></button>
+        </div>
+    </div>
+    <button class="wb-tool" data-tool="sticky" title="Sticky Note (N)" onclick="toolManager.activate('sticky')">
+        <i class="fas fa-sticky-note"></i>
+    </button>
+    <button class="wb-tool" data-tool="text" title="Text (T)" onclick="toolManager.activate('text')">
+        <i class="fas fa-font"></i>
+    </button>
+    <button class="wb-tool" data-tool="connector" title="Connector (C)" onclick="toolManager.activate('connector')">
+        <i class="fas fa-project-diagram"></i>
+    </button>
+    <button class="wb-tool" data-tool="eraser" title="Eraser (E)" onclick="toolManager.activate('eraser')">
+        <i class="fas fa-eraser"></i>
+    </button>
+    <button class="wb-tool" title="Add Label to Shape" onclick="openLabelPicker()">
+        <i class="fas fa-tag"></i>
+    </button>
+    <div class="wb-separator"></div>
+    <button class="wb-tool" title="Undo (Ctrl+Z)" onclick="undoManager.undo()">
+        <i class="fas fa-undo"></i>
+    </button>
+    <button class="wb-tool" title="Redo (Ctrl+Y)" onclick="undoManager.redo()">
+        <i class="fas fa-redo"></i>
+    </button>
+    <div class="wb-separator"></div>
+    <button class="wb-tool" title="Toggle Grid (G)" onclick="gridManager.toggle()">
+        <i class="fas fa-th"></i>
+    </button>
+</div>
+
+<!-- Zoom Controls -->
+<div id="zoom-controls">
+    <button onclick="viewportManager.zoomToPoint({x: innerWidth/2, y: innerHeight/2}, viewportManager.zoom * 1.2)" title="Zoom In">+</button>
+    <span id="zoom-level">100%</span>
+    <button onclick="viewportManager.zoomToPoint({x: innerWidth/2, y: innerHeight/2}, viewportManager.zoom * 0.8)" title="Zoom Out">-</button>
+    <button onclick="viewportManager.fitToContent()" title="Fit to Content" style="font-size: 11px;">Fit</button>
+    <button onclick="viewportManager.resetView()" title="Reset Zoom" style="font-size: 11px;">1:1</button>
+</div>
+
+<!-- Minimap -->
+<div id="minimap-container">
+    <canvas id="minimap" width="180" height="120"></canvas>
+</div>
+
+<!-- Property Panel -->
+<div id="property-panel">
+    <div class="prop-header">Properties</div>
+    <div id="prop-shape-section">
+        <div class="prop-row">
+            <label>Fill</label>
+            <input type="color" id="prop-fill" value="#333333" onchange="applyProperty('fill', this.value)">
+        </div>
+        <div class="prop-row">
+            <label>Stroke</label>
+            <input type="color" id="prop-stroke" value="#000000" onchange="applyProperty('stroke', this.value)">
+        </div>
+        <div class="prop-row">
+            <label>Stroke W</label>
+            <input type="number" id="prop-stroke-width" value="1" min="0" max="50" step="0.5" style="width:60px;"
+                   onchange="applyProperty('strokeWidth', parseFloat(this.value))">
+        </div>
+        <div class="prop-row">
+            <label>Stroke Type</label>
+            <select id="prop-stroke-type" onchange="applyStrokeType(this.value)">
+                <option value="solid">Solid</option>
+                <option value="dashed">Dashed</option>
+                <option value="dotted">Dotted</option>
+                <option value="dash-dot">Dash-dot</option>
+                <option value="long-dash">Long dash</option>
+            </select>
+        </div>
+        <div class="prop-row">
+            <label>Opacity</label>
+            <input type="range" id="prop-opacity" min="0" max="1" step="0.1" value="1" oninput="applyProperty('opacity', parseFloat(this.value))">
+        </div>
+        <div class="prop-row prop-text-buttons">
+            <label>Layer</label>
+            <button class="prop-toggle" onclick="bringToFrontSelected()" title="Bring to Front">
+                <i class="fas fa-angles-up"></i>
+            </button>
+            <button class="prop-toggle" onclick="sendToBackSelected()" title="Send to Back">
+                <i class="fas fa-angles-down"></i>
+            </button>
+        </div>
+        <div class="prop-row">
+            <label>Animate</label>
+            <select id="prop-anim-type" style="flex:1;">
+                <option value="highlight">Highlight (zoom)</option>
+                <option value="spotlight">Spotlight (auto)</option>
+                <option value="spotlight:circle">Spotlight (circle)</option>
+                <option value="spotlight:rect">Spotlight (rect)</option>
+            </select>
+            <button id="prop-anim-toggle" class="prop-toggle" onclick="toggleSelectedAnim()" title="Start/Stop animation">&#9654; Start</button>
+        </div>
+    </div>
+    <!-- Media section -->
+    <div class="prop-section-divider"></div>
+    <div class="prop-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+        <label style="margin-bottom:0;">Media URL</label>
+        <input type="text" id="prop-media-url" placeholder="https://..."
+               style="width:100%;box-sizing:border-box;font-size:11px;padding:3px 5px;border:1px solid #ddd;border-radius:4px;"
+               onchange="applyMediaData()">
+    </div>
+    <div class="prop-row">
+        <label>Type</label>
+        <select id="prop-media-type" onchange="applyMediaData()" style="flex:1;">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+        </select>
+        <button onclick="openMediaOverlay()" title="Open media"
+                style="padding:3px 8px;font-size:12px;border:1px solid #ddd;border-radius:4px;background:#f5f5f5;cursor:pointer;white-space:nowrap;">&#9654; Open</button>
+    </div>
+    <!-- Text formatting section (shown only for text/label objects) -->
+    <div id="prop-text-section" style="display:none;">
+        <div class="prop-section-divider"></div>
+        <div class="prop-row">
+            <label>Color</label>
+            <input type="color" id="prop-text-color" value="#222222" onchange="applyTextFill(this.value)">
+        </div>
+        <div class="prop-row">
+            <label>Size</label>
+            <input type="number" id="prop-font-size" value="13" min="6" max="120" step="1"
+                   onchange="applyProperty('fontSize', parseInt(this.value))">
+        </div>
+        <div class="prop-row prop-text-buttons">
+            <button id="prop-bold" class="prop-toggle" onclick="toggleTextProp('fontWeight', 'bold', 'normal')" title="Bold">B</button>
+            <button id="prop-italic" class="prop-toggle" onclick="toggleTextProp('fontStyle', 'italic', 'normal')" title="Italic"><i>I</i></button>
+            <button id="prop-underline" class="prop-toggle" onclick="toggleTextProp('underline', true, false)" title="Underline"><u>U</u></button>
+        </div>
+        <div class="prop-row">
+            <label>Font</label>
+            <select id="prop-font-family" onchange="applyProperty('fontFamily', this.value)">
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Helvetica, sans-serif">Helvetica</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="Times New Roman, serif">Times</option>
+                <option value="Courier New, monospace">Courier</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="system-ui, sans-serif">System</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Tree Node Panel -->
+<div id="tree-node-panel">
+    <div class="prop-header">Tree Node</div>
+    <div class="prop-row">
+        <label style="width:100%;">Children &amp; Connections</label>
+    </div>
+    <div id="tree-children-list" style="margin:0 10px 8px 10px;display:flex;flex-direction:column;gap:4px;max-height:240px;overflow-y:auto;"></div>
+    <!-- legacy hidden select kept for getSelectedChildren() compat -->
+    <select id="tree-children-select" multiple style="display:none;"></select>
+    <div class="prop-row tree-node-buttons">
+        <button onclick="toggleSelectedTreeChildren()" title="Toggle visibility of selected children">Show/Hide</button>
+        <button onclick="deleteSelectedTreeChildren()" title="Delete selected connections" style="color:#c00;">Delete</button>
+    </div>
+    <div class="prop-row">
+        <label>Visibility</label>
+        <input type="range" id="tree-visibility-input" min="0" max="1" step="0.05" value="1"
+               oninput="applyVisibilityToSelectedChildren(parseFloat(this.value))">
+    </div>
+</div>
+
+<!-- Media Overlay -->
+<div id="media-overlay">
+    <button id="media-overlay-close" onclick="closeMediaOverlay()" title="Close">&times;</button>
+    <img id="media-overlay-img" src="" alt="" style="display:none;max-width:90vw;max-height:90vh;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+    <video id="media-overlay-video" controls style="display:none;max-width:90vw;max-height:90vh;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,0.5);"></video>
+</div>
+
+<!-- Context Menu -->
+<div id="wb-context-menu">
+    <div class="ctx-item" onclick="copy(pc); closeContextMenu()"><i class="fas fa-copy"></i> Copy <span class="shortcut">Ctrl+C</span></div>
+    <div class="ctx-item" onclick="paste(pc); closeContextMenu()"><i class="fas fa-paste"></i> Paste <span class="shortcut">Ctrl+V</span></div>
+    <div class="ctx-item" onclick="duplicateSelected(); closeContextMenu()"><i class="fas fa-clone"></i> Duplicate</div>
+    <div class="ctx-separator"></div>
+    <div class="ctx-item" onclick="deleteSelectedAndClose()"><i class="fas fa-trash"></i> Delete <span class="shortcut">Del</span></div>
+    <div class="ctx-item" onclick="openLabelPicker(); closeContextMenu()"><i class="fas fa-tag"></i> Add Label</div>
+    <div class="ctx-separator"></div>
+    <div class="ctx-item" onclick="bringToFrontSelected(); closeContextMenu()"><i class="fas fa-layer-group"></i> Bring to Front</div>
+    <div class="ctx-item" onclick="sendToBackSelected(); closeContextMenu()"><i class="fas fa-layer-group"></i> Send to Back</div>
+</div>
+
+<!-- Shape Label Position Picker -->
+<div id="label-picker">
+    <!-- Row 0: outside top -->
+    <div class="lp-empty"></div>
+    <div class="lp-cell" data-pos="outside-nw" title="Outside top-left">↖</div>
+    <div class="lp-cell" data-pos="outside-n"  title="Outside top">↑</div>
+    <div class="lp-cell" data-pos="outside-ne" title="Outside top-right">↗</div>
+    <div class="lp-empty"></div>
+    <!-- Row 1: inside top -->
+    <div class="lp-empty"></div>
+    <div class="lp-cell inside" data-pos="inside-nw" title="Inside top-left">⌜</div>
+    <div class="lp-cell inside" data-pos="inside-n"  title="Inside top">▲</div>
+    <div class="lp-cell inside" data-pos="inside-ne" title="Inside top-right">⌝</div>
+    <div class="lp-empty"></div>
+    <!-- Row 2: center (outside-w/e + inside center row) -->
+    <div class="lp-cell" data-pos="outside-w"     title="Outside left">←</div>
+    <div class="lp-cell inside" data-pos="inside-w"      title="Inside left">◄</div>
+    <div class="lp-cell inside" data-pos="inside-center" title="Inside center">●</div>
+    <div class="lp-cell inside" data-pos="inside-e"      title="Inside right">►</div>
+    <div class="lp-cell" data-pos="outside-e"     title="Outside right">→</div>
+    <!-- Row 3: inside bottom -->
+    <div class="lp-empty"></div>
+    <div class="lp-cell inside" data-pos="inside-sw" title="Inside bottom-left">⌞</div>
+    <div class="lp-cell inside" data-pos="inside-s"  title="Inside bottom">▼</div>
+    <div class="lp-cell inside" data-pos="inside-se" title="Inside bottom-right">⌟</div>
+    <div class="lp-empty"></div>
+    <!-- Row 4: outside bottom -->
+    <div class="lp-empty"></div>
+    <div class="lp-cell" data-pos="outside-sw" title="Outside bottom-left">↙</div>
+    <div class="lp-cell" data-pos="outside-s"  title="Outside bottom">↓</div>
+    <div class="lp-cell" data-pos="outside-se" title="Outside bottom-right">↘</div>
+    <div class="lp-empty"></div>
+</div>
+
+<script>
+    // --- Initialize whiteboard features ---
+    window.viewportManager = new ViewportManager([pc, oc], $('#textillateContainer'));
+    window.undoManager = new UndoManager();
+    window.toolManager = new ToolManager();
+    window.gridManager = new GridManager(pc);
+
+    // Update grid when viewport changes (pan/zoom)
+    pc.on('after:render', function() {
+        if (gridManager.enabled) {
+            gridManager.updateGrid();
+        }
+    });
+
+    // Update grid canvas size when window resizes
+    window.addEventListener('resize', function() {
+        if (window.gridCanvas && window.gridCtx) {
+            window.gridCanvas.width = window.innerWidth;
+            window.gridCanvas.height = window.innerHeight;
+            if (gridManager.enabled) {
+                gridManager.updateGrid();
+            }
+        }
+    });
+
+    // Pan/zoom
+    initWhiteboardPanZoom(viewportManager, pc);
+
+    // Minimap
+    viewportManager.initMinimap('minimap');
+
+    // Undo/redo integration
+    initUndoRedo(pc, undoManager, oc);
+
+    // Tools registration
+    registerTools(toolManager, pc, oc);
+
+    // Shape drawing
+    initShapeDrawingTool(pc, toolManager);
+
+    // Alignment guides
+    window.alignmentGuides = initAlignmentGuides(pc);
+
+    // Sticky note editing
+    enableStickyNoteEditing(pc);
+
+    // Sticky note + eraser handlers
+    initStickyAndEraserHandlers(pc, toolManager, undoManager);
+
+    // Shape label manager
+    window.shapeTextManager = new ShapeTextManager(pc);
+    shapeTextManager.attachToCanvas();
+
+    // Wire up label picker cells
+    document.querySelectorAll('#label-picker .lp-cell[data-pos]').forEach(cell => {
+        cell.addEventListener('click', function() {
+            const pos = this.dataset.pos;
+            const shape = pc.getActiveObject();
+            if (!shape) return;
+            shapeTextManager.addLabel(shape, pos);
+            document.getElementById('label-picker').classList.remove('visible');
+        });
+    });
+
+    function openLabelPicker() {
+        const shape = pc.getActiveObject();
+        if (!shape) return;
+        const picker = document.getElementById('label-picker');
+        // Position picker near the shape center on screen
+        const center = shape.getCenterPoint();
+        const vt = pc.viewportTransform;
+        const screenX = vt[0] * center.x + vt[4];
+        const screenY = vt[3] * center.y + vt[5];
+        picker.style.left = (screenX - 80) + 'px';
+        picker.style.top  = (screenY - 80) + 'px';
+        picker.classList.add('visible');
+    }
+
+    document.addEventListener('click', function(e) {
+        const picker = document.getElementById('label-picker');
+        if (picker && !e.target.closest('#label-picker') && !e.target.closest('.wb-tool[title="Add Label to Shape"]')) {
+            picker.classList.remove('visible');
+        }
+    });
+
+    // Grid snapping on move
+    pc.on('object:moving', function(e) {
+        gridManager.snapObject(e.target);
+    });
+
+    // Property panel show/hide
+    pc.on('selection:created', showPropertyPanel);
+    pc.on('selection:updated', showPropertyPanel);
+    pc.on('selection:cleared', function() {
+        document.getElementById('property-panel').classList.remove('visible');
+        document.getElementById('tree-node-panel').classList.remove('visible');
+    });
+
+    function isTextObject(obj) {
+        if (!obj) return false;
+        return obj.type === 'textbox' || obj.type === 'text' || obj.type === 'i-text' ||
+               (obj.customData && obj.customData.type === 'shapeLabel');
+    }
+
+    function showPropertyPanel(e) {
+        const obj = e.selected ? e.selected[0] : null;
+        if (!obj) return;
+        const panel = document.getElementById('property-panel');
+        panel.classList.add('visible');
+
+        const shapeSection = document.getElementById('prop-shape-section');
+        const textSection = document.getElementById('prop-text-section');
+        const isText = isTextObject(obj);
+        const isSticky = _isStickyNote(obj);
+        // Sticky notes are a Group(rect, textbox) — read the paper colour
+        // from customData/inner rect, and the text props from inner text.
+        const stickyInnerText = isSticky && typeof obj.getObjects === 'function'
+            ? obj.getObjects().find(o => o.type === 'textbox' || o.type === 'i-text' || o.type === 'text')
+            : null;
+        const stickyInnerRect = isSticky && typeof obj.getObjects === 'function'
+            ? obj.getObjects().find(o => o.type === 'rect')
+            : null;
+
+        // Shape properties: show for non-text objects (and for stickies —
+        // they expose paper colour + opacity but no stroke).
+        if (isText) {
+            shapeSection.style.display = 'none';
+        } else {
+            shapeSection.style.display = '';
+            if (isSticky) {
+                const paperFill = (obj.customData && obj.customData.color)
+                    || (stickyInnerRect && stickyInnerRect.fill)
+                    || '#FFE082';
+                document.getElementById('prop-fill').value = colorToHex(paperFill) || '#FFE082';
+                document.getElementById('prop-opacity').value = obj.opacity != null ? obj.opacity : 1;
+            } else {
+                document.getElementById('prop-fill').value = colorToHex(obj.fill) || '#333333';
+                document.getElementById('prop-stroke').value = colorToHex(obj.stroke) || '#000000';
+                document.getElementById('prop-stroke-width').value = obj.strokeWidth != null ? obj.strokeWidth : 1;
+                document.getElementById('prop-stroke-type').value = detectStrokeType(obj.strokeDashArray);
+                document.getElementById('prop-opacity').value = obj.opacity != null ? obj.opacity : 1;
+            }
+        }
+
+        // Tree node panel — only show when there are outgoing children
+        const _treeChildCount = (obj.treeConnection &&
+            obj.treeConnection.outgoing &&
+            obj.treeConnection.outgoing.lines &&
+            obj.treeConnection.outgoing.lines.length) || 0;
+        if (_treeChildCount > 0) {
+            showTreeNodePanel(obj);
+        } else {
+            document.getElementById('tree-node-panel').classList.remove('visible');
+        }
+
+        // Media fields — populate from customData
+        const _cd = obj.customData || {};
+        document.getElementById('prop-media-url').value = _cd.mediaUrl || '';
+        document.getElementById('prop-media-type').value = _cd.mediaType || 'image';
+
+        // Text section: show for text-like objects AND for sticky notes
+        // (so users can tune the inner textbox's font/colour/alignment).
+        const textSrc = isSticky ? stickyInnerText : (isText ? obj : null);
+        if (textSrc) {
+            textSection.style.display = '';
+            document.getElementById('prop-text-color').value = colorToHex(textSrc.fill) || '#222222';
+            document.getElementById('prop-font-size').value = textSrc.fontSize || 13;
+            document.getElementById('prop-bold').classList.toggle('active', textSrc.fontWeight === 'bold');
+            document.getElementById('prop-italic').classList.toggle('active', textSrc.fontStyle === 'italic');
+            document.getElementById('prop-underline').classList.toggle('active', !!textSrc.underline);
+            // Match font family in dropdown
+            const fontSelect = document.getElementById('prop-font-family');
+            const family = textSrc.fontFamily || 'Arial, sans-serif';
+            let matched = false;
+            for (let i = 0; i < fontSelect.options.length; i++) {
+                if (family.indexOf(fontSelect.options[i].value.split(',')[0]) >= 0) {
+                    fontSelect.selectedIndex = i;
+                    matched = true;
+                    break;
+                }
+            }
+            if (!matched) fontSelect.selectedIndex = 0;
+        } else {
+            textSection.style.display = 'none';
+        }
+    }
+
+    // Convert css color to hex for <input type="color">
+    function colorToHex(color) {
+        if (!color) return null;
+        if (color.charAt(0) === '#') {
+            // Ensure 7-char hex
+            if (color.length === 4) {
+                return '#' + color[1]+color[1] + color[2]+color[2] + color[3]+color[3];
+            }
+            return color.slice(0, 7);
+        }
+        // rgb(...) or named color -> use canvas trick
+        const ctx = document.createElement('canvas').getContext('2d');
+        ctx.fillStyle = color;
+        return ctx.fillStyle; // returns hex
+    }
+
+    // For sticky notes, the active object is a Group whose paper colour
+    // and text props live on inner children — route those through
+    // setStickyProp so the right child is mutated and replay can use the
+    // same helper.
+    function _isStickyNote(obj) {
+        return !!(obj && obj.customData && obj.customData.type === 'stickyNote');
+    }
+    function _stickyPropMap(prop) {
+        // Translate panel-level prop names to setStickyProp prop names.
+        // (Text colour input shares the 'fill' prop name with paper colour
+        // on the panel, but we know which one it was by the input id.)
+        return prop === 'fill-text' ? 'textFill' : prop;
+    }
+
+    function applyProperty(prop, value) {
+        const obj = pc.getActiveObject();
+        if (!obj) return;
+        if (_isStickyNote(obj)) {
+            const sp = _stickyPropMap(prop);
+            setStickyProp(obj, sp, value);
+            pc.requestRenderAll();
+            if (obj.uid) recordScript(`setStickyProp(${JSON.stringify(obj.uid)}, ${JSON.stringify(sp)}, ${JSON.stringify(value)})`);
+            return;
+        }
+        const prevState = {};
+        prevState[prop] = obj[prop];
+        obj.set(prop, value);
+        pc.requestRenderAll();
+        const newState = {};
+        newState[prop] = value;
+        undoManager.push(Commands.modifyObject(pc, obj, prevState, newState));
+        if (obj.uid) recordScript(`setProp('${obj.uid}', '${prop}', ${JSON.stringify(value)})`);
+    }
+
+    function applyTextFill(value) {
+        const obj = pc.getActiveObject();
+        if (!obj) return;
+        if (_isStickyNote(obj)) {
+            setStickyProp(obj, 'textFill', value);
+            pc.requestRenderAll();
+            if (obj.uid) recordScript(`setStickyProp(${JSON.stringify(obj.uid)}, "textFill", ${JSON.stringify(value)})`);
+            return;
+        }
+        // For plain text objects, "fill" IS the text colour.
+        applyProperty('fill', value);
+    }
+
+    function toggleTextProp(prop, onVal, offVal) {
+        const obj = pc.getActiveObject();
+        if (!obj) return;
+        const sticky = _isStickyNote(obj);
+        // For sticky notes, read current value from the inner textbox.
+        const innerText = sticky && typeof obj.getObjects === 'function'
+            ? obj.getObjects().find(o => o.type === 'textbox' || o.type === 'i-text' || o.type === 'text')
+            : null;
+        const current = sticky ? (innerText && innerText[prop]) : obj[prop];
+        const newValue = current === onVal ? offVal : onVal;
+        if (sticky) {
+            setStickyProp(obj, prop, newValue);
+            pc.requestRenderAll();
+            if (obj.uid) recordScript(`setStickyProp(${JSON.stringify(obj.uid)}, ${JSON.stringify(prop)}, ${JSON.stringify(newValue)})`);
+        } else {
+            const prevState = {};
+            prevState[prop] = current;
+            obj.set(prop, newValue);
+            pc.requestRenderAll();
+            const newState = {};
+            newState[prop] = newValue;
+            undoManager.push(Commands.modifyObject(pc, obj, prevState, newState));
+            if (obj.uid) recordScript(`setProp('${obj.uid}', '${prop}', ${JSON.stringify(newValue)})`);
+        }
+        // Update button state
+        if (prop === 'fontWeight') document.getElementById('prop-bold').classList.toggle('active', newValue === 'bold');
+        if (prop === 'fontStyle') document.getElementById('prop-italic').classList.toggle('active', newValue === 'italic');
+        if (prop === 'underline') document.getElementById('prop-underline').classList.toggle('active', !!newValue);
+    }
+
+    // ---- Stroke type helpers ----
+    const STROKE_DASH_PRESETS = {
+        solid:     null,
+        dashed:    [8, 5],
+        dotted:    [2, 5],
+        'dash-dot': [10, 5, 2, 5],
+        'long-dash': [20, 6]
+    };
+
+    function detectStrokeType(dashArray) {
+        if (!dashArray || dashArray.length === 0) return 'solid';
+        const len = dashArray.length;
+        if (len >= 4) return 'dash-dot';
+        const dash = dashArray[0], gap = dashArray[1];
+        if (dash <= 2) return 'dotted';
+        if (dash >= 18) return 'long-dash';
+        return 'dashed';
+    }
+
+    function applyStrokeType(type) {
+        const obj = pc.getActiveObject();
+        if (!obj) return;
+        const prev = obj.strokeDashArray ? [...obj.strokeDashArray] : null;
+        const value = STROKE_DASH_PRESETS[type] ? [...STROKE_DASH_PRESETS[type]] : null;
+        obj.set('strokeDashArray', value);
+        pc.requestRenderAll();
+        undoManager.push(Commands.modifyObject(pc, obj,
+            { strokeDashArray: prev }, { strokeDashArray: value }));
+        if (obj.uid) recordScript(`setProp('${obj.uid}', 'strokeDashArray', ${JSON.stringify(value)})`);
+    }
+
+    // ---- Media overlay ----
+    function applyMediaData() {
+        const obj = pc.getActiveObject();
+        if (!obj) return;
+        const cd = customData(obj);
+        cd.mediaUrl = document.getElementById('prop-media-url').value.trim();
+        cd.mediaType = document.getElementById('prop-media-type').value;
+        if (obj.uid) {
+            recordScript(`setCustomData('${obj.uid}', {mediaUrl: ${JSON.stringify(cd.mediaUrl)}, mediaType: ${JSON.stringify(cd.mediaType)}})`);
+        }
+    }
+
+    function openMediaOverlay() {
+        const obj = pc.getActiveObject();
+        if (!obj) return;
+        const cd = obj.customData || {};
+        const url = cd.mediaUrl;
+        if (!url) return;
+
+        const overlay = document.getElementById('media-overlay');
+        const img = document.getElementById('media-overlay-img');
+        const video = document.getElementById('media-overlay-video');
+
+        // Compute object center in screen/viewport coordinates
+        const vpt = pc.viewportTransform;
+        const center = obj.getCenterPoint();
+        const screenX = center.x * vpt[0] + vpt[4];
+        const screenY = center.y * vpt[3] + vpt[5];
+        const xPct = ((screenX / window.innerWidth) * 100).toFixed(2) + '%';
+        const yPct = ((screenY / window.innerHeight) * 100).toFixed(2) + '%';
+
+        // Set media content
+        const type = cd.mediaType || 'image';
+        if (type === 'video') {
+            img.style.display = 'none';
+            img.src = '';
+            video.src = url;
+            video.style.display = '';
+        } else {
+            video.style.display = 'none';
+            video.src = '';
+            img.src = url;
+            img.style.display = '';
+        }
+
+        // Animate from object centre outward
+        overlay.style.clipPath = `circle(0% at ${xPct} ${yPct})`;
+        overlay._closeOrigin = `${xPct} ${yPct}`;
+        overlay.style.display = 'flex';
+        // Force reflow so the initial clip-path is applied before transitioning
+        overlay.offsetHeight; // eslint-disable-line no-unused-expressions
+        overlay.style.clipPath = `circle(150% at ${xPct} ${yPct})`;
+    }
+
+    function closeMediaOverlay() {
+        const overlay = document.getElementById('media-overlay');
+        const origin = overlay._closeOrigin || '50% 50%';
+        overlay.style.clipPath = `circle(0% at ${origin})`;
+        overlay.addEventListener('transitionend', function handler() {
+            overlay.style.display = 'none';
+            const video = document.getElementById('media-overlay-video');
+            video.pause();
+            video.src = '';
+            overlay.removeEventListener('transitionend', handler);
+        }, { once: true });
+    }
+
+    // Close overlay on Escape key; open the script editor with Ctrl/Cmd+Shift+S.
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (document.getElementById('media-overlay').style.display === 'flex') {
+                closeMediaOverlay();
+            }
+            if (document.getElementById('scriptViewerDialog').style.display === 'flex') {
+                closeScriptDialog();
+            }
+        }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'S' || e.key === 's')) {
+            // Don't swallow the shortcut while the user is editing an IText
+            // or typing inside the script editor itself.
+            const inTextarea = e.target && (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT');
+            const inScriptDialog = document.getElementById('scriptViewerDialog').style.display === 'flex';
+            if (!inTextarea && !inScriptDialog) {
+                e.preventDefault();
+                openScriptDialog();
+            }
+        }
+    });
+
+    // Stop keyboard events inside the script editor dialog from bubbling to
+    // document-level handlers that drive the canvas. Escape still closes the
+    // dialog because it's handled here before propagation is stopped.
+    ['keydown', 'keyup', 'keypress'].forEach(type => {
+        document.getElementById('scriptViewerDialog').addEventListener(type, e => {
+            if (type === 'keydown' && e.key === 'Escape') closeScriptDialog();
+            e.stopPropagation();
+        });
+    });
+
+    // ---- Script Viewer Dialog ----
+    function ensureScriptEditor() {
+        if (window._scriptEditor) return window._scriptEditor;
+        const ed = ace.edit("scriptViewerEditor");
+        ed.setTheme("ace/theme/monokai");
+        ed.session.setMode("ace/mode/javascript");
+        ed.setFontSize(13);
+        ed.session.setUseWrapMode(true);
+        ed.setOption('showPrintMargin', false);
+        window._scriptEditor = ed;
+        return ed;
+    }
+
+    function openScriptDialog() {
+        const lines = window.recordedScriptLines || [];
+        document.getElementById('scriptViewerDialog').style.display = 'flex';
+        const ed = ensureScriptEditor();
+        ed.setValue(lines.join('\n'), -1);
+        ed.resize(true);
+        document.getElementById('scriptLineCount').textContent = lines.length + ' line' + (lines.length !== 1 ? 's' : '');
+        ed.focus();
+    }
+
+    function closeScriptDialog() {
+        document.getElementById('scriptViewerDialog').style.display = 'none';
+    }
+
+    function saveScriptEdits() {
+        const ed = ensureScriptEditor();
+        const lines = ed.getValue().split('\n').filter(l => l.trim() !== '');
+        window.recordedScriptLines = lines;
+        document.getElementById('scriptLineCount').textContent = lines.length + ' line' + (lines.length !== 1 ? 's' : '');
+    }
+
+    function clearScriptDialog() {
+        if (!confirm('Clear all recorded script lines?')) return;
+        window.recordedScriptLines = [];
+        if (window._scriptEditor) window._scriptEditor.setValue('', -1);
+        document.getElementById('scriptLineCount').textContent = '0 lines';
+    }
+
+    function copyScriptDialog() {
+        const text = window._scriptEditor ? window._scriptEditor.getValue() : '';
+        navigator.clipboard.writeText(text);
+    }
+
+    function playScriptFromDialog() {
+        // Flush any unsaved edits in the ACE editor so the user plays what they see.
+        if (window._scriptEditor) saveScriptEdits();
+        closeScriptDialog();
+        openClearBeforePlayDialog();
+    }
+
+    function openClearBeforePlayDialog() {
+        $('#clearBeforePlay-pc').prop('checked', true);
+        $('#clearBeforePlay-oc').prop('checked', true);
+        $('#clearBeforePlay-txt').prop('checked', true);
+        $('#clearBeforePlayDialog').css('display', 'flex');
+    }
+
+    function closeClearBeforePlayDialog() {
+        $('#clearBeforePlayDialog').hide();
+    }
+
+    function confirmClearAndPlay() {
+        if ($('#clearBeforePlay-pc').is(':checked')) clear('pc');
+        if ($('#clearBeforePlay-oc').is(':checked')) clear('oc');
+        if ($('#clearBeforePlay-txt').is(':checked')) clear('txt');
+        closeClearBeforePlayDialog();
+        playScript();
+    }
+
+    function confirmClearAndPlayStepwise() {
+        if ($('#clearBeforePlay-pc').is(':checked')) clear('pc');
+        if ($('#clearBeforePlay-oc').is(':checked')) clear('oc');
+        if ($('#clearBeforePlay-txt').is(':checked')) clear('txt');
+        closeClearBeforePlayDialog();
+        playScriptStepwise();
+    }
+
+    // ---- Stepwise Playback ----
+    window._stepwiseState = null;
+
+    function playScriptStepwise() {
+        const lines = (window.recordedScriptLines || []).map(s => (s + '').trim()).filter(Boolean);
+        if (!lines.length) return;
+        const fns = (typeof buildScriptExecutables === 'function')
+            ? buildScriptExecutables().map(eval)
+            : lines.map(l => {
+                const exec = (l.startsWith('animate') || l.startsWith('Promise')) ? 'return ' + l + ';' : l;
+                return eval('(() => { ' + exec + ' })');
+              });
+        window._stepwiseState = { lines: lines, fns: fns, index: 0, busy: false };
+        window.isRecordingPlayback = true;
+        $('#stepwisePlayDialog').css('display', 'flex');
+        renderStepwiseLines();
+    }
+
+    function closeStepwiseDialog() {
+        $('#stepwisePlayDialog').hide();
+        window._stepwiseState = null;
+        window.isRecordingPlayback = false;
+    }
+
+    function _stepwiseEscapeHtml(s) {
+        return (s + '').replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+    }
+
+    function renderStepwiseLines() {
+        const s = window._stepwiseState;
+        if (!s) return;
+        const el = document.getElementById('stepwiseLines');
+        const total = s.lines.length;
+        document.getElementById('stepwiseIndex').textContent = Math.min(s.index, total);
+        document.getElementById('stepwiseTotal').textContent = total;
+        el.innerHTML = s.lines.map(function (line, i) {
+            const isCurrent = i === s.index;
+            const isDone = i < s.index;
+            const bg = isCurrent ? '#fff59d' : (isDone ? '#e8f5e9' : 'transparent');
+            const color = isDone ? '#888' : '#222';
+            const prefix = isCurrent ? '&#9654; ' : (isDone ? '&#10003; ' : '&nbsp;&nbsp;');
+            return '<div style="padding:2px 4px;background:' + bg + ';color:' + color +
+                ';white-space:pre-wrap;word-break:break-all;">' + prefix +
+                (i + 1).toString().padStart(3, ' ') + ': ' + _stepwiseEscapeHtml(line) + '</div>';
+        }).join('');
+        const nextBtn = document.getElementById('stepwiseNextBtn');
+        if (s.index >= total) {
+            nextBtn.disabled = true;
+            nextBtn.textContent = '✓ Done';
+            document.getElementById('stepwiseStatus').textContent = 'Finished';
+        } else {
+            nextBtn.disabled = !!s.busy;
+            nextBtn.innerHTML = '&#9193; Next';
+            document.getElementById('stepwiseStatus').textContent = s.busy ? 'Running…' : '';
+        }
+        const cur = el.children[s.index] || el.children[total - 1];
+        if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'center' });
+    }
+
+    function stepwiseNext() {
+        const s = window._stepwiseState;
+        if (!s || s.busy) return;
+        if (s.index >= s.fns.length) return;
+        const fn = s.fns[s.index];
+        s.busy = true;
+        renderStepwiseLines();
+        let result;
+        try { result = fn(); } catch (e) {
+            console.error('Stepwise error at line ' + (s.index + 1) + ':', e);
+        }
+        const advance = function () {
+            s.index += 1;
+            s.busy = false;
+            renderStepwiseLines();
+        };
+        if (result && typeof result.then === 'function') {
+            result.then(advance, advance);
+        } else {
+            advance();
+        }
+    }
+
+    function stepwiseRunToEnd() {
+        const s = window._stepwiseState;
+        if (!s) return;
+        const remaining = s.fns.slice(s.index);
+        closeStepwiseDialog();
+        if (remaining.length) schedule(remaining, 1);
+    }
+
+    // ---- Tree Node Panel ----
+    function getNodeLabel(node) {
+        if (!node) return '';
+        return node.text ||
+               (node.customData && node.customData.text) ||
+               node.uid ||
+               '(unknown)';
+    }
+
+    function getImmediateChildren(obj) {
+        const lines = obj.treeConnection && obj.treeConnection.outgoing
+            ? obj.treeConnection.outgoing.lines : [];
+        return lines
+            .map(findIfRequired)
+            .filter(Boolean)
+            .map(line => findIfRequired(line.customData && line.customData.target))
+            .filter(Boolean);
+    }
+
+    // Returns [{line, child}] pairs for the currently active tree-node-panel node
+    function _getTreePairs(obj) {
+        const rawLines = (obj && obj.treeConnection && obj.treeConnection.outgoing)
+            ? obj.treeConnection.outgoing.lines : [];
+        return rawLines.map(findIfRequired).filter(Boolean).map(line => ({
+            line,
+            child: findIfRequired(line.customData && line.customData.target)
+        })).filter(p => p.child);
+    }
+
+    let _treePanelNode = null; // track which node the panel is showing
+
+    function showTreeNodePanel(obj) {
+        _treePanelNode = obj;
+        const treePanel = document.getElementById('tree-node-panel');
+        _renderTreeChildrenList(obj);
+        treePanel.classList.add('visible');
+    }
+
+    function _renderTreeChildrenList(obj) {
+        const list = document.getElementById('tree-children-list');
+        const hiddenSelect = document.getElementById('tree-children-select');
+        list.innerHTML = '';
+        hiddenSelect.innerHTML = '';
+        if (!obj) return;
+
+        const pairs = _getTreePairs(obj);
+        pairs.forEach(({ line, child }) => {
+            // Keep hidden select in sync for getSelectedChildren()
+            const opt = document.createElement('option');
+            opt.value = child.uid;
+            opt.textContent = getNodeLabel(child);
+            hiddenSelect.appendChild(opt);
+
+            // Build visible row
+            const row = document.createElement('div');
+            row.className = 'tree-child-row';
+            row.dataset.childUid = child.uid;
+            row.dataset.lineUid = line.uid || '';
+
+            const chk = document.createElement('input');
+            chk.type = 'checkbox';
+            chk.title = 'Select';
+            chk.addEventListener('change', () => {
+                row.classList.toggle('selected', chk.checked);
+                opt.selected = chk.checked;
+            });
+
+            const lbl = document.createElement('span');
+            lbl.className = 'tree-child-label';
+            lbl.textContent = getNodeLabel(child);
+            if (child.visible === false) lbl.style.opacity = '0.4';
+
+            const btnLine = document.createElement('button');
+            btnLine.textContent = '↗ Line';
+            btnLine.title = 'Select connector line on canvas';
+            btnLine.className = 'tree-row-btn';
+            btnLine.onclick = () => selectTreeLine(line.uid);
+
+            const btnDel = document.createElement('button');
+            btnDel.textContent = '✕';
+            btnDel.title = 'Delete this connection';
+            btnDel.className = 'tree-row-btn tree-row-btn-del';
+            btnDel.onclick = () => {
+                deleteTreeConnection(_treePanelNode, line.uid, child.uid);
+                _renderTreeChildrenList(_treePanelNode);
+            };
+
+            row.appendChild(chk);
+            row.appendChild(lbl);
+            row.appendChild(btnLine);
+            row.appendChild(btnDel);
+            list.appendChild(row);
+        });
+    }
+
+    function getSelectedChildren() {
+        // Read from visible rows' checkboxes
+        const rows = document.querySelectorAll('#tree-children-list .tree-child-row');
+        const result = [];
+        rows.forEach(row => {
+            const chk = row.querySelector('input[type=checkbox]');
+            if (chk && chk.checked) {
+                const obj = findIfRequired(row.dataset.childUid);
+                if (obj) result.push(obj);
+            }
+        });
+        return result;
+    }
+
+    function deleteSelectedTreeChildren() {
+        if (!_treePanelNode) return;
+        const rows = document.querySelectorAll('#tree-children-list .tree-child-row');
+        rows.forEach(row => {
+            const chk = row.querySelector('input[type=checkbox]');
+            if (chk && chk.checked) {
+                deleteTreeConnection(_treePanelNode, row.dataset.lineUid, row.dataset.childUid);
+            }
+        });
+        _renderTreeChildrenList(_treePanelNode);
+    }
+
+    function selectTreeLine(lineUid) {
+        const line = findIfRequired(lineUid);
+        if (!line) return;
+        pc.setActiveObject(line);
+        pc.requestRenderAll();
+    }
+
+    function toggleSelectedTreeChildren() {
+        const targets = getSelectedChildren();
+        if (!targets.length) return;
+        // If any visible, hide all; otherwise show all
+        const anyVisible = targets.some(c => c.visible !== false);
+        targets.forEach(c => {
+            if (anyVisible) {
+                hideObject(c);
+            } else {
+                showObject(c);
+                // Lift newly-revealed nodes above any overlapping objects so
+                // they're actually visible after Show.
+                if (c.canvas && typeof c.canvas.bringObjectToFront === 'function') {
+                    c.canvas.bringObjectToFront(c);
+                }
+            }
+        });
+        pc.requestRenderAll();
+        // Re-render rows so opacity hint updates
+        if (_treePanelNode) _renderTreeChildrenList(_treePanelNode);
+    }
+
+    function applyVisibilityToSelectedChildren(value) {
+        const targets = getSelectedChildren();
+        if (!targets.length) return;
+        targets.forEach(c => {
+            c.set('opacity', value);
+            if (value === 0) c.set('visible', false);
+            else c.set('visible', true);
+        });
+        pc.requestRenderAll();
+    }
+
+    // Make property panel draggable
+    let isDragging = false;
+    let dragOffset = { x: 0, y: 0 };
+
+    const panel = document.getElementById('property-panel');
+    const header = panel.querySelector('.prop-header');
+
+    header.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        const rect = panel.getBoundingClientRect();
+        dragOffset.x = e.clientX - rect.left;
+        dragOffset.y = e.clientY - rect.top;
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        const x = e.clientX - dragOffset.x;
+        const y = e.clientY - dragOffset.y;
+        panel.style.left = Math.max(0, Math.min(window.innerWidth - panel.offsetWidth, x)) + 'px';
+        panel.style.top = Math.max(0, Math.min(window.innerHeight - panel.offsetHeight, y)) + 'px';
+        panel.style.right = 'auto'; // Remove right positioning when dragged
+    });
+
+    document.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+
+    // Make tree node panel draggable
+    let isDraggingTree = false;
+    let dragOffsetTree = { x: 0, y: 0 };
+    const treePanel = document.getElementById('tree-node-panel');
+    const treePanelHeader = treePanel.querySelector('.prop-header');
+    treePanelHeader.addEventListener('mousedown', function(e) {
+        isDraggingTree = true;
+        const rect = treePanel.getBoundingClientRect();
+        dragOffsetTree.x = e.clientX - rect.left;
+        dragOffsetTree.y = e.clientY - rect.top;
+        e.preventDefault();
+    });
+    document.addEventListener('mousemove', function(e) {
+        if (!isDraggingTree) return;
+        const x = e.clientX - dragOffsetTree.x;
+        const y = e.clientY - dragOffsetTree.y;
+        treePanel.style.left = Math.max(0, Math.min(window.innerWidth - treePanel.offsetWidth, x)) + 'px';
+        treePanel.style.top = Math.max(0, Math.min(window.innerHeight - treePanel.offsetHeight, y)) + 'px';
+        treePanel.style.right = 'auto';
+    });
+    document.addEventListener('mouseup', function() { isDraggingTree = false; });
+
+    // Context menu
+    pc.on('mouse:down', function(e) {
+        if (e.e && e.e.button === 2) {
+            e.e.preventDefault();
+            const menu = document.getElementById('wb-context-menu');
+            menu.style.left = e.e.clientX + 'px';
+            menu.style.top = e.e.clientY + 'px';
+            menu.classList.add('visible');
+        } else {
+            closeContextMenu();
+        }
+    });
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('#wb-context-menu')) closeContextMenu();
+    });
+    // Prevent browser context menu on canvas
+    document.querySelector('.canvas-container')?.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+    function closeContextMenu() {
+        document.getElementById('wb-context-menu').classList.remove('visible');
+    }
+
+    function duplicateSelected() {
+        const obj = pc.getActiveObject();
+        if (obj) duplicate(obj);
+    }
+
+    function deleteSelectedAndClose() {
+        const obj = pc.getActiveObject();
+        if (obj) {
+            undoManager.push(Commands.removeObject(pc, obj));
+            if (obj.uid) recordScript(`removeByUid(${JSON.stringify(obj.uid)})`);
+            deleteFabricObject(obj);
+        }
+        closeContextMenu();
+    }
+
+    function bringToFrontSelected() {
+        const obj = pc.getActiveObject();
+        if (obj) {
+            pc.bringObjectToFront(obj);
+            pc.requestRenderAll();
+            if (obj.uid) recordScript(`bringToFront(${JSON.stringify(obj.uid)})`);
+        }
+    }
+
+    // ---- Animate / Spotlight controls ----
+    // Tracks the currently-running Properties-panel-initiated anim so we can
+    // (a) toggle the button between Start/Stop, (b) stop on ESC, and
+    // (c) record the full start→stop cycle with the elapsed duration baked in.
+    window._activeAnim = null;
+
+    function _animBtn() { return document.getElementById('prop-anim-toggle'); }
+
+    function _setAnimBtnRunning(running) {
+        const btn = _animBtn();
+        if (!btn) return;
+        if (running) {
+            btn.innerHTML = '&#9209; Stop';
+            btn.classList.add('active');
+            btn.style.background = '#c62828';
+            btn.style.color = '#fff';
+        } else {
+            btn.innerHTML = '&#9654; Start';
+            btn.classList.remove('active');
+            btn.style.background = '';
+            btn.style.color = '';
+        }
+    }
+
+    function toggleSelectedAnim() {
+        if (window._activeAnim) {
+            stopActiveAnim();
+            return;
+        }
+        const obj = pc.getActiveObject();
+        if (!obj) return;
+        // Multi-select (activeSelection) has no uid of its own — gather
+        // every child's uid so we drive the animation across the whole
+        // selection. Single-object case becomes a 1-element list.
+        const isSelection = obj.type === 'activeSelection' && Array.isArray(obj._objects);
+        const uids = isSelection
+            ? obj._objects.map(o => o.uid).filter(Boolean)
+            : (obj.uid ? [obj.uid] : []);
+        if (!uids.length) return;
+        // Select value encodes type plus optional shape sub-choice, e.g.
+        // 'spotlight:circle'. Bare 'spotlight' = auto.
+        const raw = document.getElementById('prop-anim-type').value || 'highlight';
+        const colon = raw.indexOf(':');
+        const type = colon === -1 ? raw : raw.slice(0, colon);
+        const shape = colon === -1 ? null : raw.slice(colon + 1);
+        const opts = shape ? { shape: shape } : null;
+        // anim() accepts an array, an activeSelection, or a single uid.
+        anim(uids, type, opts || undefined);
+        window._activeAnim = { uids: uids, type: type, opts: opts, startedAt: Date.now() };
+        _setAnimBtnRunning(true);
+    }
+
+    function stopActiveAnim() {
+        const a = window._activeAnim;
+        if (!a) return;
+        const elapsedMs = Math.max(0, Date.now() - a.startedAt);
+        stopAnim(a.uids);
+        // Record as a single Promise-chained line so playback waits the same
+        // duration the user kept the anim running before invoking stop.
+        // Prefix `Promise.` is what buildScriptExecutables looks for to wrap
+        // the line with `return …;` and let schedule() await it.
+        const animArgs = a.opts
+            ? `${JSON.stringify(a.uids)}, ${JSON.stringify(a.type)}, ${JSON.stringify(a.opts)}`
+            : `${JSON.stringify(a.uids)}, ${JSON.stringify(a.type)}`;
+        recordScript(
+            `Promise.resolve(anim(${animArgs}))` +
+            `.then(()=>new Promise(r=>setTimeout(r,${elapsedMs})))` +
+            `.then(()=>stopAnim(${JSON.stringify(a.uids)}))`
+        );
+        window._activeAnim = null;
+        _setAnimBtnRunning(false);
+    }
+
+    function sendToBackSelected() {
+        const obj = pc.getActiveObject();
+        if (obj) {
+            pc.sendObjectToBack(obj);
+            pc.requestRenderAll();
+            if (obj.uid) recordScript(`sendToBack(${JSON.stringify(obj.uid)})`);
+        }
+    }
+
+    // Shape menu
+    function toggleShapeMenu() {
+        document.getElementById('shape-menu').classList.toggle('open');
+    }
+    function closeShapeMenu() {
+        document.getElementById('shape-menu').classList.remove('open');
+    }
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('[data-tool="shape"]')) closeShapeMenu();
+    });
+</script>
+</body>
+
+</html>
