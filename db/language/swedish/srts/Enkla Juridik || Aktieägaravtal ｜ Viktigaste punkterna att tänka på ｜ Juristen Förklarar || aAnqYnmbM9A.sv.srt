@@ -1,6 +1,6 @@
 1
 00:00:05,219 --> 00:00:13,521
-Ett aktieägaravtal är ett juridiskt dokument där aktieägarna i ett aktiebolag kommer överens om bolagets struktur och hur bolagets verksamhet ska styras. 
+Ett aktieägaravtal är ett juridiskt dokument där aktieägarna i ett aktiebolag kommer överens om bolagets struktur och hur bolagets verksamhet ska styras.
 
 2
 00:00:13,573 --> 00:00:18,976
@@ -8,7 +8,7 @@ När du ska driva ett bolag med flera andra delägare är det alltid starkt reko
 
 3
 00:00:18,976 --> 00:00:25,828
-Anledningen är att man vill avtala om hur bolaget och delägarna ska agera vid olika situationer som kan uppstå i framtiden. 
+Anledningen är att man vill avtala om hur bolaget och delägarna ska agera vid olika situationer som kan uppstå i framtiden.
 
 4
 00:00:25,828 --> 00:00:31,817
@@ -36,7 +36,7 @@ Gällande den 1:a punkten är det viktigt för dig att tänka på att formulera 
 
 10
 00:00:52,101 --> 00:00:56,504
-Det innebär att eventuella krav på delägarna ska vara formulerade med ett enkelt språk. 
+Det innebär att eventuella krav på delägarna ska vara formulerade med ett enkelt språk.
 
 11
 00:00:57,113 --> 00:01:02,037
@@ -72,7 +72,7 @@ Vad händer med aktierna om en delägare skulle skilja sig?
 
 19
 00:01:34,493 --> 00:01:37,330
-Vad händer om en delägare blir långvarigt sjukskriven? 
+Vad händer om en delägare blir långvarigt sjukskriven?
 
 20
 00:01:38,037 --> 00:01:41,433
@@ -84,7 +84,7 @@ Vanligt är att man reglerar de här punkter genom att låta de gifta delägarna
 
 22
 00:01:50,445 --> 00:01:56,064
-I aktieägaravtalet går det också att bestämma att aktierna vid dödsfall eller skilsmässa har ett visst pris, 
+I aktieägaravtalet går det också att bestämma att aktierna vid dödsfall eller skilsmässa har ett visst pris,
 
 23
 00:01:56,064 --> 00:01:59,360
@@ -96,7 +96,7 @@ Ett starkt tips är att också skriva en klausul för när man som aktieägare m
 
 25
 00:02:04,861 --> 00:02:09,699
-Ett exempel på ett sådan kriterium kan vara vid långvarig sjukskrivning. 
+Ett exempel på ett sådan kriterium kan vara vid långvarig sjukskrivning.
 
 26
 00:02:09,699 --> 00:02:13,732
@@ -104,7 +104,7 @@ Eller om delägaren inte uppnår ett visst försäljningskrav under en given per
 
 27
 00:02:14,156 --> 00:02:17,269
-Punkt 3 handlar om att reglera överlåtelse av aktier. 
+Punkt 3 handlar om att reglera överlåtelse av aktier.
 
 28
 00:02:17,693 --> 00:02:22,085
@@ -112,7 +112,7 @@ Det är vanligt att ni som delägare inte vill att man ska kunna sälja sina akt
 
 29
 00:02:22,509 --> 00:02:28,524
-Ni kan begränsa denna rätt genom att ta med hembuds-, förköps-, återköps- och samtyckesklausuler i avtalet. 
+Ni kan begränsa denna rätt genom att ta med hembuds-, förköps-, återköps- och samtyckesklausuler i avtalet.
 
 30
 00:02:29,176 --> 00:02:36,000
@@ -128,7 +128,7 @@ En hembudsklausul innebär att tidigare ägare av en viss aktie har förköpsrä
 
 33
 00:02:50,739 --> 00:02:56,586
-Förköpsrätt innebär att ni ger andra delägare rätt att köpa aktierna innan andra får köpa aktierna. 
+Förköpsrätt innebär att ni ger andra delägare rätt att köpa aktierna innan andra får köpa aktierna.
 
 34
 00:02:56,586 --> 00:03:01,087
@@ -136,33 +136,4 @@ På så vis kan ni undvika att oönskade delägare köper sig in i bolaget.
 
 35
 00:03:01,956 --> 00:03:09,000
-En återköpsklausul reglerar rätten att köpa tillbaka aktier som man tidigare sålt under en viss tid på ett på förhand angivet belopp. 
-
-36
-00:03:09,643 --> 00:03:14,611
-Detta kan vara smart att göra om man släpper in en delägare som inte visar sig vara en bra match lite längre fram.
-
-37
-00:03:15,883 --> 00:03:24,977
-Samtyckesklausuler föreskriver att en aktieägare i vissa fall måste inhämta styrelsens eller bolagsstämmans samtycke innan en överlåtelse av aktier sker. 
-
-38
-00:03:25,673 --> 00:03:29,280
-Detta ökar kontrollen ytterligare över vilka som kan bli delägare.
-
-39
-00:03:29,541 --> 00:03:34,172
-Det allra sista ni ska tänka på är att förbjuda aktieägarna från att kunna pantsätta aktierna.
-
-40
-00:03:34,792 --> 00:03:39,316
-Om ni vill ha hjälp med att skriva ett aktieägaravtal får ni gärna höra av er till oss på Enkla Juridik.
-
-41
-00:03:39,816 --> 00:03:43,577
-Tack för att du tittade! Tryck gärna på gilla-knappen om videon var användbar.
-
-42
-00:03:43,577 --> 00:03:50,323
-Har du frågor? Tveka inte att ställa din fråga i kommentarsfältet på Youtube eller höra av dig till oss på vår hemsida enklajuridik.se
-
+En återköpsklausul reglerar rätten att köpa tillbaka aktier som man tidigare sålt under en viss tid på ett på förhand angivet belopp.
