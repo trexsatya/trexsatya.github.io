@@ -1,0 +1,903 @@
+1
+00:00:00,000 --> 00:00:02,010
+very good and welcome once again to
+
+2
+00:00:02,010 --> 00:00:03,629
+beta tech if this is the first video
+
+3
+00:00:03,629 --> 00:00:05,069
+you've made on the channel we talk
+
+4
+00:00:05,069 --> 00:00:06,930
+about software and technology so
+
+5
+00:00:06,930 --> 00:00:08,849
+if you're interested in development you've come to the
+
+6
+00:00:08,849 --> 00:00:10,830
+right place after uploading some
+
+7
+00:00:10,830 --> 00:00:12,389
+videos on object oriented programming I've
+
+8
+00:00:12,389 --> 00:00:14,370
+realized that you guys really like this whole
+
+9
+00:00:14,370 --> 00:00:15,870
+systems design thing both
+
+10
+00:00:15,870 --> 00:00:17,340
+internal software and
+
+11
+00:00:17,340 --> 00:00:19,560
+architecture so
+
+12
+00:00:19,560 --> 00:00:21,000
+I'm happy to say that this is going to be the
+
+13
+00:00:21,000 --> 00:00:22,650
+first video in a series of videos
+
+14
+00:00:22,650 --> 00:00:25,230
+on design patterns the idea is
+
+15
+00:00:25,230 --> 00:00:27,269
+simple try to make a video for
+
+16
+00:00:27,269 --> 00:00:29,250
+each pattern put them all together in a
+
+17
+00:00:29,250 --> 00:00:31,170
+playlist and be able to say that we've
+
+18
+00:00:31,170 --> 00:00:33,180
+compiled all the design patterns in video
+
+19
+00:00:33,180 --> 00:00:35,070
+but before we get into a
+
+20
+00:00:35,070 --> 00:00:37,920
+series that I warn you won't be short I
+
+21
+00:00:37,920 --> 00:00:39,780
+think it's better to first explain what
+
+22
+00:00:39,780 --> 00:00:41,760
+design patterns are why they
+
+23
+00:00:41,760 --> 00:00:44,340
+exist and see a little bit how they are classified
+
+24
+00:00:44,340 --> 00:00:46,079
+more than anything I don't think it's going to be much use to
+
+25
+00:00:46,079 --> 00:00:48,000
+explain each one of these
+
+26
+00:00:48,000 --> 00:00:49,800
+concepts without first having an
+
+27
+00:00:49,800 --> 00:00:51,870
+introduction so let's get to work
+
+28
+00:00:51,870 --> 00:00:53,760
+and explain once and for all what the
+
+29
+00:00:53,760 --> 00:00:55,469
+heck this design patterns thing is
+
+30
+00:00:55,469 --> 00:00:57,420
+we can say that a design pattern is
+
+31
+00:00:57,420 --> 00:00:59,730
+a recipe an action plan a
+
+32
+00:00:59,730 --> 00:01:02,399
+description of a  problem along with a
+
+33
+00:01:02,399 --> 00:01:04,170
+way to solve it in other
+
+34
+00:01:04,170 --> 00:01:05,610
+professions such as in
+
+35
+00:01:05,610 --> 00:01:06,330
+architecture
+
+36
+00:01:06,330 --> 00:01:08,610
+many patterns reusable elements are used
+
+37
+00:01:08,610 --> 00:01:10,970
+to solve
+
+38
+00:01:10,970 --> 00:01:13,320
+recurring problems that are found in
+
+39
+00:01:13,320 --> 00:01:15,090
+everyday life when they are said in buildings
+
+40
+00:01:15,090 --> 00:01:16,950
+for example examples of these patterns
+
+41
+00:01:16,950 --> 00:01:19,260
+could be arches to support
+
+42
+00:01:19,260 --> 00:01:21,330
+large loads or bridges to
+
+43
+00:01:21,330 --> 00:01:23,910
+overcome obstacles in this way
+
+44
+00:01:23,910 --> 00:01:25,860
+architects can design
+
+45
+00:01:25,860 --> 00:01:28,230
+more complex solutions by combining these elements
+
+46
+00:01:28,230 --> 00:01:30,480
+with each other developers
+
+47
+00:01:30,480 --> 00:01:32,790
+also have similar tools
+
+48
+00:01:32,790 --> 00:01:33,990
+throughout history there have been
+
+49
+00:01:33,990 --> 00:01:35,640
+problems in software development
+
+50
+00:01:35,640 --> 00:01:38,280
+that have appeared again and again and
+
+51
+00:01:38,280 --> 00:01:40,500
+that coincidentally were solved in a
+
+52
+00:01:40,500 --> 00:01:42,300
+similar way these problems were
+
+53
+00:01:42,300 --> 00:01:44,010
+general enough to be
+
+54
+00:01:44,010 --> 00:01:45,660
+able to appear in different situations
+
+55
+00:01:45,660 --> 00:01:47,760
+with different languages and with
+
+56
+00:01:47,760 --> 00:01:50,190
+different architectures and in fact
+
+57
+00:01:50,190 --> 00:01:51,660
+most solutions
+
+58
+00:01:51,660 --> 00:01:53,400
+also stop in a general way
+
+59
+00:01:53,400 --> 00:01:55,200
+therefore they are recipes that will serve you in
+
+60
+00:01:55,200 --> 00:01:57,030
+many different environments for example
+
+61
+00:01:57,030 --> 00:01:59,670
+both in front-end and MBA in
+
+62
+00:01:59,670 --> 00:02:02,610
+summary a design pattern defines a
+
+63
+00:02:02,610 --> 00:02:04,860
+solution to a recurring problem and this
+
+64
+00:02:04,860 --> 00:02:06,720
+solution can be replicated and implemented
+
+65
+00:02:06,720 --> 00:02:08,820
+in various ways depending on the
+
+66
+00:02:08,820 --> 00:02:10,310
+technology
+
+67
+00:02:10,310 --> 00:02:12,290
+or language to define these
+
+68
+00:02:12,290 --> 00:02:13,760
+patterns normally
+
+69
+00:02:13,760 --> 00:02:16,069
+graphics are used as patterns are usually
+
+70
+00:02:16,069 --> 00:02:18,080
+class constructions and
+
+71
+00:02:18,080 --> 00:02:19,910
+definition of  relationships between
+
+72
+00:02:19,910 --> 00:02:22,040
+them these graphics are normally
+
+73
+00:02:22,040 --> 00:02:25,220
+u ml diagrams or similar in this series
+
+74
+00:02:25,220 --> 00:02:26,840
+of videos I will try to explain with
+
+75
+00:02:26,840 --> 00:02:28,849
+examples and in the most understandable way
+
+76
+00:02:28,849 --> 00:02:30,880
+possible these class relationships
+
+77
+00:02:30,880 --> 00:02:32,660
+explaining the problems that are
+
+78
+00:02:32,660 --> 00:02:34,730
+solved each pattern and in some
+
+79
+00:02:34,730 --> 00:02:37,040
+cases the consequences or complications
+
+80
+00:02:37,040 --> 00:02:38,930
+that can emerge from using them
+
+81
+00:02:38,930 --> 00:02:41,510
+so as I said this video is going to
+
+82
+00:02:41,510 --> 00:02:43,459
+be the introduction point and
+
+83
+00:02:43,459 --> 00:02:45,380
+therefore I think it is necessary to teach you the
+
+84
+00:02:45,380 --> 00:02:47,750
+classification of the different
+
+85
+00:02:47,750 --> 00:02:50,000
+design patterns in a basic way how they are
+
+86
+00:02:50,000 --> 00:02:52,010
+grouped together and normally
+
+87
+00:02:52,010 --> 00:02:53,930
+the patterns are classified into three
+
+88
+00:02:53,930 --> 00:02:56,660
+general fields the creational patterns
+
+89
+00:02:56,660 --> 00:02:59,060
+are the structural patterns and the
+
+90
+00:02:59,060 --> 00:03:01,580
+behavioral patterns the
+
+91
+00:03:01,580 --> 00:03:03,080
+national patterns are those that are
+
+92
+00:03:03,080 --> 00:03:04,760
+responsible for solving problems that
+
+93
+00:03:04,760 --> 00:03:06,500
+involve the creation of objects
+
+94
+00:03:06,500 --> 00:03:08,870
+their objective is to provide solutions to be able to
+
+95
+00:03:08,870 --> 00:03:11,239
+create specific instances of certain
+
+96
+00:03:11,239 --> 00:03:13,400
+objects for example if we have a
+
+97
+00:03:13,400 --> 00:03:15,700
+complex class hierarchy useful
+
+98
+00:03:15,700 --> 00:03:17,290
+type of patterns can help us
+
+99
+00:03:17,290 --> 00:03:18,760
+keep our code free of
+
+100
+00:03:18,760 --> 00:03:21,370
+infinite ipsi infinite switches or the
+
+101
+00:03:21,370 --> 00:03:22,750
+set to better understand the
+
+102
+00:03:22,750 --> 00:03:24,670
+problem imagine that you are
+
+103
+00:03:24,670 --> 00:03:26,319
+developing a video game you have
+
+104
+00:03:26,319 --> 00:03:28,450
+several types of enemies it is a video game
+
+105
+00:03:28,450 --> 00:03:29,950
+where the enemies appear on the map
+
+106
+00:03:29,950 --> 00:03:31,840
+randomly and therefore you
+
+107
+00:03:31,840 --> 00:03:33,760
+want both the type of enemy
+
+108
+00:03:33,760 --> 00:03:36,849
+and their position to  decide at
+
+109
+00:03:36,849 --> 00:03:39,069
+runtime all enemies inherit from
+
+110
+00:03:39,069 --> 00:03:41,590
+the enemy class so to decide
+
+111
+00:03:41,590 --> 00:03:43,599
+which specific enemy we want to use
+
+112
+00:03:43,599 --> 00:03:45,580
+you have logic in several parts of your code
+
+113
+00:03:45,580 --> 00:03:48,459
+to know which class to use this
+
+114
+00:03:48,459 --> 00:03:50,049
+can end up being a problem because it
+
+115
+00:03:50,049 --> 00:03:51,880
+will not be easy to add a
+
+116
+00:03:51,880 --> 00:03:53,950
+new enemy you will have to touch many parts
+
+117
+00:03:53,950 --> 00:03:55,959
+of the code to make it work and the
+
+118
+00:03:55,959 --> 00:03:57,370
+same will happen if at any time
+
+119
+00:03:57,370 --> 00:03:59,769
+you want to eliminate some type of enemy that is
+
+120
+00:03:59,769 --> 00:04:01,750
+where the
+
+121
+00:04:01,750 --> 00:04:04,390
+alex creation patterns would come in and in this specific case the
+
+122
+00:04:04,390 --> 00:04:07,030
+pattern is called factor and they also
+
+123
+00:04:07,030 --> 00:04:08,530
+help us in case we have for
+
+124
+00:04:08,530 --> 00:04:10,510
+example a very complex object to
+
+125
+00:04:10,510 --> 00:04:12,430
+build the creation of this object
+
+126
+00:04:12,430 --> 00:04:14,290
+can be very complicated and they give us
+
+127
+00:04:14,290 --> 00:04:16,060
+patterns that can help us both
+
+128
+00:04:16,060 --> 00:04:18,489
+simplify this creation and make it
+
+129
+00:04:18,489 --> 00:04:20,289
+more understandable continuing with the example
+
+130
+00:04:20,289 --> 00:04:21,780
+of the video game you may
+
+131
+00:04:21,780 --> 00:04:23,610
+think that creating the level map can
+
+132
+00:04:23,610 --> 00:04:25,830
+be very difficult the map class has
+
+133
+00:04:25,830 --> 00:04:27,510
+many parameters and therefore
+
+134
+00:04:27,510 --> 00:04:30,120
+building it is not simple another problem
+
+135
+00:04:30,120 --> 00:04:31,800
+that we can solve in this case
+
+136
+00:04:31,800 --> 00:04:34,560
+using the wilder pattern the next
+
+137
+00:04:34,560 --> 00:04:36,270
+family of patterns that we are going to see is that
+
+138
+00:04:36,270 --> 00:04:38,340
+of structural patterns these
+
+139
+00:04:38,340 --> 00:04:39,930
+patterns help us when
+
+140
+00:04:39,930 --> 00:04:41,760
+configuring relationships between objects
+
+141
+00:04:41,760 --> 00:04:43,860
+still continuing with the example of the
+
+142
+00:04:43,860 --> 00:04:46,169
+video game we have seen that we have
+
+143
+00:04:46,169 --> 00:04:48,419
+a set of enemies the enemy class
+
+144
+00:04:48,419 --> 00:04:51,720
+in turn is a  game entity in the
+
+145
+00:04:51,720 --> 00:04:53,730
+same way as npcs and power
+
+146
+00:04:53,730 --> 00:04:55,590
+apps we define a game entity
+
+147
+00:04:55,590 --> 00:04:57,780
+as something that has a certain logic and that is
+
+148
+00:04:57,780 --> 00:04:59,730
+updated in each iteration of the
+
+149
+00:04:59,730 --> 00:05:01,740
+game club therefore we have that each
+
+150
+00:05:01,740 --> 00:05:03,750
+time the game loop is executed each time
+
+151
+00:05:03,750 --> 00:05:05,700
+the iteration makes a pass we
+
+152
+00:05:05,700 --> 00:05:07,890
+consider all the entities in the game
+
+153
+00:05:07,890 --> 00:05:10,110
+and call the function to update their
+
+154
+00:05:10,110 --> 00:05:12,120
+logic in this way all the entities
+
+155
+00:05:12,120 --> 00:05:14,669
+move depending on their state
+
+156
+00:05:14,669 --> 00:05:16,710
+the enemies look for you the npcs
+
+157
+00:05:16,710 --> 00:05:19,140
+wait for you and the power apps appear or
+
+158
+00:05:19,140 --> 00:05:20,910
+disappear but now let's put the case
+
+159
+00:05:20,910 --> 00:05:23,070
+in which there is an enemy that what it does is
+
+160
+00:05:23,070 --> 00:05:24,990
+create more enemies it is an enemy that
+
+161
+00:05:24,990 --> 00:05:26,610
+generates some small minions around it
+
+162
+00:05:26,610 --> 00:05:27,430
+so
+
+163
+00:05:27,430 --> 00:05:29,020
+that they go to attack these minions
+
+164
+00:05:29,020 --> 00:05:31,570
+are obviously also entities and
+
+165
+00:05:31,570 --> 00:05:33,190
+therefore they have to be updated each
+
+166
+00:05:33,190 --> 00:05:34,960
+time the game loop is executed
+
+167
+00:05:34,960 --> 00:05:36,940
+but we want the big enemy to
+
+168
+00:05:36,940 --> 00:05:38,770
+die all his millions to also
+
+169
+00:05:38,770 --> 00:05:40,960
+die therefore these minions
+
+170
+00:05:40,960 --> 00:05:43,390
+depend in some way on the
+
+171
+00:05:43,390 --> 00:05:45,460
+life cycle of their creator so it is no use to us
+
+172
+00:05:45,460 --> 00:05:48,010
+that in some magical way they are added
+
+173
+00:05:48,010 --> 00:05:49,870
+to the list of global entities of the
+
+174
+00:05:49,870 --> 00:05:51,460
+game this is a problem that we can
+
+175
+00:05:51,460 --> 00:05:52,870
+solve using the pattern
+
+176
+00:05:52,870 --> 00:05:54,850
+composite that gives us a special way
+
+177
+00:05:54,850 --> 00:05:56,190
+to organize our entities
+
+178
+00:05:56,190 --> 00:05:58,870
+assuming that each entity can have
+
+179
+00:05:58,870 --> 00:06:01,450
+entities within it recursively
+
+180
+00:06:01,450 --> 00:06:03,640
+and finally we have the
+
+181
+00:06:03,640 --> 00:06:05,590
+behavior patterns that help us perform
+
+182
+00:06:05,590 --> 00:06:08,350
+interaction between classes or objects
+
+183
+00:06:08,350 --> 00:06:10,020
+so that we can distribute the
+
+184
+00:06:10,020 --> 00:06:11,980
+responsibilities of each of these
+
+185
+00:06:11,980 --> 00:06:13,990
+elements in a much more
+
+186
+00:06:13,990 --> 00:06:16,450
+organized way in our video game each
+
+187
+00:06:16,450 --> 00:06:18,040
+enemy attacks in a different way
+
+188
+00:06:18,040 --> 00:06:19,690
+some run towards you to
+
+189
+00:06:19,690 --> 00:06:21,730
+hit you and others throw projectiles
+
+190
+00:06:21,730 --> 00:06:23,500
+from afar a simple way to
+
+191
+00:06:23,500 --> 00:06:26,020
+implement this would be to define within
+
+192
+00:06:26,020 --> 00:06:28,360
+the logic of each enemy these
+
+193
+00:06:28,360 --> 00:06:30,130
+attack patterns so that all
+
+194
+00:06:30,130 --> 00:06:32,350
+enemies of the same type always attack the
+
+195
+00:06:32,350 --> 00:06:34,210
+same but let's imagine that we want
+
+196
+00:06:34,210 --> 00:06:36,460
+a little more game we want to add a
+
+197
+00:06:36,460 --> 00:06:38,620
+new more fearsome enemy that has
+
+198
+00:06:38,620 --> 00:06:40,870
+much more life that is bigger but
+
+199
+00:06:40,870 --> 00:06:42,669
+although it costs much more to kill
+
+200
+00:06:42,669 --> 00:06:44,860
+following the same attack pattern as the
+
+201
+00:06:44,860 --> 00:06:46,150
+first one we had seen simply
+
+202
+00:06:46,150 --> 00:06:49,030
+runs towards you to hit you we could
+
+203
+00:06:49,030 --> 00:06:50,710
+duplicate all the code and put it in the
+
+204
+00:06:50,710 --> 00:06:52,960
+new enemy but as you know
+
+205
+00:06:52,960 --> 00:06:55,030
+developers do not like to repeat
+
+206
+00:06:55,030 --> 00:06:57,130
+work this is a perfect case in
+
+207
+00:06:57,130 --> 00:06:59,110
+which using the strategy pattern would
+
+208
+00:06:59,110 --> 00:07:01,180
+give us a very useful solution that would
+
+209
+00:07:01,180 --> 00:07:02,910
+allow us to decouple the
+
+210
+00:07:02,910 --> 00:07:05,080
+behaviors the types of attacks of
+
+211
+00:07:05,080 --> 00:07:07,419
+the enemies giving us the option  to be
+
+212
+00:07:07,419 --> 00:07:10,150
+much more variable in our video from
+
+213
+00:07:10,150 --> 00:07:11,889
+here on there is no other option but to
+
+214
+00:07:11,889 --> 00:07:13,389
+start explaining the
+
+215
+00:07:13,389 --> 00:07:15,729
+design patterns the idea is that this video is the
+
+216
+00:07:15,729 --> 00:07:17,710
+limit of the series therefore I will be
+
+217
+00:07:17,710 --> 00:07:19,750
+leaving in the description all the
+
+218
+00:07:19,750 --> 00:07:21,009
+videos about design patterns
+
+219
+00:07:21,009 --> 00:07:23,050
+classifying them obviously by their
+
+220
+00:07:23,050 --> 00:07:25,000
+family if you like this initiative
+
+221
+00:07:25,000 --> 00:07:26,710
+please subscribe to my channel and leave me
+
+222
+00:07:26,710 --> 00:07:28,449
+a good light and do not forget to leave me a
+
+223
+00:07:28,449 --> 00:07:30,759
+comment saying what design pattern
+
+224
+00:07:30,759 --> 00:07:32,500
+you want to see first I hope this
+
+225
+00:07:32,500 --> 00:07:34,900
+series helps you and if much more we will see each other
+
+226
+00:07:34,900 --> 00:07:38,550
+in the next video goodbye

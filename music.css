@@ -1,0 +1,84 @@
+.previewControls > *{
+   margin-top: 5px;
+   margin-right: 5px;
+}
+
+/* Buttons: one consistent, smooth look. Each button carries an icon (.ic) and a text label
+   (.txt); desktop shows the text, mobile collapses to the icon for a tighter, app-like UI. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  padding: .3em .6em;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  font-size: .9em;
+  line-height: 1.4;
+  transition: background .15s ease, border-color .15s ease;
+}
+.btn:hover { background: #eef4ff; border-color: #2563eb; }
+.btn:active { background: #dbe7ff; }
+/* Toggle buttons (Loop, Color voices, …) lit when their option is on:
+   a soft blue tint + colored border + bold label — clearly "on" without shouting. */
+.btn.toggle.active { background: #e8f0ff; border-color: #2563eb; color: #1e40af; font-weight: 600; }
+.btn.toggle.active:hover { background: #dce8ff; }
+.btn.ico { padding: .25em .45em; }   /* tight icon-only buttons (◀ ▶ measure arrows) */
+.btn .ic, .iconlabel .ic { display: none; }   /* desktop: text label is enough */
+
+/* Vocabulary rows: clickable label grows; delete (🗑) sits at the right, quiet until hovered. */
+.vocabRow { display: flex; align-items: center; gap: .5rem; }
+.vocabLabel { flex: 1 1 auto; cursor: pointer; }
+.vocabDel {
+  flex: 0 0 auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: .1em .35em;
+  border-radius: 4px;
+  opacity: .55;
+  transition: opacity .15s ease, background .15s ease;
+}
+.vocabDel:hover { opacity: 1; background: #fde8e8; }
+
+@media (max-width: 700px) {
+  .btn { padding: .5em .6em; font-size: 1em; }   /* bigger tap targets */
+  .btn .txt, .iconlabel .txt { display: none; }  /* mobile: show the icon only */
+  .btn .ic, .iconlabel .ic { display: inline; }
+  .btn.ico { padding: .4em .55em; }
+  .vocabDel { opacity: 1; }                       /* no hover on touch — always visible */
+  .previewControls > * { margin-top: 8px; }
+}
+
+/* Voice chips for note suppression: a small pill per voice, lit when the whole voice is muted. */
+.voiceChip {
+  display: inline-block;
+  margin: 0 .15em;
+  padding: .05em .5em;
+  font-size: .85em;
+  border-radius: 10px;
+  border: 1px solid #888;
+  background: #fff;
+  cursor: pointer;
+}
+#voiceChips { display: none; }   /* shown only while in suppress edit-mode */
+
+/* Library tag-filter chips: click to toggle; lit when the tag is in the active filter. */
+.tagChip {
+  display: inline-block;
+  margin: 0 .15em .15em 0;
+  padding: .05em .5em;
+  font-size: .8em;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+}
+.tagChip.active { background: #2563eb; border-color: #2563eb; color: #fff; }
+/* Per-row delete button in Manage Library: quiet until hovered. */
+.pieceDel { border: none; background: none; cursor: pointer; opacity: .55; padding: 0 .25em; }
+.pieceDel:hover { opacity: 1; }

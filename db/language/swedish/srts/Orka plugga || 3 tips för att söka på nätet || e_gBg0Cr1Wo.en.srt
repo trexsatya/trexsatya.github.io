@@ -1,0 +1,152 @@
+1
+00:00:01,800 --> 00:00:05,520
+When searching for facts and information to a task-
+
+2
+00:00:05,680 --> 00:00:07,680
+-Is, for example, environmental impact-
+
+3
+00:00:07,840 --> 00:00:11,480
+-Can it be good to know basic search techniques.
+
+4
+00:00:11,640 --> 00:00:15,000
+These help you get the best possible result.
+
+5
+00:00:15,160 --> 00:00:19,040
+Here are three tips on how to optimize your search.
+
+6
+00:00:21,200 --> 00:00:24,280
+When to search for a concept consisting of several words-
+
+7
+00:00:24,440 --> 00:00:27,960
+-Can it be good to write the words within quotation marks.
+
+8
+00:00:28,120 --> 00:00:31,560
+Then you limit your search to just show out results-
+
+9
+00:00:31,720 --> 00:00:33,720
+-which contains the words in sequence.
+
+10
+00:00:33,880 --> 00:00:38,280
+If you write "global warming", you will get results with the concept.
+
+11
+00:00:38,440 --> 00:00:42,520
+Instead you search for “global warming” without quotation mark-
+
+12
+00:00:42,680 --> 00:00:46,200
+-can some search engines display results where either "global"-
+
+13
+00:00:46,360 --> 00:00:48,800
+-or "heating" is included.
+
+14
+00:00:50,000 --> 00:00:53,080
+A method that can help you get a wider search-
+
+15
+00:00:53,240 --> 00:00:55,800
+-In some search engines are truncation.
+
+16
+00:00:55,960 --> 00:00:58,680
+By adding a star to the word stem-
+
+17
+00:00:58,840 --> 00:01:02,640
+-Do you hit all words with the same beginning as your keyword.
+
+18
+00:01:02,800 --> 00:01:05,960
+For example, you search for "environment*"-
+
+19
+00:01:06,120 --> 00:01:09,160
+-can you get search hits as "environment", "environment"--
+
+20
+00:01:09,320 --> 00:01:12,840
+-"Environmental issues", "environmental impact", etc.
+
+21
+00:01:13,960 --> 00:01:18,280
+In many search engines you can control how you want to combine your keywords-
+
+22
+00:01:18,440 --> 00:01:21,080
+-by using booles search.
+
+23
+00:01:21,240 --> 00:01:23,280
+It means you write the words:
+
+24
+00:01:23,440 --> 00:01:26,440
+"and", "or", or "note" between your keywords.
+
+25
+00:01:26,600 --> 00:01:28,600
+For example, if you are to search on-
+
+26
+00:01:28,760 --> 00:01:31,240
+-My environmental impact in Sweden you can write:
+
+27
+00:01:31,400 --> 00:01:37,120
+"Environmental impact or climate change or carbon dioxide emissions and Sweden".
+
+28
+00:01:37,280 --> 00:01:39,480
+In order for the search engine to know which word-
+
+29
+00:01:39,640 --> 00:01:42,200
+-which should be searched together with the word "or"-
+
+30
+00:01:42,360 --> 00:01:45,720
+-Do you turn the words into a bracket.
+
+31
+00:01:45,880 --> 00:01:48,760
+Then you get search hits containing "Sweden"-
+
+32
+00:01:48,920 --> 00:01:51,240
+-and some of the words “environmental impact”-
+
+33
+00:01:51,400 --> 00:01:54,720
+-"Climate change" and "carbon dioxide emissions".
+
+34
+00:01:54,880 --> 00:01:58,880
+Thus, to optimize your search you can use:
+
+35
+00:01:59,040 --> 00:02:02,480
+Drawing, truncation and booles search.
+
+36
+00:02:02,640 --> 00:02:05,400
+These are some tips to help you find-
+
+37
+00:02:05,560 --> 00:02:10,080
+-This you are looking for on the internet and can make you save time.
+
+38
+00:02:12,040 --> 00:02:16,040
+Swedish texture: Jenny Berglund Iyuno-Di Group for UR
+

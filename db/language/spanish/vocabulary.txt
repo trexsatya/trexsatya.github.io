@@ -1,0 +1,703 @@
+# Very Basic
+hacer (do,make)
+(now) | (yo) hago | (tú) haces | (él/usted) hace | (nosotros) hacemos | (vosotros) hacéis | (ellos/ustedes) hacen
+(then) | (yo) hice | (tú) hiciste | (él/usted) hizo | (nosotros) hicimos | (vosotros) hicisteis | (ellos/ustedes) hicieron
+(then-ongoing) | (yo) hacía | (tú) hacías | (él/usted) hacía | (nosotros) hacíamos | (vosotros) hacíais | (ellos/ustedes) hacían
+(future) | (yo) haré | (tú) harás | (él/usted) hará | (nosotros) haremos | (vosotros) haréis | (ellos/ustedes) harán
+(would) | (yo) haría | (tú) harías | (él/usted) haría | (nosotros) haríamos | (vosotros) haríais | (ellos/ustedes) harían
+(emotions-now) | (yo) haga | (tú) hagas | (él/usted) haga | (nosotros) hagamos | (vosotros) hagáis | (ellos/ustedes) hagan
+(emotions-then) | (yo) hiciera ( ) | (tú) hicieras ( ) | (él/usted) hiciera (/ hiciese ) | (nosotros) hiciéramos (ésemos ) | (vosotros) hicierais ( ) | (ellos/ustedes) hicieran (/ hiciesen)
+(has completed) | (yo) he hecho | (tú) has hecho | (él/usted) ha hecho | (nosotros) hemos hecho | (vosotros) habéis hecho | (ellos/ustedes) han hecho
+(imperative)| haz | haga | hagamos | haced | hagan
+
+ ser (be)
+(now) | soy | eres | es | somos | sois | son
+(then) | fui | fuiste | fue | fuimos | fuisteis | fueron
+(then-ongoing) | era | eras | era | éramos | erais | eran
+(future) | seré | serás | será | seremos | seréis | serán
+(would) | sería | serías | sería | seríamos | seríais | serían
+(emotions-now) | sea | seas | sea | seamos | seáis | sean
+(emotions-then) | fuera | fueras | fuera | fuéramos ésemos | fuerais | fueran
+(has completed) | he sido | has sido | ha sido | hemos sido | habéis sido | han sido
+(imperative)| sé | sea | seamos | sed | sean
+
+ ver (see)
+(now) | veo | ves | ve | vemos | veis | ven
+(then) | vi | viste | vio | vimos | visteis | vieron
+(then-ongoing) | veía | veías | veía | veíamos | veíais | veían
+(future) | veré | verás | verá | veremos | veréis | verán
+(would) | vería | verías | vería | veríamos | veríais | verían
+(emotions-now) | vea | veas | vea | veamos | veáis | vean
+(emotions-then) | viera | vieras | viera | viéramos ésemos | vierais | vieran
+(has completed) | he visto | has visto | ha visto | hemos visto | habéis visto | han visto
+(imperative)| ve | vea | veamos | ved | vean
+
+estar (be-temporary)
+(now) | estoy | estás | está | estamos | estáis | están
+(then) | estuve | estuviste | estuvo | estuvimos | estuvisteis | estuvieron
+(then-ongoing) | estaba | estabas | estaba | estábamos | estabais | estaban
+(future) | estaré | estarás | estará | estaremos | estaréis | estarán
+(would) | estaría | estarías | estaría | estaríamos | estaríais | estarían
+(emotions-now) | esté | estés | esté | estemos | estéis | estén
+(emotions-then) | estuviera | estuvieras | estuviera | estuviéramos ésemos | estuvierais | estuvieran
+(has completed) | he estado | has estado | ha estado | hemos estado | habéis estado | han estado
+(imperative)| está | esté | estemos | estad | estén
+
+servir (serve)
+(now) | sirvo | sirves | sirve | servimos | servís | sirven
+(then) | serví | serviste | sirvió | servimos | servisteis | sirvieron
+(then-ongoing) | servía | servías | servía | servíamos | servíais | servían
+(future) | serviré | servirás | servirá | serviremos | serviréis | servirán
+(would) | serviría | servirías | serviría | serviríamos | serviríais | servirían
+(emotions-now) | sirva | sirvas | sirva | sirvamos | sirváis | sirvan
+(emotions-then) | sirviera | sirvieras | sirviera | sirviéramos ésemos | sirvierais | sirvieran
+(has completed) | he servido | has servido | ha servido | hemos servido | habéis servido | han servido
+(imperative)| sirve | sirva | sirvamos | servid | sirvan
+
+tener (have)
+(now) | tengo | tienes | tiene | tenemos | tenéis | tienen
+(then) | tuve | tuviste | tuvo | tuvimos | tuvisteis | tuvieron
+(then-ongoing) | tenía | tenías | tenía | teníamos | teníais | tenían
+(future) | tendré | tendrás | tendrá | tendremos | tendréis | tendrán
+(would) | tendría | tendrías | tendría | tendríamos | tendríais | tendrían
+(emotions-now) | tenga | tengas | tenga | tengamos | tengáis | tengan
+(emotions-then) | tuviera | tuvieras | tuviera | tuviéramos ésemos | tuvierais | tuvieran
+(has completed) | he tenido | has tenido | ha tenido | hemos tenido | habéis tenido | han tenido
+(imperative)| ten | tenga | tengamos | tened | tengan
+
+deber (should, must)
+(now) | debo | debes | debe | debemos | debéis | deben
+(then) | debí | debiste | debió | debimos | debisteis | debieron
+(then-ongoing) | debía | debías | debía | debíamos | debíais | debían
+(future) | deberé | deberás | deberá | deberemos | deberéis | deberán
+(would) | debería | deberías | debería | deberíamos | deberíais | deberían
+(emotions-now) | deba | debas | deba | debamos | debáis | deban
+(emotions-then) | debiera | debieras | debiera | debiéramos ésemos | debierais | debieran
+(has completed) | he debido | has debido | ha debido | hemos debido | habéis debido | han debido
+(imperative)| debe | deba | debamos | debed | deban
+
+| ir (go)|
+(now) | voy | vas | va | vamos | vais | van
+(then) | fui | fuiste | fue | fuimos | fuisteis | fueron
+(then-ongoing) | iba | ibas | iba | íbamos | ibais | iban
+(future) | iré | irás | irá | iremos | iréis | irán
+(would) | iría | irías | iría | iríamos | iríais | irían
+(emotions-now) | vaya | vayas | vaya | vayamos | vayáis | vayan
+(emotions-then) | fuera | fueras | fuera | fuéramos ésemos | fuerais | fueran
+(has completed) | he ido | has ido | ha ido | hemos ido | habéis ido | han ido
+(imperative)| ve | vaya | vayamos | id | vayan
+
+venir (come)
+(now) | vengo | vienes | viene | venimos | venís | vienen
+(then) | vine | viniste | vino | vinimos | vinisteis | vinieron
+(then-ongoing) | venía | venías | venía | veníamos | veníais | venían
+(future) | vendré | vendrás | vendrá | vendremos | vendréis | vendrán
+(would) | vendría | vendrías | vendría | vendríamos | vendríais | vendrían
+(emotions-now) | venga | vengas | venga | vengamos | vengáis | vengan
+(emotions-then) | viniera | vinieras | viniera | viniéramos ésemos | vinierais | vinieran
+(has completed) | he venido | has venido | ha venido | hemos venido | habéis venido | han venido
+(imperative)| ven | venga | vengamos | venid | vengan
+
+poder (can)
+(now) | puedo | puedes | puede | podemos | podéis | pueden
+(then) | pude | pudiste | pudo | pudimos | pudisteis | pudieron
+(then-ongoing) | podía | podías | podía | podíamos | podíais | podían
+(future) | podré | podrás | podrá | podremos | podréis | podrán
+(would) | podría | podrías | podría | podríamos | podríais | podrían
+(emotions-now) | pueda | puedas | pueda | podamos | podáis | puedan
+(emotions-then) | pudiera | pudieras | pudiera | pudiéramos ésemos | pudierais | pudieran
+(has completed) | he podido | has podido | ha podido | hemos podido | habéis podido | han podido
+(imperative)| puede | pueda | podamos | poded | puedan
+
+querer (want)
+(now) | quiero | quieres | quiere | queremos | queréis | quieren
+(then) | quise | quisiste | quiso | quisimos | quisisteis | quisieron
+(then-ongoing) | quería | querías | quería | queríamos | queríais | querían
+(future) | querré | querrás | querrá | querremos | querréis | querrán
+(would) | querría | querrías | querría | querríamos | querríais | querrían
+(emotions-now) | quiera | quieras | quiera | queramos | queráis | quieran
+(emotions-then) | quisiera | quisieras | quisiera | quisiéramos ésemos | quisierais | quisieran
+(has completed) | he querido | has querido | ha querido | hemos querido | habéis querido | han querido
+(imperative)| quiere | quiera | queramos | quered | quieran
+
+saber (know)
+(now) | sé | sabes | sabe | sabemos | sabéis | saben
+(then) | supe | supiste | supo | supimos | supisteis | supieron
+(then-ongoing) | sabía | sabías | sabía | sabíamos | sabíais | sabían
+(future) | sabré | sabrás | sabrá | sabremos | sabréis | sabrán
+(would) | sabría | sabrías | sabría | sabríamos | sabríais | sabrían
+(emotions-now) | sepa | sepas | sepa | sepamos | sepáis | sepan
+(emotions-then) | supiera | supieras | supiera | supiéramos ésemos | supierais | supieran
+(has completed) | he sabido | has sabido | ha sabido | hemos sabido | habéis sabido | han sabido
+(imperative)| sabe | sepa | sepamos | sabed | sepan
+
+decir (say)
+(now) | digo | dices | dice | decimos | decís | dicen
+(then) | dije | dijiste | dijo | dijimos | dijisteis | dijeron
+(then-ongoing) | decía | decías | decía | decíamos | decíais | decían
+(future) | diré | dirás | dirá | diremos | diréis | dirán
+(would) | diría | dirías | diría | diríamos | diríais | dirían
+(emotions-now) | diga | digas | diga | digamos | digáis | digan
+(emotions-then) | dijera | dijeras | dijera | dijéramos ésemos | dijerais | dijeran
+(has completed) | he dicho | has dicho | ha dicho | hemos dicho | habéis dicho | han dicho
+(imperative)| di | diga | digamos | decid | digan
+
+ dar (give)
+(now) | doy | das | da | damos | dais | dan
+(then) | di | diste | dio | dimos | disteis | dieron
+(then-ongoing) | daba | dabas | daba | dábamos | dabais | daban
+(future) | daré | darás | dará | daremos | daréis | darán
+(would) | daría | darías | daría | daríamos | daríais | darían
+(emotions-now) | dé | des | dé | demos | deis | den
+(emotions-then) | diera | dieras | diera | diéramos ésemos | dierais | dieran
+(has completed) | he dado | has dado | ha dado | hemos dado | habéis dado | han dado
+(imperative)| da | dé | demos | dad | den
+
+# Common things and actions
+(cause)|<*causar|<*provocar|para | para que | con el fin de | para así |
+(effect)|efecto|resultado|consecuencia|lo cual permite|
+(need)|<*necesitar|<*{sentir}requerir|<*precisar|
+haya que|hay que|hace falta|es necesario|es preciso|
+(want)|querer|<*desear|<*gustar|
+(goal)|objetivo|meta|propósito|
+(having to)|tener que|
+
+(receive)|<*recibir|obtener|
+
+(ask)|<*preguntar|<*solicitar|<*pedir|hacer una pregunta|
+(order,request)|pedido|
+(answer)|<*responder|<*contestar|respuesta|
+(tell)|<*decir|<*contar|<*informar|
+(think)|<*pensar|<*creer|<*opinar|
+(understand)|<*entender|<*comprender|
+
+(help)|<*ayudar|<*asistir|
+(use)|<*usar|<*{realizar}utilizar|
+
+(look)|<*mirar|observar|ver|
+(search)|buscar|explorar|investigar|
+(find)|encontrar|hallar|
+
+(lost)|<*{entender}perder|<*{enviar}extraviar|
+(remember)|<*{contar}recordar|<*{contar}acordar|
+(forget)|<*olvidar|<*dejar de recordar|
+
+(learn)|<*aprender|<*estudiar|
+(teach)|<*enseñar|<*{construir}instruir|
+(read)|<*leer|
+(write)|<*escribir|
+(speak)|<*hablar|<*conversar|
+(listen)|<*escuchar|<*oír|
+
+# Everyday phrases
+(Hälsningar & artigheter) | ¡Hola! | ¿Qué tal? | ¿Cómo estás? | Bien, gracias. ¿Y tú? | Mucho gusto. | Igualmente. | Adiós. | Hasta luego. | Nos vemos. | Que tengas un buen día.
+(Artighet & ursäkter) | Gracias. | De nada. | Perdón. | Disculpa. | Lo siento. | No hay problema.
+(Frågor i vardagen) | ¿Qué haces? | ¿Dónde estás? | ¿Qué pasa? | ¿Puedes ayudarme? | ¿Qué hora es? | ¿Cuánto cuesta? | ¿Hablas inglés? | ¿Dónde está el baño?
+(Svar & uttryck) | Claro. | No sé. | Vale. | Está bien. | Ni idea. | No importa. | ¡Qué bien! | ¡Qué mal! | ¡Qué pena! | ¡Qué suerte!
+(Restaurang & affär) | Una mesa para dos, por favor. | La cuenta, por favor. | ¿Tienen menú del día? | Quisiera esto. | ¿Puedo pagar con tarjeta? | Está delicioso.
+que yo recuerde| que yo sepa | por lo que sé |hasta donde recuerdo
+(still)|(todavía)|aún|
+(although)|aunque|a pesar de que|
+(not even)|ni siquiera|ni tan siquiera|
+(not yet)|todavía no|aún no|
+(already)| ya |
+(just now)|ahora mismo|justo ahora|
+(any)|cualquier|algún|alguna|
+
+# Mental Capabilities, abstractions
+(ignore)|<*ignorar|desatender|
+(consider)|considerar|tener en cuenta|
+(assume)|asumir|suponer|
+(guess)|adivinar|suponer|
+(hope)|esperar|tener esperanza|
+(doubt)|dudar|tener dudas|
+(believe)|creer|pensar|
+(trust)|confiar|fiarse|
+(agree)|estar de acuerdo|aceptar|
+(disagree)|no estar de acuerdo|rechazar|
+(decide)|decidir|determinar|
+(choose)|elegir|escoger|
+(prefer)|preferir|gustar más|
+(plan)|planear|planificar|
+(convince)|<*{vencer}convencer|persuadir|
+
+(stupid)|tonto|bobo|necio|
+(smart)|inteligente|listo|sabio|
+(stupidly)|estúpidamente|tontamente|
+(smartly)|inteligentemente|sabiamente|
+(knowledge)|conocimiento|saber|
+(wisdom)|sabiduría|prudencia|
+(intelligence)|inteligencia|cociente intelectual|
+(imagination)|imaginación|fantasía|
+(creativity)|creatividad|ingenio|
+
+(study)|estudiar|investigar|
+(thought)|pensamiento|idea|
+(analyze)|analizar|examinar|
+(solve)|resolver|solucionar|
+(problem)|problema|dificultad|
+(solution)|solución|resolución|
+(reason)|razón|motivo|
+(logic)|lógica|razonamiento|
+
+# Feelings, emotions
+(sensation)|sensación|sentimiento|
+(cry)|<*llorar|
+(feel)|<*sentir|
+(love)|amar|querer|
+(hate)|odiar|
+(like)|gustar|agradar|
+(dislike)|disgustar|desagradar|
+(fear)|temer|tener miedo|
+(frighten)|asustar|atemorizar|
+(worry)|preocuparse|inquietarse|
+(happy)|feliz|contento|alegre|
+(sad)|triste|apenado|afligido|
+(angry)|enojado|furioso|molesto|rabia|<*rabiar| ira |furia|
+(bored)|aburrido|fastidiado|
+(tired)|cansado|fatigado|
+(excited)|emocionado|entusiasmado|
+(nervous)|nervioso|ansioso|
+(calmed)|calmado|tranquilo|
+(relaxed)|relajado|tranquilo|
+(stressed)|estresado|tenso|
+(frustrated)|frustrado|desilusionado|
+(frustration)|frustración|desilusión|
+(surprised)|sorprendido|asombrado|
+(confused)|confundido|desconcertado|
+(proud)|orgulloso|satisfecho|
+(shy)|tímido|vergonzoso|
+(lonely)|solo|solitario|
+(guilty)|culpable|avergonzado|
+(jealous)|celoso|envidioso|
+(envy)|envidiar|desear|
+
+# Physical activities
+
+# Games, sports
+
+# Basic Necessities
+
+# Sex, reproduction, romance
+
+# Damages, Distructions, Negative things etc
+(invade)|<*invadir|penetrar|
+(damage)|dañar|estropear|
+(destroy)|destruir|arruinar|
+(break)|romper|quebrar|
+(harm)|hacer daño|perjudicar|
+(kill)|matar|asesinar|
+(wound)|herir|lesionar|
+(hurt)|doler|lastimar|
+(fight)|pelear|luchar|
+(battle)|batalla|combate|
+(war)|guerra|conflicto|
+(die)|morir|fallecer|
+(death)|muerte|fallecimiento|
+
+# Time
+(suddenly)|de repente|repentinamente|
+(immediately)|inmediatamente|enseguida|
+(later)|más tarde|después|
+(soon)|pronto|dentro de poco|
+(early)|temprano|antes de tiempo|
+(late)|tarde|con retraso|
+(always)|siempre|constantemente|
+(never)|nunca|jamás|
+(often)|a menudo|frecuentemente|
+(sometimes)|a veces|algunas veces|
+(once in a while)|de vez en cuando|ocasionalmente|
+(usually)|normalmente|generalmente|
+(while)|mientras|durante|
+(before)|antes|anteriormente|
+(after)|después|luego|
+(then)|entonces|luego|
+(now)|ahora|en este momento|
+(soon)|pronto|dentro de poco|
+(recently)|recientemente|últimamente|
+(long ago)|hace mucho tiempo|hace tiempo|
+(for a long time)|desde hace mucho tiempo|durante mucho tiempo|
+(since)|desde|desde que|
+(for)|por|durante|
+(temporarily)|temporalmente|provisionalmente|
+(permanently)|permanentemente|de forma permanente|
+(ever)|alguna vez|jamás|
+(never)|nunca|jamás|
+(again)|de nuevo|otra vez|
+(again and again)|una y otra vez|repetidamente|
+(from time to time)|de vez en cuando|ocasionalmente|
+(from beginning to end)|de principio a fin|de cabo a rabo|
+
+# Space, Position
+(here)aquí|acá|
+(there)allí|ahí|
+(there, far away)allá|allí lejos|ahí lejos|
+(there, close by)allí cerca|ahí cerca|
+(near)|cerca|alrededor|
+(there, in the distance)allí a lo lejos|ahí a lo lejos|
+(far)|lejos|alejado|
+(there, in the middle)allí en el medio|ahí en el medio|
+(everywhere)en todas partes|
+(back)|atrás|detrás|
+(front)|adelante|delante|
+(middle)|medio|en el medio|
+(up)|arriba|encima|
+(down)|abajo|debajo|
+(left)|izquierda|a la izquierda|
+(right)|derecha|a la derecha|
+(inside)|dentro|adentro|
+(outside)|fuera|afuera|
+(around)|alrededor|en torno a|
+(surrounding)|circundante|circundante|alrededor de|
+(surrounds)|rodear|
+
+# Measurement, Counting
+(only)|solamente|solo|sola|
+(performance)|rendimiento|
+
+(again and again)|una y otra vez|una vez más|repetidamente|
+(every time)cada vez|
+
+# Shapes, arrangements and conditions
+parece|parecer|
+(similar,same)|parecido|parecida|igual|mismo|misma|idéntica|idéntica|semejante|
+(different)|diferente|distinto|distinta|
+
+# Phases, Motion
+(change)|<*cambiar|<*{complicar}modificar|
+(continue)|<*{actuar}continuar|<*proseguir|
+(repeat)|<*{pedir}repetir|<*volver (a hacer)|
+
+(open)|abrir|destapar|
+(close)|cerrar|clausurar|finalizar|
+(start)|empezar|comenzar|iniciar|
+(stop)|parar|detener|cesar|
+(wait)|esperar|aguardar|
+(finish)|terminar|acabar|concluir|
+
+(move)|mover|desplazar|
+(travel)|viajar|desplazarse|<*recorrer|
+(lift)|levantar|<*{realizar}alzar|
+(push)|empujar|impulsar|
+(pull)|tirar|jalar|
+(carry)|llevar|transportar|
+(throw)|lanzar|tirar|
+(catch)|atrapar|coger|
+(fall)|caer|desplomarse|
+(shed)|<*derramar|desprender|
+(rise)|subir|ascender|
+(jump)|<*saltar|brincar|
+(let go)|<*{contar}soltar|dejar ir|
+(run)|correr|trotar|
+(walk)|caminar|andar|
+(sit)|<*{pensar}sentar|sentarse|estar sentado|
+(stand)|estar de pie|ponerse de pie|
+(lie down)|acostarse|tumbarse|
+(fly)|volar|planear|
+(swim)|nadar|bucear|
+(drive)|conducir|manejar|
+(ride)|montar|andar en|
+(turn)|girar|voltear|
+
+# Activities
+
+# Physical appearance
+
+# Conditions, states
+(ability)|habilidad|capacidad|
+(disability)|discapacidad|minusvalía|
+(power)|potencia|fuerza|
+(powerless)|impotencia|debilidad|
+(strength)|fuerza|vigor|
+(weakness)|debilidad|fragilidad|
+(heavy)|pesado|pesada|
+(light)|ligero|ligera|
+(big)|grande|enorme|gigante|
+(small)|pequeño|pequeña|diminuto|
+(long)|largo|larga|
+(short)|corto|breve|
+(thick)|grueso|gordo|
+(thin)|delgado|fino|
+(hard)|duro|difícil|
+(soft)|suave|blando|
+(fast)|rápido|veloz|
+(slow)|lento|pausado|
+(old)|viejo|antiguo|
+(young)|joven|juvenil|
+(new)|nuevo|reciente|
+(old, not new)|viejo|usado|antiguo|
+(clean)|limpio|aseado|
+(dirty)|sucio|manchado|
+(strong)|fuerte|robusto|
+(weak)|débil|frágil|
+(healthy)|saludable|sano|
+(sick)|enfermo|malado|
+(fat)|gordo|obeso|
+(thin, slim)|delgado|flaco|
+(bright)|brillante|luminoso|
+(dark)|oscuro|tenebroso|
+(flat)|plano|llano|
+(round)|redondo|circular|
+(smooth)|liso|suave|
+(rough)|áspero|rugoso|
+(dry)|seco|árido|
+(wet)|mojado|húmedo|
+(full)|lleno|completo|
+(empty)|vacío|desocupado|
+(free)|libre|desocupado|
+(busy)|ocupado|atareado|
+(open)|abierto|despejado|
+(closed)|cerrado|clausurado|
+(freezing)|helado|congelado|
+(hot)|caliente|ardiente|
+(cold)|frío|gélido|
+(warm)|tibio|cálido|
+(cool)|fresco|templado|
+(sunny)|soleado|soleada|
+(cloudy)|nublado|cubierto|
+(rainy)|lluvioso|lluviosa|
+(windy)|ventoso|ventosa|
+(stormy)|tormentoso|tempestuoso|
+(snowy)|nevado|nevosa|
+(foggy)|brumoso|neblinoso|
+(certain)|cierto|seguro|
+(uncertain)|incierto|dudoso|
+(possible)|posible|factible|
+(impossible)|imposible|inviable|
+(probable)|probable|verosímil|
+(improbable)|improbable|poco probable|
+(familiar)|familiar|conocido|
+(strange)|extraño|raro|
+(real)|real|verdadero|
+(fake)|falso|artificial|
+(true)|verdadero|cierto|
+(false)|falso|erróneo|
+(alive)|vivo|viviente|
+(dead)|muerto|fallecido|
+(present)|presente|actual|
+(absent)|ausente|faltante|
+(available)|disponible|accesible|
+(unavailable)|no disponible|indisponible|
+(flexible)|flexible|elástico|
+(stiff)|rígido|tieso|
+(broken)|roto|quebrado|
+(repairable)|reparable|arreglable|
+(unrepairable)|irreparable|irremediable|
+(fixed)|fijo|arreglado|
+(broken down)|averiado|descompuesto|
+(win)|ganar|vencer|
+(lose)|perder|derrotar|
+(success)|éxito|triunfo|
+(failure)|fracaso|fallo|
+
+# Conditions - normality
+
+# Health and diseases, problems
+
+# Finance, economy, business
+
+# Animals, birds and characteristics
+
+# Security, safety
+
+# Sounds
+(sound)|sonido|ruido|
+(shout)|<*gritar|vociferar|
+(whisper)|susurrar|murmurar|
+(sing)|cantar|entonar|
+(music)|música|melodía|
+(noise)|ruido|estruendo|
+(loud)|fuerte|ruidoso|
+(quiet)|silencioso|tranquilo|
+(soft)|suave|blando|
+
+# Light
+
+# Taste
+
+# Colors
+
+# Transport
+
+# Common talks
+
+# Interactions among people
+
+# Social relations
+
+# Relationships
+(Consists)|consiste( en)|
+(unique)|único|única|
+(that)|eso|esa|ese|aquello|aquella|aquel|
+(other)|otro|otra|otros|otras|
+(same)|mismo|misma|mismos|mismas|
+(different)|diferente|distinto|distinta|
+(part)|parte|porción|
+(whole)|todo|completo|
+(share)|compartir|repartir|
+
+# Performances, shows, events
+
+# Mental habits, conditions, personalities
+
+# Food, Drink, kitchen, Eating
+(food)|comida|alimento|
+(breakfast)|desayunar|almorzar|
+(lunch)|comer|almorzar|
+(dinner)|cenar|comer la cena|
+(snack)|merendar|picotear|
+(drink)|beber|tomar|
+(cook)|cocinar|preparar la comida|
+(eat)|comer|alimentarse|
+(prepare)|preparar|cocinar|
+
+(kitchen)|cocina|cocinar|
+(restaurant)|restaurante|comedor|
+(bar)|bar|taberna|
+(cafe)|café|cafetería|
+
+
+# Clothes, Furnitures
+(clothes)|ropa|vestimenta|
+(shirt)|camisa|blusa|
+(pants)|pantalones|pantalón|
+(shoes)|zapatos|calzado|
+(dress)|vestido|atuendo|
+(skirt)|falda|
+(coat)|abrigo|chaqueta|
+(jacket)|chaqueta|cazadora|
+(suit)|traje|conjunto|
+(tie)|corbata|lazo|
+(belt)|cinturón|faja|
+(hat)|sombrero|gorro|
+(glasses)|gafas|lentes|
+(watch)|reloj|cronómetro|
+(jewelry)|joyas|bisutería|
+(furniture)|muebles|mobilario|
+(table)|mesa|mesita|
+(chair)|silla|asiento|
+(sofa)|sofá|diván|
+(bed)|cama|lecho|
+(wardrobe)|armario|ropero|
+(shelf)|estantería|repisa|
+(drawer)|cajón|gaveta|
+(mirror)|espejo|cristal|
+(carpet)|alfombra|tapete|
+(curtain)|cortina|visillo|
+(lamp)|lámpara|foco|
+(light)|luz|iluminación|
+(fan)|ventilador|abanico|
+(air conditioner)|aire acondicionado|climatizador|
+(heater)|calefactor|radiador|
+(fridge)|nevera|refrigerador|
+(oven)|horno|cocina|
+(microwave)|microondas|horno microondas|
+(toaster)|tostadora|tostador|
+(blender)|licuadora|batidora|
+(dishwasher)|lavavajillas|lavaplatos|
+(washing machine)|lavadora|máquina de lavar|
+(dryer)|secadora|máquina de secar|
+(sink)|fregadero|lavabo|
+(toilet)|inodoro|retrete|
+(shower)|ducha|regadera|
+(bath)|bañera|tina|
+
+# Fruits, Vegetables
+
+# Buildings, houses etc
+
+# Colours
+
+# Cleaning
+
+# Body Parts, Accessories and Actions
+cabeza|cabezas|
+cerebro|cerebros|
+pelo|pelos|cabello|cabellos|
+cara|caras|
+cuello|cuellos|
+ojo|ojos|
+oreja|orejas|
+nariz|narices|
+labio|labios|
+boca|bocas|
+lengua|lenguas|
+
+# Natural and derived elements
+
+# Nature, Plants, Trees, Farming, Agriculture
+las estaciones(del año)|primavera|verano|otoño|invierno|
+
+# Flowers
+
+# Managing things, situations
+(Save)|ahorrar|
+(Waste)|desperdiciar|gastar|
+(Improve)|mejorar|
+(Organize)|organizar|
+(Manage)|gestionar|
+(Avoid)|evitar|
+
+(hide)|esconder|ocultar|cubrir|
+(show)|mostrar|enseñar|revelar|
+(combine)|combinar|unir|juntar|
+(separate)|separar|dividir|partir|
+(collect)|recoger|coleccionar|
+(gather)|reunir|juntar|agrupar|
+(distribute)|distribuir|repartir|
+
+(build)|construir|edificar|
+(destroy)|destruir|arruinar|derribar|
+(create)|crear|producir|generar|
+
+(fix)|arreglar|reparar|solucionar|
+(break)|romper|quebrar|partir|
+
+# Tools, machines
+
+# Entertainment
+
+# Crimes, Law, Rules, Regulation, Punishments, Justice
+(beat)|golpear|(propinar/dar una)paliza|<*{llegar}pegar|
+(steal)|robar|hurtar|
+(kill)|matar|asesinar|
+(lie)|mentir|faltar a la verdad|
+(cheat)|engañar|hacer trampa|
+(arrest)|arrestar|detener|
+(jail)|encarcelar|prender|
+(law)|ley|norma|
+(rule)|regla|norma|
+(punish)|castigar|penalizar|
+(judge)|juzgar|sentenciar|
+(trial)|juicio|proceso|
+(crime)|crimen|delito|
+(police)|policía|fuerzas del orden|
+(court)|tribunal|corte|
+
+# Studies, school, education
+
+# Lines of work, jobs, occupations, professions & related words
+
+# Decision-making
+
+# Truth, Lies, Deception
+
+# Logic
+
+# Non-physical
+
+# Advanced linguistic constructs
+
+# Miscellaneous
+
+# Idiomatic way
+
+# Speaking style, Phrases
+
+# IT, Software, Hardware
+
+# Sayings
+
+# Metaphors
+
+# Idioms

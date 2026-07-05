@@ -1,0 +1,14 @@
+{
+  "contextLinesBefore": 1,
+  "contextLinesAfter": 1,
+  "includeJokes": false,
+  "enabledSources": [
+    "youtube"
+  ],
+  "recPlayGapSeconds": 30,
+  "blockedChannels": [],
+  "recPlayShuffle": false,
+  "recPlayLoop": "off",
+  "practiceRevealMode": "flip",
+  "practiceFrontIsSource": false
+}

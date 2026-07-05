@@ -1,0 +1,19 @@
+1
+00:32:58,039 --> 00:33:01,240
+you take another number an even number eh 14
+
+2
+00:33:01,240 --> 00:33:04,519
+or 16 for example But we want 15
+
+3
+00:33:04,519 --> 00:33:06,399
+Yes but 15 is an odd number It is
+
+4
+00:33:06,399 --> 00:33:08,279
+impossible to split in two if you want
+
+5
+00:33:08,279 --> 00:33:11,519
+whole

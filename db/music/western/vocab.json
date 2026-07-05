@@ -1,0 +1,233 @@
+[
+  {
+    "id": "A_Time_For_Us.mscz_1_14",
+    "category": "uncategorized",
+    "pieceId": "A_Time_For_Us.mscz",
+    "system": "western",
+    "measureStart": 1,
+    "measureEnd": 14,
+    "measureOffset": 0,
+    "youtube": null,
+    "startSeconds": null,
+    "endSeconds": null,
+    "chords": [],
+    "note": "chords+arpeggios",
+    "snapshot": {
+      "pitches": [
+        64,
+        67,
+        66,
+        47,
+        59,
+        54,
+        54,
+        59,
+        59,
+        62,
+        59,
+        48,
+        62,
+        64,
+        55,
+        55,
+        60,
+        64,
+        62,
+        60,
+        47,
+        55,
+        62,
+        50,
+        50,
+        55,
+        62,
+        60,
+        59,
+        45,
+        52,
+        57,
+        45,
+        52,
+        59,
+        57,
+        55,
+        57,
+        40,
+        59,
+        52,
+        59,
+        64,
+        67,
+        66,
+        47,
+        59,
+        54,
+        54,
+        59,
+        59,
+        62,
+        59,
+        48,
+        62,
+        64,
+        52,
+        55,
+        60,
+        64,
+        45,
+        60,
+        64,
+        69,
+        60,
+        64,
+        69,
+        64,
+        47,
+        62,
+        66,
+        47,
+        47,
+        59,
+        52,
+        59,
+        67,
+        40,
+        66,
+        64,
+        62,
+        52,
+        59,
+        67,
+        66,
+        64,
+        62,
+        40,
+        55,
+        59,
+        64,
+        55
+      ],
+      "chords": [
+        "Em+9",
+        "Bm",
+        "C",
+        "G",
+        "Am",
+        "Em",
+        "Bm",
+        "C",
+        "Am",
+        "Bm",
+        "Em"
+      ]
+    },
+    "suppressed": [
+      {
+        "measure": 2,
+        "midi": 64,
+        "beats": 4.5
+      },
+      {
+        "measure": 2,
+        "midi": 67,
+        "beats": 5
+      },
+      {
+        "measure": 4,
+        "midi": 64,
+        "beats": 10.5
+      },
+      {
+        "measure": 4,
+        "midi": 62,
+        "beats": 11
+      },
+      {
+        "measure": 4,
+        "midi": 60,
+        "beats": 11.75
+      },
+      {
+        "measure": 5,
+        "midi": 62,
+        "beats": 13.5
+      },
+      {
+        "measure": 5,
+        "midi": 60,
+        "beats": 14
+      },
+      {
+        "measure": 5,
+        "midi": 59,
+        "beats": 14.75
+      },
+      {
+        "measure": 6,
+        "midi": 59,
+        "beats": 16.5
+      },
+      {
+        "measure": 6,
+        "midi": 57,
+        "beats": 16.75
+      },
+      {
+        "measure": 6,
+        "midi": 55,
+        "beats": 17
+      },
+      {
+        "measure": 6,
+        "midi": 57,
+        "beats": 17.5
+      },
+      {
+        "measure": 7,
+        "midi": 64,
+        "beats": 19.5
+      },
+      {
+        "measure": 7,
+        "midi": 67,
+        "beats": 20
+      },
+      {
+        "measure": 7,
+        "midi": 66,
+        "beats": 20.75
+      },
+      {
+        "measure": 3,
+        "midi": 62,
+        "beats": 8
+      },
+      {
+        "measure": 3,
+        "midi": 59,
+        "beats": 8.75
+      },
+      {
+        "measure": 3,
+        "midi": 59,
+        "beats": 7.5
+      },
+      {
+        "measure": 8,
+        "midi": 59,
+        "beats": 22.5
+      },
+      {
+        "measure": 8,
+        "midi": 62,
+        "beats": 23
+      },
+      {
+        "measure": 8,
+        "midi": 59,
+        "beats": 23.75
+      }
+    ],
+    "createdAt": "2026-06-23"
+  }
+]

@@ -1,0 +1,687 @@
+1
+00:00:00,000 --> 00:00:02,010
+y ahora estoy turno a revisar el patrón
+
+2
+00:00:02,010 --> 00:00:04,400
+fábrica o factoría vamos a código
+
+3
+00:00:04,400 --> 00:00:10,349
+[Música]
+
+4
+00:00:11,769 --> 00:00:13,629
+como lo mencioné en las fuentes para
+
+5
+00:00:13,629 --> 00:00:15,639
+este curso vamos a ver el patrón
+
+6
+00:00:15,639 --> 00:00:18,340
+factoría del patrón fábrica bien podemos
+
+7
+00:00:18,340 --> 00:00:20,050
+analizar el diagrama que se está
+
+8
+00:00:20,050 --> 00:00:22,360
+indicando aquí miren tenemos una
+
+9
+00:00:22,360 --> 00:00:24,939
+interfaz figura y tenemos tres
+
+10
+00:00:24,939 --> 00:00:27,270
+implementaciones de esta interfaz
+
+11
+00:00:27,270 --> 00:00:30,219
+círculo cuadrado y rectángulo luego
+
+12
+00:00:30,219 --> 00:00:32,890
+tenemos una clase que es la fábrica y
+
+13
+00:00:32,890 --> 00:00:34,480
+bueno esto viene a ser la clase prueba
+
+14
+00:00:34,480 --> 00:00:36,940
+para ejecutar nuestra aplicación en sí
+
+15
+00:00:36,940 --> 00:00:39,280
+lo importante vendría a ser todo esto
+
+16
+00:00:39,280 --> 00:00:42,399
+conjuntamente con esta clase de fábrica
+
+17
+00:00:42,399 --> 00:00:44,650
+entendamos que el patrón de diseño de
+
+18
+00:00:44,650 --> 00:00:46,300
+fábrica su objetivo es devolver
+
+19
+00:00:46,300 --> 00:00:48,610
+instancias de una clase en particular
+
+20
+00:00:48,610 --> 00:00:50,700
+por medio de algún identificador
+
+21
+00:00:50,700 --> 00:00:53,320
+entonces por ejemplo si yo necesito
+
+22
+00:00:53,320 --> 00:00:55,570
+tener una instancia de la clase persona
+
+23
+00:00:55,570 --> 00:00:57,820
+yo le voy a decir a la fábrica necesito
+
+24
+00:00:57,820 --> 00:01:00,760
+un objeto de la clase persona si
+
+25
+00:01:00,760 --> 00:01:03,910
+necesito por ejemplo de la clase boleta
+
+26
+00:01:03,910 --> 00:01:06,460
+yo tengo que ir primero por la fábrica y
+
+27
+00:01:06,460 --> 00:01:08,229
+la fábrica va a ser la responsable de
+
+28
+00:01:08,229 --> 00:01:10,360
+devolverme esa instancia es decir yo no
+
+29
+00:01:10,360 --> 00:01:12,460
+voy a distanciar directamente el objeto
+
+30
+00:01:12,460 --> 00:01:13,869
+y para ello no se trae un ejemplo
+
+31
+00:01:13,869 --> 00:01:15,819
+demostrativo peculiar para que se puede
+
+32
+00:01:15,819 --> 00:01:18,070
+entender esto miremos tenemos
+
+33
+00:01:18,070 --> 00:01:20,830
+aquí una clase app que viene a ser la
+
+34
+00:01:20,830 --> 00:01:23,050
+ejecución de mi método ustedes pueden
+
+35
+00:01:23,050 --> 00:01:26,620
+ver que digo ahora cual mysql h2 pero
+
+36
+00:01:26,620 --> 00:01:28,360
+estoy entrando a un concepto llamado
+
+37
+00:01:28,360 --> 00:01:33,490
+fábrica y obtengo una conexión en base a
+
+38
+00:01:33,490 --> 00:01:36,520
+algún identificador y esto me devuelve
+
+39
+00:01:36,520 --> 00:01:38,710
+una instancia y yo ya puedo disponer de
+
+40
+00:01:38,710 --> 00:01:40,810
+los métodos propios de esa instancia
+
+41
+00:01:40,810 --> 00:01:42,580
+para que se entienda esto primero vamos
+
+42
+00:01:42,580 --> 00:01:45,040
+a explicar la interfaz safe que en este
+
+43
+00:01:45,040 --> 00:01:48,550
+caso sería reemplazada por la interfaz y
+
+44
+00:01:48,550 --> 00:01:51,910
+conexión está bien y conexión para mí
+
+45
+00:01:51,910 --> 00:01:54,190
+sería la interfaz en el cual yo voy a
+
+46
+00:01:54,190 --> 00:01:56,259
+definir dos métodos para conectar y
+
+47
+00:01:56,259 --> 00:01:57,940
+desconectar a la base de datos y luego
+
+48
+00:01:57,940 --> 00:02:00,759
+tengo implementaciones propias de esta
+
+49
+00:02:00,759 --> 00:02:03,270
+interfaz como por ejemplo conexión mysql
+
+50
+00:02:03,270 --> 00:02:05,710
+conexión oracle' conexión post greg
+
+51
+00:02:05,710 --> 00:02:08,830
+conexión sql y una conexión vacía está
+
+52
+00:02:08,830 --> 00:02:11,890
+bien entonces en la conexión mysql
+
+53
+00:02:11,890 --> 00:02:13,959
+yo voy a definir algunos criterios para
+
+54
+00:02:13,959 --> 00:02:15,790
+enlazar la base de datos
+
+55
+00:02:15,790 --> 00:02:17,769
+y aquí puedo indicar los valores por
+
+56
+00:02:17,769 --> 00:02:19,480
+defecto y simplemente como estoy
+
+57
+00:02:19,480 --> 00:02:21,219
+implementando esta interfaz conexión
+
+58
+00:02:21,219 --> 00:02:23,469
+sobre escribo los métodos conectar y
+
+59
+00:02:23,469 --> 00:02:25,510
+desconectar a mi criterio está bien
+
+60
+00:02:25,510 --> 00:02:27,790
+ustedes pueden colocar ahí el código que
+
+61
+00:02:27,790 --> 00:02:30,250
+más les adapte que más necesiten para
+
+62
+00:02:30,250 --> 00:02:32,200
+conexión ahora con muy similar si
+
+63
+00:02:32,200 --> 00:02:34,150
+simplemente estoy cambiando los
+
+64
+00:02:34,150 --> 00:02:35,890
+parámetros de configuración esto puede
+
+65
+00:02:35,890 --> 00:02:37,480
+enlazarse con algún archivo properties
+
+66
+00:02:37,480 --> 00:02:38,920
+ya depende de ustedes pero lo que quiero
+
+67
+00:02:38,920 --> 00:02:40,989
+de ejemplificar aquí es el uso del
+
+68
+00:02:40,989 --> 00:02:43,239
+patrón miren tenemos la conexión postre
+
+69
+00:02:43,239 --> 00:02:47,349
+lo mismo otros valores sqlserver y una
+
+70
+00:02:47,349 --> 00:02:49,209
+conexión vacía en donde indiquemos que
+
+71
+00:02:49,209 --> 00:02:51,909
+no se especificó algún proveedor bien
+
+72
+00:02:51,909 --> 00:02:54,250
+entonces según el diagrama tendríamos ya
+
+73
+00:02:54,250 --> 00:02:56,010
+esta parte y sus implementaciones
+
+74
+00:02:56,010 --> 00:02:58,780
+necesitamos ahora la factoría la
+
+75
+00:02:58,780 --> 00:03:01,569
+factoría o la fábrica sería esta clase
+
+76
+00:03:01,569 --> 00:03:04,299
+conexión fábrica en el cual lo que estoy
+
+77
+00:03:04,299 --> 00:03:07,659
+haciendo es tener un método público que
+
+78
+00:03:07,659 --> 00:03:10,329
+devuelva una interfaz conexión y aquí
+
+79
+00:03:10,329 --> 00:03:12,340
+porque colocamos interfaz conexión el
+
+80
+00:03:12,340 --> 00:03:14,260
+objetivo de este patrón es devolver una
+
+81
+00:03:14,260 --> 00:03:16,510
+instancia según lo pide el usuario
+
+82
+00:03:16,510 --> 00:03:18,459
+entonces cómo estamos haciendo una
+
+83
+00:03:18,459 --> 00:03:20,349
+fábrica de conexiones de base de datos
+
+84
+00:03:20,349 --> 00:03:22,060
+es ese contexto
+
+85
+00:03:22,060 --> 00:03:24,819
+devolver alguna implementación que
+
+86
+00:03:24,819 --> 00:03:28,750
+obviamente dependa de esta interfaz y
+
+87
+00:03:28,750 --> 00:03:31,270
+conexión si yo coloco conexión sqlserver
+
+88
+00:03:31,270 --> 00:03:33,250
+aquí estaría devolviendo una
+
+89
+00:03:33,250 --> 00:03:35,709
+implementación solamente de sql si yo
+
+90
+00:03:35,709 --> 00:03:37,540
+establezco postre sólo estaría
+
+91
+00:03:37,540 --> 00:03:40,180
+devolviendo de postre entonces para
+
+92
+00:03:40,180 --> 00:03:41,800
+poder tener esa independencia de
+
+93
+00:03:41,800 --> 00:03:43,269
+cualquier motor que yo pueda devolver
+
+94
+00:03:43,269 --> 00:03:46,239
+según algún identificador es necesario
+
+95
+00:03:46,239 --> 00:03:48,130
+colocar una interfaz con eso hago
+
+96
+00:03:48,130 --> 00:03:50,110
+flexible el código y bueno le voy a
+
+97
+00:03:50,110 --> 00:03:52,000
+llamar un método de conexión que sería
+
+98
+00:03:52,000 --> 00:03:55,090
+lo similar aquí get safe que sería
+
+99
+00:03:55,090 --> 00:03:58,110
+obtener figura simplemente primero
+
+100
+00:03:58,110 --> 00:04:00,880
+recibe un parámetro que voy a indicarle
+
+101
+00:04:00,880 --> 00:04:03,310
+algún motor de base de datos y evaluó si
+
+102
+00:04:03,310 --> 00:04:04,870
+el motor viene no lo leyó le voy a
+
+103
+00:04:04,870 --> 00:04:07,630
+devolver una conexión vacía si el motor
+
+104
+00:04:07,630 --> 00:04:10,390
+es igual a mysql entonces yo le voy a
+
+105
+00:04:10,390 --> 00:04:13,330
+devolver una instancia de mysql de
+
+106
+00:04:13,330 --> 00:04:15,819
+conexión mysql que viene a ser esta
+
+107
+00:04:15,819 --> 00:04:17,010
+clase
+
+108
+00:04:17,010 --> 00:04:19,410
+y por ende a distanciar no se ejecuta el
+
+109
+00:04:19,410 --> 00:04:20,820
+constructor y ya tengo los valores
+
+110
+00:04:20,820 --> 00:04:22,650
+inicializa 2 para que yo pueda más
+
+111
+00:04:22,650 --> 00:04:24,050
+adelante hacer un conectar o desconectar
+
+112
+00:04:24,050 --> 00:04:27,210
+según la conveniencia que necesite igual
+
+113
+00:04:27,210 --> 00:04:29,430
+forma para oracle devuelvo instancia de
+
+114
+00:04:29,430 --> 00:04:31,350
+ahora cual para postre lo mismo parece q
+
+115
+00:04:31,350 --> 00:04:33,510
+vale lo mismo y así por cada motor de
+
+116
+00:04:33,510 --> 00:04:35,520
+base datos que yo pueda necesitar si
+
+117
+00:04:35,520 --> 00:04:37,140
+alguno no cumple criterio le puedo
+
+118
+00:04:37,140 --> 00:04:39,450
+devolver conexión vacía la clase que
+
+119
+00:04:39,450 --> 00:04:42,030
+ejecuta todo esto sería app en donde en
+
+120
+00:04:42,030 --> 00:04:44,070
+el método main instancia una fábrica
+
+121
+00:04:44,070 --> 00:04:46,740
+creó la fábrica y luego utilizó la misma
+
+122
+00:04:46,740 --> 00:04:49,170
+fábrica para indicar una conexión y le
+
+123
+00:04:49,170 --> 00:04:51,570
+pasó el identificador que necesito si
+
+124
+00:04:51,570 --> 00:04:52,980
+quiero conectarme en esta ocasión ahora
+
+125
+00:04:52,980 --> 00:04:55,590
+con sería el que ahora con ya puedo
+
+126
+00:04:55,590 --> 00:04:57,780
+disponer de su conectar y desconectar si
+
+127
+00:04:57,780 --> 00:05:00,150
+quiero de mysql lo mismo y si quiero de
+
+128
+00:05:00,150 --> 00:05:02,550
+h2 lo mismo entonces de esa manera al
+
+129
+00:05:02,550 --> 00:05:04,590
+ejecutar la aplicación vamos a ver que
+
+130
+00:05:04,590 --> 00:05:07,890
+tenemos diferentes instancias de acuerdo
+
+131
+00:05:07,890 --> 00:05:09,690
+al identificador que nosotros
+
+132
+00:05:09,690 --> 00:05:12,240
+necesitamos
+
+133
+00:05:12,240 --> 00:05:13,590
+entonces pueden ver en la parte inferior
+
+134
+00:05:13,590 --> 00:05:15,090
+que dice se conectó ahora con él se
+
+135
+00:05:15,090 --> 00:05:16,349
+desconectó de ahora cuales se conectó
+
+136
+00:05:16,349 --> 00:05:18,780
+mysql y lo mismo para los siguientes
+
+137
+00:05:18,780 --> 00:05:19,740
+casos
+
+138
+00:05:19,740 --> 00:05:22,349
+en este caso como h2 no está dentro del
+
+139
+00:05:22,349 --> 00:05:25,050
+conjunto de la fábrica sale que no se
+
+140
+00:05:25,050 --> 00:05:26,880
+específico el proveedor ahora este es un
+
+141
+00:05:26,880 --> 00:05:28,229
+ejercicio demostrativo en el cual
+
+142
+00:05:28,229 --> 00:05:29,580
+también ustedes pueden aplicar a otro
+
+143
+00:05:29,580 --> 00:05:32,340
+contexto si es que por ahí tienen alguna
+
+144
+00:05:32,340 --> 00:05:35,910
+necesidad de definir objetos según
+
+145
+00:05:35,910 --> 00:05:37,919
+algunas características pueden tener esa
+
+146
+00:05:37,919 --> 00:05:40,139
+clase ya implementada y simplemente con
+
+147
+00:05:40,139 --> 00:05:41,729
+el hecho de llamarlo por la fábrica
+
+148
+00:05:41,729 --> 00:05:43,740
+pueden tener la instancia y cuál es el
+
+149
+00:05:43,740 --> 00:05:45,720
+beneficio de esto el beneficio es
+
+150
+00:05:45,720 --> 00:05:48,030
+principalmente la flexibilidad que nos
+
+151
+00:05:48,030 --> 00:05:50,190
+proporciona el código al no depender de
+
+152
+00:05:50,190 --> 00:05:52,440
+alguna instancia en particular porque
+
+153
+00:05:52,440 --> 00:05:54,210
+porque simplemente primero tendremos que
+
+154
+00:05:54,210 --> 00:05:56,069
+pasar por la fábrica y la fábrica nos
+
+155
+00:05:56,069 --> 00:05:58,470
+daría la implementación que nosotros
+
+156
+00:05:58,470 --> 00:06:00,690
+necesitamos y así podríamos cambiar una
+
+157
+00:06:00,690 --> 00:06:03,150
+pieza por otra según el contexto de la
+
+158
+00:06:03,150 --> 00:06:04,949
+aplicación en el siguiente tutorial
+
+159
+00:06:04,949 --> 00:06:06,810
+veremos el patrón fábrica abstracta o
+
+160
+00:06:06,810 --> 00:06:09,060
+abstracta factory o factoría abstracta
+
+161
+00:06:09,060 --> 00:06:11,009
+como quieran llamarlo en el cual vamos a
+
+162
+00:06:11,009 --> 00:06:13,650
+tener una fábrica de fábrica y vamos a
+
+163
+00:06:13,650 --> 00:06:15,449
+poder obtener objetos de acuerdo a la
+
+164
+00:06:15,449 --> 00:06:17,940
+fábrica que estemos buscando si te gustó
+
+165
+00:06:17,940 --> 00:06:18,750
+este tutorial
+
+166
+00:06:18,750 --> 00:06:20,760
+dale manito arriba compártelo con tus
+
+167
+00:06:20,760 --> 00:06:22,500
+amigos no te olvides suscribirte en el
+
+168
+00:06:22,500 --> 00:06:24,270
+botón de aquí abajo seguirme en redes
+
+169
+00:06:24,270 --> 00:06:25,680
+sociales que están en la descripción del
+
+170
+00:06:25,680 --> 00:06:28,170
+vídeo deja tu comentario y los espero en
+
+171
+00:06:28,170 --> 00:06:29,790
+un siguiente tutorial
+
+172
+00:06:29,790 --> 00:06:39,240
+[Música]

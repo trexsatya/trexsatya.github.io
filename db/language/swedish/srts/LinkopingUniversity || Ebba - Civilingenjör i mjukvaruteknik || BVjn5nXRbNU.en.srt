@@ -1,0 +1,84 @@
+1
+00:00:01,536 --> 00:00:05,888
+My name is Ebba and I read a civil engineer in software technology at LiU.
+
+2
+00:00:06,144 --> 00:00:07,424
+I'm in my fourth year.
+
+3
+00:00:07,936 --> 00:00:10,240
+As a civil engineer you read a lot of math.
+
+4
+00:00:10,752 --> 00:00:15,104
+But just on software technology you read a lot of programming, several different programming languages.
+
+5
+00:00:16,128 --> 00:00:21,248
+What I think is fun about programming is that it is very concrete.
+ You get a response from your computer.
+
+6
+00:00:21,504 --> 00:00:25,344
+But it is also very creative.
+ You can solve a problem in very many different ways,
+
+7
+00:00:25,856 --> 00:00:28,160
+So you get both the concrete and creative in one.
+
+8
+00:00:28,672 --> 00:00:34,304
+When we did our bachelor's work, we worked in a team of eight people throughout the semester.
+
+9
+00:00:34,560 --> 00:00:39,680
+They have taken 3D scans, inside the actual mines, up in Kiruna.
+
+10
+00:00:40,192 --> 00:00:43,776
+As they read to data file.
+ And we developed an algorithm that can,
+
+11
+00:00:45,056 --> 00:00:49,664
+Our node graph generates itself.
+ Then they can do simulations
+
+12
+00:00:49,920 --> 00:00:51,712
+that makes you can see where it becomes most worthwhile
+
+13
+00:00:51,968 --> 00:00:54,784
+to break ore, and that can do it for any mine.
+
+14
+00:00:55,296 --> 00:00:58,880
+It got very cool because it is actually used by LKAB's system today.
+
+15
+00:00:59,904 --> 00:01:01,696
+I think anyone can search!
+
+16
+00:01:02,208 --> 00:01:06,816
+It is a bit sad that there is a stereotype today, which you see a lot in movies and TV series.
+
+17
+00:01:07,072 --> 00:01:13,216
+That people who program are super -smart, self -taught and sit completely alone in any basement
+
+18
+00:01:13,472 --> 00:01:15,520
+and hack into institutions while
+
+19
+00:01:15,776 --> 00:01:19,360
+This is not the case in reality, but we are social and we have great fun.
+
+20
+00:01:20,896 --> 00:01:22,688
+So you should not hesitate to search.
+

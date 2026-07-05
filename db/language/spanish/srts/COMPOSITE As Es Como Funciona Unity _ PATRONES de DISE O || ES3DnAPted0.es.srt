@@ -1,0 +1,759 @@
+1
+00:00:00,040 --> 00:00:01,719
+muy buenas y bienvenidos un día más a
+
+2
+00:00:01,719 --> 00:00:03,600
+betatech para los que seáis nuevos en el
+
+3
+00:00:03,600 --> 00:00:05,240
+canal aquí hablamos de software y de
+
+4
+00:00:05,240 --> 00:00:07,319
+tecnología y concretamente en esta serie
+
+5
+00:00:07,319 --> 00:00:09,440
+hablamos sobre patrones de diseño vamos
+
+6
+00:00:09,440 --> 00:00:11,840
+a explicar uno a uno cada patrón viendo
+
+7
+00:00:11,840 --> 00:00:13,719
+sus utilidades y explicándolas con
+
+8
+00:00:13,719 --> 00:00:15,759
+ejemplos pero si aún no sabéis lo que es
+
+9
+00:00:15,759 --> 00:00:17,640
+un patrón de diseño os dejo el índice de
+
+10
+00:00:17,640 --> 00:00:19,320
+la serie por aquí arriba y también en la
+
+11
+00:00:19,320 --> 00:00:21,199
+descripción para que le echéis un ojo y
+
+12
+00:00:21,199 --> 00:00:23,800
+hoy vamos a hablar del patrón composite
+
+13
+00:00:23,800 --> 00:00:25,279
+es un patrón muy útil y se utiliza
+
+14
+00:00:25,279 --> 00:00:26,599
+muchísimo al desarrollar entornos
+
+15
+00:00:26,599 --> 00:00:28,880
+gráficos o videojuegos ya que simplifica
+
+16
+00:00:28,880 --> 00:00:31,000
+mucho la manera de pensar en las escenas
+
+17
+00:00:31,000 --> 00:00:33,200
+tridimensionales si estás ni que sea un
+
+18
+00:00:33,200 --> 00:00:35,480
+poquito familiarizado con Unity sabrás
+
+19
+00:00:35,480 --> 00:00:37,280
+que cada elemento del juego es lo que se
+
+20
+00:00:37,280 --> 00:00:39,960
+conoce como una entidad o un Game object
+
+21
+00:00:39,960 --> 00:00:42,399
+el personaje los enemigos el escenario
+
+22
+00:00:42,399 --> 00:00:44,280
+cada elemento del juego es una entidad
+
+23
+00:00:44,280 --> 00:00:46,800
+cada una con sus propias propiedades y
+
+24
+00:00:46,800 --> 00:00:48,320
+una cosa muy útil que te permite hacer
+
+25
+00:00:48,320 --> 00:00:50,840
+Unity es anidar estas entidades dentro
+
+26
+00:00:50,840 --> 00:00:53,480
+de otras darles una jerarquía puedes
+
+27
+00:00:53,480 --> 00:00:55,399
+tener al personaje como una entidad y
+
+28
+00:00:55,399 --> 00:00:57,719
+por debajo tener entidades hijas como
+
+29
+00:00:57,719 --> 00:01:00,000
+por ejemplo las armas u otros elementos
+
+30
+00:01:00,000 --> 00:01:01,879
+relacionados con el personaje esto lo
+
+31
+00:01:01,879 --> 00:01:03,039
+que permite es trasladar las
+
+32
+00:01:03,039 --> 00:01:05,400
+transformaciones del padre a los hijos
+
+33
+00:01:05,400 --> 00:01:07,560
+Por ejemplo puedes mover a los hijos en
+
+34
+00:01:07,560 --> 00:01:10,040
+relación al padre el patrón composite es
+
+35
+00:01:10,040 --> 00:01:11,720
+precisamente una de las posibles
+
+36
+00:01:11,720 --> 00:01:13,320
+soluciones para implementar este
+
+37
+00:01:13,320 --> 00:01:15,640
+comportamiento consiste básicamente en
+
+38
+00:01:15,640 --> 00:01:18,040
+tener un tipo de dato genérico del que
+
+39
+00:01:18,040 --> 00:01:20,320
+pueden colgar otros elementos del mismo
+
+40
+00:01:20,320 --> 00:01:22,920
+tipo básicamente se trata en montar una
+
+41
+00:01:22,920 --> 00:01:25,280
+jerarquía con forma de árbol de forma
+
+42
+00:01:25,280 --> 00:01:27,240
+que cada entidad pueda estar formada por
+
+43
+00:01:27,240 --> 00:01:29,320
+otras entidades del mismo tipo que a su
+
+44
+00:01:29,320 --> 00:01:30,920
+vez pueden pueden estar formadas por
+
+45
+00:01:30,920 --> 00:01:33,040
+otras entidades del mismo tipo que a su
+
+46
+00:01:33,040 --> 00:01:34,880
+vez pueden estar formadas por otras
+
+47
+00:01:34,880 --> 00:01:37,040
+entidades del mismo tipo que a su vez
+
+48
+00:01:37,040 --> 00:01:38,640
+pueden estar formadas por otras
+
+49
+00:01:38,640 --> 00:01:41,119
+entidades del mismo tipo ya me entendéis
+
+50
+00:01:41,119 --> 00:01:43,759
+es en resumen una estructura recursiva
+
+51
+00:01:43,759 --> 00:01:45,280
+Pero antes de entrar en detalle de cómo
+
+52
+00:01:45,280 --> 00:01:47,280
+se utiliza concretamente este patrón
+
+53
+00:01:47,280 --> 00:01:48,600
+dejarme darle las gracias al
+
+54
+00:01:48,600 --> 00:01:51,200
+patrocinador de este vídeo arc arc es
+
+55
+00:01:51,200 --> 00:01:52,479
+una plataforma pensada para
+
+56
+00:01:52,479 --> 00:01:54,200
+desarrolladores que están buscando
+
+57
+00:01:54,200 --> 00:01:56,159
+trabajo remoto disponen de una
+
+58
+00:01:56,159 --> 00:01:57,880
+plataforma de scraping web que está
+
+59
+00:01:57,880 --> 00:02:00,000
+buscando constantemente las mejores
+
+60
+00:02:00,000 --> 00:02:02,039
+ofertas remotas en diferentes Portales y
+
+61
+00:02:02,039 --> 00:02:03,399
+te permite comparar las diferentes
+
+62
+00:02:03,399 --> 00:02:04,960
+ofertas para que puedas aplicar a las
+
+63
+00:02:04,960 --> 00:02:07,079
+que mejor te encajen además con arc
+
+64
+00:02:07,079 --> 00:02:08,800
+Puedes responder a unos pequeños Quiz
+
+65
+00:02:08,800 --> 00:02:10,160
+para demostrar tus habilidades como
+
+66
+00:02:10,160 --> 00:02:11,959
+programador y de esta forma puedes
+
+67
+00:02:11,959 --> 00:02:13,800
+saltarte ciertas etapas en los procesos
+
+68
+00:02:13,800 --> 00:02:15,720
+de selección Como por ejemplo algunas
+
+69
+00:02:15,720 --> 00:02:18,160
+entrevistas técnicas ya que al final ark
+
+70
+00:02:18,160 --> 00:02:20,360
+mismo te valida los conocimientos y
+
+71
+00:02:20,360 --> 00:02:21,920
+además por si no fuera suficiente
+
+72
+00:02:21,920 --> 00:02:24,160
+disponen también de una comunidad una
+
+73
+00:02:24,160 --> 00:02:25,920
+comunidad que te va a permitir compartir
+
+74
+00:02:25,920 --> 00:02:27,680
+experiencias y resolver dudas sobre el
+
+75
+00:02:27,680 --> 00:02:29,879
+trabajo remoto Quiero agradecer a ar por
+
+76
+00:02:29,879 --> 00:02:31,640
+reinar Este vídeo y si quieres saber más
+
+77
+00:02:31,640 --> 00:02:33,239
+te dejo el enlace en la descripción y en
+
+78
+00:02:33,239 --> 00:02:34,959
+el comentario fijado ya sabéis que yo
+
+79
+00:02:34,959 --> 00:02:36,519
+ahora mismo Estoy trabajando en remoto y
+
+80
+00:02:36,519 --> 00:02:37,599
+por lo tanto cuando aparece una
+
+81
+00:02:37,599 --> 00:02:39,120
+oportunidades como esta que también os
+
+82
+00:02:39,120 --> 00:02:40,920
+puedan ser útiles a vosotros me gusta
+
+83
+00:02:40,920 --> 00:02:43,400
+compartirlas y sin mucho más continuamos
+
+84
+00:02:43,400 --> 00:02:46,040
+con el vídeo bien vayamos pues ahora sí
+
+85
+00:02:46,040 --> 00:02:48,360
+al ejemplo del videojuego imaginaros que
+
+86
+00:02:48,360 --> 00:02:50,280
+cada entidad tiene una función de
+
+87
+00:02:50,280 --> 00:02:52,040
+renderizado que lo que hace es
+
+88
+00:02:52,040 --> 00:02:53,879
+básicamente dibujar la entidad en la
+
+89
+00:02:53,879 --> 00:02:56,120
+pantalla renderizar la ya sea en tres
+
+90
+00:02:56,120 --> 00:02:58,280
+dimensiones o en dos dimensiones ahora
+
+91
+00:02:58,280 --> 00:03:00,040
+pensamos que lo que queremos implementar
+
+92
+00:03:00,040 --> 00:03:02,080
+es un enemigo muy grande tipo estos
+
+93
+00:03:02,080 --> 00:03:03,680
+enemigos no que están formados por
+
+94
+00:03:03,680 --> 00:03:06,200
+varias partes como por ejemplo el torso
+
+95
+00:03:06,200 --> 00:03:08,200
+y las extremidades y cada parte tiene
+
+96
+00:03:08,200 --> 00:03:10,040
+una lógica diferente podemos pensar
+
+97
+00:03:10,040 --> 00:03:11,640
+entonces que el enemigo es un conjunto
+
+98
+00:03:11,640 --> 00:03:13,760
+de trozos o un conjunto de enemigos más
+
+99
+00:03:13,760 --> 00:03:15,920
+pequeños como digo puede tener el cuerpo
+
+100
+00:03:15,920 --> 00:03:18,640
+principal y una pata izquierda que lanza
+
+101
+00:03:18,640 --> 00:03:21,000
+fuego y una pata derecha que lanza agua
+
+102
+00:03:21,000 --> 00:03:23,480
+envenenada cada trozo con su lógica El
+
+103
+00:03:23,480 --> 00:03:25,159
+ejemplo concreto da un poco igual pero
+
+104
+00:03:25,159 --> 00:03:26,519
+al final la cosa es que a nivel de
+
+105
+00:03:26,519 --> 00:03:28,280
+código no queremos tener que estar
+
+106
+00:03:28,280 --> 00:03:30,360
+siempre llevando todos los objetos por
+
+107
+00:03:30,360 --> 00:03:32,360
+separado con nosotros ni tener que
+
+108
+00:03:32,360 --> 00:03:34,080
+llamar a las funciones de cada parte
+
+109
+00:03:34,080 --> 00:03:35,760
+individual cada vez que queremos hacer
+
+110
+00:03:35,760 --> 00:03:37,680
+algo cada vez que queremos mover el
+
+111
+00:03:37,680 --> 00:03:39,720
+enemigo tenemos que mover todas sus
+
+112
+00:03:39,720 --> 00:03:41,640
+partes lo que queremos hacer es poder
+
+113
+00:03:41,640 --> 00:03:43,879
+llamar a una función general y que esta
+
+114
+00:03:43,879 --> 00:03:45,920
+sea la encargada de transmitírselo a sus
+
+115
+00:03:45,920 --> 00:03:47,920
+hijos en el caso del render nosotros
+
+116
+00:03:47,920 --> 00:03:50,120
+queremos renderizar el enemigo grande no
+
+117
+00:03:50,120 --> 00:03:51,720
+queremos renderizar cada parte por
+
+118
+00:03:51,720 --> 00:03:54,040
+separado para esto podemos implementar
+
+119
+00:03:54,040 --> 00:03:56,879
+precisamente el patrón composite creando
+
+120
+00:03:56,879 --> 00:03:59,360
+una entidad llamada enemigo grande que
+
+121
+00:03:59,360 --> 00:04:01,760
+esté formada dentro de ella por
+
+122
+00:04:01,760 --> 00:04:04,120
+diferentes entidades más pequeñas de
+
+123
+00:04:04,120 --> 00:04:06,599
+esta forma como el enemigo grande es en
+
+124
+00:04:06,599 --> 00:04:08,959
+sí ya una entidad podemos utilizarla
+
+125
+00:04:08,959 --> 00:04:10,959
+como si fuera pues una entidad sencilla
+
+126
+00:04:10,959 --> 00:04:12,799
+una entidad más dentro del conjunto de
+
+127
+00:04:12,799 --> 00:04:15,200
+entidades que tenemos y que el sistema
+
+128
+00:04:15,200 --> 00:04:18,120
+desde fuera no necesita saber ni debe
+
+129
+00:04:18,120 --> 00:04:19,880
+saber que se trata de una entidad
+
+130
+00:04:19,880 --> 00:04:22,040
+compuesta va a ser responsabilidad de la
+
+131
+00:04:22,040 --> 00:04:24,320
+entidad padre el gestionar la lógica y
+
+132
+00:04:24,320 --> 00:04:26,800
+las funciones de las entidades hijas en
+
+133
+00:04:26,800 --> 00:04:28,560
+mi caso yo utilicé precisamente por
+
+134
+00:04:28,560 --> 00:04:30,759
+primera vez este patrón en la asignatura
+
+135
+00:04:30,759 --> 00:04:32,759
+de videojuegos para hacer un enemigo que
+
+136
+00:04:32,759 --> 00:04:35,120
+era básicamente un pulpo el pulpo tenía
+
+137
+00:04:35,120 --> 00:04:37,199
+un tentáculo con varias esferas vale
+
+138
+00:04:37,199 --> 00:04:39,360
+cada esfera era una entidad que podía
+
+139
+00:04:39,360 --> 00:04:41,280
+matar al jugador y el jugador tenía que
+
+140
+00:04:41,280 --> 00:04:43,199
+matar cada una de estas esferas de forma
+
+141
+00:04:43,199 --> 00:04:45,240
+individual antes de poder enfrentarse al
+
+142
+00:04:45,240 --> 00:04:47,639
+pulpo entonces cada una de estas esferas
+
+143
+00:04:47,639 --> 00:04:49,759
+individualmente eran una entidad
+
+144
+00:04:49,759 --> 00:04:52,000
+sencilla no tenían hijas Pero todas
+
+145
+00:04:52,000 --> 00:04:54,280
+ellas formaban parte de la entidad padre
+
+146
+00:04:54,280 --> 00:04:56,639
+del pulpo por lo tanto nosotros como
+
+147
+00:04:56,639 --> 00:04:58,639
+desarrolladores podíamos mover el pulpo
+
+148
+00:04:58,639 --> 00:05:00,639
+libremente que las esferas siempre iban
+
+149
+00:05:00,639 --> 00:05:02,880
+con él además esta estructura permite
+
+150
+00:05:02,880 --> 00:05:04,759
+que los hijos se comporten de forma
+
+151
+00:05:04,759 --> 00:05:06,639
+diferente dependiendo de las propiedades
+
+152
+00:05:06,639 --> 00:05:08,680
+del padre podríamos hacer que la el
+
+153
+00:05:08,680 --> 00:05:10,639
+resto de esferas aumentan la velocidad
+
+154
+00:05:10,639 --> 00:05:12,680
+cuando el pulpo ve que le quedan menos
+
+155
+00:05:12,680 --> 00:05:14,120
+esferas vivas pues cada una va más
+
+156
+00:05:14,120 --> 00:05:15,880
+rápido o cada una es más grande se
+
+157
+00:05:15,880 --> 00:05:17,600
+pueden hacer mil virguerías Pero lo
+
+158
+00:05:17,600 --> 00:05:19,240
+importante es que toda esta lógica
+
+159
+00:05:19,240 --> 00:05:21,600
+reside en el pulpo para el sistema
+
+160
+00:05:21,600 --> 00:05:24,199
+exterior el pulpo es el pulpo da igual
+
+161
+00:05:24,199 --> 00:05:27,680
+que tenga 5 20 o 30 esferas en fin
+
+162
+00:05:27,680 --> 00:05:29,160
+cambiando ya un poco de tema de los
+
+163
+00:05:29,160 --> 00:05:31,639
+pulpos y del mar el diagrama uml de este
+
+164
+00:05:31,639 --> 00:05:33,680
+patrón es bastante sencillo ya que al
+
+165
+00:05:33,680 --> 00:05:35,680
+final todo hereda de lo mismo en nuestro
+
+166
+00:05:35,680 --> 00:05:37,280
+caso tendríamos la abstracción de
+
+167
+00:05:37,280 --> 00:05:39,880
+entidad y la clase concreta la clase que
+
+168
+00:05:39,880 --> 00:05:42,000
+hereda o que implementa esta entidad es
+
+169
+00:05:42,000 --> 00:05:44,520
+el pulpo luego además tendríamos otra
+
+170
+00:05:44,520 --> 00:05:46,800
+clase concreta que sería la Esfera que
+
+171
+00:05:46,800 --> 00:05:48,960
+también es obviamente una hija o una
+
+172
+00:05:48,960 --> 00:05:51,440
+implementación de la clase entidad el
+
+173
+00:05:51,440 --> 00:05:53,440
+pulpo pues tiene como propiedad un
+
+174
+00:05:53,440 --> 00:05:55,360
+conjunto de entidades que en este caso
+
+175
+00:05:55,360 --> 00:05:57,199
+van a ser nuestras esferas obviamente y
+
+176
+00:05:57,199 --> 00:05:58,680
+por lo tanto cada vez que el pulpo
+
+177
+00:05:58,680 --> 00:06:00,680
+ejecute una función de cualquier tipo
+
+178
+00:06:00,680 --> 00:06:02,600
+también puede procesar el mensaje
+
+179
+00:06:02,600 --> 00:06:04,639
+correspondiente hacia sus hijos sin duda
+
+180
+00:06:04,639 --> 00:06:06,800
+es uno de los patrones que más me gustan
+
+181
+00:06:06,800 --> 00:06:08,360
+a nivel personal ya que además de ser
+
+182
+00:06:08,360 --> 00:06:10,240
+muy fácil de entender aporta mucha
+
+183
+00:06:10,240 --> 00:06:12,360
+flexibilidad permite generar un código
+
+184
+00:06:12,360 --> 00:06:14,000
+superlimpio ya que al final es una
+
+185
+00:06:14,000 --> 00:06:16,000
+extracción que unifica el comportamiento
+
+186
+00:06:16,000 --> 00:06:18,280
+de todas tus entidades de una forma muy
+
+187
+00:06:18,280 --> 00:06:20,400
+sencilla y muy clara de utilizar y como
+
+188
+00:06:20,400 --> 00:06:22,280
+es costumbre Espero que este vídeo os
+
+189
+00:06:22,280 --> 00:06:24,240
+haya gustado sin mucho más nos vemos en
+
+190
+00:06:24,240 --> 00:06:28,120
+el siguiente hasta otra

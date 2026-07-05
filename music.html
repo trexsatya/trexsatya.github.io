@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Sequence Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/github-utils.js"></script>
+    <script src="/vendor/opensheetmusicdisplay.min.js"></script>
+    <script src="/vendor/tone.js"></script>
+    <link rel="stylesheet" href="/music.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 1rem;
+        }
+
+        .passing {
+            background: #a0d8ef; /* light blue */
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .bg-blue-600 {
+            background-color: #2563eb;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .px-3 {
+            padding-left: .75rem;
+            padding-right: .75rem;
+        }
+
+        .py-1 {
+            padding-top: .25rem;
+            padding-bottom: .25rem;
+        }
+
+        .rounded {
+            border-radius: .5rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .text-green-600 {
+            color: #16a34a;
+        }
+
+        .text-red-600 {
+            color: #dc2626;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: yellow;
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+
+        .accordion {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .accordion summary {
+            cursor: pointer;
+            padding: 6px;
+            font-weight: bold;
+        }
+
+        .accordion pre {
+            white-space: pre-wrap;
+            margin: 0;
+            padding: 6px;
+        }
+
+        .controls {
+            margin-bottom: 1em;
+        }
+
+        .accordion-container {
+            width: 100%;
+            font-family: system-ui, sans-serif;
+        }
+
+        .accordion-header {
+            width: 100%;
+            text-align: left;
+            padding: 12px 16px;
+            background: #f3f3f3;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.25s, color 0.25s;
+        }
+
+        .accordion-header:hover {
+            background: #e6e6e6;
+        }
+
+        .accordion-header.active {
+            background: #ccc;
+            color: #222;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-top: none;
+            padding: 0 16px;
+        }
+
+        .accordion-content.open {
+            padding: 10px 16px;
+            max-height: 100%; /* or adjust as needed */
+        }
+
+        #appLayout { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start; }
+        #searchView { flex: 1 1 320px; min-width: 280px; }
+        #musicPreview { flex: 2 1 460px; min-width: 280px; }
+        #results .resultRow { padding: 6px 8px; border: 1px solid #ddd; border-radius: 6px; margin: 4px 0; cursor: pointer; }
+        #results .resultRow:hover { background: #f3f3f3; }
+        .chordChip { display: inline-flex; gap: 4px; align-items: center; border: 1px solid #ccc; border-radius: 6px; padding: 4px 6px; margin: 2px; }
+        .extPill { border: 1px solid #bbb; border-radius: 10px; padding: 0 8px; cursor: pointer; background: #fff; }
+        .extPill.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+        #managerSection { margin-bottom: 1rem; }
+        #managerSection > summary { cursor: pointer; font-weight: 600; }
+
+        /* Native fullscreen (#previewFullscreenBtn): give the pane a solid background and let it
+           scroll, since the fullscreen element otherwise renders on a black, non-scrolling backdrop. */
+        #musicPreview:fullscreen { background: #fff; overflow: auto; padding: 1rem; }
+        #musicPreview:-webkit-full-screen { background: #fff; overflow: auto; padding: 1rem; }
+
+        /* On phones the inline preview is too cramped; show it as a full-screen modal dialog.
+           #musicPreview is toggled via display:none/block, so when shown these rules make it a
+           fixed overlay. The existing Close button (#previewCloseBtn) dismisses it. */
+        @media (max-width: 700px) {
+          #musicPreview {
+            position: fixed;
+            /* Explicit longhand offsets + sizes, NOT the `inset` shorthand: older mobile Safari
+               ignores `inset`, leaving the fixed box to size to its content (taller/wider than the
+               screen) while the body is locked — so nothing scrolls and the score is clipped. */
+            top: 0; right: 0; bottom: 0; left: 0;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;          /* dynamic viewport: excludes the mobile browser's URL bar */
+            box-sizing: border-box;  /* keep the 1rem padding inside the viewport box (no overflow) */
+            z-index: 1000;
+            margin: 0;
+            background: #fff;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem;
+            border-top: none;
+            box-shadow: 0 0 24px rgba(0, 0, 0, .4);
+          }
+          /* The score can be wider than the screen; let it scroll horizontally on its own so the
+             page body never has to. */
+          #osmdPreview { overflow-x: auto; }
+          /* Keep the close/segment controls reachable at the top while scrolling the score. */
+          #musicPreview > div:first-child {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding-bottom: .4rem;
+            z-index: 1;
+          }
+          body.preview-open { overflow: hidden; }   /* lock the page behind the dialog */
+        }
+        #fretboardPanel.fb-wrap{background:#fff;border:1px solid #d8dee8;border-radius:10px;padding:10px 14px;margin-top:1rem}
+        #fretboardPanel summary{cursor:pointer;font-weight:600}
+        /* Nested "Controls" collapsible: subtler than the panel's own summary. */
+        #fretboardPanel .fb-controls{margin:6px 0}
+        #fretboardPanel .fb-controls>summary{font-weight:500;font-size:12.5px;color:#555;list-style:none}
+        #fretboardPanel .fb-controls>summary::-webkit-details-marker{display:none}
+        #fretboardPanel .fb-controls>summary::before{content:'▸ ';color:#888}
+        #fretboardPanel .fb-controls[open]>summary::before{content:'▾ '}
+        #fretboardPanel .fb-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px;margin:8px 0}
+        #fretboardPanel .fb-chip{border:1px solid #1565c0;color:#1565c0;border-radius:999px;padding:2px 10px;cursor:pointer;background:#eef4ff}
+        #fretboardPanel .fb-chip.alt{border-color:#bbb;color:#555;background:#fff}
+        #fretboardPanel .fb-btn{border:1px solid #1565c0;border-radius:6px;padding:3px 12px;cursor:pointer}
+        #fretboardPanel .fb-paths{margin:8px 0;font-size:13px}
+        #fretboardPanel .fb-paths select{font:12.5px monospace;padding:4px 8px;border:1px solid #1565c0;border-radius:6px;min-width:320px}
+        #fretboardPanel .fb-step{display:flex;gap:8px;align-items:center;font-size:13px;margin:8px 0;flex-wrap:wrap}
+        #fretboardPanel .fb-msg{color:#c62828;font-size:12px}
+        /* Keep Prev / Step / Next together on one line even when the row wraps. */
+        #fretboardPanel .fb-nav{display:inline-flex;gap:8px;align-items:center;flex-wrap:nowrap}
+        #fretboardPanel .fb-step-lbl{white-space:nowrap}
+        /* Movement arrows: dashes march toward the arrowhead (up = right, down = left); the
+           bidirectional arrow pulses instead. Arrowheads pulse for visibility. */
+        #fretboardPanel .fb-arrow-line{stroke-dasharray:6 4}
+        #fretboardPanel .fb-arrow-line.up{animation:fbFlowFwd .7s linear infinite}
+        #fretboardPanel .fb-arrow-line.down{animation:fbFlowBack .7s linear infinite}
+        #fretboardPanel .fb-arrow-line.bi{stroke-dasharray:none;animation:fbArrowPulse 1.1s ease-in-out infinite}
+        #fretboardPanel .fb-arrowhead{animation:fbArrowPulse 1.1s ease-in-out infinite}
+        @keyframes fbFlowFwd{to{stroke-dashoffset:-10}}
+        @keyframes fbFlowBack{to{stroke-dashoffset:10}}
+        @keyframes fbArrowPulse{0%,100%{opacity:.35}50%{opacity:1}}
+        @media (prefers-reduced-motion: reduce){
+          #fretboardPanel .fb-arrow-line,#fretboardPanel .fb-arrowhead{animation:none}
+        }
+        #fbSvg{max-width:100%;overflow-x:auto;display:block}
+        /* Collapsible Motifs / Phrases panels (like the fretboard panel) + shared match bar. */
+        .np-panel{margin:.25rem 0;padding:.4rem .6rem;border-radius:4px}
+        .np-panel>summary{cursor:pointer;font-weight:600;font-size:13.5px}
+        /* Header toggle: shows/hides THIS panel's tags/phrases on the sheet (dim the rest), independent
+           of expand/collapse (which only shows the panel's own controls + list). */
+        .np-vis{margin-left:8px;border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:12.5px;font-weight:400;vertical-align:middle}
+        .np-vis[aria-pressed="true"]{background:#1565c0;border-color:#1565c0;color:#fff}
+        #tagPanel{background:#f6f3ff;border:1px solid #ddd0ff}
+        #phrasePanel{background:#eef4ff;border:1px solid #cfe0ff}
+        /* When expanded, a panel's body floats over the sheet (absolute) instead of pushing it down —
+           so toggling a panel never reflows the page (which could nudge a scrollbar and force OSMD to
+           re-render, dropping the pattern-match highlights). Anchored below both summaries via .np-wrap. */
+        .np-wrap{position:relative}
+        .np-panel[open]>.np-body{position:absolute;left:0;right:0;top:100%;z-index:60;margin-top:3px;
+          border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:.5rem .7rem;max-height:72vh;overflow:auto}
+        #tagPanel[open]>.np-body{background:#f6f3ff;border:1px solid #ddd0ff}
+        #phrasePanel[open]>.np-body{background:#eef4ff;border:1px solid #cfe0ff}
+        .pattern-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;margin:.25rem 0;padding:.35rem .6rem;background:#fafafa;border:1px solid #e5e5e5;border-radius:4px}
+        .pattern-controls select{padding:3px 6px;border:1px solid #ccc;border-radius:5px;font-size:13px}
+        /* Pattern tags */
+        #tagPanel .tag-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}
+        #tagPanel .tag-lbl{color:#555}
+        #tagPanel select,#tagPanel #tagNew{padding:3px 6px;border:1px solid #c9b8ff;border-radius:5px;font-size:13px}
+        #tagPanel .tag-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+        #tagPanel .tag-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid #ddd0ff;border-radius:999px;padding:3px 8px;font-size:12.5px;background:#fff}
+        #tagPanel .tag-pill .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+        #tagPanel .tag-pill .cnt{color:#888}
+        #tagPanel .tag-pill .del{border:none;background:none;color:#a33;cursor:pointer;font-size:14px;line-height:1;padding:0 2px}
+        /* Check/uncheck-all sits just before the tag pills. */
+        #tagPanel .tag-list-head{display:flex;align-items:flex-start;gap:8px;margin-top:8px}
+        #tagPanel .tag-list-head .tag-list{margin-top:0}
+        #tagPanel .icon-btn{border:1px solid #bbb;background:#fff;border-radius:6px;padding:2px 8px;cursor:pointer;font-size:15px;line-height:1.5;flex:none}
+        /* Phrases panel: one card per phrase (header row of actions + a wrap of member-tag checkboxes). */
+        #phrasePanel .tag-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}
+        #phrasePanel .tag-lbl{color:#555}
+        #phrasePanel .tag-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+        #phrasePanel .phrase-row{border:1px solid #cfe0ff;border-radius:6px;padding:6px 8px;background:#fff}
+        #phrasePanel .phrase-head{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+        #phrasePanel .phrase-tags{display:flex;flex-wrap:wrap;margin-top:6px;padding-top:6px;border-top:1px dashed #e0e8f5}
+        #phrasePanel .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+        #phrasePanel .del{border:none;background:none;color:#a33;cursor:pointer;font-size:15px;line-height:1;padding:0 2px;margin-left:auto}
+        #phrasePanel .btn.active{background:#1565c0;color:#fff;border-color:#1565c0}
+        #fretboardPanel:fullscreen{background:#fff;overflow:auto;padding:24px}
+        #fretboardPanel:fullscreen #fbSvg{width:100%;height:auto;max-width:none}
+        /* Touch-friendly chord-window move/resize buttons (alternative to dragging) */
+        #windowNudge.win-nudge{display:inline-flex;gap:6px;align-items:center;margin-right:.5em;vertical-align:middle}
+        #windowNudge .win-btn{min-width:40px;height:36px;border:1px solid #1565c0;background:#eef4ff;color:#1565c0;border-radius:6px;font-size:16px;line-height:1;cursor:pointer;font-weight:700}
+        #windowNudge .win-btn:active{background:#1565c0;color:#fff}
+        #windowNudge .win-sep{display:inline-block;width:1px;height:22px;background:#cfe0ff}
+        /* Fretboard panel — mobile layout: bigger touch targets, full-width select, stacked controls */
+        @media (max-width:640px){
+          #fretboardPanel.fb-wrap{padding:8px 10px}
+          /* Smaller, tidier tap targets (the old 40px min-height looked clunky). */
+          #fretboardPanel .fb-btn,#fretboardPanel .fb-chip{padding:4px 9px;font-size:12px}
+          #fretboardPanel .fb-bar .fb-btn{margin-left:0 !important}
+          #fretboardPanel .fb-paths select{width:100%;min-width:0}
+          #fretboardPanel .fb-bar,#fretboardPanel .fb-step{gap:6px}
+          #fbSpeed{flex:1 1 120px}
+          #windowNudge .win-btn{min-width:48px;height:42px;font-size:18px}
+        }
+    </style>
+</head>
+<body>
+<h2 style="margin:.25rem 0">Music study — <span id="systemLabel"></span></h2>
+<details id="managerSection">
+  <summary>Manage library (add / rebuild / push pieces)</summary>
+  <div class="controls">
+    <button id="addXmlBtn">Add MusicXML…</button>
+    <input type="file" id="xmlFile" accept=".xml,.musicxml,application/xml,text/xml" style="display:none" multiple>
+    <button id="addTextBtn">Add note-text…</button>
+    <button id="rebuildBtn">Rebuild selected/new (local)</button>
+    <button id="retryBtn" style="display:none"></button>
+    <span id="status"></span>
+  </div>
+  <textarea id="textInput" placeholder="Paste note-text, first line = title" style="display:none;width:100%;height:6em"></textarea>
+  <div id="tagFilterBar" style="margin:.35rem 0"></div>
+  <div id="pieceList"></div>
+</details>
+<div id="appLayout">
+  <div id="searchView">
+    <div id="searchPanel">
+      <div>
+        <label><input type="radio" name="searchMode" value="chord" checked> Chord</label>
+        <label><input type="radio" name="searchMode" value="melody"> Melody</label>
+      </div>
+      <div id="chordMode">
+        <div id="chips"></div>
+        <button id="addChipBtn">+ Add chord</button>
+        <div>
+          <button class="btn toggle" data-for="strictExt" title="Require exact chord extensions (no extra tones)"><span class="ic">🎯</span><span class="txt">strict extensions</span></button>
+          <label>max gap <input id="maxGap" type="number" min="0" value="0" style="width:3em"></label>
+          <button class="btn toggle" data-for="transposeInv" title="Match the progression in any key"><span class="ic">🔀</span><span class="txt">transpose-invariant</span></button>
+          <input type="checkbox" id="strictExt" hidden>
+          <input type="checkbox" id="transposeInv" hidden>
+        </div>
+      </div>
+      <div id="melodyMode" style="display:none">
+        <div id="noteButtons"></div>
+        <input id="melodyTokens" type="text" placeholder="C . . E G" style="width:16em">
+        <div>
+          <label><input type="checkbox" id="byInterval"> by interval</label>
+          <label>tolerance <input id="pitchTol" type="number" min="0" value="0" style="width:3em"></label>
+        </div>
+      </div>
+      <div>
+        <label>max results <input id="maxResults" type="number" min="1" value="20" style="width:4em"></label>
+        <button id="searchBtn">Search</button>
+        <span id="searchMsg"></span>
+      </div>
+    </div>
+    <div id="results"></div>
+    <details id="vocabSection" style="margin-top:1rem">
+      <summary style="cursor:pointer;font-weight:600">Vocabulary</summary>
+      <div id="vocabList"></div>
+    </details>
+  </div>
+<div id="musicPreview" style="display:none;border-top:1px solid #ddd;padding-top:1rem">
+  <div style="margin-bottom:.5rem" class="previewControls">
+    <div><strong id="previewTitle"></strong></div>
+    <label class="measLabel">Measures:
+      <button id="startPrevBtn" class="btn ico" title="extend the window to an earlier measure">◀</button>
+      <input id="segFrom" type="number" min="1" style="width:2.4em" placeholder="from">
+      <button id="startNextBtn" class="btn ico" title="move the start later">▶</button>
+      –
+      <button id="endPrevBtn" class="btn ico" title="move the end earlier">◀</button>
+      <input id="segTo" type="number" min="1" style="width:2.4em" placeholder="to">
+      <button id="endNextBtn" class="btn ico" title="extend the window to a later measure">▶</button>
+    </label>
+    <button id="previewFullBtn" class="btn" title="Show the full piece"><span class="ic">⤢</span><span class="txt">Full</span></button>
+    <button id="previewSegBtn" class="btn" title="Show this measure range"><span class="ic">◧</span><span class="txt">Show segment</span></button>
+    <button id="previewFullscreenBtn" class="btn" title="Toggle fullscreen"><span class="ic">⛶</span><span class="txt">Fullscreen</span></button>
+    <button id="previewCloseBtn" class="btn" title="Close"><span class="ic">✕</span><span class="txt">Close</span></button>
+    <span id="previewMsg"></span>
+  </div>
+  <div id="transport" style="margin:.5rem 0" class="previewControls">
+    <select id="srcSel"><option value="midi">MIDI</option><option value="youtube">YouTube</option></select>
+    <button id="playBtn" class="btn" title="Play from the start"><span class="ic">▶</span><span class="txt">▶ Play</span></button>
+    <button id="pauseBtn" class="btn" title="Pause / Resume"><span class="ic">⏸</span><span class="txt">⏸ Pause</span></button>
+    <button class="btn toggle" data-for="loopChk" title="Loop the segment" aria-pressed="false"><span class="ic">🔁</span><span class="txt">🔁 Loop segment</span></button>
+    <input type="checkbox" id="loopChk" hidden>   <!-- loop state; toggled by the button above -->
+
+    <label>Tempo <input id="tempoInput" type="number" min="20" max="300" style="width:4em"></label>
+    <label>Instrument
+      <select id="instrSel">
+        <option value="piano">Piano</option>
+        <option value="guitar">Guitar</option>
+        <option value="strings">Strings</option>
+        <option value="organ">Organ</option>
+        <option value="synth">Synth</option>
+      </select>
+    </label>
+    <span id="transportMsg" style="color: blueviolet;"></span>
+  </div>
+  <div id="mediaRow" style="margin:.25rem 0" class="previewControls">
+    <button id="ytToggleBtn" class="btn" title="Show / hide the YouTube link field"><span class="ic">🔗</span><span class="txt">🔗 YouTube link</span></button>
+    <span id="ytLinkWrap" style="display:none">
+      <input id="ytUrl" type="text" placeholder="YouTube URL" style="width:16em">
+      <button id="ytSaveBtn" class="btn" title="Link this YouTube video to the piece"><span class="ic">💾</span><span class="txt">Link</span></button>
+    </span>
+    <button id="guessBtn" class="btn" title="Guess segment start/end times from the YouTube video"><span class="ic">⏱</span><span class="txt">Guess times</span></button>
+    <input id="guessSec" type="number" step="0.1" style="width:5em" placeholder="start s">
+    <input id="guessEndSec" type="number" step="0.1" style="width:5em" placeholder="end s">
+    <input id="vocabCat" type="text" placeholder="category" style="width:8em">
+    <input id="vocabNote" type="text" placeholder="note" style="width:14em">
+    <button id="addVocabBtn" class="btn"><span class="ic">➕</span><span class="txt">Add to vocab</span></button>
+  </div>
+  <div id="viewOptions" style="margin:.25rem 0" class="previewControls">
+    <button class="btn toggle" data-for="voiceColorChk" title="Color the voices"><span class="ic">🎨</span><span class="txt">Color voices</span></button>
+    <button class="btn toggle" data-for="noteNameChk" title="Show note names"><span class="ic">🔤</span><span class="txt">Note names</span></button>
+    <button class="btn toggle" data-for="chordChk" title="Show chords"><span class="ic">🎵</span><span class="txt">Show chords</span></button>
+    <button class="btn toggle" data-for="dimConnChk" title="Dim beams / stems"><span class="ic">〰️</span><span class="txt">Dim beams/stems</span></button>
+    <button class="btn toggle" data-for="chordWindowChk" title="Draggable chord window"><span class="ic">🔲</span><span class="txt">Chord window</span></button>
+    <button class="btn toggle" data-for="globalMatchChk" title="When on, clicking a chord name highlights every occurrence of it across the visible sheet"><span class="ic">🌐</span><span class="txt">Global</span></button>
+    <input type="checkbox" id="voiceColorChk" checked hidden>
+    <input type="checkbox" id="noteNameChk" hidden>
+    <input type="checkbox" id="chordChk" checked hidden>
+    <input type="checkbox" id="dimConnChk" checked hidden>
+    <input type="checkbox" id="chordWindowChk" hidden>
+    <input type="checkbox" id="globalMatchChk" hidden>
+  </div>
+  <div id="suppressPanel" style="display:none; margin:.25rem 0; padding:.3rem .4rem; background:#fff8f0; border:1px solid #ffd9b0; border-radius:4px">
+    <button class="btn toggle" data-for="suppressModeChk" title="Click notes to silence them"><span class="ic">🔇</span><span class="txt">Suppress notes</span></button>
+    <button class="btn toggle" data-for="hearAllChk" title="Temporarily hear every suppressed note"><span class="ic">👂</span><span class="txt">Hear all</span></button>
+    <span id="voiceChips"></span>
+    <span id="suppressHint" style="font-size:.8em;color:#a0660a"></span>
+    <input type="checkbox" id="suppressModeChk" hidden>
+    <input type="checkbox" id="hearAllChk" hidden>
+  </div>
+  <div id="windowPanel" style="display:none; margin:.25rem 0; padding:.3rem .4rem; background:#f4f8ff; border:1px solid #cfe0ff; border-radius:4px">
+    <div id="windowNudge" class="win-nudge" title="Move / resize the window (easier than dragging on touch)">
+      <button type="button" id="winMoveL" class="win-btn" title="Move window left" aria-label="Move window left">◀</button>
+      <button type="button" id="winMoveR" class="win-btn" title="Move window right" aria-label="Move window right">▶</button>
+      <button type="button" id="winMoveU" class="win-btn" title="Move window to line above" aria-label="Move window up">▲</button>
+      <button type="button" id="winMoveD" class="win-btn" title="Move window to line below" aria-label="Move window down">▼</button>
+      <span class="win-sep"></span>
+      <button type="button" id="winShrink" class="win-btn" title="Shrink window" aria-label="Shrink window">–</button>
+      <button type="button" id="winExpand" class="win-btn" title="Expand window" aria-label="Expand window">+</button>
+    </div>
+    <span style="font-size:.85em;color:#555">Chords:</span>
+    <span id="windowChords"></span>
+    <span id="windowRange" style="font-size:.8em;color:#777"></span>
+    <button id="captureWindowBtn" class="btn" style="margin-left:.5em" title="Capture this window to vocab"><span class="ic">➕</span><span class="txt">Capture window → vocab</span></button>
+  </div>
+  <!-- Motifs + Phrases panels overlay the sheet when expanded (see .np-body CSS) so toggling them
+       never reflows the page — a reflow could nudge a scrollbar and force OSMD to re-render. -->
+  <div class="np-wrap">
+  <details id="tagPanel" class="np-panel">
+    <summary>🏷️ Motifs<button type="button" id="tagVisBtn" class="np-vis" title="Show these motifs on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button></summary>
+    <div class="np-body">
+    <div class="tag-row">
+      <button class="btn toggle" data-for="tagModeChk" title="Click notes to add/remove them from the active tag"><span class="ic">🖌️</span><span class="txt">Edit mode</span></button>
+      <label class="tag-lbl">Tag:
+        <input id="tagInput" list="tagOptions" placeholder="pick or type a tag…" maxlength="24" autocomplete="off"
+               title="Pick an existing tag or type a new one (Enter), then click notes to paint it" style="width:11em">
+        <datalist id="tagOptions"></datalist>
+      </label>
+      <button id="playTagsBtn" class="btn" title="Play only the checked tags' notes, skipping the gaps between them"><span class="ic">▶</span><span class="txt">▶ Play</span></button>
+      <label class="tag-lbl" title="Silence inserted between tagged runs, in beats (scales with tempo)">Breath
+        <input type="number" id="breathBeats" min="0" max="4" step="0.25" value="1" style="width:2em">
+      </label>
+      <input type="checkbox" id="tagModeChk" hidden>
+    </div>
+    <div class="tag-row" style="margin-top:6px">
+      <button id="findPatternBtn" class="btn" title="Find other occurrences of the checked tags' note patterns on the open sheet"><span class="ic">🔎</span><span class="txt">Find pattern</span></button>
+      <span id="patternMsg" style="font-size:.8em;color:#555"></span>
+    </div>
+    <div class="tag-list-head">
+      <button id="tagCheckAllBtn" class="icon-btn" title="Check / uncheck all tags" aria-label="Check or uncheck all tags">☑</button>
+      <div id="tagList" class="tag-list"></div>
+    </div>
+    </div>
+  </details>
+  <details id="phrasePanel" class="np-panel">
+    <summary>🎼 Phrases<button type="button" id="phraseVisBtn" class="np-vis" title="Show these phrases on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button></summary>
+    <div class="np-body">
+    <div class="tag-row">
+      <label class="tag-lbl">New phrase:
+        <input id="phraseInput" maxlength="32" placeholder="name…" autocomplete="off" style="width:11em">
+      </label>
+      <button id="addPhraseBtn" class="btn"><span class="ic">➕</span><span class="txt">Add</span></button>
+      <span id="phraseMsg" style="font-size:.8em;color:#555"></span>
+    </div>
+    <div id="phraseList" class="tag-list"></div>
+    </div>
+  </details>
+    <!-- Shared pattern-match settings — used by BOTH the Motifs "Find pattern" and each Phrase's Find.
+       Moved into whichever panel is open (updatePatternControls) so it rides the same overlay. -->
+  <div id="patternControls" class="pattern-controls" style="display:none">
+    <span class="tag-lbl">Pattern match:</span>
+    <label class="tag-lbl">by
+      <select id="patMode" title="Match by pitch intervals, note durations, or both">
+        <option value="intervals">intervals</option>
+        <option value="duration">duration</option>
+        <option value="both">both</option>
+      </select>
+    </label>
+    <label class="tag-lbl" title="Durations: off = exact note types; on = proportional (augmentation/diminution matches)">
+      <input type="checkbox" id="patProportional"> proportional
+    </label>
+    <select id="patIntervalBasis" title="Match intervals literally (chromatic) or by scale degree (diatonic)">
+      <option value="diatonic">diatonic</option>
+      <option value="chromatic">chromatic</option>
+    </select>
+    <select id="patKey" title="Key for diatonic matching (defaults to the piece's best-guess key)"></select>
+  </div>
+  </div>
+  <div id="osmdPreview"></div>
+  <details id="fretboardPanel" class="fb-wrap">
+    <summary>🎸 Fretboard</summary>
+    <!-- All controls above the diagram collapse behind one toggle to declutter the panel. -->
+    <details class="fb-controls" open>
+      <summary>⚙️ Controls</summary>
+      <div class="fb-bar">
+        <button type="button" id="fbSrcGuessed" class="fb-chip">Guessed chords</button>
+        <button type="button" id="fbSrcWindow" class="fb-chip alt">Chord window</button>
+        <button type="button" id="fbSrcMatched" class="fb-chip alt" title="Notes from the motifs' matched occurrences (run Find pattern first)">Motifs</button>
+        <button type="button" id="fbSrcPhrases" class="fb-chip alt" title="Notes from all phrases (create phrases in the Phrases panel)">Phrases</button>
+        <button type="button" class="btn toggle" data-for="fbSuppress" title="Include suppressed notes in the capture"><span class="ic">🔇</span><span class="txt">Suppressed</span></button>
+        <button type="button" class="btn toggle" data-for="fbOctave" title="Place notes at their written octave (off = pitch-class shapes)"><span class="ic">🎯</span><span class="txt">Match octave</span></button>
+        <button type="button" class="btn toggle" data-for="fbPlayable" title="Only physically playable voicings (fretted span ≤ 3)"><span class="ic">🖐️</span><span class="txt">Playable</span></button>
+        <button type="button" id="fbFullscreen" class="fb-chip alt" style="margin-left:auto">⛶ Fullscreen</button>
+        <input type="checkbox" id="fbSuppress" hidden>
+        <input type="checkbox" id="fbOctave" checked hidden>
+        <input type="checkbox" id="fbPlayable" checked hidden>
+      </div>
+      <div class="fb-paths">
+        <label>Ways to play <select id="fbPaths"></select></label>
+      </div>
+      <!-- Transport / shape controls stay above the diagram; only Prev/Next sit below it. -->
+      <div class="fb-step">
+        <button type="button" id="fbReset" class="fb-chip alt">Reset</button>
+        <span class="fb-step-lbl">Step <b id="fbStepLabel">—</b></span>
+        <button type="button" id="fbPlay" class="fb-btn" style="margin-left:8px">▶ Play</button>
+        <input type="range" id="fbSpeed" min="200" max="1400" value="700" style="vertical-align:middle;width:90px">
+        <span style="margin-left:8px">shape
+          <button type="button" id="fbShapePrev" class="fb-chip">◀</button>
+          <b id="fbShapeLabel">0 / 0</b>
+          <button type="button" id="fbShapeNext" class="fb-chip">▶</button>
+        </span>
+      </div>
+    </details>
+    <div id="fbMsg" class="fb-msg"></div>
+    <svg id="fbSvg"></svg>
+    <!-- Prev/Next step navigation sits BELOW the fretboard, under the diagram it drives. -->
+    <div class="fb-step fb-nav">
+      <button type="button" id="fbPrev" class="fb-btn">◀ Prev</button>
+      <button type="button" id="fbPlayStep" class="fb-btn" title="Sound the current step's notes (the highlighted sheet segment)">🔊 Play step</button>
+      <button type="button" id="fbNext" class="fb-btn">Next ▶</button>
+      <button type="button" class="btn toggle" data-for="fbAutoPlayChk" title="Automatically sound each step as you move Prev/Next"><span class="ic">🎧</span><span class="txt">Auto-play</span></button>
+      <button type="button" class="btn toggle" data-for="fbNoteName" title="Label the dots with note names (off = fret numbers)"><span class="ic">🔤</span><span class="txt">Note names</span></button>
+      <input type="checkbox" id="fbAutoPlayChk" hidden>
+      <input type="checkbox" id="fbNoteName" hidden>
+    </div>
+  </details>
+  <div id="ytPlayer" style="display:none"></div>
+</div>
+</div>
+
+<script type="module">
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js';
+  import { runQuery } from './music-query.js';
+  import { createMusicRenderer, resolveMatchMeasures } from './music-render.js';
+  import { init as initFretboard } from './fretboard-panel.js';
+  import { chordDisplayName } from './music-chords.js';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js';
+  import { createMusicStore } from './music-local-store.js';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js';
+
+  const system = getSystemFromUrl().name;
+  document.getElementById('systemLabel').textContent = system;
+
+  // jQuery is already global in music.html (loaded via <script>); musicxml.js needs it.
+  let index = [];
+  let unpushedIds = new Set();   // pieces with local index/detail edits (add/rebuild/tags/link) awaiting push
+  let vocab = [];
+  let dirtyVocab = false;        // vocab.json changed locally, awaiting the manual push
+  let dirtyIndex = false;        // index.json changed with no unpushed piece (e.g. a delete) — needs push
+  const tagFilter = new Set();   // active tag filter; applies to the library list AND search
+  const store = createMusicStore();
+  const pending = [];  // newly added pieces not yet pushed: {id,title,format,source,key}
+
+  // Pattern-tag registry: the GLOBAL list of tags [{name,color}], shared across all pieces and
+  // synced via a pushed tags.json (like vocab.json). Per-piece note assignments live in each
+  // detail.patterns. Loaded at startup; edits persist locally and go out in the next manual push.
+  let tagRegistry = [];
+  let dirtyTags = false;   // tags.json changed locally, awaiting the manual push
+  async function loadTagRegistry() {
+    let remote = [];
+    try { const res = await fetch(`${getMusicResourceUrl(system)}/tags.json`); if (res.ok) remote = await res.json(); } catch (_) { remote = []; }
+    let local = [];
+    try { local = (await store.getTags(system)) || []; } catch (_) { local = []; }
+    return mergeRegistry(remote, local);   // remote ∪ local-only tags, colors preserved
+  }
+  function saveTagRegistry() {
+    store.putTags(system, tagRegistry).catch(() => {});
+    dirtyTags = true;
+    if (renderer) renderer.setTagRegistry(tagRegistry);
+    updatePushBtn();
+  }
+
+  function idFromName(name) {
+    return name.replace(/\.(xml|musicxml|txt)$/i, '').trim().replace(/\s+/g, '_').replace(/[\/\\:*?"<>|]/g, '');
+  }
+  function setStatus(s) { document.getElementById('status').textContent = s; }
+
+  // The single manual-push affordance: every edit stacks up locally; this button (was "Retry push")
+  // commits them all in one batch. Count = unpushed pieces + a vocab change + an index-only change.
+  function updatePushBtn() {
+    const btn = document.getElementById('retryBtn');
+    const n = unpushedIds.size + (dirtyVocab ? 1 : 0) + (dirtyIndex ? 1 : 0) + (dirtyTags ? 1 : 0);
+    if (n > 0) { btn.style.display = ''; btn.textContent = `Push changes (${n})`; }
+    else { btn.style.display = 'none'; }
+  }
+  function hasPending() { return unpushedIds.size > 0 || dirtyVocab || dirtyIndex || dirtyTags; }
+
+  function makeCommitter(label) {
+    return (files) => window.GitHubUtils.commitMultipleFiles({
+      owner: 'trexsatya', repo: 'trexsatya.github.io', branch: 'gh-pages',
+      commitMessage: `music(${system}): rebuild ${label}`, files
+    });
+  }
+
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+  // Parse a comma-separated tag string → trimmed, de-duped, non-empty list (order preserved).
+  function parseTags(str) {
+    const out = [];
+    String(str || '').split(',').forEach(t => { const v = t.trim(); if (v && !out.includes(v)) out.push(v); });
+    return out;
+  }
+  function allTags() {
+    const set = new Set();
+    index.forEach(e => (e.tags || []).forEach(t => set.add(t)));
+    return [...set].sort();
+  }
+  // Tag-filter chips above the library list; clicking a chip toggles it in the active filter.
+  function renderTagFilter() {
+    const bar = document.getElementById('tagFilterBar');
+    const tags = allTags();
+    if (!tags.length) { bar.innerHTML = ''; return; }
+    bar.innerHTML = '<span style="font-size:.8em;color:#555">Filter by tag:</span> '
+      + tags.map(t => `<button class="tagChip${tagFilter.has(t) ? ' active' : ''}" data-tag="${esc(t)}">${esc(t)}</button>`).join(' ')
+      + (tagFilter.size ? ` <button class="tagChip" data-tag="" title="Clear filter">clear ✕</button>` : '');
+  }
+  function render() {
+    const rows = [];
+    filterByTags(index, tagFilter).forEach(e => rows.push(
+      `<label style="display:block"><input type="checkbox" class="sel" data-id="${e.id}"> ${esc(e.title || e.id)} <small>(${e.noteCount} notes, ${e.channels.join('/')})</small> `
+      + `<button class="previewBtn" data-id="${e.id}">Preview</button> `
+      + `<input class="pieceTags" data-id="${e.id}" value="${esc((e.tags || []).join(', '))}" placeholder="tags…" style="width:10em;font-size:.85em"> `
+      + `<button class="pieceDel" data-id="${e.id}" title="Delete piece + its vocab">🗑</button>`
+      + `${unpushedIds.has(e.id) ? ' <span style="color:#c00;font-weight:600">● not pushed</span>' : ''}</label>`));
+    pending.forEach(p => rows.push(
+      `<label style="display:block;color:#a06000"><input type="checkbox" class="sel" data-id="${p.id}" checked disabled> ${esc(p.title)} <small>(new — Push to publish)</small></label>`));
+    document.getElementById('pieceList').innerHTML = rows.join('') || '<em>No pieces match.</em>';
+    renderTagFilter();
+  }
+
+  document.getElementById('addXmlBtn').onclick = () => document.getElementById('xmlFile').click();
+  document.getElementById('xmlFile').onchange = async (ev) => {
+    for (const file of ev.target.files) {
+      const source = await file.text();
+      const id = idFromName(file.name);
+      pending.push({ id, title: id, format: 'musicxml', source });
+    }
+    render();
+  };
+  document.getElementById('addTextBtn').onclick = () => {
+    const ta = document.getElementById('textInput'); ta.style.display = 'block'; ta.focus();
+  };
+  document.getElementById('textInput').onchange = (ev) => {
+    const text = ev.target.value.trim(); if (!text) return;
+    const title = text.split('\n')[0].slice(0, 60);
+    pending.push({ id: idFromName(title), title, format: 'note-text', source: text, key: 'C' });
+    ev.target.value = ''; ev.target.style.display = 'none'; render();
+  };
+
+  document.getElementById('rebuildBtn').onclick = async () => {
+    const selectedIds = new Set(Array.from(document.querySelectorAll('.sel:checked')).map(c => c.dataset.id));
+    const reselected = index
+      .filter(e => selectedIds.has(e.id))
+      .map(e => ({ id: e.id, title: e.title, format: e.format, source: null, key: e.key }));
+    // For already-indexed pieces we need their source; prefer the local store, else fetch the detail file.
+    for (const r of reselected) {
+      let detail = await store.getDetail(system, r.id).catch(() => null);
+      if (!detail) detail = await fetch(`${getMusicResourceUrl(system)}/details/${r.id}.json`).then(x => x.json());
+      r.source = detail.source; r.format = detail.format;
+    }
+    const pieces = [...pending, ...reselected];
+    if (!pieces.length) { setStatus('Nothing selected.'); return; }
+    setStatus('Encoding…');
+    try {
+      const { changed, changedPieces, index: nextIndex } = computeChanges({ system, pieces, currentIndex: index,
+        force: selectedIds.size > 0, updatedAt: new Date().toISOString().slice(0, 10) });
+      index = nextIndex; pending.length = 0;
+      let localError = null;
+      try { await store.putPieces(system, changedPieces); } catch (e) { localError = e.message; }
+      changed.forEach(id => unpushedIds.add(id));
+      render(); updatePushBtn();
+      setStatus(changed.length
+        ? `Encoded ${changed.length} piece(s) locally — click "Push changes" to publish.${localError ? ' (local save error: ' + localError + ')' : ''}`
+        : 'No changes.');
+    } catch (e) { setStatus('Error: ' + e.message); }
+  };
+
+  // Manual push: commit ALL stacked local edits (index + changed details + vocab) in one batch.
+  document.getElementById('retryBtn').onclick = async () => {
+    if (!hasPending()) { setStatus('Nothing to push.'); return; }
+    setStatus('Pushing…');
+    try {
+      const res = await pushPending({ system, currentIndex: index, vocab, pushVocab: dirtyVocab,
+        tags: tagRegistry, pushTags: dirtyTags, committer: makeCommitter('push changes'), store });
+      if (res.pushed) { unpushedIds.clear(); dirtyVocab = false; dirtyIndex = false; dirtyTags = false; }
+      render(); updatePushBtn();
+      setStatus(res.pushed ? 'Pushed all changes to GitHub.' : 'Push failed: ' + (res.pushError || 'unknown'));
+    } catch (e) { setStatus('Push failed: ' + e.message); }
+  };
+
+  let renderer = null;
+  let totalMeasures = 0;
+  // Measure numbers are stored/rendered SEQUENTIALLY (pickup = 1) but shown/typed as the score's
+  // PRINTED numbers. currentOffset = sequential − printed for the loaded piece (the pickup shift).
+  let currentOffset = 0;
+  const toPrintedMeasure = (seq) => (Number.isFinite(seq) ? seq - currentOffset : seq);
+  const toSeqMeasure = (printed) => (Number.isFinite(printed) ? printed + currentOffset : printed);
+  function ensureRenderer() {
+    if (!renderer) {
+      renderer = createMusicRenderer(document.getElementById('osmdPreview'),
+        { onChordSelect: syncVocabChords, onWindowChange: onChordWindowChange, onSuppressionChange: onSuppressionChange,
+          onPatternsChange: onPatternsChange, onPhrasesChange: onPhrasesChange });
+      fbPanel = initFretboard(renderer, {
+        panel: document.getElementById('fretboardPanel'),
+        srcGuessed: document.getElementById('fbSrcGuessed'),
+        srcWindow: document.getElementById('fbSrcWindow'),
+        srcMatched: document.getElementById('fbSrcMatched'),
+        srcPhrases: document.getElementById('fbSrcPhrases'),
+        suppressChk: document.getElementById('fbSuppress'),
+        octaveChk: document.getElementById('fbOctave'),
+        playableChk: document.getElementById('fbPlayable'),
+        noteNameChk: document.getElementById('fbNoteName'),
+        resetBtn: document.getElementById('fbReset'),
+        fullscreenBtn: document.getElementById('fbFullscreen'),
+        pathSelect: document.getElementById('fbPaths'),
+        prevBtn: document.getElementById('fbPrev'),
+        nextBtn: document.getElementById('fbNext'),
+        playStepBtn: document.getElementById('fbPlayStep'),
+        autoPlayChk: document.getElementById('fbAutoPlayChk'),
+        playBtn: document.getElementById('fbPlay'),
+        speed: document.getElementById('fbSpeed'),
+        shapePrev: document.getElementById('fbShapePrev'),
+        shapeNext: document.getElementById('fbShapeNext'),
+        stepLabel: document.getElementById('fbStepLabel'),
+        shapeLabel: document.getElementById('fbShapeLabel'),
+        msg: document.getElementById('fbMsg'),
+        svg: document.getElementById('fbSvg'),
+      }, {
+        // Sound the current step as it reads on the sheet (chords stack, melody plays in sequence),
+        // through the same player/instrument as the transport. `events` is [{midi, beat, durBeats}].
+        playSequence: (events) => {
+          if (!events || !events.length) return;
+          const p = ensurePlayer();
+          const instr = document.getElementById('instrSel').value;
+          if (instr !== fbStepInstr) { p.setInstrument(instr); fbStepInstr = instr; }
+          const spb = 60 / currentTempo();
+          const base = Math.min(...events.map((e) => e.beat));
+          const secs = events.map((e) => ({ midi: e.midi, time: (e.beat - base) * spb, duration: Math.max(0.15, (e.durBeats || 1) * spb) }));
+          return p.playSequence(secs);
+        },
+      });
+    }
+    return renderer;
+  }
+
+  // ── Chord window (draggable selection over the staff) ──────────────────────────────────────
+  let windowState = { chords: [], measureRange: null };   // latest payload from the renderer
+  const windowPicks = new Set();                          // chord names the user picked to capture
+  let globalChordMatch = false;   // "Global" toggle: picked chords highlight every occurrence sheet-wide
+  // Fired by the renderer whenever the window moves/re-anchors: refresh chips + highlight + range.
+  function onChordWindowChange(payload) {
+    windowState = payload || { chords: [], measureRange: null };
+    const names = new Set(windowState.chords.map((c) => c.name));
+    [...windowPicks].forEach((n) => { if (!names.has(n)) windowPicks.delete(n); });   // drop vanished picks
+    renderWindowChips();
+    applyWindowHighlight();
+    const r = windowState.measureRange;   // sequential → show printed
+    document.getElementById('windowRange').textContent = r ? `(m. ${toPrintedMeasure(r[0])}–${toPrintedMeasure(r[1])})` : '';
+  }
+  function renderWindowChips() {
+    const host = document.getElementById('windowChords');
+    if (!host) return;
+    host.innerHTML = '';
+    if (!windowState.chords.length) { host.textContent = ' — '; return; }
+    windowState.chords.forEach((c) => {
+      const sel = windowPicks.has(c.name);
+      const chip = document.createElement('button');
+      chip.textContent = (sel ? '✓ ' : '') + chordDisplayName(c.name);
+      chip.style.cssText = `margin:0 .15em; padding:.05em .4em; font-size:.85em; border-radius:3px; cursor:pointer; border:1px solid ${sel ? '#c62828' : '#1565c0'}; background:${sel ? '#ffe3e3' : '#eef4ff'}; color:${sel ? '#c62828' : '#1565c0'}`;
+      chip.onclick = () => {
+        if (windowPicks.has(c.name)) windowPicks.delete(c.name); else windowPicks.add(c.name);
+        renderWindowChips();
+        applyWindowHighlight();
+      };
+      host.appendChild(chip);
+    });
+  }
+  function applyWindowHighlight() {
+    if (!renderer) return;
+    // The window and the overlay share one highlight channel; when the window is off, leave it
+    // to the overlay (otherwise toggling Global would erase an overlay-selected highlight).
+    if (!document.getElementById('chordWindowChk').checked) return;
+    const picked = windowState.chords.filter((c) => windowPicks.has(c.name)).map((c) => c.name);
+    renderer.clearHighlight();
+    if (!picked.length) return;
+    // Global: light up every occurrence of the picked chords across the sheet. Local: only the
+    // window's own notes that form them.
+    const notes = (globalChordMatch && renderer.occurrenceNotesForChords)
+      ? renderer.occurrenceNotesForChords(picked)
+      : windowState.chords.filter((c) => windowPicks.has(c.name)).reduce((acc, c) => acc.concat(c.notes || []), []);
+    if (notes.length) renderer.highlightChord(notes);
+  }
+  // Auto-update chord picks while a saved vocab item is on screen. Writes the LOCAL cache only
+  // (survives reload) — it does NOT push to GitHub, which would spam commits on every toggle.
+  // The push happens later via "Add/update to vocab". No-op when capturing a fresh segment.
+  function syncVocabChords(names) {
+    if (!currentVocabEntry) return;
+    currentVocabEntry.chords = names || [];
+    vocab = upsertVocab(vocab, currentVocabEntry);
+    renderVocab();
+    if (store && store.putVocab) {
+      try { const p = store.putVocab(system, vocab); if (p && p.catch) p.catch(() => {}); } catch (_) {}
+    }
+    setMediaMsg('Chords saved locally — Add/update to vocab to push', 'ok');
+  }
+
+  let player = null, yt = null, currentDetail = null, currentVocabEntry = null;
+  let fbStepInstr = null;   // last instrument pushed to the player for fretboard step-play (avoids re-creating the voice)
+  let fbPanel = null;       // fretboard panel controller (from initFretboard) — for cross-panel actions
+  // The "Add to vocab" button doubles as "Add/update" while a saved vocab item is on screen.
+  function updateAddVocabLabel() {
+    const btn = document.getElementById('addVocabBtn');
+    if (btn) btn.innerHTML = currentVocabEntry
+      ? '<span class="ic">✎</span><span class="txt">Add/update to vocab</span>'
+      : '<span class="ic">➕</span><span class="txt">Add to vocab</span>';
+  }
+  const escapeHtml = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  // Toast notifications for media/vocab actions: stacked, auto-dismissing popups that float over the
+  // page (replacing the old inline status pill). Tone sets the colour; errors linger longer; a toast
+  // also dismisses on click. setMediaMsg keeps its (text, tone) signature so all call sites are unchanged.
+  function toastHost() {
+    let c = document.getElementById('toastHost');
+    if (!c) {
+      c = document.createElement('div');
+      c.id = 'toastHost';
+      // longhand positioning (not `inset`) for older mobile Safari; container ignores pointer events
+      // so it never blocks the page, while each toast re-enables them to be click-dismissable.
+      c.style.cssText = 'position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:11000;'
+        + 'display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;width:max-content;max-width:92vw';
+      document.body.appendChild(c);
+    }
+    return c;
+  }
+  function setMediaMsg(text, tone) {
+    if (!text) return;
+    const palette = { info: ['#eef2ff', '#3730a3', '#c7d2fe'], ok: ['#e7f6ec', '#1b7f3b', '#a7e3bd'], err: ['#fdecec', '#b42318', '#f3b4ad'] };
+    const [bg, fg, border] = palette[tone] || palette.info;
+    const t = document.createElement('div');
+    t.textContent = text;
+    t.style.cssText = `pointer-events:auto;cursor:pointer;background:${bg};color:${fg};border:1px solid ${border};`
+      + 'padding:8px 14px;border-radius:10px;font-size:.9rem;line-height:1.35;box-shadow:0 4px 16px rgba(0,0,0,.18);'
+      + 'max-width:92vw;text-align:center;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s';
+    toastHost().appendChild(t);
+    requestAnimationFrame(() => { t.style.opacity = '1'; t.style.transform = 'translateY(0)'; });
+    let gone = false;
+    const dismiss = () => { if (gone) return; gone = true; t.style.opacity = '0'; t.style.transform = 'translateY(8px)'; setTimeout(() => t.remove(), 280); };
+    t.addEventListener('click', dismiss);
+    setTimeout(dismiss, tone === 'err' ? 8000 : 4000);   // errors linger longer
+  }
+  function ensurePlayer() {
+    if (!player) player = createMusicPlayer({ getCursor: () => (renderer && renderer.osmd ? renderer.osmd.cursor : null) });
+    return player;
+  }
+  function segmentRange() {
+    // Fields hold PRINTED numbers; convert to the sequential numbers used internally / by OSMD.
+    const from = parseInt(document.getElementById('segFrom').value, 10);
+    const to = parseInt(document.getElementById('segTo').value, 10);
+    return (Number.isFinite(from) && Number.isFinite(to)) ? { fromMeasure: toSeqMeasure(from), toMeasure: toSeqMeasure(to) } : {};
+  }
+  // What to play: when the chord window is on, play only the window — note-accurate (fromBeat/
+  // toBeat) when onsets are available, else the measures it spans. Otherwise the segment from/to.
+  // Read live from the renderer so it can't go stale against the window's current position.
+  function activeRange() {
+    const winOn = document.getElementById('chordWindowChk') && document.getElementById('chordWindowChk').checked;
+    const wr = winOn && renderer && renderer.getWindowRange && renderer.getWindowRange();
+    if (wr) return wr;
+    return segmentRange();
+  }
+  function currentTempo() {
+    const t = parseInt(document.getElementById('tempoInput').value, 10);
+    return Number.isFinite(t) && t > 0 ? t : 90;
+  }
+  function playMidi() {
+    if (!currentDetail) return;
+    // MusicXML pieces get a time-accurate, polyphonic schedule from the source; note-text
+    // pieces (no real timing) fall back to the simple per-note sequential builder.
+    const useXml = currentDetail.format === 'musicxml' && currentDetail.source;
+    const range = activeRange();
+    const muted = (renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : [];
+    const schedule = useXml
+      ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), ...range, mutedNotes: muted })
+      : buildSchedule(currentDetail.voices, { tempo: currentTempo(), ...range });
+    if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
+    const span = (range.fromBeat != null) ? ' (window)'
+      : (range.fromMeasure != null) ? ` (m. ${toPrintedMeasure(range.fromMeasure)}–${toPrintedMeasure(range.toMeasure)})` : '';
+    const p = ensurePlayer();
+    p.setInstrument(document.getElementById('instrSel').value);
+    p.setSchedule(schedule, { cursorStartStep: range.cursorStep || 0 });
+    p.setLoop(document.getElementById('loopChk').checked);
+    document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    p.play()
+      .then(() => { document.getElementById('transportMsg').textContent = `Playing ${schedule.length} notes${span}`; })
+      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; });
+  }
+  // Tag skip-playback: play only the checked tags' notes, removing the empty stretches between
+  // tagged runs (a beat-relative breath separates runs). Whole piece — ignores segment/window.
+  function playTags() {
+    if (!currentDetail) return;
+    if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
+      document.getElementById('transportMsg').textContent = 'Tag playback needs a MusicXML piece.'; return;
+    }
+    const tagged = (renderer && renderer.getFilterNotes) ? renderer.getFilterNotes() : [];
+    // Include the notes matched by the most recent Find-pattern search (if any), so the recurring
+    // pattern is sounded alongside the tagged notes. Union, de-duped by (midi, beats), onset-sorted.
+    const matched = (renderer && renderer.getPatternMatchNotes) ? renderer.getPatternMatchNotes() : [];
+    const seen = new Set();
+    const keep = [...tagged, ...matched].filter((n) => {
+      const k = `${n.midi}@${n.beats}`;
+      if (seen.has(k)) return false;
+      seen.add(k); return true;
+    }).sort((a, b) => a.beats - b.beats);
+    if (!keep.length) { document.getElementById('transportMsg').textContent = 'Check a tag to play it.'; return; }
+    const breath = parseFloat(document.getElementById('breathBeats').value);
+    const breathBeats = (Number.isFinite(breath) && breath >= 0) ? breath : 1;
+    const schedule = buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep, breathBeats });
+    if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
+    const p = ensurePlayer();
+    p.setInstrument(document.getElementById('instrSel').value);
+    p.setSchedule(schedule, { cursorStartStep: 0 });
+    p.setLoop(document.getElementById('loopChk').checked);
+    document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    const withMatches = matched.length ? ' (tags + matches)' : '';
+    p.play()
+      .then(() => { document.getElementById('transportMsg').textContent = `Playing ${schedule.length} notes${withMatches}`; })
+      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; });
+  }
+  let ytMonitor = null;
+  let ytLoadedId = null;   // video id currently loaded in the player (avoid reloading on replay)
+  function clearYtMonitor() { if (ytMonitor) { clearInterval(ytMonitor); ytMonitor = null; } }
+  // Bound YouTube playback to [startSec, endSec]: poll currentTime and, on reaching the end,
+  // loop back to the start (when Loop is checked) or pause. No-op if the range is degenerate.
+  function startYtMonitor(startSec, endSec) {
+    clearYtMonitor();
+    if (!(endSec > startSec)) return;
+    ytMonitor = setInterval(() => {
+      if (!yt || !yt.isReady()) return;
+      if (yt.getCurrentTime() >= endSec) {
+        if (document.getElementById('loopChk').checked) yt.seekTo(startSec);
+        else { yt.pause(); clearYtMonitor(); }
+      }
+    }, 200);
+  }
+  function playYouTube() {
+    const url = currentDetail && currentDetail.meta && currentDetail.meta.youtube;
+    const id = parseYouTubeId(url);
+    if (!id) { document.getElementById('transportMsg').textContent = 'No linked YouTube video.'; return; }
+    document.getElementById('ytPlayer').style.display = '';
+    const range = segmentRange();
+    const hasSeg = Number.isFinite(range.fromMeasure) && Number.isFinite(range.toMeasure);
+    const from = range.fromMeasure || 1, to = range.toMeasure || from;
+    const editedStart = parseFloat(document.getElementById('guessSec').value);
+    const editedEnd = parseFloat(document.getElementById('guessEndSec').value);
+    const startFor = () => {
+      if (Number.isFinite(editedStart)) return editedStart;
+      const g = guessSegmentStart(currentDetail, [from, to], yt.getDuration());
+      document.getElementById('guessSec').value = g.toFixed(1);
+      return g;
+    };
+    const endFor = () => {
+      if (Number.isFinite(editedEnd)) return editedEnd;
+      const g = guessSegmentStart(currentDetail, [to + 1, to + 1], yt.getDuration());
+      document.getElementById('guessEndSec').value = g.toFixed(1);
+      return g;
+    };
+    const begin = () => {
+      const s = startFor(); yt.seekTo(s); yt.play();
+      if (hasSeg) startYtMonitor(s, endFor()); else clearYtMonitor();
+    };
+    try {
+      if (!yt) {
+        // First ever play: build the player; seek+play once it's ready.
+        yt = createYouTubeController('ytPlayer', { onReady: () => begin() });
+        ytLoadedId = id;
+        yt.load(id, Number.isFinite(editedStart) ? editedStart : 0);
+      } else if (ytLoadedId !== id) {
+        // Switched to a different video: reload it, then seek+play.
+        ytLoadedId = id;
+        yt.load(id, Number.isFinite(editedStart) ? editedStart : 0);
+        begin();
+      } else {
+        // Same video already loaded: just seek to the segment start + play (no reload —
+        // reloading mid-play raced with the immediate seek and restarted from 0).
+        begin();
+      }
+      document.getElementById('transportMsg').textContent = 'Playing YouTube' + (hasSeg ? ' (segment)' : '');
+    } catch (e) { document.getElementById('transportMsg').textContent = 'YouTube error: ' + e.message; }
+  }
+  document.getElementById('instrSel').onchange = () => { if (player) player.setInstrument(document.getElementById('instrSel').value); };
+  // The YouTube link field stays hidden until asked for — most of the time you're not editing it.
+  document.getElementById('ytToggleBtn').onclick = () => {
+    const w = document.getElementById('ytLinkWrap');
+    w.style.display = (w.style.display === 'none' || !w.style.display) ? 'inline' : 'none';
+  };
+  // View toggles (Loop, Color voices, Note names, Show chords, Dim, Chord window) are icon
+  // buttons backed by a hidden checkbox. Clicking flips the checkbox, fires its existing change
+  // handler, and lights the button. Programmatic checkbox changes call syncToggles() to refresh.
+  function syncToggle(btn) {
+    const chk = document.getElementById(btn.dataset.for);
+    const on = !!(chk && chk.checked);
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function syncToggles() { document.querySelectorAll('.btn.toggle').forEach(syncToggle); }
+  document.querySelectorAll('.btn.toggle').forEach((btn) => {
+    btn.onclick = () => {
+      const chk = document.getElementById(btn.dataset.for);
+      chk.checked = !chk.checked;
+      chk.dispatchEvent(new Event('change'));   // run the checkbox's existing onchange logic
+      syncToggle(btn);
+    };
+  });
+  // Loop's effect lives on its checkbox so the generic toggle drives it (and applies live).
+  document.getElementById('loopChk').onchange = () => { if (player) player.setLoop(document.getElementById('loopChk').checked); };
+  syncToggles();
+
+  // ── Note suppression UI (vocab items only) ─────────────────────────────────────────────────
+  function renderVoiceChips() {
+    const box = document.getElementById('voiceChips');
+    box.innerHTML = '';
+    if (!renderer || !renderer.listVoices) return;
+    renderer.listVoices().forEach((v) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'voiceChip' + (v.allSuppressed ? ' active' : '');
+      chip.textContent = `V${v.id + 1}`;
+      chip.style.borderColor = v.color;
+      chip.style.color = v.allSuppressed ? '#fff' : v.color;
+      chip.style.background = v.allSuppressed ? v.color : '#fff';
+      chip.title = v.allSuppressed ? 'Restore this voice' : 'Silence this whole voice';
+      chip.onclick = () => { renderer.suppressVoice(v.id, !v.allSuppressed); };
+      box.appendChild(chip);
+    });
+  }
+  function onSuppressionChange() {
+    renderVoiceChips();
+    const n = (renderer && renderer.getSuppressedNotes) ? renderer.getSuppressedNotes().length : 0;
+    document.getElementById('suppressHint').textContent = n ? `${n} note${n === 1 ? '' : 's'} suppressed` : '';
+  }
+  document.getElementById('suppressModeChk').onchange = (e) => {
+    if (renderer) renderer.setSuppressMode(e.target.checked);
+    document.getElementById('voiceChips').style.display = e.target.checked ? 'inline' : 'none';
+    if (e.target.checked) renderVoiceChips();
+  };
+  document.getElementById('hearAllChk').onchange = (e) => { if (renderer) renderer.setHearAll(e.target.checked); };
+  // Two-button transport: Play always (re)starts from the segment start; Pause toggles to Resume.
+  let paused = false;
+  let ytPlaying = false;   // tracks YouTube playback (Tone.Transport.state is authoritative for MIDI)
+  function updatePauseLabel() {
+    document.getElementById('pauseBtn').innerHTML = paused
+      ? '<span class="ic">▶</span><span class="txt">▶ Resume</span>'
+      : '<span class="ic">⏸</span><span class="txt">⏸ Pause</span>';
+  }
+  document.getElementById('playBtn').onclick = () => {
+    paused = false; updatePauseLabel();
+    const isYt = document.getElementById('srcSel').value === 'youtube';
+    ytPlaying = isYt;   // started fresh; only meaningful for the YouTube source
+    (isYt ? playYouTube() : playMidi());
+  };
+  document.getElementById('pauseBtn').onclick = () => {
+    const isYt = document.getElementById('srcSel').value === 'youtube';
+    if (!paused) {
+      if (isYt) { if (yt) yt.pause(); } else if (player) player.pause();
+      paused = true;
+    } else {
+      if (isYt) { if (yt) yt.play(); ytPlaying = true; } else if (player) player.resume();
+      paused = false;
+    }
+    updatePauseLabel();
+  };
+  // Spacebar: play / pause / resume the transport (active only while the preview is open, and not
+  // while typing in a field). Resume if paused; pause if playing; otherwise start from the top.
+  function transportToggle() {
+    if (paused) { document.getElementById('pauseBtn').click(); return; }   // resume
+    const isYt = document.getElementById('srcSel').value === 'youtube';
+    const playing = isYt
+      ? ytPlaying
+      : !!(window.Tone && window.Tone.Transport && window.Tone.Transport.state === 'started');
+    document.getElementById(playing ? 'pauseBtn' : 'playBtn').click();
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.code !== 'Space' && e.key !== ' ') return;
+    if (document.getElementById('musicPreview').style.display === 'none') return;   // preview closed
+    const t = e.target, tag = t && t.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+    e.preventDefault();   // stop the page from scrolling / re-triggering a focused button
+    transportToggle();
+  });
+  document.getElementById('segFrom').oninput = () => {
+    const f = parseInt(document.getElementById('segFrom').value, 10);   // auto-set end = start + 1
+    if (Number.isFinite(f)) document.getElementById('segTo').value = f + 1;
+  };
+
+  let currentPreviewId = null;
+  document.getElementById('ytSaveBtn').onclick = async () => {
+    const url = document.getElementById('ytUrl').value.trim();
+    if (!currentPreviewId || !url) { setMediaMsg('Preview a piece and enter a URL.', 'info'); return; }
+    setMediaMsg('Saving link…');
+    const res = await linkYouTubeLocal({ system, id: currentPreviewId, url, currentIndex: index, store });
+    if (res.error) { setMediaMsg(res.error, 'err'); return; }
+    index = res.index;
+    if (currentDetail && currentDetail.meta) currentDetail.meta.youtube = url;
+    unpushedIds.add(currentPreviewId);
+    render(); updatePushBtn();
+    setMediaMsg('Linked locally — click "Push changes" to publish.', 'ok');
+  };
+  document.getElementById('guessBtn').onclick = () => {
+    if (!currentDetail) { setMediaMsg('Preview a piece first.', 'info'); return; }
+    const dur = yt && yt.getDuration ? yt.getDuration() : 0;
+    if (!dur) { setMediaMsg('Load the YouTube video first (▶ on YouTube source).', 'info'); return; }
+    const range = segmentRange();
+    const from = range.fromMeasure || 1, to = range.toMeasure || from;
+    const start = guessSegmentStart(currentDetail, [from, to], dur);
+    const end = guessSegmentStart(currentDetail, [to + 1, to + 1], dur);  // start of the next measure
+    document.getElementById('guessSec').value = start.toFixed(1);
+    document.getElementById('guessEndSec').value = end.toFixed(1);
+    setMediaMsg(`Segment: ${start.toFixed(1)}–${end.toFixed(1)}s of ${dur.toFixed(0)}s`, 'ok');
+  };
+
+  // Three-way prompt for "Add/update to vocab" while a saved item is on screen. Resolves to
+  // 'update' (overwrite the item), 'new' (save as a separate item), or 'cancel' (abort, change
+  // nothing). A small custom modal because window.confirm offers only two outcomes — and its
+  // Cancel reads as "abort", which is exactly the trap that made the old OK/Cancel flow surprising.
+  function chooseVocabAction(entryId) {
+    return new Promise((resolve) => {
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:10000;padding:1em';
+      const box = document.createElement('div');
+      box.style.cssText = 'background:#fff;border-radius:10px;padding:1.2em;width:24em;max-width:100%;box-sizing:border-box;box-shadow:0 8px 32px rgba(0,0,0,.3)';
+      const msg = document.createElement('div');
+      msg.style.cssText = 'margin-bottom:1em;line-height:1.45';
+      msg.append('This passage is already saved as ');
+      const b = document.createElement('b'); b.textContent = '“' + entryId + '”'; msg.append(b);   // textContent: no HTML injection from the id
+      msg.append('. What would you like to do?');
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:.5em;justify-content:flex-end;flex-wrap:wrap';
+      let done = false;
+      const onKey = (e) => { if (e.key === 'Escape') finish('cancel'); };
+      const finish = (val) => { if (done) return; done = true; document.removeEventListener('keydown', onKey); document.body.removeChild(overlay); resolve(val); };
+      const mk = (label, val, primary) => {
+        const btn = document.createElement('button');
+        btn.className = 'btn'; btn.textContent = label;
+        if (primary) btn.style.cssText = 'background:#1565c0;color:#fff;border-color:#1565c0';
+        btn.onclick = () => finish(val);
+        return btn;
+      };
+      row.append(mk('Cancel', 'cancel'), mk('Add as new', 'new'), mk('Update', 'update', true));
+      box.append(msg, row); overlay.append(box);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) finish('cancel'); });
+      document.addEventListener('keydown', onKey);
+      document.body.append(overlay);
+    });
+  }
+  document.getElementById('addVocabBtn').onclick = async () => {
+    if (!currentDetail || !currentPreviewId) { setMediaMsg('Preview a piece first.', 'info'); return; }
+    const range = segmentRange();
+    const from = range.fromMeasure || 1, to = range.toMeasure || from;
+    const startRaw = parseFloat(document.getElementById('guessSec').value);
+    const endRaw = parseFloat(document.getElementById('guessEndSec').value);
+    // While a saved vocab item is on screen, ask whether to update it, add a separate item, or abort.
+    let updating = false;
+    if (currentVocabEntry) {
+      const action = await chooseVocabAction(currentVocabEntry.id);
+      if (action === 'cancel') return;            // abort entirely — change nothing
+      updating = action === 'update';
+    }
+    const entry = buildVocabEntry({
+      pieceId: currentPreviewId, system, measureRange: [from, to],
+      measureOffset: currentOffset,   // pickup shift, so the list can show printed numbers
+      youtube: (currentDetail.meta && currentDetail.meta.youtube) || null,
+      startSeconds: Number.isFinite(startRaw) ? startRaw : null,
+      endSeconds: Number.isFinite(endRaw) ? endRaw : null,
+      chords: (renderer && renderer.getSelectedChords && renderer.getSelectedChords()) || [],
+      note: document.getElementById('vocabNote').value.trim(),
+      snapshot: buildSnapshot(currentDetail, [from, to]),
+      suppressed: (renderer && renderer.getSuppressedNotes && renderer.getSuppressedNotes()) || [],
+      category: document.getElementById('vocabCat').value.trim() || 'uncategorized',
+      createdAt: (updating && currentVocabEntry.createdAt) || new Date().toISOString().slice(0, 10),
+    });
+    if (updating) entry.id = currentVocabEntry.id;                          // update: keep the original identity even if the measures changed
+    else if (currentVocabEntry) entry.id = uniqueVocabId(vocab, entry.id);  // add-new from a saved item: suffix so it can't silently replace it
+    vocab = upsertVocab(vocab, entry);
+    currentVocabEntry = entry;                        // now showing the saved (possibly new) item
+    updateAddVocabLabel();
+    renderVocab();
+    try { await store.putVocab(system, vocab); } catch (_) {}
+    dirtyVocab = true; updatePushBtn();
+    setMediaMsg(`${updating ? 'Updated' : 'Added'} "${entry.id}" (${vocab.length} total) — click "Push changes" to publish.`, 'ok');
+  };
+  async function openPreview(id) {
+    const title = (index.find(e => e.id === id) || {}).title || id;
+    document.getElementById('previewTitle').textContent = title;
+    document.getElementById('previewMsg').textContent = 'Loading…';
+    document.getElementById('musicPreview').style.display = 'block';
+    document.body.classList.add('preview-open');   // lock page scroll behind the mobile dialog
+    currentDetail = null; currentPreviewId = null; currentVocabEntry = null;   // cleared until a piece fully renders
+    updateAddVocabLabel();
+    let detail;
+    try {
+      detail = unpushedIds.has(id)
+        ? await store.getDetail(system, id)
+        : await fetch(`${getMusicResourceUrl(system)}/details/${id}.json`).then(x => x.json());
+      if (!detail) throw new Error('detail not found');
+    } catch (e) { document.getElementById('previewMsg').textContent = 'Failed to load detail.'; return; }
+    let res;
+    try {
+      var renderer = await ensureRenderer();
+      res = await renderer.loadDetail(detail);
+      renderer.setTagRegistry(tagRegistry);   // seed the global tag list (colors + selectable names)
+    } catch (e) { document.getElementById('previewMsg').textContent = 'Render error: ' + e.message; return; }
+    if (!res.ok) { document.getElementById('previewMsg').textContent = 'Cannot render (note-text piece).'; return; }
+    currentDetail = detail;
+    currentPreviewId = id;
+    totalMeasures = res.totalMeasures || 0;
+    currentOffset = res.measureOffset || 0;   // pickup shift for printed↔sequential conversions
+    document.getElementById('instrSel').value = instrumentVoiceKey(detail.meta && detail.meta.instrument);
+    if (player) player.setInstrument(document.getElementById('instrSel').value);
+    document.getElementById('ytUrl').value = (detail.meta && detail.meta.youtube) || '';
+    document.getElementById('guessSec').value = '';
+    document.getElementById('guessEndSec').value = '';
+    document.getElementById('vocabNote').value = '';
+    document.getElementById('tempoInput').value = (detail.meta && detail.meta.tempo) || 90;
+    if (player) player.stop();
+    renderer.clearMeasureHighlight();   // a plain piece preview carries no captured-range shading
+    renderer.applyResponsiveZoom(document.getElementById('osmdPreview').clientWidth || window.innerWidth);
+    renderer.showFull();
+    renderer.setShowChords(document.getElementById('chordChk').checked);   // Show chords is on by default
+    // Default the diatonic key picker to this piece's best-guess key (notes are now rendered).
+    if (renderer.guessBestKey) { const g = renderer.guessBestKey(); if (g) document.getElementById('patKey').value = `${g.tonicPc}:${g.mode}`; }
+    if (renderer) { renderer.setSuppressedNotes([]); renderer.setSuppressMode(false); }
+    // Note suppression is available in a plain preview too (not just saved vocab items): you can
+    // silence notes to practice chords/melodies live. It stays transient unless you capture to vocab.
+    document.getElementById('suppressPanel').style.display = '';
+    document.getElementById('suppressModeChk').checked = false;
+    document.getElementById('hearAllChk').checked = false;
+    document.getElementById('voiceChips').style.display = 'none';
+    // Pattern tags: the renderer loaded detail.patterns on load; reset the tag controls and rebuild
+    // the tag UI for the fresh piece. Keep the panel's visibility following its toggle.
+    document.getElementById('tagModeChk').checked = false;
+    tagFilterSel.clear();
+    activeTagName = '';
+    if (renderer) { renderer.setTagMode(false); renderer.setFilterTags([]); }
+    setTagVis(false);   // sheet tag visibility starts off (decoupled from expand); auto-load turns it on
+    // Fold any tags this piece already uses into the global list (so they're selectable everywhere).
+    // Only persist/mark-dirty when the merge actually added something (mergeRegistry only grows).
+    const mergedReg = mergeRegistry(tagRegistry, renderer ? renderer.getPatterns() : []);
+    if (mergedReg.length !== tagRegistry.length) { tagRegistry = mergedReg; saveTagRegistry(); }
+    else if (renderer) renderer.setTagRegistry(tagRegistry);
+    syncToggles();
+    onSuppressionChange();   // reset the chips/hint for the fresh piece
+    renderTagUI();
+    // If this piece carries motifs, surface them automatically: turn on the sheet 👁 visibility, check
+    // every motif that has notes here, and run the pattern search so its occurrences highlight on load.
+    // The panel itself stays COLLAPSED (its overlay would cover the sheet); the user opens it to manage.
+    const pieceTags = renderer ? renderer.getPatterns().filter((a) => (a.notes || []).length).map((a) => a.name) : [];
+    if (pieceTags.length) {
+      pieceTags.forEach((n) => tagFilterSel.add(n));
+      renderer.setFilterTags([...tagFilterSel]);
+      setTagVis(true);                            // reveal motifs on the sheet (dim the rest)
+      renderTagUI();
+      searchPattern();                            // auto-run Find pattern (matches now populate lastPatternMatches)
+      if (fbPanel) fbPanel.setSource('matched');  // point the fretboard at the motifs' matches
+    }
+    // Phrases: the renderer loaded detail.phrases on load; reset the phrase controls for the fresh
+    // piece (panel visibility follows its own toggle).
+    activePhraseName = null; phrasePainting = false; shownPhraseNames.clear();
+    document.getElementById('phraseInput').value = '';
+    document.getElementById('phraseMsg').textContent = '';
+    const phrasePanelOpen = document.getElementById('phrasePanel').open;
+    if (renderer) { renderer.setPhrasePaintMode(false); renderer.setShownPhrases([]); }
+    setPhraseVis(false);   // sheet phrase visibility starts off (decoupled from expand)
+    if (phrasePanelOpen) renderPhraseUI();
+    updatePatternControls();
+    document.getElementById('previewMsg').textContent = `${res.totalMeasures} measures`;
+  }
+  document.getElementById('pieceList').addEventListener('click', (ev) => {
+    const prev = ev.target.closest('.previewBtn');
+    if (prev) { ev.preventDefault(); openPreview(prev.dataset.id); return; }
+    const del = ev.target.closest('.pieceDel');
+    if (del) { ev.preventDefault(); deletePiece(del.dataset.id); }
+  });
+  // Tag edits: commit on blur/Enter (change). Local-only — pushed later via "Push changes".
+  document.getElementById('pieceList').addEventListener('change', (ev) => {
+    const inp = ev.target.closest('.pieceTags');
+    if (inp) setPieceTags(inp.dataset.id, inp.value);
+  });
+  // Tag-filter chips toggle the active filter (empty data-tag = clear).
+  document.getElementById('tagFilterBar').addEventListener('click', (ev) => {
+    const chip = ev.target.closest('.tagChip');
+    if (!chip) return;
+    const t = chip.dataset.tag;
+    if (!t) tagFilter.clear(); else if (tagFilter.has(t)) tagFilter.delete(t); else tagFilter.add(t);
+    render();
+  });
+  // Save tags locally on the index entry (+ local store), mark the piece pending. No push.
+  async function setPieceTags(id, value) {
+    const entry = index.find(e => e.id === id); if (!entry) return;
+    entry.tags = parseTags(value);
+    const detail = await store.getDetail(system, id);   // may be null for a remote piece; pushPending skips null details
+    try { await store.putPieces(system, [{ entry, detail }]); } catch (_) {}
+    unpushedIds.add(id);
+    render(); updatePushBtn();
+    setStatus(`Tagged "${id}" — click "Push changes" to publish.`);
+  }
+  // Delete a piece AND its vocab entries; local-only, batched into the next manual push.
+  async function deletePiece(id) {
+    if (!window.confirm(`Delete piece "${id}" and all its vocabulary?\n\nThis removes it from the library.`)) return;
+    const out = removePieceFromLibrary(index, vocab, id);
+    index = out.index; vocab = out.vocab;
+    try { await store.deletePiece(system, id); await store.putVocab(system, vocab); } catch (_) {}
+    unpushedIds.delete(id);
+    dirtyIndex = true; dirtyVocab = true;
+    if (currentVocabEntry && currentVocabEntry.pieceId === id) { currentVocabEntry = null; updateAddVocabLabel(); }
+    render(); renderVocab(); updatePushBtn();
+    setStatus(`Deleted "${id}" locally — click "Push changes" to publish.`);
+  }
+  document.getElementById('previewFullBtn').onclick = () => renderer && renderer.showFull();
+  document.getElementById('voiceColorChk').onchange = (e) => { if (renderer) renderer.setVoiceColors(e.target.checked); };
+  document.getElementById('noteNameChk').onchange = (e) => { if (renderer) renderer.setNoteNames(e.target.checked); };
+  document.getElementById('chordChk').onchange = (e) => { if (renderer) renderer.setShowChords(e.target.checked); };
+  document.getElementById('dimConnChk').onchange = (e) => { if (renderer) renderer.setDimConnectors(e.target.checked); };
+  document.getElementById('chordWindowChk').onchange = (e) => {
+    document.getElementById('windowPanel').style.display = e.target.checked ? '' : 'none';
+    if (!e.target.checked) { windowPicks.clear(); if (renderer) renderer.clearHighlight(); }
+    if (renderer) renderer.setChordWindow(e.target.checked);
+  };
+  // ── Pattern tags ───────────────────────────────────────────────────────────────────────────
+  let activeTagName = '';   // the tag clicked notes paint into; mirrored in the combobox input
+  const tagFilterSel = new Set();   // tag names checked in the filter list
+  let activePhraseName = null;   // phrase whose notes paint-mode clicks edit
+  const shownPhraseNames = new Set();   // phrases revealed + tinted on the sheet (checkboxes)
+  let phrasePainting = false;    // phrase-paint mode on/off
+  // Rebuild the tag combobox options and the tag pills from the GLOBAL tag list, annotated with how
+  // many notes THIS piece assigns to each. Called on load and after every tag edit.
+  function renderTagUI() {
+    if (!renderer) return;
+    const names = renderer.getTagNames();      // global list
+    const colors = renderer.getTagColors();    // global colors
+    const countOf = {};                        // per-piece note counts
+    renderer.getPatterns().forEach((a) => { countOf[a.name] = (a.notes || []).length; });
+    // Combobox: a single field that both picks an existing tag and accepts a new one (Enter).
+    if (!names.includes(activeTagName)) activeTagName = names[0] || '';
+    renderer.setActiveTag(activeTagName || null);
+    const dl = document.getElementById('tagOptions');
+    dl.innerHTML = '';
+    names.forEach((nm) => { const o = document.createElement('option'); o.value = nm; dl.appendChild(o); });
+    const input = document.getElementById('tagInput');
+    if (document.activeElement !== input) input.value = activeTagName;   // don't fight mid-typing
+    const list = document.getElementById('tagList');
+    list.innerHTML = '';
+    names.forEach((nm) => {
+      const pill = document.createElement('span');
+      pill.className = 'tag-pill';
+      const cb = document.createElement('input');
+      cb.type = 'checkbox'; cb.checked = tagFilterSel.has(nm); cb.title = 'Show this tag when filtering';
+      cb.onchange = () => {
+        if (cb.checked) tagFilterSel.add(nm); else tagFilterSel.delete(nm);
+        if (renderer) renderer.setFilterTags([...tagFilterSel]);
+        // Filtering by tags → point the fretboard at the tags' matched patterns automatically.
+        if (cb.checked && fbPanel) fbPanel.setSource('matched');
+      };
+      const sw = document.createElement('span'); sw.className = 'sw'; sw.style.background = colors[nm] || '#999';
+      const label = document.createElement('span'); label.textContent = nm;
+      const cnt = document.createElement('span'); cnt.className = 'cnt'; cnt.textContent = `(${countOf[nm] || 0})`;
+      const del = document.createElement('button'); del.className = 'del'; del.textContent = '×'; del.title = 'Delete tag (global)';
+      del.onclick = () => {
+        tagRegistry = removeTagReg(tagRegistry, nm); saveTagRegistry();   // drop from the global list
+        tagFilterSel.delete(nm);
+        if (renderer) renderer.clearTagAssignments(nm);   // drop this piece's notes for it → onPatternsChange persists
+        renderTagUI();
+      };
+      pill.append(cb, sw, label, cnt, del);
+      list.appendChild(pill);
+    });
+    if (renderer) renderer.setFilterTags([...tagFilterSel]);
+    // A tag change (added/removed) may affect the phrase panel's member-tag checkboxes.
+    if (document.getElementById('phrasePanel').open) renderPhraseUI();
+  }
+  // Persist per-piece note assignments with the piece (local-first; pushed in the next manual batch).
+  async function onPatternsChange(patterns) {
+    renderTagUI();
+    if (!currentDetail || !currentPreviewId) return;
+    currentDetail.patterns = patterns;
+    const entry = index.find((e) => e.id === currentPreviewId);
+    if (entry) {
+      try { await store.putPieces(system, [{ entry, detail: currentDetail }]); } catch (_) {}
+      unpushedIds.add(currentPreviewId);
+      render(); updatePushBtn();
+    }
+  }
+  // Move the shared match controls into whichever panel is open, so they ride that panel's floating
+  // overlay (rather than sitting in flow and reflowing the sheet). Hidden when neither is open.
+  function updatePatternControls() {
+    const tag = document.getElementById('tagPanel'), phr = document.getElementById('phrasePanel');
+    const pc = document.getElementById('patternControls');
+    const openPanel = tag.open ? tag : (phr.open ? phr : null);
+    if (openPanel) { openPanel.querySelector('.np-body').appendChild(pc); pc.style.display = 'flex'; }
+    else pc.style.display = 'none';
+  }
+  // Sheet visibility is DECOUPLED from expand/collapse: the header 👁 toggle dims the sheet and reveals
+  // the checked motifs/phrases; expand/collapse only shows this panel's own controls + list.
+  let tagVisOn = false, phraseVisOn = false;
+  function setTagVis(on) {
+    tagVisOn = !!on;
+    if (renderer) renderer.setTagFilter(tagVisOn);
+    const b = document.getElementById('tagVisBtn'); if (b) b.setAttribute('aria-pressed', tagVisOn ? 'true' : 'false');
+  }
+  function setPhraseVis(on) {
+    phraseVisOn = !!on;
+    if (renderer) renderer.setPhraseFilter(phraseVisOn);
+    const b = document.getElementById('phraseVisBtn'); if (b) b.setAttribute('aria-pressed', phraseVisOn ? 'true' : 'false');
+  }
+  // The header 👁 buttons sit inside <summary>, so preventDefault/stopPropagation keeps a click from
+  // also toggling the <details>.
+  document.getElementById('tagVisBtn').addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); setTagVis(!tagVisOn); });
+  document.getElementById('phraseVisBtn').addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); setPhraseVis(!phraseVisOn); });
+  // Expand/collapse the Motifs panel: only its controls + tag list; collapsing exits tag-paint mode.
+  // The two panels are mutually exclusive so their floating overlays never stack on each other.
+  document.getElementById('tagPanel').addEventListener('toggle', (e) => {
+    const open = e.target.open;
+    if (open) document.getElementById('phrasePanel').open = false;
+    if (!open && renderer) { renderer.setTagMode(false); document.getElementById('tagModeChk').checked = false; syncToggles(); }
+    if (open) renderTagUI();
+    updatePatternControls();
+  });
+  document.getElementById('tagModeChk').onchange = (e) => {
+    if (!renderer) return;
+    // Tag Edit mode and phrase-paint mode are mutually exclusive (paint has click precedence, so a
+    // left-over active phrase would otherwise swallow tag clicks). Turning Edit mode on exits paint.
+    if (e.target.checked && phrasePainting) {
+      phrasePainting = false; activePhraseName = null;
+      renderer.setPhrasePaintMode(false); renderer.setActivePhrase(null);
+      renderPhraseUI();
+    }
+    renderer.setTagMode(e.target.checked);
+  };
+  document.getElementById('playTagsBtn').onclick = playTags;
+  // Check all tags at once (or uncheck all if every tag is already checked).
+  document.getElementById('tagCheckAllBtn').onclick = () => {
+    if (!renderer) return;
+    const names = renderer.getTagNames();
+    const allOn = names.length > 0 && names.every((n) => tagFilterSel.has(n));
+    tagFilterSel.clear();
+    if (!allOn) names.forEach((n) => tagFilterSel.add(n));
+    renderer.setFilterTags([...tagFilterSel]);
+    if (tagFilterSel.size && fbPanel) fbPanel.setSource('matched');   // mirror the per-tag check behavior
+    renderTagUI();
+  };
+  // Populate the diatonic-key picker: 24 keys (value "tonicPc:mode"). The selected key defaults to
+  // the piece's best guess (set on load in openPreview) instead of an "auto" sentinel.
+  (function fillPatKey() {
+    const sel = document.getElementById('patKey');
+    const names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    ['major', 'minor'].forEach((mode) => names.forEach((nm, pc) => {
+      const o = document.createElement('option');
+      o.value = `${pc}:${mode}`; o.textContent = `${nm} ${mode}`;
+      sel.appendChild(o);
+    }));
+  })();
+  // Find + highlight other occurrences of the checked tags' patterns on the open sheet.
+  function searchPattern() {
+    const msgEl = document.getElementById('patternMsg');
+    if (!currentDetail) return;
+    if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
+      msgEl.textContent = 'Pattern search needs a MusicXML piece.'; return;
+    }
+    if (!renderer || !renderer.searchTagPatterns) return;
+    const mode = document.getElementById('patMode').value;
+    const durationStrict = !document.getElementById('patProportional').checked;
+    const intervalBasis = document.getElementById('patIntervalBasis').value;
+    const keyVal = document.getElementById('patKey').value;
+    let key = null;
+    if (keyVal) { const [pc, m] = keyVal.split(':'); key = { tonicPc: parseInt(pc, 10), mode: m }; }
+    const { results, keyLabel } = renderer.searchTagPatterns({ mode, durationStrict, intervalBasis, key });
+    if (!results.length) { msgEl.textContent = 'Check a tag to search.'; return; }
+    msgEl.innerHTML = '';
+    if (keyLabel) msgEl.appendChild(document.createTextNode(`key: ${keyLabel} — `));
+    results.forEach((r, i) => {
+      const span = document.createElement('span');
+      span.textContent = `${r.name}: ${r.count}`;
+      span.style.color = r.color; span.style.fontWeight = '600';
+      msgEl.appendChild(span);
+      if (i < results.length - 1) msgEl.appendChild(document.createTextNode('  ·  '));
+    });
+  }
+  document.getElementById('findPatternBtn').onclick = searchPattern;
+
+  // ── Phrases ──────────────────────────────────────────────────────────────────────────────────
+  // A phrase = named group of member tags + extra hand-picked notes, with its own color. Rebuilt
+  // from the renderer's phrase list on every edit. Per row: a show checkbox (reveal + tint on the
+  // dimmed sheet), paint / play / find / delete, and a wrap of member-tag checkboxes.
+  function renderPhraseUI() {
+    if (!renderer) return;
+    const phrases = renderer.getPhrases();
+    const tagNames = renderer.getTagNames();
+    const tagColors = renderer.getTagColors();
+    const list = document.getElementById('phraseList');
+    list.innerHTML = '';
+    if (!phrases.length) {
+      list.innerHTML = '<span style="font-size:.85em;color:#888">No phrases yet — add one, then tick its member tags and/or paint extra notes.</span>';
+      return;
+    }
+    const mkBtn = (txt, title, fn, active) => {
+      const b = document.createElement('button');
+      b.className = 'btn' + (active ? ' active' : ''); b.style.cssText = 'padding:1px 7px;font-size:12px';
+      b.title = title; b.textContent = txt; b.onclick = fn; return b;
+    };
+    phrases.forEach((p) => {
+      const row = document.createElement('div'); row.className = 'phrase-row';
+      const show = document.createElement('input'); show.type = 'checkbox'; show.checked = shownPhraseNames.has(p.name);
+      show.title = 'Show this phrase (reveal + tint its notes on the sheet)';
+      show.onchange = () => setPhraseShown(p.name, show.checked);
+      const sw = document.createElement('span'); sw.className = 'sw'; sw.style.background = p.color || '#999';
+      const nm = document.createElement('b'); nm.textContent = p.name; nm.style.marginRight = '6px';
+      const info = document.createElement('span');
+      info.style.cssText = 'font-size:.78em;color:#666;margin-right:8px';
+      info.textContent = `${p.tags.length} tag${p.tags.length === 1 ? '' : 's'} · ${p.notes.length} extra`;
+      const paintBtn = mkBtn('🖌️', 'Paint extra notes — click noteheads on the sheet', () => togglePhrasePaint(p.name), activePhraseName === p.name && phrasePainting);
+      const playBtn = mkBtn('▶', 'Play this phrase (its tags + extra notes, together)', () => playPhrase(p.name));
+      const findBtn = mkBtn('🔍', 'Find other occurrences of this phrase on the sheet', () => findPhrase(p.name));
+      const delBtn = mkBtn('🗑', 'Delete this phrase', () => {
+        if (window.confirm(`Delete phrase "${p.name}"? (${p.tags.length} tag${p.tags.length === 1 ? '' : 's'} + ${p.notes.length} extra note${p.notes.length === 1 ? '' : 's'})`)) renderer.removePhrase(p.name);
+      });
+      delBtn.style.marginLeft = 'auto';   // push delete to the far right of the row
+      const head = document.createElement('div'); head.className = 'phrase-head';
+      head.append(show, sw, nm, info, paintBtn, playBtn, findBtn, delBtn);
+      // Member-tag checkboxes (the phrase's logical group).
+      const tagsWrap = document.createElement('div'); tagsWrap.className = 'phrase-tags';
+      if (!tagNames.length) {
+        const s = document.createElement('span'); s.style.cssText = 'font-size:.8em;color:#999'; s.textContent = '(no tags to add yet)'; tagsWrap.append(s);
+      }
+      tagNames.forEach((tn) => {
+        const lbl = document.createElement('label'); lbl.style.cssText = 'font-size:.82em;display:inline-flex;align-items:center;gap:3px;margin-right:8px';
+        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = p.tags.includes(tn);
+        cb.onchange = () => renderer.setPhraseTag(p.name, tn, cb.checked);
+        const dot = document.createElement('span'); dot.className = 'sw'; dot.style.background = tagColors[tn] || '#999';
+        lbl.append(cb, dot, document.createTextNode(tn)); tagsWrap.append(lbl);
+      });
+      row.append(head, tagsWrap);
+      list.appendChild(row);
+    });
+  }
+  // Toggle phrase-paint mode for one phrase (exits tag mode to avoid competing notehead clicks).
+  function togglePhrasePaint(name) {
+    if (activePhraseName === name && phrasePainting) { phrasePainting = false; activePhraseName = null; }
+    else {
+      activePhraseName = name; phrasePainting = true;
+      document.getElementById('tagModeChk').checked = false; if (renderer) renderer.setTagMode(false); syncToggles();
+    }
+    if (renderer) { renderer.setActivePhrase(activePhraseName); renderer.setPhrasePaintMode(phrasePainting); }
+    renderPhraseUI();
+  }
+  // Reveal/hide a phrase's notes on the (dimmed) sheet.
+  function setPhraseShown(name, on) {
+    if (on) shownPhraseNames.add(name); else shownPhraseNames.delete(name);
+    if (renderer) renderer.setShownPhrases([...shownPhraseNames]);
+    renderPhraseUI();
+  }
+  // Play a phrase's resolved notes, skipping the gaps between them (same engine as Play tags).
+  function playPhrase(name) {
+    if (!currentDetail) return;
+    if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
+      document.getElementById('transportMsg').textContent = 'Phrase playback needs a MusicXML piece.'; return;
+    }
+    const keep = (renderer && renderer.getPhraseNoteIds) ? renderer.getPhraseNoteIds(name) : [];
+    if (!keep.length) { document.getElementById('transportMsg').textContent = 'This phrase has no notes.'; return; }
+    const breath = parseFloat(document.getElementById('breathBeats').value);
+    const breathBeats = (Number.isFinite(breath) && breath >= 0) ? breath : 1;
+    const schedule = buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep, breathBeats });
+    if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
+    const p = ensurePlayer();
+    p.setInstrument(document.getElementById('instrSel').value);
+    p.setSchedule(schedule, { cursorStartStep: 0 });
+    p.setLoop(document.getElementById('loopChk').checked);
+    document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    p.play()
+      .then(() => { document.getElementById('transportMsg').textContent = `Playing phrase "${name}" (${schedule.length} notes)`; })
+      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; });
+  }
+  // Find + highlight other occurrences of a phrase (reuses the tag panel's match settings).
+  function findPhrase(name) {
+    const msgEl = document.getElementById('phraseMsg');
+    if (!currentDetail || !(currentDetail.format === 'musicxml' && currentDetail.source)) {
+      msgEl.textContent = 'Pattern search needs a MusicXML piece.'; return;
+    }
+    if (!renderer || !renderer.searchPhrasePattern) return;
+    const mode = document.getElementById('patMode').value;
+    const durationStrict = !document.getElementById('patProportional').checked;
+    const intervalBasis = document.getElementById('patIntervalBasis').value;
+    const keyVal = document.getElementById('patKey').value;
+    let key = null;
+    if (keyVal) { const [pc, m] = keyVal.split(':'); key = { tonicPc: parseInt(pc, 10), mode: m }; }
+    const { count, keyLabel } = renderer.searchPhrasePattern(name, { mode, durationStrict, intervalBasis, key });
+    msgEl.textContent = `"${name}": ${count} other occurrence${count === 1 ? '' : 's'}${keyLabel ? ` · key ${keyLabel}` : ''}`;
+  }
+  // Persist per-piece phrases with the piece (local-first; pushed in the next manual batch).
+  async function onPhrasesChange(list) {
+    renderPhraseUI();
+    if (!currentDetail || !currentPreviewId) return;
+    currentDetail.phrases = list;
+    const entry = index.find((e) => e.id === currentPreviewId);
+    if (entry) {
+      try { await store.putPieces(system, [{ entry, detail: currentDetail }]); } catch (_) {}
+      unpushedIds.add(currentPreviewId);
+      render(); updatePushBtn();
+    }
+  }
+  // Expand/collapse the Phrases panel: only its controls + phrase list; collapsing exits phrase-paint.
+  document.getElementById('phrasePanel').addEventListener('toggle', (e) => {
+    const open = e.target.open;
+    if (open) document.getElementById('tagPanel').open = false;
+    if (!open) {   // collapsing exits phrase-paint mode
+      phrasePainting = false; activePhraseName = null;
+      if (renderer) renderer.setPhrasePaintMode(false);
+    } else { renderPhraseUI(); if (fbPanel) fbPanel.setSource('phrases'); }   // point the fretboard at phrases
+    updatePatternControls();
+  });
+  document.getElementById('addPhraseBtn').onclick = () => {
+    const input = document.getElementById('phraseInput');
+    const name = input.value.trim();
+    if (!name || !renderer) return;
+    if (renderer.addPhrase(name)) { input.value = ''; document.getElementById('phraseMsg').textContent = ''; }
+    else document.getElementById('phraseMsg').textContent = 'A phrase with that name already exists.';
+  };
+  document.getElementById('phraseInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); document.getElementById('addPhraseBtn').click(); }
+  });
+  // One combobox does add + select: an existing name just becomes active; a new name is added to the
+  // GLOBAL tag list (next palette color), saved, and made active. Commits on Enter or on blur.
+  function commitTag() {
+    if (!renderer) return;
+    const input = document.getElementById('tagInput');
+    const name = input.value.trim();
+    if (!name) { input.value = activeTagName; return; }
+    if (!renderer.getTagNames().includes(name)) {   // new → add to the global registry
+      const r = addTagReg(tagRegistry, name); tagRegistry = r.registry; saveTagRegistry();
+    }
+    activeTagName = name; renderer.setActiveTag(name);
+    renderTagUI();
+  }
+  document.getElementById('tagInput').addEventListener('change', commitTag);
+  document.getElementById('tagInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); commitTag(); } });
+  // Touch-friendly window nudge buttons — move/resize without dragging (hard on mobile).
+  [['winMoveL', 'moveLeft'], ['winMoveR', 'moveRight'], ['winMoveU', 'moveUp'], ['winMoveD', 'moveDown'],
+   ['winShrink', 'shrink'], ['winExpand', 'expand']]
+    .forEach(([id, action]) => {
+      const b = document.getElementById(id);
+      if (b) b.onclick = () => { if (renderer && renderer.adjustWindow) renderer.adjustWindow(action); };
+    });
+  // "Global": re-scope chord-name clicks to the whole visible sheet. Tell the renderer (it
+  // re-applies the overlay's selection) and re-apply the window-chip highlight in the new scope.
+  document.getElementById('globalMatchChk').onchange = (e) => {
+    globalChordMatch = e.target.checked;
+    if (renderer && renderer.setGlobalChordMatch) renderer.setGlobalChordMatch(globalChordMatch);
+    applyWindowHighlight();
+  };
+  // Capture the current window: map its measure range + picked chords into the existing flow.
+  document.getElementById('captureWindowBtn').onclick = () => {
+    if (!windowState.measureRange) { setMediaMsg('No notes in the window', 'err'); return; }
+    document.getElementById('segFrom').value = toPrintedMeasure(windowState.measureRange[0]);
+    document.getElementById('segTo').value = toPrintedMeasure(windowState.measureRange[1]);
+    if (renderer) renderer.setSelectedChords([...windowPicks]);
+    document.getElementById('addVocabBtn').click();   // reuse Add/update-to-vocab (times, note, confirm)
+  };
+  // A note edit is NOT auto-saved: it persists only when you click "Add/update to vocab" and choose
+  // Update (or Add as new). This keeps Cancel a true abort — nothing changes until you commit.
+  document.getElementById('previewSegBtn').onclick = () => {
+    const from = toSeqMeasure(parseInt(document.getElementById('segFrom').value, 10));
+    const to = toSeqMeasure(parseInt(document.getElementById('segTo').value, 10));
+    if (renderer && Number.isFinite(from) && Number.isFinite(to)) renderer.showSegment([from, to]);
+  };
+  // Prev/Next on each boundary: the start pair (◀▶ left) moves segFrom, the end pair (◀▶
+  // right) moves segTo. ◀ on the start and ▶ on the end grow the window; the inner arrows shrink it.
+  function adjustSegment(which, delta) {
+    if (!renderer) return;
+    // Work in sequential numbers (fields are printed), clamp to [1, totalMeasures], write printed.
+    let from = toSeqMeasure(parseInt(document.getElementById('segFrom').value, 10));
+    let to = toSeqMeasure(parseInt(document.getElementById('segTo').value, 10));
+    if (!Number.isFinite(from)) from = 1;
+    if (!Number.isFinite(to)) to = from;
+    if (which === 'from') from = Math.min(to, Math.max(1, from + delta));
+    else to = Math.max(from, Math.min(totalMeasures || (to + Math.max(delta, 0)), to + delta));
+    document.getElementById('segFrom').value = toPrintedMeasure(from);
+    document.getElementById('segTo').value = toPrintedMeasure(to);
+    renderer.showSegment([from, to]);
+  }
+  document.getElementById('startPrevBtn').onclick = () => adjustSegment('from', -1);
+  document.getElementById('startNextBtn').onclick = () => adjustSegment('from', 1);
+  document.getElementById('endPrevBtn').onclick = () => adjustSegment('to', -1);
+  document.getElementById('endNextBtn').onclick = () => adjustSegment('to', 1);
+  document.getElementById('previewCloseBtn').onclick = () => {
+    if (player) player.stop();
+    clearYtMonitor(); if (yt) yt.pause();
+    paused = false; ytPlaying = false; updatePauseLabel();
+    document.getElementById('musicPreview').style.display = 'none';
+    document.getElementById('suppressPanel').style.display = 'none';
+    if (renderer) { renderer.setSuppressedNotes([]); renderer.setSuppressMode(false); }
+    document.getElementById('suppressModeChk').checked = false;
+    document.getElementById('hearAllChk').checked = false;
+    syncToggles();
+    document.body.classList.remove('preview-open');
+  };
+  // Toggle native fullscreen on the preview pane (webkit fallback for Safari).
+  document.getElementById('previewFullscreenBtn').onclick = () => {
+    const el = document.getElementById('musicPreview');
+    const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+    if (fsEl) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); }
+    else { (el.requestFullscreen || el.webkitRequestFullscreen).call(el); }
+  };
+  // Re-fit the score to the (new) viewport width whenever fullscreen enters/exits.
+  ['fullscreenchange', 'webkitfullscreenchange'].forEach((ev) => document.addEventListener(ev, () => {
+    if (renderer && renderer.applyResponsiveZoom) renderer.applyResponsiveZoom(window.innerWidth);
+  }));
+
+  // ---- Search UI (Layout C) ----
+  const NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  const QUALITIES = ['maj', 'min', 'dim', 'aug'];
+  const EXTENSIONS = ['add9', '7', 'maj7', '6', '9', 'sus4'];
+
+  function addChip() {
+    const chip = document.createElement('div');
+    chip.className = 'chordChip';
+    const rootSel = document.createElement('select');
+    NOTE_NAMES.forEach(n => rootSel.add(new Option(n, n)));
+    const qualSel = document.createElement('select');
+    QUALITIES.forEach(q => qualSel.add(new Option(q, q)));
+    chip.appendChild(rootSel);
+    chip.appendChild(qualSel);
+    EXTENSIONS.forEach(ext => {
+      const pill = document.createElement('button');
+      pill.type = 'button'; pill.className = 'extPill'; pill.textContent = ext; pill.dataset.ext = ext;
+      pill.onclick = () => pill.classList.toggle('active');
+      chip.appendChild(pill);
+    });
+    const del = document.createElement('button');
+    del.type = 'button'; del.textContent = '×'; del.onclick = () => chip.remove();
+    chip.appendChild(del);
+    document.getElementById('chips').appendChild(chip);
+  }
+  function readChips() {
+    return Array.from(document.querySelectorAll('#chips .chordChip')).map(chip => {
+      const sels = chip.querySelectorAll('select');
+      return {
+        root: sels[0].value, quality: sels[1].value,
+        extensions: Array.from(chip.querySelectorAll('.extPill.active')).map(p => p.dataset.ext),
+      };
+    });
+  }
+  function buildNoteButtons() {
+    const box = document.getElementById('noteButtons');
+    const append = (tok) => { const t = document.getElementById('melodyTokens'); t.value = (t.value ? t.value + ' ' : '') + tok; };
+    [...NOTE_NAMES, '.'].forEach(tok => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = tok; b.onclick = () => append(tok);
+      box.appendChild(b);
+    });
+    const clr = document.createElement('button');
+    clr.type = 'button'; clr.textContent = 'clear'; clr.onclick = () => { document.getElementById('melodyTokens').value = ''; };
+    box.appendChild(clr);
+  }
+  function currentMode() {
+    return document.querySelector('input[name="searchMode"]:checked').value;
+  }
+  function maxResultsVal() {
+    const n = parseInt(document.getElementById('maxResults').value, 10);
+    return Number.isFinite(n) && n > 0 ? n : undefined;
+  }
+  function buildQuery() {
+    if (currentMode() === 'chord') {
+      return buildChordQuery(readChips(), {
+        strict_extensions: document.getElementById('strictExt').checked,
+        max_gap: parseInt(document.getElementById('maxGap').value, 10) || 0,
+        transpose_invariant: document.getElementById('transposeInv').checked,
+        max_results: maxResultsVal(),
+      });
+    }
+    const tokens = document.getElementById('melodyTokens').value.trim().split(/\s+/).filter(Boolean);
+    return buildMelodyQuery(tokens, {
+      search_by_interval: document.getElementById('byInterval').checked,
+      pitch_tolerance: parseInt(document.getElementById('pitchTol').value, 10) || 0,
+      max_results: maxResultsVal(),
+    });
+  }
+  function renderResults(results) {
+    const box = document.getElementById('results');
+    if (!results.length) { box.innerHTML = '<em>No matches.</em>'; return; }
+    box.innerHTML = '';
+    results.forEach(r => {
+      const title = (index.find(e => e.id === r.pieceId) || {}).title || r.pieceId;
+      const row = document.createElement('div');
+      row.className = 'resultRow';
+      row.innerHTML = `<strong>${title}</strong><br><small>${matchSummary(r)}</small>`;
+      row.onclick = () => openResult(r);
+      box.appendChild(row);
+    });
+  }
+  async function openResult(result) {
+    await openPreview(result.pieceId);
+    if (!currentDetail) return;   // note-text or failed render: detail pane shows its own message
+    const mr = resolveMatchMeasures(currentDetail, result.match);   // sequential
+    if (mr) {
+      document.getElementById('segFrom').value = toPrintedMeasure(mr[0]);
+      document.getElementById('segTo').value = toPrintedMeasure(mr[1]);
+      if (renderer) renderer.showSegment(mr);
+    }
+  }
+  async function openVocabEntry(entry) {
+    await openPreview(entry.pieceId);
+    if (!currentDetail) return;
+    currentVocabEntry = entry;
+    const from = entry.measureStart, to = entry.measureEnd;   // sequential (stored)
+    document.getElementById('segFrom').value = toPrintedMeasure(from);
+    document.getElementById('segTo').value = toPrintedMeasure(to);
+    document.getElementById('vocabCat').value = (entry.category && entry.category !== 'uncategorized') ? entry.category : '';
+    document.getElementById('vocabNote').value = entry.note || '';
+    if (entry.startSeconds != null) document.getElementById('guessSec').value = entry.startSeconds;
+    if (entry.endSeconds != null) document.getElementById('guessEndSec').value = entry.endSeconds;
+    if (renderer) { renderer.showSegment([from, to]); renderer.highlightMeasures([from, to]); }
+    if (renderer) renderer.setSuppressedNotes(entry.suppressed || []);
+    document.getElementById('suppressModeChk').checked = false;
+    document.getElementById('hearAllChk').checked = false;
+    document.getElementById('voiceChips').style.display = 'none';
+    document.getElementById('suppressPanel').style.display = '';
+    syncToggles();           // reflect suppress-mode/hear-all buttons as off
+    onSuppressionChange();   // refresh chips + hint
+    // Restore the manually-picked chords: show the overlay and pre-select those labels.
+    const savedChords = entry.chords || (entry.chord ? [entry.chord] : []);   // back-compat with old single-chord entries
+    if (savedChords.length && renderer) {
+      document.getElementById('chordChk').checked = true;
+      renderer.setShowChords(true);
+      renderer.setSelectedChords(savedChords);
+    }
+    syncToggles();   // reflect the (programmatic) Show-chords state on its toggle button
+    updateAddVocabLabel();
+  }
+  // Delete a vocab item after confirmation: drop it locally, re-render, then push the new vocab.json.
+  async function deleteVocabEntry(entry) {
+    if (!window.confirm(`Delete vocab item “${entry.id}”?\n\nThis removes it for good.`)) return;
+    vocab = vocab.filter(v => v.id !== entry.id);
+    if (currentVocabEntry && currentVocabEntry.id === entry.id) { currentVocabEntry = null; updateAddVocabLabel(); }
+    renderVocab();
+    try { await store.putVocab(system, vocab); } catch (_) {}
+    dirtyVocab = true; updatePushBtn();
+    setMediaMsg(`Deleted “${entry.id}” locally — click "Push changes" to publish.`, 'ok');
+  }
+  function renderVocab() {
+    const box = document.getElementById('vocabList');
+    const groups = groupVocabByCategory(vocab);
+    if (!groups.length) { box.innerHTML = '<em>No vocabulary yet.</em>'; return; }
+    box.innerHTML = '';
+    groups.forEach(g => {
+      const h = document.createElement('div');
+      h.innerHTML = `<strong>${g.category}</strong>`;
+      box.appendChild(h);
+      g.entries.forEach(e => {
+        const title = (index.find(x => x.id === e.pieceId) || {}).title || e.pieceId;
+        const mark = (e.startSeconds != null || e.youtube) ? ' ▶' : '';
+        const noteHtml = e.note ? ` <small style="color:#666">— ${escapeHtml(e.note)}</small>` : '';
+        const off = e.measureOffset || 0;   // show the item's PRINTED measure numbers
+        const row = document.createElement('div');
+        row.className = 'resultRow vocabRow';
+        const label = document.createElement('span');
+        label.className = 'vocabLabel';
+        label.innerHTML = `${title} <small>m${e.measureStart - off}–${e.measureEnd - off}${mark}</small>${noteHtml}`;
+        label.onclick = () => openVocabEntry(e);
+        const del = document.createElement('button');
+        del.className = 'vocabDel'; del.title = 'Delete this vocab item'; del.textContent = '🗑';
+        del.onclick = (ev) => { ev.stopPropagation(); deleteVocabEntry(e); };
+        row.appendChild(label);
+        row.appendChild(del);
+        box.appendChild(row);
+      });
+    });
+  }
+  document.querySelectorAll('input[name="searchMode"]').forEach(radio => {
+    radio.onchange = () => {
+      document.getElementById('chordMode').style.display = currentMode() === 'chord' ? '' : 'none';
+      document.getElementById('melodyMode').style.display = currentMode() === 'melody' ? '' : 'none';
+    };
+  });
+  document.getElementById('addChipBtn').onclick = addChip;
+  document.getElementById('searchBtn').onclick = () => {
+    let query;
+    try { query = buildQuery(); } catch (e) { document.getElementById('searchMsg').textContent = e.message; return; }
+    let results;
+    try { results = runQuery(query, filterByTags(index, tagFilter)); }
+    catch (e) { document.getElementById('searchMsg').textContent = 'Invalid query: ' + e.message; return; }
+    const tagNote = tagFilter.size ? ` (tags: ${[...tagFilter].join(', ')})` : '';
+    document.getElementById('searchMsg').textContent = `${results.length} match${results.length === 1 ? '' : 'es'}${tagNote}`;
+    renderResults(results);
+  };
+  addChip();            // start with one chord chip
+  buildNoteButtons();   // populate the melody note-picker
+
+  (async () => {
+    try { const lib = await loadLibrary(system, store); index = lib.index; unpushedIds = lib.unpushedIds; }
+    catch (_) { index = []; unpushedIds = new Set(); }
+    try { vocab = await loadVocab(system, store); } catch (_) { vocab = []; }
+    try { tagRegistry = await loadTagRegistry(); } catch (_) { tagRegistry = []; }
+    if (renderer) renderer.setTagRegistry(tagRegistry);   // (renderer is lazy; ensureRenderer also seeds it)
+    render(); updatePushBtn(); renderVocab();
+  })();
+</script>
+</body>
+</html>

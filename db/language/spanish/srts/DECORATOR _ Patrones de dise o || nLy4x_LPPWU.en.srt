@@ -1,0 +1,959 @@
+1
+00:00:00,000 --> 00:00:01,920
+this video is sponsored by app
+
+2
+00:00:01,920 --> 00:00:03,629
+cloud test their servers with
+
+3
+00:00:03,629 --> 00:00:05,549
+storage faster than any
+
+4
+00:00:05,549 --> 00:00:08,490
+ssd for free and get $25
+
+5
+00:00:08,490 --> 00:00:09,870
+credit with the promo code
+
+6
+00:00:09,870 --> 00:00:12,900
+beta t hey guys and welcome to
+
+7
+00:00:12,900 --> 00:00:14,940
+another day of beta take for those of you new
+
+8
+00:00:14,940 --> 00:00:17,220
+to the channel here we talk about software and
+
+9
+00:00:17,220 --> 00:00:19,320
+technology and specifically in this
+
+10
+00:00:19,320 --> 00:00:21,090
+series we talk about design patterns
+
+11
+00:00:21,090 --> 00:00:24,330
+we are going to explain each design pattern one by one
+
+12
+00:00:24,330 --> 00:00:26,490
+looking at the utilities and
+
+13
+00:00:26,490 --> 00:00:28,650
+explaining them with examples if you still don't
+
+14
+00:00:28,650 --> 00:00:30,510
+know what a design pattern is I'll
+
+15
+00:00:30,510 --> 00:00:32,160
+leave the index of the series
+
+16
+00:00:32,160 --> 00:00:34,410
+up here and in the description in
+
+17
+00:00:34,410 --> 00:00:36,059
+today's video we are going to talk about the
+
+18
+00:00:36,059 --> 00:00:37,829
+corrector pattern the collector pattern is a
+
+19
+00:00:37,829 --> 00:00:39,360
+structural pattern that allows us to
+
+20
+00:00:39,360 --> 00:00:41,730
+extend the functionalities of a class
+
+21
+00:00:41,730 --> 00:00:43,680
+without having to resort to inheritance
+
+22
+00:00:43,680 --> 00:00:45,809
+when you have an object and you want to
+
+23
+00:00:45,809 --> 00:00:48,090
+add functionality to it it's very easy to
+
+24
+00:00:48,090 --> 00:00:50,129
+fall into the temptation of implementing a
+
+25
+00:00:50,129 --> 00:00:52,379
+super complex class hierarchy by
+
+26
+00:00:52,379 --> 00:00:53,910
+creating classes for each
+
+27
+00:00:53,910 --> 00:00:56,129
+possible combination of elements for
+
+28
+00:00:56,129 --> 00:00:57,930
+example imagine that we are
+
+29
+00:00:57,930 --> 00:00:59,370
+developing a game where our
+
+30
+00:00:59,370 --> 00:01:01,350
+enemies have power apps we have
+
+31
+00:01:01,350 --> 00:01:03,480
+normal enemies and enemies that wear
+
+32
+00:01:03,480 --> 00:01:05,309
+certain items that give them certain
+
+33
+00:01:05,309 --> 00:01:05,980
+properties
+
+34
+00:01:05,980 --> 00:01:08,170
+these enemies can put on armor
+
+35
+00:01:08,170 --> 00:01:10,510
+which  it modifies behaviors such as
+
+36
+00:01:10,510 --> 00:01:12,880
+the way they move and the way they
+
+37
+00:01:12,880 --> 00:01:15,340
+defend themselves then at some moments they
+
+38
+00:01:15,340 --> 00:01:17,350
+can even wear a helmet which
+
+39
+00:01:17,350 --> 00:01:19,750
+makes them resistant to direct attacks to the
+
+40
+00:01:19,750 --> 00:01:21,880
+head the thing is in summary that all
+
+41
+00:01:21,880 --> 00:01:23,560
+the enemies in the game can have
+
+42
+00:01:23,560 --> 00:01:25,210
+these varieties so if we
+
+43
+00:01:25,210 --> 00:01:27,010
+wanted to organize them
+
+44
+00:01:27,010 --> 00:01:29,140
+simply using inheritance we would end up
+
+45
+00:01:29,140 --> 00:01:31,840
+having a class for the enemy one
+
+46
+00:01:31,840 --> 00:01:34,090
+for the enemy with a helmet another for the
+
+47
+00:01:34,090 --> 00:01:36,220
+enemy with armor another for the
+
+48
+00:01:36,220 --> 00:01:38,620
+enemy with armor and helmet etcetera
+
+49
+00:01:38,620 --> 00:01:41,320
+for all the different enemies
+
+50
+00:01:41,320 --> 00:01:43,480
+that exist in our game and imagine
+
+51
+00:01:43,480 --> 00:01:45,460
+then if we want to have a new type
+
+52
+00:01:45,460 --> 00:01:47,950
+of clothing I don't know gloves this is
+
+53
+00:01:47,950 --> 00:01:50,050
+a problem that mistreated causes an
+
+54
+00:01:50,050 --> 00:01:51,730
+explosion of classes that ends up being
+
+55
+00:01:51,730 --> 00:01:54,130
+unmaintainable with the collector pattern
+
+56
+00:01:54,130 --> 00:01:56,500
+we get an elegant solution to be
+
+57
+00:01:56,500 --> 00:01:58,540
+able to generate these objects
+
+58
+00:01:58,540 --> 00:02:01,360
+dynamically without having to define all the
+
+59
+00:02:01,360 --> 00:02:03,880
+possible combinations statically
+
+60
+00:02:03,880 --> 00:02:06,910
+composition versus inheritance we could
+
+61
+00:02:06,910 --> 00:02:08,050
+think that we can solve this
+
+62
+00:02:08,050 --> 00:02:09,790
+for example with strategy and with a
+
+63
+00:02:09,790 --> 00:02:11,500
+strategic pattern but that pattern would
+
+64
+00:02:11,500 --> 00:02:12,940
+also generate
+
+65
+00:02:12,940 --> 00:02:14,620
+a large number of classes since we
+
+66
+00:02:14,620 --> 00:02:17,050
+would have to make a strategy for
+
+67
+00:02:17,050 --> 00:02:19,360
+each possible combination the
+
+68
+00:02:19,360 --> 00:02:20,980
+corrector pattern allows us to solve this
+
+69
+00:02:20,980 --> 00:02:23,440
+let's see how it does it the
+
+70
+00:02:23,440 --> 00:02:24,840
+corrector pattern allows us to extend
+
+71
+00:02:24,840 --> 00:02:27,580
+behaviors dynamically which is
+
+72
+00:02:27,580 --> 00:02:29,130
+precisely what  what we want to achieve let's
+
+73
+00:02:29,130 --> 00:02:31,840
+consider as base behavior the
+
+74
+00:02:31,840 --> 00:02:33,940
+behavior of an enemy without any
+
+75
+00:02:33,940 --> 00:02:36,520
+extra then we create each
+
+76
+00:02:36,520 --> 00:02:38,770
+decorator separately the intention is to
+
+77
+00:02:38,770 --> 00:02:40,570
+have decorators such as
+
+78
+00:02:40,570 --> 00:02:43,270
+armor or helmet to be
+
+79
+00:02:43,270 --> 00:02:45,310
+able to combine them freely on
+
+80
+00:02:45,310 --> 00:02:47,770
+any enemy, that is to say a
+
+81
+00:02:47,770 --> 00:02:49,600
+base enemy with an armor decorator
+
+82
+00:02:49,600 --> 00:02:51,850
+would have a modified behavior to
+
+83
+00:02:51,850 --> 00:02:54,010
+one that doesn't have it and we also want to
+
+84
+00:02:54,010 --> 00:02:56,260
+add decorators not only to
+
+85
+00:02:56,260 --> 00:02:58,960
+base enemies but also to enemies with other
+
+86
+00:02:58,960 --> 00:03:01,720
+decorators for example adding a helmet to
+
+87
+00:03:01,720 --> 00:03:03,490
+an enemy that already has armor
+
+88
+00:03:03,490 --> 00:03:05,680
+we want to create a
+
+89
+00:03:05,680 --> 00:03:07,690
+layered organization as if it were an onion where we
+
+90
+00:03:07,690 --> 00:03:10,090
+can dynamically add layers to the enemy
+
+91
+00:03:10,090 --> 00:03:12,130
+to modify its
+
+92
+00:03:12,130 --> 00:03:14,440
+behavior let's first define
+
+93
+00:03:14,440 --> 00:03:16,270
+the nomenclature of the parts of the pattern
+
+94
+00:03:16,270 --> 00:03:17,800
+to make it easier to understand
+
+95
+00:03:17,800 --> 00:03:19,540
+our base character
+
+96
+00:03:19,540 --> 00:03:21,849
+would be the component that we want to decorate
+
+97
+00:03:21,849 --> 00:03:24,189
+and we want to be able to do it with
+
+98
+00:03:24,189 --> 00:03:26,799
+arbitrary sets of these decorators now
+
+99
+00:03:26,799 --> 00:03:28,359
+let's see the idea that allows us to
+
+100
+00:03:28,359 --> 00:03:30,340
+bring this layered structure to reality
+
+101
+00:03:30,340 --> 00:03:32,349
+without breaking anything because I
+
+102
+00:03:32,349 --> 00:03:34,359
+tell you the truth reading this it seemed like a
+
+103
+00:03:34,359 --> 00:03:36,489
+bit of black magic the idea is that a
+
+104
+00:03:36,489 --> 00:03:39,459
+decorator is also a component, that is to
+
+105
+00:03:39,459 --> 00:03:41,500
+say from the outside it doesn't matter to us if we
+
+106
+00:03:41,500 --> 00:03:43,599
+have an undecorated component like
+
+107
+00:03:43,599 --> 00:03:45,939
+the base enemy or a decorated component
+
+108
+00:03:45,939 --> 00:03:48,159
+like  the enemy with armor we want to be
+
+109
+00:03:48,159 --> 00:03:50,530
+able to treat them equally so a
+
+110
+00:03:50,530 --> 00:03:52,030
+decorator has to be a component
+
+111
+00:03:52,030 --> 00:03:53,829
+in order to be treated as a
+
+112
+00:03:53,829 --> 00:03:56,260
+component a decorator has to
+
+113
+00:03:56,260 --> 00:03:59,349
+inherit from component in addition to this a
+
+114
+00:03:59,349 --> 00:04:01,959
+decorator is not only a component but
+
+115
+00:04:01,959 --> 00:04:04,900
+has a component inside this is
+
+116
+00:04:04,900 --> 00:04:06,459
+precisely what allows us to have
+
+117
+00:04:06,459 --> 00:04:08,829
+layers and to be able to combine different
+
+118
+00:04:08,829 --> 00:04:11,260
+effects from different decorators if we
+
+119
+00:04:11,260 --> 00:04:13,329
+want to have an enemy with armor and
+
+120
+00:04:13,329 --> 00:04:16,209
+helmet we create the helmet decorator which will
+
+121
+00:04:16,209 --> 00:04:18,340
+have a component inside this
+
+122
+00:04:18,340 --> 00:04:20,019
+component that has inside is a
+
+123
+00:04:20,019 --> 00:04:22,270
+decorator with the armor and this
+
+124
+00:04:22,270 --> 00:04:24,880
+decorator with armor in turn has
+
+125
+00:04:24,880 --> 00:04:25,990
+another one inside
+
+126
+00:04:25,990 --> 00:04:28,930
+which is the base enemy if we look at the
+
+127
+00:04:28,930 --> 00:04:30,849
+complete onion we get the enemy
+
+128
+00:04:30,849 --> 00:04:33,250
+that wears armor and wears a helmet and the
+
+129
+00:04:33,250 --> 00:04:35,110
+fact that a decorator can
+
+130
+00:04:35,110 --> 00:04:37,419
+behave like a component in a
+
+131
+00:04:37,419 --> 00:04:40,180
+polymorphic way allows us to abstract from
+
+132
+00:04:40,180 --> 00:04:41,800
+what we have inside we have a
+
+133
+00:04:41,800 --> 00:04:43,599
+component inside but this component
+
+134
+00:04:43,599 --> 00:04:46,300
+can be an already decorated component and
+
+135
+00:04:46,300 --> 00:04:48,130
+this can grow and have layers and
+
+136
+00:04:48,130 --> 00:04:50,470
+layers and layers and layers that in the end you
+
+137
+00:04:50,470 --> 00:04:51,970
+treat it equally
+
+138
+00:04:51,970 --> 00:04:53,740
+let's see how
+
+139
+00:04:53,740 --> 00:04:55,389
+the classes would be organized with the example of the
+
+140
+00:04:55,389 --> 00:04:57,849
+enemies but before continuing let me
+
+141
+00:04:57,849 --> 00:04:59,500
+thank the sponsor of
+
+142
+00:04:59,500 --> 00:05:02,199
+this video up close up cloud is a
+
+143
+00:05:02,199 --> 00:05:03,729
+solution of  hosting that offers the
+
+144
+00:05:03,729 --> 00:05:05,199
+fastest servers on the market
+
+145
+00:05:05,199 --> 00:05:07,659
+offer both an app and a
+
+146
+00:05:07,659 --> 00:05:09,400
+super intuitive yet very
+
+147
+00:05:09,400 --> 00:05:11,229
+powerful control panel that allows you to automate the
+
+148
+00:05:11,229 --> 00:05:13,389
+scalability of your products. In addition,
+
+149
+00:05:13,389 --> 00:05:15,130
+all their servers have
+
+150
+00:05:15,130 --> 00:05:17,349
+maxi or ps technology that offers
+
+151
+00:05:17,349 --> 00:05:18,819
+faster disk speeds than
+
+152
+00:05:18,819 --> 00:05:21,460
+any ssd. You can try app cloud for
+
+153
+00:05:21,460 --> 00:05:23,440
+free using the beta
+
+154
+00:05:23,440 --> 00:05:25,000
+tec code that I leave the description and you will
+
+155
+00:05:25,000 --> 00:05:27,190
+receive $ 25 of credit to
+
+156
+00:05:27,190 --> 00:05:29,710
+use on the platform. Continuing with
+
+157
+00:05:29,710 --> 00:05:30,430
+the example we would
+
+158
+00:05:30,430 --> 00:05:32,470
+have our component that would be
+
+159
+00:05:32,470 --> 00:05:35,020
+the enemy this component would be an
+
+160
+00:05:35,020 --> 00:05:37,120
+abstraction of all our enemies
+
+161
+00:05:37,120 --> 00:05:38,800
+so each specific enemy would
+
+162
+00:05:38,800 --> 00:05:41,140
+inherit from this abstraction then we
+
+163
+00:05:41,140 --> 00:05:42,670
+would have the abstraction of the
+
+164
+00:05:42,670 --> 00:05:45,130
+decorators this generic decorator
+
+165
+00:05:45,130 --> 00:05:47,680
+would have an attribute of type component and would
+
+166
+00:05:47,680 --> 00:05:50,110
+also inherit from the same definition
+
+167
+00:05:50,110 --> 00:05:52,240
+of component if you notice it is a
+
+168
+00:05:52,240 --> 00:05:54,220
+recursive architecture where a
+
+169
+00:05:54,220 --> 00:05:56,500
+component ends up having components
+
+170
+00:05:56,500 --> 00:05:58,120
+within this form as I have said
+
+171
+00:05:58,120 --> 00:06:00,400
+we can add the layers the
+
+172
+00:06:00,400 --> 00:06:02,290
+base enemy would be the component that
+
+173
+00:06:02,290 --> 00:06:04,030
+is inside the decorator and since the
+
+174
+00:06:04,030 --> 00:06:06,160
+decorator is in turn a component each
+
+175
+00:06:06,160 --> 00:06:08,470
+message it receives from the outside it can
+
+176
+00:06:08,470 --> 00:06:10,960
+transmit it to the internal component because
+
+177
+00:06:10,960 --> 00:06:12,970
+in the end it uses the same interface in
+
+178
+00:06:12,970 --> 00:06:15,070
+this way the messages  they can be
+
+179
+00:06:15,070 --> 00:06:17,590
+sending to increasingly internal layers
+
+180
+00:06:17,590 --> 00:06:19,840
+until reaching the base enemy and you
+
+181
+00:06:19,840 --> 00:06:21,670
+can also modify the
+
+182
+00:06:21,670 --> 00:06:24,040
+behaviors as the message
+
+183
+00:06:24,040 --> 00:06:26,290
+goes through these layers obviously
+
+184
+00:06:26,290 --> 00:06:28,120
+each specific type of decorator would
+
+185
+00:06:28,120 --> 00:06:30,669
+inherit from the base class so for
+
+186
+00:06:30,669 --> 00:06:32,860
+example we would have the decorators with
+
+187
+00:06:32,860 --> 00:06:35,350
+helmet and with armor and now comes the
+
+188
+00:06:35,350 --> 00:06:38,200
+question of how the hell do we mount this from the
+
+189
+00:06:38,200 --> 00:06:39,190
+outside as useful let's
+
+190
+00:06:39,190 --> 00:06:41,590
+be a decorated element the idea is
+
+191
+00:06:41,590 --> 00:06:43,570
+that you have to pass to each decorator through a
+
+192
+00:06:43,570 --> 00:06:45,820
+constructor the component that you want to
+
+193
+00:06:45,820 --> 00:06:48,430
+have inside you pass the component
+
+194
+00:06:48,430 --> 00:06:50,170
+that you want to decorate
+
+195
+00:06:50,170 --> 00:06:52,000
+therefore you can add decorators
+
+196
+00:06:52,000 --> 00:06:54,400
+by layers or configure the layers of an
+
+197
+00:06:54,400 --> 00:06:56,830
+element as follows it would be
+
+198
+00:06:56,830 --> 00:06:58,660
+within the functions that
+
+199
+00:06:58,660 --> 00:07:00,640
+the decorator has for being a component
+
+200
+00:07:00,640 --> 00:07:02,680
+where it would modify the behavior
+
+201
+00:07:02,680 --> 00:07:06,100
+of the internal component you can even not
+
+202
+00:07:06,100 --> 00:07:07,750
+depend on the result of the
+
+203
+00:07:07,750 --> 00:07:10,000
+lower levels and say hey this decorator
+
+204
+00:07:10,000 --> 00:07:11,920
+overwrites all the logic of the
+
+205
+00:07:11,920 --> 00:07:14,260
+layers that exist below for example in
+
+206
+00:07:14,260 --> 00:07:15,880
+the case of the decorator with helmet we
+
+207
+00:07:15,880 --> 00:07:17,710
+could make it so that if the attack is to the
+
+208
+00:07:17,710 --> 00:07:20,290
+head the damage becomes zero and
+
+209
+00:07:20,290 --> 00:07:22,060
+therefore it makes no sense to transmit the
+
+210
+00:07:22,060 --> 00:07:24,040
+message of I have been damaged to the
+
+211
+00:07:24,040 --> 00:07:25,960
+lower layers because the decorator itself will
+
+212
+00:07:25,960 --> 00:07:28,240
+say I have been damaged but not  it
+
+213
+00:07:28,240 --> 00:07:30,370
+affects because I wear a helmet in the end one
+
+214
+00:07:30,370 --> 00:07:31,870
+thing to keep in mind when using
+
+215
+00:07:31,870 --> 00:07:33,700
+this pattern is that the order in which
+
+216
+00:07:33,700 --> 00:07:35,380
+the decorators are added can end up
+
+217
+00:07:35,380 --> 00:07:37,540
+influencing the final result if a
+
+218
+00:07:37,540 --> 00:07:39,310
+decorator has the behavior for
+
+219
+00:07:39,310 --> 00:07:41,950
+example of living the damage by two it depends
+
+220
+00:07:41,950 --> 00:07:43,960
+on which layer you put it it can modify
+
+221
+00:07:43,960 --> 00:07:45,610
+the total damage or only
+
+222
+00:07:45,610 --> 00:07:47,620
+the partial damage which is why
+
+223
+00:07:47,620 --> 00:07:50,080
+this pattern is used keep in mind that the order
+
+224
+00:07:50,080 --> 00:07:52,689
+has relevance in the behavior and
+
+225
+00:07:52,689 --> 00:07:54,250
+basically how our
+
+226
+00:07:54,250 --> 00:07:56,259
+class structure would look at the end would be something
+
+227
+00:07:56,259 --> 00:07:58,569
+like this with this architecture we have
+
+228
+00:07:58,569 --> 00:08:00,699
+defined all the possible types of
+
+229
+00:08:00,699 --> 00:08:03,370
+enemy combining their power apps without
+
+230
+00:08:03,370 --> 00:08:05,740
+falling into an explosion of classes also
+
+231
+00:08:05,740 --> 00:08:07,719
+adding a new power up would imply the
+
+232
+00:08:07,719 --> 00:08:10,030
+creation of a single new class which
+
+233
+00:08:10,030 --> 00:08:12,400
+greatly facilitates the extension of the
+
+234
+00:08:12,400 --> 00:08:14,349
+system I hope you liked this video
+
+235
+00:08:14,349 --> 00:08:16,150
+if it has been so please do not
+
+236
+00:08:16,150 --> 00:08:18,189
+forget to subscribe and give it a like and
+
+237
+00:08:18,189 --> 00:08:19,750
+leave me in the comments what pattern
+
+238
+00:08:19,750 --> 00:08:21,520
+you want us to analyze in the next
+
+239
+00:08:21,520 --> 00:08:23,590
+video see you in the next video
+
+240
+00:08:23,590 --> 00:08:26,580
+bye

@@ -1,0 +1,831 @@
+1
+00:00:00,000 --> 00:00:02,040
+muy buenas y bienvenidos un día más a
+
+2
+00:00:02,040 --> 00:00:03,720
+ver a take para los que seáis un nuevos
+
+3
+00:00:03,720 --> 00:00:05,879
+en el canal aquí hablamos de software y
+
+4
+00:00:05,879 --> 00:00:08,130
+de tecnología y concretamente en esta
+
+5
+00:00:08,130 --> 00:00:09,990
+serie hablamos sobre patrones de diseño
+
+6
+00:00:09,990 --> 00:00:12,900
+vamos a explicar uno a uno cada patrón
+
+7
+00:00:12,900 --> 00:00:15,540
+de diseño viendo sus utilidades y
+
+8
+00:00:15,540 --> 00:00:17,880
+explicando los con ejemplos si aún no
+
+9
+00:00:17,880 --> 00:00:19,710
+sabéis lo que es un patrón de diseño os
+
+10
+00:00:19,710 --> 00:00:21,510
+dejo el índice de la serie por aquí
+
+11
+00:00:21,510 --> 00:00:24,000
+arriba y en la descripción entonces el
+
+12
+00:00:24,000 --> 00:00:26,250
+patrón de este vídeo es el patrón de la
+
+13
+00:00:26,250 --> 00:00:28,800
+factoría abstracta la factoría abstracta
+
+14
+00:00:28,800 --> 00:00:30,269
+es un patrón que tiene mucha relación
+
+15
+00:00:30,269 --> 00:00:32,340
+con el patrón factor y de ahí que los
+
+16
+00:00:32,340 --> 00:00:34,440
+nombres pues también se parezcan por lo
+
+17
+00:00:34,440 --> 00:00:36,270
+que si aún no has visto que es el patrón
+
+18
+00:00:36,270 --> 00:00:36,989
+factory
+
+19
+00:00:36,989 --> 00:00:39,030
+te aconsejo que veas primero ese vídeo y
+
+20
+00:00:39,030 --> 00:00:41,680
+luego vuelvas a ver este
+
+21
+00:00:41,680 --> 00:00:44,650
+ya perfecto pues con esto ya podemos
+
+22
+00:00:44,650 --> 00:00:46,750
+profundizar un poco más en el patrón
+
+23
+00:00:46,750 --> 00:00:48,850
+abstracto factory y para ello vamos a
+
+24
+00:00:48,850 --> 00:00:50,500
+hablar de un juego que podría ser un
+
+25
+00:00:50,500 --> 00:00:53,110
+caso de uso de manual para implementar
+
+26
+00:00:53,110 --> 00:00:56,110
+una factoría abstracta y es el caso de
+
+27
+00:00:56,110 --> 00:00:57,730
+super mario maker
+
+28
+00:00:57,730 --> 00:01:01,140
+[Música]
+
+29
+00:01:01,140 --> 00:01:02,530
+amigos
+
+30
+00:01:02,530 --> 00:01:05,760
+pues todo
+
+31
+00:01:07,400 --> 00:01:10,080
+[Música]
+
+32
+00:01:10,080 --> 00:01:12,940
+ah
+
+33
+00:01:12,940 --> 00:01:15,250
+en super mario maker puedes montar pues
+
+34
+00:01:15,250 --> 00:01:17,440
+tus propios niveles de supermario los
+
+35
+00:01:17,440 --> 00:01:19,240
+típicos los niveles de la gameboy o de
+
+36
+00:01:19,240 --> 00:01:20,950
+la nintendo ds poniendo elementos
+
+37
+00:01:20,950 --> 00:01:22,990
+típicos de la saga como por ejemplo
+
+38
+00:01:22,990 --> 00:01:26,110
+tuberías enemigos y bloques pero no sólo
+
+39
+00:01:26,110 --> 00:01:28,630
+eso sino que una de las características
+
+40
+00:01:28,630 --> 00:01:30,400
+del juego y por lo que se hizo tan
+
+41
+00:01:30,400 --> 00:01:32,500
+famoso es que permite modificar el
+
+42
+00:01:32,500 --> 00:01:34,660
+estilo visual del nivel utilizando
+
+43
+00:01:34,660 --> 00:01:36,910
+gráficos clásicos de game boy o gráficos
+
+44
+00:01:36,910 --> 00:01:39,250
+de nintendo ds con el mismo nivel pero
+
+45
+00:01:39,250 --> 00:01:41,260
+con diferente visualización de esta
+
+46
+00:01:41,260 --> 00:01:43,030
+forma los jugadores pueden escoger el
+
+47
+00:01:43,030 --> 00:01:45,010
+estilo que mejor encaja con sus niveles
+
+48
+00:01:45,010 --> 00:01:47,860
+pero como hacen esto cómo funciona una
+
+49
+00:01:47,860 --> 00:01:49,060
+de las formas de hacerlo sería
+
+50
+00:01:49,060 --> 00:01:51,880
+precisamente utilizando una factoría
+
+51
+00:01:51,880 --> 00:01:54,880
+abstracta vamos a ver como primero vamos
+
+52
+00:01:54,880 --> 00:01:56,740
+a ver qué problemas nos podemos
+
+53
+00:01:56,740 --> 00:01:59,170
+encontrar si intentamos conseguir esta
+
+54
+00:01:59,170 --> 00:02:01,150
+funcionalidad pero utilizando
+
+55
+00:02:01,150 --> 00:02:03,820
+simplemente el patrón factor y pongamos
+
+56
+00:02:03,820 --> 00:02:05,560
+que tenemos una factor y que nos
+
+57
+00:02:05,560 --> 00:02:08,560
+instancia objetos desde la clase bloque
+
+58
+00:02:08,560 --> 00:02:10,750
+interrogante según el estilo del nivel
+
+59
+00:02:10,750 --> 00:02:12,910
+nos puede instancia elementos de la
+
+60
+00:02:12,910 --> 00:02:15,790
+clase concreta game boy interrogante
+
+61
+00:02:15,790 --> 00:02:18,459
+nintendo de ese interrogante aunque en
+
+62
+00:02:18,459 --> 00:02:21,430
+realidad eso nos debería dar igual lo
+
+63
+00:02:21,430 --> 00:02:23,219
+importante es que es un bloque
+
+64
+00:02:23,219 --> 00:02:25,390
+interrogante tenemos nuestra bonita
+
+65
+00:02:25,390 --> 00:02:27,129
+factoría y es la que usamos para
+
+66
+00:02:27,129 --> 00:02:29,379
+distanciar estos elementos que de
+
+67
+00:02:29,379 --> 00:02:31,629
+momento son los únicos que cambian en
+
+68
+00:02:31,629 --> 00:02:33,370
+función del tipo de nivel si queremos
+
+69
+00:02:33,370 --> 00:02:35,560
+por ejemplo que las monedas también
+
+70
+00:02:35,560 --> 00:02:37,900
+cambien de estilo tendremos que
+
+71
+00:02:37,900 --> 00:02:40,239
+construir otra factor y una factor y
+
+72
+00:02:40,239 --> 00:02:43,120
+para la clase monedas que nos instancia
+
+73
+00:02:43,120 --> 00:02:45,159
+la moneda correspondiente al tipo de
+
+74
+00:02:45,159 --> 00:02:47,079
+nivel que tenemos delante veis por dónde
+
+75
+00:02:47,079 --> 00:02:48,730
+vamos si seguimos por este camino
+
+76
+00:02:48,730 --> 00:02:51,370
+tendremos una factor y por cada elemento
+
+77
+00:02:51,370 --> 00:02:53,859
+que queremos que se vea afectado total
+
+78
+00:02:53,859 --> 00:02:56,200
+que acabaremos teniendo un montón de
+
+79
+00:02:56,200 --> 00:02:58,239
+factorías y tenemos que gestionar cada
+
+80
+00:02:58,239 --> 00:03:01,540
+vez más y más clases además todo esto
+
+81
+00:03:01,540 --> 00:03:03,819
+trae otro problema y es que al ofrecer
+
+82
+00:03:03,819 --> 00:03:06,129
+todas las factorías de forma individual
+
+83
+00:03:06,129 --> 00:03:08,290
+no hay ningún sistema de control sobre
+
+84
+00:03:08,290 --> 00:03:10,569
+qué ítems se utilizan con cuales nada
+
+85
+00:03:10,569 --> 00:03:12,519
+evitaría que en cierta parte del código
+
+86
+00:03:12,519 --> 00:03:15,340
+se instancia un tumbados de cuando el
+
+87
+00:03:15,340 --> 00:03:16,290
+estilo del nivel
+
+88
+00:03:16,290 --> 00:03:19,019
+es 3d para solucionar esto entra a la
+
+89
+00:03:19,019 --> 00:03:21,420
+factoría abstracta la factoría abstracta
+
+90
+00:03:21,420 --> 00:03:23,280
+se define como y dejarme leer la
+
+91
+00:03:23,280 --> 00:03:25,620
+definición formal patrón de diseño que
+
+92
+00:03:25,620 --> 00:03:27,989
+provee una interfaz ya para crear
+
+93
+00:03:27,989 --> 00:03:29,939
+familias de objetos relacionados o
+
+94
+00:03:29,939 --> 00:03:32,730
+dependientes sin especificar su clase
+
+95
+00:03:32,730 --> 00:03:36,540
+concreta provee una interficie para
+
+96
+00:03:36,540 --> 00:03:39,900
+crear es un patrón creación al familias
+
+97
+00:03:39,900 --> 00:03:42,359
+de objetos relacionados o dependientes
+
+98
+00:03:42,359 --> 00:03:45,060
+objetos relacionados como el ejemplo de
+
+99
+00:03:45,060 --> 00:03:47,700
+mario maker donde están relacionados por
+
+100
+00:03:47,700 --> 00:03:50,069
+temas por estilo visual están los
+
+101
+00:03:50,069 --> 00:03:52,019
+objetos con gráficos de game boy por un
+
+102
+00:03:52,019 --> 00:03:54,120
+lado y los objetos con gráficos de
+
+103
+00:03:54,120 --> 00:03:56,340
+nintendo ds por otro y quiero dar
+
+104
+00:03:56,340 --> 00:03:59,189
+énfasis a lo de que no se especifica su
+
+105
+00:03:59,189 --> 00:04:01,950
+clase concreta es decir se sigue
+
+106
+00:04:01,950 --> 00:04:05,340
+trabajando 100% con abstracciones nunca
+
+107
+00:04:05,340 --> 00:04:07,650
+dependes de una clase concreta de moneda
+
+108
+00:04:07,650 --> 00:04:10,349
+siempre utilizas la abstracción moneda
+
+109
+00:04:10,349 --> 00:04:12,299
+de forma que te es indiferente si es en
+
+110
+00:04:12,299 --> 00:04:14,069
+las monedas de game boy o una moneda de
+
+111
+00:04:14,069 --> 00:04:16,739
+nintendo ds o una moneda de girl y te da
+
+112
+00:04:16,739 --> 00:04:18,930
+igual con esto conseguimos lo bueno de
+
+113
+00:04:18,930 --> 00:04:20,820
+las factorías que es trabajar de forma
+
+114
+00:04:20,820 --> 00:04:22,310
+independiente
+
+115
+00:04:22,310 --> 00:04:24,770
+acciones concretas de cada clase pero
+
+116
+00:04:24,770 --> 00:04:26,990
+además nos permite crear relaciones
+
+117
+00:04:26,990 --> 00:04:29,360
+entre objetos de forma que no se puedan
+
+118
+00:04:29,360 --> 00:04:31,820
+utilizar de forma indiscriminada te
+
+119
+00:04:31,820 --> 00:04:34,340
+protege de utilizar sin querer objetos
+
+120
+00:04:34,340 --> 00:04:36,620
+que no deberían utilizarse juntos y para
+
+121
+00:04:36,620 --> 00:04:38,630
+montar todo ese tinglado no es tampoco
+
+122
+00:04:38,630 --> 00:04:40,910
+tan difícil es un poco lioso pero no
+
+123
+00:04:40,910 --> 00:04:43,100
+difícil en vez de tener una factoría con
+
+124
+00:04:43,100 --> 00:04:45,770
+un método de crear cierto objeto tenemos
+
+125
+00:04:45,770 --> 00:04:47,900
+una factoría abstracta que tiene varios
+
+126
+00:04:47,900 --> 00:04:50,270
+métodos que crean diferentes tipos de
+
+127
+00:04:50,270 --> 00:04:51,950
+objeto en el ejemplo que estamos viendo
+
+128
+00:04:51,950 --> 00:04:53,810
+la factoría abstracta tendría definido
+
+129
+00:04:53,810 --> 00:04:56,180
+el método de crear bloque interrogante y
+
+130
+00:04:56,180 --> 00:04:58,610
+el de crear moneda sería responsabilidad
+
+131
+00:04:58,610 --> 00:05:01,280
+de la implementación concreta de esta
+
+132
+00:05:01,280 --> 00:05:04,010
+factoría factorial abstracta implementar
+
+133
+00:05:04,010 --> 00:05:05,870
+estos métodos y crear instancias
+
+134
+00:05:05,870 --> 00:05:08,240
+concretas de estos objetos
+
+135
+00:05:08,240 --> 00:05:10,040
+por ejemplo tendríamos la factoría
+
+136
+00:05:10,040 --> 00:05:12,889
+abstracta de envoy maps track factory
+
+137
+00:05:12,889 --> 00:05:14,479
+que instancia siempre las clases
+
+138
+00:05:14,479 --> 00:05:16,669
+concretas que implementan los gráficos
+
+139
+00:05:16,669 --> 00:05:18,470
+ver en boyle y tendríamos lo mismo con
+
+140
+00:05:18,470 --> 00:05:20,660
+la nintendo ds filmax track factory que
+
+141
+00:05:20,660 --> 00:05:23,450
+implementaría estos mismos métodos pero
+
+142
+00:05:23,450 --> 00:05:25,310
+instancia cndh o las clases concretas
+
+143
+00:05:25,310 --> 00:05:27,200
+que implementan los gráficos del interno
+
+144
+00:05:27,200 --> 00:05:27,800
+es
+
+145
+00:05:27,800 --> 00:05:30,289
+y para evitarle a darnos tanto vamos a
+
+146
+00:05:30,289 --> 00:05:32,300
+poner otro ejemplo esta vez un poco
+
+147
+00:05:32,300 --> 00:05:34,039
+aplicado al desarrollo de aplicaciones
+
+148
+00:05:34,039 --> 00:05:35,900
+multiplataforma todos hemos oído hablar
+
+149
+00:05:35,900 --> 00:05:38,389
+de frutero de rinitis que te permiten
+
+150
+00:05:38,389 --> 00:05:39,770
+desarrollar aplicaciones tanto para
+
+151
+00:05:39,770 --> 00:05:42,110
+android como para mayores si vemos la
+
+152
+00:05:42,110 --> 00:05:43,940
+misma aplicación hecha por ejemplo en
+
+153
+00:05:43,940 --> 00:05:46,400
+platter en ios o en android seguramente
+
+154
+00:05:46,400 --> 00:05:48,169
+veamos que los elementos gráficos son
+
+155
+00:05:48,169 --> 00:05:50,449
+diferentes los botones o los inputs de
+
+156
+00:05:50,449 --> 00:05:52,370
+texto pues cambian de una plataforma a
+
+157
+00:05:52,370 --> 00:05:54,680
+otra una posible implementación de esta
+
+158
+00:05:54,680 --> 00:05:56,690
+característica a nivel de el framework
+
+159
+00:05:56,690 --> 00:05:58,330
+ya que en la aplicación multiplataforma
+
+160
+00:05:58,330 --> 00:06:01,310
+podría ser utilizar factorías abstractas
+
+161
+00:06:01,310 --> 00:06:03,169
+teniendo una factoría abstracta concreta
+
+162
+00:06:03,169 --> 00:06:05,930
+de elementos de ios y otra de elementos
+
+163
+00:06:05,930 --> 00:06:08,030
+de android incluso otro ejemplo podría
+
+164
+00:06:08,030 --> 00:06:09,860
+ser el famoso dark film que están
+
+165
+00:06:09,860 --> 00:06:11,960
+sacando ahora a muchas aplicaciones el
+
+166
+00:06:11,960 --> 00:06:13,789
+dark theme puede ser implementado
+
+167
+00:06:13,789 --> 00:06:15,530
+también utilizando factorías abstractas
+
+168
+00:06:15,530 --> 00:06:17,060
+siguiendo la misma lógica una
+
+169
+00:06:17,060 --> 00:06:19,159
+implementación crea elementos en un modo
+
+170
+00:06:19,159 --> 00:06:21,020
+claro y la otra implementación crea
+
+171
+00:06:21,020 --> 00:06:23,330
+elementos en modo oscuro vamos a ver el
+
+172
+00:06:23,330 --> 00:06:25,460
+diagrama vml ahora en pantalla para
+
+173
+00:06:25,460 --> 00:06:27,530
+acabar de entender estos ejemplos y ver
+
+174
+00:06:27,530 --> 00:06:29,480
+un poco la formalidad
+
+175
+00:06:29,480 --> 00:06:32,270
+tenemos la clase abstracta o interficie
+
+176
+00:06:32,270 --> 00:06:34,610
+abstracta factory que sería la que
+
+177
+00:06:34,610 --> 00:06:36,380
+define los métodos de factoría con la
+
+178
+00:06:36,380 --> 00:06:38,720
+clase abstracta que construyen el método
+
+179
+00:06:38,720 --> 00:06:40,550
+que crea monedas el método que crear
+
+180
+00:06:40,550 --> 00:06:42,950
+bloques interrogante etcétera y tenemos
+
+181
+00:06:42,950 --> 00:06:45,440
+por otro lado los productos individuales
+
+182
+00:06:45,440 --> 00:06:47,810
+los productos serían por una parte las
+
+183
+00:06:47,810 --> 00:06:50,120
+abstracciones es decir moneda y bloque
+
+184
+00:06:50,120 --> 00:06:51,800
+interrogante lo que de verdad genera
+
+185
+00:06:51,800 --> 00:06:54,620
+dependencias y por debajo las clases
+
+186
+00:06:54,620 --> 00:06:57,170
+concretas la moneda de gameboy o la
+
+187
+00:06:57,170 --> 00:06:59,300
+moneda de nintendo ds por ejemplo es
+
+188
+00:06:59,300 --> 00:07:01,340
+responsabilidad de cada factoría
+
+189
+00:07:01,340 --> 00:07:03,440
+abstracta concreta que heredan o
+
+190
+00:07:03,440 --> 00:07:05,570
+implementan a la factoría abstracta
+
+191
+00:07:05,570 --> 00:07:08,600
+general instancia unas clases u otras
+
+192
+00:07:08,600 --> 00:07:11,450
+pero desde fuera nunca se sabe ni se
+
+193
+00:07:11,450 --> 00:07:13,430
+debería saber con qué clase concreta
+
+194
+00:07:13,430 --> 00:07:14,990
+estás trabajando por eso siempre
+
+195
+00:07:14,990 --> 00:07:16,640
+trabajas pues con estas abstracciones
+
+196
+00:07:16,640 --> 00:07:18,710
+estas clases abstractas estás interficie
+
+197
+00:07:18,710 --> 00:07:21,980
+sólo lo que sea vamos utilizan a saco el
+
+198
+00:07:21,980 --> 00:07:24,440
+polimorfismo y básicamente es esto he
+
+199
+00:07:24,440 --> 00:07:25,880
+intentado dar un poco más de variedad a
+
+200
+00:07:25,880 --> 00:07:27,230
+los ejemplos pues para acabar de
+
+201
+00:07:27,230 --> 00:07:29,570
+entender el porqué de este patrón y cómo
+
+202
+00:07:29,570 --> 00:07:31,220
+se puede aplicar a diferentes casos
+
+203
+00:07:31,220 --> 00:07:31,990
+espero
+
+204
+00:07:31,990 --> 00:07:33,520
+que os haya gustado el vídeo y ya sabéis
+
+205
+00:07:33,520 --> 00:07:36,010
+suscribiros y darle al like si os gusta
+
+206
+00:07:36,010 --> 00:07:36,700
+esta serie
+
+207
+00:07:36,700 --> 00:07:38,590
+muchas gracias por verme y nos vemos en
+
+208
+00:07:38,590 --> 00:07:41,790
+el próximo vídeo adiós

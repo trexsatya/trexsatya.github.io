@@ -1,0 +1,39 @@
+1
+00:38:02,560 --> 00:38:04,400
+medans man är inne i spelet så kan man
+
+2
+00:38:04,400 --> 00:38:06,880
+ta fram själva scoreboard eh vi kommer
+
+3
+00:38:06,880 --> 00:38:10,400
+köra ett dussintal matcher här eh dussin
+
+4
+00:38:10,400 --> 00:38:14,319
+är 12 va Ja Så det är inte 12 Ja Det är
+
+5
+00:38:14,319 --> 00:38:17,119
+jättekonstigt det det är ex var några
+
+6
+04:20:52,560 --> 04:20:55,119
+signalens förändringar i realtid men
+
+7
+04:20:55,119 --> 04:20:58,640
+översättning är fortfarande utom
+
+8
+04:20:58,640 --> 04:21:01,880
+räckhåll teknikerna justerar maskinen
+
+9
+04:21:01,880 --> 04:21:04,239
+för att kunna bearbeta signalen i flera
+
+10
+04:21:04,239 --> 04:21:06,920
+frekvenser samtidigt några svaga mönster

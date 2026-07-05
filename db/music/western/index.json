@@ -1,0 +1,63 @@
+[
+  {
+    "id": "A_Time_For_Us.mscz",
+    "title": "A_Time_For_Us.mscz",
+    "system": "western",
+    "format": "musicxml",
+    "sourceUrl": null,
+    "youtube": null,
+    "key": "C",
+    "time": "3/4",
+    "tempo": 71,
+    "instrument": "Classical Guitar",
+    "voiceCount": 1,
+    "noteCount": 242,
+    "channels": [
+      "pitch",
+      "interval",
+      "sargam",
+      "duration",
+      "chordSymbol"
+    ],
+    "search": {
+      "contour": "3,-1,-19,12,-5,0,5,0,3,-3,-11,14,2,-9,0,5,4,-2,-2,-13,8,7,-12,0,5,7,-2,-1,-14,7,5,-12,7,7,-2,-2,2,-17,19,-7,7,5,3,-1,-19,12,-5,0,5,0,3,-3,-11,14,2,-12,3,5,4,-19,15,4,5,-9,4,5,-5,-17,15,4,-19,0,12,-7,7,8,-27,26,-2,-2,-10,7,8,-1,-2,-2,-22,15,4,5,-9,-12,12,4,-12,3,5,4,-4,-13,15,-12,5,0,7,2,-14,7,5,3,-15,7,5,3,-3,-5,3,4,-19,7,5,3,-2,4,-4,4,3,5,-17,12,7,-15,3,5,4,-17,15,4,-19,0,15,-10,3,4,5,-24,24,3,-1,-19,12,-5,0,5,0,3,-3,-11,14,2,-9,0,5,4,-2,-2,-13,8,7,-12,0,5,7,-2,-1,-14,7,5,-12,7,7,-2,-2,2,-17,19,-7,7,5,3,-1,-19,12,-5,0,5,0,3,-3,-11,14,2,-12,3,5,4,-19,15,4,5,-9,4,5,-5,-17,15,4,-19,0,8,-3,7,8,-27,26,-2,-2,-10,7,8,-1,-2,-2,-22,15,4,5,-10,1,-15,12",
+      "pitchClasses": "E G Fs B B Fs Fs B B D B C D E G G C E D C B G D D D G D C B A E A A E B A G A E B E B E G Fs B B Fs Fs B B D B C D E E G C E A C E A C E A E B D Fs B B B E B G E Fs E D E B G Fs E D E G B E G G G B B D G B G Fs A A D D A B A E A C A E A C A E G B E B E G F A F A C F C C G E G C E B D Fs B B D E G B E E E G Fs B B Fs Fs B B D B C D E G G C E D C B G D D D G D C B A E A A E B A G A E B E B E G Fs B B Fs Fs B B D B C D E E G C E A C E A C E A E B D Fs B B G E B G E Fs E D E B G Fs E D E G B E Fs G E E",
+      "sargam": "Ga Pa Ni Ni Ni Ni Re Ni Sa Re Ga Pa Pa Sa Ga Re Sa Ni Pa Re Re Re Pa Re Sa Ni Dha Ga Dha Dha Ga Ni Dha Pa Dha Ga Ni Ga Ni Ga Pa Ni Ni Ni Ni Re Ni Sa Re Ga Ga Pa Sa Ga Dha Sa Ga Dha Sa Ga Dha Ga Ni Re Ni Ni Ni Ga Ni Pa Ga Ga Re Ga Ni Pa Ga Re Ga Pa Ni Ga Pa Pa Pa Ni Ni Re Pa Ni Pa Dha Dha Re Re Dha Ni Dha Ga Dha Sa Dha Ga Dha Sa Dha Ga Pa Ni Ga Ni Ga Pa Ma Dha Ma Dha Sa Ma Sa Sa Pa Ga Pa Sa Ga Ni Re Ni Ni Re Ga Pa Ni Ga Ga Ga Pa Ni Ni Ni Ni Re Ni Sa Re Ga Pa Pa Sa Ga Re Sa Ni Pa Re Re Re Pa Re Sa Ni Dha Ga Dha Dha Ga Ni Dha Pa Dha Ga Ni Ga Ni Ga Pa Ni Ni Ni Ni Re Ni Sa Re Ga Ga Pa Sa Ga Dha Sa Ga Dha Sa Ga Dha Ga Ni Re Ni Ni Pa Ga Ni Pa Ga Ga Re Ga Ni Pa Ga Re Ga Pa Ni Ga Pa Ga Ga",
+      "chords": "Em+9 Bm C G Am Em Bm C Am Bm Em G D Am Em F C Bm Em Bm C G Am Em Bm C Am GM7 Em Em+9"
+    },
+    "detailPath": "details/A_Time_For_Us.mscz.json",
+    "contentHash": "5f7eade6",
+    "tags": [],
+    "updatedAt": "2026-06-22"
+  },
+  {
+    "id": "Chopin_Nocturne_Op.9_No.2_for_Solo_Guitar",
+    "title": "Chopin_Nocturne_Op.9_No.2_for_Solo_Guitar",
+    "system": "western",
+    "format": "musicxml",
+    "sourceUrl": null,
+    "youtube": "https://www.youtube.com/watch?v=ZFiUjdot3dM",
+    "key": "E",
+    "time": "12/8",
+    "tempo": 54,
+    "instrument": "Classical Guitar",
+    "voiceCount": 2,
+    "noteCount": 938,
+    "channels": [
+      "pitch",
+      "interval",
+      "sargam",
+      "duration",
+      "chordSymbol"
+    ],
+    "search": {
+      "contour": "0,5,4,0,-2,2,-2,-7,5,-5,9,-7,1,-1,-13,13,12,-5,-2,5,-2,-1,-5,3,-3,5,-4,-3,-6,4,16,-2,-2,-2,-1,1,-8,2,1,-5,0,5,4,-2,2,-2,2,-2,-1,1,2,-5,3,-2,0,2,-2,2,-2,-1,1,2,-7,6,3,-20,13,1,-1,5,-1,4,-1,6,-1,-5,3,0,-2,-1,-5,3,-1,1,2,0,-20,15,1,-3,-6,4,16,-2,-2,-2,-1,1,-8,2,1,0,-5,4,1,-1,3,2,-2,0,-5,0,3,-3,3,0,-7,3,4,-1,1,2,-2,0,-5,9,3,-6,5,-11,9,-10,8,-7,4,-4,5,-8,8,-10,9,-11,6,3,-7,4,5,-4,-7,3,5,-7,7,-1,2,-9,6,3,-7,3,6,1,4,-10,1,1,-1,1,3,-6,6,5,-2,0,-2,0,2,-2,2,-2,-1,1,2,-7,9,-8,-1,1,1,1,-1,5,-1,4,-1,5,1,-1,-5,3,-2,-1,-5,3,-1,1,2,0,-20,15,1,-3,-6,-3,4,3,4,0,12,-3,1,-13,11,-1,-1,-3,-3,-2,-2,4,5,-2,-2,0,-7,-3,2,-2,0,-5,15,-12,7,-1,7,-11,-3,1,-1,7,3,-2,-7,3,5,-7,7,-1,2,-9,6,3,-7,3,6,-16,9,-10,1,1,-1,1,3,5,-2,0,-14,14,-2,2,-2,-1,1,2,2,3,6,-3,3,-8,-1,-2,2,-2,2,-3,1,2,12,-16,-3,3,4,3,4,-2,-2,-1,-1,-3,-3,-4,-1,1,-11,13,2,5,-2,-2,0,8,4,2,-2,2,2,-16,8,4,0,2,-2,2,-2,2,-2,4,-4,2,-2,-1,1,12,-1,-2,-2,-1,-11,4,6,-11,3,2,-7,8,2,-2,0,-1,1,16,-2,-2,-1,-2,-7,6,-1,-1,0,-1,0,-1,0,-2,-2,-7,-5,12,-8,1,0,3,-8,5,3,4,5,3,4,-10,12,-10,12,-16,4,3,5,0,-12,6,4,-10,6,3,-1,-1,-1,-1,-1,-5,1,12,-18,6,2,-8,3,5,6,-25,10,6,9,-25,7,3,6,3,5,-11,-1,2,-3,2,-1,2,-3,2,-1,2,-3,2,-1,2,-3,2,-1,2,-3,2,-1,2,-3,2,-1,4,-2,3,-1,3,-2,4,-9,16,-2,-2,-1,-1,-1,-2,-3,1,-3,2,8,-10,8,-12,4,-7,9,-7,8,-5,9,-12,8,-5,9,-12,8,-8,3,5,4,-9,12,5,-8,-12,3,5",
+      "pitchClasses": "B B E Gs Gs Fs Gs Fs B E B Gs Cs D Cs C Cs Cs Gs Fs B A Gs Ds Fs Ds Gs E Cs G B Ds Cs B A Gs A Cs Ds E B B E Gs Fs Gs Fs Gs Fs F Fs Gs Ds Fs E E Fs E Fs E Ds E Fs B F Gs C Cs D Cs Fs F A Gs D Cs Gs B B A Gs Ds Fs F Fs Gs Gs C Ds E Cs G B Ds Cs B A Gs A Cs Ds E E B Ds E Ds Fs Gs Fs Fs Cs Cs E Cs E E A C E Ds E Fs E E B Gs B F As B Gs As Fs B Ds B E Gs E Fs Ds E As Cs Fs As Ds B E G C F C B Cs E As Cs Fs A Ds E Gs As B C B C Ds A Ds Gs Fs Fs E E Fs E Fs E Ds E Fs B Gs C B C Cs D Cs Fs F A Gs Cs D Cs Gs B A Gs Ds Fs F Fs Gs Gs C Ds E Cs G E Gs B Ds Ds Ds C Cs C B As A Fs Ds Cs B Ds Gs Fs E E A Fs Gs Fs Fs Cs E E B As F Fs Ds E Ds As Cs B E G C F C B Cs E As Cs Fs A Ds B Gs As B C B C Ds Gs Fs Fs E Fs E Fs E Ds E Fs Gs B F D F A Gs Fs Gs Fs Gs F Fs Gs Gs E Cs E Gs B Ds Cs B As A Fs Ds B As B C Cs Ds Gs Fs E E C E Fs E Fs Gs E C E E Fs E Fs E Fs E Gs E Fs E Ds E E Ds Cs B As B Ds A As Cs Ds Gs E Fs E E Ds E Gs Fs E Ds Cs Fs C B As As A A Gs Gs Fs E A E E Gs A A C E A C E A C E Fs Fs Gs Gs E Gs B E E E As D E As Cs C B As A Gs Ds E E As E Fs As Cs Fs C B A Ds C B Fs A Ds Fs B C B Cs As C B Cs As C B Cs As C B Cs As C B Cs As C B Cs As C B Ds Cs E Ds Fs E Gs B Ds Cs B As A Gs Fs Ds E Cs Ds B Cs A A Cs Fs Ds Gs E B Gs Gs E B Gs Gs E Gs B E Gs B B E Gs Gs B E",
+      "sargam": "Pa Pa Sa Ga Ga Re Ga Re Pa Sa Pa Ga Dha Dha Dha Dha Ga Re Pa Ma Ga Ni Re Ni Ga Sa Dha Pa Ni Dha Pa Ma Ga Ma Dha Ni Sa Pa Pa Sa Ga Re Ga Re Ga Re Re Ga Ni Re Sa Sa Re Sa Re Sa Ni Sa Re Pa Ga Dha Dha Re Ma Ga Dha Ga Pa Pa Ma Ga Ni Re Re Ga Ga Ni Sa Dha Pa Ni Dha Pa Ma Ga Ma Dha Ni Sa Sa Pa Ni Sa Ni Re Ga Re Re Dha Dha Sa Dha Sa Sa Ma Sa Ni Sa Re Sa Sa Pa Ga Pa Pa Ga Re Pa Ni Pa Sa Ga Sa Re Ni Sa Dha Re Ni Pa Sa Pa Dha Sa Dha Re Ma Ni Sa Ga Pa Pa Ni Ma Ni Ga Re Re Sa Sa Re Sa Re Sa Ni Sa Re Pa Ga Pa Dha Dha Re Ma Ga Dha Dha Ga Pa Ma Ga Ni Re Re Ga Ga Ni Sa Dha Sa Ga Pa Ni Ni Ni Dha Pa Ma Re Ni Dha Pa Ni Ga Re Sa Sa Ma Re Ga Re Re Dha Sa Sa Pa Re Ni Sa Ni Dha Pa Sa Pa Dha Sa Dha Re Ma Ni Pa Ga Pa Pa Ni Ga Re Re Sa Re Sa Re Sa Ni Sa Re Ga Pa Ma Ga Re Ga Re Ga Re Ga Ga Sa Dha Sa Ga Pa Ni Dha Pa Ma Re Ni Pa Pa Dha Ni Ga Re Sa Sa Sa Re Sa Re Ga Sa Sa Sa Re Sa Re Sa Re Sa Ga Sa Re Sa Ni Sa Sa Ni Dha Pa Pa Ni Ma Dha Ni Ga Sa Re Sa Sa Ni Sa Ga Re Sa Ni Dha Re Pa Ma Ma Ga Ga Re Sa Ma Sa Sa Ga Ma Ma Sa Ma Sa Ma Sa Re Re Ga Ga Sa Ga Pa Sa Sa Sa Sa Dha Pa Ma Ga Ni Sa Sa Sa Re Dha Re Pa Ma Ni Pa Re Ma Ni Re Pa Pa Dha Pa Dha Pa Dha Pa Dha Pa Dha Pa Dha Pa Ni Dha Sa Ni Re Sa Ga Pa Ni Dha Pa Ma Ga Re Ni Sa Dha Ni Pa Dha Ma Ma Dha Re Ni Ga Sa Pa Ga Ga Sa Pa Ga Ga Sa Ga Pa Sa Ga Pa Pa Sa Ga Ga Pa Sa",
+      "chords": "Am6+9 Bm6+9 A6+9 Bm6+9 A#6+9 A6+9 Abm9 A6+9 Abm6+9 A#6+9 Ab9 Bm6+9 A#6+9 A6+9 Abm9 E9 Abm6+9 A#6+9 Ab9 Bm6+9 A#6+9 A6+9 Am6+9 A6+9 Ab9 Am6+9 A6+9 B9 A6+9 E Am6+9 Bm6+9 A6+9 Bm6+9 A#6+9 A6+9 Abm9 A6+9 Abm6+9 A#6+9 Ab9 Bm6+9 A#6+9 A6+9 Abm9 E9 Abm6+9 A#6+9 Ab9 Bm6+9 A#6+9 A6+9 Am6+9 A6+9 Ab9 Am6+9 A6+9 E"
+    },
+    "detailPath": "details/Chopin_Nocturne_Op.9_No.2_for_Solo_Guitar.json",
+    "contentHash": "5e431b68",
+    "updatedAt": "2026-06-20"
+  }
+]

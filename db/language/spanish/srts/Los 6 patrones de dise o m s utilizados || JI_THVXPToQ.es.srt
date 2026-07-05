@@ -1,0 +1,979 @@
+1
+00:00:00,080 --> 00:00:01,920
+En ingeniería de software, los patrones
+
+2
+00:00:01,920 --> 00:00:04,120
+de diseño son una solución general y
+
+3
+00:00:04,120 --> 00:00:06,520
+reutilizable para problemas comunes que
+
+4
+00:00:06,520 --> 00:00:08,320
+ocurren en un determinado contexto
+
+5
+00:00:08,320 --> 00:00:10,040
+cuando nos encontramos diseñando
+
+6
+00:00:10,040 --> 00:00:12,200
+aplicaciones. Estas no son una solución
+
+7
+00:00:12,200 --> 00:00:14,000
+final que luego se transforma en código
+
+8
+00:00:14,000 --> 00:00:16,279
+fuente, sino que son una descripción o
+
+9
+00:00:16,279 --> 00:00:18,480
+plantilla que puedes utilizar tú en
+
+10
+00:00:18,480 --> 00:00:21,260
+determinado momento.
+
+11
+00:00:21,260 --> 00:00:24,199
+[Música]
+
+12
+00:00:24,199 --> 00:00:26,080
+Hola mundo y bienvenidos a este video.
+
+13
+00:00:26,080 --> 00:00:27,519
+Los patrones de diseño son la
+
+14
+00:00:27,519 --> 00:00:29,640
+formalización de buenas prácticas que un
+
+15
+00:00:29,640 --> 00:00:31,320
+ingeniero de software puede utilizar
+
+16
+00:00:31,320 --> 00:00:33,480
+para resolver problemas comunes. En
+
+17
+00:00:33,480 --> 00:00:35,160
+programación orientada a objetos, los
+
+18
+00:00:35,160 --> 00:00:37,040
+patrones de diseño, por lo general
+
+19
+00:00:37,040 --> 00:00:39,200
+muestran relaciones e interacciones
+
+20
+00:00:39,200 --> 00:00:41,200
+sobre los distintos objetos y clases,
+
+21
+00:00:41,200 --> 00:00:43,000
+aunque patrones que impliquen
+
+22
+00:00:43,000 --> 00:00:45,039
+mutabilidad no son útiles cuando se está
+
+23
+00:00:45,039 --> 00:00:47,000
+utilizando un paradigma funcional
+
+24
+00:00:47,000 --> 00:00:48,640
+estricto. Algunos patrones podrían ser
+
+25
+00:00:48,640 --> 00:00:50,680
+hasta catalogados de innecesarios o
+
+26
+00:00:50,680 --> 00:00:53,000
+inútiles dependiendo del paradigma,
+
+27
+00:00:53,000 --> 00:00:54,760
+lenguaje o librerías que estemos
+
+28
+00:00:54,760 --> 00:00:56,719
+utilizando, ya que estos ya podrían
+
+29
+00:00:56,719 --> 00:00:58,879
+tener soluciones específicas para poder
+
+30
+00:00:58,879 --> 00:01:01,199
+resolver esos problemas. En este video
+
+31
+00:01:01,199 --> 00:01:02,920
+nosotros veremos seis patrones de
+
+32
+00:01:02,920 --> 00:01:04,879
+diseño, pero no debes pensar de que
+
+33
+00:01:04,879 --> 00:01:06,439
+estos son balas de plata, ya que
+
+34
+00:01:06,439 --> 00:01:08,640
+utilizar alguno de estos patrones podría
+
+35
+00:01:08,640 --> 00:01:10,560
+ser una pésima idea dependiendo de tu
+
+36
+00:01:10,560 --> 00:01:12,400
+contexto. Pero antes de mencionarte los
+
+37
+00:01:12,400 --> 00:01:14,520
+seis patrones de diseño y qué problemas
+
+38
+00:01:14,520 --> 00:01:16,640
+estos resuelven, tengo que decirte que
+
+39
+00:01:16,640 --> 00:01:18,600
+el botón de me gusta acaba de escribir
+
+40
+00:01:18,600 --> 00:01:20,720
+código espaghetti. Y esta es una pésima
+
+41
+00:01:20,720 --> 00:01:22,040
+práctica en el desarrollo de software,
+
+42
+00:01:22,040 --> 00:01:23,680
+por lo que para que ese maldito aprenda
+
+43
+00:01:23,680 --> 00:01:25,400
+que no debe seguir escribiendo código
+
+44
+00:01:25,400 --> 00:01:27,960
+espaghetti, debes golpearlo un número
+
+45
+00:01:27,960 --> 00:01:29,720
+par de veces hasta que quede en azul.
+
+46
+00:01:29,720 --> 00:01:31,079
+Cuando el botón de me gusta quede en
+
+47
+00:01:31,079 --> 00:01:33,000
+azul, él habrá aprendido que ya no debe
+
+48
+00:01:33,000 --> 00:01:34,520
+seguir escribiendo código espaguagetti.
+
+49
+00:01:34,520 --> 00:01:36,399
+Y si golpeas el botón de me gusta, harás
+
+50
+00:01:36,399 --> 00:01:38,399
+que nuestra comunidad de desarrollo sea
+
+51
+00:01:38,399 --> 00:01:40,040
+muchísimo mejor, ya que el botón de me
+
+52
+00:01:40,040 --> 00:01:41,840
+gusta se habrá encaminado en escribir
+
+53
+00:01:41,840 --> 00:01:43,759
+código de mejor calidad. Y ya que ese
+
+54
+00:01:43,759 --> 00:01:45,399
+maldito está en azul, continuamos con
+
+55
+00:01:45,399 --> 00:01:46,799
+nuestro video. En ingeniería de
+
+56
+00:01:46,799 --> 00:01:49,040
+software, el patrón Singleton restringe
+
+57
+00:01:49,040 --> 00:01:51,960
+la instanciación de una clase a solo una
+
+58
+00:01:51,960 --> 00:01:54,079
+única instancia. Esto es útil cuando
+
+59
+00:01:54,079 --> 00:01:55,880
+necesitas solo una instancia de una
+
+60
+00:01:55,880 --> 00:01:58,000
+clase para poder coordinar acciones
+
+61
+00:01:58,000 --> 00:02:00,280
+entre distintos sistemas. Si tu sistema
+
+62
+00:02:00,280 --> 00:02:02,719
+solo tiene una base de datos, singleton.
+
+63
+00:02:02,719 --> 00:02:04,920
+Si tienes solo una API, singleton. Si
+
+64
+00:02:04,920 --> 00:02:06,399
+tienes que conectarte con un servicio
+
+65
+00:02:06,399 --> 00:02:09,200
+como AWS y solo con una instancia de
+
+66
+00:02:09,200 --> 00:02:11,440
+este, Singleton. Dependiendo del
+
+67
+00:02:11,440 --> 00:02:13,200
+lenguaje podría ser que no necesites
+
+68
+00:02:13,200 --> 00:02:15,160
+implementar una clase de singleton. En
+
+69
+00:02:15,160 --> 00:02:17,319
+Node JS puedes implementar un objeto
+
+70
+00:02:17,319 --> 00:02:19,760
+literal y exportarlo. Esto se comportará
+
+71
+00:02:19,760 --> 00:02:21,680
+igual que un singleton, ya que el motor
+
+72
+00:02:21,680 --> 00:02:23,680
+de Node tiene implementado un caché con
+
+73
+00:02:23,680 --> 00:02:25,680
+las variables exportadas, por lo que
+
+74
+00:02:25,680 --> 00:02:27,760
+siempre será la misma. Pero en caso de
+
+75
+00:02:27,760 --> 00:02:29,800
+Java, que tiene una implementación más
+
+76
+00:02:29,800 --> 00:02:31,560
+estricta, debe implementarse de la
+
+77
+00:02:31,560 --> 00:02:33,720
+siguiente manera. Primero se crea la
+
+78
+00:02:33,720 --> 00:02:35,800
+clase. Luego defines una propiedad
+
+79
+00:02:35,800 --> 00:02:38,200
+llamada Singleton, la cual tendrá la
+
+80
+00:02:38,200 --> 00:02:40,720
+instancia que creamos. Luego definimos
+
+81
+00:02:40,720 --> 00:02:43,200
+un constructor llamado Singleton. Ese
+
+82
+00:02:43,200 --> 00:02:45,360
+constructor se encargará de construir el
+
+83
+00:02:45,360 --> 00:02:47,239
+objeto que vamos a necesitar en un
+
+84
+00:02:47,239 --> 00:02:49,599
+futuro. Luego creamos un método llamado
+
+85
+00:02:49,599 --> 00:02:51,360
+get instance, que se encargará de
+
+86
+00:02:51,360 --> 00:02:52,840
+devolver la instancia de nuestro
+
+87
+00:02:52,840 --> 00:02:54,879
+singleton. En programación orientada a
+
+88
+00:02:54,879 --> 00:02:56,720
+objetos, el patrón decorador es un
+
+89
+00:02:56,720 --> 00:02:58,040
+patrón que permite agregar
+
+90
+00:02:58,040 --> 00:03:00,640
+funcionalidades a un objeto sin alterar
+
+91
+00:03:00,640 --> 00:03:02,879
+el comportamiento de otras instancias de
+
+92
+00:03:02,879 --> 00:03:04,959
+objetos de la misma clase. Soluciona el
+
+93
+00:03:04,959 --> 00:03:06,599
+problema de agregar o quitar
+
+94
+00:03:06,599 --> 00:03:08,560
+responsabilidades a un objeto en el
+
+95
+00:03:08,560 --> 00:03:11,480
+rantime y es una alternativa flexible a
+
+96
+00:03:11,480 --> 00:03:13,720
+las subclases. Y una implementación en
+
+97
+00:03:13,720 --> 00:03:16,159
+Java se vería algo más o menos así. Si
+
+98
+00:03:16,159 --> 00:03:18,519
+vamos a vender café, vamos a necesitar
+
+99
+00:03:18,519 --> 00:03:21,120
+saber el precio de este y también vamos
+
+100
+00:03:21,120 --> 00:03:23,879
+a necesitar saber sus ingredientes, que
+
+101
+00:03:23,879 --> 00:03:26,239
+claro, el café tiene café, pero
+
+102
+00:03:26,239 --> 00:03:28,319
+podríamos querer vender también café con
+
+103
+00:03:28,319 --> 00:03:30,640
+leche. Y en lugar de crear una nueva
+
+104
+00:03:30,640 --> 00:03:33,159
+clase y reimplementar los métodos, lo
+
+105
+00:03:33,159 --> 00:03:36,000
+mejor sería tomar la tasa que ya existe
+
+106
+00:03:36,000 --> 00:03:38,760
+y pasarla por el constructor a una clase
+
+107
+00:03:38,760 --> 00:03:41,799
+con leche. Esta clase crea métodos con
+
+108
+00:03:41,799 --> 00:03:44,439
+los mismos nombres, pero llama primero a
+
+109
+00:03:44,439 --> 00:03:46,599
+los métodos del objeto café. Y cuando
+
+110
+00:03:46,599 --> 00:03:49,159
+alguien solicite el precio, agregamos el
+
+111
+00:03:49,159 --> 00:03:51,560
+valor de la leche. Y cuando alguien
+
+112
+00:03:51,560 --> 00:03:53,799
+solicite los ingredientes, agregamos
+
+113
+00:03:53,799 --> 00:03:58,519
+también como ingrediente la leche.
+
+114
+00:03:58,519 --> 00:04:00,640
+En ingeniería de software, el patrón
+
+115
+00:04:00,640 --> 00:04:02,840
+mediador define un objeto, el cual
+
+116
+00:04:02,840 --> 00:04:05,280
+encapsula cómo otros objetos van a
+
+117
+00:04:05,280 --> 00:04:08,200
+interactuar. Este patrón se considera un
+
+118
+00:04:08,200 --> 00:04:10,280
+patrón de comportamiento, ya que puede
+
+119
+00:04:10,280 --> 00:04:12,959
+alterar cómo se ejecuta la aplicación.
+
+120
+00:04:12,959 --> 00:04:15,560
+Un patrón mediador en JavaScript definir
+
+121
+00:04:15,560 --> 00:04:17,239
+de la siguiente manera. Primero,
+
+122
+00:04:17,239 --> 00:04:19,199
+definimos un ifi, que significa
+
+123
+00:04:19,199 --> 00:04:22,520
+inmediate invoked expression. A esta le
+
+124
+00:04:22,520 --> 00:04:24,440
+agregamos una variable, la que contendrá
+
+125
+00:04:24,440 --> 00:04:26,800
+los eventos que pueden despacharse o
+
+126
+00:04:26,800 --> 00:04:29,479
+escucharse. Seguido, creamos una función
+
+127
+00:04:29,479 --> 00:04:31,919
+llamada subscribe. Esta se encargará de
+
+128
+00:04:31,919 --> 00:04:34,120
+recibir el evento y también la función
+
+129
+00:04:34,120 --> 00:04:36,039
+que se ejecutará. Esta debe quedar
+
+130
+00:04:36,039 --> 00:04:37,960
+registrada en nuestra variable de
+
+131
+00:04:37,960 --> 00:04:39,919
+eventos. Después creamos una función
+
+132
+00:04:39,919 --> 00:04:42,199
+llamada dispatch. Esta recibirá el
+
+133
+00:04:42,199 --> 00:04:44,520
+evento que se está despachando y también
+
+134
+00:04:44,520 --> 00:04:46,440
+la data que se le pasará como argumento
+
+135
+00:04:46,440 --> 00:04:48,479
+a la función que suscribiremos. Esta
+
+136
+00:04:48,479 --> 00:04:50,840
+función recorrerá todos los eventos que
+
+137
+00:04:50,840 --> 00:04:53,199
+se encuentran registrados y de encontrar
+
+138
+00:04:53,199 --> 00:04:55,280
+uno o más de uno, ejecutará las
+
+139
+00:04:55,280 --> 00:04:57,720
+funciones y pasará los datos a cada una
+
+140
+00:04:57,720 --> 00:04:59,919
+de estas. Luego retornamos estas
+
+141
+00:04:59,919 --> 00:05:02,360
+funciones y con eso ya construimos
+
+142
+00:05:02,360 --> 00:05:04,479
+nuestro mediador. La diferencia entre un
+
+143
+00:05:04,479 --> 00:05:06,479
+mediador y un observador es que el
+
+144
+00:05:06,479 --> 00:05:08,880
+mediador necesita un objeto aparte
+
+145
+00:05:08,880 --> 00:05:11,120
+encargado de manejar las comunicaciones
+
+146
+00:05:11,120 --> 00:05:13,560
+entre todos los objetos, mientras que el
+
+147
+00:05:13,560 --> 00:05:16,199
+observador modifica el objeto que tiene
+
+148
+00:05:16,199 --> 00:05:18,560
+que escuchar. El patrón observador no
+
+149
+00:05:18,560 --> 00:05:21,479
+tiene este intermediario. Redux
+
+150
+00:05:21,479 --> 00:05:23,319
+implementa el patrón mediador. En
+
+151
+00:05:23,319 --> 00:05:25,080
+ingeniería de software, el patrón
+
+152
+00:05:25,080 --> 00:05:27,120
+adaptador permite que un objeto que no
+
+153
+00:05:27,120 --> 00:05:28,759
+está diseñado para funcionar con una
+
+154
+00:05:28,759 --> 00:05:31,759
+interfaz sea modificado para que este sí
+
+155
+00:05:31,759 --> 00:05:34,280
+pueda funcionar con esta. En Python
+
+156
+00:05:34,280 --> 00:05:36,160
+podemos definir un patrón adaptador
+
+157
+00:05:36,160 --> 00:05:39,000
+creando dos clases. Primero, creamos una
+
+158
+00:05:39,000 --> 00:05:41,440
+clase Android y una clase iPhone.
+
+159
+00:05:41,440 --> 00:05:44,319
+Android se recarga con USB y iPhone se
+
+160
+00:05:44,319 --> 00:05:46,400
+recarga con Lightning. Puedo crear una
+
+161
+00:05:46,400 --> 00:05:48,199
+clase cargador que reciba el teléfono
+
+162
+00:05:48,199 --> 00:05:50,199
+que tiene que cargar, pero este solo
+
+163
+00:05:50,199 --> 00:05:52,639
+funcionaría con USB. Por lo que para que
+
+164
+00:05:52,639 --> 00:05:54,840
+el iPhone se pueda cargar, puedo crear
+
+165
+00:05:54,840 --> 00:05:57,360
+una clase iPhone adapter que reciba el
+
+166
+00:05:57,360 --> 00:05:59,199
+iPhone y que cuando se llame a su método
+
+167
+00:05:59,199 --> 00:06:01,440
+para cargar el teléfono con USB, que
+
+168
+00:06:01,440 --> 00:06:04,039
+este lo cargue con Lightning. De esta
+
+169
+00:06:04,039 --> 00:06:06,479
+manera, este iPhone adaptado podría
+
+170
+00:06:06,479 --> 00:06:08,919
+utilizarse con el cargador de Android.
+
+171
+00:06:08,919 --> 00:06:11,400
+El patrón MBC o también conocido como
+
+172
+00:06:11,400 --> 00:06:13,360
+Model View Controller se utiliza
+
+173
+00:06:13,360 --> 00:06:15,240
+comúnmente para desarrollar interfaces
+
+174
+00:06:15,240 --> 00:06:18,120
+de usuario dividiendo la lógica en tres
+
+175
+00:06:18,120 --> 00:06:21,120
+elementos interconectados. El modelo, el
+
+176
+00:06:21,120 --> 00:06:22,520
+cual contiene la lógica de tu
+
+177
+00:06:22,520 --> 00:06:24,599
+aplicación, se encargará de llamar a los
+
+178
+00:06:24,599 --> 00:06:27,000
+distintos datos y contiene las reglas de
+
+179
+00:06:27,000 --> 00:06:29,479
+negocio. La vista es la representación
+
+180
+00:06:29,479 --> 00:06:31,880
+visual de los datos que se recolectan.
+
+181
+00:06:31,880 --> 00:06:33,880
+Esto es lo que verá el usuario y el
+
+182
+00:06:33,880 --> 00:06:36,120
+controlador. Se encarga de recibir los
+
+183
+00:06:36,120 --> 00:06:38,240
+datos, transformarlos en algo útil para
+
+184
+00:06:38,240 --> 00:06:41,000
+el modelo, recibe los datos del modelo y
+
+185
+00:06:41,000 --> 00:06:43,440
+luego construye la respuesta para el
+
+186
+00:06:43,440 --> 00:06:46,120
+usuario. Un ejemplo de MBC se puede ver
+
+187
+00:06:46,120 --> 00:06:48,840
+fácilmente en Node js con Express, donde
+
+188
+00:06:48,840 --> 00:06:51,120
+creamos un endpo encargado de recibir
+
+189
+00:06:51,120 --> 00:06:53,000
+las peticiones de nuestro usuario. Con
+
+190
+00:06:53,000 --> 00:06:55,120
+esa petición vamos a buscar los datos
+
+191
+00:06:55,120 --> 00:06:57,280
+que este necesita. Luego los devolvemos
+
+192
+00:06:57,280 --> 00:06:59,720
+al usuario estos datos y por supuesto
+
+193
+00:06:59,720 --> 00:07:02,120
+manejamos las excepciones en el caso que
+
+194
+00:07:02,120 --> 00:07:04,800
+estas existan. Si existe un HTML lo
+
+195
+00:07:04,800 --> 00:07:06,280
+renderizamos con los datos que
+
+196
+00:07:06,280 --> 00:07:08,120
+recolectamos, pero en este caso
+
+197
+00:07:08,120 --> 00:07:10,280
+devolvemos los datos como si fuese una
+
+198
+00:07:10,280 --> 00:07:12,400
+API Rest, por lo que nuestra vista entre
+
+199
+00:07:12,400 --> 00:07:14,840
+comillas en este caso es un Jason. El
+
+200
+00:07:14,840 --> 00:07:16,639
+patrón Flux fue desarrollado por
+
+201
+00:07:16,639 --> 00:07:19,000
+Facebook hace algunos años en respuesta
+
+202
+00:07:19,000 --> 00:07:22,199
+a los patrones ya existentes y este
+
+203
+00:07:22,199 --> 00:07:24,039
+complementa el funcionamiento de la
+
+204
+00:07:24,039 --> 00:07:25,759
+librería que ellos también crearon.
+
+205
+00:07:25,759 --> 00:07:28,039
+llamada React Flux. También es un
+
+206
+00:07:28,039 --> 00:07:29,960
+framework con el mismo nombre, pero lo
+
+207
+00:07:29,960 --> 00:07:31,960
+importante de este patrón, a diferencia
+
+208
+00:07:31,960 --> 00:07:34,680
+del MBC, es que este cumple con ser un
+
+209
+00:07:34,680 --> 00:07:37,199
+ciclo circular donde el usuario gatilla
+
+210
+00:07:37,199 --> 00:07:39,919
+un evento desde la vista. Este realiza
+
+211
+00:07:39,919 --> 00:07:42,440
+unas acciones que luego actualizan el
+
+212
+00:07:42,440 --> 00:07:44,879
+estado de nuestra aplicación y luego de
+
+213
+00:07:44,879 --> 00:07:47,400
+que el estado fue actualizado, nuestra
+
+214
+00:07:47,400 --> 00:07:49,759
+aplicación se renderiza nuevamente,
+
+215
+00:07:49,759 --> 00:07:52,159
+actualizando de esta manera la vista.
+
+216
+00:07:52,159 --> 00:07:53,759
+Ojalá que luego de haber visto este
+
+217
+00:07:53,759 --> 00:07:55,319
+video te puedas hacer una idea de los
+
+218
+00:07:55,319 --> 00:07:57,000
+patrones que existen, pero no pienses
+
+219
+00:07:57,000 --> 00:07:58,759
+que estos son los mejores o balas de
+
+220
+00:07:58,759 --> 00:08:00,520
+plata. Estos sencillamente son
+
+221
+00:08:00,520 --> 00:08:02,240
+herramientas que tú vas a poder agregar
+
+222
+00:08:02,240 --> 00:08:03,680
+a tu arsenal. Y si quieres saber más
+
+223
+00:08:03,680 --> 00:08:05,360
+acerca de más patrones de diseño que
+
+224
+00:08:05,360 --> 00:08:07,440
+existen, en la descripción de este video
+
+225
+00:08:07,440 --> 00:08:09,280
+tengo un curso sobre patrones de diseño.
+
+226
+00:08:09,280 --> 00:08:11,319
+Vemos algunos de estos y también muchos
+
+227
+00:08:11,319 --> 00:08:12,960
+otros patrones que puedes utilizar en el
+
+228
+00:08:12,960 --> 00:08:14,560
+día a día. Y por supuesto que cuando
+
+229
+00:08:14,560 --> 00:08:16,159
+estés estudiando puedes hacerlo
+
+230
+00:08:16,159 --> 00:08:18,159
+escuchando mi música, ya que esta ayuda
+
+231
+00:08:18,159 --> 00:08:20,000
+a mejorar la concentración y esto hará
+
+232
+00:08:20,000 --> 00:08:22,000
+que tus estudios y tus trabajos sean más
+
+233
+00:08:22,000 --> 00:08:23,599
+productivos. Y este fue el video de esta
+
+234
+00:08:23,599 --> 00:08:25,120
+semana. Si te gustó, recuerda golpear
+
+235
+00:08:25,120 --> 00:08:26,560
+mucho al maldito del botón de me gusta.
+
+236
+00:08:26,560 --> 00:08:28,680
+Recuerda, escribió código espaguetti. Si
+
+237
+00:08:28,680 --> 00:08:30,479
+te encantó, considera suscribirte a este
+
+238
+00:08:30,479 --> 00:08:32,159
+canal. Déjame un comentario acá abajo
+
+239
+00:08:32,159 --> 00:08:33,839
+sobre qué otro tipo de video te gustaría
+
+240
+00:08:33,839 --> 00:08:35,719
+que yo hiciera. Y si deseas profundizar
+
+241
+00:08:35,719 --> 00:08:37,080
+en alguna materia, por supuesto que acá
+
+242
+00:08:37,080 --> 00:08:39,080
+abajo también vas a encontrar links con
+
+243
+00:08:39,080 --> 00:08:40,919
+acceso a todos mis cursos. Hasta la
+
+244
+00:08:40,919 --> 00:08:44,260
+próxima y chao mundo.
+
+245
+00:08:44,260 --> 00:08:58,869
+[Música]

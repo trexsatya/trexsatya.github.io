@@ -1,0 +1,704 @@
+1
+00:00:04.383 --> 00:00:07.530
+Vi går vidare här.
+
+
+2
+00:00:07.580 --> 00:00:10.524
+Vi ska väl se lite grann på
+hur vi har tänkt oss -
+
+
+3
+00:00:10.582 --> 00:00:12.590
+att lägga upp
+det här vägledningsarbetet.
+
+
+4
+00:00:12.641 --> 00:00:15.946
+Det är väldigt mycket erfarenheter
+och mycket reflektioner -
+
+
+5
+00:00:15.997 --> 00:00:19.110
+från de här händelserna
+och vi ser att det finns önskemål -
+
+
+6
+00:00:19.160 --> 00:00:23.030
+hos väldigt många olika nivåer
+inom räddningstjänst -
+
+
+7
+00:00:23.080 --> 00:00:27.380
+och att få vägledning
+för deras roll.
+
+
+8
+00:00:28.160 --> 00:00:31.670
+Det här har väldigt mycket styrt oss
+i dispositionen av den här vägledningen -
+
+
+9
+00:00:31.720 --> 00:00:34.530
+och den har blivit väldigt omfångsrik
+av den orsaken -
+
+
+10
+00:00:34.580 --> 00:00:37.370
+att vi vill ha liksom en del
+som ska passa var och en -
+
+
+11
+00:00:37.420 --> 00:00:39.420
+med olika bakgrund
+och behov.
+
+
+12
+00:00:40.760 --> 00:00:45.250
+Vi har ju i upptakten
+av det här vägledningsarbetet, -
+
+
+13
+00:00:45.300 --> 00:00:47.300
+när vi liksom har tittat på...
+
+
+14
+00:00:47.440 --> 00:00:49.890
+Vi måste ju ha svar på frågor
+för vi ju inte hittat -
+
+
+15
+00:00:49.940 --> 00:00:52.710
+det här internationellt
+och vi har verkligen sökt -
+
+
+16
+00:00:52.761 --> 00:00:55.710
+och helst hade vi nog bara velat
+kunnat översätta till svenska någonting -
+
+
+17
+00:00:55.760 --> 00:00:57.858
+som någon annan hade gjort
+som hade varit bra,  -
+
+
+18
+00:00:57.909 --> 00:01:00.380
+men tyvärr så fanns inte det.
+
+
+19
+00:01:01.100 --> 00:01:03.470
+Så vi har tagit emot hjälp -
+
+
+20
+00:01:03.520 --> 00:01:07.450
+och vi utlyste en studie
+för att få beräkningsunderlag -
+
+
+21
+00:01:07.500 --> 00:01:10.330
+för alla de frågor
+som vi behöver svar på.
+
+
+22
+00:01:10.380 --> 00:01:13.530
+Alltså, vi kan ju ha en känsla för
+hur långa jetflammor blir, -
+
+
+23
+00:01:13.580 --> 00:01:16.110
+vi kan ha en känsla för
+hur långt splitter flyger -
+
+
+24
+00:01:16.160 --> 00:01:19.670
+och hur långt bort man får
+sin hörsel skadad och så vidare -
+
+
+25
+00:01:19.720 --> 00:01:23.620
+och hur farliga 
+gasmolnsexplosioner är i tunnlar, -
+
+
+26
+00:01:23.820 --> 00:01:28.630
+men vi kan ju inte fastställa det här
+bara på grund av magkänsla, -
+
+
+27
+00:01:28.680 --> 00:01:31.413
+för det här måste vi basera på någonting.
+
+
+28
+00:01:31.800 --> 00:01:34.637
+Annars är det inte trovärdigt för MSB 
+att ge ut en vägledning -
+
+
+29
+00:01:34.688 --> 00:01:36.850
+om vi inte har någonting
+att bygga på.
+
+
+30
+00:01:36.900 --> 00:01:39.160
+ Så det här har vi försökt
+att göra med -
+
+
+31
+00:01:39.211 --> 00:01:42.970
+de bästa beräkningsverktyg
+som faktiskt finns på marknaden.
+
+
+32
+00:01:43.020 --> 00:01:46.390
+Det här är ju gjort med verktyg
+som är designade för -
+
+
+33
+00:01:46.440 --> 00:01:49.107
+just den här typen
+av CFD-beräkningar då.
+
+
+34
+00:01:50.580 --> 00:01:52.830
+Så det underlaget
+har vi i ryggen sedan -
+
+
+35
+00:01:52.880 --> 00:01:54.970
+när vi går in och rekommenderar.
+
+
+36
+00:01:55.020 --> 00:01:57.690
+Sedan när det gäller LPG,
+alltså den här typen av fordon -
+
+
+37
+00:01:57.740 --> 00:01:59.910
+som drivs av propan-butanblandningar, -
+
+
+38
+00:01:59.960 --> 00:02:03.430
+då är det här redan gjort
+på den amerikanska marknaden, -
+
+
+39
+00:02:03.480 --> 00:02:05.914
+så då har vi inte lagt pengar på det,
+utan där har vi bara -
+
+
+40
+00:02:05.973 --> 00:02:10.104
+plockat de erfarenheterna för 
+de här få fordonen som det handlar om.
+
+
+41
+00:02:10.419 --> 00:02:12.730
+Där har vi plockat hem det
+den vägen.
+
+
+42
+00:02:12.780 --> 00:02:16.170
+Så det här är lite grann bakgrunden.
+Vi har massor av erfarenheter, -
+
+
+43
+00:02:16.220 --> 00:02:21.070
+vi har beräkningar, 
+både som vi själva har låtit göra -
+
+
+44
+00:02:21.120 --> 00:02:23.310
+och beräkningar
+som vi har kunna plocka hem -
+
+
+45
+00:02:23.360 --> 00:02:25.427
+från den vetenskapliga världen.
+
+
+46
+00:02:26.205 --> 00:02:28.225
+Vad gör man med det här sedan?
+
+
+47
+00:02:28.276 --> 00:02:31.520
+Ja, det här måste ju accepteras 
+av alla aktörer.
+
+
+48
+00:02:31.620 --> 00:02:34.230
+Vi har därför startat
+ett brett samarbete -
+
+
+49
+00:02:34.280 --> 00:02:36.547
+med att förankra denna vägledning.
+
+
+50
+00:02:36.800 --> 00:02:41.770
+Det här är ju naturligtvis ingenting
+som man skakar ur manschettarmen -
+
+
+51
+00:02:41.820 --> 00:02:44.850
+utan att vi har plockat 
+med oss akademien.
+
+
+52
+00:02:44.900 --> 00:02:48.310
+Vi har Lunds tekniska högskola
+och Umeå universitet -
+
+
+53
+00:02:48.360 --> 00:02:51.360
+som har hjälpt oss mycket
+inom trafikolycksområdet förut.
+
+
+54
+00:02:51.800 --> 00:02:55.670
+Vi har ju folk med provningserfarenhet
+från RISE.
+
+
+55
+00:02:55.720 --> 00:03:01.379
+Vi har gjort försök
+och vi har inhämtat material från dem -
+
+
+56
+00:03:01.430 --> 00:03:04.690
+och vi har haft med dem i gruppen.
+Vi har tagit med fordonsbranschen, -
+
+
+57
+00:03:04.740 --> 00:03:10.350
+alltså alltifrån bransch-
+organisationer till våra stora -
+
+
+58
+00:03:10.400 --> 00:03:15.090
+lastbilstillverkare i landet
+och även övriga fordonstillverkare -
+
+
+59
+00:03:15.140 --> 00:03:18.830
+de har ju varit med i någon mån,
+där vi har behövt svar på frågor.
+
+
+60
+00:03:18.880 --> 00:03:23.690
+Och vi har utgått väldigt mycket ifrån
+marknadens värsta tank, -
+
+
+61
+00:03:23.740 --> 00:03:29.790
+marknadens värsta storlek
+på gasläckage och så vidare -
+
+
+62
+00:03:29.840 --> 00:03:33.830
+från tryckutjämningsanordningar
+och annat för att vi ska vara -
+
+
+63
+00:03:33.880 --> 00:03:36.170
+på den säkra sidan
+i våra rekommendationer.
+
+
+64
+00:03:36.220 --> 00:03:38.890
+Sedan kan det vara så att ibland
+så är det mindre tankstorlekar -
+
+
+65
+00:03:38.940 --> 00:03:43.530
+och kanske mindre risker,
+men det blir för plottrigt -
+
+
+66
+00:03:43.580 --> 00:03:46.050
+om vi ska ha en vägledning
+för varje fordon, -
+
+
+67
+00:03:46.100 --> 00:03:49.172
+utan vi måste kunna gruppera dem
+i olika grupper.
+
+
+68
+00:03:49.800 --> 00:03:54.700
+Räddningstjänst är ju viktigt.
+Petter, tack för din insats.
+
+
+69
+00:03:54.896 --> 00:03:57.869
+Det var inte bara jag.
+- Nej, det är ju inte bara du, -
+
+
+70
+00:03:57.944 --> 00:04:00.070
+utan att vi har ju försökt
+att få med folk -
+
+
+71
+00:04:00.120 --> 00:04:03.570
+både från deltidssidan
+och erfarenhet därifrån -
+
+
+72
+00:04:03.620 --> 00:04:06.870
+och till de större räddningstjänsterna
+som har väldigt, -
+
+
+73
+00:04:06.920 --> 00:04:10.330
+vad ska man säga,
+besvärliga samhällsstörningar -
+
+
+74
+00:04:10.380 --> 00:04:12.850
+när det får olyckor i sina innerstäder.
+
+
+75
+00:04:12.900 --> 00:04:15.210
+Därför har vi fått med oss
+Storstockholm naturligtvis, -
+
+
+76
+00:04:15.260 --> 00:04:18.971
+som har mycket erfarenheter
+och Uppsala brandförsvar också.
+
+
+77
+00:04:19.480 --> 00:04:22.168
+De har lite mer resurser
+och de kan hjälpa oss lite enklare -
+
+
+78
+00:04:22.219 --> 00:04:24.815
+än kanske en väldigt liten
+räddningstjänst, så det är inte -
+
+
+79
+00:04:24.866 --> 00:04:28.990
+att försöka att undanhålla
+de små räddningstjänsternas problem -
+
+
+80
+00:04:29.040 --> 00:04:31.040
+och utmaningar.
+
+
+81
+00:04:31.860 --> 00:04:36.430
+När det gäller energigaserna
+så har vi blandat in energigasbranschen -
+
+
+82
+00:04:36.480 --> 00:04:41.050
+via sina branschorganisationer främst
+och det är Vätgas Sverige -
+
+
+83
+00:04:41.100 --> 00:04:43.630
+och Energigas Sverige
+som vi fångar dem med, -
+
+
+84
+00:04:43.680 --> 00:04:47.010
+men vi har även tagit in Gasum
+när det gäller LNG, -
+
+
+85
+00:04:47.060 --> 00:04:50.500
+för de har mer teknisk kunskap
+om sina system då.
+
+
+86
+00:04:51.660 --> 00:04:54.710
+Andra myndigheter är också viktigt
+att vi har med oss.
+
+
+87
+00:04:54.760 --> 00:05:00.780
+FOI har vi gett uppdraget
+om omvärldsbevakning.
+
+
+88
+00:05:01.440 --> 00:05:03.570
+Vi har bollat lite frågor med dem.
+
+
+89
+00:05:03.620 --> 00:05:07.010
+Trafikverket är väldigt berörda
+när det här händer -
+
+
+90
+00:05:07.060 --> 00:05:09.830
+i vår infrastruktur
+i tunnlar och så vidare -
+
+
+91
+00:05:09.880 --> 00:05:13.848
+att vi har med oss dem,
+så att vi inte missar viktiga aspekter.
+
+
+92
+00:05:13.960 --> 00:05:18.330
+Transportstyrelsen som godkänner fordon
+och har den fordonskännedomen -
+
+
+93
+00:05:18.380 --> 00:05:20.730
+som vi behöver
+de är också viktiga -
+
+
+94
+00:05:20.780 --> 00:05:23.180
+att få statistik och så vidare ifrån.
+
+
+95
+00:05:23.400 --> 00:05:25.470
+Sedan är det här
+mycket arbetsmiljöfrågor, -
+
+
+96
+00:05:25.520 --> 00:05:29.010
+så om vi behöver hjälp
+av någon myndighet -
+
+
+97
+00:05:29.060 --> 00:05:33.604
+så är det ofta Arbetsmiljöverket
+för att kunna tolka deras bestämmelser.
+
+
+98
+00:05:33.800 --> 00:05:37.310
+För tanken är att när vi
+ger rekommendationer för zonindelning, -
+
+
+99
+00:05:37.360 --> 00:05:40.850
+att den skyddsutrusning
+som vi tänker oss att man använder -
+
+
+100
+00:05:40.900 --> 00:05:44.847
+i de här zonerna också är 
+den lämpligaste i deras ögon, -
+
+
+101
+00:05:44.898 --> 00:05:48.250
+så att vi har försökt
+att bygga ett lag -
+
+
+102
+00:05:48.300 --> 00:05:52.230
+för att lösa den här uppgiften,
+som är ganska kraftfullt -
+
+
+103
+00:05:52.280 --> 00:05:56.570
+och det är för att 
+det här ska leda till en samsyn, -
+
+
+104
+00:05:56.620 --> 00:06:01.190
+att det här är bästa möjliga teknik
+vid händelser -
+
+
+105
+00:06:01.240 --> 00:06:07.630
+och att det här är underbyggt.
+Det har varit för mycket gissningslek -
+
+
+106
+00:06:07.680 --> 00:06:11.456
+och bedömningar tidigare
+och därför har vi landat i det här.
+
+
+107
+00:06:11.740 --> 00:06:13.740
+Vad blev resultatet då, Erik?
+
+
+108
+00:06:15.200 --> 00:06:17.467
+Ja, det blev den här vägledningen.
+
+
+109
+00:06:17.720 --> 00:06:19.720
+Den är indelad i tre delar.
+
+
+110
+00:06:20.040 --> 00:06:23.120
+Del 1: Bakgrund och faktaunderlag.
+
+
+111
+00:06:23.480 --> 00:06:28.130
+Den delen möjliggör fördjupad kunskap
+och anpassningar lokalt -
+
+
+112
+00:06:28.180 --> 00:06:33.250
+och den innehåller också
+en hel del fotnoter och hänvisningar -
+
+
+113
+00:06:33.300 --> 00:06:36.360
+till ställen där man kan läsa mer.
+
+
+114
+00:06:37.080 --> 00:06:39.480
+Den taktiska vägledningen.
+
+
+115
+00:06:40.240 --> 00:06:43.670
+Den innehåller rekommendationer
+för hela räddningsledningssystemet -
+
+
+116
+00:06:43.720 --> 00:06:48.260
+och den har även perspektivet
+både före, under och efter olyckor.
+
+
+117
+00:06:48.640 --> 00:06:51.790
+Det är för att kunna få med
+både förberedelser -
+
+
+118
+00:06:51.840 --> 00:06:54.240
+och efterarbetet
+när olyckan är klar.
+
+
+119
+00:06:55.860 --> 00:07:01.630
+Del 3, det är ett operativt metodstöd,
+som inriktar sig mot insatsledning -
+
+
+120
+00:07:01.680 --> 00:07:05.670
+och uppgiftsledning
+och den kan man sprida mer brett -
+
+
+121
+00:07:05.720 --> 00:07:07.987
+till alla räddningstjänstpersonal.
+

@@ -1,0 +1,931 @@
+1
+00:00:00,000 --> 00:00:01,680
+siempre es importante tener un buen
+
+2
+00:00:01,680 --> 00:00:03,720
+control de las instancias que estemos
+
+3
+00:00:03,720 --> 00:00:05,370
+utilizando en nuestro proyecto pero qué
+
+4
+00:00:05,370 --> 00:00:07,799
+pasaría si podemos delimitar a una única
+
+5
+00:00:07,799 --> 00:00:10,170
+instancia en toda la aplicación a
+
+6
+00:00:10,170 --> 00:00:12,780
+ciertos objetos de nuestro proyecto a
+
+7
+00:00:12,780 --> 00:00:14,610
+esta práctica se le conoce como el uso
+
+8
+00:00:14,610 --> 00:00:17,369
+del patrón singleton acompáñame y vamos
+
+9
+00:00:17,369 --> 00:00:18,660
+al código
+
+10
+00:00:18,660 --> 00:00:24,149
+[Música]
+
+11
+00:00:25,600 --> 00:00:27,640
+y hoy toca ver el primer patrón de
+
+12
+00:00:27,640 --> 00:00:29,650
+diseño del curso conocido como sing
+
+13
+00:00:29,650 --> 00:00:31,870
+letón y me gustaría compartirles dos
+
+14
+00:00:31,870 --> 00:00:34,210
+páginas en el cual este curso también se
+
+15
+00:00:34,210 --> 00:00:36,280
+va a apoyar y que ustedes pueden sacarle
+
+16
+00:00:36,280 --> 00:00:38,530
+provecho para afianzar los conceptos que
+
+17
+00:00:38,530 --> 00:00:40,390
+voy a explicar y la primera página es
+
+18
+00:00:40,390 --> 00:00:42,580
+source making en el cual a la mano
+
+19
+00:00:42,580 --> 00:00:44,110
+izquierda van a encontrar un apartado
+
+20
+00:00:44,110 --> 00:00:46,690
+que dice designs pater y está separado
+
+21
+00:00:46,690 --> 00:00:48,850
+por lo que es la geo efe de hagan un
+
+22
+00:00:48,850 --> 00:00:50,860
+fork tienes patrones que nacionales
+
+23
+00:00:50,860 --> 00:00:53,320
+estructurales y de comportamiento 7
+
+24
+00:00:53,320 --> 00:00:55,930
+algunos ejemplos la definición y también
+
+25
+00:00:55,930 --> 00:00:58,360
+el código para que puedas checarlo en
+
+26
+00:00:58,360 --> 00:01:00,250
+otros lenguajes de programación por
+
+27
+00:01:00,250 --> 00:01:01,900
+ejemplo acá tenemos el código en java en
+
+28
+00:01:01,900 --> 00:01:04,780
+php en python y entre otros otra página
+
+29
+00:01:04,780 --> 00:01:07,270
+muy conocida es tutoriales point que
+
+30
+00:01:07,270 --> 00:01:09,130
+tiene también una sección para patrones
+
+31
+00:01:09,130 --> 00:01:11,890
+de diseño y explica muchísimos patrones
+
+32
+00:01:11,890 --> 00:01:14,770
+para que tú puedas revisar su diagrama
+
+33
+00:01:14,770 --> 00:01:17,650
+ml y una implementación básica entonces
+
+34
+00:01:17,650 --> 00:01:20,140
+estas dos páginas se las recomiendo para
+
+35
+00:01:20,140 --> 00:01:22,240
+que estén revisando lo a lo largo del
+
+36
+00:01:22,240 --> 00:01:24,400
+curso checarlo a la par con los ejemplos
+
+37
+00:01:24,400 --> 00:01:27,340
+que se van a crear aquí en el canal el
+
+38
+00:01:27,340 --> 00:01:28,810
+patrón siguiente cómo están viendo aquí
+
+39
+00:01:28,810 --> 00:01:31,149
+esta imagen connotación ml esta clase
+
+40
+00:01:31,149 --> 00:01:32,140
+que está arriba
+
+41
+00:01:32,140 --> 00:01:35,080
+es propio nada más para ejecutar la
+
+42
+00:01:35,080 --> 00:01:37,840
+aplicación pero no es importante en la
+
+43
+00:01:37,840 --> 00:01:40,390
+definición en sí del patrón esto es lo
+
+44
+00:01:40,390 --> 00:01:42,430
+importante el single obvio una variable
+
+45
+00:01:42,430 --> 00:01:44,979
+llamada instance del mismo tipo single o
+
+46
+00:01:44,979 --> 00:01:47,530
+bien y también tenemos un constructor un
+
+47
+00:01:47,530 --> 00:01:49,450
+método que instant que al final me va a
+
+48
+00:01:49,450 --> 00:01:51,970
+retornar un objeto de la misma clase
+
+49
+00:01:51,970 --> 00:01:53,830
+single offset por eso tienes aquí un
+
+50
+00:01:53,830 --> 00:01:56,590
+retorno entonces el objetivo del patrón
+
+51
+00:01:56,590 --> 00:01:58,540
+singleton como ustedes están apreciando
+
+52
+00:01:58,540 --> 00:02:03,460
+aquí es tener una única instancia de una
+
+53
+00:02:03,460 --> 00:02:06,100
+clase durante toda la aplicación es de
+
+54
+00:02:06,100 --> 00:02:07,539
+que todos los usuarios utilicen esa
+
+55
+00:02:07,539 --> 00:02:09,850
+misma instancia pero porque se pueden
+
+56
+00:02:09,850 --> 00:02:11,709
+preguntar les pongo el siguiente
+
+57
+00:02:11,709 --> 00:02:14,170
+escenario imaginen que ustedes tienen
+
+58
+00:02:14,170 --> 00:02:16,959
+una lista de países que mostrar está
+
+59
+00:02:16,959 --> 00:02:20,410
+bien esa lista de países es muy poco
+
+60
+00:02:20,410 --> 00:02:22,900
+probable casi nula la posibilidad que
+
+61
+00:02:22,900 --> 00:02:25,840
+puedan cambiar los nombres entonces no
+
+62
+00:02:25,840 --> 00:02:27,940
+tendría sentido devolverle a cada
+
+63
+00:02:27,940 --> 00:02:29,850
+usuario que se logre en nuestro sistema
+
+64
+00:02:29,850 --> 00:02:32,920
+un espacio de memoria es decir un objeto
+
+65
+00:02:32,920 --> 00:02:35,860
+el cual tenga ahí la lista de países sí
+
+66
+00:02:35,860 --> 00:02:38,079
+tenemos 100 mil usuarios van a ver 100
+
+67
+00:02:38,079 --> 00:02:38,980
+mil objetos
+
+68
+00:02:38,980 --> 00:02:42,159
+y utilizan la misma información entonces
+
+69
+00:02:42,159 --> 00:02:46,150
+no tendría sentido sería mejor tener un
+
+70
+00:02:46,150 --> 00:02:48,879
+único objeto en el cual se ha
+
+71
+00:02:48,879 --> 00:02:51,549
+distanciado una única vez y por cada
+
+72
+00:02:51,549 --> 00:02:53,700
+usuario que necesite esta información
+
+73
+00:02:53,700 --> 00:02:56,170
+simplemente pida el objeto que ya ha
+
+74
+00:02:56,170 --> 00:02:57,519
+sido instancia do quizás por otro
+
+75
+00:02:57,519 --> 00:03:00,280
+usuario obtenga la misma información
+
+76
+00:03:00,280 --> 00:03:02,379
+entonces 100.000 usuarios van a utilizar
+
+77
+00:03:02,379 --> 00:03:05,410
+un único objeto y esto en performance en
+
+78
+00:03:05,410 --> 00:03:07,900
+consumo de memoria va a ser muchísimo
+
+79
+00:03:07,900 --> 00:03:10,000
+mejor para este caso he traído un
+
+80
+00:03:10,000 --> 00:03:12,340
+ejemplo simulando el beneficio si es que
+
+81
+00:03:12,340 --> 00:03:14,890
+lo aplicamos para tema de jd ves en base
+
+82
+00:03:14,890 --> 00:03:17,319
+de datos tenemos una clase de conexión
+
+83
+00:03:17,319 --> 00:03:19,150
+como están viendo aquí un objeto llamado
+
+84
+00:03:19,150 --> 00:03:21,549
+instancia de la clase conexión que es la
+
+85
+00:03:21,549 --> 00:03:24,160
+misma clase que están viendo aquí lo
+
+86
+00:03:24,160 --> 00:03:26,519
+tenemos de ámbito estático y privado
+
+87
+00:03:26,519 --> 00:03:29,349
+porque señores por qué porque como vamos
+
+88
+00:03:29,349 --> 00:03:31,180
+a acceder a sus métodos estáticos sin
+
+89
+00:03:31,180 --> 00:03:33,190
+pasar por una instancia necesito
+
+90
+00:03:33,190 --> 00:03:34,930
+colocarle el keyword static si
+
+91
+00:03:34,930 --> 00:03:37,810
+desconoces el uso de éste que word
+
+92
+00:03:37,810 --> 00:03:39,579
+static te recomiendo checar los
+
+93
+00:03:39,579 --> 00:03:41,260
+tutoriales básicos del canal en el cual
+
+94
+00:03:41,260 --> 00:03:43,569
+se explica las diferencias entre métodos
+
+95
+00:03:43,569 --> 00:03:45,310
+de instancia y métodos de clase
+
+96
+00:03:45,310 --> 00:03:47,380
+y te va a quedar muy claro porque se
+
+97
+00:03:47,380 --> 00:03:49,270
+utiliza la palabra reservada estática
+
+98
+00:03:49,270 --> 00:03:51,910
+yo voy a crear un constructor de ámbito
+
+99
+00:03:51,910 --> 00:03:54,160
+privado y esta es la clave para evitar
+
+100
+00:03:54,160 --> 00:03:56,760
+crear instancias adicionales miren
+
+101
+00:03:56,760 --> 00:03:59,200
+cuando nosotros colocamos de ámbito
+
+102
+00:03:59,200 --> 00:04:01,390
+privado más adelante cuando queremos
+
+103
+00:04:01,390 --> 00:04:04,030
+crear un objeto solo no vamos a poder
+
+104
+00:04:04,030 --> 00:04:07,599
+disponer del operador new si no vamos a
+
+105
+00:04:07,599 --> 00:04:10,989
+poder hacerlo entonces como obtenemos la
+
+106
+00:04:10,989 --> 00:04:12,489
+instancia si es que el constructor está
+
+107
+00:04:12,489 --> 00:04:15,730
+privado muy fácil creó un método de tipo
+
+108
+00:04:15,730 --> 00:04:17,139
+estático también para que pueda ser
+
+109
+00:04:17,139 --> 00:04:20,739
+accedido llamado get instancia y aquí
+
+110
+00:04:20,739 --> 00:04:23,080
+compruebo si la instancia es igual anula
+
+111
+00:04:23,080 --> 00:04:26,200
+significa que no existe un objeto vamos
+
+112
+00:04:26,200 --> 00:04:29,229
+a distanciar lo que está bien y si por
+
+113
+00:04:29,229 --> 00:04:30,790
+alguna razón alguien quiere seguir
+
+114
+00:04:30,790 --> 00:04:33,490
+llamando este método pero un usuario
+
+115
+00:04:33,490 --> 00:04:35,650
+previo ya lo instancia ya no entraría
+
+116
+00:04:35,650 --> 00:04:38,380
+este paso simplemente le devolvería la
+
+117
+00:04:38,380 --> 00:04:40,930
+instancia que el usuario anterior ya
+
+118
+00:04:40,930 --> 00:04:42,760
+realizó estos dos métodos son
+
+119
+00:04:42,760 --> 00:04:44,889
+simplemente métodos de prueba para que
+
+120
+00:04:44,889 --> 00:04:47,889
+tú puedas ver que puedo acceder a los
+
+121
+00:04:47,889 --> 00:04:49,780
+métodos definidos para
+
+122
+00:04:49,780 --> 00:04:51,850
+a clase imaginemos que aquí estamos
+
+123
+00:04:51,850 --> 00:04:53,590
+conectándonos con base de datos y aquí
+
+124
+00:04:53,590 --> 00:04:55,750
+desconectando nos entonces yo tengo aquí
+
+125
+00:04:55,750 --> 00:04:58,180
+mi clase app gracias a que yo he puesto
+
+126
+00:04:58,180 --> 00:05:01,240
+el constructor de ámbito privado yo no
+
+127
+00:05:01,240 --> 00:05:03,520
+puedo utilizar el constructor así de
+
+128
+00:05:03,520 --> 00:05:04,389
+simple
+
+129
+00:05:04,389 --> 00:05:06,130
+porque no está visible tú puedes ver
+
+130
+00:05:06,130 --> 00:05:09,130
+aquí está de ámbito privado y esa es la
+
+131
+00:05:09,130 --> 00:05:11,770
+ventaja de hacerlo privado porque si lo
+
+132
+00:05:11,770 --> 00:05:13,320
+tuviéramos de la forma tradicional
+
+133
+00:05:13,320 --> 00:05:16,810
+público tú vas a ver que aquí sí vamos a
+
+134
+00:05:16,810 --> 00:05:18,910
+poder crear una instancia a uno por
+
+135
+00:05:18,910 --> 00:05:20,110
+ejemplo y que cada una instancia dos
+
+136
+00:05:20,110 --> 00:05:22,180
+entonces no tendría sentido porque
+
+137
+00:05:22,180 --> 00:05:24,550
+estaría rompiendo el patrón así que uno
+
+138
+00:05:24,550 --> 00:05:26,470
+de los pasos importantes es colocar el
+
+139
+00:05:26,470 --> 00:05:28,540
+constructor como ámbito privado si
+
+140
+00:05:28,540 --> 00:05:29,950
+queremos tener la instancia es decir
+
+141
+00:05:29,950 --> 00:05:31,810
+queremos tener un objeto de esta clase
+
+142
+00:05:31,810 --> 00:05:34,120
+de conexión vamos a apoyarnos en el
+
+143
+00:05:34,120 --> 00:05:35,919
+nombre de la clase y conexión en la
+
+144
+00:05:35,919 --> 00:05:39,760
+clase misma y a través del punto puedo
+
+145
+00:05:39,760 --> 00:05:42,940
+acceder al método de clase llamado bien
+
+146
+00:05:42,940 --> 00:05:44,830
+instancia porque este método tiene
+
+147
+00:05:44,830 --> 00:05:47,530
+static y me permite de forma directa
+
+148
+00:05:47,530 --> 00:05:51,430
+ingresar a él sí y esto como ya saben
+
+149
+00:05:51,430 --> 00:05:53,290
+que me devuelve una instancia no de
+
+150
+00:05:53,290 --> 00:05:54,729
+acuerdo si es que ha sido distanciado
+
+151
+00:05:54,729 --> 00:05:56,110
+previamente o no vamos
+
+152
+00:05:56,110 --> 00:05:58,720
+a tener aquí en la variable ce ya la
+
+153
+00:05:58,720 --> 00:06:00,670
+referencia en memoria del objeto
+
+154
+00:06:00,670 --> 00:06:02,590
+distanciado y por eso yo puedo hacer
+
+155
+00:06:02,590 --> 00:06:05,860
+punto conectar y punto desconectar vamos
+
+156
+00:06:05,860 --> 00:06:08,730
+a hacer clic derecho
+
+157
+00:06:09,780 --> 00:06:12,420
+ranas me conecte a la base de datos y me
+
+158
+00:06:12,420 --> 00:06:14,520
+desconecté de la base de datos ok
+
+159
+00:06:14,520 --> 00:06:17,610
+muy diferente hubiese sido si yo tenía
+
+160
+00:06:17,610 --> 00:06:20,520
+que colocar público y aquí hacer de esta
+
+161
+00:06:20,520 --> 00:06:23,190
+manera tendría aquí el mismo resultado
+
+162
+00:06:23,190 --> 00:06:25,020
+sí señores tendría el mismo resultado
+
+163
+00:06:25,020 --> 00:06:27,030
+pero otro usuario podría hacer lo
+
+164
+00:06:27,030 --> 00:06:29,160
+siguiente no conexión se uno igual ni
+
+165
+00:06:29,160 --> 00:06:31,860
+conexión y aquí hice uno junto conectar
+
+166
+00:06:31,860 --> 00:06:35,130
+hice 1 punto desconectar pero aquí
+
+167
+00:06:35,130 --> 00:06:38,930
+cuantas instancias tendríamos 2 1 2
+
+168
+00:06:38,930 --> 00:06:41,250
+entonces si esto lo llevamos a una
+
+169
+00:06:41,250 --> 00:06:42,690
+escala mayor cuando tenemos muchos
+
+170
+00:06:42,690 --> 00:06:44,790
+usuarios vamos a tener muchos objetos
+
+171
+00:06:44,790 --> 00:06:47,820
+para este mismo comportamiento así que
+
+172
+00:06:47,820 --> 00:06:51,150
+por eso es el uso del patrón singleton y
+
+173
+00:06:51,150 --> 00:06:53,070
+tener esta ventaja ahora lo que tú estás
+
+174
+00:06:53,070 --> 00:06:56,130
+viendo en la parte inferior se instance
+
+175
+00:06:56,130 --> 00:06:58,080
+of connection es simplemente un plus
+
+176
+00:06:58,080 --> 00:07:00,270
+para que tú veas que lo que se está
+
+177
+00:07:00,270 --> 00:07:03,150
+retornando de este método realmente es
+
+178
+00:07:03,150 --> 00:07:06,000
+un objeto de la clase conexión por eso
+
+179
+00:07:06,000 --> 00:07:08,820
+tengo aquí sé que es la variable es una
+
+180
+00:07:08,820 --> 00:07:11,070
+instancia de conexión que es la clase
+
+181
+00:07:11,070 --> 00:07:13,620
+esto va a retornar un valor bull ya no
+
+182
+00:07:13,620 --> 00:07:15,479
+tuvo falls y por eso tú estás viendo en
+
+183
+00:07:15,479 --> 00:07:16,230
+la parte inferior
+
+184
+00:07:16,230 --> 00:07:19,050
+true en la parte inferior tu puedes ver
+
+185
+00:07:19,050 --> 00:07:21,960
+una cita que dice otro ejemplo que es
+
+186
+00:07:21,960 --> 00:07:23,670
+prácticamente la misma implementación
+
+187
+00:07:23,670 --> 00:07:25,230
+del patrón pero con este tema de las
+
+188
+00:07:25,230 --> 00:07:27,690
+listas que les estoy diciendo eso está
+
+189
+00:07:27,690 --> 00:07:29,760
+en los tutoriales de java 7 s avanzado
+
+190
+00:07:29,760 --> 00:07:32,250
+si no me equivoco y también la gente que
+
+191
+00:07:32,250 --> 00:07:33,720
+viene del mundo de spring y algunos de
+
+192
+00:07:33,720 --> 00:07:35,040
+mis estudiantes que llevará un curso de
+
+193
+00:07:35,040 --> 00:07:36,690
+sprint conmigo saben que por defecto
+
+194
+00:07:36,690 --> 00:07:38,850
+sprint gestiona todos sus objetos
+
+195
+00:07:38,850 --> 00:07:42,030
+llamados vince de ámbito singleton
+
+196
+00:07:42,030 --> 00:07:43,410
+cuando uno hace una inyección de
+
+197
+00:07:43,410 --> 00:07:45,810
+dependencias trae la instancia
+
+198
+00:07:45,810 --> 00:07:48,210
+singleton de este objeto y como
+
+199
+00:07:48,210 --> 00:07:50,040
+usualmente se utilizan ahí para poder
+
+200
+00:07:50,040 --> 00:07:52,080
+acceder a repositorios de datos como
+
+201
+00:07:52,080 --> 00:07:53,190
+todos los usuarios quieran acceder a
+
+202
+00:07:53,190 --> 00:07:54,990
+mismo repositorio de datos traen la
+
+203
+00:07:54,990 --> 00:07:57,390
+misma instancia para poder hacer su
+
+204
+00:07:57,390 --> 00:07:58,890
+operación otra de los datos que yo
+
+205
+00:07:58,890 --> 00:08:01,950
+necesite como conclusión es el patrón de
+
+206
+00:08:01,950 --> 00:08:04,440
+diseño singleton permite tener una única
+
+207
+00:08:04,440 --> 00:08:07,320
+instancia de una clase para que sea
+
+208
+00:08:07,320 --> 00:08:09,240
+utilizado durante toda la aplicación el
+
+209
+00:08:09,240 --> 00:08:10,320
+beneficio es en el rendimiento
+
+210
+00:08:10,320 --> 00:08:12,810
+especialmente en memoria la desventaja
+
+211
+00:08:12,810 --> 00:08:14,700
+de este patrón es que no podemos abusar
+
+212
+00:08:14,700 --> 00:08:16,860
+de él no vamos a hacer singleton durante
+
+213
+00:08:16,860 --> 00:08:18,570
+toda la aplicación va a haber momentos
+
+214
+00:08:18,570 --> 00:08:21,550
+donde se requiera alguna instancia nueva
+
+215
+00:08:21,550 --> 00:08:24,370
+poder distinguir que la operación del
+
+216
+00:08:24,370 --> 00:08:27,130
+usuario bajo no sólo ve puede variar en
+
+217
+00:08:27,130 --> 00:08:29,710
+algunos valores ya hablaremos justamente
+
+218
+00:08:29,710 --> 00:08:31,480
+de esa implementación en un patrón de
+
+219
+00:08:31,480 --> 00:08:34,180
+diseño conocido como prototype y también
+
+220
+00:08:34,180 --> 00:08:36,430
+el mundo de spring no soporta no te
+
+221
+00:08:36,430 --> 00:08:37,840
+olvides que este código va a estar
+
+222
+00:08:37,840 --> 00:08:40,000
+disponible en el git hub del curso así
+
+223
+00:08:40,000 --> 00:08:41,620
+que nos vemos en el siguiente tutorial
+
+224
+00:08:41,620 --> 00:08:44,560
+que hablaremos sobre el patrón fábrica y
+
+225
+00:08:44,560 --> 00:08:46,780
+después fábrica abstracto si te gustó
+
+226
+00:08:46,780 --> 00:08:48,670
+este tutorial dale manito arriba
+
+227
+00:08:48,670 --> 00:08:50,740
+compártelo con tus amigos no te olvide
+
+228
+00:08:50,740 --> 00:08:51,850
+suscribirte en el botón de aquí abajo
+
+229
+00:08:51,850 --> 00:08:53,950
+seguirme las redes sociales que están en
+
+230
+00:08:53,950 --> 00:08:55,420
+la descripción del vídeo deja tu
+
+231
+00:08:55,420 --> 00:08:57,400
+comentario y los espero en un siguiente
+
+232
+00:08:57,400 --> 00:08:58,640
+tutorial
+
+233
+00:08:58,640 --> 00:09:08,049
+[Música]

@@ -1,0 +1,720 @@
+1
+00:00:13,312 --> 00:00:19,213
+Hello!
+ My name is Fatima Klanco Al Mulki.
+ I work at the Royal Library.
+
+2
+00:00:19,388 --> 00:00:24,576
+I will now show how to primarily catalog a book with non-Latin alphabet.
+
+3
+00:00:24,832 --> 00:00:31,949
+The described approach applies to version 1.19 of Libris cataloging and may change.
+
+4
+00:00:32,097 --> 00:00:36,916
+I have chosen a book that is in Serbian with Cyrillic alphabet.
+
+5
+00:00:37,064 --> 00:00:43,776
+I will now search for the Serbian translation of Christer Karphamam "judges in lawless countries".
+
+6
+00:00:44,492 --> 00:00:50,607
+We are looking for here in free text on the ISBN number.
+
+7
+00:00:52,687 --> 00:01:09,128
+And we get no hits.
+ I also search for a pregnant word in the title and writer, and I get no hits either.
+
+8
+00:01:09,612 --> 00:01:18,619
+Now that I have assured that it is not cataloged, I choose to press Create new.
+
+9
+00:01:18,619 --> 00:01:28,983
+Here I will get a menu of different templates and I choose printed monograph - RDA.
+
+10
+00:01:31,908 --> 00:01:38,728
+And before I start by filling in, I can briefly tell you about this menu on the right.
+
+11
+00:01:39,092 --> 00:01:50,756
+The tools include: Expand everyone, minimize, enrich from template and here you can choose different types of templates eg.
+ Book.
+
+12
+00:01:50,756 --> 00:01:56,224
+Plus signs in case one would miss any trait.
+
+13
+00:01:56,480 --> 00:02:02,624
+It is not relevant in this case because we are already based on a template.
+
+14
+00:02:02,880 --> 00:02:13,215
+Here is the Undo button and here is the Save button, or create the post button.
+
+15
+00:02:16,192 --> 00:02:24,600
+We can also see here that the entry is divided into an instance part and an Admind Datel.
+
+16
+00:02:25,664 --> 00:02:37,432
+In the instance of works, one is related to the work as agents, any preferred title, classifications, subject words.
+
+17
+00:02:37,572 --> 00:02:43,883
+The real instance begins at the identifier.
+
+18
+00:02:46,144 --> 00:02:57,994
+Here.
+ And here are the descriptive characteristics and information to them we retrieve directly from the manifestation.
+
+19
+00:02:58,592 --> 00:03:02,261
+But we start from the administration.
+
+20
+00:03:04,282 --> 00:03:10,871
+The first thing that meets us here is bibliography and most libraries do not have to care about this,
+
+21
+00:03:10,871 --> 00:03:19,314
+But within Libris there are some bibliographies that we register and such a bibliography is the national bibliography
+
+22
+00:03:19,314 --> 00:03:28,472
+Another is Suecana, it is Swedish material that has been translated into other languages and the Royal Library has the task of collecting and preserving.
+
+23
+00:03:29,152 --> 00:03:36,783
+Since this is a translation of a Swedish work and I catalog for KB, I want it to be included in the Suecana collection,
+
+24
+00:03:36,783 --> 00:03:42,129
+Thus, the collection of foreign material with Swedish connection that KB preserves.
+
+25
+00:03:42,976 --> 00:03:46,972
+And I am entering here
+
+26
+00:03:50,656 --> 00:03:55,516
+Suec, which stands for Suecana, instead of Sigel.
+
+27
+00:03:58,002 --> 00:04:01,408
+Then we have the description level.
+
+28
+00:04:01,664 --> 00:04:08,835
+Most libraries need to settle at library level, or choose the library level.
+
+29
+00:04:09,054 --> 00:04:15,144
+Post status changes automatically when we save.
+
+30
+00:04:15,616 --> 00:04:25,476
+Cataloging rules.
+ Here we see that it is an RDA post and that we use ISBD interview.
+
+31
+00:04:25,665 --> 00:04:31,647
+In most cases, the information should be divided into different and underlying properties.
+
+32
+00:04:31,841 --> 00:04:42,879
+In some exceptional cases, it is necessary to use ISBD interview within a property, to separate data, so we leave it.
+
+33
+00:04:43,135 --> 00:04:49,279
+Cataloging language is Swedish.
+ We don't change that either.
+
+34
+00:04:49,535 --> 00:04:56,946
+And the cataloging body is what applies to Libris library.
+
+35
+00:04:58,234 --> 00:05:06,947
+What we should add and that was not included in the template are two things.
+ One is Systemtekinsk Note and the other is modifications.
+
+36
+00:05:07,353 --> 00:05:18,728
+In System Technical Note, we specify which romanization home we will use when we transfer non-Latin signs to the Latin alphabet.
+
+37
+00:05:18,975 --> 00:05:24,281
+Within the Librian collective, we largely use the Library of Congress Romanization schedules
+
+38
+00:05:24,281 --> 00:05:28,854
+When transferring text with non-Latin writing to Latin writing.
+
+39
+00:05:29,152 --> 00:05:34,350
+Exceptions to this are made for church writing and Greek writing.
+
+40
+00:05:34,633 --> 00:05:46,401
+In the case of Cyrillic, KB/libris practice is that Slavic and most non -Slavic works with church writing should be translit according to ISO 9: 1995.
+
+41
+00:05:46,401 --> 00:05:57,356
+Instead, those libraries that need it may choose to transcribe according to KR76 (Kjellberg) and, if necessary, supplement with ALA-LC Romanization Table,
+
+42
+00:05:57,356 --> 00:06:04,914
+Non-Slavic Languages (In Cyrillic Script) for the extra characters that may occur in non-Slavic languages.
+
+43
+00:06:04,914 --> 00:06:15,273
+Exceptions make up Mongolic where the extra signs ө, ө are romanized as Swedish island, island and ү, ү as ü, ü.
+
+44
+00:06:15,575 --> 00:06:19,135
+And then we have exceptions for Greek which is:
+
+45
+00:06:19,135 --> 00:06:30,228
+Old Greek follows transliteration schedule established for scientific libraries in Swedish cataloging rules 1980 (SK).
+
+46
+00:06:30,228 --> 00:06:39,575
+Nygrecian texts follow transcription schedule stated for Swedish public libraries following the library service's practice for public libraries.
+
+47
+00:06:39,575 --> 00:06:46,624
+You can find more detailed information including links to the various schedules in the Metadatabyrån.
+
+48
+00:06:47,088 --> 00:06:53,502
+The important thing is that in this case you specify which table you use.
+
+49
+00:06:53,758 --> 00:07:04,688
+And since we have a church alphabet here, we should state it.
+
+50
+00:07:04,959 --> 00:07:11,871
+We will first produce systemic remark.
+
+51
+00:07:17,247 --> 00:07:18,015
+Like this.
+
+52
+00:07:18,783 --> 00:07:22,965
+And then we specify transliteration schedule.
+ So there.
+
+53
+00:07:23,135 --> 00:07:31,199
+And the other thing we should put before leaving the admin meta is modifications.
+
+54
+00:07:34,143 --> 00:07:35,127
+Like this
+
+55
+00:07:35,679 --> 00:07:45,758
+And here we choose the last in the list: Non-Latin characters are available in both original and translated form.
+
+56
+00:07:45,993 --> 00:07:53,002
+And now we are done with the admin meta and move on to the instance.
+
+57
+00:07:53,312 --> 00:07:58,133
+Now I start with the bibliographic tasks I find in the book.
+
+58
+00:07:58,376 --> 00:08:04,450
+The ISBN I write here.
+
+59
+00:08:04,855 --> 00:08:09,945
+Distinctive addition.
+ Most libraries do not use this field.
+
+60
+00:08:09,945 --> 00:08:13,311
+But here you can write about the book is stapled or hardcover.
+
+61
+00:08:13,823 --> 00:08:18,568
+You can also write other tasks that belong to this particular manifestation.
+
+62
+00:08:20,735 --> 00:08:24,366
+I choose to write here, stapled.
+
+63
+00:08:24,575 --> 00:08:27,391
+Late publishing method: Monographic resource.
+
+64
+00:08:27,647 --> 00:08:32,682
+When we catalog a regular book, it is always a monographic resource.
+
+65
+00:08:33,128 --> 00:08:43,837
+Media type.
+ Wear type.
+ It is right.
+ It should always be unedated and volume.
+
+66
+00:08:44,287 --> 00:08:46,335
+Then we arrive at the title.
+
+67
+00:08:47,871 --> 00:09:00,694
+And here we start from the title page and I write here the translated form of the title.
+
+68
+00:09:01,183 --> 00:09:03,487
+They look like this.
+
+69
+00:09:04,767 --> 00:09:24,396
+And I do not have other title information, but I will develop a variant title to put the title in original writing instead.
+
+70
+00:09:25,261 --> 00:09:26,757
+Like this.
+
+71
+00:09:33,183 --> 00:09:34,719
+So
+
+72
+00:09:35,743 --> 00:09:40,144
+And I have no filing values to take into account.
+
+73
+00:09:41,119 --> 00:09:51,618
+I also write the origin information in translated form as it says on the title page.
+
+74
+00:09:51,871 --> 00:09:58,015
+Next is a circulation task and there is rarely information about editions in new books
+
+75
+00:09:58,015 --> 00:10:14,729
+But if there is information then we will take it as it looks in the manifestation.
+ And here I actually have, and it looks like this.
+
+76
+00:10:21,759 --> 00:10:23,355
+So there.
+
+77
+00:10:24,639 --> 00:10:30,527
+Publication.
+ The first feature of primary publication is land.
+
+78
+00:10:30,783 --> 00:10:37,996
+And since we start from a template, Sweden is already managed
+
+79
+00:10:37,996 --> 00:10:43,624
+But we know that this manifestation comes from Serbia.
+
+80
+00:10:44,095 --> 00:10:46,911
+So I change it.
+
+81
+00:10:47,679 --> 00:10:58,106
+We write the place as it says.
+
+82
+00:10:58,687 --> 00:11:08,621
+Thus, the place of publishing.
+ Sometimes it says in the publications only publishers and not the place of publication.
+
+83
+00:11:08,621 --> 00:11:15,765
+If it had not been a place of publication we would have to have it anyway, but then we would cling to it.
+
+84
+00:11:15,940 --> 00:11:21,462
+The following trait is an agent.
+ Here the publisher itself should stand.
+
+85
+00:11:21,462 --> 00:11:32,648
+If the name of the publisher appears in the source in more than one language or in more than one writing, indicate the name that is in the main title's language.
+
+86
+00:11:32,648 --> 00:11:39,697
+If this criterion cannot be applied, specify the task that comes first in the source.
+
+87
+00:11:39,697 --> 00:11:48,288
+We follow the title page and write: Medija cents ...
+
+88
+00:11:49,119 --> 00:12:00,481
+As it stands.
+ If the task is not on the title page, then we take the charge from the place where the publisher is most highlighted, where it is most evident.
+
+89
+00:12:00,919 --> 00:12:03,455
+Then it's years and date.
+
+90
+00:12:03,711 --> 00:12:09,017
+Publishing time is a nuclear element for published manifestations
+
+91
+00:12:09,017 --> 00:12:13,470
+Year may only contain four alphanumeric characters.
+
+92
+00:12:13,618 --> 00:12:22,655
+It is not uncommon for the actual publication year to be in the book.
+ The publication year can be based on the print year or the Cophyright year.
+
+93
+00:12:22,911 --> 00:12:27,007
+We have a print year and copyright year which is 2019.
+
+94
+00:12:33,407 --> 00:12:43,715
+Date is used if we do not have a secure publication year in the book and then need to specify characters other than those that are allowed in the capacity year.
+
+95
+00:12:43,932 --> 00:12:53,712
+In this case, we base the release on the print year and therefore need to enter 2019 within staples.
+
+96
+00:12:57,215 --> 00:12:58,239
+So
+
+97
+00:12:59,586 --> 00:13:11,030
+Then we have manufacturing.
+ Since we have based the publication on the print year, we need to specify that year without staples in manufacturing.
+
+98
+00:13:11,151 --> 00:13:16,159
+We don't really need to fill in the place and agent, but we do it now.
+
+99
+00:13:16,159 --> 00:13:21,197
+So, here it should say ... so.
+
+100
+00:13:32,031 --> 00:13:40,852
+But as I said, most libraries do not have to care about the manufacturing tasks.
+
+101
+00:13:42,271 --> 00:13:44,831
+Range
+
+102
+00:13:46,623 --> 00:13:51,874
+Then we enter the last paginated page.
+
+103
+00:13:53,791 --> 00:14:09,392
+Dimensions do not have to care either.
+ But if you were to do so, you round up.
+ If a book eg.
+ Is 21.2 cm then you round to 22.
+
+104
+00:14:11,394 --> 00:14:15,295
+It is not mandatory but you can fill in if you want
+
+105
+00:14:15,807 --> 00:14:21,951
+Other physical details.
+ Here you usually fill in illustrations, maps.
+
+106
+00:14:22,463 --> 00:14:29,477
+In this manifestation we actually have illustrations so I fill in here.
+
+107
+00:14:40,127 --> 00:14:43,455
+This manifestation is not included in a series.
+
+108
+00:14:44,991 --> 00:14:51,135
+To see how to enter series membership look at the instructions in the help texts.
+
+109
+00:14:51,391 --> 00:15:04,295
+Remark.
+ Here you can put in something that you think may be of interest to the end user and applies to this particular manifestation.
+
+110
+00:15:04,447 --> 00:15:09,565
+Now I'm going back to the instance of works.
+
+111
+00:15:13,919 --> 00:15:25,226
+Eventually, the works will be broken out and you will link to them from the instances but so far they remain as a local entity in the instance
+
+112
+00:15:25,378 --> 00:15:31,062
+And the work information is repeated in each entry in the same way as in Marc posts.
+
+113
+00:15:33,119 --> 00:15:42,000
+The title in instance of works should be the preferred title for the work and since this is a translation it should be the original title
+
+114
+00:15:42,115 --> 00:15:45,663
+And we should therefore check how it says in NB's post.
+
+115
+00:15:59,231 --> 00:16:10,691
+Then I put in here as it looks in the Swedish post.
+
+116
+00:16:11,775 --> 00:16:17,789
+So.
+ Now we have checked that it looks right.
+
+117
+00:16:17,919 --> 00:16:24,063
+And we have no filing values to take into account.
+
+118
+00:16:24,319 --> 00:16:33,738
+Here I have participation and function and here I enter the author's name.
+
+119
+00:16:42,239 --> 00:16:48,383
+We check that the author has an authorized name form and we link to it.
+
+120
+00:16:48,639 --> 00:17:00,000
+If we are unsure of the person, it is possible to click on the name and the entity will open in another window.
+
+121
+00:17:00,000 --> 00:17:10,395
+Then we have the opportunity to check that it is really the right person.
+ But here we already see a judge and we are sure it is right.
+
+122
+00:17:10,552 --> 00:17:19,634
+So I link.
+ And the function is already filled.
+ It's a writer.
+
+123
+00:17:19,878 --> 00:17:29,087
+Participation.
+ Here it can be a translator, illustrator etc.
+
+124
+00:17:29,087 --> 00:17:35,231
+Right in this manifestation I actually have no information about who the translator is.
+
+125
+00:17:35,487 --> 00:17:38,726
+So I skip it.
+
+126
+00:17:41,631 --> 00:17:51,168
+Now we come to language and since we are based on a template, the language is already Swedish here and we should change that.
+
+127
+00:17:51,168 --> 00:17:56,381
+The language is Serbian.
+
+128
+00:17:59,382 --> 00:18:01,087
+Genre/form.
+
+129
+00:18:01,343 --> 00:18:08,271
+Under "genre/form", different types of codes are collected such as the literary genre, and genre/form terms.
+
+130
+00:18:08,446 --> 00:18:17,835
+This is a translation of a Swedish book.
+ There is an original to be based on which is cataloged by the national bibliography.
+
+131
+00:18:18,000 --> 00:18:23,794
+I can therefore look for it and link to the same genre/form term and subject words.
+
+132
+00:18:24,158 --> 00:18:32,575
+It is not possible to copy linked entities so I can look for them and link to them.
+ First genre/form the terms.
+
+133
+00:18:35,391 --> 00:18:36,927
+Like this.
+
+134
+00:18:44,183 --> 00:18:46,655
+Like this.
+ First.
+
+135
+00:19:08,649 --> 00:19:16,713
+And then I have ... Now we have linked the genre/form the terms.
+
+136
+00:19:19,935 --> 00:19:27,891
+For more information on how to add genre/form, subject word and classification, look at the instructional films: add genre/form,
+
+137
+00:19:27,891 --> 00:19:32,555
+Link subject words and primary cataloging of original works.
+
+138
+00:19:34,271 --> 00:19:38,879
+Lets see.
+ Here we have two different parts.
+ We arrive at classification.
+
+139
+00:19:40,671 --> 00:19:45,279
+We have two different parts.
+ One is Dewey and the other is SAB.
+
+140
+00:19:47,327 --> 00:19:57,909
+SAB rating we do not do on KB so I will only do this dewey part,
+
+141
+00:19:58,339 --> 00:20:02,058
+And here I write lawyers - judges.
+
+142
+00:20:02,687 --> 00:20:09,834
+If I had chosen to leave this one, it would not disappear when saving.
+
+143
+00:20:09,834 --> 00:20:17,314
+Usually, if these fields are not filled, they will disappear when saving the mail.
+
+144
+00:20:17,314 --> 00:20:21,707
+But in this case, I actually choose to remove and just leave Dewey.
+
+145
+00:20:21,838 --> 00:20:29,193
+I am on topic and here I add according to ...
+
+146
+00:20:35,711 --> 00:20:38,015
+This is the right one.
+
+147
+00:20:40,575 --> 00:20:43,135
+And then I also choose
+
+148
+00:20:51,071 --> 00:20:52,095
+So
+
+149
+00:20:55,679 --> 00:20:59,376
+And finally I choose the person myself.
+
+150
+00:21:06,731 --> 00:21:08,048
+So there.
+
+151
+00:21:13,599 --> 00:21:16,672
+Now follows a note of language.
+
+152
+00:21:18,464 --> 00:21:25,002
+In this field we can add, for example, something that is important for the end user such as
+
+153
+00:21:25,376 --> 00:21:33,873
+That the Arabic that the text is vocalized, it is Serbian with Latin alphabet etc.
+
+154
+00:21:34,080 --> 00:21:38,688
+It is the catalog that assesses whether any remark is needed.
+
+155
+00:21:40,480 --> 00:21:43,552
+This is appropriate because there is a complaint about language.
+
+156
+00:21:44,929 --> 00:21:54,859
+Because this is Serbian and Serbian is usually written with church alphabet, and I have just one in my hand.
+
+157
+00:21:55,072 --> 00:21:59,424
+So I choose not to write any special note about it.
+
+158
+00:22:01,728 --> 00:22:10,911
+We should not forget that this is a translation and we develop that property via the plus sign here.
+
+159
+00:22:11,712 --> 00:22:16,320
+And chooses translation of.
+
+160
+00:22:17,344 --> 00:22:19,345
+Like this.
+
+161
+00:22:35,516 --> 00:22:41,011
+So.
+ And we choose the right language.
+ It is translated from Swedish.
+
+162
+00:22:41,267 --> 00:22:47,574
+For translations in several stages, use the property intermediate language to translations.
+
+163
+00:22:47,803 --> 00:22:56,894
+It is not uncommon for the work to be translated in two stages: to ex.
+ From the Swedish original to-English and then to Arabic for example.
+
+164
+00:22:57,042 --> 00:23:15,273
+Here we choose intermediate language by using the property ... like this ... and click on the plus here.
+ Then an entity is created.
+
+165
+00:23:15,456 --> 00:23:18,528
+And we choose works.
+
+166
+00:23:19,296 --> 00:23:23,648
+And then we put the intermediate language here.
+
+167
+00:23:24,180 --> 00:23:32,352
+We find now, English for example and with this we had said that
+
+168
+00:23:34,912 --> 00:23:45,600
+This is a translation from Swedish to Serbian, via English.
+
+169
+00:23:45,963 --> 00:23:52,870
+But I remove this now because it does not match my book.
+
+170
+00:23:53,088 --> 00:23:59,232
+So, now we are done with the cataloging.
+

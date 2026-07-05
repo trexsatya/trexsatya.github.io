@@ -1,0 +1,765 @@
+1
+00:00:10,587 --> 00:00:14,311
+Hej, jag heter Lisa Olsson Dahlquist
+
+2
+00:00:14,311 --> 00:00:17,154
+och arbetar som lärare och forskare
+
+3
+00:00:17,154 --> 00:00:22,902
+på avdelningen för AVM och digitala kulturer vid Lunds universitet
+
+4
+00:00:22,902 --> 00:00:26,160
+på institutionen för kulturvetenskaper. 
+
+5
+00:00:26,160 --> 00:00:36,000
+Den här inspelningen är en del av Forskartorgets digitala program på Bokmässan i år.
+
+6
+00:00:36,737 --> 00:00:42,192
+Det som jag ska presentera idag är ett forskningsprojekt
+ som jag har gjort
+
+7
+00:00:42,390 --> 00:00:45,169
+tillsammans med min kollega Ola Sundin
+
+8
+00:00:45,612 --> 00:00:49,600
+på uppdrag av Digitalt först med användaren i fokus
+
+9
+00:00:50,176 --> 00:00:56,232
+som sätter fokus på algoritmmedvetenhet i mötet mellan generationer.
+
+10
+00:00:59,904 --> 00:01:09,624
+Trots att algoritmer idag är en väldigt central del i vår allt mer uppkopplade vardag
+
+11
+00:01:09,888 --> 00:01:17,661
+så vet vi fortfarande relativt lite om människors erfarenheter, förhållningssätt och medvetna handlingar
+
+12
+00:01:17,661 --> 00:01:20,585
+i relation till algoritmer
+
+13
+00:01:20,585 --> 00:01:24,736
+och hur algoritmer påverkar våra digitala informationsflöden
+
+14
+00:01:25,760 --> 00:01:28,576
+Syftet med det här projektet är att utveckla
+
+15
+00:01:28,749 --> 00:01:33,188
+en fördjupad kunskap om vad algoritmmedvetenhet kan betyda
+
+16
+00:01:33,188 --> 00:01:34,976
+i mötet mellan barn och vuxna
+
+17
+00:01:35,488 --> 00:01:41,084
+för att bättre förstå människor digitala handlande och därigenom skapa förutsättningar för
+
+18
+00:01:41,084 --> 00:01:44,726
+bibliotekariers digitala kompetensutveckling
+
+19
+00:01:44,960 --> 00:01:46,708
+inom MIK-området
+
+20
+00:01:47,008 --> 00:01:50,033
+det vill säga medie- och informationskunnighetsområdet
+
+21
+00:01:52,896 --> 00:01:54,432
+Det här innebär att
+
+22
+00:01:54,688 --> 00:01:55,968
+det här är forskningsprojekt
+
+23
+00:01:56,224 --> 00:02:04,187
+som kan sättas in i ett större sammanhang av den forskning
+som har bedrivits av vår forskargrupp i Lund under många år
+
+24
+00:02:04,928 --> 00:02:07,744
+som har ett fokus på just käll- och sökkritik
+
+25
+00:02:07,744 --> 00:02:10,560
+och sökning i en digital vardag
+
+26
+00:02:10,816 --> 00:02:12,096
+algoritmer
+
+27
+00:02:12,352 --> 00:02:15,697
+och medie- och informationskunnighet i relation till
+
+28
+00:02:15,697 --> 00:02:17,216
+folkbibliotek på olika sätt
+
+29
+00:02:19,264 --> 00:02:24,763
+I slutet av den här presentationen kommer jag också ge er en lista
+
+30
+00:02:24,763 --> 00:02:32,086
+över publikationer om man är intresserad av att ta del 
+av annan forskning som vi också har utfört
+
+31
+00:02:33,344 --> 00:02:37,044
+Men just det här projektet tar sin utgångspunkt i
+
+32
+00:02:37,044 --> 00:02:41,280
+vad algoritmmedvetenhet kan betyda utifrån ett användarperspektiv
+
+33
+00:02:42,731 --> 00:02:50,519
+När vi pratar om det ser vi det som en viktig 
+del i medie- och informationskunnighet idag.
+
+34
+00:02:51,008 --> 00:02:53,824
+Eftersom vi har varit intresserade av att
+
+35
+00:02:54,592 --> 00:03:00,224
+undersöka hur barn och vuxna tillsammans 
+resonerar och reflekterar
+
+36
+00:03:00,480 --> 00:03:04,247
+om sin digitala vardag så har vi gjort familjeintervjuer.
+
+37
+00:03:04,832 --> 00:03:07,422
+Vi har gjort 14 familjeintervjuer
+
+38
+00:03:07,422 --> 00:03:11,232
+med sammantaget 40 deltagare i familjernas  hem.
+
+39
+00:03:12,209 --> 00:03:17,888
+Långa samtal som har handlat om deras digitala vardag
+
+40
+00:03:18,912 --> 00:03:24,800
+Vi har i samtalen fokuserat på frågor som hur deltagarna upplever
+
+41
+00:03:25,056 --> 00:03:28,640
+att algoritmer påverkar internetanvändningen
+
+42
+00:03:30,688 --> 00:03:32,224
+Vad betyder källkritik
+
+43
+00:03:32,480 --> 00:03:35,808
+för olika generationen, unga och äldre
+
+44
+00:03:36,576 --> 00:03:42,464
+Hur man uppfattar sina informationsflöden i sociala medier
+
+45
+00:03:43,520 --> 00:03:50,400
+och hur man ser på biblioteket i relation till medie- och informationskunnighet
+
+46
+00:03:51,691 --> 00:03:56,378
+Bland annat dessa frågor har vi utgått från i samtalen.
+
+47
+00:03:57,312 --> 00:04:03,456
+En kortare sammanfattning av resultaten från studien
+
+48
+00:04:03,456 --> 00:04:12,000
+resultaten presenteras i relation till de teman som framkommer i vår rapport
+
+49
+00:04:17,221 --> 00:04:23,679
+Det är tydligt i studien att internetanvändningen 
+präglar såväl barnen som de vuxnas
+
+50
+00:04:23,935 --> 00:04:25,727
+vardag på en mängd olika sätt
+
+51
+00:04:25,983 --> 00:04:27,519
+från morgon till kväll
+
+52
+00:04:28,031 --> 00:04:31,615
+Datorer och mobiltelefoner används för arbete
+
+53
+00:04:31,871 --> 00:04:36,479
+skola, avkoppling, nyheter vid olika tillfällen under dagen
+
+54
+00:04:37,452 --> 00:04:44,415
+När det gäller tiden som Internetanvändningen 
+tar i anspråk är detta någonting som de vuxna 
+
+55
+00:04:44,671 --> 00:04:46,975
+i studien reflekterande över i
+
+56
+00:04:47,231 --> 00:04:49,023
+betydligt högre utsträckning 
+
+57
+00:04:49,279 --> 00:04:51,071
+än vad de yngre deltagarna gör.
+
+58
+00:04:52,351 --> 00:04:54,842
+För flera av de vuxna är det här
+
+59
+00:04:54,842 --> 00:05:00,287
+någonting som de menar tar för mycket tid
+
+60
+00:05:00,799 --> 00:05:06,310
+De vill gärna minska sitt internetanvändande och då i synnerhet
+
+61
+00:05:06,310 --> 00:05:09,759
+när det gäller sociala medietjänster som Facebook.
+
+62
+00:05:11,295 --> 00:05:17,147
+Man beskriver också hur till exempel nyhetsläsningen 
+på internet tar mer tid i anspråk
+
+63
+00:05:17,147 --> 00:05:19,743
+än man hade tänkt från början eftersom man blir
+
+64
+00:05:19,999 --> 00:05:23,327
+rekommenderad till nya artiklar
+
+65
+00:05:23,839 --> 00:05:25,572
+hela tiden 
+
+66
+00:05:25,572 --> 00:05:30,495
+och det kan vara svårt att sluta
+
+67
+00:05:30,495 --> 00:05:37,274
+Här framträder som att algoritmerna och de 
+olika rekommendationssystem kan bidra till
+
+68
+00:05:37,274 --> 00:05:39,967
+att skapa en känsla av ofrihet.
+
+69
+00:05:40,223 --> 00:05:42,783
+De håller kvar användarna
+
+70
+00:05:43,039 --> 00:05:44,575
+i de olika tjänsterna.
+
+71
+00:05:47,903 --> 00:05:52,026
+När det gäller algoritmer så är det många av deltagarna som 
+
+72
+00:05:52,026 --> 00:05:55,327
+upplever att de har knapp kännedom om vad algoritmer är
+
+73
+00:05:55,839 --> 00:06:01,215
+Men i samtalen visade det sig ändå att man har 
+kunskap om vad algoritmer gör
+
+74
+00:06:01,727 --> 00:06:04,031
+deras konsekvenser
+
+75
+00:06:05,055 --> 00:06:07,359
+Det handlar om förståelse för hur
+
+76
+00:06:07,615 --> 00:06:09,407
+ens eget internetbeteende
+
+77
+00:06:09,919 --> 00:06:13,759
+påverkar vilken information och vilka annonser
+
+78
+00:06:14,015 --> 00:06:15,551
+som blir synliga i ens flöden
+
+79
+00:06:16,480 --> 00:06:21,602
+Här framträder också en mer kritisk och ifrågasättande syn på
+
+80
+00:06:21,602 --> 00:06:24,255
+internets kommersiella affärsmodell
+
+81
+00:06:24,511 --> 00:06:27,520
+bland de vuxna än bland barnen.
+
+82
+00:06:29,375 --> 00:06:31,823
+Denna mer kritiska syn bland de
+
+83
+00:06:31,823 --> 00:06:36,543
+vuxna avspeglar sig också i samtalen när det gäller frågor om
+
+84
+00:06:37,055 --> 00:06:39,615
+integritet och övervakning på nätet.
+
+85
+00:06:40,383 --> 00:06:44,680
+De vuxna i studien tycks mer motvilligt acceptera
+
+86
+00:06:45,247 --> 00:06:47,039
+en förlorad integritet
+
+87
+00:06:47,295 --> 00:06:53,439
+medan flera av de yngre är mer välvilligt inställda
+till exempelvis riktad reklam
+
+88
+00:06:55,743 --> 00:06:56,767
+Det framkommer
+
+89
+00:06:57,791 --> 00:07:03,935
+ändå att det finns mycket osäkerhet kring hur dataspår lagras
+
+90
+00:07:04,191 --> 00:07:05,727
+och hanteras
+
+91
+00:07:05,983 --> 00:07:09,055
+och att tjänsternas och den tekniska infrastrukturen
+
+92
+00:07:09,311 --> 00:07:11,103
+bristande transparens
+
+93
+00:07:11,359 --> 00:07:14,431
+leder till mycket spekulationer och gissningar
+
+94
+00:07:15,711 --> 00:07:21,855
+Och när det gäller just infrastrukturen, 
+frågor om hur internet styrs och kontrolleras
+
+95
+00:07:22,111 --> 00:07:25,439
+varför viss information blir synlig och inte annan
+
+96
+00:07:26,719 --> 00:07:32,863
+Så framkommer det att det inte något som man har 
+diskuterat i särskilt hög utsträckning i familjen.
+
+97
+00:07:33,887 --> 00:07:38,343
+Det blir också tydligt att det kan vara väldigt svårt att sätta ord på
+
+98
+00:07:38,343 --> 00:07:44,639
+och föreställa sig internets osynliga informationsinfrastruktur och uppbyggnad.
+
+99
+00:07:46,175 --> 00:07:52,319
+Hos många deltagare i studien så väcks ett intresse för frågorna
+
+100
+00:07:52,575 --> 00:07:55,135
+under samtalens gång
+
+101
+00:07:55,391 --> 00:07:59,009
+man efterfrågar mer och lättillgänglig kunskap om ämnet.
+
+102
+00:08:02,047 --> 00:08:04,863
+I samtalen med familjerna så blir det också tydligt
+
+103
+00:08:05,375 --> 00:08:06,911
+att det finns stora skillnader
+
+104
+00:08:07,423 --> 00:08:13,567
+mellan och inom familjerna i hur man förhåller sig till och reflekterar över
+
+105
+00:08:13,823 --> 00:08:16,639
+informationen man får till sig i olika flöden på nätet.
+
+106
+00:08:16,895 --> 00:08:18,400
+Det vi kallar för sökkritik.
+
+107
+00:08:19,455 --> 00:08:23,048
+Liksom hur källkritik kan förstås.
+
+108
+00:08:24,575 --> 00:08:26,111
+Det står klart att
+
+109
+00:08:26,367 --> 00:08:28,470
+källkritik i betydelsen 
+
+110
+00:08:28,470 --> 00:08:36,760
+vad man kan och inte kan lita på är något som 
+diskuteras i betydligt högre utsträckning
+
+111
+00:08:37,119 --> 00:08:38,399
+än sökkritik
+
+112
+00:08:39,167 --> 00:08:42,239
+det vill säga varför information presenteras för oss
+
+113
+00:08:43,263 --> 00:08:44,031
+på så sätt
+
+114
+00:08:44,543 --> 00:08:45,311
+som den gör.
+
+115
+00:08:49,246 --> 00:08:52,215
+När det gäller bibliotek
+
+116
+00:08:53,759 --> 00:08:55,551
+för samtliga deltagare
+
+117
+00:08:56,063 --> 00:08:57,599
+unga som vuxna
+
+118
+00:08:58,111 --> 00:08:59,647
+är bibliotek
+
+119
+00:09:00,927 --> 00:09:02,975
+i stor utsträckning förknippat med att
+
+120
+00:09:03,231 --> 00:09:04,767
+låna böcker
+
+121
+00:09:06,303 --> 00:09:10,797
+En utmaning ligger i folkbibliotekariers uppdrag
+
+122
+00:09:10,911 --> 00:09:13,717
+att utbilda i digitala kompetenser
+
+123
+00:09:13,717 --> 00:09:17,311
+gentemot användare som är omedvetna eller
+
+124
+00:09:19,103 --> 00:09:22,531
+om bibliotekets pedagogiska uppdrag
+
+125
+00:09:22,687 --> 00:09:24,991
+eller helt enkelt ointresserade.
+
+126
+00:09:27,039 --> 00:09:32,572
+De vuxna i studien som jag tidigare nämnde efterlyser mer
+
+127
+00:09:32,671 --> 00:09:34,975
+kunskap kring ämnet.
+
+128
+00:09:35,231 --> 00:09:36,767
+Och gärna i form av kortare
+
+129
+00:09:37,023 --> 00:09:38,815
+föreläsningsverksamhet.
+
+130
+00:09:39,583 --> 00:09:45,727
+Här menar vi att bibliotekariernas pedagogiska roll som föreläsare
+
+131
+00:09:45,983 --> 00:09:49,836
+skulle kunna synliggöras och utökas ytterligare
+
+132
+00:09:50,847 --> 00:09:53,523
+Biblioteket kan också bidra till att
+
+133
+00:09:53,523 --> 00:09:56,479
+utveckla människors föreställningsförmåga
+
+134
+00:09:56,735 --> 00:10:01,343
+i relation till den osynliga digitala informationsinfrastrukturen
+
+135
+00:10:01,855 --> 00:10:09,311
+som på så många sätt påverkar hur vi uppfattar 
+och förstår vår omvärld idag
+
+136
+00:10:13,119 --> 00:10:24,200
+Baserat på de här resultaten och slutsatserna 
+så ger vi följande rekommendationer
+
+137
+00:10:26,687 --> 00:10:29,503
+Att ge kontinuerligt utrymme åt
+
+138
+00:10:29,759 --> 00:10:35,135
+och skapa förutsättningar för omfattande
+kompetensutveckling så att bibliotek
+
+139
+00:10:35,391 --> 00:10:42,403
+och bibliotekarier med rätta kan hävda att de har 
+kunskaper om algoritmer, digital källkritik
+
+140
+00:10:42,815 --> 00:10:45,375
+och andra effekter av informationens
+
+141
+00:10:45,631 --> 00:10:48,703
+infrastruktur som är så central för människors liv
+
+142
+00:10:48,959 --> 00:10:49,983
+idag
+
+143
+00:10:51,263 --> 00:10:54,591
+Det handlar inte enbart om teknisk kunskap
+
+144
+00:10:55,615 --> 00:10:59,711
+utan en bredare förmåga och kritisk kunskap
+
+145
+00:10:59,967 --> 00:11:04,846
+som innefattar kulturella, sociala och politiska aspekter
+
+146
+00:11:06,111 --> 00:11:09,951
+Vi rekommenderar också att folkbiblioteken
+
+147
+00:11:10,719 --> 00:11:15,327
+utvecklas till noder för MIK-frågor i lokalsamhället
+
+148
+00:11:16,351 --> 00:11:19,935
+Här kan bibliotekarier arbeta mer med utåtriktad verksamhet
+
+149
+00:11:20,959 --> 00:11:24,720
+främst riktad mot andra arbetsplatser och yrkesgrupper
+
+150
+00:11:25,567 --> 00:11:32,579
+Genom att förmedla expertis till exempelvis polis, 
+skola, fritidsverksamhet, idrottsledare
+
+151
+00:11:32,579 --> 00:11:34,527
+vårdpersonal och socialtjänst
+
+152
+00:11:35,039 --> 00:11:38,623
+så kan folkbiblioteket indirekt nå människor
+
+153
+00:11:39,391 --> 00:11:41,439
+som de inte annars alltid når.
+
+154
+00:11:45,023 --> 00:11:48,351
+Men det är en roll som måste vara trovärdig och grundad i expertis
+
+155
+00:11:48,607 --> 00:11:52,959
+Det är en utmaning att förändra bilden av bibliotekens och bibliotekariers
+
+156
+00:11:53,215 --> 00:11:53,983
+samlade expertis.
+
+157
+00:11:56,543 --> 00:11:58,847
+Ett sätt att arbeta pedagogiskt
+
+158
+00:11:59,103 --> 00:12:01,151
+i direktkontakt med användare
+
+159
+00:12:01,407 --> 00:12:07,551
+kan vara att omsätta en kritisk pedagogik i praktiken och därigenom arbeta 
+
+160
+00:12:07,807 --> 00:12:09,343
+både läsfrämjande och med MIK
+
+161
+00:12:11,135 --> 00:12:17,279
+Här förespråkar vi reflekterande samtal exempelvis inom ramen för
+
+162
+00:12:17,535 --> 00:12:18,303
+cirkelverksamhet.
+
+163
+00:12:19,122 --> 00:12:22,911
+På så sätt kan fokus vara att medvetandegöra
+
+164
+00:12:23,935 --> 00:12:27,574
+och kritiskt reflektera tillsammans med varandra.
+
+165
+00:12:28,287 --> 00:12:32,138
+Kulturella uttrycksformer som skönlitteratur
+
+166
+00:12:32,138 --> 00:12:37,503
+facklitteratur eller film skulle kunna bidra till att synliggöra och verka som
+
+167
+00:12:37,503 --> 00:12:40,626
+underlag för samtal om den många gånger
+
+168
+00:12:40,831 --> 00:12:44,120
+osynliga informationsinfrastrukturen.
+
+169
+00:12:45,695 --> 00:12:48,255
+Avslutningsvis 
+
+170
+00:12:48,511 --> 00:12:51,839
+menar vi att för att kunna möjliggöra för bibliotekarien
+
+171
+00:12:52,095 --> 00:12:56,703
+att arbeta mer med utåtriktad MIK-verksamhet
+
+172
+00:12:56,959 --> 00:13:01,823
+men också med den här typen av reflekterande samtal i cirkelverksamhet
+
+173
+00:13:02,335 --> 00:13:09,680
+så behöver även pedagogisk förmåga ingår i den
+kontinuerliga kompetensutvecklingen.
+
+174
+00:13:10,527 --> 00:13:15,600
+Såväl de här rekommendationerna som rapporten
+
+175
+00:13:16,159 --> 00:13:21,920
+kommer alldeles snart att publiceras på Digitalt först webbplats.
+
+176
+00:13:23,583 --> 00:13:27,167
+Men för den som redan nu är intresserad av att
+
+177
+00:13:27,679 --> 00:13:31,720
+läsa och dessa och relaterade frågor
+
+178
+00:13:33,093 --> 00:13:41,118
+så har jag här en lista med relaterade publikationer som 
+handlar om sökning i en digital vardag
+
+179
+00:13:41,759 --> 00:13:45,087
+om sök- och källkritik i skolan,
+
+180
+00:13:45,343 --> 00:13:50,975
+om den osynliga informationsinfrastruktur och behov av att synliggöra den,
+
+181
+00:13:54,559 --> 00:13:55,839
+algoritmer,
+
+182
+00:13:56,095 --> 00:14:00,703
+och hur bibliotek kan arbeta med folkbildning i en digital samtid.
+
+183
+00:14:02,751 --> 00:14:05,567
+Med dessa rekommendationer
+
+184
+00:14:05,882 --> 00:14:10,780
+vill jag säga tack för att ni lyssnade
+
+185
+00:14:10,780 --> 00:14:15,362
+Gå gärna in och läs vår rapport på Digitalt först webbsida.
+
+186
+00:14:15,362 --> 00:14:17,362
+Tack!
+

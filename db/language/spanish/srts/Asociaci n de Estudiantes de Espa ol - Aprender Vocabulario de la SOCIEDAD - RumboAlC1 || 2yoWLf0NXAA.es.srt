@@ -1,0 +1,1247 @@
+1
+00:00:00,020 --> 00:00:07,560
+si has leído bien en esta lección vamos
+
+2
+00:00:07,560 --> 00:00:09,960
+a crear una asociación de estudiantes de
+
+3
+00:00:09,960 --> 00:00:12,059
+español Hola y bienvenido bienvenido una
+
+4
+00:00:12,059 --> 00:00:15,120
+vez más a una nueva lección de este
+
+5
+00:00:15,120 --> 00:00:18,779
+curso de rumbo al c1 en la lección de
+
+6
+00:00:18,779 --> 00:00:21,420
+hoy vamos a crear una asociación de
+
+7
+00:00:21,420 --> 00:00:24,900
+estudiantes de español y por qué pues no
+
+8
+00:00:24,900 --> 00:00:26,340
+sé por qué la verdad no sé por qué Si
+
+9
+00:00:26,340 --> 00:00:29,039
+quieres participar en todas estas
+
+10
+00:00:29,039 --> 00:00:30,480
+encuestas donde elegimos el tema de las
+
+11
+00:00:30,480 --> 00:00:33,120
+lecciones de los vídeos de aquí de
+
+12
+00:00:33,120 --> 00:00:35,760
+YouTube que están formando parte de este
+
+13
+00:00:35,760 --> 00:00:37,440
+curso de rumbo al c1 Pues suscríbete a
+
+14
+00:00:37,440 --> 00:00:39,300
+spanish with Vicente activa las
+
+15
+00:00:39,300 --> 00:00:41,820
+notificaciones y en la pestaña de
+
+16
+00:00:41,820 --> 00:00:44,100
+comunidad publicaré Todas las semanas
+
+17
+00:00:44,100 --> 00:00:47,700
+estas encuestas te recuerdo que el tema
+
+18
+00:00:47,700 --> 00:00:49,860
+de Este vídeo lo han elegido todos y
+
+19
+00:00:49,860 --> 00:00:51,719
+todos los estudiantes de este canal Así
+
+20
+00:00:51,719 --> 00:00:53,340
+que si quieres participar ya sabes lo
+
+21
+00:00:53,340 --> 00:00:55,739
+que tienes que hacer y tengo que ser
+
+22
+00:00:55,739 --> 00:00:58,199
+completamente sincero elegisteis el tema
+
+23
+00:00:58,199 --> 00:01:01,620
+de sociedad y yo la verdad es que no
+
+24
+00:01:01,620 --> 00:01:04,019
+tenía ni idea de cómo español del
+
+25
+00:01:04,019 --> 00:01:06,000
+vocabulario de la sociedad tenía una
+
+26
+00:01:06,000 --> 00:01:09,320
+idea que era bueno podría hablar un poco
+
+27
+00:01:09,320 --> 00:01:12,119
+del marxismo del marxismo hablar de
+
+28
+00:01:12,119 --> 00:01:14,580
+proletariado clase capitalista etcétera
+
+29
+00:01:14,580 --> 00:01:17,640
+etcétera Pero como decimos en español
+
+30
+00:01:17,640 --> 00:01:19,740
+aquí cada uno es de su padre y de su
+
+31
+00:01:19,740 --> 00:01:23,040
+madre y hay ideas muy diferentes así que
+
+32
+00:01:23,040 --> 00:01:25,080
+no quería crear una discusión política
+
+33
+00:01:25,080 --> 00:01:28,619
+lo que quiero es que vosotros aprendáis
+
+34
+00:01:28,619 --> 00:01:32,159
+español y después tenía otra idea que
+
+35
+00:01:32,159 --> 00:01:34,740
+era hablar de una fiesta cultural que se
+
+36
+00:01:34,740 --> 00:01:38,159
+celebra en teruel que se llama Las Bodas
+
+37
+00:01:38,159 --> 00:01:40,380
+de Isabel segura pero esto mejor lo voy
+
+38
+00:01:40,380 --> 00:01:43,079
+a dejar para el canal del podcast Así
+
+39
+00:01:43,079 --> 00:01:45,600
+que si quieres aprender Qué es este
+
+40
+00:01:45,600 --> 00:01:46,860
+evento tan tradicional y tan raro que
+
+41
+00:01:46,860 --> 00:01:48,960
+estás viendo ahora mismo en imágenes
+
+42
+00:01:48,960 --> 00:01:50,460
+suscríbete al Canal de podcast para
+
+43
+00:01:50,460 --> 00:01:53,159
+aprender español que te lo tienes por
+
+44
+00:01:53,159 --> 00:01:55,860
+aquí y Bueno pues ya somos más de 6.000
+
+45
+00:01:55,860 --> 00:01:57,780
+oyentes de este podcast así que busca
+
+46
+00:01:57,780 --> 00:02:00,840
+podcast para aprender español y
+
+47
+00:02:00,840 --> 00:02:03,119
+suscríbete así que se me una idea mejor
+
+48
+00:02:03,119 --> 00:02:05,579
+vamos a crear una asociación de
+
+49
+00:02:05,579 --> 00:02:07,140
+estudiantes con pues las normas para
+
+50
+00:02:07,140 --> 00:02:09,780
+esta asociación y derechos y
+
+51
+00:02:09,780 --> 00:02:12,360
+obligaciones de los socios y las socias
+
+52
+00:02:12,360 --> 00:02:14,340
+y al mismo tiempo Pues por supuesto pues
+
+53
+00:02:14,340 --> 00:02:16,020
+vamos a aprender español y antes de
+
+54
+00:02:16,020 --> 00:02:19,500
+empezar con esta lección Te voy a mandar
+
+55
+00:02:19,500 --> 00:02:21,720
+una tarea te voy a poner actividades
+
+56
+00:02:21,720 --> 00:02:24,360
+para que practiques desde el minuto
+
+57
+00:02:24,360 --> 00:02:27,120
+número 1 o 2 no sé qué minuto será
+
+58
+00:02:27,120 --> 00:02:29,160
+podemos crear una asociación pero ya
+
+59
+00:02:29,160 --> 00:02:31,560
+estamos en el curso de rumba c1 Así que
+
+60
+00:02:31,560 --> 00:02:34,500
+vamos a intentar llevar nuestro
+
+61
+00:02:34,500 --> 00:02:37,200
+vocabulario al siguiente nivel Por qué
+
+62
+00:02:37,200 --> 00:02:39,660
+otro verbo podríamos sustituir el verbo
+
+63
+00:02:39,660 --> 00:02:43,220
+crear de crear una asociación por el
+
+64
+00:02:43,220 --> 00:02:46,980
+verbo consolidar por el verbo
+
+65
+00:02:46,980 --> 00:02:50,099
+constituir por el verbo asociar o por el
+
+66
+00:02:50,099 --> 00:02:52,739
+verbo agrupar cuál de estas cuatro
+
+67
+00:02:52,739 --> 00:02:55,160
+opciones crees que es la adecuada para
+
+68
+00:02:55,160 --> 00:02:58,200
+sustituir el verbo crear Pues bien
+
+69
+00:02:58,200 --> 00:03:01,860
+quédate en esta lección y Presta
+
+70
+00:03:01,860 --> 00:03:04,680
+atención porque si prestas atención vas
+
+71
+00:03:04,680 --> 00:03:06,180
+a saber cuál es la respuesta correcta y
+
+72
+00:03:06,180 --> 00:03:07,920
+quédate También en esta lección porque
+
+73
+00:03:07,920 --> 00:03:09,959
+al final del vídeo vamos a hablar de
+
+74
+00:03:09,959 --> 00:03:12,420
+esta respuesta y vamos a ver que hemos
+
+75
+00:03:12,420 --> 00:03:14,040
+aprendido en esta lección y ya está que
+
+76
+00:03:14,040 --> 00:03:16,500
+me enrollo me enrollo me pongo a hablar
+
+77
+00:03:16,500 --> 00:03:19,739
+y no termino estáis preparados y
+
+78
+00:03:19,739 --> 00:03:19,739
+preparadas adelante
+
+79
+00:03:23,670 --> 00:03:26,720
+[Música]
+
+80
+00:03:26,940 --> 00:03:32,659
+bien pues vamos a empezar y vamos a ir
+
+81
+00:03:32,659 --> 00:03:35,519
+al grano que necesitamos para crear
+
+82
+00:03:35,519 --> 00:03:37,680
+nuestra asociación de estudiantes que
+
+83
+00:03:37,680 --> 00:03:41,580
+vamos a necesitar pues vamos a necesitar
+
+84
+00:03:41,580 --> 00:03:45,120
+unos estatutos unos estatutos unas
+
+85
+00:03:45,120 --> 00:03:47,400
+reglas vamos a necesitar un conjunto de
+
+86
+00:03:47,400 --> 00:03:49,620
+normas podemos llamarlo también una
+
+87
+00:03:49,620 --> 00:03:53,280
+normativa pero en este caso cuando se
+
+88
+00:03:53,280 --> 00:03:55,799
+crean comunidades asociaciones o incluso
+
+89
+00:03:55,799 --> 00:03:58,140
+partidos políticos también pues vamos a
+
+90
+00:03:58,140 --> 00:04:00,120
+tener que crear unos estatutos que es
+
+91
+00:04:00,120 --> 00:04:02,580
+donde se recogen las normas no voy a
+
+92
+00:04:02,580 --> 00:04:04,560
+entrar en detalles técnicos pero lo que
+
+93
+00:04:04,560 --> 00:04:06,780
+vamos a hacer es explicar cómo vamos a
+
+94
+00:04:06,780 --> 00:04:08,879
+constituir esta asociación Y también
+
+95
+00:04:08,879 --> 00:04:12,060
+vamos a ver algunos derechos y
+
+96
+00:04:12,060 --> 00:04:14,099
+obligaciones de los socios de esta
+
+97
+00:04:14,099 --> 00:04:16,919
+asociación bien pues vamos a empezar con
+
+98
+00:04:16,919 --> 00:04:19,919
+la primera Norma libre derecho de
+
+99
+00:04:19,919 --> 00:04:23,220
+admisión en esta asociación pueden
+
+100
+00:04:23,220 --> 00:04:26,340
+formar parte todas las personas con el
+
+101
+00:04:26,340 --> 00:04:28,199
+único objetivo de Pues bueno aprender
+
+102
+00:04:28,199 --> 00:04:30,120
+español se supone que si es una
+
+103
+00:04:30,120 --> 00:04:31,919
+asociación de estudiantes de español es
+
+104
+00:04:31,919 --> 00:04:33,840
+porque todas las personas que forman
+
+105
+00:04:33,840 --> 00:04:37,199
+parte de esta asociación todas las
+
+106
+00:04:37,199 --> 00:04:39,479
+personas que se asocian o que se unen
+
+107
+00:04:39,479 --> 00:04:41,639
+Mejor dicho para no sonar un poco
+
+108
+00:04:41,639 --> 00:04:43,979
+redundante asociarse a esta asociación
+
+109
+00:04:43,979 --> 00:04:45,960
+todas las personas que se unen a esta
+
+110
+00:04:45,960 --> 00:04:47,820
+asociación pues entendemos que son
+
+111
+00:04:47,820 --> 00:04:50,040
+personas que pues tienen un interés por
+
+112
+00:04:50,040 --> 00:04:51,840
+aprender español y libre derecho de
+
+113
+00:04:51,840 --> 00:04:54,600
+admisión porque como se dice en el
+
+114
+00:04:54,600 --> 00:04:57,419
+artículo 14 de la Constitución española
+
+115
+00:04:57,419 --> 00:05:00,620
+no se producirá ningún tipo de
+
+116
+00:05:00,620 --> 00:05:05,400
+discriminación por motivo de nacimiento
+
+117
+00:05:05,400 --> 00:05:08,160
+raza sexo religión u opinión O sea que
+
+118
+00:05:08,160 --> 00:05:09,780
+tenemos un libre derecho de admisión no
+
+119
+00:05:09,780 --> 00:05:11,220
+nos importa ninguna de estas
+
+120
+00:05:11,220 --> 00:05:13,020
+características lo único que nos
+
+121
+00:05:13,020 --> 00:05:15,540
+importará en esta asociación es que
+
+122
+00:05:15,540 --> 00:05:18,660
+quieras aprender español regla número 2
+
+123
+00:05:18,660 --> 00:05:20,639
+esta asociación no está basada en una
+
+124
+00:05:20,639 --> 00:05:23,940
+jerarquía O sea que no hay gente que
+
+125
+00:05:23,940 --> 00:05:27,300
+está arriba de la jerarquía o gente que
+
+126
+00:05:27,300 --> 00:05:30,419
+esté debajo de la jerarquía en palabras
+
+127
+00:05:30,419 --> 00:05:32,759
+nos da igual tu clase social nos da
+
+128
+00:05:32,759 --> 00:05:34,979
+igual si las personas pertenecen a una
+
+129
+00:05:34,979 --> 00:05:37,620
+clase social alta o una clase social
+
+130
+00:05:37,620 --> 00:05:39,600
+media o una clase social baja nos da
+
+131
+00:05:39,600 --> 00:05:41,820
+igual el único interés que tenemos en
+
+132
+00:05:41,820 --> 00:05:44,699
+esta asociación es que quieras aprender
+
+133
+00:05:44,699 --> 00:05:47,100
+español qué hay que hacer para unirse a
+
+134
+00:05:47,100 --> 00:05:51,660
+la asociación muy sencillo hay que
+
+135
+00:05:51,660 --> 00:05:54,539
+rellenar un formulario de admisión si
+
+136
+00:05:54,539 --> 00:05:57,720
+quieres asociarte vas a necesitar
+
+137
+00:05:57,720 --> 00:05:59,520
+rellenar este formulario de admisión
+
+138
+00:05:59,520 --> 00:06:01,500
+esto lo tienen que hacer todos los
+
+139
+00:06:01,500 --> 00:06:04,740
+socios y todas las socias todo el mundo
+
+140
+00:06:04,740 --> 00:06:07,259
+necesitamos un mínimo de información y
+
+141
+00:06:07,259 --> 00:06:10,620
+para eso pues vamos a pedirte que
+
+142
+00:06:10,620 --> 00:06:12,840
+rellenes un formulario vale necesitamos
+
+143
+00:06:12,840 --> 00:06:16,340
+un poquito de información Siempre hay un
+
+144
+00:06:16,340 --> 00:06:19,520
+poquito de burocracia y a veces Pues
+
+145
+00:06:19,520 --> 00:06:22,380
+bueno vamos a tardar un poquito en en
+
+146
+00:06:22,380 --> 00:06:25,800
+leer tu formulario porque como decimos
+
+147
+00:06:25,800 --> 00:06:28,380
+aquí en España las cosas de palacio van
+
+148
+00:06:28,380 --> 00:06:30,300
+despacio así eres español ya sabes qué
+
+149
+00:06:30,300 --> 00:06:32,880
+significa esta expresión y si no lo eres
+
+150
+00:06:32,880 --> 00:06:36,000
+es que básicamente todas las cosas de
+
+151
+00:06:36,000 --> 00:06:38,039
+carácter oficial suelen tardar mucho Y
+
+152
+00:06:38,039 --> 00:06:39,900
+bueno pues como esta asociación Pues
+
+153
+00:06:39,900 --> 00:06:41,940
+también nos encargamos de difundir la
+
+154
+00:06:41,940 --> 00:06:44,220
+cultura vamos a ir despacio con la
+
+155
+00:06:44,220 --> 00:06:46,139
+burocracia Vale para adaptarnos al
+
+156
+00:06:46,139 --> 00:06:47,940
+sistema español vale bueno el que se
+
+157
+00:06:47,940 --> 00:06:51,419
+entienda que es un poquito Es una broma
+
+158
+00:06:51,419 --> 00:06:55,440
+siguiente Norma todos los socios y las
+
+159
+00:06:55,440 --> 00:06:58,020
+socias se comprometen a respetar la
+
+160
+00:06:58,020 --> 00:07:02,039
+normativa o bueno los todos los
+
+161
+00:07:02,039 --> 00:07:03,780
+estatutos de está asociación Bueno se
+
+162
+00:07:03,780 --> 00:07:07,020
+entiende que si quieres formar parte de
+
+163
+00:07:07,020 --> 00:07:09,539
+esta asociación Pues tienes que respetar
+
+164
+00:07:09,539 --> 00:07:10,979
+las normas que tenemos y última Norma
+
+165
+00:07:10,979 --> 00:07:13,740
+que vamos a tener en cuenta para
+
+166
+00:07:13,740 --> 00:07:17,900
+constituir esta asociación la
+
+167
+00:07:17,900 --> 00:07:21,300
+participación y la cooperación es
+
+168
+00:07:21,300 --> 00:07:24,199
+fundamental para formar parte de esta
+
+169
+00:07:24,199 --> 00:07:27,720
+asociación bueno para integrarte para
+
+170
+00:07:27,720 --> 00:07:31,500
+integrarte con los demás estudiantes de
+
+171
+00:07:31,500 --> 00:07:33,780
+español cooperación y participación que
+
+172
+00:07:33,780 --> 00:07:36,000
+es básicamente lo que te pido siempre en
+
+173
+00:07:36,000 --> 00:07:38,340
+todos los vídeos que participes porque
+
+174
+00:07:38,340 --> 00:07:41,880
+así podemos ver todos los estudiantes
+
+175
+00:07:41,880 --> 00:07:44,180
+que practicas español bien y estas son
+
+176
+00:07:44,180 --> 00:07:47,819
+algunas de las normas para constituir
+
+177
+00:07:47,819 --> 00:07:50,240
+esta asociación de estudiantes de
+
+178
+00:07:50,240 --> 00:07:53,940
+español y ahora te voy a preguntar a ti
+
+179
+00:07:53,940 --> 00:07:57,180
+se te ocurre alguna Norma que te
+
+180
+00:07:57,180 --> 00:07:59,940
+gustaría incluir en los estatutos de
+
+181
+00:07:59,940 --> 00:08:01,680
+esta asociación Si es así si tienes en
+
+182
+00:08:01,680 --> 00:08:03,840
+la cabeza alguna Norma que te gustaría
+
+183
+00:08:03,840 --> 00:08:06,660
+incluir pues déjala en los comentarios
+
+184
+00:08:06,660 --> 00:08:09,180
+porque como siempre decimos la
+
+185
+00:08:09,180 --> 00:08:12,479
+participación y la cooperación son
+
+186
+00:08:12,479 --> 00:08:14,460
+fundamentales para integrarse en esta
+
+187
+00:08:14,460 --> 00:08:17,400
+asociación Así que como decimos en
+
+188
+00:08:17,400 --> 00:08:18,960
+español te toca predicar con el ejemplo
+
+189
+00:08:18,960 --> 00:08:20,879
+bien y ahora vamos a ver algunos
+
+190
+00:08:20,879 --> 00:08:24,180
+derechos y obligaciones de todos los
+
+191
+00:08:24,180 --> 00:08:26,780
+socios y socias de esta asociación de
+
+192
+00:08:26,780 --> 00:08:30,120
+estudiantes número uno Los Socios de
+
+193
+00:08:30,120 --> 00:08:32,039
+convivir y cooperar bueno convivir
+
+194
+00:08:32,039 --> 00:08:35,099
+realmente no porque no vamos a vivir
+
+195
+00:08:35,099 --> 00:08:37,320
+juntos estamos en el mundo online más
+
+196
+00:08:37,320 --> 00:08:39,539
+que convivir y cooperar solo cooperar
+
+197
+00:08:39,539 --> 00:08:42,659
+Los Socios deberán cooperar para
+
+198
+00:08:42,659 --> 00:08:45,420
+aprender español así mucho mejor y Esta
+
+199
+00:08:45,420 --> 00:08:49,220
+es una de las principales obligaciones
+
+200
+00:08:49,220 --> 00:08:52,440
+de los socios de esta asociación
+
+201
+00:08:52,440 --> 00:08:56,100
+cooperar y participar no lo olvides
+
+202
+00:08:56,100 --> 00:08:59,399
+derecho de los socios se asistirá a los
+
+203
+00:08:59,399 --> 00:09:03,720
+socios siempre que se pueda se asistirá
+
+204
+00:09:03,720 --> 00:09:06,300
+pero asistir no es asistir no es como ir
+
+205
+00:09:06,300 --> 00:09:07,860
+a un lugar asistir a un evento bien pues
+
+206
+00:09:07,860 --> 00:09:11,580
+en este caso en español también podemos
+
+207
+00:09:11,580 --> 00:09:15,000
+utilizar asistir a alguien como un
+
+208
+00:09:15,000 --> 00:09:17,940
+sinónimo de ayudar te recuerdo que este
+
+209
+00:09:17,940 --> 00:09:19,800
+es el curso de rumbo al c1 estamos en
+
+210
+00:09:19,800 --> 00:09:22,339
+una lección del curso rumbo al c1
+
+211
+00:09:22,339 --> 00:09:25,980
+entonces yo te voy a dar poquito a poco
+
+212
+00:09:25,980 --> 00:09:29,180
+el vocabulario para que vayas y subiendo
+
+213
+00:09:29,180 --> 00:09:31,560
+hacia el c1 o hasta el C2 efectivamente
+
+214
+00:09:31,560 --> 00:09:33,480
+asistir a alguien pues es una forma
+
+215
+00:09:33,480 --> 00:09:36,000
+también un poco más avanzada de decir
+
+216
+00:09:36,000 --> 00:09:37,860
+ayudar De hecho si algún día tienes un
+
+217
+00:09:37,860 --> 00:09:40,380
+problema con tu coche en la carretera
+
+218
+00:09:40,380 --> 00:09:43,200
+aquí en España a quién tienes que llamar
+
+219
+00:09:43,200 --> 00:09:45,060
+pues asistencia en la carretera que
+
+220
+00:09:45,060 --> 00:09:47,160
+básicamente pues son las personas que te
+
+221
+00:09:47,160 --> 00:09:49,560
+van a ayudar si tienes un problema con
+
+222
+00:09:49,560 --> 00:09:51,660
+tu coche en la carretera asistencia en
+
+223
+00:09:51,660 --> 00:09:53,459
+la carretera Es como decir ayuda en la
+
+224
+00:09:53,459 --> 00:09:56,100
+carretera pero usamos la palabra pues
+
+225
+00:09:56,100 --> 00:09:58,740
+asistencia siguiente que también es una
+
+226
+00:09:58,740 --> 00:10:01,560
+obligación de los estudiantes mejor sí
+
+227
+00:10:01,560 --> 00:10:05,519
+una obligación se deberá aceptar lo que
+
+228
+00:10:05,519 --> 00:10:06,959
+quiera la mayoría hombre Yo creo que si
+
+229
+00:10:06,959 --> 00:10:09,240
+nos tomamos esto como una democracia
+
+230
+00:10:09,240 --> 00:10:11,279
+como por ejemplo a la hora de elegir el
+
+231
+00:10:11,279 --> 00:10:13,560
+tema de este vídeo tenemos que aceptar
+
+232
+00:10:13,560 --> 00:10:16,560
+lo que quiera la mayoría no podemos
+
+233
+00:10:16,560 --> 00:10:18,600
+elegir lo que quiera una minoría sino
+
+234
+00:10:18,600 --> 00:10:22,200
+que tenemos que centrarnos en lo que
+
+235
+00:10:22,200 --> 00:10:25,500
+quiera la mayoría No porque si el 80%
+
+236
+00:10:25,500 --> 00:10:28,860
+quiere hacer una lección sobre yo que sé
+
+237
+00:10:28,860 --> 00:10:30,959
+sobre el futuro y el 20% quiere hacer
+
+238
+00:10:30,959 --> 00:10:34,800
+una lección sobre el pasado tenemos que
+
+239
+00:10:34,800 --> 00:10:37,080
+pensar siempre en el bien común en esta
+
+240
+00:10:37,080 --> 00:10:39,240
+mayoría no en la mayoría de estudiantes
+
+241
+00:10:39,240 --> 00:10:40,760
+y última Norma de derechos y
+
+242
+00:10:40,760 --> 00:10:43,320
+obligaciones de los estudiantes
+
+243
+00:10:43,320 --> 00:10:45,600
+suscribirse y aprender español con otros
+
+244
+00:10:45,600 --> 00:10:48,360
+canales se considerará un motivo de
+
+245
+00:10:48,360 --> 00:10:50,399
+engaño y de traición bueno Esto es una
+
+246
+00:10:50,399 --> 00:10:52,620
+broma completamente la verdad es que
+
+247
+00:10:52,620 --> 00:10:55,079
+quería introducir la palabra engaño por
+
+248
+00:10:55,079 --> 00:10:56,820
+algún sitio y traición no engañar y
+
+249
+00:10:56,820 --> 00:10:58,440
+traicionar quería introducir estas
+
+250
+00:10:58,440 --> 00:11:00,660
+palabras pero no encontraba un contexto
+
+251
+00:11:00,660 --> 00:11:02,760
+adecuado para introducirlas así que
+
+252
+00:11:02,760 --> 00:11:05,220
+espero que no te enfades aprende español
+
+253
+00:11:05,220 --> 00:11:07,100
+con quien tú quieras con quien más te
+
+254
+00:11:07,100 --> 00:11:10,800
+guste bien pues creo que
+
+255
+00:11:10,800 --> 00:11:14,040
+ya hemos establecido todos los estatutos
+
+256
+00:11:14,040 --> 00:11:16,140
+no todos todas las normas de esta
+
+257
+00:11:16,140 --> 00:11:18,420
+asociación Así que creo que ya estamos
+
+258
+00:11:18,420 --> 00:11:21,240
+preparados para constituir nuestra
+
+259
+00:11:21,240 --> 00:11:22,740
+asociación de estudiantes de español si
+
+260
+00:11:22,740 --> 00:11:24,660
+tú tienes alguna Norma más que te
+
+261
+00:11:24,660 --> 00:11:27,300
+gustaría incluir No olvides Pues eso
+
+262
+00:11:27,300 --> 00:11:28,740
+dejarla en los comentarios bueno si
+
+263
+00:11:28,740 --> 00:11:30,420
+quieres seguir aprendiendo español y
+
+264
+00:11:30,420 --> 00:11:33,240
+llevando tu nivel de español hasta el
+
+265
+00:11:33,240 --> 00:11:35,160
+nivel c1 pues quiero que sepas que en la
+
+266
+00:11:35,160 --> 00:11:37,140
+academia de español online en concreto
+
+267
+00:11:37,140 --> 00:11:40,320
+en el curso de rumbo al c1 estamos
+
+268
+00:11:40,320 --> 00:11:42,180
+trabajando con todo este vocabulario que
+
+269
+00:11:42,180 --> 00:11:44,100
+has aprendido hasta ahora y también con
+
+270
+00:11:44,100 --> 00:11:46,620
+el de esta lección como puedes ver aquí
+
+271
+00:11:46,620 --> 00:11:49,019
+con otro vídeo explicativo y con
+
+272
+00:11:49,019 --> 00:11:52,800
+actividades para ampliar tu vocabulario
+
+273
+00:11:52,800 --> 00:11:54,959
+y llegar al c1 bien y al principio de
+
+274
+00:11:54,959 --> 00:11:57,060
+esta lección pues te he preguntado Cuál
+
+275
+00:11:57,060 --> 00:12:01,200
+crees que sería el verbo adecuado para
+
+276
+00:12:01,200 --> 00:12:02,640
+sustituir a crear una asociación te he
+
+277
+00:12:02,640 --> 00:12:06,260
+dado elegir entre cuatro verbos
+
+278
+00:12:06,260 --> 00:12:10,459
+diferentes Como por ejemplo consolidar
+
+279
+00:12:10,459 --> 00:12:13,440
+constituir asociar o agrupar una
+
+280
+00:12:13,440 --> 00:12:16,260
+asociación Y si has prestado atención a
+
+281
+00:12:16,260 --> 00:12:18,079
+esta lección Pues ya sabes cuál es la
+
+282
+00:12:18,079 --> 00:12:21,660
+respuesta efectivamente
+
+283
+00:12:21,660 --> 00:12:24,360
+constituir una asociación utilizamos
+
+284
+00:12:24,360 --> 00:12:27,540
+constituir cuando creamos un conjunto de
+
+285
+00:12:27,540 --> 00:12:30,839
+reglas de normas etcétera etcétera o un
+
+286
+00:12:30,839 --> 00:12:33,360
+conjunto de cosas para crear algo por
+
+287
+00:12:33,360 --> 00:12:35,160
+ejemplo podemos constituir una
+
+288
+00:12:35,160 --> 00:12:37,740
+asociación podemos constituir una
+
+289
+00:12:37,740 --> 00:12:40,380
+comunidad también podemos constituir Un
+
+290
+00:12:40,380 --> 00:12:44,279
+gobierno también se puede constituir una
+
+291
+00:12:44,279 --> 00:12:47,279
+asamblea para hablar dialogar y negociar
+
+292
+00:12:47,279 --> 00:12:49,980
+puntos en común una vez más puedes decir
+
+293
+00:12:49,980 --> 00:12:51,720
+perfectamente crear una asociación o
+
+294
+00:12:51,720 --> 00:12:54,839
+también se puede utilizar otro verbo que
+
+295
+00:12:54,839 --> 00:12:57,000
+es como fundar una asociación pero yo
+
+296
+00:12:57,000 --> 00:13:00,360
+poco a poco en este curso te voy dando
+
+297
+00:13:00,360 --> 00:13:03,480
+un vocabulario que cada vez te va a
+
+298
+00:13:03,480 --> 00:13:07,079
+hacer Pues bueno pues llegar hasta el
+
+299
+00:13:07,079 --> 00:13:08,519
+nivel en el que tú pues quieras estar Y
+
+300
+00:13:08,519 --> 00:13:10,620
+si con esta lección has aprendido
+
+301
+00:13:10,620 --> 00:13:14,519
+palabras Como por ejemplo mayoría
+
+302
+00:13:14,519 --> 00:13:17,820
+minoría jerarquía constituir una
+
+303
+00:13:17,820 --> 00:13:21,000
+asociación etcétera etcétera como
+
+304
+00:13:21,000 --> 00:13:23,700
+decimos en español Yo me puedo dar con
+
+305
+00:13:23,700 --> 00:13:26,700
+un canto en los dientes que básicamente
+
+306
+00:13:26,700 --> 00:13:29,940
+significa que yo me siento satisfecho
+
+307
+00:13:29,940 --> 00:13:31,800
+si tú has aprendido todas estas palabras
+
+308
+00:13:31,800 --> 00:13:34,980
+y bueno eso ha sido todo en esta lección
+
+309
+00:13:34,980 --> 00:13:37,560
+una vez más Muchas gracias por aprender
+
+310
+00:13:37,560 --> 00:13:41,270
+español y nos vemos en la próxima
+
+311
+00:13:41,270 --> 00:14:01,260
+lección hasta luego
+
+312
+00:14:01,260 --> 00:14:01,260
+[Música]
