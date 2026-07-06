@@ -375,8 +375,8 @@ Lägra( sig)|<*slå läger|
 (overview)|genomgång|översyn|översikt
 (scrutinize)|lusläsa(läsa noggrant)|
 (inspect)|besikta|besiktiga|undersöka|inspektera|undersökning|inspektion|besiktning|besiktningar|visitation|
-(thorough)|Vända på varje sten|Under lupp|Syna i sömmarna|Gå till botten med något
-(probe)|Känna någon på pulsen
+(thorough)|Vända på varje sten|Under lupp|Syna i sömmarna|Gå till botten med
+(probe)|Känna på pulsen
 (explore)|utforska|
 (recon)|reka(kort av rekognosera)|rekognosera
 (recognize)|känner igen mig|känna igen|identifiera|identifiering|känner med dig
@@ -441,7 +441,7 @@ Lägra( sig)|<*slå läger|
 (hope)|Så länge det finns liv finns det hopp
 (silverlining)|Varje moln har en silverkant
 (faith)|Tron kan försätta berg
-(desperate)|Gripa efter ett halmstrån
+(desperate)|(Gripa) efter halmstrån
 (hope)|Leva på hoppet
 (overreach)|Spänna bågen för högt|
 (bless)|välsigna|välsignelse|välsignelser|
@@ -460,18 +460,18 @@ Lägra( sig)|<*slå läger|
 (chance)|slump|chans|chanser|
 (dice)|kasta tärningar|tärningsslag|
 (seize)|passa på|ta tillfället i akt|nyttja|utnyttja|utnyttjar|utnyttjade|utnyttjat|utnyttjande|nyttjande|nyttjandet|nyttjanden|
-(opportunity)|Ger man någon lillfingret så tar de hela handen
-(forge)|Man ska smida medan järnet är varmt
+(opportunity)|Ger man honom lillfingret så tar han hela handen
+(forge)|(Man ska )smida medan järnet är varmt
 (opportunity)|Vädra morgonluft|
 (habitual)|vanemässig|vana|vanor|
-(automatic)|(sitter)I ryggmärgen|
+(automatic)|sitter I ryggmärgen|
 (unchangeable)|Ränderna går aldrig ur
 (trait)|egenskap|egenskaper|drag(sl-pl)|lynne|lynnen(pl)|särdrag|
 (nature)|Var fågel sjunger efter sin egen näbb|Var smed har sin sed
 (temperament)|sinnelag|natur|mentalitet|läggning|läggningar|
 (essential)|väsentlig|huvudsaklig|avgörande|betydande|viktig|främst|anmärkningsvärd|anmärkningsvärt
 (essence)|Pudelns kärna
-(dear)|ligga någon varmt om hjärtat|angelägen|betydelsefull
+(dear)|(ligga någon) varmt om hjärtat|angelägen|betydelsefull
 (nature)|väsen(sl-pl)|beskaffenhet|beskaffenheten|
 (irrelevant)|oväsentlig|ovidkommande|irrelevant
 (done)|<*sätta sin sista potatis
