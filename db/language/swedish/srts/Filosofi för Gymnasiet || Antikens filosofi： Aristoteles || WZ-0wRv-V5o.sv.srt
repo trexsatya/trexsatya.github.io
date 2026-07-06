@@ -1,243 +1,223 @@
 1
-00:03:29,180 --> 00:03:34,520
-Just förändring ansåg redan de gamla naturfilosoferna vara ett stort problem,
-
-2
 00:03:34,520 --> 00:03:40,340
 varför exempelvis Zenon menade att verkligheten måste vara en illusion.
 
-3
+2
 00:03:41,100 --> 00:03:46,960
 För att förklara detta införde Aristoteles också begreppet "potential".
 
-4
+3
 00:03:47,200 --> 00:03:52,300
 Inbyggt i all materia fanns potentialen att bli vissa ting.
 
-5
+4
 00:03:52,520 --> 00:03:58,860
 I ett ekollon finns potentialen att bli en ek, däremot inte att bli en hund.
 
-6
+5
 00:03:59,340 --> 00:04:04,980
 När någonting antagit sin form har potentialen aktualiserats.
 
-7
+6
 00:04:04,980 --> 00:04:07,840
 Tinget har nu blivit vad det kan bli.
 
-8
+7
 00:04:08,880 --> 00:04:13,660
 Därtill finns en avsikt, ett ändamål, inbyggt i allt.
 
-9
+8
 00:04:13,800 --> 00:04:21,740
 Anledningen till att ekollonet strävar efter att bli en ek är för att säkra artens fortlevnad.
 
-10
+9
 00:04:22,640 --> 00:04:27,460
 Precis som sin föregångare Platon var Aristoteles intresserad av hur man kunde skapa
 
-11
-00:04:27,460 --> 00:04:32,040
-det perfekta samhället – något han beskriver i boken Politiken.
-
-12
-00:04:47,980 --> 00:04:54,320
-men försvarar den då rådande synen på kvinnor och slavar som lägre stående.
-
-13
+10
 00:04:55,400 --> 00:05:00,800
 Demokratin var en angelägenhet endast för fria män, menade han.
 
-14
+11
 00:05:01,360 --> 00:05:04,620
 Han utgick från att människan var en social varelse,
 
-15
+12
 00:05:04,620 --> 00:05:10,280
 ett politiskt djur som önskade leva tillsammans med andra människor.
 
-16
+13
 00:05:10,800 --> 00:05:15,240
 För att detta skulle fungera krävdes en strikt hierarki;
 
-17
+14
 00:05:15,500 --> 00:05:21,100
 längst ner slaven därefter barnen, hustrun och högst upp mannen.
 
-18
+15
 00:05:21,340 --> 00:05:27,840
 Detta var den naturliga ordningen och systemet skulle leda till det goda och trygga livet.
 
-19
+16
 00:05:28,740 --> 00:05:33,680
 När individen accepterat sin roll blir hon också lycklig.
 
-20
+17
 00:05:34,080 --> 00:05:41,780
 Statens uppgift var att hjälpa varje familj, och i förlängningen varje individ, att nå detta goda liv.
 
-21
+18
 00:05:43,000 --> 00:05:49,880
 I boken ”Den nikomachiska etiken” beskriver Aristoteles sin syn på etik och moral.
 
-22
-00:05:49,880 --> 00:05:54,480
-Människan har, enligt Aristoteles, en särställning i naturen.
-
-23
+19
 00:05:54,480 --> 00:05:59,420
 Vi styrs inte av instinkter utan av förnuft och fria vilja.
 
-24
+20
 00:05:59,800 --> 00:06:04,860
 Vi har heller inga medfödda kunskaper om rätt och fel, bra eller dåligt,
 
-25
+21
 00:06:04,860 --> 00:06:09,080
 utan detta är någonting måste vi lära oss genom träning.
 
-26
+22
 00:06:09,560 --> 00:06:18,500
 Vi blir vänliga genom att utföra vänliga handlingar, måttfulla genom att utföra måttfulla handlingar osv.
 
-27
+23
 00:06:19,240 --> 00:06:27,740
 Genom att utveckla och förädla sina dygder, sina positiva egenskaper, kommer vi att bli bättre människor.
 
-28
+24
 00:06:28,260 --> 00:06:32,520
 Därmed kommer vi automatiskt att agera rätt i olika situationer
 
-29
+25
 00:06:32,520 --> 00:06:37,340
 då goda handlingar härstammar från goda karaktärsdrag.
 
-30
+26
 00:06:37,920 --> 00:06:42,880
 Det finns två typer av dygder – moraliska och intellektuella.
 
-31
+27
 00:06:44,180 --> 00:06:49,040
 En god människa är också en lycklig människa, menar Aristoteles.
 
-32
+28
 00:06:49,540 --> 00:06:57,820
 Vi strävar alla efter att leva som sociala varelser i ett samhälle, något som en dygdig person har lätt för.
 
-33
+29
 00:06:58,400 --> 00:07:04,540
 För att bli dygdig måste vi ha en balanserad hållning till våra känslor och lustar.
 
-34
+30
 00:07:04,700 --> 00:07:12,240
 Var denna gyllene medelväg går varierar från person till person, men han ger några enkla exempel:
 
-35
+31
 00:07:12,500 --> 00:07:22,780
 mod är balansen mellan dumdristighet och feghet, givmildhet är balansen mellan slöseri och girighet.
 
-36
+32
 00:07:23,620 --> 00:07:32,180
 Målet till lycka går alltså genom att lära sig bli en balanserad personlighet –  att vara lagom.
 
-37
+33
 00:07:33,260 --> 00:07:38,820
 Som filosof var Aristoteles på många sätt annorlunda än sina föregångare.
 
-38
+34
 00:07:39,320 --> 00:07:45,620
 Hans forskning var systematisk och baserad på noggranna observationer av världen
 
-39
+35
 00:07:45,620 --> 00:07:51,480
 och hans filosofi handlar mest om vad vi idag skulle kalla naturvetenskap.
 
-40
+36
 00:07:52,420 --> 00:07:58,280
 Därmed finns en tydlig koppling mellan Aristoteles och naturfilosoferna.
 
-41
+37
 00:07:58,680 --> 00:08:05,520
 Under hela sitt liv fördjupade han sig i forskning på ett sätt som saknar motstycke i den västerländska historien,
 
-42
+38
 00:08:05,520 --> 00:08:09,040
 och hans inflytande är svårt att överskatta.
 
-43
+39
 00:08:10,200 --> 00:08:17,160
 Hans geocentriska världsbild, men jorden i mitten och planeterna kretsande kring denna,
 
-44
+40
 00:08:17,160 --> 00:08:25,080
 var rådande ända till 1500-talet då Nicolaus Copernicus, Galileo Galilei och Tycho Brahe
 
-45
+41
 00:08:25,080 --> 00:08:30,520
 kunde bevisa den heliocentriska världsbilden – att det är solen som står i centrum.
 
-46
+42
 00:08:31,000 --> 00:08:38,840
 Till stor del berodde detta på att den katolska kyrkan använde hans tankar för att konstruera sin världsbild.
 
-47
+43
 00:08:39,740 --> 00:08:45,400
 Bibelns syn på skapelsen är också förenlig med Aristoteles syn
 
-48
+44
 00:08:45,400 --> 00:08:50,200
 på att allting har ett inbyggt ändamål, en avsikt.
 
-49
+45
 00:08:51,300 --> 00:08:58,980
 För att kunna bedriva sin vetenskap behövde han fördjupad insikt i hur korrekta slutledningar fungerade.
 
-50
+46
 00:08:59,240 --> 00:09:07,020
 Reglerna för detta var ännu inte kända, varpå Aristoteles skapade det som idag är känt som logik.
 
-51
+47
 00:09:07,500 --> 00:09:14,960
 Det var först i slutet av 1800-talet som denna logik kom att vidareutvecklas till vad den är idag.
 
-52
+48
 00:09:16,160 --> 00:09:23,120
 Aristoteles sysslande med i stort sett alla dåtidens vetenskaper, undantaget matematik,
 
-53
+49
 00:09:23,120 --> 00:09:27,500
 och var sannolikt antikens mest lärde man.
 
-54
+50
 00:09:27,960 --> 00:09:36,220
 Han var den som kartlade många av de vetenskaperna vi har idag – och studerar man retorik eller dramaturgi
 
-55
+51
 00:09:36,220 --> 00:09:41,900
 är det fortfarande Aristoteles så gott som oförändrade verk som man läser.
 
-56
+52
 00:09:42,960 --> 00:09:47,520
 Hans kategorisering av växter och djur var rådande
 
-57
+53
 00:09:47,520 --> 00:09:54,780
 fram till dess att Carl von Linné lanserade sin systematisering under 1700-talet.
 
-58
+54
 00:09:55,220 --> 00:10:02,080
 För att hantera sin forskning kategoriserade han filosofin i fyra olika kategorier:
 
-59
+55
 00:10:02,080 --> 00:10:06,800
 Fysik, metafysik, logik och etik.
 
-60
+56
 00:10:07,100 --> 00:10:13,680
 Detta är en uppdelning som vi, med viss modifikation, har kvar än idag.
-
-61
-00:10:14,420 --> 00:10:18,400
-Vi har relativt god kunskap om Aristoteles filosofi

@@ -1,338 +1,289 @@
 1
-00:01:10,166 --> 00:01:15,300
-Had been lost suddenly Titan all communication with the crew on the surface.
-
-2
 00:01:16,550 --> 00:01:18,266
 A few days later,
 
-3
+2
 00:01:18,266 --> 00:01:21,050
 June 22, you could confirm that one found
 
-4
+3
 00:01:21,050 --> 00:01:24,866
 wreckage from titanium near Titanic
 
-5
+4
 00:01:25,283 --> 00:01:28,883
 And most likely all five people had on board.
 
-6
+5
 00:01:29,366 --> 00:01:31,016
 Died.
 
-7
+6
 00:01:31,016 --> 00:01:34,316
 The cause is believed to be an implosion.
 
-8
+7
 00:01:37,100 --> 00:01:40,100
 What was Oceangate for companies?
 
-9
+8
 00:01:40,133 --> 00:01:43,966
 How was the submarine Titan constructed and what risks were there?
 
-10
+9
 00:01:44,516 --> 00:01:48,916
 What really happened and what is an implosion?
 
-11
-00:01:49,700 --> 00:01:52,700
-We will find out today.
-
-12
-00:02:41,550 --> 00:02:44,150
-It weighed about 10.4 tons and
-
-13
+10
 00:02:44,150 --> 00:02:47,150
 was made of carbon fiber and titanium.
 
-14
+11
 00:02:47,516 --> 00:02:50,600
 It was equipped with four electric engines,
 
-15
+12
 00:02:50,933 --> 00:02:54,566
 Two vertical and two horizontal.
 
-16
+13
 00:02:55,700 --> 00:02:59,000
 These could steer the boat forward, backward,
 
-17
+14
 00:02:59,000 --> 00:03:02,333
 up and down and rotate it.
 
-18
+15
 00:03:03,450 --> 00:03:05,850
 The maximum speed was 3 knots,
 
-19
+16
 00:03:05,850 --> 00:03:08,850
 which is about 5.5 km/h.
 
-20
+17
 00:03:09,083 --> 00:03:13,400
 Oxygen to the entire crew would last for 96 hours if something
 
-21
+18
 00:03:13,400 --> 00:03:17,900
 Would go wrong and it was built to cope with a depth of 4000 meters.
 
-22
+19
 00:03:18,383 --> 00:03:23,316
 The pilot steered the entire submarine with a modified wireless game control.
 
-23
-00:03:23,333 --> 00:03:26,183
-A Logitech F710.
-
-24
-00:03:56,900 --> 00:04:00,533
-To begin with, everything happened out on international water
-
-25
+20
 00:04:00,800 --> 00:04:04,166
 Which meant that you did not have to have any special security rules.
 
-26
+21
 00:04:04,500 --> 00:04:09,466
 Titanium was not approved as seaworthy by any authority or organization
 
-27
+22
 00:04:09,683 --> 00:04:14,250
 And all passengers on board must also sign an agreement
 
-28
+23
 00:04:14,483 --> 00:04:19,633
 where you confirm that you are aware of all risks, that it is all an experiment
 
-29
+24
 00:04:19,883 --> 00:04:22,766
 and that it can result in physical harm,
 
-30
+25
 00:04:22,766 --> 00:04:25,666
 trauma or death.
 
-31
+26
 00:04:25,666 --> 00:04:28,666
 The agreement briefly gives the Oceangate back free
 
-32
+27
 00:04:28,883 --> 00:04:31,633
 If something would go wrong.
 
-33
+28
 00:04:31,633 --> 00:04:36,750
 One of the founders, Stockton Rush told in an interview from 2021 to quote
 
-34
-00:04:37,216 --> 00:04:41,950
-I have violated some rules for building titanium, carbon fiber and titanium.
-
-35
-00:04:47,300 --> 00:04:48,533
-End quote.
-
-36
+29
 00:04:48,533 --> 00:04:52,916
 In 2018, David Lochridge wrote the then head of Oceangates
 
-37
+30
 00:04:52,916 --> 00:04:58,283
 marine operations, a report in which he expressed his concern about titanium
 
-38
+31
 00:04:58,283 --> 00:05:02,033
 He wanted the submarine to be inspected and be certified
 
-39
+32
 00:05:02,033 --> 00:05:05,450
 by an authority, but Oceangate did not want it.
 
-40
+33
 00:05:05,600 --> 00:05:08,850
 They refused to pay for such an inspection.
 
-41
+34
 00:05:09,150 --> 00:05:13,216
 Another thing he expressed in his report was that the window that was on titanium.
 
-42
+35
 00:05:13,433 --> 00:05:17,716
 was just certified and approved for a depth of 1300 meters,
 
-43
+36
 00:05:18,000 --> 00:05:23,150
 About a third of the depth required to get down to Titanic.
 
-44
+37
 00:05:23,150 --> 00:05:27,900
 Oceangate did not like Lochridge's statements so they sued him and kicked him.
 
-45
+38
 00:05:29,033 --> 00:05:29,700
 Then we have to
 
-46
+39
 00:05:29,700 --> 00:05:32,866
 Also talk about the choice of material for titanium,
 
-47
+40
 00:05:33,566 --> 00:05:36,566
 Carbon fiber and titanium.
 
-48
+41
 00:05:37,016 --> 00:05:41,900
 Carbon fiber is an extremely strong and lightweight material that is known for its high
 
-49
+42
 00:05:41,900 --> 00:05:47,516
 tensile strength.
 Thus, the ability to withstand forces that pull the material apart.
 
-50
+43
 00:05:47,866 --> 00:05:52,283
 However, it is not as strong when it comes to pressure strength
 
-51
+44
 00:05:52,583 --> 00:05:56,250
 which is the ability to withstand the power that compresses the material.
 
-52
+45
 00:05:56,783 --> 00:06:00,566
 At extremely high pressure that one encounters down in the sea
 
-53
+46
 00:06:00,800 --> 00:06:04,400
 Can carbon fiber based structures crack.
 
-54
+47
 00:06:05,000 --> 00:06:08,783
 Titanic, on the other hand, is known for its high compressive strength,
 
-55
+48
 00:06:09,266 --> 00:06:13,216
 Which makes it a good choice for vehicles that will dive far below the water.
 
-56
+49
 00:06:13,850 --> 00:06:17,116
 But it is much heavier and more expensive than carbon fiber.
 
-57
+50
 00:06:18,866 --> 00:06:20,266
 To combine titanium
 
-58
+51
 00:06:20,266 --> 00:06:23,416
 and carbon fiber may seem like a good idea to take advantage
 
-59
+52
 00:06:23,416 --> 00:06:27,650
 of both carbon fiber's ease and titanium compressive strength.
 
-60
+53
 00:06:28,050 --> 00:06:32,850
 But at these extreme pressure down in the sea, the parts can
 
-61
-00:06:32,866 --> 00:06:36,683
-Two materials meet.
-When titanium and carbon fiber meet -
-
-62
-00:07:17,250 --> 00:07:20,816
-This never can handle a human body because one would die
-
-63
+54
 00:07:20,816 --> 00:07:24,900
 immediately and hence we need something that can protect us from the pressure,
 
-64
+55
 00:07:26,666 --> 00:07:28,883
 For example, a submarine.
 
-65
+56
 00:07:28,883 --> 00:07:32,366
 But then it is important that the submarine is designed to cope with the pressure.
 
-66
+57
 00:07:32,850 --> 00:07:38,400
 At 3800 meters depth the pressure is so great that the submarine is pressed together
 
-67
+58
 00:07:38,400 --> 00:07:43,516
 From all directions and edges with a force corresponding to about 10 \ H000 tonnes.
 
-68
+59
 00:07:43,916 --> 00:07:48,716
 It's like having the weight of the Eiffel Tower pressing against the submarine,
 
-69
+60
 00:07:49,250 --> 00:07:52,583
 But not just from above but from all directions.
 
-70
+61
 00:07:54,116 --> 00:07:57,200
 Back to June 18, 2023.
 
-71
+62
 00:07:57,416 --> 00:08:00,416
 When the time is on its way down to Titanic
 
-72
-00:08:00,800 --> 00:08:05,300
-When 1 hour and 45 minutes had been lost Titan contact
-
-73
-00:10:24,566 --> 00:10:26,516
-Note how fast it went.
-
-74
+63
 00:10:26,516 --> 00:10:31,616
 This is thus the pressure from the outside that compresses the thought, which has a vacuum inside.
 
-75
+64
 00:10:31,883 --> 00:10:35,216
 And this is just the pressure from our atmosphere on the surface.
 
-76
+65
 00:10:35,516 --> 00:10:38,516
 Thus, the pressure from only one atmosphere.
 
-77
+66
 00:10:39,766 --> 00:10:42,766
 Implosion that happened for the crew inside the titanium
 
-78
+67
 00:10:42,900 --> 00:10:45,900
 was exposed to 380 atmospheres.
 
-79
+68
 00:10:46,366 --> 00:10:49,366
 So you can only imagine how fast it went.
 
-80
+69
 00:10:50,000 --> 00:10:53,400
 They never even got to react to something happening,
 
-81
+70
 00:10:54,616 --> 00:10:57,616
 Which might be just as good.
 
-82
+71
 00:10:57,950 --> 00:10:59,416
 It was a brief summary
 
-83
+72
 00:10:59,416 --> 00:11:02,900
 by the company Oceangate.
 The accident with titanium ..
-
-84
-00:11:03,316 --> 00:11:06,316
-And the dangers down to the depths of the sea.

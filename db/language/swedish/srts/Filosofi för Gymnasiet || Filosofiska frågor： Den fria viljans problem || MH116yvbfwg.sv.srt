@@ -23,261 +23,217 @@ Många menar till och med att vår upplevelse av inflytande över vårt agerande
 efterkonstruktion av ett handlande som var oundvikligt eller rent av förbestämt.
 
 7
-00:00:42,180 --> 00:00:47,260
-De menar därmed att du inte kunnat göra något annat i denna stund än att titta på just detta.
-
-8
-00:00:59,560 --> 00:01:04,520
-Problemet tar sin utgångspunkt i att vi lever i en determinerad värld,
-
-9
 00:01:04,600 --> 00:01:08,480
 det vill säga en värld där naturen är orsaksbestämd.
 
-10
+8
 00:01:08,940 --> 00:01:13,320
 Ett äpple faller inte till marken därför att det bestämt sig för att lämna grenen,
 
-11
+9
 00:01:13,320 --> 00:01:17,600
 utan på grund av en komplex mängd av orsak-verkan.
 
-12
+10
 00:01:18,140 --> 00:01:25,340
 Några av de variabler som påverkar när äpplet faller är; äpplets storlek och massa, trädets storlek och ålder,
 
-13
+11
 00:01:25,340 --> 00:01:32,780
 grenens tjocklek, eventuella genetiska defekter, höjd över marken, temperatur, nederbörd, vindar,
 
-14
+12
 00:01:32,780 --> 00:01:36,580
 tid på året, yttre påverkan i form av djur, och så vidare...
 
-15
+13
 00:01:37,060 --> 00:01:42,700
 Vad som slutligen får ett äpple att falla vid exakt en viss tidpunkt är alltför komplext för en människa att
 
-16
+14
 00:01:42,700 --> 00:01:46,020
 kunna räkna ut – vi kan omöjligen känna till alla variabler.
 
-17
+15
 00:01:46,348 --> 00:01:50,548
 Trots detta är de flesta överens om att om vi kände till alla förutsättningar
 
-18
+16
 00:01:50,580 --> 00:01:54,760
 så skulle vi kunna räkna ut exakt när äpplet skulle falla.
 
-19
+17
 00:01:55,020 --> 00:01:58,700
 Äpplets öde är därmed determinerat.
 
-20
+18
 00:01:59,560 --> 00:02:02,840
 Ibland används i dessa diskussioner termen ”förbestämt”,
 
-21
+19
 00:02:02,860 --> 00:02:05,580
 ofta tänkt som synonymt med determinerat.
 
-22
+20
 00:02:05,840 --> 00:02:09,560
 Man kanske säger att det därför är förbestämt när äpplet kommer att falla.
 
-23
+21
 00:02:10,080 --> 00:02:15,760
 Det finns dock en poäng i att inte använda denna term då termen ”förbestämt” antyder att någon,
 
-24
+22
 00:02:15,760 --> 00:02:20,420
 ofta tolkat som Gud, på förhand har bestämt när saker ska ske.
 
-25
+23
 00:02:20,880 --> 00:02:25,200
 Detta är i regel inte vad vi menar, även om det givetvis finns teorier
 
-26
+24
 00:02:25,200 --> 00:02:29,220
 om att alla händelser utspelar sig efter Guds förbestämda plan.
 
-27
+25
 00:02:30,380 --> 00:02:36,080
 Naturen är alltså determinerad, den går teoretiskt att förutsäga om man kan alla parametrar.
 
-28
-00:02:36,540 --> 00:02:40,740
-Detta gäller också exempelvis fysikaliska eller ekonomiska system.
-
-29
+26
 00:02:41,480 --> 00:02:47,700
 Har man kunskap om en projektils utgångshastighet, utgångsriktning, form, vindens styrka,
 
-30
+27
 00:02:47,700 --> 00:02:53,500
 luftfuktighet, höjd över havet osv kan man avgöra exakt var den kommer att landa.
 
-31
+28
 00:02:54,240 --> 00:02:58,280
 Varför skulle då människan skilja sig från de grundläggande förutsättningar
 
-32
+29
 00:02:58,280 --> 00:03:00,500
 som verkar gälla för allt annat i universum?
 
-33
+30
 00:03:01,000 --> 00:03:06,300
 Skulle vi och vår hjärna inte lyda under samma orsak-verkan som allt annat,
 
-34
+31
 00:03:06,300 --> 00:03:09,660
 vi är ju trots allt uppbyggda av samma materia?
 
-35
+32
 00:03:10,260 --> 00:03:12,240
 Varje gång du tar ett beslut om något,
 
-36
+33
 00:03:12,240 --> 00:03:17,960
 så fattar du detta beslut utifrån tidigare erfarenheter och de aktuella förutsättningarna.
 
-37
+34
 00:03:18,740 --> 00:03:24,320
 Tänk dig nu en hypotetisk varelse (i filosofi ofta benämnd Laplaces demon) som har kännedom
 
-38
-00:03:24,320 --> 00:03:30,880
-om varje partikel och varje händelse i universum och har förmåga att analysera allt detta.
-
-39
-00:05:37,560 --> 00:05:42,440
-Dessutom är den mänskliga hjärnan full med motsvarande ”rutiner och algoritmer”,
-
-40
+35
 00:05:42,440 --> 00:05:49,000
 strukturerade som ett neuralt nätverk i vår hjärna. Det är därför vi kan lära oss saker och tänka.
 
-41
+36
 00:05:49,800 --> 00:05:55,800
 Ett exempel på en ”tänkande” dator kapabel att ta egna beslut är IBMs Watson,
 
-42
+37
 00:05:55,800 --> 00:05:59,460
 en artificiell intelligens som tolkar naturligt språk.
 
-43
+38
 00:06:00,020 --> 00:06:06,580
 År 2011 vann Watson den amerikanska versionen av Jeopardy! mot de mänskliga finalisterna.
 
-44
+39
 00:06:07,120 --> 00:06:11,900
 Watson är ingen vanlig dator utan består av 90 hopkopplade servrar.
 
-45
+40
 00:06:12,200 --> 00:06:18,640
 Ingen hävdar att Watson har någon fri vilja, men prestationen illustrerar väl den tekniska utvecklingen.
 
-46
+41
 00:06:19,060 --> 00:06:23,340
 Så menar man att en dator aldrig kommer kunna åtnjuta äkta fri vilja
 
-47
+42
 00:06:23,340 --> 00:06:26,660
 så har man en utmaning i att förklara hur människan kan det.
 
-48
+43
 00:06:27,400 --> 00:06:33,520
 I en undersökning från Max Planck-institutet i Leipzig och Bernstein Center for Computational Neuroscience
 
-49
+44
 00:06:33,520 --> 00:06:39,900
 i Berlin från 2008 undersöktes 14 friska försökspersoner med hjälp av en hjärn-scanner.
 
-50
+45
 00:06:40,580 --> 00:06:45,680
 Slumpmässiga bokstäver visades på en skärm, en ny bokstav varje halvsekund.
 
-51
-00:06:46,240 --> 00:06:50,880
-Personerna fick trycka på en knapp närhelst de kände för det under försökets gång.
-
-52
-00:08:53,120 --> 00:08:57,980
-Så längre vi har upplevelsen av en fri vilja så flyter allt på som vanligt i vilket fall.
-
-53
+46
 00:08:58,300 --> 00:09:02,640
 Detta är i och för sig helt sant, men om det inte finns någon fri vilja så skulle detta få
 
-54
+47
 00:09:02,640 --> 00:09:07,160
 oerhörda konsekvenser för bland annat moralen, för rätt och fel.
 
-55
+48
 00:09:08,140 --> 00:09:11,240
 Etik och moral handlar om att välja rätt eller fel.
 
-56
+49
 00:09:11,580 --> 00:09:16,780
 Handlingar som bryter mot vår etik varierar från olämpligt (till exempel att ladda ner en
 
-57
+50
 00:09:16,780 --> 00:09:22,460
 upphovsrättsskyddad fil) till grovt kriminellt (mord och våldtäkt).
 
-58
+51
 00:09:23,100 --> 00:09:28,400
 Förbrytare får sedan sitt straff baserat på hur mycket de bröt mot våra lagar och förordningar,
 
-59
+52
 00:09:28,400 --> 00:09:33,460
 som i sin tur är baserade på vår uppfattning av etik och moral (rätt och fel).
 
-60
+53
 00:09:34,600 --> 00:09:41,380
 Men om våra handlingar är determinerade betyder det att en brottsling aldrig hade kunnat agera annorlunda.
 
-61
+54
 00:09:41,940 --> 00:09:47,040
 Personen hade lika mycket påverkan på sin handling som äpplet som faller från trädet.
 
-62
+55
 00:09:47,480 --> 00:09:51,200
 Men hur kan man då motivera att personen ska straffas?
 
-63
+56
 00:09:52,760 --> 00:09:58,500
 Men vi kan också vända på resonemanget och hävda att det är oproblematiskt att straffa brottslingar,
 
-64
+57
 00:09:58,500 --> 00:10:02,580
 även om de inte själva kunnat påverka att brottet begicks.
 
-65
+58
 00:10:03,040 --> 00:10:09,160
 Vi kan nämligen med lätthet peka på att straffet på samma sätt som brottet är determinerat.
 
-66
+59
 00:10:09,660 --> 00:10:14,200
 Vi hade alltså aldrig kunnat välja att inte straffa dem.
 
-67
+60
 00:10:14,800 --> 00:10:20,060
 Ett problem med determinismen är att man lätt hamnar i en ”du hade inte kunnat agera annorlunda,
-
-68
-00:10:20,060 --> 00:10:23,220
-jag hade inte kunnat agera annorlunda”-diskussion.
-
-69
-00:10:23,960 --> 00:10:28,480
-Det är lätt att hänvisa till att vad som än sägs så är det determinerat
-
-70
-00:10:28,480 --> 00:10:32,460
-och ingenting annat hade någonsin kunnat sägas eller tänkas.
-
-71
-00:10:33,100 --> 00:10:41,020
-Ett svar på vad som möjliggör vårt ”undantag” från den i övrigt determinerade världen är att Gud gett oss fri vilja.

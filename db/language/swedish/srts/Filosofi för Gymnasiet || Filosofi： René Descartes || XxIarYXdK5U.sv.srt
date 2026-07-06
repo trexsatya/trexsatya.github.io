@@ -1,407 +1,343 @@
 1
-00:00:42,020 --> 00:00:45,480
-en vana han skulle behålla under resten av sitt liv.
-
-2
 00:00:46,220 --> 00:00:51,760
 Av sina välbärgade föräldrar kom han att ärva så mycket pengar att han aldrig skulle behövde jobba.
 
-3
+2
 00:00:51,880 --> 00:00:56,360
 Istället ägnade han sin tid åt tänkande, ofta liggandes i sin säng.
 
-4
+3
 00:00:57,140 --> 00:01:02,480
 Efter att ha färdigställt sin utbildning bröt han med det högre societetslivet i Paris
 
-5
+4
 00:01:02,480 --> 00:01:07,140
 och flyttade till Amsterdam där han kom att stanna under större delen av sitt liv.
 
-6
+5
 00:01:08,140 --> 00:01:13,480
 Descartes kom att kritisera filosofi för att den inte kunde ge tillförlitlig kunskap.
 
-7
+6
 00:01:13,860 --> 00:01:17,060
 Olika filosofiska teorier kolliderade med varandra,
 
-8
+7
 00:01:17,060 --> 00:01:21,880
 och det fanns inget sätt att avgöra vad som var sant och vad som var falskt.
 
-9
+8
 00:01:22,400 --> 00:01:27,720
 Anledningen till detta, menade Descartes, var att filosofin saknade en säker grund
 
-10
+9
 00:01:27,940 --> 00:01:31,280
 – en otvivelaktigt säker sanning att baseras på.
 
-11
+10
 00:01:32,000 --> 00:01:34,900
 Detta till skillnad från exempelvis matematiken.
 
-12
+11
 00:01:35,080 --> 00:01:41,580
 Anledningen till att vi kan konstruera komplexa matematiska teorier är för att vi är överens om hur
 
-13
+12
 00:01:41,580 --> 00:01:47,760
 matematiken fungerar på sin mest grundläggande nivå – exempelvis 1+1=2
 
-14
+13
 00:01:47,760 --> 00:01:51,960
 eller att en rak linje är den kortaste sträckan mellan två punkter.
 
-15
+14
 00:01:51,960 --> 00:01:58,200
 Något motsvarande existerar inte inom filosofin, varför vi aldrig kan säga något med säkerhet.
 
-16
+15
 00:01:58,940 --> 00:02:04,700
 Kunde det nu, frågade sig Descartes, vara möjligt att finna något motsvarande hos filosofin?
 
-17
+16
 00:02:04,700 --> 00:02:10,440
 Om man kunde hitta satser utanför matematiken vars sanningar var omöjliga att betvivla
 
-18
+17
 00:02:10,440 --> 00:02:16,340
 kunde man använda dessa som utgångspunkt för logiska slutledningar inom filosofin.
 
-19
+18
 00:02:16,760 --> 00:02:24,760
 I sin jakt efter en säker grund för filosofisk kunskap använde han sig av en metod kallad systematiskt tvivel.
 
-20
+19
 00:02:24,760 --> 00:02:31,840
 Han försökte själv tvivla på allt, för att på detta sätt hoppas hitta någonting som inte gick att ifrågasätta
 
-21
+20
 00:02:31,840 --> 00:02:35,660
 – något som måste vara otvivelaktigt sant.
 
-22
+21
 00:02:36,200 --> 00:02:42,600
 Han insåg snart att upplevelser baserade på våra sinnen (exempelvis syn, hörsel, känsel)
 
-23
+22
 00:02:42,600 --> 00:02:47,400
 inte var tillräckligt säkra för att utgöra otvivelaktig kunskap.
 
-24
+23
 00:02:47,720 --> 00:02:51,500
 Detta då vi alltid riskerar att uppfatta något felaktigt.
 
-25
+24
 00:02:51,720 --> 00:02:56,280
 Vi kan faktiskt inte ens vara säkra på om vi är vakna eller drömmer, menade Descartes.
 
-26
+25
 00:02:56,840 --> 00:03:00,460
 Våra sinnen är tillräckliga för att navigera i vardagen,
 
-27
+26
 00:03:00,460 --> 00:03:05,940
 men inte för att utgöra grunden för absolut och otvivelaktig sanning.
 
-28
-00:03:06,580 --> 00:03:13,360
-Kvarstår gör då vårt förnuft, vårt tänkande, men även detta går att betvivla menar Descartes.
-
-29
-00:03:13,820 --> 00:03:18,740
-Tänk om det existerar en ond demon som lurar oss varje gång vi räknar matte
-
-30
-00:03:18,740 --> 00:03:22,540
-– alltså är inte ens matematiken otvivelaktigt sann.
-
-31
-00:03:23,000 --> 00:03:27,720
-Men om nu varken våra sinnen eller vårt förnuft kan ge oss säker sanning,
-
-32
-00:03:27,720 --> 00:03:30,920
-finns det då någonting som inte går att betvivla?
-
-33
-00:03:31,240 --> 00:03:32,820
-Det finns det, menar Descartes.
-
-34
-00:03:33,040 --> 00:03:38,080
-Det enda vi kan vara helt säker på är att vi har de upplevelser vi har.
-
-35
-00:03:38,360 --> 00:03:44,700
-Även om man kan betvivla att det finns en yttervärld, kan man inte tvivla på att man har upplevelsen av den.
-
-36
-00:03:44,700 --> 00:03:49,260
-Detta är sant även om man ser fel, drömmer eller blir lurad.
-
-37
-00:03:50,260 --> 00:03:52,920
-Av detta kan vi dra vissa slutsatser.
-
-38
-00:03:53,160 --> 00:03:57,140
-Det innebär att vi är någon slags existerande varelse.
-
-39
+27
 00:03:57,140 --> 00:04:03,940
 Man känner inte nödvändigtvis till sin egen natur, men att man existerar står utom allt tvivel.
 
-40
+28
 00:04:03,980 --> 00:04:09,100
 För även om man blir lurad av en ond demon, är det någon som blir lurad.
 
-41
+29
 00:04:09,280 --> 00:04:13,520
 Därtill vet vi med absolut säkerhet att man är en varelse
 
-42
+30
 00:04:13,520 --> 00:04:17,880
 som har om inte annat så åtminstone medvetna upplevelser.
 
-43
+31
 00:04:18,840 --> 00:04:24,900
 Descartes sammanfattade denna slutsats i en berömd latinsk fras: ”Cogito ergo sum”,
 
-44
+32
 00:04:24,900 --> 00:04:31,720
 som översättas till ”Jag tänker, alltså finns jag”. Detta är kunskapens fundament.
 
-45
+33
 00:04:32,000 --> 00:04:35,180
 Därefter började Descartes bygga upp världen igen.
 
-46
+34
 00:04:35,280 --> 00:04:43,300
 Han började med att försöka bevisa Guds existens med en variant av det klassiska ontologiska gudsbeviset:
 
-47
+35
 00:04:44,780 --> 00:04:48,440
 1. Gud är per definition det största tänkbara.
 
-48
-00:04:48,740 --> 00:04:51,440
-2. Antag att Gud inte existerar.
-
-49
-00:04:58,180 --> 00:05:05,780
-4. Detta något är i så fall större än Gud, eftersom det är större att existera än att inte existera.
-
-50
+36
 00:05:05,880 --> 00:05:12,000
 5. Detta leder dock till en paradox, eftersom Gud ju per definition är det största tänkbara.
 
-51
+37
 00:05:12,420 --> 00:05:17,040
 6. Antagandet att Gud inte existerar är alltså felaktigt.
 
-52
+38
 00:05:17,860 --> 00:05:23,840
 När Descartes försäkrat sig om Guds existens menade han också att allt vi uppfattar med våra sinnen
 
-53
+39
 00:05:23,840 --> 00:05:28,100
 måste var sant då Gud inte skulle tillåta oss att luras.
 
-54
+40
 00:05:28,380 --> 00:05:37,280
 Orsaken till att vi trots allt ibland tar fel beror på vår fria vilja, som undantagsvis leder oss till felaktiga omdömen.
 
-55
+41
 00:05:37,600 --> 00:05:42,640
 Gud garanterar också att vårt förnuft inte luras av någon yttre påverkan,
 
-56
+42
 00:05:42,640 --> 00:05:46,180
 varför världen är så som den framstår för oss.
 
-57
+43
 00:05:46,540 --> 00:05:50,080
 Det viktigaste med Descartes filosofi är hans metod.
 
-58
+44
 00:05:50,100 --> 00:05:53,740
 Han resonerar metodiskt och undviker spekulationer
 
-59
+45
 00:05:53,740 --> 00:05:57,280
 (åtminstone fram till dess att han blandar in Gud i resonemanget),
 
-60
-00:05:57,480 --> 00:06:02,120
-och lägger därmed grunden för hur modern filosofi bedrivs.
-
-61
-00:08:00,120 --> 00:08:06,160
-till skillnad som en empirist som menar att kunskap har sin grund i erfarenheter.
-
-62
+46
 00:08:07,140 --> 00:08:13,180
 I likhet med många andra rationalister var Descartes förutom filosof även matematiker.
 
-63
+47
 00:08:13,520 --> 00:08:18,480
 Han såg insikter i matematik som grundläggande för att förstå sig på världen
 
-64
+48
 00:08:18,480 --> 00:08:22,880
 – en tanke han delade med exempelvis Pythagoras och Platon.
 
-65
+49
 00:08:23,640 --> 00:08:27,720
 En morgon låg Descartes, sin vana trogen, och mediterade
 
-66
+50
 00:08:27,720 --> 00:08:30,700
 då han såg en fluga som flög omkring i rummet.
 
-67
+51
 00:08:31,240 --> 00:08:36,840
 Han insåg att man kunde beskriva flugans läge genom att ange dess avstånd
 
-68
+52
 00:08:36,840 --> 00:08:39,580
 till tre väggar med ett gemensamt hörn.
 
-69
+53
 00:08:40,580 --> 00:08:46,760
 Varje läge hos en punkt i rummet eller planet kunde beskrivas med tal kallade koordinater,
 
-70
+54
 00:08:46,760 --> 00:08:50,800
 och en punkt i rörelse kunde beskrivas med ekvationer.
 
-71
+55
 00:08:51,100 --> 00:08:54,180
 Han hade just uppfunnit koordinatsystemet.
 
-72
+56
 00:08:54,780 --> 00:09:00,960
 Descartes förbättrade också den algebraiska notationen genom att införa exponenter
 
-73
+57
 00:09:01,360 --> 00:09:07,540
 och konventionen att beteckna okända kvantiteter med bokstäver från slutet av alfabetet
 
-74
+58
 00:09:07,540 --> 00:09:11,520
 och kända kvantiteter med bokstäver från början av alfabetet.
 
-75
+59
 00:09:12,380 --> 00:09:18,080
 Redan innan detta hade man börjat använda bokstäver för att beteckna kvantiteter,
 
-76
+60
 00:09:18,080 --> 00:09:22,220
 men man använde en notation som var ganska omständlig.
 
-77
+61
 00:09:23,440 --> 00:09:28,040
 Ekvationen som med Descartes notation skulle skrivas så här:
 
-78
+62
 00:09:28,780 --> 00:09:31,540
 skrevs tidigare som:
 
-79
+63
 00:09:33,740 --> 00:09:41,320
 Även det vi idag känner som Newtons första lag, eller tröghetslagen, formulerades först av Descartes.
 
-80
+64
 00:09:41,520 --> 00:09:46,600
 Därmed är han också en av föregångarna inom den moderna fysiken.
 
-81
+65
 00:09:46,980 --> 00:09:50,980
 En av de som beundrade Descartes var drottning Kristina av Sverige,
 
-82
+66
 00:09:50,980 --> 00:09:55,880
 och hon bjöd filosofen till Stockholm för att ge henne privatlektioner i filosofi.
 
-83
+67
 00:09:56,240 --> 00:10:01,320
 Han accepterade motvilligt men kom att lida svårt av den kalla vintern.
 
-84
+68
 00:10:02,120 --> 00:10:07,560
 Han ska själv ha beskrivit Sverige som ett björnarnas land mellan klippor och is
 
-85
+69
 00:10:07,560 --> 00:10:11,280
 där till och med människornas tankar fryser till is.
 
-86
+70
 00:10:11,760 --> 00:10:20,040
 Därtill beordrades Descartes, som aldrig någonsin stigit upp före kl 11, att hålla sina lektioner kl 5 på morgonen.
 
-87
+71
 00:10:20,560 --> 00:10:27,620
 Inom två veckor drabbades han av lunginflammation och avled kort därefter på Stockholms slott.
 
-88
+72
 00:10:28,360 --> 00:10:32,320
 Här har vi Sveriges kanske största bidrag till filosofihistorien
 
-89
+73
 00:10:32,320 --> 00:10:36,580
 – vårt klimat dödade en av världshistoriens största tänkare.
 
-90
+74
 00:10:37,240 --> 00:10:44,360
 Som djupt troende katolik i det protestantiska Sverige var det otänkbart att begrava honom i vigd jord.
 
-91
+75
 00:10:44,520 --> 00:10:51,300
 Istället gravsatte man honom på en kyrkogård för odöpta barn, men detta ställde till nya problem.
 
-92
+76
 00:10:51,700 --> 00:10:57,760
 För att få plats med filosofen i en kista anpassad för barn beslutade man att såga av hans huvud.
 
-93
+77
 00:10:57,860 --> 00:11:02,100
 Som om detta inte vore illa nog tappades huvudet också bort.
 
-94
+78
 00:11:02,360 --> 00:11:08,560
 Detta uppdagades först 16 år senare då Frankrike efter diplomatiska påtryckningar
 
-95
+79
 00:11:08,560 --> 00:11:14,400
 fått kistan uppgrävd och skeppad till Paris för en statsmannamässig begravning.
 
-96
+80
 00:11:15,380 --> 00:11:23,020
 Först 150 år senare återfanns Descartes kranium av den svenska kemins fader, Jacob Berzelius,
 
-97
+81
 00:11:23,020 --> 00:11:25,600
 och den kunde återföras till Paris.
 
-98
+82
 00:11:25,980 --> 00:11:29,840
 Hur fransmännen reagerade när de upptäckte att svenskarna roat sig med att
 
-99
+83
 00:11:29,840 --> 00:11:34,860
 rista in klotter och slarvat bort underkäken förtäljer inte historien.
 
-100
+84
 00:11:35,740 --> 00:11:41,240
 Av någon outgrundlig anledning lät man även denna gång bli att återförena kroppsdelarna.
 
-101
+85
 00:11:41,480 --> 00:11:46,600
 Istället placerade man skallen på en hylla i det naturvetenskapliga museet i Paris
 
-102
+86
 00:11:46,600 --> 00:11:53,340
 där det fortfarande finns till beskådan – inklämt mellan ett par neandertal- och cromagnonskallar.

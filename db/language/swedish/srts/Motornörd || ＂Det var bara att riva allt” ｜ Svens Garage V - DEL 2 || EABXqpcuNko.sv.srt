@@ -1,147 +1,121 @@
 1
-00:01:34,989 --> 00:01:36,886
-Så den enda generator jag kunde hitta.
-
-2
 00:01:36,970 --> 00:01:40,730
 Jag har försökt att få igång min,
 men nej, det går inte.
 
-3
+2
 00:01:41,269 --> 00:01:45,555
 Den är lite speciell med
 för det sitter bara en spole i denna
 
-4
+3
 00:01:45,639 --> 00:01:49,660
 så de måste ha
 en särskild laddnings regulator
 
-5
+4
 00:01:50,629 --> 00:01:52,295
 och det är en regulator
 som hela tiden ligger
 
-6
+5
 00:01:52,379 --> 00:01:55,849
 och pulsar ström in i lindningen.
 
-7
+6
 00:01:57,019 --> 00:01:59,830
 Så en modern laddnings regulator
 funkar inte.
 
-8
+7
 00:02:00,150 --> 00:02:05,779
 Så jag köpte ju en laddnings regulator,
 en elektronisk,
 
-9
+8
 00:02:06,339 --> 00:02:08,339
 och köpte ny lindning.
 
-10
+9
 00:02:08,720 --> 00:02:10,925
 Men nej, jag fick inte igång det där.
 
-11
-00:02:11,009 --> 00:02:13,009
-Laddar inte någonting.
-
-12
-00:02:17,500 --> 00:02:19,500
-Och det finns att köpa.
-
-13
+10
 00:02:20,039 --> 00:02:24,472
 En har hittat till Europa nere i Belgien
 och sen snubbe där.
 
-14
+11
 00:02:24,472 --> 00:02:25,233
 En?
 
-15
+12
 00:02:25,233 --> 00:02:27,089
 En, hade han.
 
-16
+13
 00:02:28,419 --> 00:02:30,669
 Men han visste att den var ovanlig.
 
-17
+14
 00:02:32,679 --> 00:02:37,199
 12 000 plus skatt plus frakt och lite.
 
-18
+15
 00:02:38,619 --> 00:02:42,059
 Ja. Nej, så roligt är det inte.
 
-19
+16
 00:02:42,330 --> 00:02:44,705
 Jag menar fan, det är ju mer
 än vad halva cykeln är värd
 
-20
+17
 00:02:44,789 --> 00:02:46,365
 om man säger så.
 
-21
+18
 00:02:46,449 --> 00:02:48,925
 Så jag gick lite
 och tittade i gömmorna här i garaget
 
-22
-00:02:49,009 --> 00:02:51,380
-och så hittade jag
-en växelström generator.
-
-23
-00:10:22,239 --> 00:10:24,479
-och det börjar giggla så här.
-
-24
+19
 00:10:26,880 --> 00:10:28,746
 Så det får man åtgärda.
 
-25
+20
 00:10:28,830 --> 00:10:31,900
 Jag har rivit en hela elsystemet,
 alla kablar och det här.
 
-26
+21
 00:10:32,309 --> 00:10:35,130
 Det är inga bra mc kablar för de är.
 
-27
+22
 00:10:36,169 --> 00:10:41,676
 Tittar man på de här, det är väldigt
 få trådar så en sådan här kabel
 
-28
+23
 00:10:41,760 --> 00:10:43,760
 blir väldigt styv.
 
-29
+24
 00:10:44,150 --> 00:10:47,440
 Ju styvare kabel
 du har ju lättare går den av vibrationer.
 
-30
+25
 00:10:48,320 --> 00:10:51,700
 Så här vill man ju ha en kabel
 som har väldigt mycket trådar
 
-31
+26
 00:10:52,030 --> 00:10:54,030
 som blir mjuk och följsam.
 
-32
+27
 00:10:54,580 --> 00:10:56,645
 Då kan han ligga
 och vibrera utan en sån här.
-
-33
-00:10:56,729 --> 00:10:59,066
-Motorn vibrerar väldigt mycket så
-då är det viktigt

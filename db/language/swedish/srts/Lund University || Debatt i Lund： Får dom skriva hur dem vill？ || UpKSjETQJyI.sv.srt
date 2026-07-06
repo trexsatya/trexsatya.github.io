@@ -1,1662 +1,1121 @@
 1
-00:01:56,736 --> 00:02:02,010
-utan minsta rädsla att göra det mer komplicerat än det redan var.
-
-2
 00:02:02,112 --> 00:02:06,375
 Detta, mina vänner, är motsvarigheten till TikTok fast tvärtom.
 
-3
+2
 00:02:08,375 --> 00:02:14,414
 Jag heter Andreas Ekström och jag hittas ofta på Sydsvenskan men det är Lunds universitet
 
-4
+3
 00:02:14,414 --> 00:02:19,706
 och särskilt Samhällsvetenskapliga fakulteten som står värd för Debatt i Lund.
 
-5
+4
 00:02:20,800 --> 00:02:24,128
 Dagens diskussion handlar alltså om språk.
 
-6
+5
 00:02:25,920 --> 00:02:30,201
 Käpphästar skulle man kunna säga och ni ska inte inbilla mig något
 
-7
+6
 00:02:30,201 --> 00:02:34,936
 alla ni som är här i denna fullsatta sal, vilka käpphästar red ni hit på?
 
-8
+7
 00:02:35,136 --> 00:02:37,440
 Någon som vill ropar bara? Vilken är er språkliga käpphäst?
 
-9
+8
 00:02:38,976 --> 00:02:39,744
 Dom.
 
-10
+9
 00:02:40,735 --> 00:02:42,735
 Vad hade vi där bak? Var inte blyg nu!
 
-11
-00:02:42,735 --> 00:02:45,871
-Särskrivningar ja! Det slipper du ikväll i alla fall
-
-12
-00:03:52,554 --> 00:03:57,088
-Många av er känner säkert igen Ola Wikander, som är docent i bibelvetenskap
-
-13
+10
 00:03:57,088 --> 00:03:58,720
 och expert på utdöda språk.
 
-14
+11
 00:03:58,848 --> 00:03:59,616
 Välkommen!
 
-15
+12
 00:04:03,586 --> 00:04:07,175
 Vi är också mycket glada att ha språkvetaren och författaren
 
-16
+13
 00:04:07,175 --> 00:04:11,584
 till boken "Handbok för språkpoliser" här, Sara Lövestam!
 
-17
+14
 00:04:15,583 --> 00:04:21,315
 Sist men inte minst, rutinerad svensklärare från Katedralskolan, gymnasiet här i Lund,
 
-18
+15
 00:04:21,375 --> 00:04:23,935
 här har vi Daniel Sandin, välkommen!
 
-19
+16
 00:04:27,914 --> 00:04:31,913
 Vet ni vad? Jag förutsätter faktiskt att ni älskar språk.
 
-20
+17
 00:04:31,913 --> 00:04:33,913
 Det gör ni va?
 
-21
+18
 00:04:34,943 --> 00:04:35,455
 Varför det?
 
-22
-00:04:37,759 --> 00:04:39,245
-Någonting är det ju som har fört er
-
-23
-00:08:21,001 --> 00:08:22,783
-Det har nog varit en drivkraft,
-
-24
+19
 00:08:25,599 --> 00:08:26,623
 intresset för språket.
 
-25
+20
 00:08:27,135 --> 00:08:29,183
 Men sen har det nog också kommit att bli
 
-26
+21
 00:08:29,695 --> 00:08:35,298
 hur språket blir länken till andra människor,
 hur vi förstår varandra.
 
-27
+22
 00:08:35,839 --> 00:08:40,664
 Från ordboken och ords olika betydelser, hur du kan uppfatta ord
 
-28
+23
 00:08:40,703 --> 00:08:44,230
 på olika sätt beroende på vilka kontexter,
 
-29
+24
 00:08:44,799 --> 00:08:49,596
 vilka personer det som uttalar dem, i vilka möten de sker till
 
-30
+25
 00:08:50,431 --> 00:08:55,961
 hur vi tolkar underförståddheter i politisk kommunikation.
 
-31
+26
 00:08:56,319 --> 00:09:00,593
 Så har det hela tiden varit den här länken till andra och hur vi förstår varann.
 
-32
+27
 00:09:00,593 --> 00:09:02,975
 Just det, det du säger med politisk kommunikation,
 
-33
-00:09:02,975 --> 00:09:03,743
-det har ju blivit en hel vetenskap
-
-34
-00:11:24,543 --> 00:11:25,823
-är någon slags
-
-35
+28
 00:11:26,847 --> 00:11:28,127
 medborgerlig rustning
 
-36
+29
 00:11:28,383 --> 00:11:29,407
 som alla borde tränas i.
 
-37
+30
 00:11:30,175 --> 00:11:34,930
 Ja, det är intressant för det här är något som vi har talat mycket om i andra typer av debatter,
 
-38
+31
 00:11:34,930 --> 00:11:40,928
 alltså politisk polarisering och medielogik som vi också har debatterat här i Debatt i Lund.
 
-39
+32
 00:11:41,951 --> 00:11:45,791
 Vad språket gör med ens förståelse är någonting som vi ska gå in på djupare men också
 
-40
+33
 00:11:46,047 --> 00:11:49,631
 var man placerar sig som människa, vem blir man då som väljare och
 
-41
+34
 00:11:49,887 --> 00:11:50,911
 som medborgare.
 
-42
+35
 00:11:51,167 --> 00:11:53,727
 Vi hade en annan debatt här som handlade om meritokrati,
 
-43
+36
 00:11:53,727 --> 00:11:57,370
 riktat mycket våra studenter här vid universitetet.
 
-44
-00:11:57,370 --> 00:12:00,358
-Hur meriterar man sig bäst om man tänker sig en karriär i det ena eller det andra?
-
-45
-00:13:11,039 --> 00:13:13,543
-och så har man liksom med sig allt det här.
-
-46
-00:13:14,367 --> 00:13:19,642
-Så ja, det är väl ganska talande för hur mycket språket styr hur man uppfattas.
-
-47
-00:13:19,642 --> 00:13:24,641
-Om du kämpar någon gång Daniel med att  motivera dina elever med att plugga till nästa prov,
-
-48
-00:13:24,641 --> 00:13:28,640
-använder du framtidsargumentet mycket? Alltså för att
-
-49
-00:13:28,959 --> 00:13:31,473
-se att det här ni behöver detta, ni kommer inte kunna skriva bra jobbansökningar,
-
-50
-00:13:31,473 --> 00:13:33,473
-ni kommer inte kunna skriva bra hemtentor.
-
-51
-00:13:35,359 --> 00:13:38,372
-Det gör jag ju naturligtvis men jag tror inte de tar till sig det
-
-52
-00:13:38,431 --> 00:13:41,704
-för att det ligger liksom i ålderns och
-
-53
-00:13:42,527 --> 00:13:44,753
-ungdomens natur att inte riktigt se de argumenten.
-
-54
-00:13:44,753 --> 00:13:46,623
-Men jag är ju övertygad, det är ju det som
-
-55
-00:13:47,647 --> 00:13:50,436
-bygger min vision av vad som är otroligt viktigt.
-
-56
+37
 00:13:51,743 --> 00:13:56,735
 Jag vill ju ge dem, som vi säkert kommer in på senare, att inte
 
-57
+38
 00:13:56,863 --> 00:14:00,601
 backa för mycket utan verkligen stå fast vid att det är så
 
-58
+39
 00:14:00,703 --> 00:14:01,215
 otroligt viktigt
 
-59
+40
 00:14:01,471 --> 00:14:01,983
 att kunna uttrycka sig,
 
-60
+41
 00:14:02,751 --> 00:14:05,766
 otroligt viktigt att behärska språk
 
-61
+42
 00:14:05,823 --> 00:14:09,032
 som de uppfattar är ålderdomligt eller passé.
 
-62
+43
 00:14:09,166 --> 00:14:11,967
 För det ger tillträde till arenor som
 
-63
+44
 00:14:12,735 --> 00:14:18,764
 de kanske inte ens vet nu att de kommer behöva det men de kommer behöva det.
 
-64
+45
 00:14:19,164 --> 00:14:23,234
 Men att förklara för dem att det är viktigt är jättesvårt
 
-65
-00:14:23,234 --> 00:14:26,662
-för de har inte redskapen att förstå det alltid. Ibland, ibland inte.
-
-66
-00:14:27,071 --> 00:14:30,143
-Men ibland tänker jag att inte heller vi förstår.
-
-67
-00:14:31,679 --> 00:14:33,471
-Precis som du säger, det är det vi har.
-
-68
-00:14:46,527 --> 00:14:51,391
-Ett ganska annorlunda språk än de själva är vana att formulera de här sakerna i så det blir ju
-
-69
+46
 00:14:51,391 --> 00:14:57,023
 någon slags dubbelspråklighet mellan den situationen.
 
-70
+47
 00:14:57,023 --> 00:15:01,522
 Precis! Då måste du ha ditt eget och kunna förstå...
 
-71
+48
 00:15:01,522 --> 00:15:04,929
 Man måste kunna ha det analytiskt vetenskapliga språket igång i hjärnan
 
-72
+49
 00:15:04,929 --> 00:15:07,521
 medan man hör patienten berätta med annan terminologi.
 
-73
+50
 00:15:07,521 --> 00:15:10,187
 Det är en rätt sofistikerad situation det där alltså.
 
-74
+51
 00:15:10,187 --> 00:15:12,127
 Det gäller egentligen väldigt många arbetsgrupper.
 
-75
+52
 00:15:12,127 --> 00:15:14,919
 Man måste vara pedagog helt enkelt.
 
-76
+53
 00:15:15,455 --> 00:15:18,452
 Ola, du sa ett ord där, dubbelspråkighet. Vad var det fina ordet för det?
 
-77
+54
 00:15:18,452 --> 00:15:19,453
 Diglossi.
 
-78
-00:15:19,807 --> 00:15:22,085
-Diglossi, då har jag lärt mig kvällens första nya ord.
-
-79
-00:17:15,519 --> 00:17:17,055
-i förståelsen för engelska ord,
-
-80
+55
 00:17:17,311 --> 00:17:19,103
 där stod sig deras förståelse.
 
-81
+56
 00:17:19,871 --> 00:17:24,927
 Så att det som hände var egentligen att förståelsen för gamla svenska ord,
 
-82
+57
 00:17:24,927 --> 00:17:26,927
 jag har faktiskt markerat här
 
-83
+58
 00:17:27,551 --> 00:17:29,343
 vilka ord gick ner mest.
 
-84
+59
 00:17:30,367 --> 00:17:34,125
 Pådrag, kulvert konstig nog,
 
-85
+60
 00:17:34,463 --> 00:17:35,487
 påstötning,
 
-86
+61
 00:17:35,999 --> 00:17:37,023
 tjänlig,
 
-87
+62
 00:17:37,279 --> 00:17:38,303
 varsko,
 
-88
+63
 00:17:38,815 --> 00:17:39,583
 föreligga.
 
-89
+64
 00:17:40,351 --> 00:17:41,857
 Alltså ord som man...
 
-90
+65
 00:17:41,857 --> 00:17:44,523
 Byråkratisk präglade germanska ord.
 
-91
+66
 00:17:44,523 --> 00:17:47,956
 Dessutom, men också som man kan hitta i en del nyhetstexter.
 
-92
+67
 00:17:48,031 --> 00:17:53,021
 Vi hade ju valt ut ord, vi har inte undersökt alla ord men ord som förekommer i tidningar,
 
-93
-00:17:53,021 --> 00:17:55,654
-så det var vårat urvalskriterier.
-
-94
-00:25:01,184 --> 00:25:04,669
-Det är en viktig poäng det där därför att så fort
-
-95
+68
 00:25:04,768 --> 00:25:08,608
 någon tycker att nu ska vi göra en reform om någonting
 
-96
+69
 00:25:09,120 --> 00:25:11,700
 så kommer det alltid finnas några människor som kommer i kläm där.
 
-97
+70
 00:25:11,700 --> 00:25:14,240
 Det är en sak med de människor som
 
-98
+71
 00:25:14,496 --> 00:25:17,312
 behärskar både för och efter så väl
 
-99
+72
 00:25:17,568 --> 00:25:22,685
 så att de bara kan växla och vid behov växla tillbaka när de hamnar ju ett annat socialt
 
-100
+73
 00:25:22,685 --> 00:25:26,698
 sammanhang eller i en mer språkkonservativ miljö eller vad som helst.
 
-101
+74
 00:25:26,698 --> 00:25:30,031
 Men de som hamnar i kläm, det är de som inte har
 
-102
+75
 00:25:30,368 --> 00:25:32,897
 den dubbelspråkigheten och inte kan göra det.
 
-103
+76
 00:25:33,696 --> 00:25:36,768
 Och får höra att nej men nu är det okej att skriva
 
-104
-00:25:37,024 --> 00:25:39,072
-det som inte var okej att skriva för en vecka.
-
-105
-00:26:03,904 --> 00:26:04,724
-Utjämnare då.
-
-106
-00:26:04,724 --> 00:26:09,534
-Ja, en klassutjämnare men jag tror det riskerar att gå åt precis det motsatta hållet
-
-107
-00:26:09,534 --> 00:26:11,023
-för att det det gör är att
-
-108
-00:26:11,072 --> 00:26:17,588
-de som har med sig både det traditionella och det lättsamma kan
-
-109
-00:26:17,728 --> 00:26:19,520
-simma lätt i de där vattnen och vet
-
-110
-00:26:19,776 --> 00:26:21,824
-lätt hur man växlar mellan en
-
-111
-00:26:22,080 --> 00:26:26,176
-en stilform till en annan till exempel, ett stavningssätt till en annan.
-
-112
-00:26:26,432 --> 00:26:27,456
-Men de som inte har det
-
-113
-00:26:27,968 --> 00:26:32,320
-markerar direkt vad de hamnar och får ingen hjälp med att
-
-114
-00:26:32,576 --> 00:26:33,856
-lära sig navigera.
-
-115
-00:26:33,856 --> 00:26:40,450
-Det här låter lite som det här klassiska argumentet från vänstern i Sverige att
-
-116
-00:29:12,576 --> 00:29:15,719
-Elegant formulerat!
-
-117
+77
 00:29:15,719 --> 00:29:18,719
 Okej, nu tar vi det. Vi tar det bara, vi måste ändå, det förstår ni.
 
-118
+78
 00:29:18,719 --> 00:29:21,685
 Okej, Anna. De eller dem, hur ska vi göra?
 
-119
+79
 00:29:21,685 --> 00:29:23,685
 Jag tycker vi redan har varit inne på det.
 
-120
+80
 00:29:26,684 --> 00:29:30,550
 Jag håller med i detta, på något sätt kan vi inte börja med skolan.
 
-121
+81
 00:29:31,264 --> 00:29:36,049
 Vi kan ju inte börja med att lärarna slutar undervisa i det, det måste på något sätt börja
 
-122
+82
 00:29:36,384 --> 00:29:37,515
 från andra hållet.
 
-123
+83
 00:29:37,664 --> 00:29:39,915
 Jag har inga starka känslor kring de och dom, dom!
 
-124
+84
 00:29:40,736 --> 00:29:44,880
 Det var en unik ståndpunkt i debatten, det måste jag säga.
 
-125
+85
 00:29:44,880 --> 00:29:46,880
 Nämen, språket förändras och
 
-126
+86
 00:29:47,136 --> 00:29:48,416
 snart kommer vi kanske byta
 
-127
+87
 00:29:48,672 --> 00:29:49,952
 till dom rakt över.
 
-128
+88
 00:29:50,720 --> 00:29:54,579
 Det har gått bra i talspråk i kanske 100 år när vi inte har gjort skillnad
 
-129
-00:29:54,579 --> 00:29:56,352
-och vi har ändå förstått varandra.
-
-130
-00:30:04,476 --> 00:30:07,343
-och ingenting är naturligt.
-
-131
-00:30:07,360 --> 00:30:12,375
-Allt det här har att göra med språkideologiska och språkpolitiska överväganden
-
-132
-00:30:12,375 --> 00:30:18,074
-och att förändring har skett har ingen som helst moralisk implikation åt något håll.
-
-133
-00:30:18,107 --> 00:30:21,140
-Vilket innebär att vi är i den unika situationen att
-
-134
-00:30:21,696 --> 00:30:27,758
-vi kan välja och då tycker jag att vi kan gott kan lära uppväxande generationer
-
-135
-00:30:27,758 --> 00:30:33,437
-att behärska den standarden oavsett om de talar som finländare eller inte.
-
-136
-00:30:35,437 --> 00:30:37,318
-Just det, för finlandssvenskar gör det fortfarande.
-
-137
-00:30:37,318 --> 00:30:43,035
-Nä, inte alla men vissa gör det. Min farmor som var mycket skånsk gjorde skillnaden i tal.
-
-138
+89
 00:30:43,035 --> 00:30:44,992
 Men i alla fall,
 
-139
+90
 00:30:44,992 --> 00:30:48,708
 det som irriterar mig i den här diskussionen det är när man framställer det
 
-140
+91
 00:30:48,708 --> 00:30:51,136
 som att det det finns någon form av ren automatik,
 
-141
+92
 00:30:51,136 --> 00:30:53,136
 att i och med att
 
-142
+93
 00:30:53,952 --> 00:30:57,536
 majoritetstalspråket har tappat den här distinktionen för ett länge sedan,
 
-143
+94
 00:30:57,566 --> 00:31:01,032
 vilket är fullständigt empirisk korrekt, det är ingen diskussion om det.
 
-144
+95
 00:31:01,120 --> 00:31:05,864
 Alltså därav följer någon slags moraltvång
 
-145
+96
 00:31:06,496 --> 00:31:08,288
 att ändra skriftspråket.
 
-146
+97
 00:31:08,288 --> 00:31:11,430
 Nej! Det gör det bara inte! nä!
 
-147
-00:31:11,430 --> 00:31:13,430
-Det håller emot?
-
-148
-00:31:13,430 --> 00:31:14,386
-Absolut!
-
-149
-00:31:14,432 --> 00:31:20,195
-Och det är det som jag är engagerad emot, den här föreställningen om en automatism.
-
-150
-00:31:20,828 --> 00:31:23,994
-Men är det verkligen ett moralargument? Handlar det inte snarare om...
-
-151
-00:31:23,994 --> 00:31:26,993
-Jo, men lite är det det faktiskt. "Ni gör det för svårt för de uppväxande...".
-
-152
-00:31:26,993 --> 00:31:32,992
-40 % av lärarna har faktiskt redan har slutat undervisa i grundskolan eller accepterat detta.
-
-153
-00:31:32,992 --> 00:31:34,992
-Då är det ett val de har gjort.
-
-154
-00:31:34,992 --> 00:31:39,958
-Dessutom kan vi notera att på 80-talet, när jag var en liten påg,
-
-155
-00:31:40,288 --> 00:31:42,592
-då var det ju jättemycket journalister som skrev dom
-
-156
-00:31:43,104 --> 00:31:44,896
-och sen slutade de med det.
-
-157
-00:31:44,896 --> 00:31:49,122
-Det är ju samma sak med den så kallade moderna stavningen i början på 1900-talet
-
-158
-00:32:03,353 --> 00:32:06,352
-Det är ett väldigt bra exempel,
-
-159
+98
 00:32:06,352 --> 00:32:09,352
 det höll ju ut några hundra år i skrift efter att det började dö ut i tal
 
-160
+99
 00:32:09,984 --> 00:32:13,084
 och sen tog någon ett beslut och sen gick det ganska fort.
 
-161
+100
 00:32:14,105 --> 00:32:16,128
 Stavningsreformer har vi ju haft av olika slag, även i andra länder.
 
-162
+101
 00:32:16,384 --> 00:32:19,712
 Men nu vill jag också höra vad Sara och Daniel säger här, hur ska vi göra?
 
-163
+102
 00:32:20,783 --> 00:32:29,696
 Jag har egentligen inte heller starka känslor men jag ser det som att vi står lite vid ett vägskäl.
 
-164
+103
 00:32:31,481 --> 00:32:36,280
 Att antingen så släpper vi dom fritt
 
-165
+104
 00:32:36,608 --> 00:32:37,888
 eller så får vi
 
-166
+105
 00:32:38,144 --> 00:32:41,445
 lägga krut på att
 
-167
+106
 00:32:41,728 --> 00:32:45,056
 undervisa både unga och äldre och på något sätt
 
-168
-00:32:45,312 --> 00:32:50,176
-starta kampanjer, liksom en svensk tiger-storlek på den kampanjen
-
-169
-00:33:56,224 --> 00:33:57,760
-Det här kan ni  göra hemma!
-
-170
+107
 00:33:57,760 --> 00:34:01,088
 Och kollat då hur många...
 
-171
+108
 00:34:01,088 --> 00:34:07,428
 Det är ett litet underlag, jag hade bara några timmar på söndagen att göra det här men
 
-172
+109
 00:34:07,488 --> 00:34:12,352
 på det visade sig att det var inte så stor skillnad 2004 till 2022 förutom
 
-173
+110
 00:34:17,472 --> 00:34:21,725
 när det gäller bestämd artikel.
 
-174
+111
 00:34:21,725 --> 00:34:27,264
 Bra publik! Det sitter en person längst fram som sa "Jag visste det!".
 
-175
+112
 00:34:27,264 --> 00:34:32,637
 Jo, för de som tillfälligtvis har glömt bestämd artikel,
 
-176
+113
 00:34:33,088 --> 00:34:34,368
 alltså när man säger
 
-177
+114
 00:34:34,368 --> 00:34:39,744
 "Dom halvfulla glasen på borden",
 
-178
+115
 00:34:39,744 --> 00:34:44,254
 att man, enligt min lilla studie,
 
-179
-00:34:44,254 --> 00:34:45,699
-så är det vanligare att man nu skriver
-
-180
-00:35:25,568 --> 00:35:29,920
-inte så många undersökningar om vart det är på väg med de och dem
-
-181
-00:35:29,920 --> 00:35:33,711
-men det finns undersökningar som visar att de som blir irriterade,
-
-182
-00:35:33,711 --> 00:35:41,710
-de blir mer irriterade på ett felanvänt de eller dem än ett allmänt använt dom.
-
-183
-00:35:49,120 --> 00:35:51,972
-Kan du matcha i passion Daniel? Hur ska vi göra?
-
-184
-00:35:51,972 --> 00:35:55,264
-Jag tror jag kan matcha passionen faktiskt...
-
-185
-00:35:57,824 --> 00:36:03,200
-Nej men så här: Vi kanske står vid ett vägskäl men jag tänker också att det finns ju
-
-186
-00:36:03,456 --> 00:36:05,248
-andra perspektiv på det här.
-
-187
+116
 00:36:05,248 --> 00:36:08,238
 Det är ju inte bara de och dem, det ganska mycket i språket
 
-188
+117
 00:36:08,320 --> 00:36:09,088
 som är svårt.
 
-189
+118
 00:36:09,856 --> 00:36:15,559
 Jag menar, det är inte särskilt svårt att lära sig skillnaden på de och dem,
 
-190
+119
 00:36:15,559 --> 00:36:18,336
 bortsett från din akademiska kollega.
 
-191
+120
 00:36:18,769 --> 00:36:23,101
 Men de flesta som har någorlunda kunskaper i språket hanterar det, det är inte särskilt konstigt.
 
-192
+121
 00:36:23,201 --> 00:36:29,000
 Det som krävs är lärare som lär ungdomarna, barnen,
 
-193
+122
 00:36:29,367 --> 00:36:31,833
 att hantera subjekts- och objektsformer i skrift.
 
-194
+123
 00:36:32,128 --> 00:36:33,033
 Det är inte konstigare än så.
 
-195
+124
 00:36:33,664 --> 00:36:35,666
 Problemet är ju något annat som jag ser det,
 
-196
-00:36:35,968 --> 00:36:38,732
-att det blir ju liksom en bildningsfråga.
-
-197
-00:36:39,296 --> 00:36:41,600
-Att vi tidigt i grundskolan har en så stor andel
-
-198
-00:36:41,856 --> 00:36:45,797
-lärare som själva inte behärskar de och dem.
-
-199
-00:36:45,797 --> 00:36:50,796
-Då står man ju inför ett vägskäl. Ska vi resignera en för att vi har en lärarkår...
-
-200
-00:36:50,816 --> 00:36:51,584
-Jag vet, jag sticker ut
-
-201
-00:36:53,120 --> 00:36:55,424
-hakan här lite som lärare men jag tänker...
-
-202
-00:36:55,936 --> 00:36:56,960
-Om så pass många
-
-203
-00:36:57,984 --> 00:37:00,032
-lärare inte själv hanterar de och dem
-
-204
-00:37:00,288 --> 00:37:04,327
-utan väljer att skriva dom, det är klart att barnen kommer skriva dom.
-
-205
+125
 00:37:04,384 --> 00:37:06,659
 Så kommer man vidare upp på gymnasiet och så:
 
-206
+126
 00:37:06,659 --> 00:37:10,659
 "Ja, vi fick alltid skriva dom, det gick ju bra..."
 
-207
+127
 00:37:10,659 --> 00:37:12,659
 Jag menar bara att det är en fråga
 
-208
+128
 00:37:12,659 --> 00:37:16,158
 och när vi pratar om de här grejerna så pratar vi, jag menar sj-ljuden,
 
-209
+129
 00:37:16,160 --> 00:37:18,690
 varför ska vi stava sj-ljuden på sjuttioelva olika sätt?
 
-210
+130
 00:37:18,690 --> 00:37:20,690
 Det är ju ganska jobbigt att lära sig.
 
-211
+131
 00:37:20,690 --> 00:37:27,389
 Inte för oss längre för vi har ju lärt oss men för barnen, vår enda generation unga
 
-212
+132
 00:37:27,680 --> 00:37:30,496
 ska lära sig varenda ord med stavning om det...
 
-213
+133
 00:37:30,752 --> 00:37:36,054
 Ja, ni vet hur många sj-ljud det är. Det var ju ändå lite klurigt, det finns ju inga direkta regler.
 
-214
+134
 00:37:36,054 --> 00:37:38,053
 Men det här hör ju också ihop med en annan sak,
 
-215
+135
 00:37:38,053 --> 00:37:43,052
 nämligen inlärningen av vad som brukar bli vårt tredje språk på svenska.
 
-216
+136
 00:37:43,052 --> 00:37:46,585
 Därför att om du inte kan de här grundläggande grammatiska sakerna
 
-217
-00:37:46,585 --> 00:37:49,952
-får du ju ganska tufft att lära dig tyska om du försöker göra det när du är sexton
-
-218
-00:37:59,449 --> 00:38:01,625
-Eller så är det då man får det.
-
-219
-00:38:01,625 --> 00:38:08,747
-Nu är det ju inte så många som har läst tyska, jag vet inte hur det är just nu,
-
-220
-00:38:08,747 --> 00:38:10,680
-men det är åtminstone min erfarenhet att
-
-221
-00:38:10,688 --> 00:38:15,946
-det var ju då man lärde sig grammatik, när man började läsa tyska.
-
-222
-00:38:16,832 --> 00:38:17,600
-Eller spanska eller franska.
-
-223
-00:38:20,160 --> 00:38:24,444
-För det inte behövdes på samma sätt, det behövs ju inte för ens eget modersmål på samma sätt.
-
-224
-00:38:24,444 --> 00:38:27,277
-Jag tänker Saras
-
-225
-00:38:27,328 --> 00:38:31,343
-elever på skrivarkurserna som vill skriva på engelska, har de problem med they och them?
-
-226
-00:38:31,424 --> 00:38:37,741
-Det är verkligen ingen stor fråga egentligen
-
-227
-00:38:38,080 --> 00:38:40,841
-men det är ju ganska mycket annat som följer med
-
-228
-00:38:40,896 --> 00:38:43,407
-och det kanske är tecken på något vi inte vill, tänker jag.
-
-229
-00:38:43,968 --> 00:38:48,239
-Som en syn på bildning, språk.
-
-230
+137
 00:38:48,239 --> 00:38:50,239
 För det är ju inte bara ta bort din
 
-231
+138
 00:38:51,392 --> 00:38:53,184
 bakåtkompatibilitet också.
 
-232
+139
 00:38:53,696 --> 00:38:57,024
 Genom att ta bort de och dem så ger vi också en helt ny generation
 
-233
+140
 00:38:57,536 --> 00:39:01,303
 det svårare att läsa allt som är skrivet tillbaka i tiden.
 
-234
+141
 00:39:01,303 --> 00:39:04,103
 Det finns sådana aspekter, på samma sätt som vi skulle paja sj-ljuden
 
-235
+142
 00:39:04,103 --> 00:39:07,102
 om vi tar bort dem för det är så svårt
 
-236
+143
 00:39:07,264 --> 00:39:09,312
 för ungdomarna att lära sig.
 
-237
+144
 00:39:09,312 --> 00:39:13,568
 För det är ju enda argumentet för att ta bort, för det är lite svårt.
 
-238
+145
 00:39:13,568 --> 00:39:17,134
 Inte bara, det är ju också att vi inte gör den distinktionen i tal.
 
-239
-00:39:17,248 --> 00:39:23,832
-Jag lyssnade på Mumin, det var underbart men jag vet att det är en minoritet finlandssvenskan
-
-240
-00:39:23,832 --> 00:39:25,832
-men det är ändå ärligt.
-
-241
-00:39:25,832 --> 00:39:30,137
-Du Ola, jag fascineras över att du sa, vägskäl är ni överens om,
-
-242
-00:39:30,137 --> 00:39:33,164
-men Ola sa att vi är i en valsituation också.
-
-243
-00:39:33,164 --> 00:39:35,863
-Därför att något som ingen av er har sagt
-
-244
-00:39:36,192 --> 00:39:38,240
-men som man ofta hör i debatten det är ju
-
-245
-00:39:38,496 --> 00:39:41,262
-"Men dom är ostoppbart, det kommer ändå att bli så."
-
-246
-00:39:41,562 --> 00:39:46,395
-Det vill säga, det är alltså det som vi kan kalla för cannabisargumentet,
-
-247
-00:39:50,060 --> 00:39:52,060
-Men jag ser inte så på det.
-
-248
+146
 00:39:52,320 --> 00:39:57,696
 Jag har flirtat med det argumentet men då tänker inte jag att det är en naturkraft
 
-249
+147
 00:39:57,696 --> 00:40:03,125
 utan jag tänker mer enligt vår tradition av språkförändringar.
 
-250
+148
 00:40:05,120 --> 00:40:13,056
 Att svenska språket ofta har valt
 
-251
+149
 00:40:13,056 --> 00:40:15,616
 den vägen som följer talspråket.
 
-252
+150
 00:40:15,616 --> 00:40:18,633
 Det är en anmärkningsvärd konservativ position du intar nu.
 
-253
+151
 00:40:18,633 --> 00:40:21,721
 Precis, jag tänkte just säga det fast tvärtom,
 
-254
+152
 00:40:21,721 --> 00:40:23,721
 att den som då säger nej i det här,
 
-255
+153
 00:40:24,587 --> 00:40:28,120
 nu ska vi sluta följa talspråket i skrift
 
-256
+154
 00:40:28,416 --> 00:40:30,720
 som vi har gjort alltid, ja då är denn
 
-257
-00:40:30,976 --> 00:40:38,018
-personen ganska radikal och följer inte det traditionella som vi har gjort
-
-258
-00:42:04,934 --> 00:42:07,999
-Viktiga årtal för språkpolisen...
-
-259
+155
 00:42:09,535 --> 00:42:14,788
 1943 är det Dagens Nyheter som slopar verben pluralformer och
 
-260
+156
 00:42:14,788 --> 00:42:18,664
 snart följer alla de andra stora tidningarna.
 
-261
+157
 00:42:19,519 --> 00:42:23,063
 Men det är stora är ju när TT gör det 1945.
 
-262
+158
 00:42:24,895 --> 00:42:27,029
 Hur låter en sådan gammal form?
 
-263
+159
 00:42:27,455 --> 00:42:32,319
 Jaha, ja men det är till exempel att istället för att säga dropparna droppar
 
-264
+160
 00:42:32,831 --> 00:42:33,343
 som vi gör nu,
 
-265
+161
 00:42:33,599 --> 00:42:35,164
 säger man dropparna droppa.
 
-266
+162
 00:42:35,164 --> 00:42:39,743
 Vi har kvar detta i våra julsånger bland annat, vi komma istället för vi kommer.
 
-267
+163
 00:42:39,999 --> 00:42:42,326
 Kräftor kräva dessa drycker.
 
-268
+164
 00:42:42,326 --> 00:42:47,359
 Precis! Detta är de gamla pluralformerna som togs bort under visst ramaskri
 
-269
+165
 00:42:47,679 --> 00:42:54,724
 framför allt 1945 när TT, Tidningarnas Telegrambyrå, gick ut med att de nu skulle...
 
-270
+166
 00:42:55,103 --> 00:43:00,389
 Det finns en jätterolig insändare i Trelleborgsposten från 1945 om det
 
-271
+167
 00:43:00,991 --> 00:43:02,989
 och då hade alltså folk
 
-272
-00:43:03,295 --> 00:43:05,011
-inte pratat så på jättelänge och
-
-273
-00:43:19,679 --> 00:43:22,685
-att det hade varit ganska bra om folk
-
-274
+168
 00:43:22,751 --> 00:43:26,018
 i skolan idag fick lära sig att passivt förstå hur de formerna fungerar
 
-275
+169
 00:43:26,018 --> 00:43:31,450
 därför att vi har så oerhört mycket litteratur som är skriven med den formläran
 
-276
+170
 00:43:31,455 --> 00:43:34,949
 och då kan man också slippa sådana där
 
-277
+171
 00:43:35,039 --> 00:43:38,315
 jag skola och sådant som gör ont i själen när man hör.
 
-278
+172
 00:43:38,315 --> 00:43:41,115
 Det stråla en stjärna står det i en bok jag har!
 
-279
+173
 00:43:41,115 --> 00:43:47,513
 Ja och saken är den att i och med att detta var så pass konservativ grej under
 
-280
+174
 00:43:47,583 --> 00:43:52,079
 så pass många år så har vi en jättestor litteratur som är skriven så och
 
-281
+175
 00:43:52,703 --> 00:43:59,511
 det hade varit rätt bra att lära ut kanske till gymnasister en snabb översikt över hur det här funkar
 
-282
+176
 00:43:59,511 --> 00:44:03,510
 eftersom de kommer att konfronteras med någonting som är skrivet såhär.
 
-283
+177
 00:44:03,510 --> 00:44:06,271
 Jag kan säga inte bara när de läser
 
-284
+178
 00:44:06,271 --> 00:44:08,575
 Strindberg utan,
 
-285
+179
 00:44:08,831 --> 00:44:09,855
 om de nu gör det.
 
-286
-00:44:11,135 --> 00:44:17,141
-Jag undervisar i klassisk hebreiska och vår grammatik är skriven
-
-287
-00:44:43,135 --> 00:44:44,927
-samling text som är skriven på det här sättet
-
-288
+180
 00:44:44,927 --> 00:44:50,559
 och man kan faktiskt lära sig saker utan att själv skriva så.
 
-289
+181
 00:44:50,559 --> 00:44:54,143
 Man kan lära sig det som en litterär...
 
-290
+182
 00:44:54,143 --> 00:44:57,133
 Men det är ju på modet att skriva om böcker nu.
 
-291
+183
 00:44:57,215 --> 00:45:01,921
 Senast idag kom ju beskedet alla Ian Flemings Bond-böcker ska städas upp
 
-292
+184
 00:45:01,921 --> 00:45:04,098
 från opassande språk och sådär.
 
-293
+185
 00:45:04,098 --> 00:45:08,764
 Men det blir ju en sådan upprörhetsdebatt varje gång, för det handlar ju ofta om politiska saker.
 
-294
+186
 00:45:09,031 --> 00:45:13,263
 Nu var det ju om författaren Roald Dahls böcker, att man skulle städa upp i dem,
 
-295
+187
 00:45:13,263 --> 00:45:15,263
 då var det ett stort ramaskri överallt.
 
-296
+188
 00:45:15,263 --> 00:45:19,095
 Idag, i en liten notis i Dagens Nyheter, kommer nyheten att förlagen har tänkt efter
 
-297
+189
 00:45:19,095 --> 00:45:21,095
 och ska ge ut båda versionerna.
 
-298
+190
 00:45:21,095 --> 00:45:22,628
 Ja, de ska ge ut dubbla.
 
-299
+191
 00:45:22,628 --> 00:45:25,627
 Då reagerar ju ingen. Det är så himla upprörande!
 
-300
+192
 00:45:25,627 --> 00:45:30,626
 Nu tror alla att nu har PK-fascismen slagit till och så får 90 % av de som tror det
 
-301
+193
 00:45:30,626 --> 00:45:35,625
 nu inte att det pågick en språkpolitisk diskussion som resulterade i en kompromiss.
 
-302
+194
 00:45:35,625 --> 00:45:39,625
 Det når inte ut för det är inte massmedialt tillräckligt tydligt och det slutar med en notis.
 
-303
+195
 00:45:39,625 --> 00:45:44,624
 Men att vi skriver om och moderniserar barnböcker till ett språk som...
 
-304
-00:45:44,624 --> 00:45:46,590
-Alltså, det är ju inte bara det att pluralformerna försvinner,
-
-305
+196
 00:45:46,590 --> 00:45:52,589
 det är ju också det att ordförrådet ändras och det är ju inga konstigheter.
 
-306
+197
 00:45:52,767 --> 00:45:58,354
 Vi har gjort nya bibelöversättningar för att Bibeln ska gå och förstå av moderna...
 
-307
+198
 00:45:58,354 --> 00:46:00,354
 Inte bara därför men delvis.
 
-308
+199
 00:46:00,354 --> 00:46:05,986
 Nä men delvis och det är inget kontroversiellt med detta,
 
-309
+200
 00:46:05,986 --> 00:46:10,985
 man byter ut ord som är politiska och då blir det rabalder.
 
-310
+201
 00:46:10,985 --> 00:46:14,984
 Jag måste också ta ett litet varv och detta har att göra med en av dina texter Sara
 
-311
+202
 00:46:14,984 --> 00:46:17,984
 där du, och jag tycker den var så bra för jag håller med,
 
-312
+203
 00:46:18,367 --> 00:46:20,117
 så fungerar ju samtidsmänniskan.
 
-313
+204
 00:46:20,117 --> 00:46:24,116
 Jag uppskattar ordet "hen" väldigt mycket,
 
-314
-00:46:24,511 --> 00:46:26,559
-som ett samlande pronomen.
-Det är väldigt
-
-315
-00:48:10,239 --> 00:48:15,527
-Man märker det på att även de brukar slira, så att säga.
-
-316
+205
 00:48:15,527 --> 00:48:19,293
 Det brukar slita med ett man då och då för att man är så van vid det
 
-317
+206
 00:48:19,711 --> 00:48:21,592
 och för att inte betyder någonting!
 
-318
+207
 00:48:21,592 --> 00:48:25,592
 Jag blir ju elitistande där, det vill säga att jag tycker hen är en bra grej
 
-319
+208
 00:48:25,592 --> 00:48:27,592
 men du har ju inte fattat, det här har Sara Lövestam lärt mig,
 
-320
+209
 00:48:27,592 --> 00:48:33,190
 det är två ord som betyder, det heter homonym, och så blir jag totalt tokig
 
-321
+210
 00:48:33,190 --> 00:48:36,190
 av det och Mello, det är min andra sådan käpphäst...
 
-322
+211
 00:48:36,190 --> 00:48:38,563
 Men då ska jag säga, jag är för Mello!
 
-323
+212
 00:48:38,563 --> 00:48:39,451
 Är du?!
 
-324
+213
 00:48:39,451 --> 00:48:40,447
 Jag med.
 
-325
-00:48:40,447 --> 00:48:46,521
-Ja och det är ett mycket vanligt sätt att förkorta ord och namn på saker.
-
-326
-00:49:22,804 --> 00:49:26,880
-Varför blir folk så tokiga av att diskutera språk? Jag menar i positiv mening också!
-
-327
-00:49:26,880 --> 00:49:28,880
-Brinner vi så för detta?
-
-328
-00:49:28,880 --> 00:49:34,111
-Men går det inte tillbaka till det vi började prata om, att det är mänskligt.
-
-329
-00:49:35,487 --> 00:49:37,744
-Det är därför det är så viktigt att
-
-330
-00:49:38,815 --> 00:49:40,607
-språk får leva kvar,
-
-331
-00:49:41,887 --> 00:49:45,143
-att vi inte låter språk dö ut. Att människor får prata sitt modersmål och så vidare.
-
-332
-00:49:45,742 --> 00:49:49,542
-Det är så otroligt tätt förknippat med vem jag är.
-
-333
-00:49:49,608 --> 00:49:53,408
-Därför blir det en del av identiteten.
-
-334
-00:49:53,408 --> 00:49:59,559
-Jag blev kallad radikal för att jag tycker någonting, nä du sa väl inte radikal
-
-335
-00:49:59,559 --> 00:50:02,739
-men radikal ståndpunkt men så satt jag och tänkte
-
-336
-00:50:02,879 --> 00:50:07,743
-att hålla fast på de och dem, ja men det blir liksom en del av en identitet att tycka
-
-337
-00:50:07,743 --> 00:50:10,971
-någonting om språket, det blir en av mig som människa och hur jag uttrycker mig.
-
-338
-00:50:10,971 --> 00:50:12,607
-Det var ett litet stickspår.
-
-339
-00:50:12,607 --> 00:50:14,004
-Men hur jag uttrycker mig,
-
-340
+214
 00:50:14,399 --> 00:50:15,167
 det är väl därför.
 
-341
+215
 00:50:15,167 --> 00:50:18,733
 Det säger ju något om vem jag är.
 
-342
+216
 00:50:18,733 --> 00:50:28,734
 Du skrev något före debatten, om språk, om att uttrycka sig på ett sätt så man uppfattas
 
-343
+217
 00:50:28,991 --> 00:50:30,527
 smartare än vad man egentligen är.
 
-344
+218
 00:50:30,527 --> 00:50:35,999
 Jag tyckte det var så träffande för det är ju också det det handlar om, att kunna
 
-345
+219
 00:50:36,159 --> 00:50:38,932
 formulera sig, på något sätt
 
-346
+220
 00:50:39,231 --> 00:50:41,535
 komma in i en miljö.
 För mig har språket varit
 
-347
+221
 00:50:42,047 --> 00:50:43,327
 en del av
 
-348
+222
 00:50:43,839 --> 00:50:46,399
 min färd in i det akademiska, i den miljön.
 
-349
+223
 00:50:47,679 --> 00:50:48,447
 Att kunna liksom
 
-350
+224
 00:50:48,959 --> 00:50:51,519
 navigera fram där och göra det lyckosamt.
 
-351
+225
 00:50:51,775 --> 00:50:53,567
 Jag vet att när jag skriver
 
-352
+226
 00:50:53,823 --> 00:50:56,562
 så kommer jag ofta nå fram.
 
-353
-00:50:57,151 --> 00:50:58,687
-Jag kommer ofta få
-
-354
-00:51:52,703 --> 00:51:54,463
-Hon skriver till alla.
-
-355
+227
 00:51:54,463 --> 00:51:59,016
 Jag är ju både i radio på Landskampen och så TV4 och SVT så jag får mail från olika håll.
 
-356
+228
 00:51:59,103 --> 00:52:07,114
 Det finns en kvinna som är väldigt engagerad i att det inte heter människer
 
-357
+229
 00:52:07,114 --> 00:52:08,681
 utan det heter människor
 
-358
+230
 00:52:09,343 --> 00:52:11,647
 och hon skriver till alla
 
-359
+231
 00:52:13,439 --> 00:52:18,479
 redaktioner och påpekar att journalister nu för tiden inte kan prata ordentligt.
 
-360
+232
 00:52:18,479 --> 00:52:23,478
 Det här är lite av en grej som jag tog upp i "Handbok för språkpoliser"
 
-361
+233
 00:52:23,478 --> 00:52:30,010
 för väldigt ofta så handlar det om att det finns en dialektal eller fornsvensk grund till
 
-362
+234
 00:52:30,079 --> 00:52:34,009
 massor av det som betraktas som språkfel idag.
 
-363
+235
 00:52:34,175 --> 00:52:36,479
 Det är ju lite charmigt att någon angriper
 
-364
+236
 00:52:36,479 --> 00:52:43,074
 ett "språkfel" som faktiskt är stockholmskt. För det brukar gå åt andra hållet.
 
-365
+237
 00:52:43,074 --> 00:52:45,673
 Det är inte bara stockholmskt, det här med er.
 
-366
+238
 00:52:45,673 --> 00:52:49,473
 Nej, men bland annat. Det finns ju annars en
 
-367
+239
 00:52:49,535 --> 00:52:52,306
 väldigt spridd föreställning att så som man talar i
 
-368
+240
 00:52:52,607 --> 00:52:56,138
 Stockholm det är rätt, vilket är - ja...
 
-369
+241
 00:52:56,138 --> 00:53:01,137
 Men varför folk blir så engagerade tror jag handlar om,
 
-370
+242
 00:53:01,137 --> 00:53:06,136
 nu när jag har fördjupat mig i det här språkpolisiära beteendet,
 
-371
+243
 00:53:06,943 --> 00:53:12,435
 det är att, jamen folk går ju runt och gör det här, de rättar ju varandra obetalt.
 
-372
-00:53:12,435 --> 00:53:20,433
-Det här något som de känner är så viktigt att de gör det här, man kanske riskerar sina relationer,
-
-373
-00:53:20,433 --> 00:53:26,099
-man räds inte dålig stämning utan man vill verkligen få sagt att det heter inte
-
-374
+244
 00:53:26,143 --> 00:53:27,167
 "Vart är du?".
 
-375
+245
 00:53:27,167 --> 00:53:32,631
 Jag tror det här hänger ihop med det jag sa först, språket är
 
-376
+246
 00:53:33,311 --> 00:53:37,330
 ingenting annat än en överenskommelse
 
-377
+247
 00:53:37,919 --> 00:53:39,929
 mellan alla människor som talar detta språk.
 
-378
+248
 00:53:40,479 --> 00:53:45,855
 Uppemot 13 miljoner som kan svenska i någon mån i världen, vi ska vara överens
 
-379
+249
 00:53:46,367 --> 00:53:51,231
 och är vi inte överens om vad ord betyder och hur hur de ska formuleras,
 
-380
+250
 00:53:51,487 --> 00:53:54,047
 vilka som ska i vilken ordning,
 
-381
+251
 00:53:54,303 --> 00:53:55,583
 var det innebär...
 
-382
+252
 00:53:55,839 --> 00:53:57,887
 Alltså hela den här grammatiken
 
-383
+253
 00:53:58,143 --> 00:53:59,167
 och semantiken.
 
-384
+254
 00:53:59,679 --> 00:54:02,692
 Är vi inte överens då kan vi ju inte kommunicera.
 
-385
+255
 00:54:02,725 --> 00:54:07,615
 Vi är ju ett stort flockdjur som har möjlighet att bilda enormt stora flockar.
 
-386
+256
 00:54:08,639 --> 00:54:11,930
 Vi kan ju bilda större flockar än något annat djur på jorden
 
-387
+257
 00:54:11,930 --> 00:54:14,023
 genom att vi kan kommunicera med varandra.
 
-388
+258
 00:54:14,023 --> 00:54:16,789
 Så faller kommunikationer, då faller vi.
 
-389
+259
 00:54:16,789 --> 00:54:20,788
 Det där var så dramatiskt som att jag nästan pratade engelska!
 
-390
+260
 00:54:20,788 --> 00:54:22,788
 Jag vill också tänker jag...
 
-391
+261
 00:54:22,788 --> 00:54:25,513
 Något slags grupptänkt där....
 
-392
+262
 00:54:25,513 --> 00:54:27,488
 Min poäng har inte ens kommit.
 
-393
-00:54:27,488 --> 00:54:31,619
-Det är inte bara överenskommelse utan det är också
-
-394
-00:56:20,431 --> 00:56:26,430
-Språket är inte bara ett medel för kommunikation, det är det uppenbarligen,
-
-395
+263
 00:56:26,879 --> 00:56:33,995
 men språket har under lång tid i människans historia varit ett aktivt konstföremål som
 
-396
+264
 00:56:34,559 --> 00:56:40,827
 man, oavsett om man riktigt vill erkänna det eller inte, ses som en sten som måste putsas
 
-397
+265
 00:56:40,827 --> 00:56:43,826
 för att bli en vacker staty eller ett hus eller vad man vill bygga med det.
 
-398
+266
 00:56:44,031 --> 00:56:50,175
 Det gör ju att när man hör någon säga eller ännu mer när man ser någon skriva eftersom
 
-399
+267
 00:56:50,943 --> 00:56:54,491
 språkkonst till stor del är skriftlig om en uteslutande,
 
-400
+268
 00:56:54,527 --> 00:56:57,024
 så blir det för vissa människor då provokativt
 
-401
+269
 00:56:57,087 --> 00:56:59,135
 när man ser någonting som
 
-402
+270
 00:57:00,159 --> 00:57:05,455
 bryter mot vad man upplever som en tänkt väg mot någon slags skönhet
 
-403
+271
 00:57:05,455 --> 00:57:08,022
 och kanske ännu mer så när det sker oavsiktligt.
 
-404
-00:57:08,022 --> 00:57:12,021
-Det är en sak med syntaxupproret och sånt för då ser man att det är medvetet
-
-405
-00:58:42,303 --> 00:58:43,839
-ja men ta det ett varv till.
-
-406
+272
 00:58:44,095 --> 00:58:45,602
 Det gör jag, det går bra.
 
-407
+273
 00:58:46,602 --> 00:58:50,635
 Var lite aktiv med ditt ordförråd
 
-408
+274
 00:58:51,263 --> 00:58:54,591
 och ta reda på, tar du reda på det en gång så har du ju det sen.
 
-409
+275
 00:58:55,600 --> 00:58:57,633
 Någon mer som vill slänga med något?
 
-410
+276
 00:58:57,633 --> 00:59:00,033
 Jag kan anknyta, jag tänker precis samma sak.
 
-411
+277
 00:59:01,759 --> 00:59:06,031
 Om man köper tanken att det är bättre att kunna två ord än ett ord,
 
-412
+278
 00:59:06,367 --> 00:59:09,131
 att det gör en till en bättre kommunikatör, så måste tre ord vara bättre än två.
 
-413
+279
 00:59:09,131 --> 00:59:11,131
 Det blir ju nästan en...
 
-414
+280
 00:59:11,487 --> 00:59:13,535
 Det innebär ju att 10.000 ord
-
-415
-00:59:13,791 --> 00:59:17,529
-är bättre än 5 och 40 bättre än och så vidare.

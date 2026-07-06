@@ -39,101 +39,69 @@ Gällande den 1:a punkten är det viktigt för dig att tänka på att formulera 
 Det innebär att eventuella krav på delägarna ska vara formulerade med ett enkelt språk.
 
 11
-00:00:57,113 --> 00:01:02,037
-Eventuella krav på försäljningsvolym per delägare eller liknande måste vara kvantifierbara.
-
-12
-00:01:02,358 --> 00:01:08,184
-Detta gäller i synnerhet om dessa mål kopplas till klausuler för när man som delägare måste tvångsförsälja sitt innehav.
-
-13
-00:01:08,684 --> 00:01:13,206
-Utöver tydlighet är det väldigt viktigt att ett aktieägaravtal är uttömmande.
-
-14
-00:01:13,621 --> 00:01:18,818
-Det innebär att aktieägaravtalet i princip ska beröra alla eventualiteter som kan uppstå i framtiden.
-
-15
-00:01:18,930 --> 00:01:24,191
-Punkt 2 handlar om att reglera vad som händer vid oväntade incidenter med stor påverkan på bolaget.
-
-16
-00:01:24,778 --> 00:01:27,833
-Här är de viktigaste frågorna som avtalet bör reglera:
-
-17
-00:01:28,626 --> 00:01:30,626
-Vad händer om en delägare går bort?
-
-18
 00:01:31,380 --> 00:01:34,217
 Vad händer med aktierna om en delägare skulle skilja sig?
 
-19
+12
 00:01:34,493 --> 00:01:37,330
 Vad händer om en delägare blir långvarigt sjukskriven?
 
-20
+13
 00:01:38,037 --> 00:01:41,433
 Och vad händer om en delägare försummar sina förpliktelser?
 
-21
+14
 00:01:41,730 --> 00:01:49,847
 Vanligt är att man reglerar de här punkter genom att låta de gifta delägarna ha ett äktenskapsförord som undantar aktierna från att tas med i en bodelning.
 
-22
+15
 00:01:50,445 --> 00:01:56,064
 I aktieägaravtalet går det också att bestämma att aktierna vid dödsfall eller skilsmässa har ett visst pris,
 
-23
+16
 00:01:56,064 --> 00:01:59,360
 och att övriga aktieägare har förköpsrätt på de här aktierna.
 
-24
+17
 00:01:59,360 --> 00:02:04,861
 Ett starkt tips är att också skriva en klausul för när man som aktieägare måste tvångsförsälja sina aktier.
 
-25
+18
 00:02:04,861 --> 00:02:09,699
 Ett exempel på ett sådan kriterium kan vara vid långvarig sjukskrivning.
 
-26
+19
 00:02:09,699 --> 00:02:13,732
 Eller om delägaren inte uppnår ett visst försäljningskrav under en given period.
 
-27
+20
 00:02:14,156 --> 00:02:17,269
 Punkt 3 handlar om att reglera överlåtelse av aktier.
 
-28
+21
 00:02:17,693 --> 00:02:22,085
 Det är vanligt att ni som delägare inte vill att man ska kunna sälja sina aktier till vem som helst.
 
-29
+22
 00:02:22,509 --> 00:02:28,524
 Ni kan begränsa denna rätt genom att ta med hembuds-, förköps-, återköps- och samtyckesklausuler i avtalet.
 
-30
+23
 00:02:29,176 --> 00:02:36,000
 Dessa fyra olika klausuler reglerar hur eventuella återköp eller försäljningar av aktier ska gå till till förmån för övriga aktieägare.
 
-31
+24
 00:02:36,761 --> 00:02:40,010
 Nu ska vi gå igenom vad de här olika klausulerna innebär.
 
-32
+25
 00:02:40,836 --> 00:02:49,815
 En hembudsklausul innebär att tidigare ägare av en viss aktie har förköpsrätt på den aktien om en utomstående har fått den genom exempelvis arv eller gåva.
 
-33
+26
 00:02:50,739 --> 00:02:56,586
 Förköpsrätt innebär att ni ger andra delägare rätt att köpa aktierna innan andra får köpa aktierna.
 
-34
+27
 00:02:56,586 --> 00:03:01,087
 På så vis kan ni undvika att oönskade delägare köper sig in i bolaget.
-
-35
-00:03:01,956 --> 00:03:09,000
-En återköpsklausul reglerar rätten att köpa tillbaka aktier som man tidigare sålt under en viss tid på ett på förhand angivet belopp.

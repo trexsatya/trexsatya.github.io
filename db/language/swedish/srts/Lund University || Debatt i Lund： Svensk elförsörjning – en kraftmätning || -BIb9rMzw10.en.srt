@@ -1,2045 +1,1504 @@
 1
-00:00:34,816 --> 00:00:36,000
-It is a collaboration between
-
-2
 00:00:36,184 --> 00:00:40,850
 Lund University, especially the Faculty of Social Sciences, and Sydsvenskan
 
-3
+2
 00:00:40,960 --> 00:00:43,517
 Which sends directly from here tonight.
 
-4
+3
 00:00:43,817 --> 00:00:46,592
 My name is Lars Mogensen and I am a journalist.
 
-5
+4
 00:00:47,360 --> 00:00:49,920
 Such a small grunk ...
 
-6
+5
 00:00:52,480 --> 00:00:55,017
 Do you see sitting at the back and you who look on the screen?
 
-7
+6
 00:00:55,050 --> 00:00:57,344
 Such a little thing with crank,
 
-8
+7
 00:00:59,392 --> 00:01:00,672
 A crank radio.
 
-9
+8
 00:01:02,720 --> 00:01:04,000
 Does anyone have such a home?
 
-10
+9
 00:01:05,792 --> 00:01:06,304
 A gang.
 
-11
+10
 00:01:06,560 --> 00:01:10,850
 This is a bubbler for this year's Christmas present 2022.
 
-12
-00:01:11,424 --> 00:01:14,496
-Another bubbler as this year's Christmas present 2022,
-
-13
-00:01:24,992 --> 00:01:29,600
-Think the other year when people wanted VR glasses and robotic vacuum cleaners.
-
-14
+11
 00:01:29,856 --> 00:01:32,134
 Now it is firewood that bubbles.
 
-15
+12
 00:01:34,208 --> 00:01:35,232
 Something has happened.
 
-16
+13
 00:01:35,488 --> 00:01:37,500
 Putin's war against Ukraine,
 
-17
+14
 00:01:38,017 --> 00:01:42,350
 The gas pipes that were blasted off our coast, at Bornholm.
 
-18
+15
 00:01:43,424 --> 00:01:45,984
 Company forced to put down or postpone
 
-19
+16
 00:01:46,240 --> 00:01:48,032
 their investments and plans
 
-20
+17
 00:01:48,288 --> 00:01:50,080
 due to completely unreasonable electricity bills.
 
-21
+18
 00:01:50,848 --> 00:01:55,117
 Private individuals who cry for concern that they are afraid that they will not cope with their electricity bills.
 
-22
+19
 00:01:56,736 --> 00:01:58,750
 And besides, some understanding
 
-23
+20
 00:01:58,784 --> 00:02:00,576
 that paints up horror scenario
 
-24
+21
 00:02:01,088 --> 00:02:03,850
 About a Sweden that is partially extinguished in winter.
 
-25
+22
 00:02:04,928 --> 00:02:08,384
 So the question is: How do we solve the Swedish energy supply on one
 
-26
+23
 00:02:08,512 --> 00:02:11,534
 fossil -free, in a robust and stable way
 
-27
+24
 00:02:12,096 --> 00:02:14,144
 And how should prices be set?
 
-28
+25
 00:02:15,936 --> 00:02:20,000
 Now we have a new and much more nuclear -friendly government.
 
-29
+26
 00:02:20,032 --> 00:02:26,067
 The question is whether it has power, energy enough to give Sweden new electricity.
 
-30
+27
 00:02:26,176 --> 00:02:31,296
 This will try to find out here tonight along with two former ministers
 
-31
-00:02:31,808 --> 00:02:39,084
-And two engineers with control of energy systems and power work technology.
-
-32
-00:03:28,640 --> 00:03:32,650
-And closest to me Lars J Nilsson, professor of environmental and energy systems.
-
-33
+28
 00:03:32,650 --> 00:03:33,760
 So I got it right, excuse.
 
-34
+29
 00:03:34,750 --> 00:03:39,904
 Warm welcome, they are worth an applause!
 
-35
+30
 00:03:43,744 --> 00:03:47,384
 The last few days so the electricity prize has suddenly gone down a bit again
 
-36
+31
 00:03:47,384 --> 00:03:49,376
 But we are in a very worried,
 
-37
+32
 00:03:49,632 --> 00:03:51,434
 advice and awkward time.
 
-38
+33
 00:03:51,936 --> 00:03:52,960
 We begin with
 
-39
+34
 00:03:53,216 --> 00:03:54,240
 Lars J,
 
-40
+35
 00:03:54,496 --> 00:03:57,900
 closest to me.
 A brief situation, how serious is the situation?
 
-41
+36
 00:04:00,640 --> 00:04:03,456
 The acute situation is well -seriously severe
 
-42
-00:04:04,736 --> 00:04:07,750
-But I think in a longer perspective so we have had
-
-43
-00:04:08,064 --> 00:04:10,112
-A safe, stable electricity supply.
-
-44
+37
 00:04:10,624 --> 00:04:11,648
 We have no shortage of electricity.
 
-45
+38
 00:04:11,904 --> 00:04:13,184
 We exported
 
-46
+39
 00:04:13,440 --> 00:04:15,232
 25 terawatt hours electricity last year.
 
-47
+40
 00:04:16,000 --> 00:04:19,583
 Now we have a problem in the short term this winter and next winter,
 
-48
+41
 00:04:20,863 --> 00:04:23,384
 driven by the war against Ukraine
 
-49
+42
 00:04:23,935 --> 00:04:27,200
 And consequences on gas prices that print our prices.
 
-50
+43
 00:04:27,263 --> 00:04:29,055
 Magnus Genrup, your location description?
 
-51
+44
 00:04:29,823 --> 00:04:31,359
 My position description is that in
 
-52
+45
 00:04:31,615 --> 00:04:35,455
 principle we have gone from a very stable system, we have discontinued
 
-53
+46
 00:04:35,967 --> 00:04:36,735
 Very much effect
 
-54
+47
 00:04:36,991 --> 00:04:42,267
 And should it get really cold then we have a pretty huge deficit that we have difficulty dealing with,
 
-55
+48
 00:04:42,623 --> 00:04:44,634
 that can mean, what we talked about before,
 
-56
+49
 00:04:44,927 --> 00:04:47,403
 Manual disconnect but it is quite unlikely.
 
-57
+50
 00:04:47,403 --> 00:04:49,023
 What I called darkening.
 
-58
+51
 00:04:49,034 --> 00:04:50,815
 But that is quite unlikely, I want to say.
 
-59
-00:04:51,071 --> 00:04:53,119
-There is still on the map that it could be so?
-
-60
-00:05:05,151 --> 00:05:05,919
-How do you describe the situation?
-
-61
+52
 00:05:07,711 --> 00:05:08,991
 Yes we have no shortage
 
-62
+53
 00:05:09,247 --> 00:05:12,063
 on electricity in Sweden, on the contrary
 
-63
+54
 00:05:12,319 --> 00:05:15,100
 Do we produce more electricity than we consume and export
 
-64
+55
 00:05:15,135 --> 00:05:16,415
 and has been
 
-65
+56
 00:05:16,927 --> 00:05:18,975
 the largest exporter even in the EU
 
-66
+57
 00:05:19,743 --> 00:05:21,023
 during certain periods.
 
-67
+58
 00:05:21,791 --> 00:05:27,550
 But we have an electricity crisis
 
-68
+59
 00:05:27,935 --> 00:05:29,727
 can you say because it is so large
 
-69
+60
 00:05:30,017 --> 00:05:32,031
 Demand for electricity in Europe right now.
 
-70
-00:05:32,799 --> 00:05:33,567
-It's tough
-
-71
-00:06:09,407 --> 00:06:11,455
-Mikael Odenberg, your picture of the situation?
-
-72
-00:06:12,735 --> 00:06:18,567
-Yes, it is more that we have problems in the electricity market with very volatile and
-
-73
-00:06:18,623 --> 00:06:21,667
-Occasionally very high prices and large price differences
-
-74
-00:06:21,684 --> 00:06:23,487
-which sets it for
-
-75
-00:06:23,743 --> 00:06:26,767
-Industry's competitiveness and for households, especially in southern Sweden.
-
-76
-00:06:27,327 --> 00:06:28,863
-But the electricity system itself is robust.
-
-77
-00:06:29,887 --> 00:06:32,447
-It shines in the cabins and what Isabella said,
-
-78
-00:06:32,959 --> 00:06:35,484
-Swedish electricity is a successful export industry.
-
-79
-00:06:35,519 --> 00:06:38,517
-Then the electricity should also last a cold winter when it is not blowing.
-
-80
-00:06:39,871 --> 00:06:40,895
-It will do it
-
-81
-00:06:41,663 --> 00:06:45,934
-Although the margins in the system have decreased with the closures of Ringhals 1 and 2.
-
-82
-00:08:01,791 --> 00:08:07,350
-seen the gas as a transitional energy type
-
-83
+61
 00:08:07,679 --> 00:08:11,200
 On the way to completely renewable electricity.
 
-84
+62
 00:08:11,263 --> 00:08:17,534
 They could not be able to help it in the rearview mirror.
 
-85
+63
 00:08:17,663 --> 00:08:20,467
 That we have sat down in that addiction is the big problem.
 
-86
+64
 00:08:20,479 --> 00:08:23,000
 We also have an electricity market model
 
-87
+65
 00:08:23,039 --> 00:08:26,850
 But marginal pricing ensures that it is the most expensive power that comes in,
 
-88
+66
 00:08:26,850 --> 00:08:30,200
 In this case, the gas, which sets the price on the entire market.
 
-89
+67
 00:08:30,200 --> 00:08:33,300
 Many people think it is strange but at the same time one should be aware that
 
-90
+68
 00:08:33,550 --> 00:08:37,834
 Marginal pricing is not a phenomenon for the electricity market,
 
-91
+69
 00:08:37,900 --> 00:08:39,935
 It is not so that Norwegian oil for example
 
-92
-00:08:40,191 --> 00:08:41,727
-Is very cheap just because it is cheap to produce.
-
-93
-00:08:43,007 --> 00:08:44,799
-It is probably a reasonable principle.
-
-94
-00:08:47,615 --> 00:08:49,151
-But then the problem is also,
-
-95
-00:08:49,407 --> 00:08:51,455
-If you take SE4 that we belong to,
-
-96
-00:09:28,063 --> 00:09:29,087
-This was your invention.
-
-97
+70
 00:09:29,343 --> 00:09:34,167
 It was I who made the decision and for a long time I had a loose beard when I went to Skåne.
 
-98
+71
 00:09:36,255 --> 00:09:40,317
 How smart was this in the rear view mirror?
 
-99
+72
 00:09:40,334 --> 00:09:42,655
 It was smart given the conditions.
 
-100
+73
 00:09:42,911 --> 00:09:44,191
 Thus there is very much
 
-101
+74
 00:09:46,239 --> 00:09:50,079
 ignorance of electricity areas.
 It's nothing like bureaucratic invention,
 
-102
+75
 00:09:51,359 --> 00:09:53,151
 Something you find for fun.
 
-103
+76
 00:09:54,175 --> 00:09:57,759
 Without electricity area division is ultimately about operational safety.
 
-104
+77
 00:09:58,015 --> 00:10:01,343
 It is because in an AC network network you cannot influence
 
-105
+78
 00:10:01,855 --> 00:10:05,517
 How the electricity flows without it flows where the resistance is the least.
 
-106
+79
 00:10:06,463 --> 00:10:09,535
 When we are going to transfer a lot of electricity from the production in the north to
 
-107
+80
 00:10:09,791 --> 00:10:11,327
 Consumer Center in the south,
 
-108
+81
 00:10:12,095 --> 00:10:14,143
 Then it runs a little too much electricity in some wires.
 
-109
+82
 00:10:14,399 --> 00:10:18,767
 Then they risk being overloaded and can break down and then you can get big power outages.
 
-110
+83
 00:10:19,007 --> 00:10:22,586
 Then you have to limit this flow in these bottlenecks.
 
-111
+84
 00:10:22,586 --> 00:10:25,017
 And that is why these four areas were invented?
 
-112
+85
 00:10:25,034 --> 00:10:27,455
 Until 2011 so
 
-113
+86
 00:10:27,711 --> 00:10:31,551
 We limited the flow in a very elegant way, we screwed the cranes to Denmark.
 
-114
+87
 00:10:33,343 --> 00:10:36,000
 Then the flows decreased in these bottlenecks
 
-115
+88
 00:10:36,159 --> 00:10:37,695
 And then the Danes complained.
 
-116
+89
 00:10:38,207 --> 00:10:44,351
 They already complained in 2006 to the Commission whose competition directorate started the whole
 
-117
+90
 00:10:44,607 --> 00:10:45,631
 the investigative apparatus.
 
-118
+91
 00:10:46,143 --> 00:10:49,983
 When we arrived at 2010, 2011
 
-119
+92
 00:10:50,495 --> 00:10:55,934
 So were there many meters -high document collections that
 
-120
+93
 00:10:56,127 --> 00:10:59,650
 The Competition Directorate came along and the message that:
 
-121
+94
 00:10:59,711 --> 00:11:03,267
 "You can't do this, you can't discriminate against Danish customers".
 
-122
+95
 00:11:04,063 --> 00:11:04,575
 Okay.
 
-123
+96
 00:11:06,879 --> 00:11:08,900
 I mean, they were right.
 
-124
+97
 00:11:09,695 --> 00:11:10,719
 Unfortunately
 
-125
+98
 00:11:12,255 --> 00:11:14,815
 Then we have to relate to this and what do you do?
 
-126
+99
 00:11:15,583 --> 00:11:19,167
 Yes, then the conventional wisdom says that then opposes man, that is
 
-127
+100
 00:11:19,935 --> 00:11:26,000
 The system operator Svenska Kraftnät goes in and shops up
 
-128
+101
 00:11:26,591 --> 00:11:29,151
 consumption reductions or production increases
 
-129
+102
 00:11:30,687 --> 00:11:33,759
 so that you affect the actors on both sides of the bottle neck.
 
-130
+103
 00:11:34,527 --> 00:11:36,800
 And on that road you reduce the flows.
 
-131
+104
 00:11:37,087 --> 00:11:40,415
 We estimated in 2011 that it was not a viable path,
 
-132
+105
 00:11:40,927 --> 00:11:42,975
 that we did not have enough opposite resources in
 
-133
+106
 00:11:43,231 --> 00:11:44,767
 Southern Sweden to
 
-134
+107
 00:11:45,791 --> 00:11:48,351
 Be able to handle the bottlenecks only with counter -trading.
 
-135
+108
 00:11:48,607 --> 00:11:50,399
 This situation is even worse today.
 
-136
-00:11:50,655 --> 00:11:56,799
-It is often the case that it is described as these four electricity areas is about providing incentives to more
-
-137
-00:11:57,055 --> 00:11:59,103
-Production in the south but that was not what was ...
-
-138
+109
 00:11:59,359 --> 00:12:03,967
 It was not at all on the map.
 Besides, we had very
 
-139
+110
 00:12:04,517 --> 00:12:07,551
 Small price differences between the electricity areas in the first few years.
 
-140
+111
 00:12:08,319 --> 00:12:11,239
 According to economic theory, of course it is so
 
-141
+112
 00:12:11,239 --> 00:12:13,951
 that there should be more investment if the price is higher
 
-142
+113
 00:12:14,207 --> 00:12:17,535
 But that was never a reason, but it was exclusively operational safety reasons.
 
-143
+114
 00:12:17,791 --> 00:12:22,117
 We must be able to handle our bottlenecks
 
-144
+115
 00:12:22,143 --> 00:12:27,519
 in order not to risk large power outages.
 When it is not possible to do only with counter -trading
 
-145
+116
 00:12:27,775 --> 00:12:29,767
 Then only one electricity area division remains.
 
-146
+117
 00:12:29,823 --> 00:12:33,407
 It also has a different point, namely that it is a fairly market economic
 
-147
-00:12:33,407 --> 00:12:35,407
-ways to handle the transmission constraints.
-
-148
-00:12:46,719 --> 00:12:50,815
-A number of power plants, Öresundsverket in Malmö, Karlshamn and Stenungssund
-
-149
+118
 00:12:51,327 --> 00:12:53,050
 And basically drove drove daytime.
 
-150
+119
 00:12:53,050 --> 00:12:56,467
 Then came nuclear power and then we removed them.
 Now we remove the nuclear power and have back the same
 
-151
+120
 00:12:56,467 --> 00:12:59,775
 Problems we had at first.
 
-152
+121
 00:13:01,055 --> 00:13:06,017
 But Germany has no such electricity areas, Finland has no such electricity areas.
 
-153
+122
 00:13:06,017 --> 00:13:09,450
 What does Isabella Lövin think about this introduction?
 Was it so neat?
 
-154
+123
 00:13:11,807 --> 00:13:16,317
 Thus, it is a lack of power generation
 
-155
+124
 00:13:16,671 --> 00:13:21,791
 In the south today and there is a surplus in the north.
 
-156
+125
 00:13:22,047 --> 00:13:23,839
 But that is today.
 
-157
+126
 00:13:24,095 --> 00:13:26,143
 Now we see how industry ...
 
-158
+127
 00:13:26,655 --> 00:13:32,543
 Those investments in green industry now explodes in the north so it does not
 
-159
+128
 00:13:32,799 --> 00:13:38,943
 sure it is so smart to export this power to the south now without man
 
-160
-00:13:39,199 --> 00:13:42,967
-Need to expand the power to the south.
-
-161
-00:13:51,999 --> 00:13:56,095
-In the south we have that situation today.
-
-162
+129
 00:13:56,607 --> 00:13:58,617
 We have very much
 
-163
+130
 00:13:58,655 --> 00:14:02,751
 Sea -based winds located on the government's table for example.
 
-164
+131
 00:14:03,007 --> 00:14:08,334
 60 terawatt hours.
 We have very much
 
-165
+132
 00:14:08,895 --> 00:14:14,271
 Even land -based wind power that today municipalities have refused to here in the south,
 
-166
+133
 00:14:14,527 --> 00:14:17,599
 that more than well cover up for the closed,
 
-167
+134
 00:14:17,855 --> 00:14:22,207
 suspended reactors.
 So that I think this mechanism
 
-168
+135
 00:14:22,463 --> 00:14:26,815
 Also, it should work to the fact that we actually get more local production.
 
-169
+136
 00:14:27,071 --> 00:14:30,911
 What does Lars say, how do you assess these electricity areas?
 
-170
+137
 00:14:31,423 --> 00:14:34,168
 Do they work?
 There are many who are very critical of them,
 
-171
-00:14:34,168 --> 00:14:36,517
-Who would like to see that they disappeared completely.
-
-172
-00:15:30,350 --> 00:15:31,850
-Is it Öresundsverket in Malmö?
-
-173
+138
 00:15:31,850 --> 00:15:33,119
 Yes.
 
-174
+139
 00:15:33,119 --> 00:15:36,191
 And instead you can say that you should criticize it.
 
-175
+140
 00:15:36,959 --> 00:15:39,505
 There are two levels and partly it is power reserve
 
-176
+141
 00:15:39,505 --> 00:15:44,100
 But there are also preparedness dimensions around this so total defense stuff,
 
-177
+142
 00:15:44,383 --> 00:15:48,184
 Where we happily invest a billion in Stockholm on a power plant that is 50 years old
 
-178
+143
 00:15:48,184 --> 00:15:52,517
 While in Malmö we throw out one that is new and that is actually quite unreasonable.
 
-179
+144
 00:15:54,111 --> 00:15:57,400
 Is it due to commercial grounds or political or administrative?
 
-180
+145
 00:16:00,255 --> 00:16:03,084
 Commercial grounds can be said.
 
-181
+146
 00:16:03,100 --> 00:16:09,934
 The problem was that they wanted to have paid because they were there as a reserve, so to speak.
 
-182
-00:16:10,239 --> 00:16:13,567
-Had they been lying on the other side of the strait they would have received quite a lot of money
-
-183
-00:16:21,247 --> 00:16:24,319
-Svenska Kraftnät would have no opportunity to trade up either of the simple
-
-184
+147
 00:16:24,575 --> 00:16:30,367
 The reason that there is no special legislation on this reserve.
 
-185
+148
 00:16:30,719 --> 00:16:34,047
 There, the Riksdag's successively reduced the scope of it.
 
-186
+149
 00:16:35,071 --> 00:16:44,184
 We can certainly return a little to the electricity areas during the question time that we drive forward eight hours.
 
-187
+150
 00:16:44,287 --> 00:16:50,431
 I want to get into what the energy mix should look like in Sweden in the future.
 Now we have
 
-188
+151
 00:16:51,199 --> 00:16:57,343
 the moderately-led government and SD who presented their visions in the Tidö agreement
 
-189
+152
 00:16:57,599 --> 00:16:59,391
 Which, after all, opens for new nuclear power.
 
-190
+153
 00:17:00,159 --> 00:17:05,717
 400 billion in credit guarantees and new construction of nuclear power.
 
-191
+154
 00:17:06,047 --> 00:17:07,550
 Is that a good idea Lars?
 
-192
+155
 00:17:09,119 --> 00:17:09,631
 New nuclear power?
 
-193
+156
 00:17:10,143 --> 00:17:10,911
 I think it will be too expensive.
 
-194
+157
 00:17:12,447 --> 00:17:12,959
 It was a card ...
 
-195
+158
 00:17:13,983 --> 00:17:16,031
 I think no one will want
 
-196
+159
 00:17:16,287 --> 00:17:22,334
 Invest unless you give the right far -reaching subsidies.
 
-197
+160
 00:17:22,431 --> 00:17:24,223
 The example is in England with Hinkley Point
 
-198
+161
 00:17:24,735 --> 00:17:27,750
 that has an agreement on
 
-199
+162
 00:17:28,063 --> 00:17:30,111
 in 30 or 35 years of age they shall deliver
 
-200
+163
 00:17:30,879 --> 00:17:34,400
 For SEK 1 per cent per kWh, it is quite expensive.
 
-201
-00:17:34,975 --> 00:17:38,250
-In Finland, we have a power plant that has extracted a lot at the time.
-
-202
-00:17:38,303 --> 00:17:39,839
-It takes a long time to build new nuclear power.
-
-203
+164
 00:17:40,095 --> 00:17:42,367
 17 years they have been there.
 
-204
+165
 00:17:44,191 --> 00:17:45,983
 So it gets too expensive simply?
 
-205
+166
 00:17:46,495 --> 00:17:47,263
 I think so,
 
-206
+167
 00:17:47,775 --> 00:17:51,567
 There will be no investments for market -based grounds.
 
-207
+168
 00:17:52,000 --> 00:17:53,407
 What does our second engineer believe?
 
-208
+169
 00:17:53,663 --> 00:18:00,017
 I think like this: that we can be much better than that.
 The other Swedish we built at 5-6 years each
 
-209
+170
 00:18:01,343 --> 00:18:05,179
 And my attitude is that we will need just all the power we can get.
 
-210
+171
 00:18:05,179 --> 00:18:06,719
 We need a healthy mix between
 
-211
+172
 00:18:07,487 --> 00:18:10,303
 non-planning and planning and there I see that
 
-212
+173
 00:18:10,559 --> 00:18:13,084
 Nuclear power has an important part to fill.
 
-213
+174
 00:18:13,375 --> 00:18:17,384
 It is partly planned I would say.
 
-214
+175
 00:18:17,727 --> 00:18:23,184
 If we are to say how planned, Svenska Kraftnät counts 9 % accessibility on wind power
 
-215
+176
 00:18:23,200 --> 00:18:25,871
 And 90 on nuclear power so it is better.
 
-216
+177
 00:18:27,455 --> 00:18:30,984
 But Lars J, when it is not planned, what makes it thrill then?
 
-217
+178
 00:18:31,000 --> 00:18:36,017
 Is it when it gets too hot in the cooling water because of the summer heat?
 
-218
+179
 00:18:36,134 --> 00:18:39,743
 It can be anything possible.
 In France Har you had the problems
 
-219
+180
 00:18:40,255 --> 00:18:42,047
 now with the hot summer and lack of water,
 
-220
+181
 00:18:42,303 --> 00:18:43,583
 lack of cooling water and
 
-221
-00:18:44,095 --> 00:18:46,399
-technical problems that arise as
-
-222
-00:19:52,191 --> 00:19:56,014
-I think that has become quite painfully obvious to most
-
-223
+182
 00:19:56,014 --> 00:19:57,567
 the last few weeks here now that
 
-224
+183
 00:19:57,823 --> 00:20:01,407
 If we do not have the climate policy that
 
-225
+184
 00:20:02,175 --> 00:20:08,319
 Reduces emissions by 2030 so we have to abandon our climate goals so that the whole discussion around
 
-226
+185
 00:20:09,343 --> 00:20:12,384
 nuclear power as a solution to the climate issue
 
-227
+186
 00:20:13,017 --> 00:20:17,279
 have been severely misleading and it knows that everyone who knows something about
 
-228
+187
 00:20:17,791 --> 00:20:19,583
 How long it takes to build new nuclear power.
 
-229
+188
 00:20:20,095 --> 00:20:21,631
 So we can leave that like that.
 
-230
+189
 00:20:22,143 --> 00:20:27,519
 Then the next question is: Okay, but we must have this planned power supply.
 
-231
+190
 00:20:28,031 --> 00:20:34,175
 Then I think it is important that when issuing 400 billion in so -called
 
-232
+191
 00:20:34,431 --> 00:20:38,467
 Green credit guarantees that you do it technology neutral.
 
-233
+192
 00:20:39,551 --> 00:20:41,599
 We have all the possibilities
 
-234
+193
 00:20:41,855 --> 00:20:47,999
 To use the entire innovation power that exists today in Sweden and in the world
 
-235
+194
 00:20:48,511 --> 00:20:52,351
 To store energy, to stabilize the electricity grid and
 
-236
+195
 00:20:52,607 --> 00:20:56,167
 Cut the peaks when it gets very expensive.
 
-237
+196
 00:20:56,703 --> 00:21:00,543
 We can energy efficiency, we can have smart electricity grids
 
-238
+197
 00:21:00,799 --> 00:21:06,834
 And it just bursts out of power in business right now.
 
-239
+198
 00:21:06,834 --> 00:21:10,015
 I was in Estonia a few weeks ago
 
-240
-00:21:10,527 --> 00:21:14,111
-and there you plan for a huge
-
-241
-00:21:14,134 --> 00:21:18,208
-Pump water power battery can be said about a mining hole.
-
-242
-00:21:18,976 --> 00:21:24,350
-So when we are thinking of storage of energy we have mostly talked about making hydrogen
-
-243
-00:21:24,864 --> 00:21:28,704
-of electricity when is very cheap, when one has an excess of
-
-244
-00:21:28,960 --> 00:21:31,008
-wind or sun or hydropower
-
-245
-00:21:31,520 --> 00:21:34,824
-So there can even be negative prices in the market,
-
-246
-00:21:34,824 --> 00:21:37,664
-You can do a lot during that period.
-
-247
-00:21:37,920 --> 00:21:44,064
-One can produce green hydrogen and that is what industries in the north
-
-248
-00:21:44,320 --> 00:21:45,856
-has already invested in.
-
-249
-00:23:08,544 --> 00:23:13,867
-There are very bright prospects for the concept of small model reactors
-
-250
+199
 00:23:13,920 --> 00:23:16,480
 where one could keep down the capital tied up,
 
-251
+200
 00:23:17,267 --> 00:23:20,576
 where one might conceivably get a system of
 
-252
+201
 00:23:20,832 --> 00:23:23,904
 serial production of these facilities and there is no doubt about
 
-253
+202
 00:23:24,672 --> 00:23:27,744
 that new such nuclear power in southern Sweden would
 
-254
+203
 00:23:28,000 --> 00:23:30,784
 Make the Swedish electrical system very well.
 
-255
+204
 00:23:30,816 --> 00:23:32,834
 Then I am allergic
 
-256
+205
 00:23:33,632 --> 00:23:38,029
 against this religious belief that not only energy -interested people have
 
-257
+206
 00:23:38,029 --> 00:23:40,767
 As for what is good electricity generation
 
-258
+207
 00:23:41,312 --> 00:23:43,360
 But unfortunately, has crept into politics as well.
 
-259
+208
 00:23:44,128 --> 00:23:47,456
 Parties believe in certain types of electricity generation and against other kinds.
 
-260
+209
 00:23:48,480 --> 00:23:52,320
 What I have advanced ever since I was an energy political spokesman for the Moderates
 
-261
+210
 00:23:53,088 --> 00:23:54,368
 94-95,
 
-262
+211
 00:23:54,624 --> 00:23:56,634
 And which unfortunately is forgotten now,
 
-263
-00:23:56,672 --> 00:23:59,967
-So it is that it is not the task of politics.
-
-264
-00:24:11,008 --> 00:24:15,300
-The Riksdag should not decide to turn off Barsebäck.
-
-265
+212
 00:24:15,384 --> 00:24:19,400
 Parliament shall not decide to restart Ringhals 2
 
-266
+213
 00:24:19,968 --> 00:24:22,016
 Without the Riksdag, the rules of the game,
 
-267
+214
 00:24:22,528 --> 00:24:23,808
 the rules for the market
 
-268
+215
 00:24:24,320 --> 00:24:26,850
 And that the market has to relate to.
 
-269
+216
 00:24:26,880 --> 00:24:30,950
 Then we should not develop subsidies, but we should discontinue subsidies.
 
-270
+217
 00:24:35,072 --> 00:24:41,216
 Magnus Genrup, this with SMR, small modular reactors, one can of course drop a
 
-271
+218
 00:24:41,472 --> 00:24:42,017
 wrench in them as well.
 
-272
+219
 00:24:42,017 --> 00:24:45,568
 There are the high security requirements, for every accident that occurs, they increase the requirements and
 
-273
+220
 00:24:46,080 --> 00:24:47,616
 Of course.
 
-274
-00:24:47,872 --> 00:24:49,408
-Is that where you also see an opportunity?
-
-275
-00:26:05,184 --> 00:26:08,000
-bring with us a very bunch of countries on wanting
-
-276
+221
 00:26:08,256 --> 00:26:09,792
 Very many SMRs.
 
-277
+222
 00:26:10,048 --> 00:26:11,072
 Then one will also come
 
-278
+223
 00:26:11,328 --> 00:26:12,864
 Problem to into the picture
 
-279
+224
 00:26:13,120 --> 00:26:14,912
 And that is the availability of uranium.
 
-280
+225
 00:26:15,680 --> 00:26:20,288
 So today, the existing mines and assets that exist
 
-281
+226
 00:26:20,544 --> 00:26:24,000
 They will last between 50 and 100 years it says on Vattenfall's website.
 
-282
+227
 00:26:24,017 --> 00:26:25,920
 We say 80 years then.
 
-283
+228
 00:26:26,176 --> 00:26:30,016
 If we see a doubling of investment in nuclear power around the world
 
-284
+229
 00:26:30,272 --> 00:26:32,576
 yes, but then we will end up uranium about
 
-285
-00:26:32,832 --> 00:26:36,123
-40 years and then we have to start looking for new assets.
-
-286
-00:26:57,920 --> 00:27:02,016
-That SMR does not exist, every submarine has one
-
-287
+230
 00:27:02,272 --> 00:27:08,386
 slightly larger variety, even a number of Russian nuclear submarines so technology is there,
 
-288
+231
 00:27:08,386 --> 00:27:11,400
 It is not that it is brand new.
 
-289
+232
 00:27:11,488 --> 00:27:13,817
 But there are security aspects of that too.
 
-290
+233
 00:27:13,817 --> 00:27:17,376
 Now think if we had 10 SMR placed around Kiev,
 
-291
+234
 00:27:17,888 --> 00:27:18,656
 No height.
 
-292
+235
 00:27:19,936 --> 00:27:20,960
 Nah.
 
-293
+236
 00:27:21,472 --> 00:27:23,520
 Is it an aspect that has become
 
-294
+237
 00:27:24,032 --> 00:27:28,384
 More important or more acute Mikael?
 Thus purely security policy aspects of
 
-295
+238
 00:27:28,640 --> 00:27:31,650
 Nuclear power plants as targets in war?
 
-296
+239
 00:27:31,934 --> 00:27:34,528
 Yes, it is clear now that we have a war and
 
-297
+240
 00:27:37,088 --> 00:27:42,208
 battles around the nuclear power plants in Ukraine, it is clear that it puts an increased focus on
 
-298
+241
 00:27:43,000 --> 00:27:45,767
 That aspect, of course it is.
 
-299
+242
 00:27:46,304 --> 00:27:52,617
 But I don't think it disqualifies nuclear power.
 
-300
+243
 00:27:53,472 --> 00:27:59,616
 But you still have to weigh.
 Now we have applications that are rejected by
 
-301
+244
 00:27:59,872 --> 00:28:01,152
 Municipality by municipality
 
-302
+245
 00:28:01,408 --> 00:28:05,504
 on wind power that corresponds to approximately all of Sweden's production.
 
-303
+246
 00:28:06,528 --> 00:28:10,112
 We have one side, on the other hand we have a technology that
 
-304
+247
 00:28:10,368 --> 00:28:16,512
 We have no economist whatsoever of today, we have just approved
 
-305
-00:28:16,768 --> 00:28:18,560
-Final repository for
-
-306
-00:28:19,328 --> 00:28:21,376
-the fuel or for the waste,
-
-307
-00:28:21,632 --> 00:28:24,960
-But it is only enough for the existing nuclear power we have today.
-
-308
-00:28:25,216 --> 00:28:28,544
-If we start to scale this up then we will have new waste laws.
-
-309
-00:28:28,567 --> 00:28:31,616
-We must ensure uranium from somewhere.
-
-310
-00:28:31,872 --> 00:28:35,712
-We just said no to uranium from Russia which is a big
-
-311
-00:28:36,992 --> 00:28:39,808
-exporter out of uranium to
-
-312
-00:28:40,064 --> 00:28:43,136
-Lots of countries.
-It is another such security policy
-
-313
-00:28:43,392 --> 00:28:46,976
-problem.
-I mean we shouldn't ...
-
-314
-00:28:47,744 --> 00:28:53,888
-It has really been portrayed in this electoral movement as something completely safe and
-
-315
-00:28:54,400 --> 00:28:56,448
-reliable and cheap.
-
-316
-00:28:56,704 --> 00:28:58,017
-It is wrong on all points.
-
-317
+248
 00:28:58,017 --> 00:29:01,140
 Magnus, I don't want to put on the total nuclear power
 
-318
+249
 00:29:01,140 --> 00:29:03,848
 But you still have to try to respond to that.
 
-319
+250
 00:29:03,848 --> 00:29:08,224
 No, but of course we have to solve the waste problem.
 There is no doubt about it.
 
-320
+251
 00:29:08,736 --> 00:29:12,832
 But the reactors of the future, the generation beyond those we are talking about today
 
-321
+252
 00:29:13,344 --> 00:29:15,392
 will generate less waste.
 
-322
+253
 00:29:16,416 --> 00:29:16,928
 Absolutely.
 
-323
+254
 00:29:17,200 --> 00:29:19,232
 So it can resolve that way?
 
-324
+255
 00:29:19,232 --> 00:29:21,280
 Partly.
 
-325
+256
 00:29:21,280 --> 00:29:24,096
 Back to the task of politics, I mean
 
-326
-00:29:24,352 --> 00:29:26,912
-Svenska Kraftnät today has an investment program on
-
-327
-00:29:32,800 --> 00:29:35,967
-The problem is that if Hybrit and O2 Green style are really realized,
-
-328
+257
 00:29:35,967 --> 00:29:38,944
 You know nothing about that then maybe that electricity is needed up there.
 
-329
+258
 00:29:39,968 --> 00:29:41,504
 How do we solve the situation?
 
-330
+259
 00:29:41,760 --> 00:29:45,784
 Yes, then it's all about getting large amounts of electricity
 
-331
+260
 00:29:45,856 --> 00:29:48,160
 In southern Sweden and what should the government do?
 
-332
+261
 00:29:48,672 --> 00:29:54,767
 Yes, it is reasonably to eliminate obstacles to investment, create a nutrition -friendly climate.
 
-333
+262
 00:29:55,072 --> 00:29:58,405
 What one is very focused to do when it comes to nuclear power,
 
-334
+263
 00:29:58,405 --> 00:30:02,200
 Remove the restrictions for where to build and how much you can build.
 
-335
+264
 00:30:02,496 --> 00:30:04,935
 But we have similar problems in the investment climate
 
-336
+265
 00:30:04,935 --> 00:30:06,592
 In terms of land -based wind power,
 
-337
+266
 00:30:07,104 --> 00:30:09,664
 closest to the municipal veto.
 
-338
+267
 00:30:10,944 --> 00:30:12,736
 One may very well have a municipal veto
 
-339
+268
 00:30:12,992 --> 00:30:17,550
 But then you have to rig it on such a investment so that invests
 
-340
+269
 00:30:17,856 --> 00:30:19,648
 not first get yes and then get no five in twelve
 
-341
+270
 00:30:19,904 --> 00:30:22,636
 And then finally you need to create an investment climate
 
-342
+271
 00:30:22,636 --> 00:30:24,768
 For sea -based wind power that is
 
-343
+272
 00:30:25,792 --> 00:30:31,017
 The stroke of power where we could quickly get very large amounts of electricity.
 
-344
-00:30:31,168 --> 00:30:34,325
-There is no arranged process today at all
-
-345
-00:32:25,856 --> 00:32:29,051
-And in a few years, like the conditions for Svenska Kraftnät's
-
-346
+273
 00:32:29,051 --> 00:32:31,488
 Planning was actually eliminated.
 
-347
+274
 00:32:31,744 --> 00:32:35,534
 It may not be invested so much in this transformation at all.
 
-348
+275
 00:32:35,840 --> 00:32:36,608
 Then when it comes to
 
-349
+276
 00:32:36,864 --> 00:32:38,400
 Wind power is that
 
-350
+277
 00:32:39,434 --> 00:32:42,240
 When the government introduced this
 
-351
+278
 00:32:42,752 --> 00:32:46,517
 The assignment to Svenska Kraftnät to establish connection points at sea so there were many
 
-352
+279
 00:32:46,592 --> 00:32:50,688
 who had objections to it in the referral round not just the bourgeois parties
 
-353
+280
 00:32:51,200 --> 00:32:54,017
 And the Swedish Democrats, but also some authorities as the Swedish Competition Authority.
 
-354
+281
 00:32:54,017 --> 00:32:55,900
 That you treat differently?
 
-355
+282
 00:32:55,900 --> 00:33:01,904
 Yes, one had in principle objection that it could partly be perceived as a subsidy
 
-356
+283
 00:33:01,934 --> 00:33:03,744
 to that kind of electricity generation.
 
-357
-00:33:05,024 --> 00:33:08,352
-This is type example on when politicians are to be sensible
-
-358
-00:33:08,608 --> 00:33:10,656
-for there they would have left short lying
-
-359
-00:33:10,912 --> 00:33:13,728
-and said: “Good that they introduced that because we had never been able to do it with our
-
-360
-00:33:13,984 --> 00:33:17,312
-Principal attitude but now we leave shortly lying ".
-
-361
-00:33:17,824 --> 00:33:21,584
-You did not and it creates then
-
-362
-00:33:22,176 --> 00:33:27,296
-New ambiguities about investment conditions again, there is no organized process.
-
-363
-00:33:27,808 --> 00:33:31,136
-Investors in offshore wind power, those behind this seven applications,
-
-364
-00:33:31,136 --> 00:33:33,184
-they were assumed
-
-365
-00:33:33,184 --> 00:33:36,540
-Invest SEK 10 million in bottom surveys,
-
-366
-00:33:36,540 --> 00:33:39,072
-planning without having any rush about
-
-367
-00:33:39,328 --> 00:33:41,632
-they will ultimately get the necessary permits.
-
-368
-00:33:41,888 --> 00:33:47,264
-This is hydropower that corresponds to all current nuclear power
-
-369
-00:33:47,520 --> 00:33:49,824
-And it is sad if it gets delayed.
-
-370
-00:33:51,104 --> 00:33:52,691
-There are very large amounts of energy,
-
-371
-00:33:52,691 --> 00:33:55,456
-Still with the major disadvantage that it is weather dependent.
-
-372
-00:33:56,480 --> 00:34:00,320
-So that a combo of sea -based wind that could be in place,
-
-373
-00:34:44,869 --> 00:34:47,680
-There may be other generators but we need the right foundation in the system.
-
-374
+284
 00:34:49,984 --> 00:34:55,360
 No, but I agree very much what Mikael says except that I don't think
 
-375
+285
 00:34:55,616 --> 00:34:56,750
 It is just nuclear power ...
 
-376
+286
 00:34:56,750 --> 00:34:57,517
 Not?!
 
-377
+287
 00:34:57,517 --> 00:35:01,984
 No!
 Surprising!
 But this particular with permit processes
 
-378
+288
 00:35:02,016 --> 00:35:08,160
 And how you have been messing with it now and it seems to be almost ideological reluctance
 
-379
+289
 00:35:08,416 --> 00:35:11,996
 against us having renewable energy because you have locked up so incredibly
 
-380
+290
 00:35:11,996 --> 00:35:14,767
 With this with nuclear power in the current government.
 
-381
+291
 00:35:15,584 --> 00:35:18,144
 You even voted no, ie it applies
 
-382
+292
 00:35:18,400 --> 00:35:20,960
 This municipal veto that Mikael mentioned
 
-383
-00:35:21,472 --> 00:35:26,567
-So it is so that the municipalities can say no to new wind power
-
-384
-00:36:19,328 --> 00:36:20,352
-So voted
-
-385
+293
 00:36:20,608 --> 00:36:25,216
 These nowadays the Tidö parties no to this because you ...
 
-386
+294
 00:36:25,472 --> 00:36:29,568
 Yes, there was no good explanation as to why you voted no, you just voted no to
 
-387
+295
 00:36:29,824 --> 00:36:35,968
 To abolish this extended opportunity to change, to say no at the end of the process.
 
-388
+296
 00:36:36,480 --> 00:36:38,784
 What do the engineers say about the municipal vetot
 
-389
+297
 00:36:39,040 --> 00:36:43,084
 Who can mess with it for both wind power and other facilities?
 
-390
+298
 00:36:43,136 --> 00:36:45,184
 Yes, we are not experts on really
 
-391
+299
 00:36:45,440 --> 00:36:48,256
 Maybe but of course ....
 
-392
+300
 00:36:48,512 --> 00:36:51,817
 You can appoint national interest and change such things.
 
-393
+301
 00:36:51,840 --> 00:36:54,144
 I would call that one
 
-394
-00:36:54,400 --> 00:36:55,936
-Political question where I have no ...
-
-395
-00:37:32,032 --> 00:37:35,544
-It may be worth it.
-
-396
-00:37:35,544 --> 00:37:36,803
-On that kind of production do you mean?
-
-397
-00:37:37,664 --> 00:37:42,342
-Unfortunately it is so that you only get a quarter when you drive back
-
-398
-00:37:42,342 --> 00:37:44,800
-So it's a big pin on the road.
-
-399
-00:37:45,088 --> 00:37:46,880
-It all is based on the fact that
-
-400
-00:37:47,136 --> 00:37:50,720
-We have a surplus of wind production that we do not need here and now.
-
-401
-00:37:51,744 --> 00:37:55,617
-If we are also going to double our cargo in the country, the question is whether this electricity will not go.
-
-402
-00:37:55,617 --> 00:37:59,117
-I don't know that but still,
-
-403
-00:37:59,680 --> 00:38:03,382
-The efficiency back and forth is very, very bad.
-
-404
-00:38:03,382 --> 00:38:05,800
-You mentioned hydropower before, pump power.
-
-405
-00:38:06,080 --> 00:38:08,384
-It's so much more elegant really.
-
-406
+302
 00:38:08,896 --> 00:38:13,504
 There you talk about getting 85 % efficiency and it is very good, and this one at 25, at best.
 
-407
+303
 00:38:14,528 --> 00:38:16,576
 I think that question is very relevant
 
-408
+304
 00:38:17,344 --> 00:38:20,416
 But it would be good if it was not answered by professors or politicians
 
-409
+305
 00:38:20,672 --> 00:38:21,696
 Without the investors.
 
-410
+306
 00:38:23,744 --> 00:38:29,888
 We have a consumption today at somewhere around 140 terawatt hours and according to calculation
 
-411
+307
 00:38:30,912 --> 00:38:35,700
 In a few years, 2030, we will be up at 220 and 320 in 2045
 
-412
+308
 00:38:35,776 --> 00:38:43,917
 So it is like a steep increase in our needs if we are to electrify this country of the future
 
-413
+309
 00:38:44,224 --> 00:38:47,500
 And then a mix is required, I guess?
 
-414
+310
 00:38:47,808 --> 00:38:52,160
 No, but they are the forecasts vary.
 The Swedish Energy Agency
 
-415
-00:38:52,928 --> 00:38:57,024
-says much less than that and one should remember that 1970
-
-416
+311
 00:38:57,280 --> 00:39:01,376
 So did you think that 2000 would have the least
 
-417
+312
 00:39:01,632 --> 00:39:03,168
 twice as large energy needs
 
-418
+313
 00:39:03,680 --> 00:39:04,704
 in Sweden
 
-419
+314
 00:39:04,960 --> 00:39:08,000
 and we've actually been just lying still
 
-420
+315
 00:39:08,032 --> 00:39:12,350
 All the time since then, despite increased population, despite a huge growth.
 
-421
+316
 00:39:12,640 --> 00:39:16,385
 So energy efficiency is also a very important instrument
 
-422
+317
 00:39:16,385 --> 00:39:18,784
 As we have not mentioned here at all.
 
-423
+318
 00:39:19,296 --> 00:39:26,950
 But now think the last month when Swedish households have reduced their electricity.
 
-424
+319
 00:39:27,232 --> 00:39:29,024
 by almost 20 %
 
-425
+320
 00:39:29,280 --> 00:39:33,067
 Without even we even had a campaign that we should.
 
-426
+321
 00:39:33,376 --> 00:39:37,472
 The industry is usually said to have about 25 % the possibility of energy efficiency.
 
-427
+322
 00:39:37,728 --> 00:39:43,104
 Now it will go to huge amounts of electricity in the north to Hybris to H2
 
-428
+323
 00:39:43,872 --> 00:39:45,152
 Style and all these.
 
-429
+324
 00:39:45,408 --> 00:39:46,176
 We know that.
 
-430
+325
 00:39:46,688 --> 00:39:48,736
 But I also see that
 
-431
+326
 00:39:48,992 --> 00:39:51,808
 There is a huge innovation force in
 
-432
-00:39:52,064 --> 00:39:55,136
-How to also want to rig these systems.
-
-433
-00:39:55,392 --> 00:39:59,744
-Again storage is something we have not mentioned much.
-
-434
-00:40:00,000 --> 00:40:04,517
-Should we have nuclear power plants or small nuclear power plants
-
-435
-00:40:04,608 --> 00:40:07,168
-that should go all the time to cut the tops
-
-436
-00:40:07,424 --> 00:40:08,960
-When it is not blowing?
-
-437
-00:40:09,216 --> 00:40:11,264
-When we could, on the other hand
-
-438
-00:40:11,520 --> 00:40:17,664
-have huge energy storage in old mining holes, battery storage, hydrogen,
-
-439
-00:40:17,920 --> 00:40:20,736
-Methane, all this you are talking about now.
-
-440
-00:40:21,504 --> 00:40:24,832
-We are going to the future, we will not be back.
-
-441
-00:40:26,112 --> 00:40:30,231
-Lars, as an engineer if you met, now they are former politicians
-
-442
-00:40:30,231 --> 00:40:32,256
-But if you got to meet the responsible politicians, what would you advise them for something?
-
-443
-00:40:32,512 --> 00:40:35,800
-What should the mix look like?
-What is the most important thing to think about?
-
-444
-00:40:35,840 --> 00:40:40,704
-I would probably go on Michael's line rather there,
-
-445
-00:40:41,472 --> 00:40:44,544
-that they should try to create stable conditions,
-
-446
-00:40:45,056 --> 00:40:46,080
-A game plan
-
-447
-00:41:34,720 --> 00:41:38,304
-I was involved a little bit in the last Energy Commission's work and it came
-
-448
+327
 00:41:38,560 --> 00:41:39,328
 From 2016.
 
-449
+328
 00:41:39,584 --> 00:41:40,864
 At that time
 
-450
+329
 00:41:41,632 --> 00:41:47,200
 Then, like still, Northvolt and Hydbrids were not on the map so that
 
-451
+330
 00:41:47,264 --> 00:41:51,084
 The Swedish Energy Agency's estimates of electricity consumption 2030 to 2040
 
-452
+331
 00:41:51,084 --> 00:41:53,600
 Be quite modest.
 
-453
+332
 00:41:53,663 --> 00:41:54,943
 Now all of a sudden it is doubled.
 
-454
+333
 00:41:55,711 --> 00:41:58,734
 It has then happened in 5-6 years.
 
-455
+334
 00:41:59,295 --> 00:42:01,317
 It indicates that an important task and
 
-456
+335
 00:42:01,599 --> 00:42:02,879
 And politics is quite different.
 
-457
-00:42:03,903 --> 00:42:05,695
-Namely to shorten the lead times
-
-458
-00:42:17,983 --> 00:42:21,823
-There is very much to do here.
-Politics has begun to take hold of it
-
-459
+336
 00:42:22,079 --> 00:42:24,639
 But there is much left to do.
 We need radically
 
-460
+337
 00:42:25,151 --> 00:42:26,431
 Short these times.
 
-461
+338
 00:42:28,479 --> 00:42:32,354
 Should we check if anyone in the audience feels urged to comment
 
-462
+339
 00:42:32,354 --> 00:42:34,111
 anything of this or setting a
 
-463
+340
 00:42:34,367 --> 00:42:39,383
 Ask and you are welcome to signal, raise a paw.
 
-464
+341
 00:42:40,255 --> 00:42:42,815
 If you run forward here we have a man in light blue shirt
 
-465
+342
 00:42:43,071 --> 00:42:45,350
 Who wipes the second row, you are kind.
 
-466
+343
 00:42:46,399 --> 00:42:51,717
 I can add that if I had met politicians then I would probably have given a little lecture
 
-467
+344
 00:42:51,775 --> 00:42:54,283
 About nuclear power that I usually give at LTH.
 
-468
-00:42:54,591 --> 00:42:56,383
-There seems to be a lot of ignorance ...
-
-469
-00:42:57,151 --> 00:42:58,175
-In politics?
-
-470
-00:42:58,175 --> 00:42:58,881
-Yes.
-
-471
-00:42:58,943 --> 00:43:01,247
-Briefly introduce yourself and a short question.
-
-472
-00:43:01,503 --> 00:43:03,039
-Hi, Torben Claesson.
-
-473
-00:48:35,071 --> 00:48:39,200
-It is the highest price that sets the price of everything, that is the problem.
-
-474
+345
 00:48:40,200 --> 00:48:42,467
 If we look at what the electricity costs to produce,
 
-475
+346
 00:48:42,467 --> 00:48:46,335
 hydropower is about 10 öre kilowatt hour, nuclear power approximately
 
-476
+347
 00:48:46,591 --> 00:48:48,639
 35-40 öre kilowatt hour.
 
-477
+348
 00:48:49,151 --> 00:48:52,479
 So to some extent, the hit award is all.
 
-478
+349
 00:48:53,247 --> 00:48:56,831
 The problem is also like this, pose that this persists so we have to
 
-479
+350
 00:48:57,343 --> 00:49:00,927
 take the bottleneck revenue for a number of years and pay back to
 
-480
+351
 00:49:01,183 --> 00:49:03,487
 Us so that we get reasonable electricity bills.
 
-481
+352
 00:49:04,255 --> 00:49:07,583
 It is fundamentally wrong and then at the same time we have
 
-482
+353
 00:49:07,839 --> 00:49:12,191
 VAT and tax revenue that this year will be approximately SEK 47 billion to the Treasury.
 
-483
-00:49:12,447 --> 00:49:15,775
-So that somewhere we have to do something else.
-Either look at it
-
-484
-00:49:42,655 --> 00:49:44,447
-Prioritizes that it should go fast.
-
-485
+354
 00:49:45,215 --> 00:49:48,287
 There are household customers who have tied electricity prices coming
 
-486
+355
 00:49:48,543 --> 00:49:49,567
 Earn good at this too.
 
-487
+356
 00:49:50,335 --> 00:49:56,479
 But then when there is a lack of firewood, you get crank radio, it is a completely different kind of consciousness
 
-488
+357
 00:49:56,735 --> 00:50:00,831
 among customers or consumers now as we see that makes us start
 
-489
+358
 00:50:01,087 --> 00:50:04,383
 Save and streamline?
 Although we think we should be compensated?
 
-490
+359
 00:50:04,415 --> 00:50:05,183
 Yes, I think so.
 
-491
+360
 00:50:05,183 --> 00:50:07,487
 You can't count on
 
-492
+361
 00:50:07,999 --> 00:50:11,071
 to be compensated with certainty.
 Those who counted to get ten
 
-493
+362
 00:50:11,583 --> 00:50:13,631
 Tighten cheaper diesel at pump ...
 
-494
-00:50:16,959 --> 00:50:18,751
-Or not.
-
-495
-00:53:00,833 --> 00:53:01,833
-Sea -based wind is in the same piece.
-
-496
+363
 00:53:01,833 --> 00:53:05,100
 Okay, not get stuck to those numbers but then Lars then, at the time,
 
-497
+364
 00:53:05,407 --> 00:53:06,431
 Now you heard Isabellas
 
-498
+365
 00:53:06,687 --> 00:53:09,733
 Problem description there, is it so bleak?
 
-499
+366
 00:53:10,015 --> 00:53:11,295
 No, so I think ...
 
-500
+367
 00:53:11,807 --> 00:53:16,617
 As Mikael started with Sweden having fantastic conditions with existing
 
-501
+368
 00:53:16,927 --> 00:53:19,385
 Hydropower, bioenergy, good wind conditions.
 
-502
+369
 00:53:19,385 --> 00:53:23,071
 We can build solar cells, we can even build solar cells in the Arctic.
 
-503
+370
 00:53:23,327 --> 00:53:24,351
 It can be interesting
 
-504
+371
 00:53:24,607 --> 00:53:26,399
 If we have the basic industry up there.
-
-505
-00:53:26,911 --> 00:53:28,959
-So all conditions exist

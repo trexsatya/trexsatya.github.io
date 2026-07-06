@@ -1,2055 +1,1177 @@
 1
-00:00:37,860 --> 00:00:40,756
-In order for us to be able to take advantage of AI fully as a country
-
-2
 00:00:41,214 --> 00:00:45,374
 for both a better society and our global competitiveness-
 
-3
+2
 00:00:46,956 --> 00:00:50,356
 Sweden needs to take a big next step in its AI trip.
 
-4
+3
 00:00:50,356 --> 00:00:52,806
 That is what we at Vinnova consider need to happen.
 
-5
+4
 00:00:53,404 --> 00:00:55,464
 That is what we are here to discuss.
 
-6
+5
 00:00:56,926 --> 00:01:00,436
 I think we continue with an introduction of you in the panel.
 
-7
+6
 00:01:02,562 --> 00:01:05,142
 Can you tell me what you are working on
 
-8
+7
 00:01:05,142 --> 00:01:08,842
 And how have you been involved in the AI area in recent years?
 
-9
+8
 00:01:09,228 --> 00:01:11,378
 We start with you, Evelina.
 
-10
+9
 00:01:11,866 --> 00:01:13,306
 Hello.
 -Yes, hello.
 
-11
-00:01:13,642 --> 00:01:16,152
-It's fun to be here.
-I am called Evelina Anttila.
-
-12
-00:02:31,927 --> 00:02:36,270
-And in collaboration try to drive and get forward faster.
-
-13
+10
 00:02:37,861 --> 00:02:38,891
 Thanks, Martin.
 
-14
+11
 00:02:39,340 --> 00:02:41,330
 Then we move on to you, Sara.
 
-15
+12
 00:02:41,330 --> 00:02:45,170
 What do you work with and how have you been involved in the Ai area in recent years?
 
-16
+13
 00:02:46,742 --> 00:02:50,120
 Hi, my name is Sara Mazur.
 It's fun to be here.
 
-17
+14
 00:02:50,337 --> 00:02:53,807
 I am an executive member of the Knut and Alice Wallenberg Foundation.
 
-18
+15
 00:02:55,600 --> 00:02:59,506
 I have worked with AI for more than 10 years.
 
-19
+16
 00:03:00,354 --> 00:03:04,332
 For the past 9 years I have been very active in the Wise program.
 
-20
+17
 00:03:04,332 --> 00:03:07,602
 First as Deputy Chairman, then as chairman.
 
-21
+18
 00:03:08,440 --> 00:03:12,440
 Before that, in my previous role as head of research at Ericsson
 
-22
-00:03:12,440 --> 00:03:15,410
-was AI one of the areas we focused a lot on.
-
-23
-00:03:16,213 --> 00:03:19,643
-For those of you who are not aware of, Knut and Alice Wallenberg's Foundation
-
-24
-00:03:19,643 --> 00:03:22,553
-Sweden's largest private research financier.
-
-25
-00:03:22,922 --> 00:03:27,130
-We fund basic research in Sweden in science, medicine and technology
-
-26
-00:03:27,130 --> 00:03:29,292
-with over SEK 2 billion each year.
-
-27
-00:03:29,645 --> 00:03:32,955
-Our largest strategic program is the Wise program:
-
-28
-00:03:32,955 --> 00:03:36,105
-Wallenberg AI Autonomous Systems and Software Program.
-
-29
-00:05:23,808 --> 00:05:26,318
-Who is here, at AI Sweden as well.
-
-30
-00:05:28,135 --> 00:05:34,975
-I have been seven years in the United States during the Ai-Revolution that happened in North America-
-
-31
-00:05:34,975 --> 00:05:38,535
-But has been back in Sweden for just over a year.
-
-32
-00:05:39,226 --> 00:05:42,546
-At the moment I happen to work in the United States.
-
-33
-00:05:43,599 --> 00:05:47,769
-Otherwise, I work a lot with advice to larger companies.
-
-34
-00:05:47,769 --> 00:05:51,559
-I work a lot with lectures and some investigations and such.
-
-35
-00:05:52,733 --> 00:05:53,794
-That's my background.
-
-36
-00:05:55,622 --> 00:05:57,492
-Thanks so much.
-
-37
-00:05:57,882 --> 00:06:00,312
-Good, then we have the panel introduced.
-
-38
-00:06:00,719 --> 00:06:04,319
-If we take out the picture on today's agenda, it looks like this.
-
-39
-00:06:07,299 --> 00:06:11,259
-We will start with an external voltage at present from Göran.
-
-40
-00:06:35,235 --> 00:06:37,340
-In the box also under the program-
-
-41
+19
 00:06:37,340 --> 00:06:39,724
 So you don't have to worry about missing it.
 
-42
+20
 00:06:40,811 --> 00:06:43,921
 Finally we do a rounding where you, Göran
 
-43
+21
 00:06:43,921 --> 00:06:47,541
 Also do a summary of what you heard during the conversation.
 
-44
+22
 00:06:48,429 --> 00:06:50,789
 You are of course also included in the panel.
 
-45
+23
 00:06:52,402 --> 00:06:54,502
 Top, then I think we are running.
 
-46
+24
 00:06:56,350 --> 00:07:01,295
 Then we start with your world -running and analysis, Göran.
 You are welcome.
 
-47
+25
 00:07:02,885 --> 00:07:03,835
 Thanks, Fredrik.
 
-48
+26
 00:07:05,404 --> 00:07:09,404
 I will take some time here to begin with.
 
-49
+27
 00:07:09,404 --> 00:07:15,704
 I will try to be more quiet under the panel and compensate with it.
 
-50
+28
 00:07:16,782 --> 00:07:22,350
 A little neighbor my view of AI, the big things that happen
 
-51
+29
 00:07:22,350 --> 00:07:25,905
 in the world and Sweden in this context.
 
-52
+30
 00:07:26,439 --> 00:07:32,809
 The other day the annual report came from Stanford, including
 
-53
+31
 00:07:33,799 --> 00:07:36,289
 called AI Index Report.
 
-54
-00:07:37,358 --> 00:07:40,880
-There is a lot of interest to look at
-
-55
-00:07:40,880 --> 00:07:44,238
-in terms of comparisons in the world, different countries, and so on.
-
-56
-00:07:44,238 --> 00:07:50,448
-One thing I thought stands out is that you find out nowadays
-
-57
-00:07:50,448 --> 00:07:55,678
-that AI significantly increases productivity and quality.
-
-58
-00:07:55,678 --> 00:07:58,608
-You have enough investigations that confirm it.
-
-59
-00:08:00,132 --> 00:08:03,842
-This, of course, makes it from a business perspective
-
-60
+32
 00:08:03,842 --> 00:08:07,212
 So this is with AI extremely interesting.
 
-61
+33
 00:08:07,212 --> 00:08:12,782
 What you can look at the organizations in the world that have come the furthest with AI
 
-62
+34
 00:08:12,782 --> 00:08:18,562
 is that they have acquired any kind of platform knowledge-
 
-63
+35
 00:08:19,170 --> 00:08:26,157
 Which allows them to reuse what they have done with AI in many contexts.
 
-64
+36
 00:08:26,157 --> 00:08:28,477
 They do not have one, two or three applications
 
-65
+37
 00:08:28,477 --> 00:08:34,427
 Without significantly more, those who have come the longest.
 
-66
+38
 00:08:36,817 --> 00:08:41,057
 This has affected in the last at least ten years
 
-67
+39
 00:08:41,347 --> 00:08:44,707
 the competitive situation in different industries.
 
-68
+40
 00:08:45,144 --> 00:08:51,794
 It may be that you have competitors who have already gained well on their way with AI.
 
-69
+41
 00:08:52,571 --> 00:08:56,331
 Perhaps even more interesting is that many customers and suppliers
 
-70
+42
 00:08:56,331 --> 00:08:57,646
 Sit and thought about:
 
-71
+43
 00:08:57,646 --> 00:09:01,851
 "What parts of the processes could we crunch
 
-72
+44
 00:09:01,851 --> 00:09:05,911
 "And raise market shares on, on the basis that we use more AI?"
 
-73
+45
 00:09:06,658 --> 00:09:13,408
 You also have a certain relationship then with many of the startups that exist within AI.
 
-74
+46
 00:09:13,408 --> 00:09:17,118
 That is, that too ... [no sound]
 
-75
+47
 00:09:28,268 --> 00:09:34,198
 ... which has its AIEKOSYSTEM and enters into new industries.
 
-76
+48
 00:09:34,198 --> 00:09:37,348
 When examined this in, for example, North America
 
-77
+49
 00:09:37,642 --> 00:09:43,312
 generally know ordinary companies that your own industry is-
 
-78
+50
 00:09:43,312 --> 00:09:47,294
 During strong opening, that it dissolves in different ways.
 
-79
+51
 00:09:48,593 --> 00:09:55,583
 You do not get the same results in Europe at all, so far, but sit a little more safe.
 
-80
+52
 00:09:56,405 --> 00:10:00,295
 But of course, the old truths also apply here.
 
-81
+53
 00:10:00,583 --> 00:10:03,723
 If it goes faster on the outside than the inside
 
-82
+54
 00:10:03,723 --> 00:10:07,763
 Could it be a rather difficult situation in the future with the development.
 
-83
-00:10:08,512 --> 00:10:13,042
-Looking at those on the left, the big AI companies-
-
-84
-00:10:36,239 --> 00:10:40,276
-Europe's largest company is then more about
-
-85
+55
 00:10:41,856 --> 00:10:44,724
 Perfumes, handbags and slimming pills.
 
-86
+56
 00:10:44,724 --> 00:10:48,744
 There is quite a big difference in the focus, so they are smaller.
 
-87
+57
 00:10:48,744 --> 00:10:54,444
 One must also have in the background that Europe has a 30 % greater population than in the United States.
 
-88
+58
 00:10:54,444 --> 00:10:58,684
 So the gap is quite large, and between these two parts also exist
 
-89
+59
 00:10:58,684 --> 00:11:05,684
 Additional AI companies from the United States, in the form of Meta, Tesla and so on.
 
-90
+60
 00:11:05,684 --> 00:11:10,724
 Of course, several Chinese will be accommodated before the European companies.
 
-91
+61
 00:11:11,338 --> 00:11:16,428
 So that which moves the fastest forward in the world within AI
 
-92
+62
 00:11:16,869 --> 00:11:18,769
 and have done in the last few years-
 
-93
+63
 00:11:18,769 --> 00:11:22,549
 is North America, southeastern Asia and the United Kingdom.
 
-94
+64
 00:11:23,780 --> 00:11:25,168
 What do they have in common
 
-95
+65
 00:11:25,168 --> 00:11:28,448
 Not everyone has everything of this, but most people have the most.
 
-96
+66
 00:11:28,448 --> 00:11:31,288
 You have a strategic priority.
 
-97
+67
 00:11:32,652 --> 00:11:39,252
 You are located in Cabinet Office in London, in the White House, and so on.
 
-98
+68
 00:11:39,763 --> 00:11:43,853
 It is not as common in the EU, that you have that priority.
 
-99
+69
 00:11:44,370 --> 00:11:48,580
 Above all, there is a strong collaboration with the industry.
 
-100
+70
 00:11:48,981 --> 00:11:54,251
 When Martin and I were in the White House just a year ago
 
-101
-00:11:54,493 --> 00:11:57,623
-We asked the question what they thought they were less good at.
-
-102
-00:12:26,726 --> 00:12:31,260
-The whole population's creativity and see, how can we use this?
-
-103
+71
 00:12:31,458 --> 00:12:36,278
 Both in terms of entrepreneurship, but also to create culture and other things.
 
-104
+72
 00:12:37,885 --> 00:12:43,768
 I would say that several of the countries have a direct aggressive policy
 
-105
+73
 00:12:43,768 --> 00:12:47,380
 to attract the competence of various kinds.
 
-106
+74
 00:12:47,929 --> 00:12:51,259
 You are also involved in building different Aihubbar.
 
-107
+75
 00:12:51,259 --> 00:12:56,799
 That is, geographical location, around, for example, university campus
 
-108
+76
 00:12:57,866 --> 00:13:01,910
 where one has some of the large AI companies-
 
-109
+77
 00:13:01,910 --> 00:13:06,139
 a couple of universities and public sector-
 
-110
+78
 00:13:06,139 --> 00:13:09,269
 And startups in one place.
 
-111
+79
 00:13:09,483 --> 00:13:12,303
 Today one expects Canada has
 
-112
-00:13:12,303 --> 00:13:16,303
-Twice as many AI hubs as you have in the EU.
-
-113
-00:13:17,502 --> 00:13:20,312
-Canada with a population of 35 million.
-
-114
-00:13:21,181 --> 00:13:28,161
-There are also plans to train leaders in a very explicit way.
-
-115
-00:13:30,104 --> 00:13:32,854
-To just take an example of what this results in
-
-116
-00:13:32,854 --> 00:13:37,404
-In, for example, health and health care, so is North America-
-
-117
-00:13:37,404 --> 00:13:42,930
-Or Canada and the United States rather, with 5 % of the world's population ...
-
-118
-00:13:42,206 --> 00:13:46,760
-Today, they account for 58 % of developments in health and healthcare.
-
-119
-00:13:46,370 --> 00:13:51,510
-The fastest part is Southeast Asia and Australia.
-
-120
-00:13:53,354 --> 00:13:57,244
-If we quickly skip to Sweden, in the limited time.
-
-121
-00:13:57,244 --> 00:13:58,644
-How does it look there
-
-122
-00:13:58,856 --> 00:14:03,686
-As I see it, we have some very strong benefits in Sweden
-
-123
-00:14:03,686 --> 00:14:05,960
-In this in the future.
-
-124
-00:14:05,685 --> 00:14:08,345
-We have a tradition of a strong entrepreneurship.
-
-125
-00:15:33,553 --> 00:15:38,583
-That is, we want to push down AI as part of digitalisation.
-
-126
+80
 00:15:39,531 --> 00:15:43,371
 To comment on this with the leadership talk parts we have
 
-127
+81
 00:15:43,371 --> 00:15:49,191
 Do I see quite often in Sweden that we delegate Ai-
 
-128
+82
 00:15:51,671 --> 00:15:56,591
 To some one in the company management, which in turn starts different projects.
 
-129
+83
 00:15:57,416 --> 00:16:01,126
 I was recently at a relatively large Swedish authority
 
-130
+84
 00:16:01,126 --> 00:16:06,766
 that had worked for 2.5 years with Proof of Concept for an AI application-
 
-131
+85
 00:16:06,766 --> 00:16:10,860
 Which was not really important to them.
 
-132
+86
 00:16:10,910 --> 00:16:14,390
 Instead of doing like those who work more strategically
 
-133
+87
 00:16:14,390 --> 00:16:16,840
 that is, make sure that everyone in the lead-
 
-134
+88
 00:16:16,840 --> 00:16:21,200
 have sufficient knowledge of and understanding of what one does with ai-
 
-135
+89
 00:16:21,200 --> 00:16:22,730
 What you can and can't do.
 
-136
+90
 00:16:22,730 --> 00:16:28,900
 Not knowledge about technology and mathematics, but on consequences.
 
-137
+91
 00:16:28,900 --> 00:16:31,600
 It is really quite natural, if you think about it
 
-138
+92
 00:16:31,600 --> 00:16:34,980
 That this is where it belongs, because it is really just there-
 
-139
+93
 00:16:34,980 --> 00:16:38,560
 one has a holistic view and can prioritize-
 
-140
+94
 00:16:38,560 --> 00:16:42,710
 between all the tens of thousands of possible AI applications available.
 
-141
+95
 00:16:43,207 --> 00:16:48,337
 This is where you can work with the legal aspects and risk assessment.
 
-142
+96
 00:16:48,800 --> 00:16:53,800
 However, the companies or organizations often go to the right
 
-143
+97
 00:16:54,534 --> 00:16:59,570
 In a next step to train all staff, so to speak.
 
-144
-00:17:00,409 --> 00:17:02,189
-A little bit about this with
-
-145
-00:17:05,789 --> 00:17:08,499
-How we look at our self -image, and so on.
-
-146
-00:18:00,644 --> 00:18:04,434
-So we should also show the world how AI can be used.
-
-147
+98
 00:18:05,380 --> 00:18:10,718
 As for our view of AI as part of digitization
 
-148
+99
 00:18:11,657 --> 00:18:13,927
 so comes this from the responsible minister-
 
-149
+100
 00:18:13,927 --> 00:18:18,732
 that it is very important that we do not do an AI strategy right now-
 
-150
+101
 00:18:18,732 --> 00:18:21,322
 but rather a digitization strategy.
 
-151
+102
 00:18:22,679 --> 00:18:26,519
 This is a relatively Swedish concern, I think.
 
-152
+103
 00:18:26,739 --> 00:18:32,684
 We miss the business and political opportunities with AI
 
-153
+104
 00:18:32,684 --> 00:18:36,494
 By pushing it down into something that maybe more often ...
 
-154
+105
 00:18:36,494 --> 00:18:38,564
 The improvements of the small steps then.
 
-155
+106
 00:18:40,253 --> 00:18:44,463
 But we have quite great opportunities, as I see it, or very large
 
-156
-00:18:44,463 --> 00:18:48,283
-to do something about this kind of way.
-
-157
-00:18:48,428 --> 00:18:52,138
-One is that things have been very fast in recent years in Sweden
-
-158
-00:18:52,138 --> 00:18:56,598
-within our large export industry.
-
-159
-00:18:56,598 --> 00:19:01,158
-As everyone knows, the small country has Sweden, at 10.5 million inhabitants
-
-160
-00:19:01,158 --> 00:19:05,488
-An over -representation of large companies that work with exports.
-
-161
-00:19:06,656 --> 00:19:12,186
-Here, most of these do not have any single-use applications-
-
-162
-00:19:12,186 --> 00:19:15,960
-Without a strategic way of working with AI.
-
-163
-00:19:15,769 --> 00:19:19,199
-There I think we need to find a way
-
-164
-00:19:19,199 --> 00:19:24,189
-To do as the United States, Canada, UK and so on-
-
-165
-00:19:24,482 --> 00:19:29,372
-To help small and medium -sized companies, help the public sector increase the pace.
-
-166
-00:19:30,280 --> 00:19:35,340
-Another thing where we are well located, thanks in large part to Vinnova of course
-
-167
-00:19:39,730 --> 00:19:45,360
-where we per capita are almost as far ahead as the UK-
-
-168
+107
 00:19:45,858 --> 00:19:50,780
 And is in par with the best countries in general.
 
-169
+108
 00:19:50,985 --> 00:19:54,845
 Another possibility I've seen in recent weeks that one has taken
 
-170
+109
 00:19:54,845 --> 00:19:58,395
 Among other things, within the Swedish regions and municipalities I have worked with.
 
-171
+110
 00:19:58,715 --> 00:20:05,350
 That is to go in depth and look at the new aistrategia proposal-
 
-172
+111
 00:20:05,350 --> 00:20:09,595
 As AI Sweden has joined, which Martin will surely develop later.
 
-173
+112
 00:20:10,670 --> 00:20:13,370
 Then also an advantage ...
 
-174
+113
 00:20:13,370 --> 00:20:16,240
 If we now come late to the party
 
-175
+114
 00:20:16,663 --> 00:20:21,668
 Do we have the advantage that we can look at everything we have done in other countries.
 
-176
+115
 00:20:21,668 --> 00:20:26,338
 All experiences and things that have gone well and less well in other countries.
 
-177
+116
 00:20:28,833 --> 00:20:31,533
 We have a huge opportunity
 
-178
+117
 00:20:31,533 --> 00:20:37,333
 If we just start working a little tougher with this than we have done hit the hit
 
-179
+118
 00:20:37,333 --> 00:20:41,453
 And are not as reclined as we may have been in the last ten years.
 
-180
+119
 00:20:42,293 --> 00:20:47,883
 To draw a lot of things that our politicians usually tend to
 
-181
+120
 00:20:47,883 --> 00:20:49,383
 And we others too, I think.
 
-182
+121
 00:20:50,328 --> 00:20:51,868
 Where we can take advantage of AI.
 
-183
+122
 00:20:51,868 --> 00:20:55,908
 We can look around only in the Nordic countries and find a lot of good stuff.
 
-184
+123
 00:20:56,861 --> 00:21:01,701
 But to do this, of course, we need competitive companies
 
-185
-00:21:01,701 --> 00:21:04,241
-that today has begun to take advantage of Ai-
-
-186
-00:21:34,753 --> 00:21:37,153
-In the same areas they are investing in?
-
-187
-00:21:37,477 --> 00:21:38,807
-And number two:
-
-188
-00:21:38,807 --> 00:21:41,477
-How can we take new creative paths
-
-189
-00:21:41,477 --> 00:21:44,907
-Where we can use unique Swedish qualities?
-
-190
+124
 00:21:44,907 --> 00:21:46,951
 It is about strength areas, and so on.
 
-191
+125
 00:21:46,951 --> 00:21:49,791
 Do you have any spontaneous response to it
 
-192
+126
 00:21:52,850 --> 00:21:57,885
 The question, as I see it, is that we want to compete in terms of our companies.
 
-193
+127
 00:21:57,885 --> 00:21:59,865
 We want to be good and compete there.
 
-194
+128
 00:21:59,865 --> 00:22:06,250
 What I suspect the issue is about is the benefits of welfare for example.
 
-195
+129
 00:22:06,695 --> 00:22:10,695
 I think we learn way too little today.
 
-196
+130
 00:22:10,695 --> 00:22:13,265
 Speaking of this self -image I'm talking about
 
-197
+131
 00:22:13,265 --> 00:22:16,155
 is there a picture that we should learn internally in Sweden-
 
-198
+132
 00:22:16,155 --> 00:22:19,795
 And then we will bring it out in the world, which I showed on this exercise.
 
-199
-00:22:19,795 --> 00:22:21,385
-It's pretty common.
-
-200
-00:23:19,213 --> 00:23:21,943
-From a perhaps technical perspective.
-
-201
+133
 00:23:22,856 --> 00:23:23,616
 Good.
 
-202
+134
 00:23:24,375 --> 00:23:29,565
 Before we start with the panel discussion I will briefly show a slide
 
-203
+135
 00:23:29,565 --> 00:23:32,145
 on what Vinnova's investment in AI looked out over the years.
 
-204
+136
 00:23:32,808 --> 00:23:35,108
 If you can show it slide.
 Good.
 
-205
+137
 00:23:36,484 --> 00:23:39,614
 These bars show the size of the financing decisions
 
-206
+138
 00:23:39,614 --> 00:23:41,864
 We have taken for AI projects every year.
 
-207
+139
 00:23:42,809 --> 00:23:48,829
 For example in the last four years we have decided on average
 
-208
+140
 00:23:48,829 --> 00:23:52,899
 About SEK 700 million per year on AI-related projects.
 
-209
+141
 00:23:53,955 --> 00:23:59,350
 Göran, do you make any reflection when you see this
 
-210
-00:23:59,689 --> 00:24:01,429
-Timing, or something else
-
-211
-00:24:04,595 --> 00:24:07,815
-From my perspective, I think it looks good with timing.
-
-212
-00:24:07,815 --> 00:24:11,185
-I think Vinnova was relatively early.
-
-213
-00:24:12,250 --> 00:24:16,750
-We see a lot of results from this, which are interesting.
-
-214
-00:24:17,204 --> 00:24:23,440
-I do not assess this type of public funding
-
-215
-00:24:23,440 --> 00:24:30,440
-Or the one that Wasp stands for, the private, as one of Sweden's concerns.
-
-216
-00:24:30,440 --> 00:24:33,274
-On the contrary, it is rather strength areas then.
-
-217
-00:24:33,818 --> 00:24:39,172
-Without what I tried to go through earlier, weaknesses were other than this.
-
-218
-00:24:41,258 --> 00:24:43,148
-I think this is very important
-
-219
-00:24:43,148 --> 00:24:46,278
-If it can continue in this way and be built up.
-
-220
+142
 00:24:47,449 --> 00:24:49,169
 Swedish entrepreneurship.
 
-221
+143
 00:24:49,169 --> 00:24:50,990
 Okay, yes.
 
-222
+144
 00:24:52,117 --> 00:24:54,237
 We can take it back for a while.
 
-223
+145
 00:24:55,556 --> 00:24:59,976
 Briefly described, before we move on, it is so that our support of AI
 
-224
+146
 00:24:59,976 --> 00:25:05,460
 Started with the fact that AI projects were more organically picked up in our broad calls.
 
-225
+147
 00:25:05,674 --> 00:25:08,924
 About 2017, AI became more and more in focus.
 
-226
+148
 00:25:09,434 --> 00:25:12,674
 This led to larger specific investments and calls.
 
-227
+149
 00:25:13,283 --> 00:25:15,833
 In 2018 we contributed, among other things
 
-228
+150
 00:25:15,833 --> 00:25:19,283
 To start AI Sweden, which Martin represents.
 
-229
+151
 00:25:20,314 --> 00:25:24,554
 Especially from 2020, we have significantly switched our investments.
 
-230
+152
 00:25:25,470 --> 00:25:27,357
 We are now working with AI on many fronts.
 
-231
+153
 00:25:28,112 --> 00:25:32,982
 We run the Innovation Program Advanced Digitization ”
 
-232
+154
 00:25:32,982 --> 00:25:36,932
 Together with Teknikföretagen and several large Swedish industrial companies.
 
-233
+155
 00:25:37,706 --> 00:25:38,986
 We have an aiprogram-
 
-234
+156
 00:25:38,986 --> 00:25:42,626
 A power collection for AI in municipalities and civil society.
 
-235
+157
 00:25:42,914 --> 00:25:45,304
 We work internationally, and so on.
 
-236
+158
 00:25:45,635 --> 00:25:48,875
 Of course, it is interesting to understand what is behind the numbers.
 
-237
+159
 00:25:48,875 --> 00:25:52,305
 To make a long story short, we work both short and long term.
 
-238
+160
 00:25:52,305 --> 00:25:56,665
 We work with lace, excellence and lace technology.
 
-239
-00:25:57,419 --> 00:25:59,309
-We work with broad ability.
-
-240
-00:27:49,300 --> 00:27:52,426
-It is Sweden's largest individual research initiative through the ages
-
-241
+161
 00:27:52,426 --> 00:27:55,756
 with a budget of 6.3 billion-
 
-242
+162
 00:27:56,070 --> 00:27:59,355
 for basic research within AI, autonomous systems and software.
 
-243
+163
 00:28:00,382 --> 00:28:03,472
 With the aim of conducting excellent research
 
-244
+164
 00:28:03,472 --> 00:28:07,360
 and skills build -up within AI, autonomous systems and software
 
-245
+165
 00:28:07,360 --> 00:28:10,562
 for the benefit of Swedish industry, but also Swedish society.
 
-246
+166
 00:28:11,205 --> 00:28:15,450
 What we do in the program is partly that we recruit researchers.
 
-247
+167
 00:28:15,450 --> 00:28:18,695
 We will recruit over 80 new researchers to Sweden
 
-248
+168
 00:28:18,695 --> 00:28:20,566
 that will establish new research groups.
 
-249
+169
 00:28:20,830 --> 00:28:24,811
 Today we have 60 of them in place, so we are good on the track.
 
-250
-00:28:24,811 --> 00:28:28,931
-The program runs until 2032, so it is very long -term.
-
-251
-00:28:59,299 --> 00:29:01,479
-A little less than a third in the Swedish Academy.
-
-252
+170
 00:29:01,479 --> 00:29:08,490
 A handful of seven, of the first hundred have left Sweden.
 
-253
+171
 00:29:08,245 --> 00:29:09,785
 It is very gratifying.
 
-254
+172
 00:29:10,106 --> 00:29:11,980
 So it gives results.
 
-255
+173
 00:29:11,980 --> 00:29:15,500
 We see that the research we fund is very highly ranked.
 
-256
+174
 00:29:15,382 --> 00:29:19,202
 It has been published over 1,550 articles
 
-257
+175
 00:29:19,202 --> 00:29:22,882
 which has a significantly higher quotation rate than we normally have in Sweden.
 
-258
+176
 00:29:23,598 --> 00:29:25,838
 It gives the result that we build competence.
 
-259
+177
 00:29:26,273 --> 00:29:28,403
 But all this is basic research.
 
-260
+178
 00:29:28,739 --> 00:29:32,129
 It is as Göran points out that it may not be there ...
 
-261
-00:29:32,129 --> 00:29:34,540
-There we have bet a lot, and it gives rash
-
-262
+179
 00:30:44,507 --> 00:30:47,770
 Without AI, they do not have a chance in the world market.
 
-263
+180
 00:30:47,704 --> 00:30:50,441
 So it has really been a necessity for them.
 
-264
+181
 00:30:51,157 --> 00:30:55,767
 There we see more and more that more people see the light, that they have to start investing.
 
-265
+182
 00:30:55,767 --> 00:30:57,787
 Export -oriented companies see that:
 
-266
+183
 00:30:58,137 --> 00:31:01,320
 "If we do not invest in this, we will not be part of the match at all".
 
-267
+184
 00:31:01,320 --> 00:31:03,570
 They see that they have to race and on.
 
-268
+185
 00:31:03,730 --> 00:31:06,360
 But it is difficult, because just as Göran is in on
 
-269
+186
 00:31:06,457 --> 00:31:09,467
 So you miss a lot of this fashion.
 
-270
+187
 00:31:09,979 --> 00:31:14,909
 You get stuck in the fact that you should very clearly count on investments in advance.
 
-271
+188
 00:31:14,909 --> 00:31:17,479
 You are not used to experimenting and Pilota.
 
-272
-00:31:17,660 --> 00:31:19,820
-But AI is not like regular software.
-
-273
-00:31:23,665 --> 00:31:28,250
-Before you start experimenting and see what value is in the data.
-
-274
-00:31:28,383 --> 00:31:31,373
-Then there is a great deal that gets stuck in a position of wait and see
-
-275
-00:31:31,373 --> 00:31:34,473
-that are a bit scared of the fact that it goes so fast within Ai-
-
-276
-00:31:34,473 --> 00:31:38,473
-So maybe we should wait a few years and see if the dust has settled then.
-
-277
-00:31:38,711 --> 00:31:42,271
-But the risk is, of course, that then competitors have run further
-
-278
-00:31:42,402 --> 00:31:47,820
-And you yourself get stuck there and have a long way to race.
-
-279
-00:31:47,260 --> 00:31:48,880
-But it is obvious, I think
-
-280
-00:31:48,880 --> 00:31:53,700
-that Sweden has good conditions today to apply a lot of AI.
-
-281
-00:31:53,959 --> 00:31:58,790
-Thanks to WASP, among other things, we have strong research and expertise.
-
-282
-00:31:58,374 --> 00:32:01,294
-More and more talented engineers are examined, etc.
-
-283
-00:32:01,513 --> 00:32:05,263
-The competence is there, so now it is about application.
-
-284
-00:32:07,101 --> 00:32:08,401
-Great.
-Thanks, Johan.
-
-285
-00:32:08,975 --> 00:32:10,875
-Then we move on to you, Evelina.
-
-286
-00:32:10,875 --> 00:32:14,635
-How do you look at the Swedish current forces, weaknesses, and so on.
-
-287
-00:32:14,917 --> 00:32:19,467
-If you want from an e-commerce and service sector perspective perhaps
-
-288
-00:32:19,467 --> 00:32:24,327
-As I think Wellstreet is active to invest in as a VC company.
-
-289
-00:32:37,352 --> 00:32:41,412
-We invest in all types of tech companies, sectors and verticals.
-
-290
+189
 00:32:41,412 --> 00:32:47,212
 It is an incredibly exciting time to be an early investor.
 
-291
+190
 00:32:48,726 --> 00:32:53,770
 I would say it's not a better time right now ...
 
-292
+191
 00:32:53,770 --> 00:32:57,157
 There is no better time than right now to jump on the Aitåget.
 
-293
+192
 00:32:57,157 --> 00:32:59,447
 We notice that in the startup scene.
 
-294
+193
 00:33:00,134 --> 00:33:03,724
 It pops up Aibolag that mushrooms out there.
 
-295
+194
 00:33:03,829 --> 00:33:05,789
 It is a large AIHAJP that is going on.
 
-296
+195
 00:33:05,789 --> 00:33:09,730
 That shark is very related to Genai.
 
-297
+196
 00:33:09,730 --> 00:33:13,269
 I think it's a bit of a shame that there is so much focus on Genai
 
-298
+197
 00:33:13,269 --> 00:33:15,989
 When there is much else to focus on.
 
-299
-00:33:15,989 --> 00:33:18,309
-Not least when it comes to industry.
-
-300
-00:33:46,544 --> 00:33:50,908
-Before we know so much more, everyone will surely be aibolag.
-
-301
-00:33:51,292 --> 00:33:55,532
-But if you look at the tech stack, we try to understand:
-
-302
-00:33:55,532 --> 00:34:00,472
-Is this a hardware provider, which is at the bottom?
-
-303
-00:34:00,472 --> 00:34:05,220
-Or is it in cloud, enabler or model provider
-
-304
-00:34:05,220 --> 00:34:10,232
-Or a company at the top of the pyramid, which is an Application Provider
-
-305
-00:34:10,232 --> 00:34:16,370
-That really uses models to solve problems that customers have.
-
-306
-00:34:16,997 --> 00:34:20,997
-There is, as I said, a lot of courage right now in the startup scene.
-
-307
-00:34:22,427 --> 00:34:26,980
-The important thing is to consider as a founder::
-
-308
-00:34:26,980 --> 00:34:29,940
-What is it really for problems we solve
-
-309
-00:34:30,151 --> 00:34:34,231
-To build successful companies is about solving a problem.
-
-310
-00:34:34,231 --> 00:34:39,521
-Preferably a big problem that many have, where AI can be part of it.
-
-311
-00:34:40,342 --> 00:34:42,772
-What I was going to say further is that
-
-312
-00:34:43,320 --> 00:34:49,812
-Since the cost of intelligence is now almost down to zero-
-
-313
-00:35:19,917 --> 00:35:24,107
-Because you already have a lot of resources, processes and capital in place.
-
-314
+198
 00:35:24,206 --> 00:35:27,256
 So I just believe in this closer collaboration
 
-315
+199
 00:35:27,256 --> 00:35:30,526
 With brave startups and industries with a lot of potential.
 
-316
+200
 00:35:32,965 --> 00:35:34,735
 How interesting.
 Thanks so much.
 
-317
+201
 00:35:35,760 --> 00:35:39,290
 Time goes very fast when you have this interesting discussion.
 
-318
+202
 00:35:39,621 --> 00:35:46,131
 We move on to part two, which we have certainly come into already.
 
-319
+203
 00:35:46,398 --> 00:35:49,578
 Our needs, opportunities and priorities ahead.
 
-320
+204
 00:35:49,993 --> 00:35:51,673
 What are we need to grab then
 
-321
+205
 00:35:52,665 --> 00:35:55,955
 We are a little into it too, so I think the word is free.
 
-322
+206
 00:35:55,955 --> 00:36:00,285
 Who wants to capture that question first, and perhaps comment on something said
 
-323
+207
 00:36:01,875 --> 00:36:04,845
 You can raise your hand.
 -I can hook in quickly.
 
-324
-00:36:08,305 --> 00:36:13,155
-Just briefly back to the last question, I totally agree with the speakers here.
-
-325
-00:37:10,635 --> 00:37:11,415
-Thanks, Martin.
-
-326
-00:37:11,415 --> 00:37:16,305
-You have many members, also many from the public sector.
-
-327
-00:37:16,514 --> 00:37:18,351
-Do you have something you want to share
-
-328
-00:37:18,351 --> 00:37:21,801
-Just what the situation is there and what the opportunity looks like?
-
-329
-00:37:22,419 --> 00:37:26,390
-It has happened super very much, but simplified you can say
-
-330
-00:37:26,390 --> 00:37:30,392
-That AI Sweden's members also reflect what Johan says.
-
-331
-00:37:30,804 --> 00:37:35,124
-It is above all those who have started early and who go ahead.
-
-332
-00:37:35,488 --> 00:37:40,518
-Although we may think that we have many members, 130 now, it is ..
-
-333
-00:37:40,518 --> 00:37:44,568
-For example, we have only less than 1 % of all Swedish companies
-
-334
-00:37:44,568 --> 00:37:48,878
-With more than 250 employees, it is an extremely small part yet.
-
-335
-00:37:49,625 --> 00:37:55,655
-It indicates that we need to get involved much more in this issue
-
-336
-00:37:56,360 --> 00:38:00,136
-and as has been said, invest in application and use it-
-
-337
-00:38:00,136 --> 00:38:04,536
-In a way that makes it spread across sectors and across the country.
-
-338
-00:38:06,230 --> 00:38:07,200
-Okay.
-
-339
-00:38:07,440 --> 00:38:10,710
-May I fill up a bit?
--Yes, I was just going to give the word to you.
-
-340
-00:38:10,710 --> 00:38:14,270
-I totally agree with Martin, but what I would like to see ...
-
-341
-00:38:14,270 --> 00:38:19,680
-We have talked about that we are starting to gain skills available and good research.
-
-342
-00:38:50,114 --> 00:38:54,524
-We need to help our above all small and medium -sized companies
-
-343
+208
 00:38:54,524 --> 00:38:56,804
 To get started and use AI for real.
 
-344
+209
 00:38:57,293 --> 00:38:58,903
 Thanks.
 Evelina, you wanted to come in.
 
-345
+210
 00:38:59,789 --> 00:39:01,590
 Yes exactly.
 
-346
+211
 00:39:01,590 --> 00:39:04,369
 As Sara is in, I think it is very important.
 
-347
+212
 00:39:04,369 --> 00:39:10,409
 Just like startups are striving to find Product Market Fit
 
-348
+213
 00:39:10,409 --> 00:39:14,989
 This is how it is AI initiative to also find an AI problem fit.
 
-349
+214
 00:39:15,355 --> 00:39:19,215
 For all problems, aite technology does not require.
 
-350
+215
 00:39:19,215 --> 00:39:22,185
 I think it's very important to get these successes
 
-351
+216
 00:39:22,185 --> 00:39:26,535
 Which makes you dare to invest even more in the long term.
 
-352
-00:39:27,510 --> 00:39:30,530
-The other thing I was thinking about was jacketing into what Martin said.
-
-353
-00:40:30,962 --> 00:40:34,442
-What measures and bets, in addition to those you have already lifted
-
-354
+217
 00:40:34,552 --> 00:40:38,812
 In different parts of society, you see that Sweden needs to take hold in-
 
-355
+218
 00:40:38,812 --> 00:40:40,312
 And where there are opportunities?
 
-356
+219
 00:40:41,166 --> 00:40:42,376
 Johan, how do you look at it
 
-357
+220
 00:40:44,933 --> 00:40:46,343
 I think it's...
 
-358
+221
 00:40:46,343 --> 00:40:49,582
 As many of us are in, gratifying that we have such consensus.
 
-359
+222
 00:40:49,582 --> 00:40:53,562
 It is precisely that the conditions are starting to be good at research and skills.
 
-360
+223
 00:40:53,916 --> 00:40:55,667
 There are skills shortages.
 
-361
+224
 00:40:55,667 --> 00:40:59,777
 There I would emphasize that the greatest lack of skills I see
 
-362
+225
 00:40:59,777 --> 00:41:03,207
 is not about specific skills to build AI models-
 
-363
-00:41:03,207 --> 00:41:04,737
-without deploying them.
-
-364
+226
 00:41:04,927 --> 00:41:07,677
 Perform a production in a robust, reliable way.
 
-365
+227
 00:41:08,136 --> 00:41:10,956
 We have many people with us, but we need many more.
 
-366
+228
 00:41:10,956 --> 00:41:12,456
 They are hard to find.
 
-367
+229
 00:41:12,872 --> 00:41:17,462
 In general, I think it would be good to point out a direction for Sweden.
 
-368
+230
 00:41:17,462 --> 00:41:21,802
 There I would call for the government, that the government could play a role.
 
-369
+231
 00:41:22,190 --> 00:41:25,330
 Look at France, Canada and others, who have ...
 
-370
+232
 00:41:25,330 --> 00:41:28,410
 You don't have all the answers here and now, you point out a direction.
 
-371
+233
 00:41:28,410 --> 00:41:30,230
 "We want this way".
 
-372
+234
 00:41:30,459 --> 00:41:31,869
 Set up an ambitious goal.
 
-373
-00:41:31,869 --> 00:41:34,869
-What could Sweden do around, for example, use?
-
-374
-00:42:17,220 --> 00:42:21,080
-Above all, it is possible to pilot and test on a small scale.
-
-375
-00:42:21,248 --> 00:42:25,878
-Everyone should test that Pilota's resolutions for their unique problem.
-
-376
-00:42:26,722 --> 00:42:29,862
-I still think the innovation system, and even politics
-
-377
-00:42:30,111 --> 00:42:32,161
-Talking too much about conditions.
-
-378
-00:42:32,161 --> 00:42:33,661
-Now we have them in place.
-
-379
-00:42:33,661 --> 00:42:37,101
-Now it is about looking forward to application and use.
-
-380
+235
 00:42:38,382 --> 00:42:39,352
 Thanks, Johan.
 
-381
+236
 00:42:40,142 --> 00:42:44,842
 Martin, you recently launched an Aistrategia for Sweden.
 
-382
+237
 00:42:45,119 --> 00:42:46,219
 Why did you do that
 
-383
+238
 00:42:47,796 --> 00:42:50,306
 It connects very well into this call.
 
-384
+239
 00:42:50,306 --> 00:42:56,786
 We did this to be able to push properly on many more leaders out there.
 
-385
+240
 00:42:57,403 --> 00:43:00,903
 Those who have already been on for many years and come a long way
 
-386
+241
 00:43:00,903 --> 00:43:03,183
 we don't have to be so worried about.
 
-387
+242
 00:43:03,183 --> 00:43:07,309
 But the incredible amount
 
-388
+243
 00:43:07,309 --> 00:43:10,459
 Both public and private organizations we have in Sweden ...
 
-389
-00:43:10,459 --> 00:43:13,579
-We have a very decentralized public sector, for example
-
-390
-00:43:13,579 --> 00:43:19,574
-Which has not yet started, but began to feel that there is something here.
-
-391
+244
 00:43:20,328 --> 00:43:25,298
 Then we wanted to give them a guide really, a way of thinking
 
-392
+245
 00:43:26,404 --> 00:43:29,674
 And a huge call to actually get started with these parts.
 
-393
+246
 00:43:29,674 --> 00:43:33,674
 Then we believe that even this strategy is applicable as
 
-394
+247
 00:43:34,853 --> 00:43:40,603
 input even to decision makers in the public-
 
-395
+248
 00:43:41,675 --> 00:43:46,585
 For how to allocate means and catalyze, you can say-
 
-396
+249
 00:43:47,346 --> 00:43:49,336
 A faster progress here.
 
-397
+250
 00:43:49,569 --> 00:43:53,419
 If we look at the public sector, it makes up almost half of our GDP.
 
-398
+251
 00:43:54,243 --> 00:43:56,815
 A leadership from government with incentive
 
-399
+252
 00:43:56,815 --> 00:44:01,595
 to develop this in collaboration and share solutions between each other-
 
-400
-00:44:01,595 --> 00:44:04,725
-Would be a very successful Swedish model.
-
-401
-00:46:00,202 --> 00:46:04,152
-More interest from leadership and a higher level of ambition.
-
-402
-00:46:05,481 --> 00:46:08,121
-Sara, you are welcome to add what was said here.
-
-403
-00:46:08,121 --> 00:46:12,581
-Before you do, I have any questions that you can pick up if you want.
-
-404
-00:46:15,459 --> 00:46:18,449
-For starters, the development is not directly still.
-
-405
-00:46:18,881 --> 00:46:22,881
-There are things beyond large -scale language models and chatgpt, and so on.
-
-406
-00:46:24,677 --> 00:46:28,407
-What do we need to keep track of there in our investment
-
-407
-00:46:28,816 --> 00:46:34,756
-My second question is that AI affects the conditions for research in itself
-
-408
-00:46:34,756 --> 00:46:36,466
-Thus, general research.
-
-409
-00:46:37,192 --> 00:46:41,524
-We see how to develop new proteins in furious speed
-
-410
-00:46:41,524 --> 00:46:44,134
-Thanks to AI models and so on.
-
-411
-00:46:44,397 --> 00:46:47,567
-Is that something you want to catch up in what I said, Sara
-
-412
-00:46:48,416 --> 00:46:49,246
-Absolutely.
-
-413
-00:46:49,246 --> 00:46:52,656
-I start with one thing we need, which may sound a bit boring.
-
-414
-00:46:52,656 --> 00:46:56,216
-But we actually need infrastructure in Sweden as well.
-
-415
-00:46:56,216 --> 00:46:59,036
-We have funded infrastructure for research
-
-416
-00:48:05,487 --> 00:48:07,557
-Then we must use AI in research.
-
-417
+253
 00:48:07,557 --> 00:48:13,467
 So it will be incredibly exciting to see how AI will work
 
-418
+254
 00:48:13,467 --> 00:48:16,367
 in the service of research and as an aid to the researchers.
 
-419
+255
 00:48:16,759 --> 00:48:17,489
 Thanks.
 
-420
+256
 00:48:17,489 --> 00:48:20,469
 Then it is a matter of aiformity standing still.
 
-421
+257
 00:48:20,469 --> 00:48:22,829
 No absolutely not.
 It moves lightning fast forward.
 
-422
+258
 00:48:23,119 --> 00:48:26,659
 It's just trying to invest forward as well.
 
-423
+259
 00:48:26,659 --> 00:48:28,289
 There is no other option.
 
-424
+260
 00:48:29,718 --> 00:48:30,568
 Thanks, Sara.
 
-425
+261
 00:48:30,817 --> 00:48:33,099
 Evelina, do you have something you want to add
 
-426
+262
 00:48:33,099 --> 00:48:37,539
 We also have a regulation from Europe, AI Act and so on.
 
-427
+263
 00:48:37,711 --> 00:48:41,861
 Do you have any reflections on it how can we take it as an opportunity?
 
-428
+264
 00:48:41,861 --> 00:48:44,301
 What is important for the way forward
 
-429
+265
 00:48:44,478 --> 00:48:48,197
 I think first and foremost that it is important with the visionary leadership
 
-430
+266
 00:48:48,197 --> 00:48:50,990
 Like everyone here in the panel is in.
 
-431
+267
 00:48:50,990 --> 00:48:53,110
 I think it's important at all levels.
 
-432
+268
 00:48:53,586 --> 00:48:58,246
 Not least the discussions that have come up about how it will affect jobs ahead.
 
-433
+269
 00:48:59,028 --> 00:49:03,498
 Where we notice some concern in the market, and early tendencies to it already
 
-434
+270
 00:49:03,498 --> 00:49:07,068
 With a strike that went on in Hollywood not so long ago.
 
-435
+271
 00:49:07,407 --> 00:49:10,077
 There I think you will have to work much more.
 
-436
+272
 00:49:10,077 --> 00:49:16,067
 And show the opportunities for this, that a new type of job will emerge.
 
-437
+273
 00:49:16,067 --> 00:49:20,297
 Another type of re and upscaling will be required in society at large.
 
-438
+274
 00:49:21,395 --> 00:49:25,545
 Then I also think about this with the fact that visionary leadership is about ...
 
-439
-00:49:25,545 --> 00:49:32,195
-Now many people understand more what AI is about, thanks to chatgpt.
-
-440
-00:51:20,555 --> 00:51:23,505
-in how to develop and use AI in a sustainable way.
-
-441
+275
 00:51:23,505 --> 00:51:27,095
 I think we will see that kind of regulations forward in other places.
 
-442
+276
 00:51:27,700 --> 00:51:29,440
 Thanks so much.
 
-443
+277
 00:51:30,379 --> 00:51:34,299
 Time, as I said, goes very fast.
 You should get the word, Johan.
 
-444
+278
 00:51:34,939 --> 00:51:37,819
 We simply start with our last words.
 
-445
+279
 00:51:38,114 --> 00:51:42,844
 Then I will take one at a time, so you are happy to get 3040 seconds to sum up-
 
-446
+280
 00:51:42,844 --> 00:51:47,324
 What you think is most important for the audience to get about Sweden's way forward.
 
-447
+281
 00:51:48,427 --> 00:51:54,263
 As a short recording to it, Johan, it is so that we find out
 
-448
+282
 00:51:54,263 --> 00:51:57,283
 That we are entering what you might call an AI revolution.
 
-449
+283
 00:51:57,598 --> 00:51:59,398
 We are right at the beginning
 
-450
-00:51:59,398 --> 00:52:02,288
-And sees what great power the large -scale models have.
-
-451
-00:54:14,166 --> 00:54:16,076
-Thanks.
-Martin
-
-452
-00:54:17,415 --> 00:54:20,126
-I just fill up.
-Let's start and take the first step.
-
-453
-00:54:20,126 --> 00:54:24,206
-It is very clear that those who understand this best also invest the most.
-
-454
-00:54:24,206 --> 00:54:28,526
-If we get started, we will create value and take it from there, simply.
-
-455
-00:54:30,405 --> 00:54:35,665
-Thanks.
-Last but not least, Sara, because Göran will make a summation.
-
-456
-00:54:36,222 --> 00:54:38,902
-Yes.
-Our purpose as a foundation is to be rural.
-
-457
-00:54:38,902 --> 00:54:41,852
-I think AI is a technology that we have to use
-
-458
-00:54:41,852 --> 00:54:44,802
-To ensure that Sweden is successful in the long term.
-
-459
-00:54:44,802 --> 00:54:46,602
-It is both about Swedish companies.
-
-460
-00:54:46,602 --> 00:54:50,192
-It will be a necessity to use AI if one is to be successful.
-
-461
-00:54:50,192 --> 00:54:53,832
-It is not just about efficiency, but also completely new opportunities.
-
-462
-00:55:10,643 --> 00:55:15,273
-Good, then we get into audience issues and at least have a question.
-
-463
-00:55:15,569 --> 00:55:17,459
-It is aimed at all of you.
-
-464
-00:55:18,678 --> 00:55:24,268
-Sweden's Unicorns has often been applicants and marketers
-
-465
-00:55:24,746 --> 00:55:25,806
-rather than deep tech.
-
-466
-00:55:26,406 --> 00:55:29,276
-Is it likely that it will also be Sweden's role in AI
-
-467
-00:55:30,028 --> 00:55:32,988
-Should we invest more in models and basic techniques
-
-468
-00:55:33,808 --> 00:55:37,308
-Or product and application to benefit from the development?
-
-469
-00:55:38,010 --> 00:55:39,250
-Someone who wants to comment
-
-470
-00:55:42,973 --> 00:55:43,893
-Johan
-
-471
-00:55:44,636 --> 00:55:46,126
-I can take a first attempt.
-
-472
-00:55:46,126 --> 00:55:48,436
-We actually build great language models.
-
-473
-00:55:48,436 --> 00:55:53,836
-On Finnish supercomputers with Finnish state funding and eufinance-
-
-474
-00:55:53,836 --> 00:55:56,756
-So we are building world -leading Swedish -speaking models now.
-
-475
-00:55:57,006 --> 00:55:58,006
-It is difficult.
-
-476
-00:55:58,296 --> 00:56:01,986
-It requires tremendously deep pockets to lead within Deep Tech.
-
-477
-00:56:01,986 --> 00:56:05,006
-It will probably be difficult for Sweden to do so.
-
-478
-00:56:05,006 --> 00:56:07,346
-This does not mean that we should not try to understand.
-
-479
-00:56:09,738 --> 00:56:12,268
-Thanks.
-Someone else with a very short comment
-
-480
-00:56:36,711 --> 00:56:38,281
-Sara, did you want to add something
-
-481
+284
 00:56:38,538 --> 00:56:43,498
 I was just going to say that historically Sweden has been good at deep tech company.
 
-482
+285
 00:56:43,498 --> 00:56:45,958
 I would not want to exclude that opportunity at all.
 
-483
+286
 00:56:45,958 --> 00:56:48,308
 I think we should do both parts.
 
-484
+287
 00:56:48,657 --> 00:56:51,457
 Okay.
 Big thanks for your summaries.
 
-485
+288
 00:56:51,838 --> 00:56:55,668
 We can easily last for another hour, it feels like, and maybe more.
 
-486
+289
 00:56:57,323 --> 00:56:59,693
 Then I turn to you, Göran.
 
-487
+290
 00:57:01,337 --> 00:57:07,337
 Would you be able to in a few minutes max sum up the most important things you heard today
 
-488
+291
 00:57:08,137 --> 00:57:10,087
 And how you look on the road forward?
 
-489
+292
 00:57:12,038 --> 00:57:17,018
 I thought there were many very important views that came out.
-
-490
-00:57:17,018 --> 00:57:24,028
-I think it is easy for us to underestimate how important Wasp is.
-
-491
-00:59:16,470 --> 00:59:19,550
-What would the military say clear sign from Colonel.
-
-492
-00:59:19,550 --> 00:59:23,880
-We have a clear sign from research, from use within Sweden
-
-493
-00:59:23,880 --> 00:59:27,500
-Especially outside Sweden, lots of experiences to take off.
-
-494
-00:59:27,954 --> 00:59:34,284
-It ends up very much on Swedish leaders, to act now.
-
-495
-00:59:34,961 --> 00:59:39,681
-On my part, this is no criticism of poor leaders who have a lot to do.
-
-496
-00:59:40,265 --> 00:59:45,525
-But one needs to prioritize this issue quite strongly, I think
-
-497
-00:59:45,608 --> 00:59:47,428
-From a leadership perspective.
-
-498
-00:59:47,807 --> 00:59:48,707
-Good.
-Thanks, Göran.
-
-499
-00:59:48,913 --> 00:59:52,393
-We're pulling over a minute.
-It goes well, I hope.
-
-500
-00:59:53,477 --> 00:59:58,105
-Big thanks for all your input in this very important discussion.
-
-501
-00:59:58,546 --> 01:00:03,666
-We can note that much of Sweden wants to see a completely different level of ambition
-
-502
-01:00:04,027 --> 01:00:06,647
-Around how we invest and take care of AI.
-
-503
-01:00:07,223 --> 01:00:13,823
-Vinnova is fully included in that ambition and look forward to that in every way we can
-
-504
-01:00:13,823 --> 01:00:16,563
-assist in this power collection to invest ahead.
-
-505
-01:00:16,563 --> 01:00:19,223
-We believe it is incredibly important.
-
-506
-01:00:20,251 --> 01:00:22,251
-It may be my short summation.
-
-507
-01:00:23,138 --> 01:00:27,228
-We look forward to a Sweden that decided to invest even more in AI.
-
-508
-01:00:27,915 --> 01:00:32,145
-Big thanks to the panel and to you who listened
-
-509
-01:00:32,145 --> 01:00:35,215
-And all the questions that have come in that we have not been able to answer.

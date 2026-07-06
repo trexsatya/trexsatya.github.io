@@ -75,18 +75,3 @@ blir utan ersättning.
 16
 00:01:03,208 --> 00:01:05,750
 Första gången får du en varning,
-
-17
-00:01:05,750 --> 00:01:09,666
-andra gången
-blir du utan ersättning i en dag.
-
-18
-00:01:09,750 --> 00:01:13,958
-Tredje gången blir du utan
-ersättning i fem dagar.
-
-19
-00:01:14,000 --> 00:01:18,083
-Fjärde gången blir du utan
-ersättning i tio dagar.

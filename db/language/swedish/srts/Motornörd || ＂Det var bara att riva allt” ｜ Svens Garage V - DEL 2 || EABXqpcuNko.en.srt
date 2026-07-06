@@ -1,132 +1,108 @@
 1
-00:01:34,989 --> 00:01:36,886
-So the only generator I could find.
-
-2
 00:01:36,970 --> 00:01:40,730
 I have tried to get mine started, but no, it is not possible.
 
-3
+2
 00:01:41,269 --> 00:01:45,555
 It is a bit special with because it sits only a coil in this
 
-4
+3
 00:01:45,639 --> 00:01:49,660
 so they must have a special charge regulator
 
-5
+4
 00:01:50,629 --> 00:01:52,295
 and it is a regulator that is constantly lying
 
-6
+5
 00:01:52,379 --> 00:01:55,849
 And pulses power into the winding.
 
-7
+6
 00:01:57,019 --> 00:01:59,830
 So a modern charge regulator does not work.
 
-8
+7
 00:02:00,150 --> 00:02:05,779
 So I bought a charge regulator, an electronic,
 
-9
+8
 00:02:06,339 --> 00:02:08,339
 And bought new winding.
 
-10
+9
 00:02:08,720 --> 00:02:10,925
 But no, I didn't get that started.
 
-11
-00:02:11,009 --> 00:02:13,009
-Don't charge anything.
-
-12
-00:02:17,500 --> 00:02:19,500
-And there is to buy.
-
-13
+10
 00:02:20,039 --> 00:02:24,472
 One has found Europe down in Belgium and then guy there.
 
-14
+11
 00:02:24,472 --> 00:02:25,233
 One?
 
-15
+12
 00:02:25,233 --> 00:02:27,089
 One, he had.
 
-16
+13
 00:02:28,419 --> 00:02:30,669
 But he knew it was unusual.
 
-17
+14
 00:02:32,679 --> 00:02:37,199
 12,000 plus tax plus shipping and a little.
 
-18
+15
 00:02:38,619 --> 00:02:42,059
 Yes.
 No, it's not that fun.
 
-19
+16
 00:02:42,330 --> 00:02:44,705
 I mean damn it is more than what half the bike is worth
 
-20
+17
 00:02:44,789 --> 00:02:46,365
 so to speak.
 
-21
+18
 00:02:46,449 --> 00:02:48,925
 So I went a bit and looked in the hides here in the garage
 
-22
-00:02:49,009 --> 00:02:51,380
-And then I found an alternator generator.
-
-23
-00:10:22,239 --> 00:10:24,479
-And it starts to giggle like this.
-
-24
+19
 00:10:26,880 --> 00:10:28,746
 So you have to fix that.
 
-25
+20
 00:10:28,830 --> 00:10:31,900
 I have ripped a whole electrical system, all the cables and this.
 
-26
+21
 00:10:32,309 --> 00:10:35,130
 It's not good MC cables because they are.
 
-27
+22
 00:10:36,169 --> 00:10:41,676
 If you look at these, there are very few threads so such a cable
 
-28
+23
 00:10:41,760 --> 00:10:43,760
 becomes very stiff.
 
-29
+24
 00:10:44,150 --> 00:10:47,440
 The stiffer the cable you have the easier it goes by vibration.
 
-30
+25
 00:10:48,320 --> 00:10:51,700
 This is how you want a cable that has a lot of threads
 
-31
+26
 00:10:52,030 --> 00:10:54,030
 which becomes soft and compliant.
 
-32
+27
 00:10:54,580 --> 00:10:56,645
 Then he can lie down and vibrate without such a thing.
-
-33
-00:10:56,729 --> 00:10:59,066
-The engine vibrates very much so then it is important

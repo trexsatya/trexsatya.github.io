@@ -62,15 +62,3 @@ Increases the number of days you become without compensation.
 16
 00:01:03,208 --> 00:01:05,750
 First time you get a warning,
-
-17
-00:01:05,750 --> 00:01:09,666
-The second time you will be without compensation for a day.
-
-18
-00:01:09,750 --> 00:01:13,958
-The third time you will be without compensation for five days.
-
-19
-00:01:14,000 --> 00:01:18,083
-The fourth time you will be without compensation for ten days.

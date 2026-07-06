@@ -21,135 +21,99 @@ In 1865, the Austrian monk presents Gregor Mendel-
 -How properties appear to be inherited from one generation to another.
 
 6
-00:00:36,080 --> 00:00:40,200
-This after he studied 29,000 pea plant-
-
-7
-00:00:49,880 --> 00:00:56,880
-That the DNA molecule and all its genes gave an organism its properties.
-
-8
 00:00:57,040 --> 00:01:03,360
 Since then, a huge effort has been made to map the organisms' DNA-
 
-9
+7
 00:01:03,520 --> 00:01:08,440
 -to try to understand which gene is linked to which trait.
 
-10
+8
 00:01:08,600 --> 00:01:14,360
 Hand in hand with this a new technology has grown - genetic engineering.
 
-11
+9
 00:01:14,520 --> 00:01:20,640
 It has made it possible to change genes of living organisms.
 
-12
+10
 00:01:20,800 --> 00:01:26,400
 For a long time we have characterized animals through breeding and plants through processing.
 
-13
+11
 00:01:26,560 --> 00:01:34,040
 But it has taken many generations before you have been able to see a result.
 
-14
+12
 00:01:34,200 --> 00:01:41,160
 After realizing the importance
 
-15
+13
 00:01:41,320 --> 00:01:47,240
 -There more experiments began.
 One such example is the sheep dolly-
 
-16
+14
 00:01:47,400 --> 00:01:52,200
 -A of the first genetic engineering experiments carried out on a mammal.
 
-17
-00:01:52,360 --> 00:01:55,360
-The very purpose was to investigate-
-
-18
-00:01:55,520 --> 00:02:00,560
--If it was possible to clone, make an exact copy, of a mammal.
-
-19
-00:02:00,720 --> 00:02:07,160
-One moved a cell nucleus into a fertilized egg from another sheep-
-
-20
-00:02:50,640 --> 00:02:54,440
--To give the other characteristics.
-
-21
-00:02:54,600 --> 00:02:57,440
-You use bacteria to help.
-
-22
-00:02:57,600 --> 00:03:04,280
-The desired gene is moved into a DNA molecule that is inserted into the bacterium.
-
-23
+15
 00:03:05,280 --> 00:03:11,080
 You then enter the bacterium into a cell on the organism you want to change.
 
-24
+16
 00:03:11,240 --> 00:03:17,720
 The new molecule can marry in the DNA.
 It changes the genetic mass.
 
-25
+17
 00:03:18,840 --> 00:03:25,960
 One can take a gene from an ice ocean fish and place it in a vegetable-
 
-26
+18
 00:03:26,120 --> 00:03:29,320
 -and make it more cold-resistant-
 
-27
+19
 00:03:29,480 --> 00:03:35,360
 -or make a crop that is more durable to pesticides-
 
-28
+20
 00:03:35,520 --> 00:03:40,200
 -So that the weeds die but not the crop.
 
-29
+21
 00:03:40,360 --> 00:03:43,600
 The views on this fall apart.
 
-30
+22
 00:03:43,760 --> 00:03:49,280
 The skepticals believe that there are risks in manipulating the genetic mass.
 
-31
+23
 00:03:49,440 --> 00:03:56,280
 In Sweden, foods that contain more than 1 % GMO must be labeled.
 
-32
+24
 00:03:56,440 --> 00:04:00,720
 The method would not work on a human being.
 
-33
+25
 00:04:00,880 --> 00:04:06,880
 Therefore, it became a fuss when an extraordinary discovery was made in 2012.
 
-34
+26
 00:04:07,040 --> 00:04:10,280
 A method that could be used on human-
 
-35
+27
 00:04:10,440 --> 00:04:13,600
 -Top the technology to a whole new level.
 
-36
+28
 00:04:13,760 --> 00:04:20,800
 Instead of adding genes, it is about changing the inheritance mass.
 
-37
+29
 00:04:21,800 --> 00:04:29,280
 I'm talking about Crispr-Cas9 or the "Gen Sax" which received the Nobel Prize in 2020.
-
-38
-00:04:29,440 --> 00:04:36,720
-It was Emmanuelle Charpentier and Jennifer Doudna who came up with the method.

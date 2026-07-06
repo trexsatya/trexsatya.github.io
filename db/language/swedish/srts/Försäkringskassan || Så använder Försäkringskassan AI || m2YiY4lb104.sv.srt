@@ -1,112 +1,93 @@
 1
-00:01:30,690 --> 00:01:34,694
-blanketter som kommer in som pappers
-blanketter inscannade för att handläggaren
-
-2
 00:01:34,694 --> 00:01:39,299
 ska slippa skriva över den och läsa
 och skriva in det i ärendet.
 
-3
+2
 00:01:39,414 --> 00:01:42,840
 Vad innebär det
 för våra kunder att vi använder AI?
 
-4
+3
 00:01:42,960 --> 00:01:47,197
 Genom att använda AI så
 kan vi öka vår effektivitet, precision
 
-5
+4
 00:01:47,197 --> 00:01:51,913
 och kvalitet inom många olika områden,
 inte bara inom handläggningen.
 
-6
+5
 00:01:51,913 --> 00:01:56,917
 Men vi kan också upptäcka avvikelser
 som till exempel bidragsbrott
 
-7
+6
 00:01:56,917 --> 00:02:00,978
 och när vi använder AI i handläggningen
 så har vi kunnat se
 
-8
+7
 00:02:00,978 --> 00:02:05,013
 att vi minskar riskerna för att vi ska
 missa och missuppfatta information.
 
-9
+8
 00:02:05,013 --> 00:02:07,496
 Vi gör mer likvärdiga bedömningar och
 
-10
+9
 00:02:07,496 --> 00:02:10,719
 vi minskar också onödiga kompletteringar.
 
-11
+10
 00:02:11,309 --> 00:02:15,469
 Det har varit en
 väldig hajp kring Chat GPT.
 
-12
+11
 00:02:15,469 --> 00:02:18,877
 Och vi är många som har provat den här
 AI-botten och författat texter åt oss.
 
-13
-00:02:18,877 --> 00:02:21,647
-Är det här en tjänst som också
-Försäkringskassan använder ?
-
-14
-00:04:46,212 --> 00:04:49,982
-dessutom väldigt olika bedömningar
-fast vi utgår från samma underlag.
-
-15
+12
 00:04:49,982 --> 00:04:53,719
 Fördelen de har är att vi har den
 här spårbarheten utifrån det sättet
 
-16
+13
 00:04:53,719 --> 00:04:55,988
 vi har byggt upp det kring den här
 
-17
+14
 00:04:55,988 --> 00:04:59,791
 övervakade maskininlärningsprocessen
 så att vi kan korrigera.
 
-18
+15
 00:04:59,791 --> 00:05:00,859
 Vi gör uppföljningar och vi
 
-19
+16
 00:05:01,129 --> 00:05:04,132
 kan korrigera om vi ser att det
 kommer in felaktigheter.
 
-20
+17
 00:05:04,132 --> 00:05:07,803
 Och sen är det också så
 att AI-lösningen fattar inte beslut utan
 
-21
+18
 00:05:07,803 --> 00:05:11,306
 det är alltid handläggaren som ansvarar i
 slutändan och som fattar beslutet.
 
-22
+19
 00:05:11,306 --> 00:05:13,975
 Det är bara ett stöd.
 
-23
+20
 00:05:13,975 --> 00:05:16,077
 Om vi ska sia  lite om framtiden.
-
-24
-00:05:16,077 --> 00:05:18,046
-Hur tror du att det ser ut om fem år?

@@ -35,277 +35,217 @@ Och den bok som vi ska utgå ifrån är en bok som heter Uthållighet av Alex Hu
 När man katalogiserar en bok är det förstås viktigt att man är riktigt säker på att boken inte är katalogiserad innan
 
 10
-00:01:22,814 --> 00:01:26,769
-för då ska man använda sig av den posten i stället.
-
-11
-00:03:00,480 --> 00:03:03,808
-Och det ligger under Identifikator.
-
-12
 00:03:05,088 --> 00:03:13,257
 Och ISBN är den vanligaste identifikatorn för tryckta böcker.
 
-13
+11
 00:03:23,776 --> 00:03:29,920
 Sådär. Och nästa fält är Särskiljande tillägg och det är inte något kärnelement så det
 
-14
+12
 00:03:30,176 --> 00:03:34,016
 behöver man inte fylla i om man inte vill. Men om man tycker att
 
-15
+13
 00:03:35,552 --> 00:03:41,696
 man har behov av det så kan man fylla i det och vi på NB fyller i det här fältet.
 
-16
+14
 00:03:41,952 --> 00:03:46,304
 Vi kan fylla i att den här boken är inbunden
 
-17
+15
 00:03:49,632 --> 00:03:50,912
 Sådär.
 
-18
+16
 00:03:51,168 --> 00:03:54,496
 Om den hade varit häftad hade vi skrivit häftad i stället.
 
-19
+17
 00:03:56,544 --> 00:04:05,302
 Och sen så kommer det tre fält som bara är standardfält som vi inte bryr oss om.
 
-20
+18
 00:04:05,302 --> 00:04:09,810
 De ligger alltid i bibliografiska poster för tryckta böcker.
 
-21
+19
 00:04:10,880 --> 00:04:21,184
 Sen har vi Har titel och där ska vi fylla i själva titeln och då tittar vi efter hur det ser ut på titelsidan.
 
-22
+20
 00:04:21,184 --> 00:04:25,983
 Titelsidan är primärkällan så det är den man alltid ska utgå ifrån.
 
-23
+21
 00:04:27,007 --> 00:04:29,823
 Så jag fyller i vad som står här.
 
-24
+22
 00:04:30,591 --> 00:04:37,549
 Och då står det Uthållighet. Det är titlen på den här boken.
 
-25
+23
 00:04:37,759 --> 00:04:48,030
 Och sedan har vi ett fält till, Övrig titelinformation, och här kan man fylla i undertiteln som också finns i den här boken.
 
-26
+24
 00:04:48,767 --> 00:05:01,748
 Och då har vi undertiteln De tänjbara gränserna för din fysiska förmåga.
 
-27
+25
 00:05:03,871 --> 00:05:10,894
 Och man följer titelsidan som den ser ut. Man liksom beskriver titelsidan. Det är viktigt.
 
-28
+26
 00:05:11,295 --> 00:05:14,879
 Och nästa fält är Upphovsuppgift.
 
-29
+27
 00:05:15,391 --> 00:05:26,463
 Och då har vi författaren skriven på titelsidan och vi skriver in Alex Hutchinson, sådär.
 
-30
-00:05:26,655 --> 00:05:32,543
-Eftersom det här är en översatt bok vill vi även ha med översättarens namn.
-
-31
-00:05:45,000 --> 00:05:50,668
-Så vi anger uppgiften som den står på titelsidans baksida.
-
-32
+28
 00:05:50,975 --> 00:05:54,559
 Och det gör vi också i det här fältet Upphovsuppgift.
 
-33
+29
 00:05:55,327 --> 00:06:02,930
 Men eftersom de här två personerna har två olika funktioner, den första, Alex Hutchinson, är författare och den andra
 
-34
+30
 00:06:02,930 --> 00:06:10,546
 är översättare då vill vi särskilda de här två med en ISBD-interpunktion.
 
-35
+31
 00:06:10,687 --> 00:06:19,380
 Om den här övriga upphovsuppgiften hade legat i ett annat fält hade vi inte behövt göra det. Då hade den kunnat skapas automatiskt.
 
-36
+32
 00:06:19,380 --> 00:06:27,282
 Men nu måste vi göra det eftersom de ligger samma fält. Så vi lägger in en ISBD-interpunktion som är semikolon här.
 
-37
+33
 00:06:28,351 --> 00:06:32,703
 Och så skriver vi in som det står på titelsidans baksida,
 
-38
+34
 00:06:33,471 --> 00:06:40,449
 översättning: Lars Ahlström.
 
-39
+35
 00:06:41,663 --> 00:06:47,551
 Så, och sedan så var det inga andra uppgifter som vi ville ha mer därifrån.
 
-40
+36
 00:06:48,319 --> 00:06:50,879
 Så det är de här två som räcker för det.
 
-41
-00:06:52,671 --> 00:07:01,566
-Då är upphovsuppgiften färdig där och då blir nästa uppgift Upplageuppgift och då får vi titta efter här i boken igen.
-
-42
-00:08:03,583 --> 00:08:10,392
-Och då tittar vi efter här i boken. Det står ingenting på titelsidan.
-
-43
+37
 00:08:10,495 --> 00:08:15,871
 Och på titelsidans baksida har vi inte heller någon utgivningsort.
 
-44
+38
 00:08:16,127 --> 00:08:24,293
 Man nämner Stockholm i en copyright-uppgift men det är en annan typ av uppgift så vi kan inte ta uppgiften därifrån.
 
-45
+39
 00:08:24,831 --> 00:08:34,070
 Däremot kan vi se att Natur & Kultur, som det handlar om här, hör hemma i Stockholm.
 
-46
+40
 00:08:34,559 --> 00:08:41,109
 Så då vet vi att vi ska skriva in Stockholm här i Utgivningsort.
 
-47
+41
 00:08:41,215 --> 00:08:48,869
 Men eftersom det inte finns någon egentlig utgivningsort måste vi klamra Stockholm.
 
-48
+42
 00:08:54,015 --> 00:08:59,135
 Det här är ett kärnelement så man måste ha med utgivningsort.
 
-49
+43
 00:09:00,159 --> 00:09:06,047
 Förlagets namn lägger vi till i Agent - Benämning.
 
-50
+44
 00:09:06,559 --> 00:09:16,623
 Och eftersom titelsidan är primärkällan så utgår vi från den. Där står det Natur & Kultur och vi skriver som det står där.
 
-51
+45
 00:09:21,663 --> 00:09:24,735
 Så, då har vi fått med den uppgiften.
 
-52
-00:09:25,503 --> 00:09:30,367
-Och sen är nästa uppgift År och Datum.
-
-53
-00:09:31,135 --> 00:09:37,023
-Och i det första fältet anger man året i numerisk form.
-
-54
-00:09:38,815 --> 00:09:43,695
-Och vi har väl inget egentligt utgivningsår här.
-
-55
-00:09:43,935 --> 00:09:51,130
-Men jag kan se att den är tryckt 2019 och det är copyright 2019 också så då vet vi att den är utgiven 2019.
-
-56
-00:09:52,895 --> 00:09:54,431
-Så vi lägger in den där
-
-57
-00:09:54,687 --> 00:10:02,551
-Och sen så fanns det inget egentligt utgivningsår så då får vi basera vårt utgivningår på tryckåret i stället, 2019.
-
-58
+46
 00:10:03,135 --> 00:10:05,183
 Men vi får klamra den här då.
 
-59
+47
 00:10:07,743 --> 00:10:08,511
 Sådär
 
-60
+48
 00:10:11,583 --> 00:10:23,785
 Och eftersom vi baserar utgivningsåret på tryckåret så vill vi även ha med det i posten. Då skriver vi bara 2019 här under Tillverkning.
 
-61
+49
 00:10:24,383 --> 00:10:29,503
 Copyrightåret som kommer härnäst det hoppar vi över.
 
-62
+50
 00:10:30,527 --> 00:10:38,528
 Omfång, där anger man hur många sidor det finns i boken. Det var 275 sidor.
 
-63
+51
 00:10:41,535 --> 00:10:44,664
 Och sen har vi Mått.
 
-64
+52
 00:10:45,119 --> 00:10:52,849
 Det är inte något kärnelement så det är inte någonting som man måste lägga till, men vi på NB brukar lägga till det.
 
-65
+53
 00:10:53,311 --> 00:11:01,527
 24 cm var boken, och vad som gäller är att man alltid avrundar uppåt.
 
-66
+54
 00:11:01,759 --> 00:11:04,063
 Övriga fysiska detaljer.
 
-67
-00:11:05,343 --> 00:11:12,924
-Boken innehåller inga illustrationer så då behöver man inte fylla i någonting här.
-
-68
-00:18:48,959 --> 00:18:55,142
-lägger man alltid bara in själva huvudtiteln och hoppar över undertitlarna.
-
-69
+55
 00:18:56,127 --> 00:18:57,663
 Så vi nöjer oss med Endure.
 
-70
+56
 00:18:57,919 --> 00:19:12,750
 Men om det är så att man skulle vara osäker på den föredragna titeln, eller originalets titel, så kan man titta i de olika nationalbibliografierna
 
-71
+57
 00:19:13,023 --> 00:19:20,256
 hur den här titeln ser ut i original om man skulle misstänka att det var något konstigt med den.
 
-72
+58
 00:19:20,447 --> 00:19:30,645
 Och det här är en bok som har givits ut i Storbritannien från början så då bör man kanske titta i British Library först,
 
-73
+59
 00:19:31,352 --> 00:19:37,886
 och se om den finns där. Annars finns det ju andra kataloger också, t.ex. Classify.
 
-74
+60
 00:19:38,111 --> 00:19:40,415
 Men vi nöjer oss med bara Endure här.
 
-75
+61
 00:19:40,671 --> 00:19:47,014
 Och sen så ska vi lägga till ett fält till som har att göra med att det här är en översättning.
 
-76
+62
 00:19:47,327 --> 00:19:56,444
 Och nästa fält är Språk. Här finns det ett språk redan. Men eftersom det är den svenska översättningen vi katalogiserar
 
-77
+63
 00:19:56,444 --> 00:20:01,476
 ska den här posten ha Språk: svenska.
-
-78
-00:20:01,663 --> 00:20:08,208
-Men vi vill tala om att den är översatt från engelska och det är det vi ska göra nu.

@@ -36,292 +36,231 @@ And the book that we should start from is a book called Endurance by Alex Hutchi
 When you catalog a book, of course, it is important that you are really sure that the book is not cataloged before
 
 10
-00:01:22,814 --> 00:01:26,769
-Because then you should use that item instead.
-
-11
-00:03:00,480 --> 00:03:03,808
-And it is below identifier.
-
-12
 00:03:05,088 --> 00:03:13,257
 And ISBN is the most common identifier for printed books.
 
-13
+11
 00:03:23,776 --> 00:03:29,920
 That's how.
 And the next field is distinctive addition and it is not a nuclear element so it
 
-14
+12
 00:03:30,176 --> 00:03:34,016
 You do not need to fill in if you do not want to.
 But if one thinks that
 
-15
+13
 00:03:35,552 --> 00:03:41,696
 You need it so you can fill it in and we at NB fill in this field.
 
-16
+14
 00:03:41,952 --> 00:03:46,304
 We can fill in that this book is hardcover
 
-17
+15
 00:03:49,632 --> 00:03:50,912
 That's how.
 
-18
+16
 00:03:51,168 --> 00:03:54,496
 If it had been stapled, we would have written a booklet instead.
 
-19
+17
 00:03:56,544 --> 00:04:05,302
 And then there will be three fields that are just standard fields that we don't care about.
 
-20
+18
 00:04:05,302 --> 00:04:09,810
 They are always in bibliographic items for printed books.
 
-21
+19
 00:04:10,880 --> 00:04:21,184
 Then we have the title and there we will fill in the title itself and then we look at what it looks like on the title page.
 
-22
+20
 00:04:21,184 --> 00:04:25,983
 The title page is the primary source so it is the one you should always start from.
 
-23
+21
 00:04:27,007 --> 00:04:29,823
 So I fill in what is here.
 
-24
+22
 00:04:30,591 --> 00:04:37,549
 And then there is endurance.
 It is the title of this book.
 
-25
+23
 00:04:37,759 --> 00:04:48,030
 And then we have another field, other title information, and here you can fill in the subtitle which is also in this book.
 
-26
+24
 00:04:48,767 --> 00:05:01,748
 And then we have the subtitle the stretchable boundaries for your physical ability.
 
-27
+25
 00:05:03,871 --> 00:05:10,894
 And you follow the title page as it looks.
 You also describe the title page.
 It is important.
 
-28
+26
 00:05:11,295 --> 00:05:14,879
 And the next field is the copy of the.
 
-29
+27
 00:05:15,391 --> 00:05:26,463
 And then we have the author written on the title page and we enter Alex Hutchinson, like that.
 
-30
-00:05:26,655 --> 00:05:32,543
-Since this is a translated book, we also want to include the translator's name.
-
-31
-00:05:45,000 --> 00:05:50,668
-So we specify the task as it is on the back of the title page.
-
-32
+28
 00:05:50,975 --> 00:05:54,559
 And we also do this in this field of origin.
 
-33
+29
 00:05:55,327 --> 00:06:02,930
 But since these two people have two different functions, the first, Alex Hutchinson, is a writer and the second
 
-34
+30
 00:06:02,930 --> 00:06:10,546
 If translators are then we want to be special these two with an ISBD intersection.
 
-35
+31
 00:06:10,687 --> 00:06:19,380
 If this other origin task had been in another field, we would not have had to do so.
 Then it could have been created automatically.
 
-36
+32
 00:06:19,380 --> 00:06:27,282
 But now we have to do it because they are the same field.
 So we put in an ISBD internal point that is semicolon here.
 
-37
+33
 00:06:28,351 --> 00:06:32,703
 And so we enter as it says on the back of the title page,
 
-38
+34
 00:06:33,471 --> 00:06:40,449
 Translation: Lars Ahlström.
 
-39
+35
 00:06:41,663 --> 00:06:47,551
 So, and then there were no other tasks that we wanted more from there.
 
-40
+36
 00:06:48,319 --> 00:06:50,879
 So it's these two that are enough for it.
 
-41
-00:06:52,671 --> 00:07:01,566
-Then the origin is completed there and then the next task will be a paving task and then we have to look here in the book again.
-
-42
-00:08:03,583 --> 00:08:10,392
-And then we look for here in the book.
-There is nothing on the title page.
-
-43
+37
 00:08:10,495 --> 00:08:15,871
 And on the back of the title page we also have no publishing site.
 
-44
+38
 00:08:16,127 --> 00:08:24,293
 Stockholm is mentioned in a copyright task but it is another type of task so we cannot take the task from there.
 
-45
+39
 00:08:24,831 --> 00:08:34,070
 However, we can see that Nature & Culture, which is about here, belongs in Stockholm.
 
-46
+40
 00:08:34,559 --> 00:08:41,109
 So then we know that we will enter Stockholm here in the place of publication.
 
-47
+41
 00:08:41,215 --> 00:08:48,869
 But since there is no actual publishing site, we must cling Stockholm.
 
-48
+42
 00:08:54,015 --> 00:08:59,135
 This is a nuclear element so you have to have a place of publication.
 
-49
+43
 00:09:00,159 --> 00:09:06,047
 We add the publisher's name in agent - term.
 
-50
+44
 00:09:06,559 --> 00:09:16,623
 And since the title page is the primary source, we start from it.
 There it says Nature & Culture and we write as it says.
 
-51
+45
 00:09:21,663 --> 00:09:24,735
 So, then we got that task.
 
-52
-00:09:25,503 --> 00:09:30,367
-And then the next task is year and date.
-
-53
-00:09:31,135 --> 00:09:37,023
-And in the first field you specify the year in numeric form.
-
-54
-00:09:38,815 --> 00:09:43,695
-And we probably have no real publishing year here.
-
-55
-00:09:43,935 --> 00:09:51,130
-But I can see that it is printed in 2019 and it is copyright 2019 also so then we know it is released in 2019.
-
-56
-00:09:52,895 --> 00:09:54,431
-So we put in that one
-
-57
-00:09:54,687 --> 00:10:02,551
-And then there was no real publishing year so we have to base our publishing year on the print year instead, 2019.
-
-58
+46
 00:10:03,135 --> 00:10:05,183
 But we have to cling to this one then.
 
-59
+47
 00:10:07,743 --> 00:10:08,511
 That's how
 
-60
+48
 00:10:11,583 --> 00:10:23,785
 And since we base the release year on the print year, we also want to include it in the post.
 Then we only write in 2019 here during manufacture.
 
-61
+49
 00:10:24,383 --> 00:10:29,503
 The copyright year that comes next we will skip.
 
-62
+50
 00:10:30,527 --> 00:10:38,528
 Scope, where you specify how many pages there are in the book.
 It was 275 pages.
 
-63
+51
 00:10:41,535 --> 00:10:44,664
 And then we have measured.
 
-64
+52
 00:10:45,119 --> 00:10:52,849
 It is not a nuclear element so it is not something you have to add, but we at NB usually add it.
 
-65
+53
 00:10:53,311 --> 00:11:01,527
 24 cm was the book, and what applies is that you always round up.
 
-66
+54
 00:11:01,759 --> 00:11:04,063
 Other physical details.
 
-67
-00:11:05,343 --> 00:11:12,924
-The book contains no illustrations so you don't have to fill in anything here.
-
-68
-00:18:48,959 --> 00:18:55,142
-If you always put in the main title itself and skip the subtitles.
-
-69
+55
 00:18:56,127 --> 00:18:57,663
 So we are content with Endure.
 
-70
+56
 00:18:57,919 --> 00:19:12,750
 But if it is so uncertain about the preferred title, or the title of the original, then you can look at the different national bibliographies
 
-71
+57
 00:19:13,023 --> 00:19:20,256
 What this title looks like in the original if you suspect it was something strange about it.
 
-72
+58
 00:19:20,447 --> 00:19:30,645
 And this is a book that has been published in the UK from the beginning so maybe you should look at British Library first,
 
-73
+59
 00:19:31,352 --> 00:19:37,886
 And see if it is there.
 Otherwise, there are other catalogs too, e.g.
 Classify.
 
-74
+60
 00:19:38,111 --> 00:19:40,415
 But we are content with just endure here.
 
-75
+61
 00:19:40,671 --> 00:19:47,014
 And then we will add another field that has to do with this being a translation.
 
-76
+62
 00:19:47,327 --> 00:19:56,444
 And the next field is language.
 Here is a language already.
 But since it is the Swedish translation we catalog
 
-77
+63
 00:19:56,444 --> 00:20:01,476
 Should this post have language: Swedish.
-
-78
-00:20:01,663 --> 00:20:08,208
-But we want to tell you that it is translated from English and that is what we should do now.

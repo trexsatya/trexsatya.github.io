@@ -1,203 +1,179 @@
 1
-00:00:18,440 --> 00:00:25,380
-På dennes uppmaning begav sig Pythagoras som 20-åring till Egypten för att studera bland annat matematik.
-
-2
 00:00:25,820 --> 00:00:34,860
 Bland lärdomarna av resan finns det vi idag känner som Pythagoras sats -- a2 + b2 = c2.
 
-3
+2
 00:00:35,280 --> 00:00:37,920
 Men Pythagoras tänkande gick längre än så.
 
-4
+3
 00:00:38,280 --> 00:00:46,000
 Precis som de övriga naturfilosoferna var Pythagoras upptagen av tanken att hitta alltings ursprung, ett urämne.
 
-5
+4
 00:00:46,400 --> 00:00:53,440
 Där Thales menade att alltings ursprung är vatten, menade Pythagoras att allting är tal.
 
-6
+5
 00:00:53,760 --> 00:01:00,280
 Han menade att universum är uppbyggt av heltal och att ingenting kan existera utan ett nummer.
 
-7
+6
 00:01:00,580 --> 00:01:05,180
 Allt är tal, och nyckeln till att förstå dem går genom matematiken.
 
-8
+7
 00:01:05,460 --> 00:01:12,440
 Startskottet för Pythagoras filosofi tros ha varit hans upptäckt av matematiska samband inom musiken
 
-9
+8
 00:01:12,840 --> 00:01:17,920
 -- att vissa ljudfrekvenser till sin natur harmoniserar bättre än andra.
 
-10
+9
 00:01:18,440 --> 00:01:24,620
 Han menade att eftersom förhållandet mellan toner kan uttryckas som tal och talförhållanden
 
-11
-00:01:24,660 --> 00:01:28,660
-borde också allt annat i världen kunna beskrivas på detta vis.
-
-12
-00:01:41,920 --> 00:01:49,140
-För att utforska matematikens förhållande till verkligheten grundade han en filosofisk-religiös skola
-
-13
+10
 00:01:49,240 --> 00:01:53,380
 som han oblygt uppkallade efter sig själv -- pythagoréerna.
 
-14
+11
 00:01:54,040 --> 00:02:03,820
 Dessa studerade matematik och numerologi, och deras mål var att genom abstrakt tänkande kunna säga något om vår värld.
 
-15
+12
 00:02:04,360 --> 00:02:10,200
 Det här var första gången matematik används till mer än praktisk räkning
 
-16
+13
 00:02:10,340 --> 00:02:14,460
 -- något som haft enorm betydelse för framtida vetenskap.
 
-17
+14
 00:02:14,600 --> 00:02:18,160
 Som pythagoré skulle man hänge sig åt filosofin.
 
-18
+15
 00:02:18,900 --> 00:02:25,260
 För att bli accepterad som en av Pythagoras lärjungar genomgick man ett intagningsprov
 
-19
+16
 00:02:25,260 --> 00:02:28,560
 som gick ut på att man inte fick säga ett ord under fem års tid.
 
-20
+17
 00:02:29,060 --> 00:02:34,020
 Man fick enbart lyssna på vad de fullvärdiga pythagoréerna hade att säga.
 
-21
+18
 00:02:34,665 --> 00:02:41,125
 Därefter skulle man följa strikta levnadsregler för att kunna fokusera på matematiken.
 
-22
+19
 00:02:41,580 --> 00:02:49,120
 Bland annat gällde att man aldrig fick plocka upp ett tappat föremål, vidröra vita höns,
 
-23
+20
 00:02:49,200 --> 00:02:55,840
 röra om i elden med järnföremål, tala i mörker, föda upp djur med krokiga klor,
 
-24
+21
 00:02:55,900 --> 00:03:02,780
 bryta bröd, kliva över staket, plocka blombuketter eller vandra längs en landsväg.
 
-25
+22
 00:03:03,280 --> 00:03:09,900
 Dessa regler var ett sätt för pythagoréerna att upprätthålla och demonstrera självkontroll.
 
-26
+23
 00:03:10,280 --> 00:03:14,160
 Man bodde tillsammans och hade inga personliga ägodelar.
 
-27
-00:03:14,780 --> 00:03:19,960
-Bland de mer filosofiskt influerade reglerna gällde strikt vegetarianism.
-
-28
-00:03:20,220 --> 00:03:27,400
-Detta då Pythagoras trodde på själavandring och menade att man kunde återfödas som vilket djur som helst.
-
-29
+24
 00:03:27,740 --> 00:03:31,180
 Att äta djur var därför samma sak som att äta människor.
 
-30
+25
 00:03:31,520 --> 00:03:34,920
 Men viktigast av allt var att undvika bönor.
 
-31
+26
 00:03:35,300 --> 00:03:40,580
 Han hade nämligen räknat ut att det går 216 år mellan varje reinkarnation,
 
-32
+27
 00:03:40,640 --> 00:03:45,200
 och däremellan var vår själ tvungen att lagras någonstans
 
-33
+28
 00:03:45,200 --> 00:03:50,660
 -- och bönor var inget annat än behållare för vilande själar.
 
-34
+29
 00:03:51,280 --> 00:03:56,780
 Pythagoras var också först med idén om att jorden var rund och kretsade kring solen,
 
-35
+30
 00:03:56,780 --> 00:04:00,880
 universum sfäriskt och planeternas banor cirkulära.
 
-36
+31
 00:04:01,380 --> 00:04:09,080
 Denna idé medförde att man nu kunde börja beräkna och förutsäga himlakropparnas rörelser och positioner.
 
-37
+32
 00:04:09,700 --> 00:04:14,640
 Att folk under medeltiden skulle trott att jorden var platt är en så kallad faktoid -
 
-38
+33
 00:04:14,640 --> 00:04:19,460
 en föreställning som hålls för sann men som i själva verket är felaktig.
 
-39
+34
 00:04:20,020 --> 00:04:31,160
 Redan ett par hundra år efter Pythagoras beräknade en annan grekisk filosof, Eratosthenes, jordens omkrets till 46,620\hkm.
 
-40
+35
 00:04:31,360 --> 00:04:35,520
 Idag vet vi att jordens omkrets är 40,075 km
 
-41
+36
 00:04:35,700 --> 00:04:40,840
 så det var sannerligen ingen dålig beräkning med tanke på att det var över 2000 år sedan.
 
-42
+37
 00:04:41,260 --> 00:04:49,360
 När Nicolaus Copernicus år 1543 beskriver den heliocentriska världsbilden (att solen är i centrum)
 
-43
+38
 00:04:49,360 --> 00:04:58,020
 kallar han själv teorin för "Astronomia Pythagorica" som en hyllning till Pythagoras teori som nu slutligen bevisats.
 
-44
+39
 00:04:58,340 --> 00:05:04,600
 För utomstående framstod förmodligen pythagoréernas aktiviteter som något mycket besynnerligt
 
-45
+40
 00:05:04,600 --> 00:05:08,200
 och betraktades med stor misstänksamhet.
 
-46
+41
 00:05:08,620 --> 00:05:12,840
 Enligt myten kom Pythagoras att bli fruktad av ortsbefolkningen
 
-47
+42
 00:05:13,000 --> 00:05:19,460
 som till sist kom att göra uppror då de fruktade att han sysslade med svartkonst.
 
-48
+43
 00:05:20,540 --> 00:05:26,600
 Pythagoras ska ha flytt för sitt liv, jagad, varpå han nådde ett stort bönfält.
 
-49
+44
 00:05:27,020 --> 00:05:33,900
 Istället för att trampa på de heliga bönorna lär han ha stannat och inväntat förföljarna och döden.
 
-50
+45
 00:05:34,480 --> 00:05:41,020
 Vi har faktiskt än idag kvar en referens till Pythagoras "svartkonst" inom populärkulturen
-
-51
-00:05:41,300 --> 00:05:45,480
-- nämligen pentagrammet eller "djävulsmärket".

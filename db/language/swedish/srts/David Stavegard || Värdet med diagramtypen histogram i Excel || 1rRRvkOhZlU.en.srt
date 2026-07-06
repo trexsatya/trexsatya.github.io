@@ -1,108 +1,71 @@
 1
-00:00:53,433 --> 00:00:58,066
-Right -click and select Format the shoulder, and look at options for shoulder ...
-
-2
 00:00:58,066 --> 00:01:02,066
 Here's a little luring: Do you see that you can scroll down here
 
-3
+2
 00:01:02,066 --> 00:01:06,832
 It's not that often you have to do it, but if we open this a little instead.
 
-4
+3
 00:01:06,833 --> 00:01:10,833
 So you see the values out here from the beginning ...
 
-5
+4
 00:01:10,833 --> 00:01:14,833
 So you should get to see automatically it is Excel suggests
 
-6
+5
 00:01:14,833 --> 00:01:20,366
 Interval width, here you can say that we want an interval of SEK 3000 in salary.
 
-7
+6
 00:01:20,366 --> 00:01:25,299
 Then it turns out all the intervals by 3000 in step length.
 
-8
+7
 00:01:25,300 --> 00:01:29,800
 Or we can say number of intervals, yes, we may want 3 intervals
 
-9
+8
 00:01:29,800 --> 00:01:33,200
 It might be a little bit, but maybe eight intervals.
 
-10
+9
 00:01:33,200 --> 00:01:37,833
 Then it draws out how many have salary in these intervals
 
-11
-00:01:37,833 --> 00:01:41,833
-Then it is like this, there are some that are at the bottom,
-
-12
+10
 00:01:41,833 --> 00:01:46,199
 as we may not care about exactly where they are located, and the same
 
-13
+11
 00:01:46,200 --> 00:01:50,166
 We may not care about them either, because it gets a little plot like that ...
 
-14
+12
 00:01:50,166 --> 00:01:54,166
 So instead you can say "interval for the highest values" if we were to write
 
-15
+13
 00:01:54,166 --> 00:01:58,166
 60,000 here, then it takes with everyone who is
 
-16
+14
 00:01:58,166 --> 00:02:02,666
 greater than 60,000 and counts them in the same bar, and the same 'intervals for the lowest'
 
-17
+15
 00:02:02,666 --> 00:02:06,666
 For example, if we say 30,000 here,
 
-18
+16
 00:02:06,666 --> 00:02:10,666
 Then it takes with everyone who has up to 30000 and counts them ...
 
-19
+17
 00:02:10,666 --> 00:02:15,599
 So it becomes a little easier to understand this, then you can look good for this graph litigran.
 
-20
+18
 00:02:21,466 --> 00:02:25,466
 Yes, something like this you can get then, and this is how you work with
-
-21
-00:02:25,466 --> 00:02:30,732
-Histogram in Excel, it's very neat, one can change
-
-22
-00:02:30,733 --> 00:02:33,466
-You just go in here and say how many intervals you want or
-
-23
-00:02:33,466 --> 00:02:37,466
-Or what interval width you want.
-You don't just have to do this on pay, this is not just a matter of pay,
-
-24
-00:02:37,466 --> 00:02:41,466
-This can do this on shoe sizes, lengths, ages, I don't know
-
-25
-00:02:41,466 --> 00:02:43,866
-Go wild, simply
-
-26
-00:02:43,866 --> 00:02:47,866
-My name is David Stavegård, big thanks for looking at this, we will see you next Thursday, again,
-
-27
-00:02:47,866 --> 00:02:49,299
-Just as always.

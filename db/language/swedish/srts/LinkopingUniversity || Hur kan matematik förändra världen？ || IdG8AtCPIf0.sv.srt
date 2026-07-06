@@ -1,393 +1,305 @@
 1
-00:01:17,056 --> 00:01:21,152
-I början av min utbildning så kände jag att jag stimulerades matematikmässigt.
-
-2
 00:01:21,920 --> 00:01:24,992
 Jag har dock alltid gillat att hålla på med mattehjälp och-
 
-3
+2
 00:01:25,760 --> 00:01:28,064
 -efter ett tag så hittade jag en förening som heter Mattehjälpen.
 
-4
+3
 00:01:28,320 --> 00:01:30,112
 Och det är en studentförening var syfte är-
 
-5
+4
 00:01:30,368 --> 00:01:32,396
 -att hjälpa studenter att klara matematiken bättre.
 
-6
+5
 00:01:32,396 --> 00:01:36,256
 Och det gjordes framför allt genom att arrangera mattestugor en gång i veckan,
 
-7
+6
 00:01:36,512 --> 00:01:40,400
 och genom att hålla repetitionsföreläsningar inför mattetentor.
 
-8
+7
 00:01:40,864 --> 00:01:42,829
 Och det här var någonting
 som jag involverade mig i,
 
-9
+8
 00:01:42,829 --> 00:01:44,192
 och jag tyckte det var jätteroligt.
 
-10
+9
 00:01:44,960 --> 00:01:46,675
 Och någonting som jag
 alltid har brottats med-
 
-11
-00:01:46,675 --> 00:01:49,568
--under tiden jag har hållt på med matematikundervisning-
-
-12
-00:04:40,319 --> 00:04:42,200
-Det har att göra med vårt kandidatprojekt,
-
-13
+10
 00:04:42,200 --> 00:04:46,000
 som jag gjorde på i-linjen,
 eller industriell ekonomi-linjen.
 
-14
+11
 00:04:46,463 --> 00:04:49,840
 Och jag gjorde det inom systemteknik
 och uppdraget var att-
 
-15
+12
 00:04:49,860 --> 00:04:54,680
 -ta en radiostyrd bil och göra om det
 till en självkörande motorvägsrobot.
 
-16
+13
 00:04:54,911 --> 00:04:58,200
 Och då skulle vi utrusta den med
 sensorer och få den att kunna-
 
-17
+14
 00:04:58,495 --> 00:04:59,826
 -ta avfarter.
 
-18
+15
 00:04:59,826 --> 00:05:01,567
 Köra på påfarter.
 
-19
+16
 00:05:01,823 --> 00:05:03,359
 Kunna åka en optimerad rutt.
 
-20
+17
 00:05:03,615 --> 00:05:06,175
 Den skulle kunna hålla avståndet
 till ett framförvarande fordon.
 
-21
+18
 00:05:06,431 --> 00:05:09,600
 Sådana grejer som man typiskt sett
 ska kunna göra på en motorväg.
 
-22
+19
 00:05:09,759 --> 00:05:13,000
 Och här kan ni se ett exempel på
 hur det gick då.
 
-23
+20
 00:05:14,111 --> 00:05:16,400
 Så nu ska bilen ta en avfart här.
 
-24
+21
 00:05:19,487 --> 00:05:22,800
 Och det här är våran
 egensnickrade bana som vi har byggt.
 
-25
+22
 00:05:23,327 --> 00:05:24,863
 Nu ska den köra på motorvägen igen.
 
-26
+23
 00:05:26,655 --> 00:05:27,935
 Och sedan så ska den ta ett varv.
 
-27
+24
 00:05:30,751 --> 00:05:33,800
 Och sedan när den kommer till den här svarta linjen så ska den nu stanna.
 
-28
+25
 00:05:35,000 --> 00:05:37,000
 Och det här var första gången
 som vi lyckades med det här,
 
-29
+26
 00:05:37,000 --> 00:05:38,680
 och det var jäkligt kul.
 
-30
+27
 00:05:39,711 --> 00:05:41,680
 Men, hur funkade det här då?
 
-31
-00:05:42,527 --> 00:05:45,855
-Jo, den här roboten var utrustad med en kamera som hela tiden tittade-
-
-32
-00:07:13,151 --> 00:07:15,000
-Det hade att göra med punktdetektion.
-
-33
+28
 00:07:15,199 --> 00:07:17,503
 Alltså att hitta intressanta punkter i bilder.
 
-34
+29
 00:07:18,015 --> 00:07:20,575
 Och det du ser här,
 det är en bild på en EU-pall.
 
-35
+30
 00:07:20,831 --> 00:07:24,040
 Och här kan man ju tänka sig
 till exempel att en autonom gaffeltruck-
 
-36
+31
 00:07:24,040 --> 00:07:26,120
 -skulle vilja åka bort och plocka upp den.
 
-37
+32
 00:07:26,207 --> 00:07:29,791
 Och då måste den veta vilka punkter
 den ska sikta med sina gafflar på.
 
-38
+33
 00:07:30,303 --> 00:07:31,520
 Och det hade då varit-
 
-39
+34
 00:07:31,583 --> 00:07:33,320
 -de här två punkterna.
 
-40
+35
 00:07:33,631 --> 00:07:35,920
 Och nyckeln här,
 eller det man vill då-
 
-41
+36
 00:07:35,920 --> 00:07:39,440
 -det är att skapa en modell
 som automatiskt utifrån bildens innehåll-
 
-42
+37
 00:07:39,440 --> 00:07:43,320
 -kan hitta och pricka ut
 vilka punkter det är som man vill hitta.
 
-43
+38
 00:07:44,895 --> 00:07:46,943
 Det som jag tänkte prata
 i lite mer detalj om här nu,
 
-44
+39
 00:07:47,199 --> 00:07:50,271
 det är en tillämpning från livsmedelsindustrin.
 
-45
+40
 00:07:50,783 --> 00:07:53,080
 När de ska paketera
 Festis-kartonger till exempel-
 
-46
+41
 00:07:53,080 --> 00:07:56,927
 -så måste de sätta ut sugrören
 på rätt ställe på kartongen.
 
-47
-00:07:57,439 --> 00:08:00,680
-Och om man inte gör det,
-så att sugröret hamnar utanför,
-
-48
+42
 00:08:45,160 --> 00:08:48,383
 uppmärksamhetskarta,
 som indikerar var det är troligt-
 
-49
+43
 00:08:48,360 --> 00:08:50,120
 -att det finns en punkt av intresse.
 
-50
+44
 00:08:50,120 --> 00:08:52,000
 Och det är då som ett vitt område.
 
-51
+45
 00:08:52,223 --> 00:08:54,000
 Och i det här fallet så är bilden,
 
-52
+46
 00:08:54,271 --> 00:08:55,720
 den här färgbilden som vi tittar på,
 
-53
+47
 00:08:55,720 --> 00:08:58,367
 det är en bild från en galleria
 med massa människor i sig.
 
-54
+48
 00:08:58,879 --> 00:09:01,695
 De här små vita områdena
 i den svarta bilden-
 
-55
+49
 00:09:01,951 --> 00:09:05,320
 -det är indikationer på var de här människornas huvuden finns.
 
-56
+50
 00:09:05,320 --> 00:09:06,960
 Det var det som var av intresse.
 
-57
+51
 00:09:09,375 --> 00:09:11,679
 Och lite kort bara om
 hur det här faktiskt gick då.
 
-58
-00:09:12,191 --> 00:09:16,800
-Här ser du tre relativt enkla exempel
-när sugröret är placerat antingen-
-
-59
-00:09:44,191 --> 00:09:44,703
-Och-
-
-60
-00:09:44,959 --> 00:09:45,727
--det kan du se här.
-
-61
-00:09:46,239 --> 00:09:49,055
-Uppe till vänster så ser du
-ett sugrör som är skevt format,
-
-62
-00:09:49,311 --> 00:09:52,815
-och uppe till höger så ser du
-ett sugrör som har fel orientering-
-
-63
-00:09:52,815 --> 00:09:54,600
--mot vad det egentligen borde ha.
-
-64
-00:09:54,943 --> 00:09:57,503
-Och vi ser här då att
-modellen kämpar med att pricka ut-
-
-65
-00:09:57,759 --> 00:09:59,295
--rätt antal punkter att detektera.
-
-66
-00:09:59,551 --> 00:10:02,320
-Och också var
-de här punkterna ska detektera.
-
-67
-00:10:02,367 --> 00:10:04,480
-Du ser det i form av de röda kryssen.
-
-68
-00:10:06,207 --> 00:10:07,231
-Avslutningsvis då.
-
-69
-00:10:08,511 --> 00:10:09,520
-Vilka olika spår finns det-
-
-70
-00:10:12,607 --> 00:10:15,935
-Jo, man kan såklart läsa till
-civil- eller högskoleingenjör.
-
-71
+52
 00:10:16,191 --> 00:10:19,007
 Och då är det mer teoretisk matte
 om man läser civilingenjör.
 
-72
+53
 00:10:19,519 --> 00:10:22,079
 Sedan kan man såklart också
 läsa till matematiker.
 
-73
+54
 00:10:22,335 --> 00:10:23,408
 Då läser du mycket matte.
 
-74
+55
 00:10:23,408 --> 00:10:27,600
 Och jag kan också rekommendera att läsa en mix av matematik och programmering.
 
-75
+56
 00:10:27,711 --> 00:10:31,039
 För då kommer du garanterat bli
 väldigt eftertraktad på arbetsmarknaden.
 
-76
+57
 00:10:31,551 --> 00:10:33,855
 Och sedan så kan du också
 läsa till matematiklärare.
 
-77
+58
 00:10:34,111 --> 00:10:35,391
 Till exempel för gymnasiet,
 
-78
+59
 00:10:35,647 --> 00:10:37,600
 eller för högstadiet.
 
-79
+60
 00:10:37,951 --> 00:10:40,640
 Sedan vill jag också bara nämna
 det här spåret som jag just nu är på.
 
-80
+61
 00:10:41,023 --> 00:10:43,583
 Det här KPU, eller
 kompletterande pedagogisk utbildning.
 
-81
+62
 00:10:44,351 --> 00:10:46,399
 Om det är så att du har läst
 civil- eller högskoleingenjör-
 
-82
+63
 00:10:46,655 --> 00:10:50,239
 -eller att du har läst till matematiker,
 så kan du komplettera din utbildning-
 
-83
+64
 00:10:50,200 --> 00:10:52,760
 -så att du får behörighet
 att undervisa inom skolan.
 
-84
+65
 00:10:53,311 --> 00:10:55,821
 Och jag läser just nu KPU vid LiU.
 
-85
+66
 00:10:55,821 --> 00:10:57,927
 Och hitintills
 så är min erfarenhet av utbildningen-
 
-86
+67
 00:10:57,927 --> 00:10:59,960
 -att den är riktigt bra och värdefull.
 
-87
+68
 00:10:59,967 --> 00:11:01,840
 Klart över förväntan faktiskt.
-
-88
-00:11:02,271 --> 00:11:03,905
-Okej,
-då har du fått höra lite om-

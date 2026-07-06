@@ -1,95 +1,79 @@
 1
-00:01:30,690 --> 00:01:34,694
-forms that come in as paper forms scanned for the manager
-
-2
 00:01:34,694 --> 00:01:39,299
 Should not have to overwrite it and read and type it in the case.
 
-3
+2
 00:01:39,414 --> 00:01:42,840
 What does it mean for our customers that we use AI?
 
-4
+3
 00:01:42,960 --> 00:01:47,197
 By using AI, we can increase our efficiency, precision
 
-5
+4
 00:01:47,197 --> 00:01:51,913
 And quality in many different areas, not just in handling.
 
-6
+5
 00:01:51,913 --> 00:01:56,917
 But we can also detect deviations such as a contribution breach
 
-7
+6
 00:01:56,917 --> 00:02:00,978
 And when we use AI in the handling we have been able to see
 
-8
+7
 00:02:00,978 --> 00:02:05,013
 That we reduce the risks of we miss and misunderstand information.
 
-9
+8
 00:02:05,013 --> 00:02:07,496
 We make more equivalent judgments and
 
-10
+9
 00:02:07,496 --> 00:02:10,719
 We also reduce unnecessary supplements.
 
-11
+10
 00:02:11,309 --> 00:02:15,469
 There has been a huge shark around Chat GPT.
 
-12
+11
 00:02:15,469 --> 00:02:18,877
 And we are many who have tried this AI bottom and authored texts for us.
 
-13
-00:02:18,877 --> 00:02:21,647
-Is this a service that the Social Insurance Office also uses?
-
-14
-00:04:46,212 --> 00:04:49,982
-In addition, very different assessments, although we are based on the same documentation.
-
-15
+12
 00:04:49,982 --> 00:04:53,719
 The advantage they have is that we have this traceability based on that way
 
-16
+13
 00:04:53,719 --> 00:04:55,988
 We have built it around this
 
-17
+14
 00:04:55,988 --> 00:04:59,791
 Monitoring machine learning process so that we can correct.
 
-18
+15
 00:04:59,791 --> 00:05:00,859
 We do follow -ups and we
 
-19
+16
 00:05:01,129 --> 00:05:04,132
 can correct if we see that errors come in.
 
-20
+17
 00:05:04,132 --> 00:05:07,803
 And then it is also the case that the AI solution does not make a decision without
 
-21
+18
 00:05:07,803 --> 00:05:11,306
 It is always the manager who is in the end and makes the decision.
 
-22
+19
 00:05:11,306 --> 00:05:13,975
 It's just a support.
 
-23
+20
 00:05:13,975 --> 00:05:16,077
 If we should say a little about the future.
-
-24
-00:05:16,077 --> 00:05:18,046
-How do you think it looks in five years?

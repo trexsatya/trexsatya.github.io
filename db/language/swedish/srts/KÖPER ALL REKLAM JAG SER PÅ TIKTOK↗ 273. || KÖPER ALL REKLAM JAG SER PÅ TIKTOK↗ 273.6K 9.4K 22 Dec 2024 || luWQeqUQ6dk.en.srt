@@ -25,7 +25,3 @@ it feels a bit stupid to put in a new one
 7
 00:54:30,000 --> 00:54:32,240
 product like this, but we do it for
-
-8
-00:54:32,240 --> 00:54:34,359
-for the sake of the test, someone has to sacrifice

@@ -1,386 +1,333 @@
 1
-00:01:10,166 --> 00:01:15,300
-hade gått förlorade plötsligt Titan
-all kommunikation med besättningen på ytan.
-
-2
 00:01:16,550 --> 00:01:18,266
 Några dagar senare,
 
-3
+2
 00:01:18,266 --> 00:01:21,050
 22 juni, kunde man bekräfta att man hittat
 
-4
+3
 00:01:21,050 --> 00:01:24,866
 vrakdelar från Titan i närheten av Titanic
 
-5
+4
 00:01:25,283 --> 00:01:28,883
 och med största sannolikhet
 hade alla fem personer ombord.
 
-6
+5
 00:01:29,366 --> 00:01:31,016
 Omkommit.
 
-7
+6
 00:01:31,016 --> 00:01:34,316
 Orsaken tros vara en implosion.
 
-8
+7
 00:01:37,100 --> 00:01:40,100
 Vad var Oceangate för företag?
 
-9
+8
 00:01:40,133 --> 00:01:43,966
 Hur var ubåten Titan
 konstruerad och vad fanns det för risker?
 
-10
+9
 00:01:44,516 --> 00:01:48,916
 Vad var det egentligen
 som hände och vad är en implosion?
 
-11
-00:01:49,700 --> 00:01:52,700
-Det ska vi ta reda på i dag.
-
-12
-00:02:41,550 --> 00:02:44,150
-Den vägde cirka 10,4 ton och
-
-13
+10
 00:02:44,150 --> 00:02:47,150
 var tillverkad av kolfiber och titan.
 
-14
+11
 00:02:47,516 --> 00:02:50,600
 Den var utrustad med fyra stycken
 elektriska motorer,
 
-15
+12
 00:02:50,933 --> 00:02:54,566
 två stycken vertikala och två stycken
 horisontella.
 
-16
+13
 00:02:55,700 --> 00:02:59,000
 Dessa kunde styra båten framåt, bakåt,
 
-17
+14
 00:02:59,000 --> 00:03:02,333
 uppåt och nedåt samt rotera den.
 
-18
+15
 00:03:03,450 --> 00:03:05,850
 Maxhastigheten var 3 knop,
 
-19
+16
 00:03:05,850 --> 00:03:08,850
 vilket är
 ungefär 5,5 km/h.
 
-20
+17
 00:03:09,083 --> 00:03:13,400
 Syret till hela besättningen skulle räcka
 i 96 timmar om något
 
-21
+18
 00:03:13,400 --> 00:03:17,900
 skulle gå fel och den var byggd
 för att klara ett djup på 4000 meter.
 
-22
+19
 00:03:18,383 --> 00:03:23,316
 Piloten styrde hela ubåten
 med en modifierad trådlös spelkontroll.
 
-23
-00:03:23,333 --> 00:03:26,183
-En Logitech F710.
-
-24
-00:03:56,900 --> 00:04:00,533
-Till att börja med så skedde allting ute
-på internationellt vatten
-
-25
+20
 00:04:00,800 --> 00:04:04,166
 vilket gjorde att man inte behövde ha
 några speciella säkerhetsregler.
 
-26
+21
 00:04:04,500 --> 00:04:09,466
 Titan var inte godkänd som sjöduglig
 av någon myndighet eller organisation
 
-27
+22
 00:04:09,683 --> 00:04:14,250
 och alla passagerare
 ombord måste dessutom skriva på ett avtal
 
-28
+23
 00:04:14,483 --> 00:04:19,633
 där man bekräftar att man är medveten om
 alla risker, att det hela är ett experiment
 
-29
+24
 00:04:19,883 --> 00:04:22,766
 och att det kan resultera i fysisk skada,
 
-30
+25
 00:04:22,766 --> 00:04:25,666
 trauma eller död.
 
-31
+26
 00:04:25,666 --> 00:04:28,666
 Avtalet ger kort och gott Oceangate
 ryggen fri
 
-32
+27
 00:04:28,883 --> 00:04:31,633
 ifall något skulle gå fel.
 
-33
+28
 00:04:31,633 --> 00:04:36,750
 En av grundarna, Stockton Rush
 berättade i en intervju från 2021 att citat
 
-34
-00:04:37,216 --> 00:04:41,950
-Jag har brutit mot några regler
-för att bygga titan, kolfiber och titan.
-
-35
-00:04:47,300 --> 00:04:48,533
-Slut citat.
-
-36
+29
 00:04:48,533 --> 00:04:52,916
 År 2018 skrev David Lochridge
 dåvarande chef för Oceangates
 
-37
+30
 00:04:52,916 --> 00:04:58,283
 marina operationer, en
 rapport där han uttryckte sin oro om Titan
 
-38
+31
 00:04:58,283 --> 00:05:02,033
 Han ville att ubåten skulle inspekteras
 och bli certifierad
 
-39
+32
 00:05:02,033 --> 00:05:05,450
 av en myndighet, men det ville inte Oceangate.
 
-40
+33
 00:05:05,600 --> 00:05:08,850
 De vägrade att betala för en
 sådan inspektion.
 
-41
+34
 00:05:09,150 --> 00:05:13,216
 En annan sak som han uttryckte i sin rapport
 var att fönstret som fanns på Titan.
 
-42
+35
 00:05:13,433 --> 00:05:17,716
 var bara certifierad
 och godkänt för ett djup på 1300 meter,
 
-43
+36
 00:05:18,000 --> 00:05:23,150
 cirka en tredjedel av djupet som krävs
 för att komma ner till Titanic.
 
-44
+37
 00:05:23,150 --> 00:05:27,900
 Oceangate gillade inte Lochridges uttalanden
 så de stämde honom och sparkade honom.
 
-45
+38
 00:05:29,033 --> 00:05:29,700
 Sen måste vi
 
-46
+39
 00:05:29,700 --> 00:05:32,866
 också prata om själva valet av material
 för titan,
 
-47
+40
 00:05:33,566 --> 00:05:36,566
 kolfiber och titan.
 
-48
+41
 00:05:37,016 --> 00:05:41,900
 Kolfiber är ett extremt starkt
 och lätt material som är känt för sin höga
 
-49
+42
 00:05:41,900 --> 00:05:47,516
 draghållfasthet. Alltså förmågan
 att motstå krafter som drar isär materialet.
 
-50
+43
 00:05:47,866 --> 00:05:52,283
 Men det är dock inte lika starkt när
 det kommer till tryckhållfasthet
 
-51
+44
 00:05:52,583 --> 00:05:56,250
 som är förmågan att motstå
 kraften som pressar ihop materialet.
 
-52
+45
 00:05:56,783 --> 00:06:00,566
 Vid extremt höga tryck som man
 stöter på nere i havet
 
-53
+46
 00:06:00,800 --> 00:06:04,400
 kan kolfiber baserade strukturer spricka.
 
-54
+47
 00:06:05,000 --> 00:06:08,783
 Titan däremot är känt för sin höga
 tryckhållfasthet,
 
-55
+48
 00:06:09,266 --> 00:06:13,216
 vilket gör det till ett bra val
 för fordon som ska dyka långt under vattnet.
 
-56
+49
 00:06:13,850 --> 00:06:17,116
 Men det är
 mycket tyngre och dyrare än kolfiber.
 
-57
+50
 00:06:18,866 --> 00:06:20,266
 Att kombinera titan
 
-58
+51
 00:06:20,266 --> 00:06:23,416
 och kolfiber kan tyckas som en bra idé
 för att dra fördel
 
-59
+52
 00:06:23,416 --> 00:06:27,650
 av både kolfiberns
 lätthet och Titans tryckhållfasthet.
 
-60
+53
 00:06:28,050 --> 00:06:32,850
 Men vid de här extrema trycken nere i havet
 kan delarna med dessa
 
-61
-00:06:32,866 --> 00:06:36,683
-två material möts. När titan och kolfiber möts -
-
-62
-00:07:17,250 --> 00:07:20,816
-Det här klarar aldrig en människokropp
-av eftersom man skulle dö
-
-63
+54
 00:07:20,816 --> 00:07:24,900
 omedelbart och därav behöver vi något som kan
 skydda oss från trycket,
 
-64
+55
 00:07:26,666 --> 00:07:28,883
 till exempel en ubåt.
 
-65
+56
 00:07:28,883 --> 00:07:32,366
 Men det gäller ju då att ubåten
 är konstruerad för att klara av trycket.
 
-66
+57
 00:07:32,850 --> 00:07:38,400
 På 3800 meters djup är trycket så
 pass stort att ubåten pressas ihop
 
-67
+58
 00:07:38,400 --> 00:07:43,516
 från alla håll och kanter med en kraft
 som motsvarar cirka 10\h000 ton.
 
-68
+59
 00:07:43,916 --> 00:07:48,716
 Det är som att ha Eiffeltornets vikt
 tryckande mot ubåten,
 
-69
+60
 00:07:49,250 --> 00:07:52,583
 men inte bara uppifrån
 utan från alla riktningar.
 
-70
+61
 00:07:54,116 --> 00:07:57,200
 Tillbaka till 18 juni 2023.
 
-71
+62
 00:07:57,416 --> 00:08:00,416
 När tiden är på väg ner till Titanic
 
-72
-00:08:00,800 --> 00:08:05,300
-När 1 timme och 45 minuter
-hade gått förlorade Titan kontakten
-
-73
-00:10:24,566 --> 00:10:26,516
-Notera hur snabbt det gick.
-
-74
+63
 00:10:26,516 --> 00:10:31,616
 Det här är alltså trycket utifrån som pressar
 ihop tanken, som har ett vakuum inuti.
 
-75
+64
 00:10:31,883 --> 00:10:35,216
 Och det här är bara trycket
 från vår atmosfär på ytan.
 
-76
+65
 00:10:35,516 --> 00:10:38,516
 Alltså trycket från endast en atmosfär.
 
-77
+66
 00:10:39,766 --> 00:10:42,766
 Implosion som skedde för besättningen inuti
 Titan
 
-78
+67
 00:10:42,900 --> 00:10:45,900
 utsattes för 380 atmosfärer.
 
-79
+68
 00:10:46,366 --> 00:10:49,366
 Så ni kan
 ju bara föreställa er hur fort det gick.
 
-80
+69
 00:10:50,000 --> 00:10:53,400
 De hann aldrig ens
 reagera på att något hände,
 
-81
+70
 00:10:54,616 --> 00:10:57,616
 vilket kanske var lika bra.
 
-82
+71
 00:10:57,950 --> 00:10:59,416
 Det var en kort sammanfattning
 
-83
+72
 00:10:59,416 --> 00:11:02,900
 av företaget Oceangate. Olyckan med Titan..
-
-84
-00:11:03,316 --> 00:11:06,316
-och farorna nere i havens djup.

@@ -1,408 +1,344 @@
 1
-00:00:42,020 --> 00:00:45,480
-A habit he would keep for the rest of his life.
-
-2
 00:00:46,220 --> 00:00:51,760
 Of his well -off parents, he came to inherit so much money that he would never have to work.
 
-3
+2
 00:00:51,880 --> 00:00:56,360
 Instead, he devoted his time to thinking, often lying in his bed.
 
-4
+3
 00:00:57,140 --> 00:01:02,480
 After completing his education, he broke with the higher social life in Paris
 
-5
+4
 00:01:02,480 --> 00:01:07,140
 And moved to Amsterdam where he came to stay for most of his life.
 
-6
+5
 00:01:08,140 --> 00:01:13,480
 Descartes came to criticize philosophy for unable to provide reliable knowledge.
 
-7
+6
 00:01:13,860 --> 00:01:17,060
 Various philosophical theories collided with each other,
 
-8
+7
 00:01:17,060 --> 00:01:21,880
 And there was no way to determine what was true and what was false.
 
-9
+8
 00:01:22,400 --> 00:01:27,720
 The reason for this, Descartes said, was that philosophy lacked a safe foundation
 
-10
+9
 00:01:27,940 --> 00:01:31,280
 - An undoubtedly confident truth to be based on.
 
-11
+10
 00:01:32,000 --> 00:01:34,900
 This is unlike, for example, mathematics.
 
-12
+11
 00:01:35,080 --> 00:01:41,580
 The reason we can construct complex mathematical theories is because we agree on how
 
-13
+12
 00:01:41,580 --> 00:01:47,760
 Mathematics works at its most basic level - for example 1+1 = 2
 
-14
+13
 00:01:47,760 --> 00:01:51,960
 Or that a straight line is the shortest stretch between two points.
 
-15
+14
 00:01:51,960 --> 00:01:58,200
 Something equivalent does not exist in philosophy, which is why we can never say anything with certainty.
 
-16
+15
 00:01:58,940 --> 00:02:04,700
 Could it now, asked Descartes, be possible to find something equivalent in philosophy?
 
-17
+16
 00:02:04,700 --> 00:02:10,440
 If one could find batches outside the mathematics whose truths were impossible to doubt
 
-18
+17
 00:02:10,440 --> 00:02:16,340
 These could be used as a starting point for logical conclusions in philosophy.
 
-19
+18
 00:02:16,760 --> 00:02:24,760
 In his search for a secure basis for philosophical knowledge, he used a method called systematic doubt.
 
-20
+19
 00:02:24,760 --> 00:02:31,840
 He himself tried to doubt everything, in order to in this way hope to find something that could not be questioned
 
-21
+20
 00:02:31,840 --> 00:02:35,660
 - Something that must be undoubtedly true.
 
-22
+21
 00:02:36,200 --> 00:02:42,600
 He soon realized that experiences based on our senses (eg vision, hearing, feeling)
 
-23
+22
 00:02:42,600 --> 00:02:47,400
 were not sufficiently safe to constitute undoubted knowledge.
 
-24
+23
 00:02:47,720 --> 00:02:51,500
 This is because we always risk perceiving something wrong.
 
-25
+24
 00:02:51,720 --> 00:02:56,280
 In fact, we can't even be sure if we are awake or dreaming, Descartes said.
 
-26
+25
 00:02:56,840 --> 00:03:00,460
 Our senses are sufficient to navigate in everyday life,
 
-27
+26
 00:03:00,460 --> 00:03:05,940
 But not to form the basis for absolute and undoubted truth.
 
-28
-00:03:06,580 --> 00:03:13,360
-Remains then do our reason, our thinking, but this too can doubt Descartes.
-
-29
-00:03:13,820 --> 00:03:18,740
-What if there is an evil demon that lurks us every time we count math
-
-30
-00:03:18,740 --> 00:03:22,540
-- Thus, even mathematics is undoubtedly true.
-
-31
-00:03:23,000 --> 00:03:27,720
-But if now neither our senses nor our reason can give us secure truth,
-
-32
-00:03:27,720 --> 00:03:30,920
-Is there something that cannot be doubted?
-
-33
-00:03:31,240 --> 00:03:32,820
-There is, says Descartes.
-
-34
-00:03:33,040 --> 00:03:38,080
-The only thing we can be absolutely sure of is that we have the experiences we have.
-
-35
-00:03:38,360 --> 00:03:44,700
-Although you can doubt that there is an outer world, you cannot doubt that you have the experience of it.
-
-36
-00:03:44,700 --> 00:03:49,260
-This is true even if you look wrong, dream or be fooled.
-
-37
-00:03:50,260 --> 00:03:52,920
-From this we can draw certain conclusions.
-
-38
-00:03:53,160 --> 00:03:57,140
-This means that we are some kind of existing being.
-
-39
+27
 00:03:57,140 --> 00:04:03,940
 You do not necessarily know your own nature, but that you exist stands beyond doubt.
 
-40
+28
 00:04:03,980 --> 00:04:09,100
 Because even if you are deceived by an evil demon, someone is cheated.
 
-41
+29
 00:04:09,280 --> 00:04:13,520
 In addition, we know with absolute certainty that one is a creature
 
-42
+30
 00:04:13,520 --> 00:04:17,880
 Which, if nothing else, has at least conscious experiences.
 
-43
+31
 00:04:18,840 --> 00:04:24,900
 Descartes summarized this conclusion in a famous Latin phrase: "Cogito Ergo sum",
 
-44
+32
 00:04:24,900 --> 00:04:31,720
 Which is translated to "I think, so I am".
 This is the foundation of knowledge.
 
-45
+33
 00:04:32,000 --> 00:04:35,180
 Then Descartes began to rebuild the world.
 
-46
+34
 00:04:35,280 --> 00:04:43,300
 He began by trying to prove God's existence with a variant of the classical ontological proof of God:
 
-47
+35
 00:04:44,780 --> 00:04:48,440
 1. God is by definition the greatest imaginable.
 
-48
-00:04:48,740 --> 00:04:51,440
-2. Suppose God does not exist.
-
-49
-00:04:58,180 --> 00:05:05,780
-4. In this case, this is greater than God, as it is greater to exist than not to exist.
-
-50
+36
 00:05:05,880 --> 00:05:12,000
 5. However, this leads to a paradox, since God by definition is the greatest imaginable.
 
-51
+37
 00:05:12,420 --> 00:05:17,040
 6. The assumption that God does not exist is thus incorrect.
 
-52
+38
 00:05:17,860 --> 00:05:23,840
 When Descartes assured himself of the existence of God, he also meant that everything we perceive with our minds
 
-53
+39
 00:05:23,840 --> 00:05:28,100
 Must be true when God would not allow us to be fooled.
 
-54
+40
 00:05:28,380 --> 00:05:37,280
 The reason why, after all, we sometimes wrong depends on our free will, which exceptionally leads us to incorrect reviews.
 
-55
+41
 00:05:37,600 --> 00:05:42,640
 God also guarantees that our reason is not fooled by any external influence,
 
-56
+42
 00:05:42,640 --> 00:05:46,180
 Why the world is as it appears to us.
 
-57
+43
 00:05:46,540 --> 00:05:50,080
 The most important thing about Descarte's philosophy is his method.
 
-58
+44
 00:05:50,100 --> 00:05:53,740
 He methodically reasoning and avoids speculation
 
-59
+45
 00:05:53,740 --> 00:05:57,280
 (at least until he mixes God into the reasoning),
 
-60
-00:05:57,480 --> 00:06:02,120
-And thus lays the foundation for how modern philosophy is conducted.
-
-61
-00:08:00,120 --> 00:08:06,160
-Unlike an empiricist who believes that knowledge has its basis in experiences.
-
-62
+46
 00:08:07,140 --> 00:08:13,180
 Like many other rationalists, Descartes, in addition to philosopher, was also mathematicians.
 
-63
+47
 00:08:13,520 --> 00:08:18,480
 He saw insights into mathematics as fundamental to understanding the world
 
-64
+48
 00:08:18,480 --> 00:08:22,880
 - A thought he shared with, for example, Pythagoras and Plato.
 
-65
+49
 00:08:23,640 --> 00:08:27,720
 One morning, Descartes, his habit was faithful, and meditated
 
-66
+50
 00:08:27,720 --> 00:08:30,700
 When he saw a fly flew around the room.
 
-67
+51
 00:08:31,240 --> 00:08:36,840
 He realized that one could describe the position of the fly by indicating its distance
 
-68
+52
 00:08:36,840 --> 00:08:39,580
 to three walls with a common corner.
 
-69
+53
 00:08:40,580 --> 00:08:46,760
 Each position at a point in the room or plane could be described with speech called coordinates,
 
-70
+54
 00:08:46,760 --> 00:08:50,800
 and a point in motion could be described with equations.
 
-71
+55
 00:08:51,100 --> 00:08:54,180
 He had just invented the coordinate system.
 
-72
+56
 00:08:54,780 --> 00:09:00,960
 Descartes also improved the algebraic notation by introducing exponents
 
-73
+57
 00:09:01,360 --> 00:09:07,540
 and the Convention to designate unknown quantities with letters from the end of the alphabet
 
-74
+58
 00:09:07,540 --> 00:09:11,520
 and known quantities with letters from the beginning of the alphabet.
 
-75
+59
 00:09:12,380 --> 00:09:18,080
 Even before this, letters had been started to denote quantities,
 
-76
+60
 00:09:18,080 --> 00:09:22,220
 But a notation was used that was quite cumbersome.
 
-77
+61
 00:09:23,440 --> 00:09:28,040
 The equation that with Descartes notation would be written like this:
 
-78
+62
 00:09:28,780 --> 00:09:31,540
 were previously written as:
 
-79
+63
 00:09:33,740 --> 00:09:41,320
 Even what we today feel as Newton's first team, or the inertia, was first formulated by Descartes.
 
-80
+64
 00:09:41,520 --> 00:09:46,600
 Thus, he is also one of the forerunners in modern physics.
 
-81
+65
 00:09:46,980 --> 00:09:50,980
 One of those who admired Descartes was Queen Kristina of Sweden,
 
-82
+66
 00:09:50,980 --> 00:09:55,880
 And she invited the philosopher to Stockholm to give her private lessons in philosophy.
 
-83
+67
 00:09:56,240 --> 00:10:01,320
 He reluctantly accepted but came to suffer severely from the cold winter.
 
-84
+68
 00:10:02,120 --> 00:10:07,560
 He himself must have described Sweden as a bears' land between cliffs and ice
 
-85
+69
 00:10:07,560 --> 00:10:11,280
 Where even people's thoughts freeze to ice.
 
-86
+70
 00:10:11,760 --> 00:10:20,040
 In addition, Descartes, who never ever got up before 11 am, was ordered to keep their lessons at 5 in the morning.
 
-87
+71
 00:10:20,560 --> 00:10:27,620
 Within two weeks he suffered pneumonia and died shortly thereafter at Stockholm Castle.
 
-88
+72
 00:10:28,360 --> 00:10:32,320
 Here we have Sweden's biggest contribution to philosophy history
 
-89
+73
 00:10:32,320 --> 00:10:36,580
 - Our climate killed one of world history's greatest thinkers.
 
-90
+74
 00:10:37,240 --> 00:10:44,360
 As a deeply believing Catholic in Protestant Sweden, it was unthinkable to bury him in weighted soil.
 
-91
+75
 00:10:44,520 --> 00:10:51,300
 Instead, he was buried at a cemetery for undone children, but this posed new problems.
 
-92
+76
 00:10:51,700 --> 00:10:57,760
 To accommodate the philosopher in a coffin adapted for children, it was decided to cut off his head.
 
-93
+77
 00:10:57,860 --> 00:11:02,100
 As if this were not bad enough, the head was also lost.
 
-94
+78
 00:11:02,360 --> 00:11:08,560
 This was first discovered 16 years later when France after diplomatic pressure
 
-95
+79
 00:11:08,560 --> 00:11:14,400
 Got the coffin excavated and shipped to Paris for a statesman's funeral.
 
-96
+80
 00:11:15,380 --> 00:11:23,020
 It was not until 150 years later that Descartes Kranium was found by the father of Swedish chemistry, Jacob Berzelius,
 
-97
+81
 00:11:23,020 --> 00:11:25,600
 And it could be returned to Paris.
 
-98
+82
 00:11:25,980 --> 00:11:29,840
 How the French reacted when they discovered that the Swedes have fun to
 
-99
+83
 00:11:29,840 --> 00:11:34,860
 Carve out scribbles and neglect the lower jaw do not tell the story.
 
-100
+84
 00:11:35,740 --> 00:11:41,240
 For some unfathomable reason, this time it was also possible to reunite the body parts.
 
-101
+85
 00:11:41,480 --> 00:11:46,600
 Instead placed the skull on a shelf in the science museum in Paris
 
-102
+86
 00:11:46,600 --> 00:11:53,340
 Where there is still the view- squeezed between a pair of Neanderthal and Cromagnon shells.

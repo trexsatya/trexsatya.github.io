@@ -1,95 +1,71 @@
 1
-00:09:04,767 --> 00:09:24,396
-Och jag har inte Övrig titelinformation, men jag ska ta fram Varianttitel för att lägga titeln i originalskrift i stället.
-
-2
 00:09:25,261 --> 00:09:26,757
 Så här.
 
-3
+2
 00:09:33,183 --> 00:09:34,719
 Så
 
-4
+3
 00:09:35,743 --> 00:09:40,144
 Och jag har inga fileringsvärden att ta hänsyn till.
 
-5
+4
 00:09:41,119 --> 00:09:51,618
 Upphovsuppgifterna skriver jag också i translittererad form såsom det står på titelsidan.
 
-6
+5
 00:09:51,871 --> 00:09:58,015
 Nästa är Upplageuppgift och det finns sällan uppgifter om upplagor i nya böcker
 
-7
+6
 00:09:58,015 --> 00:10:14,729
 men om det skulle finnas information då tar vi den som den ser ut i manifestationen. Och här har jag faktiskt, och det ser ut så här.
 
-8
+7
 00:10:21,759 --> 00:10:23,355
 Så där.
 
-9
+8
 00:10:24,639 --> 00:10:30,527
 Utgivning. Den första egenskapen i primär utgivning är Land.
 
-10
+9
 00:10:30,783 --> 00:10:37,996
 Och eftersom vi utgår ifrån en mall så är Sverige redan förvalt
 
-11
-00:10:37,996 --> 00:10:43,624
-men vi vet att den här manifestationen kommer från Serbien.
-
-12
-00:12:03,711 --> 00:12:09,017
-Utgivningstid är ett kärnelement för publicerade manifestationer
-
-13
+10
 00:12:09,017 --> 00:12:13,470
 År får endast innehålla fyra alfanumeriska tecken.
 
-14
+11
 00:12:13,618 --> 00:12:22,655
 Det är inte sällan att det inte står egentligt utgivningsår i boken. Utgivningsåret kan man basera på tryckåret eller cophyright-året.
 
-15
+12
 00:12:22,911 --> 00:12:27,007
 Vi har tryckår och copyright-år som är 2019.
 
-16
+13
 00:12:33,407 --> 00:12:43,715
 Datum används om vi inte har ett säkert utgivningsår i boken och då behöver ange andra tecken än de som är tillåtna i egenskapen År.
 
-17
+14
 00:12:43,932 --> 00:12:53,712
 I det här fallet baserar vi utgivningen på tryckåret och behöver därför lägga in 2019 inom klammer.
 
-18
+15
 00:12:57,215 --> 00:12:58,239
 Så
 
-19
+16
 00:12:59,586 --> 00:13:11,030
 Sedan har vi Tillverkning. Eftersom vi har baserat utgivningen på tryckåret behöver vi ange det året utan klammer i tillverkning.
 
-20
+17
 00:13:11,151 --> 00:13:16,159
 Plats och agent behöver vi egentligen inte fylla i men vi gör det nu.
 
-21
+18
 00:13:16,159 --> 00:13:21,197
 Alltså, här ska det stå ... så.
-
-22
-00:13:32,031 --> 00:13:40,852
-Men som sagt, de flesta bibliotek behöver inte bry sig om tillverkningsuppgifterna.
-
-23
-00:13:42,271 --> 00:13:44,831
-Omfång
-
-24
-00:13:46,623 --> 00:13:51,874
-Då skriver vi in den sista paginerade sidan.

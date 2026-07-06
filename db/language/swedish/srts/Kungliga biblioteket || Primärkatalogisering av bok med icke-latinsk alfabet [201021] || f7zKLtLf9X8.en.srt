@@ -1,99 +1,75 @@
 1
-00:09:04,767 --> 00:09:24,396
-And I do not have other title information, but I will develop a variant title to put the title in original writing instead.
-
-2
 00:09:25,261 --> 00:09:26,757
 Like this.
 
-3
+2
 00:09:33,183 --> 00:09:34,719
 So
 
-4
+3
 00:09:35,743 --> 00:09:40,144
 And I have no filing values to take into account.
 
-5
+4
 00:09:41,119 --> 00:09:51,618
 I also write the origin information in translated form as it says on the title page.
 
-6
+5
 00:09:51,871 --> 00:09:58,015
 Next is a circulation task and there is rarely information about editions in new books
 
-7
+6
 00:09:58,015 --> 00:10:14,729
 But if there is information then we will take it as it looks in the manifestation.
 And here I actually have, and it looks like this.
 
-8
+7
 00:10:21,759 --> 00:10:23,355
 So there.
 
-9
+8
 00:10:24,639 --> 00:10:30,527
 Publication.
 The first feature of primary publication is land.
 
-10
+9
 00:10:30,783 --> 00:10:37,996
 And since we start from a template, Sweden is already managed
 
-11
-00:10:37,996 --> 00:10:43,624
-But we know that this manifestation comes from Serbia.
-
-12
-00:12:03,711 --> 00:12:09,017
-Publishing time is a nuclear element for published manifestations
-
-13
+10
 00:12:09,017 --> 00:12:13,470
 Year may only contain four alphanumeric characters.
 
-14
+11
 00:12:13,618 --> 00:12:22,655
 It is not uncommon for the actual publication year to be in the book.
 The publication year can be based on the print year or the Cophyright year.
 
-15
+12
 00:12:22,911 --> 00:12:27,007
 We have a print year and copyright year which is 2019.
 
-16
+13
 00:12:33,407 --> 00:12:43,715
 Date is used if we do not have a secure publication year in the book and then need to specify characters other than those that are allowed in the capacity year.
 
-17
+14
 00:12:43,932 --> 00:12:53,712
 In this case, we base the release on the print year and therefore need to enter 2019 within staples.
 
-18
+15
 00:12:57,215 --> 00:12:58,239
 So
 
-19
+16
 00:12:59,586 --> 00:13:11,030
 Then we have manufacturing.
 Since we have based the publication on the print year, we need to specify that year without staples in manufacturing.
 
-20
+17
 00:13:11,151 --> 00:13:16,159
 We don't really need to fill in the place and agent, but we do it now.
 
-21
+18
 00:13:16,159 --> 00:13:21,197
 So, here it should say ... so.
-
-22
-00:13:32,031 --> 00:13:40,852
-But as I said, most libraries do not have to care about the manufacturing tasks.
-
-23
-00:13:42,271 --> 00:13:44,831
-Range
-
-24
-00:13:46,623 --> 00:13:51,874
-Then we enter the last paginated page.

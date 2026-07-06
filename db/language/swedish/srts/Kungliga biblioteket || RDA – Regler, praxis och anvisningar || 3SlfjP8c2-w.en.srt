@@ -1,183 +1,112 @@
 1
-00:01:56,740 --> 00:02:02,080
-Before RDA, KRS (cataloging rules were followed for Swedish libraries).
-
-2
 00:02:02,360 --> 00:02:10,980
 Imported items may be made according to RDA, AACR2 or national cataloging rules.
 
-3
+2
 00:02:12,360 --> 00:02:18,500
 The main rule is that descriptions in Libris that follow other cataloging rules other than RDA
 
-4
+3
 00:02:18,752 --> 00:02:21,568
 not to be redone according to RDA.
 
-5
+4
 00:02:23,360 --> 00:02:31,580
 The RDA is developed by the RSC (RDA Steering Committee) consisting of representatives from different countries.
 
-6
+5
 00:02:32,060 --> 00:02:38,080
 The goal is for all continents to be represented and it is a work that is ongoing.
 
-7
+6
 00:02:40,760 --> 00:02:50,560
 RDA was completed in 2010 and then replaced AACR2 on which our previous cataloging rules, KRS, are based on.
 
-8
+7
 00:02:51,000 --> 00:02:59,860
 The Library of Congress was the first to switch to RDA.
 They went over 2013.
 
-9
+8
 00:03:01,500 --> 00:03:05,340
 KB switched to RDA in 2017.
 
-10
+9
 00:03:08,160 --> 00:03:12,256
 RDA is gathered in the online service RDA Toolkit.
 
-11
-00:03:13,020 --> 00:03:22,680
-Swedish, publicly funded libraries have access to RDA Toolkit through a subscription that KB has.
-
-12
-00:06:13,500 --> 00:06:16,820
-4: Subjects, objects, events, locations
-
-13
+10
 00:06:18,623 --> 00:06:22,975
 Places are the only chapter in section 4 that contains information.
 
-14
+11
 00:06:23,240 --> 00:06:30,980
 It was thought that the other chapters would be added after the release of RDA Toolkit, but it never happened.
 
-15
+12
 00:06:31,420 --> 00:06:40,580
 Now that you have launched the beta version of the new RDA Toolkit, there is only space left of the entities in section 4.
 
-16
+13
 00:06:42,940 --> 00:06:49,480
 Section 5-10 gives you guidelines on how to describe relationships between the entities.
 
-17
+14
 00:06:50,620 --> 00:06:56,840
 A number of appendix that contains rules for upper and lower case, for example,
 
-18
+15
 00:06:57,140 --> 00:07:00,340
 Abbreviations and symbols are also available.
 
-19
+16
 00:07:01,380 --> 00:07:07,240
 There are also appendix with different types of relationship designations to indicate more
 
-20
+17
 00:07:07,400 --> 00:07:10,080
 specific relationships between the units.
 
-21
+18
 00:07:13,663 --> 00:07:19,551
 Appendix I-M (Relationships)
 
-22
-00:07:21,340 --> 00:07:27,940
-Relationships between a resource and agents linked to the resource.
-It is available in appendix I.
-
-23
-00:09:45,480 --> 00:09:53,160
-The four description methods are: unstructured description, structured description,
-
-24
-00:09:53,640 --> 00:09:58,040
-Identifier and uri.
-
-25
-00:10:01,080 --> 00:10:03,900
-Unstructured description
-
-26
-00:10:05,183 --> 00:10:11,327
-Yes, there may be remarks, quotes from different sources and information transferred from the manifestation.
-
-27
-00:10:13,375 --> 00:10:17,215
-"Mechanical" transfer, ie
-That you write what stands.
-
-28
-00:10:19,260 --> 00:10:27,640
-They are manipulated according to certain rules that apply to punctuation, upper and lower case, etc.
-
-29
-00:10:28,980 --> 00:10:33,860
-And unstructured description cannot be understood by machines.
-
-30
-00:10:36,415 --> 00:10:38,975
-Structured description
-
-31
-00:10:41,540 --> 00:10:45,100
-We have an example under publishing details:
-
-32
-00:10:45,640 --> 00:10:53,940
-"Take what you see" applies to each individual element, ie.
-Follow the formulation of the resource, but
-
-33
-00:10:54,340 --> 00:10:57,660
-Enter the elements in a particular order.
-
-34
-00:12:38,460 --> 00:12:43,720
-They indicated which elements must be stated at each level of description.
-
-35
+19
 00:12:43,940 --> 00:12:48,000
 In Libris, the description levels remain.
 
-36
+20
 00:12:48,520 --> 00:12:55,640
 In RDA there are really no description levels.
 Instead, talking about nuclear elements
 
-37
+21
 00:12:55,940 --> 00:12:59,800
 Or core elements as it is called in English.
 
-38
+22
 00:13:00,500 --> 00:13:10,140
 The picture shows the element title (manifestation) in RDA Toolkit.
 Title has several sub -elements.
 
-39
+23
 00:13:10,660 --> 00:13:21,360
 The main title is a nuclear element.
 All other titles are optional, e.g.
 Other title information, variant titles.
 
-40
+24
 00:13:26,920 --> 00:13:29,480
 Nuclear elements - what does RDA say?
 
-41
+25
 00:13:30,500 --> 00:13:38,180
 Well, a description of an entity should contain all nuclear elements that are applicable and easily accessible.
 
-42
+26
 00:13:38,680 --> 00:13:44,580
 It should also contain all other elements necessary to distinguish
 
-43
+27
 00:13:44,840 --> 00:13:48,160
 the entity from other similar entities.
-
-44
-00:13:50,980 --> 00:13:56,920
-Think about the user's needs and use the catalog's judgment.

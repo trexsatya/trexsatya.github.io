@@ -1,364 +1,275 @@
 1
-00:01:14,540 --> 00:01:20,220
-Autosol has come with 2 new ones and I have only tested one so far.
-
-2
 00:01:20,220 --> 00:01:23,560
 There is one that is only for aluminum and should test it with.
 
-3
+2
 00:01:23,560 --> 00:01:28,780
 There are other means that you use that act as a wax.
 
-4
+3
 00:01:28,780 --> 00:01:35,580
 There are 2-3 different brands on the market but I have not been able to try anything yet.
 
-5
+4
 00:01:35,700 --> 00:01:41,140
 -There's happened to some time since last time.
 Yes rims and tires are in place and so did the whole car.
 
-6
+5
 00:01:41,140 --> 00:01:46,140
 The tires I have offended myself down here.
 I bought iron so I could squeeze them.
 
-7
+6
 00:01:46,140 --> 00:01:50,920
 Both front and rear tires have inner hose and I get punctured along the road ...
 
-8
+7
 00:01:50,920 --> 00:01:54,900
 ... then spare wheels are not enough, but you have to change the inner hose.
 
-9
+8
 00:01:54,900 --> 00:02:01,340
 And then I have to know if it is possible to push the tire or not and I have practiced all 4 tires.
 
-10
+9
 00:02:01,340 --> 00:02:08,960
 -And now the grill is ready.
 Yes, I have roughly polished to see all the bumps.
 
-11
+10
 00:02:08,960 --> 00:02:12,020
 If you feel like this, it feels uneven.
 
-12
+11
 00:02:12,020 --> 00:02:16,340
 I will smooth more but now I know what is visible and not visible.
 
-13
+12
 00:02:16,340 --> 00:02:23,580
 I have made some covers to sit on the inside of the frame.
 
-14
+13
 00:02:23,580 --> 00:02:26,440
 These are these.
 -And you have pressed this?
 
-15
+14
 00:02:26,440 --> 00:02:30,040
 Yes and it should sit 2 screwed here.
 
-16
+15
 00:02:31,500 --> 00:02:34,060
 It is to cover the ugly.
 
-17
+16
 00:02:34,060 --> 00:02:38,560
 The plastic foil goes around the edge here.
 
-18
+17
 00:02:38,560 --> 00:02:42,760
 Because I will foil the frame ...
 
-19
-00:02:42,760 --> 00:02:47,220
-... it is difficult to foil the inside and get it neat.
-
-20
-00:04:30,940 --> 00:04:35,780
-Even when setting the ignition on the engines.
-
-21
+18
 00:04:36,320 --> 00:04:38,460
 Distributers are behind here.
 
-22
+19
 00:04:38,460 --> 00:04:41,300
 -How often will you use this?
 
-23
+20
 00:04:41,300 --> 00:04:46,080
 I drive as much as the other cars, it is 600 miles a year
 
-24
+21
 00:04:46,080 --> 00:04:47,620
 -Oops.
 
-25
+22
 00:04:47,620 --> 00:04:53,020
 If it doesn't work, I put it in a barn where no one can see it.
 
-26
+23
 00:04:53,340 --> 00:04:58,560
 It should work otherwise it is not fun.
 It is pointless to have a car standing.
 
-27
+24
 00:04:58,560 --> 00:05:04,020
 I want to be able to drive to Stockholm, Norrtälje on a meeting and home.
 
-28
+25
 00:05:04,020 --> 00:05:08,420
 -What are you putting on now?
 These are the oil filling pipes.
 
-29
+26
 00:05:11,140 --> 00:05:12,900
 It's a bit tight.
 
-30
-00:05:15,720 --> 00:05:19,540
-It will be the first and second engine and here you fill the oil.
-
-31
-00:06:30,140 --> 00:06:34,600
-The screws are also new in stainless steel.
-
-32
+27
 00:06:34,600 --> 00:06:39,480
 I have rationalized away the choke.
 This is never used in Sweden in the summer.
 
-33
+28
 00:06:39,480 --> 00:06:44,440
 I never drive in the winter with this car.
 
-34
+29
 00:06:44,440 --> 00:06:47,640
 -How should you be able to get carburetors to be sync?
 
-35
+30
 00:06:47,640 --> 00:06:53,100
 They do not have to be synced because the carburetor in the middle feeds both engines.
 
-36
+31
 00:06:53,100 --> 00:06:58,300
 Both engines have the same structure and the same compression and camshafts.
 
-37
+32
 00:06:58,300 --> 00:07:01,215
 That carburetor controls both engines.
 
-38
+33
 00:07:01,220 --> 00:07:06,240
 During normal driving, only the carburetor in the middle is connected.
 
-39
+34
 00:07:06,240 --> 00:07:11,720
 When you gas on when overtaking, the other carburetors open.
 
-40
+35
 00:07:11,720 --> 00:07:14,400
 There will be an exchange here.
 
-41
-00:07:14,400 --> 00:07:16,880
-It is also own manufacturing.
-
-42
-00:07:31,600 --> 00:07:37,920
-The most important thing is that when driving at 100-110km/h that the carburetor is set correctly.
-
-43
+36
 00:07:37,920 --> 00:07:42,200
 It is own implementation here.
 It is a piece of leather that I have shrunk.
 
-44
+37
 00:07:42,200 --> 00:07:45,660
 I got the funnel -shaped and squeezed it between two trays.
 
-45
+38
 00:07:45,660 --> 00:07:50,260
 And made this brass ring so it gets air tight.
 
-46
+39
 00:07:50,260 --> 00:07:53,260
 It is the details that do it.
 -It really is.
 
-47
+40
 00:07:53,380 --> 00:07:56,480
 If you want to be won I have made a gap here.
 
-48
+41
 00:07:57,420 --> 00:08:02,360
 There should be a cable in this hole that is controlled with a lever from the inside.
 
-49
+42
 00:08:02,380 --> 00:08:05,560
 And it opens that way.
 -Of course!
 
-50
+43
 00:08:06,100 --> 00:08:09,220
 We'll see if it works because it can leak a little.
 
-51
+44
 00:08:09,220 --> 00:08:13,520
 There will be stainless steel feathers.
 These are just ordinary Biltema feathers.
 
-52
+45
 00:08:13,520 --> 00:08:19,240
 -In terms of body it is clear.
 Yes doors and seats are cut.
 
-53
+46
 00:08:19,240 --> 00:08:23,260
 I have done grid templates and most of the fitting is done.
 
-54
+47
 00:08:23,260 --> 00:08:25,800
 -What is it for boxes?
 -It's not going to be glass?
 
-55
-00:08:25,800 --> 00:08:30,380
-Well there will be slats.
-That I will cut myself.
-
-56
-00:10:00,700 --> 00:10:04,760
-It doesn't get that far on the pedal.
-
-57
+48
 00:10:05,240 --> 00:10:10,420
 There is no oil in but this one is connected.
 
-58
+49
 00:10:10,680 --> 00:10:12,480
 And here is full gas.
 
-59
+50
 00:10:12,480 --> 00:10:14,660
 -When will it get there?
 
-60
+51
 00:10:14,660 --> 00:10:18,700
 I'll just buy a regular tachometer that I attach to the back.
 
-61
+52
 00:10:18,700 --> 00:10:23,000
 And a pointer from a mora clock ...
 
-62
+53
 00:10:23,000 --> 00:10:29,500
 ... a little bigger as an arrow and old numbers as it was on watches before scaled up to 6.
 
-63
+54
 00:10:29,500 --> 00:10:33,780
 And some lamps at the bottom for charging temp etc.
 
-64
+55
 00:10:33,780 --> 00:10:37,640
 Should you have any speedometer?
 No, there will be GPS instead.
 
-65
+56
 00:10:37,640 --> 00:10:41,680
 I don't need any speedometer in this car.
 
-66
-00:10:41,680 --> 00:10:44,675
-And GPS you have with you so I can drive after it.
-
-67
-00:11:04,620 --> 00:11:07,340
--I haven't seen any name on it.
-
-68
+57
 00:11:07,340 --> 00:11:12,680
 It's going on and should ... would cast first ...
 
-69
+58
 00:11:12,680 --> 00:11:16,500
 ... and put on the back but I have regretted it.
 
-70
+59
 00:11:16,500 --> 00:11:20,120
 It will be in the valve cover instead.
 
-71
+60
 00:11:20,120 --> 00:11:24,820
 It will be written here.
 So you only use plain salt water.
 
-72
+61
 00:11:24,820 --> 00:11:28,520
 Mask and switch on a car battery.
 
-73
+62
 00:11:28,520 --> 00:11:31,860
 Plus here and minus you dip in the water.
 
-74
+63
 00:11:31,860 --> 00:11:35,635
 Here it has become a good edge.
 
-75
+64
 00:11:35,640 --> 00:11:38,740
 It's only 20 minutes.
 It is a very significant edge.
 
-76
+65
 00:11:38,740 --> 00:11:44,380
 The text should be polished but the frame around.
-
-77
-00:11:44,380 --> 00:11:48,540
--What should it be hot?
-Uh, Decimo Segundo.
-
-78
-00:12:45,100 --> 00:12:48,960
-It was sick near the wheel.
-Yes it should be corrected.
-
-79
-00:12:48,960 --> 00:12:54,340
-I have to put a spacer in between so I get the wheel 1.5 cm.
-
-80
-00:12:54,380 --> 00:13:01,200
-It does not get that hot as it is silencer insulation.
-
-81
-00:13:01,200 --> 00:13:03,720
-So it insulates the heat with.
-
-82
-00:13:03,720 --> 00:13:09,120
-What is left to construct is a handbrake.
-
-83
-00:13:09,200 --> 00:13:16,020
-I have not decided yet and I will have a foot brake or a long lever.
-
-84
-00:13:16,680 --> 00:13:20,000
-It's good to have an emergency brake.
-
-85
-00:13:20,020 --> 00:13:23,260
--Now I'll wage further we'll be visible again soon.
-We'll do that.
-
-86
-00:13:23,260 --> 00:13:25,140
-Bye!
-Hello!

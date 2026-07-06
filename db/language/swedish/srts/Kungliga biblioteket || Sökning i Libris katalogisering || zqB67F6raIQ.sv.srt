@@ -1,47 +1,35 @@
 1
-00:00:42,496 --> 00:00:48,640
-Du kan ändra avgränsningen till Verk, Agent, Koncept eller Alla.
-
-2
 00:00:49,920 --> 00:00:53,660
 Eftersom vi ännu inte har börjat jobba med verk som egna entiteter
 
-3
+2
 00:00:53,780 --> 00:00:56,820
 får du inte många träffar när du söker på verk.
 
-4
+3
 00:00:56,832 --> 00:01:00,672
 Som förval är sökningen också inställd på fritext.
 
-5
+4
 00:01:01,184 --> 00:01:07,328
 Du kan sedan avgränsa ytterligare här genom att välja ISBN, ISSN eller Huvudtitel.
 
-6
+5
 00:01:09,376 --> 00:01:15,520
 Om du avgränsar till ISBN kan du söka på ISBN med eller utan bindestreck.
 
-7
+6
 00:01:15,776 --> 00:01:21,408
 Om du söker på ISBN som fritext, sök utan bindestreck.
 
-8
+7
 00:01:21,920 --> 00:01:25,504
 Du kan också klicka på Sök i huvudmenyn.
 
-9
+8
 00:01:26,528 --> 00:01:31,392
 Då kommer du till en vy där du kan söka i Libris eller Andra källor.
 
-10
+9
 00:01:31,904 --> 00:01:38,048
 Det är viktigt att alltid söka noga i Libris först för att vara säker på att man inte skapar dubbletter.
-
-11
-00:01:39,072 --> 00:01:43,680
-Om man inte hittar det man söker i Libris kan man gå vidare till Andra källor.
-
-12
-00:01:44,192 --> 00:01:49,056
-Här finns möjlighet att söka i andra databaser och importera en post.

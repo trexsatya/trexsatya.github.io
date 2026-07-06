@@ -1,175 +1,107 @@
 1
-00:01:56,740 --> 00:02:02,080
-Före RDA följdes KRS (Katalogiseringsregler för svenska bibliotek).
-
-2
 00:02:02,360 --> 00:02:10,980
 Importerade poster kan vara gjorda enligt RDA, AACR2 eller nationella katalogiseringsregler.
 
-3
+2
 00:02:12,360 --> 00:02:18,500
 Huvudregeln är att beskrivningar i Libris som följer andra katalogiseringsregler än RDA
 
-4
+3
 00:02:18,752 --> 00:02:21,568
 inte ska göras om enligt RDA.
 
-5
+4
 00:02:23,360 --> 00:02:31,580
 RDA utvecklas av RSC (RDA Steering Committee) som består av representanter från olika länder.
 
-6
+5
 00:02:32,060 --> 00:02:38,080
 Målet är att alla världsdelar ska vara representerade och det är ett arbete som pågår.
 
-7
+6
 00:02:40,760 --> 00:02:50,560
 RDA var färdigt 2010 och ersatte då AACR2 som våra tidigare katalogiseringsregler, KRS, bygger på.
 
-8
+7
 00:02:51,000 --> 00:02:59,860
 Library of Congress var först med att gå över till RDA. De gick över 2013.
 
-9
+8
 00:03:01,500 --> 00:03:05,340
 KB gick över till RDA år 2017.
 
-10
+9
 00:03:08,160 --> 00:03:12,256
 RDA är samlat i onlinetjänsten RDA Toolkit.
 
-11
-00:03:13,020 --> 00:03:22,680
-Svenska, offentligt finansierade bibliotek får tillgång till RDA Toolkit via ett abonnemang som KB har.
-
-12
-00:06:13,500 --> 00:06:16,820
-4: Ämnen, objekt, händelser, platser
-
-13
+10
 00:06:18,623 --> 00:06:22,975
 Platser är det enda kapitlet i sektion 4 som innehåller information.
 
-14
+11
 00:06:23,240 --> 00:06:30,980
 Det var tänkt att de andra kapitlen skulle läggas till efter releasen av RDA Toolkit, men det blev aldrig så.
 
-15
+12
 00:06:31,420 --> 00:06:40,580
 Nu när man lanserat betaversionen av nya RDA Toolkit finns bara Plats kvar av entiteterna i sektion 4.
 
-16
+13
 00:06:42,940 --> 00:06:49,480
 Sektion 5-10 ger er riktlinjer för hur man beskriver relationer mellan entiteterna.
 
-17
+14
 00:06:50,620 --> 00:06:56,840
 Ett antal appendix som bl a innehåller regler för stora och små bokstäver,
 
-18
+15
 00:06:57,140 --> 00:07:00,340
 förkortningar och symboler, finns också.
 
-19
+16
 00:07:01,380 --> 00:07:07,240
 Det finns också appendix med olika typer av relationsbeteckningar för att ange mer
 
-20
+17
 00:07:07,400 --> 00:07:10,080
 specifika relationer mellan enheterna.
 
-21
+18
 00:07:13,663 --> 00:07:19,551
 Appendix I-M (relationsbeteckningar)
 
-22
-00:07:21,340 --> 00:07:27,940
-Relationer mellan en resurs och agenter knutna till resursen. Det finns i Appendix I.
-
-23
-00:09:45,480 --> 00:09:53,160
-De fyra beskrivningsmetoderna är: Ostrukturerad beskrivning, Strukturerad beskrivning,
-
-24
-00:09:53,640 --> 00:09:58,040
-Identifikator och URI.
-
-25
-00:10:01,080 --> 00:10:03,900
-Ostrukturerad beskrivning
-
-26
-00:10:05,183 --> 00:10:11,327
-Ja, det kan vara anmärkningar, citat från olika källor och uppgifter överförda från manifestationen.
-
-27
-00:10:13,375 --> 00:10:17,215
-”Mekanisk” överföring, dvs. att man skriver det som står.
-
-28
-00:10:19,260 --> 00:10:27,640
-De manipuleras enligt vissa regler som gäller interpunktion, stora och små bokstäver osv.
-
-29
-00:10:28,980 --> 00:10:33,860
-Och ostrukturerad beskrivning kan inte förstås av maskiner.
-
-30
-00:10:36,415 --> 00:10:38,975
-Strukturerad beskrivning
-
-31
-00:10:41,540 --> 00:10:45,100
-Vi har ett exempel under Utgivningsuppgifter:
-
-32
-00:10:45,640 --> 00:10:53,940
-”ta vad du ser” gäller för varje enskilt element, dvs. följ resursens formulering, men
-
-33
-00:10:54,340 --> 00:10:57,660
-ange elementen i en viss ordning.
-
-34
-00:12:38,460 --> 00:12:43,720
-De angav vilka element som måste anges på respektive beskrivningsnivå.
-
-35
+19
 00:12:43,940 --> 00:12:48,000
 I Libris finns beskrivningsnivåerna kvar.
 
-36
+20
 00:12:48,520 --> 00:12:55,640
 I RDA finns egentligen inga beskrivningsnivåer. Istället talar man om kärnelement
 
-37
+21
 00:12:55,940 --> 00:12:59,800
 Eller core elements som det heter på engelska.
 
-38
+22
 00:13:00,500 --> 00:13:10,140
 Bilden visar elementet Titel (manifestation) i RDA Toolkit. Titel har flera underelement.
 
-39
+23
 00:13:10,660 --> 00:13:21,360
 Huvudtitel är ett kärnelement. Alla andra titlar är valfria, t.ex. övrig titelinformation, varianttitlar.
 
-40
+24
 00:13:26,920 --> 00:13:29,480
 Kärnelement – vad säger RDA?
 
-41
+25
 00:13:30,500 --> 00:13:38,180
 Jo, en beskrivning av en entitet ska innehålla alla kärnelement som är tillämpliga och lätt åtkomliga.
 
-42
+26
 00:13:38,680 --> 00:13:44,580
 Den ska också innehålla alla övriga element som är nödvändiga för att skilja
 
-43
+27
 00:13:44,840 --> 00:13:48,160
 entiteten från andra liknande entiteter.
-
-44
-00:13:50,980 --> 00:13:56,920
-Tänk på användarens behov och använd katalogisatörens omdöme.
