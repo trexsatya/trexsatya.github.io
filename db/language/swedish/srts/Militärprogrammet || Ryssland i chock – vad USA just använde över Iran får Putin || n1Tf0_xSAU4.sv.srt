@@ -1,0 +1,599 @@
+1
+00:11:44,639 --> 00:11:47,480
+dränker GPS-signalen. Om din störsändare
+
+2
+00:11:47,480 --> 00:11:49,839
+levererar mer effekt än GPS-signalen
+
+3
+00:11:49,839 --> 00:11:51,760
+till mottagaren kan den dränka
+
+4
+00:11:51,760 --> 00:11:54,160
+GPS-signalerna och få drönaren som tar
+
+5
+00:11:54,160 --> 00:11:56,160
+emot dem att komma ur kurs eller
+
+6
+00:11:56,160 --> 00:11:58,639
+krascha. På en frontlinje så lång som
+
+7
+00:11:58,639 --> 00:12:01,079
+den i Ukraina behöver du inte enorma
+
+8
+00:12:01,079 --> 00:12:03,279
+störsändare för att effektivt bedriva
+
+9
+00:12:03,279 --> 00:12:05,560
+elektronisk krigföring över ett stort
+
+10
+00:12:05,560 --> 00:12:08,120
+område. Det är inte så det fungerar.
+
+11
+00:12:08,120 --> 00:12:09,600
+>> Det du verkligen behöver är en rad
+
+12
+00:12:09,600 --> 00:12:11,000
+störsändare som är tillräckligt
+
+13
+00:12:11,000 --> 00:12:13,240
+kraftfulla för att dränka GPS-signaler
+
+14
+00:12:13,240 --> 00:12:14,600
+och som är utplacerade längs
+
+15
+00:12:14,600 --> 00:12:16,360
+frontlinjerna.
+
+16
+00:12:16,360 --> 00:12:18,399
+>> Rysslands lösning har varit att utveckla
+
+17
+00:12:18,399 --> 00:12:21,120
+en flotta av mobila lastbilsmonterade
+
+18
+00:12:21,120 --> 00:12:26,720
+störsändare som R330 ZHEL.
+
+19
+00:12:26,720 --> 00:12:29,079
+NRL257
+
+20
+00:12:29,079 --> 00:12:33,120
+KSK 4 och RB341
+
+21
+00:12:33,120 --> 00:12:36,440
+V Leer 3. De har visat sig vara ganska
+
+22
+00:12:36,440 --> 00:12:38,440
+effektiva mot drönare och till och med
+
+23
+00:12:38,440 --> 00:12:41,760
+GPSstyrda missiler som Jdam vars
+
+24
+00:12:41,760 --> 00:12:43,680
+signaler ligger helt inom Sytells
+
+25
+00:12:43,680 --> 00:12:46,079
+räckvid. Nu är det den typen av detaljer
+
+26
+00:12:46,079 --> 00:12:48,680
+som får The Military Show att sticka ut
+
+27
+00:12:48,680 --> 00:12:50,880
+från andra militärinriktade kanaler.
+
+28
+00:12:50,880 --> 00:12:52,560
+>> Prenumerera på kanalen och se till att
+
+29
+00:12:52,560 --> 00:12:54,440
+du slår på aviseringar så att du aldrig
+
+30
+00:12:54,440 --> 00:12:56,519
+missar de senaste nyheterna från de
+
+31
+00:12:56,519 --> 00:12:59,199
+viktigaste orosärdarna på planeten. Nu
+
+32
+00:12:59,199 --> 00:13:01,519
+byter Ukraina ständigt de frekvenser som
+
+33
+00:13:01,519 --> 00:13:03,760
+används för att styra drönare precis som
+
+34
+00:13:03,760 --> 00:13:06,199
+Ryssland gör. Vilket skapar ett oändligt
+
+35
+00:13:06,199 --> 00:13:08,760
+spel av åtgärder och motoråtgärder när
+
+36
+00:13:08,760 --> 00:13:11,000
+båda sidor anpassar sig. Ibland har
+
+37
+00:13:11,000 --> 00:13:13,399
+drönarna på ena sidan övertaget medan
+
+38
+00:13:13,399 --> 00:13:15,240
+den andra sidan försöker lista ut hur de
+
+39
+00:13:15,240 --> 00:13:17,720
+ska justera sina störningsmotåtgärder.
+
+40
+00:13:17,720 --> 00:13:19,639
+Eller som den ryske befälhavaren
+
+41
+00:13:19,639 --> 00:13:22,440
+Irdoganov uttrycker det: Fienden leker
+
+42
+00:13:22,440 --> 00:13:24,240
+med frekvenser.
+
+43
+00:13:24,240 --> 00:13:26,600
+Vi omkonfigurerar våra system för
+
+44
+00:13:26,600 --> 00:13:29,000
+elektronisk krigföring. Fienden börjar
+
+45
+00:13:29,000 --> 00:13:31,760
+sluta oss med elektronisk krigföring.
+
+46
+00:13:31,760 --> 00:13:34,000
+Det biter till andra frekvenser. Allt
+
+47
+00:13:34,000 --> 00:13:36,639
+detta möjliggörs av de svaga signalerna
+
+48
+00:13:36,639 --> 00:13:40,199
+från de avlägsnaatelliterna.
+
+49
+00:13:40,199 --> 00:13:43,120
+Men Starlink är en helt annan historia.
+
+50
+00:13:43,120 --> 00:13:45,040
+Det utgör ett problem för Ryssland som
+
+51
+00:13:45,040 --> 00:13:47,480
+de för närvarande och inom överskådlig
+
+52
+00:13:47,480 --> 00:13:50,880
+framtid inte har något sätt att bemöta.
+
+53
+00:13:50,880 --> 00:13:53,199
+Det går inte att störa ut. Till skillnad
+
+54
+00:13:53,199 --> 00:13:55,440
+från navigationssatelliter operar
+
+55
+00:13:55,440 --> 00:13:58,120
+Starlink i låg omlocksbana runt jorden
+
+56
+00:13:58,120 --> 00:14:00,360
+eller Leo.
+
+57
+00:14:00,360 --> 00:14:02,600
+Satelliterna är inte tusentals kilometer
+
+58
+00:14:02,600 --> 00:14:05,800
+från jorden. De kratsar på ungefär 550
+
+59
+00:14:05,800 --> 00:14:08,839
+km höjd ovanför jorden. Det finns för
+
+60
+00:14:08,839 --> 00:14:11,440
+närvarande omkring 10.020
+
+61
+00:14:11,440 --> 00:14:14,160
+Starlinksatelliter i omloppsbanan. Det
+
+62
+00:14:14,160 --> 00:14:18,720
+magiska 10.000 målet nåddes den 17 mars
+
+63
+00:14:18,720 --> 00:14:22,199
+2026 efter att en Falcon 9 raket som
+
+64
+00:14:22,199 --> 00:14:25,079
+sköts upp från Space Launch Complex Four
+
+65
+00:14:25,079 --> 00:14:27,959
+East vid Vandenberg Space Force Base i
+
+66
+00:14:27,959 --> 00:14:31,160
+Kalifornien placerade ytterligare 25
+
+67
+00:14:31,160 --> 00:14:33,240
+satelliter i områpsbana.
+
+68
+00:14:33,240 --> 00:14:35,680
+>> Starlink har faktiskt skjutit upp totalt
+
+69
+00:14:35,680 --> 00:14:38,160
+11.529
+
+70
+00:14:38,160 --> 00:14:41,839
+satelliter sedan maj 2019. Men några av
+
+71
+00:14:41,839 --> 00:14:44,399
+dessa har varit ersättningar för utkänta
+
+72
+00:14:44,399 --> 00:14:47,160
+och nedtagna rymdfarkoster. Dessa
+
+73
+00:14:47,160 --> 00:14:49,639
+satelliter rusar runt jorden i nära
+
+74
+00:14:49,639 --> 00:14:53,279
+27.000 km i timmen och bildar ett
+
+75
+00:14:53,279 --> 00:14:55,720
+nätverk som täcker jorden och skapar
+
+76
+00:14:55,720 --> 00:14:58,480
+nästan allfattande teckning var du än
+
+77
+00:14:58,480 --> 00:15:00,759
+befinner dig på planetens yta. Detta
+
+78
+00:15:00,759 --> 00:15:03,240
+skapar två stora problem för Ryssland.
+
+79
+00:15:03,240 --> 00:15:05,680
+Eller för den delen Iran, Kina eller
+
+80
+00:15:05,680 --> 00:15:07,519
+någon annan motståndare som vill slå ut
+
+81
+00:15:07,519 --> 00:15:09,360
+en Starlinkstyrdänare.
+
+82
+00:15:09,360 --> 00:15:10,720
+För det första tar varje
+
+83
+00:15:10,720 --> 00:15:12,920
+Starlinkterminal inte emot en signal
+
+84
+00:15:12,920 --> 00:15:15,199
+från en enda Starlinks satellit som en
+
+85
+00:15:15,199 --> 00:15:17,639
+gammaldagsparabol. Den hoppar ständigt
+
+86
+00:15:17,639 --> 00:15:20,199
+mellan olika enheter i nätverket men rör
+
+87
+00:15:20,199 --> 00:15:22,880
+sig över himlen. Vid varje tidpunkt
+
+88
+00:15:22,880 --> 00:15:25,440
+biter varje terminal troligen mellan
+
+89
+00:15:25,440 --> 00:15:28,240
+satelliter under korta tidsintervall.
+
+90
+00:15:28,240 --> 00:15:29,959
+Det betyder att Ryssland inte bara
+
+91
+00:15:29,959 --> 00:15:32,440
+behöver störa en enda signal på en enda
+
+92
+00:15:32,440 --> 00:15:35,399
+vektor. De måste träffa motsvarigheten
+
+93
+00:15:35,399 --> 00:15:37,560
+till ett rörligt mål placerat på ett
+
+94
+00:15:37,560 --> 00:15:40,440
+rörligt nätverk. För det andra, eftersom
+
+95
+00:15:40,440 --> 00:15:42,480
+Starlinks satelliter är mycket närmare
+
+96
+00:15:42,480 --> 00:15:45,079
+jorden än GPS satelliter är signalen
+
+97
+00:15:45,079 --> 00:15:47,079
+mycket starkare vid mottagaren. Så
+
+98
+00:15:47,079 --> 00:15:49,079
+Ryssland behöver en mycket kraftfullare
+
+99
+00:15:49,079 --> 00:15:51,240
+störsändare för att kunna avbryta och
+
+100
+00:15:51,240 --> 00:15:53,800
+dränka signalen.
+
+101
+00:15:53,800 --> 00:15:55,680
+Det ligger definitivt inte utanför
+
+102
+00:15:55,680 --> 00:15:58,000
+Rysslands kapacitet att störa en enskild
+
+103
+00:15:58,000 --> 00:16:00,000
+satellitlänk även om signalen är
+
+104
+00:16:00,000 --> 00:16:02,240
+starkare. Men att försöka störa ett helt
+
+105
+00:16:02,240 --> 00:16:04,880
+nätverk med över 10.000 satelliter som
+
+106
+00:16:04,880 --> 00:16:08,319
+rör sig i hastigheter över Mac 22 är en
+
+107
+00:16:08,319 --> 00:16:10,319
+helt annan typ av problem. Vid det här
+
+108
+00:16:10,319 --> 00:16:11,600
+laget är det dessutom ett
+
+109
+00:16:11,600 --> 00:16:13,440
+oövervinnerligt problem.
+
+110
+00:16:13,440 --> 00:16:15,240
+>> Att störa drönare är inte längre ett
+
+111
+00:16:15,240 --> 00:16:16,880
+problem som kan lösas med en parkerad
+
+112
+00:16:16,880 --> 00:16:19,120
+störningslastbil nära frontlinjen.
+
+113
+00:16:19,120 --> 00:16:21,480
+>> Du behöver en enorm flotta av mycket
+
+114
+00:16:21,480 --> 00:16:23,839
+kraftfulla störsändare, särskilt om
+
+115
+00:16:23,839 --> 00:16:26,079
+terminalen använder en riktantenn och
+
+116
+00:16:26,079 --> 00:16:28,240
+modern signalbehandling, vilket Lukas
+
+117
+00:16:28,240 --> 00:16:30,120
+troligen gör. Istället för att störa
+
+118
+00:16:30,120 --> 00:16:32,519
+svaga signaler till enskilda mottagare
+
+119
+00:16:32,519 --> 00:16:34,360
+måste Ryssland nu övermanna
+
+120
+00:16:34,360 --> 00:16:36,959
+frekvenshoppande ständigt växlande
+
+121
+00:16:36,959 --> 00:16:39,839
+multisatellitlänkar som ändrar geometri
+
+122
+00:16:39,839 --> 00:16:41,720
+innan du ens hinner haka på. Det är
+
+123
+00:16:41,720 --> 00:16:44,240
+tekniskt genomförbart i stor skala, men
+
+124
+00:16:44,240 --> 00:16:46,839
+den skala som krävs ligger nästan säkert
+
+125
+00:16:46,839 --> 00:16:49,040
+långt bortom Rysslands kapacitet inom
+
+126
+00:16:49,040 --> 00:16:51,519
+överskådlig framtid. Disa kinesiska
+
+127
+00:16:51,519 --> 00:16:54,040
+militärforskare genomförde simuleringar
+
+128
+00:16:54,040 --> 00:16:56,160
+för att bedöma hur många störsändare de
+
+129
+00:16:56,160 --> 00:16:57,600
+skulle behöva för att slå ut
+
+130
+00:16:57,600 --> 00:16:59,720
+Starlinkuppkopplingen över Taiwan. Att
+
+131
+00:16:59,720 --> 00:17:01,800
+slå ut det nätverket skulle sannolikt
+
+132
+00:17:01,800 --> 00:17:04,480
+vara en avgörande del i en framgångsrik
+
+133
+00:17:04,480 --> 00:17:07,160
+kinesisk invasion. Simuleringen kom fram
+
+134
+00:17:07,160 --> 00:17:08,959
+till att det skulle krävas ett optimalt
+
+135
+00:17:08,959 --> 00:17:12,839
+nätverk av minst 935 synkroniserade
+
+136
+00:17:12,839 --> 00:17:15,760
+flygbuna störsändare med hög effekt för
+
+137
+00:17:15,760 --> 00:17:18,039
+att helt slå ut teckningen. Alternativt,
+
+138
+00:17:18,039 --> 00:17:19,679
+om man förlitar sig på systemen med
+
+139
+00:17:19,679 --> 00:17:22,280
+lägre effekt kan Kina behöva närmare
+
+140
+00:17:22,280 --> 00:17:25,120
+2000 stöddrönare för att uppnå en
+
+141
+00:17:25,120 --> 00:17:27,079
+liknande effekt. Om man överför det till
+
+142
+00:17:27,079 --> 00:17:29,760
+Ukraina där frontlinjen är mellan 800
+
+143
+00:17:29,760 --> 00:17:32,880
+och 1200 km lång skulle Ryssland
+
+144
+00:17:32,880 --> 00:17:34,919
+sannolikt behöva flera t000
+
+145
+00:17:34,919 --> 00:17:37,640
+lastbilsmonterade störsändare bara för
+
+146
+00:17:37,640 --> 00:17:39,520
+att knappt räcka till. Om man dessutom
+
+147
+00:17:39,520 --> 00:17:41,320
+tar med i beräkningen de miljontals
+
+148
+00:17:41,320 --> 00:17:43,400
+kvadratkilometer inom sitt territorium
+
+149
+00:17:43,400 --> 00:17:45,120
+som Ryssland skulle behöva skydda mot
+
+150
+00:17:45,120 --> 00:17:48,120
+ukrainska långdistansattacker med
