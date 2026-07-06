@@ -1,0 +1,27 @@
+1
+00:16:53,240 --> 00:16:57,720
+the numbers on the edges of the network. Okay, so
+
+2
+00:16:57,720 --> 00:17:01,759
+networks can provide many different functions on
+
+3
+00:17:01,759 --> 00:17:04,839
+one and the same architecture.
+
+4
+00:17:04,839 --> 00:17:09,480
+And uh now I want you to imagine
+
+5
+00:17:09,480 --> 00:17:12,679
+if you were to collect all the functions
+
+6
+00:17:12,679 --> 00:17:15,799
+which a network can represent on it
+
+7
+00:17:15,799 --> 00:17:18,799
+this way. What would it look like?
