@@ -1,0 +1,27 @@
+1
+00:17:35,320 --> 00:17:36,840
+överdimensionerat.
+
+2
+00:17:36,840 --> 00:17:39,120
+Det kanske är kostnader för fiber som
+
+3
+00:17:39,120 --> 00:17:41,840
+blir orimligt för datamängderna ökar.
+
+4
+00:17:41,840 --> 00:17:45,360
+Eh, och då behöver du redundans. Eh, men
+
+5
+00:17:45,360 --> 00:17:47,960
+du man måste ha multipla ställen runt
+
+6
+00:17:47,960 --> 00:17:48,760
+jorden.
+
+7
+00:17:48,760 --> 00:17:51,760
+>> Ja.
