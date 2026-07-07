@@ -1404,16 +1404,6 @@
             "timeEnd": 521,
             "lineIndex": 3,
             "enabled": true
-          },
-          {
-            "searchText": "se mellan fingrarna|ser mellan fingrarna|såg mellan fingrarna|sett mellan fingrarna",
-            "word": "såg mellan fingrarna",
-            "id": "Lwd92cIa2J8",
-            "source": "youtube",
-            "timeStart": 513,
-            "timeEnd": 521,
-            "lineIndex": 3,
-            "enabled": true
           }
         ]
       },
@@ -2901,16 +2891,6 @@
       },
       "sorl|sorla": {
         "sorl": [
-          {
-            "searchText": "sorl|sorla",
-            "word": "sorl",
-            "id": "X3-E00lSuoQ",
-            "source": "youtube",
-            "timeStart": 373,
-            "timeEnd": 381,
-            "lineIndex": 3,
-            "enabled": true
-          },
           {
             "searchText": "sorl|sorla",
             "word": "sorl",
@@ -16273,7 +16253,6 @@
       }
     },
     "createdAt": 1781255483283,
-    "updatedAt": 1781255483283,
-    "random": true
+    "updatedAt": 1781255483283
   }
 }
