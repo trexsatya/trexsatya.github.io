@@ -2,6 +2,699 @@
   "Default": {
     "items": {},
     "createdAt": 1783422000111,
-    "updatedAt": 1783424544662
+    "updatedAt": 1783425303235
+  },
+  "Random From All": {
+    "items": {
+      "gyllene": {
+        "gyllene": [
+          {
+            "searchText": "gyllene",
+            "word": "gyllene",
+            "id": "inkM1XTOa80",
+            "source": "YouTube",
+            "timeStart": 11120.2,
+            "timeEnd": 11134.56,
+            "lineIndex": 4284,
+            "enabled": true
+          }
+        ]
+      },
+      "tecken": {
+        "tecken": [
+          {
+            "searchText": "tecken",
+            "word": "tecken",
+            "id": "f7zKLtLf9X8",
+            "source": "YouTube",
+            "timeStart": 624.639,
+            "timeEnd": 747.007,
+            "lineIndex": 10,
+            "enabled": true
+          }
+        ]
+      },
+      "i kontrast till": {
+        "i kontrast till": [
+          {
+            "searchText": "i kontrast till",
+            "word": "i kontrast till",
+            "id": "K7zHdXKfew4",
+            "source": "YouTube",
+            "timeStart": 644.28,
+            "timeEnd": 671.68,
+            "lineIndex": 112,
+            "enabled": true
+          }
+        ]
+      },
+      "riva": {
+        "riva": [
+          {
+            "searchText": "riva",
+            "word": "riva",
+            "id": "LstW-DN5TLI",
+            "source": "YouTube",
+            "timeStart": 572.52,
+            "timeEnd": 621.22,
+            "lineIndex": 58,
+            "enabled": true
+          }
+        ]
+      },
+      "tysta": {
+        "tysta": [
+          {
+            "searchText": "tysta",
+            "word": "tysta",
+            "id": "stA3UUZhCfA",
+            "source": "youtube",
+            "timeStart": 2567.2,
+            "timeEnd": 2594.599,
+            "lineIndex": 2,
+            "enabled": true
+          }
+        ]
+      },
+      "klockrent": {
+        "klockrent": [
+          {
+            "searchText": "klockrent",
+            "word": "klockrent",
+            "id": "L4eL3MxJ5HI",
+            "source": "YouTube",
+            "timeStart": 3624.558,
+            "timeEnd": 3657.898,
+            "lineIndex": 97,
+            "enabled": true
+          }
+        ]
+      },
+      "skörda offer": {
+        "skörda offer": [
+          {
+            "searchText": "skörda offer",
+            "word": "skörda offer",
+            "id": "S4VTibm7E-8",
+            "source": "youtube",
+            "timeStart": 3072.72,
+            "timeEnd": 3085.079,
+            "lineIndex": 5,
+            "enabled": true
+          }
+        ]
+      },
+      "knaka": {
+        "knaka": [
+          {
+            "searchText": "knaka",
+            "word": "knaka",
+            "id": "NTpm00YjAWM",
+            "source": "YouTube",
+            "timeStart": 3133.482,
+            "timeEnd": 3146.415,
+            "lineIndex": 423,
+            "enabled": true
+          }
+        ]
+      },
+      "Borgen": {
+        "Borgen": [
+          {
+            "searchText": "Borgen",
+            "word": "Borgen",
+            "id": "ThiYpvNgmhk",
+            "source": "YouTube",
+            "timeStart": 272.28,
+            "timeEnd": 285.199,
+            "lineIndex": 4,
+            "enabled": true
+          }
+        ]
+      },
+      "enligt": {
+        "enligt": [
+          {
+            "searchText": "enligt",
+            "word": "enligt",
+            "id": "yeUxzYmmpAo",
+            "source": "YouTube",
+            "timeStart": 1185.44,
+            "timeEnd": 1196.96,
+            "lineIndex": 3,
+            "enabled": true
+          }
+        ]
+      },
+      "donationer": {
+        "donationer": [
+          {
+            "searchText": "donationer",
+            "word": "donationer",
+            "id": "LstW-DN5TLI",
+            "source": "YouTube",
+            "timeStart": 34.673,
+            "timeEnd": 71.657,
+            "lineIndex": 5,
+            "enabled": true
+          }
+        ]
+      },
+      "sätta sig in i": {
+        "sätta sig in i": [
+          {
+            "searchText": "sätta sig in i",
+            "word": "sätta sig in i",
+            "id": "xHvTAA7lbVQ",
+            "source": "youtube",
+            "timeStart": 6.08,
+            "timeEnd": 14.44,
+            "lineIndex": 5,
+            "enabled": true
+          }
+        ]
+      },
+      "svikta": {
+        "svikta": [
+          {
+            "searchText": "svikta",
+            "word": "svikta",
+            "id": "NTpm00YjAWM",
+            "source": "YouTube",
+            "timeStart": 809.604,
+            "timeEnd": 827.27,
+            "lineIndex": 112,
+            "enabled": true
+          }
+        ]
+      },
+      "Vad synd": {
+        "Vad synd": [
+          {
+            "searchText": "Vad synd",
+            "word": "Vad synd",
+            "id": "16vFLT5Q29I",
+            "source": "youtube",
+            "timeStart": 126.799,
+            "timeEnd": 138.08,
+            "lineIndex": 2,
+            "enabled": true
+          }
+        ]
+      },
+      "praktisk": {
+        "praktisk": [
+          {
+            "searchText": "praktisk",
+            "word": "praktisk",
+            "id": "K7zHdXKfew4",
+            "source": "YouTube",
+            "timeStart": 344.32,
+            "timeEnd": 370.24,
+            "lineIndex": 66,
+            "enabled": true
+          }
+        ]
+      },
+      "sälja": {
+        "sälja": [
+          {
+            "searchText": "sälja",
+            "word": "sälja",
+            "id": "uoNKKuuC1cg",
+            "source": "YouTube",
+            "timeStart": 394.44,
+            "timeEnd": 417.12,
+            "lineIndex": 13,
+            "enabled": true
+          }
+        ]
+      },
+      "ta kontakt": {
+        "ta kontakt": [
+          {
+            "searchText": "ta kontakt",
+            "word": "ta kontakt",
+            "id": "tEFnw2njYr4",
+            "source": "youtube",
+            "timeStart": 333.4,
+            "timeEnd": 341.8,
+            "lineIndex": 1,
+            "enabled": true
+          }
+        ]
+      },
+      "fonder": {
+        "fonder": [
+          {
+            "searchText": "fonder",
+            "word": "fonder",
+            "id": "Ps-TDAJKjr4",
+            "source": "YouTube",
+            "timeStart": 508.63,
+            "timeEnd": 523.949,
+            "lineIndex": 5,
+            "enabled": true
+          }
+        ]
+      },
+      "vakta sin tunga": {
+        "vakta sin tunga": [
+          {
+            "searchText": "vakta sin tunga",
+            "word": "vakta sin tunga",
+            "id": "aRR9cSHpoOU",
+            "source": "YouTube",
+            "timeStart": 48.399,
+            "timeEnd": 56.84,
+            "lineIndex": 4,
+            "enabled": true
+          }
+        ]
+      },
+      "räv bakom örat": {
+        "räv bakom örat": [
+          {
+            "searchText": "räv bakom örat",
+            "word": "räv bakom örat",
+            "id": "A1DWI00IJB8",
+            "source": "YouTube",
+            "timeStart": 2113.68,
+            "timeEnd": 2123.16,
+            "lineIndex": 4,
+            "enabled": true
+          }
+        ]
+      },
+      "fån": {
+        "fån": [
+          {
+            "searchText": "fån",
+            "word": "fån",
+            "id": "F3cXO6ZWeiU",
+            "source": "YouTube",
+            "timeStart": 949.87,
+            "timeEnd": 966,
+            "lineIndex": 93,
+            "enabled": true
+          }
+        ]
+      },
+      "oroa": {
+        "oroa": [
+          {
+            "searchText": "oroa",
+            "word": "oroa",
+            "id": "6C0FX5tA9QQ",
+            "source": "YouTube",
+            "timeStart": 184.72,
+            "timeEnd": 11207.04,
+            "lineIndex": 8,
+            "enabled": true
+          }
+        ]
+      },
+      "rådgivare": {
+        "rådgivare": [
+          {
+            "searchText": "rådgivare",
+            "word": "rådgivare",
+            "id": "QbWKxfubJmQ",
+            "source": "youtube",
+            "timeStart": 1149.08,
+            "timeEnd": 1158.559,
+            "lineIndex": 8,
+            "enabled": true
+          }
+        ]
+      },
+      "nöd och näppe": {
+        "nöd och näppe": [
+          {
+            "searchText": "nöd och näppe",
+            "word": "nöd och näppe",
+            "id": "am1QhEoYVfQ",
+            "source": "YouTube",
+            "timeStart": 2539.007,
+            "timeEnd": 2556.927,
+            "lineIndex": 515,
+            "enabled": true
+          }
+        ]
+      },
+      "förgäves": {
+        "förgäves": [
+          {
+            "searchText": "förgäves",
+            "word": "förgäves",
+            "id": "umKOyz_4bTk",
+            "source": "YouTube",
+            "timeStart": 34.54,
+            "timeEnd": 65.8,
+            "lineIndex": 9,
+            "enabled": true
+          }
+        ]
+      },
+      "jobba": {
+        "jobba": [
+          {
+            "searchText": "jobba",
+            "word": "jobba",
+            "id": "1zmge737i4k",
+            "source": "YouTube",
+            "timeStart": 966.92,
+            "timeEnd": 1044.74,
+            "lineIndex": 115,
+            "enabled": true
+          }
+        ]
+      },
+      "leva": {
+        "leva": [
+          {
+            "searchText": "leva",
+            "word": "leva",
+            "id": "wrxqSYOwm3Y",
+            "source": "youtube",
+            "timeStart": 1925.559,
+            "timeEnd": 1930.72,
+            "lineIndex": 1,
+            "enabled": true
+          }
+        ]
+      },
+      "yrkat": {
+        "yrkat": [
+          {
+            "searchText": "yrkat",
+            "word": "yrkat",
+            "id": "2rVtTSwFD_s",
+            "source": "youtube",
+            "timeStart": 5335.8,
+            "timeEnd": 5349.8,
+            "lineIndex": 9,
+            "enabled": true
+          }
+        ]
+      },
+      "gå vilse": {
+        "gå vilse": [
+          {
+            "searchText": "gå vilse",
+            "word": "gå vilse",
+            "id": "45MXwkiHKTE",
+            "source": "YouTube",
+            "timeStart": 751.25,
+            "timeEnd": 782.1,
+            "lineIndex": 23,
+            "enabled": true
+          }
+        ]
+      },
+      "Gröt": {
+        "Gröt": [
+          {
+            "searchText": "Gröt",
+            "word": "Gröt",
+            "id": "gVeOBod0gNs",
+            "source": "YouTube",
+            "timeStart": 631.8,
+            "timeEnd": 660.44,
+            "lineIndex": 109,
+            "enabled": true
+          }
+        ]
+      },
+      "på löpande band": {
+        "på löpande band": [
+          {
+            "searchText": "på löpande band",
+            "word": "på löpande band",
+            "id": "K7zHdXKfew4",
+            "source": "YouTube",
+            "timeStart": 999.28,
+            "timeEnd": 1025.16,
+            "lineIndex": 168,
+            "enabled": true
+          }
+        ]
+      },
+      "förändring": {
+        "förändring": [
+          {
+            "searchText": "förändring",
+            "word": "förändring",
+            "id": "QpIUerkRYes",
+            "source": "YouTube",
+            "timeStart": 73.44,
+            "timeEnd": 94.16,
+            "lineIndex": 2,
+            "enabled": true
+          }
+        ]
+      },
+      "På så vis": {
+        "På så vis": [
+          {
+            "searchText": "På så vis",
+            "word": "På så vis",
+            "id": "aAnqYnmbM9A",
+            "source": "YouTube",
+            "timeStart": 160.836,
+            "timeEnd": 181.087,
+            "lineIndex": 27,
+            "enabled": true
+          }
+        ]
+      },
+      "dun": {
+        "dun": [
+          {
+            "searchText": "dun",
+            "word": "dun",
+            "id": "7WgsOUt2rE0",
+            "source": "YouTube",
+            "timeStart": 2376.983,
+            "timeEnd": 2456.844,
+            "lineIndex": 100,
+            "enabled": true
+          }
+        ]
+      },
+      "ta tag i": {
+        "ta tag i": [
+          {
+            "searchText": "ta tag i",
+            "word": "ta tag i",
+            "id": "RoxoJ5CSx1s",
+            "source": "YouTube",
+            "timeStart": 975.549,
+            "timeEnd": 1048.16,
+            "lineIndex": 19,
+            "enabled": true
+          }
+        ]
+      },
+      "fristad": {
+        "fristad": [
+          {
+            "searchText": "fristad",
+            "word": "fristad",
+            "id": "QE50V7-Wksw",
+            "source": "YouTube",
+            "timeStart": 350.039,
+            "timeEnd": 361.4,
+            "lineIndex": 156,
+            "enabled": true
+          }
+        ]
+      },
+      "olämplig": {
+        "olämplig": [
+          {
+            "searchText": "olämplig",
+            "word": "olämplig",
+            "id": "P_l_wEN6KQY",
+            "source": "YouTube",
+            "timeStart": 14579.96,
+            "timeEnd": 14604.92,
+            "lineIndex": 763,
+            "enabled": true
+          }
+        ]
+      },
+      "rutschkana": {
+        "rutschkana": [
+          {
+            "searchText": "rutschkana",
+            "word": "rutschkana",
+            "id": "dmlBNrEL23A",
+            "source": "YouTube",
+            "timeStart": 1413.06,
+            "timeEnd": 1426.044,
+            "lineIndex": 154,
+            "enabled": true
+          }
+        ]
+      },
+      "från hjärtat": {
+        "från hjärtat": [
+          {
+            "searchText": "från hjärtat",
+            "word": "från hjärtat",
+            "id": "1sLeq5iwDj0",
+            "source": "YouTube",
+            "timeStart": 959.66,
+            "timeEnd": 979.08,
+            "lineIndex": 91,
+            "enabled": true
+          }
+        ]
+      },
+      "logiker": {
+        "logiker": [
+          {
+            "searchText": "logiker",
+            "word": "logiker",
+            "id": "OmnXw7daV4c",
+            "source": "YouTube",
+            "timeStart": 779.36,
+            "timeEnd": 789.68,
+            "lineIndex": 4,
+            "enabled": true
+          }
+        ]
+      },
+      "klä av": {
+        "klä av": [
+          {
+            "searchText": "klä av",
+            "word": "klä av",
+            "id": "1zmge737i4k",
+            "source": "YouTube",
+            "timeStart": 1141.86,
+            "timeEnd": 1150.66,
+            "lineIndex": 142,
+            "enabled": true
+          }
+        ]
+      },
+      "svärmor": {
+        "svärmor": [
+          {
+            "searchText": "svärmor",
+            "word": "svärmor",
+            "id": "7MailENdgx4",
+            "source": "YouTube",
+            "timeStart": 610.08,
+            "timeEnd": 633.24,
+            "lineIndex": 54,
+            "enabled": true
+          }
+        ]
+      },
+      "lager": {
+        "lager": [
+          {
+            "searchText": "lager",
+            "word": "lager",
+            "id": "fTxzdZZcUYA",
+            "source": "YouTube",
+            "timeStart": 488.2,
+            "timeEnd": 506.32,
+            "lineIndex": 40,
+            "enabled": true
+          }
+        ]
+      },
+      "hopplös": {
+        "hopplös": [
+          {
+            "searchText": "hopplös",
+            "word": "hopplös",
+            "id": "inkM1XTOa80",
+            "source": "YouTube",
+            "timeStart": 6331.199,
+            "timeEnd": 6344.76,
+            "lineIndex": 2416,
+            "enabled": true
+          }
+        ]
+      },
+      "Sluta": {
+        "Sluta": [
+          {
+            "searchText": "Sluta",
+            "word": "Sluta",
+            "id": "JobQjOq7Dpk",
+            "source": "youtube",
+            "timeStart": 1352.799,
+            "timeEnd": 1383.88,
+            "lineIndex": 3,
+            "enabled": true
+          }
+        ]
+      },
+      "glimten i ögat": {
+        "glimten i ögat": [
+          {
+            "searchText": "glimten i ögat",
+            "word": "glimten i ögat",
+            "id": "A7pEstyn3hc",
+            "source": "youtube",
+            "timeStart": 1535.32,
+            "timeEnd": 1543.399,
+            "lineIndex": 2,
+            "enabled": true
+          }
+        ]
+      },
+      "halvera": {
+        "halvera": [
+          {
+            "searchText": "halvera",
+            "word": "halvera",
+            "id": "9kaJxOPRw4o",
+            "source": "youtube",
+            "timeStart": 53.12,
+            "timeEnd": 63.359,
+            "lineIndex": 3,
+            "enabled": true
+          }
+        ]
+      },
+      "ur gängorna": {
+        "ur gängorna": [
+          {
+            "searchText": "ur gängorna",
+            "word": "ur gängorna",
+            "id": "inkM1XTOa80",
+            "source": "YouTube",
+            "timeStart": 6818,
+            "timeEnd": 6831.8,
+            "lineIndex": 2603,
+            "enabled": true
+          }
+        ]
+      },
+      "bakom kulisserna": {
+        "bakom kulisserna": [
+          {
+            "searchText": "bakom kulisserna",
+            "word": "bakom kulisserna",
+            "id": "VePVEvpZU6c",
+            "source": "YouTube",
+            "timeStart": 5481.8,
+            "timeEnd": 5494.48,
+            "lineIndex": 7,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "createdAt": 1783425308523,
+    "updatedAt": 1783425308523,
+    "random": true
   }
 }
