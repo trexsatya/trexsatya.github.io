@@ -1205,6 +1205,27 @@
     const fab = document.getElementById('fabPlay');
     if (fab) fab.textContent = fabPlaying() ? '⏸' : '▶';
   }
+  // Glue the FAB to the bottom-right of the *visual* viewport so it stays visible through page/score
+  // scroll, pinch-zoom, and the mobile URL bar showing/hiding. `position:fixed` alone pins to the
+  // layout viewport, so a pinch-zoom would slide the button off-screen; visualViewport tracks what's
+  // actually on screen. Counter-scaling by 1/scale keeps it a constant on-screen size when zoomed.
+  function positionFab() {
+    const fab = document.getElementById('fabPlay');
+    const vv = window.visualViewport;
+    if (!fab || !vv) return;            // no visualViewport → the CSS right/bottom fallback applies
+    const size = 56, margin = 16, scale = vv.scale || 1;
+    fab.style.right = 'auto';
+    fab.style.bottom = 'auto';
+    fab.style.transformOrigin = 'bottom right';
+    fab.style.transform = `scale(${1 / scale})`;
+    fab.style.left = (vv.offsetLeft + vv.width - margin - size) + 'px';
+    fab.style.top = (vv.offsetTop + vv.height - margin - size) + 'px';
+  }
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', positionFab);
+    window.visualViewport.addEventListener('scroll', positionFab);
+  }
+  window.addEventListener('scroll', positionFab, true);   // capture: also catches the score's own scroll
   function updatePauseLabel() {
     document.getElementById('pauseBtn').innerHTML = paused
       ? '<span class="ic">▶</span><span class="txt">▶ Resume</span>'
@@ -1356,6 +1377,7 @@
     document.getElementById('previewMsg').textContent = 'Loading…';
     document.getElementById('musicPreview').style.display = 'block';
     document.body.classList.add('preview-open');   // lock page scroll behind the mobile dialog
+    updateFab(); positionFab();                     // the FAB is now shown (mobile) — place & label it
     currentDetail = null; currentPreviewId = null; currentVocabEntry = null;   // cleared until a piece fully renders
     updateAddVocabLabel();
     let detail;
