@@ -158,6 +158,16 @@
            #musicPreview is toggled via display:none/block, so when shown these rules make it a
            fixed overlay. The existing Close button (#previewCloseBtn) dismisses it. */
         @media (max-width: 700px) {
+          /* Floating play/pause button: only on mobile, only while a piece is open. */
+          body.preview-open #fabPlay {
+            display: flex; align-items: center; justify-content: center;
+            position: fixed; z-index: 1200;
+            right: 16px; bottom: calc(16px + env(safe-area-inset-bottom));
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #1565c0; color: #fff; border: none;
+            font-size: 24px; line-height: 1; cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0,0,0,.35);
+          }
           #musicPreview {
             position: fixed;
             /* Explicit longhand offsets + sizes, NOT the `inset` shorthand: older mobile Safari
@@ -283,6 +293,39 @@
           #fbSpeed{flex:1 1 120px}
           #windowNudge .win-btn{min-width:48px;height:42px;font-size:18px}
         }
+        /* Practice log */
+        #practiceSection{margin:.5rem 0;border:1px solid #e3dcff;border-radius:8px;padding:.35rem .6rem;background:#faf8ff}
+        #practiceSection > summary{cursor:pointer;font-weight:600}
+        .pl-form{margin:.5rem 0;display:flex;flex-direction:column;gap:8px}
+        .pl-form .pl-row{display:flex;gap:12px;flex-wrap:wrap}
+        .pl-form label{display:flex;flex-direction:column;font-size:12px;color:#555;gap:2px}
+        .pl-form .pl-wide{width:100%}
+        .pl-form input[type=text],.pl-form textarea,.pl-form input[type=date],.pl-form select,
+        .pl-addfield input,.pl-addfield select{padding:4px 6px;border:1px solid #c9b8ff;border-radius:5px;font-size:13px}
+        .pl-form .pl-wide input,.pl-form textarea{width:100%}
+        .pl-fields{border:1px dashed #d8ccff;border-radius:6px;padding:6px 8px}
+        .pl-fields-head{font-size:11.5px;color:#777;margin-bottom:4px}
+        .pl-addfield{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px}
+        .pl-field-row{display:flex;gap:6px;align-items:center;margin:3px 0;font-size:13px}
+        .pl-field-row .pl-fname{font-weight:600;min-width:8em}
+        .pl-field-row .pl-fval{flex:1}
+        .pl-field-row .pl-fx{border:none;background:none;color:#a33;cursor:pointer;font-size:15px}
+        .pl-form-foot{display:flex;gap:8px;align-items:center}
+        .pl-form-foot #plSave{background:#1565c0;color:#fff;border-color:#1565c0}
+        #practiceList{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+        .pl-entry{border:1px solid #e6e0f7;border-radius:8px;padding:8px 10px;background:#fff}
+        .pl-entry-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+        .pl-entry-week{font-weight:700;font-size:13px}
+        .pl-entry-goal{flex:1;min-width:8em}
+        .pl-piece-link{color:#1565c0;cursor:pointer;text-decoration:underline;font-size:12.5px}
+        .pl-entry-notes{color:#444;font-size:12.5px;margin-top:4px;white-space:pre-wrap}
+        .pl-entry-fields{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+        .pl-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid #e0e0e0;border-radius:999px;padding:1px 8px;font-size:12px;background:#fafafa}
+        .pl-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+        .pl-status-badge{display:inline-block;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;color:#fff}
+        .pl-entry .icon-btn{border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:13px}
+        /* Mobile floating play/pause button */
+        #fabPlay{display:none}
         /* Guessed-key badge in the piece list */
         .key-badge{display:inline-block;background:#fff3cd;color:#7a5b00;border:1px solid #ffe08a;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:600;white-space:nowrap;vertical-align:baseline}
         /* Split-collection confirm dialog */
@@ -320,6 +363,37 @@
   <div id="tagFilterBar" style="margin:.35rem 0"></div>
   <div id="keyFilterBar" style="margin:.35rem 0"></div>
   <div id="pieceList"></div>
+</details>
+<details id="practiceSection">
+  <summary>🗓️ Practice Log</summary>
+  <div class="pl-form">
+    <div class="pl-row">
+      <label>Week <input type="date" id="plWeek"></label>
+      <label>Piece
+        <select id="plPiece"><option value="">— none —</option></select>
+      </label>
+      <label>Status <select id="plStatus"></select></label>
+    </div>
+    <label class="pl-wide">Goal <input type="text" id="plGoal" placeholder="This week's goal…"></label>
+    <label class="pl-wide">Notes <textarea id="plNotes" rows="2" placeholder="Notes…"></textarea></label>
+    <div class="pl-fields">
+      <div class="pl-fields-head">Custom fields</div>
+      <div id="plFieldRows"></div>
+      <div class="pl-addfield">
+        <input id="plFieldName" list="plFieldNames" placeholder="field name" autocomplete="off">
+        <datalist id="plFieldNames"></datalist>
+        <input id="plFieldValue" placeholder="value">
+        <select id="plFieldStatus"></select>
+        <button type="button" id="plAddField" class="btn">＋ Add field</button>
+      </div>
+    </div>
+    <div class="pl-form-foot">
+      <button type="button" id="plSave" class="btn">Save entry</button>
+      <button type="button" id="plClear" class="btn">Clear</button>
+      <span id="plFormMsg"></span>
+    </div>
+  </div>
+  <div id="practiceList"></div>
 </details>
 <div id="appLayout">
   <div id="searchView">
@@ -560,6 +634,7 @@
   <div id="ytPlayer" style="display:none"></div>
 </div>
 </div>
+<button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
   import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js';
@@ -570,6 +645,7 @@
   import { chordDisplayName } from './music-chords.js';
   import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js';
   import { createMusicStore } from './music-local-store.js';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js';
   import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js';
   import { guessSegmentStart, linkYouTubeLocal } from './music-media.js';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js';
@@ -586,6 +662,10 @@
   let dirtyIndex = false;        // index.json changed with no unpushed piece (e.g. a delete) — needs push
   const tagFilter = new Set();   // active tag filter; applies to the library list AND search
   let keyFilter = '';            // active guessed-key filter ('' = all); applies to the library list
+  let practiceEntries = [];      // weekly practice log entries (local-only)
+  let practiceFields = [];       // global custom-field-name registry (grows as you name new fields)
+  let practiceDraft = [];        // custom fields being composed in the form: [{name,value,status}]
+  let practiceEditId = null;     // id of the entry currently loaded into the form (null = new)
   const store = createMusicStore();
   const pending = [];  // newly added pieces not yet pushed: {id,title,format,source,key}
 
@@ -1115,17 +1195,31 @@
   // Two-button transport: Play always (re)starts from the segment start; Pause toggles to Resume.
   let paused = false;
   let ytPlaying = false;   // tracks YouTube playback (Tone.Transport.state is authoritative for MIDI)
+  // Is the transport currently sounding (not paused, not stopped)? Drives the mobile FAB icon.
+  function fabPlaying() {
+    if (paused) return false;
+    const isYt = document.getElementById('srcSel').value === 'youtube';
+    return isYt ? ytPlaying : !!(window.Tone && window.Tone.Transport && window.Tone.Transport.state === 'started');
+  }
+  function updateFab() {
+    const fab = document.getElementById('fabPlay');
+    if (fab) fab.textContent = fabPlaying() ? '⏸' : '▶';
+  }
   function updatePauseLabel() {
     document.getElementById('pauseBtn').innerHTML = paused
       ? '<span class="ic">▶</span><span class="txt">▶ Resume</span>'
       : '<span class="ic">⏸</span><span class="txt">⏸ Pause</span>';
+    updateFab();
   }
   document.getElementById('playBtn').onclick = () => {
     paused = false; updatePauseLabel();
     const isYt = document.getElementById('srcSel').value === 'youtube';
     ytPlaying = isYt;   // started fresh; only meaningful for the YouTube source
     (isYt ? playYouTube() : playMidi());
+    document.getElementById('fabPlay').textContent = '⏸';   // we just started — reflect it immediately
   };
+  // Mobile floating play/pause button drives the same transport toggle as the spacebar.
+  document.getElementById('fabPlay').addEventListener('click', transportToggle);
   document.getElementById('pauseBtn').onclick = () => {
     const isYt = document.getElementById('srcSel').value === 'youtube';
     if (!paused) {
@@ -2067,13 +2161,150 @@
   addChip();            // start with one chord chip
   buildNoteButtons();   // populate the melody note-picker
 
+  // ===== Weekly practice log (local-only) =====
+  function savePractice() {
+    if (!store || !store.putPractice) return;
+    try { const p = store.putPractice(system, { entries: practiceEntries, fields: practiceFields }); if (p && p.catch) p.catch(() => {}); } catch (_) {}
+  }
+  function newEntryId() { return `pl_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 6)}`; }
+  // Parse an <input type=date> 'YYYY-MM-DD' as a LOCAL date (new Date('YYYY-MM-DD') is UTC and can
+  // shift the day across a timezone — which would land weekStart on the wrong week).
+  function parseDateInput(v) {
+    const [y, m, d] = String(v || '').split('-').map(Number);
+    return (y && m && d) ? new Date(y, m - 1, d) : new Date();
+  }
+  function fillStatusSelect(sel, value) {
+    sel.innerHTML = PRACTICE_STATUSES.map(s => `<option value="${s.value}"${s.value === value ? ' selected' : ''}>${esc(s.label)}</option>`).join('');
+  }
+  function statusBadge(value) {
+    const m = statusMeta(value);
+    return `<span class="pl-status-badge" style="background:${m.color}">${esc(m.label)}</span>`;
+  }
+  function fieldDatalist() {
+    document.getElementById('plFieldNames').innerHTML = practiceFields.map(f => `<option value="${esc(f)}"></option>`).join('');
+  }
+  // Populate the piece dropdown + field-name datalist + status selects from current state.
+  function refreshPracticeInputs() {
+    const pieceSel = document.getElementById('plPiece');
+    const cur = pieceSel.value;
+    pieceSel.innerHTML = '<option value="">— none —</option>'
+      + index.map(e => `<option value="${esc(e.id)}">${esc(e.title || e.id)}</option>`).join('');
+    pieceSel.value = cur;
+    fieldDatalist();
+    if (!document.getElementById('plStatus').options.length) fillStatusSelect(document.getElementById('plStatus'), 'planned');
+    if (!document.getElementById('plFieldStatus').options.length) fillStatusSelect(document.getElementById('plFieldStatus'), 'planned');
+  }
+  function renderPracticeDraft() {
+    document.getElementById('plFieldRows').innerHTML = practiceDraft.map((f, i) =>
+      `<div class="pl-field-row"><span class="pl-fname">${esc(f.name)}</span>`
+      + `<span class="pl-fval">${esc(f.value)}</span>${statusBadge(f.status)}`
+      + ` <button type="button" class="pl-fx" data-i="${i}" title="Remove field">✕</button></div>`).join('');
+  }
+  function renderPracticeList() {
+    const rows = sortEntries(practiceEntries).map(e => {
+      const piece = e.pieceId ? ` <span class="pl-piece-link" data-piece="${esc(e.pieceId)}">▶ ${esc(e.pieceTitle || e.pieceId)}</span>` : '';
+      const fields = (e.custom || []).map(f =>
+        `<span class="pl-chip"><span class="pl-dot" style="background:${statusMeta(f.status).color}"></span><strong>${esc(f.name)}:</strong> ${esc(f.value)}</span>`).join('');
+      return `<div class="pl-entry" data-id="${esc(e.id)}"><div class="pl-entry-head">`
+        + `<span class="pl-entry-week">${esc(weekLabel(e.week))}</span>${statusBadge(e.status)}`
+        + `<span class="pl-entry-goal">${esc(e.goal)}</span>${piece}`
+        + `<button type="button" class="icon-btn pl-edit" data-id="${esc(e.id)}" title="Edit">✎</button>`
+        + `<button type="button" class="icon-btn pl-del" data-id="${esc(e.id)}" title="Delete">🗑</button></div>`
+        + (e.notes ? `<div class="pl-entry-notes">${esc(e.notes)}</div>` : '')
+        + (fields ? `<div class="pl-entry-fields">${fields}</div>` : '')
+        + `</div>`;
+    });
+    document.getElementById('practiceList').innerHTML = rows.join('') || '<em style="color:#888;font-size:13px">No practice entries yet.</em>';
+  }
+  function renderPractice() { refreshPracticeInputs(); renderPracticeDraft(); renderPracticeList(); }
+  function resetPracticeForm() {
+    practiceEditId = null; practiceDraft = [];
+    document.getElementById('plWeek').value = weekStart(new Date());
+    document.getElementById('plGoal').value = '';
+    document.getElementById('plNotes').value = '';
+    document.getElementById('plPiece').value = '';
+    fillStatusSelect(document.getElementById('plStatus'), 'planned');
+    fillStatusSelect(document.getElementById('plFieldStatus'), 'planned');
+    document.getElementById('plSave').textContent = 'Save entry';
+    document.getElementById('plFormMsg').textContent = '';
+    renderPracticeDraft();
+  }
+  // Add a custom field: register a new name globally, append it to the form's draft.
+  document.getElementById('plAddField').addEventListener('click', () => {
+    const nameInp = document.getElementById('plFieldName');
+    const valInp = document.getElementById('plFieldValue');
+    const merged = mergeFieldName(practiceFields, nameInp.value);
+    if (!merged.name) { nameInp.focus(); return; }
+    practiceFields = merged.fields;
+    if (merged.added) { savePractice(); fieldDatalist(); }   // persist the new field name globally
+    practiceDraft.push({ name: merged.name, value: valInp.value.trim(), status: document.getElementById('plFieldStatus').value });
+    nameInp.value = ''; valInp.value = '';
+    renderPracticeDraft();
+  });
+  document.getElementById('plFieldRows').addEventListener('click', (ev) => {
+    const x = ev.target.closest('.pl-fx'); if (!x) return;
+    practiceDraft.splice(parseInt(x.dataset.i, 10), 1);
+    renderPracticeDraft();
+  });
+  document.getElementById('plSave').addEventListener('click', () => {
+    const week = weekStart(parseDateInput(document.getElementById('plWeek').value));
+    const goal = document.getElementById('plGoal').value.trim();
+    const notes = document.getElementById('plNotes').value.trim();
+    const pieceId = document.getElementById('plPiece').value || null;
+    const status = document.getElementById('plStatus').value;
+    if (!goal && !notes && !pieceId && !practiceDraft.length) {
+      document.getElementById('plFormMsg').textContent = 'Add a goal, note, piece, or field first.'; return;
+    }
+    const pieceTitle = pieceId ? ((index.find(e => e.id === pieceId) || {}).title || pieceId) : '';
+    const entry = makeEntry({ id: practiceEditId || newEntryId(), week, pieceId, pieceTitle, goal, status, notes,
+      custom: practiceDraft, updatedAt: new Date().toISOString() });
+    practiceEntries = upsertEntry(practiceEntries, entry);
+    savePractice(); resetPracticeForm(); renderPracticeList();
+    document.getElementById('plFormMsg').textContent = 'Saved.';
+  });
+  document.getElementById('plClear').addEventListener('click', resetPracticeForm);
+  document.getElementById('practiceList').addEventListener('click', (ev) => {
+    const link = ev.target.closest('.pl-piece-link');
+    if (link) { openPreview(link.dataset.piece); return; }
+    const edit = ev.target.closest('.pl-edit');
+    if (edit) {
+      const e = practiceEntries.find(x => x.id === edit.dataset.id); if (!e) return;
+      practiceEditId = e.id;
+      refreshPracticeInputs();
+      document.getElementById('plWeek').value = e.week;
+      document.getElementById('plGoal').value = e.goal;
+      document.getElementById('plNotes').value = e.notes;
+      document.getElementById('plPiece').value = e.pieceId || '';
+      fillStatusSelect(document.getElementById('plStatus'), e.status);
+      practiceDraft = (e.custom || []).map(f => ({ ...f }));
+      renderPracticeDraft();
+      document.getElementById('plSave').textContent = 'Update entry';
+      document.getElementById('plFormMsg').textContent = `Editing ${weekLabel(e.week)}…`;
+      document.getElementById('practiceSection').open = true;
+      document.getElementById('plGoal').focus();
+      return;
+    }
+    const del = ev.target.closest('.pl-del');
+    if (del) {
+      if (!window.confirm('Delete this practice entry?')) return;
+      practiceEntries = removeEntry(practiceEntries, del.dataset.id);
+      if (practiceEditId === del.dataset.id) resetPracticeForm();
+      savePractice(); renderPracticeList();
+    }
+  });
+  // Keep the piece dropdown current when the panel is opened.
+  document.getElementById('practiceSection').addEventListener('toggle', (e) => { if (e.target.open) refreshPracticeInputs(); });
+
   (async () => {
     try { const lib = await loadLibrary(system, store); index = lib.index; unpushedIds = lib.unpushedIds; }
     catch (_) { index = []; unpushedIds = new Set(); }
     try { vocab = await loadVocab(system, store); } catch (_) { vocab = []; }
     try { tagRegistry = await loadTagRegistry(); } catch (_) { tagRegistry = []; }
+    try { const pl = await store.getPractice(system); practiceEntries = pl.entries || []; practiceFields = pl.fields || []; }
+    catch (_) { practiceEntries = []; practiceFields = []; }
     if (renderer) renderer.setTagRegistry(tagRegistry);   // (renderer is lazy; ensureRenderer also seeds it)
     render(); updatePushBtn(); renderVocab();
+    renderPractice(); resetPracticeForm();
   })();
 </script>
 </body>
