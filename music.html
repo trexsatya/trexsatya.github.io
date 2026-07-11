@@ -283,6 +283,25 @@
           #fbSpeed{flex:1 1 120px}
           #windowNudge .win-btn{min-width:48px;height:42px;font-size:18px}
         }
+        /* Guessed-key badge in the piece list */
+        .key-badge{display:inline-block;background:#fff3cd;color:#7a5b00;border:1px solid #ffe08a;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:600;white-space:nowrap;vertical-align:baseline}
+        /* Split-collection confirm dialog */
+        .split-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:1000}
+        .split-box{background:#fff;color:#222;border-radius:10px;max-width:560px;width:92%;max-height:82vh;display:flex;flex-direction:column;box-shadow:0 12px 40px rgba(0,0,0,.3);padding:16px 18px}
+        .split-head{font-weight:700;font-size:16px;margin-bottom:2px}
+        .split-sub{color:#666;font-size:12.5px;margin-bottom:10px}
+        .split-prefix{margin-bottom:10px}
+        .split-prefix label{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#555}
+        .split-prefix input{flex:1;padding:6px 8px;border:1px solid #c9b8ff;border-radius:6px;font-size:13px}
+        .split-list{overflow:auto;border:1px solid #eee;border-radius:8px;padding:4px}
+        .split-row{display:flex;align-items:center;gap:8px;padding:6px 8px;border-bottom:1px solid #f2f2f2}
+        .split-row:last-child{border-bottom:none}
+        .split-title{flex:1;font-size:13.5px}
+        .split-meta{color:#999;font-size:11.5px;white-space:nowrap}
+        .split-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+        .split-foot button{padding:6px 14px;border-radius:6px;border:1px solid #ccc;background:#f7f7f7;cursor:pointer}
+        .split-foot .split-add{background:#1565c0;color:#fff;border-color:#1565c0;font-weight:600}
+        .split-foot .split-add:disabled{opacity:.5;cursor:default}
     </style>
 </head>
 <body>
@@ -299,6 +318,7 @@
   </div>
   <textarea id="textInput" placeholder="Paste note-text, first line = title" style="display:none;width:100%;height:6em"></textarea>
   <div id="tagFilterBar" style="margin:.35rem 0"></div>
+  <div id="keyFilterBar" style="margin:.35rem 0"></div>
   <div id="pieceList"></div>
 </details>
 <div id="appLayout">
@@ -543,6 +563,7 @@
 
 <script type="module">
   import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js';
   import { runQuery } from './music-query.js';
   import { createMusicRenderer, resolveMatchMeasures } from './music-render.js';
   import { init as initFretboard } from './fretboard-panel.js';
@@ -564,6 +585,7 @@
   let dirtyVocab = false;        // vocab.json changed locally, awaiting the manual push
   let dirtyIndex = false;        // index.json changed with no unpushed piece (e.g. a delete) — needs push
   const tagFilter = new Set();   // active tag filter; applies to the library list AND search
+  let keyFilter = '';            // active guessed-key filter ('' = all); applies to the library list
   const store = createMusicStore();
   const pending = [];  // newly added pieces not yet pushed: {id,title,format,source,key}
 
@@ -629,26 +651,59 @@
       + tags.map(t => `<button class="tagChip${tagFilter.has(t) ? ' active' : ''}" data-tag="${esc(t)}">${esc(t)}</button>`).join(' ')
       + (tagFilter.size ? ` <button class="tagChip" data-tag="" title="Clear filter">clear ✕</button>` : '');
   }
+  // Distinct guessed keys present in the library, sorted for a stable dropdown.
+  function distinctKeys() {
+    const set = new Set();
+    index.forEach(e => { if (e.guessedKey) set.add(e.guessedKey); });
+    return [...set].sort();
+  }
+  function renderKeyFilter() {
+    const bar = document.getElementById('keyFilterBar');
+    const keys = distinctKeys();
+    if (keyFilter && !keys.includes(keyFilter)) keyFilter = '';   // stale selection (its pieces are gone)
+    if (!keys.length) { bar.innerHTML = ''; return; }
+    const opts = ['<option value="">All keys</option>']
+      .concat(keys.map(k => `<option value="${esc(k)}"${keyFilter === k ? ' selected' : ''}>${esc(k)}</option>`));
+    bar.innerHTML = '<span style="font-size:.8em;color:#555">Filter by key:</span> '
+      + `<select id="keyFilterSel" style="font-size:.85em;padding:2px 6px">${opts.join('')}</select>`
+      + (keyFilter ? ` <span class="key-badge">${esc(keyFilter)}</span>` : '');
+  }
   function render() {
     const rows = [];
-    filterByTags(index, tagFilter).forEach(e => rows.push(
+    filterByTags(index, tagFilter)
+      .filter(e => !keyFilter || e.guessedKey === keyFilter)
+      .forEach(e => rows.push(
       `<label style="display:block"><input type="checkbox" class="sel" data-id="${e.id}"> ${esc(e.title || e.id)} <small>(${e.noteCount} notes, ${e.channels.join('/')})</small> `
+      + `${e.guessedKey ? `<span class="key-badge" title="Guessed key (tonal center)">${esc(e.guessedKey)}</span> ` : ''}`
       + `<button class="previewBtn" data-id="${e.id}">Preview</button> `
       + `<input class="pieceTags" data-id="${e.id}" value="${esc((e.tags || []).join(', '))}" placeholder="tags…" style="width:10em;font-size:.85em"> `
+      + `${e.pieceCount > 1 ? `<button class="pieceSplit" data-id="${e.id}" title="Split into ${e.pieceCount} separate pieces">✂️</button> ` : ''}`
       + `<button class="pieceDel" data-id="${e.id}" title="Delete piece + its vocab">🗑</button>`
       + `${unpushedIds.has(e.id) ? ' <span style="color:#c00;font-weight:600">● not pushed</span>' : ''}</label>`));
     pending.forEach(p => rows.push(
       `<label style="display:block;color:#a06000"><input type="checkbox" class="sel" data-id="${p.id}" checked disabled> ${esc(p.title)} <small>(new — Push to publish)</small></label>`));
     document.getElementById('pieceList').innerHTML = rows.join('') || '<em>No pieces match.</em>';
     renderTagFilter();
+    renderKeyFilter();
   }
 
   document.getElementById('addXmlBtn').onclick = () => document.getElementById('xmlFile').click();
   document.getElementById('xmlFile').onchange = async (ev) => {
-    for (const file of ev.target.files) {
+    const files = [...ev.target.files];
+    ev.target.value = '';   // let the same file be picked again later
+    for (const file of files) {
       const source = await file.text();
-      const id = idFromName(file.name);
-      pending.push({ id, title: id, format: 'musicxml', source });
+      const base = idFromName(file.name);
+      // A file may pack several pieces (e.g. a book of etudes). Detect boundaries; if it's a
+      // collection, let the user confirm which pieces to add. Otherwise add it as one piece.
+      const defPrefix = defaultTitlePrefix(file.name);
+      let split = null;
+      try { split = splitMusicXmlPieces(source, { fallbackTitle: base, prefix: defPrefix }); } catch (_) { split = null; }
+      if (split && split.pieces.length > 1) {
+        await openSplitDialog(split, defPrefix);   // pushes the chosen pieces into `pending`
+      } else {
+        pending.push({ id: base, title: base, format: 'musicxml', source });
+      }
     }
     render();
   };
@@ -1290,6 +1345,8 @@
   document.getElementById('pieceList').addEventListener('click', (ev) => {
     const prev = ev.target.closest('.previewBtn');
     if (prev) { ev.preventDefault(); openPreview(prev.dataset.id); return; }
+    const spl = ev.target.closest('.pieceSplit');
+    if (spl) { ev.preventDefault(); splitPiece(spl.dataset.id); return; }
     const del = ev.target.closest('.pieceDel');
     if (del) { ev.preventDefault(); deletePiece(del.dataset.id); }
   });
@@ -1304,6 +1361,13 @@
     if (!chip) return;
     const t = chip.dataset.tag;
     if (!t) tagFilter.clear(); else if (tagFilter.has(t)) tagFilter.delete(t); else tagFilter.add(t);
+    render();
+  });
+  // Key-filter dropdown (delegated — the <select> is re-rendered on each render()).
+  document.getElementById('keyFilterBar').addEventListener('change', (ev) => {
+    const sel = ev.target.closest('#keyFilterSel');
+    if (!sel) return;
+    keyFilter = sel.value;
     render();
   });
   // Save tags locally on the index entry (+ local store), mark the piece pending. No push.
@@ -1327,6 +1391,103 @@
     if (currentVocabEntry && currentVocabEntry.pieceId === id) { currentVocabEntry = null; updateAddVocabLabel(); }
     render(); renderVocab(); updatePushBtn();
     setStatus(`Deleted "${id}" locally — click "Push changes" to publish.`);
+  }
+  // A piece id that doesn't collide with an existing library entry or a pending add.
+  function uniquePieceId(base) {
+    const taken = new Set([...index.map(e => e.id), ...pending.map(p => p.id)]);
+    if (!taken.has(base)) return base;
+    let i = 2; while (taken.has(`${base}_${i}`)) i++; return `${base}_${i}`;
+  }
+  // Manual split of an already-indexed piece: fetch its source (local store, else the remote detail
+  // file), split, and confirm — same dialog as auto-detect on import.
+  async function splitPiece(id) {
+    const entry = index.find(e => e.id === id);
+    const fallback = entry ? (entry.title || id) : id;
+    setStatus('Loading source to split…');
+    let detail = await store.getDetail(system, id).catch(() => null);
+    if (!detail || !detail.source) {
+      try { detail = await fetch(`${getMusicResourceUrl(system)}/details/${id}.json`).then(x => x.json()); } catch (_) {}
+    }
+    if (!detail || !detail.source) { setStatus('No source available to split this piece.'); return; }
+    if ((detail.format || 'musicxml') !== 'musicxml') { setStatus('Only MusicXML pieces can be split.'); return; }
+    const defPrefix = defaultTitlePrefix(fallback);
+    let split;
+    try { split = splitMusicXmlPieces(detail.source, { fallbackTitle: fallback, prefix: defPrefix }); }
+    catch (e) { setStatus('Split failed: ' + e.message); return; }
+    if (split.pieces.length <= 1) { setStatus(`"${fallback}" looks like a single piece — nothing to split.`); return; }
+    setStatus('');
+    openSplitDialog(split, defPrefix);
+  }
+  // Confirm dialog: list the detected pieces (checked by default) and add the chosen ones to
+  // `pending`. Resolves with the number added (0 on cancel). No re-render/re-encode happens here —
+  // the pieces enter the normal "Rebuild → Push" flow.
+  function openSplitDialog(split, initialPrefix) {
+    return new Promise((resolve) => {
+      const overlay = document.createElement('div');
+      overlay.className = 'split-overlay';
+      const box = document.createElement('div');
+      box.className = 'split-box';
+      const head = document.createElement('div');
+      head.className = 'split-head';
+      head.textContent = `Split “${split.collectionTitle || 'this file'}” into ${split.pieces.length} pieces`;
+      const sub = document.createElement('div');
+      sub.className = 'split-sub';
+      sub.textContent = 'Edit the title prefix, uncheck any you don’t want. Each becomes its own library piece.';
+      // Editable title prefix — each piece is named "{prefix} — No. N (tempo)". Default derived from
+      // the file/piece name (the composer/opus segment).
+      const prefixRow = document.createElement('div');
+      prefixRow.className = 'split-prefix';
+      const prefixLbl = document.createElement('label'); prefixLbl.textContent = 'Title prefix';
+      const prefixInp = document.createElement('input'); prefixInp.type = 'text';
+      prefixInp.value = initialPrefix || split.collectionTitle || '';
+      prefixLbl.appendChild(prefixInp);
+      prefixRow.appendChild(prefixLbl);
+      const list = document.createElement('div');
+      list.className = 'split-list';
+      const checks = split.pieces.map((p) => {
+        const row = document.createElement('label');
+        row.className = 'split-row';
+        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = true;
+        const t = document.createElement('span'); t.className = 'split-title';
+        const meta = document.createElement('small'); meta.className = 'split-meta';
+        meta.textContent = `m ${p.measureStart}–${p.measureEnd} (${p.measureCount})`;
+        row.append(cb, t, meta);
+        list.appendChild(row);
+        return { cb, titleEl: t, piece: p };
+      });
+      const titleFor = (p) => pieceTitle(prefixInp.value, p.index, p.tempo);
+      const retitle = () => checks.forEach(({ titleEl, piece }) => { titleEl.textContent = titleFor(piece); });
+      retitle();
+      prefixInp.addEventListener('input', retitle);
+      const foot = document.createElement('div');
+      foot.className = 'split-foot';
+      const cancel = document.createElement('button'); cancel.textContent = 'Cancel';
+      const add = document.createElement('button'); add.className = 'split-add';
+      const count = () => checks.filter((c) => c.cb.checked).length;
+      const refresh = () => { const n = count(); add.textContent = `Add ${n} piece${n === 1 ? '' : 's'}`; add.disabled = !n; };
+      list.addEventListener('change', refresh); refresh();
+      foot.append(cancel, add);
+      box.append(head, sub, prefixRow, list, foot);
+
+      const close = (added) => { overlay.remove(); resolve(added); };
+      cancel.onclick = () => close(0);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(0); });
+      add.onclick = () => {
+        let n = 0;
+        checks.forEach(({ cb, piece }) => {
+          if (!cb.checked) return;
+          const title = titleFor(piece);
+          const id = uniquePieceId(idFromName(title));
+          pending.push({ id, title, format: 'musicxml', source: piece.source });
+          n += 1;
+        });
+        render();
+        if (n) setStatus(`Added ${n} piece(s) — click “Rebuild selected/new (local)”, then “Push changes”.`);
+        close(n);
+      };
+      overlay.appendChild(box);
+      document.body.appendChild(overlay);
+    });
   }
   document.getElementById('previewFullBtn').onclick = () => renderer && renderer.showFull();
   document.getElementById('voiceColorChk').onchange = (e) => { if (renderer) renderer.setVoiceColors(e.target.checked); };
