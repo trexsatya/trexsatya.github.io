@@ -2092,7 +2092,15 @@
     if (mr) {
       document.getElementById('segFrom').value = toPrintedMeasure(mr[0]);
       document.getElementById('segTo').value = toPrintedMeasure(mr[1]);
-      if (renderer) renderer.showSegment(mr);
+      if (renderer) { renderer.showSegment(mr); renderer.highlightMeasures(mr); }
+      // Call out exactly what matched at these measures — the searched chords, which may be labelled
+      // differently by the live on-sheet overlay, so the user can see the match explicitly.
+      const m = result.match;
+      if (m.kind === 'chord' && (m.symbols || []).length) {
+        const syms = m.symbols.map(chordDisplayName).join(' · ');
+        document.getElementById('previewMsg').textContent =
+          `Matched: ${syms}  ·  measures ${toPrintedMeasure(mr[0])}–${toPrintedMeasure(mr[1])}`;
+      }
     }
   }
   async function openVocabEntry(entry) {
