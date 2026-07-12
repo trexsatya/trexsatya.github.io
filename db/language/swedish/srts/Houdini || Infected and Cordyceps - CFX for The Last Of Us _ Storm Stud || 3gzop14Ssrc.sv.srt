@@ -1,0 +1,27 @@
+1
+00:13:18,720 --> 00:13:21,079
+happening is is just a particle going
+
+2
+00:13:21,079 --> 00:13:23,760
+Along that Curve spewing spewing out
+
+3
+00:13:23,760 --> 00:13:26,760
+other particles as it goes and we
+
+4
+00:13:26,760 --> 00:13:30,279
+connect those points and then gitter the
+
+5
+00:13:30,279 --> 00:13:31,720
+Velocity on the Curve because we don't
+
+6
+00:13:31,720 --> 00:13:34,519
+want a Constant Trail going and maybe it
+
+7
+00:13:34,519 --> 00:13:37,519
+goes faster when it's perpendicular to
