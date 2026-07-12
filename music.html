@@ -144,6 +144,8 @@
         #results .resultRow { padding: 6px 8px; border: 1px solid #ddd; border-radius: 6px; margin: 4px 0; cursor: pointer; }
         #results .resultRow:hover { background: #f3f3f3; }
         .chordChip { display: inline-flex; gap: 4px; align-items: center; border: 1px solid #ccc; border-radius: 6px; padding: 4px 6px; margin: 2px; }
+        .match-chip { margin: 0 .15em; padding: .05em .5em; font-size: .9em; border-radius: 3px; cursor: pointer; border: 1px solid #1565c0; background: #eef4ff; color: #1565c0; }
+        .match-chip.on { border-color: #b8860b; background: #ffcc00; color: #4a3500; font-weight: 600; }
         .extPill { border: 1px solid #bbb; border-radius: 10px; padding: 0 8px; cursor: pointer; background: #fff; }
         .extPill.active { background: #2563eb; color: #fff; border-color: #2563eb; }
         #managerSection { margin-bottom: 1rem; }
@@ -640,7 +642,7 @@
   import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js';
   import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js';
   import { runQuery } from './music-query.js';
-  import { createMusicRenderer, resolveMatchMeasures } from './music-render.js';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js';
   import { init as initFretboard } from './fretboard-panel.js';
   import { chordDisplayName } from './music-chords.js';
   import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js';
@@ -2093,15 +2095,38 @@
       document.getElementById('segFrom').value = toPrintedMeasure(mr[0]);
       document.getElementById('segTo').value = toPrintedMeasure(mr[1]);
       if (renderer) { renderer.showSegment(mr); renderer.highlightMeasures(mr); }
-      // Call out exactly what matched at these measures — the searched chords, which may be labelled
-      // differently by the live on-sheet overlay, so the user can see the match explicitly.
+      // Call out exactly what matched at these measures as clickable chips — the searched chords may
+      // be labelled differently by the live on-sheet overlay, so clicking a chip lights up exactly
+      // the notes that formed that chord at its own measure(s), letting the user verify the match.
       const m = result.match;
-      if (m.kind === 'chord' && (m.symbols || []).length) {
-        const syms = m.symbols.map(chordDisplayName).join(' · ');
-        document.getElementById('previewMsg').textContent =
-          `Matched: ${syms}  ·  measures ${toPrintedMeasure(mr[0])}–${toPrintedMeasure(mr[1])}`;
-      }
+      if (m.kind === 'chord' && (m.symbols || []).length) renderMatchedChords(m, mr);
     }
+  }
+  // Render "Matched: [chip] [chip] … · measures X–Y" into previewMsg. Each chip highlights the notes
+  // that form its chord at its measure span (from the match's exact chord indices); click again to clear.
+  function renderMatchedChords(match, mr) {
+    const host = document.getElementById('previewMsg');
+    host.textContent = '';
+    host.appendChild(document.createTextNode('Matched: '));
+    const spans = currentDetail ? collapsedChordSpans(currentDetail) : [];
+    const indices = match.indices || [];
+    (match.symbols || []).forEach((sym, i) => {
+      const span = spans[indices[i]];                    // this chip's own measure span
+      const range = span ? [span.measureStart, span.measureEnd] : mr;
+      const chip = document.createElement('button');
+      chip.className = 'match-chip';
+      chip.textContent = chordDisplayName(sym);
+      chip.title = `Show the notes that form ${chordDisplayName(sym)} (measure ${toPrintedMeasure(range[0])})`;
+      chip.onclick = () => {
+        const wasOn = chip.classList.contains('on');
+        host.querySelectorAll('.match-chip.on').forEach((c) => c.classList.remove('on'));
+        if (wasOn) { if (renderer) renderer.clearHighlight(); return; }
+        chip.classList.add('on');
+        if (renderer) renderer.highlightMatchedChord(sym, range);
+      };
+      host.appendChild(chip);
+    });
+    host.appendChild(document.createTextNode(`  ·  measures ${toPrintedMeasure(mr[0])}–${toPrintedMeasure(mr[1])}`));
   }
   async function openVocabEntry(entry) {
     await openPreview(entry.pieceId);
