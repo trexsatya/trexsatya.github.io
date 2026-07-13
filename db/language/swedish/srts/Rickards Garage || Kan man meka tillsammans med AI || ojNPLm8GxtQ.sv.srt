@@ -1,0 +1,27 @@
+1
+00:04:27,840 --> 00:04:31,080
+kan vara den här trycksensorn som har
+
+2
+00:04:31,080 --> 00:04:32,800
+hängt sig.
+
+3
+00:04:32,800 --> 00:04:37,320
+Men eh här står också att man kan göra
+
+4
+00:04:37,320 --> 00:04:40,440
+en manuell återställning av fellkoderna.
+
+5
+00:04:40,440 --> 00:04:43,199
+Så ska vi testa det. Det har varit himla
+
+6
+00:04:43,199 --> 00:04:46,520
+roligt att se om det funkar. Eh håll in
+
+7
+00:04:46,520 --> 00:04:49,520
+knappen auto och återcirkulation
