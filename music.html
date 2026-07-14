@@ -690,8 +690,8 @@
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js';
   import { TECHNIQUES, generateVariations } from './music-embellish.js';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, voiceNotes, ADDED_NOTE_COLOR } from './music-embellish-xml.js';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis } from './music-embellish-ui.js';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR } from './music-embellish-xml.js';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps } from './music-embellish-ui.js';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2240,23 +2240,13 @@
     p.play().catch((err) => { console.warn('[variations] playback error:', err); stopVarPlayback(); });
   };
 
-  // Build fretboard steps from the current variation's embellished voice: the voice's playable
-  // notes (skips <rest>/<chord/>) in document order as { name, octave }, wrapped as one step —
-  // the shape fretboard-panel's 'window' source uses. ADDED notes are ringed via highlightMidis.
+  // Build fretboard steps from the current variation's embellished voice: ONE step per playable note
+  // (monophonic melody). See variationFretSteps — packing the whole voice into one step exploded
+  // voicingsForNotes into a ~10^16-combo cartesian product and killed the page. ADDED notes are
+  // ringed via highlightMidis.
   function buildVariationSteps() {
     if (!currentVarXml) return [];
-    const doc = new DOMParser().parseFromString(currentVarXml, 'application/xml');
-    const notes = voiceNotes(doc, varVoiceIds[varGenVoiceIdx] || '1').map((n) => {
-      const pitch = n.querySelector('pitch');
-      if (!pitch) return null;
-      const step = pitch.querySelector('step').textContent.trim();
-      const octave = parseInt(pitch.querySelector('octave').textContent, 10);
-      const alterEl = pitch.querySelector('alter');
-      const alter = alterEl ? parseInt(alterEl.textContent, 10) : 0;
-      const acc = alter === 2 ? '##' : alter === 1 ? '#' : alter === -1 ? 'b' : alter === -2 ? 'bb' : '';
-      return { name: step + acc, octave };
-    }).filter(Boolean);
-    return notes.length ? [{ name: 'variation', notes }] : [];
+    return variationFretSteps(currentVarXml, varVoiceIds[varGenVoiceIdx] || '1');
   }
 
   // 🎸 Fretboard: capture the current variation onto the fretboard, ringing the ADDED notes, and
