@@ -178,7 +178,7 @@
             top: 0; right: 0; bottom: 0; left: 0;
             width: 100%;
             height: 100vh;
-            height: 100dvh;          /* dynamic viewport: excludes the mobile browser's URL bar */
+            height: 96%;          /* dynamic viewport: excludes the mobile browser's URL bar */
             box-sizing: border-box;  /* keep the 1rem padding inside the viewport box (no overflow) */
             z-index: 1000;
             margin: 0;
@@ -289,11 +289,10 @@
         #variationsSection #varGenerate{background:#1b7f3b;color:#fff;border-color:#1b7f3b}
         #variationsSection #varGenerate:disabled{background:#cfe6d6;border-color:#cfe6d6;color:#6d8a76;cursor:not-allowed}
         #variationsSection .var-warn{font-size:12px;color:#b42318}
-        #variationsSection #varList{display:flex;flex-direction:column;gap:4px;margin:.25rem 0}
-        #variationsSection .var-row{display:flex;gap:8px;align-items:center;border:1px solid #d3e7d9;border-radius:6px;padding:4px 8px;background:#fff;cursor:pointer;font-size:13px}
-        #variationsSection .var-row.selected{border-color:#1b7f3b;background:#e7f6ec;box-shadow:0 0 0 1px #1b7f3b inset}
-        #variationsSection .var-row .var-label{flex:1}
-        #variationsSection .var-row .var-play{border:1px solid #1b7f3b;background:#fff;color:#1b7f3b;border-radius:5px;cursor:pointer;padding:1px 8px;font-size:13px}
+        #variationsSection .var-picker{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:.25rem 0}
+        #variationsSection #varSelect{flex:1;min-width:160px;padding:4px 6px;border:1px solid #b5ddc0;border-radius:5px;font-size:13px;background:#fff}
+        #variationsSection #varPlay,#variationsSection #varFret{border:1px solid #1b7f3b;background:#fff;color:#1b7f3b;border-radius:5px;cursor:pointer;padding:3px 10px;font-size:13px}
+        #variationsSection #varSelect:disabled,#variationsSection #varPlay:disabled,#variationsSection #varFret:disabled{opacity:.5;cursor:not-allowed}
         #variationsSection .var-empty{font-size:12.5px;color:#777}
         #variationsSection #varSheet{margin-top:.25rem;overflow-x:auto}
         #fretboardPanel:fullscreen{background:#fff;overflow:auto;padding:24px}
@@ -457,14 +456,14 @@
 <div id="musicPreview" style="display:none;border-top:1px solid #ddd;padding-top:1rem">
   <div style="margin-bottom:.5rem" class="previewControls">
     <div><strong id="previewTitle"></strong></div>
-    <label class="measLabel">Measures:
-      <button id="startPrevBtn" class="btn ico" title="extend the window to an earlier measure">◀</button>
+    <label class="measLabel">#:
+      <button id="startPrevBtn" class="btn ico" title="extend the window to an earlier measure">◀|</button>
       <input id="segFrom" type="number" min="1" style="width:2.4em" placeholder="from">
-      <button id="startNextBtn" class="btn ico" title="move the start later">▶</button>
+      <button id="startNextBtn" class="btn ico" title="move the start later">|▶</button>
       –
-      <button id="endPrevBtn" class="btn ico" title="move the end earlier">◀</button>
+      <button id="endPrevBtn" class="btn ico" title="move the end earlier">◀|</button>
       <input id="segTo" type="number" min="1" style="width:2.4em" placeholder="to">
-      <button id="endNextBtn" class="btn ico" title="extend the window to a later measure">▶</button>
+      <button id="endNextBtn" class="btn ico" title="extend the window to a later measure">|▶</button>
     </label>
     <button id="previewFullBtn" class="btn" title="Show the full piece"><span class="ic">⤢</span><span class="txt">Full</span></button>
     <button id="previewSegBtn" class="btn" title="Show this measure range"><span class="ic">◧</span><span class="txt">Show segment</span></button>
@@ -615,7 +614,12 @@
         <span id="varWarn" class="var-warn"></span>
       </div>
       <div id="varTechs" class="var-techs"></div>
-      <div id="varList"></div>
+      <div id="varPicker" class="var-picker">
+        <select id="varSelect" disabled></select>
+        <button id="varPlay" type="button" disabled>▶ Play</button>
+        <button id="varFret" type="button" disabled>🎸 Fretboard</button>
+      </div>
+      <div id="varEmpty" class="var-empty">Generate variations to preview them here.</div>
       <div id="varSheet"></div>
     </div>
   </details>
@@ -686,7 +690,7 @@
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js';
   import { TECHNIQUES, generateVariations } from './music-embellish.js';
-  import { extractSegmentXml, applyVariation } from './music-embellish-xml.js';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, voiceNotes, ADDED_NOTE_COLOR } from './music-embellish-xml.js';
   import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis } from './music-embellish-ui.js';
 
   const system = getSystemFromUrl().name;
@@ -1059,6 +1063,7 @@
     return Number.isFinite(t) && t > 0 ? t : 90;
   }
   function playMidi() {
+    stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     // MusicXML pieces get a time-accurate, polyphonic schedule from the source; note-text
     // pieces (no real timing) fall back to the simple per-note sequential builder.
@@ -1083,6 +1088,7 @@
   // Tag skip-playback: play only the checked tags' notes, removing the empty stretches between
   // tagged runs (a beat-relative breath separates runs). Whole piece — ignores segment/window.
   function playTags() {
+    stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
       document.getElementById('transportMsg').textContent = 'Tag playback needs a MusicXML piece.'; return;
@@ -1496,8 +1502,9 @@
     updatePatternControls();
     // Variations panel: repopulate the voice picker, clear any prior results/sheet, re-check the guardrail.
     populateVarVoices();
-    lastVariations = []; selectedVarIdx = -1; varGenRange = null; varGenVoiceIdx = 0;
-    document.getElementById('varList').innerHTML = '';
+    stopVarPlayback();
+    variations = []; varGenRange = null; varGenVoiceIdx = 0; currentVarXml = null;
+    populateVarSelect();   // clears the select + disables Play/Fretboard, shows the empty state
     if (varRenderer && document.getElementById('varSheet')) document.getElementById('varSheet').innerHTML = '';
     varRenderer = null;   // OSMD binds to the (now-cleared) container; recreate lazily on next select
     refreshVariationsGuardrail();
@@ -1894,6 +1901,7 @@
   }
   // Play a phrase's resolved notes, skipping the gaps between them (same engine as Play tags).
   function playPhrase(name) {
+    stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
       document.getElementById('transportMsg').textContent = 'Phrase playback needs a MusicXML piece.'; return;
@@ -2030,12 +2038,13 @@
   // Decorate one voice over a ≤3-measure segment with non-chord-tone techniques, list the
   // generated variations, then render + play the selected one in a single shared OSMD panel.
   let varRenderer = null;          // dedicated OSMD instance bound to #varSheet (created lazily)
-  let varPlayer = null;            // dedicated player for previewing a variation
-  let lastVariations = [];         // the variations from the most recent Generate
+  let varPlayer = null;            // dedicated player for previewing a variation (cursor on #varSheet)
+  let variations = [];             // the variations from the most recent Generate
   let varVoiceIds = [];            // XML <voice> ids in encoder order (index-aligned with currentDetail.voices)
-  let selectedVarIdx = -1;
   let varGenRange = null;          // sequential [from,to] captured at Generate (edits are indexed to it)
   let varGenVoiceIdx = 0;          // voice index captured at Generate
+  let currentVarXml = null;        // embellished MusicXML of the currently-rendered variation (play/fretboard source)
+  let varPlaying = false;          // is #varPlay currently sounding a variation
 
   // Fill the technique checkboxes (all checked) once.
   (function initVarTechniques() {
@@ -2127,7 +2136,7 @@
     const segmentNoteNames = currentDetail.voices.flatMap((v) =>
       v.name.filter((_, i) => v.measureIndex[i] >= from && v.measureIndex[i] <= to));
 
-    lastVariations = generateVariations({
+    variations = generateVariations({
       voiceNotes,
       chordByMeasure,
       segmentNoteNames,
@@ -2138,34 +2147,38 @@
     });
     varGenRange = [from, to];       // freeze the range/voice the edits were indexed against
     varGenVoiceIdx = vIdx;
-    selectedVarIdx = -1;
-    renderVarList();
+    populateVarSelect();            // fill the select, select the first, and render it
   };
 
-  function renderVarList() {
-    const host = document.getElementById('varList');
-    host.innerHTML = '';
-    if (!lastVariations.length) {
-      const empty = document.createElement('div');
-      empty.className = 'var-empty';
-      empty.textContent = 'No variations for these techniques on this segment.';
-      host.appendChild(empty);
+  // Fill the selectbox from the generated variations, enable/disable the controls, and auto-render
+  // the first option. When there are none, clear + disable everything and show the empty state.
+  function populateVarSelect() {
+    const sel = document.getElementById('varSelect');
+    const empty = document.getElementById('varEmpty');
+    const playBtn = document.getElementById('varPlay');
+    const fretBtn = document.getElementById('varFret');
+    if (!sel) return;
+    stopVarPlayback();
+    sel.innerHTML = '';
+    if (!variations.length) {
+      sel.disabled = playBtn.disabled = fretBtn.disabled = true;
+      empty.style.display = '';
+      empty.textContent = varGenRange
+        ? 'No variations for these techniques on this segment.'
+        : 'Generate variations to preview them here.';
+      currentVarXml = null;
+      if (varRenderer && document.getElementById('varSheet')) document.getElementById('varSheet').innerHTML = '';
       return;
     }
-    lastVariations.forEach((v, i) => {
-      const row = document.createElement('div');
-      row.className = 'var-row' + (i === selectedVarIdx ? ' selected' : '');
-      const label = document.createElement('span');
-      label.className = 'var-label'; label.textContent = v.label;
-      const play = document.createElement('button');
-      play.className = 'var-play'; play.type = 'button'; play.textContent = '▶';
-      play.title = 'Play this variation';
-      play.onclick = (ev) => { ev.stopPropagation(); playVariation(i); };
-      row.appendChild(label);
-      row.appendChild(play);
-      row.onclick = () => selectVariation(i);
-      host.appendChild(row);
+    variations.forEach((v, i) => {
+      const opt = document.createElement('option');
+      opt.value = String(i); opt.textContent = v.label;
+      sel.appendChild(opt);
     });
+    sel.disabled = playBtn.disabled = fretBtn.disabled = false;
+    empty.style.display = 'none';
+    sel.selectedIndex = 0;
+    renderSelectedVariation();
   }
 
   // Lazily create the shared render panel bound to #varSheet.
@@ -2174,39 +2187,91 @@
     return varRenderer;
   }
 
-  // Build the variation's MusicXML: extract the segment, apply the edits to the chosen voice.
-  function buildVariationXml(i) {
-    const v = lastVariations[i];
-    if (!v || !currentDetail || !varGenRange) return null;
-    const voiceId = varVoiceIds[varGenVoiceIdx] || '1';
-    const segXml = extractSegmentXml(currentDetail.source, varGenRange);
-    return applyVariation(segXml, voiceId, v.edits);
+  // Lazily create the dedicated variation player; its cursor follows on #varSheet's OSMD.
+  function ensureVarPlayer() {
+    if (!varPlayer) varPlayer = createMusicPlayer({ getCursor: () => (varRenderer && varRenderer.osmd ? varRenderer.osmd.cursor : null) });
+    return varPlayer;
   }
 
-  async function selectVariation(i) {
-    selectedVarIdx = i;
-    renderVarList();
-    const varXml = buildVariationXml(i);
-    if (!varXml) return;
+  // Stop any in-progress variation playback and reset the cursor + the #varPlay button label.
+  function stopVarPlayback() {
+    if (varPlayer && varPlaying) { try { varPlayer.stop(); } catch (_) {} }
+    varPlaying = false;
+    const btn = document.getElementById('varPlay');
+    if (btn) btn.textContent = '▶ Play';
+  }
+
+  // Render the currently-selected variation: extract the frozen segment, apply its edits to the
+  // generated voice, render into #varSheet, then color the ADDED notes (after render so the
+  // noteheads exist). Stores the embellished XML in currentVarXml for play/fretboard.
+  async function renderSelectedVariation() {
+    stopVarPlayback();
+    const sel = document.getElementById('varSelect');
+    const v = variations[sel.selectedIndex];
+    if (!v || !currentDetail || !varGenRange) return;
+    const segXml = extractSegmentXml(currentDetail.source, varGenRange);
+    const varXml = applyVariation(segXml, varVoiceIds[varGenVoiceIdx] || '1', v.edits);
+    currentVarXml = varXml;
     const r = ensureVarRenderer();
     try {
       await r.loadDetail({ source: varXml, meta: { key: currentDetail.meta && currentDetail.meta.key }, format: 'musicxml', voices: [] });
       r.showFull();
+      const marks = coloredNoteMarks(varXml);
+      r.highlightExtraNotes(marks, ADDED_NOTE_COLOR);
     } catch (err) { console.warn('[variations] render failed:', err); }
   }
+  document.getElementById('varSelect').onchange = renderSelectedVariation;
 
-  function playVariation(i) {
-    if (i !== selectedVarIdx) selectVariation(i);
-    const varXml = buildVariationXml(i);
-    if (!varXml) return;
-    const schedule = buildScheduleFromMusicXml(varXml, { tempo: currentTempo() });
+  // ▶ Play / ⏹ Stop toggle: play the current variation's XML with the OSMD cursor following on
+  // #varSheet. Mirrors the main preview play path (setInstrument → setSchedule → play), on a
+  // dedicated player so the cursor tracks #varSheet, not #osmdPreview.
+  document.getElementById('varPlay').onclick = () => {
+    if (varPlaying) { stopVarPlayback(); return; }
+    if (!currentVarXml) return;
+    const schedule = buildScheduleFromMusicXml(currentVarXml, { tempo: currentTempo() });
     if (!schedule.length) return;
-    if (!varPlayer) varPlayer = createMusicPlayer({});
-    varPlayer.setInstrument(document.getElementById('instrSel').value);
-    varPlayer.setLoop(false);
-    varPlayer.setSchedule(schedule);
-    varPlayer.play().catch((err) => console.warn('[variations] playback error:', err));
+    if (player) player.stop();   // don't overlap the main preview on the shared Tone.Transport
+    const p = ensureVarPlayer();
+    p.setInstrument(document.getElementById('instrSel').value);
+    p.setSchedule(schedule, { cursorStartStep: 0 });
+    p.setLoop(false);
+    varPlaying = true;
+    document.getElementById('varPlay').textContent = '⏹ Stop';
+    p.play().catch((err) => { console.warn('[variations] playback error:', err); stopVarPlayback(); });
+  };
+
+  // Build fretboard steps from the current variation's embellished voice: the voice's playable
+  // notes (skips <rest>/<chord/>) in document order as { name, octave }, wrapped as one step —
+  // the shape fretboard-panel's 'window' source uses. ADDED notes are ringed via highlightMidis.
+  function buildVariationSteps() {
+    if (!currentVarXml) return [];
+    const doc = new DOMParser().parseFromString(currentVarXml, 'application/xml');
+    const notes = voiceNotes(doc, varVoiceIds[varGenVoiceIdx] || '1').map((n) => {
+      const pitch = n.querySelector('pitch');
+      if (!pitch) return null;
+      const step = pitch.querySelector('step').textContent.trim();
+      const octave = parseInt(pitch.querySelector('octave').textContent, 10);
+      const alterEl = pitch.querySelector('alter');
+      const alter = alterEl ? parseInt(alterEl.textContent, 10) : 0;
+      const acc = alter === 2 ? '##' : alter === 1 ? '#' : alter === -1 ? 'b' : alter === -2 ? 'bb' : '';
+      return { name: step + acc, octave };
+    }).filter(Boolean);
+    return notes.length ? [{ name: 'variation', notes }] : [];
   }
+
+  // 🎸 Fretboard: capture the current variation onto the fretboard, ringing the ADDED notes, and
+  // open the fretboard panel. Initializes the renderer/fretboard lazily if not yet created.
+  document.getElementById('varFret').onclick = () => {
+    if (!currentVarXml) return;
+    if (!fbPanel) ensureRenderer();   // fretboard is created inside ensureRenderer()
+    if (!fbPanel) return;             // guard: still unavailable (no piece loaded)
+    const steps = buildVariationSteps();
+    if (!steps.length) return;
+    const highlightMidis = coloredNoteMarks(currentVarXml).map((m) => m.midi);
+    fbPanel.captureSteps(steps, { highlightMidis });
+    const panel = document.getElementById('fretboardPanel');
+    if (panel && !panel.open) panel.open = true;
+  };
   document.getElementById('previewCloseBtn').onclick = () => {
     if (player) player.stop();
     clearYtMonitor(); if (yt) yt.pause();
