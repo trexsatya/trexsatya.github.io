@@ -291,8 +291,10 @@
         #variationsSection .var-warn{font-size:12px;color:#b42318}
         #variationsSection .var-picker{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:.25rem 0}
         #variationsSection #varSelect{flex:1;min-width:160px;padding:4px 6px;border:1px solid #b5ddc0;border-radius:5px;font-size:13px;background:#fff}
-        #variationsSection #varPlay,#variationsSection #varFret{border:1px solid #1b7f3b;background:#fff;color:#1b7f3b;border-radius:5px;cursor:pointer;padding:3px 10px;font-size:13px}
-        #variationsSection #varSelect:disabled,#variationsSection #varPlay:disabled,#variationsSection #varFret:disabled{opacity:.5;cursor:not-allowed}
+        #variationsSection #varPlay,#variationsSection #varFret,#variationsSection #varSilence,#variationsSection #varHearAll,#variationsSection #varSaveVocab{border:1px solid #1b7f3b;background:#fff;color:#1b7f3b;border-radius:5px;cursor:pointer;padding:3px 10px;font-size:13px}
+        #variationsSection #varSelect:disabled,#variationsSection #varPlay:disabled,#variationsSection #varFret:disabled,#variationsSection #varSilence:disabled,#variationsSection #varHearAll:disabled,#variationsSection #varSaveVocab:disabled{opacity:.5;cursor:not-allowed}
+        #variationsSection #varSilence.active,#variationsSection #varHearAll.active{background:#1b7f3b;color:#fff}
+        #variationsSection .var-silence-hint{font-size:12px;color:#a0660a}
         #variationsSection .var-empty{font-size:12.5px;color:#777}
         #variationsSection #varSheet{margin-top:.25rem;overflow-x:auto}
         #fretboardPanel:fullscreen{background:#fff;overflow:auto;padding:24px}
@@ -609,6 +611,17 @@
     <div class="var-body">
       <div class="var-controls">
         <label>Voice <select id="varVoice"></select></label>
+        <label>Style
+          <select id="varStyle">
+            <option value="classical">Classical</option>
+            <option value="bluesy">Bluesy</option>
+            <option value="contrapuntal">Contrapuntal</option>
+          </select>
+        </label>
+        <label id="varShuffleWrap" style="display:none"><input type="checkbox" id="varShuffle"> Shuffle</label>
+        <label id="varRegisterWrap" style="display:none">Counter
+          <select id="varRegister"><option value="below">below</option><option value="above">above</option></select>
+        </label>
         <label><input id="varAddNotes" type="checkbox"> add extra notes (widen to key scale)</label>
         <button id="varGenerate" class="btn">Generate</button>
         <span id="varWarn" class="var-warn"></span>
@@ -618,6 +631,10 @@
         <select id="varSelect" disabled></select>
         <button id="varPlay" type="button" disabled>▶ Play</button>
         <button id="varFret" type="button" disabled>🎸 Fretboard</button>
+        <button id="varSilence" type="button" title="Click notes on the variation to silence them from playback" disabled>🔇 Silence</button>
+        <button id="varHearAll" type="button" title="Temporarily hear every silenced note" disabled>👂 Hear all</button>
+        <button id="varSaveVocab" type="button" title="Save this variation as a vocabulary item (replays exactly as generated)" disabled>➕ Save to vocab</button>
+        <span id="varSilenceHint" class="var-silence-hint"></span>
       </div>
       <div id="varEmpty" class="var-empty">Generate variations to preview them here.</div>
       <div id="varSheet"></div>
@@ -690,8 +707,11 @@
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js';
   import { TECHNIQUES, generateVariations } from './music-embellish.js';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR } from './music-embellish-xml.js';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps } from './music-embellish-ui.js';
+  import { generateCounterLines } from './music-counterpoint.js';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js';
+  import { splitSingleVoice } from './music-voice-split.js';
+  import { encodeMusicXml } from './music-encoding.js';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1503,7 +1523,7 @@
     // Variations panel: repopulate the voice picker, clear any prior results/sheet, re-check the guardrail.
     populateVarVoices();
     stopVarPlayback();
-    variations = []; varGenRange = null; varGenVoiceIdx = 0; currentVarXml = null;
+    variations = []; varGenRange = null; varWorkingSource = null; varGenVoiceId = '1'; varGenVoiceIds = ['1']; varCounterVoiceId = '2'; currentVarXml = null;
     populateVarSelect();   // clears the select + disables Play/Fretboard, shows the empty state
     if (varRenderer && document.getElementById('varSheet')) document.getElementById('varSheet').innerHTML = '';
     varRenderer = null;   // OSMD binds to the (now-cleared) container; recreate lazily on next select
@@ -2041,10 +2061,20 @@
   let varPlayer = null;            // dedicated player for previewing a variation (cursor on #varSheet)
   let variations = [];             // the variations from the most recent Generate
   let varVoiceIds = [];            // XML <voice> ids in encoder order (index-aligned with currentDetail.voices)
+  let varEntries = [];             // voicePickerEntries() for the current source (real voices or Melody/Bass split)
+  let varWorkingSource = null;     // source used for the current generation (split copy or raw)
   let varGenRange = null;          // sequential [from,to] captured at Generate (edits are indexed to it)
-  let varGenVoiceIdx = 0;          // voice index captured at Generate
+  let varGenVoiceId = '1';         // the <voice> id the current edits target
+  let varGenVoiceIds = ['1'];      // voice ids the fretboard should show (contrapuntal → [melody, counter])
+  let varCounterVoiceId = '2';     // the fresh <voice> id the contrapuntal counter-line is written to
   let currentVarXml = null;        // embellished MusicXML of the currently-rendered variation (play/fretboard source)
   let varPlaying = false;          // is #varPlay currently sounding a variation
+  // Per-variation note silencing: each variation index remembers its own silenced notes, so switching
+  // shows a fresh slate but restores what you silenced there. Regenerating clears the whole map.
+  const varSilences = new Map();   // variation index → [{measure,midi,beats}] silenced on that variation
+  let varRenderedIndex = -1;       // the variation index currently on #varSheet (for the memory above)
+  let varSilenceMode = false;      // #varSilence toggle: clicking noteheads silences them
+  let varHearAll = false;          // #varHearAll toggle: transiently un-mute everything
 
   // Fill the technique checkboxes (all checked) once.
   (function initVarTechniques() {
@@ -2067,10 +2097,13 @@
     sel.innerHTML = '';
     // orderedVoiceIds matches the encoder's voicesMap key order, so varVoiceIds[i] ↔ voices[i].
     varVoiceIds = (currentDetail && currentDetail.source) ? orderedVoiceIds(currentDetail.source) : ['1'];
-    const voices = (currentDetail && currentDetail.voices) || [];
-    voices.forEach((_, i) => {
+    // Entries drive the picker: multi-voice → one per real voice; single-voice → Melody/Bass (auto-split).
+    varEntries = (currentDetail && currentDetail.source)
+      ? voicePickerEntries(currentDetail.source, varVoiceIds)
+      : [];
+    varEntries.forEach((entry, i) => {
       const opt = document.createElement('option');
-      opt.value = String(i); opt.textContent = `Voice ${varVoiceIds[i] || (i + 1)}`;
+      opt.value = String(i); opt.textContent = entry.label;
       sel.appendChild(opt);
     });
   }
@@ -2101,6 +2134,17 @@
   document.getElementById('segTo').addEventListener('input', refreshVariationsGuardrail);
   document.getElementById('variationsSection').addEventListener('toggle', (e) => { if (e.target.open) refreshVariationsGuardrail(); });
 
+  // Style selector drives which extra controls are relevant: contrapuntal hides the technique
+  // checkboxes and reveals the Counter register; bluesy reveals Shuffle. (#varTechs is the checkbox
+  // container div, so hiding it hides every technique checkbox at once.)
+  document.getElementById('varStyle').addEventListener('change', (e) => {
+    const style = e.target.value;
+    const techs = document.getElementById('varTechs');
+    if (techs) techs.style.display = style === 'contrapuntal' ? 'none' : '';
+    document.getElementById('varShuffleWrap').style.display = style === 'bluesy' ? '' : 'none';
+    document.getElementById('varRegisterWrap').style.display = style === 'contrapuntal' ? '' : 'none';
+  });
+
   function checkedTechniqueKeys() {
     return Array.from(document.querySelectorAll('#varTechs .var-tech'))
       .filter((cb) => cb.checked).map((cb) => cb.value);
@@ -2115,38 +2159,87 @@
     if (to - from + 1 > 3) { refreshVariationsGuardrail(); return; }
 
     const chordByMeasure = buildChordByMeasure(collapsedChordSpans(currentDetail));
-    const vIdx = parseInt(document.getElementById('varVoice').value, 10) || 0;
-    const voice = currentDetail.voices[vIdx];
-    const voiceNotes = buildVoiceNotes(voice, from, to, chordByMeasure);
+    const pickIdx = parseInt(document.getElementById('varVoice').value, 10) || 0;
+    const entry = varEntries[pickIdx] || varEntries[0];
+    if (!entry) return;
+    // Split entries embellish a two-voice working copy (melody='1', bass='2') of a single-voice
+    // piece; real voices work off the raw source. varWorkingSource/varGenVoiceId are the segment +
+    // <voice> id every later step (render/play/fretboard) must reuse.
+    const workingSource = entry.split ? splitSingleVoice(currentDetail.source) : currentDetail.source;
+    varWorkingSource = workingSource;
+    varGenVoiceId = entry.voiceId;
 
-    // Alignment safety: the XML builder addresses one note per onset (skips <rest>/<chord/>).
-    // If its addressable count differs from our collapsed engine list, edits would land on the
-    // wrong notes — warn (still proceed) so the mismatch surfaces during manual testing.
-    const voiceId = varVoiceIds[vIdx] || '1';
-    try {
-      const addr = addressableMidis(extractSegmentXml(currentDetail.source, [from, to]), voiceId);
-      if (addr.length !== voiceNotes.length) {
-        console.warn(`[variations] note-list misalignment: engine ${voiceNotes.length} vs XML builder `
-          + `${addr.length} for voice ${vIdx} (id ${voiceId}) over measures ${from}-${to}. `
-          + 'Edits may land on the wrong notes.');
+    const style = document.getElementById('varStyle').value;
+    if (style === 'contrapuntal') {
+      // Contrapuntal: generate independent counter-lines that move against the chosen voice's
+      // melody. Each "variation" carries a whole counter-line; renderSelectedVariation writes it as
+      // a fresh colored voice. No per-note edits, so skip the classical note-list + alignment guard.
+      // Work entirely in SEGMENT-RELATIVE 1..N numbering: extractSegmentXml renumbers kept measures
+      // to 1..N by position, and renderSelectedVariation writes into that same renumbered segment —
+      // so the counter-line's measure values must be 1..N, not the absolute from..to.
+      const N = to - from + 1;
+      const seg = extractSegmentXml(workingSource, [from, to]);   // measures renumbered 1..N (by position)
+      // Chord map in SEGMENT-RELATIVE numbering: relative m (1..N) → the sequential chord at (from+m-1).
+      const relChord = {};
+      for (let m = 1; m <= N; m++) relChord[m] = chordByMeasure[from + m - 1] || null;
+      const melody = buildBeatNotes(seg, entry.voiceId, 1, N);    // reads the seg's renumbered 1..N
+      const lines = generateCounterLines({
+        melody,
+        chordByMeasure: relChord,
+        key: currentDetail.meta && currentDetail.meta.key,
+        register: document.getElementById('varRegister').value,
+      });
+      // Counter voice id = the first integer id not already used in the working source.
+      const used = new Set(distinctVoiceIdsInOrder(workingSource).map(String));
+      let counterId = 2; while (used.has(String(counterId))) counterId++;
+      varCounterVoiceId = String(counterId);
+      variations = lines.map((line, i) => ({ label: line.label || `Counter-line ${i + 1}`, isContrapuntal: true, line }));
+      varGenVoiceIds = [entry.voiceId, varCounterVoiceId];
+    } else {
+      // Classical / bluesy: decorate the chosen voice in place with non-chord-tone techniques.
+      // Engine note-list for the chosen voice, sourced from the working copy. For a split entry the
+      // synthetic voice has no currentDetail.voices[…] entry, so re-encode the working source and pull
+      // its voice by ordered id; real voices come from the pre-encoded currentDetail.voices.
+      let voiceNotes;
+      if (entry.split) {
+        const encoded = encodeMusicXml(workingSource);
+        const wids = orderedVoiceIds(workingSource);
+        const widx = Math.max(0, wids.indexOf(String(entry.voiceId)));
+        voiceNotes = buildVoiceNotes(encoded.voices[widx] || encoded.voices[0], from, to, chordByMeasure);
+      } else {
+        voiceNotes = buildVoiceNotes(currentDetail.voices[pickIdx], from, to, chordByMeasure);
       }
-    } catch (err) { console.warn('[variations] alignment check failed:', err); }
 
-    // Default pool = pitch classes present across ALL voices in the segment.
-    const segmentNoteNames = currentDetail.voices.flatMap((v) =>
-      v.name.filter((_, i) => v.measureIndex[i] >= from && v.measureIndex[i] <= to));
+      // Alignment safety: the XML builder addresses one note per onset (skips <rest>/<chord/>).
+      // If its addressable count differs from our collapsed engine list, edits would land on the
+      // wrong notes — warn (still proceed) so the mismatch surfaces during manual testing.
+      try {
+        const addr = addressableMidis(extractSegmentXml(workingSource, [from, to]), entry.voiceId);
+        if (addr.length !== voiceNotes.length) {
+          console.warn(`[variations] note-list misalignment: engine ${voiceNotes.length} vs XML builder `
+            + `${addr.length} for entry "${entry.label}" (id ${entry.voiceId}) over measures ${from}-${to}. `
+            + 'Edits may land on the wrong notes.');
+        }
+      } catch (err) { console.warn('[variations] alignment check failed:', err); }
 
-    variations = generateVariations({
-      voiceNotes,
-      chordByMeasure,
-      segmentNoteNames,
-      key: currentDetail.meta && currentDetail.meta.key,
-      techniques: checkedTechniqueKeys(),
-      addNotes: document.getElementById('varAddNotes').checked,
-      cap: 50,
-    });
+      // Default pool = pitch classes present across ALL voices in the segment.
+      const segmentNoteNames = currentDetail.voices.flatMap((v) =>
+        v.name.filter((_, i) => v.measureIndex[i] >= from && v.measureIndex[i] <= to));
+
+      variations = generateVariations({
+        voiceNotes,
+        chordByMeasure,
+        segmentNoteNames,
+        key: currentDetail.meta && currentDetail.meta.key,
+        style,
+        techniques: checkedTechniqueKeys(),
+        addNotes: document.getElementById('varAddNotes').checked,
+        shuffle: document.getElementById('varShuffle') ? document.getElementById('varShuffle').checked : false,
+        cap: 50,
+      });
+      varGenVoiceIds = [entry.voiceId];
+    }
     varGenRange = [from, to];       // freeze the range/voice the edits were indexed against
-    varGenVoiceIdx = vIdx;
     populateVarSelect();            // fill the select, select the first, and render it
   };
 
@@ -2157,14 +2250,24 @@
     const empty = document.getElementById('varEmpty');
     const playBtn = document.getElementById('varPlay');
     const fretBtn = document.getElementById('varFret');
+    const silenceBtn = document.getElementById('varSilence');
+    const hearBtn = document.getElementById('varHearAll');
+    const saveBtn = document.getElementById('varSaveVocab');
     if (!sel) return;
     stopVarPlayback();
     sel.innerHTML = '';
+    // A fresh generation invalidates the per-variation silence memory and resets the toggles.
+    varSilences.clear(); varRenderedIndex = -1;
+    varSilenceMode = false; varHearAll = false; reflectVarSilence(); updateVarSilenceHint();
     if (!variations.length) {
-      sel.disabled = playBtn.disabled = fretBtn.disabled = true;
+      sel.disabled = playBtn.disabled = fretBtn.disabled = silenceBtn.disabled = hearBtn.disabled = saveBtn.disabled = true;
       empty.style.display = '';
+      const styleSel = document.getElementById('varStyle');
+      const isContrapuntal = styleSel && styleSel.value === 'contrapuntal';
       empty.textContent = varGenRange
-        ? 'No variations for these techniques on this segment.'
+        ? (isContrapuntal
+          ? 'No counter-lines for this segment (a measure may lack a detected chord).'
+          : 'No variations for these techniques on this segment.')
         : 'Generate variations to preview them here.';
       currentVarXml = null;
       if (varRenderer && document.getElementById('varSheet')) document.getElementById('varSheet').innerHTML = '';
@@ -2175,7 +2278,7 @@
       opt.value = String(i); opt.textContent = v.label;
       sel.appendChild(opt);
     });
-    sel.disabled = playBtn.disabled = fretBtn.disabled = false;
+    sel.disabled = playBtn.disabled = fretBtn.disabled = silenceBtn.disabled = hearBtn.disabled = saveBtn.disabled = false;
     empty.style.display = 'none';
     sel.selectedIndex = 0;
     renderSelectedVariation();
@@ -2183,13 +2286,25 @@
 
   // Lazily create the shared render panel bound to #varSheet.
   function ensureVarRenderer() {
-    if (!varRenderer) varRenderer = createMusicRenderer(document.getElementById('varSheet'), {});
+    if (!varRenderer) varRenderer = createMusicRenderer(document.getElementById('varSheet'), {
+      // A notehead click (in silence mode) or Hear-all change fires this; remember the silenced
+      // notes against the variation currently shown, and refresh the count hint.
+      onSuppressionChange: () => {
+        if (varRenderedIndex >= 0) varSilences.set(varRenderedIndex, varRenderer.getSuppressedNotes());
+        updateVarSilenceHint();
+      },
+    });
     return varRenderer;
   }
 
   // Lazily create the dedicated variation player; its cursor follows on #varSheet's OSMD.
   function ensureVarPlayer() {
-    if (!varPlayer) varPlayer = createMusicPlayer({ getCursor: () => (varRenderer && varRenderer.osmd ? varRenderer.osmd.cursor : null) });
+    if (!varPlayer) varPlayer = createMusicPlayer({
+      getCursor: () => (varRenderer && varRenderer.osmd ? varRenderer.osmd.cursor : null),
+      // Natural end (played to the segment boundary): reset the ▶/⏹ toggle. Inline (not
+      // stopVarPlayback) so we don't re-enter the player's stop() from inside its own stop.
+      onEnd: () => { varPlaying = false; const b = document.getElementById('varPlay'); if (b) b.textContent = '▶ Play'; },
+    });
     return varPlayer;
   }
 
@@ -2209,8 +2324,17 @@
     const sel = document.getElementById('varSelect');
     const v = variations[sel.selectedIndex];
     if (!v || !currentDetail || !varGenRange) return;
-    const segXml = extractSegmentXml(currentDetail.source, varGenRange);
-    const varXml = applyVariation(segXml, varVoiceIds[varGenVoiceIdx] || '1', v.edits);
+    const seg = extractSegmentXml(varWorkingSource || currentDetail.source, varGenRange);
+    let varXml;
+    if (v.isContrapuntal) {
+      // Realize the counter-line as a fresh colored voice grafted onto the frozen segment; the
+      // ADDED_NOTE_COLOR lets coloredNoteMarks() find its notes for highlighting below.
+      const doc = new DOMParser().parseFromString(seg, 'application/xml');
+      writeVoice(doc, { voiceId: varCounterVoiceId, notesByMeasure: counterLineToNotesByMeasure(v.line, seg), color: ADDED_NOTE_COLOR });
+      varXml = new XMLSerializer().serializeToString(doc);
+    } else {
+      varXml = applyVariation(seg, varGenVoiceId, v.edits);
+    }
     currentVarXml = varXml;
     const r = ensureVarRenderer();
     try {
@@ -2218,9 +2342,78 @@
       r.showFull();
       const marks = coloredNoteMarks(varXml);
       r.highlightExtraNotes(marks, ADDED_NOTE_COLOR);
+      // Restore this variation's own silenced notes + the persistent silence/hear-all toggle state.
+      // setSuppressedNotes replaces the set (and resets hearAll), so re-apply hearAll after.
+      varRenderedIndex = sel.selectedIndex;
+      r.setSuppressedNotes(varSilences.get(varRenderedIndex) || []);
+      r.setSuppressMode(varSilenceMode);
+      if (varHearAll) r.setHearAll(true);
+      updateVarSilenceHint();
     } catch (err) { console.warn('[variations] render failed:', err); }
   }
   document.getElementById('varSelect').onchange = renderSelectedVariation;
+
+  // Reflect the silence / hear-all toggle button states.
+  function reflectVarSilence() {
+    const s = document.getElementById('varSilence');
+    const h = document.getElementById('varHearAll');
+    if (s) s.classList.toggle('active', varSilenceMode);
+    if (h) h.classList.toggle('active', varHearAll);
+  }
+  // Show how many notes are silenced on the current variation.
+  function updateVarSilenceHint() {
+    const hint = document.getElementById('varSilenceHint');
+    if (!hint) return;
+    const n = (varRenderer && varRenderer.getSuppressedNotes) ? varRenderer.getSuppressedNotes().length : 0;
+    hint.textContent = n ? `${n} silenced` : '';
+  }
+  // 🔇 Silence: when on, clicking a notehead on the variation sheet silences/un-silences it (dimmed,
+  // and skipped by ▶ Play). The mode persists as you switch variations; the silenced notes are
+  // remembered per variation (see varSilences).
+  document.getElementById('varSilence').onclick = () => {
+    varSilenceMode = !varSilenceMode;
+    if (varRenderer) varRenderer.setSuppressMode(varSilenceMode);
+    reflectVarSilence();
+  };
+  // 👂 Hear all: transiently un-mute every silenced note without clearing the set.
+  document.getElementById('varHearAll').onclick = () => {
+    varHearAll = !varHearAll;
+    if (varRenderer) varRenderer.setHearAll(varHearAll);
+    reflectVarSilence();
+  };
+  // ➕ Save to vocab: persist the CURRENT variation as a vocabulary item. Unlike a normal capture
+  // (which only references the source passage), this stores the variation's own embellished MusicXML
+  // so re-opening replays it exactly, plus its silenced notes and fretboard voice ids. Auto-filed
+  // under the "variations" category (or the typed category); the note records style + which variation.
+  document.getElementById('varSaveVocab').onclick = async () => {
+    if (!currentVarXml || !currentPreviewId || !varGenRange) { setMediaMsg('Generate a variation first.', 'info'); return; }
+    const [from, to] = varGenRange;                       // sequential segment span the variation covers
+    const styleSel = document.getElementById('varStyle');
+    const styleTxt = (styleSel && styleSel.options[styleSel.selectedIndex]) ? styleSel.options[styleSel.selectedIndex].textContent : '';
+    const vSel = document.getElementById('varSelect');
+    const varTxt = (vSel && vSel.options[vSel.selectedIndex]) ? vSel.options[vSel.selectedIndex].textContent : '';
+    const label = [styleTxt, varTxt].filter(Boolean).join(' — ') || 'Variation';
+    const cat = document.getElementById('vocabCat').value.trim();
+    const entry = buildVocabEntry({
+      pieceId: currentPreviewId, system, measureRange: [from, to],
+      measureOffset: currentOffset,
+      youtube: (currentDetail.meta && currentDetail.meta.youtube) || null,
+      note: label,
+      snapshot: buildSnapshot(currentDetail, [from, to]),  // original-passage pitches, for search/context
+      suppressed: (varRenderer && varRenderer.getSuppressedNotes) ? varRenderer.getSuppressedNotes() : [],
+      category: cat || 'variations',
+      createdAt: new Date().toISOString().slice(0, 10),
+      variationXml: currentVarXml,                         // the actual embellished notes → replays as-is
+      variationLabel: label,
+      variationVoiceIds: [...varGenVoiceIds],
+    });
+    entry.id = uniqueVocabId(vocab, entry.id);             // never clobber a normal item / another saved variation
+    vocab = upsertVocab(vocab, entry);
+    renderVocab();
+    try { await store.putVocab(system, vocab); } catch (_) {}
+    dirtyVocab = true; updatePushBtn();
+    setMediaMsg(`Saved variation "${label}" to vocab (${vocab.length} total) — click "Push changes" to publish.`, 'ok');
+  };
 
   // ▶ Play / ⏹ Stop toggle: play the current variation's XML with the OSMD cursor following on
   // #varSheet. Mirrors the main preview play path (setInstrument → setSchedule → play), on a
@@ -2228,7 +2421,10 @@
   document.getElementById('varPlay').onclick = () => {
     if (varPlaying) { stopVarPlayback(); return; }
     if (!currentVarXml) return;
-    const schedule = buildScheduleFromMusicXml(currentVarXml, { tempo: currentTempo() });
+    // Skip the notes silenced on this variation (keeps their slot, mutes the synth) — mirrors the
+    // main preview's muted-notes path.
+    const muted = (varRenderer && varRenderer.getMutedNotes) ? varRenderer.getMutedNotes() : [];
+    const schedule = buildScheduleFromMusicXml(currentVarXml, { tempo: currentTempo(), mutedNotes: muted });
     if (!schedule.length) return;
     if (player) player.stop();   // don't overlap the main preview on the shared Tone.Transport
     const p = ensureVarPlayer();
@@ -2240,13 +2436,13 @@
     p.play().catch((err) => { console.warn('[variations] playback error:', err); stopVarPlayback(); });
   };
 
-  // Build fretboard steps from the current variation's embellished voice: ONE step per playable note
-  // (monophonic melody). See variationFretSteps — packing the whole voice into one step exploded
-  // voicingsForNotes into a ~10^16-combo cartesian product and killed the page. ADDED notes are
-  // ringed via highlightMidis.
+  // Build fretboard steps from the current variation's embellished voice: ONE step per BEAT
+  // (quarter-note pulse), each holding that beat's notes. See variationFretSteps — grouping by beat
+  // bounds each step's voicings and avoids the ~10^16-combo cartesian blow-up that killed the page.
+  // ADDED notes are ringed via highlightMidis.
   function buildVariationSteps() {
     if (!currentVarXml) return [];
-    return variationFretSteps(currentVarXml, varVoiceIds[varGenVoiceIdx] || '1');
+    return variationFretSteps(currentVarXml, varGenVoiceIds.length > 1 ? varGenVoiceIds : varGenVoiceIds[0]);
   }
 
   // 🎸 Fretboard: capture the current variation onto the fretboard, ringing the ADDED notes, and
@@ -2258,7 +2454,8 @@
     const steps = buildVariationSteps();
     if (!steps.length) return;
     const highlightMidis = coloredNoteMarks(currentVarXml).map((m) => m.midi);
-    fbPanel.captureSteps(steps, { highlightMidis });
+    // Track the cursor on the VARIATION sheet (these steps came from #varSheet, not the main preview).
+    fbPanel.captureSteps(steps, { highlightMidis, cursorRenderer: varRenderer });
     const panel = document.getElementById('fretboardPanel');
     if (panel && !panel.open) panel.open = true;
   };
@@ -2409,7 +2606,39 @@
     });
     host.appendChild(document.createTextNode(`  ·  measures ${toPrintedMeasure(mr[0])}–${toPrintedMeasure(mr[1])}`));
   }
+  // Re-open a saved VARIATION vocab item: open its piece for context, then render the stored
+  // embellished MusicXML on the Variations sheet and enable the controls so it plays / silences /
+  // captures exactly as saved. Self-contained — driven by entry.variationXml, not the source passage.
+  async function openVariationVocabEntry(entry) {
+    await openPreview(entry.pieceId);
+    const from = entry.measureStart, to = entry.measureEnd;   // sequential (stored)
+    document.getElementById('segFrom').value = toPrintedMeasure(from);
+    document.getElementById('segTo').value = toPrintedMeasure(to);
+    // Freeze variation state to this saved item (no generated set — the controls act on currentVarXml).
+    variations = [];
+    varGenRange = [from, to];
+    varGenVoiceIds = (entry.variationVoiceIds && entry.variationVoiceIds.length) ? [...entry.variationVoiceIds] : ['1'];
+    currentVarXml = entry.variationXml;
+    varSilenceMode = false; varHearAll = false; varRenderedIndex = -1;
+    const r = ensureVarRenderer();
+    try {
+      await r.loadDetail({ source: entry.variationXml, meta: { key: (currentDetail && currentDetail.meta && currentDetail.meta.key) || null }, format: 'musicxml', voices: [] });
+      r.showFull();
+      r.highlightExtraNotes(coloredNoteMarks(entry.variationXml), ADDED_NOTE_COLOR);
+      r.setSuppressedNotes(entry.suppressed || []);
+      r.setSuppressMode(false);
+    } catch (err) { console.warn('[variations] saved-variation render failed:', err); }
+    // The picker has no generated options; enable the controls that act on currentVarXml directly.
+    const sel = document.getElementById('varSelect'); if (sel) { sel.innerHTML = ''; sel.disabled = true; }
+    ['varPlay', 'varFret', 'varSilence', 'varHearAll', 'varSaveVocab'].forEach((id) => { const b = document.getElementById(id); if (b) b.disabled = false; });
+    document.getElementById('varEmpty').style.display = 'none';
+    reflectVarSilence(); updateVarSilenceHint();
+    const panel = document.getElementById('variationsSection');
+    if (panel) { panel.open = true; panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    setMediaMsg(`Opened saved variation “${entry.variationLabel || entry.note || entry.id}”.`, 'ok');
+  }
   async function openVocabEntry(entry) {
+    if (entry.variationXml) { await openVariationVocabEntry(entry); return; }   // saved variation → replay its own XML
     await openPreview(entry.pieceId);
     if (!currentDetail) return;
     currentVocabEntry = entry;
@@ -2460,13 +2689,14 @@
       g.entries.forEach(e => {
         const title = (index.find(x => x.id === e.pieceId) || {}).title || e.pieceId;
         const mark = (e.startSeconds != null || e.youtube) ? ' ▶' : '';
+        const varMark = e.variationXml ? '🎶 ' : '';   // a saved variation replays its own embellished notes
         const noteHtml = e.note ? ` <small style="color:#666">— ${escapeHtml(e.note)}</small>` : '';
         const off = e.measureOffset || 0;   // show the item's PRINTED measure numbers
         const row = document.createElement('div');
         row.className = 'resultRow vocabRow';
         const label = document.createElement('span');
         label.className = 'vocabLabel';
-        label.innerHTML = `${title} <small>m${e.measureStart - off}–${e.measureEnd - off}${mark}</small>${noteHtml}`;
+        label.innerHTML = `${varMark}${title} <small>m${e.measureStart - off}–${e.measureEnd - off}${mark}</small>${noteHtml}`;
         label.onclick = () => openVocabEntry(e);
         const del = document.createElement('button');
         del.className = 'vocabDel'; del.title = 'Delete this vocab item'; del.textContent = '🗑';
