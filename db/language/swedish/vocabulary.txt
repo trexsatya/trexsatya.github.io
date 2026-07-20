@@ -282,7 +282,7 @@ Lägra( sig)|<*slå läger|
 (goal)|mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionärer|idealbild|
 (objective)|ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
 (regarding)|angående|gällande|beträffande
-(nosy)|Man ska inte lägga näsan i blöt|
+(nosy)|(Man ska inte) lägga näsan i blöt|
 (attribute)|till<*skriva|till<*räkna|
 (deliberate)|med flit|flitig|avsiktlig|med vett och vilja|uppsåtlig|överlagd|
 (effort)|(Ligga/gå) i selen(old)
@@ -341,7 +341,7 @@ Lägra( sig)|<*slå läger|
 (sift)|sålla|sålla agnarna från vetet|filtrera|sila|avskilja|skräda|skräder|skrädde|skrätt|Skilja agnarna från vetet|
 (analyze)|analysera|överväga|avväga|betänka|betänker|betänkte|betänkt|betänk|
 (Tradeoff)|avvägning
-(debated)|stött och blött|
+(Think though)|stöta och blöta|stötte och blötte|stött och blött|
 (downside)|Medaljens baksida|nakdel
 (consult)|konferera|rådgöra|diskutera|rådfråga|
 (parallel)|dra paralleller mellan|
@@ -895,7 +895,7 @@ Ursäkt|förevändning|täckmantel
 (Take off)|(ta )avstamp
 (circle)|<*ta ett varv|
 (stagger)|vingla|vackla|stappla|ragla|svikta
-(flutter)|fladdra|
+(flutter)|fladdra|flaxa
 (fall)|falla|faller|föll|fallit|fall|ramla|störta|rasa|snubbla|snava|snubbeltråd|tumla
 (risk)|rasrisk
 (collapse)|Rasa som ett korthus
@@ -2484,6 +2484,7 @@ daskig|sjaskig|urblekt|urvattnad
 (alkaline)|basisk|alkalisk
 (taste)|söt|salt|sur|kärv|sträv|
 (sweetness)|sötma
+Sötsaker|snask|godis
 
 (exquisite)|utsökt|
 (delicate)|delikat|
@@ -2860,12 +2861,12 @@ hunsa|hundsfottera|köra över
 (respectable)|vördnadsbjudande|aktningsvärd|vördig
 (venerable)|ärevördig|
 (selfish)|självisk|egoistisk|egoism|egoist|egoister|
-(self)|Man är alltid sig själv närmast
+(self interest comes first)|Man är alltid sig själv närmast
 (help)|Ta för sig|
 (smug)|självgod|förnumstig|besserwisser
 (arrogant)|Uppföra sig som om man ägde stället
 (conceited)|inbilsk|
-(cautious)|Osvuret är bäst
+(cautious, uncertain)|Osvuret är bäst
 (greedy)|girig|
 (more)|Mycket vill ha mer
 (picky)|nogräknad|kräsen|sparsmakad|spotta i glaset|
@@ -2898,12 +2899,12 @@ hunsa|hundsfottera|köra över
 (disobedient)|olydig|stygg|busig|vanartig|ouppfostrad|rackarunge|rackare(sl-pl)|rackarn|stojig|sate|satar|
 (mischievious)|full i fan
 (rascal like behavior)|lymmel|ofog(sl-pl)|bus(sl-pl)|hyss(sl-pl)|stoj|glam|oskick|
-(live)|I sus och dus|Leva loppan
+(live fully)|I sus och dus|Leva loppan
 (defy)|trotsa|motstå|
 (oppose)|motarbeta|dissident|dissidenter|und<*sätta
 (caution)|Såga inte av den gren du själv sitter på
 (obey)|lyda|
-(rude)|oförskämd|oartig|ohövlig|uppkäftig|oblyg|ohyfsad|plump|hyfsat|uppnosig|näsvis|
+(rude)|oförskämd|oartig|ohövlig|uppkäftig|oblyg|ohyfsad|plump|uppnosig|näsvis|
 (shameless)|skamlös|oanständig|fräck|hänsynlös|vilde|fara fram som ett yrväder|burdus|utan blygsel|
 (push)|Armbåga sig fram|Gå över lik
 (manners)|Hut går hem|fräckhet straffar sig
@@ -2926,7 +2927,7 @@ försagd|modlös|klenmodig|förlägen
 (pious)|from|fromhet|from som ett lamm|
 (funny)|lustig|skojig|lättsam|
 (talkative)|pratig|pratsam|munvig|pratkvarn
-(talk)|Hålla låda
+(talk a lot)|Hålla låda
 (longwinded)|långrandig|harang|(lång )utläggning
 (eloquent)|vältalig|retorisk|retoriskt begåvad|retoriskt begåvade|elokvent|vältalighet|retorik|retoriker|retoriker|
 (taciturn)|tystlåten|inbunden|reserverad
@@ -2973,7 +2974,7 @@ försagd|modlös|klenmodig|förlägen
 (attitude)|inställning|inställningar|hållning|attityd|attityder|förhållningssätt(sl-pl)|
 (creative)|kreativ|påhittig|originell|finurlig|fyndig|knepig|fiffig
 (improvise,create from limited resources)|koka soppa på en spik
-(quick)|Ge svar på tal
+(quick, comeback)|Ge svar på tal
 (unimaginative)|fantasilös|
 (presence)|närvaro|närvaron|frånvaro|frånvaron|närvarande|I en annan värld
 (interested)|intresserad|
@@ -3019,7 +3020,7 @@ här blir inga barn gjorda
 (inexperienced)|oerfaren|oerfarna|
 (beginner)|alla är vi barn i början
 (experience)|erfarenhet|upplevelse|uppleva|vara med om |upplever|upplevde|upplevt|upplevelser|
-förfaren|inpiskad( också förhärdad)|utstuderad|durkdriven|
+(Sly, experienced, planned)|förfaren|inpiskad( också förhärdad)|utstuderad|durkdriven|
 (seasoned)|rutinerad|
 (mature)|Torr bakom öronen|
 (talent)|begåvning|begåvningar|talang|talanger|
