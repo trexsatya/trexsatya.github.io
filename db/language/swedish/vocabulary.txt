@@ -978,7 +978,7 @@ Ursäkt|förevändning|täckmantel
 (gay)|bög|homosexuell|fjolla|fjollig
 (hatch)|kläcka|kläcker|kläckte|kläckt|kläck|ruva|häcka|
 (grope)|fingerpulla|tafsa|
-(masturbation)|onani|onanera|masturbera|pulla|runka|
+(masturbation)|onani|onanera|masturbera|pulla|runka|dra en handtralla
 (ejaculate)|ejakulera|uttömma|utlösa|
 (squeezeout)|frampressa|
 (rut)|brunst|parningsdrift|parningslek|brunstig|parningsvillig
@@ -1024,7 +1024,7 @@ Ursäkt|förevändning|täckmantel
 (proverb)|Det flyger inga stekta sparvar i munnen på en
 (burden)|Dra det tyngsta lasset
 (push)|<*Kör så det ryker|<*driva .* till sin spets
-(strain)|<*bemöda <*sig|anstränga|anstränger|ansträngde|ansträngt|
+(strain)|<*bemöda <*sig|anstränga|anstränger|ansträngde|ansträngt|spotta i glaset
 (effort)|<*lägga krut i |Spara inte på krutet|För fulla muggar|Ge järnet
 (thrifty)|den som spar han har|
 (toil)|Slita ont|
@@ -1146,7 +1146,7 @@ Ursäkt|förevändning|täckmantel
 (delay)|försenad|tidig|dröja|dröjer|dröjd|dröj|försening|förseningar|dröjsmål(sl-pl)|förhala|försinka|sinka|fördröja
 (proverb)|Medan gräset gror, dör kon
 (schedule)|schema|scheman(pl)|schemalägga|schemaläggning|schemaläggningar|schemalagd|schemalagt|
-(routine)|rutin|rutiner|slentrian
+(routine)|rutin|rutiner|slentrian|(gå på )stritan(esp. arbetsliv)
 (embed)|Införliva i (rutin)
 (timeline)|tidsplan|tidsplaner|
 (timerange)|tidsram|tidsramar|
@@ -1385,7 +1385,7 @@ Ursäkt|förevändning|täckmantel
 (fleet)|flotta|flottor|flottilj|flottiljer|flottiljer
 (numbers)|jämna tal|udda tal
 (both)|både|båda|såväl|bägge|bådadera|ömse|på ömse hål|på ömse sidor|
-(all)|alla | samtliga|varenda|vartenda|allesammans|allesamman|
+(all)|alla | samtliga|varenda|vartenda|allesammans|allesamman|hela klabbet|rubbet|alltihop|alltsammans
 (everyone)|Hela baletten|fan och hans moster
 (commoners)|gemene man|menige man|
 (rabble)|kreti och pleti|
@@ -2836,7 +2836,7 @@ hunsa|hundsfottera|köra över
 (sociable)|vänsäll|folkkär|
 (popular)|berömd|(komma) i ropet|populär|känd|kändis|omtyckt|omskriven|omtalat|omtyckt|I rampljuset|känd
 (Defamous)|ökänd|ökänt
-(trending)|I ropet[tillfälligtvis)|På tapeten|
+(trending)|I ropet(tillfälligtvis)|På tapeten|
 (kind)|snäll|vänlig|
 (Tearful,sentimental)|gråtmild|sentimental|känslosam|
 (thoughtful)|Det är omtänksamt av dig
@@ -2852,24 +2852,24 @@ hunsa|hundsfottera|köra över
 (mean)|elak|ond|illasinnad|lömsk|försåtlig|nedrig|ondska|elakhet|demon|demonisk
 (malice)|illvilja|
 (sin)|synd|synder|syndig
-(clumsy)|töntig|tafatt|klumpig|drummel|tafflig(utan koord.)|tölp|tölpig|lurkig|fumlig|mupp|
+(clumsy)|töntig|tafatt|klumpig|drummel|tafflig(utan koord.)|tölp|tölpig|fumlig|mupp|
 (clumsy)|Diskret som en elefant i en porslinsbutik|Smidig som ett kylskåp|Stel som en pinne
 (ridiculous)|löjlig|
-(awkward)|(Ha) tummen mitt i handen|
+(Lack practical skills)|(Ha) tummen mitt i handen|
 (strict)|sträng|stram|strikt|<*ta i med hårdhandskarna|Maktfullkomlig
 (cutie)|sötnos|sötnosar
 (respectable)|vördnadsbjudande|aktningsvärd|vördig
 (venerable)|ärevördig|
 (selfish)|självisk|egoistisk|egoism|egoist|egoister|
 (self interest comes first)|Man är alltid sig själv närmast
-(help)|Ta för sig|
+(help yourself, confidence, assert)|Ta för sig|
 (smug)|självgod|förnumstig|besserwisser
 (arrogant)|Uppföra sig som om man ägde stället
 (conceited)|inbilsk|
 (cautious, uncertain)|Osvuret är bäst
 (greedy)|girig|
 (more)|Mycket vill ha mer
-(picky)|nogräknad|kräsen|sparsmakad|spotta i glaset|
+(picky)|nogräknad|kräsen|sparsmakad|
 (glutton)|girigbuk|girigbukar|
 (greedy)|den som gapar efter mycket mister ofta hela stycket
 (stingy)|snål|sparsam|ekonomisk|snåljåp|snålvarg|karg|sniken|ogin|
@@ -2880,7 +2880,7 @@ hunsa|hundsfottera|köra över
 (opportunist)|Vända kappan efter vinden|
 (turn)|Vända andra kinden till|
 (arrogance)|högmod|hybris|övermod|högfärd|storhetsvansinne|megalomani|övermodig|
-(caution)|Gräv inte upp större sten än du kan bära|
+(caution, know your limits)|Gräv inte upp större sten än du kan bära|
 (arrogant)|mallig|högmodig|högfärdig|megaloman|pösmunk|pösmunkar|pösig|stropp|
 (fall)|Högmod går före fall|
 (cocky)|kaxig|pösig|dryg|Stolt som en tupp|stöddig|Rak som en fura|morsk|stursk(f.)
