@@ -490,6 +490,9 @@
         <option value="synth">Synth</option>
       </select>
     </label>
+    <label title="Transpose the whole piece — updates the sheet, chords, fretboard, and playback">Transpose
+      <select id="transposeKey"></select>
+    </label>
     <span id="transportMsg" style="color: blueviolet;"></span>
   </div>
   <div id="mediaRow" style="margin:.25rem 0" class="previewControls">
@@ -660,6 +663,7 @@
       </div>
       <div class="fb-paths">
         <label>Ways to play <select id="fbPaths"></select></label>
+        <label title="Mix the region shapes across chords — each chord can take its shape from a different position">Combinations <select id="fbCombos"></select></label>
       </div>
       <!-- Transport / shape controls stay above the diagram; only Prev/Next sit below it. -->
       <div class="fb-step">
@@ -693,25 +697,26 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=520821cf7e';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=520821cf7e';
-  import { runQuery } from './music-query.js?v=520821cf7e';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=520821cf7e';
-  import { init as initFretboard } from './fretboard-panel.js?v=520821cf7e';
-  import { chordDisplayName } from './music-chords.js?v=520821cf7e';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=520821cf7e';
-  import { createMusicStore } from './music-local-store.js?v=520821cf7e';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=520821cf7e';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=520821cf7e';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=520821cf7e';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=520821cf7e';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=520821cf7e';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=520821cf7e';
-  import { generateCounterLines } from './music-counterpoint.js?v=520821cf7e';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=520821cf7e';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=520821cf7e';
-  import { splitSingleVoice } from './music-voice-split.js?v=520821cf7e';
-  import { encodeMusicXml } from './music-encoding.js?v=520821cf7e';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=f73e325fc4';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=f73e325fc4';
+  import { runQuery } from './music-query.js?v=f73e325fc4';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=f73e325fc4';
+  import { init as initFretboard } from './fretboard-panel.js?v=f73e325fc4';
+  import { chordDisplayName } from './music-chords.js?v=f73e325fc4';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=f73e325fc4';
+  import { createMusicStore } from './music-local-store.js?v=f73e325fc4';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=f73e325fc4';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=f73e325fc4';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=f73e325fc4';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=f73e325fc4';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=f73e325fc4';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=f73e325fc4';
+  import { generateCounterLines } from './music-counterpoint.js?v=f73e325fc4';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=f73e325fc4';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=f73e325fc4';
+  import { splitSingleVoice } from './music-voice-split.js?v=f73e325fc4';
+  import { encodeMusicXml } from './music-encoding.js?v=f73e325fc4';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=f73e325fc4';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -925,6 +930,7 @@
         resetBtn: document.getElementById('fbReset'),
         fullscreenBtn: document.getElementById('fbFullscreen'),
         pathSelect: document.getElementById('fbPaths'),
+        comboSelect: document.getElementById('fbCombos'),
         prevBtn: document.getElementById('fbPrev'),
         nextBtn: document.getElementById('fbNext'),
         playStepBtn: document.getElementById('fbPlayStep'),
@@ -1017,6 +1023,11 @@
   }
 
   let player = null, yt = null, currentDetail = null, currentVocabEntry = null;
+  // Transpose: keep the ORIGINAL (untransposed) source + its detected tonic/mode so every transpose is
+  // computed from it (not cumulatively). The dropdown mirrors #patKey — 24 keys (major + minor) — and
+  // defaults to the piece's best-guess key. TRANSPOSE_NAMES[pc] is the tonic name shown per pitch class.
+  let pieceOriginalSource = null, pieceOriginalPc = 0, pieceOriginalMode = 'major';
+  const TRANSPOSE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
   let fbStepInstr = null;   // last instrument pushed to the player for fretboard step-play (avoids re-creating the voice)
   let fbPanel = null;       // fretboard panel controller (from initFretboard) — for cross-panel actions
   // The "Add to vocab" button doubles as "Add/update" while a saved vocab item is on screen.
@@ -1435,6 +1446,53 @@
     dirtyVocab = true; updatePushBtn();
     setMediaMsg(`${updating ? 'Updated' : 'Added'} "${entry.id}" (${vocab.length} total) — click "Push changes" to publish.`, 'ok');
   };
+  // Fill the transpose dropdown with the 12 keys, marking the piece's own key "(original)" and
+  // selecting it. Called on each fresh preview.
+  // 24 keys (major then minor), value "pc:mode" like #patKey; the piece's original key is preselected
+  // and marked "(original)".
+  function populateTransposeSelect() {
+    const sel = document.getElementById('transposeKey');
+    if (!sel) return;
+    sel.innerHTML = '';
+    ['major', 'minor'].forEach((mode) => TRANSPOSE_NAMES.forEach((nm, pc) => {
+      const opt = document.createElement('option');
+      opt.value = `${pc}:${mode}`;
+      const isOrig = pc === pieceOriginalPc && mode === pieceOriginalMode;
+      opt.textContent = isOrig ? `${nm} ${mode} (original)` : `${nm} ${mode}`;
+      sel.appendChild(opt);
+    }));
+    sel.value = `${pieceOriginalPc}:${pieceOriginalMode}`;
+  }
+
+  // Transpose the whole piece to target pitch class `targetPc` / `mode`. Always computed from the ORIGINAL
+  // source (so it's absolute, not cumulative), then re-renders the sheet and re-captures the fretboard;
+  // currentDetail.source is updated so playback and variations use the transposed pitches too.
+  async function applyTranspose(targetPc, mode) {
+    if (!currentDetail || pieceOriginalSource == null) return;
+    const semis = nearestSemitones(pieceOriginalPc, targetPc);
+    const src = semis === 0 ? pieceOriginalSource : transposeMusicXml(pieceOriginalSource, semis, targetPc, mode);
+    const keyLabel = `${TRANSPOSE_NAMES[targetPc]} ${mode}`;
+    currentDetail = { ...currentDetail, source: src, meta: { ...(currentDetail.meta || {}), key: keyLabel } };
+    const renderer = await ensureRenderer();
+    if (player) player.stop();
+    // Preserve the current view: loadDetail resets to the whole piece, so if a segment was clipped
+    // (not the full piece) re-show that same measure window on the transposed score instead of showFull.
+    const prev = renderer.getShownRange ? renderer.getShownRange() : null;
+    const wasSegment = prev && (prev.from > 1 || (prev.total && prev.to < prev.total)) && prev.to >= prev.from;
+    await renderer.loadDetail(currentDetail);
+    renderer.applyResponsiveZoom(document.getElementById('osmdPreview').clientWidth || window.innerWidth);
+    if (wasSegment) renderer.showSegment([prev.from, prev.to]); else renderer.showFull();
+    renderer.setShowChords(document.getElementById('chordChk').checked);
+    if (fbPanel) fbPanel.capture();   // re-read the transposed sheet's chords onto the fretboard
+  }
+  {
+    const tsel = document.getElementById('transposeKey');
+    if (tsel) tsel.addEventListener('change', (e) => {
+      const [pc, mode] = String(e.target.value).split(':');
+      applyTranspose(parseInt(pc, 10) || 0, mode || 'major');
+    });
+  }
+
   async function openPreview(id) {
     const title = (index.find(e => e.id === id) || {}).title || id;
     document.getElementById('previewTitle').textContent = title;
@@ -1460,6 +1518,13 @@
     if (!res.ok) { document.getElementById('previewMsg').textContent = 'Cannot render (note-text piece).'; return; }
     currentDetail = detail;
     currentPreviewId = id;
+    pieceOriginalSource = detail.source;                         // baseline for transposition (absolute, non-cumulative)
+    // Original key = the piece's best-guess tonic/mode (notes are rendered now), so the Transpose picker
+    // opens on the real key and transposes are measured from it. `pieceGuess` is reused for #patKey below.
+    const pieceGuess = renderer.guessBestKey ? renderer.guessBestKey() : null;
+    pieceOriginalPc = pieceGuess ? pieceGuess.tonicPc : 0;
+    pieceOriginalMode = pieceGuess ? pieceGuess.mode : 'major';
+    populateTransposeSelect();
     totalMeasures = res.totalMeasures || 0;
     currentOffset = res.measureOffset || 0;   // pickup shift for printed↔sequential conversions
     document.getElementById('instrSel').value = instrumentVoiceKey(detail.meta && detail.meta.instrument);
@@ -1474,8 +1539,8 @@
     renderer.applyResponsiveZoom(document.getElementById('osmdPreview').clientWidth || window.innerWidth);
     renderer.showFull();
     renderer.setShowChords(document.getElementById('chordChk').checked);   // Show chords is on by default
-    // Default the diatonic key picker to this piece's best-guess key (notes are now rendered).
-    if (renderer.guessBestKey) { const g = renderer.guessBestKey(); if (g) document.getElementById('patKey').value = `${g.tonicPc}:${g.mode}`; }
+    // Default the diatonic key picker to this piece's best-guess key (computed above as pieceGuess).
+    if (pieceGuess) document.getElementById('patKey').value = `${pieceGuess.tonicPc}:${pieceGuess.mode}`;
     if (renderer) { renderer.setSuppressedNotes([]); renderer.setSuppressMode(false); }
     // Note suppression is available in a plain preview too (not just saved vocab items): you can
     // silence notes to practice chords/melodies live. It stays transient unless you capture to vocab.
