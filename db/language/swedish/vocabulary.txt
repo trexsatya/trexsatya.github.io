@@ -418,7 +418,6 @@ Lägra( sig)|<*slå läger|
 (proverb)|bättre brödlös än rådlös
 (proverb)|Lättare döljer en vis sin visdom än en dåre sin dårskap
 (sense)| vett |förnuft|omdöme|förstånd|
-
 (wish)|önska|önskan|önskemål|önskning|önskningar|dröm|drömmar|drömma|drömmer|drömde|drömt|drömsk|drömskt|drömska|drömsk|drömmande|svärmisk|
 (daydream)|Bygga luftslott
 (hope)|hoppas|förhoppning|hopp|förväntning|förväntan|förväntningar|<*Hålla tummarna|
@@ -1979,7 +1978,7 @@ svagaste länken i kedjan
 (bad)|dålig|värre|värste|värsta|sämre|sämst|sämsta|knackig|taskig|ynklig|
 (reprehensible)|Förkastlig
 (shabby)|risig|åtgången|skruttig|ruffig|sjabbig
-(poor)|beklämmande|bristfällig|ofullständig|felaktig|ruskig|ruggig|
+(poor)|beklämmande|bristfällig|ofullständig|felaktig|ruskig|ruggig|knagglig
 (defective)|defekt|defekter|felaktighet|felaktigheter|
 (proverb)|Det är mänskligt att fela|Även den bäste kan fela
 (proverb)|Två fel gör inte ett rätt
@@ -2816,71 +2815,58 @@ hunsa|hundsfottera|köra över
 (order)|befallning|kommando|
 (attention)|lystring|hör upp|
 (urge)|uppmana|uppmaning|uppmaningar|inrådan|påbud(sl-pl)|dekret|förmana|
-
-
 #Mental habits, conditions, personalities
 (embedded)|<*Sitta i väggarna
 
 (hermit)|eremit|
-(virginity)|svendom|svendomar|ungfrudom|ungfru|mödom|mödomar|oskuld|oskulder
+(virginity)|svendom|svendomar|jungfrudom|jungfru|mödom|mödomar|oskuld|oskulder
 (lad)|sven|svenner|svenne|svennar
-
 (--heart related--)
 (callous)|känslokall|skoningslös|obarmhärtig|stram|
 (dulled, numb)|avtrubbad|
-
 (kind)|snäll|vänlig|
 (Tearful,sentimental)|gråtmild|sentimental|känslosam|
 (thoughtful)|Det är omtänksamt av dig
-(harmless)|Inte göra en fluga förnär
-
+(harmless)|Inte gör en fluga förnär
 (--politeness, concern for others--)
 (polite)|artig|hövlig|
 (refined)|belevad|gentleman|kultiverad
 (choose)|Skräda orden|
 (modest)|anspråkslös|taktfull|försynt|hänsynsfull|omtänksam|finkänslig|skonsam|ömsint|försynt
-(humble)|blygsam|ödmjuk|modest|from|From som ett lamm
+(Empathetic)|empatisk|inkännande
+(humble)|blygsam|ödmjuk|From som ett lamm
 försagd|modlös|klenmodig|förlägen (blyg och förvirrad)
 (grounded)|Med båda fötterna på jorden
 (reserved)|reserverad|tillbakadragen|skygg|
-
 (pushy)|påträngande|påträngande|framfusig|Tränga <*sig på
 (pushy)|Vassa armbågar|På höga hästar
 (rude)|oförskämd|oartig|ohövlig|uppkäftig|oblyg|ohyfsad|plump|uppnosig|näsvis|
-(shameless)|skamlös|oanständig|fräck|hänsynlös|vilde|fara fram som ett yrväder|burdus|utan blygsel|
+(shameless)|skamlös|oanständig|fräck|hänsynslös|vilde|fara fram som ett yrväder|burdus|utan blygsel|
 (push)|Armbåga sig fram|Gå över lik
 (manners)|Hut går hem|fräckhet straffar sig
 (sarcastic)|spydig|uppkäftig|provocerande|Vass tunga|
 (rascal like behavior)|lymmel|ofog(sl-pl)|bus(sl-pl)|hyss(sl-pl)|stoj|glam|oskick|
-
 (--forgiveness--)
 (turn other cheek)|Vända andra kinden till|
 (big-hearted)|vidsynt|storsint
-
 (narrowminded)|trångsynt|småaktig
-
 (--bravery--)
 (cowardly)|feg|fegis| mes|mesig|mjäkig|pjoskig|ynkrygg|ynkryggar|
-
 (bold)|djärv|modig|orädd|frejdig|frimodig|tapper
 (warrior)|kämpe|
 (brave)|Modig som ett lejon
 (courage)|den fege dör tusentals gånger, den modige dör bara en
 (courage)|civilkurage|
-
 (go out on a limb)|Sticka ut hakan|
 risktagare
-
 (--goodwill--)
 (mean)|elak|ond|illasinnad|lömsk|försåtlig|nedrig|ondska|elakhet|demon|demonisk
 (malice)|illvilja|
 (sin)|synd|synder|syndig
-
 (--flexibility--)
 (welcoming)|välkommande|Öppna armar|
 (accommodating)|tillmötesgående|medgörlig|
 (adaptable)|anpassningsbar|
-
 (stubborn)|trilsk|trilskas|trilskas|trilskas|trilskades|trilskats|
 (obstinate)|egensinnig|envis|ihärdig|omedgörlig|istadig|outtröttlig|obstinat|halsstarrig(f.)
 (stubborn)|Envis som synden|Envis som en röd gris|Envis som en åsna
@@ -2890,49 +2876,39 @@ risktagare
 (will)|Vilja av stål|ståndaktig
 (steadfast)|karaktärsfast
 (strict)|sträng|stram|strikt|<*ta i med hårdhandskarna|Maktfullkomlig
-
 (--conformity--)
 (obedient)|foglig|lydig|följsam|lydnad|lydande|underlydande|undergiven|lydig|underdånig|
 (compliant)|undfallande|beskedlig|
 (obedient)|Lydig som en hund
-
 (rebellious)|rebellisk|upprorisk|trotsig
 (uproar)|rabalder|uppståndelse|uppror|
 (disobedient)|olydig|stygg|busig|vanartig|ouppfostrad|rackarunge|rackare(sl-pl)|rackarn|stojig|sate|satar|
 (mischievious)|full i fan
 (defy)|trotsa|motstå|
-(oppose)|motarbeta|dissident|dissidenter|und<*sätta
-
+(oppose)|motarbeta|dissident|dissidenter|
 (--loyalty--)
 (opportunist)|Vända kappan efter vinden|
-
 (--honesty--)
 (honest)|ärlig
 (hypocrite)|hycklare|hyckleri|hypokrisi|skenhelighet|fromleri|skrymteri|hyckla
-
 (--social interaction related--)
 (introvert)|introvert|inåtvänd|
 (shy)|folkskygg
 (rustic)|rustik|bondsk|lantlig|
 (urban)|urban|
 (modest)|sedesam|dygdesam|dygdig|pryd|
-
 (sociable)|vänsäll|folkkär|
 (extrovert)|utåtriktad
-
 (small pond)|Ankdamm
 (stalk)|stalka|
 (presence)|närvaro|närvaron|frånvaro|frånvaron|närvarande|I en annan värld
-
 (--social status, perception--)
 (charisma)|pondus|karisma|
 (unassailable)|oantastlig|
 (undeniable)|obestridlig|ovedersäglig|oförneklig|
 (popular)|berömd|(komma) i ropet|populär|känd|kändis|omtyckt|omskriven|omtalat|omtyckt|I rampljuset|känd
-(trending)|I ropet[tillfälligtvis)|På tapeten|
-
+(trending)|I ropet(tillfälligtvis)|På tapeten|
 (Defamous)|ökänd|ökänt
-
 (--selfishness--)
 (selfish)|självisk|egoistisk|egoism|egoist|egoister|
 (self interest comes first)|Man är alltid sig själv närmast
@@ -2943,19 +2919,15 @@ risktagare
 (stingy)|snål|sparsam|ekonomisk|snåljåp|snålvarg|karg|sniken|ogin|
 (petty)||småaktig
 (miserly)|knusslig(småsnål)|
-
 (generous)|generös
-
 (--neatness, organisation--)
 (punctual)|punktlig|punktlighet
 (clumsy)|töntig|tafatt|klumpig|drummel|tafflig(utan koord.)|tölp|tölpig|lurkig|fumlig|mupp|
 (clumsy)|Diskret som en elefant i en porslinsbutik|Smidig som ett kylskåp|Stel som en pinne
 (ridiculous)|löjlig|
 (lacks practical knowledge)|(Ha) tummen mitt i handen|
-
 ()|redig
 (picky)|nogräknad|kräsen|sparsmakad|petig
-
 (--confidence--)
 (cautious, uncertain)|Osvuret är bäst
 (help yourself, confident)|som tar för sig|
@@ -2968,9 +2940,7 @@ risktagare
 (cocky)|kaxig|pösig|dryg|Stolt som en tupp|stöddig|Rak som en fura|morsk|stursk(f.)
 (dandy)|sprätt|snobb|arrogant|överlägsen|Stiga åt huvudet|snobberi
 (pretentious)|anspråksfull|pretentiös|pretto|förmäten(mycket)|övermodig|(Pretention)|pretention
-
 (Showoff)|skrytmåns
-
 (--effort--)
 (buckle up)|spotta i glaset|
 (cautious undertaking)|Gräv inte upp större sten än du kan bära|
@@ -2984,22 +2954,17 @@ risktagare
 (enterprising)|företagsam|tilltagsen|initiativrik|
 (eager)|På hugget
 (industrious)|Flitig som en myra|Flitig som ett bi
-
 (lazy)|lat|oföretagsam|slö|latmask(nedsättande)|slapp|
 (laze)|slappa
 (lethargic)|loj|slöfock|slöfockar|
-
 (--respect--)
 (respectful)|vördsam|respektfull|respekterad
 (respectable)|vördnadsbjudande|aktningsvärd|vördig
 (venerable)|ärevördig|
-
 (--self view--)
 (selfpitying)|självömkande|
-
 (--temper--)
 (phlegmatic)|flegmatiker(sl-pl)|stilla
-
 (hotheaded)|hetsporre
 (heated)|I hetluften|i hetsiga sammanhang
 (crazy)|galen|galning|tokfrans|tokfransar|tokstolle|tokstollar|vurm|ha vurm|vettvilling
@@ -3010,11 +2975,8 @@ risktagare
 (mad)|Åt fanders|Ute och cyklar|Uppåt väggarna|
 (senseless)|sanslös|
 (eccentric)|kuf|särling|ensamvarg|säregen
-
 (violent)|våldsam|aggressiv|angripande|
-
 (live fully)|(leva) I sus och dus|Leva loppan
-
 (--talking--)
 (funny)|lustig|skojig|lättsam|
 (talkative)|pratig|pratsam|munvig|pratkvarn
@@ -3022,7 +2984,6 @@ risktagare
 (longwinded)|långrandig|harang|(lång )utläggning
 (eloquent)|vältalig|retorisk|retoriskt begåvad|retoriskt begåvade|elokvent|vältalighet|retorik|retoriker|retoriker|
 (taciturn)|tystlåten|inbunden|reserverad
-
 (--intelligense, usefulness--)
 (born yesterday)|Född i farstun|
 (layman)|lekman
@@ -3051,7 +3012,6 @@ risktagare
 (mismatch)|Sätta bocken till trädgårdsmästare|Man ska inte sätta bocken som trädgårdsmästare
 (mismatch)|Låt inte vargen vakta fåren
 (mismatch)|Katt bland hermelinerna
-
 (will do, just enough)|duga|kunna|<*gå an|<*hålla måttet|
 (manage)|Det knallar och går
 (mature)|Torr bakom öronen|
@@ -3076,10 +3036,8 @@ risktagare
 (expert)|fackman|expert|sakkunnig|rådig|fackmässig|fackmän|fackmänna|pionjär|pionjärer|
 (capable)|kapabel|Av det rätta virket|Karl för sin hatt
 (genius)|geni|genit|genier|genial|snillrik|
-
 (stay in your lane)|Bli vid sin läst
 (knowitall)|förståsigpåare(nedsättande, ironisk)
-
 (cunning)|slug|rävslug|listig|klipsk|beräknande|listig som en räv|fullflätad|Slug som en räv|
 (cunning)|Listig som en orm|Räv bakom örat
 (clever)|fiffig|påhittig|smart|
@@ -3089,35 +3047,26 @@ risktagare
 (sly)|illfundig|
 (outsmart)|överlista|listigare
 (maneuver)|Utmanövera|
-
 (--special--)
 (founder)|grundare (av nåt)(sl-pl)|grundarn|instiftare(sl-pl)|skapare(sl-pl)|skaparn|upphovsmakare(sl-pl)|upphovsmakarn|
 (special, ace, a trump card)|Ess i rockärmen
-
 (--creativity--)
 (creative)|kreativ|påhittig|originell|finurlig|fyndig|knepig|fiffig
 (improvise,create from limited resources)|koka soppa på en spik
 (quick, comeback)|Ge svar på tal
-
 (unimaginative)|fantasilös|
-
 (imagination)|fantasi|inbilla|<*föreställa <*sig|
 (Delusional)|inbilsk|
 (fanatic)|fanatisk|
-
 (--religiousity--)
 (pious)|from|fromhet|from som ett lamm|
-
 (--overall--)
 (attitude)|inställning|inställningar|hållning|attityd|attityder|förhållningssätt(sl-pl)|
-
 (spank, hit)|dänga|dängor|
-
 (interested)|intresserad|
 (double benefit)|två flugor i en smäll
 (clash)|Rimmar illa
 (timing)|Var sak har sin tid
-
 #Food, Drink, kitchen, Eating
 (eat)|vad äter ni till vardags
 (eating is important)|Äta bör man annars dör man
@@ -5280,7 +5229,6 @@ vara=vara,är,var,varit
 växa=växa,växer,växte,vuxit
 vetta=vetta,vetter,vette,vettat
 visa=visa,visar,visade,visat
-
 
 #undefined
 (Draincleaner)|propplösare
