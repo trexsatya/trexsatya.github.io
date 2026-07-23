@@ -248,8 +248,17 @@
            so toggling a panel never reflows the page (which could nudge a scrollbar and force OSMD to
            re-render, dropping the pattern-match highlights). Anchored below both summaries via .np-wrap. */
         .np-wrap{position:relative}
-        .np-panel[open]>.np-body{position:absolute;left:0;right:0;top:100%;z-index:60;margin-top:3px;
+        /* The expanded body is a floating, DRAGGABLE card (bounded width, not full-width) so the user
+           can move it off the score to reach the noteheads for tag/phrase painting. Absolute (no reflow);
+           drag applies a translate offset (see makePanelDraggable), preserved while the panel is open. */
+        .np-panel[open]>.np-body{position:absolute;left:0;right:auto;width:min(360px,92vw);top:100%;z-index:60;margin-top:3px;
           border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:.5rem .7rem;max-height:72vh;overflow:auto}
+        /* Drag handle: a slim sticky bar at the top of the card. Double-click resets the position. */
+        .np-drag{display:flex;align-items:center;gap:6px;cursor:move;user-select:none;touch-action:none;
+          font-size:12px;color:#8a7fb0;font-weight:600;margin:-.5rem -.7rem .45rem;padding:5px .7rem;
+          border-bottom:1px solid rgba(0,0,0,.08);border-radius:6px 6px 0 0;position:sticky;top:-.5rem;background:inherit;z-index:1}
+        #phrasePanel .np-drag{color:#6f8bbf}
+        .np-drag .grip{letter-spacing:1px}
         #tagPanel[open]>.np-body{background:#f6f3ff;border:1px solid #ddd0ff}
         #phrasePanel[open]>.np-body{background:#eef4ff;border:1px solid #cfe0ff}
         .pattern-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;margin:.25rem 0;padding:.35rem .6rem;background:#fafafa;border:1px solid #e5e5e5;border-radius:4px}
@@ -551,6 +560,7 @@
   <details id="tagPanel" class="np-panel">
     <summary>🏷️ Motifs<button type="button" id="tagVisBtn" class="np-vis" title="Show these motifs on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button></summary>
     <div class="np-body">
+    <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
     <div class="tag-row">
       <button class="btn toggle" data-for="tagModeChk" title="Click notes to add/remove them from the active tag"><span class="ic">🖌️</span><span class="txt">Edit mode</span></button>
       <label class="tag-lbl">Tag:
@@ -577,6 +587,7 @@
   <details id="phrasePanel" class="np-panel">
     <summary>🎼 Phrases<button type="button" id="phraseVisBtn" class="np-vis" title="Show these phrases on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button></summary>
     <div class="np-body">
+    <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
     <div class="tag-row">
       <label class="tag-lbl">New phrase:
         <input id="phraseInput" maxlength="32" placeholder="name…" autocomplete="off" style="width:11em">
@@ -697,26 +708,26 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=bb914f9b2f';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=bb914f9b2f';
-  import { runQuery } from './music-query.js?v=bb914f9b2f';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=bb914f9b2f';
-  import { init as initFretboard } from './fretboard-panel.js?v=bb914f9b2f';
-  import { chordDisplayName } from './music-chords.js?v=bb914f9b2f';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=bb914f9b2f';
-  import { createMusicStore } from './music-local-store.js?v=bb914f9b2f';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=bb914f9b2f';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=bb914f9b2f';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=bb914f9b2f';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=bb914f9b2f';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=bb914f9b2f';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=bb914f9b2f';
-  import { generateCounterLines } from './music-counterpoint.js?v=bb914f9b2f';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=bb914f9b2f';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=bb914f9b2f';
-  import { splitSingleVoice } from './music-voice-split.js?v=bb914f9b2f';
-  import { encodeMusicXml } from './music-encoding.js?v=bb914f9b2f';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=bb914f9b2f';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=2abb285815';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=2abb285815';
+  import { runQuery } from './music-query.js?v=2abb285815';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=2abb285815';
+  import { init as initFretboard } from './fretboard-panel.js?v=2abb285815';
+  import { chordDisplayName } from './music-chords.js?v=2abb285815';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=2abb285815';
+  import { createMusicStore } from './music-local-store.js?v=2abb285815';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=2abb285815';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=2abb285815';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=2abb285815';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=2abb285815';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=2abb285815';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=2abb285815';
+  import { generateCounterLines } from './music-counterpoint.js?v=2abb285815';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=2abb285815';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=2abb285815';
+  import { splitSingleVoice } from './music-voice-split.js?v=2abb285815';
+  import { encodeMusicXml } from './music-encoding.js?v=2abb285815';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=2abb285815';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1798,7 +1809,12 @@
     if (document.activeElement !== input) input.value = activeTagName;   // don't fight mid-typing
     const list = document.getElementById('tagList');
     list.innerHTML = '';
-    names.forEach((nm) => {
+    // The pill list is for checking/filtering tags that actually mark notes in THIS piece — a tag with
+    // 0 notes here can't be shown/filtered, so hide it (it's still pickable via the datalist above).
+    const listNames = names.filter((nm) => (countOf[nm] || 0) > 0);
+    // Check/uncheck-all is meaningless without any listed tag — hide it when the list is empty.
+    document.getElementById('tagCheckAllBtn').style.display = listNames.length ? '' : 'none';
+    listNames.forEach((nm) => {
       const pill = document.createElement('span');
       pill.className = 'tag-pill';
       const cb = document.createElement('input');
@@ -1847,6 +1863,43 @@
     if (openPanel) { openPanel.querySelector('.np-body').appendChild(pc); pc.style.display = 'flex'; }
     else pc.style.display = 'none';
   }
+  // Make a floating panel body draggable by its .np-drag handle: pointer drag sets a translate offset
+  // (kept on the element, so it persists while open); double-click the handle resets it. A ≥40px sliver
+  // is always kept on-screen so the handle can't be lost. Wired once — the body elements are static.
+  function makePanelDraggable(body) {
+    const handle = body && body.querySelector('.np-drag');
+    if (!handle || handle._wired) return;
+    handle._wired = true;
+    let dragging = false, sx = 0, sy = 0, ox = 0, oy = 0, aL = 0, aT = 0, bw = 0, bh = 0;
+    const apply = () => {
+      const o = body._off;
+      body.style.transform = (o && (o.x || o.y)) ? `translate(${o.x}px, ${o.y}px)` : '';
+    };
+    handle.addEventListener('pointerdown', (e) => {
+      dragging = true; sx = e.clientX; sy = e.clientY;
+      const o = body._off || { x: 0, y: 0 }; ox = o.x; oy = o.y;
+      const r = body.getBoundingClientRect();
+      aL = r.left - ox; aT = r.top - oy; bw = r.width; bh = r.height;   // anchored (untransformed) origin
+      try { handle.setPointerCapture(e.pointerId); } catch (_) {}
+      e.preventDefault();
+    });
+    handle.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      let nx = ox + (e.clientX - sx), ny = oy + (e.clientY - sy);
+      nx = Math.max(40 - bw - aL, Math.min(window.innerWidth - 40 - aL, nx));
+      ny = Math.max(-aT, Math.min(window.innerHeight - 40 - aT, ny));
+      body._off = { x: nx, y: ny };
+      apply();
+    });
+    const end = (e) => { if (dragging) { dragging = false; try { handle.releasePointerCapture(e.pointerId); } catch (_) {} } };
+    handle.addEventListener('pointerup', end);
+    handle.addEventListener('pointercancel', end);
+    handle.addEventListener('dblclick', () => { body._off = { x: 0, y: 0 }; apply(); });
+  }
+  ['tagPanel', 'phrasePanel'].forEach((id) => {
+    const p = document.getElementById(id);
+    if (p) makePanelDraggable(p.querySelector('.np-body'));
+  });
   // Sheet visibility is DECOUPLED from expand/collapse: the header 👁 toggle dims the sheet and reveals
   // the checked motifs/phrases; expand/collapse only shows this panel's own controls + list.
   let tagVisOn = false, phraseVisOn = false;
@@ -1888,7 +1941,8 @@
   // Check all tags at once (or uncheck all if every tag is already checked).
   document.getElementById('tagCheckAllBtn').onclick = () => {
     if (!renderer) return;
-    const names = renderer.getTagNames();
+    const countOf = {}; renderer.getPatterns().forEach((a) => { countOf[a.name] = (a.notes || []).length; });
+    const names = renderer.getTagNames().filter((n) => (countOf[n] || 0) > 0);   // only the listed (note-bearing) tags
     const allOn = names.length > 0 && names.every((n) => tagFilterSel.has(n));
     tagFilterSel.clear();
     if (!allOn) names.forEach((n) => tagFilterSel.add(n));
