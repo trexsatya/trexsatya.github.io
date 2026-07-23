@@ -697,26 +697,26 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=b3b03444e8';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=b3b03444e8';
-  import { runQuery } from './music-query.js?v=b3b03444e8';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=b3b03444e8';
-  import { init as initFretboard } from './fretboard-panel.js?v=b3b03444e8';
-  import { chordDisplayName } from './music-chords.js?v=b3b03444e8';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=b3b03444e8';
-  import { createMusicStore } from './music-local-store.js?v=b3b03444e8';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=b3b03444e8';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=b3b03444e8';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=b3b03444e8';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=b3b03444e8';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=b3b03444e8';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=b3b03444e8';
-  import { generateCounterLines } from './music-counterpoint.js?v=b3b03444e8';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=b3b03444e8';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=b3b03444e8';
-  import { splitSingleVoice } from './music-voice-split.js?v=b3b03444e8';
-  import { encodeMusicXml } from './music-encoding.js?v=b3b03444e8';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=b3b03444e8';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=e75b8f0522';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=e75b8f0522';
+  import { runQuery } from './music-query.js?v=e75b8f0522';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=e75b8f0522';
+  import { init as initFretboard } from './fretboard-panel.js?v=e75b8f0522';
+  import { chordDisplayName } from './music-chords.js?v=e75b8f0522';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=e75b8f0522';
+  import { createMusicStore } from './music-local-store.js?v=e75b8f0522';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=e75b8f0522';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=e75b8f0522';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=e75b8f0522';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=e75b8f0522';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=e75b8f0522';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=e75b8f0522';
+  import { generateCounterLines } from './music-counterpoint.js?v=e75b8f0522';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=e75b8f0522';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=e75b8f0522';
+  import { splitSingleVoice } from './music-voice-split.js?v=e75b8f0522';
+  import { encodeMusicXml } from './music-encoding.js?v=e75b8f0522';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=e75b8f0522';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1093,11 +1093,13 @@
     return segmentRange();
   }
   // Fired by the renderer when the click-to-play-from start note changes. Show where the next Play will
-  // begin (or clear our own note when the start was reset). Cosmetic — the range is read fresh at play.
+  // begin, and mark a seek as pending so Resume restarts from the moved cursor instead of continuing
+  // from the paused position. Cleared when a start actually consumes it (Play / cursor reset).
   function onSeek() {
+    const ps = renderer && renderer.getPlayStartRange && renderer.getPlayStartRange();
+    seekPending = !!ps;
     const el = document.getElementById('transportMsg');
     if (!el) return;
-    const ps = renderer && renderer.getPlayStartRange && renderer.getPlayStartRange();
     if (ps) el.textContent = `▶ Play starts at m. ${toPrintedMeasure(ps.fromMeasure)}`;
     else if (/^▶ Play starts at/.test(el.textContent)) el.textContent = '';
   }
@@ -1283,6 +1285,9 @@
   document.getElementById('hearAllChk').onchange = (e) => { if (renderer) renderer.setHearAll(e.target.checked); };
   // Two-button transport: Play always (re)starts from the segment start; Pause toggles to Resume.
   let paused = false;
+  // Set when the play cursor was moved by a click; makes Resume restart from the cursor (not the
+  // paused position). Cleared once a Play/Resume starts from it. See onSeek + the pause/resume handler.
+  let seekPending = false;
   let ytPlaying = false;   // tracks YouTube playback (Tone.Transport.state is authoritative for MIDI)
   // Is the transport currently sounding (not paused, not stopped)? Drives the mobile FAB icon.
   function fabPlaying() {
@@ -1322,7 +1327,7 @@
     updateFab();
   }
   document.getElementById('playBtn').onclick = () => {
-    paused = false; updatePauseLabel();
+    paused = false; seekPending = false; updatePauseLabel();   // a fresh Play consumes any pending seek
     const isYt = document.getElementById('srcSel').value === 'youtube';
     ytPlaying = isYt;   // started fresh; only meaningful for the YouTube source
     (isYt ? playYouTube() : playMidi());
@@ -1336,7 +1341,10 @@
       if (isYt) { if (yt) yt.pause(); } else if (player) player.pause();
       paused = true;
     } else {
-      if (isYt) { if (yt) yt.play(); ytPlaying = true; } else if (player) player.resume();
+      // Resume: if the cursor was moved (clicked) while paused, start fresh from it; else continue.
+      if (isYt) { if (yt) yt.play(); ytPlaying = true; }
+      else if (seekPending) { seekPending = false; playMidi(); }
+      else if (player) player.resume();
       paused = false;
     }
     updatePauseLabel();
