@@ -1506,6 +1506,23 @@ body.rec-paused .lines-cntnr .buttons .capture-btn { opacity: 0.4; pointer-event
     font-style: italic;
 }
 
+/* Placeholder phrase translation shown in the review row + Practice back. */
+#recordingReviewDialog .rec-item-gloss { color: #2e7d32; font-style: italic; }
+.practice-phrase-gloss {
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #c8e6c9;
+}
+.practice-phrase-gloss[data-auto="1"]::after {
+    content: ' (auto)';
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+    font-size: 11px;
+}
+
 /* Virtual-playlist member picker dialog */
 #virtualPlaylistEditor .vpe-name-label {
     display: block;
