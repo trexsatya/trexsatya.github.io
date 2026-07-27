@@ -1506,18 +1506,6 @@ body.rec-paused .lines-cntnr .buttons .capture-btn { opacity: 0.4; pointer-event
     font-style: italic;
 }
 
-/* Flash a playlist item that a tapped notification points at. Works on a
-   .rec-item row (manual card) or a .rec-item-list group (word/phrase). */
-#recordingReviewDialog .rec-item-notif-flash,
-#recordingReviewDialog .rec-item-list.rec-item-notif-flash {
-    animation: recNotifFlash 2.4s ease-out;
-    border-radius: 3px;
-}
-@keyframes recNotifFlash {
-    0%, 60% { background: #fff2c2; box-shadow: inset 3px 0 0 #ff8f00; }
-    100% { background: transparent; box-shadow: none; }
-}
-
 /* Virtual-playlist member picker dialog */
 #virtualPlaylistEditor .vpe-name-label {
     display: block;
