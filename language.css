@@ -2233,6 +2233,108 @@ body.practice-mode #mediaContainer #youtubePlayer iframe {
 }
 .manage-popover .manage-item:hover { background: #f6f8fa; }
 
+/* Notification bell inbox — icon button with an unread badge, opening a
+   newest-first dropdown of study reminders that fired. Mirrors the manage
+   popover; closes on outside click via JS. */
+.notif-bell-wrap { display: inline-block; }
+#notifBellBtn { position: relative; }
+.notif-bell-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #d1242f;
+    color: #fff;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+.notif-bell-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    width: 340px;
+    max-width: 90vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    z-index: 1000;
+}
+.notif-bell-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eaeef2;
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+.notif-bell-hd span { font-weight: 700; font-size: 13px; color: #24292f; }
+.notif-bell-readall {
+    background: transparent;
+    border: none;
+    color: #0969da;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+}
+.notif-bell-readall[disabled] { color: #8c959f; cursor: default; }
+.notif-bell-empty { padding: 16px 12px; color: #8c959f; font-size: 12px; text-align: center; }
+.notif-bell-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f2f4f6;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.notif-bell-row:hover { background: #f6f8fa; }
+.notif-bell-row[data-open="0"] { cursor: default; }
+.notif-bell-row.unread { background: #f0f6ff; }
+.notif-bell-row.unread:hover { background: #e4eeff; }
+.notif-bell-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: transparent;
+}
+.notif-bell-row.unread .notif-bell-dot { background: #0969da; }
+.notif-bell-main { flex: 1 1 auto; min-width: 0; }
+.notif-bell-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #24292f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notif-bell-body {
+    display: block;
+    font-size: 12px;
+    color: #57606a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notif-bell-meta { display: block; font-size: 11px; color: #8c959f; margin-top: 2px; }
+.notif-bell-missed { color: #bc4c00; font-weight: 600; }
+
 /* Rare words category headers (when no category filter is active). */
 .rare-words-cat-hdr {
     font-size: 11px;
