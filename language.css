@@ -2266,7 +2266,9 @@ body.practice-mode #mediaContainer #youtubePlayer iframe {
     border: 1px solid #d0d7de;
     border-radius: 6px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-    z-index: 12000;
+    /* Above page chrome / result panels (which can reach ~100020) — the bell
+       dropdown never coexists with a jQuery UI dialog, so this is safe. */
+    z-index: 100050;
 }
 .notif-bell-hd {
     display: flex;
