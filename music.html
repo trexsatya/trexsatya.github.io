@@ -488,9 +488,13 @@
     <button id="pauseBtn" class="btn" title="Pause / Resume"><span class="ic">⏸</span><span class="txt">⏸ Pause</span></button>
     <button class="btn toggle" data-for="loopChk" title="Loop the segment" aria-pressed="false"><span class="ic">🔁</span><span class="txt">🔁 Loop segment</span></button>
     <input type="checkbox" id="loopChk" hidden>   <!-- loop state; toggled by the button above -->
+    <button class="btn toggle" data-for="metroChk" title="Metronome: a steady click at the tempo now — accents the downbeat from the time signature. Independent of playback." aria-pressed="false"><span class="ic">🎵</span><span class="txt">🎵 Metronome</span></button>
+    <input type="checkbox" id="metroChk" hidden>   <!-- standalone metronome on/off -->
+    <button class="btn toggle" data-for="metroPlayChk" title="Click on play: metronome runs only while the piece/segment plays — starts on the first beat, stops at the end, and repeats with Loop." aria-pressed="false"><span class="ic">🎵</span><span class="txt">🎵 on play</span></button>
+    <input type="checkbox" id="metroPlayChk" hidden>   <!-- click-along-with-playback on/off -->
 
-    <label>Tempo <input id="tempoInput" type="number" min="20" max="300" style="width:4em"></label>
-    <label>Instrument
+    <label> <input id="tempoInput" type="number" min="20" max="300" style="width:4em"></label>
+    <label>
       <select id="instrSel">
         <option value="piano">Piano</option>
         <option value="guitar">Guitar</option>
@@ -499,7 +503,7 @@
         <option value="synth">Synth</option>
       </select>
     </label>
-    <label title="Transpose the whole piece — updates the sheet, chords, fretboard, and playback">Transpose
+    <label title="Transpose the whole piece — updates the sheet, chords, fretboard, and playback">
       <select id="transposeKey"></select>
     </label>
     <span id="transportMsg" style="color: blueviolet;"></span>
@@ -708,26 +712,27 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=664c2152ff';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=664c2152ff';
-  import { runQuery } from './music-query.js?v=664c2152ff';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=664c2152ff';
-  import { init as initFretboard } from './fretboard-panel.js?v=664c2152ff';
-  import { chordDisplayName } from './music-chords.js?v=664c2152ff';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=664c2152ff';
-  import { createMusicStore } from './music-local-store.js?v=664c2152ff';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=664c2152ff';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=664c2152ff';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=664c2152ff';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=664c2152ff';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=664c2152ff';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=664c2152ff';
-  import { generateCounterLines } from './music-counterpoint.js?v=664c2152ff';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=664c2152ff';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=664c2152ff';
-  import { splitSingleVoice } from './music-voice-split.js?v=664c2152ff';
-  import { encodeMusicXml } from './music-encoding.js?v=664c2152ff';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=664c2152ff';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=c694bb55b7';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=c694bb55b7';
+  import { runQuery } from './music-query.js?v=c694bb55b7';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=c694bb55b7';
+  import { init as initFretboard } from './fretboard-panel.js?v=c694bb55b7';
+  import { chordDisplayName } from './music-chords.js?v=c694bb55b7';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=c694bb55b7';
+  import { createMusicStore } from './music-local-store.js?v=c694bb55b7';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=c694bb55b7';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=c694bb55b7';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=c694bb55b7';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=c694bb55b7';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=c694bb55b7';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=c694bb55b7';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=c694bb55b7';
+  import { generateCounterLines } from './music-counterpoint.js?v=c694bb55b7';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=c694bb55b7';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=c694bb55b7';
+  import { splitSingleVoice } from './music-voice-split.js?v=c694bb55b7';
+  import { encodeMusicXml } from './music-encoding.js?v=c694bb55b7';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=c694bb55b7';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1082,7 +1087,10 @@
     setTimeout(dismiss, tone === 'err' ? 8000 : 4000);   // errors linger longer
   }
   function ensurePlayer() {
-    if (!player) player = createMusicPlayer({ getCursor: () => (renderer && renderer.osmd ? renderer.osmd.cursor : null) });
+    if (!player) player = createMusicPlayer({ getCursor: () => (renderer && renderer.osmd ? renderer.osmd.cursor : null),
+      // Natural completion (fires only when Loop is off): the piece ended, so stop the "on play" click
+      // and reset the transport label. With Loop on this never fires, so the click keeps running.
+      onEnd: () => { midiPlaying = false; paused = false; updatePauseLabel(); updateMetro(false); } });
     return player;
   }
   function segmentRange() {
@@ -1139,9 +1147,20 @@
     p.setSchedule(schedule, { cursorStartStep: range.cursorStep || 0 });
     p.setLoop(document.getElementById('loopChk').checked);
     document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    // Align the metronome to the piece: tick on the beat grid (the first played note may be syncopated /
+    // off-beat, e.g. beat 4.5) with the strong beat on the barline downbeats. schedule[0].beat is the
+    // absolute onset in quarter-beats; the anacrusis (pickup) length shifts where the downbeats sit.
+    const N = beatsPerMeasureFromSource();
+    const startAbsBeat = schedule.length ? (schedule[0].beat || 0) : 0;
+    const anacrusis = (renderer && renderer.anacrusisBeats) ? renderer.anacrusisBeats() : N;
+    ({ phase: metroPhase, beatOffset: metroBeatOffset } = downbeatAlignment(startAbsBeat, anacrusis, N));
+    midiPlaying = true;   // for the "on play" metronome (aligned once audio actually starts, below)
     p.play()
-      .then(() => { document.getElementById('transportMsg').textContent = `Playing ${schedule.length} notes${span}`; })
-      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; });
+      .then(() => {
+        document.getElementById('transportMsg').textContent = `Playing ${schedule.length} notes${span}`;
+        updateMetro(true);   // start/re-phase the click to playback's first beat
+      })
+      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; midiPlaying = false; updateMetro(false); });
   }
   // Tag skip-playback: play only the checked tags' notes, removing the empty stretches between
   // tagged runs (a beat-relative breath separates runs). Whole piece — ignores segment/window.
@@ -1263,6 +1282,47 @@
   });
   // Loop's effect lives on its checkbox so the generic toggle drives it (and applies live).
   document.getElementById('loopChk').onchange = () => { if (player) player.setLoop(document.getElementById('loopChk').checked); };
+
+  // Metronome — a steady click at the current tempo, accenting the downbeat from the piece's time
+  // signature. TWO independent controls share one click engine (its own clock, so no double-clicks):
+  //   • 🎵 Metronome  (metroChk)     — standalone: clicks now, regardless of playback.
+  //   • 🎵 on play    (metroPlayChk) — clicks only WHILE the piece/segment plays: aligned to the first
+  //                                    beat on Play, stopped at the end, and continues across Loop.
+  // The engine runs when either applies: manual on, OR on-play on AND MIDI is currently playing.
+  let metro = null;
+  let midiPlaying = false;   // MIDI playback is active (drives the "on play" metronome)
+  let metroPhase = 0;        // beat phase of the current playback start within its measure (0 = downbeat)
+  let metroBeatOffset = 0;   // sub-beat delay (beats) so the first click lands on the beat grid
+  function ensureMetro() { if (!metro) metro = createMetronome({}); return metro; }
+  function beatsPerMeasureFromSource() {
+    try {
+      const src = currentDetail && currentDetail.source;
+      const m = src && src.match(/<beats>\s*(\d+)\s*<\/beats>/);   // first <time> numerator; default 4
+      return m ? (parseInt(m[1], 10) || 4) : 4;
+    } catch (_) { return 4; }
+  }
+  const metroManualOn = () => document.getElementById('metroChk').checked;
+  const metroPlayOn = () => document.getElementById('metroPlayChk').checked;
+  const metroShouldRun = () => metroManualOn() || (metroPlayOn() && midiPlaying);
+  function syncMetronomeSettings() { if (!metro) return; metro.setTempo(currentTempo()); metro.setBeatsPerMeasure(beatsPerMeasureFromSource()); }
+  // Bring the engine in line with the desired state. `realign` re-phases the click to now (used when
+  // playback starts/resumes) so the accented beat lands on the piece's downbeats; otherwise a running
+  // click is left where it is. A standalone start (not playing) uses phase 0 — its first click is a
+  // downbeat. `metroPhase` is the playback-start phase computed in playMidi.
+  function updateMetro(realign) {
+    const m = ensureMetro();
+    if (metroShouldRun()) {
+      syncMetronomeSettings();
+      const phase = midiPlaying ? metroPhase : 0;
+      const offset = midiPlaying ? metroBeatOffset : 0;
+      if (realign) m.restart(phase, offset);
+      else if (!m.isRunning()) m.start(phase, offset);
+    } else m.stop();
+  }
+  document.getElementById('metroChk').onchange = () => updateMetro(false);
+  document.getElementById('metroPlayChk').onchange = () => updateMetro(false);
+  // Keep a running metronome at the live tempo when the Tempo field changes.
+  document.getElementById('tempoInput').addEventListener('input', () => { if (metro && metroShouldRun()) metro.setTempo(currentTempo()); });
   syncToggles();
 
   // ── Note suppression UI (vocab items only) ─────────────────────────────────────────────────
@@ -1351,11 +1411,12 @@
     if (!paused) {
       if (isYt) { if (yt) yt.pause(); } else if (player) player.pause();
       paused = true;
+      if (!isYt) { midiPlaying = false; updateMetro(false); }   // pause the "on play" click with the piece
     } else {
       // Resume: if the cursor was moved (clicked) while paused, start fresh from it; else continue.
       if (isYt) { if (yt) yt.play(); ytPlaying = true; }
-      else if (seekPending) { seekPending = false; playMidi(); }
-      else if (player) player.resume();
+      else if (seekPending) { seekPending = false; playMidi(); }   // playMidi re-arms midiPlaying + the click
+      else if (player) { player.resume(); midiPlaying = true; updateMetro(true); }
       paused = false;
     }
     updatePauseLabel();
@@ -1534,6 +1595,10 @@
     document.body.classList.add('preview-open');   // lock page scroll behind the mobile dialog
     updateFab(); positionFab();                     // the FAB is now shown (mobile) — place & label it
     currentDetail = null; currentPreviewId = null; currentVocabEntry = null;   // cleared until a piece fully renders
+    midiPlaying = false;
+    document.getElementById('metroChk').checked = false;
+    document.getElementById('metroPlayChk').checked = false;
+    syncToggles(); if (metro) metro.stop();   // both metronome toggles start off for each piece
     updateAddVocabLabel();
     let detail;
     try {
@@ -2602,6 +2667,10 @@
   };
   document.getElementById('previewCloseBtn').onclick = () => {
     if (player) player.stop();
+    midiPlaying = false;
+    document.getElementById('metroChk').checked = false;
+    document.getElementById('metroPlayChk').checked = false;
+    syncToggles(); if (metro) metro.stop();   // reset both metronome toggles
     clearYtMonitor(); if (yt) yt.pause();
     paused = false; ytPlaying = false; updatePauseLabel();
     document.getElementById('musicPreview').style.display = 'none';
