@@ -732,28 +732,28 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=69be744a70';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=69be744a70';
-  import { runQuery } from './music-query.js?v=69be744a70';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=69be744a70';
-  import { init as initFretboard } from './fretboard-panel.js?v=69be744a70';
-  import { chordDisplayName } from './music-chords.js?v=69be744a70';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=69be744a70';
-  import { createMusicStore } from './music-local-store.js?v=69be744a70';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=69be744a70';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=69be744a70';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=69be744a70';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=69be744a70';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=69be744a70';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=69be744a70';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=69be744a70';
-  import { generateCounterLines } from './music-counterpoint.js?v=69be744a70';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=69be744a70';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=69be744a70';
-  import { splitSingleVoice } from './music-voice-split.js?v=69be744a70';
-  import { encodeMusicXml } from './music-encoding.js?v=69be744a70';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=69be744a70';
-  import { listParts, mergeParts } from './music-merge.js?v=69be744a70';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=e171885bb0';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=e171885bb0';
+  import { runQuery } from './music-query.js?v=e171885bb0';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=e171885bb0';
+  import { init as initFretboard } from './fretboard-panel.js?v=e171885bb0';
+  import { chordDisplayName } from './music-chords.js?v=e171885bb0';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=e171885bb0';
+  import { createMusicStore } from './music-local-store.js?v=e171885bb0';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=e171885bb0';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=e171885bb0';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=e171885bb0';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=e171885bb0';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=e171885bb0';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=e171885bb0';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=e171885bb0';
+  import { generateCounterLines } from './music-counterpoint.js?v=e171885bb0';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=e171885bb0';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=e171885bb0';
+  import { splitSingleVoice } from './music-voice-split.js?v=e171885bb0';
+  import { encodeMusicXml } from './music-encoding.js?v=e171885bb0';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=e171885bb0';
+  import { listParts, mergeParts } from './music-merge.js?v=e171885bb0';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1619,6 +1619,10 @@
     currentDetail = { ...currentDetail, source: newSource };
     pieceOriginalSource = newSource;
     const renderer = await ensureRenderer();
+    // Preserve the current view: merge keeps the same measure count, so if a segment is clipped, re-show
+    // that same measure window on the combined score instead of resetting to the whole piece.
+    const prev = renderer.getShownRange ? renderer.getShownRange() : null;
+    const wasSegment = prev && (prev.from > 1 || (prev.total && prev.to < prev.total)) && prev.to >= prev.from;
     if (player) player.stop();
     midiPlaying = false; updateMetro(false);
     const res = await renderer.loadDetail(currentDetail);
@@ -1629,7 +1633,7 @@
     totalMeasures = (res && res.totalMeasures) || 0;
     currentOffset = (res && res.measureOffset) || 0;
     renderer.applyResponsiveZoom(document.getElementById('osmdPreview').clientWidth || window.innerWidth);
-    renderer.showFull();
+    if (wasSegment) renderer.showSegment([prev.from, prev.to]); else renderer.showFull();
     renderer.setShowChords(document.getElementById('chordChk').checked);
     if (fbPanel) fbPanel.capture();
   }
