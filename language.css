@@ -3436,3 +3436,110 @@ body.rec-playing #recPlayingSubs { display: block; }
     }
     #practiceLogDialog .practice-log-item-name { padding-top: 0; }
 }
+
+/* ── Library (EPUB) full-text search — the bar and results injected at the
+   top of #result. Driven by PlaylistBridge's globalSearch op; only present
+   inside the Cupitor app. ───────────────────────────────────────────── */
+.lib-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 4px 6px;
+    margin-bottom: 4px;
+    background: #f6f8fa;
+    border-bottom: 1px solid #dde3e8;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.lib-auto-label {
+    font-size: 0.82em;
+    color: #555;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+}
+.lib-search-status {
+    font-size: 0.82em;
+    color: #666;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.lib-status-busy::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+    border: 2px solid #bbb;
+    border-top-color: #4dba87;
+    border-radius: 50%;
+    animation: lib-spin 0.8s linear infinite;
+    vertical-align: -1px;
+}
+@keyframes lib-spin { to { transform: rotate(360deg); } }
+.lib-results:not(:empty) {
+    padding: 2px 6px 6px 6px;
+    border-bottom: 1px solid #dde3e8;
+    margin-bottom: 6px;
+}
+.lib-head {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 2px 0;
+    margin-bottom: 4px;
+    font-size: 0.82em;
+    color: #555;
+    cursor: pointer;
+}
+.lib-head:hover { color: #222; }
+.lib-caret { display: inline-block; width: 10px; color: #888; }
+.lib-collapsed .lib-body { display: none; }
+.lib-capped { color: #b8860b; }
+.lib-streaming { color: #4dba87; }
+.lib-cancelled { color: #999; }
+.lib-empty { font-size: 0.85em; color: #777; padding: 2px 0; }
+.lib-book { margin-bottom: 6px; }
+.lib-book-title {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 1px 0;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #24405c;
+    cursor: pointer;
+}
+.lib-book-title:hover { text-decoration: underline; }
+.lib-book-count { font-weight: 400; color: #888; font-size: 0.85em; }
+.lib-book-collapsed .lib-book-body { display: none; }
+.lib-chapter { margin: 3px 0 3px 8px; }
+.lib-open {
+    background: transparent;
+    border: none;
+    border-left: 3px solid #4dba87;
+    padding: 0 0 0 6px;
+    font-size: 0.85em;
+    color: #1d6fa5;
+    cursor: pointer;
+    text-align: left;
+}
+.lib-open:hover { text-decoration: underline; }
+.lib-snip {
+    font-size: 0.85em;
+    color: #333;
+    margin: 2px 0 2px 9px;
+    line-height: 1.35;
+}
+.lib-snip mark { background: #ffe680; padding: 0 1px; }
