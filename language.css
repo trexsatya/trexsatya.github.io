@@ -3537,9 +3537,18 @@ body.rec-playing #recPlayingSubs { display: block; }
 }
 .lib-open:hover { text-decoration: underline; }
 .lib-snip {
+    display: block;
+    width: calc(100% - 9px);
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 1px 2px;
     font-size: 0.85em;
+    font-family: inherit;
     color: #333;
     margin: 2px 0 2px 9px;
     line-height: 1.35;
+    cursor: pointer;
 }
+.lib-snip:hover { background: #f0f4f8; }
 .lib-snip mark { background: #ffe680; padding: 0 1px; }
