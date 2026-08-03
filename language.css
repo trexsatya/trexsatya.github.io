@@ -3508,8 +3508,8 @@ body.rec-playing #recPlayingSubs { display: block; }
 .lib-streaming { color: #4dba87; }
 .lib-cancelled { color: #999; }
 .lib-empty { font-size: 0.85em; color: #777; padding: 2px 0; }
-.lib-book { margin-bottom: 6px; }
-.lib-book-title {
+.lib-group { margin-bottom: 6px; }
+.lib-group-title {
     display: block;
     width: 100%;
     text-align: left;
@@ -3521,9 +3521,11 @@ body.rec-playing #recPlayingSubs { display: block; }
     color: #24405c;
     cursor: pointer;
 }
-.lib-book-title:hover { text-decoration: underline; }
-.lib-book-count { font-weight: 400; color: #888; font-size: 0.85em; }
-.lib-book-collapsed .lib-book-body { display: none; }
+.lib-group-title:hover { text-decoration: underline; }
+.lib-group-title mark { background: #ffe680; padding: 0 2px; border-radius: 2px; }
+.lib-group-count { font-weight: 400; color: #888; font-size: 0.85em; }
+.lib-group-collapsed .lib-group-body { display: none; }
+.lib-chapter-book { color: #555; }
 .lib-chapter { margin: 3px 0 3px 8px; }
 .lib-open {
     background: transparent;
