@@ -2336,6 +2336,23 @@ body.practice-mode #mediaContainer #youtubePlayer iframe {
 .notif-bell-meta { display: block; font-size: 11px; color: #8c959f; margin-top: 2px; }
 .notif-bell-missed { color: #bc4c00; font-weight: 600; }
 
+/* Replace-item picker — a radio list of alternative auto-captured examples. */
+.repl-hd { font-size: 13px; color: #24292f; margin-bottom: 8px; }
+.repl-cand-list { max-height: 46vh; overflow-y: auto; }
+.repl-cand {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 6px;
+    border-bottom: 1px solid #f2f4f6;
+    cursor: pointer;
+}
+.repl-cand:hover { background: #f6f8fa; }
+.repl-cand input { margin-top: 3px; flex: 0 0 auto; }
+.repl-cand-body { display: flex; flex-direction: column; min-width: 0; }
+.repl-cand-text { font-size: 13px; color: #24292f; }
+.repl-cand-meta { font-size: 11px; color: #8c959f; margin-top: 2px; }
+
 /* Rare words category headers (when no category filter is active). */
 .rare-words-cat-hdr {
     font-size: 11px;
