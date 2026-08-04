@@ -466,7 +466,7 @@
   </div>
 <div id="musicPreview" style="display:none;border-top:1px solid #ddd;padding-top:1rem">
   <div style="margin-bottom:.5rem" class="previewControls">
-    <div><strong id="previewTitle"></strong></div>
+    <div><strong id="previewTitle"></strong> <span id="pieceKeyBadge" class="key-badge" style="display:none"></span></div>
     <label class="measLabel">#:
       <button id="startPrevBtn" class="btn ico" title="extend the window to an earlier measure">◀|</button>
       <input id="segFrom" type="number" min="1" style="width:2.4em" placeholder="from">
@@ -732,28 +732,29 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=9e37d7b67d';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=9e37d7b67d';
-  import { runQuery } from './music-query.js?v=9e37d7b67d';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=9e37d7b67d';
-  import { init as initFretboard } from './fretboard-panel.js?v=9e37d7b67d';
-  import { chordDisplayName } from './music-chords.js?v=9e37d7b67d';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=9e37d7b67d';
-  import { createMusicStore } from './music-local-store.js?v=9e37d7b67d';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=9e37d7b67d';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=9e37d7b67d';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=9e37d7b67d';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=9e37d7b67d';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=9e37d7b67d';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=9e37d7b67d';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=9e37d7b67d';
-  import { generateCounterLines } from './music-counterpoint.js?v=9e37d7b67d';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=9e37d7b67d';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=9e37d7b67d';
-  import { splitSingleVoice } from './music-voice-split.js?v=9e37d7b67d';
-  import { encodeMusicXml } from './music-encoding.js?v=9e37d7b67d';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=9e37d7b67d';
-  import { listParts, mergeParts } from './music-merge.js?v=9e37d7b67d';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=a473dffa45';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=a473dffa45';
+  import { runQuery } from './music-query.js?v=a473dffa45';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=a473dffa45';
+  import { init as initFretboard } from './fretboard-panel.js?v=a473dffa45';
+  import { chordDisplayName } from './music-chords.js?v=a473dffa45';
+  import { keyExplanation } from './music-key.js?v=a473dffa45';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=a473dffa45';
+  import { createMusicStore } from './music-local-store.js?v=a473dffa45';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=a473dffa45';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=a473dffa45';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=a473dffa45';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=a473dffa45';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=a473dffa45';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=a473dffa45';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=a473dffa45';
+  import { generateCounterLines } from './music-counterpoint.js?v=a473dffa45';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=a473dffa45';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=a473dffa45';
+  import { splitSingleVoice } from './music-voice-split.js?v=a473dffa45';
+  import { encodeMusicXml } from './music-encoding.js?v=a473dffa45';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=a473dffa45';
+  import { listParts, mergeParts } from './music-merge.js?v=a473dffa45';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -852,13 +853,21 @@
       + `<select id="keyFilterSel" style="font-size:.85em;padding:2px 6px">${opts.join('')}</select>`
       + (keyFilter ? ` <span class="key-badge">${esc(keyFilter)}</span>` : '');
   }
+  // Tooltip for a list row's key badge. Entries built before key confidence was recorded have neither
+  // field, so they read as a plain guess rather than claiming a confidence they never computed.
+  function keyBadgeTitle(e) {
+    const detected = 'Detected key: key signature narrowed by the cadences';
+    if (!e.keyConfidence) return `${detected} (open the piece for details)`;
+    return `${detected} — ${e.keyConfidence} confidence`
+      + (e.keyAmbiguous ? '; the signature is missing or disagrees with the notes, so this is a reading of the music' : '');
+  }
   function render() {
     const rows = [];
     filterByTags(index, tagFilter)
       .filter(e => !keyFilter || e.guessedKey === keyFilter)
       .forEach(e => rows.push(
       `<label style="display:block"><input type="checkbox" class="sel" data-id="${e.id}"> ${esc(e.title || e.id)} <small>(${e.noteCount} notes, ${e.channels.join('/')})</small> `
-      + `${e.guessedKey ? `<span class="key-badge" title="Guessed key (tonal center)">${esc(e.guessedKey)}</span> ` : ''}`
+      + `${e.guessedKey ? `<span class="key-badge" title="${esc(keyBadgeTitle(e))}">${esc(e.guessedKey)}${e.keyAmbiguous || (e.keyConfidence && e.keyConfidence !== 'high') ? ' ?' : ''}</span> ` : ''}`
       + `<button class="previewBtn" data-id="${e.id}">Preview</button> `
       + `<input class="pieceTags" data-id="${e.id}" value="${esc((e.tags || []).join(', '))}" placeholder="tags…" style="width:10em;font-size:.85em"> `
       + `${e.pieceCount > 1 ? `<button class="pieceSplit" data-id="${e.id}" title="Split into ${e.pieceCount} separate pieces">✂️</button> ` : ''}`
@@ -1564,6 +1573,23 @@
     dirtyVocab = true; updatePushBtn();
     setMediaMsg(`${updating ? 'Updated' : 'Added'} "${entry.id}" (${vocab.length} total) — click "Push changes" to publish.`, 'ok');
   };
+  // Show the detected key next to the title, with WHY in the tooltip. A key is a reading, not a fact:
+  // the signature only narrows it to two (its major and its relative minor) and the cadences pick one,
+  // so anything less than a confident reading is marked with "?" and says what it rests on. `stored` is
+  // the encoder's own detection (detail.meta.keyDetail) — used for its reasons when the live re-detection
+  // over the rendered notes agrees with it.
+  function showKeyBadge(live, stored) {
+    const badge = document.getElementById('pieceKeyBadge');
+    if (!badge) return;
+    const d = (live && live.label) ? live : stored;
+    if (!d || !d.label) { badge.style.display = 'none'; return; }
+    const src = (stored && live && stored.label === live.label) ? stored : d;
+    const unsure = d.confidence !== 'high' || d.ambiguous;
+    badge.style.display = '';
+    badge.textContent = d.label + (unsure ? ' ?' : '');
+    badge.title = keyExplanation(src);
+  }
+
   // Fill the transpose dropdown with the 12 keys, marking the piece's own key "(original)" and
   // selecting it. Called on each fresh preview.
   // 24 keys (major then minor), value "pc:mode" like #patKey; the piece's original key is preselected
@@ -1629,6 +1655,7 @@
     const g = renderer.guessBestKey ? renderer.guessBestKey() : null;
     pieceOriginalPc = g ? g.tonicPc : 0;
     pieceOriginalMode = g ? g.mode : 'major';
+    showKeyBadge(g);
     populateTransposeSelect();
     totalMeasures = (res && res.totalMeasures) || 0;
     currentOffset = (res && res.measureOffset) || 0;
@@ -1753,6 +1780,7 @@
     const pieceGuess = renderer.guessBestKey ? renderer.guessBestKey() : null;
     pieceOriginalPc = pieceGuess ? pieceGuess.tonicPc : 0;
     pieceOriginalMode = pieceGuess ? pieceGuess.mode : 'major';
+    showKeyBadge(pieceGuess, detail.meta && detail.meta.keyDetail);
     populateTransposeSelect();
     totalMeasures = res.totalMeasures || 0;
     currentOffset = res.measureOffset || 0;   // pickup shift for printed↔sequential conversions
