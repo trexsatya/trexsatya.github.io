@@ -732,29 +732,29 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=cf737a0062';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=cf737a0062';
-  import { runQuery } from './music-query.js?v=cf737a0062';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=cf737a0062';
-  import { init as initFretboard } from './fretboard-panel.js?v=cf737a0062';
-  import { chordDisplayName } from './music-chords.js?v=cf737a0062';
-  import { keyExplanation } from './music-key.js?v=cf737a0062';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=cf737a0062';
-  import { createMusicStore } from './music-local-store.js?v=cf737a0062';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=cf737a0062';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=cf737a0062';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=cf737a0062';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=cf737a0062';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=cf737a0062';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=cf737a0062';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=cf737a0062';
-  import { generateCounterLines } from './music-counterpoint.js?v=cf737a0062';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=cf737a0062';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=cf737a0062';
-  import { splitSingleVoice } from './music-voice-split.js?v=cf737a0062';
-  import { encodeMusicXml } from './music-encoding.js?v=cf737a0062';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=cf737a0062';
-  import { listParts, mergeParts } from './music-merge.js?v=cf737a0062';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=8d8b0b3096';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=8d8b0b3096';
+  import { runQuery } from './music-query.js?v=8d8b0b3096';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=8d8b0b3096';
+  import { init as initFretboard } from './fretboard-panel.js?v=8d8b0b3096';
+  import { chordDisplayName } from './music-chords.js?v=8d8b0b3096';
+  import { keyExplanation } from './music-key.js?v=8d8b0b3096';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=8d8b0b3096';
+  import { createMusicStore } from './music-local-store.js?v=8d8b0b3096';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=8d8b0b3096';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=8d8b0b3096';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=8d8b0b3096';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=8d8b0b3096';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=8d8b0b3096';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=8d8b0b3096';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=8d8b0b3096';
+  import { generateCounterLines } from './music-counterpoint.js?v=8d8b0b3096';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=8d8b0b3096';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=8d8b0b3096';
+  import { splitSingleVoice } from './music-voice-split.js?v=8d8b0b3096';
+  import { encodeMusicXml } from './music-encoding.js?v=8d8b0b3096';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=8d8b0b3096';
+  import { listParts, mergeParts, explodeStaves } from './music-merge.js?v=8d8b0b3096';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1075,7 +1075,12 @@
   let pieceOriginalSource = null, pieceOriginalPc = 0, pieceOriginalMode = 'major';
   // Combine-parts state: the piece's source BEFORE any merge (so Reset restores it), and whether a merge
   // is currently applied. Merging makes the combined source the new transpose baseline.
-  let mergeBaseSource = null, mergedActive = false;
+  // `mergeSource` is the combine-ready view of the piece: a solo-piano piece is one <part> across two
+  // staves, so we explode multi-staff parts into one <part> per staff — then the two hands become
+  // mergeable units and Combine (e.g. Fit-to-guitar) can fold them onto one staff. No-op for scores that
+  // already have several single-staff parts. Reset still restores mergeBaseSource (the untouched original).
+  let mergeBaseSource = null, mergeSource = null, mergedActive = false;
+  const combineReadySource = (src) => { try { return explodeStaves(src); } catch (_) { return src; } };
   const TRANSPOSE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
   let fbStepInstr = null;   // last instrument pushed to the player for fretboard step-play (avoids re-creating the voice)
   let fbPanel = null;       // fretboard panel controller (from initFretboard) — for cross-panel actions
@@ -1675,15 +1680,14 @@
   function updateCombineBtn() {
     const btn = document.getElementById('combineBtn');
     if (!btn) return;
-    const n = (mergeBaseSource && !mergedActive) ? mergeablePartsOf(mergeBaseSource).length
-            : (mergeBaseSource ? mergeablePartsOf(mergeBaseSource).length : 0);
+    const n = mergeSource ? mergeablePartsOf(mergeSource).length : 0;
     btn.style.display = n >= 2 ? '' : 'none';
     btn.textContent = mergedActive ? 'Combined ✓' : 'Combine…';
   }
   function openCombinePanel() {
-    if (!mergeBaseSource) return;
+    if (!mergeSource) return;
     const list = document.getElementById('combineList');
-    const parts = mergeablePartsOf(mergeBaseSource);
+    const parts = mergeablePartsOf(mergeSource);
     list.innerHTML = parts.map((p) =>
       `<label style="display:block; padding:.12rem 0"><input type="checkbox" class="combineSel" value="${p.id}" checked> ${p.name}</label>`).join('');
     document.getElementById('combineResetBtn').style.display = mergedActive ? '' : 'none';
@@ -1706,8 +1710,8 @@
     const fitGuitar = document.getElementById('combineFitGuitar').checked;
     const opts = { name: 'Combined' };
     if (fitGuitar) opts.fitRange = { lo: 40, hi: 76 };   // 6-string guitar sounding range E2–E5
-    const merged = mergeParts(mergeBaseSource, ids, opts);
-    if (merged === mergeBaseSource) { combineMsg.textContent = 'Nothing to combine.'; return; }
+    const merged = mergeParts(mergeSource, ids, opts);
+    if (merged === mergeSource) { combineMsg.textContent = 'Nothing to combine.'; return; }
     mergedActive = true;
     await reloadPieceSource(merged);
     updateCombineBtn();
@@ -1773,6 +1777,7 @@
     currentPreviewId = id;
     pieceOriginalSource = detail.source;                         // baseline for transposition (absolute, non-cumulative)
     mergeBaseSource = detail.source; mergedActive = false;       // pre-merge baseline for Combine parts
+    mergeSource = combineReadySource(detail.source);             // staves-exploded view the picker/merge use
     document.getElementById('combinePanel').style.display = 'none';
     updateCombineBtn();
     // Original key = the piece's best-guess tonic/mode (notes are rendered now), so the Transpose picker
