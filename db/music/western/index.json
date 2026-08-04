@@ -6092,5 +6092,40 @@
     "contentHash": "ac6ba040",
     "tags": [],
     "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "marmotte-beethoven-piano.mxl_(combined)",
+    "title": "marmotte-beethoven-piano.mxl (combined)",
+    "system": "western",
+    "format": "musicxml",
+    "sourceUrl": null,
+    "youtube": null,
+    "key": "Em",
+    "guessedKey": "E minor",
+    "keyConfidence": "high",
+    "keyAmbiguous": false,
+    "time": "6/8",
+    "tempo": 92,
+    "instrument": "Combined",
+    "voiceCount": 2,
+    "noteCount": 510,
+    "pieceCount": 1,
+    "channels": [
+      "pitch",
+      "interval",
+      "sargam",
+      "duration",
+      "chordSymbol"
+    ],
+    "search": {
+      "contour": "7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,0,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,7,5,-14,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,7,5,-12,12,7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,0,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,7,5,-12,-12,7,5,-14,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,7,5,-12,12,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,3,4,-7,12",
+      "pitchClasses": "E B E E B E E B Ds E B E E B Ds E B E E B Ds E B Ds E B E E B E E B Ds E B E E B Ds E B Ds E B E E E G B D A D G D G B Ds Fs B E G B E G B Ds Fs B E B E D A D G D G B Ds Fs B E G B Ds Fs E B E E E B E E B E E B Ds E B E E B Ds E B E E B Ds E B Ds E B E E B E E B Ds E B E E B Ds E B Ds E B E E E G B D A D G D G B Ds Fs B E G B E G B Ds Fs B E G B D A D G D G B Ds Fs B E G B Ds Fs E B E E E B E D A D G D G B Ds Fs B E G B E G B Ds Fs B E G B D A D G D G B Ds Fs B E G B Ds Fs E B E E E G B D A D G D G B Ds Fs B E G B E G B Ds Fs B E G B D A D G D G B Ds Fs B E G B Ds Fs E G B E E",
+      "sargam": "Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Pa Sa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Pa Sa Sa Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Pa Sa Sa Sa Pa Sa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Pa Sa Sa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Ga Pa Sa Sa",
+      "chords": "Em B Em B Bsus4 Em G Bsus4 B D G Bsus4 Em B Em Bsus4 Em G Bsus4 B Em G Bsus4 D G Bsus4 B Em G Bsus4 Em G Bsus4 B Em G B Em"
+    },
+    "detailPath": "details/marmotte-beethoven-piano.mxl_(combined).json",
+    "contentHash": "527305c5",
+    "tags": [],
+    "updatedAt": "2026-08-04"
   }
 ]
