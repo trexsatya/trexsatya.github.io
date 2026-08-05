@@ -200,6 +200,25 @@
             padding-bottom: .4rem;
             z-index: 1;
           }
+          /* Chord window: pin its controls to the bottom of the screen. Dragging the window means
+             scrolling down the score, and the nudge buttons / chord chips / Capture sat back up at the
+             top — so every adjustment cost a scroll up and back. `fixed`, not `sticky`: sticky only
+             holds an element that is BELOW the fold, and this panel sits above the score, so it would
+             scroll away the moment you passed it. Out of flow, so showing it shifts nothing.
+             z-index below 60, so an open Motifs / Phrases / Rhythm card still layers over it.
+             The floating play button lifts above it (positionFab) and the score reserves trailing room
+             (syncWindowPinnedSpace) — both measured, since chord chips change this panel's height. */
+          #windowPanel {
+            position: fixed;
+            left: .5rem;
+            right: .5rem;
+            bottom: calc(4px + env(safe-area-inset-bottom));
+            z-index: 55;
+            margin: 0;
+            max-height: 38vh;
+            overflow-y: auto;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .2);
+          }
           body.preview-open { overflow: hidden; }   /* lock the page behind the dialog */
         }
         #fretboardPanel.fb-wrap{background:#fff;border:1px solid #d8dee8;border-radius:10px;padding:10px 14px;margin-top:1rem}
@@ -329,6 +348,8 @@
         #variationsSection #varSheet{margin-top:.25rem;overflow-x:auto}
         #fretboardPanel:fullscreen{background:#fff;overflow:auto;padding:24px}
         #fretboardPanel:fullscreen #fbSvg{width:100%;height:auto;max-width:none}
+        /* Chord-window controls (shown only while the Chord window toggle is on; JS drives display). */
+        #windowPanel{margin:.25rem 0;padding:.3rem .4rem;background:#f4f8ff;border:1px solid #cfe0ff;border-radius:4px}
         /* Touch-friendly chord-window move/resize buttons (alternative to dragging) */
         #windowNudge.win-nudge{display:inline-flex;gap:6px;align-items:center;margin-right:.5em;vertical-align:middle}
         #windowNudge .win-btn{min-width:40px;height:36px;border:1px solid #1565c0;background:#eef4ff;color:#1565c0;border-radius:6px;font-size:16px;line-height:1;cursor:pointer;font-weight:700}
@@ -589,7 +610,7 @@
     <input type="checkbox" id="suppressModeChk" hidden>
     <input type="checkbox" id="hearAllChk" hidden>
   </div>
-  <div id="windowPanel" style="display:none; margin:.25rem 0; padding:.3rem .4rem; background:#f4f8ff; border:1px solid #cfe0ff; border-radius:4px">
+  <div id="windowPanel" style="display:none">
     <div id="windowNudge" class="win-nudge" title="Move / resize the window (easier than dragging on touch)">
       <button type="button" id="winMoveL" class="win-btn" title="Move window left" aria-label="Move window left">◀</button>
       <button type="button" id="winMoveR" class="win-btn" title="Move window right" aria-label="Move window right">▶</button>
@@ -793,29 +814,29 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=8f5c20a7a7';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=8f5c20a7a7';
-  import { runQuery } from './music-query.js?v=8f5c20a7a7';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=8f5c20a7a7';
-  import { init as initFretboard } from './fretboard-panel.js?v=8f5c20a7a7';
-  import { chordDisplayName } from './music-chords.js?v=8f5c20a7a7';
-  import { keyExplanation } from './music-key.js?v=8f5c20a7a7';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=8f5c20a7a7';
-  import { createMusicStore } from './music-local-store.js?v=8f5c20a7a7';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=8f5c20a7a7';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=8f5c20a7a7';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=8f5c20a7a7';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=8f5c20a7a7';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=8f5c20a7a7';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=8f5c20a7a7';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=8f5c20a7a7';
-  import { generateCounterLines } from './music-counterpoint.js?v=8f5c20a7a7';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=8f5c20a7a7';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=8f5c20a7a7';
-  import { splitSingleVoice } from './music-voice-split.js?v=8f5c20a7a7';
-  import { encodeMusicXml } from './music-encoding.js?v=8f5c20a7a7';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=8f5c20a7a7';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=8f5c20a7a7';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=b6cf9b9888';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=b6cf9b9888';
+  import { runQuery } from './music-query.js?v=b6cf9b9888';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=b6cf9b9888';
+  import { init as initFretboard } from './fretboard-panel.js?v=b6cf9b9888';
+  import { chordDisplayName } from './music-chords.js?v=b6cf9b9888';
+  import { keyExplanation } from './music-key.js?v=b6cf9b9888';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=b6cf9b9888';
+  import { createMusicStore } from './music-local-store.js?v=b6cf9b9888';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=b6cf9b9888';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=b6cf9b9888';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=b6cf9b9888';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=b6cf9b9888';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=b6cf9b9888';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=b6cf9b9888';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=b6cf9b9888';
+  import { generateCounterLines } from './music-counterpoint.js?v=b6cf9b9888';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=b6cf9b9888';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=b6cf9b9888';
+  import { splitSingleVoice } from './music-voice-split.js?v=b6cf9b9888';
+  import { encodeMusicXml } from './music-encoding.js?v=b6cf9b9888';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=b6cf9b9888';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=b6cf9b9888';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1081,6 +1102,7 @@
     applyWindowHighlight();
     const r = windowState.measureRange;   // sequential → show printed
     document.getElementById('windowRange').textContent = r ? `(m. ${toPrintedMeasure(r[0])}–${toPrintedMeasure(r[1])})` : '';
+    syncWindowPinnedSpace();   // the chips just changed the pinned panel's height
   }
   function renderWindowChips() {
     const host = document.getElementById('windowChords');
@@ -1260,12 +1282,18 @@
     const anacrusis = (renderer && renderer.anacrusisBeats) ? renderer.anacrusisBeats() : N;
     ({ phase: metroPhase, beatOffset: metroBeatOffset } = downbeatAlignment(startAbsBeat, anacrusis, N));
     midiPlaying = true;   // for the "on play" metronome (aligned once audio actually starts, below)
+    startPending = true;  // the transport starts only once the instrument has loaded — see startFabSync
     p.play()
       .then(() => {
         document.getElementById('transportMsg').textContent = `Playing ${schedule.length} notes${span}`;
         updateMetro(true);   // start/re-phase the click to playback's first beat
+        startPending = false; updateFab();
       })
-      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; midiPlaying = false; updateMetro(false); });
+      .catch(() => {
+        document.getElementById('transportMsg').textContent = 'Playback error.';
+        midiPlaying = false; updateMetro(false);
+        startPending = false; updateFab();   // nothing is playing — don't leave the FAB showing ⏸
+      });
   }
   // Beats of silence inserted between the runs of a skip-playback (tags / phrases / rhythm).
   function breathBeatsValue() {
@@ -1316,7 +1344,9 @@
       if (!yt || !yt.isReady()) return;
       if (yt.getCurrentTime() >= endSec) {
         if (document.getElementById('loopChk').checked) yt.seekTo(startSec);
-        else { yt.pause(); clearYtMonitor(); }
+        // Reaching the segment's end stops playback without any button being pressed, so clear the
+        // flag the FAB reads — otherwise it stays on ⏸ with nothing playing.
+        else { yt.pause(); clearYtMonitor(); ytPlaying = false; updateFab(); }
       }
     }, 200);
   }
@@ -1479,21 +1509,68 @@
     const fab = document.getElementById('fabPlay');
     if (fab) fab.textContent = fabPlaying() ? '⏸' : '▶';
   }
+  // Playback can stop WITHOUT any button being pressed: the schedule runs out, a YouTube video ends or
+  // is paused in its own iframe, an instrument fails to load, a variation preview grabs the shared
+  // transport. Each of those left the FAB showing ⏸ forever. Rather than chase every path, reconcile
+  // the icon against the real transport state a few times a second while a piece is open — it only
+  // writes to the DOM when the icon actually changes.
+  //
+  // `startPending` covers the one case where the icon must LEAD reality: a fresh Play shows ⏸ at once,
+  // but Tone.Transport doesn't start until the instrument has loaded, and reconciling in that gap would
+  // flick the icon back to ▶ and then to ⏸ again.
+  let startPending = false;
+  let fabSync = null;
+  function startFabSync() {
+    if (fabSync) return;
+    fabSync = setInterval(() => {
+      const fab = document.getElementById('fabPlay');
+      if (!fab || startPending) return;
+      const want = fabPlaying() ? '⏸' : '▶';
+      if (fab.textContent !== want) fab.textContent = want;
+    }, 300);
+  }
+  function stopFabSync() { if (fabSync) { clearInterval(fabSync); fabSync = null; } }
   // Glue the FAB to the bottom-right of the *visual* viewport so it stays visible through page/score
   // scroll, pinch-zoom, and the mobile URL bar showing/hiding. `position:fixed` alone pins to the
   // layout viewport, so a pinch-zoom would slide the button off-screen; visualViewport tracks what's
   // actually on screen. Counter-scaling by 1/scale keeps it a constant on-screen size when zoomed.
   function positionFab() {
     const fab = document.getElementById('fabPlay');
+    if (!fab) return;
+    const size = 56, margin = 16;
+    // On mobile the chord-window controls are pinned across the bottom of the screen; sit above them
+    // instead of on top of them. Measured every time, because the panel grows as chord chips wrap.
+    const lift = pinnedWindowHeight();
     const vv = window.visualViewport;
-    if (!fab || !vv) return;            // no visualViewport → the CSS right/bottom fallback applies
-    const size = 56, margin = 16, scale = vv.scale || 1;
+    if (!vv) {                          // no visualViewport → keep the CSS corner, just clear the panel
+      fab.style.bottom = `calc(${margin}px + env(safe-area-inset-bottom) + ${lift}px)`;
+      return;
+    }
+    const scale = vv.scale || 1;
     fab.style.right = 'auto';
     fab.style.bottom = 'auto';
     fab.style.transformOrigin = 'bottom right';
     fab.style.transform = `scale(${1 / scale})`;
     fab.style.left = (vv.offsetLeft + vv.width - margin - size) + 'px';
-    fab.style.top = (vv.offsetTop + vv.height - margin - size) + 'px';
+    fab.style.top = (vv.offsetTop + vv.height - margin - size - lift) + 'px';
+  }
+  // On-screen height of the pinned chord-window panel, or 0 when it isn't pinned (hidden, or desktop —
+  // the media query, not a width test in JS, decides where it pins). Visibility is read from `display`,
+  // NOT offsetParent: a fixed-position element has no offsetParent, so that test is always falsy here.
+  function pinnedWindowHeight() {
+    const panel = document.getElementById('windowPanel');
+    if (!panel) return 0;
+    const cs = getComputedStyle(panel);
+    if (cs.display === 'none' || cs.position !== 'fixed') return 0;
+    return Math.round(panel.getBoundingClientRect().height) + 8;
+  }
+  // Let the score scroll clear of the pinned panel: reserve its height at the end of the preview, so
+  // the last system can always be brought above the bar. Also re-places the FAB above it.
+  function syncWindowPinnedSpace() {
+    const prev = document.getElementById('musicPreview');
+    const lift = pinnedWindowHeight();
+    if (prev) prev.style.paddingBottom = lift ? `${lift + 16}px` : '';
+    positionFab();
   }
   if (window.visualViewport) {
     window.visualViewport.addEventListener('resize', positionFab);
@@ -1838,6 +1915,7 @@
     document.getElementById('musicPreview').style.display = 'block';
     document.body.classList.add('preview-open');   // lock page scroll behind the mobile dialog
     updateFab(); positionFab();                     // the FAB is now shown (mobile) — place & label it
+    startFabSync();                                 // keep its icon honest while the piece is open
     currentDetail = null; currentPreviewId = null; currentVocabEntry = null;   // cleared until a piece fully renders
     midiPlaying = false;
     document.getElementById('metroChk').checked = false;
@@ -2105,6 +2183,7 @@
   document.getElementById('dimConnChk').onchange = (e) => { if (renderer) renderer.setDimConnectors(e.target.checked); };
   document.getElementById('chordWindowChk').onchange = (e) => {
     document.getElementById('windowPanel').style.display = e.target.checked ? '' : 'none';
+    syncWindowPinnedSpace();   // mobile: the panel is pinned across the bottom — make room, lift the FAB
     if (!e.target.checked) { windowPicks.clear(); if (renderer) renderer.clearHighlight(); }
     if (renderer) renderer.setChordWindow(e.target.checked);
   };
@@ -3039,6 +3118,7 @@
     document.getElementById('hearAllChk').checked = false;
     syncToggles();
     document.body.classList.remove('preview-open');
+    stopFabSync();   // the FAB is hidden again; stop reconciling its icon
   };
   // Toggle native fullscreen on the preview pane (webkit fallback for Safari).
   document.getElementById('previewFullscreenBtn').onclick = () => {
