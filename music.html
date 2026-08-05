@@ -340,6 +340,7 @@
         #rhythmPanel .rg-sw{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
         #rhythmPanel .rg-what{font-size:11.5px;color:#777;margin-top:4px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
         #rhythmPanel .rg-fig{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+        #rhythmPanel .rg-bound{font-size:11px;color:#0b7285;font-family:system-ui,sans-serif}
         #rhythmPanel .rg-row .del{border:none;background:none;color:#a33;cursor:pointer;font-size:15px;line-height:1;padding:0 2px;margin-left:auto}
         #rhythmPanel .btn.active{background:#0ca678;color:#fff;border-color:#0ca678}
         #rhythmPanel .rg-empty{font-size:11.5px;color:#888}
@@ -739,7 +740,7 @@
         <input id="rgRanges" maxlength="60" placeholder="bars, e.g. 2-3, 11-12" autocomplete="off" style="width:9.5em"
                title="Printed bar numbers. Ranges with a dash, several separated by commas.">
         <button id="rgViewBtn" class="btn" title="Fill the bars box from the segment showing on screen"><span class="ic">⤵</span><span class="txt">⤵ from view</span></button>
-        <button id="rgAddBtn" class="btn" title="Capture these bars as a group"><span class="ic">➕</span><span class="txt">➕ Capture</span></button>
+        <button id="rgAddBtn" class="btn" title="Capture these bars as a group. With a rhythm picked above, the group is bound to THAT rhythm; otherwise to whichever figure those bars use most."><span class="ic">➕</span><span class="txt">➕ Capture</span></button>
       </div>
       <div class="tag-row" style="margin-top:6px">
         <button id="rgPlayAllBtn" class="btn" title="Play the groups one after another — each group's bars back to back, a gap between groups — so their characters can be compared"><span class="ic">▶▶</span><span class="txt">▶▶ Play all</span></button>
@@ -865,30 +866,30 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=61297052ee';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=61297052ee';
-  import { runQuery } from './music-query.js?v=61297052ee';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=61297052ee';
-  import { init as initFretboard } from './fretboard-panel.js?v=61297052ee';
-  import { chordDisplayName } from './music-chords.js?v=61297052ee';
-  import { keyExplanation } from './music-key.js?v=61297052ee';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=61297052ee';
-  import { createMusicStore } from './music-local-store.js?v=61297052ee';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=61297052ee';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=61297052ee';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=61297052ee';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=61297052ee';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=61297052ee';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=61297052ee';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=61297052ee';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=61297052ee';
-  import { generateCounterLines } from './music-counterpoint.js?v=61297052ee';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=61297052ee';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=61297052ee';
-  import { splitSingleVoice } from './music-voice-split.js?v=61297052ee';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=61297052ee';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=61297052ee';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=61297052ee';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=ddedfe2607';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=ddedfe2607';
+  import { runQuery } from './music-query.js?v=ddedfe2607';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=ddedfe2607';
+  import { init as initFretboard } from './fretboard-panel.js?v=ddedfe2607';
+  import { chordDisplayName } from './music-chords.js?v=ddedfe2607';
+  import { keyExplanation } from './music-key.js?v=ddedfe2607';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=ddedfe2607';
+  import { createMusicStore } from './music-local-store.js?v=ddedfe2607';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=ddedfe2607';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=ddedfe2607';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=ddedfe2607';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=ddedfe2607';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=ddedfe2607';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=ddedfe2607';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=ddedfe2607';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=ddedfe2607';
+  import { generateCounterLines } from './music-counterpoint.js?v=ddedfe2607';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=ddedfe2607';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=ddedfe2607';
+  import { splitSingleVoice } from './music-voice-split.js?v=ddedfe2607';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=ddedfe2607';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=ddedfe2607';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=ddedfe2607';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2779,7 +2780,7 @@
     applyRhythmHighlight();
     renderRhythmGroups();
   };
-  document.getElementById('rhythmUnit').onchange = rescanRhythms;
+  document.getElementById('rhythmUnit').onchange = () => { rescanRhythms(); renderRhythmGroups(); };
   document.getElementById('rhythmProportional').onchange = () => { rescanRhythms(); renderRhythmGroups(); };
   document.getElementById('rhythmScanBtn').onclick = rescanRhythms;
   // Opening the panel scans the sheet as it stands. The highlight SURVIVES collapsing — the card
@@ -2882,6 +2883,9 @@
       row.append(head, acts);
       // WHICH figure of those bars the group stands for. A group is that figure limited to these bars,
       // so this picker is the group's other half — it defaults to whichever figure the bars use most.
+      // The list is read under the group's OWN settings once it is bound to a figure, so it always shows
+      // what the group means; rebinding from it stores those same settings back.
+      const listOpts = g.pattern ? { unit: g.unit || 'bar', proportional: !!g.proportional } : rhythmOpts();
       const figs = renderer.rhythmGroupPatterns ? renderer.rhythmGroupPatterns(g.name, rhythmOpts()) : [];
       const what = document.createElement('div'); what.className = 'rg-what';
       if (!figs.length) {
@@ -2894,12 +2898,24 @@
           o.value = f.id; o.textContent = `${f.label}   ×${f.count}`;
           pick.appendChild(o);
         });
-        pick.value = (g.pattern && figs.some((f) => f.id === g.pattern)) ? g.pattern : figs[0].id;
+        const bound = g.pattern && figs.some((f) => f.id === g.pattern);
+        pick.value = bound ? g.pattern : figs[0].id;
         pick.onchange = () => {
-          renderer.setRhythmGroupPattern(g.name, pick.value);
+          // Rebinding stores the settings the list was built under, so the choice survives the panel
+          // being flipped to cells / proportional later.
+          renderer.setRhythmGroupPattern(g.name, pick.value, listOpts);
           if (shownGroupName === g.name) showRhythmGroup(g.name, true);
         };
         what.appendChild(pick);
+        // A group read under other settings than the panel's would otherwise look mislabelled.
+        const o = rhythmOpts();
+        if (bound && (g.unit !== o.unit || !!g.proportional !== o.proportional)) {
+          const note = document.createElement('span');
+          note.className = 'rg-bound';
+          note.textContent = ` bound as ${g.unit === 'cell' ? 'cell' : 'bar'}${g.proportional ? ' · proportional' : ''}`;
+          note.title = 'This group keeps the scan settings it was bound under, so the panel\'s Group by / proportional don\'t change what it means. Pick again here to rebind.';
+          what.appendChild(note);
+        }
       }
       row.appendChild(what);
       list.appendChild(row);
@@ -3001,16 +3017,23 @@
     if (!renderer) return;
     const ranges = rgTypedRanges();
     if (!ranges.length) { rgMsg('Which bars? Type them (e.g. 2-3, 11-12) or take them ⤵ from the view.'); return; }
-    // The capture takes the figure those bars use most — that IS the group — and, unnamed, its label.
+    // WHICH figure the group means: the one picked in the rhythm picker above when those bars actually
+    // run it (that is the direct way to say "this rhythm, in these bars"), else the figure they use most.
     const typed = document.getElementById('rgName').value.trim();
     const figs = renderer.rhythmRangesPatterns ? renderer.rhythmRangesPatterns(ranges, rhythmOpts()) : [];
-    const name = typed || (figs.length ? figs[0].label : `m ${rgShowRanges(ranges)}`);
-    if (!renderer.addRhythmGroup(name, ranges, figs.length ? figs[0].id : null)) {
+    const picked = rhythmSelId && figs.find((f) => f.id === rhythmSelId);
+    const fig = picked || figs[0] || null;
+    const name = typed || (fig ? fig.label : `m ${rgShowRanges(ranges)}`);
+    if (!renderer.addRhythmGroup(name, ranges, fig ? fig.id : null, rhythmOpts())) {
       rgMsg(`A group named "${name}" already exists.`); return;
     }
+    // Held until after showRhythmGroup, which writes its own message.
+    const warn = (rhythmSelId && !picked)
+      ? `m ${rgShowRanges(ranges)} don't run ${rhythmSelLabel} — bound to ${fig ? fig.label : 'nothing'} instead. ` : '';
     document.getElementById('rgName').value = '';
     document.getElementById('rgRanges').value = '';
     showRhythmGroup(name, true);   // capture and see it at once
+    if (warn) rgMsg(warn + document.getElementById('rgMsg').textContent);
   };
   document.getElementById('rgRanges').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { e.preventDefault(); document.getElementById('rgAddBtn').click(); }
