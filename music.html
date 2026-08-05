@@ -238,12 +238,21 @@
         /* Collapsible Motifs / Phrases panels (like the fretboard panel) + shared match bar. */
         .np-panel{margin:.25rem 0;padding:.4rem .6rem;border-radius:4px}
         .np-panel>summary{cursor:pointer;font-weight:600;font-size:13.5px}
-        /* Header toggle: shows/hides THIS panel's tags/phrases on the sheet (dim the rest), independent
-           of expand/collapse (which only shows the panel's own controls + list). */
-        .np-vis{margin-left:8px;border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:12.5px;font-weight:400;vertical-align:middle}
+        /* In-panel toggle: shows/hides THIS panel's tags/phrases on the sheet (dim the rest),
+           independent of whether the panel itself is open. */
+        .np-vis{border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:12.5px;font-weight:400;vertical-align:middle}
         .np-vis[aria-pressed="true"]{background:#1565c0;border-color:#1565c0;color:#fff}
-        #tagPanel{background:#f6f3ff;border:1px solid #ddd0ff}
-        #phrasePanel{background:#eef4ff;border:1px solid #cfe0ff}
+        /* The three sheet panels open from this row of buttons rather than from accordion headers, so
+           the row stays put and only the open panel's card floats over the score. Each panel is still a
+           <details> — the open/closed model the rest of the code reads — with its summary hidden and its
+           own box collapsed to nothing, so the row alone occupies the flow. */
+        .np-tabs{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:.25rem 0}
+        .np-tab.active{background:#e8f0ff;border-color:#2563eb;color:#1e40af;font-weight:600}
+        .np-tab.active:hover{background:#dce8ff}
+        /* "Showing on the sheet" — the panel's own 👁 is on, even while its card is closed. */
+        .np-tab.vis::after{content:"👁";margin-left:5px;font-size:.85em;opacity:.85}
+        .np-panel.np-tabbed{margin:0;padding:0;border:0;background:none}
+        .np-panel.np-tabbed>summary{display:none}
         /* When expanded, a panel's body floats over the sheet (absolute) instead of pushing it down —
            so toggling a panel never reflows the page (which could nudge a scrollbar and force OSMD to
            re-render, dropping the pattern-match highlights). Anchored below both summaries via .np-wrap. */
@@ -251,7 +260,9 @@
         /* The expanded body is a floating, DRAGGABLE card (bounded width, not full-width) so the user
            can move it off the score to reach the noteheads for tag/phrase painting. Absolute (no reflow);
            drag applies a translate offset (see makePanelDraggable), preserved while the panel is open. */
-        .np-panel[open]>.np-body{position:absolute;left:0;right:auto;width:min(360px,92vw);top:100%;z-index:60;margin-top:3px;
+        /* border-box so the padding + border are INSIDE the 92vw cap — otherwise the card overhangs the
+           right edge of a phone screen and the page picks up a horizontal scrollbar. */
+        .np-panel[open]>.np-body{position:absolute;left:0;right:auto;width:min(360px,92vw);box-sizing:border-box;top:100%;z-index:60;margin-top:3px;
           border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:.5rem .7rem;max-height:72vh;overflow:auto}
         /* Drag handle: a slim sticky bar at the top of the card. Double-click resets the position. */
         .np-drag{display:flex;align-items:center;gap:6px;cursor:move;user-select:none;touch-action:none;
@@ -286,6 +297,16 @@
         #phrasePanel .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
         #phrasePanel .del{border:none;background:none;color:#a33;cursor:pointer;font-size:15px;line-height:1;padding:0 2px;margin-left:auto}
         #phrasePanel .btn.active{background:#1565c0;color:#fff;border-color:#1565c0}
+        /* Rhythm panel: pick one of the rhythms the piece uses; its occurrences light up teal. */
+        #rhythmPanel[open]>.np-body{background:#f0faf6;border:1px solid #c3e8da}
+        #rhythmPanel .np-drag{color:#4f9c85}
+        #rhythmPanel .tag-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}
+        #rhythmPanel .tag-lbl{color:#555}
+        #rhythmPanel select{padding:3px 6px;border:1px solid #a8ddc9;border-radius:5px;font-size:13px;max-width:100%}
+        /* Monospace so the rhythm letter-strings line up down the list. */
+        #rhythmPanel #rhythmSel{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+        #rhythmPanel .rh-msg{font-size:12px;color:#555;margin-top:6px;min-height:1.2em}
+        #rhythmPanel .rh-legend{font-size:11.5px;color:#8a8a8a;margin-top:5px;line-height:1.4}
         /* Variations panel — decorate a voice over a ≤3-measure segment with non-chord-tone techniques.
            Normal-flow (not the floating .np-body overlay) because it hosts its own render sheet. */
         #variationsSection{background:#f2fbf4;border:1px solid #c6e9cf}
@@ -583,14 +604,25 @@
     <span id="windowRange" style="font-size:.8em;color:#777"></span>
     <button id="captureWindowBtn" class="btn" style="margin-left:.5em" title="Capture this window to vocab"><span class="ic">➕</span><span class="txt">Capture window → vocab</span></button>
   </div>
-  <!-- Motifs + Phrases panels overlay the sheet when expanded (see .np-body CSS) so toggling them
-       never reflows the page — a reflow could nudge a scrollbar and force OSMD to re-render. -->
+  <!-- Motifs / Phrases / Rhythm open from the button row below and overlay the sheet (see .np-body
+       CSS) so opening one never reflows the page — a reflow could nudge a scrollbar and force OSMD to
+       re-render. Each panel stays a <details> (the open/closed model the code reads); the buttons
+       drive it and its own summary is hidden. -->
   <div class="np-wrap">
-  <details id="tagPanel" class="np-panel">
-    <summary>🏷️ Motifs<button type="button" id="tagVisBtn" class="np-vis" title="Show these motifs on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button></summary>
+  <div class="np-tabs">
+    <button type="button" id="tagPanelBtn" class="btn np-tab" aria-pressed="false" aria-controls="tagPanel"
+            title="Motifs — tag notes and find where their pattern comes back"><span class="ic">🏷️</span><span class="txt">🏷️ Motifs</span></button>
+    <button type="button" id="phrasePanelBtn" class="btn np-tab" aria-pressed="false" aria-controls="phrasePanel"
+            title="Phrases — group motifs and hand-picked notes into a named phrase"><span class="ic">🎼</span><span class="txt">🎼 Phrases</span></button>
+    <button type="button" id="rhythmPanelBtn" class="btn np-tab" aria-pressed="false" aria-controls="rhythmPanel"
+            title="Rhythm — pick a rhythm the piece uses and see (and hear) every occurrence"><span class="ic">🥁</span><span class="txt">🥁 Rhythm</span></button>
+  </div>
+  <details id="tagPanel" class="np-panel np-tabbed">
+    <summary>🏷️ Motifs</summary>
     <div class="np-body">
     <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
     <div class="tag-row">
+      <button type="button" id="tagVisBtn" class="np-vis" title="Show these motifs on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button>
       <button class="btn toggle" data-for="tagModeChk" title="Click notes to add/remove them from the active tag"><span class="ic">🖌️</span><span class="txt">Edit mode</span></button>
       <label class="tag-lbl">Tag:
         <input id="tagInput" list="tagOptions" placeholder="pick or type a tag…" maxlength="24" autocomplete="off"
@@ -613,11 +645,12 @@
     </div>
     </div>
   </details>
-  <details id="phrasePanel" class="np-panel">
-    <summary>🎼 Phrases<button type="button" id="phraseVisBtn" class="np-vis" title="Show these phrases on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button></summary>
+  <details id="phrasePanel" class="np-panel np-tabbed">
+    <summary>🎼 Phrases</summary>
     <div class="np-body">
     <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
     <div class="tag-row">
+      <button type="button" id="phraseVisBtn" class="np-vis" title="Show these phrases on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button>
       <label class="tag-lbl">New phrase:
         <input id="phraseInput" maxlength="32" placeholder="name…" autocomplete="off" style="width:11em">
       </label>
@@ -625,6 +658,29 @@
       <span id="phraseMsg" style="font-size:.8em;color:#555"></span>
     </div>
     <div id="phraseList" class="tag-list"></div>
+    </div>
+  </details>
+  <details id="rhythmPanel" class="np-panel np-tabbed">
+    <summary>🥁 Rhythm</summary>
+    <div class="np-body">
+    <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
+    <div class="tag-row">
+      <label class="tag-lbl">Group by
+        <select id="rhythmUnit" title="Bars: every distinct bar rhythm. Cells: rhythm cells that repeat — they may start mid-bar or cross a bar line">
+          <option value="bar">bars</option>
+          <option value="cell">cells</option>
+        </select>
+      </label>
+      <label class="tag-lbl" title="Match rhythms by their proportions, so the same rhythm at half or double speed counts as one pattern">
+        <input type="checkbox" id="rhythmProportional"> proportional
+      </label>
+      <button id="rhythmScanBtn" class="btn" title="Re-scan the sheet as it stands (whole piece or the segment on screen)"><span class="ic">🔎</span><span class="txt">Scan</span></button>
+    </div>
+    <div class="tag-row" style="margin-top:6px">
+      <select id="rhythmSel" title="Pick a rhythm — every occurrence lights up on the sheet, and ▶ Play sounds only those notes at their real place in the piece (clear the pick to hear everything)"></select>
+    </div>
+    <div id="rhythmMsg" class="rh-msg"></div>
+    <div class="rh-legend">w h q e s t = whole · half · quarter · eighth · 16th · 32nd — “.” dotted, “³” triplet, “(x)” a rest of that length.</div>
     </div>
   </details>
     <!-- Shared pattern-match settings — used by BOTH the Motifs "Find pattern" and each Phrase's Find.
@@ -737,29 +793,29 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=b56881422b';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=b56881422b';
-  import { runQuery } from './music-query.js?v=b56881422b';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=b56881422b';
-  import { init as initFretboard } from './fretboard-panel.js?v=b56881422b';
-  import { chordDisplayName } from './music-chords.js?v=b56881422b';
-  import { keyExplanation } from './music-key.js?v=b56881422b';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=b56881422b';
-  import { createMusicStore } from './music-local-store.js?v=b56881422b';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=b56881422b';
-  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=b56881422b';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=b56881422b';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=b56881422b';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=b56881422b';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=b56881422b';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=b56881422b';
-  import { generateCounterLines } from './music-counterpoint.js?v=b56881422b';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=b56881422b';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=b56881422b';
-  import { splitSingleVoice } from './music-voice-split.js?v=b56881422b';
-  import { encodeMusicXml } from './music-encoding.js?v=b56881422b';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=b56881422b';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=b56881422b';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=1c18f32ad1';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=1c18f32ad1';
+  import { runQuery } from './music-query.js?v=1c18f32ad1';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=1c18f32ad1';
+  import { init as initFretboard } from './fretboard-panel.js?v=1c18f32ad1';
+  import { chordDisplayName } from './music-chords.js?v=1c18f32ad1';
+  import { keyExplanation } from './music-key.js?v=1c18f32ad1';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=1c18f32ad1';
+  import { createMusicStore } from './music-local-store.js?v=1c18f32ad1';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=1c18f32ad1';
+  import { buildSchedule, buildScheduleFromMusicXml, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=1c18f32ad1';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=1c18f32ad1';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=1c18f32ad1';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=1c18f32ad1';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=1c18f32ad1';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=1c18f32ad1';
+  import { generateCounterLines } from './music-counterpoint.js?v=1c18f32ad1';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=1c18f32ad1';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=1c18f32ad1';
+  import { splitSingleVoice } from './music-voice-split.js?v=1c18f32ad1';
+  import { encodeMusicXml } from './music-encoding.js?v=1c18f32ad1';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=1c18f32ad1';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=1c18f32ad1';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1177,14 +1233,20 @@
     const useXml = currentDetail.format === 'musicxml' && currentDetail.source;
     const range = activeRange();
     const muted = (renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : [];
+    // A picked rhythm SOLOS that figure across the whole transport (Play, spacebar, the mobile FAB):
+    // every other drawn note is silenced but keeps its slot, so the piece's timing is untouched and
+    // what you hear lands exactly on the highlighted noteheads. Clear the pick to hear everything.
+    const soloMuted = (rhythmSelId && renderer && renderer.getRhythmMutedNotes)
+      ? renderer.getRhythmMutedNotes(rhythmSelId, rhythmOpts()) : [];
     const schedule = useXml
-      ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), ...range, mutedNotes: muted })
+      ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), ...range, mutedNotes: [...muted, ...soloMuted] })
       : buildSchedule(currentDetail.voices, { tempo: currentTempo(), ...range });
     if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
     const winOn = document.getElementById('chordWindowChk') && document.getElementById('chordWindowChk').checked;
-    const span = (winOn && range.fromBeat != null) ? ' (window)'
+    const span = ((winOn && range.fromBeat != null) ? ' (window)'
       : (range.fromBeat != null && range.fromMeasure != null) ? ` (from m. ${toPrintedMeasure(range.fromMeasure)})`   // click-selected start
-      : (range.fromMeasure != null) ? ` (m. ${toPrintedMeasure(range.fromMeasure)}–${toPrintedMeasure(range.toMeasure)})` : '';
+      : (range.fromMeasure != null) ? ` (m. ${toPrintedMeasure(range.fromMeasure)}–${toPrintedMeasure(range.toMeasure)})` : '')
+      + (soloMuted.length ? ` · rhythm ${rhythmSelLabel} only — the rest is silent` : '');
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: range.cursorStep || 0 });
@@ -1205,6 +1267,11 @@
       })
       .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; midiPlaying = false; updateMetro(false); });
   }
+  // Beats of silence inserted between the runs of a skip-playback (tags / phrases / rhythm).
+  function breathBeatsValue() {
+    const breath = parseFloat(document.getElementById('breathBeats').value);
+    return (Number.isFinite(breath) && breath >= 0) ? breath : 1;
+  }
   // Tag skip-playback: play only the checked tags' notes, removing the empty stretches between
   // tagged runs (a beat-relative breath separates runs). Whole piece — ignores segment/window.
   function playTags() {
@@ -1224,9 +1291,8 @@
       seen.add(k); return true;
     }).sort((a, b) => a.beats - b.beats);
     if (!keep.length) { document.getElementById('transportMsg').textContent = 'Check a tag to play it.'; return; }
-    const breath = parseFloat(document.getElementById('breathBeats').value);
-    const breathBeats = (Number.isFinite(breath) && breath >= 0) ? breath : 1;
-    const schedule = buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep, breathBeats });
+    const schedule = buildScheduleFromMusicXml(currentDetail.source,
+      { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
     if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
@@ -1867,6 +1933,7 @@
     if (renderer) { renderer.setPhrasePaintMode(false); renderer.setShownPhrases([]); }
     setPhraseVis(false);   // sheet phrase visibility starts off (decoupled from expand)
     if (phrasePanelOpen) renderPhraseUI();
+    resetRhythmPanel();   // the rhythm list belongs to the notes that were drawn — rescan for this piece
     updatePatternControls();
     // Variations panel: repopulate the voice picker, clear any prior results/sheet, re-check the guardrail.
     populateVarVoices();
@@ -2030,6 +2097,7 @@
     document.getElementById('segFrom').value = '';   // Full = whole piece → clear the segment range inputs
     document.getElementById('segTo').value = '';
     renderer.showFull();
+    refreshRhythmIfOpen();
   };
   document.getElementById('voiceColorChk').onchange = (e) => { if (renderer) renderer.setVoiceColors(e.target.checked); };
   document.getElementById('noteNameChk').onchange = (e) => { if (renderer) renderer.setNoteNames(e.target.checked); };
@@ -2151,32 +2219,57 @@
     handle.addEventListener('pointercancel', end);
     handle.addEventListener('dblclick', () => { body._off = { x: 0, y: 0 }; apply(); });
   }
-  ['tagPanel', 'phrasePanel'].forEach((id) => {
-    const p = document.getElementById(id);
-    if (p) makePanelDraggable(p.querySelector('.np-body'));
+  // The Motifs / Phrases / Rhythm buttons ARE these panels' headers: one click opens a panel's floating
+  // card, another closes it. The <details> stays the model, so every existing `.open` read and `toggle`
+  // handler (mutual exclusion, pattern controls, rhythm rescan) keeps working untouched — the buttons
+  // just flip `.open`, and each panel's toggle event lights the matching button.
+  const PANEL_IDS = ['tagPanel', 'phrasePanel', 'rhythmPanel'];
+  function syncPanelTabs() {
+    PANEL_IDS.forEach((id) => {
+      const btn = document.getElementById(`${id}Btn`);
+      const panel = document.getElementById(id);
+      if (!btn || !panel) return;
+      btn.classList.toggle('active', panel.open);
+      btn.setAttribute('aria-pressed', panel.open ? 'true' : 'false');
+    });
+  }
+  PANEL_IDS.forEach((id) => {
+    const panel = document.getElementById(id);
+    if (!panel) return;
+    makePanelDraggable(panel.querySelector('.np-body'));
+    panel.addEventListener('toggle', syncPanelTabs);
+    const btn = document.getElementById(`${id}Btn`);
+    if (btn) btn.onclick = () => { panel.open = !panel.open; };
   });
-  // Sheet visibility is DECOUPLED from expand/collapse: the header 👁 toggle dims the sheet and reveals
-  // the checked motifs/phrases; expand/collapse only shows this panel's own controls + list.
+  syncPanelTabs();
+  // Sheet visibility is DECOUPLED from the panel being open: a panel's 👁 toggle dims the sheet and
+  // reveals its checked motifs/phrases, and stays on after you close the panel. Since the toggle now
+  // lives inside the card, the panel's button carries an 👁 marker while it is on — otherwise a dimmed
+  // sheet would have no visible cause once the card is closed.
   let tagVisOn = false, phraseVisOn = false;
+  function markTabVis(panelId, on) {
+    const btn = document.getElementById(`${panelId}Btn`);
+    if (btn) btn.classList.toggle('vis', !!on);
+  }
   function setTagVis(on) {
     tagVisOn = !!on;
     if (renderer) renderer.setTagFilter(tagVisOn);
     const b = document.getElementById('tagVisBtn'); if (b) b.setAttribute('aria-pressed', tagVisOn ? 'true' : 'false');
+    markTabVis('tagPanel', tagVisOn);
   }
   function setPhraseVis(on) {
     phraseVisOn = !!on;
     if (renderer) renderer.setPhraseFilter(phraseVisOn);
     const b = document.getElementById('phraseVisBtn'); if (b) b.setAttribute('aria-pressed', phraseVisOn ? 'true' : 'false');
+    markTabVis('phrasePanel', phraseVisOn);
   }
-  // The header 👁 buttons sit inside <summary>, so preventDefault/stopPropagation keeps a click from
-  // also toggling the <details>.
-  document.getElementById('tagVisBtn').addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); setTagVis(!tagVisOn); });
-  document.getElementById('phraseVisBtn').addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); setPhraseVis(!phraseVisOn); });
+  document.getElementById('tagVisBtn').onclick = () => setTagVis(!tagVisOn);
+  document.getElementById('phraseVisBtn').onclick = () => setPhraseVis(!phraseVisOn);
   // Expand/collapse the Motifs panel: only its controls + tag list; collapsing exits tag-paint mode.
   // The two panels are mutually exclusive so their floating overlays never stack on each other.
   document.getElementById('tagPanel').addEventListener('toggle', (e) => {
     const open = e.target.open;
-    if (open) document.getElementById('phrasePanel').open = false;
+    if (open) { document.getElementById('phrasePanel').open = false; document.getElementById('rhythmPanel').open = false; }
     if (!open && renderer) { renderer.setTagMode(false); document.getElementById('tagModeChk').checked = false; syncToggles(); }
     if (open) renderTagUI();
     updatePatternControls();
@@ -2324,9 +2417,8 @@
     }
     const keep = (renderer && renderer.getPhraseNoteIds) ? renderer.getPhraseNoteIds(name) : [];
     if (!keep.length) { document.getElementById('transportMsg').textContent = 'This phrase has no notes.'; return; }
-    const breath = parseFloat(document.getElementById('breathBeats').value);
-    const breathBeats = (Number.isFinite(breath) && breath >= 0) ? breath : 1;
-    const schedule = buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep, breathBeats });
+    const schedule = buildScheduleFromMusicXml(currentDetail.source,
+      { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
     if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
@@ -2368,7 +2460,7 @@
   // Expand/collapse the Phrases panel: only its controls + phrase list; collapsing exits phrase-paint.
   document.getElementById('phrasePanel').addEventListener('toggle', (e) => {
     const open = e.target.open;
-    if (open) document.getElementById('tagPanel').open = false;
+    if (open) { document.getElementById('tagPanel').open = false; document.getElementById('rhythmPanel').open = false; }
     if (!open) {   // collapsing exits phrase-paint mode
       phrasePainting = false; activePhraseName = null;
       if (renderer) renderer.setPhrasePaintMode(false);
@@ -2385,6 +2477,81 @@
   document.getElementById('phraseInput').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { e.preventDefault(); document.getElementById('addPhraseBtn').click(); }
   });
+  // ---- Rhythm panel ------------------------------------------------------------------------------
+  // Nothing to tag or paint here: the panel READS the rhythms off the sheet that is showing (whole
+  // piece or segment), lists them most-used first, and paints every occurrence of the picked one.
+  let rhythmSelId = '';      // picked pattern id — kept across rescans while that rhythm still exists
+  let rhythmSelLabel = '';   // ...and its letter-label, for the transport message
+  const rhythmOpts = () => ({
+    unit: document.getElementById('rhythmUnit').value,
+    proportional: document.getElementById('rhythmProportional').checked,
+  });
+  // Rebuild the picker from the drawn notes. Re-applies the pick when the rescan still finds it;
+  // scanning alone never touches the sheet's highlight (that would wipe a motif search's colors).
+  function rescanRhythms() {
+    const sel = document.getElementById('rhythmSel');
+    const msg = document.getElementById('rhythmMsg');
+    sel.innerHTML = '';
+    const pats = (renderer && renderer.getRhythmPatterns) ? renderer.getRhythmPatterns(rhythmOpts()) : [];
+    const none = document.createElement('option');
+    none.value = ''; none.textContent = pats.length ? '— pick a rhythm —' : '— none found —';
+    sel.appendChild(none);
+    pats.forEach((p) => {
+      const o = document.createElement('option');
+      o.value = p.id;
+      const ms = p.measures.slice(0, 4).map(toPrintedMeasure).join(', ');
+      o.textContent = `${p.label}   ×${p.count}   ·   m ${ms}${p.measures.length > 4 ? '…' : ''}`;
+      sel.appendChild(o);
+    });
+    const hadPick = rhythmSelId;
+    if (rhythmSelId && pats.some((p) => p.id === rhythmSelId)) sel.value = rhythmSelId;
+    else rhythmSelId = '';
+    const cell = rhythmOpts().unit === 'cell';
+    msg.textContent = pats.length
+      ? `${pats.length} ${cell ? 'repeating cell' : 'bar rhythm'}${pats.length === 1 ? '' : 's'} on the visible sheet`
+      : (cell ? 'No rhythm cell repeats on the visible sheet.' : 'No rhythms found — open a MusicXML piece.');
+    // Re-apply the pick — or, when the rescan lost it (switching bars↔cells, or a new view), wipe its
+    // paint so the sheet never shows a highlight the picker no longer names.
+    if (rhythmSelId || hadPick) applyRhythmHighlight();
+  }
+  // Paint every occurrence of the picked rhythm — or clear the highlight when the pick is cleared.
+  // While a rhythm is picked the transport sounds only its notes (playMidi's soloMuted), so say so.
+  function applyRhythmHighlight() {
+    if (!renderer || !renderer.highlightRhythmPattern) return;
+    const res = renderer.highlightRhythmPattern(rhythmSelId, rhythmOpts());
+    rhythmSelLabel = res.label || '';
+    if (!rhythmSelId) return;
+    const msg = document.getElementById('rhythmMsg');
+    if (!res.count) { msg.textContent = 'That rhythm is not on the visible sheet — press Scan.'; return; }
+    const ms = res.measures.slice(0, 8).map(toPrintedMeasure).join(', ') + (res.measures.length > 8 ? '…' : '');
+    msg.textContent = `${res.label} — ${res.count} occurrence${res.count === 1 ? '' : 's'} · m ${ms} · ▶ Play sounds only these notes, in time`;
+  }
+  document.getElementById('rhythmSel').onchange = (e) => { rhythmSelId = e.target.value; applyRhythmHighlight(); };
+  document.getElementById('rhythmUnit').onchange = rescanRhythms;
+  document.getElementById('rhythmProportional').onchange = rescanRhythms;
+  document.getElementById('rhythmScanBtn').onclick = rescanRhythms;
+  // Opening the panel scans the sheet as it stands. The highlight SURVIVES collapsing — the card
+  // floats over the score, so collapsing it is how you look at what lit up.
+  document.getElementById('rhythmPanel').addEventListener('toggle', (e) => {
+    if (!e.target.open) return;
+    document.getElementById('tagPanel').open = false;
+    document.getElementById('phrasePanel').open = false;
+    rescanRhythms();
+  });
+  // Switching between the full piece and a segment changes which notes are drawn, so the counts and
+  // the list change with it. Only rescans while the panel is showing; otherwise opening it will.
+  function refreshRhythmIfOpen() {
+    if (document.getElementById('rhythmPanel').open) rescanRhythms();
+  }
+  // A fresh piece/segment invalidates the list (different notes are drawn).
+  function resetRhythmPanel() {
+    rhythmSelId = ''; rhythmSelLabel = '';
+    if (document.getElementById('rhythmPanel').open) rescanRhythms();
+    else {
+      document.getElementById('rhythmSel').innerHTML = '';
+      document.getElementById('rhythmMsg').textContent = '';
+    }
+  }
   // One combobox does add + select: an existing name just becomes active; a new name is added to the
   // GLOBAL tag list (next palette color), saved, and made active. Commits on Enter or on blur.
   function commitTag() {
@@ -2428,6 +2595,7 @@
     const from = toSeqMeasure(parseInt(document.getElementById('segFrom').value, 10));
     const to = toSeqMeasure(parseInt(document.getElementById('segTo').value, 10));
     if (renderer && Number.isFinite(from) && Number.isFinite(to)) renderer.showSegment([from, to]);
+    refreshRhythmIfOpen();
   };
   // Prev/Next on each boundary: the start pair (◀▶ left) moves segFrom, the end pair (◀▶
   // right) moves segTo. ◀ on the start and ▶ on the end grow the window; the inner arrows shrink it.
@@ -2444,6 +2612,7 @@
     document.getElementById('segTo').value = toPrintedMeasure(to);
     renderer.showSegment([from, to]);
     refreshVariationsGuardrail();
+    refreshRhythmIfOpen();
   }
   document.getElementById('startPrevBtn').onclick = () => adjustSegment('from', -1);
   document.getElementById('startNextBtn').onclick = () => adjustSegment('from', 1);
@@ -2973,6 +3142,7 @@
       document.getElementById('segFrom').value = toPrintedMeasure(mr[0]);
       document.getElementById('segTo').value = toPrintedMeasure(mr[1]);
       if (renderer) { renderer.showSegment(mr); renderer.highlightMeasures(mr); }
+      refreshRhythmIfOpen();
       // Call out exactly what matched at these measures as clickable chips — the searched chords may
       // be labelled differently by the live on-sheet overlay, so clicking a chip lights up exactly
       // the notes that formed that chord at its own measure(s), letting the user verify the match.
@@ -3050,6 +3220,7 @@
     if (entry.startSeconds != null) document.getElementById('guessSec').value = entry.startSeconds;
     if (entry.endSeconds != null) document.getElementById('guessEndSec').value = entry.endSeconds;
     if (renderer) { renderer.showSegment([from, to]); renderer.highlightMeasures([from, to]); }
+    refreshRhythmIfOpen();
     if (renderer) renderer.setSuppressedNotes(entry.suppressed || []);
     document.getElementById('suppressModeChk').checked = false;
     document.getElementById('hearAllChk').checked = false;
