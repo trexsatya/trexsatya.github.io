@@ -5744,41 +5744,6 @@
     "updatedAt": "2026-08-04"
   },
   {
-    "id": "gtr118-m12-miles-davis-so-what_swing.mscz",
-    "title": "gtr118-m12-miles-davis-so-what_swing.mscz",
-    "system": "western",
-    "format": "musicxml",
-    "sourceUrl": null,
-    "youtube": null,
-    "key": "D",
-    "guessedKey": "D major",
-    "keyConfidence": "medium",
-    "keyAmbiguous": true,
-    "time": "4/4",
-    "tempo": 120,
-    "instrument": "Trumpet",
-    "voiceCount": 2,
-    "noteCount": 851,
-    "pieceCount": 4,
-    "channels": [
-      "pitch",
-      "interval",
-      "sargam",
-      "duration",
-      "chordSymbol"
-    ],
-    "search": {
-      "contour": "3,4,3,-10,3,4,3,-10,3,4,3,-10,3,4,3,-10,3,4,3,-24,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-5,-7,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-5,0,0,-2,0,5,4,-11,5,4,-7,7,2,1,2,2,-4,-9,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-5,-7,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-5,-7,5,4,-11,5,4,-8,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-5,-7,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-5,0,0,-2,0,5,4,-11,5,4,-7,0,7,-2,2,-7,0,0,3,4,-2,2,-7,3,4,-2,2,3,-1,1,-1,-2,0,-4,4,-2,2,-7,0,12,0,0,0,-12,7,3,5,-15,7,3,5,-15,7,3,5,-3,0,0,0,-12,7,3,5,-15,7,3,5,-15,7,3,5,-3,0,0,0,-12,7,3,5,-15,7,3,5,-15,7,3,5,-3,0,0,0,-12,7,3,5,-15,7,3,5,-15,7,3,5,-15,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-5,-7,5,4,-11,5,4,-7,7,2,1,2,2,-4,2,-12,5,4,-11,5,4,-5,0,0,-2,0,5,4,-11,5,4,-7,7,2,1,2,2,-4,-10,0,7,2,1,2,2,-4,-10,-5,5,7,2,1,2,2,-4,-10,2,0,0,-2,0,7,2,1,2,2,-4,-9,7,2,1,2,2,-4,-10,0,7,2,1,2,2,-4,-10,-5,5,7,2,1,2,2,-4,-10,0,7,2,1,2,2,-4,-10,-5,4,7,2,1,2,2,-4,-10,0,7,2,1,2,2,-4,-10,-5,5,7,2,1,2,2,-4,-10,2,0,0,-2,0,0,-2,11,-13,-1,-2,-2,4,5,0,2,1,4,0,5,-1,-1,-2,-1,-2,-2,-1,-2,-2,11,-13,-1,-2,-2,4,5,0,2,1,4,0,5,-1,-1,-2,-1,-2,-2,-1,-2,-2,11,-13,-1,-2,-2,4,5,2,1,4,4,1,2,1,2,-7,-1,-1,-1,-2,-2,-1,-2,7,2,1,2,2,-4,-10,0,7,2,1,2,2,-4,-10,-5,5,7,2,1,2,2,-4,-10,2,0,0,-2",
-      "pitchClasses": "E G B D E G B D E G B D E G B D E G B D D A B C D E C D D G B C F A D A B C D E C D A D G B C F A D A B C D E C D D G B C F A E E E D D G B C F A D A B C D E C Ds As C Cs Ds F Cs Ds Ds Gs C Cs Fs As Ds As C Cs Ds F Cs Ds As Ds Gs C Cs Fs As Ds As C Cs Ds F Cs Ds Ds Gs C Cs Fs As Ds As C Cs Ds F Cs Ds As Ds Gs C Cs Fs As D A B C D E C D D G B C F A D A B C D E C D A D G B C F A D A B C D E C D D G B C F A E E E D D G B C F A D D A G A D D D F A G A D F A G A C B C B A A F A G A D D D D D D D A C F D A C F D A C F D D D D D A C F D A C F D A C F D D D D D A C F D A C F D A C F D D D D D A C F D A C F D A C F D A B C D E C D D G B C F A D A B C D E C D A D G B C F A D A B C D E C D D G B C F A E E E D D G B C F A D A B C D E C D D A B C D E C D A D A B C D E C D E E E D D A B C D E C Ds As C Cs Ds F Cs Ds Ds As C Cs Ds F Cs Ds As Ds As C Cs Ds F Cs Ds Ds As C Cs Ds F Cs Ds As D A B C D E C D D A B C D E C D A D A B C D E C D E E E D D D C B As A G F A D D E F A A D Cs C As A G F E D C B As A G F A D D E F A A D Cs C As A G F E D C B As A G F A D E F A Cs D E F G C B As A G F E D A B C D E C D D A B C D E C D A D A B C D E C D E E E D",
-      "sargam": "Re Ma Dha Sa Re Ma Dha Sa Re Ma Dha Sa Re Ma Dha Sa Re Ma Dha Sa Sa Pa Dha Sa Re Sa Sa Ma Dha Pa Sa Pa Dha Sa Re Sa Pa Sa Ma Dha Pa Sa Pa Dha Sa Re Sa Sa Ma Dha Pa Re Re Re Sa Sa Ma Dha Pa Sa Pa Dha Sa Re Ni Ni Ni Ga Ni Ni Ni Ga Ni Ni Ni Ga Ni Ni Ni Ga Sa Pa Dha Sa Re Sa Sa Ma Dha Pa Sa Pa Dha Sa Re Sa Pa Sa Ma Dha Pa Sa Pa Dha Sa Re Sa Sa Ma Dha Pa Re Re Re Sa Sa Ma Dha Pa Sa Sa Pa Ma Pa Sa Sa Sa Pa Ma Pa Sa Pa Ma Pa Dha Dha Pa Pa Pa Ma Pa Sa Sa Sa Sa Sa Sa Sa Pa Sa Pa Sa Pa Sa Sa Sa Sa Sa Pa Sa Pa Sa Pa Sa Sa Sa Sa Sa Pa Sa Pa Sa Pa Sa Sa Sa Sa Sa Pa Sa Pa Sa Pa Sa Pa Dha Sa Re Sa Sa Ma Dha Pa Sa Pa Dha Sa Re Sa Pa Sa Ma Dha Pa Sa Pa Dha Sa Re Sa Sa Ma Dha Pa Re Re Re Sa Sa Ma Dha Pa Sa Pa Dha Sa Re Sa Sa Pa Dha Sa Re Sa Pa Sa Pa Dha Sa Re Sa Re Re Re Sa Sa Pa Dha Sa Re Ni Ni Ni Ni Ni Ni Ni Ni Sa Pa Dha Sa Re Sa Sa Pa Dha Sa Re Sa Pa Sa Pa Dha Sa Re Sa Re Re Re Sa Sa Sa Dha Pa Ma Pa Sa Sa Re Pa Pa Sa Ni Pa Ma Re Sa Dha Pa Ma Pa Sa Sa Re Pa Pa Sa Ni Pa Ma Re Sa Dha Pa Ma Pa Sa Re Pa Ni Sa Re Ma Dha Pa Ma Re Sa Pa Dha Sa Re Sa Sa Pa Dha Sa Re Sa Pa Sa Pa Dha Sa Re Sa Re Re Re Sa",
-      "chords": "Em7 Am G Am G Am G Am D#m F# D#m F# D#m F# D#m F# Am G Am G Am G Dsus4 Dm Dm7 Am G Am G Am G E7Sus4 D#mMaj7 E7Sus4 Dm+9 E7Sus4"
-    },
-    "detailPath": "details/gtr118-m12-miles-davis-so-what_swing.mscz.json",
-    "contentHash": "678aa1d4",
-    "tags": [],
-    "updatedAt": "2026-08-04"
-  },
-  {
     "id": "hm-blues-phelng-phra-rach-niphnth_swing.mscz",
     "title": "hm-blues-phelng-phra-rach-niphnth_swing.mscz",
     "system": "western",
@@ -6055,41 +6020,6 @@
     },
     "detailPath": "details/waltz-for-debby-guitar-arrangement_swing.mscz.json",
     "contentHash": "b8b3232b",
-    "tags": [],
-    "updatedAt": "2026-08-04"
-  },
-  {
-    "id": "marmotte-beethoven-piano.mxl",
-    "title": "marmotte-beethoven-piano.mxl",
-    "system": "western",
-    "format": "musicxml",
-    "sourceUrl": null,
-    "youtube": null,
-    "key": "Am",
-    "guessedKey": "A minor",
-    "keyConfidence": "high",
-    "keyAmbiguous": false,
-    "time": "6/8",
-    "tempo": 92,
-    "instrument": "Piano",
-    "voiceCount": 2,
-    "noteCount": 510,
-    "pieceCount": 1,
-    "channels": [
-      "pitch",
-      "interval",
-      "sargam",
-      "duration",
-      "chordSymbol"
-    ],
-    "search": {
-      "contour": "7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,0,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,7,5,-14,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,7,5,-12,12,7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,7,5,-12,7,4,-11,7,5,-12,7,4,-11,7,4,-11,7,5,-12,0,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,7,5,-12,-12,7,5,-14,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,7,5,-12,12,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,5,3,-8,4,3,-7,-7,3,4,-9,7,5,-7,7,5,-8,4,3,-7,5,3,-8,4,3,-14,3,4,-7,12",
-      "pitchClasses": "A E A A E A A E Gs A E A A E Gs A E A A E Gs A E Gs A E A A E A A E Gs A E A A E Gs A E Gs A E A A A C E G D G C G C E Gs B E A C E A C E Gs B E A E A G D G C G C E Gs B E A C E Gs B A E A A A E A A E A A E Gs A E A A E Gs A E A A E Gs A E Gs A E A A E A A E Gs A E A A E Gs A E Gs A E A A A C E G D G C G C E Gs B E A C E A C E Gs B E A C E G D G C G C E Gs B E A C E Gs B A E A A A E A G D G C G C E Gs B E A C E A C E Gs B E A C E G D G C G C E Gs B E A C E Gs B A E A A A C E G D G C G C E Gs B E A C E A C E Gs B E A C E G D G C G C E Gs B E A C E Gs B A C E A A",
-      "sargam": "Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Pa Sa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Pa Sa Sa Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Pa Sa Sa Pa Sa Pa Sa Sa Pa Sa Pa Sa Pa Sa Sa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Pa Sa Sa Sa Pa Sa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Pa Sa Sa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Sa Ga Pa Re Pa Sa Ga Pa Ni Ma Ni Ga Ni Ga Pa Re Pa Sa Ga Pa Re Sa Ga Pa Sa Sa",
-      "chords": "Am E Am E Esus4 Am C Esus4 E G C Esus4 Am E Am Esus4 Am C Esus4 E Am C Esus4 G C Esus4 E Am C Esus4 Am C Esus4 E Am C E Am"
-    },
-    "detailPath": "details/marmotte-beethoven-piano.mxl.json",
-    "contentHash": "ac6ba040",
     "tags": [],
     "updatedAt": "2026-08-04"
   },
