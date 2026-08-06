@@ -289,6 +289,14 @@
           border-bottom:1px solid rgba(0,0,0,.08);border-radius:6px 6px 0 0;position:sticky;top:-.5rem;background:inherit;z-index:1}
         #phrasePanel .np-drag{color:#6f8bbf}
         .np-drag .grip{letter-spacing:1px}
+        /* Resize grip: sticky to the card's bottom-right so it stays reachable while the body scrolls
+           (the drag bar is sticky to the top the same way). Pointer-driven, so it works on touch —
+           the native CSS resizer does not on iOS. Double-click restores the CSS size. */
+        .np-size{position:sticky;bottom:-.5rem;margin:.35rem -.35rem -.5rem auto;width:20px;height:20px;flex:none;
+          cursor:nwse-resize;touch-action:none;opacity:.5;
+          background:linear-gradient(135deg,transparent 46%,currentColor 46%,currentColor 56%,transparent 56%,
+            transparent 68%,currentColor 68%,currentColor 78%,transparent 78%)}
+        .np-size:hover{opacity:.9}
         #tagPanel[open]>.np-body{background:#f6f3ff;border:1px solid #ddd0ff}
         #phrasePanel[open]>.np-body{background:#eef4ff;border:1px solid #cfe0ff}
         .pattern-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;margin:.25rem 0;padding:.35rem .6rem;background:#fafafa;border:1px solid #e5e5e5;border-radius:4px}
@@ -460,6 +468,15 @@
     <span id="status"></span>
   </div>
   <textarea id="textInput" placeholder="Paste note-text, first line = title" style="display:none;width:100%;height:6em"></textarea>
+  <!-- Name filter: 175+ pieces make scanning the list by eye hopeless. Substring, case-insensitive,
+       matched against the title (and the id, which is what a file was added as). -->
+  <div style="margin:.35rem 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <label style="font-size:.9em;color:#555">Filter by name
+      <input id="nameFilter" type="search" placeholder="type part of a title…" autocomplete="off"
+             style="width:14em;padding:3px 6px;border:1px solid #ccc;border-radius:5px" title="Show only pieces whose title contains this">
+    </label>
+    <span id="nameFilterCount" style="font-size:.85em;color:#777"></span>
+  </div>
   <div id="tagFilterBar" style="margin:.35rem 0"></div>
   <div id="keyFilterBar" style="margin:.35rem 0"></div>
   <div id="pieceList"></div>
@@ -725,7 +742,20 @@
       <button id="rhythmScanBtn" class="btn" title="Re-scan the sheet as it stands (whole piece or the segment on screen)"><span class="ic">🔎</span><span class="txt">Scan</span></button>
     </div>
     <div class="tag-row" style="margin-top:6px">
-      <select id="rhythmSel" title="Pick a rhythm — every occurrence lights up on the sheet, and ▶ Play sounds only those notes at their real place in the piece (clear the pick to hear everything)"></select>
+      <select id="rhythmSel" title="Pick a rhythm — every occurrence lights up on the sheet, and ▶ Play sounds only the bars it lives in (clear the pick to hear the whole piece)"></select>
+    </div>
+    <!-- How a picked rhythm (or a selected group) plays. Either way only the BARS it occurs in are
+         played, one run after another with `gap` beats between them. -->
+    <div class="tag-row" style="margin-top:6px">
+      <label class="tag-lbl">Play
+        <select id="rhythmPlayMode" title="Solo: only the rhythm's own notes sound, the rest of its bars stay silent but keep their timing. Bars: everything in those bars sounds, so you hear the rhythm in context.">
+          <option value="solo">the rhythm only</option>
+          <option value="measures">all notes of its bars</option>
+        </select>
+      </label>
+      <label class="tag-lbl" title="Silence between one run of bars and the next, in beats (scales with tempo)">gap
+        <input type="number" id="rgGap" min="0" max="16" step="0.5" value="2" style="width:3.2em">
+      </label>
     </div>
     <div id="rhythmMsg" class="rh-msg"></div>
     <div class="rh-legend">w h q e s t = whole · half · quarter · eighth · 16th · 32nd — “.” dotted, “³” triplet, “(x)” a rest of that length.</div>
@@ -743,10 +773,7 @@
         <button id="rgAddBtn" class="btn" title="Capture these bars as a group. With a rhythm picked above, the group is bound to THAT rhythm; otherwise to whichever figure those bars use most."><span class="ic">➕</span><span class="txt">➕ Capture</span></button>
       </div>
       <div class="tag-row" style="margin-top:6px">
-        <button id="rgPlayAllBtn" class="btn" title="Play the groups one after another — each group's bars back to back, a gap between groups — so their characters can be compared"><span class="ic">▶▶</span><span class="txt">▶▶ Play all</span></button>
-        <label class="tag-lbl" title="Silence between one group and the next, in beats (scales with tempo)">gap
-          <input type="number" id="rgGap" min="0" max="16" step="0.5" value="2" style="width:3.2em">
-        </label>
+        <button id="rgPlayAllBtn" class="btn" title="Play the groups one after another, a gap between them, so their characters can be compared"><span class="ic">▶▶</span><span class="txt">▶▶ Play all</span></button>
       </div>
       <div id="rgMsg" class="rh-msg"></div>
       <div id="rgList" class="rg-list"></div>
@@ -866,30 +893,30 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=ddedfe2607';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=ddedfe2607';
-  import { runQuery } from './music-query.js?v=ddedfe2607';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=ddedfe2607';
-  import { init as initFretboard } from './fretboard-panel.js?v=ddedfe2607';
-  import { chordDisplayName } from './music-chords.js?v=ddedfe2607';
-  import { keyExplanation } from './music-key.js?v=ddedfe2607';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=ddedfe2607';
-  import { createMusicStore } from './music-local-store.js?v=ddedfe2607';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=ddedfe2607';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=ddedfe2607';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=ddedfe2607';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=ddedfe2607';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=ddedfe2607';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=ddedfe2607';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=ddedfe2607';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=ddedfe2607';
-  import { generateCounterLines } from './music-counterpoint.js?v=ddedfe2607';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=ddedfe2607';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=ddedfe2607';
-  import { splitSingleVoice } from './music-voice-split.js?v=ddedfe2607';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=ddedfe2607';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=ddedfe2607';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=ddedfe2607';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=e43f09b6a8';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=e43f09b6a8';
+  import { runQuery } from './music-query.js?v=e43f09b6a8';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=e43f09b6a8';
+  import { init as initFretboard } from './fretboard-panel.js?v=e43f09b6a8';
+  import { chordDisplayName } from './music-chords.js?v=e43f09b6a8';
+  import { keyExplanation } from './music-key.js?v=e43f09b6a8';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=e43f09b6a8';
+  import { createMusicStore } from './music-local-store.js?v=e43f09b6a8';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=e43f09b6a8';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=e43f09b6a8';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=e43f09b6a8';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=e43f09b6a8';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=e43f09b6a8';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=e43f09b6a8';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=e43f09b6a8';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=e43f09b6a8';
+  import { generateCounterLines } from './music-counterpoint.js?v=e43f09b6a8';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=e43f09b6a8';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=e43f09b6a8';
+  import { splitSingleVoice } from './music-voice-split.js?v=e43f09b6a8';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=e43f09b6a8';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=e43f09b6a8';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=e43f09b6a8';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -996,11 +1023,16 @@
     return `${detected} — ${e.keyConfidence} confidence`
       + (e.keyAmbiguous ? '; the signature is missing or disagrees with the notes, so this is a reading of the music' : '');
   }
+  let nameFilter = '';   // substring the library list is narrowed to (title or id)
+  const matchesName = (e) => !nameFilter
+    || String(e.title || '').toLowerCase().includes(nameFilter)
+    || String(e.id || '').toLowerCase().includes(nameFilter);
   function render() {
     const rows = [];
-    filterByTags(index, tagFilter)
+    const shown = filterByTags(index, tagFilter)
       .filter(e => !keyFilter || e.guessedKey === keyFilter)
-      .forEach(e => rows.push(
+      .filter(matchesName);
+    shown.forEach(e => rows.push(
       `<label style="display:block"><input type="checkbox" class="sel" data-id="${e.id}"> ${esc(e.title || e.id)} <small>(${e.noteCount} notes, ${e.channels.join('/')})</small> `
       + `${e.guessedKey ? `<span class="key-badge" title="${esc(keyBadgeTitle(e))}">${esc(e.guessedKey)}${e.keyAmbiguous || (e.keyConfidence && e.keyConfidence !== 'high') ? ' ?' : ''}</span> ` : ''}`
       + `<button class="previewBtn" data-id="${e.id}">Preview</button> `
@@ -1011,9 +1043,15 @@
     pending.forEach(p => rows.push(
       `<label style="display:block;color:#a06000"><input type="checkbox" class="sel" data-id="${p.id}" checked disabled> ${esc(p.title)} <small>(new — Push to publish)</small></label>`));
     document.getElementById('pieceList').innerHTML = rows.join('') || '<em>No pieces match.</em>';
+    const count = document.getElementById('nameFilterCount');
+    if (count) count.textContent = nameFilter ? `${shown.length} of ${index.length}` : '';
     renderTagFilter();
     renderKeyFilter();
   }
+  document.getElementById('nameFilter').addEventListener('input', (e) => {
+    nameFilter = e.target.value.trim().toLowerCase();
+    render();
+  });
 
   document.getElementById('addXmlBtn').onclick = () => document.getElementById('xmlFile').click();
   document.getElementById('xmlFile').onchange = async (ev) => {
@@ -1313,29 +1351,28 @@
     // A picked rhythm SOLOS that figure across the whole transport (Play, spacebar, the mobile FAB):
     // every other drawn note is silenced but keeps its slot, so the piece's timing is untouched and
     // what you hear lands exactly on the highlighted noteheads. Clear the pick to hear everything.
-    const soloMuted = (rhythmSelId && renderer && renderer.getRhythmMutedNotes)
-      ? renderer.getRhythmMutedNotes(rhythmSelId, rhythmOpts()) : [];
-    // A selected rhythm GROUP is the same thing limited to its own bars: only its figure sounds there,
-    // everything else in the piece is silenced but keeps its slot.
-    const groupMuted = (shownGroupName && renderer && renderer.getRhythmGroupMutedNotes)
-      ? renderer.getRhythmGroupMutedNotes(shownGroupName, rhythmOpts()) : [];
-    // A selected group whose figure isn't on the drawn sheet would mute NOTHING — i.e. play the whole
-    // piece, which is the opposite of what the selection asks for. Say so instead.
-    if (shownGroupName && !groupMuted.length) {
+    // A picked rhythm — or a selected group — narrows playback to the BARS it occurs in, played one run
+    // after another with `gap` beats between them (see rhythmPlaySet). Nothing picked: the piece as-is.
+    const sel = rhythmPlaySet();
+    if (sel && !sel.keep.length) {
       document.getElementById('transportMsg').textContent =
-        `Group "${shownGroupName}" isn't on the sheet that's showing — press Scan, or show the whole piece.`;
+        `${sel.what} isn't on the sheet that's showing — press Scan, or show the whole piece.`;
       return;
     }
-    const schedule = useXml
-      ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), ...range, mutedNotes: [...muted, ...soloMuted, ...groupMuted] })
-      : buildSchedule(currentDetail.voices, { tempo: currentTempo(), ...range });
+    const schedule = !useXml
+      ? buildSchedule(currentDetail.voices, { tempo: currentTempo(), ...range })
+      : sel
+      ? buildScheduleFromMusicXml(currentDetail.source,
+          { tempo: currentTempo(), keepNotes: sel.keep, mutedNotes: [...muted, ...sel.mute], breathBeats: rgGapBeats() })
+      : buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), ...range, mutedNotes: muted });
     if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
+    const soundingCount = schedule.filter((e) => !e.muted).length;
     const winOn = document.getElementById('chordWindowChk') && document.getElementById('chordWindowChk').checked;
     const span = ((winOn && range.fromBeat != null) ? ' (window)'
       : (range.fromBeat != null && range.fromMeasure != null) ? ` (from m. ${toPrintedMeasure(range.fromMeasure)})`   // click-selected start
       : (range.fromMeasure != null) ? ` (m. ${toPrintedMeasure(range.fromMeasure)}–${toPrintedMeasure(range.toMeasure)})` : '')
-      + (soloMuted.length ? ` · rhythm ${rhythmSelLabel} only — the rest is silent` : '')
-      + (groupMuted.length ? ` · group "${shownGroupName}" only — the rest is silent` : '');
+      + (sel ? ` · ${sel.what}: ${sel.bars} bar${sel.bars === 1 ? '' : 's'}, ${rhythmPlayMode() === 'solo' ? 'the rhythm only' : 'all their notes'}` : '')
+      + (soundingCount < schedule.length ? ` (${soundingCount} sounding)` : '');
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: range.cursorStep || 0 });
@@ -2463,6 +2500,60 @@
     handle.addEventListener('pointercancel', end);
     handle.addEventListener('dblclick', () => { body._off = { x: 0, y: 0 }; apply(); });
   }
+  // Make a floating panel body RESIZABLE by a grip in its bottom-right corner: pointer drag sets an
+  // explicit width/height (inline, so it outlives closing and reopening the card, like the drag
+  // offset); double-click drops back to the CSS size. Pointer-driven rather than CSS `resize` so it
+  // works on touch. The grip is appended here — it must be the card's last child.
+  // Cap a card's height to the room actually below it, so it never runs past the window bottom (which
+  // would put its resize grip off-screen). The CSS 72vh cap can't do this — it knows the viewport, not
+  // where the card starts. Skipped once the user has sized the card by hand.
+  function fitPanelHeight(body) {
+    if (!body || body._userSized || !body.offsetParent) return;
+    const top = body.getBoundingClientRect().top;
+    body.style.maxHeight = `${Math.max(160, Math.round(window.innerHeight - top - 12))}px`;
+  }
+  function fitOpenPanels() {
+    PANEL_IDS.forEach((id) => {
+      const p = document.getElementById(id);
+      if (p && p.open) fitPanelHeight(p.querySelector('.np-body'));
+    });
+  }
+  window.addEventListener('resize', fitOpenPanels);
+  function makePanelResizable(body) {
+    if (!body || body._sizeWired) return;
+    body._sizeWired = true;
+    const grip = document.createElement('div');
+    grip.className = 'np-size';
+    grip.title = 'Drag to resize · double-click to reset';
+    body.appendChild(grip);
+    const MIN_W = 240, MIN_H = 120;
+    let sizing = false, sx = 0, sy = 0, w0 = 0, h0 = 0, left = 0, top = 0;
+    grip.addEventListener('pointerdown', (e) => {
+      const r = body.getBoundingClientRect();
+      sizing = true; sx = e.clientX; sy = e.clientY; w0 = r.width; h0 = r.height; left = r.left; top = r.top;
+      try { grip.setPointerCapture(e.pointerId); } catch (_) {}
+      e.preventDefault(); e.stopPropagation();
+    });
+    grip.addEventListener('pointermove', (e) => {
+      if (!sizing) return;
+      // Cap at what is still on screen from the card's own top-left, so it can't be dragged out of reach.
+      const w = Math.max(MIN_W, Math.min(w0 + (e.clientX - sx), window.innerWidth - left - 8));
+      const h = Math.max(MIN_H, Math.min(h0 + (e.clientY - sy), window.innerHeight - top - 8));
+      body.style.width = `${Math.round(w)}px`;
+      body.style.height = `${Math.round(h)}px`;
+      body.style.maxHeight = 'none';   // the CSS 72vh cap would otherwise win over a taller drag
+      body._userSized = true;          // ...and stop fitPanelHeight from overriding the chosen size
+    });
+    const end = (e) => { if (sizing) { sizing = false; try { grip.releasePointerCapture(e.pointerId); } catch (_) {} } };
+    grip.addEventListener('pointerup', end);
+    grip.addEventListener('pointercancel', end);
+    grip.addEventListener('dblclick', (e) => {
+      e.stopPropagation();
+      body.style.width = ''; body.style.height = ''; body.style.maxHeight = '';
+      body._userSized = false;
+      fitPanelHeight(body);
+    });
+  }
   // The Motifs / Phrases / Rhythm buttons ARE these panels' headers: one click opens a panel's floating
   // card, another closes it. The <details> stays the model, so every existing `.open` read and `toggle`
   // handler (mutual exclusion, pattern controls, rhythm rescan) keeps working untouched — the buttons
@@ -2481,7 +2572,8 @@
     const panel = document.getElementById(id);
     if (!panel) return;
     makePanelDraggable(panel.querySelector('.np-body'));
-    panel.addEventListener('toggle', syncPanelTabs);
+    makePanelResizable(panel.querySelector('.np-body'));
+    panel.addEventListener('toggle', () => { syncPanelTabs(); if (panel.open) fitPanelHeight(panel.querySelector('.np-body')); });
     const btn = document.getElementById(`${id}Btn`);
     if (btn) btn.onclick = () => { panel.open = !panel.open; };
   });
@@ -2761,6 +2853,34 @@
     // paint so the sheet never shows a highlight the picker no longer names.
     if (rhythmSelId || hadPick) applyRhythmHighlight();
   }
+  const rhythmPlayMode = () => document.getElementById('rhythmPlayMode').value;
+  // Beats of silence between one run of bars (or one group) and the next.
+  function rgGapBeats() {
+    const v = parseFloat(document.getElementById('rgGap').value);
+    return (Number.isFinite(v) && v >= 0) ? v : 2;
+  }
+  // What the transport should play when a rhythm is picked or a group is selected:
+  //   keep — every note of the bars it occurs in, so those bars keep their exact timing and everything
+  //          between them is removed (a `gap` breath is left in the seam);
+  //   mute — in "solo" mode, the notes inside those bars that are NOT part of the rhythm.
+  // Null when nothing is selected (play the piece as it stands). `keep` empty means the selection isn't
+  // on the drawn sheet at all — the caller says so instead of playing everything.
+  function rhythmPlaySet() {
+    if (!renderer) return null;
+    const solo = rhythmPlayMode() === 'solo';
+    if (shownGroupName) {
+      const keep = renderer.getRhythmGroupMeasureNoteIds(shownGroupName, rhythmOpts());
+      const mute = solo ? renderer.getRhythmGroupMutedNotes(shownGroupName, rhythmOpts()) : [];
+      return { keep, mute, what: `group "${shownGroupName}"`, bars: barCountOf(keep) };
+    }
+    if (rhythmSelId) {
+      const keep = renderer.getRhythmMeasureNoteIds(rhythmSelId, rhythmOpts());
+      const mute = solo ? renderer.getRhythmMutedNotes(rhythmSelId, rhythmOpts()) : [];
+      return { keep, mute, what: `rhythm ${rhythmSelLabel}`, bars: barCountOf(keep) };
+    }
+    return null;
+  }
+  const barCountOf = (notes) => new Set((notes || []).map((n) => n.measure)).size;
   // Paint every occurrence of the picked rhythm — or clear the highlight when the pick is cleared.
   // While a rhythm is picked the transport sounds only its notes (playMidi's soloMuted), so say so.
   function applyRhythmHighlight() {
@@ -2772,7 +2892,8 @@
     if (!res.count) { msg.textContent = 'That rhythm is not on the visible sheet — press Scan.'; return; }
     renderColorLegend();   // name the rhythm's colour now that a pick is painted
     const ms = res.measures.slice(0, 8).map(toPrintedMeasure).join(', ') + (res.measures.length > 8 ? '…' : '');
-    msg.textContent = `${res.label} — ${res.count} occurrence${res.count === 1 ? '' : 's'} · m ${ms} · ▶ Play sounds only these notes, in time`;
+    const how = rhythmPlayMode() === 'solo' ? 'these notes only' : 'all the notes of those bars';
+    msg.textContent = `${res.label} — ${res.count} occurrence${res.count === 1 ? '' : 's'} · m ${ms} · ▶ Play sounds ${how}, ${rgGapBeats()} beats between runs`;
   }
   document.getElementById('rhythmSel').onchange = (e) => {
     rhythmSelId = e.target.value;
@@ -2871,7 +2992,7 @@
       // long line wrapped a stray button onto a line of its own.
       const acts = document.createElement('div'); acts.className = 'rg-acts';
       acts.append(bars,
-        mk('▶', `Play only group "${g.name}" — its bars back to back, a breath apart`, () => playRhythmGroup(g.name)),
+        mk('▶', `Play only group "${g.name}" — the bars its rhythm occurs in, a gap apart`, () => playRhythmGroup(g.name)),
         mk('👁', 'Select this group: its bars light up, and ▶ Play sounds only them at their real place in the piece', () => showRhythmGroup(g.name), shownGroupName === g.name),
         mk('➕', 'Add the bars showing on screen to this group', () => {
           const add = viewRanges();
@@ -2938,20 +3059,22 @@
     }
     const res = renderer.highlightRhythmGroup(next, rhythmOpts());
     if (next) {
+      const how = rhythmPlayMode() === 'solo' ? 'that rhythm only' : 'all the notes of those bars';
       rgMsg(res.count
-        ? `"${next}" = ${res.label} in m ${res.measures.slice(0, 8).map(toPrintedMeasure).join(', ')}${res.measures.length > 8 ? '…' : ''} — ${res.count} occurrence${res.count === 1 ? '' : 's'} · ▶ Play sounds only those, in time`
+        ? `"${next}" = ${res.label} in m ${res.measures.slice(0, 8).map(toPrintedMeasure).join(', ')}${res.measures.length > 8 ? '…' : ''} — ${res.count} occurrence${res.count === 1 ? '' : 's'} · ▶ Play sounds ${how}`
         : `"${next}" isn't on the visible sheet — show the whole piece, or the segment holding its bars.`);
     } else rgMsg('');
     renderRhythmGroups();
   }
-  // One group as a schedule: just its figure's notes, the gaps between them removed (the skip-playback
-  // engine motifs and phrases use). Used by ▶ and ▶▶ Play all; the main transport instead SOLOS the
-  // selected group, leaving the piece's own timing alone.
+  // One group as a schedule: the bars its figure occurs in, one run after another with the gap between
+  // them, and — in solo mode — only its figure sounding inside them. Exactly what the main transport
+  // plays for a selected group, so ▶ on a row and selecting it give the same thing.
   function rhythmGroupSchedule(g) {
-    const keep = renderer.getRhythmGroupNoteIds ? renderer.getRhythmGroupNoteIds(g.name, rhythmOpts()) : [];
+    const keep = renderer.getRhythmGroupMeasureNoteIds(g.name, rhythmOpts());
     if (!keep.length) return [];
+    const mute = rhythmPlayMode() === 'solo' ? renderer.getRhythmGroupMutedNotes(g.name, rhythmOpts()) : [];
     return buildScheduleFromMusicXml(currentDetail.source,
-      { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
+      { tempo: currentTempo(), keepNotes: keep, mutedNotes: mute, breathBeats: rgGapBeats() });
   }
   // Hand a finished schedule to the transport. `label` is what the transport line says once it sounds.
   function startGroupPlayback(schedule, label) {
@@ -2989,7 +3112,8 @@
     if (!schedule.length) {
       document.getElementById('transportMsg').textContent = `Group "${name}" isn't on the sheet that's showing — press Scan, or show the whole piece.`; return;
     }
-    startGroupPlayback(schedule, `Playing group "${name}" (${schedule.length} notes of its rhythm, back to back)`);
+    const heard = schedule.filter((e) => !e.muted).length;
+    startGroupPlayback(schedule, `Playing group "${name}" — ${barCountOf(renderer.getRhythmGroupMeasureNoteIds(name, rhythmOpts()))} bars, ${heard} note${heard === 1 ? '' : 's'} sounding`);
   }
   // Play every group in turn, `gap` beats of silence between them — the point being to hear one
   // character against the next without hunting for the bars each time.
@@ -2998,8 +3122,7 @@
     if (!rgPlayable()) return;
     const groups = (renderer.getRhythmGroups() || []).filter((g) => g.ranges.length);
     if (!groups.length) { rgMsg('No groups to play yet.'); return; }
-    const gapBeats = parseFloat(document.getElementById('rgGap').value);
-    const gapSeconds = ((Number.isFinite(gapBeats) && gapBeats >= 0) ? gapBeats : 2) * (60 / currentTempo());
+    const gapSeconds = rgGapBeats() * (60 / currentTempo());
     const parts = groups.map((g) => rhythmGroupSchedule(g));
     const played = groups.filter((g, i) => parts[i].length);
     const schedule = concatSchedules(parts, gapSeconds);
@@ -3007,6 +3130,10 @@
     startGroupPlayback(schedule, `Playing ${played.length} groups in turn: ${played.map((g) => `"${g.name}"`).join(' → ')}`);
   }
   document.getElementById('rgPlayAllBtn').onclick = playAllRhythmGroups;
+  document.getElementById('rhythmPlayMode').onchange = () => {
+    if (shownGroupName) showRhythmGroup(shownGroupName, true);
+    else if (rhythmSelId) applyRhythmHighlight();
+  };
   document.getElementById('rgViewBtn').onclick = () => {
     const v = viewRanges();
     if (!v.length) { rgMsg('Showing the whole piece — type the bars, or set the segment first.'); return; }
