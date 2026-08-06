@@ -893,30 +893,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=e43f09b6a8';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=e43f09b6a8';
-  import { runQuery } from './music-query.js?v=e43f09b6a8';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=e43f09b6a8';
-  import { init as initFretboard } from './fretboard-panel.js?v=e43f09b6a8';
-  import { chordDisplayName } from './music-chords.js?v=e43f09b6a8';
-  import { keyExplanation } from './music-key.js?v=e43f09b6a8';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=e43f09b6a8';
-  import { createMusicStore } from './music-local-store.js?v=e43f09b6a8';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=e43f09b6a8';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=e43f09b6a8';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=e43f09b6a8';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=e43f09b6a8';
-  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, groupVocabByCategory } from './music-vocab.js?v=e43f09b6a8';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=e43f09b6a8';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=e43f09b6a8';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=e43f09b6a8';
-  import { generateCounterLines } from './music-counterpoint.js?v=e43f09b6a8';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=e43f09b6a8';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=e43f09b6a8';
-  import { splitSingleVoice } from './music-voice-split.js?v=e43f09b6a8';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=e43f09b6a8';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=e43f09b6a8';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=e43f09b6a8';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=0de19f1366';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=0de19f1366';
+  import { runQuery } from './music-query.js?v=0de19f1366';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=0de19f1366';
+  import { init as initFretboard } from './fretboard-panel.js?v=0de19f1366';
+  import { chordDisplayName } from './music-chords.js?v=0de19f1366';
+  import { keyExplanation } from './music-key.js?v=0de19f1366';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=0de19f1366';
+  import { createMusicStore } from './music-local-store.js?v=0de19f1366';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=0de19f1366';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=0de19f1366';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=0de19f1366';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=0de19f1366';
+  import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=0de19f1366';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=0de19f1366';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=0de19f1366';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=0de19f1366';
+  import { generateCounterLines } from './music-counterpoint.js?v=0de19f1366';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=0de19f1366';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=0de19f1366';
+  import { splitSingleVoice } from './music-voice-split.js?v=0de19f1366';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=0de19f1366';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=0de19f1366';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=0de19f1366';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -926,6 +927,7 @@
   let unpushedIds = new Set();   // pieces with local index/detail edits (add/rebuild/tags/link) awaiting push
   let vocab = [];
   let dirtyVocab = false;        // vocab.json changed locally, awaiting the manual push
+  let remoteVocab = [];          // the PUBLISHED vocab.json — the baseline a per-item revert restores from
   let dirtyIndex = false;        // index.json changed with no unpushed piece (e.g. a delete) — needs push
   const tagFilter = new Set();   // active tag filter; applies to the library list AND search
   let keyFilter = '';            // active guessed-key filter ('' = all); applies to the library list
@@ -1039,7 +1041,7 @@
       + `<input class="pieceTags" data-id="${e.id}" value="${esc((e.tags || []).join(', '))}" placeholder="tags…" style="width:10em;font-size:.85em"> `
       + `${e.pieceCount > 1 ? `<button class="pieceSplit" data-id="${e.id}" title="Split into ${e.pieceCount} separate pieces">✂️</button> ` : ''}`
       + `<button class="pieceDel" data-id="${e.id}" title="Delete piece + its vocab">🗑</button>`
-      + `${unpushedIds.has(e.id) ? ' <span style="color:#c00;font-weight:600">● not pushed</span>' : ''}</label>`));
+      + `${unpushedIds.has(e.id) ? ` <span style="color:#c00;font-weight:600">● not pushed</span> <button class="pieceRevert" data-id="${e.id}" title="Discard the local edits to this piece and go back to the published version">↩ revert</button>` : ''}</label>`));
     pending.forEach(p => rows.push(
       `<label style="display:block;color:#a06000"><input type="checkbox" class="sel" data-id="${p.id}" checked disabled> ${esc(p.title)} <small>(new — Push to publish)</small></label>`));
     document.getElementById('pieceList').innerHTML = rows.join('') || '<em>No pieces match.</em>';
@@ -1118,8 +1120,12 @@
     try {
       const res = await pushPending({ system, currentIndex: index, vocab, pushVocab: dirtyVocab,
         tags: tagRegistry, pushTags: dirtyTags, committer: makeCommitter('push changes'), store });
-      if (res.pushed) { unpushedIds.clear(); dirtyVocab = false; dirtyIndex = false; dirtyTags = false; }
-      render(); updatePushBtn();
+      if (res.pushed) {
+        unpushedIds.clear(); dirtyVocab = false; dirtyIndex = false; dirtyTags = false;
+        // What was local is now published, so it becomes the baseline a later revert restores.
+        remoteVocab = JSON.parse(JSON.stringify(vocab || []));
+      }
+      render(); renderVocab(); updatePushBtn();
       setStatus(res.pushed ? 'Pushed all changes to GitHub.' : 'Push failed: ' + (res.pushError || 'unknown'));
     } catch (e) { setStatus('Push failed: ' + e.message); }
   };
@@ -2226,6 +2232,8 @@
     if (prev) { ev.preventDefault(); openPreview(prev.dataset.id); return; }
     const spl = ev.target.closest('.pieceSplit');
     if (spl) { ev.preventDefault(); splitPiece(spl.dataset.id); return; }
+    const rev = ev.target.closest('.pieceRevert');
+    if (rev) { ev.preventDefault(); revertPiece(rev.dataset.id); return; }
     const del = ev.target.closest('.pieceDel');
     if (del) { ev.preventDefault(); deletePiece(del.dataset.id); }
   });
@@ -2270,6 +2278,35 @@
     if (currentVocabEntry && currentVocabEntry.pieceId === id) { currentVocabEntry = null; updateAddVocabLabel(); }
     render(); renderVocab(); updatePushBtn();
     setStatus(`Deleted "${id}" locally — click "Push changes" to publish.`);
+  }
+  // Throw away the local edits to one piece and go back to the published version: drop its local
+  // record, then re-merge the library so the remote index entry (and, on the next preview, the remote
+  // detail file) take over. A piece the server has never seen has nothing to fall back to — reverting
+  // it removes it, so say that in the confirmation rather than after the fact.
+  async function revertPiece(id) {
+    setStatus('Checking the published library…');
+    let remote = [];
+    try { remote = await loadIndex(system); }
+    catch (_) { setStatus('Could not reach the published library — nothing reverted.'); return; }
+    const onServer = remote.some((e) => e.id === id);
+    const entry = index.find((e) => e.id === id);
+    const name = (entry && entry.title) || id;
+    const question = onServer
+      ? `Discard local changes to "${name}"?\n\nIt goes back to the published version. Anything not pushed (tags, motifs, phrases, rhythm groups) is lost.`
+      : `"${name}" has never been pushed, so there is no published version to go back to.\n\nReverting REMOVES it from your library. Continue?`;
+    if (!window.confirm(question)) { setStatus(''); return; }
+    try { await store.deletePiece(system, id); } catch (_) {}
+    try {
+      const lib = await loadLibrary(system, store);
+      index = lib.index; unpushedIds = lib.unpushedIds;
+    } catch (_) { unpushedIds.delete(id); index = index.filter((e) => e.id !== id || onServer); }
+    render(); updatePushBtn();
+    // If the piece is open, reopen it so what's on screen is the version that now exists.
+    if (currentPreviewId === id) {
+      if (onServer) await openPreview(id);
+      else document.getElementById('previewCloseBtn').click();
+    }
+    setStatus(onServer ? `Reverted "${name}" to the published version.` : `Removed "${name}" (it was never pushed).`);
   }
   // A piece id that doesn't collide with an existing library entry or a pending add.
   function uniquePieceId(base) {
@@ -3877,6 +3914,24 @@
     dirtyVocab = true; updatePushBtn();
     setMediaMsg(`Deleted “${entry.id}” locally — click "Push changes" to publish.`, 'ok');
   }
+  // Put one vocab item back to the published version — or remove it when the server has never seen it
+  // (a local capture that was never pushed has nothing to go back to).
+  async function revertVocabEntry_(entry) {
+    const status = vocabItemStatus(entry, remoteVocab);
+    if (status === 'same') { setMediaMsg(`“${entry.id}” already matches the published version.`, 'ok'); return; }
+    const question = status === 'new'
+      ? `“${entry.id}” has never been pushed, so there is no published version to go back to.\n\nReverting REMOVES it. Continue?`
+      : `Discard local changes to “${entry.id}”?\n\nIt goes back to the published version.`;
+    if (!window.confirm(question)) return;
+    const { vocab: next, action } = revertVocabEntry(vocab, remoteVocab, entry.id);
+    vocab = next;
+    if (currentVocabEntry && currentVocabEntry.id === entry.id) { currentVocabEntry = null; updateAddVocabLabel(); }
+    try { await store.putVocab(system, vocab); } catch (_) {}
+    // With the last local edit gone there is nothing left to push.
+    dirtyVocab = !vocabMatchesRemote(vocab, remoteVocab);
+    renderVocab(); updatePushBtn();
+    setMediaMsg(action === 'removed' ? `Removed “${entry.id}” (it was never pushed).` : `Reverted “${entry.id}” to the published version.`, 'ok');
+  }
   function renderVocab() {
     const box = document.getElementById('vocabList');
     const groups = groupVocabByCategory(vocab);
@@ -3902,6 +3957,20 @@
         del.className = 'vocabDel'; del.title = 'Delete this vocab item'; del.textContent = '🗑';
         del.onclick = (ev) => { ev.stopPropagation(); deleteVocabEntry(e); };
         row.appendChild(label);
+        // Items that differ from the published vocab.json can be thrown away individually.
+        const status = vocabItemStatus(e, remoteVocab);
+        if (status !== 'same') {
+          const mark = document.createElement('span');
+          mark.style.cssText = 'color:#c00;font-weight:600;font-size:.8em;margin:0 .4em';
+          mark.textContent = status === 'new' ? '● new' : '● changed';
+          mark.title = status === 'new' ? 'Not in the published library yet' : 'Differs from the published version';
+          row.appendChild(mark);
+          const rev = document.createElement('button');
+          rev.className = 'vocabDel'; rev.textContent = '↩';
+          rev.title = status === 'new' ? 'Remove this unpushed item' : 'Discard local changes — go back to the published version';
+          rev.onclick = (ev) => { ev.stopPropagation(); revertVocabEntry_(e); };
+          row.appendChild(rev);
+        }
         row.appendChild(del);
         box.appendChild(row);
       });
@@ -4064,7 +4133,12 @@
   (async () => {
     try { const lib = await loadLibrary(system, store); index = lib.index; unpushedIds = lib.unpushedIds; }
     catch (_) { index = []; unpushedIds = new Set(); }
+    // The published vocab.json is fetched alongside the merged list: it is the baseline that tells the
+    // UI which items are local, and the version a per-item revert restores.
+    try { remoteVocab = await loadRemoteVocab(system); } catch (_) { remoteVocab = []; }
     try { vocab = await loadVocab(system, store); } catch (_) { vocab = []; }
+    // A local vocab identical to the published one has nothing pending, whatever an earlier session set.
+    if (vocabMatchesRemote(vocab, remoteVocab)) dirtyVocab = false;
     try { tagRegistry = await loadTagRegistry(); } catch (_) { tagRegistry = []; }
     try { const pl = await store.getPractice(system); practiceEntries = pl.entries || []; practiceFields = pl.fields || []; }
     catch (_) { practiceEntries = []; practiceFields = []; }
