@@ -633,6 +633,7 @@
     <button id="addVocabBtn" class="btn"><span class="ic">➕</span><span class="txt">Add to vocab</span></button>
   </div>
   <div id="viewOptions" style="margin:.25rem 0" class="previewControls">
+    <button id="originalViewBtn" class="btn" title="Show the piece in its original form — clear all Motif / Phrase / Rhythm highlighting, dimming and playback muting. Your tags, phrases and rhythms are kept; any highlight action brings its view back."><span class="ic">↺</span><span class="txt">Original view</span></button>
     <button class="btn toggle" data-for="voiceColorChk" title="Color the voices"><span class="ic">🎨</span><span class="txt">Color voices</span></button>
     <button class="btn toggle" data-for="noteNameChk" title="Show note names"><span class="ic">🔤</span><span class="txt">Note names</span></button>
     <button class="btn toggle" data-for="chordChk" title="Show chords"><span class="ic">🎵</span><span class="txt">Show chords</span></button>
@@ -894,31 +895,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=0fc6b2f514';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=0fc6b2f514';
-  import { runQuery } from './music-query.js?v=0fc6b2f514';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=0fc6b2f514';
-  import { init as initFretboard } from './fretboard-panel.js?v=0fc6b2f514';
-  import { chordDisplayName } from './music-chords.js?v=0fc6b2f514';
-  import { keyExplanation } from './music-key.js?v=0fc6b2f514';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=0fc6b2f514';
-  import { createMusicStore } from './music-local-store.js?v=0fc6b2f514';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=0fc6b2f514';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=0fc6b2f514';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=0fc6b2f514';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=0fc6b2f514';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=6528016e62';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=6528016e62';
+  import { runQuery } from './music-query.js?v=6528016e62';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=6528016e62';
+  import { init as initFretboard } from './fretboard-panel.js?v=6528016e62';
+  import { chordDisplayName } from './music-chords.js?v=6528016e62';
+  import { keyExplanation } from './music-key.js?v=6528016e62';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=6528016e62';
+  import { createMusicStore } from './music-local-store.js?v=6528016e62';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=6528016e62';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=6528016e62';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=6528016e62';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=6528016e62';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=0fc6b2f514';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=0fc6b2f514';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=0fc6b2f514';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=0fc6b2f514';
-  import { generateCounterLines } from './music-counterpoint.js?v=0fc6b2f514';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=0fc6b2f514';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=0fc6b2f514';
-  import { splitSingleVoice } from './music-voice-split.js?v=0fc6b2f514';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=0fc6b2f514';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=0fc6b2f514';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=0fc6b2f514';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=6528016e62';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=6528016e62';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=6528016e62';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=6528016e62';
+  import { generateCounterLines } from './music-counterpoint.js?v=6528016e62';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=6528016e62';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=6528016e62';
+  import { splitSingleVoice } from './music-voice-split.js?v=6528016e62';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=6528016e62';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=6528016e62';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=6528016e62';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2641,10 +2642,30 @@
   // rhythm) clears the OTHER two so only the active highlight owns (and dims) the sheet. Motif/phrase
   // searches already drop rhythmFocus internally; this also handles the view toggles + rhythm picks.
   function activateFocus(which) {
+    if (renderer && renderer.plainViewOn && renderer.plainViewOn()) renderer.setPlainView(false);   // any highlight leaves "Original view"
     if (which !== 'motif') { if (tagVisOn) setTagVis(false); if (dimAllOn) setDimAllView(false); }
     if (which !== 'phrase') { if (phraseVisOn) setPhraseVis(false); }
     if (which !== 'rhythm') clearRhythmFocus();
   }
+  // Restore the piece to its original look + sound: drop every Motif / Phrase / Rhythm highlight, dim and
+  // playback mute. Keeps the tags/phrases/rhythms and the tag selection — running any Find/highlight again
+  // brings that view straight back (activateFocus clears plainView).
+  function showOriginalView() {
+    setTagVis(false); setDimAllView(false); setPhraseVis(false);
+    clearRhythmFocus();
+    if (shownPhraseNames) { shownPhraseNames.clear(); }
+    if (renderer) {
+      renderer.setShownPhrases([]);
+      renderer.clearSearchHighlight();   // drop coloured motif/phrase occurrences
+      renderer.setPlainView(true);       // suppress the residual base tag tint
+    }
+    const pm = document.getElementById('patternMsg'); if (pm) pm.textContent = '';
+    const rm = document.getElementById('rhythmMsg'); if (rm) rm.textContent = '';
+    if (typeof renderPhraseUI === 'function') renderPhraseUI();
+    if (typeof renderRhythmGroups === 'function') renderRhythmGroups();
+    document.getElementById('transportMsg').textContent = 'Original view — highlights cleared (tags kept).';
+  }
+  document.getElementById('originalViewBtn').onclick = showOriginalView;
   function setTagVis(on) {
     tagVisOn = !!on;
     if (tagVisOn) activateFocus('motif');
