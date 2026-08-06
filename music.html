@@ -688,6 +688,7 @@
     <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
     <div class="tag-row">
       <button type="button" id="tagVisBtn" class="np-vis" title="Show these motifs on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button>
+      <button type="button" id="dimAllBtn" class="np-vis" title="Dim the whole sheet so the notes you tag — and any Find-pattern matches — stand out. Dimmed notes are also silent during playback." aria-pressed="false">🌑 Dim all</button>
       <button class="btn toggle" data-for="tagModeChk" title="Click notes to add/remove them from the active tag"><span class="ic">🖌️</span><span class="txt">Edit mode</span></button>
       <label class="tag-lbl">Tag:
         <input id="tagInput" list="tagOptions" placeholder="pick or type a tag…" maxlength="24" autocomplete="off"
@@ -893,31 +894,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=0de19f1366';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=0de19f1366';
-  import { runQuery } from './music-query.js?v=0de19f1366';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=0de19f1366';
-  import { init as initFretboard } from './fretboard-panel.js?v=0de19f1366';
-  import { chordDisplayName } from './music-chords.js?v=0de19f1366';
-  import { keyExplanation } from './music-key.js?v=0de19f1366';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=0de19f1366';
-  import { createMusicStore } from './music-local-store.js?v=0de19f1366';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=0de19f1366';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=0de19f1366';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=0de19f1366';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=0de19f1366';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=0fc6b2f514';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=0fc6b2f514';
+  import { runQuery } from './music-query.js?v=0fc6b2f514';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=0fc6b2f514';
+  import { init as initFretboard } from './fretboard-panel.js?v=0fc6b2f514';
+  import { chordDisplayName } from './music-chords.js?v=0fc6b2f514';
+  import { keyExplanation } from './music-key.js?v=0fc6b2f514';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=0fc6b2f514';
+  import { createMusicStore } from './music-local-store.js?v=0fc6b2f514';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=0fc6b2f514';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=0fc6b2f514';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=0fc6b2f514';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=0fc6b2f514';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=0de19f1366';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=0de19f1366';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=0de19f1366';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=0de19f1366';
-  import { generateCounterLines } from './music-counterpoint.js?v=0de19f1366';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=0de19f1366';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=0de19f1366';
-  import { splitSingleVoice } from './music-voice-split.js?v=0de19f1366';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=0de19f1366';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=0de19f1366';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=0de19f1366';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=0fc6b2f514';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=0fc6b2f514';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=0fc6b2f514';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=0fc6b2f514';
+  import { generateCounterLines } from './music-counterpoint.js?v=0fc6b2f514';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=0fc6b2f514';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=0fc6b2f514';
+  import { splitSingleVoice } from './music-voice-split.js?v=0fc6b2f514';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=0fc6b2f514';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=0fc6b2f514';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=0fc6b2f514';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1353,7 +1354,12 @@
     // pieces (no real timing) fall back to the simple per-note sequential builder.
     const useXml = currentDetail.format === 'musicxml' && currentDetail.source;
     const range = activeRange();
-    const muted = (renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : [];
+    // Effective muted = the user's suppressed notes PLUS whatever the active highlight has dimmed
+    // (motif / phrase / rhythm / dim-all): a dimmed sheet plays only its lit notes. getDimmedNotes is []
+    // when nothing is dimmed, so normal playback is unaffected.
+    const mutedBase = (renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : [];
+    const dimmed = (renderer && renderer.getDimmedNotes) ? renderer.getDimmedNotes() : [];
+    const muted = dimmed.length ? [...mutedBase, ...dimmed] : mutedBase;
     // A picked rhythm SOLOS that figure across the whole transport (Play, spacebar, the mobile FAB):
     // every other drawn note is silenced but keeps its slot, so the piece's timing is untouched and
     // what you hear lands exactly on the highlighted noteheads. Clear the pick to hear everything.
@@ -1594,7 +1600,7 @@
     // A highlighted rhythm (picked pattern or selected group) greys the whole sheet and paints only
     // its own notes, so no voice / motif / phrase colour is on screen while it holds the sheet.
     const focus = renderer.rhythmFocusOn ? renderer.rhythmFocusOn() : false;
-    const dimming = tagVisOn || phraseVisOn || focus;
+    const dimming = tagVisOn || phraseVisOn || dimAllOn || focus;
     // Voices — only while "Color voices" is on and nothing is dimming them.
     const voicesOn = renderer.voiceColorsOn ? renderer.voiceColorsOn() : false;
     if (voicesOn && !dimming && renderer.listVoices) {
@@ -2619,26 +2625,54 @@
   // reveals its checked motifs/phrases, and stays on after you close the panel. Since the toggle now
   // lives inside the card, the panel's button carries an 👁 marker while it is on — otherwise a dimmed
   // sheet would have no visible cause once the card is closed.
-  let tagVisOn = false, phraseVisOn = false;
+  let tagVisOn = false, phraseVisOn = false, dimAllOn = false;
   function markTabVis(panelId, on) {
     const btn = document.getElementById(`${panelId}Btn`);
     if (btn) btn.classList.toggle('vis', !!on);
   }
+  // Clear whichever rhythm highlight (picked pattern or shown group) currently owns the sheet.
+  function clearRhythmFocus() {
+    let changed = false;
+    if (rhythmSelId) { rhythmSelId = ''; rhythmSelLabel = ''; const rs = document.getElementById('rhythmSel'); if (rs) rs.value = ''; changed = true; }
+    if (shownGroupName) { shownGroupName = null; changed = true; }
+    if (changed && renderer && renderer.highlightRhythmPattern) renderer.highlightRhythmPattern('', rhythmOpts());
+  }
+  // Highlights are exclusive — last action wins. Activating one of the three systems (motif / phrase /
+  // rhythm) clears the OTHER two so only the active highlight owns (and dims) the sheet. Motif/phrase
+  // searches already drop rhythmFocus internally; this also handles the view toggles + rhythm picks.
+  function activateFocus(which) {
+    if (which !== 'motif') { if (tagVisOn) setTagVis(false); if (dimAllOn) setDimAllView(false); }
+    if (which !== 'phrase') { if (phraseVisOn) setPhraseVis(false); }
+    if (which !== 'rhythm') clearRhythmFocus();
+  }
   function setTagVis(on) {
     tagVisOn = !!on;
+    if (tagVisOn) activateFocus('motif');
     if (renderer) renderer.setTagFilter(tagVisOn);
     const b = document.getElementById('tagVisBtn'); if (b) b.setAttribute('aria-pressed', tagVisOn ? 'true' : 'false');
     markTabVis('tagPanel', tagVisOn);
     renderColorLegend();   // dimming repaints the sheet: voice colours out, grey in
   }
+  // Dim-all: a tagging aid that greys the whole sheet, keeping only the active/checked tags + Find-pattern
+  // matches lit (and, via playback mute, silences the dimmed notes). A Motifs-scope highlight, so it
+  // takes over from Phrases/Rhythms too.
+  function setDimAllView(on) {
+    dimAllOn = !!on;
+    if (dimAllOn) activateFocus('motif');
+    if (renderer) renderer.setDimAll(dimAllOn);
+    const b = document.getElementById('dimAllBtn'); if (b) b.setAttribute('aria-pressed', dimAllOn ? 'true' : 'false');
+    renderColorLegend();
+  }
   function setPhraseVis(on) {
     phraseVisOn = !!on;
+    if (phraseVisOn) activateFocus('phrase');
     if (renderer) renderer.setPhraseFilter(phraseVisOn);
     const b = document.getElementById('phraseVisBtn'); if (b) b.setAttribute('aria-pressed', phraseVisOn ? 'true' : 'false');
     markTabVis('phrasePanel', phraseVisOn);
     renderColorLegend();   // dimming repaints the sheet: voice colours out, grey in
   }
   document.getElementById('tagVisBtn').onclick = () => setTagVis(!tagVisOn);
+  document.getElementById('dimAllBtn').onclick = () => setDimAllView(!dimAllOn);
   document.getElementById('phraseVisBtn').onclick = () => setPhraseVis(!phraseVisOn);
   // Expand/collapse the Motifs panel: only its controls + tag list; collapsing exits tag-paint mode.
   // The two panels are mutually exclusive so their floating overlays never stack on each other.
@@ -2692,6 +2726,7 @@
       msgEl.textContent = 'Pattern search needs a MusicXML piece.'; return;
     }
     if (!renderer || !renderer.searchTagPatterns) return;
+    activateFocus('motif');   // last-action-wins: a motif search takes the sheet from Phrases/Rhythms
     const mode = document.getElementById('patMode').value;
     const durationStrict = !document.getElementById('patProportional').checked;
     const intervalBasis = document.getElementById('patIntervalBasis').value;
@@ -2781,6 +2816,7 @@
   // Reveal/hide a phrase's notes on the (dimmed) sheet.
   function setPhraseShown(name, on) {
     if (on) shownPhraseNames.add(name); else shownPhraseNames.delete(name);
+    if (on) activateFocus('phrase');   // showing a phrase takes the sheet from Motifs/Rhythms
     if (renderer) renderer.setShownPhrases([...shownPhraseNames]);
     renderPhraseUI();
   }
@@ -2812,6 +2848,7 @@
       msgEl.textContent = 'Pattern search needs a MusicXML piece.'; return;
     }
     if (!renderer || !renderer.searchPhrasePattern) return;
+    activateFocus('phrase');   // last-action-wins: a phrase search takes the sheet from Motifs/Rhythms
     const mode = document.getElementById('patMode').value;
     const durationStrict = !document.getElementById('patProportional').checked;
     const intervalBasis = document.getElementById('patIntervalBasis').value;
@@ -2934,7 +2971,7 @@
   }
   document.getElementById('rhythmSel').onchange = (e) => {
     rhythmSelId = e.target.value;
-    if (rhythmSelId) shownGroupName = null;   // one highlight channel: a pattern pick releases the group
+    if (rhythmSelId) { shownGroupName = null; activateFocus('rhythm'); }   // one channel: picking a rhythm releases the group + Motifs/Phrases
     applyRhythmHighlight();
     renderRhythmGroups();
   };
@@ -3093,6 +3130,7 @@
     if (next) {                          // the highlight channel holds one thing at a time
       rhythmSelId = ''; rhythmSelLabel = '';
       document.getElementById('rhythmSel').value = '';
+      activateFocus('rhythm');           // last-action-wins: take the sheet from Motifs/Phrases
     }
     const res = renderer.highlightRhythmGroup(next, rhythmOpts());
     if (next) {
