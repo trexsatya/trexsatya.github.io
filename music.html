@@ -745,6 +745,10 @@
       <select id="autoPhraseSel" title="Pick a phrase to shade its bars on the sheet — its first statement solid, each modified return lighter" style="max-width:22em">
         <option value="">— detected phrase —</option>
       </select>
+      <button id="autoPhrasePlayBtn" class="btn" title="Play the picked phrase: every occurrence in turn with a gap between, so the first statement and its modified returns land back to back"><span class="ic">▶</span><span class="txt">▶ Play</span></button>
+      <label class="tag-lbl" title="Silence between one occurrence and the next, in beats (scales with tempo)">gap
+        <input type="number" id="autoPhraseGap" min="0" max="8" step="0.5" value="2" style="width:2.6em">
+      </label>
       <span id="autoPhraseMsg" style="font-size:.8em;color:#555"></span>
     </div>
     <div id="phraseList" class="tag-list"></div>
@@ -918,31 +922,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=59a70ccc80';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=59a70ccc80';
-  import { runQuery } from './music-query.js?v=59a70ccc80';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=59a70ccc80';
-  import { init as initFretboard } from './fretboard-panel.js?v=59a70ccc80';
-  import { chordDisplayName } from './music-chords.js?v=59a70ccc80';
-  import { keyExplanation } from './music-key.js?v=59a70ccc80';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=59a70ccc80';
-  import { createMusicStore } from './music-local-store.js?v=59a70ccc80';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=59a70ccc80';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=59a70ccc80';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=59a70ccc80';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=59a70ccc80';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=226135ed09';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=226135ed09';
+  import { runQuery } from './music-query.js?v=226135ed09';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=226135ed09';
+  import { init as initFretboard } from './fretboard-panel.js?v=226135ed09';
+  import { chordDisplayName } from './music-chords.js?v=226135ed09';
+  import { keyExplanation } from './music-key.js?v=226135ed09';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=226135ed09';
+  import { createMusicStore } from './music-local-store.js?v=226135ed09';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=226135ed09';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=226135ed09';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=226135ed09';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=226135ed09';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=59a70ccc80';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=59a70ccc80';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=59a70ccc80';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=59a70ccc80';
-  import { generateCounterLines } from './music-counterpoint.js?v=59a70ccc80';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=59a70ccc80';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=59a70ccc80';
-  import { splitSingleVoice } from './music-voice-split.js?v=59a70ccc80';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=59a70ccc80';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=59a70ccc80';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=59a70ccc80';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=226135ed09';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=226135ed09';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=226135ed09';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=226135ed09';
+  import { generateCounterLines } from './music-counterpoint.js?v=226135ed09';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=226135ed09';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=226135ed09';
+  import { splitSingleVoice } from './music-voice-split.js?v=226135ed09';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=226135ed09';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=226135ed09';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=226135ed09';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -3019,14 +3023,55 @@
     autoPhraseMsg(autoPhraseSummary);
   }
 
+  const autoPhraseGapBeats = () => {
+    const v = parseFloat(document.getElementById('autoPhraseGap').value);
+    return (Number.isFinite(v) && v >= 0) ? v : 2;
+  };
+  const selectedDetectedPhrase = () => {
+    const raw = document.getElementById('autoPhraseSel').value;
+    return raw === '' ? null : detectedPhrases[Number(raw)] || null;
+  };
+
+  // Play the picked phrase: each occurrence in turn, `gap` beats of silence between them.
+  //
+  // One schedule per occurrence rather than one for all of them, because keepNotes COMPRESSES the gaps
+  // out of whatever it is given — hand it every occurrence at once and the returns run together with no
+  // seam, which defeats the point. Built separately and spliced by concatSchedules, each occurrence keeps
+  // its own internal timing exactly and the only silence is the gap you asked for.
+  function playDetectedPhrase() {
+    stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
+    const p = selectedDetectedPhrase();
+    if (!p) { autoPhraseMsg('Pick a detected phrase first.'); return; }
+    if (!currentDetail || !(currentDetail.format === 'musicxml' && currentDetail.source)) {
+      setTransportMsg('Phrase playback needs a MusicXML piece.', 'err'); return;
+    }
+    const gap = autoPhraseGapBeats();
+    const parts = p.occurrences.map((o) => {
+      const keep = renderer.barRangeNoteIds(o.from, o.to);
+      return keep.length
+        ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep })
+        : [];
+    });
+    const sounded = parts.filter((s) => s.length).length;
+    const schedule = concatSchedules(parts, gap * (60 / currentTempo()));
+    if (!schedule.length) {
+      setTransportMsg(`Phrase ${p.name} isn't on the sheet that's showing — press Find, or show the whole piece.`, 'err');
+      return;
+    }
+    renderer.shadePhrase(p);   // hear it and see it: playing always shows which bars are sounding
+    const varied = p.occurrences.filter((o) => o.varied).length;
+    startGroupPlayback(schedule,
+      `Playing phrase ${p.name} — ${sounded} occurrence${sounded === 1 ? '' : 's'} in turn`
+      + (varied ? `, ${varied} modified` : '') + `, ${gap} beat${gap === 1 ? '' : 's'} between`);
+  }
+  document.getElementById('autoPhrasePlayBtn').onclick = playDetectedPhrase;
   document.getElementById('autoPhraseBtn').onclick = runAutoPhraseDetect;
   // Changing the phrase length invalidates the scan rather than silently keeping the old one.
   document.getElementById('autoPhraseBars').onchange = () => { if (detectedPhrases.length) runAutoPhraseDetect(); };
-  document.getElementById('autoPhraseSel').onchange = (e) => {
-    // The placeholder's value is '' and Number('') is 0 — so test the raw value, or picking
-    // "— detected phrase —" to clear the sheet would silently re-select the first family instead.
-    const raw = e.target.value;
-    const p = raw === '' ? null : detectedPhrases[Number(raw)];
+  document.getElementById('autoPhraseSel').onchange = () => {
+    // Read through selectedDetectedPhrase: the placeholder's value is '' and Number('') is 0, so a bare
+    // index lookup would treat "— detected phrase —" as the first family and shade it instead of clearing.
+    const p = selectedDetectedPhrase();
     if (renderer && renderer.shadePhrase) renderer.shadePhrase(p || null);
     if (!p) { autoPhraseMsg(autoPhraseSummary); return; }
     const varied = (p.occurrences || []).filter((o) => o.varied).length;
