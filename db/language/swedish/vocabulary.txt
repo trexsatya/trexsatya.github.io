@@ -73,6 +73,7 @@
 (incense)|rökelse|rökelser|
 (stink)|stinka|stinker|stank|stink|
 (taste)|smaka|smak|smakning
+(Bad taste)|bismak
 (hearing)|höra| hör |hörde|hört|lyssna|hörsel|lyssning|lystra|lystring|lyssning|
 (attention)|(ha eller vara )idel öra|
 (sight)|(se)| ser |såg|sett|blick|blicka|blickar|blickade|blickat|
@@ -619,7 +620,7 @@ Lägra( sig)|<*slå läger|
 (nonsense)|Prata smörja
 (insane)|från vettet|Utom sig
 (explosion)|Ta hus i helvete|Ta hus i helsike|
-(anger)|ilska|vrede|få damp|få utbrott|dampa(extremt arg)|lacka|
+(anger)|ilska|vrede|få damp|få utbrott|dampa(extremt arg)|lacka|ursinne|raseri
 (irritable)|Arg som ett bi
 (proverb)|arga katter får rivet skinn
 (hotheaded)|Hetlevrad|
@@ -1030,7 +1031,7 @@ Ursäkt|förevändning|täckmantel
 (pinch)|kläm|klämmar|snärt (till)|snärtar|
 (twist)|kränga(däck t.e)|krängning|krängningar|
 (inserted)|instucken|
-(forced)|tvingad|tvång(sl-pl)|påtvånga|tvinga|nödsakad
+(forced)|tvingad|tvång(sl-pl)|påtvånga|tvinga|nödsakad|tvungen|nödd
 (rob)|röva|erövra|plundra|kapa|ta ifrån|råna|rov(sl-pl)|
 (excessforce)|övervåld(sl-pl)|
 (hit)|<*slå|drämma(starkare)|<*ge <*sig på|<*ta på|mörbulta
@@ -2037,7 +2038,7 @@ svagaste länken i kedjan
 (expression)|Vara den som är den|
 (only)|enda|enbart|endast|idel|uteslutande|bara|blott|enkom|exklusivt|exklusiv|unik|enstaka
 (monopoly)|ensamrätt|ensamrätter|
-(different)|annorlunda|avvikende|anomali|anomalier|avvikelse|avvikande
+(different)|annorlunda|avvikende|anomali|anomalier|avvikelse|avvikande|från<*gå
 (expression)|Svarta fåret|
 (normal)|normal|vanlig|gängse|Tretton på dussinet|gemen|
 (cliché)|klyscha|klyschor|
@@ -2335,7 +2336,7 @@ svagaste länken i kedjan
 (protected)|fridlysa|fridlyser|fridlyste|fridlyst|fridlys|
 (shield)|skölda|sköldar|sköldade|sköldat|sköldande|
 (arm)|beväpna|vapen(sl-pl)|
-(risk)|äventyr|riskera|risk|risker|
+(risk)|äventyr|odyssé|irrfärd|riskera|risk|risker|
 (risk)|Balansera på slak lina|Bära eller brista
 (risk)|(Sätta något/stå) på spel|Spela ett högt spel|Leka med elden
 (risk)|Lyckan står den djärve bi
@@ -2842,6 +2843,7 @@ försagd|modlös|klenmodig|förlägen (blyg och förvirrad)
 (pushy)|Vassa armbågar|På höga hästar
 (rude)|oförskämd|oartig|ohövlig|uppkäftig|oblyg|ohyfsad|uppnosig|näsvis|
 (shameless)|skamlös|oanständig|fräck|hänsynslös|fara fram som ett yrväder|utan blygsel|
+(Blunt)|burdus|brysk|vilde|rättfram|taktlös
 (push)|Armbåga sig fram|Gå över lik
 (manners)|Hut går hem|fräckhet straffar sig
 (sarcastic)|spydig|uppkäftig|provocerande|Vass tunga|
@@ -2852,7 +2854,7 @@ försagd|modlös|klenmodig|förlägen (blyg och förvirrad)
 (narrowminded)|trångsynt|småaktig
 (--bravery--)
 (cowardly)|feg|fegis| mes|mesig|mjäkig|pjoskig|ynkrygg|ynkryggar|
-(bold)|djärv|modig|orädd|frejdig|frimodig|tapper
+(bold)|djärv|modig|orädd|frimodig|tapper
 (warrior)|kämpe|
 (brave)|Modig som ett lejon
 (courage)|den fege dör tusentals gånger, den modige dör bara en
@@ -2949,7 +2951,7 @@ risktagare
 (end)|Slutet gott, allting gott|Ändamålet helgar medlen
 (persist)|framhärda|envisas|hålla ut|
 (persistent)|efterhängsen|påstridig|påflugen|
-(diligent)|flitig|arbetsam|idog|energisk|alert|livlig|sangvinisk|livfull|rask|sprudlande|rivig
+(diligent)|flitig|arbetsam|idog|energisk|alert|livlig|frejdig|sangvinisk|livfull|rask|sprudlande|rivig
 (ride out a storm)|Rida ut en storm
 (enterprising)|företagsam|tilltagsen|initiativrik|
 (eager)|På hugget
@@ -4011,6 +4013,7 @@ Myndighet|ämbetsverk
 (enumerate)|räkna upp|uppräkning|uppräkningar|
 (recite)|rabbla upp(mekaniskt och själlöst)|
 (calculate)|beräkna|
+(Estimate)|måtta|
 (estimated)|beräknad|(väl/generöst/riktigt/högt/knappt/snålt)tilltagen|
 (facility)|inrättning|anläggning|institution
 (institution)|anstalt(t.e. i skol eller vård)|
@@ -4078,7 +4081,7 @@ Täckmantel
 (densify)|förtäta|
 (tight)|tätt|tajt|åtsmitande|trång
 (consideration)|hänsyn(sl-pl)|beaktande|med hänsyn till|ta hänsyn till|beakta
-(mistake)|miss<*ta |misstaga|<*ta miste|misstag(sl-pl)|missuppfatta|förvillelse|Få något om bakfoten
+(mistake)|miss<*ta |misstaga|snedsteg|<*ta miste|misstag(sl-pl)|missuppfatta|förvillelse|Få något om bakfoten
 (futile)|Hugga i sten
 (wise)|av skadan blir man vis
 (learn)|Man lär sig av misstagen
