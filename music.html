@@ -595,7 +595,8 @@
       <select id="transposeKey"></select>
     </label>
     <button id="combineBtn" type="button" style="display:none" title="Combine several instrument parts onto one staff">Combine…</button>
-    <span id="transportMsg" style="color: blueviolet;"></span>
+    <!-- Transport feedback used to sit here as an inline pill; it is a toast now (setTransportMsg), so it
+         is seen wherever you are scrolled to instead of only when this row is on screen. -->
   </div>
   <!-- Combine-parts picker: merge selected parts into one concert-pitch staff (view + playback/chords/fretboard). -->
   <div id="combinePanel" style="display:none; position:absolute; z-index:60; background:#fff; border:1px solid #bbb; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,.18); padding:.6rem .7rem; min-width:220px; font-size:.9rem">
@@ -723,6 +724,23 @@
       </label>
       <button id="addPhraseBtn" class="btn"><span class="ic">➕</span><span class="txt">Add</span></button>
       <span id="phraseMsg" style="font-size:.8em;color:#555"></span>
+    </div>
+    <!-- Automatic phrase detection: read the piece's phrases off the score instead of building them by
+         hand. Picking one shades its bars behind the notes (see renderer.shadePhrase). -->
+    <div class="tag-row" id="autoPhraseRow" style="border-top:1px dashed #cfe0ff;padding-top:6px">
+      <label class="tag-lbl" title="How long a phrase is. Most music is in 8-bar phrases; 4 finds half-phrases, 16 finds long ones.">Detect
+        <select id="autoPhraseBars">
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="8" selected>8</option>
+          <option value="16">16</option>
+        </select> -bar phrases
+      </label>
+      <button id="autoPhraseBtn" class="btn" title="Find the phrases of this piece and which of them come back later"><span class="ic">🔍</span><span class="txt">Find</span></button>
+      <select id="autoPhraseSel" title="Pick a phrase to shade its bars on the sheet — its first statement solid, each modified return lighter" style="max-width:22em">
+        <option value="">— detected phrase —</option>
+      </select>
+      <span id="autoPhraseMsg" style="font-size:.8em;color:#555"></span>
     </div>
     <div id="phraseList" class="tag-list"></div>
     </div>
@@ -895,31 +913,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=6528016e62';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=6528016e62';
-  import { runQuery } from './music-query.js?v=6528016e62';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=6528016e62';
-  import { init as initFretboard } from './fretboard-panel.js?v=6528016e62';
-  import { chordDisplayName } from './music-chords.js?v=6528016e62';
-  import { keyExplanation } from './music-key.js?v=6528016e62';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=6528016e62';
-  import { createMusicStore } from './music-local-store.js?v=6528016e62';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=6528016e62';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=6528016e62';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=6528016e62';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=6528016e62';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=1a94a69ba1';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=1a94a69ba1';
+  import { runQuery } from './music-query.js?v=1a94a69ba1';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=1a94a69ba1';
+  import { init as initFretboard } from './fretboard-panel.js?v=1a94a69ba1';
+  import { chordDisplayName } from './music-chords.js?v=1a94a69ba1';
+  import { keyExplanation } from './music-key.js?v=1a94a69ba1';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=1a94a69ba1';
+  import { createMusicStore } from './music-local-store.js?v=1a94a69ba1';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=1a94a69ba1';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=1a94a69ba1';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=1a94a69ba1';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=1a94a69ba1';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=6528016e62';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=6528016e62';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=6528016e62';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=6528016e62';
-  import { generateCounterLines } from './music-counterpoint.js?v=6528016e62';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=6528016e62';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=6528016e62';
-  import { splitSingleVoice } from './music-voice-split.js?v=6528016e62';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=6528016e62';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=6528016e62';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=6528016e62';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=1a94a69ba1';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=1a94a69ba1';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=1a94a69ba1';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=1a94a69ba1';
+  import { generateCounterLines } from './music-counterpoint.js?v=1a94a69ba1';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=1a94a69ba1';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=1a94a69ba1';
+  import { splitSingleVoice } from './music-voice-split.js?v=1a94a69ba1';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=1a94a69ba1';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=1a94a69ba1';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=1a94a69ba1';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1294,6 +1312,11 @@
   }
   function setMediaMsg(text, tone) {
     if (!text) return;
+    // Saying the same thing again refreshes the toast that is already up instead of stacking a copy.
+    // The transport repeats itself constantly — clicking the same start note, replaying the same phrase —
+    // and a column of identical toasts reads as a bug.
+    const last = toastHost().lastElementChild;
+    if (last && last.textContent === text && last._refresh && last._refresh()) return;
     const palette = { info: ['#eef2ff', '#3730a3', '#c7d2fe'], ok: ['#e7f6ec', '#1b7f3b', '#a7e3bd'], err: ['#fdecec', '#b42318', '#f3b4ad'] };
     const [bg, fg, border] = palette[tone] || palette.info;
     const t = document.createElement('div');
@@ -1306,7 +1329,19 @@
     let gone = false;
     const dismiss = () => { if (gone) return; gone = true; t.style.opacity = '0'; t.style.transform = 'translateY(8px)'; setTimeout(() => t.remove(), 280); };
     t.addEventListener('click', dismiss);
-    setTimeout(dismiss, tone === 'err' ? 8000 : 4000);   // errors linger longer
+    const ttl = tone === 'err' ? 8000 : 4000;   // errors linger longer
+    t._timer = setTimeout(dismiss, ttl);
+    // Restart this toast's countdown. Refuses once it has started fading — a toast on its way out must
+    // not be revived, or a repeated message would flicker back mid-fade.
+    t._refresh = () => { if (gone) return false; clearTimeout(t._timer); t._timer = setTimeout(dismiss, ttl); return true; };
+  }
+  // Transport / view feedback ("Playing 433 notes", "Loading instrument…", "Original view — …"). Was an
+  // inline pill next to the transport buttons; now a toast, so the message is seen wherever you are on
+  // the page instead of only when the transport row happens to be in view. A falsy text is a no-op: the
+  // old pill was cleared by assigning '', and a toast has nothing to clear — it expires on its own.
+  function setTransportMsg(text, tone = 'info') {
+    if (!text) return;
+    setMediaMsg(text, tone);
   }
   function ensurePlayer() {
     if (!player) player = createMusicPlayer({ getCursor: () => (renderer && renderer.osmd ? renderer.osmd.cursor : null),
@@ -1339,10 +1374,9 @@
   function onSeek() {
     const ps = renderer && renderer.getPlayStartRange && renderer.getPlayStartRange();
     seekPending = !!ps;
-    const el = document.getElementById('transportMsg');
-    if (!el) return;
-    if (ps) el.textContent = `▶ Play starts at m. ${toPrintedMeasure(ps.fromMeasure)}`;
-    else if (/^▶ Play starts at/.test(el.textContent)) el.textContent = '';
+    // Only the "moved to" direction is worth a toast. Dropping the start note used to blank the inline
+    // pill; a toast has nothing to blank, and announcing "no longer starting there" would be noise.
+    if (ps) setTransportMsg(`▶ Play starts at m. ${toPrintedMeasure(ps.fromMeasure)}`);
   }
   function currentTempo() {
     const t = parseInt(document.getElementById('tempoInput').value, 10);
@@ -1368,8 +1402,7 @@
     // after another with `gap` beats between them (see rhythmPlaySet). Nothing picked: the piece as-is.
     const sel = rhythmPlaySet();
     if (sel && !sel.keep.length) {
-      document.getElementById('transportMsg').textContent =
-        `${sel.what} isn't on the sheet that's showing — press Scan, or show the whole piece.`;
+      setTransportMsg(`${sel.what} isn't on the sheet that's showing — press Scan, or show the whole piece.`, 'err');
       return;
     }
     const schedule = !useXml
@@ -1378,7 +1411,7 @@
       ? buildScheduleFromMusicXml(currentDetail.source,
           { tempo: currentTempo(), keepNotes: sel.keep, mutedNotes: [...muted, ...sel.mute], breathBeats: rgGapBeats() })
       : buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), ...range, mutedNotes: muted });
-    if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
+    if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     const soundingCount = schedule.filter((e) => !e.muted).length;
     const winOn = document.getElementById('chordWindowChk') && document.getElementById('chordWindowChk').checked;
     const span = ((winOn && range.fromBeat != null) ? ' (window)'
@@ -1390,7 +1423,7 @@
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: range.cursorStep || 0 });
     p.setLoop(document.getElementById('loopChk').checked);
-    document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    setTransportMsg('Loading instrument…');
     // Align the metronome to the piece: tick on the beat grid (the first played note may be syncopated /
     // off-beat, e.g. beat 4.5) with the strong beat on the barline downbeats. schedule[0].beat is the
     // absolute onset in quarter-beats; the anacrusis (pickup) length shifts where the downbeats sit.
@@ -1402,12 +1435,12 @@
     startPending = true;  // the transport starts only once the instrument has loaded — see startFabSync
     p.play()
       .then(() => {
-        document.getElementById('transportMsg').textContent = `Playing ${schedule.length} notes${span}`;
+        setTransportMsg(`Playing ${schedule.length} notes${span}`, 'ok');
         updateMetro(true);   // start/re-phase the click to playback's first beat
         startPending = false; updateFab();
       })
       .catch(() => {
-        document.getElementById('transportMsg').textContent = 'Playback error.';
+        setTransportMsg('Playback error.', 'err');
         midiPlaying = false; updateMetro(false);
         startPending = false; updateFab();   // nothing is playing — don't leave the FAB showing ⏸
       });
@@ -1423,7 +1456,7 @@
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
-      document.getElementById('transportMsg').textContent = 'Tag playback needs a MusicXML piece.'; return;
+      setTransportMsg('Tag playback needs a MusicXML piece.', 'err'); return;
     }
     const tagged = (renderer && renderer.getFilterNotes) ? renderer.getFilterNotes() : [];
     // Include the notes matched by the most recent Find-pattern search (if any), so the recurring
@@ -1435,19 +1468,19 @@
       if (seen.has(k)) return false;
       seen.add(k); return true;
     }).sort((a, b) => a.beats - b.beats);
-    if (!keep.length) { document.getElementById('transportMsg').textContent = 'Check a tag to play it.'; return; }
+    if (!keep.length) { setTransportMsg('Check a tag to play it.', 'err'); return; }
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
       { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
-    if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
+    if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
     p.setLoop(document.getElementById('loopChk').checked);
-    document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    setTransportMsg('Loading instrument…');
     const withMatches = matched.length ? ' (tags + matches)' : '';
     p.play()
-      .then(() => { document.getElementById('transportMsg').textContent = `Playing ${schedule.length} notes${withMatches}`; })
-      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; });
+      .then(() => { setTransportMsg(`Playing ${schedule.length} notes${withMatches}`, 'ok'); })
+      .catch(() => { setTransportMsg('Playback error.', 'err'); });
   }
   let ytMonitor = null;
   let ytLoadedId = null;   // video id currently loaded in the player (avoid reloading on replay)
@@ -1470,7 +1503,7 @@
   function playYouTube() {
     const url = currentDetail && currentDetail.meta && currentDetail.meta.youtube;
     const id = parseYouTubeId(url);
-    if (!id) { document.getElementById('transportMsg').textContent = 'No linked YouTube video.'; return; }
+    if (!id) { setTransportMsg('No linked YouTube video.', 'err'); return; }
     document.getElementById('ytPlayer').style.display = '';
     const range = segmentRange();
     const hasSeg = Number.isFinite(range.fromMeasure) && Number.isFinite(range.toMeasure);
@@ -1509,8 +1542,8 @@
         // reloading mid-play raced with the immediate seek and restarted from 0).
         begin();
       }
-      document.getElementById('transportMsg').textContent = 'Playing YouTube' + (hasSeg ? ' (segment)' : '');
-    } catch (e) { document.getElementById('transportMsg').textContent = 'YouTube error: ' + e.message; }
+      setTransportMsg('Playing YouTube' + (hasSeg ? ' (segment)' : ''), 'ok');
+    } catch (e) { setTransportMsg('YouTube error: ' + e.message, 'err'); }
   }
   document.getElementById('instrSel').onchange = () => { if (player) player.setInstrument(document.getElementById('instrSel').value); };
   // The YouTube link field stays hidden until asked for — most of the time you're not editing it.
@@ -2075,8 +2108,7 @@
     await reloadPieceSource(merged);
     updateCombineBtn();
     combinePanel.style.display = 'none';
-    document.getElementById('transportMsg').textContent =
-      `Combined ${ids.length} parts onto one staff${fitGuitar ? ' (guitar range)' : ''}.`;
+    setTransportMsg(`Combined ${ids.length} parts onto one staff${fitGuitar ? ' (guitar range)' : ''}.`);
   };
   document.getElementById('combineResetBtn').onclick = async () => {
     if (!mergeBaseSource) return;
@@ -2084,7 +2116,7 @@
     await reloadPieceSource(mergeBaseSource);
     updateCombineBtn();
     combinePanel.style.display = 'none';
-    document.getElementById('transportMsg').textContent = 'Restored the original parts.';
+    setTransportMsg('Restored the original parts.', 'ok');
   };
   // Octave nudge for the combined view: shift the whole arrangement up/down a full octave. Applied to the
   // transpose baseline so it persists across key changes (an octave shift doesn't change the key), then the
@@ -2095,7 +2127,7 @@
     const sel = document.getElementById('transposeKey');
     if (sel && sel.value) { const [pc, mode] = String(sel.value).split(':'); await applyTranspose(parseInt(pc, 10) || 0, mode || 'major'); }
     else { await reloadPieceSource(pieceOriginalSource); }
-    document.getElementById('transportMsg').textContent = `Moved the combined arrangement ${delta > 0 ? 'up' : 'down'} an octave.`;
+    setTransportMsg(`Moved the combined arrangement ${delta > 0 ? 'up' : 'down'} an octave.`, 'ok');
   }
   document.getElementById('combineOctUp').onclick = () => nudgeCombineOctave(1);
   document.getElementById('combineOctDown').onclick = () => nudgeCombineOctave(-1);
@@ -2220,6 +2252,7 @@
     const phrasePanelOpen = document.getElementById('phrasePanel').open;
     if (renderer) { renderer.setPhrasePaintMode(false); renderer.setShownPhrases([]); }
     setPhraseVis(false);   // sheet phrase visibility starts off (decoupled from expand)
+    resetAutoPhrases();    // a detected phrase list belongs to the piece it was scanned from
     if (phrasePanelOpen) renderPhraseUI();
     resetRhythmPanel();   // the rhythm list belongs to the notes that were drawn — rescan for this piece
     renderColorLegend();  // name this piece's voice colours
@@ -2661,9 +2694,10 @@
     }
     const pm = document.getElementById('patternMsg'); if (pm) pm.textContent = '';
     const rm = document.getElementById('rhythmMsg'); if (rm) rm.textContent = '';
+    clearAutoPhraseShade();   // the band goes; the detected list stays, like the rhythm list
     if (typeof renderPhraseUI === 'function') renderPhraseUI();
     if (typeof renderRhythmGroups === 'function') renderRhythmGroups();
-    document.getElementById('transportMsg').textContent = 'Original view — highlights cleared (tags kept).';
+    setTransportMsg('Original view — highlights cleared (tags kept).');
   }
   document.getElementById('originalViewBtn').onclick = showOriginalView;
   function setTagVis(on) {
@@ -2846,21 +2880,21 @@
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
-      document.getElementById('transportMsg').textContent = 'Phrase playback needs a MusicXML piece.'; return;
+      setTransportMsg('Phrase playback needs a MusicXML piece.', 'err'); return;
     }
     const keep = (renderer && renderer.getPhraseNoteIds) ? renderer.getPhraseNoteIds(name) : [];
-    if (!keep.length) { document.getElementById('transportMsg').textContent = 'This phrase has no notes.'; return; }
+    if (!keep.length) { setTransportMsg('This phrase has no notes.', 'err'); return; }
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
       { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
-    if (!schedule.length) { document.getElementById('transportMsg').textContent = 'Nothing to play.'; return; }
+    if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
     p.setLoop(document.getElementById('loopChk').checked);
-    document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    setTransportMsg('Loading instrument…');
     p.play()
-      .then(() => { document.getElementById('transportMsg').textContent = `Playing phrase "${name}" (${schedule.length} notes)`; })
-      .catch(() => { document.getElementById('transportMsg').textContent = 'Playback error.'; });
+      .then(() => { setTransportMsg(`Playing phrase "${name}" (${schedule.length} notes)`, 'ok'); })
+      .catch(() => { setTransportMsg('Playback error.', 'err'); });
   }
   // Find + highlight other occurrences of a phrase (reuses the tag panel's match settings).
   function findPhrase(name) {
@@ -2911,6 +2945,67 @@
   document.getElementById('phraseInput').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') { e.preventDefault(); document.getElementById('addPhraseBtn').click(); }
   });
+  // ---- Automatic phrase detection ---------------------------------------------------------------
+  // Read the piece's phrases off the score (music-phrase-detect.js) instead of building them by hand:
+  // equal spans of `bars`, grouped by likeness, so a theme and its modified returns land in one family.
+  // Not persisted — the result is derived from the notes that are drawn, so re-scanning is both cheaper
+  // and more honest than storing a snapshot the next segment/zoom change would invalidate.
+  let detectedPhrases = [];      // families from renderer.detectPhrases, in appearance order
+  let autoPhraseSummary = '';    // the scan's own line, restored when a selection is cleared
+  const autoPhraseMsg = (t) => { document.getElementById('autoPhraseMsg').textContent = t || ''; };
+
+  // Drop the scan and whatever band it left on the sheet. Called on piece load, on "Original view",
+  // and before a re-scan — a selection kept across scans would shade bars the new scan doesn't group.
+  function resetAutoPhrases() {
+    detectedPhrases = []; autoPhraseSummary = '';
+    const sel = document.getElementById('autoPhraseSel');
+    if (sel) sel.innerHTML = '<option value="">— detected phrase —</option>';
+    autoPhraseMsg('');
+    if (renderer && renderer.clearPhraseShade) renderer.clearPhraseShade();
+  }
+
+  // Un-pick the current phrase and take its band off the sheet, keeping the scan itself. What
+  // "Original view" does to the detected phrases — the list is a reading of the piece, not a highlight.
+  function clearAutoPhraseShade() {
+    const sel = document.getElementById('autoPhraseSel');
+    if (sel) sel.value = '';
+    if (renderer && renderer.clearPhraseShade) renderer.clearPhraseShade();
+    autoPhraseMsg(autoPhraseSummary);
+  }
+
+  function runAutoPhraseDetect() {
+    if (!renderer || !renderer.detectPhrases) return;
+    resetAutoPhrases();
+    const res = renderer.detectPhrases({ bars: Number(document.getElementById('autoPhraseBars').value) || 8 });
+    detectedPhrases = res.phrases || [];
+    if (!detectedPhrases.length) { autoPhraseSummary = 'nothing on the sheet to scan'; autoPhraseMsg(autoPhraseSummary); return; }
+    const sel = document.getElementById('autoPhraseSel');
+    detectedPhrases.forEach((p, i) => {
+      const o = document.createElement('option');
+      o.value = String(i); o.textContent = p.label; sel.appendChild(o);
+      o.style.color = p.color;
+    });
+    const recurring = detectedPhrases.filter((p) => p.count > 1).length;
+    // The starting bar is worth saying: when it isn't the first bar, the scan decided the piece opens
+    // with an intro/pickup, and that is the one judgement a player would want to double-check.
+    autoPhraseSummary = `${detectedPhrases.length} phrase${detectedPhrases.length === 1 ? '' : 's'}, ${recurring} recurring`
+      + (res.offset ? ` · from bar ${res.first + res.offset}` : '');
+    autoPhraseMsg(autoPhraseSummary);
+  }
+
+  document.getElementById('autoPhraseBtn').onclick = runAutoPhraseDetect;
+  // Changing the phrase length invalidates the scan rather than silently keeping the old one.
+  document.getElementById('autoPhraseBars').onchange = () => { if (detectedPhrases.length) runAutoPhraseDetect(); };
+  document.getElementById('autoPhraseSel').onchange = (e) => {
+    // The placeholder's value is '' and Number('') is 0 — so test the raw value, or picking
+    // "— detected phrase —" to clear the sheet would silently re-select the first family instead.
+    const raw = e.target.value;
+    const p = raw === '' ? null : detectedPhrases[Number(raw)];
+    if (renderer && renderer.shadePhrase) renderer.shadePhrase(p || null);
+    if (!p) { autoPhraseMsg(autoPhraseSummary); return; }
+    const varied = (p.occurrences || []).filter((o) => o.varied).length;
+    autoPhraseMsg(`${p.name}: ${p.count}×` + (varied ? ` · ${varied} modified (lighter band)` : ' · literal'));
+  };
   // ---- Rhythm panel ------------------------------------------------------------------------------
   // Nothing to tag or paint here: the panel READS the rhythms off the sheet that is showing (whole
   // piece or segment), lists them most-used first, and paints every occurrence of the picked one.
@@ -3178,17 +3273,17 @@
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
     p.setLoop(document.getElementById('loopChk').checked);
-    document.getElementById('transportMsg').textContent = 'Loading instrument…';
+    setTransportMsg('Loading instrument…');
     // No `midiPlaying` (and so no "on play" metronome): skip-playback splices bars together, so the
     // bar grid the click phases to no longer exists. The FAB reads the transport itself, so it follows.
     startPending = true;
     p.play()
       .then(() => {
-        document.getElementById('transportMsg').textContent = label;
+        setTransportMsg(label, 'ok');
         startPending = false; updateFab();
       })
       .catch(() => {
-        document.getElementById('transportMsg').textContent = 'Playback error.';
+        setTransportMsg('Playback error.', 'err');
         startPending = false; updateFab();
       });
   }
@@ -3196,7 +3291,7 @@
   function rgPlayable() {
     if (!currentDetail) return false;
     if (currentDetail.format === 'musicxml' && currentDetail.source) return true;
-    document.getElementById('transportMsg').textContent = 'Group playback needs a MusicXML piece.';
+    setTransportMsg('Group playback needs a MusicXML piece.', 'err');
     return false;
   }
   function playRhythmGroup(name) {
@@ -3206,7 +3301,7 @@
     if (!g || !g.ranges.length) { rgMsg(`"${name}" has no bars yet.`); return; }
     const schedule = rhythmGroupSchedule(g);
     if (!schedule.length) {
-      document.getElementById('transportMsg').textContent = `Group "${name}" isn't on the sheet that's showing — press Scan, or show the whole piece.`; return;
+      setTransportMsg(`Group "${name}" isn't on the sheet that's showing — press Scan, or show the whole piece.`, 'err'); return;
     }
     const heard = schedule.filter((e) => !e.muted).length;
     startGroupPlayback(schedule, `Playing group "${name}" — ${barCountOf(renderer.getRhythmGroupMeasureNoteIds(name, rhythmOpts()))} bars, ${heard} note${heard === 1 ? '' : 's'} sounding`);
@@ -3222,7 +3317,7 @@
     const parts = groups.map((g) => rhythmGroupSchedule(g));
     const played = groups.filter((g, i) => parts[i].length);
     const schedule = concatSchedules(parts, gapSeconds);
-    if (!schedule.length) { document.getElementById('transportMsg').textContent = 'No notes in any group.'; return; }
+    if (!schedule.length) { setTransportMsg('No notes in any group.', 'err'); return; }
     startGroupPlayback(schedule, `Playing ${played.length} groups in turn: ${played.map((g) => `"${g.name}"`).join(' → ')}`);
   }
   document.getElementById('rgPlayAllBtn').onclick = playAllRhythmGroups;
