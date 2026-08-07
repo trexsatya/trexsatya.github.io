@@ -289,6 +289,11 @@
           border-bottom:1px solid rgba(0,0,0,.08);border-radius:6px 6px 0 0;position:sticky;top:-.5rem;background:inherit;z-index:1}
         #phrasePanel .np-drag{color:#6f8bbf}
         .np-drag .grip{letter-spacing:1px}
+        /* Close button, at the far end of the drag bar. Takes the panel's own colour so each card's
+           control reads as part of that card. Sized for a fingertip, not just a mouse. */
+        .np-close{margin-left:auto;border:none;background:none;color:inherit;cursor:pointer;
+          font-size:17px;line-height:1;padding:0 4px;opacity:.7;font-weight:700}
+        .np-close:hover,.np-close:focus-visible{opacity:1}
         /* Resize grip: sticky to the card's bottom-right so it stays reachable while the body scrolls
            (the drag bar is sticky to the top the same way). Pointer-driven, so it works on touch —
            the native CSS resizer does not on iOS. Double-click restores the CSS size. */
@@ -913,31 +918,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=1a94a69ba1';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=1a94a69ba1';
-  import { runQuery } from './music-query.js?v=1a94a69ba1';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=1a94a69ba1';
-  import { init as initFretboard } from './fretboard-panel.js?v=1a94a69ba1';
-  import { chordDisplayName } from './music-chords.js?v=1a94a69ba1';
-  import { keyExplanation } from './music-key.js?v=1a94a69ba1';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=1a94a69ba1';
-  import { createMusicStore } from './music-local-store.js?v=1a94a69ba1';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=1a94a69ba1';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=1a94a69ba1';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=1a94a69ba1';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=1a94a69ba1';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=59a70ccc80';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=59a70ccc80';
+  import { runQuery } from './music-query.js?v=59a70ccc80';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=59a70ccc80';
+  import { init as initFretboard } from './fretboard-panel.js?v=59a70ccc80';
+  import { chordDisplayName } from './music-chords.js?v=59a70ccc80';
+  import { keyExplanation } from './music-key.js?v=59a70ccc80';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=59a70ccc80';
+  import { createMusicStore } from './music-local-store.js?v=59a70ccc80';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=59a70ccc80';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=59a70ccc80';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=59a70ccc80';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=59a70ccc80';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=1a94a69ba1';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=1a94a69ba1';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=1a94a69ba1';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=1a94a69ba1';
-  import { generateCounterLines } from './music-counterpoint.js?v=1a94a69ba1';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=1a94a69ba1';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=1a94a69ba1';
-  import { splitSingleVoice } from './music-voice-split.js?v=1a94a69ba1';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=1a94a69ba1';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=1a94a69ba1';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=1a94a69ba1';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=59a70ccc80';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=59a70ccc80';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=59a70ccc80';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=59a70ccc80';
+  import { generateCounterLines } from './music-counterpoint.js?v=59a70ccc80';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=59a70ccc80';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=59a70ccc80';
+  import { splitSingleVoice } from './music-voice-split.js?v=59a70ccc80';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=59a70ccc80';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=59a70ccc80';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=59a70ccc80';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2635,6 +2640,26 @@
   // card, another closes it. The <details> stays the model, so every existing `.open` read and `toggle`
   // handler (mutual exclusion, pattern controls, rhythm rescan) keeps working untouched — the buttons
   // just flip `.open`, and each panel's toggle event lights the matching button.
+  // A × at the end of the drag bar closes the card. The tab button toggles it too, but a card that has
+  // been dragged over the sheet can sit far from the button it came from (and on a phone the button may
+  // be scrolled off), so the close control belongs on the thing being closed. Built here rather than in
+  // each panel's markup so all three stay identical.
+  function addPanelCloseButton(panel) {
+    const bar = panel.querySelector('.np-body .np-drag');
+    if (!bar || bar.querySelector('.np-close')) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'np-close';
+    btn.textContent = '×';
+    btn.title = 'Close this panel';
+    btn.setAttribute('aria-label', 'Close panel');
+    // The bar IS the drag handle and resets its position on double-click, so both have to be swallowed
+    // here — otherwise pressing × would start a drag, and a double-tap on it would move the card.
+    btn.addEventListener('pointerdown', (e) => e.stopPropagation());
+    btn.addEventListener('dblclick', (e) => e.stopPropagation());
+    btn.addEventListener('click', (e) => { e.stopPropagation(); panel.open = false; });
+    bar.appendChild(btn);
+  }
   const PANEL_IDS = ['tagPanel', 'phrasePanel', 'rhythmPanel'];
   function syncPanelTabs() {
     PANEL_IDS.forEach((id) => {
@@ -2650,6 +2675,7 @@
     if (!panel) return;
     makePanelDraggable(panel.querySelector('.np-body'));
     makePanelResizable(panel.querySelector('.np-body'));
+    addPanelCloseButton(panel);
     panel.addEventListener('toggle', () => { syncPanelTabs(); if (panel.open) fitPanelHeight(panel.querySelector('.np-body')); });
     const btn = document.getElementById(`${id}Btn`);
     if (btn) btn.onclick = () => { panel.open = !panel.open; };
@@ -3004,7 +3030,13 @@
     if (renderer && renderer.shadePhrase) renderer.shadePhrase(p || null);
     if (!p) { autoPhraseMsg(autoPhraseSummary); return; }
     const varied = (p.occurrences || []).filter((o) => o.varied).length;
-    autoPhraseMsg(`${p.name}: ${p.count}×` + (varied ? ` · ${varied} modified (lighter band)` : ' · literal'));
+    // Name the changed bars outright when there are few enough to read — "differs in m30, m32" saves
+    // hunting for the dashed outlines. Past that, just the count; a list of twenty bars is not a fact.
+    const changed = (p.occurrences || []).flatMap((o) => o.changed || []);
+    const where = changed.length && changed.length <= 6
+      ? ` · differs in ${changed.map((m) => `m${m}`).join(', ')}`
+      : (changed.length ? ` · ${changed.length} bars differ (dashed)` : '');
+    autoPhraseMsg(`${p.name}: ${p.count}×` + (varied ? ` · ${varied} modified (lighter band)` : ' · literal') + where);
   };
   // ---- Rhythm panel ------------------------------------------------------------------------------
   // Nothing to tag or paint here: the panel READS the rhythms off the sheet that is showing (whole
