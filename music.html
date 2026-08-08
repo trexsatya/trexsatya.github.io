@@ -930,31 +930,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=11cf8e27d6';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=11cf8e27d6';
-  import { runQuery } from './music-query.js?v=11cf8e27d6';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=11cf8e27d6';
-  import { init as initFretboard } from './fretboard-panel.js?v=11cf8e27d6';
-  import { chordDisplayName } from './music-chords.js?v=11cf8e27d6';
-  import { keyExplanation } from './music-key.js?v=11cf8e27d6';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=11cf8e27d6';
-  import { createMusicStore } from './music-local-store.js?v=11cf8e27d6';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=11cf8e27d6';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=11cf8e27d6';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=11cf8e27d6';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=11cf8e27d6';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=1b189f1ced';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=1b189f1ced';
+  import { runQuery } from './music-query.js?v=1b189f1ced';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=1b189f1ced';
+  import { init as initFretboard } from './fretboard-panel.js?v=1b189f1ced';
+  import { chordDisplayName } from './music-chords.js?v=1b189f1ced';
+  import { keyExplanation } from './music-key.js?v=1b189f1ced';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=1b189f1ced';
+  import { createMusicStore } from './music-local-store.js?v=1b189f1ced';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=1b189f1ced';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=1b189f1ced';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=1b189f1ced';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=1b189f1ced';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=11cf8e27d6';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=11cf8e27d6';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=11cf8e27d6';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=11cf8e27d6';
-  import { generateCounterLines } from './music-counterpoint.js?v=11cf8e27d6';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=11cf8e27d6';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=11cf8e27d6';
-  import { splitSingleVoice } from './music-voice-split.js?v=11cf8e27d6';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=11cf8e27d6';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=11cf8e27d6';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=11cf8e27d6';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=1b189f1ced';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=1b189f1ced';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=1b189f1ced';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=1b189f1ced';
+  import { generateCounterLines } from './music-counterpoint.js?v=1b189f1ced';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=1b189f1ced';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=1b189f1ced';
+  import { splitSingleVoice } from './music-voice-split.js?v=1b189f1ced';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=1b189f1ced';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=1b189f1ced';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=1b189f1ced';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1412,12 +1412,10 @@
     // pieces (no real timing) fall back to the simple per-note sequential builder.
     const useXml = currentDetail.format === 'musicxml' && currentDetail.source;
     const range = activeRange();
-    // Effective muted = the user's suppressed notes PLUS whatever the active highlight has dimmed
-    // (motif / phrase / rhythm / dim-all): a dimmed sheet plays only its lit notes. getDimmedNotes is []
-    // when nothing is dimmed, so normal playback is unaffected.
-    const mutedBase = (renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : [];
-    const dimmed = (renderer && renderer.getDimmedNotes) ? renderer.getDimmedNotes() : [];
-    const muted = dimmed.length ? [...mutedBase, ...dimmed] : mutedBase;
+    // Suppressed + dimmed, shared with every other play path. It deliberately does NOT fold in the dim
+    // while a rhythm owns the sheet — `sel.mute` below is that decision, and folding the grey in here
+    // silenced the very notes "all their notes" mode exists to play.
+    const muted = effectiveMutedIds();
     // A picked rhythm SOLOS that figure across the whole transport (Play, spacebar, the mobile FAB):
     // every other drawn note is silenced but keeps its slot, so the piece's timing is untouched and
     // what you hear lands exactly on the highlighted noteheads. Clear the pick to hear everything.
@@ -1493,7 +1491,7 @@
     }).sort((a, b) => a.beats - b.beats);
     if (!keep.length) { setTransportMsg('Check a tag to play it.', 'err'); return; }
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
-      { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
+      { tempo: currentTempo(), keepNotes: keep, mutedNotes: effectiveMutedIds(), breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     setLastPlay({ tag: 'M', label: 'the checked motifs', run: playTags });
     const p = ensurePlayer();
@@ -1501,9 +1499,15 @@
     p.setSchedule(schedule, { cursorStartStep: 0 });
     p.setLoop(document.getElementById('loopChk').checked);
     setTransportMsg('Loading instrument…');
+    const audible = soundingCount(schedule);
+    if (!audible) { setTransportMsg(nothingSounds('the checked motifs'), 'err'); return; }
     const withMatches = matched.length ? ' (tags + matches)' : '';
     p.play()
-      .then(() => { setTransportMsg(`Playing ${schedule.length} notes${withMatches}`, 'ok'); })
+      .then(() => {
+        const silent = schedule.length - audible;
+        setTransportMsg(`Playing ${audible} notes${withMatches}`
+          + (silent ? ` (${silent} ${silencedWord()})` : ''), 'ok');
+      })
       .catch(() => { setTransportMsg('Playback error.', 'err'); });
   }
   let ytMonitor = null;
@@ -2289,7 +2293,7 @@
     tagFilterSel.clear();
     activeTagName = '';
     if (renderer) { renderer.setTagMode(false); renderer.setFilterTags([]); }
-    setTagVis(false);   // sheet tag visibility starts off (decoupled from expand); auto-load turns it on
+    setTagVis(false);   // every piece opens undimmed — see the motif block below
     // Fold any tags this piece already uses into the global list (so they're selectable everywhere).
     // Only persist/mark-dirty when the merge actually added something (mergeRegistry only grows).
     const mergedReg = mergeRegistry(tagRegistry, renderer ? renderer.getPatterns() : []);
@@ -2298,17 +2302,15 @@
     syncToggles();
     onSuppressionChange();   // reset the chips/hint for the fresh piece
     renderTagUI();
-    // If this piece carries motifs, surface them automatically: turn on the sheet 👁 visibility, check
-    // every motif that has notes here, and run the pattern search so its occurrences highlight on load.
-    // The panel itself stays COLLAPSED (its overlay would cover the sheet); the user opens it to manage.
+    // A piece that carries motifs opens with them CHECKED but not shown: the sheet stays the plain,
+    // whole piece. Turning 👁 on here (and auto-running Find pattern) meant every such piece opened
+    // already dimmed — and since dimmed notes are silent, playback was quietly narrowed to the motifs
+    // before the user had asked for anything. Press 👁 on sheet / Find pattern to get that view.
     const pieceTags = renderer ? renderer.getPatterns().filter((a) => (a.notes || []).length).map((a) => a.name) : [];
     if (pieceTags.length) {
       pieceTags.forEach((n) => tagFilterSel.add(n));
       renderer.setFilterTags([...tagFilterSel]);
-      setTagVis(true);                            // reveal motifs on the sheet (dim the rest)
       renderTagUI();
-      searchPattern();                            // auto-run Find pattern (matches now populate lastPatternMatches)
-      if (fbPanel) fbPanel.setSource('matched');  // point the fretboard at the motifs' matches
     }
     // Phrases: the renderer loaded detail.phrases on load; reset the phrase controls for the fresh
     // piece (panel visibility follows its own toggle).
@@ -2989,8 +2991,31 @@
   // measure.) Muting keeps every slot, so the phrase keeps its shape and length and simply goes quiet
   // where it should. Same contract the main transport uses (see playMidi).
   const suppressedNoteIds = () => ((renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : []);
+  // Everything that must not sound, for EVERY play path: the user's Suppress-notes set, plus whatever
+  // the active highlight has greyed out. A dimmed sheet plays only what is lit — so with Motifs showing
+  // a Find-pattern result, playing a phrase or a rhythm group sounds just the notes lit as motifs.
+  //
+  // Skipped while a rhythm owns the sheet: there the grey IS the rhythm's own highlight, and "all their
+  // notes" mode deliberately plays those greyed notes. Each rhythm path adds its own solo mute on top,
+  // so the solo/all choice stays where it belongs instead of being pre-empted here.
+  function effectiveMutedIds() {
+    const base = suppressedNoteIds();
+    if (shownGroupName || rhythmSelId) return base;
+    const dimmed = (renderer && renderer.getDimmedNotes) ? renderer.getDimmedNotes() : [];
+    return dimmed.length ? [...base, ...dimmed] : base;
+  }
+  // Is anything other than the user's own suppression silencing notes right now? Decides whether a
+  // "not sounding" count should be blamed on Suppress notes or on the highlight that owns the sheet.
+  const dimIsSilencing = () => !!(renderer && renderer.anyDimActive && renderer.anyDimActive()
+    && !(shownGroupName || rhythmSelId));
   // How many events of a finished schedule will actually sound.
   const soundingCount = (schedule) => schedule.filter((e) => !e.muted).length;
+  // Why notes are silent — the highlight owning the sheet, or the user's own suppression. Saying
+  // "suppressed" when it was really the motif dim sends you hunting through the wrong panel.
+  const silencedWord = () => (dimIsSilencing() ? 'not highlighted' : 'suppressed');
+  const nothingSounds = (what) => (dimIsSilencing()
+    ? `None of ${what} is highlighted — clear the Motifs/Phrases view to hear it all.`
+    : `Every note of ${what} is suppressed — nothing would sound.`);
 
   function playPhrase(name) {
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
@@ -3001,10 +3026,10 @@
     const keep = (renderer && renderer.getPhraseNoteIds) ? renderer.getPhraseNoteIds(name) : [];
     if (!keep.length) { setTransportMsg('This phrase has no notes.', 'err'); return; }
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
-      { tempo: currentTempo(), keepNotes: keep, mutedNotes: suppressedNoteIds(), breathBeats: breathBeatsValue() });
+      { tempo: currentTempo(), keepNotes: keep, mutedNotes: effectiveMutedIds(), breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     const heard = soundingCount(schedule);
-    if (!heard) { setTransportMsg(`Every note of "${name}" is suppressed — nothing would sound.`, 'err'); return; }
+    if (!heard) { setTransportMsg(nothingSounds(`phrase "${name}"`), 'err'); return; }
     const silenced = schedule.length - heard;
     setLastPlay({ tag: 'P', label: `phrase "${name}"`, run: () => playPhrase(name) });
     const p = ensurePlayer();
@@ -3015,7 +3040,7 @@
     p.play()
       .then(() => {
         setTransportMsg(`Playing phrase "${name}" (${heard} note${heard === 1 ? '' : 's'}`
-          + (silenced ? `, ${silenced} suppressed` : '') + ')', 'ok');
+          + (silenced ? `, ${silenced} ${silencedWord()}` : '') + ')', 'ok');
       })
       .catch(() => { setTransportMsg('Playback error.', 'err'); });
   }
@@ -3139,7 +3164,7 @@
       setTransportMsg('Phrase playback needs a MusicXML piece.', 'err'); return;
     }
     const gap = autoPhraseGapBeats();
-    const muted = suppressedNoteIds();   // "Suppress notes" applies here too — a suppressed voice stays quiet
+    const muted = effectiveMutedIds();   // Suppress notes AND the active dim — see effectiveMutedIds
     const parts = p.occurrences.map((o) => {
       const keep = renderer.barRangeNoteIds(o.from, o.to);
       return keep.length
@@ -3153,7 +3178,7 @@
       return;
     }
     const heard = soundingCount(schedule);
-    if (!heard) { setTransportMsg(`Every note of phrase ${p.name} is suppressed — nothing would sound.`, 'err'); return; }
+    if (!heard) { setTransportMsg(nothingSounds(`phrase ${p.name}`), 'err'); return; }
     renderer.shadePhrase(p);   // hear it and see it: playing always shows which bars are sounding
     const varied = p.occurrences.filter((o) => o.varied).length;
     const silenced = schedule.length - heard;
@@ -3161,7 +3186,7 @@
       `Playing phrase ${p.name} — ${sounded} occurrence${sounded === 1 ? '' : 's'} in turn`
       + (varied ? `, ${varied} modified` : '')
       + `, ${gap} beat${gap === 1 ? '' : 's'} between`
-      + (silenced ? ` · ${heard} sounding, ${silenced} suppressed` : ''),
+      + (silenced ? ` · ${heard} sounding, ${silenced} ${silencedWord()}` : ''),
       { tag: 'P', label: `phrase ${p.name}`, run: playDetectedPhrase });
   }
   document.getElementById('autoPhrasePlayBtn').onclick = playDetectedPhrase;
@@ -3440,9 +3465,12 @@
   function rhythmGroupSchedule(g) {
     const keep = renderer.getRhythmGroupMeasureNoteIds(g.name, rhythmOpts());
     if (!keep.length) return [];
+    // Solo silences everything but the figure; on top of that come Suppress notes and — when a motif or
+    // phrase highlight owns the sheet — its dim, so a solo played under a Find-pattern result sounds only
+    // the notes lit as motifs.
     const mute = rhythmPlayMode() === 'solo' ? renderer.getRhythmGroupMutedNotes(g.name, rhythmOpts()) : [];
     return buildScheduleFromMusicXml(currentDetail.source,
-      { tempo: currentTempo(), keepNotes: keep, mutedNotes: mute, breathBeats: rgGapBeats() });
+      { tempo: currentTempo(), keepNotes: keep, mutedNotes: [...effectiveMutedIds(), ...mute], breathBeats: rgGapBeats() });
   }
   // Hand a finished schedule to the transport. `label` is what the transport line says once it sounds.
   function startGroupPlayback(schedule, label, source) {
@@ -3482,6 +3510,7 @@
       setTransportMsg(`Group "${name}" isn't on the sheet that's showing — press Scan, or show the whole piece.`, 'err'); return;
     }
     const heard = schedule.filter((e) => !e.muted).length;
+    if (!heard) { setTransportMsg(nothingSounds(`group "${name}"`), 'err'); return; }
     startGroupPlayback(schedule, `Playing group "${name}" — ${barCountOf(renderer.getRhythmGroupMeasureNoteIds(name, rhythmOpts()))} bars, ${heard} note${heard === 1 ? '' : 's'} sounding`,
       { tag: 'R', label: `group "${name}"`, run: () => playRhythmGroup(name) });
   }
