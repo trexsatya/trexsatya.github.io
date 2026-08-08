@@ -439,6 +439,11 @@
         .pl-entry .icon-btn{border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:13px}
         /* Mobile floating play/pause button */
         #fabPlay{display:none}
+        /* Per-occurrence chips for the picked detected phrase. Filled = counted, hollow = switched off. */
+        #autoPhraseOccs{display:inline-flex;flex-wrap:wrap;gap:4px;margin-left:6px;vertical-align:middle}
+        .occ-chip{border:1.5px solid #bbb;border-radius:999px;padding:1px 8px;font-size:11.5px;
+          font-weight:600;cursor:pointer;background:#fff;line-height:1.5;white-space:nowrap}
+        .occ-chip[aria-pressed="false"]{text-decoration:line-through}
         /* Which ▶ the floating button is bound to. Hidden for the main sheet (the default); a short
            tag when a panel's ▶ last had the transport, so it is clear that pressing it replays THAT
            and not the whole piece. */
@@ -585,8 +590,8 @@
     <button id="pauseBtn" class="btn" title="Pause / Resume"><span class="ic">⏸</span><span class="txt">⏸ Pause</span></button>
     <button class="btn toggle" data-for="loopChk" title="Loop the segment" aria-pressed="false"><span class="ic">🔁</span><span class="txt">🔁 Loop segment</span></button>
     <input type="checkbox" id="loopChk" hidden>   <!-- loop state; toggled by the button above -->
-    <button class="btn toggle" data-for="followChk" title="Follow the play cursor: scroll the score so the bars being played stay in view" aria-pressed="false"><span class="ic">👁</span><span class="txt">👁 Follow</span></button>
-    <input type="checkbox" id="followChk" hidden>   <!-- scroll-to-cursor on/off -->
+    <button class="btn toggle" data-for="followChk" title="Follow the play cursor: scroll the score so the bars being played stay in view" aria-pressed="true"><span class="ic">👁</span><span class="txt">👁 Follow</span></button>
+    <input type="checkbox" id="followChk" checked hidden>   <!-- scroll-to-cursor; on by default -->
     <button class="btn toggle" data-for="metroChk" title="Metronome: a steady click at the tempo now — accents the downbeat from the time signature. Independent of playback." aria-pressed="false"><span class="ic">🎵</span><span class="txt">🎵 Metronome</span></button>
     <input type="checkbox" id="metroChk" hidden>   <!-- standalone metronome on/off -->
     <button class="btn toggle" data-for="metroPlayChk" title="Click on play: metronome runs only while the piece/segment plays — starts on the first beat, stops at the end, and repeats with Loop." aria-pressed="false"><span class="ic">🎵</span><span class="txt">🎵 on play</span></button>
@@ -758,6 +763,9 @@
         <input type="number" id="autoPhraseGap" min="0" max="8" step="0.5" value="2" style="width:2.6em">
       </label>
       <span id="autoPhraseMsg" style="font-size:.8em;color:#555"></span>
+      <!-- One chip per occurrence of the picked phrase, all on. Switching one off takes it off the
+           sheet AND out of playback, so a single modification can be studied on its own. -->
+      <span id="autoPhraseOccs" style="display:none"></span>
     </div>
     <div id="phraseList" class="tag-list"></div>
     </div>
@@ -930,31 +938,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=4a02f46445';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=4a02f46445';
-  import { runQuery } from './music-query.js?v=4a02f46445';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=4a02f46445';
-  import { init as initFretboard } from './fretboard-panel.js?v=4a02f46445';
-  import { chordDisplayName } from './music-chords.js?v=4a02f46445';
-  import { keyExplanation } from './music-key.js?v=4a02f46445';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=4a02f46445';
-  import { createMusicStore } from './music-local-store.js?v=4a02f46445';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=4a02f46445';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=4a02f46445';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=4a02f46445';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=4a02f46445';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=b5017019eb';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=b5017019eb';
+  import { runQuery } from './music-query.js?v=b5017019eb';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=b5017019eb';
+  import { init as initFretboard } from './fretboard-panel.js?v=b5017019eb';
+  import { chordDisplayName } from './music-chords.js?v=b5017019eb';
+  import { keyExplanation } from './music-key.js?v=b5017019eb';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=b5017019eb';
+  import { createMusicStore } from './music-local-store.js?v=b5017019eb';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=b5017019eb';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=b5017019eb';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=b5017019eb';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=b5017019eb';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=4a02f46445';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=4a02f46445';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=4a02f46445';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=4a02f46445';
-  import { generateCounterLines } from './music-counterpoint.js?v=4a02f46445';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=4a02f46445';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=4a02f46445';
-  import { splitSingleVoice } from './music-voice-split.js?v=4a02f46445';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=4a02f46445';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=4a02f46445';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=4a02f46445';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=b5017019eb';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=b5017019eb';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=b5017019eb';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=b5017019eb';
+  import { generateCounterLines } from './music-counterpoint.js?v=b5017019eb';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=b5017019eb';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=b5017019eb';
+  import { splitSingleVoice } from './music-voice-split.js?v=b5017019eb';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=b5017019eb';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=b5017019eb';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=b5017019eb';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -3115,6 +3123,8 @@
     detectedPhrases = []; autoPhraseSummary = '';
     const sel = document.getElementById('autoPhraseSel');
     if (sel) sel.innerHTML = '<option value="">— detected phrase —</option>';
+    autoPhraseOn = new Set();
+    renderAutoPhraseOccs();
     autoPhraseMsg('');
     if (renderer && renderer.clearPhraseShade) renderer.clearPhraseShade();
   }
@@ -3124,6 +3134,8 @@
   function clearAutoPhraseShade() {
     const sel = document.getElementById('autoPhraseSel');
     if (sel) sel.value = '';
+    autoPhraseOn = new Set();
+    renderAutoPhraseOccs();
     if (renderer && renderer.clearPhraseShade) renderer.clearPhraseShade();
     autoPhraseMsg(autoPhraseSummary);
   }
@@ -3157,6 +3169,53 @@
     return raw === '' ? null : detectedPhrases[Number(raw)] || null;
   };
 
+  // Which occurrences of the picked phrase are switched on — indices into its occurrence list. Every
+  // occurrence starts on; the set is rebuilt whenever a phrase is picked or the scan is re-run.
+  let autoPhraseOn = new Set();
+  // The picked phrase with each occurrence flagged by its chip. Shading and playback both read
+  // `enabled`, so what you see and what you hear can never disagree with the chips.
+  function enabledPhrase() {
+    const p = selectedDetectedPhrase();
+    if (!p) return null;
+    return { ...p, occurrences: (p.occurrences || []).map((o, i) => ({ ...o, enabled: autoPhraseOn.has(i) })) };
+  }
+  const applyAutoPhraseShade = () => { if (renderer && renderer.shadePhrase) renderer.shadePhrase(enabledPhrase()); };
+  // Chips for the picked phrase. Hidden for a phrase that occurs once — there is nothing to compare it
+  // against, and a lone chip that can only silence the thing you just picked is a trap, not a control.
+  function renderAutoPhraseOccs() {
+    const host = document.getElementById('autoPhraseOccs');
+    if (!host) return;
+    host.innerHTML = '';
+    const p = selectedDetectedPhrase();
+    const occ = (p && p.occurrences) || [];
+    if (occ.length < 2) { host.style.display = 'none'; return; }
+    host.style.display = '';
+    occ.forEach((o, i) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'occ-chip';
+      chip.textContent = `${p.name}${i + 1}${o.varied ? '′' : ''}`;
+      chip.title = `${o.varied ? 'Modified return' : 'First statement'} · m${o.from}–${o.to}`
+        + ((o.changed || []).length ? ` · differs in ${o.changed.map((m) => `m${m}`).join(', ')}` : '')
+        + ' — click to drop it from the shading and the playback';
+      const paint = () => {
+        const on = autoPhraseOn.has(i);
+        chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+        chip.style.background = on ? p.color : '#fff';
+        chip.style.color = on ? '#fff' : '#999';
+        chip.style.borderColor = on ? p.color : '#ccc';
+      };
+      chip.onclick = () => {
+        if (autoPhraseOn.has(i)) autoPhraseOn.delete(i); else autoPhraseOn.add(i);
+        paint();
+        applyAutoPhraseShade();
+        autoPhraseMsg(pickedPhraseMsg());
+      };
+      paint();
+      host.appendChild(chip);
+    });
+  }
+
   // Play the picked phrase: each occurrence in turn, `gap` beats of silence between them.
   //
   // One schedule per occurrence rather than one for all of them, because keepNotes COMPRESSES the gaps
@@ -3172,7 +3231,12 @@
     }
     const gap = autoPhraseGapBeats();
     const muted = effectiveMutedIds();   // Suppress notes AND the active dim — see effectiveMutedIds
-    const parts = p.occurrences.map((o) => {
+    // Only the occurrences whose chip is on, so what plays is exactly what is shaded. Switching every
+    // one off is a real choice, not an error — say so rather than starting a run of silence.
+    const all = p.occurrences || [];
+    const chosen = all.filter((o, i) => autoPhraseOn.has(i));
+    if (!chosen.length) { autoPhraseMsg(`Switch on an occurrence of ${p.name} to play it.`); return; }
+    const parts = chosen.map((o) => {
       const keep = renderer.barRangeNoteIds(o.from, o.to);
       return keep.length
         ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep, mutedNotes: muted })
@@ -3186,11 +3250,13 @@
     }
     const heard = soundingCount(schedule);
     if (!heard) { setTransportMsg(nothingSounds(`phrase ${p.name}`), 'err'); return; }
-    renderer.shadePhrase(p);   // hear it and see it: playing always shows which bars are sounding
-    const varied = p.occurrences.filter((o) => o.varied).length;
+    applyAutoPhraseShade();   // hear it and see it: playing always shows which bars are sounding
+    const varied = chosen.filter((o) => o.varied).length;
     const silenced = schedule.length - heard;
     startGroupPlayback(schedule,
-      `Playing phrase ${p.name} — ${sounded} occurrence${sounded === 1 ? '' : 's'} in turn`
+      `Playing phrase ${p.name} — ${sounded}`
+      + (chosen.length < all.length ? ` of ${all.length}` : '')
+      + ` occurrence${sounded === 1 ? '' : 's'} in turn`
       + (varied ? `, ${varied} modified` : '')
       + `, ${gap} beat${gap === 1 ? '' : 's'} between`
       + (silenced ? ` · ${heard} sounding, ${silenced} ${silencedWord()}` : ''),
@@ -3200,20 +3266,32 @@
   document.getElementById('autoPhraseBtn').onclick = runAutoPhraseDetect;
   // Changing the phrase length invalidates the scan rather than silently keeping the old one.
   document.getElementById('autoPhraseBars').onchange = () => { if (detectedPhrases.length) runAutoPhraseDetect(); };
+  // What the panel says about the picked phrase, counting only the occurrences that are switched on —
+  // so the line tracks the chips instead of describing a phrase that is no longer all on screen.
+  function pickedPhraseMsg() {
+    const p = selectedDetectedPhrase();
+    if (!p) return autoPhraseSummary;
+    const occ = p.occurrences || [];
+    const on = occ.filter((o, i) => autoPhraseOn.has(i));
+    const varied = on.filter((o) => o.varied).length;
+    // Name the changed bars outright when there are few enough to read — "differs in m30, m32" saves
+    // hunting for the dashed outlines. Past that, just the count; a list of twenty bars is not a fact.
+    const changed = on.flatMap((o) => o.changed || []);
+    const where = changed.length && changed.length <= 6
+      ? ` · differs in ${changed.map((m) => `m${m}`).join(', ')}`
+      : (changed.length ? ` · ${changed.length} bars differ (dashed)` : '');
+    const count = on.length === occ.length ? `${p.count}×` : `${on.length} of ${occ.length}`;
+    if (!on.length) return `${p.name}: none switched on`;
+    return `${p.name}: ${count}` + (varied ? ` · ${varied} modified (lighter band)` : ' · literal') + where;
+  }
   document.getElementById('autoPhraseSel').onchange = () => {
     // Read through selectedDetectedPhrase: the placeholder's value is '' and Number('') is 0, so a bare
     // index lookup would treat "— detected phrase —" as the first family and shade it instead of clearing.
     const p = selectedDetectedPhrase();
-    if (renderer && renderer.shadePhrase) renderer.shadePhrase(p || null);
-    if (!p) { autoPhraseMsg(autoPhraseSummary); return; }
-    const varied = (p.occurrences || []).filter((o) => o.varied).length;
-    // Name the changed bars outright when there are few enough to read — "differs in m30, m32" saves
-    // hunting for the dashed outlines. Past that, just the count; a list of twenty bars is not a fact.
-    const changed = (p.occurrences || []).flatMap((o) => o.changed || []);
-    const where = changed.length && changed.length <= 6
-      ? ` · differs in ${changed.map((m) => `m${m}`).join(', ')}`
-      : (changed.length ? ` · ${changed.length} bars differ (dashed)` : '');
-    autoPhraseMsg(`${p.name}: ${p.count}×` + (varied ? ` · ${varied} modified (lighter band)` : ' · literal') + where);
+    autoPhraseOn = new Set(((p && p.occurrences) || []).map((o, i) => i));   // a fresh pick starts all on
+    renderAutoPhraseOccs();
+    applyAutoPhraseShade();
+    autoPhraseMsg(pickedPhraseMsg());
   };
   // ---- Rhythm panel ------------------------------------------------------------------------------
   // Nothing to tag or paint here: the panel READS the rhythms off the sheet that is showing (whole
