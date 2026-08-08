@@ -930,31 +930,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=1b189f1ced';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=1b189f1ced';
-  import { runQuery } from './music-query.js?v=1b189f1ced';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=1b189f1ced';
-  import { init as initFretboard } from './fretboard-panel.js?v=1b189f1ced';
-  import { chordDisplayName } from './music-chords.js?v=1b189f1ced';
-  import { keyExplanation } from './music-key.js?v=1b189f1ced';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=1b189f1ced';
-  import { createMusicStore } from './music-local-store.js?v=1b189f1ced';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=1b189f1ced';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=1b189f1ced';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=1b189f1ced';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=1b189f1ced';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=4a02f46445';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=4a02f46445';
+  import { runQuery } from './music-query.js?v=4a02f46445';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=4a02f46445';
+  import { init as initFretboard } from './fretboard-panel.js?v=4a02f46445';
+  import { chordDisplayName } from './music-chords.js?v=4a02f46445';
+  import { keyExplanation } from './music-key.js?v=4a02f46445';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=4a02f46445';
+  import { createMusicStore } from './music-local-store.js?v=4a02f46445';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=4a02f46445';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=4a02f46445';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=4a02f46445';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=4a02f46445';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=1b189f1ced';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=1b189f1ced';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=1b189f1ced';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=1b189f1ced';
-  import { generateCounterLines } from './music-counterpoint.js?v=1b189f1ced';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=1b189f1ced';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=1b189f1ced';
-  import { splitSingleVoice } from './music-voice-split.js?v=1b189f1ced';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=1b189f1ced';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=1b189f1ced';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=1b189f1ced';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=4a02f46445';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=4a02f46445';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=4a02f46445';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=4a02f46445';
+  import { generateCounterLines } from './music-counterpoint.js?v=4a02f46445';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=4a02f46445';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=4a02f46445';
+  import { splitSingleVoice } from './music-voice-split.js?v=4a02f46445';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=4a02f46445';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=4a02f46445';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=4a02f46445';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1480,8 +1480,11 @@
       setTransportMsg('Tag playback needs a MusicXML piece.', 'err'); return;
     }
     const tagged = (renderer && renderer.getFilterNotes) ? renderer.getFilterNotes() : [];
-    // Include the notes matched by the most recent Find-pattern search (if any), so the recurring
-    // pattern is sounded alongside the tagged notes. Union, de-duped by (midi, beats), onset-sorted.
+    // Include the notes matched by the Find-pattern search, so the recurring pattern is sounded
+    // alongside the tagged notes. The search is no longer run when the piece opens (that left every
+    // motif-carrying piece dimmed), so run it here when nothing is cached — otherwise ▶ would play
+    // only the handful of notes that were tagged by hand instead of the motif through the piece.
+    if (renderer && renderer.getPatternMatchNotes && !renderer.getPatternMatchNotes().length) searchPattern();
     const matched = (renderer && renderer.getPatternMatchNotes) ? renderer.getPatternMatchNotes() : [];
     const seen = new Set();
     const keep = [...tagged, ...matched].filter((n) => {
@@ -1490,17 +1493,21 @@
       seen.add(k); return true;
     }).sort((a, b) => a.beats - b.beats);
     if (!keep.length) { setTransportMsg('Check a tag to play it.', 'err'); return; }
+    // Suppress notes only — NOT the dim. Here the kept set IS what the highlight lit, so filtering it
+    // by the dim is self-contradictory; worse, the player matches muted notes on (midi, beats) alone,
+    // so a dimmed note in the other hand silenced its lit unison partner. Phrases and rhythms DO apply
+    // the dim, because there the kept set is a REGION the highlight narrows.
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
-      { tempo: currentTempo(), keepNotes: keep, mutedNotes: effectiveMutedIds(), breathBeats: breathBeatsValue() });
+      { tempo: currentTempo(), keepNotes: keep, mutedNotes: suppressedNoteIds(), breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     setLastPlay({ tag: 'M', label: 'the checked motifs', run: playTags });
+    const audible = soundingCount(schedule);
+    if (!audible) { setTransportMsg(nothingSounds('the checked motifs'), 'err'); return; }
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
     p.setLoop(document.getElementById('loopChk').checked);
     setTransportMsg('Loading instrument…');
-    const audible = soundingCount(schedule);
-    if (!audible) { setTransportMsg(nothingSounds('the checked motifs'), 'err'); return; }
     const withMatches = matched.length ? ' (tags + matches)' : '';
     p.play()
       .then(() => {
