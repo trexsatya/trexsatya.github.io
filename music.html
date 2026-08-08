@@ -439,6 +439,12 @@
         .pl-entry .icon-btn{border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:13px}
         /* Mobile floating play/pause button */
         #fabPlay{display:none}
+        /* Which ▶ the floating button is bound to. Hidden for the main sheet (the default); a short
+           tag when a panel's ▶ last had the transport, so it is clear that pressing it replays THAT
+           and not the whole piece. */
+        #fabTag{position:absolute;top:-5px;right:-5px;background:#fff;color:#1565c0;
+          border:1px solid #1565c0;border-radius:999px;padding:0 5px;
+          font-size:10px;font-weight:700;line-height:15px;letter-spacing:.2px}
         /* Guessed-key badge in the piece list */
         .key-badge{display:inline-block;background:#fff3cd;color:#7a5b00;border:1px solid #ffe08a;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:600;white-space:nowrap;vertical-align:baseline}
         /* Split-collection confirm dialog */
@@ -579,6 +585,8 @@
     <button id="pauseBtn" class="btn" title="Pause / Resume"><span class="ic">⏸</span><span class="txt">⏸ Pause</span></button>
     <button class="btn toggle" data-for="loopChk" title="Loop the segment" aria-pressed="false"><span class="ic">🔁</span><span class="txt">🔁 Loop segment</span></button>
     <input type="checkbox" id="loopChk" hidden>   <!-- loop state; toggled by the button above -->
+    <button class="btn toggle" data-for="followChk" title="Follow the play cursor: scroll the score so the bars being played stay in view" aria-pressed="false"><span class="ic">👁</span><span class="txt">👁 Follow</span></button>
+    <input type="checkbox" id="followChk" hidden>   <!-- scroll-to-cursor on/off -->
     <button class="btn toggle" data-for="metroChk" title="Metronome: a steady click at the tempo now — accents the downbeat from the time signature. Independent of playback." aria-pressed="false"><span class="ic">🎵</span><span class="txt">🎵 Metronome</span></button>
     <input type="checkbox" id="metroChk" hidden>   <!-- standalone metronome on/off -->
     <button class="btn toggle" data-for="metroPlayChk" title="Click on play: metronome runs only while the piece/segment plays — starts on the first beat, stops at the end, and repeats with Loop." aria-pressed="false"><span class="ic">🎵</span><span class="txt">🎵 on play</span></button>
@@ -919,34 +927,34 @@
   <div id="ytPlayer" style="display:none"></div>
 </div>
 </div>
-<button id="fabPlay" title="Play / pause" aria-label="Play or pause">▶</button>
+<button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=226135ed09';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=226135ed09';
-  import { runQuery } from './music-query.js?v=226135ed09';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=226135ed09';
-  import { init as initFretboard } from './fretboard-panel.js?v=226135ed09';
-  import { chordDisplayName } from './music-chords.js?v=226135ed09';
-  import { keyExplanation } from './music-key.js?v=226135ed09';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=226135ed09';
-  import { createMusicStore } from './music-local-store.js?v=226135ed09';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=226135ed09';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=226135ed09';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=226135ed09';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=226135ed09';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=11cf8e27d6';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=11cf8e27d6';
+  import { runQuery } from './music-query.js?v=11cf8e27d6';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=11cf8e27d6';
+  import { init as initFretboard } from './fretboard-panel.js?v=11cf8e27d6';
+  import { chordDisplayName } from './music-chords.js?v=11cf8e27d6';
+  import { keyExplanation } from './music-key.js?v=11cf8e27d6';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=11cf8e27d6';
+  import { createMusicStore } from './music-local-store.js?v=11cf8e27d6';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=11cf8e27d6';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=11cf8e27d6';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=11cf8e27d6';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=11cf8e27d6';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=226135ed09';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=226135ed09';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=226135ed09';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=226135ed09';
-  import { generateCounterLines } from './music-counterpoint.js?v=226135ed09';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=226135ed09';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=226135ed09';
-  import { splitSingleVoice } from './music-voice-split.js?v=226135ed09';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=226135ed09';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=226135ed09';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=226135ed09';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=11cf8e27d6';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=11cf8e27d6';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=11cf8e27d6';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=11cf8e27d6';
+  import { generateCounterLines } from './music-counterpoint.js?v=11cf8e27d6';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=11cf8e27d6';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=11cf8e27d6';
+  import { splitSingleVoice } from './music-voice-split.js?v=11cf8e27d6';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=11cf8e27d6';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=11cf8e27d6';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=11cf8e27d6';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1064,7 +1072,7 @@
       .filter(e => !keyFilter || e.guessedKey === keyFilter)
       .filter(matchesName);
     shown.forEach(e => rows.push(
-      `<label style="display:block"><input type="checkbox" class="sel" data-id="${e.id}"> ${esc(e.title || e.id)} <small>(${e.noteCount} notes, ${e.channels.join('/')})</small> `
+      `<label style="display:block"><input type="checkbox" class="sel" data-id="${e.id}"> ${esc(e.title || e.id)} `
       + `${e.guessedKey ? `<span class="key-badge" title="${esc(keyBadgeTitle(e))}">${esc(e.guessedKey)}${e.keyAmbiguous || (e.keyConfidence && e.keyConfidence !== 'high') ? ' ?' : ''}</span> ` : ''}`
       + `<button class="previewBtn" data-id="${e.id}">Preview</button> `
       + `<input class="pieceTags" data-id="${e.id}" value="${esc((e.tags || []).join(', '))}" placeholder="tags…" style="width:10em;font-size:.85em"> `
@@ -1354,6 +1362,12 @@
   }
   function ensurePlayer() {
     if (!player) player = createMusicPlayer({ getCursor: () => (renderer && renderer.osmd ? renderer.osmd.cursor : null),
+      // Follow the cursor while it plays, when the toggle is on. Read live so flipping the toggle
+      // mid-piece takes effect at once instead of at the next Play.
+      onCursorMove: () => {
+        if (!document.getElementById('followChk').checked) return;
+        if (renderer && renderer.scrollCursorIntoView) renderer.scrollCursorIntoView();
+      },
       // Natural completion (fires only when Loop is off): the piece ended, so stop the "on play" click
       // and reset the transport label. With Loop on this never fires, so the click keeps running.
       onEnd: () => { midiPlaying = false; paused = false; updatePauseLabel(); updateMetro(false); } });
@@ -1481,6 +1495,7 @@
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
       { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
+    setLastPlay({ tag: 'M', label: 'the checked motifs', run: playTags });
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
@@ -1745,6 +1760,12 @@
     if (e.target.checked) renderVoiceChips();
   };
   document.getElementById('hearAllChk').onchange = (e) => { if (renderer) renderer.setHearAll(e.target.checked); };
+  // Switching Follow on jumps to the cursor straight away rather than waiting for the next note —
+  // the usual reason to turn it on is that you have lost track of where playback is.
+  document.getElementById('followChk').onchange = (e) => {
+    if (!e.target.checked || !renderer || !renderer.scrollCursorIntoView) return;
+    if (!renderer.scrollCursorIntoView()) setTransportMsg('Following the play cursor.');
+  };
   // Two-button transport: Play always (re)starts from the segment start; Pause toggles to Resume.
   let paused = false;
   // Set when the play cursor was moved by a click; makes Resume restart from the cursor (not the
@@ -1757,9 +1778,26 @@
     const isYt = document.getElementById('srcSel').value === 'youtube';
     return isYt ? ytPlaying : !!(window.Tone && window.Tone.Transport && window.Tone.Transport.state === 'started');
   }
-  function updateFab() {
+  // Which ▶ last had the transport. `null` means the main sheet — the state a freshly opened piece is
+  // in, and what every path falls back to. A panel's ▶ (Motifs / Rhythms / Phrases) records itself
+  // here so the floating button, the spacebar and Resume all act on THAT: without this, pressing ▶
+  // after a phrase finished silently restarted the whole piece instead of the phrase being studied.
+  // `run` re-invokes that exact play; `tag` is the badge shown on the floating button.
+  let lastPlay = null;
+  function setLastPlay(source) { lastPlay = source; updateFabTag(); }
+  function updateFabTag() {
+    const tag = document.getElementById('fabTag');
     const fab = document.getElementById('fabPlay');
-    if (fab) fab.textContent = fabPlaying() ? '⏸' : '▶';
+    if (!tag || !fab) return;
+    tag.textContent = lastPlay ? lastPlay.tag : '';
+    tag.hidden = !lastPlay;
+    const what = lastPlay ? lastPlay.label : 'the sheet';
+    fab.title = `Play / pause ${what}`;
+    fab.setAttribute('aria-label', `Play or pause ${what}`);
+  }
+  function updateFab() {
+    const icon = document.getElementById('fabIcon');
+    if (icon) icon.textContent = fabPlaying() ? '⏸' : '▶';
   }
   // Playback can stop WITHOUT any button being pressed: the schedule runs out, a YouTube video ends or
   // is paused in its own iframe, an instrument fails to load, a variation preview grabs the shared
@@ -1775,10 +1813,10 @@
   function startFabSync() {
     if (fabSync) return;
     fabSync = setInterval(() => {
-      const fab = document.getElementById('fabPlay');
-      if (!fab || startPending) return;
+      const icon = document.getElementById('fabIcon');
+      if (!icon || startPending) return;
       const want = fabPlaying() ? '⏸' : '▶';
-      if (fab.textContent !== want) fab.textContent = want;
+      if (icon.textContent !== want) icon.textContent = want;
     }, 300);
   }
   function stopFabSync() { if (fabSync) { clearInterval(fabSync); fabSync = null; } }
@@ -1837,10 +1875,11 @@
   }
   document.getElementById('playBtn').onclick = () => {
     paused = false; seekPending = false; updatePauseLabel();   // a fresh Play consumes any pending seek
+    setLastPlay(null);   // the main transport takes the floating button back from whatever panel had it
     const isYt = document.getElementById('srcSel').value === 'youtube';
     ytPlaying = isYt;   // started fresh; only meaningful for the YouTube source
     (isYt ? playYouTube() : playMidi());
-    document.getElementById('fabPlay').textContent = '⏸';   // we just started — reflect it immediately
+    document.getElementById('fabIcon').textContent = '⏸';   // we just started — reflect it immediately
   };
   // Mobile floating play/pause button drives the same transport toggle as the spacebar.
   document.getElementById('fabPlay').addEventListener('click', transportToggle);
@@ -1853,7 +1892,10 @@
     } else {
       // Resume: if the cursor was moved (clicked) while paused, start fresh from it; else continue.
       if (isYt) { if (yt) yt.play(); ytPlaying = true; }
-      else if (seekPending) { seekPending = false; playMidi(); }   // playMidi re-arms midiPlaying + the click
+      // The click-to-play-from cursor belongs to the main sheet. While a panel's ▶ holds the transport
+      // its schedule has nothing to seek within, so honour the pending seek only when the sheet is what
+      // is playing — otherwise Resume would jump out of the phrase and restart the whole piece.
+      else if (seekPending && !lastPlay) { seekPending = false; playMidi(); }   // re-arms midiPlaying + the click
       else if (player) { player.resume(); midiPlaying = true; updateMetro(true); }
       paused = false;
     }
@@ -1867,7 +1909,16 @@
     const playing = isYt
       ? ytPlaying
       : !!(window.Tone && window.Tone.Transport && window.Tone.Transport.state === 'started');
-    document.getElementById(playing ? 'pauseBtn' : 'playBtn').click();
+    if (playing) { document.getElementById('pauseBtn').click(); return; }
+    startLastPlay();
+  }
+  // Start whatever ▶ was last active. Nothing recorded (a fresh piece, or the main ▶ was the last one
+  // pressed) means the main sheet, so go through #playBtn and keep its YouTube / seek / label handling
+  // in one place. A panel's ▶ re-runs itself, minus that handling — it has no cursor to seek.
+  function startLastPlay() {
+    if (!lastPlay) { document.getElementById('playBtn').click(); return; }
+    paused = false; updatePauseLabel();
+    lastPlay.run();
   }
   document.addEventListener('keydown', (e) => {
     if (e.code !== 'Space' && e.key !== ' ') return;
@@ -1883,6 +1934,10 @@
   };
 
   let currentPreviewId = null;
+  // Vocab item the URL should name. Kept apart from `currentVocabEntry` because a saved *variation*
+  // opens as a vocab item but deliberately never becomes the "current" one (Add-to-vocab must not
+  // overwrite it) — yet a refresh should still bring it back.
+  let openedVocabId = null;
   document.getElementById('ytSaveBtn').onclick = async () => {
     const url = document.getElementById('ytUrl').value.trim();
     if (!currentPreviewId || !url) { setMediaMsg('Preview a piece and enter a URL.', 'info'); return; }
@@ -2168,6 +2223,7 @@
     updateFab(); positionFab();                     // the FAB is now shown (mobile) — place & label it
     startFabSync();                                 // keep its icon honest while the piece is open
     currentDetail = null; currentPreviewId = null; currentVocabEntry = null;   // cleared until a piece fully renders
+    openedVocabId = null;   // a plain Preview; the vocab paths below re-set this after they call us
     midiPlaying = false;
     document.getElementById('metroChk').checked = false;
     document.getElementById('metroPlayChk').checked = false;
@@ -2213,6 +2269,7 @@
     document.getElementById('segTo').value = '';        // any stale segment range left from a vocab item
     document.getElementById('tempoInput').value = (detail.meta && detail.meta.tempo) || 90;
     if (player) player.stop();
+    setLastPlay(null);   // a fresh piece has no "last played" yet — the floating button means the sheet
     renderer.clearMeasureHighlight();   // a plain piece preview carries no captured-range shading
     renderer.applyResponsiveZoom(document.getElementById('osmdPreview').clientWidth || window.innerWidth);
     renderer.showFull();
@@ -2275,6 +2332,24 @@
     varRenderer = null;   // OSMD binds to the (now-cleared) container; recreate lazily on next select
     refreshVariationsGuardrail();
     document.getElementById('previewMsg').textContent = `${res.totalMeasures} measures`;
+    syncOpenUrl();
+  }
+  // Keep the address bar on whatever is open, so a refresh (or a shared link) lands back on the same
+  // piece — and on the same vocab item when one was opened. `?system=` is left alone: it comes from the
+  // URL too. replaceState, not pushState — this is where you already are, not a new history entry.
+  function syncOpenUrl() {
+    let url;
+    try { url = new URL(window.location.href); } catch (_) { return; }
+    if (currentPreviewId) {
+      url.searchParams.set('piece', currentPreviewId);
+      if (openedVocabId) url.searchParams.set('vocab', openedVocabId);
+      else url.searchParams.delete('vocab');   // a plain preview is not a vocab item, even after one was
+    } else {
+      url.searchParams.delete('piece');
+      url.searchParams.delete('vocab');
+    }
+    // A file:// page rejects replaceState in some browsers; the deep link is a nicety, not worth a throw.
+    try { history.replaceState(null, '', url.pathname + url.search + url.hash); } catch (_) {}
   }
   document.getElementById('pieceList').addEventListener('click', (ev) => {
     const prev = ev.target.closest('.previewBtn');
@@ -2906,6 +2981,17 @@
     renderPhraseUI();
   }
   // Play a phrase's resolved notes, skipping the gaps between them (same engine as Play tags).
+  // The notes "Suppress notes" is currently silencing, to hand a skip-playback as `mutedNotes`.
+  //
+  // Muted, not removed from keepNotes. keepNotes compresses away any measure it is given nothing in, so
+  // suppressing a whole bar and then dropping it would delete that bar from the phrase — the phrase would
+  // start on what is really its second bar. (A hole INSIDE a bar is safe either way; compression is per
+  // measure.) Muting keeps every slot, so the phrase keeps its shape and length and simply goes quiet
+  // where it should. Same contract the main transport uses (see playMidi).
+  const suppressedNoteIds = () => ((renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : []);
+  // How many events of a finished schedule will actually sound.
+  const soundingCount = (schedule) => schedule.filter((e) => !e.muted).length;
+
   function playPhrase(name) {
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
@@ -2915,15 +3001,22 @@
     const keep = (renderer && renderer.getPhraseNoteIds) ? renderer.getPhraseNoteIds(name) : [];
     if (!keep.length) { setTransportMsg('This phrase has no notes.', 'err'); return; }
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
-      { tempo: currentTempo(), keepNotes: keep, breathBeats: breathBeatsValue() });
+      { tempo: currentTempo(), keepNotes: keep, mutedNotes: suppressedNoteIds(), breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
+    const heard = soundingCount(schedule);
+    if (!heard) { setTransportMsg(`Every note of "${name}" is suppressed — nothing would sound.`, 'err'); return; }
+    const silenced = schedule.length - heard;
+    setLastPlay({ tag: 'P', label: `phrase "${name}"`, run: () => playPhrase(name) });
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
     p.setLoop(document.getElementById('loopChk').checked);
     setTransportMsg('Loading instrument…');
     p.play()
-      .then(() => { setTransportMsg(`Playing phrase "${name}" (${schedule.length} notes)`, 'ok'); })
+      .then(() => {
+        setTransportMsg(`Playing phrase "${name}" (${heard} note${heard === 1 ? '' : 's'}`
+          + (silenced ? `, ${silenced} suppressed` : '') + ')', 'ok');
+      })
       .catch(() => { setTransportMsg('Playback error.', 'err'); });
   }
   // Find + highlight other occurrences of a phrase (reuses the tag panel's match settings).
@@ -3046,10 +3139,11 @@
       setTransportMsg('Phrase playback needs a MusicXML piece.', 'err'); return;
     }
     const gap = autoPhraseGapBeats();
+    const muted = suppressedNoteIds();   // "Suppress notes" applies here too — a suppressed voice stays quiet
     const parts = p.occurrences.map((o) => {
       const keep = renderer.barRangeNoteIds(o.from, o.to);
       return keep.length
-        ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep })
+        ? buildScheduleFromMusicXml(currentDetail.source, { tempo: currentTempo(), keepNotes: keep, mutedNotes: muted })
         : [];
     });
     const sounded = parts.filter((s) => s.length).length;
@@ -3058,11 +3152,17 @@
       setTransportMsg(`Phrase ${p.name} isn't on the sheet that's showing — press Find, or show the whole piece.`, 'err');
       return;
     }
+    const heard = soundingCount(schedule);
+    if (!heard) { setTransportMsg(`Every note of phrase ${p.name} is suppressed — nothing would sound.`, 'err'); return; }
     renderer.shadePhrase(p);   // hear it and see it: playing always shows which bars are sounding
     const varied = p.occurrences.filter((o) => o.varied).length;
+    const silenced = schedule.length - heard;
     startGroupPlayback(schedule,
       `Playing phrase ${p.name} — ${sounded} occurrence${sounded === 1 ? '' : 's'} in turn`
-      + (varied ? `, ${varied} modified` : '') + `, ${gap} beat${gap === 1 ? '' : 's'} between`);
+      + (varied ? `, ${varied} modified` : '')
+      + `, ${gap} beat${gap === 1 ? '' : 's'} between`
+      + (silenced ? ` · ${heard} sounding, ${silenced} suppressed` : ''),
+      { tag: 'P', label: `phrase ${p.name}`, run: playDetectedPhrase });
   }
   document.getElementById('autoPhrasePlayBtn').onclick = playDetectedPhrase;
   document.getElementById('autoPhraseBtn').onclick = runAutoPhraseDetect;
@@ -3345,7 +3445,8 @@
       { tempo: currentTempo(), keepNotes: keep, mutedNotes: mute, breathBeats: rgGapBeats() });
   }
   // Hand a finished schedule to the transport. `label` is what the transport line says once it sounds.
-  function startGroupPlayback(schedule, label) {
+  function startGroupPlayback(schedule, label, source) {
+    if (source) setLastPlay(source);   // the floating button now replays THIS, not the whole sheet
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
@@ -3381,7 +3482,8 @@
       setTransportMsg(`Group "${name}" isn't on the sheet that's showing — press Scan, or show the whole piece.`, 'err'); return;
     }
     const heard = schedule.filter((e) => !e.muted).length;
-    startGroupPlayback(schedule, `Playing group "${name}" — ${barCountOf(renderer.getRhythmGroupMeasureNoteIds(name, rhythmOpts()))} bars, ${heard} note${heard === 1 ? '' : 's'} sounding`);
+    startGroupPlayback(schedule, `Playing group "${name}" — ${barCountOf(renderer.getRhythmGroupMeasureNoteIds(name, rhythmOpts()))} bars, ${heard} note${heard === 1 ? '' : 's'} sounding`,
+      { tag: 'R', label: `group "${name}"`, run: () => playRhythmGroup(name) });
   }
   // Play every group in turn, `gap` beats of silence between them — the point being to hear one
   // character against the next without hunting for the bars each time.
@@ -3395,7 +3497,8 @@
     const played = groups.filter((g, i) => parts[i].length);
     const schedule = concatSchedules(parts, gapSeconds);
     if (!schedule.length) { setTransportMsg('No notes in any group.', 'err'); return; }
-    startGroupPlayback(schedule, `Playing ${played.length} groups in turn: ${played.map((g) => `"${g.name}"`).join(' → ')}`);
+    startGroupPlayback(schedule, `Playing ${played.length} groups in turn: ${played.map((g) => `"${g.name}"`).join(' → ')}`,
+      { tag: 'R', label: 'every rhythm group', run: playAllRhythmGroups });
   }
   document.getElementById('rgPlayAllBtn').onclick = playAllRhythmGroups;
   document.getElementById('rhythmPlayMode').onchange = () => {
@@ -3922,6 +4025,7 @@
   };
   document.getElementById('previewCloseBtn').onclick = () => {
     if (player) player.stop();
+    setLastPlay(null);
     midiPlaying = false;
     document.getElementById('metroChk').checked = false;
     document.getElementById('metroPlayChk').checked = false;
@@ -3936,6 +4040,8 @@
     syncToggles();
     document.body.classList.remove('preview-open');
     stopFabSync();   // the FAB is hidden again; stop reconciling its icon
+    currentPreviewId = null; currentVocabEntry = null; openedVocabId = null;
+    syncOpenUrl();   // nothing is open — a refresh should land on the library, not reopen the piece
   };
   // Toggle native fullscreen on the preview pane (webkit fallback for Safari).
   document.getElementById('previewFullscreenBtn').onclick = () => {
@@ -4103,6 +4209,7 @@
     const panel = document.getElementById('variationsSection');
     if (panel) { panel.open = true; panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     setMediaMsg(`Opened saved variation “${entry.variationLabel || entry.note || entry.id}”.`, 'ok');
+    openedVocabId = entry.id; syncOpenUrl();
   }
   async function openVocabEntry(entry) {
     if (entry.variationXml) { await openVariationVocabEntry(entry); return; }   // saved variation → replay its own XML
@@ -4134,6 +4241,7 @@
     }
     syncToggles();   // reflect the (programmatic) Show-chords state on its toggle button
     updateAddVocabLabel();
+    openedVocabId = entry.id; syncOpenUrl();   // openPreview wrote just ?piece=; now name the item too
   }
   // Delete a vocab item after confirmation: drop it locally, re-render, then push the new vocab.json.
   async function deleteVocabEntry(entry) {
@@ -4376,7 +4484,19 @@
     if (renderer) renderer.setTagRegistry(tagRegistry);   // (renderer is lazy; ensureRenderer also seeds it)
     render(); updatePushBtn(); renderVocab();
     renderPractice(); resetPracticeForm();
+    await reopenFromUrl();
   })();
+  // Reopen whatever ?piece= / ?vocab= names, so a refresh (or a shared link) picks up where you were.
+  // Runs after the library and vocab have loaded, because both lookups need them. An id that no longer
+  // exists is ignored rather than reported: a stale link should just leave you on the library.
+  async function reopenFromUrl() {
+    const q = new URLSearchParams(window.location.search);
+    const wantVocab = q.get('vocab'), wantPiece = q.get('piece');
+    const entry = wantVocab ? vocab.find((v) => v.id === wantVocab) : null;
+    // A vocab id that is gone still tells us which piece it belonged to — fall back to opening that.
+    if (entry) { await openVocabEntry(entry); return; }
+    if (wantPiece && index.some((e) => e.id === wantPiece)) await openPreview(wantPiece);
+  }
 </script>
 </body>
 </html>
