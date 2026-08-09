@@ -1041,32 +1041,32 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=7d84f688a9';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=7d84f688a9';
-  import { runQuery } from './music-query.js?v=7d84f688a9';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=7d84f688a9';
-  import { init as initFretboard } from './fretboard-panel.js?v=7d84f688a9';
-  import { chordDisplayName } from './music-chords.js?v=7d84f688a9';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=7d84f688a9';
-  import { keyExplanation } from './music-key.js?v=7d84f688a9';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=7d84f688a9';
-  import { createMusicStore } from './music-local-store.js?v=7d84f688a9';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=7d84f688a9';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=7d84f688a9';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=7d84f688a9';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=7d84f688a9';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=8937e2bfba';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=8937e2bfba';
+  import { runQuery } from './music-query.js?v=8937e2bfba';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=8937e2bfba';
+  import { init as initFretboard } from './fretboard-panel.js?v=8937e2bfba';
+  import { chordDisplayName } from './music-chords.js?v=8937e2bfba';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=8937e2bfba';
+  import { keyExplanation } from './music-key.js?v=8937e2bfba';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=8937e2bfba';
+  import { createMusicStore } from './music-local-store.js?v=8937e2bfba';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=8937e2bfba';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=8937e2bfba';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=8937e2bfba';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=8937e2bfba';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=7d84f688a9';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=7d84f688a9';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=7d84f688a9';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=7d84f688a9';
-  import { generateCounterLines } from './music-counterpoint.js?v=7d84f688a9';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=7d84f688a9';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=7d84f688a9';
-  import { splitSingleVoice } from './music-voice-split.js?v=7d84f688a9';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=7d84f688a9';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=7d84f688a9';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=7d84f688a9';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=8937e2bfba';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=8937e2bfba';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=8937e2bfba';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=8937e2bfba';
+  import { generateCounterLines } from './music-counterpoint.js?v=8937e2bfba';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=8937e2bfba';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=8937e2bfba';
+  import { splitSingleVoice } from './music-voice-split.js?v=8937e2bfba';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=8937e2bfba';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=8937e2bfba';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=8937e2bfba';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -3338,11 +3338,24 @@ Can you hear it?       &gt; ask()"></textarea>
       occurrences: (p.occurrences || []).map((o) => ({ ...o })),
     }));
     const entry = index.find((e) => e.id === currentPreviewId);
-    if (!entry) return;
-    try { await store.putPieces(system, [{ entry, detail: currentDetail }]); } catch (_) {}
+    // Say what went wrong instead of reporting a save that never happened — a swallowed error here
+    // reads as "kept" and then leaves no trace after a reload, which is the worst of both.
+    if (!entry) { autoPhraseMsg('This piece is not in the library list — nothing to attach them to.'); return; }
+    try {
+      await store.putPieces(system, [{ entry, detail: currentDetail }]);
+    } catch (err) {
+      autoPhraseMsg(`Could not keep them: ${err && err.message ? err.message : err}`);
+      return;
+    }
+    // Read it back: the message must reflect what is actually on disk, since that is all a reload has.
+    const back = await store.getDetail(system, currentPreviewId).catch(() => null);
+    if (!back || !(back.detectedPhrases || []).length) {
+      autoPhraseMsg('Could not keep them — the piece did not save. Nothing was changed.');
+      return;
+    }
     unpushedIds.add(currentPreviewId);
     render(); updatePushBtn();
-    autoPhraseMsg(`Kept ${detectedPhrases.length} with the piece — click "Push changes" to publish.`);
+    autoPhraseMsg(`Kept ${back.detectedPhrases.length} with the piece — click "Push changes" to publish.`);
   }
   // Rename the picked phrase. The letters a scan hands out (A, B, C) say nothing about the music;
   // a name of your own is what makes inPhrase(chorus) readable a month later.
@@ -3660,13 +3673,16 @@ Can you hear it?       &gt; ask()"></textarea>
     const whole = (p) => (p.occurrences || []).map((o, i) => (o.from != null && o.to != null ? i : -1)).filter((i) => i >= 0);
     let p = detectedPhrases.find((x) => x.name === raw);
     if (p && whole(p).length) return pick(p, whole(p));
-    const m = raw.match(/^(.*?)\s*(\d+|['′])$/);
-    if (m) {
+    // "B2", "B2′", "B2'" — the ′ is part of the chip's LABEL (it marks a modified return), so a name
+    // copied straight off a chip has to work. Without an index, a lone ′ means "the modified ones".
+    const m = raw.match(/^(.*?)\s*(\d+)?\s*['′]?$/);
+    if (m && (m[2] || /['′]$/.test(raw))) {
       p = detectedPhrases.find((x) => x.name === m[1]);
       const occ = (p && p.occurrences) || [];
+      const n = m[2] ? Number(m[2]) : null;
       const idx = !p ? []
-        : (/\d/.test(m[2])
-          ? (Number(m[2]) >= 1 && Number(m[2]) <= occ.length ? [Number(m[2]) - 1] : [])
+        : (n != null
+          ? (n >= 1 && n <= occ.length ? [n - 1] : [])
           : occ.map((o, i) => (o.varied ? i : -1)).filter((i) => i >= 0));
       if (idx.length) return pick(p, idx);
     }
