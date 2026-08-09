@@ -1045,32 +1045,32 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=70c6dac272';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=70c6dac272';
-  import { runQuery } from './music-query.js?v=70c6dac272';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=70c6dac272';
-  import { init as initFretboard } from './fretboard-panel.js?v=70c6dac272';
-  import { chordDisplayName } from './music-chords.js?v=70c6dac272';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=70c6dac272';
-  import { keyExplanation } from './music-key.js?v=70c6dac272';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=70c6dac272';
-  import { createMusicStore } from './music-local-store.js?v=70c6dac272';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=70c6dac272';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=70c6dac272';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=70c6dac272';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=70c6dac272';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=f2eba47dc5';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=f2eba47dc5';
+  import { runQuery } from './music-query.js?v=f2eba47dc5';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars } from './music-render.js?v=f2eba47dc5';
+  import { init as initFretboard } from './fretboard-panel.js?v=f2eba47dc5';
+  import { chordDisplayName } from './music-chords.js?v=f2eba47dc5';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=f2eba47dc5';
+  import { keyExplanation } from './music-key.js?v=f2eba47dc5';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=f2eba47dc5';
+  import { createMusicStore } from './music-local-store.js?v=f2eba47dc5';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=f2eba47dc5';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=f2eba47dc5';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=f2eba47dc5';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=f2eba47dc5';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=70c6dac272';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=70c6dac272';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=70c6dac272';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=70c6dac272';
-  import { generateCounterLines } from './music-counterpoint.js?v=70c6dac272';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=70c6dac272';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=70c6dac272';
-  import { splitSingleVoice } from './music-voice-split.js?v=70c6dac272';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=70c6dac272';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=70c6dac272';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=70c6dac272';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=f2eba47dc5';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=f2eba47dc5';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=f2eba47dc5';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=f2eba47dc5';
+  import { generateCounterLines } from './music-counterpoint.js?v=f2eba47dc5';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=f2eba47dc5';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=f2eba47dc5';
+  import { splitSingleVoice } from './music-voice-split.js?v=f2eba47dc5';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=f2eba47dc5';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=f2eba47dc5';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=f2eba47dc5';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1607,15 +1607,27 @@ Can you hear it?       &gt; ask()"></textarea>
     // only the handful of notes that were tagged by hand instead of the motif through the piece.
     if (withMatches && renderer && renderer.getPatternMatchNotes && !renderer.getPatternMatchNotes().length) searchPattern();
     const matched = (withMatches && renderer && renderer.getPatternMatchNotes) ? renderer.getPatternMatchNotes() : [];
+    // Narrowing to bars weighs whole OCCURRENCES, not loose notes: a motif is a run, and keeping only
+    // the notes of it that happen to fall inside a phrase plays a fragment of the tune. (It did — a
+    // five-note motif came out as four.) Unscoped, every tagged and matched note is in play as before.
+    const groups = bars && renderer && renderer.getPatternMatchGroups ? renderer.getPatternMatchGroups() : null;
+    const inside = groups ? groupsInsideBars(groups, bars) : null;
+    const pool = inside ? inside.flatMap((g) => g.notes) : [...tagged, ...matched];
     const seen = new Set();
-    const inBars = (n) => !bars || bars.some(([f, t]) => n.measure >= f && n.measure <= t);
-    const keep = [...tagged, ...matched].filter(inBars).filter((n) => {
+    const keep = pool.filter((n) => {
       const k = `${n.midi}@${n.beats}`;
       if (seen.has(k)) return false;
       seen.add(k); return true;
     }).sort((a, b) => a.beats - b.beats);
     if (!keep.length) {
-      setTransportMsg(bars ? 'None of the checked motifs land in those bars.' : 'Check a tag to play it.', 'err');
+      // Nothing fitting is usually not "it isn't here" but "it crosses the edge" — the motif starts in
+      // the last bar of the phrase and finishes in the next. Say which, or the empty result is a puzzle.
+      const over = (groups || []).filter((g) => g.from != null
+        && bars.some(([f, t]) => g.to >= f && g.from <= t));
+      setTransportMsg(!bars ? 'Check a tag to play it.'
+        : (over.length
+          ? `No whole run inside those bars — ${over[0].name} runs m${over[0].from}–${over[0].to}, across the edge.`
+          : 'None of the checked motifs occur in those bars.'), 'err');
       return;
     }
     // Suppress notes only — NOT the dim. Here the kept set IS what the highlight lit, so filtering it
