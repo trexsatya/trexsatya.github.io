@@ -793,8 +793,13 @@
     <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
     <div class="tag-row">
       <button type="button" id="phraseVisBtn" class="np-vis" title="Show these phrases on the sheet (dim everything else)" aria-pressed="false">👁 on sheet</button>
+      <!-- A phrase is a named stretch of bars. Which NOTES are in play is the Motifs panel's job, so
+           there is nothing to pick here beyond where the phrase starts and ends. -->
       <label class="tag-lbl">New phrase:
-        <input id="phraseInput" maxlength="32" placeholder="name…" autocomplete="off" style="width:11em">
+        <input id="phraseInput" maxlength="32" placeholder="name…" autocomplete="off" style="width:8em">
+      </label>
+      <label class="tag-lbl" title="The bars this phrase covers. Empty takes whatever range the segment boxes above are showing.">bars
+        <input id="phraseFrom" type="number" min="1" style="width:3em" placeholder="from">–<input id="phraseTo" type="number" min="1" style="width:3em" placeholder="to">
       </label>
       <button id="addPhraseBtn" class="btn"><span class="ic">➕</span><span class="txt">Add</span></button>
       <span id="phraseMsg" style="font-size:.8em;color:#555"></span>
@@ -1045,32 +1050,32 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=f2eba47dc5';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=f2eba47dc5';
-  import { runQuery } from './music-query.js?v=f2eba47dc5';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars } from './music-render.js?v=f2eba47dc5';
-  import { init as initFretboard } from './fretboard-panel.js?v=f2eba47dc5';
-  import { chordDisplayName } from './music-chords.js?v=f2eba47dc5';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=f2eba47dc5';
-  import { keyExplanation } from './music-key.js?v=f2eba47dc5';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=f2eba47dc5';
-  import { createMusicStore } from './music-local-store.js?v=f2eba47dc5';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=f2eba47dc5';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=f2eba47dc5';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=f2eba47dc5';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=f2eba47dc5';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=8c21f81e3f';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=8c21f81e3f';
+  import { runQuery } from './music-query.js?v=8c21f81e3f';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars } from './music-render.js?v=8c21f81e3f';
+  import { init as initFretboard } from './fretboard-panel.js?v=8c21f81e3f';
+  import { chordDisplayName } from './music-chords.js?v=8c21f81e3f';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=8c21f81e3f';
+  import { keyExplanation } from './music-key.js?v=8c21f81e3f';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=8c21f81e3f';
+  import { createMusicStore } from './music-local-store.js?v=8c21f81e3f';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=8c21f81e3f';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=8c21f81e3f';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=8c21f81e3f';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=8c21f81e3f';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=f2eba47dc5';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=f2eba47dc5';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=f2eba47dc5';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=f2eba47dc5';
-  import { generateCounterLines } from './music-counterpoint.js?v=f2eba47dc5';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=f2eba47dc5';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=f2eba47dc5';
-  import { splitSingleVoice } from './music-voice-split.js?v=f2eba47dc5';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=f2eba47dc5';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=f2eba47dc5';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=f2eba47dc5';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=8c21f81e3f';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=8c21f81e3f';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=8c21f81e3f';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=8c21f81e3f';
+  import { generateCounterLines } from './music-counterpoint.js?v=8c21f81e3f';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=8c21f81e3f';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=8c21f81e3f';
+  import { splitSingleVoice } from './music-voice-split.js?v=8c21f81e3f';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=8c21f81e3f';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=8c21f81e3f';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=8c21f81e3f';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2461,11 +2466,11 @@ Can you hear it?       &gt; ask()"></textarea>
     }
     // Phrases: the renderer loaded detail.phrases on load; reset the phrase controls for the fresh
     // piece (panel visibility follows its own toggle).
-    activePhraseName = null; phrasePainting = false; shownPhraseNames.clear();
+    shownPhraseNames.clear();
     document.getElementById('phraseInput').value = '';
     document.getElementById('phraseMsg').textContent = '';
     const phrasePanelOpen = document.getElementById('phrasePanel').open;
-    if (renderer) { renderer.setPhrasePaintMode(false); renderer.setShownPhrases([]); }
+    if (renderer) renderer.setShownPhrases([]);
     setPhraseVis(false);   // sheet phrase visibility starts off (decoupled from expand)
     resetAutoPhrases();    // a detected phrase list belongs to the piece it was scanned from
     document.getElementById('autoPhraseName').value = '';
@@ -2755,9 +2760,7 @@ Can you hear it?       &gt; ask()"></textarea>
   // ── Pattern tags ───────────────────────────────────────────────────────────────────────────
   let activeTagName = '';   // the tag clicked notes paint into; mirrored in the combobox input
   const tagFilterSel = new Set();   // tag names checked in the filter list
-  let activePhraseName = null;   // phrase whose notes paint-mode clicks edit
   const shownPhraseNames = new Set();   // phrases revealed + tinted on the sheet (checkboxes)
-  let phrasePainting = false;    // phrase-paint mode on/off
   // Rebuild the tag combobox options and the tag pills from the GLOBAL tag list, annotated with how
   // many notes THIS piece assigns to each. Called on load and after every tag edit.
   function renderTagUI() {
@@ -3048,13 +3051,6 @@ Can you hear it?       &gt; ask()"></textarea>
   });
   document.getElementById('tagModeChk').onchange = (e) => {
     if (!renderer) return;
-    // Tag Edit mode and phrase-paint mode are mutually exclusive (paint has click precedence, so a
-    // left-over active phrase would otherwise swallow tag clicks). Turning Edit mode on exits paint.
-    if (e.target.checked && phrasePainting) {
-      phrasePainting = false; activePhraseName = null;
-      renderer.setPhrasePaintMode(false); renderer.setActivePhrase(null);
-      renderPhraseUI();
-    }
     renderer.setTagMode(e.target.checked);
   };
   document.getElementById('playTagsBtn').onclick = () => playTags();   // not `= playTags` — the click event would become its options
@@ -3118,12 +3114,10 @@ Can you hear it?       &gt; ask()"></textarea>
     renderColorLegend();   // shown phrases are painted in their own colours
     if (!renderer) return;
     const phrases = renderer.getPhrases();
-    const tagNames = renderer.getTagNames();
-    const tagColors = renderer.getTagColors();
     const list = document.getElementById('phraseList');
     list.innerHTML = '';
     if (!phrases.length) {
-      list.innerHTML = '<span style="font-size:.85em;color:#888">No phrases yet — add one, then tick its member tags and/or paint extra notes.</span>';
+      list.innerHTML = '<span style="font-size:.85em;color:#888">No phrases yet — name a stretch of bars above.</span>';
       return;
     }
     const mkBtn = (txt, title, fn, active) => {
@@ -3134,49 +3128,37 @@ Can you hear it?       &gt; ask()"></textarea>
     phrases.forEach((p) => {
       const row = document.createElement('div'); row.className = 'phrase-row';
       const show = document.createElement('input'); show.type = 'checkbox'; show.checked = shownPhraseNames.has(p.name);
-      show.title = 'Show this phrase (reveal + tint its notes on the sheet)';
+      show.title = 'Show this phrase (reveal + tint its bars on the sheet)';
       show.onchange = () => setPhraseShown(p.name, show.checked);
       const sw = document.createElement('span'); sw.className = 'sw'; sw.style.background = p.color || '#999';
       const nm = document.createElement('b'); nm.textContent = p.name; nm.style.marginRight = '6px';
-      const info = document.createElement('span');
-      info.style.cssText = 'font-size:.78em;color:#666;margin-right:8px';
-      info.textContent = `${p.tags.length} tag${p.tags.length === 1 ? '' : 's'} · ${p.notes.length} extra`;
-      const paintBtn = mkBtn('🖌️', 'Paint extra notes — click noteheads on the sheet', () => togglePhrasePaint(p.name), activePhraseName === p.name && phrasePainting);
-      const playBtn = mkBtn('▶', 'Play this phrase (its tags + extra notes, together)', () => playPhrase(p.name));
-      const findBtn = mkBtn('🔍', 'Find other occurrences of this phrase on the sheet', () => findPhrase(p.name));
+      // The range is the phrase — so it is editable in place rather than shown as a caption.
+      const mk = (val) => {
+        const i = document.createElement('input');
+        i.type = 'number'; i.min = '1'; i.style.cssText = 'width:3.2em;font-size:12px';
+        i.value = val == null ? '' : String(val);
+        return i;
+      };
+      const from = mk(p.from), to = mk(p.to);
+      const apply = () => renderer.setPhraseRange(p.name, from.value, to.value);
+      from.onchange = apply; to.onchange = apply;
+      const dash = document.createElement('span'); dash.textContent = '–'; dash.style.cssText = 'font-size:.8em;color:#666';
+      const bars = document.createElement('span');
+      bars.style.cssText = 'font-size:.78em;color:#666;margin-right:8px;display:inline-flex;align-items:center;gap:2px';
+      bars.append(document.createTextNode('m'), from, dash, to);
+      const playBtn = mkBtn('▶', 'Play these bars', () => playPhrase(p.name));
+      const findBtn = mkBtn('🔍', 'Find other places in the piece that sound like these bars', () => findPhrase(p.name));
       const delBtn = mkBtn('🗑', 'Delete this phrase', () => {
-        if (window.confirm(`Delete phrase "${p.name}"? (${p.tags.length} tag${p.tags.length === 1 ? '' : 's'} + ${p.notes.length} extra note${p.notes.length === 1 ? '' : 's'})`)) renderer.removePhrase(p.name);
+        if (window.confirm(`Delete phrase "${p.name}"${p.from != null ? ` (m${p.from}–${p.to})` : ''}?`)) renderer.removePhrase(p.name);
       });
-      delBtn.style.marginLeft = 'auto';   // push delete to the far right of the row
+      delBtn.style.marginLeft = 'auto';
       const head = document.createElement('div'); head.className = 'phrase-head';
-      head.append(show, sw, nm, info, paintBtn, playBtn, findBtn, delBtn);
-      // Member-tag checkboxes (the phrase's logical group).
-      const tagsWrap = document.createElement('div'); tagsWrap.className = 'phrase-tags';
-      if (!tagNames.length) {
-        const s = document.createElement('span'); s.style.cssText = 'font-size:.8em;color:#999'; s.textContent = '(no tags to add yet)'; tagsWrap.append(s);
-      }
-      tagNames.forEach((tn) => {
-        const lbl = document.createElement('label'); lbl.style.cssText = 'font-size:.82em;display:inline-flex;align-items:center;gap:3px;margin-right:8px';
-        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = p.tags.includes(tn);
-        cb.onchange = () => renderer.setPhraseTag(p.name, tn, cb.checked);
-        const dot = document.createElement('span'); dot.className = 'sw'; dot.style.background = tagColors[tn] || '#999';
-        lbl.append(cb, dot, document.createTextNode(tn)); tagsWrap.append(lbl);
-      });
-      row.append(head, tagsWrap);
+      head.append(show, sw, nm, bars, playBtn, findBtn, delBtn);
+      row.append(head);
       list.appendChild(row);
     });
   }
-  // Toggle phrase-paint mode for one phrase (exits tag mode to avoid competing notehead clicks).
-  function togglePhrasePaint(name) {
-    if (activePhraseName === name && phrasePainting) { phrasePainting = false; activePhraseName = null; }
-    else {
-      activePhraseName = name; phrasePainting = true;
-      document.getElementById('tagModeChk').checked = false; if (renderer) renderer.setTagMode(false); syncToggles();
-    }
-    if (renderer) { renderer.setActivePhrase(activePhraseName); renderer.setPhrasePaintMode(phrasePainting); }
-    renderPhraseUI();
-  }
-  // Reveal/hide a phrase's notes on the (dimmed) sheet.
+  // Reveal/hide a phrase's bars on the (dimmed) sheet.
   function setPhraseShown(name, on) {
     if (on) shownPhraseNames.add(name); else shownPhraseNames.delete(name);
     if (on) activateFocus('phrase');   // showing a phrase takes the sheet from Motifs/Rhythms
@@ -3274,26 +3256,34 @@ Can you hear it?       &gt; ask()"></textarea>
       render(); updatePushBtn();
     }
   }
-  // Expand/collapse the Phrases panel: only its controls + phrase list; collapsing exits phrase-paint.
+  // Expand/collapse the Phrases panel: only its controls + phrase list.
   document.getElementById('phrasePanel').addEventListener('toggle', (e) => {
     const open = e.target.open;
     if (open) { document.getElementById('tagPanel').open = false; document.getElementById('rhythmPanel').open = false; }
-    if (!open) {   // collapsing exits phrase-paint mode
-      phrasePainting = false; activePhraseName = null;
-      if (renderer) renderer.setPhrasePaintMode(false);
-    } else { renderPhraseUI(); if (fbPanel) fbPanel.setSource('phrases'); }   // point the fretboard at phrases
+    if (open) { renderPhraseUI(); if (fbPanel) fbPanel.setSource('phrases'); }   // point the fretboard at phrases
     updatePatternControls();
   });
   document.getElementById('addPhraseBtn').onclick = () => {
     const input = document.getElementById('phraseInput');
     const name = input.value.trim();
     if (!name || !renderer) return;
-    if (renderer.addPhrase(name)) { input.value = ''; document.getElementById('phraseMsg').textContent = ''; }
-    else document.getElementById('phraseMsg').textContent = 'A phrase with that name already exists.';
+    const msg = document.getElementById('phraseMsg');
+    // Bars left blank fall back to the segment boxes: naming the stretch you are already looking at is
+    // the common case, and re-typing its numbers is busywork.
+    const num = (id) => { const v = parseInt(document.getElementById(id).value, 10); return Number.isFinite(v) ? v : null; };
+    const from = num('phraseFrom') ?? num('segFrom');
+    const to = num('phraseTo') ?? num('segTo');
+    if (from == null || to == null) { msg.textContent = 'Give the phrase its bars — from and to.'; return; }
+    if (renderer.addPhrase(name, from, to)) {
+      input.value = '';
+      document.getElementById('phraseFrom').value = ''; document.getElementById('phraseTo').value = '';
+      msg.textContent = '';
+    } else msg.textContent = 'A phrase with that name already exists.';
   };
-  document.getElementById('phraseInput').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') { e.preventDefault(); document.getElementById('addPhraseBtn').click(); }
-  });
+  ['phraseInput', 'phraseFrom', 'phraseTo'].forEach((id) => document.getElementById(id)
+    .addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); document.getElementById('addPhraseBtn').click(); }
+    }));
   // ---- Automatic phrase detection ---------------------------------------------------------------
   // Read the piece's phrases off the score (music-phrase-detect.js) instead of building them by hand:
   // equal spans of `bars`, grouped by likeness, so a theme and its modified returns land in one family.
@@ -3715,10 +3705,10 @@ Can you hear it?       &gt; ask()"></textarea>
           : occ.map((o, i) => (o.varied ? i : -1)).filter((i) => i >= 0));
       if (idx.length) return pick(p, idx);
     }
+    // A phrase you named by hand IS a stretch of bars, so it needs no resolving beyond reading it.
     const named = (renderer && renderer.getPhrases) ? renderer.getPhrases().find((x) => x.name === raw) : null;
-    if (named) {
-      const ms = (named.notes || []).map((n) => n.measure).filter((x) => x != null);
-      if (ms.length) return { detected: null, index: -1, occ: [], ranges: [[Math.min(...ms), Math.max(...ms)]] };
+    if (named && named.from != null && named.to != null) {
+      return { detected: null, index: -1, occ: [], ranges: [[named.from, named.to]] };
     }
     return null;
   }
@@ -3844,7 +3834,10 @@ Can you hear it?       &gt; ask()"></textarea>
     // cut down to B (m9-16) finds zero matches and the line plays nothing. Measured: 36 matches on the
     // full sheet, 0 with the view scoped. The whole piece stays drawn; the bars filter does the work.
     let bars = null;
-    if (step.phrase) {
+    if (step.measures) {
+      bars = [step.measures];
+      scriptMsg(`m${step.measures[0]}–${step.measures[1]}`);
+    } else if (step.phrase) {
       ensureDetectedPhrases();
       const res = resolvePhrase(step.phrase);
       if (!res) {
