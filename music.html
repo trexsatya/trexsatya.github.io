@@ -816,6 +816,12 @@
       <label class="tag-lbl" title="Silence between one occurrence and the next, in beats (scales with tempo)">gap
         <input type="number" id="autoPhraseGap" min="0" max="8" step="0.5" value="2" style="width:2.6em">
       </label>
+      <!-- Rename the picked phrase and keep the whole scan with the piece. A detected list is
+           otherwise gone the moment you close the piece, and a script that says inPhrase(B) would
+           have to re-scan (and could not use a name of your own at all). -->
+      <input id="autoPhraseName" maxlength="24" placeholder="rename…" autocomplete="off"
+        title="Give the picked phrase a name of your own — scripts refer to it by this" style="width:7em">
+      <button id="autoPhraseSaveBtn" class="btn" title="Keep these phrases with the piece, so they are here next time and scripts can use them without scanning"><span class="ic">💾</span><span class="txt">Keep</span></button>
       <span id="autoPhraseMsg" style="font-size:.8em;color:#555"></span>
       <!-- One chip per occurrence of the picked phrase, all on. Switching one off takes it off the
            sheet AND out of playback, so a single modification can be studied on its own. -->
@@ -1035,32 +1041,32 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=015610aa1e';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=015610aa1e';
-  import { runQuery } from './music-query.js?v=015610aa1e';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=015610aa1e';
-  import { init as initFretboard } from './fretboard-panel.js?v=015610aa1e';
-  import { chordDisplayName } from './music-chords.js?v=015610aa1e';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=015610aa1e';
-  import { keyExplanation } from './music-key.js?v=015610aa1e';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=015610aa1e';
-  import { createMusicStore } from './music-local-store.js?v=015610aa1e';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=015610aa1e';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=015610aa1e';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=015610aa1e';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=015610aa1e';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=7d84f688a9';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=7d84f688a9';
+  import { runQuery } from './music-query.js?v=7d84f688a9';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=7d84f688a9';
+  import { init as initFretboard } from './fretboard-panel.js?v=7d84f688a9';
+  import { chordDisplayName } from './music-chords.js?v=7d84f688a9';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=7d84f688a9';
+  import { keyExplanation } from './music-key.js?v=7d84f688a9';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=7d84f688a9';
+  import { createMusicStore } from './music-local-store.js?v=7d84f688a9';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=7d84f688a9';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=7d84f688a9';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=7d84f688a9';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=7d84f688a9';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=015610aa1e';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=015610aa1e';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=015610aa1e';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=015610aa1e';
-  import { generateCounterLines } from './music-counterpoint.js?v=015610aa1e';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=015610aa1e';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=015610aa1e';
-  import { splitSingleVoice } from './music-voice-split.js?v=015610aa1e';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=015610aa1e';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=015610aa1e';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=015610aa1e';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=7d84f688a9';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=7d84f688a9';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=7d84f688a9';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=7d84f688a9';
+  import { generateCounterLines } from './music-counterpoint.js?v=7d84f688a9';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=7d84f688a9';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=7d84f688a9';
+  import { splitSingleVoice } from './music-voice-split.js?v=7d84f688a9';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=7d84f688a9';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=7d84f688a9';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=7d84f688a9';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2446,6 +2452,8 @@ Can you hear it?       &gt; ask()"></textarea>
     if (renderer) { renderer.setPhrasePaintMode(false); renderer.setShownPhrases([]); }
     setPhraseVis(false);   // sheet phrase visibility starts off (decoupled from expand)
     resetAutoPhrases();    // a detected phrase list belongs to the piece it was scanned from
+    document.getElementById('autoPhraseName').value = '';
+    loadSavedPhrases();    // ...unless this piece has one kept with it, in which case it is already here
     // The script travels with the piece (like phrases and rhythm groups). Any run in flight belongs
     // to the piece that is leaving, so abandon it before the new text lands.
     scriptRunId++; scriptRunning = false; scriptIdx = -1;
@@ -3302,18 +3310,65 @@ Can you hear it?       &gt; ask()"></textarea>
     autoPhraseMsg(autoPhraseSummary);
   }
 
+  // Fill the picker from `detectedPhrases`, whichever way they got there — a fresh scan or the copy
+  // kept with the piece.
+  function fillAutoPhraseSel() {
+    const sel = document.getElementById('autoPhraseSel');
+    sel.innerHTML = '<option value="">— detected phrase —</option>';
+    detectedPhrases.forEach((p, i) => {
+      const o = document.createElement('option');
+      o.value = String(i); o.textContent = p.label; sel.appendChild(o);
+      o.style.color = p.color;
+    });
+  }
+  // Phrases kept with the piece: they load with it, so neither you nor a script has to scan first.
+  function loadSavedPhrases() {
+    const saved = (currentDetail && currentDetail.detectedPhrases) || [];
+    if (!saved.length) return;
+    detectedPhrases = saved.map((p) => ({ ...p, occurrences: (p.occurrences || []).map((o) => ({ ...o })) }));
+    fillAutoPhraseSel();
+    autoPhraseSummary = `${detectedPhrases.length} phrase${detectedPhrases.length === 1 ? '' : 's'} kept with this piece`;
+    autoPhraseMsg(autoPhraseSummary);
+  }
+  async function saveDetectedPhrases() {
+    if (!currentDetail || !currentPreviewId) { autoPhraseMsg('Open a piece first.'); return; }
+    if (!detectedPhrases.length) { autoPhraseMsg('Nothing to keep — press Find.'); return; }
+    currentDetail.detectedPhrases = detectedPhrases.map((p) => ({
+      name: p.name, color: p.color, label: p.label, count: p.count,
+      occurrences: (p.occurrences || []).map((o) => ({ ...o })),
+    }));
+    const entry = index.find((e) => e.id === currentPreviewId);
+    if (!entry) return;
+    try { await store.putPieces(system, [{ entry, detail: currentDetail }]); } catch (_) {}
+    unpushedIds.add(currentPreviewId);
+    render(); updatePushBtn();
+    autoPhraseMsg(`Kept ${detectedPhrases.length} with the piece — click "Push changes" to publish.`);
+  }
+  // Rename the picked phrase. The letters a scan hands out (A, B, C) say nothing about the music;
+  // a name of your own is what makes inPhrase(chorus) readable a month later.
+  function renameDetectedPhrase() {
+    const input = document.getElementById('autoPhraseName');
+    const name = input.value.trim();
+    const p = selectedDetectedPhrase();
+    if (!name) return;
+    if (!p) { autoPhraseMsg('Pick a phrase first, then rename it.'); return; }
+    if (detectedPhrases.some((x) => x !== p && x.name === name)) { autoPhraseMsg(`"${name}" is already taken.`); return; }
+    const i = detectedPhrases.indexOf(p);
+    p.label = name + p.label.slice(p.name.length);   // the label opens with the name — swap just that
+    p.name = name;
+    fillAutoPhraseSel();
+    document.getElementById('autoPhraseSel').value = String(i);
+    renderAutoPhraseOccs();
+    autoPhraseMsg(`Renamed — a script can say inPhrase(${name}). Press 💾 Keep to save it.`);
+  }
+
   function runAutoPhraseDetect() {
     if (!renderer || !renderer.detectPhrases) return;
     resetAutoPhrases();
     const res = renderer.detectPhrases({ bars: Number(document.getElementById('autoPhraseBars').value) || 8 });
     detectedPhrases = res.phrases || [];
     if (!detectedPhrases.length) { autoPhraseSummary = 'nothing on the sheet to scan'; autoPhraseMsg(autoPhraseSummary); return; }
-    const sel = document.getElementById('autoPhraseSel');
-    detectedPhrases.forEach((p, i) => {
-      const o = document.createElement('option');
-      o.value = String(i); o.textContent = p.label; sel.appendChild(o);
-      o.style.color = p.color;
-    });
+    fillAutoPhraseSel();
     const recurring = detectedPhrases.filter((p) => p.count > 1).length;
     // The starting bar is worth saying: when it isn't the first bar, the scan decided the piece opens
     // with an intro/pickup, and that is the one judgement a player would want to double-check.
@@ -3451,10 +3506,14 @@ Can you hear it?       &gt; ask()"></textarea>
     // index lookup would treat "— detected phrase —" as the first family and shade it instead of clearing.
     const p = selectedDetectedPhrase();
     autoPhraseOn = new Set(((p && p.occurrences) || []).map((o, i) => i));   // a fresh pick starts all on
+    document.getElementById('autoPhraseName').value = p ? p.name : '';
     renderAutoPhraseOccs();
     applyAutoPhraseShade();
     autoPhraseMsg(pickedPhraseMsg());
   };
+  document.getElementById('autoPhraseSaveBtn').onclick = saveDetectedPhrases;
+  document.getElementById('autoPhraseName').onchange = renameDetectedPhrase;
+  document.getElementById('autoPhraseName').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); renameDetectedPhrase(); } };
   // ---- Script panel ------------------------------------------------------------------------------
   // Interactive practice notes: prose that also DOES something. Parsing lives in music-script.js;
   // everything here is the runner — it turns a parsed step into the same calls the panels' own
@@ -3575,21 +3634,57 @@ Can you hear it?       &gt; ask()"></textarea>
     playTags({ withMatches, bars });
     return true;
   }
-  // The bars a script's inPhrase(name) covers, as printed measures: one range per place the phrase
-  // occurs. A detected family names every occurrence itself; a phrase you named by hand is the span
-  // of the notes in it. null when nothing on the piece answers to that name.
-  function phraseBarRanges(name) {
-    const found = detectedPhrases.find((p) => p.name === name);
-    if (found) {
-      const occ = (found.occurrences || []).filter((o) => o.from != null && o.to != null);
-      return occ.length ? occ.map((o) => [o.from, o.to]) : null;
+  // A script must not depend on someone having pressed Find first — scan for phrases on demand, over
+  // the WHOLE piece so inPhrase(B) means the same thing whatever segment happened to be showing.
+  function ensureDetectedPhrases() {
+    if (detectedPhrases.length || !renderer) return;
+    const view = scriptViewState();
+    renderer.showFull(); onDrawnRangeChanged();
+    runAutoPhraseDetect();
+    scriptRestoreView(view);
+  }
+  // Resolve a script's phrase name to the bars it covers (printed measures) and, for a detected
+  // family, which of its occurrences those are.
+  //
+  //   inPhrase(B)   every place B occurs        inPhrase(B2)  just the second — the chips' own labels
+  //   inPhrase(B′)  only the modified returns   (B' with a plain apostrophe works too)
+  //
+  // An exact name always wins, so a phrase you named by hand "Etude 2" is still itself and not
+  // "Etude", occurrence 2. null when nothing on the piece answers to the name.
+  function resolvePhrase(name) {
+    const raw = String(name == null ? '' : name).trim();
+    const pick = (p, idx) => ({
+      detected: p, index: detectedPhrases.indexOf(p), occ: idx,
+      ranges: idx.map((i) => [p.occurrences[i].from, p.occurrences[i].to]),
+    });
+    const whole = (p) => (p.occurrences || []).map((o, i) => (o.from != null && o.to != null ? i : -1)).filter((i) => i >= 0);
+    let p = detectedPhrases.find((x) => x.name === raw);
+    if (p && whole(p).length) return pick(p, whole(p));
+    const m = raw.match(/^(.*?)\s*(\d+|['′])$/);
+    if (m) {
+      p = detectedPhrases.find((x) => x.name === m[1]);
+      const occ = (p && p.occurrences) || [];
+      const idx = !p ? []
+        : (/\d/.test(m[2])
+          ? (Number(m[2]) >= 1 && Number(m[2]) <= occ.length ? [Number(m[2]) - 1] : [])
+          : occ.map((o, i) => (o.varied ? i : -1)).filter((i) => i >= 0));
+      if (idx.length) return pick(p, idx);
     }
-    const named = (renderer && renderer.getPhrases) ? renderer.getPhrases().find((p) => p.name === name) : null;
+    const named = (renderer && renderer.getPhrases) ? renderer.getPhrases().find((x) => x.name === raw) : null;
     if (named) {
-      const ms = (named.notes || []).map((n) => n.measure).filter((m) => m != null);
-      if (ms.length) return [[Math.min(...ms), Math.max(...ms)]];
+      const ms = (named.notes || []).map((n) => n.measure).filter((x) => x != null);
+      if (ms.length) return { detected: null, index: -1, occ: [], ranges: [[Math.min(...ms), Math.max(...ms)]] };
     }
     return null;
+  }
+  // Point the Phrases panel at what the script chose, so the chips, the shading and the sound all
+  // agree with the line that is running.
+  function selectDetectedOccurrences(res) {
+    if (!res || !res.detected || res.index < 0) return;
+    document.getElementById('autoPhraseSel').value = String(res.index);
+    autoPhraseOn = new Set(res.occ);
+    renderAutoPhraseOccs();
+    applyAutoPhraseShade();
   }
   // Snapshot / restore the drawn range, so a step scoped by inPhrase() hands the sheet back the way
   // it found it rather than leaving the reader parked on the last occurrence's bars.
@@ -3611,20 +3706,19 @@ Can you hear it?       &gt; ask()"></textarea>
     if (renderer) { renderer.showSegment([toSeqMeasure(from), toSeqMeasure(to)]); onDrawnRangeChanged(); }
     return true;
   }
-  // A phrase argument is either a detected letter (A, B…) or one you named by hand.
+  // A phrase argument is either a detected family (A, B, B2, B′…) or one you named by hand.
   function scriptPlayPhrase(name) {
-    const i = detectedPhrases.findIndex((p) => p.name === name);
-    if (i >= 0) {
-      const sel = document.getElementById('autoPhraseSel');
-      sel.value = String(i);
-      sel.dispatchEvent(new Event('change'));
+    ensureDetectedPhrases();
+    const res = resolvePhrase(name);
+    if (res && res.detected) {
+      // Set the pick directly rather than dispatching `change` on the picker: that handler switches
+      // every occurrence back on, which would undo a B2 the script just asked for.
+      selectDetectedOccurrences(res);
       playDetectedPhrase();
       return true;
     }
-    if (renderer && renderer.getPhrases && renderer.getPhrases().some((p) => p.name === name)) {
-      playPhrase(name); return true;
-    }
-    scriptMsg(`No phrase "${name}" — run Find in the Phrases panel first, or check the name.`);
+    if (res) { playPhrase(name); return true; }
+    scriptMsg(`No phrase "${name}" on this piece — check the name (A, B2, B′…).`);
     return false;
   }
 
@@ -3657,11 +3751,11 @@ Can you hear it?       &gt; ask()"></textarea>
         // Each in turn with a breath between, so they land back to back and the difference is the
         // only thing that changed. Sequential rather than one spliced schedule: each argument may be
         // a different KIND of thing, and each already knows how to play itself.
+        ensureDetectedPhrases();   // an argument may name a phrase, so know them before deciding
         for (let i = 0; i < a.args.length; i++) {
           if (runId !== scriptRunId) return false;
           const one = a.args[i];
-          const played = detectedPhrases.some((p) => p.name === one) ? scriptPlayPhrase(one)
-            : scriptPlayTags([one], true);
+          const played = resolvePhrase(one) ? scriptPlayPhrase(one) : scriptPlayTags([one], true);
           if (played) { await awaitPlaybackEnd(runId); await sleep(450, runId); }
         }
         return false;   // already waited for each
@@ -3694,43 +3788,39 @@ Can you hear it?       &gt; ask()"></textarea>
     const step = scriptSteps[i];
     if (!step) return;
     scriptIdx = i;
-    // inPhrase(): visit each place the phrase occurs in turn, showing its bars. Scoping by the VIEW
-    // rather than by a filter is what makes the highlight agree with the sound — the motif search
-    // reads the drawn notes, so bars that aren't showing can neither light up nor play.
-    let ranges = [null];
-    const view = scriptViewState();
+    // inPhrase(): narrow what SOUNDS to the phrase's bars, and shade them so you can see where.
+    //
+    // It deliberately does NOT show only those bars. A motif's pattern is built from the notes you
+    // tagged, and the search only sees what is drawn — the tags for this piece live in m2, so a sheet
+    // cut down to B (m9-16) finds zero matches and the line plays nothing. Measured: 36 matches on the
+    // full sheet, 0 with the view scoped. The whole piece stays drawn; the bars filter does the work.
+    let bars = null;
     if (step.phrase) {
-      const found = phraseBarRanges(step.phrase);
-      if (!found) {
+      ensureDetectedPhrases();
+      const res = resolvePhrase(step.phrase);
+      if (!res) {
         // Skip the step rather than fall back to the whole piece: a line that asked for one phrase
         // and got the entire score is worse than a line that plainly says it could not.
-        scriptMsg(`No phrase "${step.phrase}" — run Find in the Phrases panel first, or check the name.`);
+        scriptMsg(`No phrase "${step.phrase}" on this piece — check the name (A, B2, B′…).`);
         return;
       }
-      ranges = found;
-      if (found.length > 1) scriptMsg(`${step.phrase}: ${found.length} places — one after another.`);
+      selectDetectedOccurrences(res);   // chips + shading follow the line, so sight and sound agree
+      bars = res.ranges;
+      scriptMsg(`${step.phrase}: ${bars.map(([f, t]) => `m${f}–${t}`).join(', ')}`);
     }
     for (let pass = 0; pass < step.repeat; pass++) {
       if (runId !== scriptRunId) return;
       showStage(step, step.repeat > 1 ? pass : null);
       const t = tempoForPass(step, pass);
       if (t != null) document.getElementById('tempoInput').value = t;
-      for (const bars of ranges) {
+      for (const a of step.actions) {
         if (runId !== scriptRunId) return;
-        if (bars) scriptShowBars(bars[0], bars[1]);
-        for (const a of step.actions) {
-          if (runId !== scriptRunId) return;
-          const sounded = await runAction(a, runId, step, bars ? [bars] : null);
-          if (sounded) await awaitPlaybackEnd(runId);
-        }
-        if (bars && ranges.length > 1) await sleep(450, runId);   // a breath between two places
+        const sounded = await runAction(a, runId, step, bars);
+        if (sounded) await awaitPlaybackEnd(runId);
       }
       // A prose-only step in Auto has nothing to wait for; give it long enough to be read.
       if (!step.actions.length) await sleep(Math.min(6000, 900 + (step.prose || '').length * 45), runId);
     }
-    // Hand the sheet back as it was found — a scope belongs to its line, not to the rest of the run.
-    // ...unless the line was ONLY inPhrase(A), which reads as "show me A" and should leave it there.
-    if (step.phrase && ranges[0] && step.actions.length && runId === scriptRunId) scriptRestoreView(view);
   }
   async function runFrom(i) {
     if (!parseScriptNow().length) { scriptMsg('Nothing to run yet — write a step or two.'); return; }
