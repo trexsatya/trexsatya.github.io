@@ -439,6 +439,18 @@
         .pl-entry .icon-btn{border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:13px}
         /* Mobile floating play/pause button */
         #fabPlay{display:none}
+        /* Script panel: the editor, the running step, and parse errors. */
+        .script-text{width:100%;box-sizing:border-box;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+          font-size:12.5px;line-height:1.5;padding:6px 8px;border:1px solid #cfd8e3;border-radius:6px;
+          resize:vertical;white-space:pre;overflow-wrap:normal;overflow-x:auto}
+        .script-stage{border:1px solid #cfe0ff;background:#f6f9ff;border-radius:8px;padding:8px 10px;margin:6px 0}
+        #scriptSay{font-size:1.02em;line-height:1.4;color:#12325c}
+        #scriptDoing{font-size:.78em;color:#5a6b85;margin-top:3px;font-family:ui-monospace,Menlo,monospace}
+        .script-stage.asking{border-color:#ffc46b;background:#fff8ec}
+        .script-errors{font-size:.78em;color:#b42318;margin-top:4px;white-space:pre-line}
+        .script-help{font-size:.78em;color:#444;background:#fafafa;border:1px solid #eee;border-radius:6px;
+          padding:6px 8px;margin:4px 0;max-height:11em;overflow:auto}
+        .script-help code{background:#eef2ff;border-radius:3px;padding:0 3px;font-size:.95em}
         /* Practice notes — the piece's panel and the per-vocab-item editor share this look. */
         .note-panel{margin:.35rem 0;max-width:44em}
         .note-panel > summary{cursor:pointer;font-size:.85em;color:#555;list-style:none;
@@ -721,6 +733,8 @@
             title="Phrases — group motifs and hand-picked notes into a named phrase"><span class="ic">🎼</span><span class="txt">🎼 Phrases</span></button>
     <button type="button" id="rhythmPanelBtn" class="btn np-tab" aria-pressed="false" aria-controls="rhythmPanel"
             title="Rhythm — pick a rhythm the piece uses and see (and hear) every occurrence"><span class="ic">🥁</span><span class="txt">🥁 Rhythm</span></button>
+    <button type="button" id="scriptPanelBtn" class="btn np-tab" aria-pressed="false" aria-controls="scriptPanel"
+            title="Script — interactive notes that highlight and play the piece as you read them"><span class="ic">📜</span><span class="txt">📜 Script</span></button>
   </div>
   <details id="tagPanel" class="np-panel np-tabbed">
     <summary>🏷️ Motifs</summary>
@@ -845,6 +859,42 @@
     </div>
     </div>
   </details>
+  <details id="scriptPanel" class="np-panel np-tabbed">
+    <summary>📜 Script</summary>
+    <div class="np-body">
+    <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
+    <!-- The runner. Shows the current step's prose while it plays; the same controls serve both
+         ways of moving through a script — press Run and it advances itself, or step with ◀ ▶. -->
+    <div class="tag-row">
+      <button id="scriptRunBtn" class="btn" title="Run from the current step"><span class="ic">▶</span><span class="txt">▶ Run</span></button>
+      <button id="scriptStopBtn" class="btn" title="Stop and leave the sheet as it is"><span class="ic">⏹</span><span class="txt">⏹ Stop</span></button>
+      <button id="scriptPrevBtn" class="btn ico" title="Previous step">◀</button>
+      <button id="scriptNextBtn" class="btn ico" title="Next step">▶</button>
+      <button class="btn toggle" data-for="scriptAutoChk" title="Auto: each step runs the next one when its sound ends. Off: nothing moves until you press ▶ next." aria-pressed="true"><span class="ic">⏩</span><span class="txt">⏩ Auto</span></button>
+      <input type="checkbox" id="scriptAutoChk" checked hidden>
+      <span id="scriptPos" style="font-size:.8em;color:#555"></span>
+    </div>
+    <div id="scriptStage" class="script-stage" style="display:none">
+      <div id="scriptSay"></div>
+      <div id="scriptDoing"></div>
+      <button id="scriptAskBtn" class="btn" style="display:none;margin-top:6px"><span class="ic">✔</span><span class="txt">Continue</span></button>
+    </div>
+    <div class="tag-row" style="margin-top:6px">
+      <button id="scriptHelpBtn" class="btn" title="What you can write in a script"><span class="ic">❓</span><span class="txt">Commands</span></button>
+      <span id="scriptMsg" style="font-size:.8em;color:#555"></span>
+    </div>
+    <div id="scriptHelp" class="script-help" style="display:none"></div>
+    <textarea id="scriptText" class="script-text" rows="9" spellcheck="false"
+      placeholder="One step per line. Text before &gt; is what it says, after it is what it does.
+
+Notice this arpeggio   &gt; playTag(1,5,8b | 1,5,8)
+Notice the melody      &gt; playTagAll(1,2,3,2,1)
+Now combine them       &gt; playTagAll(1,5,8b | 1,5,8 | 1,2,3,2,1)
+Work the jump          &gt; tempo(60 | 100) repeat(4) playBars(12,16)
+Can you hear it?       &gt; ask()"></textarea>
+    <div id="scriptErrors" class="script-errors"></div>
+    </div>
+  </details>
     <!-- Shared pattern-match settings — used by BOTH the Motifs "Find pattern" and each Phrase's Find.
        Moved into whichever panel is open (updatePatternControls) so it rides the same overlay. -->
   <div id="patternControls" class="pattern-controls" style="display:none">
@@ -958,31 +1008,32 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=7a68e8cad9';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=7a68e8cad9';
-  import { runQuery } from './music-query.js?v=7a68e8cad9';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=7a68e8cad9';
-  import { init as initFretboard } from './fretboard-panel.js?v=7a68e8cad9';
-  import { chordDisplayName } from './music-chords.js?v=7a68e8cad9';
-  import { keyExplanation } from './music-key.js?v=7a68e8cad9';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=7a68e8cad9';
-  import { createMusicStore } from './music-local-store.js?v=7a68e8cad9';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=7a68e8cad9';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=7a68e8cad9';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=7a68e8cad9';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=7a68e8cad9';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=50c94e123a';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=50c94e123a';
+  import { runQuery } from './music-query.js?v=50c94e123a';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=50c94e123a';
+  import { init as initFretboard } from './fretboard-panel.js?v=50c94e123a';
+  import { chordDisplayName } from './music-chords.js?v=50c94e123a';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=50c94e123a';
+  import { keyExplanation } from './music-key.js?v=50c94e123a';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=50c94e123a';
+  import { createMusicStore } from './music-local-store.js?v=50c94e123a';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=50c94e123a';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=50c94e123a';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=50c94e123a';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=50c94e123a';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=7a68e8cad9';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=7a68e8cad9';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=7a68e8cad9';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=7a68e8cad9';
-  import { generateCounterLines } from './music-counterpoint.js?v=7a68e8cad9';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=7a68e8cad9';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=7a68e8cad9';
-  import { splitSingleVoice } from './music-voice-split.js?v=7a68e8cad9';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=7a68e8cad9';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=7a68e8cad9';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=7a68e8cad9';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=50c94e123a';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=50c94e123a';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=50c94e123a';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=50c94e123a';
+  import { generateCounterLines } from './music-counterpoint.js?v=50c94e123a';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=50c94e123a';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=50c94e123a';
+  import { splitSingleVoice } from './music-voice-split.js?v=50c94e123a';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=50c94e123a';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=50c94e123a';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=50c94e123a';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1501,7 +1552,10 @@
   }
   // Tag skip-playback: play only the checked tags' notes, removing the empty stretches between
   // tagged runs (a beat-relative breath separates runs). Whole piece — ignores segment/window.
-  function playTags() {
+  // `withMatches` false plays ONLY the notes you tagged by hand — no Find-pattern occurrences. That
+  // is the difference between a script's playTag() and playTagAll(), and it has to suppress the
+  // auto-search below too, or clearing the matches would just cause them to be found again.
+  function playTags({ withMatches = true } = {}) {
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
@@ -1512,8 +1566,8 @@
     // alongside the tagged notes. The search is no longer run when the piece opens (that left every
     // motif-carrying piece dimmed), so run it here when nothing is cached — otherwise ▶ would play
     // only the handful of notes that were tagged by hand instead of the motif through the piece.
-    if (renderer && renderer.getPatternMatchNotes && !renderer.getPatternMatchNotes().length) searchPattern();
-    const matched = (renderer && renderer.getPatternMatchNotes) ? renderer.getPatternMatchNotes() : [];
+    if (withMatches && renderer && renderer.getPatternMatchNotes && !renderer.getPatternMatchNotes().length) searchPattern();
+    const matched = (withMatches && renderer && renderer.getPatternMatchNotes) ? renderer.getPatternMatchNotes() : [];
     const seen = new Set();
     const keep = [...tagged, ...matched].filter((n) => {
       const k = `${n.midi}@${n.beats}`;
@@ -1536,11 +1590,11 @@
     p.setSchedule(schedule, { cursorStartStep: 0 });
     p.setLoop(document.getElementById('loopChk').checked);
     setTransportMsg('Loading instrument…');
-    const withMatches = matched.length ? ' (tags + matches)' : '';
+    const matchNote = matched.length ? ' (tags + matches)' : '';
     p.play()
       .then(() => {
         const silent = schedule.length - audible;
-        setTransportMsg(`Playing ${audible} notes${withMatches}`
+        setTransportMsg(`Playing ${audible} notes${matchNote}`
           + (silent ? ` (${silent} ${silencedWord()})` : ''), 'ok');
       })
       .catch(() => { setTransportMsg('Playback error.', 'err'); });
@@ -2358,6 +2412,14 @@
     if (renderer) { renderer.setPhrasePaintMode(false); renderer.setShownPhrases([]); }
     setPhraseVis(false);   // sheet phrase visibility starts off (decoupled from expand)
     resetAutoPhrases();    // a detected phrase list belongs to the piece it was scanned from
+    // The script travels with the piece (like phrases and rhythm groups). Any run in flight belongs
+    // to the piece that is leaving, so abandon it before the new text lands.
+    scriptRunId++; scriptRunning = false; scriptIdx = -1;
+    if (scriptAskResolve) { const r = scriptAskResolve; scriptAskResolve = null; r(); }
+    document.getElementById('scriptText').value = currentDetail.script || '';
+    document.getElementById('scriptStage').style.display = 'none';
+    document.getElementById('scriptHelp').style.display = 'none';
+    scriptMsg(''); parseScriptNow();
     if (phrasePanelOpen) renderPhraseUI();
     resetRhythmPanel();   // the rhythm list belongs to the notes that were drawn — rescan for this piece
     renderColorLegend();  // name this piece's voice colours
@@ -2821,7 +2883,7 @@
     btn.addEventListener('click', (e) => { e.stopPropagation(); panel.open = false; });
     bar.appendChild(btn);
   }
-  const PANEL_IDS = ['tagPanel', 'phrasePanel', 'rhythmPanel'];
+  const PANEL_IDS = ['tagPanel', 'phrasePanel', 'rhythmPanel', 'scriptPanel'];
   function syncPanelTabs() {
     PANEL_IDS.forEach((id) => {
       const btn = document.getElementById(`${id}Btn`);
@@ -2936,7 +2998,7 @@
     }
     renderer.setTagMode(e.target.checked);
   };
-  document.getElementById('playTagsBtn').onclick = playTags;
+  document.getElementById('playTagsBtn').onclick = () => playTags();   // not `= playTags` — the click event would become its options
   // Check all tags at once (or uncheck all if every tag is already checked).
   document.getElementById('tagCheckAllBtn').onclick = () => {
     if (!renderer) return;
@@ -3358,6 +3420,237 @@
     applyAutoPhraseShade();
     autoPhraseMsg(pickedPhraseMsg());
   };
+  // ---- Script panel ------------------------------------------------------------------------------
+  // Interactive practice notes: prose that also DOES something. Parsing lives in music-script.js;
+  // everything here is the runner — it turns a parsed step into the same calls the panels' own
+  // buttons make, so a script can never do something you could not do by hand.
+  let scriptSteps = [], scriptErrors = [];
+  let scriptIdx = -1;          // step currently showing (-1 = not started)
+  let scriptRunning = false;   // a run is in flight; Stop and any edit cancel it
+  let scriptRunId = 0;         // bumped to abandon an in-flight run without unwinding it
+  let scriptAskResolve = null; // set while an ask() is waiting for Continue
+  const scriptMsg = (t) => { document.getElementById('scriptMsg').textContent = t || ''; };
+  const scriptAuto = () => document.getElementById('scriptAutoChk').checked;
+
+  function parseScriptNow() {
+    const res = parseScript(document.getElementById('scriptText').value);
+    scriptSteps = res.steps; scriptErrors = res.errors;
+    document.getElementById('scriptErrors').textContent =
+      scriptErrors.map((e) => `line ${e.line}: ${e.message}`).join('\n');
+    document.getElementById('scriptPos').textContent =
+      scriptSteps.length ? `${scriptSteps.length} step${scriptSteps.length === 1 ? '' : 's'}` : '';
+    return scriptSteps;
+  }
+  // Persist with the piece, like phrases and rhythm groups.
+  async function saveScript() {
+    if (!currentDetail || !currentPreviewId) return;
+    const text = document.getElementById('scriptText').value;
+    if ((currentDetail.script || '') === text) return;
+    currentDetail.script = text;
+    const entry = index.find((e) => e.id === currentPreviewId);
+    if (!entry) return;
+    try { await store.putPieces(system, [{ entry, detail: currentDetail }]); } catch (_) {}
+    unpushedIds.add(currentPreviewId);
+    render(); updatePushBtn();
+    scriptMsg('Saved — click "Push changes" to publish.');
+  }
+
+  function showStage(step, pass) {
+    const stage = document.getElementById('scriptStage');
+    if (!step) { stage.style.display = 'none'; return; }
+    stage.style.display = '';
+    document.getElementById('scriptSay').textContent = step.prose || '';
+    const desc = describeStep(step);
+    document.getElementById('scriptDoing').textContent =
+      desc + (step.repeat > 1 && pass != null ? `  (pass ${pass + 1} of ${step.repeat})` : '');
+    document.getElementById('scriptPos').textContent =
+      `step ${scriptIdx + 1} of ${scriptSteps.length}`;
+  }
+
+  // Wait for the transport to finish whatever a step just started. Polls rather than hooking the
+  // player: several paths (main, phrase, rhythm) start sound and the FAB already proves polling is
+  // the reliable read. Gives the instrument time to load before deciding nothing ever started.
+  function awaitPlaybackEnd(runId) {
+    return new Promise((resolve) => {
+      const T = window.Tone && window.Tone.Transport;
+      if (!T) return resolve();
+      const t0 = Date.now();
+      let started = false;
+      const tick = setInterval(() => {
+        if (runId !== scriptRunId) { clearInterval(tick); return resolve(); }
+        const on = T.state === 'started';
+        if (on) started = true;
+        const gaveUp = !started && Date.now() - t0 > 9000;      // instrument never got going
+        const tooLong = Date.now() - t0 > 5 * 60 * 1000;        // runaway guard
+        if ((started && !on) || gaveUp || tooLong) { clearInterval(tick); resolve(); }
+      }, 150);
+    });
+  }
+  const sleep = (ms, runId) => new Promise((r) => setTimeout(() => r(), ms));
+
+  // Check exactly these motifs and show them, the way the Motifs panel would.
+  function scriptSelectTags(names) {
+    if (!renderer) return [];
+    const known = new Set(renderer.getPatterns().map((a) => a.name));
+    const wanted = names.filter((n) => known.has(n));
+    tagFilterSel.clear();
+    wanted.forEach((n) => tagFilterSel.add(n));
+    renderer.setFilterTags([...tagFilterSel]);
+    renderTagUI();
+    setTagVis(true);
+    return wanted;
+  }
+  function scriptPlayTags(names, withMatches) {
+    const found = scriptSelectTags(names);
+    const missing = names.filter((n) => !found.includes(n));
+    if (missing.length) scriptMsg(`No motif named ${missing.map((m) => `"${m}"`).join(', ')} on this piece.`);
+    if (!found.length) return false;
+    if (withMatches) searchPattern();
+    else if (renderer.clearSearchHighlight) renderer.clearSearchHighlight();
+    playTags({ withMatches });
+    return true;
+  }
+  function scriptShowBars(a, b) {
+    const from = parseInt(a, 10), to = parseInt(b, 10);
+    if (!Number.isFinite(from) || !Number.isFinite(to)) return false;
+    document.getElementById('segFrom').value = from;
+    document.getElementById('segTo').value = to;
+    if (renderer) { renderer.showSegment([toSeqMeasure(from), toSeqMeasure(to)]); onDrawnRangeChanged(); }
+    return true;
+  }
+  // A phrase argument is either a detected letter (A, B…) or one you named by hand.
+  function scriptPlayPhrase(name) {
+    const i = detectedPhrases.findIndex((p) => p.name === name);
+    if (i >= 0) {
+      const sel = document.getElementById('autoPhraseSel');
+      sel.value = String(i);
+      sel.dispatchEvent(new Event('change'));
+      playDetectedPhrase();
+      return true;
+    }
+    if (renderer && renderer.getPhrases && renderer.getPhrases().some((p) => p.name === name)) {
+      playPhrase(name); return true;
+    }
+    scriptMsg(`No phrase "${name}" — run Find in the Phrases panel first, or check the name.`);
+    return false;
+  }
+
+  // Run ONE action. Returns true when it started sound (so the runner knows to wait for it).
+  async function runAction(a, runId) {
+    switch (a.name) {
+      case 'playTag':      return scriptPlayTags(a.args, false);
+      case 'playTagAll':   return scriptPlayTags(a.args, true);
+      case 'playPhrase':   return scriptPlayPhrase(a.args[0]);
+      case 'playGroup': {
+        const g = (renderer.getRhythmGroups() || []).find((x) => x.name === a.args[0]);
+        if (!g) { scriptMsg(`No rhythm group "${a.args[0]}".`); return false; }
+        playRhythmGroup(a.args[0]); return true;
+      }
+      case 'playBars': {
+        if (!scriptShowBars(a.args[0], a.args[1])) return false;
+        playMidi(); return true;
+      }
+      case 'compare': {
+        // Each in turn with a breath between, so they land back to back and the difference is the
+        // only thing that changed. Sequential rather than one spliced schedule: each argument may be
+        // a different KIND of thing, and each already knows how to play itself.
+        for (let i = 0; i < a.args.length; i++) {
+          if (runId !== scriptRunId) return false;
+          const one = a.args[i];
+          const played = detectedPhrases.some((p) => p.name === one) ? scriptPlayPhrase(one)
+            : scriptPlayTags([one], true);
+          if (played) { await awaitPlaybackEnd(runId); await sleep(450, runId); }
+        }
+        return false;   // already waited for each
+      }
+      case 'show':         return scriptShowBars(a.args[0], a.args[1]) && false;
+      case 'full':         if (renderer) { renderer.showFull(); onDrawnRangeChanged(); } return false;
+      case 'wait':         await sleep(Math.max(0, parseFloat(a.args[0]) || 0) * 1000, runId); return false;
+      case 'originalView': showOriginalView(); return false;
+      case 'ask': {
+        const stage = document.getElementById('scriptStage');
+        const btn = document.getElementById('scriptAskBtn');
+        if (a.args[0]) document.getElementById('scriptSay').textContent = a.args[0];
+        stage.classList.add('asking');
+        btn.style.display = '';
+        await new Promise((resolve) => { scriptAskResolve = resolve; });
+        scriptAskResolve = null;
+        btn.style.display = 'none';
+        stage.classList.remove('asking');
+        return false;
+      }
+      default: return false;
+    }
+  }
+
+  // Run one step: its passes, its tempo (held or ramped), its actions in order.
+  async function runStep(i, runId) {
+    const step = scriptSteps[i];
+    if (!step) return;
+    scriptIdx = i;
+    for (let pass = 0; pass < step.repeat; pass++) {
+      if (runId !== scriptRunId) return;
+      showStage(step, step.repeat > 1 ? pass : null);
+      const t = tempoForPass(step, pass);
+      if (t != null) document.getElementById('tempoInput').value = t;
+      for (const a of step.actions) {
+        if (runId !== scriptRunId) return;
+        const sounded = await runAction(a, runId);
+        if (sounded) await awaitPlaybackEnd(runId);
+      }
+      // A prose-only step in Auto has nothing to wait for; give it long enough to be read.
+      if (!step.actions.length) await sleep(Math.min(6000, 900 + (step.prose || '').length * 45), runId);
+    }
+  }
+  async function runFrom(i) {
+    if (!parseScriptNow().length) { scriptMsg('Nothing to run yet — write a step or two.'); return; }
+    const runId = ++scriptRunId;
+    scriptRunning = true;
+    for (let k = Math.max(0, i); k < scriptSteps.length; k++) {
+      if (runId !== scriptRunId) return;
+      await runStep(k, runId);
+      if (runId !== scriptRunId) return;
+      if (!scriptAuto()) break;          // manual: stop after the one step
+      await sleep(250, runId);
+    }
+    if (runId === scriptRunId) {
+      scriptRunning = false;
+      if (scriptAuto() && scriptIdx >= scriptSteps.length - 1) scriptMsg('Done.');
+    }
+  }
+  function stopScript() {
+    scriptRunId++;                       // abandons any in-flight run
+    scriptRunning = false;
+    if (scriptAskResolve) { const r = scriptAskResolve; scriptAskResolve = null; r(); }
+    document.getElementById('scriptAskBtn').style.display = 'none';
+    document.getElementById('scriptStage').classList.remove('asking');
+    if (player) player.stop();
+    scriptMsg('Stopped.');
+  }
+  function stepTo(i) {
+    if (!parseScriptNow().length) return;
+    stopScript();
+    const next = Math.max(0, Math.min(scriptSteps.length - 1, i));
+    const runId = ++scriptRunId;
+    scriptRunning = true;
+    runStep(next, runId).then(() => { if (runId === scriptRunId) scriptRunning = false; });
+  }
+  document.getElementById('scriptRunBtn').onclick = () => runFrom(scriptIdx < 0 ? 0 : scriptIdx);
+  document.getElementById('scriptStopBtn').onclick = stopScript;
+  document.getElementById('scriptNextBtn').onclick = () => stepTo(scriptIdx + 1);
+  document.getElementById('scriptPrevBtn').onclick = () => stepTo(scriptIdx - 1);
+  document.getElementById('scriptAskBtn').onclick = () => { if (scriptAskResolve) scriptAskResolve(); };
+  document.getElementById('scriptText').addEventListener('input', () => { parseScriptNow(); });
+  document.getElementById('scriptText').addEventListener('change', () => { parseScriptNow(); saveScript(); });
+  document.getElementById('scriptHelpBtn').onclick = () => {
+    const box = document.getElementById('scriptHelp');
+    if (box.style.display !== 'none') { box.style.display = 'none'; return; }
+    box.innerHTML = '<b>One step per line.</b> Text before <code>&gt;</code> is what it says, after it is what it does. '
+      + 'Arguments are separated by <code>|</code> — a motif name may contain commas.<br>'
+      + Object.entries(COMMANDS).map(([n, c]) => `<code>${n}()</code> — ${c.doc}`).join('<br>');
+    box.style.display = '';
+  };
+
   // ---- Rhythm panel ------------------------------------------------------------------------------
   // Nothing to tag or paint here: the panel READS the rhythms off the sheet that is showing (whole
   // piece or segment), lists them most-used first, and paints every occurrence of the picked one.
@@ -4219,6 +4512,7 @@
     syncToggles();
     document.body.classList.remove('preview-open');
     stopFabSync();   // the FAB is hidden again; stop reconciling its icon
+    stopScript();
     currentPreviewId = null; currentVocabEntry = null; openedVocabId = null;
     syncOpenUrl();   // nothing is open — a refresh should land on the library, not reopen the piece
   };
