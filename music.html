@@ -454,6 +454,8 @@
         .script-line-run{position:absolute;left:1px;width:18px;padding:0;border:0;background:transparent;
           color:#2563eb;cursor:pointer;font-size:10px;text-align:center;border-radius:4px}
         .script-line-run:hover{background:#e8efff}
+        /* Run and Stop are opposites: exactly one of them is ever the thing to press. */
+        #scriptRunBtn:disabled,#scriptStopBtn:disabled{opacity:.4;cursor:not-allowed}
         /* What the running step SAYS, over the sheet. Not a toast: a toast expires after a few
            seconds, and a step's line has to stay readable for as long as that step is playing. Top
            of the screen, because the transport's toasts own the bottom. Click to dismiss. */
@@ -889,15 +891,14 @@
     <summary>📜 Script</summary>
     <div class="np-body">
     <div class="np-drag" title="Drag to move · double-click to reset"><span class="grip">⠿⠿</span> drag to move</div>
-    <!-- The runner. Shows the current step's prose while it plays; the same controls serve both
-         ways of moving through a script — press Run and it advances itself, or step with ◀ ▶. -->
+    <!-- The runner. Shows the current step's prose while it plays. Each control does one thing:
+         Run all plays to the end, ◀ ▶ move a step at a time, and the gutter ▶ runs the line you are
+         looking at. -->
     <div class="tag-row">
-      <button id="scriptRunBtn" class="btn" title="Run from the current step"><span class="ic">▶</span><span class="txt">▶ Run</span></button>
+      <button id="scriptRunBtn" class="btn" title="Play the whole script from the step showing — each step starts when the one before it finishes"><span class="ic">▶</span><span class="txt">▶ Run all</span></button>
       <button id="scriptStopBtn" class="btn" title="Stop and leave the sheet as it is"><span class="ic">⏹</span><span class="txt">⏹ Stop</span></button>
       <button id="scriptPrevBtn" class="btn ico" title="Previous step">◀</button>
       <button id="scriptNextBtn" class="btn ico" title="Next step">▶</button>
-      <button class="btn toggle" data-for="scriptAutoChk" title="Auto: each step runs the next one when its sound ends. Off: nothing moves until you press ▶ next." aria-pressed="true"><span class="ic">⏩</span><span class="txt">⏩ Auto</span></button>
-      <input type="checkbox" id="scriptAutoChk" checked hidden>
       <span id="scriptPos" style="font-size:.8em;color:#555"></span>
     </div>
     <div id="scriptStage" class="script-stage" style="display:none">
@@ -1041,32 +1042,32 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=8937e2bfba';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=8937e2bfba';
-  import { runQuery } from './music-query.js?v=8937e2bfba';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=8937e2bfba';
-  import { init as initFretboard } from './fretboard-panel.js?v=8937e2bfba';
-  import { chordDisplayName } from './music-chords.js?v=8937e2bfba';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=8937e2bfba';
-  import { keyExplanation } from './music-key.js?v=8937e2bfba';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=8937e2bfba';
-  import { createMusicStore } from './music-local-store.js?v=8937e2bfba';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=8937e2bfba';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=8937e2bfba';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=8937e2bfba';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=8937e2bfba';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=addbc992ff';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=addbc992ff';
+  import { runQuery } from './music-query.js?v=addbc992ff';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=addbc992ff';
+  import { init as initFretboard } from './fretboard-panel.js?v=addbc992ff';
+  import { chordDisplayName } from './music-chords.js?v=addbc992ff';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=addbc992ff';
+  import { keyExplanation } from './music-key.js?v=addbc992ff';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=addbc992ff';
+  import { createMusicStore } from './music-local-store.js?v=addbc992ff';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=addbc992ff';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=addbc992ff';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=addbc992ff';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=addbc992ff';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=8937e2bfba';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=8937e2bfba';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=8937e2bfba';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=8937e2bfba';
-  import { generateCounterLines } from './music-counterpoint.js?v=8937e2bfba';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=8937e2bfba';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=8937e2bfba';
-  import { splitSingleVoice } from './music-voice-split.js?v=8937e2bfba';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=8937e2bfba';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=8937e2bfba';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=8937e2bfba';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=addbc992ff';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=addbc992ff';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=addbc992ff';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=addbc992ff';
+  import { generateCounterLines } from './music-counterpoint.js?v=addbc992ff';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=addbc992ff';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=addbc992ff';
+  import { splitSingleVoice } from './music-voice-split.js?v=addbc992ff';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=addbc992ff';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=addbc992ff';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=addbc992ff';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2456,7 +2457,7 @@ Can you hear it?       &gt; ask()"></textarea>
     loadSavedPhrases();    // ...unless this piece has one kept with it, in which case it is already here
     // The script travels with the piece (like phrases and rhythm groups). Any run in flight belongs
     // to the piece that is leaving, so abandon it before the new text lands.
-    scriptRunId++; scriptRunning = false; scriptIdx = -1;
+    scriptRunId++; setScriptRunning(false); scriptIdx = -1; scriptFinished = false;
     if (scriptAskResolve) { const r = scriptAskResolve; scriptAskResolve = null; r(); }
     document.getElementById('scriptText').value = currentDetail.script || '';
     document.getElementById('scriptStage').style.display = 'none';
@@ -3534,10 +3535,19 @@ Can you hear it?       &gt; ask()"></textarea>
   let scriptSteps = [], scriptErrors = [];
   let scriptIdx = -1;          // step currently showing (-1 = not started)
   let scriptRunning = false;   // a run is in flight; Stop and any edit cancel it
+  let scriptFinished = false;  // the last run reached the end — Run all should start over, not replay it
+  // Run and Stop are opposites, so only one of them is ever live. Every place that starts or ends a
+  // run goes through here, which is what keeps the two buttons from disagreeing with the transport.
+  function setScriptRunning(on) {
+    scriptRunning = !!on;
+    const run = document.getElementById('scriptRunBtn');
+    const stop = document.getElementById('scriptStopBtn');
+    if (run) run.disabled = scriptRunning;
+    if (stop) stop.disabled = !scriptRunning;
+  }
   let scriptRunId = 0;         // bumped to abandon an in-flight run without unwinding it
   let scriptAskResolve = null; // set while an ask() is waiting for Continue
   const scriptMsg = (t) => { document.getElementById('scriptMsg').textContent = t || ''; };
-  const scriptAuto = () => document.getElementById('scriptAutoChk').checked;
 
   function parseScriptNow() {
     const res = parseScript(document.getElementById('scriptText').value);
@@ -3838,26 +3848,29 @@ Can you hear it?       &gt; ask()"></textarea>
       if (!step.actions.length) await sleep(Math.min(6000, 900 + (step.prose || '').length * 45), runId);
     }
   }
+  // Run all: every step from here to the end, each starting when the one before it finishes. One step
+  // at a time is what ◀ ▶ and the gutter ▶ are for — so this button has a single meaning, and there is
+  // no mode to check before pressing it.
   async function runFrom(i) {
     if (!parseScriptNow().length) { scriptMsg('Nothing to run yet — write a step or two.'); return; }
     const runId = ++scriptRunId;
-    scriptRunning = true;
+    setScriptRunning(true);
+    scriptFinished = false;
     for (let k = Math.max(0, i); k < scriptSteps.length; k++) {
       if (runId !== scriptRunId) return;
       await runStep(k, runId);
       if (runId !== scriptRunId) return;
-      if (!scriptAuto()) break;          // manual: stop after the one step
       await sleep(250, runId);
     }
     if (runId === scriptRunId) {
-      scriptRunning = false;
-      // Manual stops mid-script: keep the banner up so the step you just ran is still readable.
-      if (scriptAuto() && scriptIdx >= scriptSteps.length - 1) { scriptMsg('Done.'); hideScriptBanner(); }
+      setScriptRunning(false);
+      scriptFinished = true;
+      scriptMsg('Done.'); hideScriptBanner();
     }
   }
   function stopScript() {
     scriptRunId++;                       // abandons any in-flight run
-    scriptRunning = false;
+    setScriptRunning(false);
     if (scriptAskResolve) { const r = scriptAskResolve; scriptAskResolve = null; r(); }
     document.getElementById('scriptAskBtn').style.display = 'none';
     document.getElementById('scriptStage').classList.remove('asking');
@@ -3865,18 +3878,35 @@ Can you hear it?       &gt; ask()"></textarea>
     hideScriptBanner();
     scriptMsg('Stopped.');
   }
+  // Run exactly one step. Off either end it says so rather than silently clamping — pressing ▶ next at
+  // the end used to replay the last step, which reads as the script having gone wrong.
   function stepTo(i) {
-    if (!parseScriptNow().length) return;
+    if (!parseScriptNow().length) { scriptMsg('Nothing to run yet — write a step or two.'); return; }
+    // Refusing must leave the readout alone: re-parsing rewrote it to "3 steps", which looks like the
+    // step you were on has been lost.
+    const keepPos = () => {
+      if (scriptIdx >= 0 && scriptIdx < scriptSteps.length) {
+        document.getElementById('scriptPos').textContent = `step ${scriptIdx + 1} of ${scriptSteps.length}`;
+      }
+    };
+    if (i < 0) { scriptMsg('Already at the first step.'); keepPos(); return; }
+    if (i > scriptSteps.length - 1) { scriptMsg('That was the last step.'); keepPos(); return; }
     stopScript();
-    const next = Math.max(0, Math.min(scriptSteps.length - 1, i));
+    scriptMsg('');            // "Stopped." is not news when you are the one stepping
     const runId = ++scriptRunId;
-    scriptRunning = true;
-    runStep(next, runId).then(() => { if (runId === scriptRunId) scriptRunning = false; });
+    setScriptRunning(true);
+    scriptFinished = false;
+    runStep(i, runId).then(() => { if (runId === scriptRunId) setScriptRunning(false); });
   }
-  document.getElementById('scriptRunBtn').onclick = () => runFrom(scriptIdx < 0 ? 0 : scriptIdx);
+  document.getElementById('scriptRunBtn').onclick = () => {
+    // Start where you are — but a script that has already run to the end starts again from the top,
+    // rather than replaying its last step forever.
+    parseScriptNow();
+    runFrom(scriptIdx < 0 || scriptFinished ? 0 : scriptIdx);
+  };
   document.getElementById('scriptStopBtn').onclick = stopScript;
-  document.getElementById('scriptNextBtn').onclick = () => stepTo(scriptIdx + 1);
-  document.getElementById('scriptPrevBtn').onclick = () => stepTo(scriptIdx - 1);
+  document.getElementById('scriptNextBtn').onclick = () => stepTo(scriptIdx < 0 ? 0 : scriptIdx + 1);
+  document.getElementById('scriptPrevBtn').onclick = () => stepTo(scriptIdx < 0 ? 0 : scriptIdx - 1);
   document.getElementById('scriptAskBtn').onclick = () => { if (scriptAskResolve) scriptAskResolve(); };
   document.getElementById('scriptText').addEventListener('input', () => { parseScriptNow(); });
   document.getElementById('scriptText').addEventListener('change', () => { parseScriptNow(); saveScript(); });
