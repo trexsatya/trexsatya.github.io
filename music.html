@@ -439,6 +439,20 @@
         .pl-entry .icon-btn{border:1px solid #bbb;background:#fff;border-radius:6px;padding:1px 7px;cursor:pointer;font-size:13px}
         /* Mobile floating play/pause button */
         #fabPlay{display:none}
+        /* Practice notes — the piece's panel and the per-vocab-item editor share this look. */
+        .note-panel{margin:.35rem 0;max-width:44em}
+        .note-panel > summary{cursor:pointer;font-size:.85em;color:#555;list-style:none;
+          display:inline-block;padding:1px 8px;border:1px solid #e0e0e0;border-radius:999px;background:#fafafa;
+          max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle}
+        .note-panel > summary::-webkit-details-marker{display:none}
+        .note-panel > summary:hover{background:#f0f4ff;border-color:#c9d8ff}
+        .note-panel[open] > summary{margin-bottom:.3rem}
+        .note-panel.has-note > summary{background:#fff8e1;border-color:#ffe08a;color:#7a5b00}
+        .note-text{width:100%;box-sizing:border-box;font:inherit;font-size:.9em;line-height:1.4;
+          padding:6px 8px;border:1px solid #cfd8e3;border-radius:6px;resize:vertical}
+        #pieceNote{width:100%;box-sizing:border-box;font:inherit;font-size:.9em;line-height:1.4;
+          padding:6px 8px;border:1px solid #cfd8e3;border-radius:6px;resize:vertical}
+        .vocabNoteBox{margin:.25rem 0 .5rem 1.2em;max-width:40em}
         /* Per-occurrence chips for the picked detected phrase. Filled = counted, hollow = switched off. */
         #autoPhraseOccs{display:inline-flex;flex-wrap:wrap;gap:4px;margin-left:6px;vertical-align:middle}
         .occ-chip{border:1.5px solid #bbb;border-radius:999px;padding:1px 8px;font-size:11.5px;
@@ -569,6 +583,12 @@
 <div id="musicPreview" style="display:none;border-top:1px solid #ddd;padding-top:1rem">
   <div style="margin-bottom:.5rem" class="previewControls">
     <div><strong id="previewTitle"></strong> <span id="pieceKeyBadge" class="key-badge" style="display:none"></span></div>
+    <!-- Practice notes for the piece. Collapsed, so it never competes with the score; the summary
+         carries the first line so a shut panel still tells you whether there IS a note. -->
+    <details id="pieceNotesPanel" class="note-panel">
+      <summary id="pieceNoteSummary">📝 Notes</summary>
+      <textarea id="pieceNote" rows="4" placeholder="What to work on in this piece — fingering, tempo, the bars that keep going wrong…"></textarea>
+    </details>
     <label class="measLabel">#:
       <button id="startPrevBtn" class="btn ico" title="extend the window to an earlier measure">◀|</button>
       <input id="segFrom" type="number" min="1" style="width:2.4em" placeholder="from">
@@ -648,7 +668,7 @@
     <input id="guessSec" type="number" step="0.1" style="width:5em" placeholder="start s">
     <input id="guessEndSec" type="number" step="0.1" style="width:5em" placeholder="end s">
     <input id="vocabCat" type="text" placeholder="category" style="width:8em">
-    <input id="vocabNote" type="text" placeholder="note" style="width:14em">
+    <textarea id="vocabNote" rows="1" placeholder="note" class="note-text" style="width:14em;vertical-align:middle"></textarea>
     <button id="addVocabBtn" class="btn"><span class="ic">➕</span><span class="txt">Add to vocab</span></button>
   </div>
   <div id="viewOptions" style="margin:.25rem 0" class="previewControls">
@@ -938,31 +958,31 @@
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=2724443d50';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=2724443d50';
-  import { runQuery } from './music-query.js?v=2724443d50';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=2724443d50';
-  import { init as initFretboard } from './fretboard-panel.js?v=2724443d50';
-  import { chordDisplayName } from './music-chords.js?v=2724443d50';
-  import { keyExplanation } from './music-key.js?v=2724443d50';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=2724443d50';
-  import { createMusicStore } from './music-local-store.js?v=2724443d50';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=2724443d50';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=2724443d50';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=2724443d50';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=2724443d50';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=7a68e8cad9';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=7a68e8cad9';
+  import { runQuery } from './music-query.js?v=7a68e8cad9';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=7a68e8cad9';
+  import { init as initFretboard } from './fretboard-panel.js?v=7a68e8cad9';
+  import { chordDisplayName } from './music-chords.js?v=7a68e8cad9';
+  import { keyExplanation } from './music-key.js?v=7a68e8cad9';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=7a68e8cad9';
+  import { createMusicStore } from './music-local-store.js?v=7a68e8cad9';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=7a68e8cad9';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=7a68e8cad9';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=7a68e8cad9';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=7a68e8cad9';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=2724443d50';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=2724443d50';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=2724443d50';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=2724443d50';
-  import { generateCounterLines } from './music-counterpoint.js?v=2724443d50';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=2724443d50';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=2724443d50';
-  import { splitSingleVoice } from './music-voice-split.js?v=2724443d50';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=2724443d50';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=2724443d50';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=2724443d50';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=7a68e8cad9';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=7a68e8cad9';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=7a68e8cad9';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=7a68e8cad9';
+  import { generateCounterLines } from './music-counterpoint.js?v=7a68e8cad9';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=7a68e8cad9';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=7a68e8cad9';
+  import { splitSingleVoice } from './music-voice-split.js?v=7a68e8cad9';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=7a68e8cad9';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=7a68e8cad9';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=7a68e8cad9';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2250,9 +2270,10 @@
     updateAddVocabLabel();
     let detail;
     try {
-      detail = unpushedIds.has(id)
-        ? await store.getDetail(system, id)
-        : await fetch(`${getMusicResourceUrl(system)}/details/${id}.json`).then(x => x.json());
+      const remote = () => fetch(`${getMusicResourceUrl(system)}/details/${id}.json`).then(x => x.json());
+      // Local first for an edited piece — but an edit can touch only the index ENTRY (tags, a note),
+      // leaving no local detail. Fall back to the published one rather than declaring the piece broken.
+      detail = unpushedIds.has(id) ? (await store.getDetail(system, id)) || (await remote()) : await remote();
       if (!detail) throw new Error('detail not found');
     } catch (e) { document.getElementById('previewMsg').textContent = 'Failed to load detail.'; return; }
     let res;
@@ -2264,6 +2285,7 @@
     if (!res.ok) { document.getElementById('previewMsg').textContent = 'Cannot render (note-text piece).'; return; }
     currentDetail = detail;
     currentPreviewId = id;
+    renderPieceNote({ collapse: true });   // needs currentPreviewId — read off this piece's index entry
     pieceOriginalSource = detail.source;                         // baseline for transposition (absolute, non-cumulative)
     mergeBaseSource = detail.source; mergedActive = false;       // pre-merge baseline for Combine parts
     mergeSource = combineReadySource(detail.source);             // staves-exploded view the picker/merge use
@@ -2383,6 +2405,9 @@
     const inp = ev.target.closest('.pieceTags');
     if (inp) setPieceTags(inp.dataset.id, inp.value);
   });
+  document.getElementById('pieceNote').addEventListener('change', savePieceNote);   // commits on blur
+  // Collapsing the panel commits too: typing then clicking the summary shut is an obvious "done".
+  document.getElementById('pieceNotesPanel').addEventListener('toggle', (e) => { if (!e.target.open) savePieceNote(); });
   // Tag-filter chips toggle the active filter (empty data-tag = clear).
   document.getElementById('tagFilterBar').addEventListener('click', (ev) => {
     const chip = ev.target.closest('.tagChip');
@@ -2399,6 +2424,46 @@
     render();
   });
   // Save tags locally on the index entry (+ local store), mark the piece pending. No push.
+  // ---- Practice notes -----------------------------------------------------------------------------
+  // Free text kept with the piece (index entry) and with each vocab item. Local-first like tags: the
+  // edit lands in the local store immediately and rides out with the next manual "Push changes".
+  const firstLine = (s) => {
+    const line = String(s || '').split('\n').find((l) => l.trim()) || '';
+    return line.trim().length > 60 ? `${line.trim().slice(0, 60)}…` : line.trim();
+  };
+  // Fill the piece's note panel from the open piece and label the summary. A shut panel still has to
+  // say whether there IS a note, so the first line goes in the summary and the pill turns amber.
+  function renderPieceNote({ collapse = false } = {}) {
+    const panel = document.getElementById('pieceNotesPanel');
+    const box = document.getElementById('pieceNote');
+    const sum = document.getElementById('pieceNoteSummary');
+    if (!panel || !box || !sum) return;
+    const entry = index.find((e) => e.id === currentPreviewId);
+    const note = (entry && entry.note) || '';
+    box.value = note;
+    sum.textContent = note ? `📝 ${firstLine(note)}` : '📝 Notes';
+    sum.title = note ? 'Practice notes for this piece' : 'Add practice notes for this piece';
+    panel.classList.toggle('has-note', !!note);
+    // A newly opened piece gets its panel shut in the SAME step that fills it — set apart, the two
+    // drift and a piece can open with the previous piece's panel still hanging open over the score.
+    if (collapse) panel.open = false;
+  }
+  async function savePieceNote() {
+    const box = document.getElementById('pieceNote');
+    if (!box || !currentPreviewId) return;
+    const entry = index.find((e) => e.id === currentPreviewId);
+    if (!entry) return;
+    const next = box.value.trim();
+    if ((entry.note || '') === next) return;   // blur with nothing typed must not mark the piece dirty
+    entry.note = next;
+    // Prefer the detail already in memory: this IS the open piece, so writing it keeps the local copy
+    // complete and gives the push a real payload instead of an entry with nothing behind it.
+    const detail = currentDetail || await store.getDetail(system, currentPreviewId);
+    try { await store.putPieces(system, [{ entry, detail }]); } catch (_) {}
+    unpushedIds.add(currentPreviewId);
+    renderPieceNote(); render(); updatePushBtn();
+    setMediaMsg(next ? 'Note saved — click "Push changes" to publish.' : 'Note cleared.', 'ok');
+  }
   async function setPieceTags(id, value) {
     const entry = index.find(e => e.id === id); if (!entry) return;
     entry.tags = parseTags(value);
@@ -4358,6 +4423,42 @@
     openedVocabId = entry.id; syncOpenUrl();   // openPreview wrote just ?piece=; now name the item too
   }
   // Delete a vocab item after confirmation: drop it locally, re-render, then push the new vocab.json.
+  // Open (or close) a multi-line note editor under a vocab row. Inline rather than a dialog: the row
+  // it belongs to stays visible, which is the whole point when the note is about that passage.
+  function toggleVocabNote(entry, row) {
+    const existing = row.parentElement.querySelector(`.vocabNoteBox[data-id="${CSS.escape(entry.id)}"]`);
+    if (existing) { existing.remove(); return; }
+    row.parentElement.querySelectorAll('.vocabNoteBox').forEach((b) => b.remove());   // one at a time
+    const box = document.createElement('div');
+    box.className = 'vocabNoteBox';
+    box.dataset.id = entry.id;
+    const ta = document.createElement('textarea');
+    ta.className = 'note-text';
+    ta.rows = 3;
+    ta.value = entry.note || '';
+    ta.placeholder = 'What to work on in this passage…';
+    ta.onchange = () => saveVocabNote(entry, ta.value);
+    ta.onkeydown = (ev) => { if (ev.key === 'Escape') box.remove(); };
+    box.appendChild(ta);
+    row.insertAdjacentElement('afterend', box);
+    ta.focus();
+  }
+  // Persist a vocab item's note. Same local-first contract as every other vocab edit: straight into
+  // the local store, marked dirty, published by the next manual push.
+  async function saveVocabNote(entry, text) {
+    const next = String(text || '').trim();
+    if ((entry.note || '') === next) return;
+    const updated = { ...entry, note: next };
+    vocab = upsertVocab(vocab, updated);
+    if (currentVocabEntry && currentVocabEntry.id === entry.id) {
+      currentVocabEntry = updated;
+      document.getElementById('vocabNote').value = next;   // keep the add/update form honest
+    }
+    renderVocab();
+    try { await store.putVocab(system, vocab); } catch (_) {}
+    dirtyVocab = true; updatePushBtn();
+    setMediaMsg(next ? `Note saved on “${entry.id}” — click "Push changes" to publish.` : 'Note cleared.', 'ok');
+  }
   async function deleteVocabEntry(entry) {
     if (!window.confirm(`Delete vocab item “${entry.id}”?\n\nThis removes it for good.`)) return;
     vocab = vocab.filter(v => v.id !== entry.id);
@@ -4410,6 +4511,15 @@
         del.className = 'vocabDel'; del.title = 'Delete this vocab item'; del.textContent = '🗑';
         del.onclick = (ev) => { ev.stopPropagation(); deleteVocabEntry(e); };
         row.appendChild(label);
+        // 📝 opens a multi-line editor under this row. Kept out of the label's click handler, which
+        // opens the passage — editing a note must not drag the sheet to a different segment.
+        const noteBtn = document.createElement('button');
+        noteBtn.className = 'vocabDel';
+        noteBtn.textContent = '📝';
+        noteBtn.title = e.note ? `Notes: ${firstLine(e.note)}` : 'Add notes to this item';
+        if (e.note) noteBtn.style.background = '#fff8e1';
+        noteBtn.onclick = (ev) => { ev.stopPropagation(); toggleVocabNote(e, row); };
+        row.appendChild(noteBtn);
         // Items that differ from the published vocab.json can be thrown away individually.
         const status = vocabItemStatus(e, remoteVocab);
         if (status !== 'same') {
