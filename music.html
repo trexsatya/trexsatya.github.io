@@ -331,6 +331,10 @@
         #phrasePanel .btn.active{background:#1565c0;color:#fff;border-color:#1565c0}
         /* Rhythm panel: pick one of the rhythms the piece uses; its occurrences light up teal. */
         #rhythmPanel[open]>.np-body{background:#f0faf6;border:1px solid #c3e8da}
+        /* Every floating card needs its own opaque background: the body has none of its own, and the
+           sticky drag bar inherits it, so a panel without this rule shows the score straight through. */
+        #scriptPanel[open]>.np-body{background:#fdf8ef;border:1px solid #ecdcc2}
+        #scriptPanel .np-drag{color:#a5854f}
         #rhythmPanel .np-drag{color:#4f9c85}
         #rhythmPanel .tag-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}
         #rhythmPanel .tag-lbl{color:#555}
@@ -442,7 +446,23 @@
         /* Script panel: the editor, the running step, and parse errors. */
         .script-text{width:100%;box-sizing:border-box;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
           font-size:12.5px;line-height:1.5;padding:6px 8px;border:1px solid #cfd8e3;border-radius:6px;
-          resize:vertical;white-space:pre;overflow-wrap:normal;overflow-x:auto}
+          resize:vertical;white-space:pre;overflow-wrap:normal;overflow-x:auto;flex:1 1 auto;min-width:0}
+        /* Gutter: one ▶ that rides the caret's line. `white-space:pre` above is what makes this
+           honest — no wrapping, so a line of text is always exactly one row to measure against. */
+        .script-edit{display:flex;align-items:stretch}
+        .script-gutter{position:relative;flex:0 0 20px;width:20px;overflow:hidden}
+        .script-line-run{position:absolute;left:1px;width:18px;padding:0;border:0;background:transparent;
+          color:#2563eb;cursor:pointer;font-size:10px;text-align:center;border-radius:4px}
+        .script-line-run:hover{background:#e8efff}
+        /* What the running step SAYS, over the sheet. Not a toast: a toast expires after a few
+           seconds, and a step's line has to stay readable for as long as that step is playing. Top
+           of the screen, because the transport's toasts own the bottom. Click to dismiss. */
+        #scriptBanner{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:11000;
+          max-width:92vw;background:#12325c;color:#fff;padding:10px 16px;border-radius:12px;
+          box-shadow:0 6px 20px rgba(0,0,0,.22);font-size:1rem;line-height:1.35;text-align:center;
+          cursor:pointer;display:none}
+        #scriptBannerSub{display:block;font-size:.74em;opacity:.72;margin-top:3px;
+          font-family:ui-monospace,Menlo,monospace}
         .script-stage{border:1px solid #cfe0ff;background:#f6f9ff;border-radius:8px;padding:8px 10px;margin:6px 0}
         #scriptSay{font-size:1.02em;line-height:1.4;color:#12325c}
         #scriptDoing{font-size:.78em;color:#5a6b85;margin-top:3px;font-family:ui-monospace,Menlo,monospace}
@@ -884,6 +904,10 @@
       <span id="scriptMsg" style="font-size:.8em;color:#555"></span>
     </div>
     <div id="scriptHelp" class="script-help" style="display:none"></div>
+    <div class="script-edit">
+    <div id="scriptGutter" class="script-gutter">
+      <button id="scriptLineRun" class="script-line-run" type="button" hidden>▶</button>
+    </div>
     <textarea id="scriptText" class="script-text" rows="9" spellcheck="false"
       placeholder="One step per line. Text before &gt; is what it says, after it is what it does.
 
@@ -894,6 +918,7 @@ Work the jump          &gt; tempo(60 | 100) repeat(4) playBars(12,16)
 Only where A says it   &gt; inPhrase(A) playTagAll(1,2,3,2,1)
 Now hear it in place   &gt; inPhrase(A) playPhraseWith(1,2,3,2,1)
 Can you hear it?       &gt; ask()"></textarea>
+    </div>
     <div id="scriptErrors" class="script-errors"></div>
     </div>
   </details>
@@ -1010,32 +1035,32 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=7d50bf65b3';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=7d50bf65b3';
-  import { runQuery } from './music-query.js?v=7d50bf65b3';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=7d50bf65b3';
-  import { init as initFretboard } from './fretboard-panel.js?v=7d50bf65b3';
-  import { chordDisplayName } from './music-chords.js?v=7d50bf65b3';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=7d50bf65b3';
-  import { keyExplanation } from './music-key.js?v=7d50bf65b3';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=7d50bf65b3';
-  import { createMusicStore } from './music-local-store.js?v=7d50bf65b3';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=7d50bf65b3';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=7d50bf65b3';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=7d50bf65b3';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=7d50bf65b3';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=015610aa1e';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=015610aa1e';
+  import { runQuery } from './music-query.js?v=015610aa1e';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=015610aa1e';
+  import { init as initFretboard } from './fretboard-panel.js?v=015610aa1e';
+  import { chordDisplayName } from './music-chords.js?v=015610aa1e';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=015610aa1e';
+  import { keyExplanation } from './music-key.js?v=015610aa1e';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=015610aa1e';
+  import { createMusicStore } from './music-local-store.js?v=015610aa1e';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=015610aa1e';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=015610aa1e';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=015610aa1e';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=015610aa1e';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=7d50bf65b3';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=7d50bf65b3';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=7d50bf65b3';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=7d50bf65b3';
-  import { generateCounterLines } from './music-counterpoint.js?v=7d50bf65b3';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=7d50bf65b3';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=7d50bf65b3';
-  import { splitSingleVoice } from './music-voice-split.js?v=7d50bf65b3';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=7d50bf65b3';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=7d50bf65b3';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=7d50bf65b3';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=015610aa1e';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=015610aa1e';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=015610aa1e';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=015610aa1e';
+  import { generateCounterLines } from './music-counterpoint.js?v=015610aa1e';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=015610aa1e';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=015610aa1e';
+  import { splitSingleVoice } from './music-voice-split.js?v=015610aa1e';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=015610aa1e';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=015610aa1e';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=015610aa1e';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2428,6 +2453,7 @@ Can you hear it?       &gt; ask()"></textarea>
     document.getElementById('scriptText').value = currentDetail.script || '';
     document.getElementById('scriptStage').style.display = 'none';
     document.getElementById('scriptHelp').style.display = 'none';
+    hideScriptBanner();   // the line on screen belongs to the piece that is leaving
     scriptMsg(''); parseScriptNow();
     if (phrasePanelOpen) renderPhraseUI();
     resetRhythmPanel();   // the rhythm list belongs to the notes that were drawn — rescan for this piece
@@ -3448,6 +3474,7 @@ Can you hear it?       &gt; ask()"></textarea>
       scriptErrors.map((e) => `line ${e.line}: ${e.message}`).join('\n');
     document.getElementById('scriptPos').textContent =
       scriptSteps.length ? `${scriptSteps.length} step${scriptSteps.length === 1 ? '' : 's'}` : '';
+    placeLineRun();   // the caret's line may have become (or stopped being) a step
     return scriptSteps;
   }
   // Persist with the piece, like phrases and rhythm groups.
@@ -3464,16 +3491,43 @@ Can you hear it?       &gt; ask()"></textarea>
     scriptMsg('Saved — click "Push changes" to publish.');
   }
 
+  // The step's line, over the sheet — the panel is usually scrolled away while you are watching the
+  // music. Lives on <body>, not in the panel: a closed <details> hides its descendants outright, and
+  // a banner that vanished when you collapsed the editor would be no use at all.
+  function scriptBanner() {
+    let el = document.getElementById('scriptBanner');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'scriptBanner';
+      el.innerHTML = '<span id="scriptBannerSay"></span><span id="scriptBannerSub"></span>';
+      el.title = 'Click to hide';
+      el.onclick = () => { el.style.display = 'none'; };
+      document.body.appendChild(el);
+    }
+    return el;
+  }
+  function showScriptBanner(say, sub) {
+    const el = scriptBanner();
+    if (!say && !sub) { el.style.display = 'none'; return; }
+    document.getElementById('scriptBannerSay').textContent = say || '';
+    document.getElementById('scriptBannerSub').textContent = sub || '';
+    el.style.display = 'block';   // NOT '': the stylesheet's own `display:none` would win back
+  }
+  const hideScriptBanner = () => { const el = document.getElementById('scriptBanner'); if (el) el.style.display = 'none'; };
+
   function showStage(step, pass) {
     const stage = document.getElementById('scriptStage');
-    if (!step) { stage.style.display = 'none'; return; }
+    if (!step) { stage.style.display = 'none'; hideScriptBanner(); return; }
     stage.style.display = '';
     document.getElementById('scriptSay').textContent = step.prose || '';
     const desc = describeStep(step);
-    document.getElementById('scriptDoing').textContent =
-      desc + (step.repeat > 1 && pass != null ? `  (pass ${pass + 1} of ${step.repeat})` : '');
+    const doing = desc + (step.repeat > 1 && pass != null ? `  (pass ${pass + 1} of ${step.repeat})` : '');
+    document.getElementById('scriptDoing').textContent = doing;
     document.getElementById('scriptPos').textContent =
       `step ${scriptIdx + 1} of ${scriptSteps.length}`;
+    // A step with no words of its own still says what it is doing — silence over the sheet would
+    // read as "nothing is happening".
+    showScriptBanner(step.prose || doing, step.prose ? doing : '');
   }
 
   // Wait for the transport to finish whatever a step just started. Polls rather than hooking the
@@ -3622,6 +3676,9 @@ Can you hear it?       &gt; ask()"></textarea>
         if (a.args[0]) document.getElementById('scriptSay').textContent = a.args[0];
         stage.classList.add('asking');
         btn.style.display = '';
+        // The banner is often all that is on screen — say what is being waited for, and where.
+        showScriptBanner(a.args[0] || document.getElementById('scriptSay').textContent,
+          'waiting — press Continue in the Script panel');
         await new Promise((resolve) => { scriptAskResolve = resolve; });
         scriptAskResolve = null;
         btn.style.display = 'none';
@@ -3688,7 +3745,8 @@ Can you hear it?       &gt; ask()"></textarea>
     }
     if (runId === scriptRunId) {
       scriptRunning = false;
-      if (scriptAuto() && scriptIdx >= scriptSteps.length - 1) scriptMsg('Done.');
+      // Manual stops mid-script: keep the banner up so the step you just ran is still readable.
+      if (scriptAuto() && scriptIdx >= scriptSteps.length - 1) { scriptMsg('Done.'); hideScriptBanner(); }
     }
   }
   function stopScript() {
@@ -3698,6 +3756,7 @@ Can you hear it?       &gt; ask()"></textarea>
     document.getElementById('scriptAskBtn').style.display = 'none';
     document.getElementById('scriptStage').classList.remove('asking');
     if (player) player.stop();
+    hideScriptBanner();
     scriptMsg('Stopped.');
   }
   function stepTo(i) {
@@ -3715,6 +3774,41 @@ Can you hear it?       &gt; ask()"></textarea>
   document.getElementById('scriptAskBtn').onclick = () => { if (scriptAskResolve) scriptAskResolve(); };
   document.getElementById('scriptText').addEventListener('input', () => { parseScriptNow(); });
   document.getElementById('scriptText').addEventListener('change', () => { parseScriptNow(); saveScript(); });
+
+  // ---- Gutter ▶ : run the line the caret is on -----------------------------------------------------
+  // The caret's line is counted from the text, and its y from the textarea's own line-height — which is
+  // only trustworthy because .script-text sets `white-space:pre`, so one line of text is always exactly
+  // one row on screen. Hidden on a line that is no step (blank, comment, or a line with a parse error):
+  // an arrow that does nothing when clicked is worse than no arrow.
+  const caretLineNo = (ta) => ta.value.slice(0, ta.selectionStart).split('\n').length;
+  function stepAtCaret() {
+    const ta = document.getElementById('scriptText');
+    return scriptSteps.findIndex((s) => s.line === caretLineNo(ta));
+  }
+  function placeLineRun() {
+    const ta = document.getElementById('scriptText');
+    const btn = document.getElementById('scriptLineRun');
+    if (!ta || !btn) return;
+    const i = stepAtCaret();
+    if (i < 0) { btn.hidden = true; return; }
+    const cs = getComputedStyle(ta);
+    const lh = parseFloat(cs.lineHeight) || 18;
+    const y = (parseFloat(cs.borderTopWidth) || 0) + (parseFloat(cs.paddingTop) || 0)
+      + (caretLineNo(ta) - 1) * lh - ta.scrollTop;
+    if (y < 0 || y > ta.clientHeight) { btn.hidden = true; return; }   // scrolled out of the box
+    btn.style.top = `${Math.round(y)}px`;
+    btn.style.height = `${Math.round(lh)}px`;
+    btn.style.lineHeight = `${Math.round(lh)}px`;
+    btn.title = `Run this line — ${describeStep(scriptSteps[i]) || 'just the words'}`;
+    btn.hidden = false;
+  }
+  ['keyup', 'click', 'input', 'scroll', 'select', 'focus'].forEach((ev) =>
+    document.getElementById('scriptText').addEventListener(ev, placeLineRun));
+  document.getElementById('scriptLineRun').addEventListener('mousedown', (e) => e.preventDefault());   // keep the caret
+  document.getElementById('scriptLineRun').addEventListener('click', () => {
+    const i = stepAtCaret();
+    if (i >= 0) stepTo(i);          // this one line, whatever Auto is set to
+  });
   document.getElementById('scriptHelpBtn').onclick = () => {
     const box = document.getElementById('scriptHelp');
     if (box.style.display !== 'none') { box.style.display = 'none'; return; }
