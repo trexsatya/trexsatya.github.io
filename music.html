@@ -891,6 +891,8 @@ Notice this arpeggio   &gt; playTag(1,5,8b | 1,5,8)
 Notice the melody      &gt; playTagAll(1,2,3,2,1)
 Now combine them       &gt; playTagAll(1,5,8b | 1,5,8 | 1,2,3,2,1)
 Work the jump          &gt; tempo(60 | 100) repeat(4) playBars(12,16)
+Only where A says it   &gt; inPhrase(A) playTagAll(1,2,3,2,1)
+Now hear it in place   &gt; inPhrase(A) playPhraseWith(1,2,3,2,1)
 Can you hear it?       &gt; ask()"></textarea>
     <div id="scriptErrors" class="script-errors"></div>
     </div>
@@ -1008,32 +1010,32 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=50c94e123a';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=50c94e123a';
-  import { runQuery } from './music-query.js?v=50c94e123a';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=50c94e123a';
-  import { init as initFretboard } from './fretboard-panel.js?v=50c94e123a';
-  import { chordDisplayName } from './music-chords.js?v=50c94e123a';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=50c94e123a';
-  import { keyExplanation } from './music-key.js?v=50c94e123a';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=50c94e123a';
-  import { createMusicStore } from './music-local-store.js?v=50c94e123a';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=50c94e123a';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=50c94e123a';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=50c94e123a';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=50c94e123a';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=7d50bf65b3';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=7d50bf65b3';
+  import { runQuery } from './music-query.js?v=7d50bf65b3';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans } from './music-render.js?v=7d50bf65b3';
+  import { init as initFretboard } from './fretboard-panel.js?v=7d50bf65b3';
+  import { chordDisplayName } from './music-chords.js?v=7d50bf65b3';
+  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=7d50bf65b3';
+  import { keyExplanation } from './music-key.js?v=7d50bf65b3';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=7d50bf65b3';
+  import { createMusicStore } from './music-local-store.js?v=7d50bf65b3';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=7d50bf65b3';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=7d50bf65b3';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=7d50bf65b3';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=7d50bf65b3';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=50c94e123a';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=50c94e123a';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=50c94e123a';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=50c94e123a';
-  import { generateCounterLines } from './music-counterpoint.js?v=50c94e123a';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=50c94e123a';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=50c94e123a';
-  import { splitSingleVoice } from './music-voice-split.js?v=50c94e123a';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=50c94e123a';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=50c94e123a';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=50c94e123a';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=7d50bf65b3';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=7d50bf65b3';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=7d50bf65b3';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=7d50bf65b3';
+  import { generateCounterLines } from './music-counterpoint.js?v=7d50bf65b3';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=7d50bf65b3';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=7d50bf65b3';
+  import { splitSingleVoice } from './music-voice-split.js?v=7d50bf65b3';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=7d50bf65b3';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=7d50bf65b3';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=7d50bf65b3';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1555,7 +1557,9 @@ Can you hear it?       &gt; ask()"></textarea>
   // `withMatches` false plays ONLY the notes you tagged by hand — no Find-pattern occurrences. That
   // is the difference between a script's playTag() and playTagAll(), and it has to suppress the
   // auto-search below too, or clearing the matches would just cause them to be found again.
-  function playTags({ withMatches = true } = {}) {
+  // `bars` ([[from,to],…], printed measures) keeps only the occurrences inside those bars — how a
+  // script's inPhrase() narrows a motif to one phrase. Omitted, the whole piece is in play.
+  function playTags({ withMatches = true, bars = null } = {}) {
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     if (!(currentDetail.format === 'musicxml' && currentDetail.source)) {
@@ -1569,12 +1573,16 @@ Can you hear it?       &gt; ask()"></textarea>
     if (withMatches && renderer && renderer.getPatternMatchNotes && !renderer.getPatternMatchNotes().length) searchPattern();
     const matched = (withMatches && renderer && renderer.getPatternMatchNotes) ? renderer.getPatternMatchNotes() : [];
     const seen = new Set();
-    const keep = [...tagged, ...matched].filter((n) => {
+    const inBars = (n) => !bars || bars.some(([f, t]) => n.measure >= f && n.measure <= t);
+    const keep = [...tagged, ...matched].filter(inBars).filter((n) => {
       const k = `${n.midi}@${n.beats}`;
       if (seen.has(k)) return false;
       seen.add(k); return true;
     }).sort((a, b) => a.beats - b.beats);
-    if (!keep.length) { setTransportMsg('Check a tag to play it.', 'err'); return; }
+    if (!keep.length) {
+      setTransportMsg(bars ? 'None of the checked motifs land in those bars.' : 'Check a tag to play it.', 'err');
+      return;
+    }
     // Suppress notes only — NOT the dim. Here the kept set IS what the highlight lit, so filtering it
     // by the dim is self-contradictory; worse, the player matches muted notes on (midi, beats) alone,
     // so a dimmed note in the other hand silenced its lit unison partner. Phrases and rhythms DO apply
@@ -1582,7 +1590,8 @@ Can you hear it?       &gt; ask()"></textarea>
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
       { tempo: currentTempo(), keepNotes: keep, mutedNotes: suppressedNoteIds(), breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
-    setLastPlay({ tag: 'M', label: 'the checked motifs', run: playTags });
+    // Repeat what was actually played, not the default: a scoped run must stay scoped on the FAB.
+    setLastPlay({ tag: 'M', label: 'the checked motifs', run: () => playTags({ withMatches, bars }) });
     const audible = soundingCount(schedule);
     if (!audible) { setTransportMsg(nothingSounds('the checked motifs'), 'err'); return; }
     const p = ensurePlayer();
@@ -3488,8 +3497,10 @@ Can you hear it?       &gt; ask()"></textarea>
   }
   const sleep = (ms, runId) => new Promise((r) => setTimeout(() => r(), ms));
 
-  // Check exactly these motifs and show them, the way the Motifs panel would.
-  function scriptSelectTags(names) {
+  // Check exactly these motifs and show them, the way the Motifs panel would. `dim` off lights the
+  // motifs WITHOUT greying the rest — what playPhraseWith needs, since the dim also silences, and a
+  // dimmed sheet would turn "the phrase with the motif lit" back into "the motif alone".
+  function scriptSelectTags(names, { dim = true } = {}) {
     if (!renderer) return [];
     const known = new Set(renderer.getPatterns().map((a) => a.name));
     const wanted = names.filter((n) => known.has(n));
@@ -3497,18 +3508,46 @@ Can you hear it?       &gt; ask()"></textarea>
     wanted.forEach((n) => tagFilterSel.add(n));
     renderer.setFilterTags([...tagFilterSel]);
     renderTagUI();
-    setTagVis(true);
+    setTagVis(dim);
     return wanted;
   }
-  function scriptPlayTags(names, withMatches) {
+  function scriptPlayTags(names, withMatches, bars) {
     const found = scriptSelectTags(names);
     const missing = names.filter((n) => !found.includes(n));
     if (missing.length) scriptMsg(`No motif named ${missing.map((m) => `"${m}"`).join(', ')} on this piece.`);
     if (!found.length) return false;
     if (withMatches) searchPattern();
     else if (renderer.clearSearchHighlight) renderer.clearSearchHighlight();
-    playTags({ withMatches });
+    playTags({ withMatches, bars });
     return true;
+  }
+  // The bars a script's inPhrase(name) covers, as printed measures: one range per place the phrase
+  // occurs. A detected family names every occurrence itself; a phrase you named by hand is the span
+  // of the notes in it. null when nothing on the piece answers to that name.
+  function phraseBarRanges(name) {
+    const found = detectedPhrases.find((p) => p.name === name);
+    if (found) {
+      const occ = (found.occurrences || []).filter((o) => o.from != null && o.to != null);
+      return occ.length ? occ.map((o) => [o.from, o.to]) : null;
+    }
+    const named = (renderer && renderer.getPhrases) ? renderer.getPhrases().find((p) => p.name === name) : null;
+    if (named) {
+      const ms = (named.notes || []).map((n) => n.measure).filter((m) => m != null);
+      if (ms.length) return [[Math.min(...ms), Math.max(...ms)]];
+    }
+    return null;
+  }
+  // Snapshot / restore the drawn range, so a step scoped by inPhrase() hands the sheet back the way
+  // it found it rather than leaving the reader parked on the last occurrence's bars.
+  function scriptViewState() {
+    return { from: document.getElementById('segFrom').value, to: document.getElementById('segTo').value };
+  }
+  function scriptRestoreView(v) {
+    if (!renderer) return;
+    if (v.from && v.to) { scriptShowBars(v.from, v.to); return; }
+    document.getElementById('segFrom').value = v.from;
+    document.getElementById('segTo').value = v.to;
+    renderer.showFull(); onDrawnRangeChanged();
   }
   function scriptShowBars(a, b) {
     const from = parseInt(a, 10), to = parseInt(b, 10);
@@ -3536,11 +3575,21 @@ Can you hear it?       &gt; ask()"></textarea>
   }
 
   // Run ONE action. Returns true when it started sound (so the runner knows to wait for it).
-  async function runAction(a, runId) {
+  // `step` carries the line's inPhrase() name; `bars` is the one occurrence of it being visited now
+  // (null when the line has no phrase scope, meaning the whole piece).
+  async function runAction(a, runId, step, bars) {
     switch (a.name) {
-      case 'playTag':      return scriptPlayTags(a.args, false);
-      case 'playTagAll':   return scriptPlayTags(a.args, true);
+      case 'playTag':      return scriptPlayTags(a.args, false, bars);
+      case 'playTagAll':   return scriptPlayTags(a.args, true, bars);
       case 'playPhrase':   return scriptPlayPhrase(a.args[0]);
+      case 'playPhraseWith': {
+        // The other half of inPhrase(): the phrase sounds whole, the motifs are only lit inside it.
+        if (!step || !step.phrase) { scriptMsg('playPhraseWith needs inPhrase(...) on the same line.'); return false; }
+        const found = scriptSelectTags(a.args, { dim: false });
+        if (!found.length) scriptMsg(`No motif named ${a.args.map((m) => `"${m}"`).join(', ')} on this piece.`);
+        else searchPattern();
+        return scriptPlayPhrase(step.phrase);
+      }
       case 'playGroup': {
         const g = (renderer.getRhythmGroups() || []).find((x) => x.name === a.args[0]);
         if (!g) { scriptMsg(`No rhythm group "${a.args[0]}".`); return false; }
@@ -3588,19 +3637,43 @@ Can you hear it?       &gt; ask()"></textarea>
     const step = scriptSteps[i];
     if (!step) return;
     scriptIdx = i;
+    // inPhrase(): visit each place the phrase occurs in turn, showing its bars. Scoping by the VIEW
+    // rather than by a filter is what makes the highlight agree with the sound — the motif search
+    // reads the drawn notes, so bars that aren't showing can neither light up nor play.
+    let ranges = [null];
+    const view = scriptViewState();
+    if (step.phrase) {
+      const found = phraseBarRanges(step.phrase);
+      if (!found) {
+        // Skip the step rather than fall back to the whole piece: a line that asked for one phrase
+        // and got the entire score is worse than a line that plainly says it could not.
+        scriptMsg(`No phrase "${step.phrase}" — run Find in the Phrases panel first, or check the name.`);
+        return;
+      }
+      ranges = found;
+      if (found.length > 1) scriptMsg(`${step.phrase}: ${found.length} places — one after another.`);
+    }
     for (let pass = 0; pass < step.repeat; pass++) {
       if (runId !== scriptRunId) return;
       showStage(step, step.repeat > 1 ? pass : null);
       const t = tempoForPass(step, pass);
       if (t != null) document.getElementById('tempoInput').value = t;
-      for (const a of step.actions) {
+      for (const bars of ranges) {
         if (runId !== scriptRunId) return;
-        const sounded = await runAction(a, runId);
-        if (sounded) await awaitPlaybackEnd(runId);
+        if (bars) scriptShowBars(bars[0], bars[1]);
+        for (const a of step.actions) {
+          if (runId !== scriptRunId) return;
+          const sounded = await runAction(a, runId, step, bars ? [bars] : null);
+          if (sounded) await awaitPlaybackEnd(runId);
+        }
+        if (bars && ranges.length > 1) await sleep(450, runId);   // a breath between two places
       }
       // A prose-only step in Auto has nothing to wait for; give it long enough to be read.
       if (!step.actions.length) await sleep(Math.min(6000, 900 + (step.prose || '').length * 45), runId);
     }
+    // Hand the sheet back as it was found — a scope belongs to its line, not to the rest of the run.
+    // ...unless the line was ONLY inPhrase(A), which reads as "show me A" and should leave it there.
+    if (step.phrase && ranges[0] && step.actions.length && runId === scriptRunId) scriptRestoreView(view);
   }
   async function runFrom(i) {
     if (!parseScriptNow().length) { scriptMsg('Nothing to run yet — write a step or two.'); return; }
