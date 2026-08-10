@@ -315,6 +315,12 @@
         #tagPanel .tag-pill .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
         #tagPanel .tag-pill .cnt{color:#888}
         #tagPanel .tag-pill .del{border:none;background:none;color:#a33;cursor:pointer;font-size:14px;line-height:1;padding:0 2px}
+        #tagPanel .tag-pill .ren{border:none;background:none;color:#556;cursor:pointer;font-size:12px;line-height:1;padding:0 2px}
+        /* Renaming a motif in place: the pill becomes its own editor, so the scope choice sits next to
+           the name being changed instead of in a modal that hides the sheet behind it. */
+        #tagPanel .tag-pill.editing{background:#fdf8ef;border-color:#e0c9a0}
+        #tagPanel .tag-pill .ren-in{font-size:12.5px;padding:1px 4px;border:1px solid #c9b48a;border-radius:4px;width:11em}
+        #tagPanel .tag-pill .scope{border:1px solid #c9b48a;background:#fff;border-radius:999px;padding:1px 8px;cursor:pointer;font-size:11.5px;white-space:nowrap}
         /* Check/uncheck-all sits just before the tag pills. */
         #tagPanel .tag-list-head{display:flex;align-items:flex-start;gap:8px;margin-top:8px}
         #tagPanel .tag-list-head .tag-list{margin-top:0}
@@ -1050,32 +1056,34 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=09d712e457';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=09d712e457';
-  import { runQuery } from './music-query.js?v=09d712e457';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars } from './music-render.js?v=09d712e457';
-  import { init as initFretboard } from './fretboard-panel.js?v=09d712e457';
-  import { chordDisplayName } from './music-chords.js?v=09d712e457';
-  import { parseScript, describeStep, tempoForPass, COMMANDS } from './music-script.js?v=09d712e457';
-  import { keyExplanation } from './music-key.js?v=09d712e457';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=09d712e457';
-  import { createMusicStore } from './music-local-store.js?v=09d712e457';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=09d712e457';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=09d712e457';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=09d712e457';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=09d712e457';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=64682e81d7';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=64682e81d7';
+  import { runQuery } from './music-query.js?v=64682e81d7';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars } from './music-render.js?v=64682e81d7';
+  import { init as initFretboard } from './fretboard-panel.js?v=64682e81d7';
+  import { chordDisplayName } from './music-chords.js?v=64682e81d7';
+  import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript } from './music-script.js?v=64682e81d7';
+  import { keyExplanation } from './music-key.js?v=64682e81d7';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=64682e81d7';
+  import { createMusicStore } from './music-local-store.js?v=64682e81d7';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=64682e81d7';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=64682e81d7';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=64682e81d7';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=64682e81d7';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=09d712e457';
-  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry } from './music-tags.js?v=09d712e457';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=09d712e457';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=09d712e457';
-  import { generateCounterLines } from './music-counterpoint.js?v=09d712e457';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=09d712e457';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=09d712e457';
-  import { splitSingleVoice } from './music-voice-split.js?v=09d712e457';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=09d712e457';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=09d712e457';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=09d712e457';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=64682e81d7';
+  import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=64682e81d7';
+  import { renameTagInPhrases } from './music-phrase.js?v=64682e81d7';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=64682e81d7';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=64682e81d7';
+  import { generateCounterLines } from './music-counterpoint.js?v=64682e81d7';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=64682e81d7';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=64682e81d7';
+  import { splitSingleVoice } from './music-voice-split.js?v=64682e81d7';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=64682e81d7';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=64682e81d7';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=64682e81d7';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1533,10 +1541,12 @@ Can you hear it?       &gt; ask()"></textarea>
     // pieces (no real timing) fall back to the simple per-note sequential builder.
     const useXml = currentDetail.format === 'musicxml' && currentDetail.source;
     const range = activeRange();
-    // Suppressed + dimmed, shared with every other play path. It deliberately does NOT fold in the dim
-    // while a rhythm owns the sheet — `sel.mute` below is that decision, and folding the grey in here
-    // silenced the very notes "all their notes" mode exists to play.
-    const muted = effectiveMutedIds();
+    // The main transport plays the PIECE. Only the Suppress-notes set silences anything here — never the
+    // grey a highlight leaves behind. A motif / phrase / rhythm view is a way of LOOKING at the score, and
+    // having it also gag the transport meant you could not hear the piece while studying part of it: the
+    // only way back to full sound was to undo the view you were working in. Every scoped play path
+    // (▶ on a motif, a phrase, a rhythm) still honours the dim — there the highlight IS the selection.
+    const muted = suppressedNoteIds();
     // A picked rhythm SOLOS that figure across the whole transport (Play, spacebar, the mobile FAB):
     // every other drawn note is silenced but keeps its slot, so the piece's timing is untouched and
     // what you hear lands exactly on the highlighted noteheads. Clear the pick to hear everything.
@@ -2444,6 +2454,7 @@ Can you hear it?       &gt; ask()"></textarea>
     document.getElementById('tagModeChk').checked = false;
     tagFilterSel.clear();
     activeTagName = '';
+    renamingTag = null;   // a half-finished rename does not belong to the next piece
     if (renderer) { renderer.setTagMode(false); renderer.setFilterTags([]); }
     setTagVis(false);   // every piece opens undimmed — see the motif block below
     // Fold any tags this piece already uses into the global list (so they're selectable everywhere).
@@ -2760,6 +2771,11 @@ Can you hear it?       &gt; ask()"></textarea>
   // ── Pattern tags ───────────────────────────────────────────────────────────────────────────
   let activeTagName = '';   // the tag clicked notes paint into; mirrored in the combobox input
   const tagFilterSel = new Set();   // tag names checked in the filter list
+  // Which motif's pill is showing the rename editor, and what has been typed into it. Held out here
+  // because renderTagUI rebuilds the whole pill list on any tag change, which would otherwise throw
+  // away a half-typed name.
+  let renamingTag = null;
+  let renamingDraft = '';
   const shownPhraseNames = new Set();   // phrases revealed + tinted on the sheet (checkboxes)
   // Rebuild the tag combobox options and the tag pills from the GLOBAL tag list, annotated with how
   // many notes THIS piece assigns to each. Called on load and after every tag edit.
@@ -2799,6 +2815,8 @@ Can you hear it?       &gt; ask()"></textarea>
       const sw = document.createElement('span'); sw.className = 'sw'; sw.style.background = colors[nm] || '#999';
       const label = document.createElement('span'); label.textContent = nm;
       const cnt = document.createElement('span'); cnt.className = 'cnt'; cnt.textContent = `(${countOf[nm] || 0})`;
+      const ren = document.createElement('button'); ren.className = 'ren'; ren.textContent = '✎'; ren.title = 'Rename this motif';
+      ren.onclick = () => { renamingTag = nm; renamingDraft = nm; renderTagUI(); };
       const del = document.createElement('button'); del.className = 'del'; del.textContent = '×'; del.title = 'Delete tag (global)';
       del.onclick = () => {
         tagRegistry = removeTagReg(tagRegistry, nm); saveTagRegistry();   // drop from the global list
@@ -2806,13 +2824,160 @@ Can you hear it?       &gt; ask()"></textarea>
         if (renderer) renderer.clearTagAssignments(nm);   // drop this piece's notes for it → onPatternsChange persists
         renderTagUI();
       };
-      pill.append(cb, sw, label, cnt, del);
+      if (renamingTag === nm) { pill.className = 'tag-pill editing'; pill.append(sw, ...renameEditor(nm)); }
+      else pill.append(cb, sw, label, cnt, ren, del);
       list.appendChild(pill);
     });
     if (renderer) renderer.setFilterTags([...tagFilterSel]);
     // A tag change (added/removed) may affect the phrase panel's member-tag checkboxes.
     if (document.getElementById('phrasePanel').open) renderPhraseUI();
   }
+  // The pill's inline rename form: the new name, then the two scopes side by side. Inline rather than a
+  // modal because the choice only makes sense next to the motif it is about — and a modal would cover
+  // the sheet you are naming the motif from. Enter takes the narrower scope (this piece); Esc backs out.
+  function renameEditor(from) {
+    const input = document.createElement('input');
+    input.className = 'ren-in'; input.value = renamingDraft; input.title = `New name for "${from}"`;
+    input.oninput = () => { renamingDraft = input.value; };
+    input.onkeydown = (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); applyTagRename(from, input.value, 'piece'); }
+      else if (e.key === 'Escape') { e.preventDefault(); renamingTag = null; renderTagUI(); }
+    };
+    const scope = (text, title, which) => {
+      const b = document.createElement('button');
+      b.className = 'scope'; b.textContent = text; b.title = title;
+      b.onclick = () => applyTagRename(from, input.value, which);
+      return b;
+    };
+    const cancel = document.createElement('button');
+    cancel.className = 'del'; cancel.textContent = '×'; cancel.title = 'Cancel the rename';
+    cancel.onclick = () => { renamingTag = null; renderTagUI(); };
+    // Focus without fighting typing: renderTagUI can rebuild this pill for unrelated reasons.
+    setTimeout(() => { if (document.activeElement !== input) { input.focus(); input.select(); } }, 0);
+    return [input,
+      scope('This piece', 'Move only this piece’s notes to the new name — every other piece keeps the old one', 'piece'),
+      scope('Everywhere', 'Rename the motif itself: the shared list and every piece saved on this device', 'global'),
+      cancel];
+  }
+
+  // Rename a motif, at one of two scopes:
+  //   'piece'  — this piece's notes move to a NEW motif of that name; the old one stays in the shared
+  //              list for the pieces that still use it. The new name gets the next palette colour,
+  //              because two motifs drawn in one colour cannot be told apart on the sheet.
+  //   'global' — the motif itself is renamed: the shared list keeps its colour, and every piece cached
+  //              on this device follows. See the caveat in the toast for pieces this device has not seen.
+  // Either way the piece's phrase memberships and practice script follow the name, so nothing is left
+  // pointing at a motif that no longer exists.
+  async function applyTagRename(from, raw, scope) {
+    const to = (raw || '').trim();
+    if (!to || to === from) { renamingTag = null; renderTagUI(); return; }
+    const taken = (renderer ? renderer.getTagNames() : []).includes(to);
+    if (taken) {
+      setTransportMsg(`There is already a motif called “${to}” — merging two motifs isn’t a rename.`, 'err');
+      return;
+    }
+    renamingTag = null;   // before any redraw, or renderTagUI would put the editor straight back
+    let swept = { pieces: 0, conflicts: 0, unseen: 0 };
+    if (scope === 'global') {
+      const r = renameTagReg(tagRegistry, from, to);
+      if (!r.renamed) { setTransportMsg(`Could not rename “${from}”.`, 'err'); renderTagUI(); return; }
+      tagRegistry = r.registry; saveTagRegistry();
+      swept = await renameTagInStoredPieces(from, to);
+    } else {
+      const r = addTagReg(tagRegistry, to);
+      tagRegistry = r.registry; if (r.added) saveTagRegistry();
+    }
+    // This piece is the open one — go through the renderer so the sheet, the checked set and the phrase
+    // memberships all move together, and the piece persists via onPatternsChange.
+    const here = renderer ? renderer.renameTagAssignments(from, to) : false;
+    if (here) { tagFilterSel.delete(from); tagFilterSel.add(to); }
+    const scriptLines = renameTagInOpenScript(from, to);
+    if (activeTagName === from) activeTagName = to;
+    const dropped = scope === 'piece' && here ? await dropUnusedTag(from) : false;
+    renderTagUI();
+    const bits = [];
+    if (here) bits.push('this piece');
+    if (swept.pieces) bits.push(`${swept.pieces} other piece${swept.pieces === 1 ? '' : 's'} on this device`);
+    if (scriptLines) bits.push(`${scriptLines} script line${scriptLines === 1 ? '' : 's'}`);
+    const skipped = swept.conflicts ? ` ${swept.conflicts} piece${swept.conflicts === 1 ? '' : 's'} already had a motif of that name and were left alone.` : '';
+    setTransportMsg(scope === 'global'
+      ? `Renamed “${from}” to “${to}”${bits.length ? ' — ' + bits.join(', ') : ''}.${skipped}`
+        + (swept.unseen ? ' Pieces not saved on this device keep the old name until you open them.' : '')
+      : (here
+        ? `“${to}” now holds this piece’s notes${scriptLines ? ` (${scriptLines} script line${scriptLines === 1 ? '' : 's'} updated)` : ''}. `
+          + (dropped ? `Nothing else used “${from}”, so it’s gone from the shared list.` : `Other pieces keep “${from}”.`)
+        : `Nothing to rename — “${from}” has no notes in this piece.`), here || scope === 'global' ? 'ok' : 'err');
+  }
+
+  // Is `name` still used by anything on this device? If not, take it out of the shared list: a per-piece
+  // rename otherwise leaves a name nobody uses cluttering the picker — and, because the name still counts
+  // as taken, blocks renaming back to it. Self-healing if wrong: a piece this device has never opened that
+  // still uses the name puts it back on open, since mergeRegistry only ever grows the list.
+  async function dropUnusedTag(name) {
+    const usedHere = (renderer ? renderer.getPatterns() : []).some((a) => a.name === name && (a.notes || []).length);
+    if (usedHere) return false;
+    let rows = [];
+    try { rows = await store.getAllDetails(system); } catch (_) { return false; }
+    const usedElsewhere = rows.some(({ id, detail }) => id !== currentPreviewId && detail
+      && ((detail.patterns || []).some((a) => a.name === name && (a.notes || []).length)
+        || (detail.phrases || []).some((p) => (p.tags || []).includes(name))));
+    if (usedElsewhere) return false;
+    tagRegistry = removeTagReg(tagRegistry, name); saveTagRegistry();
+    tagFilterSel.delete(name);
+    return true;
+  }
+
+  // Follow the rename into the OPEN piece's script (textarea + detail). Returns the lines changed.
+  function renameTagInOpenScript(from, to) {
+    const ta = document.getElementById('scriptText');
+    if (!ta) return 0;
+    const { text, lines } = renameTagInScript(ta.value, from, to);
+    if (!lines) return 0;
+    ta.value = text;
+    parseScriptNow();
+    saveScript();
+    return lines;
+  }
+
+  // Follow the rename into every OTHER piece held in the local cache: its motif assignments, its phrase
+  // memberships and its script. A piece that carries motifs was written to the cache when they were made,
+  // so this reaches the whole library in practice without refetching every published detail. Each rewrite
+  // marks the piece unpushed, so the batch goes out with the next Push changes. Returns the count.
+  async function renameTagInStoredPieces(from, to) {
+    let rows = [];
+    try { rows = await store.getAllDetails(system); } catch (_) { return { pieces: 0, conflicts: 0 }; }
+    const touched = [];
+    let conflicts = 0;
+    for (const { id, detail } of rows) {
+      if (!detail || id === currentPreviewId) continue;   // the open piece goes through the renderer
+      // Ask whether the piece USES the name, rather than diffing the rewritten arrays: the reducers
+      // return a fresh array either way, so a reference check would call every piece changed.
+      const inPatterns = (detail.patterns || []).some((a) => a.name === from);
+      const inPhrases = (detail.phrases || []).some((p) => (p.tags || []).includes(from));
+      const script = renameTagInScript(detail.script || '', from, to);
+      if (!inPatterns && !inPhrases && !script.lines) continue;
+      // A piece that already has a motif of the new name cannot take this rename — the reducers refuse
+      // to merge two motifs' notes. Counted, so the toast doesn't claim a piece it skipped.
+      if ((detail.patterns || []).some((a) => a.name === to)) { conflicts++; continue; }
+      const entry = index.find((e) => e.id === id);
+      if (!entry) continue;                    // no index entry → nothing to push it with
+      if (inPatterns) detail.patterns = renameInAssignments(detail.patterns, from, to);
+      if (inPhrases) detail.phrases = renameTagInPhrases(detail.phrases, from, to);
+      if (script.lines) detail.script = script.text;
+      touched.push({ entry, detail, id });
+    }
+    // Library pieces this device holds no detail for. Only those can still be carrying the old name, so
+    // the "not everywhere, really" caveat is worth saying when there are some and pure noise when not.
+    const cached = new Set(rows.map((r) => r.id));
+    const unseen = index.filter((e) => !cached.has(e.id)).length;
+    if (!touched.length) return { pieces: 0, conflicts, unseen };
+    try { await store.putPieces(system, touched.map(({ entry, detail }) => ({ entry, detail }))); }
+    catch (_) { return { pieces: 0, conflicts, unseen }; }
+    touched.forEach(({ id }) => unpushedIds.add(id));
+    render(); updatePushBtn();
+    return { pieces: touched.length, conflicts, unseen };
+  }
+
   // Persist per-piece note assignments with the piece (local-first; pushed in the next manual batch).
   async function onPatternsChange(patterns) {
     renderTagUI();
@@ -3174,9 +3339,11 @@ Can you hear it?       &gt; ask()"></textarea>
   // measure.) Muting keeps every slot, so the phrase keeps its shape and length and simply goes quiet
   // where it should. Same contract the main transport uses (see playMidi).
   const suppressedNoteIds = () => ((renderer && renderer.getMutedNotes) ? renderer.getMutedNotes() : []);
-  // Everything that must not sound, for EVERY play path: the user's Suppress-notes set, plus whatever
-  // the active highlight has greyed out. A dimmed sheet plays only what is lit — so with Motifs showing
-  // a Find-pattern result, playing a phrase or a rhythm group sounds just the notes lit as motifs.
+  // Everything that must not sound, for the SCOPED play paths (a phrase, a detected phrase, a rhythm
+  // group): the user's Suppress-notes set, plus whatever the active highlight has greyed out. There the
+  // highlight is the selection, so a dimmed sheet plays only what is lit — with Motifs showing a
+  // Find-pattern result, playing a phrase sounds just the notes lit as motifs. The main transport
+  // (playMidi) deliberately does NOT use this: ▶ Play means the piece, and only 🔇 quiets it.
   //
   // Skipped while a rhythm owns the sheet: there the grey IS the rhythm's own highlight, and "all their
   // notes" mode deliberately plays those greyed notes. Each rhythm path adds its own solo mute on top,
