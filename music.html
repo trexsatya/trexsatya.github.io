@@ -479,6 +479,43 @@
         .script-help{font-size:.78em;color:#444;background:#fafafa;border:1px solid #eee;border-radius:6px;
           padding:6px 8px;margin:4px 0;max-height:11em;overflow:auto}
         .script-help code{background:#eef2ff;border-radius:3px;padding:0 3px;font-size:.95em}
+        /* Command builder: the script as a table — a row per line, a column per thing a line carries.
+           Rows group under `#` titles, one <tbody> per group so every section shares one column grid. */
+        .script-builder{border:1px solid #cfe0ff;background:#f6f9ff;border-radius:8px;padding:6px 7px;margin:4px 0}
+        .script-builder .sb-wrap{overflow-x:auto;max-height:22em;overflow-y:auto}
+        .sb-table{border-collapse:collapse;font-size:.8em;width:100%}
+        .sb-table th{position:sticky;top:0;z-index:1;background:#eaf1ff;color:#5a6b85;font-weight:600;
+          text-align:left;padding:2px 5px;border-bottom:1px solid #cfe0ff;white-space:nowrap}
+        .sb-table td{padding:2px 5px;border-bottom:1px solid #e8eef8;vertical-align:top}
+        .sb-table tbody.sb-group{border-left:3px solid #cfe0ff}
+        .sb-table tbody.sb-group + tbody.sb-group tr:first-child td{border-top:1px solid #cfe0ff}
+        .sb-table tr.sb-grouphead td{background:#e4ecfb;padding:3px 5px}
+        .sb-table .sb-n{color:#9aa7ba;font-size:.85em;text-align:right;width:3.1em;user-select:none;
+          white-space:nowrap}
+        /* ▶ per row (run this step) and per section title (run the section). The off state is an empty
+           span of the same width, so the numbers stay in one column whether a line is runnable or not. */
+        .sb-table .sb-run{display:inline-block;width:14px;border:none;background:transparent;padding:0;
+          margin-right:2px;color:#2563eb;cursor:pointer;font-size:10px;text-align:center;border-radius:3px}
+        .sb-table .sb-run-off{cursor:default}
+        .sb-table .sb-run:hover{background:#dbe7ff}
+        .sb-table tr.sb-grouphead .sb-run{font-size:11px}
+        .sb-table .sb-title{font-weight:700;color:#12325c;border:1px solid transparent;background:transparent;
+          font-size:1em;width:16em;padding:1px 3px;border-radius:4px}
+        .sb-table .sb-title:hover,.sb-table .sb-title:focus{border-color:#a9c4ee;background:#fff}
+        .sb-table .sb-fold{border:none;background:none;cursor:pointer;color:#5a6b85;font-size:11px;padding:0 4px 0 0}
+        .sb-table .sb-count{font-size:.85em;color:#7b8798;margin-left:8px}
+        .script-builder input,.script-builder select{font-size:1em;padding:1px 2px}
+        .script-builder .sb-words{width:15em;min-width:7em}
+        .script-builder .sb-acts{display:flex;flex-direction:column;gap:2px}
+        .script-builder .sb-act{display:flex;gap:3px;align-items:center;flex-wrap:wrap}
+        .script-builder .sb-num{width:3.6em}
+        .script-builder .sb-pick{max-width:9em}
+        .script-builder .sb-bad{color:#b42318}
+        .script-builder .sb-x{border:none;background:none;color:#a33;cursor:pointer;font-size:13px;
+          line-height:1;padding:0 2px}
+        .script-builder .sb-foot{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:5px}
+        .script-builder .sb-note{font-size:.76em;color:#7b8798}
+        .script-builder .sb-note.bad{color:#b42318}
         /* Practice notes — the piece's panel and the per-vocab-item editor share this look. */
         .note-panel{margin:.35rem 0;max-width:44em}
         .note-panel > summary{cursor:pointer;font-size:.85em;color:#555;list-style:none;
@@ -840,6 +877,18 @@
            sheet AND out of playback, so a single modification can be studied on its own. -->
       <span id="autoPhraseOccs" style="display:none"></span>
     </div>
+    <!-- What every ▶ in this panel sounds. A phrase is a REGION, so what is inside it can be narrowed by
+         whatever the Motifs panel has lit — worth having ("hear the motif where it sits in the phrase")
+         and a surprise when you wanted the bars. So it is a choice here, not something inferred from
+         which other panel happens to be showing. Either way 🔇 Suppress notes still silences. -->
+    <div class="tag-row" id="phrasePlayRow" style="border-top:1px dashed #cfe0ff;padding-top:6px">
+      <label class="tag-lbl">▶ plays
+        <select id="phrasePlayMode" title="Highlighted: with a motif / phrase view on, only the lit notes inside the phrase sound — the rest stay silent but keep their timing. All notes: every note of the phrase's bars sounds however the sheet is dimmed. 🔇 Suppress notes silences in both.">
+          <option value="lit">only the highlighted notes</option>
+          <option value="bars">all notes of its bars</option>
+        </select>
+      </label>
+    </div>
     <div id="phraseList" class="tag-list"></div>
     </div>
   </details>
@@ -922,9 +971,14 @@
     </div>
     <div class="tag-row" style="margin-top:6px">
       <button id="scriptHelpBtn" class="btn" title="What you can write in a script"><span class="ic">❓</span><span class="txt">Commands</span></button>
+      <button id="scriptBuildBtn" class="btn" aria-pressed="false" title="Edit this line's commands with menus instead of typing them — the motifs, phrases and rhythm groups of this piece are offered by name"><span class="ic">🧩</span><span class="txt">Build</span></button>
       <span id="scriptMsg" style="font-size:.8em;color:#555"></span>
     </div>
     <div id="scriptHelp" class="script-help" style="display:none"></div>
+    <!-- Command builder for the line the caret is on. The textarea stays the one source of truth: this
+         reads a line, offers the piece's own motif / phrase / group names, and writes the line back.
+         Not a replacement for typing — the two edit the same text, so you can use either. -->
+    <div id="scriptBuilder" class="script-builder" style="display:none"></div>
     <div class="script-edit">
     <div id="scriptGutter" class="script-gutter">
       <button id="scriptLineRun" class="script-line-run" type="button" hidden>▶</button>
@@ -1056,35 +1110,36 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=f35b1f0cc7';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=f35b1f0cc7';
-  import { runQuery } from './music-query.js?v=f35b1f0cc7';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges } from './music-render.js?v=f35b1f0cc7';
-  import { init as initFretboard } from './fretboard-panel.js?v=f35b1f0cc7';
-  import { chordDisplayName } from './music-chords.js?v=f35b1f0cc7';
-  import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript } from './music-script.js?v=f35b1f0cc7';
-  import { safeHtml } from './music-richtext.js?v=f35b1f0cc7';
-  import { keyExplanation } from './music-key.js?v=f35b1f0cc7';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=f35b1f0cc7';
-  import { createMusicStore } from './music-local-store.js?v=f35b1f0cc7';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=f35b1f0cc7';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=f35b1f0cc7';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=f35b1f0cc7';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=f35b1f0cc7';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=5c7bad92f4';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=5c7bad92f4';
+  import { runQuery } from './music-query.js?v=5c7bad92f4';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges } from './music-render.js?v=5c7bad92f4';
+  import { init as initFretboard } from './fretboard-panel.js?v=5c7bad92f4';
+  import { chordDisplayName } from './music-chords.js?v=5c7bad92f4';
+  import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript,
+    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=5c7bad92f4';
+  import { safeHtml } from './music-richtext.js?v=5c7bad92f4';
+  import { keyExplanation } from './music-key.js?v=5c7bad92f4';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=5c7bad92f4';
+  import { createMusicStore } from './music-local-store.js?v=5c7bad92f4';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=5c7bad92f4';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=5c7bad92f4';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=5c7bad92f4';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=5c7bad92f4';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=f35b1f0cc7';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=5c7bad92f4';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
-    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=f35b1f0cc7';
-  import { renameTagInPhrases } from './music-phrase.js?v=f35b1f0cc7';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=f35b1f0cc7';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=f35b1f0cc7';
-  import { generateCounterLines } from './music-counterpoint.js?v=f35b1f0cc7';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=f35b1f0cc7';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=f35b1f0cc7';
-  import { splitSingleVoice } from './music-voice-split.js?v=f35b1f0cc7';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=f35b1f0cc7';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=f35b1f0cc7';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=f35b1f0cc7';
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=5c7bad92f4';
+  import { renameTagInPhrases } from './music-phrase.js?v=5c7bad92f4';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=5c7bad92f4';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=5c7bad92f4';
+  import { generateCounterLines } from './music-counterpoint.js?v=5c7bad92f4';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=5c7bad92f4';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=5c7bad92f4';
+  import { splitSingleVoice } from './music-voice-split.js?v=5c7bad92f4';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=5c7bad92f4';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=5c7bad92f4';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=5c7bad92f4';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1675,14 +1730,16 @@ Can you hear it?       &gt; ask()"></textarea>
     // Suppress notes only — NOT the dim. Here the kept set IS what the highlight lit, so filtering it
     // by the dim is self-contradictory; worse, the player matches muted notes on (midi, beats) alone,
     // so a dimmed note in the other hand silenced its lit unison partner. Phrases and rhythms DO apply
-    // the dim, because there the kept set is a REGION the highlight narrows.
+    // the dim (unless the Phrases panel is set to play all the bars), because there the kept set is a
+    // REGION the highlight narrows.
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
       { tempo: currentTempo(), keepNotes: keep, mutedNotes: suppressedNoteIds(), breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     // Repeat what was actually played, not the default: a scoped run must stay scoped on the FAB.
     setLastPlay({ tag: 'M', label: 'the checked motifs', run: () => playTags({ withMatches, bars }) });
     const audible = soundingCount(schedule);
-    if (!audible) { setTransportMsg(nothingSounds('the checked motifs'), 'err'); return; }
+    // `false`: this path mutes Suppress-notes only (see just above), so the dim cannot be what silenced them.
+    if (!audible) { setTransportMsg(nothingSounds('the checked motifs', false), 'err'); return; }
     const p = ensurePlayer();
     p.setInstrument(document.getElementById('instrSel').value);
     p.setSchedule(schedule, { cursorStartStep: 0 });
@@ -1693,7 +1750,7 @@ Can you hear it?       &gt; ask()"></textarea>
       .then(() => {
         const silent = schedule.length - audible;
         setTransportMsg(`Playing ${audible} notes${matchNote}`
-          + (silent ? ` (${silent} ${silencedWord()})` : ''), 'ok');
+          + (silent ? ` (${silent} ${silencedWord(false)})` : ''), 'ok');
       })
       .catch(() => { setTransportMsg('Playback error.', 'err'); });
   }
@@ -2540,6 +2597,8 @@ Can you hear it?       &gt; ask()"></textarea>
     document.getElementById('scriptHelp').style.display = 'none';
     hideScriptBanner();   // the line on screen belongs to the piece that is leaving
     scriptMsg(''); parseScriptNow();
+    // The builder is bound to a line of the OLD script; rebuild it against the new one if it is open.
+    if (typeof renderScriptBuilder === 'function') renderScriptBuilder();
     if (phrasePanelOpen) renderPhraseUI();
     resetRhythmPanel();   // the rhythm list belongs to the notes that were drawn — rescan for this piece
     renderColorLegend();  // name this piece's voice colours
@@ -3386,7 +3445,10 @@ Can you hear it?       &gt; ask()"></textarea>
       const bars = document.createElement('span');
       bars.style.cssText = 'font-size:.78em;color:#666;margin-right:8px;display:inline-flex;align-items:center;gap:2px';
       bars.append(document.createTextNode('m'), from, dash, to);
-      const playBtn = mkBtn('▶', 'Play these bars', () => playPhrase(p.name));
+      const playBtn = mkBtn('▶', phrasePlaysLit()
+        ? 'Play these bars — with a motif / phrase view on, only the notes it has lit (see “▶ plays” above)'
+        : 'Play these bars — every note in them, however the sheet is dimmed (see “▶ plays” above)',
+        () => playPhrase(p.name));
       const findBtn = mkBtn('🔍', 'Find other places in the piece that sound like these bars', () => findPhrase(p.name));
       const delBtn = mkBtn('🗑', 'Delete this phrase', () => {
         if (window.confirm(`Delete phrase "${p.name}"${p.from != null ? ` (m${p.from}–${p.to})` : ''}?`)) renderer.removePhrase(p.name);
@@ -3429,18 +3491,31 @@ Can you hear it?       &gt; ask()"></textarea>
     const dimmed = (renderer && renderer.getDimmedNotes) ? renderer.getDimmedNotes() : [];
     return dimmed.length ? [...base, ...dimmed] : base;
   }
-  // Is anything other than the user's own suppression silencing notes right now? Decides whether a
-  // "not sounding" count should be blamed on Suppress notes or on the highlight that owns the sheet.
-  const dimIsSilencing = () => !!(renderer && renderer.anyDimActive && renderer.anyDimActive()
+  // Is a highlight greying notes on the sheet right now? Rhythm paths are excluded for the reason given
+  // in effectiveMutedIds: there the grey IS the rhythm's own highlight.
+  const dimActiveOnSheet = () => !!(renderer && renderer.anyDimActive && renderer.anyDimActive()
     && !(shownGroupName || rhythmSelId));
   // How many events of a finished schedule will actually sound.
   const soundingCount = (schedule) => schedule.filter((e) => !e.muted).length;
   // Why notes are silent — the highlight owning the sheet, or the user's own suppression. Saying
-  // "suppressed" when it was really the motif dim sends you hunting through the wrong panel.
-  const silencedWord = () => (dimIsSilencing() ? 'not highlighted' : 'suppressed');
-  const nothingSounds = (what) => (dimIsSilencing()
+  // "suppressed" when it was really the motif dim sends you hunting through the wrong panel. `dimApplies`
+  // is false on the paths that mute Suppress-notes ONLY (playTags, and a phrase set to play all its
+  // bars): there a dimmed sheet is not what silenced anything, so naming it would misdirect just as badly.
+  const silencedWord = (dimApplies = true) => ((dimApplies && dimActiveOnSheet()) ? 'not highlighted' : 'suppressed');
+  const nothingSounds = (what, dimApplies = true) => ((dimApplies && dimActiveOnSheet())
     ? `None of ${what} is highlighted — clear the Motifs/Phrases view to hear it all.`
     : `Every note of ${what} is suppressed — nothing would sound.`);
+  // ▶ in the Phrases panel: does the active dim narrow the phrase, or does the phrase sound whole?
+  const phrasePlaysLit = () => {
+    const el = document.getElementById('phrasePlayMode');
+    return !el || el.value !== 'bars';
+  };
+  // Everything that must not sound when a phrase plays. "all notes of its bars" simply drops the dim from
+  // the reckoning and leaves the user's own 🔇 suppression, which is the whole job of the toggle.
+  const phraseMutedIds = () => (phrasePlaysLit() ? effectiveMutedIds() : suppressedNoteIds());
+  // Said in the status line when the sheet is greyed but the phrase is sounding in full — otherwise a
+  // dimmed sheet that plays everything looks like the dim has stopped working.
+  const phrasePlayNote = () => ((!phrasePlaysLit() && dimActiveOnSheet()) ? ' · all notes of its bars' : '');
 
   function playPhrase(name) {
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
@@ -3451,10 +3526,10 @@ Can you hear it?       &gt; ask()"></textarea>
     const keep = (renderer && renderer.getPhraseNoteIds) ? renderer.getPhraseNoteIds(name) : [];
     if (!keep.length) { setTransportMsg('This phrase has no notes.', 'err'); return; }
     const schedule = buildScheduleFromMusicXml(currentDetail.source,
-      { tempo: currentTempo(), keepNotes: keep, mutedNotes: effectiveMutedIds(), breathBeats: breathBeatsValue() });
+      { tempo: currentTempo(), keepNotes: keep, mutedNotes: phraseMutedIds(), breathBeats: breathBeatsValue() });
     if (!schedule.length) { setTransportMsg('Nothing to play.', 'err'); return; }
     const heard = soundingCount(schedule);
-    if (!heard) { setTransportMsg(nothingSounds(`phrase "${name}"`), 'err'); return; }
+    if (!heard) { setTransportMsg(nothingSounds(`phrase "${name}"`, phrasePlaysLit()), 'err'); return; }
     const silenced = schedule.length - heard;
     setLastPlay({ tag: 'P', label: `phrase "${name}"`, run: () => playPhrase(name) });
     const p = ensurePlayer();
@@ -3465,7 +3540,7 @@ Can you hear it?       &gt; ask()"></textarea>
     p.play()
       .then(() => {
         setTransportMsg(`Playing phrase "${name}" (${heard} note${heard === 1 ? '' : 's'}`
-          + (silenced ? `, ${silenced} ${silencedWord()}` : '') + ')', 'ok');
+          + (silenced ? `, ${silenced} ${silencedWord(phrasePlaysLit())}` : '') + ')' + phrasePlayNote(), 'ok');
       })
       .catch(() => { setTransportMsg('Playback error.', 'err'); });
   }
@@ -3708,7 +3783,7 @@ Can you hear it?       &gt; ask()"></textarea>
       setTransportMsg('Phrase playback needs a MusicXML piece.', 'err'); return;
     }
     const gap = autoPhraseGapBeats();
-    const muted = effectiveMutedIds();   // Suppress notes AND the active dim — see effectiveMutedIds
+    const muted = phraseMutedIds();      // Suppress notes, plus the active dim unless ▶ plays all the bars
     // Only the occurrences whose chip is on, so what plays is exactly what is shaded. Switching every
     // one off is a real choice, not an error — say so rather than starting a run of silence.
     const all = p.occurrences || [];
@@ -3727,7 +3802,7 @@ Can you hear it?       &gt; ask()"></textarea>
       return;
     }
     const heard = soundingCount(schedule);
-    if (!heard) { setTransportMsg(nothingSounds(`phrase ${p.name}`), 'err'); return; }
+    if (!heard) { setTransportMsg(nothingSounds(`phrase ${p.name}`, phrasePlaysLit()), 'err'); return; }
     applyAutoPhraseShade();   // hear it and see it: playing always shows which bars are sounding
     const varied = chosen.filter((o) => o.varied).length;
     const silenced = schedule.length - heard;
@@ -3737,10 +3812,15 @@ Can you hear it?       &gt; ask()"></textarea>
       + ` occurrence${sounded === 1 ? '' : 's'} in turn`
       + (varied ? `, ${varied} modified` : '')
       + `, ${gap} beat${gap === 1 ? '' : 's'} between`
-      + (silenced ? ` · ${heard} sounding, ${silenced} ${silencedWord()}` : ''),
+      + (silenced ? ` · ${heard} sounding, ${silenced} ${silencedWord(phrasePlaysLit())}` : '')
+      + phrasePlayNote(),
       { tag: 'P', label: `phrase ${p.name}`, run: playDetectedPhrase });
   }
   document.getElementById('autoPhrasePlayBtn').onclick = playDetectedPhrase;
+  // The per-phrase ▶ tooltips name the current mode, so they have to be rebuilt when it changes.
+  document.getElementById('phrasePlayMode').onchange = () => {
+    if (document.getElementById('phrasePanel').open) renderPhraseUI();
+  };
   document.getElementById('autoPhraseBtn').onclick = runAutoPhraseDetect;
   // Changing the phrase length invalidates the scan rather than silently keeping the old one.
   document.getElementById('autoPhraseBars').onchange = () => { if (detectedPhrases.length) runAutoPhraseDetect(); };
@@ -4076,6 +4156,19 @@ Can you hear it?       &gt; ask()"></textarea>
     }
   }
 
+  // Colour the bars an inBars() line is working on, so "this step is m9–16" is on the SHEET and not only
+  // in the panel's text. The whole piece stays drawn (see runStep) — without a band there is nothing to
+  // tell you where to look.
+  //
+  // Shading goes through the phrase-band channel, so a new scope replaces the last one rather than
+  // stacking; and the two other background washes (a captured vocab range, the fretboard step band) are
+  // cleared first, because three coloured stretches at once no longer say which bars the step meant.
+  function scriptShadeBars(range) {
+    if (!renderer || !range) return;
+    if (renderer.clearMeasureHighlight) renderer.clearMeasureHighlight();
+    if (renderer.clearStepHighlight) renderer.clearStepHighlight();
+    if (renderer.shadeBars) renderer.shadeBars(range, { badge: `m${range[0]}–${range[1]}` });
+  }
   // Run one step: its passes, its tempo (held or ramped), its actions in order.
   async function runStep(i, runId) {
     const step = scriptSteps[i];
@@ -4090,6 +4183,7 @@ Can you hear it?       &gt; ask()"></textarea>
     let bars = null;
     if (step.measures) {
       bars = [step.measures];
+      scriptShadeBars(step.measures);
       scriptMsg(`m${step.measures[0]}–${step.measures[1]}`);
     } else if (step.phrase) {
       ensureDetectedPhrases();
@@ -4121,12 +4215,16 @@ Can you hear it?       &gt; ask()"></textarea>
   // Run all: every step from here to the end, each starting when the one before it finishes. One step
   // at a time is what ◀ ▶ and the gutter ▶ are for — so this button has a single meaning, and there is
   // no mode to check before pressing it.
-  async function runFrom(i) {
+  //
+  // `last` stops early, for the ▶ on a section title in the table: that has to run the section and then
+  // stop, not spill into the next one. Omitted, it is the end of the script, exactly as before.
+  async function runFrom(i, last = Infinity) {
     if (!parseScriptNow().length) { scriptMsg('Nothing to run yet — write a step or two.'); return; }
+    const end = Math.min(last, scriptSteps.length - 1);
     const runId = ++scriptRunId;
     setScriptRunning(true);
     scriptFinished = false;
-    for (let k = Math.max(0, i); k < scriptSteps.length; k++) {
+    for (let k = Math.max(0, i); k <= end; k++) {
       if (runId !== scriptRunId) return;
       await runStep(k, runId);
       if (runId !== scriptRunId) return;
@@ -4136,7 +4234,9 @@ Can you hear it?       &gt; ask()"></textarea>
     }
     if (runId === scriptRunId) {
       setScriptRunning(false);
-      scriptFinished = true;
+      // Only a run that reached the real end is "finished" — that flag is what makes ▶ Run all start over
+      // from the top, and a section that stopped where it was told to should be continued, not restarted.
+      scriptFinished = end >= scriptSteps.length - 1;
       scriptMsg('Done.'); hideScriptBanner();
     }
   }
@@ -4184,10 +4284,17 @@ Can you hear it?       &gt; ask()"></textarea>
   document.getElementById('scriptText').addEventListener('change', () => { parseScriptNow(); saveScript(); });
 
   // ---- Gutter ▶ : run the line the caret is on -----------------------------------------------------
+  // The text box's own gutter. The table above has a ▶ per row and per section; this is the same idea for
+  // whoever is typing rather than building, and they run the identical stepTo(), so the two agree.
+  //
   // The caret's line is counted from the text, and its y from the textarea's own line-height — which is
   // only trustworthy because .script-text sets `white-space:pre`, so one line of text is always exactly
-  // one row on screen. Hidden on a line that is no step (blank, comment, or a line with a parse error):
-  // an arrow that does nothing when clicked is worse than no arrow.
+  // one row on screen. Hidden on a line that is no step at all (blank, or a bare comment): an arrow that
+  // does nothing when clicked is worse than no arrow.
+  //
+  // A line whose COMMAND half is unparseable is still a step when it has words — parseScript keeps the
+  // prose and drops the bad call — so it keeps its arrow, and pressing it shows the words and plays
+  // nothing. That is precisely what Run all does with that line, so the arrow is not lying.
   const caretLineNo = (ta) => ta.value.slice(0, ta.selectionStart).split('\n').length;
   function stepAtCaret() {
     const ta = document.getElementById('scriptText');
@@ -4225,6 +4332,467 @@ Can you hear it?       &gt; ask()"></textarea>
       + Object.entries(COMMANDS).map(([n, c]) => `<code>${n}()</code> — ${c.doc}`).join('<br>');
     box.style.display = '';
   };
+
+  // ---- Command builder ----------------------------------------------------------------------------
+  // The script as a TABLE: one row per line, one column per thing a line can carry — its words, what it
+  // does and with what, the bars or phrase it is kept to, tempo, repeats, gap. Two things are hard to
+  // type from memory — the verb names with their arities, and the exact motif / phrase / group names of
+  // THIS piece — and both are known here, so both are offered as menus.
+  //
+  // The textarea stays the single source of truth. The table holds no state of its own beyond "am I
+  // open": it reads every line, and each control writes its whole line back and the table re-reads it.
+  // So there is never a table that disagrees with the text, and typing and building can be mixed freely.
+  //
+  // Which columns exist follows the grammar: `inBars`/`inPhrase`, `tempo`, `repeat` and `gap` describe
+  // the STEP (parseScript lifts them out of the line), so each gets one column; everything else is a
+  // verb the step performs, and a step may perform several, so those stack inside the one cell.
+  //
+  // Rows group under titles, and a title is just a `#` line — which the language already has and already
+  // skips when running. So a script keeps its sections when it is typed by hand or read back as text, and
+  // nothing new had to be invented to hold them.
+  const BUILDER_MODIFIERS = ['inBars', 'inPhrase', 'tempo', 'repeat', 'gap'];
+  let builderOpen = false;
+  const builderFolded = new Set();   // group titles that are collapsed — by title, so it survives a redraw
+
+  // The names this piece actually has, for the kind of argument being edited. A select is built from
+  // these PLUS whatever the line already says, so a script naming something that no longer exists stays
+  // editable instead of being silently rewritten.
+  function scriptChoices(kind) {
+    if (!renderer) return [];
+    if (kind === 'tag') return (renderer.getPatterns() || []).map((a) => a.name);
+    if (kind === 'group') return (renderer.getRhythmGroups() || []).map((g) => g.name);
+    if (kind === 'name') return [...scriptChoices('phrase'), ...scriptChoices('tag')];
+    if (kind === 'phrase') {
+      // Named phrases, plus each detected family AND the labels of its individual returns — the same
+      // spellings the occurrence chips use and resolvePhrase accepts: B, B2, B3′, B′.
+      const out = (renderer.getPhrases() || []).map((p) => p.name);
+      (detectedPhrases || []).forEach((p) => {
+        out.push(p.name);
+        const occ = p.occurrences || [];
+        if (occ.length > 1) occ.forEach((o, i) => out.push(`${p.name}${i + 1}${o.varied ? '′' : ''}`));
+        if (occ.some((o) => o.varied)) out.push(`${p.name}′`);
+      });
+      return [...new Set(out)];
+    }
+    return [];
+  }
+  // One line, taken apart into the table's columns exactly the way parseScript takes it apart.
+  function builderRowModel(raw, lineNo) {
+    const cut = proseCut(raw);
+    const prose = (cut >= 0 ? raw.slice(0, cut) : raw).replace(/\s+$/, '');
+    const parsed = cut >= 0 ? parseCalls(raw.slice(cut + 1), lineNo) : { calls: [], errors: [] };
+    const row = { lineNo, raw, prose, column: cut >= 0 ? cut : 0, errors: parsed.errors,
+      comment: /^\s*#/.test(raw), blank: !raw.trim(),
+      actions: [], scope: null, tempo: ['', ''], repeat: '', gap: '' };
+    parsed.calls.forEach((c) => {
+      if (c.name === 'inBars') {
+        // "9-16" is ONE argument as far as the parser is concerned — inBars is not numeric, so the dash
+        // lives inside it. The table has a from box and a to box, and a number input silently REFUSES a
+        // value like "9-16" (it came back empty, and writing the row back then said inBars(16)). So split
+        // it into two here, the same way parseScript does when it reads the range.
+        const parts = c.args.length > 1 ? c.args : String(c.args[0] || '').split(/[-–—]/);
+        const from = String(parts[0] == null ? '' : parts[0]).trim();
+        const to = String(parts[1] == null || String(parts[1]).trim() === '' ? from : parts[1]).trim();
+        row.scope = { name: 'inBars', args: [from, to] };
+        return;
+      }
+      if (c.name === 'inPhrase') { row.scope = c; return; }
+      if (c.name === 'tempo') { row.tempo = [c.args[0] || '', c.args[1] || '']; return; }
+      if (c.name === 'repeat') { row.repeat = c.args[0] || ''; return; }
+      if (c.name === 'gap') { row.gap = c.args[0] || ''; return; }
+      row.actions.push(c);
+    });
+    return row;
+  }
+  const builderLines = () => document.getElementById('scriptText').value.split('\n');
+  // The lines to SHOW. Text ending in a newline splits into a final '' that is an artifact of the text
+  // rather than a step anyone wrote; rendering it would park a permanent empty row under every script —
+  // and make "＋ step" look like it did nothing, since the row it added was already there.
+  function builderVisibleLines() {
+    const lines = builderLines();
+    if (lines.length > 1 && lines[lines.length - 1] === '') lines.pop();
+    return lines;
+  }
+  function builderNote(text, bad) {
+    const el = document.querySelector('#scriptBuilder .sb-note');
+    if (!el) return;
+    el.classList.toggle('bad', !!bad);
+    el.textContent = text;
+  }
+  // Write one line back — but only if the result still parses. Committing a line the parser chokes on is
+  // a dead end: the table would then have to refuse to edit it, and you would reach that state just by
+  // emptying a box. Returns '' when it wrote, or why it would not.
+  function builderWriteLine(lineNo, prose, calls) {
+    const ta = document.getElementById('scriptText');
+    const lines = ta.value.split('\n');
+    while (lines.length < lineNo) lines.push('');
+    const cut = proseCut(lines[lineNo - 1] || '');
+    const line = formatLine(prose, calls, { column: cut >= 0 ? cut : 0 });
+    const bad = parseScript(line).errors;
+    if (bad.length) return bad[0].message;
+    lines[lineNo - 1] = line;
+    ta.value = lines.join('\n');
+    parseScriptNow(); saveScript(); placeLineRun();
+    return '';
+  }
+  // Sensible arguments for a command just chosen from a menu, so what lands in the script is runnable at
+  // once rather than an empty call that fails its own arity check.
+  function builderDefaults(name) {
+    const ui = ARG_UI[name] || {};
+    // A script's bar numbers are the PRINTED ones (inBars/playBars/show all convert on the way in), while
+    // viewRanges() is sequential — seeding straight from it would be off by the pickup on any piece with one.
+    const view = viewRanges();
+    const span = view.length
+      ? [String(toPrintedMeasure(view[0][0])), String(toPrintedMeasure(view[0][1]))]
+      : ['1', '4'];
+    if (name === 'tempo') return [String(currentTempo())];
+    if (name === 'repeat') return ['2'];
+    if (name === 'gap') return ['1'];
+    if (name === 'wait') return ['2'];
+    if (ui.kind === 'bar') return span;
+    if (ui.kind === 'phrase') {
+      // 'A' is a real answer even on a piece that has never been scanned: a script runs the detector on
+      // demand (ensureDetectedPhrases) and detected phrases are always A, B, C… Unlike a motif name,
+      // which is whatever you called it, this one can be defaulted — so inPhrase stays available.
+      return [scriptChoices('phrase')[0] || 'A'];
+    }
+    if (name === 'compare') return scriptChoices('name').slice(0, 2);
+    if (ui.kind === 'tag' || ui.kind === 'group' || ui.kind === 'name') return scriptChoices(ui.kind).slice(0, 1);
+    return [];
+  }
+  // A verb is offered only when this piece has what it needs — nothing tagged means no playTag to pick.
+  // Offering it would insert a call that cannot be completed, and the arity check would lock the line.
+  function builderCanAdd(name) {
+    const spec = COMMANDS[name];
+    if (!spec) return false;
+    if (spec.args === '0' || spec.args === '0-1') return true;
+    return builderDefaults(name).length >= (spec.args === '2+' ? 2 : 1);
+  }
+
+  // ── the table ──────────────────────────────────────────────────────────────────────────────────────
+  const BUILDER_COLS = [
+    ['', 'line number — the ▶ in the gutter runs this line'],
+    ['words', 'What this step says over the sheet. A little markup is allowed: <b>, <i>, colour.'],
+    ['does', 'The verbs this step performs, in order. A step may have several.'],
+    ['in', 'Keep this step to a stretch of bars, or to one phrase'],
+    ['which', 'The bars, or which phrase'],
+    ['tempo', 'Beats per minute. Two values ramp across the repeats.'],
+    ['×', 'How many times this step runs'],
+    ['gap', 'Seconds of quiet after this step, instead of the panel’s gap'],
+    ['', ''],
+  ];
+  function renderScriptBuilder() {
+    const box = document.getElementById('scriptBuilder');
+    if (!box) return;
+    box.style.display = builderOpen ? '' : 'none';
+    if (!builderOpen) return;
+    // Each row's ▶ needs its step's index, so the step list has to match the text this render is reading.
+    parseScriptNow();
+    box.innerHTML = '';
+    const wrap = document.createElement('div'); wrap.className = 'sb-wrap';
+    const table = document.createElement('table'); table.className = 'sb-table';
+    const thead = document.createElement('thead');
+    const hr = document.createElement('tr');
+    BUILDER_COLS.forEach(([label, title]) => {
+      const th = document.createElement('th'); th.textContent = label; if (title) th.title = title;
+      hr.append(th);
+    });
+    thead.append(hr); table.append(thead);
+    // One <tbody> per group: that is what draws the grouping, and it keeps every row in the same column
+    // grid — a nested table would let each section's columns drift out of line with the others'.
+    builderGroups().forEach((g) => table.append(builderTbody(g)));
+    wrap.append(table); box.append(wrap);
+
+    const foot = document.createElement('div'); foot.className = 'sb-foot';
+    // Appending rather than inserting at the caret: the table is the whole script at once, so there is no
+    // "here" to insert at — and a row can be dragged into place by editing the text if it matters.
+    const append = (text, focusSel) => {
+      const ta = document.getElementById('scriptText');
+      const base = ta.value.replace(/\n+$/, '');
+      ta.value = base === '' ? `${text}\n` : `${base}\n${text}\n`;
+      parseScriptNow(); saveScript(); placeLineRun();
+      renderScriptBuilder();
+      const el = document.querySelector(focusSel);
+      if (el) { el.focus(); if (el.select) el.select(); }
+    };
+    const addStep = document.createElement('button');
+    addStep.type = 'button'; addStep.className = 'btn'; addStep.style.cssText = 'padding:1px 8px;font-size:12px';
+    addStep.textContent = '＋ step';
+    addStep.title = 'Add a step at the end of the script';
+    addStep.onclick = () => append('', '#scriptBuilder tbody:last-child tr:last-child .sb-words');
+    const addGroup = document.createElement('button');
+    addGroup.type = 'button'; addGroup.className = 'btn'; addGroup.style.cssText = 'padding:1px 8px;font-size:12px';
+    addGroup.textContent = '＋ section';
+    addGroup.title = 'Start a new titled group of steps (a # line in the script)';
+    // No trailing newline in the text — `append` adds it. With one here the script grew a blank line per
+    // click, and "＋ step" then became a no-op because the row it wanted to add was already there.
+    addGroup.onclick = () => append('# new section', '#scriptBuilder tbody:last-child .sb-title');
+    const note = document.createElement('span'); note.className = 'sb-note';
+    foot.append(addStep, addGroup, note);
+    box.append(foot);
+    const n = scriptSteps.length;
+    builderNote(`${n} step${n === 1 ? '' : 's'} · a row writes its own line, so the box below still works`
+      + ' · a # line is a section title', false);
+  }
+  // The script cut into groups: a `#` line starts one and names it, and the rows after it belong to it
+  // until the next. Lines before any `#` are one untitled group, so a script with no sections still shows.
+  const builderGroupTitle = (raw) => raw.replace(/^\s*#+\s?/, '');
+  function builderGroups() {
+    const out = [];
+    let cur = { title: null, lineNo: null, rows: [] };
+    builderVisibleLines().forEach((raw, i) => {
+      const model = builderRowModel(raw, i + 1);
+      if (!model.comment) { cur.rows.push(model); return; }
+      if (cur.title != null || cur.rows.length) out.push(cur);
+      cur = { title: builderGroupTitle(raw), lineNo: i + 1, rows: [] };
+    });
+    out.push(cur);
+    return out.filter((g) => g.title != null || g.rows.length);
+  }
+  function builderTbody(g) {
+    const tb = document.createElement('tbody');
+    tb.className = 'sb-group';
+    const folded = g.title != null && builderFolded.has(g.title);
+    if (g.title != null) {
+      const tr = document.createElement('tr'); tr.className = 'sb-grouphead';
+      const n = document.createElement('td'); n.className = 'sb-n';
+      n.append(builderGroupRunBtn(g), document.createTextNode(String(g.lineNo)));
+      const td = document.createElement('td'); td.colSpan = BUILDER_COLS.length - 2;
+      const fold = document.createElement('button');
+      fold.type = 'button'; fold.className = 'sb-fold'; fold.textContent = folded ? '▸' : '▾';
+      fold.title = folded ? 'Show this section’s steps' : 'Hide this section’s steps';
+      fold.onclick = () => {
+        if (folded) builderFolded.delete(g.title); else builderFolded.add(g.title);
+        renderScriptBuilder();
+      };
+      const t = document.createElement('input');
+      t.className = 'sb-title'; t.value = g.title; t.placeholder = 'section title…';
+      t.title = 'A name for this group of steps. It is a # line in the script, so it is skipped when it runs.';
+      t.onchange = () => {
+        // Follow the fold across a rename, or a collapsed section would spring open on being retitled.
+        if (builderFolded.delete(g.title) && t.value.trim()) builderFolded.add(t.value.trim());
+        builderSetRaw(g.lineNo, `# ${t.value.trim()}`);
+      };
+      td.append(fold, t);
+      if (folded) {
+        const c = document.createElement('span'); c.className = 'sb-count';
+        const k = g.rows.filter((r) => !r.blank).length;
+        c.textContent = `${k} step${k === 1 ? '' : 's'} hidden`;
+        td.append(c);
+      }
+      tr.append(n, td, builderDelCell({ lineNo: g.lineNo }, 'Delete this section title (its steps stay)'));
+      tb.append(tr);
+    }
+    if (!folded) g.rows.forEach((r) => tb.append(builderTr(r)));
+    return tb;
+  }
+  // Read every call on a row out of its controls. `swap` replaces one select's slot with freshly seeded
+  // defaults — what a just-changed function or scope menu needs, since the argument boxes beside it still
+  // hold the OLD verb's values.
+  function builderCallsOf(tr, swap) {
+    const calls = [];
+    const scope = tr.querySelector('.sb-scope');
+    if (swap && swap.what === 'scope') {
+      if (swap.name) calls.push({ name: swap.name, args: builderDefaults(swap.name) });
+    } else if (scope && scope.value) {
+      calls.push({ name: scope.value, args: [...tr.querySelectorAll('.sb-scope-arg')].map((i) => i.value) });
+    }
+    const tempo = [...tr.querySelectorAll('.sb-tempo')].map((i) => i.value).filter((v) => v !== '');
+    if (tempo.length) calls.push({ name: 'tempo', args: tempo });
+    const rep = tr.querySelector('.sb-repeat');
+    if (rep && rep.value !== '' && Number(rep.value) > 1) calls.push({ name: 'repeat', args: [rep.value] });
+    const gap = tr.querySelector('.sb-gap');
+    if (gap && gap.value !== '') calls.push({ name: 'gap', args: [gap.value] });
+    tr.querySelectorAll('.sb-act').forEach((act) => {
+      const fn = act.querySelector('.sb-fn');
+      if (swap && swap.what === 'action' && swap.el === act) {
+        if (swap.name) calls.push({ name: swap.name, args: builderDefaults(swap.name) });
+        return;
+      }
+      if (!fn || !fn.value) return;
+      calls.push({ name: fn.value, args: [...act.querySelectorAll('.sb-arg')].map((i) => i.value) });
+    });
+    return calls;
+  }
+  // Write this row, redraw, and if the write was refused say why — in that order, because the redraw
+  // rebuilds the note line. Every control on the table goes through here.
+  function builderApply(tr, swap) {
+    const words = tr.querySelector('.sb-words');
+    const why = builderWriteLine(Number(tr.dataset.line), words ? words.value : '', builderCallsOf(tr, swap));
+    renderScriptBuilder();
+    if (why) builderNote(why, true);
+  }
+  function builderTr(row) {
+    const tr = document.createElement('tr');
+    tr.dataset.line = String(row.lineNo);
+    const cell = () => { const td = document.createElement('td'); tr.append(td); return td; };
+    const num = cell(); num.className = 'sb-n';
+    num.append(builderRunBtn(row.lineNo), document.createTextNode(String(row.lineNo)));
+
+    const words = document.createElement('input');
+    words.className = 'sb-words'; words.value = row.prose;
+    words.placeholder = row.blank ? 'a new step…' : 'what this step says…';
+    words.title = BUILDER_COLS[1][1];
+    words.onchange = () => builderApply(tr);
+    cell().append(words);
+
+    // A line whose commands the parser cannot read is shown, never rewritten: rebuilding it from a
+    // partial parse would delete the typo along with whatever else was on the line.
+    if (row.errors.length) {
+      const td = cell(); td.colSpan = BUILDER_COLS.length - 3; td.className = 'sb-bad';
+      td.textContent = `can’t read “${row.raw.slice(row.column + 1).trim()}” — ${row.errors[0].message}`;
+      words.disabled = true;
+      tr.append(builderDelCell(row));
+      return tr;
+    }
+
+    // does — one block per verb, plus one empty block to add the next.
+    const acts = cell(); acts.className = 'sb-acts';
+    [...row.actions, null].forEach((call) => acts.append(builderActBlock(tr, call)));
+
+    // in / which — the step's scope.
+    const scopeSel = document.createElement('select');
+    scopeSel.className = 'sb-scope'; scopeSel.title = BUILDER_COLS[3][1];
+    scopeSel.append(new Option('—', ''));
+    ['inBars', 'inPhrase'].forEach((n) => {
+      const o = new Option(n === 'inBars' ? 'bars' : 'phrase', n);
+      o.title = COMMANDS[n].doc; o.disabled = !builderCanAdd(n);
+      scopeSel.append(o);
+    });
+    scopeSel.value = row.scope ? row.scope.name : '';
+    scopeSel.onchange = () => builderApply(tr, { what: 'scope', name: scopeSel.value });
+    cell().append(scopeSel);
+    const which = cell();
+    if (row.scope) builderArgControls(which, row.scope.name, row.scope.args, 'sb-scope-arg', () => builderApply(tr));
+
+    const tempo = cell();
+    [0, 1].forEach((k) => {
+      const el = document.createElement('input');
+      el.type = 'number'; el.min = '10'; el.className = 'sb-tempo sb-num';
+      el.value = row.tempo[k] || '';
+      el.placeholder = k ? '→' : 'bpm';
+      el.title = k ? 'Ramp to this by the last repeat' : 'Beats per minute for this step';
+      el.onchange = () => builderApply(tr);
+      if (k) tempo.append(document.createTextNode('→'));
+      tempo.append(el);
+    });
+    const rep = document.createElement('input');
+    rep.type = 'number'; rep.min = '1'; rep.className = 'sb-repeat sb-num'; rep.value = row.repeat || '';
+    rep.placeholder = '1'; rep.title = BUILDER_COLS[6][1];
+    rep.onchange = () => builderApply(tr);
+    cell().append(rep);
+    const gap = document.createElement('input');
+    gap.type = 'number'; gap.min = '0'; gap.step = '0.5'; gap.className = 'sb-gap sb-num'; gap.value = row.gap || '';
+    gap.placeholder = '–'; gap.title = BUILDER_COLS[7][1];
+    gap.onchange = () => builderApply(tr);
+    cell().append(gap);
+    tr.append(builderDelCell(row));
+    return tr;
+  }
+  // One verb of a step: which one, and its arguments. `call` null is the empty block that adds the next.
+  function builderActBlock(tr, call) {
+    const act = document.createElement('div'); act.className = 'sb-act';
+    const fn = document.createElement('select');
+    fn.className = 'sb-fn'; fn.title = call ? COMMANDS[call.name].doc : 'Add a verb to this step';
+    fn.append(new Option(call ? '—' : '＋ do…', ''));
+    Object.entries(COMMANDS).forEach(([n, c]) => {
+      if (BUILDER_MODIFIERS.includes(n)) return;          // these have columns of their own
+      const can = builderCanAdd(n);
+      const o = new Option(can ? n : `${n} — nothing to name yet`, n);
+      o.disabled = !can; o.title = c.doc;
+      fn.append(o);
+    });
+    fn.value = call ? call.name : '';
+    fn.onchange = () => builderApply(tr, { what: 'action', el: act, name: fn.value });
+    act.append(fn);
+    if (call) builderArgControls(act, call.name, call.args, 'sb-arg', () => builderApply(tr));
+    return act;
+  }
+  // The argument controls for one call, appended to `host`. A name argument is a select of what this
+  // piece has; a bar or number argument is a number box. A variadic verb always shows one empty slot
+  // past its last argument — that is how another motif is added, and clearing one removes it.
+  function builderArgControls(host, name, args, cls, onChange) {
+    const ui = ARG_UI[name] || { kind: 'text', labels: ['value'], variadic: true };
+    if (ui.kind === 'none') return;
+    const slots = ui.variadic ? (args || []).length + 1 : ui.labels.length;
+    for (let s = 0; s < slots; s++) {
+      const label = ui.labels[Math.min(s, ui.labels.length - 1)] || 'value';
+      const value = (args || [])[s] == null ? '' : args[s];
+      let el;
+      if (ui.kind === 'tag' || ui.kind === 'phrase' || ui.kind === 'group' || ui.kind === 'name') {
+        el = document.createElement('select');
+        const opts = scriptChoices(ui.kind);
+        el.append(new Option('—', ''));
+        // The line's own value first when it is not in the list, so a script naming a motif that has
+        // since been renamed away still shows what it says instead of silently reading as blank.
+        (value && !opts.includes(value) ? [value, ...opts] : opts)
+          .forEach((o) => el.append(new Option(o, o)));
+      } else {
+        el = document.createElement('input');
+        if (ui.kind === 'bar' || ui.kind === 'number') { el.type = 'number'; el.min = ui.kind === 'bar' ? '1' : '0'; }
+        el.placeholder = label;
+      }
+      el.value = value;
+      el.className = `${cls} ${ui.kind === 'bar' || ui.kind === 'number' ? 'sb-num' : 'sb-pick'}`;
+      el.title = `${name}: ${label}`;
+      el.onchange = onChange;
+      host.append(el);
+    }
+  }
+  // ▶ for one row — run just that step. A line that is no step at all (a blank one) gets a placeholder of
+  // the same width instead, so the numbers stay in one column. A line whose commands don't parse DOES keep
+  // its arrow: it is still a step that says its words, and that is what Run all would do with it too.
+  function builderRunBtn(lineNo) {
+    const i = scriptSteps.findIndex((s) => s.line === lineNo);
+    if (i < 0) { const gap = document.createElement('span'); gap.className = 'sb-run sb-run-off'; return gap; }
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'sb-run'; b.textContent = '▶';
+    b.title = `Run this step — ${describeStep(scriptSteps[i]) || 'just the words'}`;
+    b.onclick = () => stepTo(i);
+    return b;
+  }
+  // ▶ for a section — its steps in turn, stopping at the end of the section.
+  function builderGroupRunBtn(g) {
+    const lines = new Set(g.rows.map((r) => r.lineNo));
+    const idx = scriptSteps.map((s, i) => (lines.has(s.line) ? i : -1)).filter((i) => i >= 0);
+    if (!idx.length) { const gap = document.createElement('span'); gap.className = 'sb-run sb-run-off'; return gap; }
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'sb-run'; b.textContent = '▶';
+    b.title = `Run this section — ${idx.length} step${idx.length === 1 ? '' : 's'}, then stop`;
+    b.onclick = () => runFrom(idx[0], idx[idx.length - 1]);
+    return b;
+  }
+  function builderDelCell(row, title) {
+    const td = document.createElement('td');
+    const x = document.createElement('button');
+    x.type = 'button'; x.className = 'sb-x'; x.textContent = '✕';
+    x.title = title || `Delete line ${row.lineNo}`;
+    x.onclick = () => {
+      const lines = builderLines();
+      lines.splice(row.lineNo - 1, 1);
+      builderSetText(lines.join('\n'));
+    };
+    td.append(x);
+    return td;
+  }
+  function builderSetRaw(lineNo, raw) {
+    const lines = builderLines();
+    while (lines.length < lineNo) lines.push('');
+    lines[lineNo - 1] = raw;
+    builderSetText(lines.join('\n'));
+  }
+  function builderSetText(text) {
+    document.getElementById('scriptText').value = text;
+    parseScriptNow(); saveScript(); placeLineRun();
+    renderScriptBuilder();
+  }
+  document.getElementById('scriptBuildBtn').onclick = () => {
+    builderOpen = !builderOpen;
+    document.getElementById('scriptBuildBtn').setAttribute('aria-pressed', builderOpen ? 'true' : 'false');
+    renderScriptBuilder();
+  };
+  // Typing in the box below is the other half of the same editor, so the table follows it.
+  document.getElementById('scriptText').addEventListener('input', () => { if (builderOpen) renderScriptBuilder(); });
 
   // ---- Rhythm panel ------------------------------------------------------------------------------
   // Nothing to tag or paint here: the panel READS the rhythms off the sheet that is showing (whole
