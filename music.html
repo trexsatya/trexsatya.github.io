@@ -1056,34 +1056,35 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=71e63c1149';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=71e63c1149';
-  import { runQuery } from './music-query.js?v=71e63c1149';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges } from './music-render.js?v=71e63c1149';
-  import { init as initFretboard } from './fretboard-panel.js?v=71e63c1149';
-  import { chordDisplayName } from './music-chords.js?v=71e63c1149';
-  import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript } from './music-script.js?v=71e63c1149';
-  import { keyExplanation } from './music-key.js?v=71e63c1149';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=71e63c1149';
-  import { createMusicStore } from './music-local-store.js?v=71e63c1149';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=71e63c1149';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=71e63c1149';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=71e63c1149';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=71e63c1149';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=f35b1f0cc7';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=f35b1f0cc7';
+  import { runQuery } from './music-query.js?v=f35b1f0cc7';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges } from './music-render.js?v=f35b1f0cc7';
+  import { init as initFretboard } from './fretboard-panel.js?v=f35b1f0cc7';
+  import { chordDisplayName } from './music-chords.js?v=f35b1f0cc7';
+  import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript } from './music-script.js?v=f35b1f0cc7';
+  import { safeHtml } from './music-richtext.js?v=f35b1f0cc7';
+  import { keyExplanation } from './music-key.js?v=f35b1f0cc7';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=f35b1f0cc7';
+  import { createMusicStore } from './music-local-store.js?v=f35b1f0cc7';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=f35b1f0cc7';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=f35b1f0cc7';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=f35b1f0cc7';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=f35b1f0cc7';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=71e63c1149';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=f35b1f0cc7';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
-    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=71e63c1149';
-  import { renameTagInPhrases } from './music-phrase.js?v=71e63c1149';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=71e63c1149';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=71e63c1149';
-  import { generateCounterLines } from './music-counterpoint.js?v=71e63c1149';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=71e63c1149';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=71e63c1149';
-  import { splitSingleVoice } from './music-voice-split.js?v=71e63c1149';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=71e63c1149';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=71e63c1149';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=71e63c1149';
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=f35b1f0cc7';
+  import { renameTagInPhrases } from './music-phrase.js?v=f35b1f0cc7';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=f35b1f0cc7';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=f35b1f0cc7';
+  import { generateCounterLines } from './music-counterpoint.js?v=f35b1f0cc7';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=f35b1f0cc7';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=f35b1f0cc7';
+  import { splitSingleVoice } from './music-voice-split.js?v=f35b1f0cc7';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=f35b1f0cc7';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=f35b1f0cc7';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=f35b1f0cc7';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1555,13 +1556,18 @@ Can you hear it?       &gt; ask()"></textarea>
     const t = parseInt(document.getElementById('tempoInput').value, 10);
     return Number.isFinite(t) && t > 0 ? t : 90;
   }
-  function playMidi() {
+  // `barRange` ([fromPrinted, toPrinted]) plays exactly those bars WITHOUT touching the view or the
+  // segment fields — how a script's playBars() works. Omitted, the range comes from the page as before
+  // (chord window, click-selected start, or the segment).
+  function playMidi(barRange = null) {
     stopVarPlayback();   // never overlap the variation preview on the shared Tone.Transport
     if (!currentDetail) return;
     // MusicXML pieces get a time-accurate, polyphonic schedule from the source; note-text
     // pieces (no real timing) fall back to the simple per-note sequential builder.
     const useXml = currentDetail.format === 'musicxml' && currentDetail.source;
-    const range = activeRange();
+    const range = barRange
+      ? { fromMeasure: toSeqMeasure(Math.min(barRange[0], barRange[1])), toMeasure: toSeqMeasure(Math.max(barRange[0], barRange[1])) }
+      : activeRange();
     // The main transport plays the PIECE. Only the Suppress-notes set silences anything here — never the
     // grey a highlight leaves behind. A motif / phrase / rhythm view is a way of LOOKING at the score, and
     // having it also gag the transport meant you could not hear the piece while studying part of it: the
@@ -3836,7 +3842,9 @@ Can you hear it?       &gt; ask()"></textarea>
   function showScriptBanner(say, sub) {
     const el = scriptBanner();
     if (!say && !sub) { el.style.display = 'none'; return; }
-    document.getElementById('scriptBannerSay').textContent = say || '';
+    // `say` is the script's own words, so its markup is honoured (see music-richtext). `sub` is the
+    // description WE generate from the step, so it stays plain text — nothing there is user markup.
+    document.getElementById('scriptBannerSay').innerHTML = safeHtml(say || '');
     document.getElementById('scriptBannerSub').textContent = sub || '';
     el.style.display = 'block';   // NOT '': the stylesheet's own `display:none` would win back
   }
@@ -3846,7 +3854,7 @@ Can you hear it?       &gt; ask()"></textarea>
     const stage = document.getElementById('scriptStage');
     if (!step) { stage.style.display = 'none'; hideScriptBanner(); return; }
     stage.style.display = '';
-    document.getElementById('scriptSay').textContent = step.prose || '';
+    document.getElementById('scriptSay').innerHTML = safeHtml(step.prose || '');
     const desc = describeStep(step);
     const doing = desc + (step.repeat > 1 && pass != null ? `  (pass ${pass + 1} of ${step.repeat})` : '');
     document.getElementById('scriptDoing').textContent = doing;
@@ -4019,8 +4027,16 @@ Can you hear it?       &gt; ask()"></textarea>
         playRhythmGroup(a.args[0]); return true;
       }
       case 'playBars': {
-        if (!scriptShowBars(a.args[0], a.args[1])) return false;
-        playMidi(); return true;
+        // Plays the bars; does NOT re-render to them. It used to call scriptShowBars first, which left
+        // the sheet clipped for every later step — and a clipped sheet holds only the drawn notes, so a
+        // following playTagAll searched those bars alone and found the motif almost nowhere. Narrowing
+        // the view is what show() is for, and the two compose: `show(12,16) playBars(12,16)`.
+        const from = parseInt(a.args[0], 10), to = parseInt(a.args[1], 10);
+        if (!Number.isFinite(from) || !Number.isFinite(to)) {
+          scriptMsg(`playBars needs two bar numbers, got "${a.args.join(' | ')}"`); return false;
+        }
+        setLastPlay({ tag: 'B', label: `bars ${from}–${to}`, run: () => playMidi([from, to]) });
+        playMidi([from, to]); return true;
       }
       case 'compare': {
         // Each in turn with a breath between, so they land back to back and the difference is the
@@ -4042,11 +4058,13 @@ Can you hear it?       &gt; ask()"></textarea>
       case 'ask': {
         const stage = document.getElementById('scriptStage');
         const btn = document.getElementById('scriptAskBtn');
-        if (a.args[0]) document.getElementById('scriptSay').textContent = a.args[0];
+        if (a.args[0]) document.getElementById('scriptSay').innerHTML = safeHtml(a.args[0]);
         stage.classList.add('asking');
         btn.style.display = '';
         // The banner is often all that is on screen — say what is being waited for, and where.
-        showScriptBanner(a.args[0] || document.getElementById('scriptSay').textContent,
+        // innerHTML, not textContent: falling back to the step's own words must keep their markup —
+        // reading the text would quietly strip the emphasis the script asked for. Already sanitised.
+        showScriptBanner(a.args[0] || document.getElementById('scriptSay').innerHTML,
           'waiting — press Continue in the Script panel');
         await new Promise((resolve) => { scriptAskResolve = resolve; });
         scriptAskResolve = null;
