@@ -1056,34 +1056,34 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=64682e81d7';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=64682e81d7';
-  import { runQuery } from './music-query.js?v=64682e81d7';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars } from './music-render.js?v=64682e81d7';
-  import { init as initFretboard } from './fretboard-panel.js?v=64682e81d7';
-  import { chordDisplayName } from './music-chords.js?v=64682e81d7';
-  import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript } from './music-script.js?v=64682e81d7';
-  import { keyExplanation } from './music-key.js?v=64682e81d7';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=64682e81d7';
-  import { createMusicStore } from './music-local-store.js?v=64682e81d7';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=64682e81d7';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=64682e81d7';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=64682e81d7';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=64682e81d7';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=71e63c1149';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=71e63c1149';
+  import { runQuery } from './music-query.js?v=71e63c1149';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges } from './music-render.js?v=71e63c1149';
+  import { init as initFretboard } from './fretboard-panel.js?v=71e63c1149';
+  import { chordDisplayName } from './music-chords.js?v=71e63c1149';
+  import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript } from './music-script.js?v=71e63c1149';
+  import { keyExplanation } from './music-key.js?v=71e63c1149';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=71e63c1149';
+  import { createMusicStore } from './music-local-store.js?v=71e63c1149';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=71e63c1149';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=71e63c1149';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=71e63c1149';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=71e63c1149';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=64682e81d7';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=71e63c1149';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
-    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=64682e81d7';
-  import { renameTagInPhrases } from './music-phrase.js?v=64682e81d7';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=64682e81d7';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=64682e81d7';
-  import { generateCounterLines } from './music-counterpoint.js?v=64682e81d7';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=64682e81d7';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=64682e81d7';
-  import { splitSingleVoice } from './music-voice-split.js?v=64682e81d7';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=64682e81d7';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=64682e81d7';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=64682e81d7';
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=71e63c1149';
+  import { renameTagInPhrases } from './music-phrase.js?v=71e63c1149';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=71e63c1149';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=71e63c1149';
+  import { generateCounterLines } from './music-counterpoint.js?v=71e63c1149';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=71e63c1149';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=71e63c1149';
+  import { splitSingleVoice } from './music-voice-split.js?v=71e63c1149';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=71e63c1149';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=71e63c1149';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=71e63c1149';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1137,6 +1137,27 @@ Can you hear it?       &gt; ask()"></textarea>
     else { btn.style.display = 'none'; }
   }
   function hasPending() { return unpushedIds.size > 0 || dirtyVocab || dirtyIndex || dirtyTags; }
+
+  // Confirm before the tab closes or navigates away, when leaving would cost something:
+  //   • pending pushes — those edits sit in IndexedDB and do survive a close, but they are not
+  //     published, and "closed the tab and forgot to push" is the mistake this exists to catch;
+  //   • script text typed but not committed — saveScript runs on `change`, i.e. on blur, so a line you
+  //     are still typing is in the textarea and nowhere else.
+  // On an untouched page it stays quiet. A dialog that fires every single time is one you learn to
+  // dismiss without reading, which costs you the one time it mattered.
+  //
+  // The browser shows ITS OWN wording and ignores ours; a non-empty returnValue is only what arms the
+  // dialog at all. `window.__skipExitConfirm = true` disarms it (for a scripted reload).
+  function unsavedScriptEdits() {
+    const ta = document.getElementById('scriptText');
+    return !!(ta && currentDetail && ta.value !== (currentDetail.script || ''));
+  }
+  function exitWouldLose() { return hasPending() || unsavedScriptEdits(); }
+  window.addEventListener('beforeunload', (e) => {
+    if (window.__skipExitConfirm || !exitWouldLose()) return;
+    e.preventDefault();
+    e.returnValue = '';
+  });
 
   function makeCommitter(label) {
     return (files) => window.GitHubUtils.commitMultipleFiles({
@@ -2084,13 +2105,31 @@ Can you hear it?       &gt; ask()"></textarea>
     paused = false; updatePauseLabel();
     lastPlay.run();
   }
+  // Where a keystroke is TEXT, not a command: every shortcut below has to stand down here, or "n" would
+  // toggle the sheet instead of landing in the motif name being typed.
+  function typingInto(t) {
+    const tag = t && t.tagName;
+    return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || !!(t && t.isContentEditable);
+  }
+  // Single-key shortcuts, live only while a piece is open:
+  //   Space — play / pause      N — note names
+  // Modified keys are left to the browser: ⌘N opens a window, and stealing that would be worse than
+  // having no shortcut at all.
   document.addEventListener('keydown', (e) => {
-    if (e.code !== 'Space' && e.key !== ' ') return;
     if (document.getElementById('musicPreview').style.display === 'none') return;   // preview closed
-    const t = e.target, tag = t && t.tagName;
-    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
-    e.preventDefault();   // stop the page from scrolling / re-triggering a focused button
-    transportToggle();
+    if (typingInto(e.target) || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.code === 'Space' || e.key === ' ') {
+      e.preventDefault();   // stop the page from scrolling / re-triggering a focused button
+      transportToggle();
+      return;
+    }
+    if (e.key === 'n' || e.key === 'N') {
+      const btn = document.querySelector('[data-for="noteNameChk"]');
+      if (!btn) return;
+      e.preventDefault();
+      btn.click();   // the toggle's own click path: flips the checkbox, fires its change, lights the button
+      setTransportMsg(`Note names ${document.getElementById('noteNameChk').checked ? 'on' : 'off'}`, 'ok');
+    }
   });
   document.getElementById('segFrom').oninput = () => {
     const f = parseInt(document.getElementById('segFrom').value, 10);   // auto-set end = start + 1
@@ -2785,7 +2824,28 @@ Can you hear it?       &gt; ask()"></textarea>
     const names = renderer.getTagNames();      // global list
     const colors = renderer.getTagColors();    // global colors
     const countOf = {};                        // per-piece note counts
-    renderer.getPatterns().forEach((a) => { countOf[a.name] = (a.notes || []).length; });
+    const barsOf = {};                         // per-piece: which measures the tagged notes sit in
+    renderer.getPatterns().forEach((a) => {
+      countOf[a.name] = (a.notes || []).length;
+      barsOf[a.name] = (a.notes || []).map((n) => n.measure);
+    });
+    // Every occurrence found by the last Find pattern, per motif — the tag's own included. Empty until
+    // a search has run, which is exactly when there is nothing extra to say.
+    const foundOf = {};
+    ((renderer.getPatternMatchGroups && renderer.getPatternMatchGroups()) || []).forEach((g) => {
+      (foundOf[g.name] = foundOf[g.name] || []).push(...g.notes.map((n) => n.measure));
+    });
+    // What hovering a chip says: where this motif is written, and — once searched — everywhere it turns
+    // up. The count alone ("(3)") never told you WHERE, so finding a motif on a 49-bar sheet meant
+    // checking it and hunting for the colour.
+    const hoverText = (nm) => {
+      const own = formatMeasureRanges(barsOf[nm] || []);
+      const head = own ? `${nm} — ${countOf[nm]} note${countOf[nm] === 1 ? '' : 's'} in m${own}` : nm;
+      const found = foundOf[nm] || [];
+      const places = new Set(found);
+      if (!found.length || places.size <= 1) return head;
+      return `${head}\noccurs in m${formatMeasureRanges(found)}`;
+    };
     // Combobox: a single field that both picks an existing tag and accepts a new one (Enter).
     if (!names.includes(activeTagName)) activeTagName = names[0] || '';
     renderer.setActiveTag(activeTagName || null);
@@ -2804,8 +2864,13 @@ Can you hear it?       &gt; ask()"></textarea>
     listNames.forEach((nm) => {
       const pill = document.createElement('span');
       pill.className = 'tag-pill';
+      const where = hoverText(nm);
+      pill.title = where;
       const cb = document.createElement('input');
-      cb.type = 'checkbox'; cb.checked = tagFilterSel.has(nm); cb.title = 'Show this tag when filtering';
+      cb.type = 'checkbox'; cb.checked = tagFilterSel.has(nm);
+      // The checkbox needs its own copy: a title on a child wins over the pill's, so without this the
+      // bars would vanish exactly where the pointer spends most of its time.
+      cb.title = `Show this tag when filtering\n${where}`;
       cb.onchange = () => {
         if (cb.checked) tagFilterSel.add(nm); else tagFilterSel.delete(nm);
         if (renderer) renderer.setFilterTags([...tagFilterSel]);
@@ -3268,6 +3333,10 @@ Can you hear it?       &gt; ask()"></textarea>
       msgEl.appendChild(span);
       if (i < results.length - 1) msgEl.appendChild(document.createTextNode('  ·  '));
     });
+    // The chips' hover text names every bar the motif was found in, so it is only true after a search
+    // has run — rebuild them here. Safe to call: setFilterTags no-ops on an unchanged selection, so this
+    // does not clear the occurrences that were just painted.
+    renderTagUI();
   }
   document.getElementById('findPatternBtn').onclick = searchPattern;
 
