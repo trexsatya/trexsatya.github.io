@@ -479,6 +479,41 @@
         .script-help{font-size:.78em;color:#444;background:#fafafa;border:1px solid #eee;border-radius:6px;
           padding:6px 8px;margin:4px 0;max-height:11em;overflow:auto}
         .script-help code{background:#eef2ff;border-radius:3px;padding:0 3px;font-size:.95em}
+        /* Compare overlay: stretches stacked, each on one staff line, columns shared. */
+        .cmp-overlay{position:fixed;inset:auto 0 0 0;top:0;z-index:11500;background:rgba(250,251,254,.98);
+          display:flex;flex-direction:column;overflow:auto;padding:10px 12px}
+        .cmp-bar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-size:.85em;
+          position:sticky;top:0;background:inherit;padding-bottom:8px}
+        .cmp-in{width:6em;font-size:1em;padding:1px 4px}
+        .cmp-vs{color:#7b8798;font-size:.9em}
+        .cmp-msg{font-size:.85em;color:#5a6b85}
+        .cmp-opt{display:inline-flex;align-items:center;gap:3px;color:#3c4c66;white-space:nowrap}
+        /* The hosted Motifs panel sits in the flow here, not as the floating card it is on the page:
+           there is nothing to move it off, and a card hovering over the panes would cover the very
+           bars being compared. !important because fitPanelHeight writes an inline max-height sized
+           for the floating card. */
+        .cmp-motifs{margin-bottom:8px}
+        .cmp-motifs .np-panel[open]>.np-body{position:static;width:auto;max-height:none!important;
+          box-shadow:none;margin-top:0;border-radius:6px}
+        .cmp-motifs .np-drag,.cmp-motifs .np-size{display:none}
+        /* Give it back its title here: on the page the tab button names it, and there is no tab bar
+           in this overlay. Clicking it folds the panel away when the panes need the room. */
+        .cmp-motifs .np-panel>summary{display:block;font-size:13px;margin-bottom:3px}
+        .cmp-panes{display:flex;flex-direction:column;gap:10px}
+        .cmp-pane{border:1px solid #dde7f7;border-radius:8px;background:#fff;padding:4px 6px 2px}
+        .cmp-tag{font-size:.76em;color:#12325c;font-weight:700;font-family:ui-monospace,Menlo,monospace}
+        .cmp-play{border:1px solid #cfe0ff;background:#f6f9ff;color:#1565c0;border-radius:5px;
+          font-size:1em;line-height:1;padding:1px 5px;cursor:pointer}
+        .cmp-play:hover{background:#e8f0ff}
+        /* The pane being heard, so the ear and the eye are on the same stretch. */
+        .cmp-pane.cmp-sounding{border-color:#1565c0;box-shadow:0 0 0 2px rgba(21,101,192,.14)}
+        /* The pad keeps a shorter stretch's box the same width as the longest one, so the two read as a
+           pair of equal frames rather than one looking cut short. */
+        .cmp-sheet{overflow:hidden;position:relative}
+        /* The playhead: where the transport is inside this pane. */
+        .cmp-head{position:absolute;top:0;bottom:0;width:2px;background:#1565c0;opacity:.75;
+          pointer-events:none;border-radius:1px}
+        .cmp-pane{display:block}
         /* Command builder: the script as a table — a row per line, a column per thing a line carries.
            Rows group under `#` titles, one <tbody> per group so every section shares one column grid. */
         .script-builder{border:1px solid #cfe0ff;background:#f6f9ff;border-radius:8px;padding:6px 7px;margin:4px 0}
@@ -866,6 +901,13 @@
       <label class="tag-lbl" title="Silence between one occurrence and the next, in beats (scales with tempo)">gap
         <input type="number" id="autoPhraseGap" min="0" max="8" step="0.5" value="2" style="width:2.6em">
       </label>
+      <!-- Re-lay the sheet so each phrase starts its own staff line and every bar is the same width, so
+           bar 3 of the first statement sits directly above bar 3 of each return. A toggle, because it
+           overrides the engraver's own line breaks — worth it to compare, not how you always read. -->
+      <button type="button" id="cmpOpenBtn" class="np-vis"
+        title="Compare two stretches: draw them one above the other with the same bar width, so bar 1 of each sits in the same column. Takes bar ranges (4-8) or phrase names (A, B2).">⧉ compare</button>
+      <button type="button" id="phraseAlignBtn" class="np-vis" aria-pressed="false"
+        title="Align phrases: break the staff at every occurrence of the picked phrase and give every bar the same width, so the same bar of each return lines up in a column. Press again for the score as engraved.">⊞ align</button>
       <!-- Rename the picked phrase and keep the whole scan with the piece. A detected list is
            otherwise gone the moment you close the piece, and a script that says inPhrase(B) would
            have to re-scan (and could not use a name of your own at all). -->
@@ -1018,6 +1060,33 @@ Can you hear it?       &gt; ask()"></textarea>
     <select id="patKey" title="Key for diatonic matching (defaults to the piece's best-guess key)"></select>
   </div>
   </div>
+  <!-- Compare two stretches side by side (stacked, really): each drawn on its own staff line with the
+       same bar width, so the same bar of each sits in one column. Its own overlay rather than part of the
+       sheet, because it shows the piece cut up in a way the sheet cannot — two stretches that are not
+       next to each other, drawn as if they were. -->
+  <div id="cmpOverlay" class="cmp-overlay" style="display:none" role="dialog" aria-label="Compare stretches">
+    <div class="cmp-bar">
+      <b>Compare</b>
+      <input id="cmpA" class="cmp-in" placeholder="4-8" title="Bars, e.g. 4-8 — or a phrase name (A, B2, B′)">
+      <span class="cmp-vs">vs</span>
+      <input id="cmpB" class="cmp-in" placeholder="9-12" title="Bars, e.g. 9-12 — or a phrase name (A, B2, B′)">
+      <select id="cmpPick" title="Fill the next empty box from a phrase of this piece"><option value="">— phrase —</option></select>
+      <label class="cmp-opt" title="Write each note's name above it"><input type="checkbox" id="cmpNamesChk" checked> names</label>
+      <!-- The transport's own tempo, reachable from here: comparing two stretches usually means slowing
+           them down, and the tempo box is behind this overlay. Same value, not a second one. -->
+      <label class="cmp-opt" title="Tempo (BPM) — the piece's own tempo, so it stays set when you close this">♩<input
+        id="cmpTempo" type="number" min="20" max="300" style="width:4em"></label>
+      <button id="cmpGo" class="btn"><span class="ic">⧉</span><span class="txt">Show</span></button>
+      <button id="cmpPlayBoth" class="btn" title="Play the two stretches one after the other, with a breath between"><span class="ic">▶</span><span class="txt">▶ both</span></button>
+      <span id="cmpMsg" class="cmp-msg"></span>
+      <button id="cmpClose" class="btn ico" title="Close (Esc)">✕</button>
+    </div>
+    <!-- The Motifs panel is MOVED in here while the overlay is open (not copied): checking a motif has
+         to mean the same thing here as on the sheet, and two panels sharing one state is how that goes
+         wrong. Put back where it came from on close. -->
+    <div id="cmpMotifs" class="cmp-motifs"></div>
+    <div id="cmpPanes" class="cmp-panes"></div>
+  </div>
   <!-- What the colours on the sheet mean right now (voices, a picked rhythm, motifs, phrases, chords).
        Rebuilt from the live state, and empty — so hidden — when nothing is colour-coded. -->
   <div id="colorLegend" class="color-legend" aria-live="polite"></div>
@@ -1110,36 +1179,37 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=5c7bad92f4';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=5c7bad92f4';
-  import { runQuery } from './music-query.js?v=5c7bad92f4';
-  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges } from './music-render.js?v=5c7bad92f4';
-  import { init as initFretboard } from './fretboard-panel.js?v=5c7bad92f4';
-  import { chordDisplayName } from './music-chords.js?v=5c7bad92f4';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=4bb786feb4';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=4bb786feb4';
+  import { runQuery } from './music-query.js?v=4bb786feb4';
+  import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges,
+    parseBarRange, renderAlignedSegments } from './music-render.js?v=4bb786feb4';
+  import { init as initFretboard } from './fretboard-panel.js?v=4bb786feb4';
+  import { chordDisplayName } from './music-chords.js?v=4bb786feb4';
   import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript,
-    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=5c7bad92f4';
-  import { safeHtml } from './music-richtext.js?v=5c7bad92f4';
-  import { keyExplanation } from './music-key.js?v=5c7bad92f4';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=5c7bad92f4';
-  import { createMusicStore } from './music-local-store.js?v=5c7bad92f4';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=5c7bad92f4';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=5c7bad92f4';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=5c7bad92f4';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=5c7bad92f4';
+    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=4bb786feb4';
+  import { safeHtml } from './music-richtext.js?v=4bb786feb4';
+  import { keyExplanation } from './music-key.js?v=4bb786feb4';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=4bb786feb4';
+  import { createMusicStore } from './music-local-store.js?v=4bb786feb4';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=4bb786feb4';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=4bb786feb4';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=4bb786feb4';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=4bb786feb4';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=5c7bad92f4';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=4bb786feb4';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
-    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=5c7bad92f4';
-  import { renameTagInPhrases } from './music-phrase.js?v=5c7bad92f4';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=5c7bad92f4';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=5c7bad92f4';
-  import { generateCounterLines } from './music-counterpoint.js?v=5c7bad92f4';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=5c7bad92f4';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=5c7bad92f4';
-  import { splitSingleVoice } from './music-voice-split.js?v=5c7bad92f4';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=5c7bad92f4';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=5c7bad92f4';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=5c7bad92f4';
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=4bb786feb4';
+  import { renameTagInPhrases } from './music-phrase.js?v=4bb786feb4';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=4bb786feb4';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=4bb786feb4';
+  import { generateCounterLines } from './music-counterpoint.js?v=4bb786feb4';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=4bb786feb4';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=4bb786feb4';
+  import { splitSingleVoice } from './music-voice-split.js?v=4bb786feb4';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=4bb786feb4';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=4bb786feb4';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=4bb786feb4';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -1385,7 +1455,9 @@ Can you hear it?       &gt; ask()"></textarea>
       renderer = createMusicRenderer(document.getElementById('osmdPreview'),
         { onChordSelect: syncVocabChords, onWindowChange: onChordWindowChange, onSuppressionChange: onSuppressionChange,
           onPatternsChange: onPatternsChange, onPhrasesChange: onPhrasesChange,
-          onRhythmGroupsChange: onRhythmGroupsChange, onSeek: onSeek });
+          onRhythmGroupsChange: onRhythmGroupsChange, onSeek: onSeek,
+          // The compare panes wear the sheet's colours; a repaint of the sheet is a repaint of theirs.
+          onAfterRender: cmpRecolor });
       fbPanel = initFretboard(renderer, {
         panel: document.getElementById('fretboardPanel'),
         srcGuessed: document.getElementById('fbSrcGuessed'),
@@ -1571,12 +1643,13 @@ Can you hear it?       &gt; ask()"></textarea>
       // Follow the cursor while it plays, when the toggle is on. Read live so flipping the toggle
       // mid-piece takes effect at once instead of at the next Play.
       onCursorMove: () => {
+        cmpFollowCursor();   // the compare overlay covers the sheet, so its panes need their own playhead
         if (!document.getElementById('followChk').checked) return;
         if (renderer && renderer.scrollCursorIntoView) renderer.scrollCursorIntoView();
       },
       // Natural completion (fires only when Loop is off): the piece ended, so stop the "on play" click
       // and reset the transport label. With Loop on this never fires, so the click keeps running.
-      onEnd: () => { midiPlaying = false; paused = false; updatePauseLabel(); updateMetro(false); } });
+      onEnd: () => { midiPlaying = false; paused = false; updatePauseLabel(); updateMetro(false); cmpHideCursor(); } });
     return player;
   }
   function segmentRange() {
@@ -3402,6 +3475,9 @@ Can you hear it?       &gt; ask()"></textarea>
     // has run — rebuild them here. Safe to call: setFilterTags no-ops on an unchanged selection, so this
     // does not clear the occurrences that were just painted.
     renderTagUI();
+    // A search paints the sheet straight onto the noteheads without necessarily re-rendering, so the
+    // repaint hook that carries everything else to the compare panes does not fire for this one.
+    cmpRecolor();
   }
   document.getElementById('findPatternBtn').onclick = searchPattern;
 
@@ -3620,6 +3696,11 @@ Can you hear it?       &gt; ask()"></textarea>
     renderAutoPhraseOccs();
     autoPhraseMsg('');
     if (renderer && renderer.clearPhraseShade) renderer.clearPhraseShade();
+    // The aligned layout was built from the phrases of the piece that is leaving. loadDetail already draws
+    // the new one as engraved, so only the button's own state has to catch up.
+    phraseAlignOn = false;
+    const ab = document.getElementById('phraseAlignBtn');
+    if (ab) ab.setAttribute('aria-pressed', 'false');
   }
 
   // Un-pick the current phrase and take its band off the sheet, keeping the scan itself. What
@@ -3763,6 +3844,9 @@ Can you hear it?       &gt; ask()"></textarea>
         paint();
         applyAutoPhraseShade();
         autoPhraseMsg(pickedPhraseMsg());
+        // Switching an occurrence off takes it out of the aligned layout too, so the lines on screen are
+        // the ones being compared — the chips already mean that for the shading and for playback.
+        if (phraseAlignOn) setPhraseAlignView(true);
       };
       paint();
       host.appendChild(chip);
@@ -3851,7 +3935,248 @@ Can you hear it?       &gt; ask()"></textarea>
     renderAutoPhraseOccs();
     applyAutoPhraseShade();
     autoPhraseMsg(pickedPhraseMsg());
+    if (phraseAlignOn) setPhraseAlignView(true);   // the layout follows the pick, or it aligns the wrong phrase
   };
+  // ---- Align phrases -------------------------------------------------------------------------------
+  // Re-lay the sheet with one phrase per staff line and every bar the same width, so the same bar of each
+  // return sits in one column and the two can be read against each other. See renderer.setPhraseAlign.
+  let phraseAlignOn = false;
+  // The bars that should each start a line, and what is being compared.
+  //
+  // A phrase's own returns first — that is the sharpest comparison — but only when there are at least TWO
+  // of them switched on. A phrase that occurs once has nothing to line up against, and aligning it alone
+  // just re-engraves the piece narrower, which looks like the button misfired. So that case falls through
+  // to every detected phrase's first bar, which is comparing DIFFERENT phrases — the other half of the
+  // same idea, and the one that always has something to show.
+  //
+  // Printed numbers throughout, which is what setSystemBreaks matches on.
+  function phraseAlignBars() {
+    const p = selectedDetectedPhrase();
+    const own = p ? (p.occurrences || []).filter((o, i) => autoPhraseOn.has(i)).map((o) => o.from) : [];
+    if (own.length >= 2) return { bars: own, what: `${p.name} and its ${own.length - 1} return${own.length === 2 ? '' : 's'}` };
+    const all = (detectedPhrases || []).flatMap((q) => (q.occurrences || []).map((o) => o.from));
+    if (all.length >= 2) return { bars: all, what: `${detectedPhrases.length} detected phrases` };
+    const named = ((renderer && renderer.getPhrases && renderer.getPhrases()) || [])
+      .map((q) => q.from).filter((n) => n != null);
+    return named.length >= 2 ? { bars: named, what: `${named.length} named phrases` } : { bars: [], what: '' };
+  }
+  async function setPhraseAlignView(on) {
+    if (!renderer || !renderer.setPhraseAlign) return;
+    const pick = on ? phraseAlignBars() : { bars: [], what: '' };
+    // Aligning needs two things to put side by side. Saying so beats re-drawing the piece narrower and
+    // leaving you to work out why nothing lines up.
+    if (on && pick.bars.length < 2) {
+      autoPhraseMsg('Nothing to align yet — aligning compares two or more phrases. Press Find, or name a second phrase.');
+      return;
+    }
+    const res = await renderer.setPhraseAlign(on ? pick.bars : null);
+    phraseAlignOn = !!res.on;
+    document.getElementById('phraseAlignBtn').setAttribute('aria-pressed', phraseAlignOn ? 'true' : 'false');
+    onDrawnRangeChanged();   // the reload re-derives the drawn notes, so anything reading them must refresh
+    if (!phraseAlignOn) { autoPhraseMsg(autoPhraseSummary); return; }
+    // Name what is being compared: with one occurrence picked this quietly falls back to comparing whole
+    // phrases, and a line that just said "aligned" would hide that it aligned something else.
+    // Naming the phrases that did not fit matters too — their columns still line up, but they take two
+    // lines each, and the fix (zoom out, or narrow the segment) is the reader's to make.
+    // Say when the sheet was shrunk to make the phrases fit, so a suddenly smaller score is explained
+    // rather than mysterious — and name the ones that still would not fit even at the floor.
+    const zoomed = res.zoom != null && res.zoom < 0.99 ? ` · shrunk to ${Math.round(res.zoom * 100)}% to fit` : '';
+    autoPhraseMsg(`Aligned ${pick.what} — ${res.systems.length} lines${zoomed}`
+      + (res.wrapped.length
+        ? ` · ${res.wrapped.map((m) => `m${m}`).join(', ')} still need more than one line`
+        : ''));
+  }
+  document.getElementById('phraseAlignBtn').onclick = () => setPhraseAlignView(!phraseAlignOn);
+
+  // ---- Compare two stretches -----------------------------------------------------------------------
+  // Its own overlay, because it shows the piece cut up in a way the sheet cannot: two stretches that are
+  // nowhere near each other, drawn one above the other as if they were. The sheet itself is left alone.
+  const cmpMsg = (t) => { document.getElementById('cmpMsg').textContent = t || ''; };
+  // A box takes either bars ("4-8") or a phrase name ("A", "B2", "Chorus") — the two things a stretch of
+  // this piece is ever called. A name is resolved through the same resolvePhrase the script uses, so the
+  // spellings that work in a script work here.
+  function cmpRangeOf(text) {
+    const raw = String(text || '').trim();
+    if (!raw) return null;
+    const direct = parseBarRange(raw);
+    if (direct) return direct;
+    ensureDetectedPhrases();
+    const res = resolvePhrase(raw);
+    const r = res && res.ranges && res.ranges[0];
+    return r ? [r[0], r[1]] : null;
+  }
+  function fillCmpPicker() {
+    const sel = document.getElementById('cmpPick');
+    sel.innerHTML = '<option value="">— phrase —</option>';
+    // The same list the script table offers, which is the point: a family AND each of its returns —
+    // A, A2, A3′, A′. Listing only the families made the one comparison this view exists for, a phrase
+    // against its own modified return, the one thing you could not pick.
+    scriptChoices('phrase').forEach((n) => {
+      // Say which bars each option covers. Choosing between B2 and B3′ from the letters alone is a guess,
+      // and the answer is already known here. resolvePhrase only reads what has been scanned — it never
+      // starts a scan — so an unscanned piece simply shows its named phrases without ranges.
+      let where = '';
+      try {
+        const r = resolvePhrase(n);
+        const first = r && r.ranges && r.ranges[0];
+        if (first) where = `  ·  m${first[0]}–${first[1]}${r.ranges.length > 1 ? ` (+${r.ranges.length - 1})` : ''}`;
+      } catch (_) { /* an unresolvable name is still offerable — the boxes accept free text */ }
+      sel.append(new Option(`${n}${where}`, n));
+    });
+  }
+  // Hear what you are looking at. A pane's own ▶ plays just that stretch; ▶ both plays them in turn with
+  // a breath between — the same order the script's compare() uses, because two stretches heard back to
+  // back is what makes a difference audible instead of remembered.
+  let cmpRanges = [];       // the ranges the panes were last drawn from
+  let cmpPlaying = false;   // guards ▶ both against being started on top of itself
+  let cmpView = null;       // the drawn panes, for their playheads
+  // The panes carry their own playhead because this overlay covers the sheet — the OSMD cursor is still
+  // moving under it, on a score you cannot see. Driven off that same cursor's beat, so the two agree.
+  function cmpFollowCursor() {
+    if (!cmpView) return;
+    let beat = null;
+    try {
+      const c = renderer && renderer.osmd && renderer.osmd.cursor;
+      const t = c && c.iterator && c.iterator.currentTimeStamp;
+      if (t && typeof t.RealValue === 'number') beat = t.RealValue * 4;
+    } catch (_) {}
+    cmpView.showCursorAtBeat(beat);
+  }
+  function cmpHideCursor() { if (cmpView) cmpView.hideCursor(); }
+  // Whatever repaints the sheet repaints the panes. One hook rather than one per control, so every
+  // Motifs action — check, uncheck, 👁, Dim all, Find pattern — carries over without being listed here.
+  function cmpRecolor() {
+    if (!cmpView || !renderer || !renderer.noteColorFn) return;
+    try { cmpView.recolor(renderer.noteColorFn()); } catch (_) {}
+  }
+  // The Motifs panel itself, moved into the overlay — see the markup note. Its previous place AND its
+  // open state are remembered, so closing the comparison leaves the page as it was found.
+  let cmpMotifHome = null;
+  function cmpHostMotifs(on) {
+    const panel = document.getElementById('tagPanel');
+    if (!panel) return;
+    if (on) {
+      if (cmpMotifHome) return;
+      // Every panel's open state, not just this one's: opening Motifs closes Phrases and Rhythms (they
+      // are mutually exclusive), and you usually get here FROM the Phrases panel — which should still
+      // be there when you come back.
+      cmpMotifHome = { parent: panel.parentNode, next: panel.nextSibling,
+        wasOpen: PANEL_IDS.map((id) => [id, !!(document.getElementById(id) || {}).open]) };
+      document.getElementById('cmpMotifs').appendChild(panel);
+      panel.open = true;   // hosted here it is the point of the view, not a card you went looking for
+    } else if (cmpMotifHome) {
+      const home = cmpMotifHome;
+      cmpMotifHome = null;
+      home.parent.insertBefore(panel, home.next);
+      home.wasOpen.forEach(([id, was]) => { const p = document.getElementById(id); if (p) p.open = was; });
+    }
+  }
+  function cmpSounding(i) {
+    [...document.querySelectorAll('#cmpPanes .cmp-pane')].forEach((p, k) => p.classList.toggle('cmp-sounding', k === i));
+  }
+  function cmpPlayRange(range) {
+    const label = `bars ${range[0]}–${range[1]}`;
+    // Hand the floating button / spacebar to this stretch, as every other panel ▶ does — otherwise they
+    // would restart the whole piece over the comparison.
+    setLastPlay({ tag: '⧉', label, run: () => playMidi([range[0], range[1]]) });
+    playMidi([range[0], range[1]]);
+  }
+  async function cmpPlayBoth() {
+    if (cmpPlaying || cmpRanges.length < 2) return;
+    cmpPlaying = true;
+    const btn = document.getElementById('cmpPlayBoth');
+    btn.disabled = true;
+    const run = scriptRunId;   // a script starting mid-way takes the transport, so stand down with it
+    try {
+      for (let i = 0; i < cmpRanges.length; i++) {
+        cmpSounding(i);
+        cmpPlayRange(cmpRanges[i]);
+        await awaitPlaybackEnd(run);
+        if (run !== scriptRunId) break;
+        if (i < cmpRanges.length - 1) await sleep(450, run);
+      }
+    } finally { cmpPlaying = false; btn.disabled = false; cmpSounding(-1); }
+  }
+  async function runCompare() {
+    if (!currentDetail || currentDetail.format !== 'musicxml' || !currentDetail.source) {
+      cmpMsg('Comparing needs a MusicXML piece.'); return;
+    }
+    const a = cmpRangeOf(document.getElementById('cmpA').value);
+    const b = cmpRangeOf(document.getElementById('cmpB').value);
+    if (!a || !b) { cmpMsg('Give both boxes bars (4-8) or a phrase name (A, B2).'); return; }
+    cmpMsg('Drawing…');
+    // The panes are drawn with the sheet's colours: voice colours, and whatever the motif/phrase overlay
+    // is painting right now. Those colours are the reason you are comparing two stretches at all — which
+    // notes belong to the motif is exactly what you are looking for — so a plain black pane would throw
+    // away the answer. Asked for at draw time, not cached, so a pane matches the sheet as it stands.
+    const res = await renderAlignedSegments(document.getElementById('cmpPanes'), currentDetail.source, [a, b],
+      { zoom: 1, offset: (renderer && renderer.getMeasureOffset) ? renderer.getMeasureOffset() : 0,
+        voiceColors: !!(renderer && renderer.getVoiceColors && renderer.getVoiceColors()),
+        colorOf: (renderer && renderer.noteColorFn) ? renderer.noteColorFn() : null,
+        noteNames: document.getElementById('cmpNamesChk').checked,
+        onPlay: cmpPlayRange });
+    cmpRanges = res.panes.map((p) => p.range);
+    cmpView = res;
+    // Say how many columns the two actually share — that is the whole claim this view makes, and a
+    // stretch that quietly failed to line up should not look the same as one that did.
+    const [p1, p2] = res.panes;
+    const shared = p1 && p2 ? p1.xs.filter((x) => p2.xs.some((y) => Math.abs(x - y) <= 2)).length : 0;
+    cmpMsg(`${res.panes.map((p) => p.label).join(' vs ')} · ${res.panes.map((p) => p.count).join(' and ')} bars`
+      + ` · ${shared} column${shared === 1 ? '' : 's'} shared`
+      + (res.panes.some((p) => p.padded === 0 && p.count < Math.max(...res.panes.map((q) => q.count)))
+        ? ' · a stretch at the end of the piece could not be padded, so its columns are its own' : '')
+      + (res.zoom < 0.99 ? ` · shrunk to ${Math.round(res.zoom * 100)}% to fit` : ''));
+  }
+  function openCompare(on) {
+    const ov = document.getElementById('cmpOverlay');
+    ov.style.display = on ? 'flex' : 'none';
+    cmpHostMotifs(on);
+    if (!on) { document.getElementById('cmpPanes').innerHTML = ''; cmpRanges = []; cmpView = null; return; }
+    document.getElementById('cmpTempo').value = document.getElementById('tempoInput').value;
+    fillCmpPicker();
+    // Offer the picked phrase and the one after it — the comparison you almost always want, ready to run.
+    const p = selectedDetectedPhrase();
+    const occ = (p && p.occurrences) || [];
+    if (occ.length >= 2 && !document.getElementById('cmpA').value) {
+      document.getElementById('cmpA').value = `${occ[0].from}-${occ[0].to}`;
+      document.getElementById('cmpB').value = `${occ[1].from}-${occ[1].to}`;
+    }
+    cmpMsg('');
+  }
+  document.getElementById('cmpOpenBtn').onclick = () => openCompare(true);
+  document.getElementById('cmpClose').onclick = () => openCompare(false);
+  document.getElementById('cmpGo').onclick = runCompare;
+  // One tempo, two boxes. Written through to the real input so everything already keyed off it — the
+  // metronome, a script's tempo(), the piece's saved tempo — sees the change; and a tempo a script set
+  // mid-run shows up here, which is why it is read back on open rather than copied once.
+  document.getElementById('cmpTempo').oninput = (e) => {
+    const t = document.getElementById('tempoInput');
+    t.value = e.target.value;
+    t.dispatchEvent(new Event('input'));
+  };
+  // Nothing drawn yet: draw first, then play — pressing ▶ before Show is the same intent.
+  document.getElementById('cmpPlayBoth').onclick = async () => {
+    if (!cmpRanges.length) await runCompare();
+    cmpPlayBoth();
+  };
+  // Redraw on the toggle only when something is already drawn — otherwise it silently re-runs a
+  // comparison the boxes may no longer describe.
+  document.getElementById('cmpNamesChk').onchange = () => {
+    if (document.getElementById('cmpPanes').children.length) runCompare();
+  };
+  document.getElementById('cmpPick').onchange = (e) => {
+    const v = e.target.value;
+    e.target.value = '';
+    if (!v) return;
+    const a = document.getElementById('cmpA'), b = document.getElementById('cmpB');
+    (a.value.trim() ? b : a).value = v;   // fills the first empty box, so two picks set up a comparison
+  };
+  ['cmpA', 'cmpB'].forEach((id) => {
+    document.getElementById(id).onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); runCompare(); } };
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('cmpOverlay').style.display !== 'none') openCompare(false);
+  });
   document.getElementById('autoPhraseSaveBtn').onclick = saveDetectedPhrases;
   document.getElementById('autoPhraseName').onchange = renameDetectedPhrase;
   document.getElementById('autoPhraseName').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); renameDetectedPhrase(); } };
