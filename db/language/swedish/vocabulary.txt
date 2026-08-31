@@ -341,6 +341,7 @@ Lägra( sig)|<*slå läger|
 (compare)|jämföra|skilja|skillnad|skillnader|urskilja|urskillning|gradskilnad|artskilnad
 (sift)|sålla|sålla agnarna från vetet|filtrera|sila|avskilja|skräda|skräder|skrädde|skrätt|Skilja agnarna från vetet|
 (analyze)|analysera|överväga|avväga|betänka|betänker|betänkte|betänkt|betänk|
+(Go back to)|Back<*a bandet
 (Tradeoff)|avvägning
 (Think though)|stöta och blöta|stötte och blötte|stött och blött|
 (downside)|Medaljens baksida|nakdel
@@ -467,7 +468,7 @@ Lägra( sig)|<*slå läger|
 (irrelevant)|oväsentlig|ovidkommande|irrelevant
 (done)|<*sätta sin sista potatis
 (redundancy)|redundans|överflödig|redundant
-(trivial)|petitess|petitesser|småsak|bagatell|struntsak|
+(trivial)|petitess|petitesser|småsak|bagatell|baggis|bagatell|struntsak|
 (overall)|övergripande|
 (review)|översyn|
 (fundamental)|grundläggande|basal|grundval|
@@ -600,7 +601,7 @@ Lägra( sig)|<*slå läger|
 (scary)|skrämmande|avskräckande|ryslig|otäck|läskig|hemsk|gräslig|läbbig|
 (horrible)|ruskig|ruggig|fasansfull|fruktansvärd|förskräcklig|förfärlig|kuslig|makaber|
 (goosebumps)|gåshud
-(anxious)|stressad|nervös|ängslig|frusterad|pressat|upphetsad|hetsa upp|
+(anxious)|stressad|nervös|ängslig|frusterad|pressat|upphetsad|hetsa upp|byxis
 (nervous)|Sitta som på nålar|Fjärilar i magen|Katt på hett plåttak|pirr i magen
 (expectant)|förväntansfull|spänd|
 (serious)|allvar(sl-pl)|allvaret|allvarlig|högtidlig|solenn|s eriös|allvarligt|allvarlighet|
@@ -696,6 +697,7 @@ Lägra( sig)|<*slå läger|
 (hasty)|förhastad|oöverlagd|obetänksam|
 (advocate)|förespråka|
 (prefer)|föredra|främja|
+(Favourite)|favvis|favorit|favvo
 (reluctance)|olust|motvilja|obenägen|ovillig|olustig|ogin|leda|ledsam|förtret(med vrede)|
 (spare)|bespara (nån)|skona|förskona
 (accept)|Bita i det sura äpplet
@@ -833,6 +835,7 @@ Ursäkt|förevändning|täckmantel
 (clomp)|klampa|
 (roam)|irra|flacka|
 (run)|springa|löpa|löper|löpte|löpt|löp|rusa|sprungen|bortsprungen|
+(Training)|kondition|kondis
 (jog)|Knata|(gå runt)småspringande|
 (flow)|rinna|ränna|drypande|rinnande|rinnande vatten|
 (march)|marsch|
@@ -931,7 +934,7 @@ Ursäkt|förevändning|täckmantel
 (guarantee)|garanti
 (store)|butik|butiker|affär|affärer|köpcentrum|galleria|gallerior|kiosk|kiosker|
 (sales)|säljaren tar kontakt|<*ta kontakt|
-(supermarket)|stormarknad|stormarknader|varuhus|varuhusen|köpcenter|loppis|loppisar|
+(supermarket)|stormarknad|stormarknader|varuhus|varuhusen|köpcenter|loppis|loppisar|loppmarknad|lopptorg
 (sell)|sälja|säljer|sålde|sålt|sälj|säljare|kränga|utsålt|till salu|till försäljning|försäljning|försäljningar|försäljare|försäljare|
 (popular)|<*Gå åt som smör i solsken
 (peddle)|langa(sälja olagligt)|
@@ -1074,6 +1077,7 @@ Ursäkt|förevändning|täckmantel
 (wear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt
 (wornout)|utsliten|uttjänt|förbrukad| slitning|
 (run-down)|nedgång|sunkig|nedgående
+(Downfall)|dekis(vdg.)|dekad|dekadent|förfallen
 (scrape)|skrapa|skrapor|skava|
 (wear)|slipa|slipmaskin|nöta|nöter|nötte|nött|nöt|gnida|gnider|gned|gnidit|gnugga|gno |
 (snowrub)|mula(gnugga snö i ansiktet)|
@@ -1430,7 +1434,7 @@ Ursäkt|förevändning|täckmantel
 (skinny)|spinkig(vard.)|
 (fat)|tjock|fet|mullig|fyllig|
 (fat)|(Tjock ) som en julgris
-(chubby)|stabbig|knubbig|trind
+(chubby)|stabbig|knubbig|trind|knubbis|
 (puffy)|plufsig|uppsvälld|plussig|pussig
 (limited)|inskränkt|begränsad
 (proverb)|Inga träd växer till himlen
@@ -1873,7 +1877,7 @@ Hak<*a upp (sig)|
 (refreshing)|svalkande|uppfriskande|
 (refresh)|förfriska|uppfriska|uppfriskning|uppfriskningar|
 (hairstyle)|frisyr|frisyrer|frissa|frissor|frilla|frillor
-(disabled)|handikappad|lytt|vanför|
+(disabled)|handikappad|lytt|vanför|funkis
 (invalid)|invalid|krympling
 (disability)|funktionshinder
 (treat)|gobit|godbitar|
@@ -2835,7 +2839,7 @@ hunsa|hundsfottera|köra över
 (choose)|Skräda orden|
 (modest)|anspråkslös|taktfull|försynt|hänsynsfull|omtänksam|finkänslig|skonsam|ömsint|försynt
 (Empathetic)|empatisk|inkännande
-(humble)|blygsam|ödmjuk|From som ett lamm
+(humble)|blygsam|ödmjuk|From som ett lamm|blygis
 försagd|modlös|klenmodig|förlägen (blyg och förvirrad)
 (grounded)|Med båda fötterna på jorden
 (reserved)|reserverad|tillbakadragen|skygg|
@@ -3538,7 +3542,7 @@ Damm|stoft(-et)|stoftmoln|
 (hair)|hår(sl-pl)|
 (comb)|kamma|kam|kammar|
 (fringe)|luv|lugg|
-(bald)|flintskallig|skallig|skallighet|skallighet|
+(bald)|flintskallig|flintis|skallig|skallighet|skallighet|
 (baldy)|flintskalle|flintis|flintar|flintarna|
 (crown)|hjässa|hjässor|
 (loose hair)|utsläppt hår|utsläppta hår|
@@ -4202,7 +4206,7 @@ Täckmantel
 (get lost)|gå vilse|förirra(sig)|
 (level)|utjämna|
 (workload)|arbetsbörda|
-(hurry)|bråttom|brådska|skyndsamhet|Brinner i knutarna|Eld i baken
+(hurry)|bråttom|brådis|brådska|skyndsamhet|Brinner i knutarna|Eld i baken
 (make it)|hinna|hinner|hann|hunnit|
 (catch up)|komma i kapp|
 (sudden)|bråd|plötslig|ond bråd död|
@@ -4359,6 +4363,7 @@ Täckmantel
 (celebrate)|fira|
 (celebrate)|Slå klackarna i taket|
 (party)|fest|fester|kalas(sl-pl)|kalaset|party|
+(Potluck)|knytkalas|knytis
 (party on)|blir festen av|blir det fest|kommer festen att hållas|
 (party cancelled)|festen är avblåst|festen är inställt|<*bli inte av|
 (lively)|Liv i luckan|festlig
@@ -4530,7 +4535,7 @@ Täckmantel
 (entrepreneur)|näringsidkare|
 (inn)|gästgiveri|krog|krogar|pub|pubar|restaurang|restaurang|taverna|tavernor|värdshus|vinstuga|vinstugor|
 (roadside inn)|vägkrog|vägkrogar
-(cafe)|kafé|kaféer|konditori|konditorier|bageri|bagerier|bageri|bager
+(cafe)|kafé|kaféer|konditori|konditorier|kondis|bageri|bagerier|bageri|bager
 (financier)|finansiär|finansiärer|finansman|finansmän|finansiering|finansieringar|finansierare|finansierare|
 (cook)|kock|kockar|kokerska|
 (claim)|yrka|yrkar|yrkade|yrkat|yrkande|yrkanden|avslagsyrkande|
@@ -4648,6 +4653,7 @@ Täckmantel
 (Allocate)|allokera
 (favor)|gynna|avkasta|vinstbringa|
 (advantage)|fördel|förmån|förmåner|gagn|nytta|gagna|avkastning|avkastningar|vinst(sl-pl)|(Ta )tillvara
+(Extra/fringe benefits)|fringis
 (disadvantage)|nackdel|
 (Double edged)|tveeggad|tveeggat|
 (guinea pig)|försökskanin|provköra|
@@ -4878,7 +4884,7 @@ Täckmantel
 (jab)|pik |pikar|gliring|gliringar|pika|glira|
 (tell jokes)|Vi kör vitsar
 (hysterical, hillarious)|hysterisk|
-(joke)|skämt(sl-pl)|
+(joke)|skämt(sl-pl)|(vulgar)fräckis
 (irony)|ironi|ironier|
 (satire)|satir|satirer|
 (gossip)|skvallra|surra|skvaller|skvallret|sladder|struntprat|dravel|tjafs|sludder|tjalla|gola(slang)|tjall|
@@ -4923,6 +4929,7 @@ Täckmantel
 (sober)|nykter|vit vecka(el. dag)|
 (sober up)|nyktra till|nyktra till sig|
 (drunk)|berusad| full|utslagen|Full som en kaja|Full som ett ägg|På kanelen|Rund under fötterna|titta för djupt i glaset
+(Hung over)|bakis|bakfull
 (drunk talks)|den druknes tal är den nyktres tankar
 (abuse)|missbruka|knarka|missbruk|
 (junkie)|pundare|knarkare|missbrukare|
