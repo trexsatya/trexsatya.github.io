@@ -3571,3 +3571,33 @@ body.rec-playing #recPlayingSubs { display: block; }
 }
 .lib-snip:hover { background: #f0f4f8; }
 .lib-snip mark { background: #ffe680; padding: 0 1px; }
+
+/* Manual-card editor: per-face dictation button + recorder bar. Source and
+   Target each own an independent recording (played back to back in Play All). */
+#manualEntryEditor .mee-mic {
+    background: transparent;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px 5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#manualEntryEditor .mee-mic:hover { background: #f6f8fa; }
+/* Listening — pulses so it's obvious the mic is open. */
+#manualEntryEditor .mee-mic-live {
+    background: #ffe9e9;
+    border-color: #d1242f;
+    animation: mee-mic-pulse 1s ease-in-out infinite;
+}
+@keyframes mee-mic-pulse { 50% { opacity: 0.45; } }
+#manualEntryEditor .mee-audio-bar {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+#manualEntryEditor .mee-audio-status { font-size: 12px; color: #666; margin-left: 4px; }
