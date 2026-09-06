@@ -1577,13 +1577,33 @@ body.rec-paused .lines-cntnr .buttons .capture-btn { opacity: 0.4; pointer-event
     border-radius: 3px;
     margin: 2px 0;
 }
+/* Reorder handle. It is a <button>, not a span, because tapping it is the only
+   way to reorder on a phone — jQuery UI sortable binds no touch events, so the
+   drag half is desktop-only. Button defaults are stripped so it still reads as
+   a handle rather than a control. */
 #recordingReviewDialog .rec-item .rec-drag {
     color: #bbb;
     user-select: none;
     cursor: grab;
     font-size: 12px;
+    background: none;
+    border: none;
+    padding: 0 2px;
+    margin: 0;
+    line-height: 1;
+    font-family: inherit;
 }
 #recordingReviewDialog .rec-item .rec-drag:hover { color: #555; }
+/* Touch: no dragging available, so make it an obvious tap target of its own. */
+@media (pointer: coarse) {
+    #recordingReviewDialog .rec-item .rec-drag {
+        cursor: pointer;
+        color: #888;
+        font-size: 15px;
+        padding: 6px 8px;
+        margin: -6px 0;
+    }
+}
 #recordingReviewDialog .rec-item.ui-sortable-helper {
     background: #fffde7;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);

@@ -231,7 +231,10 @@
         /* Selection checkboxes are always rendered but only shown while
            picking, so entering select mode costs no re-render. */
         .cup-sub-pick { display: none; flex: 0 0 auto; margin: 3px 0 0 0; cursor: pointer; }
-        .cup-picking .cup-sub-pick { display: inline-block; }
+        .cup-picking .cup-sub-pick { display: inline-block; width: 17px; height: 17px; }
+        /* The whole row is the selection target while selecting, so it should
+           look like one. */
+        .cup-picking .cup-sub-cue { cursor: pointer; }
         .cup-sub-cue.cup-picked { background: rgba(120,200,120,0.18); opacity: 1; }
         .cup-sub-tr {
           margin-top: 2px; font-size: 13px; color: #b8d4ff;
@@ -453,6 +456,10 @@
         el.__cupBound = true;
         el.addEventListener('click', (e) => {
           e.stopPropagation();
+          // Words swallow the click, so without this a tap on any word would
+          // look the word up instead of selecting — leaving the checkbox as
+          // the only target that worked.
+          if (state.picking) { togglePickRow(el.closest('.cup-sub-cue')); return; }
           const w = el.getAttribute('data-w') || el.textContent || '';
           try { window.CaptionHandler && window.CaptionHandler.postMessage(w); } catch (_) {}
         });
@@ -577,6 +584,17 @@
       }
     }
 
+    // Flip one line's selection. syncPickUi repaints the checkbox and the
+    // count, so callers don't touch either.
+    function togglePickRow(row) {
+      if (!row) return;
+      const id = Number(row.dataset.cueId);
+      if (!Number.isFinite(id)) return;
+      if (state.selected.has(id)) state.selected.delete(id);
+      else state.selected.add(id);
+      syncPickUi();
+    }
+
     function sendSelected() {
       if (!state.selected.size || !canSend()) return;
       const lines = state.cues
@@ -620,9 +638,9 @@
         '<div class="cup-sub-text">' + tokenize(cue.text) + trHtml + '</div>';
       const pick = row.querySelector('.cup-sub-pick');
       pick.checked = state.selected.has(cue.id);
-      // Selection is driven ONLY from the checkbox. A row click still seeks
-      // and a word click still looks up, so no tap changes meaning depending
-      // on a mode the user has to remember.
+      // Outside select mode a row tap seeks and a word tap looks the word up.
+      // Inside it, every tap anywhere on the row toggles that line: the
+      // checkbox alone is too small a target to be the only way in.
       pick.addEventListener('click', (e) => {
         e.stopPropagation();
         if (pick.checked) state.selected.add(cue.id);
@@ -630,8 +648,10 @@
         syncPickUi();
       });
       row.addEventListener('click', (e) => {
-        if (e.target.classList && e.target.classList.contains('cup-w')) return;
+        // The checkbox has already handled itself.
         if (e.target === pick) return;
+        if (state.picking) { togglePickRow(row); return; }
+        if (e.target.classList && e.target.classList.contains('cup-w')) return;
         if (state.currentVideo) {
           state.currentVideo.currentTime = cue.start;
           try { state.currentVideo.play(); } catch (_) {}
@@ -1254,7 +1274,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 14;
+    const CAPS_VERSION = 15;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
