@@ -29,6 +29,11 @@
   function createSubtitleUI(opts) {
     const state = {
       cues: [],
+      // Selection for "send to the app". Holds stable cue ids, not indices:
+      // addCue splices into the middle, so indices shift under us.
+      picking: false,
+      selected: new Set(),
+      nextCueId: 1,
       sidebar: null,
       listEl: null,
       currentVideo: null,
@@ -223,6 +228,11 @@
           padding-top: 2px; user-select: none;
         }
         .cup-sub-text { flex: 1; word-break: break-word; }
+        /* Selection checkboxes are always rendered but only shown while
+           picking, so entering select mode costs no re-render. */
+        .cup-sub-pick { display: none; flex: 0 0 auto; margin: 3px 0 0 0; cursor: pointer; }
+        .cup-picking .cup-sub-pick { display: inline-block; }
+        .cup-sub-cue.cup-picked { background: rgba(120,200,120,0.18); opacity: 1; }
         .cup-sub-tr {
           margin-top: 2px; font-size: 13px; color: #b8d4ff;
           font-style: italic; opacity: 0.85;
@@ -287,6 +297,9 @@
           <button data-act="next" title="Next cue">⟩</button>
           <button data-act="copy" title="Copy transcript">⧉</button>
           <button data-act="clear" title="Clear transcript">🗑</button>
+          <button data-act="pick" title="Select lines">☑</button>
+          <button data-act="all" title="Select all / none" style="display:none">⊞</button>
+          <button data-act="send" title="Send selected to Cupitor" style="display:none">⤴</button>
           <span class="cup-sub-status" data-r="status"></span>
         </div>
         <div class="cup-sub-list"></div>
@@ -314,6 +327,7 @@
           }
         }
       };
+      syncPickUi();
       sb.querySelector('[data-act="settings"]').onclick = () => openSettingsDialog();
       sb.querySelector('[data-act="prev"]').onclick = () => seekRelative(-1);
       sb.querySelector('[data-act="next"]').onclick = () => seekRelative(+1);
@@ -324,9 +338,24 @@
         }).join('\n');
         try { navigator.clipboard && navigator.clipboard.writeText(txt); } catch (_) {}
       };
+      sb.querySelector('[data-act="pick"]').onclick = (e) => {
+        setPicking(!state.picking);
+        e.currentTarget.classList.toggle('cup-on', state.picking);
+      };
+      sb.querySelector('[data-act="all"]').onclick = () => {
+        // Every harvested cue, not just the ones that have played. On sites
+        // whose whole track is fetched up front this is the full transcript.
+        const all = state.cues.map(c => c.id);
+        const full = all.length && all.every(id => state.selected.has(id));
+        state.selected = full ? new Set() : new Set(all);
+        syncPickUi();
+      };
+      sb.querySelector('[data-act="send"]').onclick = () => sendSelected();
       sb.querySelector('[data-act="clear"]').onclick = () => {
         state.cues = []; state.activeIdx = -1;
+        state.selected = new Set();
         if (state.listEl) state.listEl.innerHTML = '';
+        syncPickUi();
       };
 
       if (state.cues.length && state.listEl) {
@@ -474,6 +503,9 @@
     function addCue(cue) {
       if (!normalizeText(cue.text)) return;
       if (findDup(cue)) return;
+      // Stable identity for selection — list positions shift as cues are
+      // spliced in, but this doesn't.
+      if (cue.id == null) cue.id = state.nextCueId++;
       let i = state.cues.length;
       while (i > 0 && state.cues[i - 1].start > cue.start) i--;
       state.cues.splice(i, 0, cue);
@@ -496,6 +528,82 @@
       // them on arrival made chunks fire on unwatched cues.
     }
 
+    // Selection is only offered inside Cupitor: without the channel there is
+    // nowhere to send, so the button would be a dead control in a browser.
+    function canSend() {
+      try {
+        return !!(window.CaptionCollector &&
+                  typeof window.CaptionCollector.postMessage === 'function');
+      } catch (_) { return false; }
+    }
+
+    function setPicking(on) {
+      state.picking = !!on;
+      // Leaving select mode drops the selection; re-entering starts clean
+      // rather than resurrecting ticks the user can no longer see.
+      if (!state.picking) state.selected = new Set();
+      syncPickUi();
+    }
+
+    function syncPickUi() {
+      const sb = state.sidebar;
+      if (!sb) return;
+      sb.classList.toggle('cup-picking', state.picking);
+      // Outside Cupitor there is nowhere to send, so selecting is a dead end
+      // — hide the entry point rather than offering a button that does nothing.
+      const pickBtn = sb.querySelector('[data-act="pick"]');
+      if (pickBtn) pickBtn.style.display = canSend() ? '' : 'none';
+      const allBtn = sb.querySelector('[data-act="all"]');
+      const sendBtn = sb.querySelector('[data-act="send"]');
+      // Both are meaningless outside select mode, so they stay out of the
+      // header entirely and normal use looks exactly as it did.
+      if (allBtn) allBtn.style.display = state.picking ? '' : 'none';
+      if (sendBtn) sendBtn.style.display = (state.picking && canSend()) ? '' : 'none';
+      if (sendBtn) sendBtn.disabled = state.selected.size === 0;
+      if (state.listEl) {
+        const rows = state.listEl.children;
+        for (let i = 0; i < rows.length; i++) {
+          const row = rows[i];
+          const id = Number(row.dataset.cueId);
+          const on = state.selected.has(id);
+          const box = row.querySelector('.cup-sub-pick');
+          if (box) box.checked = on;
+          row.classList.toggle('cup-picked', state.picking && on);
+        }
+      }
+      const status = sb.querySelector('[data-r="status"]');
+      if (status && state.picking) {
+        status.textContent = state.selected.size + ' selected';
+      }
+    }
+
+    function sendSelected() {
+      if (!state.selected.size || !canSend()) return;
+      const lines = state.cues
+        .filter(c => state.selected.has(c.id))
+        .map(c => {
+          const line = { start: c.start, end: c.end, text: c.text };
+          if (c.translation) line.translation = c.translation;
+          return line;
+        });
+      if (!lines.length) return;
+      const payload = {
+        title: (document.title || '').trim(),
+        url: location.href,
+        lang: state.translationSource || '',
+        lines,
+      };
+      try {
+        window.CaptionCollector.postMessage(JSON.stringify(payload));
+        console.log('[caps] sent', lines.length, 'lines');
+        setPicking(false);
+        const pickBtn = state.sidebar && state.sidebar.querySelector('[data-act="pick"]');
+        if (pickBtn) pickBtn.classList.remove('cup-on');
+      } catch (e) {
+        console.warn('[caps] send failed', e);
+      }
+    }
+
     function renderCue(cue, idx) {
       if (!state.listEl) return;
       const row = document.createElement('div');
@@ -505,11 +613,25 @@
       const trHtml = cue.translation
         ? '<div class="cup-sub-tr">' + escHtml(cue.translation) + '</div>'
         : (cue.trPending ? '<div class="cup-sub-tr cup-tr-pending">…</div>' : '');
+      row.dataset.cueId = String(cue.id);
       row.innerHTML =
+        '<input type="checkbox" class="cup-sub-pick">' +
         '<span class="cup-sub-time">' + fmtTime(cue.start) + '</span>' +
         '<div class="cup-sub-text">' + tokenize(cue.text) + trHtml + '</div>';
+      const pick = row.querySelector('.cup-sub-pick');
+      pick.checked = state.selected.has(cue.id);
+      // Selection is driven ONLY from the checkbox. A row click still seeks
+      // and a word click still looks up, so no tap changes meaning depending
+      // on a mode the user has to remember.
+      pick.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (pick.checked) state.selected.add(cue.id);
+        else state.selected.delete(cue.id);
+        syncPickUi();
+      });
       row.addEventListener('click', (e) => {
         if (e.target.classList && e.target.classList.contains('cup-w')) return;
+        if (e.target === pick) return;
         if (state.currentVideo) {
           state.currentVideo.currentTime = cue.start;
           try { state.currentVideo.play(); } catch (_) {}
@@ -799,6 +921,9 @@
     // Shown only while in a replay phase; cleared when forward play resumes.
     function updateStatus() {
       if (!state.sidebar) return;
+      // While selecting, the status span carries the selection count; the
+      // replay indicator would otherwise clear it on the next tick.
+      if (state.picking) return;
       const el = state.sidebar.querySelector('[data-r="status"]');
       if (!el) return;
       const inReplay = state.chunkReplaying && state.currentPass >= 1;
@@ -1030,33 +1155,114 @@
   }
 
   // -----------------------------------------------------------------------
-  // SVT Play module
+  // Caption capture module
   //
-  // SVT serves WebVTT subtitles as a sidecar track and uses standard HTML5
-  // `<video>` + TextTrack API (no DRM). Three capture paths, all running:
+  // Three capture paths, all running together:
   //   1) Read existing video.textTracks. If any has cues populated (or we
   //      can force mode='hidden' to populate them), we get the full
   //      transcript with accurate timing — best case.
   //   2) XHR/fetch hook: any response body starting with `WEBVTT` is a
   //      subtitle file. Parse it and push every cue.
   //   3) DOM observer fallback: mirror the on-screen cue container if the
-  //      first two miss.
+  //      first two miss. This is the only path that needs per-site knowledge.
+  //
+  // CAPTION_SITES is the configuration surface. This file is served from
+  // gh-pages and fetched at runtime, so adding a player or repairing a
+  // changed layout is an edit here — no app release.
+  //
+  //   host          match the site by domain
+  //   domProbe      match the site by the presence of this element, whatever
+  //                 the domain (players identifiable by their own markup)
+  //   domSelector   where the on-screen cue text lives, once matched
+  //   cueSelector   optional inner element inside domSelector holding the cue
+  //   shrinkSelectors  player frame(s) to shrink for split view
+  //   isWatchPage   optional — restrict the sidebar to real video pages
+  //
+  // An entry needs `host` or `domProbe` to match. `domSelector` is only
+  // needed for path 3; entries without one still get paths 1 and 2.
   // -----------------------------------------------------------------------
-  (function svtPlaySubs() {
+  const CAPTION_SITES = [
+    {
+      id: 'svt',
+      host: /(^|\.)svtplay\.se$|(^|\.)svt\.se$/,
+      // SVT uses obfuscated CSS-in-JS class names ("vp_b", "css-dgqlcd")
+      // but reliable data-rt attributes for everything important.
+      // Outermost player frame is data-rt="video-player-fullscreen".
+      shrinkSelectors: [
+        '[data-rt="video-player-fullscreen"]',
+        '[data-rt="video-player-container"]',
+        '[data-rt="video-player-frame"]',
+      ],
+      domSelector: '[data-rt="subtitles-container"]',
+      cueSelector: '.vtt-cue-teletext',
+      isWatchPage: () =>
+        /\/video\//.test(location.pathname) ||
+        /\/(klipp|kanaler)\//.test(location.pathname),
+    },
+    {
+      id: 'urplay',
+      host: /(^|\.)urplay\.se$/,
+      domSelector: '.jw-text-track-display',
+      shrinkSelectors: ['.jwplayer', '.jw-wrapper'],
+    },
+    {
+      // Any JW Player page, whatever the domain — the markup identifies it.
+      id: 'jwplayer',
+      domProbe: '.jw-text-track-display',
+      domSelector: '.jw-text-track-display',
+      shrinkSelectors: ['.jwplayer', '.jw-wrapper'],
+    },
+    {
+      id: 'youtube',
+      host: /(^|\.)youtube\.com$/,
+      domSelector: '.ytp-caption-window-container',
+      cueSelector: '.ytp-caption-segment',
+      shrinkSelectors: ['#movie_player', '.html5-video-player'],
+    },
+    {
+      // Fallback: no DOM knowledge, but native TextTracks and sidecar WebVTT
+      // still work, which covers most standard HTML5 players.
+      id: 'native',
+      domProbe: 'video',
+    },
+  ];
+
+  function resolveCaptionSite() {
     const host = (location && location.host) || '';
-    if (!/(^|\.)svtplay\.se$|(^|\.)svt\.se$/.test(host)) return;
+    for (const s of CAPTION_SITES) {
+      if (s.host && s.host.test(host)) return s;
+    }
+    // Host didn't match — fall back to identifying the player by its markup.
+    for (const s of CAPTION_SITES) {
+      if (s.domProbe) {
+        try {
+          if (document.querySelector(s.domProbe)) return s;
+        } catch (_) {}
+      }
+    }
+    return null;
+  }
+
+  (function captionCapture() {
+    const host = (location && location.host) || '';
+    let site = resolveCaptionSite();
+    // A DOM probe can miss on first run if the player hasn't rendered yet.
+    // Bail only when there is no <video> either — re-injection on navigation
+    // gives us another chance.
+    if (!site && !document.querySelector('video')) return;
+    if (!site) site = CAPTION_SITES[CAPTION_SITES.length - 1];
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const SVT_VERSION = 13;
-    const prev = window.__cupSvtInstalled;
-    if (prev && typeof prev === 'object' && prev.version >= SVT_VERSION) return;
+    const CAPS_VERSION = 14;
+    const prev = window.__cupCapsInstalled;
+    if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
       try { prev.teardown(); } catch (_) {}
     }
     const intervalIds = [];
-    const installToken = { version: SVT_VERSION, intervalIds, teardown };
-    window.__cupSvtInstalled = installToken;
+    const installToken = { version: CAPS_VERSION, intervalIds, teardown };
+    window.__cupCapsInstalled = installToken;
     function teardown() {
       for (const id of intervalIds) { try { clearInterval(id); } catch (_) {} }
       intervalIds.length = 0;
@@ -1076,19 +1282,16 @@
 
     const ui = createSubtitleUI({
       bodyClass: 'cup-sub-split',
-      // SVT uses obfuscated CSS-in-JS class names ("vp_b", "css-dgqlcd")
-      // but reliable data-rt attributes for everything important.
-      // Outermost player frame is data-rt="video-player-fullscreen".
-      shrinkSelectors: [
-        '[data-rt="video-player-fullscreen"]',
-        '[data-rt="video-player-container"]',
-        '[data-rt="video-player-frame"]',
-      ],
+      shrinkSelectors: site.shrinkSelectors,
     });
 
     function isWatchPage() {
-      // SVT Play title pages live at /video/<id>/<slug> (and similar).
-      return /\/video\//.test(location.pathname) || /\/(klipp|kanaler)\//.test(location.pathname);
+      // Sites that also serve non-video pages narrow this down; everywhere
+      // else, the presence of a <video> is the only signal we have.
+      if (typeof site.isWatchPage === 'function') {
+        try { return !!site.isWatchPage(); } catch (_) { return true; }
+      }
+      return !!document.querySelector('video');
     }
 
     // ---- diagnostics: dump what we see every 4 s until we capture cues ----
@@ -1152,7 +1355,7 @@
           try { tt.mode = 'hidden'; } catch (_) {}
         }
         const got = harvestTrack(tt);
-        if (got) console.log('[svt] textTrack', tt.language || tt.label, 'gave', got, 'cues');
+        if (got) console.log('[caps] textTrack', tt.language || tt.label, 'gave', got, 'cues');
         // Future cues (live/streamed VTT segments) arrive via cuechange.
         if (!tt.__cupBound) {
           tt.__cupBound = true;
@@ -1193,7 +1396,7 @@
         const txt = buf.join(' ').replace(/\s+/g, ' ').trim();
         if (txt) { ui.addCue({ start, end, text: txt }); added++; }
       }
-      if (added) console.log('[svt] VTT parsed:', added, 'cues');
+      if (added) console.log('[caps] VTT parsed:', added, 'cues');
     }
     function vttToSec(t) {
       const parts = t.split(':');
@@ -1230,18 +1433,21 @@
       }
     })();
 
-    // ---- 3) DOM mirror — the actual SVT path ----
-    // SVT renders cues into [data-rt="subtitles-container"] > .vtt-cue-teletext,
-    // with each subtitle line in its own <span>. Other class names are
-    // obfuscated (css-xxx) so we anchor on the stable data-rt attribute.
+    // ---- 3) DOM mirror — the only path needing per-site knowledge ----
+    // The player paints the current cue into `site.domSelector`, optionally
+    // into an inner `site.cueSelector`, usually with each line in its own
+    // <span>. Timing comes from the video's clock, since the DOM says only
+    // "this is on screen now".
     (function hookDom() {
+      if (!site.domSelector) return;
       let lastText = '';
       let lastChangeAt = 0;
       ownSetInterval(() => {
-        const container = document.querySelector('[data-rt="subtitles-container"]');
+        const container = document.querySelector(site.domSelector);
         if (!container) return;
-        // Prefer the inner cue div (multiple lines) — fall back to whole container.
-        const cueEl = container.querySelector('.vtt-cue-teletext') || container;
+        // Prefer the inner cue element (multiple lines) — fall back to the
+        // container itself when the site has no inner wrapper.
+        const cueEl = (site.cueSelector && container.querySelector(site.cueSelector)) || container;
         // Join <span> children with newlines so multi-line cues stay separated.
         let text;
         const spans = cueEl.querySelectorAll('span');
@@ -1301,7 +1507,7 @@
           if (lastMarked) lastMarked.classList.remove('cup-shrink-target');
           wrap.classList.add('cup-shrink-target');
           lastMarked = wrap;
-          console.log('[svt] shrink target =', wrap.tagName, wrap.className || '(no class)');
+          console.log('[caps] shrink target =', wrap.tagName, wrap.className || '(no class)');
         }
       } else if (!want && lastMarked) {
         lastMarked.classList.remove('cup-shrink-target');
@@ -1311,6 +1517,6 @@
       pumpTextTracks();
     }, 1000);
 
-    console.log('Cupitor SVT Play subs installed v' + SVT_VERSION + ' (host=', host, ')');
+    console.log('Cupitor caption capture installed v' + CAPS_VERSION + ' (site=', site.id, 'host=', host, ')');
   })();
 })();
