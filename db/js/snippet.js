@@ -1537,9 +1537,15 @@
       const basket = root.querySelector('[data-act="basket"]');
       const panel = root.querySelector('.cup-pc-panel');
       add.hidden = !state.pending;
-      basket.hidden = state.items.length === 0;
-      basket.textContent = '▤ ' + state.items.length;
-      panel.hidden = !(state.open && state.items.length);
+      // Visible whenever armed, even at zero, so the mode announces itself.
+      // Without this an armed page looks identical to an unarmed one until a
+      // tap happens to land — and on a reader that eats taps, never.
+      basket.hidden = state.items.length === 0 && !state.tapMode;
+      basket.textContent = state.items.length
+        ? (state.tapMode ? '✎ ' : '▤ ') + state.items.length
+        : '✎ Tap sentences';
+      panel.hidden = !state.open;
+      root.querySelector('[data-act="send"]').disabled = state.items.length === 0;
       const list = root.querySelector('[data-r="list"]');
       if (!panel.hidden) {
         list.textContent = '';
@@ -1557,7 +1563,9 @@
           list.appendChild(row);
         });
         if (!state.items.length) {
-          list.innerHTML = '<div class="cup-pc-empty">Nothing collected yet.</div>';
+          list.innerHTML = '<div class="cup-pc-empty">' + (state.tapMode
+            ? 'Tap a sentence to collect it. Selecting text works too, where the page allows it.'
+            : 'Select text, then tap “+ Add sentence”.') + '</div>';
         }
       }
     }
