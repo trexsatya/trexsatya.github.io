@@ -3152,7 +3152,8 @@ body.rec-playing #recPlayingWord { display: block; }
     border-radius: 50%;
 }
 #recPlayingBanner .rec-pb-gap > button:hover { background: rgba(255,255,255,0.18); }
-#recPlayingBanner .rec-pb-gap-val {
+#recPlayingBanner .rec-pb-gap-val,
+#recPlayingBanner .rec-pb-sgap-val {
     min-width: 36px;
     text-align: center;
     font-family: monospace;
@@ -3161,6 +3162,22 @@ body.rec-playing #recPlayingWord { display: block; }
     padding: 2px 4px;
     user-select: none;
 }
+
+/* Source→Target pause stepper. Only shown while a card with both recordings
+   is playing, so it sits beside the item-gap pill and needs a little more
+   width for its "ᔆᵀ 30s" readout. Tinted so the two pills don't read as one
+   control. */
+#recPlayingBanner .rec-pb-sgap {
+    background: rgba(120, 190, 255, 0.18);
+}
+#recPlayingBanner .rec-pb-sgap-val { min-width: 52px; }
+
+/* Second copy of the item-gap stepper, inside the ℹ details block. It exists
+   only as the phone fallback for when the source→target pill has taken the
+   single slot in the top row, so it stays hidden by default and is switched
+   on by exactly the one rule that hides the top-row copy — that pairing is
+   what guarantees one and only one of the two is ever visible. */
+#recPlayingBanner .rec-pb-details-gap { margin-top: 8px; display: none; }
 
 /* Desktop layout — banner is wide enough to always show details, so the
    ℹ button is redundant. Count is also redundant (it's in the head). */
@@ -3188,6 +3205,17 @@ body.rec-playing #recPlayingWord { display: block; }
     }
     #recPlayingBanner .rec-pb-details { display: none; }
     #recPlayingBanner.rec-pb-expanded .rec-pb-details { display: block; }
+    /* Two stepper pills plus the ℹ button are wider than the banner gets on a
+       phone: the row would spill under the Minimize/Close buttons and squeeze
+       the progress area until its centred countdown text is clipped. While a
+       dual-recording card is playing, the source→target pause is the one that
+       is about to happen, so it takes the single slot in the top row and the
+       item gap moves into the ℹ details block. The two declarations belong
+       together — one hides the top-row copy, the other reveals the fallback.
+       The first selector must stay scoped to .rec-pb-top, or it matches the
+       fallback pill too and leaves no item-gap control at all. */
+    #recPlayingBanner.rec-pb-has-sgap .rec-pb-top .rec-pb-gap:not(.rec-pb-sgap) { display: none; }
+    #recPlayingBanner.rec-pb-has-sgap .rec-pb-details-gap { display: block; }
     #recPlayingWord {
         top: 40px;
         font-size: 20px;
