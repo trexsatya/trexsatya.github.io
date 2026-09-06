@@ -1903,6 +1903,43 @@ body.practice-mode #mediaRelatedContainer {
    The natural layout collapses (its parent .fl-left has float:left and
    most of its other children are display:none in play mode), which made
    the iframe render at zero height. Fixed positioning sidesteps that. */
+/* A manual card has no video. Hide the YouTube slot entirely and let
+   #recPlayingAudio take that space, rather than leaving a black 16:9 box
+   above a card that is only ever going to make sound. Overrides the
+   display:block !important below, so it has to be at least as specific. */
+body.rec-playing.rec-playing-manual #mediaContainer {
+    display: none !important;
+}
+/* Audio player for a manual card's recordings — same fixed slot the video
+   would have used. Real <audio controls> so the recording can be scrubbed and
+   replayed by hand, not just driven by the playlist's timing. */
+#recPlayingAudio {
+    position: fixed;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100vw, 900px);
+    box-sizing: border-box;
+    padding: 10px 12px;
+    background: #111;
+    color: #eee;
+    z-index: 100001;
+    display: none;
+}
+body.rec-playing-manual #recPlayingAudio { display: block; }
+#recPlayingAudio .rec-pa-face {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    min-height: 14px;
+    margin-bottom: 6px;
+}
+#recPlayingAudio .rec-pa-el {
+    width: 100%;
+    display: block;
+}
+
 body.rec-playing #mediaContainer,
 body.practice-mode #mediaContainer {
     display: block !important;
@@ -3324,7 +3361,14 @@ body.rec-playing #recPlayingSubs { display: block; }
     background: rgba(255, 255, 255, 0.08);
     border-left-color: #4caf50;
 }
-#recPlayingSubs .rec-ps-main {}
+/* A manual card's text is stored with real newlines — a caption capture puts
+   one cue per line — so the overlay has to honour them instead of collapsing
+   the whole card onto one run-on line. */
+#recPlayingSubs .rec-ps-main,
+#recPlayingSubs .rec-ps-sec {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
 #recPlayingSubs .rec-ps-sec {
     font-size: 0.85em;
     font-style: italic;
