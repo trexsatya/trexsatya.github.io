@@ -1494,7 +1494,11 @@
       st.textContent = `
         .cup-pc { position: fixed; right: 12px; bottom: 12px; z-index: 2147483000;
                   font: 13px/1.35 system-ui, -apple-system, sans-serif;
-                  display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+                  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+                  /* A page that blanket-disables pointer events must not take
+                     our controls with it. */
+                  pointer-events: auto; }
+        .cup-pc * { pointer-events: auto; }
         .cup-pc button { font: inherit; border: 0; border-radius: 16px; padding: 8px 13px;
                   background: #1f6feb; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.35);
                   cursor: pointer; }
@@ -1511,7 +1515,7 @@
         .cup-pc-foot { display: flex; gap: 6px; justify-content: flex-end; padding-top: 6px; }
         .cup-pc-empty { opacity: .7; padding: 6px 2px; }
       `;
-      document.documentElement.appendChild(st);
+      (document.head || document.documentElement).appendChild(st);
 
       root = document.createElement('div');
       root.className = 'cup-pc';
@@ -1525,24 +1529,31 @@
         '</div>' +
         '<button data-act="basket" hidden></button>' +
         '<button data-act="add" hidden>+ Add sentence</button>';
-      document.documentElement.appendChild(root);
+      // Into <body>, NOT documentElement. A node parented to <html> outside
+      // <body> paints correctly but hit-tests unreliably in Blink, which shows
+      // up as a control you can see and cannot tap.
+      (document.body || document.documentElement).appendChild(root);
 
-      root.querySelector('[data-act="add"]').onclick = () => {
+      // Capture phase and touchend as well as click: readers install their own
+      // aggressive gesture handlers, and a control that silently does nothing
+      // is worse than no control.
+      const on = (act, fn) => {
+        const el = root.querySelector('[data-act="' + act + '"]');
+        if (!el) return;
+        const run = (ev) => { ev.preventDefault(); ev.stopPropagation(); fn(); };
+        el.addEventListener('click', run, true);
+        el.addEventListener('touchend', run, true);
+      };
+      on('add', () => {
         if (!collect(state.pending)) { state.pending = ''; sync(); return; }
         state.pending = '';
+        state.open = true;
         clearSelections();
         sync();
-      };
-      root.querySelector('[data-act="basket"]').onclick = () => {
-        state.open = !state.open;
-        sync();
-      };
-      root.querySelector('[data-act="clear"]').onclick = () => {
-        state.items = [];
-        state.open = false;
-        sync();
-      };
-      root.querySelector('[data-act="send"]').onclick = send;
+      });
+      on('basket', () => { state.open = !state.open; sync(); });
+      on('clear', () => { state.items = []; state.open = false; sync(); });
+      on('send', send);
     }
 
     // Drop the highlight everywhere it might live, so the chip doesn't linger
@@ -1565,6 +1576,10 @@
 
     function sync() {
       ensureUi();
+      // An SPA that replaces <body> takes our controls with it.
+      if (root && !root.isConnected) {
+        try { (document.body || document.documentElement).appendChild(root); } catch (_) {}
+      }
       const add = root.querySelector('[data-act="add"]');
       const basket = root.querySelector('[data-act="basket"]');
       const panel = root.querySelector('.cup-pc-panel');
@@ -1679,7 +1694,12 @@
       if (!d || !d.op) return;
       if (d.op === 'hello') { broadcastArm(); return; }
       if (d.op === 'add') {
-        if (collect(String(d.text || ''))) sync();
+        if (collect(String(d.text || ''))) {
+          // Show the list as soon as there is something in it. Relying on the
+          // user finding a toggle is what made this feel broken.
+          state.open = true;
+          sync();
+        }
         return;
       }
       if (d.op === 'selection') {
