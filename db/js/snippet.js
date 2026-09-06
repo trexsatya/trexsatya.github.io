@@ -507,8 +507,24 @@
       return false;
     }
 
+    // Storyboard / thumbnail tracks are WEBVTT too, and their cue payload is
+    // an image URL — usually with a #xywh= spatial fragment picking one frame
+    // out of a sprite sheet. They are timed, so they parse perfectly as cues,
+    // but they are not speech and must never reach the panel.
+    function isThumbnailCue(text) {
+      const t = (text || '').trim();
+      if (!t) return true;
+      if (/#xywh=/i.test(t)) return true;
+      // A cue that is nothing but an image reference. Anchored and
+      // whitespace-free, so a spoken line that merely mentions a filename
+      // ("open cat.jpg then") still gets through.
+      if (/^\S+\.(jpe?g|png|webp|avif|gif)(\?|#|$)/i.test(t)) return true;
+      return false;
+    }
+
     function addCue(cue) {
       if (!normalizeText(cue.text)) return;
+      if (isThumbnailCue(cue.text)) return;
       if (findDup(cue)) return;
       // Stable identity for selection — list positions shift as cues are
       // spliced in, but this doesn't.
@@ -1263,6 +1279,447 @@
     return null;
   }
 
+  // ---- Frame reach -------------------------------------------------------
+  //
+  // snippet.js is injected with runJavaScript, which evaluates in the TOP
+  // frame only. Anything living in an iframe — an e-book reader, an embedded
+  // player — is therefore invisible to every feature in this file. Studora
+  // renders its reader into <iframe id="readeriframe-...">, so nothing here
+  // reaches the book text.
+  //
+  // A same-origin frame can be reached from the top document through
+  // contentDocument. A cross-origin one cannot, by design, and no amount of
+  // JavaScript changes that — that case needs WebView-level injection.
+  //
+  // Features register with cupInFrames(name, fn). fn(doc, win) runs once per
+  // document: the top one, every reachable frame, frames that appear later,
+  // and nested frames. Frames that cannot be reached are reported once each,
+  // so the logs say plainly whether a site is workable.
+  (function frameReach() {
+    if (window.__cupFramesInstalled) return;
+    window.__cupFramesInstalled = true;
+
+    const MAX_DEPTH = 4;          // a reader inside a player is plausible; deeper is not
+    const features = [];          // { name, fn, seen: WeakSet<Document> }
+    const reportedBlocked = new Set();
+
+    function label(frame) {
+      try {
+        return frame.getAttribute('src') || frame.id || frame.name || '(inline)';
+      } catch (_) { return '(unreadable)'; }
+    }
+
+    // The try/catch IS the same-origin test: reading contentDocument across
+    // origins throws.
+    function reach(frame) {
+      try { return frame.contentDocument || null; } catch (_) { return null; }
+    }
+
+    // Each feature tracks its own documents, so registering a second feature
+    // does not re-run the first one where it has already installed.
+    function install(doc, win, where, stats) {
+      if (!doc || !doc.body) return;
+      for (const f of features) {
+        if (f.seen.has(doc)) continue;
+        f.seen.add(doc);
+        stats.installs++;
+        try {
+          f.fn(doc, win);
+        } catch (e) {
+          console.warn('[frames]', f.name, 'threw in', where, e);
+        }
+      }
+    }
+
+    function visit(doc, depth, stats) {
+      if (depth > MAX_DEPTH) return;
+      let frames;
+      try { frames = doc.querySelectorAll('iframe, frame'); } catch (_) { return; }
+      frames.forEach((frame) => {
+        const name = label(frame);
+        const inner = reach(frame);
+        if (!inner) {
+          stats.blocked++;
+          if (!reportedBlocked.has(name)) {
+            reportedBlocked.add(name);
+            console.log('[frames] cross-origin, cannot reach:', name);
+          }
+          return;
+        }
+        // The element can exist before its document does. Install on load
+        // rather than dropping the frame.
+        if (!inner.body || inner.readyState === 'loading') {
+          if (!frame.__cupFrameWait) {
+            frame.__cupFrameWait = true;
+            frame.addEventListener('load', sweep, { once: true });
+          }
+          stats.pending++;
+          return;
+        }
+        install(inner, frame.contentWindow, name, stats);
+        visit(inner, depth + 1, stats);
+      });
+    }
+
+    function sweep() {
+      const stats = { installs: 0, blocked: 0, pending: 0 };
+      install(document, window, 'top', stats);
+      visit(document, 0, stats);
+      return stats;
+    }
+
+    window.cupInFrames = function (name, fn) {
+      if (typeof fn !== 'function') return;
+      features.push({ name: name, fn: fn, seen: new WeakSet() });
+      const stats = sweep();
+      console.log('[frames]', name, '→', stats.installs, 'document(s),',
+        stats.blocked, 'blocked,', stats.pending, 'pending');
+    };
+
+    // Frames appear long after load on SPA sites.
+    try {
+      new MutationObserver(sweep).observe(document.documentElement, {
+        childList: true, subtree: true,
+      });
+    } catch (_) {}
+    // A frame can also swap its document without its element being touched,
+    // which no observer on this document reports. Cheap because it returns
+    // immediately on the overwhelming majority of pages, which have no frames.
+    setInterval(() => {
+      if (!document.querySelector('iframe, frame')) return;
+      sweep();
+    }, 2000);
+
+    // Diagnostic, for reading in the snippet logs while sizing up a site.
+    window.cupFrameReport = function () {
+      const rows = [];
+      (function walk(doc, depth) {
+        if (depth > MAX_DEPTH) return;
+        let frames;
+        try { frames = doc.querySelectorAll('iframe, frame'); } catch (_) { return; }
+        frames.forEach((frame) => {
+          const inner = reach(frame);
+          rows.push({
+            frame: label(frame),
+            depth: depth,
+            reachable: !!inner,
+            ready: inner ? inner.readyState : null,
+            chars: inner && inner.body ? (inner.body.innerText || '').length : 0,
+          });
+          if (inner) walk(inner, depth + 1);
+        });
+      })(document, 0);
+      console.log('[frames] report ' + JSON.stringify(rows));
+      return rows;
+    };
+
+    const first = sweep();
+    console.log('[frames] reach installed —', first.blocked, 'blocked,',
+      first.pending, 'pending,', document.querySelectorAll('iframe, frame').length,
+      'frame(s) in top document');
+  })();
+
+  // ---- Page sentence capture ---------------------------------------------
+  //
+  // Select text anywhere on the page — including inside a same-origin reader
+  // iframe — collect it, and send the collection to the language webapp as
+  // manual playlist items.
+  //
+  // It rides the caption-capture pipeline: CaptionCollector → the host →
+  // a cupitorCaptionCapture event carrying source:'page'. So there is one
+  // validated host path and one webapp listener for both sources.
+  //
+  // Deliberately built on the WebView's own text selection rather than on
+  // tapping words. Selection needs no DOM mutation, which is what makes it
+  // safe on a React-rendered page that rebuilds its nodes underneath us.
+  (function pageCapture() {
+    // The UI lives in the top frame: a panel rendered inside the reader
+    // iframe would be clipped by it. Frames only contribute selections.
+    if (window.top !== window) return;
+    if (window.__cupPageCaptureInstalled) return;
+
+    // Outside Cupitor there is nowhere to send, so the whole feature stays
+    // invisible rather than offering dead controls.
+    function canSend() {
+      try {
+        return !!(window.CaptionCollector &&
+                  typeof window.CaptionCollector.postMessage === 'function');
+      } catch (_) { return false; }
+    }
+    if (!canSend()) return;
+    if (typeof window.cupInFrames !== 'function') return;
+    window.__cupPageCaptureInstalled = true;
+
+    const MIN_CHARS = 2;
+    // tapMode is armed from the app's existing capture chip, via
+    // __cupitorSetCaptureMode below — no extra floating button in the page.
+    const state = { pending: '', items: [], open: false, tapMode: false };
+    let root = null;
+
+    function ensureUi() {
+      if (root) return;
+      const st = document.createElement('style');
+      st.textContent = `
+        .cup-pc { position: fixed; right: 12px; bottom: 12px; z-index: 2147483000;
+                  font: 13px/1.35 system-ui, -apple-system, sans-serif;
+                  display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+        .cup-pc button { font: inherit; border: 0; border-radius: 16px; padding: 8px 13px;
+                  background: #1f6feb; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.35);
+                  cursor: pointer; }
+        .cup-pc button[data-act="basket"] { background: #444c56; }
+        .cup-pc-panel { background: #0d1117; color: #e6edf3; border: 1px solid #30363d;
+                  border-radius: 10px; padding: 8px; width: min(78vw, 340px);
+                  max-height: 46vh; overflow: auto; box-shadow: 0 4px 18px rgba(0,0,0,.45); }
+        .cup-pc-row { display: flex; gap: 6px; align-items: flex-start; padding: 5px 2px;
+                  border-bottom: 1px solid #21262d; }
+        .cup-pc-row:last-child { border-bottom: 0; }
+        .cup-pc-row span { flex: 1 1 auto; }
+        .cup-pc-row button { background: transparent; color: #f85149; padding: 0 4px;
+                  box-shadow: none; border-radius: 4px; }
+        .cup-pc-foot { display: flex; gap: 6px; justify-content: flex-end; padding-top: 6px; }
+        .cup-pc-empty { opacity: .7; padding: 6px 2px; }
+      `;
+      document.documentElement.appendChild(st);
+
+      root = document.createElement('div');
+      root.className = 'cup-pc';
+      root.innerHTML =
+        '<div class="cup-pc-panel" hidden>' +
+          '<div data-r="list"></div>' +
+          '<div class="cup-pc-foot">' +
+            '<button data-act="clear">Clear</button>' +
+            '<button data-act="send">Send</button>' +
+          '</div>' +
+        '</div>' +
+        '<button data-act="basket" hidden></button>' +
+        '<button data-act="add" hidden>+ Add sentence</button>';
+      document.documentElement.appendChild(root);
+
+      root.querySelector('[data-act="add"]').onclick = () => {
+        if (!collect(state.pending)) { state.pending = ''; sync(); return; }
+        state.pending = '';
+        clearSelections();
+        sync();
+      };
+      root.querySelector('[data-act="basket"]').onclick = () => {
+        state.open = !state.open;
+        sync();
+      };
+      root.querySelector('[data-act="clear"]').onclick = () => {
+        state.items = [];
+        state.open = false;
+        sync();
+      };
+      root.querySelector('[data-act="send"]').onclick = send;
+    }
+
+    // Drop the highlight everywhere it might live, so the chip doesn't linger
+    // over a selection the user thinks they have already banked.
+    function clearSelections() {
+      const docs = [document];
+      try {
+        document.querySelectorAll('iframe, frame').forEach((f) => {
+          try { if (f.contentDocument) docs.push(f.contentDocument); } catch (_) {}
+        });
+      } catch (_) {}
+      docs.forEach((d) => {
+        try {
+          const w = d.defaultView;
+          const sel = w && w.getSelection && w.getSelection();
+          if (sel && sel.removeAllRanges) sel.removeAllRanges();
+        } catch (_) {}
+      });
+    }
+
+    function sync() {
+      ensureUi();
+      const add = root.querySelector('[data-act="add"]');
+      const basket = root.querySelector('[data-act="basket"]');
+      const panel = root.querySelector('.cup-pc-panel');
+      add.hidden = !state.pending;
+      basket.hidden = state.items.length === 0;
+      basket.textContent = '▤ ' + state.items.length;
+      panel.hidden = !(state.open && state.items.length);
+      const list = root.querySelector('[data-r="list"]');
+      if (!panel.hidden) {
+        list.textContent = '';
+        state.items.forEach((text, i) => {
+          const row = document.createElement('div');
+          row.className = 'cup-pc-row';
+          const span = document.createElement('span');
+          span.textContent = text;
+          const del = document.createElement('button');
+          del.textContent = '✕';
+          del.title = 'Remove';
+          del.onclick = () => { state.items.splice(i, 1); sync(); };
+          row.appendChild(span);
+          row.appendChild(del);
+          list.appendChild(row);
+        });
+        if (!state.items.length) {
+          list.innerHTML = '<div class="cup-pc-empty">Nothing collected yet.</div>';
+        }
+      }
+    }
+
+    function caretRangeAt(doc, x, y) {
+      try {
+        if (doc.caretRangeFromPoint) return doc.caretRangeFromPoint(x, y);
+        if (doc.caretPositionFromPoint) {
+          const p = doc.caretPositionFromPoint(x, y);
+          if (!p) return null;
+          const r = doc.createRange();
+          r.setStart(p.offsetNode, p.offset);
+          r.collapse(true);
+          return r;
+        }
+      } catch (_) {}
+      return null;
+    }
+
+    // The sentence under a tap, resolved without requiring a selection the
+    // user may not be able to make. Blink exposes sentence granularity on
+    // Selection.modify, which is exactly this job; the manual split is the
+    // fallback for when that is missing or the markup defeats it.
+    function sentenceAt(doc, win, x, y) {
+      const range = caretRangeAt(doc, x, y);
+      if (!range) return '';
+      try {
+        const sel = win.getSelection();
+        if (sel) {
+          sel.removeAllRanges();
+          sel.addRange(range);
+          sel.modify('move', 'backward', 'sentenceboundary');
+          sel.modify('extend', 'forward', 'sentence');
+          const t = String(sel.toString() || '').replace(/\s+/g, ' ').trim();
+          if (t.length >= MIN_CHARS) return t;
+        }
+      } catch (_) {}
+      try {
+        const node = range.startContainer;
+        if (!node || node.nodeType !== 3) return '';
+        const raw = String(node.textContent || '');
+        const off = range.startOffset;
+        const re = /[^.!?…]+[.!?…]*\s*/g;
+        let m;
+        while ((m = re.exec(raw)) !== null) {
+          if (off >= m.index && off <= m.index + m[0].length) {
+            const t = m[0].replace(/\s+/g, ' ').trim();
+            if (t.length >= MIN_CHARS) return t;
+          }
+        }
+        return raw.replace(/\s+/g, ' ').trim();
+      } catch (_) { return ''; }
+    }
+
+    function collect(text) {
+      if (!text || text.length < MIN_CHARS) return false;
+      // Consecutive duplicates are almost always a double tap, not intent.
+      if (state.items[state.items.length - 1] === text) return false;
+      state.items.push(text);
+      return true;
+    }
+
+    // Armed from the app's capture chip. The host has always pushed this call
+    // to the main WebView; until now nothing on a web page defined it.
+    window.__cupitorSetCaptureMode = function (active) {
+      state.tapMode = !!active;
+      window.__cupitorCaptureMode = state.tapMode;
+      if (root) sync();
+      console.log('[pagecap] tap mode', state.tapMode ? 'armed' : 'off');
+    };
+
+    function send() {
+      if (!state.items.length || !canSend()) return;
+      // No timestamps: page sentences have no media time. The host coerces the
+      // missing fields and its sort is stable, so this order is preserved.
+      const payload = {
+        source: 'page',
+        title: (document.title || '').trim(),
+        url: location.href,
+        lang: '',
+        lines: state.items.map((text) => ({ text: text })),
+      };
+      try {
+        window.CaptionCollector.postMessage(JSON.stringify(payload));
+        console.log('[pagecap] sent', state.items.length, 'sentence(s)');
+        state.items = [];
+        state.pending = '';
+        state.open = false;
+        sync();
+      } catch (e) {
+        console.warn('[pagecap] send failed', e);
+      }
+    }
+
+    // One watcher per document, installed by the top frame reaching in. The
+    // top document's own selection is covered by the same registration.
+    window.cupInFrames('page-capture', function (doc, win) {
+      // Readers routinely disable selection so long-press stays theirs for
+      // page turns, which is why dragging to select fails in them. Re-enable
+      // it where we can; the armed tap path below is the answer when even
+      // this is not enough.
+      try {
+        const st = doc.createElement('style');
+        st.textContent =
+          '*, *::before, *::after { -webkit-user-select: text !important;' +
+          ' user-select: text !important; }';
+        (doc.head || doc.documentElement).appendChild(st);
+      } catch (_) {}
+
+      // Capture phase, because a reader that swallows clicks for its own
+      // gestures would otherwise never let this run. Only fires while armed,
+      // and only swallows the tap when a sentence was actually collected —
+      // so an armed tap on empty margin still turns the page.
+      doc.addEventListener('click', (ev) => {
+        if (!state.tapMode) return;
+        const el = ev.target;
+        if (el && el.closest) {
+          if (el.closest('.cup-pc')) return;
+          if (el.closest('a,button,input,textarea,select,[role="button"]')) return;
+        }
+        const text = sentenceAt(doc, win, ev.clientX, ev.clientY);
+        if (!collect(text)) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        state.pending = '';
+        try {
+          const sel = win.getSelection();
+          if (sel && sel.removeAllRanges) sel.removeAllRanges();
+        } catch (_) {}
+        sync();
+      }, true);
+
+      const report = () => {
+        let text = '';
+        try {
+          const sel = win && win.getSelection && win.getSelection();
+          if (sel && !sel.isCollapsed) {
+            const node = sel.anchorNode;
+            const el = node && (node.nodeType === 1 ? node : node.parentElement);
+            // Selecting inside our own panel must not re-arm the chip.
+            if (!(el && el.closest && el.closest('.cup-pc'))) {
+              text = String(sel.toString() || '').replace(/\s+/g, ' ').trim();
+            }
+          }
+        } catch (_) {}
+        if (text.length < MIN_CHARS) text = '';
+        // A selection cleared in one frame must not wipe a pending capture
+        // made in another, so only report meaningful transitions.
+        if (!text && state.pending && win !== window) return;
+        state.pending = text;
+        sync();
+      };
+      doc.addEventListener('selectionchange', report);
+      // selectionchange is unreliable on some WebView builds; these are the
+      // gestures that finish a selection.
+      doc.addEventListener('mouseup', report);
+      doc.addEventListener('touchend', report);
+    });
+
+    console.log('[pagecap] installed');
+  })();
+
   (function captionCapture() {
     const host = (location && location.host) || '';
     let site = resolveCaptionSite();
@@ -1274,7 +1731,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 15;
+    const CAPS_VERSION = 16;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -1369,6 +1826,12 @@
       if (!tracks || !tracks.length) return;
       for (let i = 0; i < tracks.length; i++) {
         const tt = tracks[i];
+        // Only real caption tracks. Storyboard thumbnails ride in as
+        // kind='metadata', and players leave those disabled on purpose — so
+        // forcing them to 'hidden' below was actively creating the problem.
+        // An empty kind is allowed: some players never set one.
+        const kind = (tt.kind || '').toLowerCase();
+        if (kind && kind !== 'subtitles' && kind !== 'captions') continue;
         // Mode 'disabled' = cues never populated. Switch to 'hidden' which
         // populates without forcing the on-screen subtitle UI.
         if (tt.mode === 'disabled') {
@@ -1414,7 +1877,7 @@
           buf.push(lines[i++].replace(/<[^>]+>/g, ''));
         }
         const txt = buf.join(' ').replace(/\s+/g, ' ').trim();
-        if (txt) { ui.addCue({ start, end, text: txt }); added++; }
+        if (txt && !isThumbnailCue(txt)) { ui.addCue({ start, end, text: txt }); added++; }
       }
       if (added) console.log('[caps] VTT parsed:', added, 'cues');
     }
