@@ -1279,6 +1279,38 @@
     return null;
   }
 
+  // ---- Page error capture -------------------------------------------------
+  //
+  // A page that renders nothing usually threw on the way. The console shim
+  // only forwards snippet.js's own output, so the page's failures are
+  // invisible from the app — which turns "it is blank" into guesswork.
+  // Kept to a handful so an ad-heavy page cannot flood the log.
+  (function pageErrors() {
+    if (window.__cupPageErrors) return;
+    const seen = [];
+    window.__cupPageErrors = seen;
+    const MAX = 10;
+    function note(kind, message, where) {
+      if (seen.length >= MAX) return;
+      const line = kind + ': ' + String(message || '').slice(0, 300) +
+        (where ? ' @ ' + String(where).slice(0, 160) : '');
+      seen.push(line);
+      console.warn('[pageerr]', line);
+    }
+    window.addEventListener('error', (ev) => {
+      try {
+        note('error', ev.message || (ev.error && ev.error.message),
+          (ev.filename || '') + ':' + (ev.lineno || ''));
+      } catch (_) {}
+    }, true);
+    window.addEventListener('unhandledrejection', (ev) => {
+      try {
+        const r = ev.reason;
+        note('unhandled', (r && (r.message || r)) || 'rejection', '');
+      } catch (_) {}
+    });
+  })();
+
   // ---- Frame reach -------------------------------------------------------
   //
   // snippet.js is injected with runJavaScript, which evaluates in the TOP
@@ -1628,12 +1660,41 @@
       return true;
     }
 
+    // Cross-origin frames run frame-boot.js, injected natively at document
+    // start, and speak to us only through postMessage — a JavaScript channel
+    // may or may not be exposed to them, but postMessage across origins always
+    // is. Arm messages go down; sentences and selections come up.
+    function broadcastArm() {
+      const msg = { __cupPC: { op: 'arm', on: state.tapMode } };
+      for (let i = 0; i < window.frames.length; i++) {
+        try { window.frames[i].postMessage(msg, '*'); } catch (_) {}
+      }
+    }
+
+    // Any frame can post here, so treat the text as untrusted input rather
+    // than instruction — it only ever lands in a basket the user reviews and
+    // sends by hand.
+    window.addEventListener('message', (ev) => {
+      const d = ev && ev.data && ev.data.__cupPC;
+      if (!d || !d.op) return;
+      if (d.op === 'hello') { broadcastArm(); return; }
+      if (d.op === 'add') {
+        if (collect(String(d.text || ''))) sync();
+        return;
+      }
+      if (d.op === 'selection') {
+        state.pending = String(d.text || '').slice(0, 4000);
+        sync();
+      }
+    });
+
     // Armed from the app's capture chip. The host has always pushed this call
     // to the main WebView; until now nothing on a web page defined it.
     window.__cupitorSetCaptureMode = function (active) {
       state.tapMode = !!active;
       window.__cupitorCaptureMode = state.tapMode;
       if (root) sync();
+      broadcastArm();
       console.log('[pagecap] tap mode', state.tapMode ? 'armed' : 'off');
     };
 
