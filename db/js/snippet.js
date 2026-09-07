@@ -1409,8 +1409,16 @@
     };
 
     // Frames appear long after load on SPA sites.
+    // Debounced: sweep() runs querySelectorAll across the top document and
+    // every reachable frame, and this observer sees every mutation batch on
+    // the page — including the ones our own panel makes when it re-renders.
+    let sweepTimer = null;
+    function sweepSoon() {
+      if (sweepTimer) return;
+      sweepTimer = setTimeout(() => { sweepTimer = null; sweep(); }, 250);
+    }
     try {
-      new MutationObserver(sweep).observe(document.documentElement, {
+      new MutationObserver(sweepSoon).observe(document.documentElement, {
         childList: true, subtree: true,
       });
     } catch (_) {}
@@ -1441,6 +1449,12 @@
           if (inner) walk(inner, depth + 1);
         });
       })(document, 0);
+      // Piggybacked here on purpose: the app's "Page & frame report" embeds
+      // whatever this returns, so the page-capture counters reach the screen
+      // without an app rebuild to add a field.
+      try {
+        rows.push({ pagecap: (window.__cupPcDiag && window.__cupPcDiag()) || 'not installed' });
+      } catch (_) {}
       console.log('[frames] report ' + JSON.stringify(rows));
       return rows;
     };
@@ -1485,9 +1499,34 @@
     const MIN_CHARS = 2;
     // tapMode is armed from the app's existing capture chip, via
     // __cupitorSetCaptureMode below — no extra floating button in the page.
-    const state = { pending: '', items: [], open: false, tapMode: false, hint: '' };
+    const state = { pending: '', pendingFrom: null, items: [], open: false,
+                    tapMode: false, hint: '' };
+    // Bumped on every arm change, so a poller that already consumed a
+    // selection re-considers it once the mode changes underneath it.
+    let armGen = 0;
     let hintTimer = null;
     let root = null;
+
+    // Diagnostics, because there is no console to read inside a cross-origin
+    // reader on a phone and "it doesn't work" has at least four distinct
+    // causes: the frame agent never ran, arm never arrived, events never
+    // reached it, or resolution failed. These counters surface in the app's
+    // "Page & frame report".
+    //
+    // `msgs` is the decisive one: zero means no frame agent ever reached us,
+    // so nothing downstream of it is worth reading.
+    const topDiag = { msgs: 0, hellos: 0, adds: 0, sels: 0, misses: 0,
+                      diags: 0, rejected: 0, ownAdds: 0, ownPolls: 0,
+                      ownSel: 0 };
+    const frameDiag = {};
+    window.__cupPcDiag = () => ({
+      armed: state.tapMode,
+      items: state.items.length,
+      pending: state.pending.slice(0, 60),
+      open: state.open,
+      top: topDiag,
+      frames: frameDiag,
+    });
 
     function ensureUi() {
       if (root) return;
@@ -1546,11 +1585,13 @@
         el.addEventListener('touchend', run, true);
       };
       on('add', () => {
-        if (!collect(state.pending)) { state.pending = ''; sync(); return; }
-        state.pending = '';
-        state.open = true;
-        clearSelections();
-        sync();
+        if (collect(state.pending)) {
+          state.open = true;
+          clearSelections();
+        } else {
+          showHint('already collected');
+        }
+        setPending('', null, true);
       });
       on('basket', () => { state.open = !state.open; sync(); });
       on('clear', () => { state.items = []; state.open = false; sync(); });
@@ -1645,6 +1686,14 @@
       // Taps land in line gaps and on padding, where caretRangeFromPoint
       // returns nothing, so probe a little above and below before giving up.
       let sawCaret = false;
+      // resolveFrom rewrites the selection on every probe, so a tap that
+      // resolves nothing would otherwise leave a stray one-word selection and
+      // destroy whatever the user actually had selected.
+      let saved = null;
+      try {
+        const s0 = win.getSelection();
+        if (s0 && s0.rangeCount) saved = s0.getRangeAt(0).cloneRange();
+      } catch (_) {}
       for (const dy of [0, -6, 6, -12, 12]) {
         const range = caretRangeAt(doc, x, y + dy);
         if (!range) continue;
@@ -1652,11 +1701,92 @@
         const t = resolveFrom(win, range);
         if (t) return t;
       }
+      try {
+        const s1 = win.getSelection();
+        if (s1) {
+          s1.removeAllRanges();
+          if (saved) s1.addRange(saved);
+        }
+      } catch (_) {}
       // 'no caret' means the point is not over addressable text at all — a
       // canvas, an overlay, a shadow root. 'no text' means it is, but nothing
       // resolved. That distinction decides what to try next.
       lastWhy = sawCaret ? 'no text' : 'no caret';
       return '';
+    }
+
+    const SENT_RE = /[^.!?…]+[.!?…]*\s*/g;
+
+    function norm(s) { return String(s || '').replace(/\s+/g, ' ').trim(); }
+
+    // The sentence spanning a character offset in a block of text.
+    function sentenceAtOffset(raw, at) {
+      if (!raw) return '';
+      if (at >= raw.length) at = raw.length - 1;
+      if (at < 0) return '';
+      let m;
+      SENT_RE.lastIndex = 0;
+      while ((m = SENT_RE.exec(raw)) !== null) {
+        if (at >= m.index && at < m.index + m[0].length) return norm(m[0]);
+      }
+      return '';
+    }
+
+    // Expand a selection to its sentence WITHOUT touching the selection.
+    //
+    // The polling path below must not mutate what the page put there:
+    // Selection.modify would fight a reader's own highlight palette and
+    // re-trigger the very poll that called it. So this only reads.
+    //
+    // Readers routinely wrap each word in its own element, so the sentence is
+    // almost never inside one text node — climb to an ancestor holding enough
+    // text, then find where in it the selection starts.
+    //
+    // The position is MEASURED with a scratch range, never searched for. A
+    // word occurs many times in a paragraph, so matching the selected text
+    // against the block's text finds the first occurrence rather than the one
+    // under the user's finger: selecting "cat" in "The cat is black. The cat
+    // sat." would collect the wrong sentence every time. Range.toString() and
+    // textContent share the same text-node semantics, so the length of the
+    // text before the selection IS its offset — which also keeps this honest
+    // where innerText would not, since innerText applies text-transform and
+    // drops hidden subtrees while the selection's own text does neither.
+    function sentenceAroundSelection(sel) {
+      let range;
+      let pick;
+      try {
+        if (!sel || sel.isCollapsed || !sel.rangeCount) return '';
+        range = sel.getRangeAt(0);
+        pick = norm(sel.toString());
+      } catch (_) { return ''; }
+      if (pick.length < MIN_CHARS) return '';
+      // A deliberate multi-sentence selection is not something to shrink.
+      if (pick.length >= 60 || /[.!?…]\s+\S/.test(pick)) return pick;
+
+      const node = range.startContainer;
+      let block = node && (node.nodeType === 1 ? node : node.parentElement);
+      // Climb past the per-word inline elements. A paged reader can make each
+      // LINE its own block, so keep going until there is room for a sentence.
+      for (let i = 0; block && i < 8; i++) {
+        if (block.tagName === 'BODY') break;
+        if ((block.textContent || '').length >= 80) break;
+        if (!block.parentElement) break;
+        block = block.parentElement;
+      }
+      if (!block) return pick;
+      const raw = String(block.textContent || '');
+      if (!raw) return pick;
+
+      let at;
+      try {
+        const pre = (block.ownerDocument || document).createRange();
+        pre.selectNodeContents(block);
+        pre.setEnd(range.startContainer, range.startOffset);
+        at = pre.toString().length;
+      } catch (_) { return pick; }
+
+      const found = sentenceAtOffset(raw, at);
+      return found.length >= MIN_CHARS ? found : pick;
     }
 
     function resolveFrom(win, range) {
@@ -1696,6 +1826,24 @@
       return true;
     }
 
+    // `state.pending` — the text behind the "+ Add sentence" chip — belongs to
+    // whichever document put it there. Ownership is not decoration: without
+    // it a selection collapsing in one frame wipes a chip another frame raised,
+    // and the frame that raised it has no way to take it down again. Both
+    // directions were real. `force` is for the user banking it by hand, which
+    // clears it whoever owns it.
+    function setPending(text, owner, force) {
+      if (text) {
+        state.pending = text;
+        state.pendingFrom = owner;
+      } else {
+        if (!force && state.pending && state.pendingFrom !== owner) return;
+        state.pending = '';
+        state.pendingFrom = null;
+      }
+      sync();
+    }
+
     // Cross-origin frames run frame-boot.js, injected natively at document
     // start, and speak to us only through postMessage — a JavaScript channel
     // may or may not be exposed to them, but postMessage across origins always
@@ -1722,23 +1870,36 @@
     window.addEventListener('message', (ev) => {
       const d = ev && ev.data && ev.data.__cupPC;
       if (!d || !d.op) return;
-      if (d.op === 'hello') { broadcastArm(); return; }
+      topDiag.msgs++;
+      if (d.op === 'diag') {
+        topDiag.diags++;
+        frameDiag[String((d.info && d.info.url) || '?')] = d.info;
+        return;
+      }
+      if (d.op === 'hello') { topDiag.hellos++; broadcastArm(); return; }
       if (d.op === 'miss') {
+        topDiag.misses++;
         showHint('no sentence (' + (d.why || 'empty') + ')');
         return;
       }
       if (d.op === 'add') {
+        topDiag.adds++;
         if (collect(String(d.text || ''))) {
           // Show the list as soon as there is something in it. Relying on the
           // user finding a toggle is what made this feel broken.
           state.open = true;
-          sync();
+        } else {
+          topDiag.rejected++;
         }
+        // Banking a sentence has to take down that frame's chip, or it sits
+        // there offering to bank what was just banked — and tapping it then
+        // hits the duplicate check and does nothing visible.
+        setPending('', ev.source);
         return;
       }
       if (d.op === 'selection') {
-        state.pending = String(d.text || '').slice(0, 4000);
-        sync();
+        topDiag.sels++;
+        setPending(String(d.text || '').slice(0, 4000), ev.source);
       }
     });
 
@@ -1747,6 +1908,7 @@
     window.__cupitorSetCaptureMode = function (active) {
       state.tapMode = !!active;
       window.__cupitorCaptureMode = state.tapMode;
+      armGen++;
       if (root) sync();
       broadcastArm();
       console.log('[pagecap] tap mode', state.tapMode ? 'armed' : 'off');
@@ -1768,6 +1930,7 @@
         console.log('[pagecap] sent', state.items.length, 'sentence(s)');
         state.items = [];
         state.pending = '';
+        state.pendingFrom = null;
         state.open = false;
         sync();
       } catch (e) {
@@ -1778,6 +1941,13 @@
     // One watcher per document, installed by the top frame reaching in. The
     // top document's own selection is covered by the same registration.
     window.cupInFrames('page-capture', function (doc, win) {
+      // A frame already running the native document-start agent is covered.
+      // Installing here too would double every listener on the same window,
+      // and stopPropagation does not stop a sibling listener — that needs
+      // stopImmediatePropagation — so both would run and fight.
+      if (win !== window) {
+        try { if (win.__cupFrameBoot) return; } catch (_) { return; }
+      }
       // Readers routinely disable selection so long-press stays theirs for
       // page turns, which is why dragging to select fails in them. Re-enable
       // it where we can; the armed tap path below is the answer when even
@@ -1807,13 +1977,12 @@
         if (!collect(text)) { showHint('already collected'); return; }
         ev.preventDefault();
         ev.stopPropagation();
-        state.pending = '';
         state.open = true;
         try {
           const sel = win.getSelection();
           if (sel && sel.removeAllRanges) sel.removeAllRanges();
         } catch (_) {}
-        sync();
+        setPending('', doc);
       };
       let tapStart = null;
       win.addEventListener('touchstart', (ev) => {
@@ -1838,31 +2007,73 @@
         handleTap(ev, ev.clientX, ev.clientY);
       }, true);
 
-      const report = () => {
-        let text = '';
+      // The event-independent path, and the one to trust inside a reader.
+      //
+      // Every tap-based approach has to win a fight with the reader's own
+      // gesture handling, and loses it in at least one of its layout modes.
+      // Polling the selection picks no fight: whatever the reader does with
+      // the event, if the user ends up with text selected — including by the
+      // reader's own long-press-then-palette behaviour, which selects a real
+      // DOM range — this sees it.
+      let pollLast = '';      // what the previous tick saw
+      let pollDone = '';      // what has already been acted on
+      let doneGen = -1;       // the arm generation it was acted on under
+      const pollSelection = () => {
+        topDiag.ownPolls++;
+        let txt = '';
+        let sel = null;
         try {
-          const sel = win && win.getSelection && win.getSelection();
+          sel = win && win.getSelection && win.getSelection();
           if (sel && !sel.isCollapsed) {
             const node = sel.anchorNode;
             const el = node && (node.nodeType === 1 ? node : node.parentElement);
             // Selecting inside our own panel must not re-arm the chip.
-            if (!(el && el.closest && el.closest('.cup-pc'))) {
-              text = String(sel.toString() || '').replace(/\s+/g, ' ').trim();
-            }
+            if (!(el && el.closest && el.closest('.cup-pc'))) txt = norm(sel.toString());
           }
         } catch (_) {}
-        if (text.length < MIN_CHARS) text = '';
-        // A selection cleared in one frame must not wipe a pending capture
-        // made in another, so only report meaningful transitions.
-        if (!text && state.pending && win !== window) return;
-        state.pending = text;
-        sync();
+        if (txt.length < MIN_CHARS) {
+          if (!pollLast && !pollDone) return;
+          pollLast = '';
+          pollDone = '';
+          // Only this document's own chip comes down — setPending refuses to
+          // clear one another document raised.
+          setPending('', doc);
+          return;
+        }
+        topDiag.ownSel = 1;
+        // Two identical ticks means the drag has finished. Without this every
+        // intermediate selection during a drag would be collected.
+        if (txt !== pollLast) { pollLast = txt; return; }
+        // The generation check is what makes "select first, then arm" work:
+        // the unarmed pass consumes the selection, and without this it would
+        // stay consumed and never be collected.
+        if (txt === pollDone && doneGen === armGen) return;
+        pollDone = txt;
+        doneGen = armGen;
+        if (state.tapMode) {
+          let sentence = '';
+          try { sentence = sentenceAroundSelection(sel); } catch (_) {}
+          if (!sentence) sentence = txt;
+          // Collect without clearing: the selection belongs to the page, and
+          // wiping it closes any palette the user is looking at. pollDone is
+          // what stops the next tick adding the same sentence again.
+          if (collect(sentence)) {
+            topDiag.ownAdds++;
+            state.open = true;
+            setPending('', doc);
+          } else {
+            setPending(sentence, doc);
+          }
+        } else {
+          // A deliberate drag is what the user meant; don't widen it.
+          setPending(txt, doc);
+        }
       };
-      doc.addEventListener('selectionchange', report);
-      // selectionchange is unreliable on some WebView builds; these are the
-      // gestures that finish a selection.
-      doc.addEventListener('mouseup', report);
-      doc.addEventListener('touchend', report);
+      doc.addEventListener('selectionchange', pollSelection);
+      doc.addEventListener('mouseup', pollSelection);
+      // selectionchange is unreliable on some WebView builds, and a reader can
+      // swallow every gesture event, so the interval is the load-bearing one.
+      setInterval(pollSelection, 350);
     });
 
     console.log('[pagecap] installed');
@@ -1879,7 +2090,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 16;
+    const CAPS_VERSION = 18;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
