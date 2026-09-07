@@ -72,9 +72,9 @@
   // The sentence under a tap, without requiring a selection the reader may not
   // permit. Blink offers sentence granularity on Selection.modify, which is
   // exactly this job; splitting the tapped text node is the fallback.
-  function sentenceAtExact(x, y) {
-    var range = caretRangeAt(x, y);
-    if (!range) return '';
+  var lastWhy = '';
+
+  function resolveFrom(range) {
     try {
       var sel = window.getSelection();
       if (sel) {
@@ -108,10 +108,19 @@
   // above and below before giving up.
   function sentenceAt(x, y) {
     var offsets = [0, -6, 6, -12, 12];
+    var sawCaret = false;
     for (var i = 0; i < offsets.length; i++) {
-      var t = sentenceAtExact(x, y + offsets[i]);
+      var range = caretRangeAt(x, y + offsets[i]);
+      if (!range) continue;
+      sawCaret = true;
+      var t = resolveFrom(range);
       if (t) return t;
     }
+    // 'no caret' means the point is not over text the engine can address at
+    // all — a canvas, an overlay, or a shadow root. 'no text' means it is over
+    // text but nothing came back, which is a resolution problem, not a
+    // reachability one. The distinction decides what to try next.
+    lastWhy = sawCaret ? 'no text' : 'no caret';
     return '';
   }
 
@@ -129,8 +138,9 @@
     var text = sentenceAt(x, y);
     if (!text || text.length < MIN_CHARS) {
       // Say so rather than staying silent: an unexplained no-op is what makes
-      // this feel unreliable even when it is working as designed.
-      up({ op: 'miss' });
+      // this feel unreliable even when it is working as designed. Leave the
+      // event alone so the reader's own tap behaviour still happens.
+      up({ op: 'miss', why: lastWhy || 'empty' });
       return;
     }
     ev.preventDefault();
@@ -152,18 +162,21 @@
       (document.head || document.documentElement).appendChild(st);
     } catch (_) {}
 
-    // Touch events, NOT click. A reader that calls preventDefault() on
-    // touchstart/touchend to drive its page turns cancels the synthesized
-    // click outright, so no click listener — at any phase — ever runs. That
-    // is why collecting worked only sometimes: it depended on whether the
-    // reader happened to cancel that particular gesture.
-    document.addEventListener('touchstart', function (ev) {
+    // On WINDOW, in capture phase, and on touch rather than click. Three
+    // separate reasons, each of which alone breaks this:
+    //   - window capture is the first stop in the event path; a reader that
+    //     binds there and stops propagation makes a document-level listener
+    //     invisible;
+    //   - capture phase runs before the target's own handlers;
+    //   - a reader that calls preventDefault() for its page turns cancels the
+    //     synthesized click outright, so no click listener ever runs.
+    window.addEventListener('touchstart', function (ev) {
       if (!armed) return;
       var t = ev.changedTouches && ev.changedTouches[0];
       tapStart = t ? { x: t.clientX, y: t.clientY, at: Date.now() } : null;
     }, true);
 
-    document.addEventListener('touchend', function (ev) {
+    window.addEventListener('touchend', function (ev) {
       if (!armed || !tapStart) return;
       var t = ev.changedTouches && ev.changedTouches[0];
       if (!t) { tapStart = null; return; }
@@ -181,7 +194,7 @@
     // touchend already handled the tap it called preventDefault, so no click
     // follows; when it could not resolve a sentence, this gets a second go and
     // collect() rejects a repeat of the same text anyway.
-    document.addEventListener('click', function (ev) {
+    window.addEventListener('click', function (ev) {
       if (!armed) return;
       handleTapAt(ev, ev.clientX, ev.clientY);
     }, true);

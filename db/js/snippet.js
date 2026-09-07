@@ -1639,19 +1639,27 @@
     // user may not be able to make. Blink exposes sentence granularity on
     // Selection.modify, which is exactly this job; the manual split is the
     // fallback for when that is missing or the markup defeats it.
+    let lastWhy = '';
+
     function sentenceAt(doc, win, x, y) {
       // Taps land in line gaps and on padding, where caretRangeFromPoint
       // returns nothing, so probe a little above and below before giving up.
+      let sawCaret = false;
       for (const dy of [0, -6, 6, -12, 12]) {
-        const t = sentenceAtExact(doc, win, x, y + dy);
+        const range = caretRangeAt(doc, x, y + dy);
+        if (!range) continue;
+        sawCaret = true;
+        const t = resolveFrom(win, range);
         if (t) return t;
       }
+      // 'no caret' means the point is not over addressable text at all — a
+      // canvas, an overlay, a shadow root. 'no text' means it is, but nothing
+      // resolved. That distinction decides what to try next.
+      lastWhy = sawCaret ? 'no text' : 'no caret';
       return '';
     }
 
-    function sentenceAtExact(doc, win, x, y) {
-      const range = caretRangeAt(doc, x, y);
-      if (!range) return '';
+    function resolveFrom(win, range) {
       try {
         const sel = win.getSelection();
         if (sel) {
@@ -1715,7 +1723,10 @@
       const d = ev && ev.data && ev.data.__cupPC;
       if (!d || !d.op) return;
       if (d.op === 'hello') { broadcastArm(); return; }
-      if (d.op === 'miss') { showHint('no sentence there'); return; }
+      if (d.op === 'miss') {
+        showHint('no sentence (' + (d.why || 'empty') + ')');
+        return;
+      }
       if (d.op === 'add') {
         if (collect(String(d.text || ''))) {
           // Show the list as soon as there is something in it. Relying on the
@@ -1779,9 +1790,12 @@
         (doc.head || doc.documentElement).appendChild(st);
       } catch (_) {}
 
-      // Touch events rather than click: a reader that calls preventDefault()
-      // on touchstart/touchend for its page turns cancels the synthesized
-      // click outright, so a click listener at any phase simply never runs.
+      // On the WINDOW, in capture phase, on touch rather than click. Each of
+      // those matters independently: window capture is the first stop in the
+      // event path, so a reader binding there and stopping propagation makes a
+      // document-level listener invisible; capture runs before the target's own
+      // handlers; and a reader that preventDefaults for page turns cancels the
+      // synthesized click outright.
       const handleTap = (ev, x, y) => {
         const el = ev.target;
         if (el && el.closest) {
@@ -1789,7 +1803,7 @@
           if (el.closest('a,button,input,textarea,select,[role="button"]')) return;
         }
         const text = sentenceAt(doc, win, x, y);
-        if (!text) { showHint('no sentence there'); return; }
+        if (!text) { showHint('no sentence (' + (lastWhy || 'empty') + ')'); return; }
         if (!collect(text)) { showHint('already collected'); return; }
         ev.preventDefault();
         ev.stopPropagation();
@@ -1802,12 +1816,12 @@
         sync();
       };
       let tapStart = null;
-      doc.addEventListener('touchstart', (ev) => {
+      win.addEventListener('touchstart', (ev) => {
         if (!state.tapMode) return;
         const t = ev.changedTouches && ev.changedTouches[0];
         tapStart = t ? { x: t.clientX, y: t.clientY, at: Date.now() } : null;
       }, true);
-      doc.addEventListener('touchend', (ev) => {
+      win.addEventListener('touchend', (ev) => {
         if (!state.tapMode || !tapStart) return;
         const t = ev.changedTouches && ev.changedTouches[0];
         if (!t) { tapStart = null; return; }
@@ -1819,7 +1833,7 @@
         if (dx > 12 || dy > 12 || dt > 600) return;
         handleTap(ev, t.clientX, t.clientY);
       }, true);
-      doc.addEventListener('click', (ev) => {
+      win.addEventListener('click', (ev) => {
         if (!state.tapMode) return;
         handleTap(ev, ev.clientX, ev.clientY);
       }, true);
