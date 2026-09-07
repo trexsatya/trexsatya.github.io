@@ -1926,7 +1926,10 @@ body.rec-playing.rec-playing-manual #mediaContainer {
     z-index: 100001;
     display: none;
 }
-body.rec-playing-manual #recPlayingAudio { display: block; }
+/* Requires .rec-playing, which minimizing removes — otherwise this fixed,
+   900px-wide black panel stays parked over the page the user just minimized
+   the player to get back to (the 🔍 "search this word" button minimizes too). */
+body.rec-playing.rec-playing-manual #recPlayingAudio { display: block; }
 #recPlayingAudio .rec-pa-face {
     font-size: 12px;
     letter-spacing: 0.04em;
@@ -1938,6 +1941,29 @@ body.rec-playing-manual #recPlayingAudio { display: block; }
 #recPlayingAudio .rec-pa-el {
     width: 100%;
     display: block;
+}
+/* Replay one face on demand. The card plays Source then Target and then holds
+   on its text; during that hold these are the only way to hear a face again. */
+#recPlayingAudio .rec-pa-faces {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+#recPlayingAudio .rec-pa-face-btn {
+    flex: 1 1 0;
+    /* Comfortably tappable with a thumb — this is used mid-listen, one-handed,
+       and often without looking. */
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #eee;
+    background: #262626;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#recPlayingAudio .rec-pa-face-btn:active {
+    background: #383838;
 }
 
 body.rec-playing #mediaContainer,
