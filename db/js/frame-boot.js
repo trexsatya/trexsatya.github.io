@@ -16,6 +16,7 @@
 //   up     { op: 'add', text }            a collected sentence
 //   up     { op: 'selection', text }      current selection, '' when cleared
 //   up     { op: 'hello' }                a frame arrived; asks for arm state
+//   up     { op: 'miss' }                 a tap resolved no sentence
 //
 // Every frame relays: arm messages downward, everything else upward. Nested
 // frames therefore work without the top frame knowing the tree.
@@ -49,7 +50,8 @@
       return;
     }
     // Anything else came from a child on its way to the top.
-    if (d.op === 'add' || d.op === 'selection' || d.op === 'hello') up(d);
+    if (d.op === 'add' || d.op === 'selection' || d.op === 'hello' ||
+        d.op === 'miss') up(d);
   });
 
   function caretRangeAt(x, y) {
@@ -70,7 +72,7 @@
   // The sentence under a tap, without requiring a selection the reader may not
   // permit. Blink offers sentence granularity on Selection.modify, which is
   // exactly this job; splitting the tapped text node is the fallback.
-  function sentenceAt(x, y) {
+  function sentenceAtExact(x, y) {
     var range = caretRangeAt(x, y);
     if (!range) return '';
     try {
@@ -93,13 +95,51 @@
       var m;
       while ((m = re.exec(raw)) !== null) {
         if (off >= m.index && off <= m.index + m[0].length) {
-          var s = m[0].replace(/\s+/g, ' ').trim();
-          if (s.length >= MIN_CHARS) return s;
+          var s2 = m[0].replace(/\s+/g, ' ').trim();
+          if (s2.length >= MIN_CHARS) return s2;
         }
       }
       return raw.replace(/\s+/g, ' ').trim();
     } catch (_) { return ''; }
   }
+
+  // A finger is not a caret. Taps land in line gaps, on padding, and between
+  // words, where caretRangeFromPoint returns nothing — so probe a little way
+  // above and below before giving up.
+  function sentenceAt(x, y) {
+    var offsets = [0, -6, 6, -12, 12];
+    for (var i = 0; i < offsets.length; i++) {
+      var t = sentenceAtExact(x, y + offsets[i]);
+      if (t) return t;
+    }
+    return '';
+  }
+
+  function clearSel() {
+    try {
+      var sel = window.getSelection();
+      if (sel && sel.removeAllRanges) sel.removeAllRanges();
+    } catch (_) {}
+  }
+
+  function handleTapAt(ev, x, y) {
+    var el = ev.target;
+    if (el && el.closest &&
+        el.closest('a,button,input,textarea,select,[role="button"]')) return;
+    var text = sentenceAt(x, y);
+    if (!text || text.length < MIN_CHARS) {
+      // Say so rather than staying silent: an unexplained no-op is what makes
+      // this feel unreliable even when it is working as designed.
+      up({ op: 'miss' });
+      return;
+    }
+    ev.preventDefault();
+    ev.stopPropagation();
+    up({ op: 'add', text: text });
+    clearSel();
+  }
+
+  var tapStart = null;
 
   function start() {
     // Readers disable selection so long-press stays theirs for page turns,
@@ -112,23 +152,38 @@
       (document.head || document.documentElement).appendChild(st);
     } catch (_) {}
 
-    // Capture phase: a reader that swallows clicks for its own gestures would
-    // otherwise never let this run. Only swallows the tap when a sentence was
-    // actually collected, so an armed tap on empty margin still turns the page.
+    // Touch events, NOT click. A reader that calls preventDefault() on
+    // touchstart/touchend to drive its page turns cancels the synthesized
+    // click outright, so no click listener — at any phase — ever runs. That
+    // is why collecting worked only sometimes: it depended on whether the
+    // reader happened to cancel that particular gesture.
+    document.addEventListener('touchstart', function (ev) {
+      if (!armed) return;
+      var t = ev.changedTouches && ev.changedTouches[0];
+      tapStart = t ? { x: t.clientX, y: t.clientY, at: Date.now() } : null;
+    }, true);
+
+    document.addEventListener('touchend', function (ev) {
+      if (!armed || !tapStart) return;
+      var t = ev.changedTouches && ev.changedTouches[0];
+      if (!t) { tapStart = null; return; }
+      var dx = Math.abs(t.clientX - tapStart.x);
+      var dy = Math.abs(t.clientY - tapStart.y);
+      var dt = Date.now() - tapStart.at;
+      tapStart = null;
+      // A drag is the reader's page turn and a long press is a selection
+      // attempt; neither is a request to collect.
+      if (dx > 12 || dy > 12 || dt > 600) return;
+      handleTapAt(ev, t.clientX, t.clientY);
+    }, true);
+
+    // Mouse and stylus, and WebViews that synthesize only mouse events. When
+    // touchend already handled the tap it called preventDefault, so no click
+    // follows; when it could not resolve a sentence, this gets a second go and
+    // collect() rejects a repeat of the same text anyway.
     document.addEventListener('click', function (ev) {
       if (!armed) return;
-      var el = ev.target;
-      if (el && el.closest &&
-          el.closest('a,button,input,textarea,select,[role="button"]')) return;
-      var text = sentenceAt(ev.clientX, ev.clientY);
-      if (!text || text.length < MIN_CHARS) return;
-      ev.preventDefault();
-      ev.stopPropagation();
-      up({ op: 'add', text: text });
-      try {
-        var sel = window.getSelection();
-        if (sel && sel.removeAllRanges) sel.removeAllRanges();
-      } catch (_) {}
+      handleTapAt(ev, ev.clientX, ev.clientY);
     }, true);
 
     var report = function () {

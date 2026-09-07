@@ -1485,7 +1485,8 @@
     const MIN_CHARS = 2;
     // tapMode is armed from the app's existing capture chip, via
     // __cupitorSetCaptureMode below — no extra floating button in the page.
-    const state = { pending: '', items: [], open: false, tapMode: false };
+    const state = { pending: '', items: [], open: false, tapMode: false, hint: '' };
+    let hintTimer = null;
     let root = null;
 
     function ensureUi() {
@@ -1588,9 +1589,11 @@
       // Without this an armed page looks identical to an unarmed one until a
       // tap happens to land — and on a reader that eats taps, never.
       basket.hidden = state.items.length === 0 && !state.tapMode;
-      basket.textContent = state.items.length
-        ? (state.tapMode ? '✎ ' : '▤ ') + state.items.length
-        : '✎ Tap sentences';
+      basket.textContent = state.hint
+        ? state.hint
+        : (state.items.length
+            ? (state.tapMode ? '✎ ' : '▤ ') + state.items.length
+            : '✎ Tap sentences');
       panel.hidden = !state.open;
       root.querySelector('[data-act="send"]').disabled = state.items.length === 0;
       const list = root.querySelector('[data-r="list"]');
@@ -1637,6 +1640,16 @@
     // Selection.modify, which is exactly this job; the manual split is the
     // fallback for when that is missing or the markup defeats it.
     function sentenceAt(doc, win, x, y) {
+      // Taps land in line gaps and on padding, where caretRangeFromPoint
+      // returns nothing, so probe a little above and below before giving up.
+      for (const dy of [0, -6, 6, -12, 12]) {
+        const t = sentenceAtExact(doc, win, x, y + dy);
+        if (t) return t;
+      }
+      return '';
+    }
+
+    function sentenceAtExact(doc, win, x, y) {
       const range = caretRangeAt(doc, x, y);
       if (!range) return '';
       try {
@@ -1679,6 +1692,15 @@
     // start, and speak to us only through postMessage — a JavaScript channel
     // may or may not be exposed to them, but postMessage across origins always
     // is. Arm messages go down; sentences and selections come up.
+    // A tap that resolves nothing must say so. Silence is indistinguishable
+    // from a dead control, which is what "unreliable" actually felt like.
+    function showHint(text) {
+      state.hint = text;
+      sync();
+      if (hintTimer) clearTimeout(hintTimer);
+      hintTimer = setTimeout(() => { state.hint = ''; sync(); }, 1600);
+    }
+
     function broadcastArm() {
       const msg = { __cupPC: { op: 'arm', on: state.tapMode } };
       for (let i = 0; i < window.frames.length; i++) {
@@ -1693,6 +1715,7 @@
       const d = ev && ev.data && ev.data.__cupPC;
       if (!d || !d.op) return;
       if (d.op === 'hello') { broadcastArm(); return; }
+      if (d.op === 'miss') { showHint('no sentence there'); return; }
       if (d.op === 'add') {
         if (collect(String(d.text || ''))) {
           // Show the list as soon as there is something in it. Relying on the
@@ -1756,27 +1779,49 @@
         (doc.head || doc.documentElement).appendChild(st);
       } catch (_) {}
 
-      // Capture phase, because a reader that swallows clicks for its own
-      // gestures would otherwise never let this run. Only fires while armed,
-      // and only swallows the tap when a sentence was actually collected —
-      // so an armed tap on empty margin still turns the page.
-      doc.addEventListener('click', (ev) => {
-        if (!state.tapMode) return;
+      // Touch events rather than click: a reader that calls preventDefault()
+      // on touchstart/touchend for its page turns cancels the synthesized
+      // click outright, so a click listener at any phase simply never runs.
+      const handleTap = (ev, x, y) => {
         const el = ev.target;
         if (el && el.closest) {
           if (el.closest('.cup-pc')) return;
           if (el.closest('a,button,input,textarea,select,[role="button"]')) return;
         }
-        const text = sentenceAt(doc, win, ev.clientX, ev.clientY);
-        if (!collect(text)) return;
+        const text = sentenceAt(doc, win, x, y);
+        if (!text) { showHint('no sentence there'); return; }
+        if (!collect(text)) { showHint('already collected'); return; }
         ev.preventDefault();
         ev.stopPropagation();
         state.pending = '';
+        state.open = true;
         try {
           const sel = win.getSelection();
           if (sel && sel.removeAllRanges) sel.removeAllRanges();
         } catch (_) {}
         sync();
+      };
+      let tapStart = null;
+      doc.addEventListener('touchstart', (ev) => {
+        if (!state.tapMode) return;
+        const t = ev.changedTouches && ev.changedTouches[0];
+        tapStart = t ? { x: t.clientX, y: t.clientY, at: Date.now() } : null;
+      }, true);
+      doc.addEventListener('touchend', (ev) => {
+        if (!state.tapMode || !tapStart) return;
+        const t = ev.changedTouches && ev.changedTouches[0];
+        if (!t) { tapStart = null; return; }
+        const dx = Math.abs(t.clientX - tapStart.x);
+        const dy = Math.abs(t.clientY - tapStart.y);
+        const dt = Date.now() - tapStart.at;
+        tapStart = null;
+        // A drag is a scroll or page turn; a long press is a selection.
+        if (dx > 12 || dy > 12 || dt > 600) return;
+        handleTap(ev, t.clientX, t.clientY);
+      }, true);
+      doc.addEventListener('click', (ev) => {
+        if (!state.tapMode) return;
+        handleTap(ev, ev.clientX, ev.clientY);
       }, true);
 
       const report = () => {
