@@ -268,6 +268,31 @@
                         S→T gap
                         <input type="number" id="recPlaySrcTgtGapSeconds" value="" min="0" max="600" step="1" placeholder="item" style="width: 46px; margin-left: 4px;">
                     </label>
+                    <label class="lang-panel-label" title="YouTube URL whose audio plays quietly under a manual card during Play All. The video itself is never shown. Leave blank for no music.">
+                        Music
+                        <input type="text" id="recMusicUrl" value="" placeholder="YouTube URL" style="width: 150px; margin-left: 4px;">
+                    </label>
+                    <label class="lang-panel-label" title="When the background music is allowed to sound: with the recording, only in the pauses between them, or throughout. It always steps aside for a video clip, which has its own audio.">
+                        Music when
+                        <select id="recMusicMode" style="margin-left: 4px;">
+                            <option value="item">With recording</option>
+                            <option value="gap">In the gaps</option>
+                            <option value="nonstop">Non-stop</option>
+                        </select>
+                    </label>
+                    <label class="lang-panel-label" title="Volume of the background music only. The card's own recordings and any video clip keep their own level.">
+                        Music vol
+                        <select id="recMusicVolume" style="margin-left: 4px;">
+                            <option value="5">5%</option>
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="20">20%</option>
+                            <option value="30">30%</option>
+                            <option value="50">50%</option>
+                            <option value="75">75%</option>
+                            <option value="100">100%</option>
+                        </select>
+                    </label>
                     <label class="lang-panel-label">
                         Lang
                         <input class="tgl tgl-flip" id="toggleLangCb" type="checkbox" data-toggle="toggle"

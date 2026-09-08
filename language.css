@@ -607,6 +607,14 @@
     font-size: 0.88em;
 }
 
+/* A setting whose value can't be used — currently a music link that isn't a
+   YouTube URL. The value is still kept so it can be corrected rather than
+   silently discarded; this just says it won't do anything yet. */
+.lang-panel-label.lang-panel-warn input {
+    border: 1px solid #d9534f;
+    background: #fff5f5;
+}
+
 .lang-panel-label {
     display: inline-flex;
     align-items: center;
