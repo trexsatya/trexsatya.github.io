@@ -380,10 +380,12 @@
     document.addEventListener('mouseup', pollSelection);
     setInterval(pollSelection, 350);
 
-    // Only report once the top frame has answered, which proves both that it
-    // runs pageCapture and that our messages arrive.
+    // Only while actually collecting. `sawArm` proves the top frame runs
+    // pageCapture and that our messages arrive; `armed` keeps this from
+    // being perpetual traffic in every frame of every page, since nothing
+    // reads it the rest of the time.
     setInterval(function () {
-      if (!sawArm) return;
+      if (!sawArm || !armed) return;
       up({ op: 'diag', info: diag });
     }, 2000);
 

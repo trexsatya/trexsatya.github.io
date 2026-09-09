@@ -1,4 +1,13 @@
-(function() {
+// GENERATED FILE — DO NOT EDIT.
+//
+// Built from db/js/src/*.js by db/js/build.sh. Edit the sources there and
+// re-run that script; anything written here is lost on the next build.
+
+// Riksdagen video pinner.
+//
+// riksdagen.se scrolls its player out of view while you read the transcript.
+// Nothing else in the snippet depends on this, and it depends on nothing.
+(function () {
   // ---------- riksdagen video pinner ----------
   function pinVideo() {
     let videoEl = null;
@@ -19,7 +28,19 @@
     }
   }
   try { setTimeout(pinVideo, 3000); } catch (e) { alert('Error' + e); }
-
+})();
+// The caption sidebar: split view, draggable divider, time-synced highlight,
+// click-to-seek rows, tappable words that post to CaptionHandler for lookup,
+// selection + Send to a playlist, replay passes and translation.
+//
+// One factory over one shared `state`, which is why it is one file: its ~45
+// functions are closures over that state, so they cannot be separated without
+// threading a context object through all of them.
+//
+// Site modules feed it through the object it returns (addCue, buildSidebar,
+// setSplit, setVideoElement); it knows nothing about any particular site.
+(function () {
+  const shared = window.__cupShared || (window.__cupShared = {});
   // -----------------------------------------------------------------------
   // Shared subtitle UI: split-view sidebar with draggable divider, time-
   // synced highlight, click-to-seek on cue rows, and clickable words that
@@ -1189,7 +1210,15 @@
       get currentVideo() { return state.currentVideo; },
     };
   }
-
+  shared.createSubtitleUI = createSubtitleUI;
+})();
+// Which players the caption capture understands, and how to find their cues.
+//
+// This is the configuration surface. It is served from gh-pages and fetched
+// at runtime, so adding a player or repairing a layout that changed is an
+// edit here — never an app release.
+(function () {
+  const shared = window.__cupShared || (window.__cupShared = {});
   // -----------------------------------------------------------------------
   // Caption capture module
   //
@@ -1278,6 +1307,14 @@
     }
     return null;
   }
+  shared.CAPTION_SITES = CAPTION_SITES;
+  shared.resolveCaptionSite = resolveCaptionSite;
+})();
+// Page error capture.
+//
+// A page that renders nothing usually threw on the way there, and the console
+// shim only forwards the snippet's own output — so the page's own failures are
+// invisible from the app, which turns "it is blank" into guesswork.
 
   // ---- Page error capture -------------------------------------------------
   //
@@ -1310,6 +1347,14 @@
       } catch (_) {}
     });
   })();
+// Frame reach: run a feature in the top document and in every frame that can
+// be reached from it.
+//
+// A same-origin frame is reachable through contentDocument. A cross-origin one
+// is not, by design, and no JavaScript changes that — that case is what
+// frame-boot.js exists for, injected natively at document start.
+//
+// Publishes window.cupInFrames(name, fn) and window.cupFrameReport().
 
   // ---- Frame reach -------------------------------------------------------
   //
@@ -1464,6 +1509,16 @@
       first.pending, 'pending,', document.querySelectorAll('iframe, frame').length,
       'frame(s) in top document');
   })();
+// Page sentence capture: collect sentences from any page — including inside a
+// cross-origin e-book reader — and send them to the language webapp as manual
+// playlist items.
+//
+// Rides the caption-capture pipeline: CaptionCollector -> the host -> a
+// cupitorCaptionCapture event carrying source:'page'. One validated host path
+// and one webapp listener serve both sources.
+//
+// Publishes window.__cupitorSetCaptureMode(bool) for the app's capture chip,
+// window.__cupSelection() for the host's lookup button, and window.__cupPcDiag().
 
   // ---- Page sentence capture ---------------------------------------------
   //
@@ -1553,6 +1608,10 @@
         .cup-pc-row button { background: transparent; color: #f85149; padding: 0 4px;
                   box-shadow: none; border-radius: 4px; }
         .cup-pc-foot { display: flex; gap: 6px; justify-content: flex-end; padding-top: 6px; }
+        /* Pushed to the far left of the footer: it is a mode switch, not an
+           action, and should not sit next to Clear and Send. */
+        .cup-pc button[data-act="tap"] { background: #30363d; margin-right: auto; }
+        .cup-pc button[data-act="tap"][data-on="1"] { background: #1f6feb; }
         .cup-pc-empty { opacity: .7; padding: 6px 2px; }
       `;
       (document.head || document.documentElement).appendChild(st);
@@ -1563,6 +1622,7 @@
         '<div class="cup-pc-panel" hidden>' +
           '<div data-r="list"></div>' +
           '<div class="cup-pc-foot">' +
+            '<button data-act="tap"></button>' +
             '<button data-act="clear">Clear</button>' +
             '<button data-act="send">Send</button>' +
           '</div>' +
@@ -1592,6 +1652,15 @@
           showHint('already collected');
         }
         setPending('', null, true);
+      });
+      // Tapping words has to be a mode: an unarmed tap must not be swallowed,
+      // or ordinary reading breaks. But burying the switch in the app's menu
+      // made the feature look dead — a selection raised the chip while a tap
+      // did nothing and said nothing. It belongs where the user already is.
+      on('tap', () => {
+        window.__cupitorSetCaptureMode(!state.tapMode);
+        state.open = true;
+        sync();
       });
       on('basket', () => { state.open = !state.open; sync(); });
       on('clear', () => { state.items = []; state.open = false; sync(); });
@@ -1629,12 +1698,21 @@
       // Visible whenever armed, even at zero, so the mode announces itself.
       // Without this an armed page looks identical to an unarmed one until a
       // tap happens to land — and on a reader that eats taps, never.
-      basket.hidden = state.items.length === 0 && !state.tapMode;
+      // Also shown for a pending selection: without that, a page where only
+      // the chip has appeared offers no way to open the panel, and therefore
+      // no way to find the Tap words switch inside it.
+      basket.hidden = !state.items.length && !state.tapMode && !state.pending;
       basket.textContent = state.hint
         ? state.hint
         : (state.items.length
             ? (state.tapMode ? '✎ ' : '▤ ') + state.items.length
-            : '✎ Tap sentences');
+            : (state.tapMode ? '✎ Tap sentences' : '▤ Basket'));
+      const tap = root.querySelector('[data-act="tap"]');
+      tap.textContent = (state.tapMode ? '◉' : '○') + ' Tap words';
+      tap.dataset.on = state.tapMode ? '1' : '';
+      tap.title = state.tapMode
+        ? 'On — tapping a word collects its sentence. Tap again to give taps back to the page.'
+        : 'Off — tapping a word does nothing. Turn on to collect by tapping.';
       panel.hidden = !state.open;
       root.querySelector('[data-act="send"]').disabled = state.items.length === 0;
       const list = root.querySelector('[data-r="list"]');
@@ -1656,7 +1734,8 @@
         if (!state.items.length) {
           list.innerHTML = '<div class="cup-pc-empty">' + (state.tapMode
             ? 'Tap a sentence to collect it. Selecting text works too, where the page allows it.'
-            : 'Select text, then tap “+ Add sentence”.') + '</div>';
+            : 'Select text, then tap “+ Add sentence”. To collect by tapping a '
+              + 'single word, turn on Tap words below.') + '</div>';
         }
       }
     }
@@ -1818,8 +1897,33 @@
       } catch (_) { return ''; }
     }
 
+    // The last thing the user selected anywhere on the page, frames included.
+    //
+    // Cupitor's "open study app" button reads the selection by walking
+    // window.frames and calling getSelection() on each — which THROWS for a
+    // cross-origin frame, so a sentence picked inside an embedded reader is
+    // invisible to it. This is the only route by which that text can reach the
+    // host: the frame agent posts it here, and the host reads it from
+    // window.__cupSelection().
+    let lookupText = '';
+    let lookupAt = 0;
+    function noteLookup(text) {
+      const t = String(text || '').trim();
+      if (t.length < MIN_CHARS) return;
+      lookupText = t;
+      lookupAt = Date.now();
+    }
+    // Ten minutes: long enough that closing a reader's palette and then
+    // opening the study app still works, short enough that a selection from
+    // an earlier reading session never pre-fills a lookup.
+    window.__cupSelection = function () {
+      if (!lookupText || Date.now() - lookupAt > 600000) return '';
+      return lookupText;
+    };
+
     function collect(text) {
       if (!text || text.length < MIN_CHARS) return false;
+      noteLookup(text);
       // Consecutive duplicates are almost always a double tap, not intent.
       if (state.items[state.items.length - 1] === text) return false;
       state.items.push(text);
@@ -1836,6 +1940,7 @@
       if (text) {
         state.pending = text;
         state.pendingFrom = owner;
+        noteLookup(text);
       } else {
         if (!force && state.pending && state.pendingFrom !== owner) return;
         state.pending = '';
@@ -1890,6 +1995,7 @@
           state.open = true;
         } else {
           topDiag.rejected++;
+          showHint('already collected');
         }
         // Banking a sentence has to take down that frame's chip, or it sits
         // there offering to bank what was just banked — and tapping it then
@@ -2062,7 +2168,10 @@
             state.open = true;
             setPending('', doc);
           } else {
-            setPending(sentence, doc);
+            // Already the last thing banked. Saying so beats raising the chip,
+            // which would offer to bank it again and then silently refuse.
+            showHint('already collected');
+            setPending('', doc);
           }
         } else {
           // A deliberate drag is what the user meant; don't widen it.
@@ -2078,8 +2187,32 @@
 
     console.log('[pagecap] installed');
   })();
+// Caption capture: harvest a player's cues into the sidebar.
+//
+// Three paths run together — read video.textTracks; hook XHR/fetch for any
+// WEBVTT body; mirror the on-screen cue container as a last resort.
+//
+// The only module with cross-file dependencies: it reads what
+// 20-caption-sidebar.js and 30-caption-sites.js publish on window.__cupShared.
 
   (function captionCapture() {
+    // Published by 20-caption-sidebar.js and 30-caption-sites.js. build.sh
+    // concatenates src/*.js in filename order, so both have already run — that
+    // ordering is the whole reason these files are numbered.
+    const shared = window.__cupShared || {};
+    const createSubtitleUI = shared.createSubtitleUI;
+    const CAPTION_SITES = shared.CAPTION_SITES;
+    const resolveCaptionSite = shared.resolveCaptionSite;
+    // The one behaviour this split adds. An earlier module failing at runtime
+    // used to surface as a crash deep inside the harvest, a long way from the
+    // cause; the bundle is fetched at runtime by every install, so say plainly
+    // what is missing instead.
+    if (typeof createSubtitleUI !== 'function' ||
+        typeof resolveCaptionSite !== 'function' || !CAPTION_SITES) {
+      console.warn('[captions] not installed — an earlier module in the bundle '
+        + 'did not run (need 20-caption-sidebar.js and 30-caption-sites.js)');
+      return;
+    }
     const host = (location && location.host) || '';
     let site = resolveCaptionSite();
     // A DOM probe can miss on first run if the player hasn't rendered yet.
@@ -2361,4 +2494,3 @@
 
     console.log('Cupitor caption capture installed v' + CAPS_VERSION + ' (site=', site.id, 'host=', host, ')');
   })();
-})();

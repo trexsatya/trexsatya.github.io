@@ -682,6 +682,25 @@
     $('#subtitlePagination').pagination()
 </script>
 
+<script>
+    // Offline support. Cupitor opens this page in a WebView dialog, and with
+    // no network the load failed outright — so the dialog would not open even
+    // though the user's data was already in IndexedDB. A page cannot serve
+    // itself offline; a service worker has to, and until now nothing on this
+    // site registered one. See /sw-language.js for why it is not the
+    // build-generated /service-worker.js.
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw-language.js')
+                .catch(function (e) {
+                    // Never fatal: without it the page simply behaves as it
+                    // always has and needs the network.
+                    console.warn('[offline] service worker registration failed', e);
+                });
+        });
+    }
+</script>
+
 </body>
 
 </html>

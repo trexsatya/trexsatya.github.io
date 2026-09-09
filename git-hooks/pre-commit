@@ -1,2 +1,6 @@
 
 python3 git-hooks/enforce-new-version.py
+
+# db/js/snippet.js is generated from db/js/src/*.js. Every install fetches it at
+# runtime, so committing a stale bundle ships sources nobody is running.
+sh db/js/build.sh --check
