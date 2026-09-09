@@ -69,16 +69,20 @@
       // WebView that delivers no ev.source must not lose arming, which would
       // silently disable the whole feature.
       if (ev.source && ev.source !== parent) return;
+      var was = armed;
       armed = !!d.on;
       diag.arms++;
       sawArm = true;
-      armGen++;
+      // Only when switching ON. Every frame's `hello` makes the top frame
+      // re-broadcast, and bumping on each of those would un-consume a
+      // selection this frame had already banked and send it again.
+      if (armed && !was) armGen++;
       down(d);              // keep nested frames in step
       return;
     }
     // Anything else came from a child on its way to the top.
     if (d.op === 'add' || d.op === 'selection' || d.op === 'hello' ||
-        d.op === 'miss' || d.op === 'diag') up(d);
+        d.op === 'miss' || d.op === 'diag' || d.op === 'lookup') up(d);
   });
 
   var SENT_RE = /[^.!?…]+[.!?…]*\s*/g;
@@ -148,13 +152,18 @@
       var s0 = window.getSelection();
       if (s0 && s0.rangeCount) saved = s0.getRangeAt(0).cloneRange();
     } catch (_) {}
+    var found = '';
     for (var i = 0; i < offsets.length; i++) {
       var range = caretRangeAt(x, y + offsets[i]);
       if (!range) continue;
       sawCaret = true;
       var t = resolveFrom(range);
-      if (t) return t;
+      if (t) { found = t; break; }
     }
+    // ALWAYS, success included. Returning early used to leave the selection
+    // set to the sentence resolveFrom fabricated, which the poller then read
+    // back as if the user had selected it. handleTapAt clears deliberately
+    // when it banks.
     try {
       var s1 = window.getSelection();
       if (s1) {
@@ -162,6 +171,7 @@
         if (saved) s1.addRange(saved);
       }
     } catch (_) {}
+    if (found) return found;
     // 'no caret' means the point is not over text the engine can address at
     // all — a canvas, an overlay, or a shadow root. 'no text' means it is over
     // text but nothing came back, which is a resolution problem, not a
@@ -277,6 +287,7 @@
   // real DOM range — we see it and can read it.
   var pollLast = '';     // what the previous tick saw
   var pollDone = '';     // what has already been acted on
+  var lookupSent = '';   // last text reported upward for lookup
   var doneGen = -1;      // the arm generation it was acted on under
 
   function pollSelection() {
@@ -285,17 +296,27 @@
     var sel = null;
     try {
       sel = window.getSelection();
-      if (sel && !sel.isCollapsed) txt = norm(sel.toString());
+      // rangeCount first: Selection.toString() flushes layout, and this runs
+      // every 350ms whether or not anything is selected.
+      if (sel && sel.rangeCount && !sel.isCollapsed) txt = norm(sel.toString());
     } catch (_) {}
     if (txt.length < MIN_CHARS) {
       if (pollLast || pollDone) {
         pollLast = '';
         pollDone = '';
+        lookupSent = '';
         up({ op: 'selection', text: '' });
       }
       return;
     }
     diag.hadSel = 1;
+    // Reported on FIRST sight and for lookup only, ahead of the settling gate:
+    // collecting needs a stable selection, looking a word up does not. Sent
+    // only when it changes — this runs three times a second per frame.
+    if (txt !== lookupSent) {
+      lookupSent = txt;
+      up({ op: 'lookup', text: txt });
+    }
     // Two identical ticks means the drag has finished. Without this, every
     // intermediate selection during a drag would be collected as its own
     // sentence.
@@ -303,21 +324,28 @@
     if (txt === pollDone && doneGen === armGen) return;
     pollDone = txt;
     doneGen = armGen;
-    var sentence = '';
-    try { sentence = sentenceAroundSelection(sel); } catch (_) {}
-    if (!sentence) sentence = txt;
-    // Collect without clearing: the selection is the reader's, and wiping it
-    // would close the palette the user is looking at. pollDone is what stops
-    // the next tick adding the same sentence again.
+    // Widen ONLY when collecting. This used to sit above the branch, so a
+    // plain selection in a reader travelled up as its whole sentence — and
+    // the host's lookup button then looked up the sentence instead of the
+    // word the user had picked. Mirror of the same rule in
+    // 60-page-capture.js's poller: a deliberate drag is what the user meant.
     if (armed) {
+      var sentence = '';
+      try { sentence = sentenceAroundSelection(sel); } catch (_) {}
+      if (!sentence) sentence = txt;
       diag.adds++;
-      // Deliberately not also posting `selection`: that sets the top frame's
-      // "+ Add sentence" chip, which would then sit there offering to bank
-      // the sentence we have just banked.
-      up({ op: 'add', text: sentence });
+      // Collect without clearing: the selection is the reader's, and wiping it
+      // would close the palette the user is looking at. pollDone is what stops
+      // the next tick adding the same sentence again.
+      //
+      // `raw` carries what was actually selected, because `text` has been
+      // widened to a sentence for the basket and lookup must not inherit that.
+      // Deliberately not posting `selection` as well: that would set the top
+      // frame's "+ Add sentence" chip, offering to bank what was just banked.
+      up({ op: 'add', text: sentence, raw: txt });
     } else {
       diag.sels++;
-      up({ op: 'selection', text: sentence });
+      up({ op: 'selection', text: txt });
     }
   }
 

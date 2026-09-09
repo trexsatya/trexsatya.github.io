@@ -262,13 +262,19 @@
         const s0 = win.getSelection();
         if (s0 && s0.rangeCount) saved = s0.getRangeAt(0).cloneRange();
       } catch (_) {}
+      let found = '';
       for (const dy of [0, -6, 6, -12, 12]) {
         const range = caretRangeAt(doc, x, y + dy);
         if (!range) continue;
         sawCaret = true;
         const t = resolveFrom(win, range);
-        if (t) return t;
+        if (t) { found = t; break; }
       }
+      // ALWAYS, success included. Returning early on success used to leave the
+      // selection set to the sentence resolveFrom had fabricated, and the
+      // poller then read that back as if the user had selected it — feeding a
+      // widened sentence to the host's lookup, which must only ever receive
+      // text the user selected. The caller clears deliberately when it banks.
       try {
         const s1 = win.getSelection();
         if (s1) {
@@ -276,6 +282,7 @@
           if (saved) s1.addRange(saved);
         }
       } catch (_) {}
+      if (found) return found;
       // 'no caret' means the point is not over addressable text at all — a
       // canvas, an overlay, a shadow root. 'no text' means it is, but nothing
       // resolved. That distinction decides what to try next.
@@ -396,8 +403,12 @@
     // window.__cupSelection().
     let lookupText = '';
     let lookupAt = 0;
+    // Fed ONLY with text the user selected themselves, never with a sentence
+    // we widened it to and never from a tap. Looking up a word has to look up
+    // that word; feeding it our expansion turned every word lookup into a
+    // sentence lookup.
     function noteLookup(text) {
-      const t = String(text || '').trim();
+      const t = String(text || '').trim().slice(0, 4000);
       if (t.length < MIN_CHARS) return;
       lookupText = t;
       lookupAt = Date.now();
@@ -412,7 +423,6 @@
 
     function collect(text) {
       if (!text || text.length < MIN_CHARS) return false;
-      noteLookup(text);
       // Consecutive duplicates are almost always a double tap, not intent.
       if (state.items[state.items.length - 1] === text) return false;
       state.items.push(text);
@@ -429,7 +439,6 @@
       if (text) {
         state.pending = text;
         state.pendingFrom = owner;
-        noteLookup(text);
       } else {
         if (!force && state.pending && state.pendingFrom !== owner) return;
         state.pending = '';
@@ -478,6 +487,9 @@
       }
       if (d.op === 'add') {
         topDiag.adds++;
+        // The frame sends `raw` — what was selected — beside the widened
+        // sentence it banks. Lookup wants the former.
+        if (d.raw) noteLookup(String(d.raw));
         if (collect(String(d.text || ''))) {
           // Show the list as soon as there is something in it. Relying on the
           // user finding a toggle is what made this feel broken.
@@ -492,19 +504,38 @@
         setPending('', ev.source);
         return;
       }
+      // Lookup only — never the chip, never the basket. A frame sends this
+      // the moment it sees a selection, so the host's lookup button is not
+      // waiting on the settling gate.
+      if (d.op === 'lookup') {
+        noteLookup(String(d.text || '').slice(0, 4000));
+        return;
+      }
       if (d.op === 'selection') {
         topDiag.sels++;
-        setPending(String(d.text || '').slice(0, 4000), ev.source);
+        const picked = String(d.text || '').slice(0, 4000);
+        noteLookup(picked);
+        setPending(picked, ev.source);
       }
     });
 
     // Armed from the app's capture chip. The host has always pushed this call
     // to the main WebView; until now nothing on a web page defined it.
     window.__cupitorSetCaptureMode = function (active) {
+      const was = state.tapMode;
       state.tapMode = !!active;
       window.__cupitorCaptureMode = state.tapMode;
-      armGen++;
-      if (root) sync();
+      // Only when switching ON. Bumping on every call — and the host re-pushes
+      // this on each navigation, while every frame's `hello` triggers a
+      // re-broadcast — would un-consume selections that were already collected
+      // and bank them a second time.
+      if (state.tapMode && !was) armGen++;
+      // Unconditional. `root` is built by ensureUi(), which only sync() calls,
+      // and nothing calls sync() at install — so `if (root)` meant the FIRST
+      // arm on a page built no UI at all: no basket, no panel, and therefore
+      // no way to see the mode or switch it off from the page. Exactly the
+      // case the basket exists for, on a reader that eats taps.
+      sync();
       broadcastArm();
       console.log('[pagecap] tap mode', state.tapMode ? 'armed' : 'off');
     };
@@ -568,7 +599,12 @@
           if (el.closest('a,button,input,textarea,select,[role="button"]')) return;
         }
         const text = sentenceAt(doc, win, x, y);
-        if (!text) { showHint('no sentence (' + (lastWhy || 'empty') + ')'); return; }
+        // Length checked as well as emptiness: resolveFrom's last fallback can
+        // hand back a single character, which is not a sentence.
+        if (!text || text.length < MIN_CHARS) {
+          showHint('no sentence (' + (lastWhy || 'empty') + ')');
+          return;
+        }
         if (!collect(text)) { showHint('already collected'); return; }
         ev.preventDefault();
         ev.stopPropagation();
@@ -619,7 +655,10 @@
         let sel = null;
         try {
           sel = win && win.getSelection && win.getSelection();
-          if (sel && !sel.isCollapsed) {
+          // rangeCount first: Selection.toString() flushes layout, and this
+          // runs every 350ms in every document, almost always with nothing
+          // selected.
+          if (sel && sel.rangeCount && !sel.isCollapsed) {
             const node = sel.anchorNode;
             const el = node && (node.nodeType === 1 ? node : node.parentElement);
             // Selecting inside our own panel must not re-arm the chip.
@@ -636,6 +675,11 @@
           return;
         }
         topDiag.ownSel = 1;
+        // Noted on FIRST sight, ahead of the settling gate below. Collecting
+        // has to wait for a stable selection; looking a word up does not, and
+        // gating both left the host's lookup button up to two ticks behind
+        // what was on screen.
+        noteLookup(txt);
         // Two identical ticks means the drag has finished. Without this every
         // intermediate selection during a drag would be collected.
         if (txt !== pollLast) { pollLast = txt; return; }
