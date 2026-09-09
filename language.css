@@ -607,12 +607,77 @@
     font-size: 0.88em;
 }
 
-/* A setting whose value can't be used — currently a music link that isn't a
-   YouTube URL. The value is still kept so it can be corrected rather than
-   silently discarded; this just says it won't do anything yet. */
-.lang-panel-label.lang-panel-warn input {
-    border: 1px solid #d9534f;
-    background: #fff5f5;
+/* Background-music panel — reached from Settings and from the playlist
+   dialog, so the controls live in one place instead of two. */
+#musicPanelDialog .mp-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+#musicPanelDialog .mp-lbl {
+    flex: 0 0 auto;
+    min-width: 88px;
+    font-size: 12px;
+    color: #555;
+}
+#musicPanelDialog .mp-grow {
+    flex: 1 1 auto;
+    min-width: 0;          /* let the select shrink instead of pushing 🗑 out */
+}
+#musicPanelDialog .mp-add input {
+    min-width: 0;
+}
+#musicPanelDialog .mp-warn {
+    font-size: 12px;
+    color: #a3352f;
+    margin: -4px 0 8px;
+}
+#musicPanelDialog .mp-hint {
+    font-size: 11px;
+    color: #888;
+    margin: -4px 0 10px;
+}
+#musicPanelDialog .mp-modes {
+    flex-wrap: wrap;
+}
+#musicPanelDialog .mp-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+}
+#musicPanelDialog .mp-slider {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+#musicPanelDialog .mp-vol-val {
+    flex: 0 0 auto;
+    min-width: 38px;
+    text-align: right;
+    font-size: 12px;
+    color: #555;
+}
+/* Phone: the label + slider + readout don't fit one line beside a 88px
+   label, and the add row has two text inputs competing for the same space. */
+@media (max-width: 640px) {
+    #musicPanelDialog .mp-add {
+        flex-wrap: wrap;
+    }
+    #musicPanelDialog .mp-add input {
+        flex: 1 1 100%;
+    }
+    #musicPanelDialog .mp-lbl {
+        min-width: 72px;
+    }
+}
+
+/* Opens a dialog rather than holding a value, so it sits with the labels but
+   reads as an action. */
+.lang-panel-btn {
+    font-size: 0.88em;
+    padding: 2px 8px;
+    white-space: nowrap;
 }
 
 .lang-panel-label {
