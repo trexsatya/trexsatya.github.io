@@ -14,7 +14,10 @@
 // Protocol, all under the `__cupPC` key:
 //   down   { op: 'arm', on: bool }        parent → children
 //   up     { op: 'add', text }            a collected sentence
-//   up     { op: 'selection', text }      current selection, '' when cleared
+//   up     { op: 'selection', text, sentence, paragraph }
+//                                          current selection, '' when cleared;
+//                                          `text` is the raw pick, the other
+//                                          two are the granularities offered
 //   up     { op: 'hello' }                a frame arrived; asks for arm state
 //   up     { op: 'miss', why }            a tap resolved no sentence
 //   up     { op: 'diag', info }           counters, so failures are readable
@@ -73,10 +76,11 @@
       armed = !!d.on;
       diag.arms++;
       sawArm = true;
-      // Only when switching ON. Every frame's `hello` makes the top frame
-      // re-broadcast, and bumping on each of those would un-consume a
-      // selection this frame had already banked and send it again.
-      if (armed && !was) armGen++;
+      // On any real change, in either direction. What must not bump it is a
+      // REPEAT of the same value, which every frame's `hello` re-broadcast
+      // produces. Bumping only when arming left the mirror broken: disarming
+      // with text still selected reported nothing ever again.
+      if (armed !== was) armGen++;
       down(d);              // keep nested frames in step
       return;
     }
@@ -220,8 +224,6 @@
       pick = norm(sel.toString());
     } catch (_) { return ''; }
     if (pick.length < MIN_CHARS) return '';
-    // A deliberate multi-sentence selection is not something to shrink.
-    if (pick.length >= 60 || /[.!?…]\s+\S/.test(pick)) return pick;
 
     var node = range.startContainer;
     var block = node && (node.nodeType === 1 ? node : node.parentElement);
@@ -246,7 +248,49 @@
     } catch (_) { return pick; }
 
     var s = sentenceAtOffset(raw, at);
-    return s.length >= MIN_CHARS ? s : pick;
+    // The sentence wins only if it actually contains what was selected;
+    // otherwise the selection spans more than one and shrinking it would throw
+    // away text the user deliberately picked.
+    if (s.length >= MIN_CHARS && s.indexOf(pick) !== -1) return s;
+    return pick;
+  }
+
+  // Tags that genuinely mark a paragraph. ARTICLE / SECTION / MAIN are
+  // deliberately absent: they are containers, and treating one as a paragraph
+  // would hand back the whole chapter.
+  var PARA_TAGS = /^(?:P|LI|BLOCKQUOTE|DD|DT|TD|TH|FIGCAPTION|H[1-6])$/;
+
+  // The block of prose containing the selection, read without touching it.
+  //
+  // The nearest real paragraph tag wins. A reader that wraps every word — or
+  // every LINE — in its own element would otherwise give back one line, so the
+  // fallback is the nearest ancestor holding a paragraph's worth of text.
+  function paragraphAroundSelection(sel) {
+    var node;
+    try {
+      if (!sel || sel.isCollapsed || !sel.rangeCount) return '';
+      node = sel.getRangeAt(0).startContainer;
+    } catch (_) { return ''; }
+    var el = node && (node.nodeType === 1 ? node : node.parentElement);
+    var fallback = null;
+    for (var i = 0; el && i < 12; i++) {
+      if (el.tagName === 'BODY') break;
+      if (PARA_TAGS.test(el.tagName || '')) {
+        var t = norm(el.textContent);
+        if (t.length >= MIN_CHARS) return t.slice(0, 4000);
+      }
+      // A ceiling as well as a floor: per-line markup with no paragraph tag
+      // jumps from a 40-character line straight to the chapter container, and
+      // "+ Paragraph" would then bank a chapter. Nothing paragraph-sized means
+      // the button stays hidden, which is the honest answer.
+      if (!fallback) {
+        var len = (el.textContent || '').length;
+        if (len >= 200 && len <= 2000) fallback = el;
+      }
+      if (!el.parentElement) break;
+      el = el.parentElement;
+    }
+    return fallback ? norm(fallback.textContent).slice(0, 4000) : '';
   }
 
   function handleTapAt(ev, x, y) {
@@ -344,8 +388,21 @@
       // frame's "+ Add sentence" chip, offering to bank what was just banked.
       up({ op: 'add', text: sentence, raw: txt });
     } else {
+      // Both granularities, resolved here because only this frame can read its
+      // own DOM. `text` stays the raw pick — the host's lookup wants the word
+      // that was selected, not a widening of it.
+      var pickSentence = '';
+      var pickPara = '';
+      try { pickSentence = sentenceAroundSelection(sel); } catch (_) {}
+      try { pickPara = paragraphAroundSelection(sel); } catch (_) {}
+      if (!pickSentence) pickSentence = txt;
       diag.sels++;
-      up({ op: 'selection', text: txt });
+      up({
+        op: 'selection',
+        text: txt,
+        sentence: pickSentence,
+        paragraph: pickPara,
+      });
     }
   }
 
@@ -417,6 +474,12 @@
       up({ op: 'diag', info: diag });
     }, 2000);
 
+    // Retract any chip a PREVIOUS document in this frame raised. A reader
+    // turning the page replaces its document, and the fresh one starts with no
+    // selection to notice going away — so the chip stayed up backed by text
+    // nobody can see any more. The frame's WindowProxy survives the
+    // navigation, so the top frame still recognises us as its owner.
+    up({ op: 'selection', text: '' });
     // The top frame may have been armed before this frame existed.
     up({ op: 'hello' });
     // A frame that loads before the top frame's snippet.js gets no answer to

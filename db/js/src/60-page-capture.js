@@ -43,8 +43,11 @@
     const MIN_CHARS = 2;
     // tapMode is armed from the app's existing capture chip, via
     // __cupitorSetCaptureMode below — no extra floating button in the page.
-    const state = { pending: '', pendingFrom: null, items: [], open: false,
-                    tapMode: false, hint: '' };
+    // pending / pendingPara are the two granularities offered for the current
+    // selection. The raw pick is deliberately NOT among them: it goes to the
+    // lookup buffer only. A button labelled "+ Sentence" has to add a sentence.
+    const state = { pending: '', pendingPara: '', pendingFrom: null, items: [],
+                    open: false, tapMode: false, hint: '' };
     // Bumped on every arm change, so a poller that already consumed a
     // selection re-considers it once the mode changes underneath it.
     let armGen = 0;
@@ -97,6 +100,8 @@
         .cup-pc-row button { background: transparent; color: #f85149; padding: 0 4px;
                   box-shadow: none; border-radius: 4px; }
         .cup-pc-foot { display: flex; gap: 6px; justify-content: flex-end; padding-top: 6px; }
+        .cup-pc-picks { display: flex; gap: 6px; }
+        .cup-pc button[data-act="addpara"] { background: #2d6a4f; }
         /* Pushed to the far left of the footer: it is a mode switch, not an
            action, and should not sit next to Clear and Send. */
         .cup-pc button[data-act="tap"] { background: #30363d; margin-right: auto; }
@@ -117,7 +122,10 @@
           '</div>' +
         '</div>' +
         '<button data-act="basket" hidden></button>' +
-        '<button data-act="add" hidden>+ Add sentence</button>';
+        '<div class="cup-pc-picks" hidden>' +
+          '<button data-act="add">+ Sentence</button>' +
+          '<button data-act="addpara">+ Paragraph</button>' +
+        '</div>';
       // Into <body>, NOT documentElement. A node parented to <html> outside
       // <body> paints correctly but hit-tests unreliably in Blink, which shows
       // up as a control you can see and cannot tap.
@@ -133,15 +141,23 @@
         el.addEventListener('click', run, true);
         el.addEventListener('touchend', run, true);
       };
-      on('add', () => {
-        if (collect(state.pending)) {
-          state.open = true;
-          clearSelections();
-        } else {
-          showHint('already collected');
-        }
-        setPending('', null, true);
-      });
+      // Deliberately leaves both the chip and the selection alone.
+      //
+      // One selection offers two granularities, and tearing the chip down
+      // after banking one made the other unreachable: the poller has already
+      // consumed that selection, so nothing re-raises it. It was worse from a
+      // reader iframe: nothing in the top document can clear a selection
+      // across origins, so the text stayed highlighted while its own controls
+      // vanished. The chip now goes when the selection does, which is the only
+      // moment the screen and the UI agree on.
+      const bank = (text) => {
+        if (!text) { showHint('nothing to add'); return; }
+        if (!collect(text)) { showHint('already collected'); return; }
+        state.open = true;
+        showHint('added');
+      };
+      on('add', () => bank(state.pending));
+      on('addpara', () => bank(state.pendingPara));
       // Tapping words has to be a mode: an unarmed tap must not be swallowed,
       // or ordinary reading breaks. But burying the switch in the app's menu
       // made the feature look dead — a selection raised the chip while a tap
@@ -156,34 +172,20 @@
       on('send', send);
     }
 
-    // Drop the highlight everywhere it might live, so the chip doesn't linger
-    // over a selection the user thinks they have already banked.
-    function clearSelections() {
-      const docs = [document];
-      try {
-        document.querySelectorAll('iframe, frame').forEach((f) => {
-          try { if (f.contentDocument) docs.push(f.contentDocument); } catch (_) {}
-        });
-      } catch (_) {}
-      docs.forEach((d) => {
-        try {
-          const w = d.defaultView;
-          const sel = w && w.getSelection && w.getSelection();
-          if (sel && sel.removeAllRanges) sel.removeAllRanges();
-        } catch (_) {}
-      });
-    }
-
     function sync() {
       ensureUi();
       // An SPA that replaces <body> takes our controls with it.
       if (root && !root.isConnected) {
         try { (document.body || document.documentElement).appendChild(root); } catch (_) {}
       }
-      const add = root.querySelector('[data-act="add"]');
+      const picks = root.querySelector('.cup-pc-picks');
       const basket = root.querySelector('[data-act="basket"]');
       const panel = root.querySelector('.cup-pc-panel');
-      add.hidden = !state.pending;
+      picks.hidden = !state.pending;
+      // Offered only when it would add something the sentence does not already
+      // cover — a one-sentence paragraph needs no second button.
+      root.querySelector('[data-act="addpara"]').hidden =
+        !state.pendingPara || state.pendingPara === state.pending;
       // Visible whenever armed, even at zero, so the mode announces itself.
       // Without this an armed page looks identical to an unarmed one until a
       // tap happens to land — and on a reader that eats taps, never.
@@ -335,8 +337,6 @@
         pick = norm(sel.toString());
       } catch (_) { return ''; }
       if (pick.length < MIN_CHARS) return '';
-      // A deliberate multi-sentence selection is not something to shrink.
-      if (pick.length >= 60 || /[.!?…]\s+\S/.test(pick)) return pick;
 
       const node = range.startContainer;
       let block = node && (node.nodeType === 1 ? node : node.parentElement);
@@ -361,7 +361,53 @@
       } catch (_) { return pick; }
 
       const found = sentenceAtOffset(raw, at);
-      return found.length >= MIN_CHARS ? found : pick;
+      // The sentence wins only if it actually contains what was selected.
+      // Otherwise the selection spans more than one sentence and shrinking it
+      // would throw away text the user deliberately picked. This one test
+      // replaces the length and punctuation guesses that used to stand here —
+      // a 70-character drag inside a single long sentence was treated as
+      // multi-sentence and banked as a mid-sentence fragment.
+      if (found.length >= MIN_CHARS && found.indexOf(pick) !== -1) return found;
+      return pick;
+    }
+
+    // Tags that genuinely mark a paragraph. ARTICLE / SECTION / MAIN are
+    // deliberately absent: they are containers, and treating one as a paragraph
+    // would hand back the whole chapter.
+    const PARA_TAGS = /^(?:P|LI|BLOCKQUOTE|DD|DT|TD|TH|FIGCAPTION|H[1-6])$/;
+
+    // The block of prose containing the selection, read without touching it.
+    //
+    // The nearest real paragraph tag wins. A reader that wraps every word — or
+    // every LINE — in its own element would otherwise give back one line, so
+    // the fallback is the nearest ancestor holding a paragraph's worth of text.
+    function paragraphAroundSelection(sel) {
+      let node;
+      try {
+        if (!sel || sel.isCollapsed || !sel.rangeCount) return '';
+        node = sel.getRangeAt(0).startContainer;
+      } catch (_) { return ''; }
+      let el = node && (node.nodeType === 1 ? node : node.parentElement);
+      let fallback = null;
+      for (let i = 0; el && i < 12; i++) {
+        if (el.tagName === 'BODY') break;
+        if (PARA_TAGS.test(el.tagName || '')) {
+          const t = norm(el.textContent);
+          if (t.length >= MIN_CHARS) return t.slice(0, 4000);
+        }
+        // A ceiling as well as a floor. Without one, per-line markup with no
+        // paragraph tag anywhere jumps straight from a 40-character line to
+        // the chapter container, and "+ Paragraph" would bank 4000 characters
+        // of chapter as a single card. Nothing paragraph-sized means the
+        // button stays hidden, which is the honest answer.
+        if (!fallback) {
+          const len = (el.textContent || '').length;
+          if (len >= 200 && len <= 2000) fallback = el;
+        }
+        if (!el.parentElement) break;
+        el = el.parentElement;
+      }
+      return fallback ? norm(fallback.textContent).slice(0, 4000) : '';
     }
 
     function resolveFrom(win, range) {
@@ -435,15 +481,19 @@
     // and the frame that raised it has no way to take it down again. Both
     // directions were real. `force` is for the user banking it by hand, which
     // clears it whoever owns it.
-    function setPending(text, owner, force) {
+    function setPending(text, para, owner, force) {
       if (text) {
         state.pending = text;
+        state.pendingPara = para || '';
         state.pendingFrom = owner;
-      } else {
-        if (!force && state.pending && state.pendingFrom !== owner) return;
+      } else if (force || !state.pending || state.pendingFrom === owner) {
         state.pending = '';
+        state.pendingPara = '';
         state.pendingFrom = null;
       }
+      // Unconditional. Callers change other state — an added item, an opened
+      // panel — before calling this, and returning early on a refused clear
+      // left all of it unrendered.
       sync();
     }
 
@@ -501,7 +551,7 @@
         // Banking a sentence has to take down that frame's chip, or it sits
         // there offering to bank what was just banked — and tapping it then
         // hits the duplicate check and does nothing visible.
-        setPending('', ev.source);
+        setPending('', '', ev.source);
         return;
       }
       // Lookup only — never the chip, never the basket. A frame sends this
@@ -515,7 +565,10 @@
         topDiag.sels++;
         const picked = String(d.text || '').slice(0, 4000);
         noteLookup(picked);
-        setPending(picked, ev.source);
+        // The frame resolves both granularities itself — only it can read its
+        // own DOM. `text` stays the raw pick, which lookup wants.
+        setPending(String(d.sentence || picked).slice(0, 4000),
+                   String(d.paragraph || '').slice(0, 4000), ev.source);
       }
     });
 
@@ -525,11 +578,13 @@
       const was = state.tapMode;
       state.tapMode = !!active;
       window.__cupitorCaptureMode = state.tapMode;
-      // Only when switching ON. Bumping on every call — and the host re-pushes
-      // this on each navigation, while every frame's `hello` triggers a
-      // re-broadcast — would un-consume selections that were already collected
-      // and bank them a second time.
-      if (state.tapMode && !was) armGen++;
+      // On any real change, in either direction — what must not bump it is a
+      // REPEAT of the same value, which the host re-pushes on each navigation
+      // and every frame's `hello` re-broadcasts. Bumping only when arming left
+      // the mirror broken: tap-mode collection deliberately keeps the
+      // selection, so disarming with text still selected raised no chip ever
+      // again. The unarmed branch only offers a chip, so it cannot re-bank.
+      if (state.tapMode !== was) armGen++;
       // Unconditional. `root` is built by ensureUi(), which only sync() calls,
       // and nothing calls sync() at install — so `if (root)` meant the FIRST
       // arm on a page built no UI at all: no basket, no panel, and therefore
@@ -556,6 +611,7 @@
         console.log('[pagecap] sent', state.items.length, 'sentence(s)');
         state.items = [];
         state.pending = '';
+        state.pendingPara = '';
         state.pendingFrom = null;
         state.open = false;
         sync();
@@ -613,7 +669,7 @@
           const sel = win.getSelection();
           if (sel && sel.removeAllRanges) sel.removeAllRanges();
         } catch (_) {}
-        setPending('', doc);
+        setPending('', '', doc);
       };
       let tapStart = null;
       win.addEventListener('touchstart', (ev) => {
@@ -671,7 +727,7 @@
           pollDone = '';
           // Only this document's own chip comes down — setPending refuses to
           // clear one another document raised.
-          setPending('', doc);
+          setPending('', '', doc);
           return;
         }
         topDiag.ownSel = 1;
@@ -699,16 +755,22 @@
           if (collect(sentence)) {
             topDiag.ownAdds++;
             state.open = true;
-            setPending('', doc);
+            setPending('', '', doc);
           } else {
             // Already the last thing banked. Saying so beats raising the chip,
             // which would offer to bank it again and then silently refuse.
             showHint('already collected');
-            setPending('', doc);
+            setPending('', '', doc);
           }
         } else {
-          // A deliberate drag is what the user meant; don't widen it.
-          setPending(txt, doc);
+          // Both granularities, resolved once from the settled selection. The
+          // raw pick reaches the lookup buffer only.
+          let sentence = '';
+          let para = '';
+          try { sentence = sentenceAroundSelection(sel); } catch (_) {}
+          try { para = paragraphAroundSelection(sel); } catch (_) {}
+          if (!sentence) sentence = txt;
+          setPending(sentence, para, doc);
         }
       };
       doc.addEventListener('selectionchange', pollSelection);
