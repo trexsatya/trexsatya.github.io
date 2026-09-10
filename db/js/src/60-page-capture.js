@@ -53,6 +53,117 @@
     let armGen = 0;
     let hintTimer = null;
     let root = null;
+    // Where the user dragged the widget to, or null for the default corner.
+    const POS_KEY = 'cupPcPos';
+    let pos = null;
+
+    // localStorage throws outright in some WebView configurations, so every
+    // access is guarded and a failure just means the default corner.
+    function loadPos() {
+      try {
+        const raw = localStorage.getItem(POS_KEY);
+        if (!raw) return null;
+        const p = JSON.parse(raw);
+        if (p && typeof p.left === 'number' && typeof p.top === 'number') return p;
+      } catch (_) {}
+      return null;
+    }
+
+    function savePos() {
+      try {
+        if (pos) localStorage.setItem(POS_KEY, JSON.stringify(pos));
+        else localStorage.removeItem(POS_KEY);
+      } catch (_) {}
+    }
+
+    // Kept fully on screen. Rotating the device or resizing can otherwise
+    // strand the widget outside the viewport with no way to reach it.
+    function clampPos(left, top) {
+      let w = 120;
+      let h = 40;
+      try {
+        const r = root.getBoundingClientRect();
+        if (r.width) w = r.width;
+        if (r.height) h = r.height;
+      } catch (_) {}
+      const maxL = Math.max(4, (window.innerWidth || 320) - w - 4);
+      const maxT = Math.max(4, (window.innerHeight || 480) - h - 4);
+      return {
+        left: Math.min(Math.max(4, left), maxL),
+        top: Math.min(Math.max(4, top), maxT),
+      };
+    }
+
+    function applyPos() {
+      if (!root) return;
+      if (pos) {
+        root.style.left = pos.left + 'px';
+        root.style.top = pos.top + 'px';
+        root.style.right = 'auto';
+        root.style.bottom = 'auto';
+      } else {
+        root.style.left = '';
+        root.style.top = '';
+        root.style.right = '';
+        root.style.bottom = '';
+      }
+    }
+
+    // The widget floats over the page, so on a reader it will sooner or later
+    // cover the very text being read. Dragging the grip moves it, and the
+    // position sticks for this origin.
+    function installDrag(handle) {
+      let drag = null;
+      const begin = (x, y) => {
+        let r;
+        try { r = root.getBoundingClientRect(); } catch (_) { return; }
+        drag = { dx: x - r.left, dy: y - r.top };
+      };
+      const move = (x, y) => {
+        if (!drag) return;
+        pos = clampPos(x - drag.dx, y - drag.dy);
+        applyPos();
+      };
+      const end = () => {
+        if (drag) savePos();
+        drag = null;
+      };
+      // Touch events stay targeted at the element the gesture STARTED on, so
+      // the move handler keeps firing once the finger leaves the grip.
+      handle.addEventListener('touchstart', (ev) => {
+        const t = ev.touches && ev.touches[0];
+        if (!t) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        begin(t.clientX, t.clientY);
+      }, true);
+      handle.addEventListener('touchmove', (ev) => {
+        const t = ev.touches && ev.touches[0];
+        if (!t || !drag) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        move(t.clientX, t.clientY);
+      }, true);
+      handle.addEventListener('touchend', (ev) => {
+        if (!drag) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        end();
+      }, true);
+      handle.addEventListener('mousedown', (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        begin(ev.clientX, ev.clientY);
+        const mm = (e) => move(e.clientX, e.clientY);
+        const mu = () => {
+          end();
+          window.removeEventListener('mousemove', mm, true);
+          window.removeEventListener('mouseup', mu, true);
+        };
+        window.addEventListener('mousemove', mm, true);
+        window.addEventListener('mouseup', mu, true);
+      }, true);
+    }
 
     // Diagnostics, because there is no console to read inside a cross-origin
     // reader on a phone and "it doesn't work" has at least four distinct
@@ -86,6 +197,11 @@
                      our controls with it. */
                   pointer-events: auto; }
         .cup-pc * { pointer-events: auto; }
+        /* The HTML hidden attribute works only through the UA stylesheet's
+           display:none, which ANY author display rule outranks. .cup-pc-picks
+           is display:flex, so setting .hidden on it did nothing at all and its
+           buttons sat over the page permanently. Never remove this. */
+        .cup-pc [hidden] { display: none !important; }
         .cup-pc button { font: inherit; border: 0; border-radius: 16px; padding: 8px 13px;
                   background: #1f6feb; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.35);
                   cursor: pointer; }
@@ -107,6 +223,11 @@
         .cup-pc button[data-act="tap"] { background: #30363d; margin-right: auto; }
         .cup-pc button[data-act="tap"][data-on="1"] { background: #1f6feb; }
         .cup-pc-empty { opacity: .7; padding: 6px 2px; }
+        /* touch-action:none, or the browser scrolls the page instead of
+           letting us move the widget. */
+        .cup-pc button[data-act="grip"] { background: #21262d; color: #8b949e;
+                  padding: 6px 11px; border-radius: 12px; font-size: 15px;
+                  line-height: 1; cursor: move; touch-action: none; }
       `;
       (document.head || document.documentElement).appendChild(st);
 
@@ -125,7 +246,10 @@
         '<div class="cup-pc-picks" hidden>' +
           '<button data-act="add">+ Sentence</button>' +
           '<button data-act="addpara">+ Paragraph</button>' +
-        '</div>';
+        '</div>' +
+        // Last, so it sits nearest the anchored corner and is the easiest
+        // thing to reach.
+        '<button data-act="grip" hidden title="Drag to move">⠿</button>';
       // Into <body>, NOT documentElement. A node parented to <html> outside
       // <body> paints correctly but hit-tests unreliably in Blink, which shows
       // up as a control you can see and cannot tap.
@@ -158,6 +282,20 @@
       };
       on('add', () => bank(state.pending));
       on('addpara', () => bank(state.pendingPara));
+      // The grip is dragged, not tapped, so it gets none of on()'s click
+      // wiring — it would fight the drag.
+      pos = loadPos();
+      applyPos();
+      installDrag(root.querySelector('[data-act="grip"]'));
+      // A rotation or a resize can leave a saved position off screen, which
+      // would strand the widget where nothing can reach it.
+      const reclamp = () => {
+        if (!pos) return;
+        pos = clampPos(pos.left, pos.top);
+        applyPos();
+      };
+      window.addEventListener('resize', reclamp);
+      window.addEventListener('orientationchange', reclamp);
       // Tapping words has to be a mode: an unarmed tap must not be swallowed,
       // or ordinary reading breaks. But burying the switch in the app's menu
       // made the feature look dead — a selection raised the chip while a tap
@@ -192,7 +330,11 @@
       // Also shown for a pending selection: without that, a page where only
       // the chip has appeared offers no way to open the panel, and therefore
       // no way to find the Tap words switch inside it.
-      basket.hidden = !state.items.length && !state.tapMode && !state.pending;
+      // `|| state.open` keeps the invariant that an open panel always has its
+      // toggle on screen. Without it, opening the panel and then dropping the
+      // selection left the panel up with nothing to close it but Clear.
+      basket.hidden = !state.items.length && !state.tapMode && !state.pending
+        && !state.open;
       basket.textContent = state.hint
         ? state.hint
         : (state.items.length
@@ -205,6 +347,10 @@
         ? 'On — tapping a word collects its sentence. Tap again to give taps back to the page.'
         : 'Off — tapping a word does nothing. Turn on to collect by tapping.';
       panel.hidden = !state.open;
+      // The grip must not become the thing that sits over the page forever —
+      // it appears only alongside something worth moving.
+      root.querySelector('[data-act="grip"]').hidden =
+        picks.hidden && basket.hidden && panel.hidden;
       root.querySelector('[data-act="send"]').disabled = state.items.length === 0;
       const list = root.querySelector('[data-r="list"]');
       if (!panel.hidden) {
