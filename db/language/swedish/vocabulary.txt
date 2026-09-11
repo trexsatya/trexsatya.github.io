@@ -1937,7 +1937,7 @@ Hak<*a upp (sig)|
 (spry)|spänstig|
 (soft)|len|mjuk|slak|
 (tender)|ömt|
-(fragile)|bräcklig|skör|spröd|ömtålig|
+(fragile)|bräcklig|skör|spröd|sprött|ömtålig|
 (crispy)|frasig|krispig|knastrig|knaprig|
 (eloquent)|munvig|
 (agile)|kroppsvig|
