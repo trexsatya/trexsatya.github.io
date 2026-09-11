@@ -526,6 +526,7 @@ Lägra( sig)|<*slå läger|
 (depression)|depression|nedstämd|deppig|deprimerad|nedstämdhet|nervsammanbrott|nedslagen|nedslående|nedslå|moloken|
 (unhinged)|Ur gängorna|
 (sulky)|trumpen|trumpet|trumpna|sur|surt|tjurig|tungsint|grinig|tjura
+(Cranky)|uppretad
 (Grimace)|grimas|
 (sour)|Sur som en citron|Sur som ättika
 (regretful)|Sålt smöret och tappat pengarna
@@ -1752,6 +1753,7 @@ Påkörd
 (related)|samhörande
 (possess)|besitta|inneha
 (include)|inkludera|innefatta|innehålla|inbegripa|omfatta|<*bestå av|
+(Included)|inklusive| på köpet|
 (inside)|innanmäte|
 (exclude)|exkludera|utesluta|porta|bannlysa|förvisa|bortvisa|utvisa|utslagen|rata|bannlysa|bannlyst|
 (eliminate)|eliminera|uteslutning|uteslutningar|exkludering|exkluderingar|utanförskap|
@@ -1854,7 +1856,7 @@ Hak<*a upp (sig)|
 
 (involve)|inblanda|blanda in|inblandad|insyltad|insyltning|
 (involve)|involvera|Ha ett finger med i spelet
-(pullin)| <*dra in |indragen
+(pullin)| <*dra in |indragen|<*dra i |
 (errand)|ärende|
 #Physical appearance
 (appearance)|utseende|utseenden(pl)|
@@ -4695,7 +4697,7 @@ Täckmantel
 (honesty lasts)|Ärlighet varar längst
 (practice what you preach)|Leva som man lär
 (double standard)|dubbelmoral|dubbelmoralisk|dubbelmoralism|dubbelmoralister|
-(cheat)|fuska|fusk|
+(cheat)|fuska|fusk|plagiat
 (shortcut)|Genväg är ofta senväg|
 (dishonest)|oärlig|tala med kluven tunga|ljuga|blåljuga|ljuger|ljög|ljugit|ljug|lögn|lögner|lögnaktig|lögnaktighet|svindleri|svindel|förljugen
 (pack of lies)|Lögn och förbannad dikt
@@ -4738,7 +4740,7 @@ Täckmantel
 (account)|redogörelse|bevisföring
 (fictional)|fiktiv|påhittad|overklig|
 (Whim)|hugskott
-(invention)|påhitt|påfund|idé|idéer|tanke|tankar|infall|huggskott|nyck|nycker|
+(invention)|påhitt|påfund|idé|idéer|tanke|tankar|infall|hugskott|nyck|nycker|
 (capricious)|nyckfull|lynnig|ombytlig|oberäknelig|där vinnet går in går vettet|oförutsägbar|
 (invent)|påhitta|<*hitta på|<*komma på|<*lista ut|<*komma med|klura ut|Gripa.* ur luften|skaka.* ur ärmen|
 ( improvise )|det man inte har i huvudet får man ha i benen|improvisera|koka soppa på en spik|spåna
@@ -5066,7 +5068,7 @@ Täckmantel
 (thanks to)|tack vare|
 (in addition)|därtill|förutom|utöver|
 (except)|undantagandes
-(moreover)|dessutom|också|även|ytterligare|till råga på allt|för övrig|
+(moreover)|dessutom|också|även|ytterligare|till råga på allt|för övrig|till på köpet|
 (even)|till och med|rentav |rent av |
 (not a soul)|inte en kotte|inte ett dugg|inte ett knyst|inte ett ljud|
 (as ... as possible)|så likt (ngt) som möjligt|så fort som möjligt|För allt vad tygen håller
