@@ -1508,6 +1508,19 @@ body.rec-paused .lines-cntnr .buttons .capture-btn { opacity: 0.4; pointer-event
     font-style: italic;
 }
 
+/* A whole group reached that way: every line under this heading came in on the
+   guess, and not one of their English lines says what was searched for. Dimmed
+   rather than hidden — these are the uses a straight English search cannot
+   reach, and sometimes they are the interesting half. */
+h5.l-accordion.srt-guess-only {
+    opacity: 0.55;
+    font-style: italic;
+}
+
+h5.l-accordion.srt-guess-only:hover {
+    opacity: 1;
+}
+
 #recordingReviewDialog .rec-item {
     font-size: 12px;
     display: flex;
