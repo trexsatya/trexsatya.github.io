@@ -2035,7 +2035,7 @@ body.practice-mode #mediaRelatedContainer {
    above a card that is only ever going to make sound. Overrides the
    display:block !important below, so it has to be at least as specific. */
 body.rec-playing.rec-playing-manual:not(.practice-mode) #mediaContainer,
-body.practice-mode.practice-manual #mediaContainer {
+body.practice-mode.practice-no-video #mediaContainer {
     display: none !important;
 }
 /* Audio player for a manual card's recordings — same fixed slot the video
@@ -2316,6 +2316,13 @@ body.practice-mode #mediaContainer #youtubePlayer iframe {
 #practiceMode .practice-settings-panel .practice-delete:hover { background: #d32f2f; }
 /* The card content sits below the fixed video (video bottom ≈ 64px +
    56.25% of min(100vw,900px)). */
+/* Nothing in the slot at all — a manual card with no video and no recordings.
+   The card starts where the slot would have, with nothing above it. Listed
+   before the rule below so a card that does have an audio panel keeps its own
+   height (equal specificity, so the later rule wins). */
+body.practice-no-video #practiceMode .practice-card {
+    top: calc(64px + var(--practice-media-h, 0px) + 12px);
+}
 /* A manual card's slot holds the audio panel, not a 16:9 video, so the card
    starts right below whatever height that turned out to be. */
 body.practice-manual #practiceMode .practice-card {
@@ -4128,3 +4135,60 @@ body.rec-playing #recPlayingSubs { display: block; }
     #translationPanel .xl-body { padding: 0 8px 8px; }
     #translationPanel .xl-term { font-size: 14px; }
 }
+
+/* ─── Search-history list (long press on Prev / Next) ─────────────────── */
+/* Fixed and body-parented, like the notification panel, so no toolbar
+   ancestor clips it. */
+.srch-hist-panel {
+    position: fixed;
+    max-width: 90vw;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    z-index: 100050;
+}
+.srch-hist-hd {
+    padding: 6px 10px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #6b7c90;
+    border-bottom: 1px solid #eef1f5;
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+.srch-hist-empty { padding: 10px; font-size: 13px; color: #6b7c90; }
+.srch-hist-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #f2f4f7;
+    text-align: left;
+    font-size: 14px;
+    color: #22303f;
+    cursor: pointer;
+    /* Tappable with a thumb. */
+    min-height: 40px;
+}
+.srch-hist-row:last-child { border-bottom: 0; }
+.srch-hist-row:hover { background: #f6f8fb; }
+.srch-hist-row.is-current { background: #eef4ff; font-weight: 600; }
+.srch-hist-term { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.srch-hist-lang, .srch-hist-here {
+    flex: 0 0 auto;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #5a7ba6;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    padding: 1px 6px;
+}
+.srch-hist-here { color: #1d6f42; border-color: #8fc0a1; }
