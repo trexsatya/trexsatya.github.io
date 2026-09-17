@@ -3574,6 +3574,9 @@ body.music-on #recPlayingBanner .rec-pb-music-btn {
     line-height: 1.45;
     padding: 1px 0;
     word-break: break-word;
+    /* A picked sentence keeps the line breaks the page gave it, and the
+       preview is where you decide whether to send it — so show them. */
+    white-space: pre-wrap;
 }
 #captionCaptureDialog .cap-cap-more { font-size: 12px; color: #888; padding-top: 4px; }
 #captionCaptureDialog .cap-cap-row {

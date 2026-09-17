@@ -93,6 +93,156 @@
 
   function norm(s) { return String(s || '').replace(/\s+/g, ' ').trim(); }
 
+  // ---------------------------------------------------------------------------
+  // Reading the page's text. Kept in step with the same block in
+  // db/js/src/60-page-capture.js — this file is injected natively into
+  // cross-origin frames and cannot import from the bundle, so the reading
+  // rules live twice. Change one, change the other; the two feed the same
+  // capture and a difference between them shows up as the same sentence
+  // arriving in two shapes depending on where it was picked.
+  // ---------------------------------------------------------------------------
+
+  // Like norm, but keeping the line breaks a selection already carries:
+  // Selection.toString() puts a newline where the layout draws one.
+  function normLines(s) {
+    return String(s || '')
+      .replace(/\r\n?/g, '\n')
+      .split('\n')
+      .map(function (row) { return row.replace(/[^\S\n]+/g, ' ').trim(); })
+      .filter(Boolean)
+      .join('\n');
+  }
+
+  // For comparing two readings of the same text when only the words matter.
+  function flat(s) { return norm(String(s || '').replace(/\n/g, ' ')); }
+
+  var NOT_TEXT = /^(?:SCRIPT|STYLE|NOSCRIPT|TEMPLATE)$/;
+  var BLOCK_ISH =
+    /^(?:ADDRESS|ARTICLE|ASIDE|BLOCKQUOTE|BR|DD|DIV|DL|DT|FIELDSET|FIGCAPTION|FIGURE|FOOTER|FORM|H[1-6]|HEADER|HR|LI|MAIN|NAV|OL|P|PRE|SECTION|TABLE|TR|UL)$/;
+  var OWN_LINE_DISPLAY =
+    /^(?:block|flex|grid|list-item|table|table-row|table-caption|flow-root)$/;
+
+  var styleCache = null;
+  function styleOf(el) {
+    if (styleCache && styleCache.has && styleCache.has(el)) return styleCache.get(el);
+    var cs = null;
+    try {
+      var win = (el.ownerDocument && el.ownerDocument.defaultView) || window;
+      cs = win.getComputedStyle(el);
+    } catch (_) { cs = null; }
+    if (styleCache && styleCache.set) styleCache.set(el, cs);
+    return cs;
+  }
+
+  // Does this element start a line where it sits?
+  function startsOwnLine(el) {
+    var tag = el.tagName || '';
+    var cs = styleOf(el);
+    var d = cs ? (cs.display || '') : '';
+    if (!d) return BLOCK_ISH.test(tag);
+    if (d === 'none') return false;
+    if (tag === 'BR') return true;
+    if ((cs.cssFloat || cs.float || 'none') !== 'none') return false;
+    if (cs.position === 'absolute' || cs.position === 'fixed') return false;
+    if (!OWN_LINE_DISPLAY.test(d)) return false;
+    var ps = el.parentElement ? styleOf(el.parentElement) : null;
+    var pd = ps ? (ps.display || '') : '';
+    if (pd === 'flex' || pd === 'inline-flex') {
+      return /^column/.test(ps.flexDirection || '');
+    }
+    return true;
+  }
+
+  // Keeps a box of its own but shares the line: a table cell, a flex-row item.
+  function sharesLineOwnBox(el) {
+    var cs = styleOf(el);
+    var d = cs ? (cs.display || '') : '';
+    if (!d) return /^(?:TD|TH|CAPTION)$/.test(el.tagName || '');
+    if (d === 'none') return false;
+    if (/^table-(?:cell|caption)$/.test(d)) return true;
+    var ps = el.parentElement ? styleOf(el.parentElement) : null;
+    var pd = ps ? (ps.display || '') : '';
+    if ((pd === 'flex' || pd === 'inline-flex') && !/^column/.test(ps.flexDirection || '')) {
+      return true;
+    }
+    return false;
+  }
+
+  // A block's text as it is READ, plus where a caret sits inside it.
+  // textContent cannot answer this: it drops a <br> and runs two paragraphs
+  // together with nothing between them. The caret is measured in the same pass
+  // that builds the text, so the offset stays measured rather than searched
+  // for. `at` is -1 when the walk never reached the caret.
+  function readBlock(root, stopNode, stopOffset) {
+    var text = '';
+    var at = -1;
+    function last() { return text ? text.charAt(text.length - 1) : ''; }
+    function addBreak() {
+      if (!text) return;
+      while (text && last() === ' ') text = text.slice(0, -1);
+      if (last() !== '\n') text += '\n';
+    }
+    function addGap() {
+      if (!text || last() === ' ' || last() === '\n') return;
+      text += ' ';
+    }
+    // ws: 'collapse' | 'lines' (pre-line) | 'keep' (pre, pre-wrap, break-spaces)
+    function addText(s, ws) {
+      for (var i = 0; i < s.length; i++) {
+        var ch = s.charAt(i);
+        if (ws !== 'collapse' && ch === '\n') { addBreak(); continue; }
+        if (ws !== 'keep' && /\s/.test(ch)) {
+          if (!text || last() === ' ' || last() === '\n') continue;
+          text += ' ';
+          continue;
+        }
+        text += ch;
+      }
+    }
+    function walk(node) {
+      var i;
+      if (node.nodeType === 3) {
+        var parent = node.parentElement;
+        var cs = parent ? styleOf(parent) : null;
+        if (cs && cs.visibility === 'hidden') return;
+        var white = cs ? (cs.whiteSpace || '') : '';
+        var ws = /^(?:pre|pre-wrap|break-spaces)$/.test(white) ? 'keep'
+          : (white === 'pre-line' ? 'lines' : 'collapse');
+        var s = String(node.nodeValue || '');
+        if (node === stopNode) {
+          var cut = Math.max(0, Math.min(Number(stopOffset) || 0, s.length));
+          addText(s.slice(0, cut), ws);
+          at = text.length;
+          addText(s.slice(cut), ws);
+        } else {
+          addText(s, ws);
+        }
+        return;
+      }
+      if (node.nodeType !== 1) return;
+      if (NOT_TEXT.test(node.tagName || '')) return;
+      var ecs = styleOf(node);
+      if (ecs && ecs.display === 'none') return;
+      var ownLine = startsOwnLine(node);
+      var ownBox = !ownLine && sharesLineOwnBox(node);
+      if (ownLine) addBreak();
+      if (ownBox) addGap();
+      var kids = node.childNodes;
+      for (i = 0; i < kids.length; i++) {
+        if (node === stopNode && i === Number(stopOffset)) at = text.length;
+        walk(kids[i]);
+      }
+      if (node === stopNode && Number(stopOffset) >= kids.length) at = text.length;
+      if (ownLine) addBreak();
+      if (ownBox) addGap();
+    }
+    try { styleCache = new Map(); } catch (_) { styleCache = null; }
+    try { walk(root); } catch (_) { /* keep whatever was read */ }
+    styleCache = null;
+    text = text.replace(/\s+$/, '');
+    return { text: text, at: at < 0 ? -1 : Math.min(at, text.length) };
+  }
+
   function caretRangeAt(x, y) {
     try {
       if (document.caretRangeFromPoint) return document.caretRangeFromPoint(x, y);
@@ -121,7 +271,7 @@
         sel.addRange(range);
         sel.modify('move', 'backward', 'sentenceboundary');
         sel.modify('extend', 'forward', 'sentence');
-        var t = norm(sel.toString());
+        var t = normLines(sel.toString());
         if (t.length >= MIN_CHARS) return t;
       }
     } catch (_) {}
@@ -193,7 +343,9 @@
     var m;
     SENT_RE.lastIndex = 0;
     while ((m = SENT_RE.exec(raw)) !== null) {
-      if (at >= m.index && at < m.index + m[0].length) return norm(m[0]);
+      // readBlock has already collapsed whatever the layout collapses, so
+      // only the ends need tidying — flattening would throw away the breaks.
+      if (at >= m.index && at < m.index + m[0].length) return m[0].replace(/^\s+|\s+$/g, '');
     }
     return '';
   }
@@ -221,7 +373,7 @@
     try {
       if (!sel || sel.isCollapsed || !sel.rangeCount) return '';
       range = sel.getRangeAt(0);
-      pick = norm(sel.toString());
+      pick = normLines(sel.toString());
     } catch (_) { return ''; }
     if (pick.length < MIN_CHARS) return '';
 
@@ -236,22 +388,14 @@
       block = block.parentElement;
     }
     if (!block) return pick;
-    var raw = String(block.textContent || '');
-    if (!raw) return pick;
+    var read = readBlock(block, range.startContainer, range.startOffset);
+    if (!read.text || read.at < 0) return pick;
 
-    var at;
-    try {
-      var pre = (block.ownerDocument || document).createRange();
-      pre.selectNodeContents(block);
-      pre.setEnd(range.startContainer, range.startOffset);
-      at = pre.toString().length;
-    } catch (_) { return pick; }
-
-    var s = sentenceAtOffset(raw, at);
+    var s = sentenceAtOffset(read.text, read.at);
     // The sentence wins only if it actually contains what was selected;
     // otherwise the selection spans more than one and shrinking it would throw
     // away text the user deliberately picked.
-    if (s.length >= MIN_CHARS && s.indexOf(pick) !== -1) return s;
+    if (s.length >= MIN_CHARS && flat(s).indexOf(flat(pick)) !== -1) return s;
     return pick;
   }
 
@@ -276,7 +420,7 @@
     for (var i = 0; el && i < 12; i++) {
       if (el.tagName === 'BODY') break;
       if (PARA_TAGS.test(el.tagName || '')) {
-        var t = norm(el.textContent);
+        var t = readBlock(el).text;
         if (t.length >= MIN_CHARS) return t.slice(0, 4000);
       }
       // A ceiling as well as a floor: per-line markup with no paragraph tag
@@ -290,7 +434,7 @@
       if (!el.parentElement) break;
       el = el.parentElement;
     }
-    return fallback ? norm(fallback.textContent).slice(0, 4000) : '';
+    return fallback ? readBlock(fallback).text.slice(0, 4000) : '';
   }
 
   function handleTapAt(ev, x, y) {
@@ -342,7 +486,7 @@
       sel = window.getSelection();
       // rangeCount first: Selection.toString() flushes layout, and this runs
       // every 350ms whether or not anything is selected.
-      if (sel && sel.rangeCount && !sel.isCollapsed) txt = norm(sel.toString());
+      if (sel && sel.rangeCount && !sel.isCollapsed) txt = normLines(sel.toString());
     } catch (_) {}
     if (txt.length < MIN_CHARS) {
       if (pollLast || pollDone) {
@@ -359,7 +503,8 @@
     // only when it changes — this runs three times a second per frame.
     if (txt !== lookupSent) {
       lookupSent = txt;
-      up({ op: 'lookup', text: txt });
+      // A dictionary lookup wants the words, not the shape.
+      up({ op: 'lookup', text: flat(txt) });
     }
     // Two identical ticks means the drag has finished. Without this, every
     // intermediate selection during a drag would be collected as its own
@@ -491,6 +636,11 @@
       up({ op: 'hello' });
     }, 1000);
   }
+
+  // The reading rules are duplicated from db/js/src/60-page-capture.js, so
+  // db/js/page-capture.test.mjs drives both through the same fixtures and
+  // fails when they drift apart.
+  window.__cupFrameBootRead = { readBlock: readBlock, normLines: normLines, flat: flat };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start, { once: true });

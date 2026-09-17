@@ -1754,7 +1754,9 @@
         .cup-pc-row { display: flex; gap: 6px; align-items: flex-start; padding: 5px 2px;
                   border-bottom: 1px solid #21262d; }
         .cup-pc-row:last-child { border-bottom: 0; }
-        .cup-pc-row span { flex: 1 1 auto; }
+        /* A picked sentence keeps the line breaks the page gave it, and the
+           basket is where the user checks what they are about to send. */
+        .cup-pc-row span { flex: 1 1 auto; white-space: pre-wrap !important; }
         .cup-pc-row button { background: transparent; color: #f85149; padding: 0 4px;
                   box-shadow: none; border-radius: 4px; }
         .cup-pc-foot { display: flex; gap: 6px; justify-content: flex-end; padding-top: 6px; }
@@ -1865,7 +1867,7 @@
       // Offered only when it would add something the sentence does not already
       // cover — a one-sentence paragraph needs no second button.
       root.querySelector('[data-act="addpara"]').hidden =
-        !state.pendingPara || state.pendingPara === state.pending;
+        !state.pendingPara || flat(state.pendingPara) === flat(state.pending);
       // Visible whenever armed, even at zero, so the mode announces itself.
       // Without this an armed page looks identical to an unarmed one until a
       // tap happens to land — and on a reader that eats taps, never.
@@ -1984,6 +1986,177 @@
 
     function norm(s) { return String(s || '').replace(/\s+/g, ' ').trim(); }
 
+    // The same, but keeping the line breaks a selection already carries.
+    // Selection.toString() puts a newline where the layout draws one, and on a
+    // document that prints each line in its own block — a transcript, a poem,
+    // a subtitle export — that break is the text, not formatting.
+    function normLines(s) {
+      return String(s || '')
+        .replace(/\r\n?/g, '\n')
+        .split('\n')
+        .map((row) => row.replace(/[^\S\n]+/g, ' ').trim())
+        .filter(Boolean)
+        .join('\n');
+    }
+
+    // For comparing two readings of the same text when only the words matter.
+    function flat(s) { return norm(String(s || '').replace(/\n/g, ' ')); }
+
+    const NOT_TEXT = /^(?:SCRIPT|STYLE|NOSCRIPT|TEMPLATE)$/;
+    const BLOCK_ISH =
+      /^(?:ADDRESS|ARTICLE|ASIDE|BLOCKQUOTE|BR|DD|DIV|DL|DT|FIELDSET|FIGCAPTION|FIGURE|FOOTER|FORM|H[1-6]|HEADER|HR|LI|MAIN|NAV|OL|P|PRE|SECTION|TABLE|TR|UL)$/;
+    const OWN_LINE_DISPLAY =
+      /^(?:block|flex|grid|list-item|table|table-row|table-caption|flow-root)$/;
+
+    // One style read per element per walk. This runs inside a 350ms poll, in
+    // every document, twice per settled selection.
+    let styleCache = null;
+    function styleOf(el) {
+      if (styleCache && styleCache.has(el)) return styleCache.get(el);
+      let cs = null;
+      try {
+        const win = (el.ownerDocument && el.ownerDocument.defaultView) || window;
+        cs = win.getComputedStyle(el);
+      } catch (_) { cs = null; }
+      if (styleCache) styleCache.set(el, cs);
+      return cs;
+    }
+
+    // Keeps a box of its own but shares the line with its neighbours — a table
+    // cell, an item in a flex row. The reader sees a gap there even when the
+    // markup has nothing between them, so the words must not run together.
+    function sharesLineOwnBox(el) {
+      const cs = styleOf(el);
+      const d = cs ? (cs.display || '') : '';
+      if (!d) return /^(?:TD|TH|CAPTION)$/.test(el.tagName || '');
+      if (d === 'none') return false;
+      if (/^table-(?:cell|caption)$/.test(d)) return true;
+      // A flex row blockifies its children, so their own display says nothing.
+      const ps = el.parentElement ? styleOf(el.parentElement) : null;
+      const pd = ps ? (ps.display || '') : '';
+      if ((pd === 'flex' || pd === 'inline-flex') && !/^column/.test(ps.flexDirection || '')) {
+        return true;
+      }
+      return false;
+    }
+
+    // Does this element start a line where it sits? The layout engine answers
+    // first; the tag list is only for when it has nothing to say.
+    function startsOwnLine(el) {
+      const tag = el.tagName || '';
+      const cs = styleOf(el);
+      const d = cs ? (cs.display || '') : '';
+      if (!d) return BLOCK_ISH.test(tag);
+      if (d === 'none') return false;
+      if (tag === 'BR') return true;            // no box of its own to report
+      if ((cs.cssFloat || cs.float || 'none') !== 'none') return false;
+      if (cs.position === 'absolute' || cs.position === 'fixed') return false;
+      if (!OWN_LINE_DISPLAY.test(d)) return false;
+      // A flex container blockifies its children whatever they are, so a
+      // child's own display says nothing about lines: a row of them shares one.
+      const ps = el.parentElement ? styleOf(el.parentElement) : null;
+      const pd = ps ? (ps.display || '') : '';
+      if (pd === 'flex' || pd === 'inline-flex') {
+        return /^column/.test(ps.flexDirection || '');
+      }
+      return true;
+    }
+
+    // A block's text as it is READ, plus where a caret sits inside it.
+    //
+    // textContent cannot be asked this: it drops a <br> entirely and runs two
+    // paragraphs together with nothing between them, so a sentence taken out
+    // of it can glue the end of one line to the start of the next. This walks
+    // the block instead, collapsing the whitespace the layout collapses and
+    // keeping a break where the layout draws one.
+    //
+    // The caret is measured in the SAME pass that builds the text, so the
+    // offset is still measured rather than searched for — the property the old
+    // Range.toString() arithmetic relied on, and the reason this is safe where
+    // matching the selected text against the block would find the wrong
+    // occurrence of a repeated word.
+    function readBlock(root, stopNode, stopOffset) {
+      let text = '';
+      let at = -1;
+      const last = () => (text ? text[text.length - 1] : '');
+      function addBreak() {
+        if (!text) return;                       // nothing above it to break
+        while (text && last() === ' ') text = text.slice(0, -1);
+        if (last() !== '\n') text += '\n';
+      }
+      // `ws`: 'collapse' (the usual), 'lines' (white-space: pre-line — runs of
+      // spaces still collapse, newlines are drawn), or 'keep' (pre, pre-wrap,
+      // break-spaces — the text is laid out exactly as written).
+      function addText(s, ws) {
+        for (let i = 0; i < s.length; i++) {
+          const ch = s[i];
+          if (ws !== 'collapse' && ch === '\n') { addBreak(); continue; }
+          if (ws !== 'keep' && /\s/.test(ch)) {
+            if (!text || last() === ' ' || last() === '\n') continue;
+            text += ' ';
+            continue;
+          }
+          text += ch;
+        }
+      }
+      function addGap() {
+        if (!text || last() === ' ' || last() === '\n') return;
+        text += ' ';
+      }
+      function walk(node) {
+        if (node.nodeType === 3) {
+          const parent = node.parentElement;
+          const cs = parent ? styleOf(parent) : null;
+          const white = cs ? (cs.whiteSpace || '') : '';
+          // Text nobody can see is not part of the sentence. visibility is
+          // inherited but a descendant can turn it back on, so it is asked of
+          // the element holding the text rather than of its ancestors.
+          if (cs && cs.visibility === 'hidden') return;
+          const ws = /^(?:pre|pre-wrap|break-spaces)$/.test(white) ? 'keep'
+            : (white === 'pre-line' ? 'lines' : 'collapse');
+          const s = String(node.nodeValue || '');
+          if (node === stopNode) {
+            const cut = Math.max(0, Math.min(Number(stopOffset) || 0, s.length));
+            addText(s.slice(0, cut), ws);
+            at = text.length;
+            addText(s.slice(cut), ws);
+          } else {
+            addText(s, ws);
+          }
+          return;
+        }
+        if (node.nodeType !== 1) return;
+        if (NOT_TEXT.test(node.tagName || '')) return;
+        const cs = styleOf(node);
+        // display:none takes the whole subtree with it; visibility does not,
+        // so it is decided per text node above.
+        if (cs && cs.display === 'none') return;
+        const ownLine = startsOwnLine(node);
+        const ownBox = !ownLine && sharesLineOwnBox(node);
+        if (ownLine) addBreak();
+        if (ownBox) addGap();
+        const kids = node.childNodes;
+        for (let i = 0; i < kids.length; i++) {
+          // A range can point at an element and a child index rather than into
+          // a text node.
+          if (node === stopNode && i === Number(stopOffset)) at = text.length;
+          walk(kids[i]);
+        }
+        if (node === stopNode && Number(stopOffset) >= kids.length) at = text.length;
+        if (ownLine) addBreak();
+        if (ownBox) addGap();
+      }
+      styleCache = new Map();
+      try { walk(root); } catch (_) { /* keep whatever was read */ }
+      styleCache = null;
+      text = text.replace(/\s+$/, '');
+      // -1 means the caret was never reached — it sat in text this walk does
+      // not read, or outside the block entirely. Saying "the end" there would
+      // hand back the block's last sentence as if it had been measured, which
+      // is the wrong-occurrence answer this whole approach exists to avoid.
+      return { text: text, at: at < 0 ? -1 : Math.min(at, text.length) };
+    }
+
     // The sentence spanning a character offset in a block of text.
     function sentenceAtOffset(raw, at) {
       if (!raw) return '';
@@ -1992,7 +2165,13 @@
       let m;
       SENT_RE.lastIndex = 0;
       while ((m = SENT_RE.exec(raw)) !== null) {
-        if (at >= m.index && at < m.index + m[0].length) return norm(m[0]);
+        if (at >= m.index && at < m.index + m[0].length) {
+          // readBlock has already collapsed whatever the layout collapses —
+          // everything except a preformatted block, where the runs are the
+          // text — so only the ends need tidying here. Flattening would throw
+          // away the breaks it kept.
+          return m[0].replace(/^\s+|\s+$/g, '');
+        }
       }
       return '';
     }
@@ -2022,7 +2201,7 @@
       try {
         if (!sel || sel.isCollapsed || !sel.rangeCount) return '';
         range = sel.getRangeAt(0);
-        pick = norm(sel.toString());
+        pick = normLines(sel.toString());
       } catch (_) { return ''; }
       if (pick.length < MIN_CHARS) return '';
 
@@ -2037,25 +2216,17 @@
         block = block.parentElement;
       }
       if (!block) return pick;
-      const raw = String(block.textContent || '');
-      if (!raw) return pick;
+      const read = readBlock(block, range.startContainer, range.startOffset);
+      if (!read.text || read.at < 0) return pick;
 
-      let at;
-      try {
-        const pre = (block.ownerDocument || document).createRange();
-        pre.selectNodeContents(block);
-        pre.setEnd(range.startContainer, range.startOffset);
-        at = pre.toString().length;
-      } catch (_) { return pick; }
-
-      const found = sentenceAtOffset(raw, at);
+      const found = sentenceAtOffset(read.text, read.at);
       // The sentence wins only if it actually contains what was selected.
       // Otherwise the selection spans more than one sentence and shrinking it
       // would throw away text the user deliberately picked. This one test
       // replaces the length and punctuation guesses that used to stand here —
       // a 70-character drag inside a single long sentence was treated as
       // multi-sentence and banked as a mid-sentence fragment.
-      if (found.length >= MIN_CHARS && found.indexOf(pick) !== -1) return found;
+      if (found.length >= MIN_CHARS && flat(found).indexOf(flat(pick)) !== -1) return found;
       return pick;
     }
 
@@ -2080,7 +2251,7 @@
       for (let i = 0; el && i < 12; i++) {
         if (el.tagName === 'BODY') break;
         if (PARA_TAGS.test(el.tagName || '')) {
-          const t = norm(el.textContent);
+          const t = readBlock(el).text;
           if (t.length >= MIN_CHARS) return t.slice(0, 4000);
         }
         // A ceiling as well as a floor. Without one, per-line markup with no
@@ -2095,7 +2266,7 @@
         if (!el.parentElement) break;
         el = el.parentElement;
       }
-      return fallback ? norm(fallback.textContent).slice(0, 4000) : '';
+      return fallback ? readBlock(fallback).text.slice(0, 4000) : '';
     }
 
     function resolveFrom(win, range) {
@@ -2106,7 +2277,7 @@
           sel.addRange(range);
           sel.modify('move', 'backward', 'sentenceboundary');
           sel.modify('extend', 'forward', 'sentence');
-          const t = String(sel.toString() || '').replace(/\s+/g, ' ').trim();
+          const t = normLines(sel.toString());
           if (t.length >= MIN_CHARS) return t;
         }
       } catch (_) {}
@@ -2142,7 +2313,10 @@
     // that word; feeding it our expansion turned every word lookup into a
     // sentence lookup.
     function noteLookup(text) {
-      const t = String(text || '').trim().slice(0, 4000);
+      // A dictionary lookup wants the words, never the shape — and this is
+      // fed from several places, so it flattens here rather than trusting
+      // each of them to.
+      const t = flat(text).slice(0, 4000);
       if (t.length < MIN_CHARS) return;
       lookupText = t;
       lookupAt = Date.now();
@@ -2158,7 +2332,10 @@
     function collect(text) {
       if (!text || text.length < MIN_CHARS) return false;
       // Consecutive duplicates are almost always a double tap, not intent.
-      if (state.items[state.items.length - 1] === text) return false;
+      // The tap path and the poll path can place the breaks differently, so
+      // compare the words.
+      const last = state.items[state.items.length - 1];
+      if (last !== undefined && flat(last) === flat(text)) return false;
       state.items.push(text);
       return true;
     }
@@ -2406,7 +2583,7 @@
             const node = sel.anchorNode;
             const el = node && (node.nodeType === 1 ? node : node.parentElement);
             // Selecting inside our own panel must not re-arm the chip.
-            if (!(el && el.closest && el.closest('.cup-pc'))) txt = norm(sel.toString());
+            if (!(el && el.closest && el.closest('.cup-pc'))) txt = normLines(sel.toString());
           }
         } catch (_) {}
         if (txt.length < MIN_CHARS) {
@@ -2423,6 +2600,8 @@
         // has to wait for a stable selection; looking a word up does not, and
         // gating both left the host's lookup button up to two ticks behind
         // what was on screen.
+        // A dictionary lookup wants the words on one line, whatever shape the
+        // page gave them.
         noteLookup(txt);
         // Two identical ticks means the drag has finished. Without this every
         // intermediate selection during a drag would be collected.
@@ -2467,6 +2646,13 @@
       // swallow every gesture event, so the interval is the load-bearing one.
       setInterval(pollSelection, 350);
     });
+
+    // How the page's text is read is where all the edge cases live — a <br>,
+    // two paragraphs written with nothing between them, a flex row, a hidden
+    // aside. db/js/page-capture.test.mjs drives these directly against a DOM;
+    // the module already publishes __cupSelection and __cupPcDiag, so this is
+    // one more handle of the same kind rather than a new surface.
+    window.__cupPageCaptureRead = { readBlock: readBlock, normLines: normLines, flat: flat };
 
     console.log('[pagecap] installed');
   })();
