@@ -1800,6 +1800,11 @@ h5.l-accordion.srt-guess-only:hover {
 /* Manual-entry editor dialog */
 #manualEntryEditor .mee-row { margin-bottom: 10px; display: flex; flex-direction: column; gap: 4px; }
 #manualEntryEditor .mee-lbl { font-size: 12px; color: #555; font-weight: 600; }
+/* The face's buttons are siblings of the label, not children of it: a <label>
+   with no `for` takes the first labelable descendant as its control, so a
+   button inside one fires when the user taps the word. */
+#manualEntryEditor .mee-lbl-row { display: flex; align-items: center; flex-wrap: wrap; }
+#manualEntryEditor .mee-tr-note { font-size: 11px; color: #666; margin-left: 8px; }
 #manualEntryEditor .mee-lbl-hint { font-weight: 400; color: #888; }
 #manualEntryEditor .mee-input {
     width: 100%;
@@ -2034,7 +2039,13 @@ body.practice-mode #mediaRelatedContainer {
    #recPlayingAudio take that space, rather than leaving a black 16:9 box
    above a card that is only ever going to make sound. Overrides the
    display:block !important below, so it has to be at least as specific. */
+/* Two ways a practice card has no use for the slot: it holds this card's own
+   recordings instead, or the card has no video at all. Both hide the video —
+   the audio panel is drawn over the same fixed strip, so a card carrying a link
+   AND a recording would otherwise paint one on top of the other, with the
+   uncovered band below still taking taps meant for the card. */
 body.rec-playing.rec-playing-manual:not(.practice-mode) #mediaContainer,
+body.practice-mode.practice-manual #mediaContainer,
 body.practice-mode.practice-no-video #mediaContainer {
     display: none !important;
 }
@@ -4036,6 +4047,33 @@ body.rec-playing #recPlayingSubs { display: block; }
     animation: mee-mic-pulse 1s ease-in-out infinite;
 }
 @keyframes mee-mic-pulse { 50% { opacity: 0.45; } }
+/* Fill this face from the other one's translation. Shares the mic button's
+   shape so the two sit together on a label without looking like two systems. */
+#manualEntryEditor .mee-tr {
+    background: transparent;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px 5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#manualEntryEditor .mee-tr:hover { background: #f6f8fa; }
+#manualEntryEditor .mee-tr:disabled { opacity: 0.5; cursor: default; }
+/* Waiting on the host's answer. The button is disabled while it works, so this
+   has to out-rank both .mee-tr:hover and .mee-tr:disabled — and restate
+   opacity, or the pulse animates down from the disabled 0.5 and barely reads. */
+#manualEntryEditor .mee-tr.mee-tr-busy,
+#manualEntryEditor .mee-tr.mee-tr-busy:hover,
+#manualEntryEditor .mee-tr.mee-tr-busy:disabled {
+    background: #eaf3ff;
+    border-color: #0969da;
+    opacity: 1;
+    cursor: default;
+    animation: mee-mic-pulse 1s ease-in-out infinite;
+}
 #manualEntryEditor .mee-audio-bar {
     display: flex;
     gap: 6px;
