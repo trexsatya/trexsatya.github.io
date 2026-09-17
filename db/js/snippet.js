@@ -324,7 +324,7 @@
           <button data-act="pick" title="Select lines">☑</button>
           <button data-act="all" title="Select all / none" style="display:none">⊞</button>
           <button data-act="send" title="Send selected to Cupitor" style="display:none">⤴</button>
-          <span class="cup-sub-status" data-r="status"></span>
+          <span class="cup-sub-status cup-nolookup" data-r="status"></span>
         </div>
         <div class="cup-sub-list"></div>
       `;
@@ -481,6 +481,14 @@
           // look the word up instead of selecting — leaving the checkbox as
           // the only target that worked.
           if (state.picking) { togglePickRow(el.closest('.cup-sub-cue')); return; }
+          // The host's own word-wrapper saw this tap first and already sent
+          // it, having rejoined any word broken across a hyphen — something
+          // we cannot do from a single token. Sending the raw token now would
+          // replace that better answer, because the host keeps only the last
+          // query handed to it. When the host isn't wrapping this page there
+          // is no inner span, and we are the only one who will send it.
+          if (e.target !== el && e.target.closest &&
+              e.target.closest('.clickable-word')) return;
           const w = el.getAttribute('data-w') || el.textContent || '';
           try { window.CaptionHandler && window.CaptionHandler.postMessage(w); } catch (_) {}
         });
@@ -593,6 +601,25 @@
       const sb = state.sidebar;
       if (!sb) return;
       sb.classList.toggle('cup-picking', state.picking);
+      // In select mode a tap on a line means "tick this one", so the whole
+      // sidebar opts out of word lookups for as long as it lasts. Without
+      // this the host's word handler fires first and opens a dictionary
+      // dialog on top of the selection the user was making.
+      const wasOptedOut = sb.classList.contains('cup-nolookup');
+      sb.classList.toggle('cup-nolookup', state.picking);
+      // Cues that arrived while opted out were never word-wrapped, because
+      // the host skips the subtree. Leaving select mode has to hand them
+      // back, or their translation lines — which carry no markup of our own —
+      // would stay untappable for the rest of the session. Class attributes
+      // are not observed, so nothing notices on its own.
+      if (wasOptedOut && !state.picking && state.listEl &&
+          typeof window._wordWrapEnqueue === 'function' &&
+          typeof window._wordWrapFlush === 'function') {
+        try {
+          window._wordWrapEnqueue(state.listEl);
+          window._wordWrapFlush();
+        } catch (_) {}
+      }
       // Outside Cupitor there is nowhere to send, so selecting is a dead end
       // — hide the entry point rather than offering a button that does nothing.
       const pickBtn = sb.querySelector('[data-act="pick"]');
@@ -671,7 +698,7 @@
       row.dataset.cueId = String(cue.id);
       row.innerHTML =
         '<input type="checkbox" class="cup-sub-pick">' +
-        '<span class="cup-sub-time">' + fmtTime(cue.start) + '</span>' +
+        '<span class="cup-sub-time cup-nolookup">' + fmtTime(cue.start) + '</span>' +
         '<div class="cup-sub-text">' + tokenize(cue.text) + trHtml + '</div>';
       const pick = row.querySelector('.cup-sub-pick');
       pick.checked = state.selected.has(cue.id);
@@ -688,7 +715,11 @@
         // The checkbox has already handled itself.
         if (e.target === pick) return;
         if (state.picking) { togglePickRow(row); return; }
-        if (e.target.classList && e.target.classList.contains('cup-w')) return;
+        // Don't seek when the tap was a word lookup. The host wraps every
+        // word on the page in .clickable-word and that inner span is what a
+        // tap actually lands on, so checking for .cup-w alone misses — and
+        // misses entirely in a translation line, which has no .cup-w at all.
+        if (e.target.closest && e.target.closest('.cup-w, .clickable-word')) return;
         if (state.currentVideo) {
           state.currentVideo.currentTime = cue.start;
           try { state.currentVideo.play(); } catch (_) {}
@@ -1002,7 +1033,7 @@
     function openSettingsDialog() {
       injectCss();
       const wrap = document.createElement('div');
-      wrap.className = 'cup-sub-modal';
+      wrap.className = 'cup-sub-modal cup-nolookup';
       wrap.innerHTML = `
         <div class="cup-sub-modal-box">
           <h3>Subtitles · settings</h3>
@@ -1743,7 +1774,7 @@
       (document.head || document.documentElement).appendChild(st);
 
       root = document.createElement('div');
-      root.className = 'cup-pc';
+      root.className = 'cup-pc cup-nolookup';
       root.innerHTML =
         '<div class="cup-pc-panel" hidden>' +
           '<div data-r="list"></div>' +

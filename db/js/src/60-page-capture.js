@@ -232,7 +232,7 @@
       (document.head || document.documentElement).appendChild(st);
 
       root = document.createElement('div');
-      root.className = 'cup-pc';
+      root.className = 'cup-pc cup-nolookup';
       root.innerHTML =
         '<div class="cup-pc-panel" hidden>' +
           '<div data-r="list"></div>' +
