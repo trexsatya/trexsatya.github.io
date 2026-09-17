@@ -4079,12 +4079,56 @@ body.rec-playing #recPlayingSubs { display: block; }
 }
 #manualEntryEditor .mee-audio-bar {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 4px;
 }
-#manualEntryEditor .mee-audio-status { font-size: 12px; color: #666; margin-left: 4px; }
+#manualEntryEditor .mee-audio-status { font-size: 11px; color: #666; margin-left: 4px; }
+/* The recorder bar is four controls per face, eight on a card — at full button
+   size they were most of the dialog. Small type and tight padding shrink the
+   strip; min-height keeps the box itself tappable, because Delete is in here
+   and it does not ask twice. */
+#manualEntryEditor .mee-audio-bar .btn {
+    font-size: 11px;
+    line-height: 1.1;
+    padding: 3px 7px;
+    min-height: 26px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    background: #fff;
+}
+/* The global .btn:hover paints cyan; the rule above out-ranks it and would
+   otherwise leave these the only controls in the dialog with no hover at all. */
+#manualEntryEditor .mee-audio-bar .btn:hover:not(:disabled) { background: #f6f8fa; }
+#manualEntryEditor .mee-audio-bar .btn:disabled { opacity: 0.45; }
+
+/* Swap: the two faces trade text and recording. Sits between the boxes because
+   that is the thing it acts on — a hinge, not a toolbar button. */
+#manualEntryEditor .mee-swap-row {
+    display: flex;
+    justify-content: center;
+    margin: -4px 0 6px;
+}
+#manualEntryEditor .mee-swap {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    line-height: 1;
+    padding: 3px 9px;
+    color: #57606a;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 999px;
+    cursor: pointer;
+}
+#manualEntryEditor .mee-swap:hover { background: #f6f8fa; color: #24292f; }
+#manualEntryEditor .mee-swap-lbl { font-weight: 600; letter-spacing: 0.02em; }
+
+/* Which way round this card translates — asked once, above the editor. */
+#meeDirAsk .mee-dir-q { font-size: 13px; color: #24292f; margin-bottom: 6px; }
+#meeDirAsk .mee-dir-hint { font-size: 11px; color: #777; }
 
 /* ── The host's dictionary for an English search ─────────────────────────
    Sits above the findings: what the word means, before what it looks like in
