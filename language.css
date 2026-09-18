@@ -170,9 +170,9 @@
    still does the sliding, so only the looks are supplied here. */
 .lang-search-select-row .lang-select-with-toggle .toggle {
     flex: 0 0 auto;
-    width: 56px !important;
-    height: 24px !important;
-    min-width: 56px;
+    width: 44px !important;
+    height: 22px !important;
+    min-width: 44px;
     border: 1px solid #c8d1da;
     border-radius: 999px;
     overflow: hidden;
@@ -183,11 +183,11 @@
     border: 0;
     border-radius: 0;
     box-shadow: none;
-    padding: 0 6px;
-    font-size: 10px;
+    padding: 0 3px;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 22px;
+    letter-spacing: 0;
+    line-height: 20px;
     min-height: 0;
 }
 /* The language actually in use reads as the "on" side whichever it is. */
@@ -205,7 +205,7 @@
     background: #fff;
     border: 1px solid #c8d1da;
     border-radius: 999px;
-    width: 18px;
+    width: 14px;
     padding: 0;
 }
 
@@ -296,6 +296,21 @@
     padding-bottom: 6px;
     border-bottom: 1px dashed #d0d7de;
     margin-bottom: 6px;
+}
+/* The header doubles as the file's own select/deselect control. */
+.srt-review-file-keep-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.srt-review-file-keep {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+.srt-review-file-name {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -2986,19 +3001,35 @@ body.practice-manual #practiceMode .practice-card {
 .ui-dialog:has(> #musicPanelDialog) { z-index: 100010 !important; }
 body.music-panel-open .ui-widget-overlay { z-index: 100009 !important; }
 
-/* Restore pill for the minimized rare-words dialog. Floats above the page
-   in the bottom-right so it doesn't sit on top of the play-mode pill
-   (which is bottom-center) when both are visible. Clicking re-opens the
-   dialog with all state preserved (page, category filter, results). */
-#rareWordsRestorePill {
+/* Where minimized dialogs park; they stack upwards so several at once never
+   land on each other. Raised a pill's height off the bottom edge to clear the
+   band the other floating pills own — Practice's restore pill (bottom-right)
+   and the playback pill (bottom-center, which reaches into this corner on a
+   phone). Above every dialog z-index in this file, because a pill is the only
+   way back to what it holds: behind the playback-queue or music-panel dialog
+   it would strand a parked card until that dialog was closed. */
+#minimizedDialogs {
     position: fixed;
-    bottom: 16px;
+    bottom: 64px;
     right: 16px;
-    z-index: 100005;
-    display: none;
+    z-index: 100030;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 8px;
+    /* Only the pills catch clicks — the gaps between them belong to the page
+       underneath. */
+    pointer-events: none;
+}
+#minimizedDialogs > * { pointer-events: auto; }
+
+/* One parked dialog. Clicking it brings the dialog back as it was. */
+.dlg-pill {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 8px 6px 14px;
+    max-width: min(78vw, 320px);
+    padding: 6px 14px;
     background: rgba(33, 33, 33, 0.94);
     color: #f5f5f5;
     border-radius: 24px;
@@ -3006,8 +3037,42 @@ body.music-panel-open .ui-widget-overlay { z-index: 100009 !important; }
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
-#rareWordsRestorePill .rare-pill-icon { font-size: 16px; }
-#rareWordsRestorePill .rare-pill-label { font-weight: 600; }
+.dlg-pill:hover { background: rgba(33, 33, 33, 1); }
+.dlg-pill .dlg-pill-icon { font-size: 16px; }
+.dlg-pill .dlg-pill-label {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Minimize control in a dialog titlebar. jQuery UI pins its close button to
+   the right edge of the bar, so this one is placed just inside it. */
+.ui-dialog-titlebar .dlg-minimize {
+    position: absolute;
+    right: 2.4em;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+}
+.ui-dialog-titlebar .dlg-minimize:hover { background: rgba(0, 0, 0, 0.12); }
+
+/* The rare-words pill is the one that can also be dismissed: the dialog
+   behind it is closed rather than parked, so its results can be let go of
+   from here. Hidden until a rare-word click minimizes the dialog. */
+#rareWordsRestorePill {
+    display: none;
+    padding-right: 8px;
+}
 #rareWordsRestorePill .rare-pill-close {
     width: 26px;
     height: 26px;
@@ -3020,7 +3085,6 @@ body.music-panel-open .ui-widget-overlay { z-index: 100009 !important; }
     cursor: pointer;
 }
 #rareWordsRestorePill .rare-pill-close:hover { background: #d32f2f; }
-#rareWordsRestorePill:hover { background: rgba(33, 33, 33, 1); }
 
 /* Settings → "Unavailable (N)…" review dialog. Lists every video that
    errored out during a play session, with per-row "Open / Remove / Forget"
