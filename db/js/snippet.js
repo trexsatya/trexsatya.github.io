@@ -63,6 +63,12 @@
       splitActive: false,
       bodyClass: opts.bodyClass || 'cup-sub-split',
       shrinkSelectors: opts.shrinkSelectors || ['video'],
+      // The query parameter this player reads a start offset from, and where
+      // a link to one is worth making, both named by the site entry. No
+      // parameter means the player has no deep link, and a sent block then
+      // carries the plain page address.
+      timeParam: opts.timeParam || '',
+      timeLinkOn: opts.timeLinkOn,
 
       // Translation state
       translationEnabled: false,
@@ -669,12 +675,9 @@
           return line;
         });
       if (!lines.length) return;
-      const payload = {
-        title: (document.title || '').trim(),
-        url: location.href,
-        lang: state.translationSource || '',
-        lines,
-      };
+      const payload = capturePayload(
+        location.href, document.title, state.translationSource,
+        lines, state.timeParam, state.timeLinkOn);
       try {
         window.CaptionCollector.postMessage(JSON.stringify(payload));
         console.log('[caps] sent', lines.length, 'lines');
@@ -1241,7 +1244,124 @@
       get currentVideo() { return state.currentVideo; },
     };
   }
+  // ── The address a captured block is sent under ───────────────────────
+  //
+  // It is the block's identity: the webapp matches it to recognise lines it
+  // has already filed from this video, so it has to mean the same thing every
+  // time. A player rewrites its own address as it plays, so whatever start
+  // offset the page is showing is taken OUT — a video watched to 12:30 and
+  // the same video at 0:00 are one page.
+  //
+  // The card's link back to a moment is built by the webapp, from the same
+  // parameter name and the lines it actually files.
+
+  // Whether a link to one moment is worth making on this page. A site entry
+  // says so with a predicate, or with a plain value read for truth, or says
+  // nothing at all and means everywhere.
+  //
+  // One rule the whole way down: anything that is not a no is a yes. The host
+  // and the webapp read the answer the same way, so a value that reads as
+  // "link here" cannot become "don't" by crossing a layer. The configuration
+  // is fetched at runtime, so a predicate that throws is a thing to survive
+  // rather than a bug report — and there, with no answer at all, no link is
+  // the one that cannot be wrong.
+  function timeLinkWanted(timeLinkOn) {
+    if (timeLinkOn == null) return true;
+    if (typeof timeLinkOn !== 'function') return !!timeLinkOn;
+    try {
+      return !!timeLinkOn();
+    } catch (_) {
+      return false;
+    }
+  }
+
+  // The parameter's name as the site entry spells it. Anything that is not a
+  // name leaves us unable to find the offset, let alone write one.
+  function timeParamName(timeParam) {
+    return typeof timeParam === 'string' ? timeParam.trim() : '';
+  }
+
+  // Only an ordinary web page is rewritten. A relative address resolved
+  // against the current page would become a link to wherever we happen to be
+  // — which reads as a working link to the wrong place — and a blob: or
+  // about: address is not somewhere anyone can be sent back to.
+  function isWebPage(url) {
+    try {
+      const p = new URL(url).protocol;
+      return p === 'http:' || p === 'https:';
+    } catch (_) {
+      return false;
+    }
+  }
+
+  // Query surgery by hand, on purpose. Reading the query into URLSearchParams
+  // and writing it back re-encodes every OTHER parameter — a bare `?flag`
+  // comes back as `?flag=`, and characters it escapes differently change
+  // shape — so the link would differ from the page in ways nobody asked for.
+  // Splitting the string touches only the parameter named.
+  function splitUrl(url) {
+    const h = url.indexOf('#');
+    const head = h >= 0 ? url.slice(0, h) : url;
+    const q = head.indexOf('?');
+    return {
+      base: q >= 0 ? head.slice(0, q) : head,
+      parts: q >= 0 ? head.slice(q + 1).split('&').filter(Boolean) : [],
+      hash: h >= 0 ? url.slice(h) : '',
+    };
+  }
+
+  function joinUrl(u) {
+    return u.base + (u.parts.length ? '?' + u.parts.join('&') : '') + u.hash;
+  }
+
+  // Whether this piece of the query is the named parameter. A page writes the
+  // name either way round, so both spellings count.
+  function isParam(part, name) {
+    const key = part.split('=')[0];
+    return key === name || key === encodeURIComponent(name);
+  }
+
+  // The page without whatever start offset it happens to be showing. Done
+  // whenever the player HAS such a parameter, whatever this particular page
+  // thinks of linking at a moment: identity has to hold still even on the
+  // pages where a link would be meaningless, or two sends from one video at
+  // different moments de-duplicate against nothing.
+  function stripTimeParam(url, timeParam) {
+    const name = timeParamName(timeParam);
+    if (!name || !isWebPage(url)) return url;
+    const u = splitUrl(url);
+    u.parts = u.parts.filter(p => !isParam(p, name));
+    return joinUrl(u);
+  }
+
+  // The block one send puts on the wire. Pure, so the shape that leaves the
+  // page can be checked without a player, a sidebar or a selection.
+  //
+  // The parameter is named rather than used. Only the webapp knows which of
+  // these lines reach the card — it drops the ones already captured from this
+  // video — and the link has to point at the earliest moment among those, not
+  // among everything ticked, or it opens at a passage filed on another card.
+  function capturePayload(href, title, lang, lines, timeParam, timeLinkOn) {
+    const name = timeParamName(timeParam);
+    return {
+      title: (title || '').trim(),
+      url: stripTimeParam(href, name),
+      // Two separate facts, and they used to share a field, which cost the
+      // webapp its ability to recognise an older card on any page where a
+      // link was not wanted. The NAME goes out always: it is what lets the
+      // webapp take the offset off an address a card stored before this, so
+      // identity matches. Whether to LINK is its own answer.
+      timeParam: name,
+      timeLink: timeLinkWanted(timeLinkOn),
+      lang: lang || '',
+      lines,
+    };
+  }
+
   shared.createSubtitleUI = createSubtitleUI;
+  shared.capturePayload = capturePayload;
+  shared.stripTimeParam = stripTimeParam;
+  shared.timeParamName = timeParamName;
 })();
 // Which players the caption capture understands, and how to find their cues.
 //
@@ -1273,6 +1393,20 @@
   //   cueSelector   optional inner element inside domSelector holding the cue
   //   shrinkSelectors  player frame(s) to shrink for split view
   //   isWatchPage   optional — restrict the sidebar to real video pages
+  //   timeParam     optional — the query parameter this player reads a start
+  //                 offset from, in whole seconds. Set it and a block sent to
+  //                 the webapp links back to the moment the passage starts
+  //                 instead of to the top of the video. Leave it out for a
+  //                 player with no deep link: a parameter the player ignores
+  //                 is worse than none, because the link still looks like it
+  //                 should work.
+  //   timeLinkOn    optional — a predicate (or a plain false) for pages where
+  //                 that link is worth making, for a site whose player is
+  //                 timed on some and live on others. It decides the link
+  //                 only: `timeParam` is still sent, because naming the
+  //                 parameter is what keeps the offset out of the page's
+  //                 identity, and an identity that moved with playback would
+  //                 de-duplicate against nothing.
   //
   // An entry needs `host` or `domProbe` to match. `domSelector` is only
   // needed for path 3; entries without one still get paths 1 and 2.
@@ -1291,6 +1425,16 @@
       ],
       domSelector: '[data-rt="subtitles-container"]',
       cueSelector: '.vtt-cue-teletext',
+      timeParam: 'position',
+      // SVT Play's own videos and clips, and nothing else. A number on a live
+      // channel's timeline means nothing to whoever opens the link an hour
+      // later, and the svt.se article player — which this entry also matches
+      // — is not known to read this at all. Anchored at the start of the path
+      // so a `/klipp/` deeper inside a news article's address does not pass
+      // for one, and the host is checked because svt.se has its own /video/.
+      timeLinkOn: () =>
+        /(^|\.)svtplay\.se$/.test(location.host) &&
+        /^\/(video|klipp)\//.test(location.pathname),
       isWatchPage: () =>
         /\/video\//.test(location.pathname) ||
         /\/(klipp|kanaler)\//.test(location.pathname),
@@ -1310,9 +1454,13 @@
     },
     {
       id: 'youtube',
-      host: /(^|\.)youtube\.com$/,
+      host: /(^|\.)youtube\.com$|^youtu\.be$/,
       domSelector: '.ytp-caption-window-container',
       cueSelector: '.ytp-caption-segment',
+      // Arrive at a video through a timed link and the address keeps `t`.
+      // Naming it here is what stops that becoming a second identity for a
+      // video already captured from its plain address.
+      timeParam: 't',
       shrinkSelectors: ['#movie_player', '.html5-video-player'],
     },
     {
@@ -2460,17 +2608,55 @@
       console.log('[pagecap] tap mode', state.tapMode ? 'armed' : 'off');
     };
 
+    // The block one send puts on the wire, built by the same code the subtitle
+    // sidebar uses so the two agree about what "the page" is. A video page
+    // rewrites its own address as it plays, and sentences picked at 12:30
+    // belong to the same page as sentences picked at the start — one identity,
+    // or the webapp files the same sentence twice.
+    //
+    // The builder lives in 20-caption-sidebar.js and the site table in
+    // 30-caption-sites.js, both read here at call time rather than at load.
+    // Without them the address goes as it is, which is what it did before
+    // they existed.
+    function capturePayload(lines) {
+      const shared = window.__cupShared || {};
+      const site = typeof shared.resolveCaptionSite === 'function'
+        ? shared.resolveCaptionSite()
+        : null;
+      if (typeof shared.capturePayload === 'function') {
+        return shared.capturePayload(
+          location.href, document.title, '', lines,
+          site && site.timeParam, site && site.timeLinkOn);
+      }
+      return {
+        title: (document.title || '').trim(),
+        url: location.href,
+        timeParam: '',
+        lang: '',
+        lines: lines,
+      };
+    }
+
+    // Asked by the host when it sends ONE tagged sentence to the webapp. That
+    // path builds its own block in Dart and would otherwise file the address
+    // bar verbatim — a different identity for the same page, and the one the
+    // player has been rewriting.
+    window.__cupCaptureIdentity = function () {
+      try {
+        const p = capturePayload([]);
+        return JSON.stringify({ url: p.url, timeParam: p.timeParam });
+      } catch (_) {
+        return JSON.stringify({ url: location.href, timeParam: '' });
+      }
+    };
+
     function send() {
       if (!state.items.length || !canSend()) return;
       // No timestamps: page sentences have no media time. The host coerces the
       // missing fields and its sort is stable, so this order is preserved.
-      const payload = {
-        source: 'page',
-        title: (document.title || '').trim(),
-        url: location.href,
-        lang: '',
-        lines: state.items.map((text) => ({ text: text })),
-      };
+      const lines = state.items.map((text) => ({ text: text }));
+      const payload = capturePayload(lines);
+      payload.source = 'page';
       try {
         window.CaptionCollector.postMessage(JSON.stringify(payload));
         console.log('[pagecap] sent', state.items.length, 'sentence(s)');
@@ -2692,7 +2878,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 18;
+    const CAPS_VERSION = 19;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -2718,9 +2904,23 @@
       return id;
     };
 
+    // Read behind a guard: the entry comes from a file fetched at runtime, so
+    // a property that throws on access is the mirror of the predicate that
+    // throws when called — which is already survived a layer down. Losing the
+    // deep link is a cost; losing the whole caption sidebar is not.
+    let timeParam;
+    let timeLinkOn;
+    try {
+      timeParam = site.timeParam;
+      timeLinkOn = site.timeLinkOn;
+    } catch (e) {
+      console.warn('[captions] site entry could not be read', e);
+    }
     const ui = createSubtitleUI({
       bodyClass: 'cup-sub-split',
       shrinkSelectors: site.shrinkSelectors,
+      timeParam: timeParam,
+      timeLinkOn: timeLinkOn,
     });
 
     function isWatchPage() {

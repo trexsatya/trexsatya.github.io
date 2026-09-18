@@ -918,17 +918,55 @@
       console.log('[pagecap] tap mode', state.tapMode ? 'armed' : 'off');
     };
 
+    // The block one send puts on the wire, built by the same code the subtitle
+    // sidebar uses so the two agree about what "the page" is. A video page
+    // rewrites its own address as it plays, and sentences picked at 12:30
+    // belong to the same page as sentences picked at the start — one identity,
+    // or the webapp files the same sentence twice.
+    //
+    // The builder lives in 20-caption-sidebar.js and the site table in
+    // 30-caption-sites.js, both read here at call time rather than at load.
+    // Without them the address goes as it is, which is what it did before
+    // they existed.
+    function capturePayload(lines) {
+      const shared = window.__cupShared || {};
+      const site = typeof shared.resolveCaptionSite === 'function'
+        ? shared.resolveCaptionSite()
+        : null;
+      if (typeof shared.capturePayload === 'function') {
+        return shared.capturePayload(
+          location.href, document.title, '', lines,
+          site && site.timeParam, site && site.timeLinkOn);
+      }
+      return {
+        title: (document.title || '').trim(),
+        url: location.href,
+        timeParam: '',
+        lang: '',
+        lines: lines,
+      };
+    }
+
+    // Asked by the host when it sends ONE tagged sentence to the webapp. That
+    // path builds its own block in Dart and would otherwise file the address
+    // bar verbatim — a different identity for the same page, and the one the
+    // player has been rewriting.
+    window.__cupCaptureIdentity = function () {
+      try {
+        const p = capturePayload([]);
+        return JSON.stringify({ url: p.url, timeParam: p.timeParam });
+      } catch (_) {
+        return JSON.stringify({ url: location.href, timeParam: '' });
+      }
+    };
+
     function send() {
       if (!state.items.length || !canSend()) return;
       // No timestamps: page sentences have no media time. The host coerces the
       // missing fields and its sort is stable, so this order is preserved.
-      const payload = {
-        source: 'page',
-        title: (document.title || '').trim(),
-        url: location.href,
-        lang: '',
-        lines: state.items.map((text) => ({ text: text })),
-      };
+      const lines = state.items.map((text) => ({ text: text }));
+      const payload = capturePayload(lines);
+      payload.source = 'page';
       try {
         window.CaptionCollector.postMessage(JSON.stringify(payload));
         console.log('[pagecap] sent', state.items.length, 'sentence(s)');

@@ -28,6 +28,20 @@
   //   cueSelector   optional inner element inside domSelector holding the cue
   //   shrinkSelectors  player frame(s) to shrink for split view
   //   isWatchPage   optional — restrict the sidebar to real video pages
+  //   timeParam     optional — the query parameter this player reads a start
+  //                 offset from, in whole seconds. Set it and a block sent to
+  //                 the webapp links back to the moment the passage starts
+  //                 instead of to the top of the video. Leave it out for a
+  //                 player with no deep link: a parameter the player ignores
+  //                 is worse than none, because the link still looks like it
+  //                 should work.
+  //   timeLinkOn    optional — a predicate (or a plain false) for pages where
+  //                 that link is worth making, for a site whose player is
+  //                 timed on some and live on others. It decides the link
+  //                 only: `timeParam` is still sent, because naming the
+  //                 parameter is what keeps the offset out of the page's
+  //                 identity, and an identity that moved with playback would
+  //                 de-duplicate against nothing.
   //
   // An entry needs `host` or `domProbe` to match. `domSelector` is only
   // needed for path 3; entries without one still get paths 1 and 2.
@@ -46,6 +60,16 @@
       ],
       domSelector: '[data-rt="subtitles-container"]',
       cueSelector: '.vtt-cue-teletext',
+      timeParam: 'position',
+      // SVT Play's own videos and clips, and nothing else. A number on a live
+      // channel's timeline means nothing to whoever opens the link an hour
+      // later, and the svt.se article player — which this entry also matches
+      // — is not known to read this at all. Anchored at the start of the path
+      // so a `/klipp/` deeper inside a news article's address does not pass
+      // for one, and the host is checked because svt.se has its own /video/.
+      timeLinkOn: () =>
+        /(^|\.)svtplay\.se$/.test(location.host) &&
+        /^\/(video|klipp)\//.test(location.pathname),
       isWatchPage: () =>
         /\/video\//.test(location.pathname) ||
         /\/(klipp|kanaler)\//.test(location.pathname),
@@ -65,9 +89,13 @@
     },
     {
       id: 'youtube',
-      host: /(^|\.)youtube\.com$/,
+      host: /(^|\.)youtube\.com$|^youtu\.be$/,
       domSelector: '.ytp-caption-window-container',
       cueSelector: '.ytp-caption-segment',
+      // Arrive at a video through a timed link and the address keeps `t`.
+      // Naming it here is what stops that becoming a second identity for a
+      // video already captured from its plain address.
+      timeParam: 't',
       shrinkSelectors: ['#movie_player', '.html5-video-player'],
     },
     {

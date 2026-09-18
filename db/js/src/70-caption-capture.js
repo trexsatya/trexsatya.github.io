@@ -34,7 +34,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 18;
+    const CAPS_VERSION = 19;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -60,9 +60,23 @@
       return id;
     };
 
+    // Read behind a guard: the entry comes from a file fetched at runtime, so
+    // a property that throws on access is the mirror of the predicate that
+    // throws when called — which is already survived a layer down. Losing the
+    // deep link is a cost; losing the whole caption sidebar is not.
+    let timeParam;
+    let timeLinkOn;
+    try {
+      timeParam = site.timeParam;
+      timeLinkOn = site.timeLinkOn;
+    } catch (e) {
+      console.warn('[captions] site entry could not be read', e);
+    }
     const ui = createSubtitleUI({
       bodyClass: 'cup-sub-split',
       shrinkSelectors: site.shrinkSelectors,
+      timeParam: timeParam,
+      timeLinkOn: timeLinkOn,
     });
 
     function isWatchPage() {

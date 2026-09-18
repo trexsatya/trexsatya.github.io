@@ -32,6 +32,12 @@
       splitActive: false,
       bodyClass: opts.bodyClass || 'cup-sub-split',
       shrinkSelectors: opts.shrinkSelectors || ['video'],
+      // The query parameter this player reads a start offset from, and where
+      // a link to one is worth making, both named by the site entry. No
+      // parameter means the player has no deep link, and a sent block then
+      // carries the plain page address.
+      timeParam: opts.timeParam || '',
+      timeLinkOn: opts.timeLinkOn,
 
       // Translation state
       translationEnabled: false,
@@ -638,12 +644,9 @@
           return line;
         });
       if (!lines.length) return;
-      const payload = {
-        title: (document.title || '').trim(),
-        url: location.href,
-        lang: state.translationSource || '',
-        lines,
-      };
+      const payload = capturePayload(
+        location.href, document.title, state.translationSource,
+        lines, state.timeParam, state.timeLinkOn);
       try {
         window.CaptionCollector.postMessage(JSON.stringify(payload));
         console.log('[caps] sent', lines.length, 'lines');
@@ -1210,5 +1213,122 @@
       get currentVideo() { return state.currentVideo; },
     };
   }
+  // ── The address a captured block is sent under ───────────────────────
+  //
+  // It is the block's identity: the webapp matches it to recognise lines it
+  // has already filed from this video, so it has to mean the same thing every
+  // time. A player rewrites its own address as it plays, so whatever start
+  // offset the page is showing is taken OUT — a video watched to 12:30 and
+  // the same video at 0:00 are one page.
+  //
+  // The card's link back to a moment is built by the webapp, from the same
+  // parameter name and the lines it actually files.
+
+  // Whether a link to one moment is worth making on this page. A site entry
+  // says so with a predicate, or with a plain value read for truth, or says
+  // nothing at all and means everywhere.
+  //
+  // One rule the whole way down: anything that is not a no is a yes. The host
+  // and the webapp read the answer the same way, so a value that reads as
+  // "link here" cannot become "don't" by crossing a layer. The configuration
+  // is fetched at runtime, so a predicate that throws is a thing to survive
+  // rather than a bug report — and there, with no answer at all, no link is
+  // the one that cannot be wrong.
+  function timeLinkWanted(timeLinkOn) {
+    if (timeLinkOn == null) return true;
+    if (typeof timeLinkOn !== 'function') return !!timeLinkOn;
+    try {
+      return !!timeLinkOn();
+    } catch (_) {
+      return false;
+    }
+  }
+
+  // The parameter's name as the site entry spells it. Anything that is not a
+  // name leaves us unable to find the offset, let alone write one.
+  function timeParamName(timeParam) {
+    return typeof timeParam === 'string' ? timeParam.trim() : '';
+  }
+
+  // Only an ordinary web page is rewritten. A relative address resolved
+  // against the current page would become a link to wherever we happen to be
+  // — which reads as a working link to the wrong place — and a blob: or
+  // about: address is not somewhere anyone can be sent back to.
+  function isWebPage(url) {
+    try {
+      const p = new URL(url).protocol;
+      return p === 'http:' || p === 'https:';
+    } catch (_) {
+      return false;
+    }
+  }
+
+  // Query surgery by hand, on purpose. Reading the query into URLSearchParams
+  // and writing it back re-encodes every OTHER parameter — a bare `?flag`
+  // comes back as `?flag=`, and characters it escapes differently change
+  // shape — so the link would differ from the page in ways nobody asked for.
+  // Splitting the string touches only the parameter named.
+  function splitUrl(url) {
+    const h = url.indexOf('#');
+    const head = h >= 0 ? url.slice(0, h) : url;
+    const q = head.indexOf('?');
+    return {
+      base: q >= 0 ? head.slice(0, q) : head,
+      parts: q >= 0 ? head.slice(q + 1).split('&').filter(Boolean) : [],
+      hash: h >= 0 ? url.slice(h) : '',
+    };
+  }
+
+  function joinUrl(u) {
+    return u.base + (u.parts.length ? '?' + u.parts.join('&') : '') + u.hash;
+  }
+
+  // Whether this piece of the query is the named parameter. A page writes the
+  // name either way round, so both spellings count.
+  function isParam(part, name) {
+    const key = part.split('=')[0];
+    return key === name || key === encodeURIComponent(name);
+  }
+
+  // The page without whatever start offset it happens to be showing. Done
+  // whenever the player HAS such a parameter, whatever this particular page
+  // thinks of linking at a moment: identity has to hold still even on the
+  // pages where a link would be meaningless, or two sends from one video at
+  // different moments de-duplicate against nothing.
+  function stripTimeParam(url, timeParam) {
+    const name = timeParamName(timeParam);
+    if (!name || !isWebPage(url)) return url;
+    const u = splitUrl(url);
+    u.parts = u.parts.filter(p => !isParam(p, name));
+    return joinUrl(u);
+  }
+
+  // The block one send puts on the wire. Pure, so the shape that leaves the
+  // page can be checked without a player, a sidebar or a selection.
+  //
+  // The parameter is named rather than used. Only the webapp knows which of
+  // these lines reach the card — it drops the ones already captured from this
+  // video — and the link has to point at the earliest moment among those, not
+  // among everything ticked, or it opens at a passage filed on another card.
+  function capturePayload(href, title, lang, lines, timeParam, timeLinkOn) {
+    const name = timeParamName(timeParam);
+    return {
+      title: (title || '').trim(),
+      url: stripTimeParam(href, name),
+      // Two separate facts, and they used to share a field, which cost the
+      // webapp its ability to recognise an older card on any page where a
+      // link was not wanted. The NAME goes out always: it is what lets the
+      // webapp take the offset off an address a card stored before this, so
+      // identity matches. Whether to LINK is its own answer.
+      timeParam: name,
+      timeLink: timeLinkWanted(timeLinkOn),
+      lang: lang || '',
+      lines,
+    };
+  }
+
   shared.createSubtitleUI = createSubtitleUI;
+  shared.capturePayload = capturePayload;
+  shared.stripTimeParam = stripTimeParam;
+  shared.timeParamName = timeParamName;
 })();
