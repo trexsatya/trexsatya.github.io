@@ -145,6 +145,69 @@
 .lang-search-select-row .select2-container {
     width: 100% !important;
 }
+/* The vocabulary select and the SV/EN switch share one line: the switch says
+   which language the box below is searched in, so it belongs next to it rather
+   than buried in Settings. The select takes the rest of the row. */
+.lang-search-select-row .lang-select-with-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+}
+.lang-search-select-row .lang-select-with-toggle > select,
+.lang-search-select-row .lang-select-with-toggle .select2-container {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto !important;   /* beats the row-wide 100% above */
+}
+/* bootstrap-toggle replaces the checkbox with a .toggle widget; size and paint
+   that, not the input.
+
+   It is a Bootstrap 3 widget and this page loads Bootstrap 4, so the classes it
+   asks for — .btn-default above all — no longer exist and the switch arrives
+   with no appearance at all, just the words SV/EN in the flow. Its own CSS
+   still does the sliding, so only the looks are supplied here. */
+.lang-search-select-row .lang-select-with-toggle .toggle {
+    flex: 0 0 auto;
+    width: 56px !important;
+    height: 24px !important;
+    min-width: 56px;
+    border: 1px solid #c8d1da;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #eef1f4;
+    cursor: pointer;
+}
+.lang-search-select-row .lang-select-with-toggle .toggle .btn {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 22px;
+    min-height: 0;
+}
+/* The language actually in use reads as the "on" side whichever it is. */
+.lang-search-select-row .lang-select-with-toggle .toggle .toggle-on {
+    background: #2f6feb;
+    color: #fff;
+    text-align: left;
+}
+.lang-search-select-row .lang-select-with-toggle .toggle .toggle-off {
+    background: #7c8794;
+    color: #fff;
+    text-align: right;
+}
+.lang-search-select-row .lang-select-with-toggle .toggle .toggle-handle {
+    background: #fff;
+    border: 1px solid #c8d1da;
+    border-radius: 999px;
+    width: 18px;
+    padding: 0;
+}
 
 .lang-tool-btn {
     padding: 5px 10px;
