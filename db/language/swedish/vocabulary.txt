@@ -173,7 +173,7 @@
 (relax)|Slappna av och varva ner|<*släppa spänningar
 (challenge)|utmaning|utmaningar|
 (challenge)|Handsken är kastad
-(challenge)|utmaning antagen|
+(challenge accepted)|utmaning antagen|
 (Stir the pot,challenge status quo)|<*röra om i grytan|
 (courage)|<*Ta tjuren vid hornen
 (potential)|potential|
@@ -249,6 +249,7 @@
 (rest)|vila|pausa|paus|pauser|rasta|
 Lägra( sig)|<*slå läger|
 (leisure)|ledighet|fritid|
+(Gap hour, break)|håltimme
 (sleep)|sova|slockna|tupplur|somna|slumra|slagga(slang)|knoppa(slang)|slummer
 (bedtime)|<*gå och lägga sig|<*Knyta sig(till sängs)
 (sleepdeep)|<*Sova som en klubbad oxe|<*Sova som en klubbad säl|<*Sova som en stock
@@ -279,7 +280,7 @@ Lägra( sig)|<*slå läger|
 #Mental Capabilities, abstractions
 (purpose)|mening|meningar|avsikt|avsikter|syfte|syften(pl)|syftet|motiv(sl-pl)|motivet|
 (strive)|eftersträva|eftersträvar|eftersträvade|eftersträvat|eftersträvande|
-(resolution)|föresats|föresatser|
+(resolution, intention)|föresats|föresatser|
 (goal)|mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionärer|idealbild|
 (objective)|ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
 (regarding)|angående|gällande|beträffande
@@ -1208,6 +1209,7 @@ Ursäkt|förevändning|täckmantel
 (proverb)|Lyckan kommer lyckan går
 (proverb)|Lätt fånget, lätt förgånget
 (temporary)|flyktig|provisorisk|övergående
+(Temporary, acting-)|tillförordnad
 (fleeting)|underbart är kort
 (lasting)|varaktig|permanent|beständig|stadig|konstant|kontinuerlig
 (eventually)|i förlängningen|
@@ -1772,7 +1774,7 @@ Påkörd
 (final)|ultimat|slutgiltig|definitiv|orygglig
 (Endpoint)|Ändpunkt|
 (once)|En gång för alla
-(hibernate)|övervintra|
+(hibernate)|övervintra|<*gå i ide|<*ligga i ide|
 (survive)|överleva|
 (phase)|aggregationstillstånd|aggregationsfas
 (state)|fast|flytande|
@@ -2979,7 +2981,7 @@ risktagare
 (nut)|stolla(kvinna, nedsättande)|stollor
 (Kranky woman)|argbigga(n)
 (crazy)|få fnatt(lätt galenhet)|(vara)från vettet|
-(craze)|ha dille på något|
+(craze, on top of something)|ha dille på något|(vara) helt inne i |
 (mad)|Åt fanders|Ute och cyklar|Uppåt väggarna|
 (senseless)|sanslös|
 (eccentric)|kuf|särling|ensamvarg|säregen
@@ -3004,7 +3006,7 @@ risktagare
 (idiot)|idiot|idioter|idioti|dum|pucko|puckon(pl)|korkad|dumstrut|trög|slö|ointelligent|dåre|dårar| tok |tokar|dumbom(affectionately)|stolle|stollar|fårskalle|fårskallar
 (foolish)|dumsnål|Snålheten bedrar visheten
 (Incompetent)|odugling|
-(retarded)|efterbliven|dum i huvudet|sinnesslö(åld.)
+(retarded)|efterbliven|dum i huvudet|sinnesslö(åld.)|debil
 (stupid)|Dum som en gås|Dum som en åsna|Dummare än tåget|En skruv lös|tomt i ladan
 (caution, shoot yourself in foot)|Såga inte av den gren du själv sitter på
 (fool)|Tala inte med en dåre om en sten, om du inte vill ha den i huvudet|Våld är den enfaldiges sista utväg
@@ -4035,7 +4037,7 @@ Myndighet|ämbetsverk
 (mask)|maskera|
 (keep face)|hålla masken
 (behind scenes)|bakom kulisserna|
-(find)|finna|hitta|leta|
+(find)|finna|hitta|leta|leta rätt på|
 (search)|Leta efter något med ljus och lykta
 (snoop)|snoka(smygligt)|böka(som en svin, i marken)|rota|luska|
 (grope)|treva( sig runt/fram)|fumla|famla
@@ -4879,7 +4881,7 @@ Täckmantel
 (date)|datera|
 (literal)|bokstavlig|bokstavligt talat|ordagrant|ordagrann|
 (speak like book)|Tala som en bok
-(take literally)|Ta någon på orden|
+(take literally)|Ta .* på orden|
 (figurative)|bildlig|
 (margin note)|marginalanteckning|
 (rejoinder)|replik(sl-pl)|vits
@@ -5253,3 +5255,5 @@ förstulet| i smyg
 längst <*plats|främst|bakerst|efterst|uppflugen
 (limited,tight,packed)|knappt om utrymme
 (quarrel)|gräl(sl-pl)|gräla|gnabbas|tjivas|
+#Assimilations
+[a-za-z]*n[\s]p[a-za-z]*
