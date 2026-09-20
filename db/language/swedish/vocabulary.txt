@@ -5259,4 +5259,7 @@ längst <*plats|främst|bakerst|efterst|uppflugen
 [a-za-z]*n[\s]p[a-za-z]*
 [a-za-z]*n[\s]b[a-za-z]*
 [a-za-z]*r[tdnsl][a-za-z]+
+[a-z]*n[\s]g[a-z]*
+[a-z]*bt[a-z]*
 [a-za-z]*n[\s]m[a-za-z]*
+[a-z]*gt[a-z]*
