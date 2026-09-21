@@ -1,9 +1,9 @@
-#Very Basic
+#Everyday Life
 (sleep)|Somna|Sova|försova(extra)|
 (wake)|vakna|vaken|morna( sig)
 (wake early)|uppe med tuppen
 (routine)|Sköta sina dagliga uppgifter
-(hygiene)|Sköta sin hygien|Bajsa/skita|Kissa|Borsta|Duscha|
+(hygiene)|Sköta sin hygien|Bajsa|skita|Kissa|Borsta|Duscha|
 (health)|Ta hand om hälsa|Röra på sig|träna|
 (cleaning)|Hålla ordning|Städa|Tvätta|Diska
 (food)|Matlagning|Laga mat|Äta mat|Dricka vatten|
@@ -29,6 +29,7 @@
 (wellbeing)|må bra|glad|lugn|
 (sexuality)|kåt|sexuellt upphetsad|åtrå|sexuell lust|
 (desire)|(är du )tänd på (henne)|
+
 #Common things and actions
 (perception)|förnimmelse|sinnesintryck|perception|intryck(vdg.)|
 (perceive)|förnimma|ana(vdg.)|förnam|förnummit
@@ -1086,9 +1087,10 @@ Ursäkt|förevändning|täckmantel
 (bliss)|salighet|salig|frälst|
 (sneaky)|smussla|smussel|fuffens|
 (beg)|tigga|tigger|tiggde|tiggt|tigg|bettla|tiggeri|tiggerier|tiggare|tiggare|tiggande|tiggande|
+
 #Time
 (time)|tid|tider|tidsrymd|tidsrymder|dags|
-(expression)|då var det dags|
+(it's time)|då var det dags|
 (round)|omgång|omgången|omgångar|
 (moment)|tidspunkt|tidspunkter|
 (time)|gång|stund|
@@ -1157,7 +1159,7 @@ Ursäkt|förevändning|täckmantel
 (instantly)|på momangen|I rödaste rappet|Illa kvickt|På ett bräde|På studs|
 (proverb)|Låt inte gräset gro under fötterna
 (spontaneously, off the top of my head)|På rak arm|utan vidare
-(expression)|Jag kan inte avgöra det på rak arm
+(right away)|(Jag kan inte avgöra det )på rak arm
 (longterm)|(tidssträckning)långvarig|kronisk|
 (years)|åratal|
 (shortterm)|kortvarig|kortlivad|kortvarighet|
@@ -1337,9 +1339,9 @@ Ursäkt|förevändning|täckmantel
 (degree)|mån|utsträckning|grad|grader|nivå|nivåer|läge|lägen(pl)|snäppet (t.e. bättre)|
 (inferior)|underlägsen|Ligga i lä|
 (superior)|överlägsen|
-(expression)|Skarpaste kniven i lådan
+(brightest mind)|Skarpaste kniven i lådan
 (equal)|jämbördig|jämbördighet|jämngod|likvärdig|lika bra|
-(expression)|Lika goda kålsupare|lika dålig|Pest eller kolera
+(equally bad)|Lika goda kålsupare|lika dålig|Pest eller kolera
 (equate)|jämställa|jämbördighet|jämbördig|
 (scale)|gradera|skala|skalor|skalning|skalningar|skalning|skalningar|
 (toextent)|i sin mån|för sin del|
@@ -1394,7 +1396,7 @@ Ursäkt|förevändning|täckmantel
 (drop)|droppe|droppar|en droppe i havet
 (lack)|brist på|ebb i kassan|
 (absence)|avsaknad|avsaknaden|avsaknader|
-(expression)|Många hövdingar, men få indianer
+(Too many chiefs and not enough Indians)|Många hövdingar, men få indianer
 (size)|storlek|storlekar|dimension|dimensioner|
 (big)|stor|större|störst|skrymmande|skrymma|skrymmer|skrymde|skrymt|skrym|
 (huge)|Stor som ett hus
@@ -1750,7 +1752,7 @@ Påkörd
 (brandnew)|sprillans ny|
 (belong)|tillhöra|tillhör|tillhörde|tillhört|tillhörighet|
 (it belongs there)|Var skall sleven vara om inte i grytan?
-(expression)|På sin mammas gata
+(expression, on home ground)|På sin mammas gata
 (proverb)|Var skall sleven vara om inte i grytan
 (related)|samhörande
 (possess)|besitta|inneha
@@ -1782,7 +1784,7 @@ Påkörd
 (evaporate)|avdunsta|evaporera|gas|gaser|ånga|ångor|plasma|torr|
 (mist,haze)|imma|immor|dimma|dim|dimmor|dis |töcken(slpl)
 (wet)|våt|väta|blöta|blöt|fukta|vattnig|fuktig
-(expression)|Som en blöt hund
+(expression, soaked to the skin, wet as a drowned rat)|Som en blöt hund
 (dew)|dagg|frost|
 (fog)|dimma|dimmor|
 (frost)|tjäle|
@@ -1790,9 +1792,9 @@ Påkörd
 (saliva)|saliv|
 (dry)|torka|torr|blåsa
 (Wipe off)|<*torka av|
-(expression)|Torrt som fnöske
+(expression, dry as a bone/dust)|Torrt som fnöske
 (solve)|lösa|löser|löste|löst|lös|löses|klara ut (problem)|
-(expression)|Saken är biff
+(expression, Case closed)|Saken är biff
 (solution)|upplösning|upplösningar|
 (effort)|Lägga manken till
 (expression)|Veta var skon klämmer|
@@ -4989,6 +4991,7 @@ Täckmantel
 (wriggle out)|slingra(sig; gall. ansvar)|Slingra sig som en orm
 (inevitable)|oundviklig|ofrånkomlig|
 (pre-chewed)|färdigtuggade|
+
 #Idiomatic way
 (both and)|både och|
 (oops)|ajdå|
@@ -5093,6 +5096,7 @@ Täckmantel
 (hand them over)|hit med dem|upp med handen|upp med hakan
 (it happens, that's life)|sånt är livet
 (Hit on someone)|<*lägga in en stöt|
+
 #Speaking style, Phrases
 (can't be)|får inte vara (fåintva)|
 (was I so (vajaså))|
