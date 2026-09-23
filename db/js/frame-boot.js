@@ -25,6 +25,20 @@
 // Every frame relays: arm messages downward, everything else upward. Nested
 // frames therefore work without the top frame knowing the tree.
 (function () {
+  // A breadcrumb trail on the page, written before anything that can return
+  // early. The log channel may not be attached to the document yet at document
+  // start, so a report that depends on it proves nothing when it is missing —
+  // this is readable later, by snippet.js, from whatever world snippet.js runs
+  // in. If snippet.js cannot see this, the two are not sharing a world, and
+  // that alone explains why a flag set here is invisible there.
+  try {
+    window.__cupFrameBootDiag = window.__cupFrameBootDiag || [];
+    window.__cupFrameBootDiag.push(
+      'ran href=' + String(location.href).slice(0, 120) +
+      ' top=' + (window.top === window) +
+      ' channel=' + (typeof window.SnippetLogChannel));
+  } catch (_) {}
+
   if (window.__cupFrameBoot) return;
   window.__cupFrameBoot = 1;
 
@@ -42,10 +56,18 @@
   // Same technique as uBlock Origin's `json-prune`: the player decides where
   // to splice ads by reading named fields off its config, so the fields are
   // removed before it can read them.
+  function note(msg) {
+    try { window.__cupFrameBootDiag.push(msg); } catch (_) {}
+  }
+
   function installYouTubeAdPrune() {
-    if (!location.hostname || location.hostname.indexOf('youtube.com') < 0) return;
-    if (window._ytAdPruneInstalled) return;
+    if (!location.hostname || location.hostname.indexOf('youtube.com') < 0) {
+      note('prune skipped: host=' + location.hostname);
+      return;
+    }
+    if (window._ytAdPruneInstalled) { note('prune skipped: already installed'); return; }
     window._ytAdPruneInstalled = 1;
+    note('prune installing');
 
     var AD_KEYS = [
       'playerAds', 'adPlacements', 'adSlots', 'adServingData',
