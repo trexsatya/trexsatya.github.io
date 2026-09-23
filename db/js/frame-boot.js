@@ -103,15 +103,21 @@
 
     var reported = 0;
     function reportResponse(url, before) {
-      if (reported >= 3) return; // a ring buffer that has to stay readable
-      reported++;
-      var present = [];
-      for (var i = 0; i < AD_KEYS.length; i++) {
-        if (AD_KEYS[i] in before) present.push(AD_KEYS[i]);
-      }
-      var endpoint = url.replace(/^https?:\/\/[^/]+/, '').split('?')[0];
-      report(endpoint + ' known=' + (present.join(',') || 'NONE') +
-             ' adish=' + (adish(before).join(',') || 'none'));
+      // Total: this runs inside a property setter that the page's own script
+      // triggers, so anything escaping here surfaces as a failure in YouTube's
+      // code. Diagnostics must never be able to break the thing they watch.
+      try {
+        if (reported >= 3) return; // a ring buffer that has to stay readable
+        if (!before || typeof before !== 'object') return;
+        reported++;
+        var present = [];
+        for (var i = 0; i < AD_KEYS.length; i++) {
+          if (AD_KEYS[i] in before) present.push(AD_KEYS[i]);
+        }
+        var endpoint = String(url).replace(/^https?:\/\/[^/]+/, '').split('?')[0];
+        report(endpoint + ' known=' + (present.join(',') || 'NONE') +
+               ' adish=' + (adish(before).join(',') || 'none'));
+      } catch (_) {}
     }
 
     // Anything an inline script already assigned before us. At document start
@@ -135,7 +141,15 @@
         // At document start this is the normal path: we are in place before
         // the watch page's inline script assigns it, which is the whole point
         // of running here rather than from the host.
-        set: function (v) { reportResponse('inline/assigned', v || {}); prune(v); _ipr = v; },
+        //
+        // The store happens outside the guard on purpose. Pruning is a best
+        // effort and may fail; holding on to what the page assigned is not
+        // optional, because a getter that then returns undefined takes the
+        // player down with it. Ads are a nuisance, a dead player is not.
+        set: function (v) {
+          try { reportResponse('inline/assigned', v); prune(v); } catch (_) {}
+          _ipr = v;
+        },
         get: function () { return _ipr; },
       });
     } catch (_) { /* may already be non-configurable */ }
@@ -148,6 +162,9 @@
         url = typeof input === 'string' ? input : (input && input.url) || '';
       } catch (_) {}
       var p = _origFetch.call(this, input, init);
+      // Not a thenable means something else has already replaced fetch with
+      // something we do not understand. Hand its result back untouched.
+      if (!p || typeof p.then !== 'function') return p;
       if (!carriesAds(url)) return p;
       return p.then(function (response) {
         // Returning the untouched response on any failure: a page with ads is
@@ -169,7 +186,19 @@
       });
     };
   }
-  try { installYouTubeAdPrune(); } catch (_) {}
+  // Named, not swallowed. An injected document-start script has no URL, so
+  // anything thrown out of here reaches the page's own error handler as the
+  // browser's opaque "Script error." with no file and no line — indistinguish-
+  // able from the dozens a site like YouTube throws on its own. Reporting it
+  // under our own name is the difference between a lead and a shrug.
+  try {
+    installYouTubeAdPrune();
+  } catch (e) {
+    try {
+      window.SnippetLogChannel.postMessage(
+        'warn|[yt] prune install failed: ' + ((e && e.message) || e));
+    } catch (_) {}
+  }
 
   // The top document gets snippet.js the ordinary way; this agent exists only
   // for frames, and doing both would install two of everything.
