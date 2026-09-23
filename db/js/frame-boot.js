@@ -101,13 +101,32 @@
       return out;
     }
 
+    // Every innertube endpoint seen, and which transport carried it, whether
+    // or not we pruned it. This is what turns "the config never reached us"
+    // from a deduction into a list: if the player config is still arriving by
+    // some route we do not watch, its name shows up here.
+    var seenKeys = {};
+    var seenCount = 0;
+    function noteSeen(url, via) {
+      try {
+        if (seenCount >= 8) return;
+        var s = String(url);
+        if (s.indexOf('/youtubei/v1/') < 0) return;
+        var key = via + ' ' + s.replace(/^https?:\/\/[^/]+/, '').split('?')[0];
+        if (seenKeys[key]) return;
+        seenKeys[key] = 1;
+        seenCount++;
+        report('saw ' + key);
+      } catch (_) {}
+    }
+
     var reported = 0;
-    function reportResponse(url, before) {
+    function reportResponse(url, before, via) {
       // Total: this runs inside a property setter that the page's own script
       // triggers, so anything escaping here surfaces as a failure in YouTube's
       // code. Diagnostics must never be able to break the thing they watch.
       try {
-        if (reported >= 3) return; // a ring buffer that has to stay readable
+        if (reported >= 6) return; // a ring buffer that has to stay readable
         if (!before || typeof before !== 'object') return;
         reported++;
         var present = [];
@@ -115,7 +134,8 @@
           if (AD_KEYS[i] in before) present.push(AD_KEYS[i]);
         }
         var endpoint = String(url).replace(/^https?:\/\/[^/]+/, '').split('?')[0];
-        report(endpoint + ' known=' + (present.join(',') || 'NONE') +
+        report(endpoint + ' via=' + (via || 'fetch') +
+               ' known=' + (present.join(',') || 'NONE') +
                ' adish=' + (adish(before).join(',') || 'none'));
       } catch (_) {}
     }
@@ -154,6 +174,92 @@
       });
     } catch (_) { /* may already be non-configurable */ }
 
+    // ---- XMLHttpRequest ----------------------------------------------------
+    //
+    // m.youtube.com fetches its player config over XHR, not fetch: on the
+    // mobile watch page the /youtubei/v1/player response never reaches the
+    // fetch wrapper below and the inline global is never assigned, yet the
+    // player starts. Wrapping only fetch covers the desktop site and misses
+    // the phone entirely.
+    //
+    // The response is rewritten through a getter defined on the instance
+    // rather than from a 'load' listener. Listeners run in registration order,
+    // and the page registers its own before we would get to add ours — by the
+    // time we rewrote anything the page would already have read it. A getter
+    // does not care who reads first.
+    try {
+      var XHR = window.XMLHttpRequest;
+      var proto = XHR && XHR.prototype;
+      var textDesc = proto && Object.getOwnPropertyDescriptor(proto, 'responseText');
+      var respDesc = proto && Object.getOwnPropertyDescriptor(proto, 'response');
+      if (proto && textDesc && textDesc.get) {
+        var origOpen = proto.open;
+        var origSend = proto.send;
+
+        proto.open = function (method, url) {
+          try { this.__cupUrl = String(url == null ? '' : url); } catch (_) {}
+          return origOpen.apply(this, arguments);
+        };
+
+        proto.send = function () {
+          try {
+            var url = this.__cupUrl || '';
+            noteSeen(url, 'xhr');
+            if (carriesAds(url)) {
+              var self = this;
+              // undefined = not computed yet, null = nothing we can do with it.
+              var cache;
+              function pruned() {
+                if (cache !== undefined) return cache;
+                cache = null;
+                var raw;
+                try { raw = textDesc.get.call(self); } catch (_) { return cache; }
+                if (typeof raw !== 'string' || raw.charAt(0) !== '{') return cache;
+                try {
+                  var j = JSON.parse(raw);
+                  reportResponse(url, j.playerResponse || j, 'xhr');
+                  prune(j);
+                  cache = JSON.stringify(j);
+                } catch (_) { cache = null; }
+                return cache;
+              }
+              Object.defineProperty(this, 'responseText', {
+                configurable: true,
+                get: function () {
+                  var v = pruned();
+                  return v === null ? textDesc.get.call(self) : v;
+                },
+              });
+              if (respDesc && respDesc.get) {
+                Object.defineProperty(this, 'response', {
+                  configurable: true,
+                  get: function () {
+                    var orig = respDesc.get.call(self);
+                    var rt = '';
+                    try { rt = self.responseType || ''; } catch (_) {}
+                    // Only the text-shaped ones get the rewritten body. A
+                    // blob or an arraybuffer is not ours to reinterpret.
+                    if (rt === '' || rt === 'text') {
+                      var v = pruned();
+                      return v === null ? orig : v;
+                    }
+                    if (rt === 'json' && orig && typeof orig === 'object') {
+                      try {
+                        reportResponse(url, orig.playerResponse || orig, 'xhr/json');
+                        prune(orig);
+                      } catch (_) {}
+                    }
+                    return orig;
+                  },
+                });
+              }
+            }
+          } catch (_) { /* never block the request itself */ }
+          return origSend.apply(this, arguments);
+        };
+      }
+    } catch (_) {}
+
     if (typeof window.fetch !== 'function') return;
     var _origFetch = window.fetch;
     window.fetch = function (input, init) {
@@ -165,6 +271,7 @@
       // Not a thenable means something else has already replaced fetch with
       // something we do not understand. Hand its result back untouched.
       if (!p || typeof p.then !== 'function') return p;
+      noteSeen(url, 'fetch');
       if (!carriesAds(url)) return p;
       return p.then(function (response) {
         // Returning the untouched response on any failure: a page with ads is
@@ -173,7 +280,7 @@
           return response.clone().text().then(function (text) {
             try {
               var json = JSON.parse(text);
-              reportResponse(url, json.playerResponse || json);
+              reportResponse(url, json.playerResponse || json, 'fetch');
               prune(json);
               return new Response(JSON.stringify(json), {
                 status: response.status,
