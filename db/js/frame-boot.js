@@ -28,6 +28,149 @@
   if (window.__cupFrameBoot) return;
   window.__cupFrameBoot = 1;
 
+  // ---- YouTube ad pruning -------------------------------------------------
+  //
+  // Deliberately above the top-frame return below, because it is needed in
+  // both places. YouTube is watched two ways: as an ordinary page in the main
+  // WebView, and as an <iframe> inside the study app's player. The host also
+  // injects this per navigation, but that injection reaches a main frame only
+  // and lands after the document has begun parsing — so it never sees the
+  // iframe at all, and on a first watch page it can lose the race to
+  // YouTube's own inline config assignment. Here it is document-start in
+  // every frame, which is the only place both of those hold.
+  //
+  // Same technique as uBlock Origin's `json-prune`: the player decides where
+  // to splice ads by reading named fields off its config, so the fields are
+  // removed before it can read them.
+  function installYouTubeAdPrune() {
+    if (!location.hostname || location.hostname.indexOf('youtube.com') < 0) return;
+    if (window._ytAdPruneInstalled) return;
+    window._ytAdPruneInstalled = 1;
+
+    var AD_KEYS = [
+      'playerAds', 'adPlacements', 'adSlots', 'adServingData',
+      'adBreakHeartbeatParams', 'importantForAds',
+    ];
+    // Endpoints whose responses carry the config. Every video after the first
+    // one in a session arrives through these rather than through the inline
+    // script.
+    var AD_ENDPOINTS = [
+      '/youtubei/v1/player',
+      '/youtubei/v1/next',
+      '/youtubei/v1/reel/reel_item_watch',
+    ];
+
+    function prune(obj) {
+      if (!obj || typeof obj !== 'object') return;
+      for (var i = 0; i < AD_KEYS.length; i++) {
+        if (AD_KEYS[i] in obj) { try { delete obj[AD_KEYS[i]]; } catch (_) {} }
+      }
+      // The /next and reel responses carry the player config one level down,
+      // with its own copy of the keys. Descend by name rather than walking the
+      // whole tree: the payload is large, and deleting anything called adSlots
+      // wherever it appears risks taking a part of the page with it.
+      if (obj.playerResponse) prune(obj.playerResponse);
+    }
+
+    function carriesAds(url) {
+      for (var i = 0; i < AD_ENDPOINTS.length; i++) {
+        if (url.indexOf(AD_ENDPOINTS[i]) >= 0) return true;
+      }
+      return false;
+    }
+
+    // Reporting, because "ads are showing" has three unrelated causes that
+    // look identical from the sofa: this never ran, it ran and found nothing
+    // to delete because the fields were renamed, or it deleted everything it
+    // knows about and the ads were stitched into the video stream upstream
+    // where no amount of deleting reaches them. Only the log tells them apart.
+    //
+    // The channel exists in the main frame of the app's own WebView and not in
+    // a cross-origin iframe, so this is quiet exactly where it cannot work.
+    function report(msg) {
+      try { window.SnippetLogChannel.postMessage('log|[yt] ' + msg); } catch (_) {}
+    }
+
+    // Top-level keys that look ad-related, so a field YouTube has renamed
+    // shows up by name instead of as silence.
+    function adish(obj) {
+      var out = [];
+      try {
+        for (var k in obj) { if (/ad/i.test(k)) out.push(k); }
+      } catch (_) {}
+      return out;
+    }
+
+    var reported = 0;
+    function reportResponse(url, before) {
+      if (reported >= 3) return; // a ring buffer that has to stay readable
+      reported++;
+      var present = [];
+      for (var i = 0; i < AD_KEYS.length; i++) {
+        if (AD_KEYS[i] in before) present.push(AD_KEYS[i]);
+      }
+      var endpoint = url.replace(/^https?:\/\/[^/]+/, '').split('?')[0];
+      report(endpoint + ' known=' + (present.join(',') || 'NONE') +
+             ' adish=' + (adish(before).join(',') || 'none'));
+    }
+
+    // Anything an inline script already assigned before us. At document start
+    // there should be nothing, but this costs nothing and covers the case
+    // where the host injected us late.
+    report('prune installed on ' + location.hostname +
+           (window.top === window ? ' (page)' : ' (iframe)'));
+    try {
+      if (window.ytInitialPlayerResponse) {
+        reportResponse('inline/ytInitialPlayerResponse', window.ytInitialPlayerResponse);
+      }
+      prune(window.ytInitialPlayerResponse);
+    } catch (_) {}
+
+    // Future assignments — the watch page's inline script, and every SPA
+    // navigation that re-assigns it.
+    try {
+      var _ipr = window.ytInitialPlayerResponse;
+      Object.defineProperty(window, 'ytInitialPlayerResponse', {
+        configurable: true,
+        // At document start this is the normal path: we are in place before
+        // the watch page's inline script assigns it, which is the whole point
+        // of running here rather than from the host.
+        set: function (v) { reportResponse('inline/assigned', v || {}); prune(v); _ipr = v; },
+        get: function () { return _ipr; },
+      });
+    } catch (_) { /* may already be non-configurable */ }
+
+    if (typeof window.fetch !== 'function') return;
+    var _origFetch = window.fetch;
+    window.fetch = function (input, init) {
+      var url = '';
+      try {
+        url = typeof input === 'string' ? input : (input && input.url) || '';
+      } catch (_) {}
+      var p = _origFetch.call(this, input, init);
+      if (!carriesAds(url)) return p;
+      return p.then(function (response) {
+        // Returning the untouched response on any failure: a page with ads is
+        // a far better outcome than a page whose player got a broken body.
+        try {
+          return response.clone().text().then(function (text) {
+            try {
+              var json = JSON.parse(text);
+              reportResponse(url, json.playerResponse || json);
+              prune(json);
+              return new Response(JSON.stringify(json), {
+                status: response.status,
+                statusText: response.statusText,
+                headers: response.headers,
+              });
+            } catch (_) { return response; }
+          }, function () { return response; });
+        } catch (_) { return response; }
+      });
+    };
+  }
+  try { installYouTubeAdPrune(); } catch (_) {}
+
   // The top document gets snippet.js the ordinary way; this agent exists only
   // for frames, and doing both would install two of everything.
   if (window.top === window) return;
