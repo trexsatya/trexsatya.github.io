@@ -58,18 +58,33 @@
       '/youtubei/v1/player',
       '/youtubei/v1/next',
       '/youtubei/v1/reel/reel_item_watch',
+      // m.youtube.com asks for the whole watch page here instead of calling
+      // /player, so on a phone this is the only one of these that ever fires.
+      '/youtubei/v1/get_watch',
     ];
 
-    function prune(obj) {
+    // Containers the config is nested inside. Descending by name rather than
+    // walking the whole tree: the payload is large, and deleting anything
+    // called adSlots wherever it appears risks taking a part of the page with
+    // it. get_watch wraps both of these, which /player does not.
+    var AD_CONTAINERS = ['playerResponse', 'response'];
+
+    function prune(obj, depth) {
       if (!obj || typeof obj !== 'object') return;
+      // A cap rather than a visited set: the nesting here is three deep at
+      // most, and a self-referencing payload must not become a hung player.
+      if ((depth || 0) > 4) return;
+      if (Object.prototype.toString.call(obj) === '[object Array]') {
+        for (var n = 0; n < obj.length; n++) prune(obj[n], (depth || 0) + 1);
+        return;
+      }
       for (var i = 0; i < AD_KEYS.length; i++) {
         if (AD_KEYS[i] in obj) { try { delete obj[AD_KEYS[i]]; } catch (_) {} }
       }
-      // The /next and reel responses carry the player config one level down,
-      // with its own copy of the keys. Descend by name rather than walking the
-      // whole tree: the payload is large, and deleting anything called adSlots
-      // wherever it appears risks taking a part of the page with it.
-      if (obj.playerResponse) prune(obj.playerResponse);
+      for (var c = 0; c < AD_CONTAINERS.length; c++) {
+        var inner = obj[AD_CONTAINERS[c]];
+        if (inner && inner !== obj) prune(inner, (depth || 0) + 1);
+      }
     }
 
     function carriesAds(url) {
@@ -120,23 +135,34 @@
       } catch (_) {}
     }
 
+    // What the ad keys look like in one container, so a renamed field shows
+    // up by name instead of as silence.
+    function describe(label, obj) {
+      if (!obj || typeof obj !== 'object') return '';
+      var present = [];
+      for (var i = 0; i < AD_KEYS.length; i++) {
+        if (AD_KEYS[i] in obj) present.push(AD_KEYS[i]);
+      }
+      var a = adish(obj);
+      return ' ' + label + '{known=' + (present.join(',') || 'NONE') +
+             ' adish=' + (a.join(',') || 'none') + '}';
+    }
+
     var reported = 0;
-    function reportResponse(url, before, via) {
+    function reportResponse(url, body, via) {
       // Total: this runs inside a property setter that the page's own script
       // triggers, so anything escaping here surfaces as a failure in YouTube's
       // code. Diagnostics must never be able to break the thing they watch.
       try {
         if (reported >= 6) return; // a ring buffer that has to stay readable
-        if (!before || typeof before !== 'object') return;
+        if (!body || typeof body !== 'object') return;
         reported++;
-        var present = [];
-        for (var i = 0; i < AD_KEYS.length; i++) {
-          if (AD_KEYS[i] in before) present.push(AD_KEYS[i]);
+        var msg = String(url).replace(/^https?:\/\/[^/]+/, '').split('?')[0] +
+                  ' via=' + (via || 'fetch') + describe('top', body);
+        for (var c = 0; c < AD_CONTAINERS.length; c++) {
+          msg += describe(AD_CONTAINERS[c], body[AD_CONTAINERS[c]]);
         }
-        var endpoint = String(url).replace(/^https?:\/\/[^/]+/, '').split('?')[0];
-        report(endpoint + ' via=' + (via || 'fetch') +
-               ' known=' + (present.join(',') || 'NONE') +
-               ' adish=' + (adish(before).join(',') || 'none'));
+        report(msg);
       } catch (_) {}
     }
 
@@ -217,7 +243,7 @@
                 if (typeof raw !== 'string' || raw.charAt(0) !== '{') return cache;
                 try {
                   var j = JSON.parse(raw);
-                  reportResponse(url, j.playerResponse || j, 'xhr');
+                  reportResponse(url, j, 'xhr');
                   prune(j);
                   cache = JSON.stringify(j);
                 } catch (_) { cache = null; }
@@ -245,7 +271,7 @@
                     }
                     if (rt === 'json' && orig && typeof orig === 'object') {
                       try {
-                        reportResponse(url, orig.playerResponse || orig, 'xhr/json');
+                        reportResponse(url, orig, 'xhr/json');
                         prune(orig);
                       } catch (_) {}
                     }
@@ -280,7 +306,7 @@
           return response.clone().text().then(function (text) {
             try {
               var json = JSON.parse(text);
-              reportResponse(url, json.playerResponse || json, 'fetch');
+              reportResponse(url, json, 'fetch');
               prune(json);
               return new Response(JSON.stringify(json), {
                 status: response.status,
