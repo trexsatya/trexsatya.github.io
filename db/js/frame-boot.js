@@ -135,34 +135,58 @@
       } catch (_) {}
     }
 
+    // The top-level key names, because two rounds of guessing the shape of
+    // this payload have now cost two deploys. Names are cheap and they end
+    // the guessing: whatever container the config is really in, it is one of
+    // these.
+    function keyList(obj) {
+      var out = [];
+      try {
+        for (var k in obj) {
+          if (out.length >= 14) { out.push('...'); break; }
+          out.push(String(k).slice(0, 40));
+        }
+      } catch (_) {}
+      return out.join(',');
+    }
+
     // What the ad keys look like in one container, so a renamed field shows
     // up by name instead of as silence.
     function describe(label, obj) {
       if (!obj || typeof obj !== 'object') return '';
+      var isArr = Object.prototype.toString.call(obj) === '[object Array]';
       var present = [];
       for (var i = 0; i < AD_KEYS.length; i++) {
         if (AD_KEYS[i] in obj) present.push(AD_KEYS[i]);
       }
-      var a = adish(obj);
-      return ' ' + label + '{known=' + (present.join(',') || 'NONE') +
-             ' adish=' + (a.join(',') || 'none') + '}';
+      return ' ' + label + (isArr ? '[array:' + obj.length + ']' : '') +
+             '{known=' + (present.join(',') || 'NONE') +
+             ' adish=' + (adish(obj).join(',') || 'none') +
+             ' keys=' + (keyList(obj) || 'none') + '}';
     }
 
-    var reported = 0;
+    // Capped per endpoint, not just in total. get_watch is re-requested every
+    // few seconds on a watch page, and in one run it used every slot before
+    // /next was ever reported — the cap hid the very thing it was meant to
+    // leave room for.
+    var reportedBy = {};
+    var reportedTotal = 0;
     function reportResponse(url, body, via) {
       // Total: this runs inside a property setter that the page's own script
       // triggers, so anything escaping here surfaces as a failure in YouTube's
       // code. Diagnostics must never be able to break the thing they watch.
       try {
-        if (reported >= 6) return; // a ring buffer that has to stay readable
+        if (reportedTotal >= 10) return;
         if (!body || typeof body !== 'object') return;
-        reported++;
-        var msg = String(url).replace(/^https?:\/\/[^/]+/, '').split('?')[0] +
-                  ' via=' + (via || 'fetch') + describe('top', body);
+        var endpoint = String(url).replace(/^https?:\/\/[^/]+/, '').split('?')[0];
+        if ((reportedBy[endpoint] || 0) >= 2) return;
+        reportedBy[endpoint] = (reportedBy[endpoint] || 0) + 1;
+        reportedTotal++;
+        var msg = endpoint + ' via=' + (via || 'fetch') + describe('top', body);
         for (var c = 0; c < AD_CONTAINERS.length; c++) {
           msg += describe(AD_CONTAINERS[c], body[AD_CONTAINERS[c]]);
         }
-        report(msg);
+        report(msg.slice(0, 900));
       } catch (_) {}
     }
 
