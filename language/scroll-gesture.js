@@ -1,0 +1,1 @@
+export const GESTURE_SLOP=6;export function gestureAxis(t,e,r,u){const a=Number(u)>0?Number(u):6,b=Math.abs(Number(t)||0),n=Math.abs(Number(e)||0);return Math.max(b,n)<a?null:r?n>b?"y":"x":"y"}
