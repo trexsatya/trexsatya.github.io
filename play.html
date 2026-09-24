@@ -310,7 +310,7 @@
 </head>
 
 <body>
-<span style="position:fixed;top:2rem;right: 1rem">
+<span id="layer-info-bar" style="position:fixed;top:2rem;right: 1rem">
         Lyr: <span id="layerInfo" style="color: blue">PC</span>;
         Uid: <span id="selectedObjId" style="color: blue"></span>;
     </span>
@@ -1813,7 +1813,28 @@
     <button class="wb-tool" title="Toggle Grid (G)" onclick="gridManager.toggle()">
         <i class="fas fa-th"></i>
     </button>
+    <div class="wb-separator"></div>
+    <button class="wb-tool" title="Script editor (Ctrl/&#8984;+Shift+S)" onclick="openScriptDialog()">
+        <i class="fas fa-code"></i>
+    </button>
+    <button class="wb-tool" title="Keyboard shortcuts (?)" onclick="toggleShortcutsHelp()">
+        <i class="fas fa-keyboard"></i>
+    </button>
 </div>
+
+<!-- Keyboard shortcuts help -->
+<div id="shortcuts-help" onclick="if (event.target === this) toggleShortcutsHelp(false)">
+    <div class="shortcuts-box">
+        <div class="shortcuts-head">
+            <strong>Keyboard shortcuts</strong>
+            <button onclick="toggleShortcutsHelp(false)" title="Close (Esc)">&times;</button>
+        </div>
+        <div id="shortcuts-list"></div>
+    </div>
+</div>
+
+<!-- Line being played (shown only during script playback) -->
+<div id="play-line-badge"></div>
 
 <!-- Zoom Controls -->
 <div id="zoom-controls">
@@ -1850,6 +1871,11 @@
             <label>Stroke W</label>
             <input type="number" id="prop-stroke-width" value="1" min="0" max="50" step="0.5" style="width:60px;"
                    onchange="applyProperty('strokeWidth', parseFloat(this.value))">
+        </div>
+        <div class="prop-row" id="prop-radius-row" style="display:none;">
+            <label>Corner radius</label>
+            <input type="number" id="prop-radius" value="0" min="0" max="500" step="1" style="width:60px;"
+                   onchange="applyCornerRadius(parseFloat(this.value) || 0)">
         </div>
         <div class="prop-row">
             <label>Stroke Type</label>
@@ -2197,6 +2223,10 @@
             ? obj.getObjects().find(o => o.type === 'rect')
             : null;
 
+        const isRect = obj instanceof fabric.Rect;
+        document.getElementById('prop-radius-row').style.display = isRect ? '' : 'none';
+        if (isRect) document.getElementById('prop-radius').value = obj.rx || 0;
+
         // Shape properties: show for non-text objects (and for stickies —
         // they expose paper colour + opacity but no stroke).
         if (isText) {
@@ -2310,6 +2340,15 @@
         newState[prop] = value;
         undoManager.push(Commands.modifyObject(pc, obj, prevState, newState));
         if (obj.uid) recordScript(`setProp('${obj.uid}', '${prop}', ${JSON.stringify(value)})`);
+    }
+
+    function applyCornerRadius(radius) {
+        const obj = pc.getActiveObject();
+        if (!(obj instanceof fabric.Rect)) return;
+        const prevState = { rx: obj.rx || 0, ry: obj.ry || 0 };
+        setCornerRadius(obj, radius);
+        undoManager.push(Commands.modifyObject(pc, obj, prevState, { rx: radius, ry: radius }));
+        if (obj.uid) recordScript(`setCornerRadius(${JSON.stringify(obj.uid)}, ${JSON.stringify(radius)})`);
     }
 
     function applyTextFill(value) {
@@ -2469,12 +2508,20 @@
     // Close overlay on Escape key; open the script editor with Ctrl/Cmd+Shift+S.
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
+            if (document.getElementById('shortcuts-help').classList.contains('visible')) toggleShortcutsHelp(false);
+            if (document.body.classList.contains("play-mode")) stopScriptPlayback();
             if (document.getElementById('media-overlay').style.display === 'flex') {
                 closeMediaOverlay();
             }
             if (document.getElementById('scriptViewerDialog').style.display === 'flex') {
                 closeScriptDialog();
             }
+        }
+        if (e.key === '?' && !e.ctrlKey && !e.metaKey) {
+            const t = e.target;
+            const typing = t && (t.tagName === 'TEXTAREA' || t.tagName === 'INPUT' || t.isContentEditable);
+            const editingText = window.pc && pc.getActiveObject() && pc.getActiveObject().isEditing;
+            if (!typing && !editingText) { e.preventDefault(); toggleShortcutsHelp(); }
         }
         if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'S' || e.key === 's')) {
             // Don't swallow the shortcut while the user is editing an IText
@@ -2528,6 +2575,105 @@
         document.getElementById('scriptViewerDialog').style.display = 'none';
     }
 
+    // ---- Play mode: clutter-free canvas while a script plays ----
+    function enterPlayMode() {
+        document.body.classList.add('play-mode');
+        [window.pc, window.oc].forEach(c => { if (c) { c.skipControlsDrawing = true; c.requestRenderAll(); } });
+    }
+
+    function exitPlayMode() {
+        document.body.classList.remove('play-mode');
+        document.getElementById('play-line-badge').textContent = '';
+        [window.pc, window.oc].forEach(c => { if (c) { c.skipControlsDrawing = false; c.requestRenderAll(); } });
+    }
+
+    // Esc during playback: the line in progress finishes, the rest are skipped.
+    function stopScriptPlayback() {
+        window._stopPlayback = true;
+        window.isRecordingPlayback = false;
+        exitPlayMode();
+    }
+
+    function showPlayLine(n, total, error) {
+        const badge = document.getElementById('play-line-badge');
+        badge.textContent = error ? `Line ${n} of ${total} failed: ${error}` : `Line ${n} of ${total}`;
+        badge.classList.toggle('failed', !!error);
+    }
+
+    // ---- Keyboard shortcuts help ----
+    const KEYBOARD_SHORTCUTS = [
+        ['Tools', [
+            ['V', 'Select tool'],
+            ['H', 'Hand / pan (when nothing is selected)'],
+            ['P', 'Pen'],
+            ['S', 'Rectangle (when nothing is selected)'],
+            ['N', 'Sticky note'],
+            ['T', 'Small text; with an object selected, make a tree from it'],
+            ['G', 'Show / hide grid'],
+            ['R', 'Show / hide rulers'],
+            ['D', 'Switch which layer is in front for drawing'],
+        ]],
+        ['Edit', [
+            ['Ctrl/\u2318 + Z', 'Undo'],
+            ['Ctrl/\u2318 + Shift + Z,  Ctrl/\u2318 + Y', 'Redo'],
+            ['Ctrl/\u2318 + A', 'Select all'],
+            ['Ctrl/\u2318 + G', 'Group selected objects'],
+            ['Ctrl + C', 'Copy (also opens the notes editor for the selected object)'],
+            ['Ctrl + V', 'Paste'],
+            ['Delete,  Backspace', 'Delete selected'],
+            ['E', 'Edit selected object'],
+            ['H', 'Hide selected object'],
+            ['Arrow keys', 'Move selected object by 10px'],
+            ['+  /  \u2212', 'Grow / shrink selected object (tree node: show / hide children)'],
+            ['L', 'Clear drawings (asks first)'],
+        ]],
+        ['View', [
+            ['+  /  \u2212', 'Zoom in / out (when nothing is selected)'],
+            ['Ctrl/\u2318 + 0', 'Reset zoom'],
+            ['Ctrl + ,', 'Bring main canvas to front'],
+            ['Ctrl + .', 'Bring drawing canvas to front'],
+            ['Ctrl + T', 'Bring text layer to front'],
+            ['Ctrl + I', 'Open inspector'],
+        ]],
+        ['Scripts', [
+            ['Ctrl/\u2318 + Shift + S', 'Open the script editor'],
+            ['Esc', 'Stop animations and return to Select; during playback, stop the script'],
+            ['?', 'This list'],
+        ]],
+    ];
+
+    function toggleShortcutsHelp(show) {
+        const el = document.getElementById('shortcuts-help');
+        const open = show != null ? show : !el.classList.contains('visible');
+        if (open && !el.dataset.rendered) {
+            const list = document.getElementById('shortcuts-list');
+            KEYBOARD_SHORTCUTS.forEach(([group, items]) => {
+                const h = document.createElement('div');
+                h.className = 'shortcuts-group';
+                h.textContent = group;
+                list.appendChild(h);
+                items.forEach(([keys, what]) => {
+                    const row = document.createElement('div');
+                    row.className = 'shortcuts-row';
+                    const k = document.createElement('span');
+                    k.className = 'shortcuts-keys';
+                    keys.split(/,\s+/).forEach(combo => {
+                        const kbd = document.createElement('kbd');
+                        kbd.textContent = combo;
+                        k.appendChild(kbd);
+                    });
+                    const d = document.createElement('span');
+                    d.textContent = what;
+                    row.appendChild(k);
+                    row.appendChild(d);
+                    list.appendChild(row);
+                });
+            });
+            el.dataset.rendered = '1';
+        }
+        el.classList.toggle('visible', open);
+    }
+
     // Functions a recorded script can call, grouped for the "? Functions" popup.
     const SCRIPT_HELP = [
         ['Create', [
@@ -2552,6 +2698,7 @@
         ]],
         ['Change', [
             ['setProp(uid, prop, value)', 'Set one property, e.g. fill'],
+            ['setCornerRadius(uid, radius)', 'Round the corners of a rectangle'],
             ['setText(uid, text)', 'Replace the text of an object'],
             ['setStickyProp(uid, prop, value)', 'Sticky note colour or text property'],
             ['setQuadLabel(uid, text)', 'Text of a textInQuad box'],

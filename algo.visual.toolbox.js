@@ -84,6 +84,14 @@ function syncUidCounters() {
 }
 
 // Helper for script playback: set a property on an object by uid
+// Rounded corners for a rectangle (fabric caps the radius at half the shorter side).
+function setCornerRadius(uidOrObj, radius) {
+  const obj = findIfRequired(uidOrObj);
+  if (!(obj instanceof fabric.Rect)) return;
+  obj.set({ rx: radius, ry: radius });
+  if (obj.canvas) obj.canvas.requestRenderAll();
+}
+
 function setProp(uid, prop, value) {
   const obj = findById(uid);
   if (obj && typeof obj.set === 'function') {
