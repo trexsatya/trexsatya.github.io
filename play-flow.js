@@ -1,0 +1,1 @@
+export function flowEnds(r,o,t,x){return"arrow"===r?[o,t]:"line"===r&&x?n(o,x)<=n(t,x)?[o,t]:[t,o]:null}export function pointAlong(n,r,o){return{x:n.x+(r.x-n.x)*o,y:n.y+(r.y-n.y)*o}}function n(n,r){return(n.x-r.x)**2+(n.y-r.y)**2}
