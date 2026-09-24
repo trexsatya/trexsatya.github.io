@@ -1200,37 +1200,37 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=6b9b135016';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=6b9b135016';
-  import { runQuery } from './music-query.js?v=6b9b135016';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=4c8a609fa5';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=4c8a609fa5';
+  import { runQuery } from './music-query.js?v=4c8a609fa5';
   import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges,
-    parseBarRange, renderAlignedSegments } from './music-render.js?v=6b9b135016';
-  import { init as initFretboard } from './fretboard-panel.js?v=6b9b135016';
-  import { chordDisplayName } from './music-chords.js?v=6b9b135016';
+    parseBarRange, renderAlignedSegments } from './music-render.js?v=4c8a609fa5';
+  import { init as initFretboard } from './fretboard-panel.js?v=4c8a609fa5';
+  import { chordDisplayName } from './music-chords.js?v=4c8a609fa5';
   import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript, renamePhraseInScript,
-    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=6b9b135016';
-  import { safeHtml } from './music-richtext.js?v=6b9b135016';
-  import { keyExplanation } from './music-key.js?v=6b9b135016';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=6b9b135016';
-  import { createMusicStore } from './music-local-store.js?v=6b9b135016';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=6b9b135016';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=6b9b135016';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=6b9b135016';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=6b9b135016';
+    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=4c8a609fa5';
+  import { safeHtml } from './music-richtext.js?v=4c8a609fa5';
+  import { keyExplanation } from './music-key.js?v=4c8a609fa5';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=4c8a609fa5';
+  import { createMusicStore } from './music-local-store.js?v=4c8a609fa5';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=4c8a609fa5';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=4c8a609fa5';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=4c8a609fa5';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=4c8a609fa5';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=6b9b135016';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=4c8a609fa5';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
-    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=6b9b135016';
-  import { renameTagInPhrases } from './music-phrase.js?v=6b9b135016';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=6b9b135016';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=6b9b135016';
-  import { generateCounterLines } from './music-counterpoint.js?v=6b9b135016';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=6b9b135016';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=6b9b135016';
-  import { splitSingleVoice } from './music-voice-split.js?v=6b9b135016';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=6b9b135016';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=6b9b135016';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=6b9b135016';
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=4c8a609fa5';
+  import { renameTagInPhrases } from './music-phrase.js?v=4c8a609fa5';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=4c8a609fa5';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=4c8a609fa5';
+  import { generateCounterLines } from './music-counterpoint.js?v=4c8a609fa5';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=4c8a609fa5';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=4c8a609fa5';
+  import { splitSingleVoice } from './music-voice-split.js?v=4c8a609fa5';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=4c8a609fa5';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=4c8a609fa5';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=4c8a609fa5';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
