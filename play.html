@@ -47,6 +47,9 @@
     <script type="text/javascript" src="/fabric.play.js"></script>
     <script type="text/javascript" src="/jquery.play.js"></script>
     <script type="text/javascript" src="/play.js"></script>
+    <script type="text/javascript" src="/vendor/html-to-image.js"></script>
+    <script type="text/javascript" src="/script-functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/html-box.js"></script>
     <script type="text/javascript" src="/whiteboard.js"></script>
     <script type="text/javascript" src="/whiteboard.undo.js"></script>
     <script type="text/javascript" src="/whiteboard.tools.js"></script>
@@ -852,15 +855,13 @@
         }
     }
 
-    pc.on('object:removed', e => {
-        //console.log(e.target);
-        const obj = e.target;
-        if (obj.treeConnection && obj.treeConnection.outgoing) {
-            obj.treeConnection.outgoing.lines.forEach(l => {
-                pc.remove(l);
-            })
-        }
-    })
+    pc.on('object:added', e => onConnectorAdded(e.target));
+    pc.on('object:removed', e => onConnectorRemoved(e.target));
+    oc.on('object:removed', e => rememberRemoved(e.target, oc));
+    // A cleared canvas starts afresh: nothing of it left to restore.
+    [pc, oc].forEach(c => c.on('canvas:cleared', () => {
+        _removedObjects.forEach((entry, uid) => { if (entry.canvas === c) _removedObjects.delete(uid); });
+    }));
 
     window.isFabricObjectMoving = false
     window.currentPathSamples = null
@@ -916,11 +917,10 @@
         }
     });
 
-    pc.on('object:moving', e => {
-        const t = e.target;
-        t._objects?.forEach(updateTreeItem)
-        updateTreeItem(t);
-    });
+    // Tree and connector lines follow objects while they are dragged, scaled,
+    // rotated or (text boxes) resized.
+    ['object:moving', 'object:scaling', 'object:rotating', 'object:resizing'].forEach(ev =>
+        pc.on(ev, e => updateTreeItem(e.target)));
 
     // Capture text edits on IText/Textbox (including sticky-note inner text).
     // editing:exited fires once per edit session with the final text on e.target.
@@ -936,9 +936,14 @@
     pc.on('object:modified', function (e) {
         const t = e.target;
         //console.log(t, "modified");
-        t._objects?.forEach(l => updateTreeItem(l, t.aCoords))
         updateTreeItem(t);
         // Record scale / rotate / vertex-edit (moves are already captured via mouse:up)
+        if (!t.uid && t.type === 'activeselection' && e.action && e.action !== 'drag') {
+            // Same form a multi-object drag records (see mouse:up above).
+            const all = t._objects.filter(o => o.uid)
+                .map(o => `animate('${o.uid}', ${JSON.stringify(getActualProperties(o, true))}, {})`);
+            if (all.length) recordScript(`Promise.all([${all.join(",")}])`);
+        }
         if (t.uid && e.action && e.action !== 'drag') {
             const r2 = n => typeof n === 'number' ? Math.round(n * 100) / 100 : n;
             if (t.customData && t.customData.type === 'textInQuad') {
@@ -953,7 +958,16 @@
                 // fabric.Line / LineArrow (tree connectors): record raw endpoints.
                 recordScript(`reshapeLineXY('${t.uid}', ${r2(t.x1)}, ${r2(t.y1)}, ${r2(t.x2)}, ${r2(t.y2)})`);
             } else {
-                recordScript(`animate('${t.uid}', ${JSON.stringify(getActualProperties(t, true))}, {})`);
+                const props = getActualProperties(t, true);
+                // A textbox's side handles change its width, not its scale,
+                // and stop it fitting its text (see Textbox initDimensions).
+                if (t.type === 'textbox') {
+                    props.width = r2(t.width);
+                    if (e.action === 'resizing' && t.customData && t.customData.autoFit === false) {
+                        recordScript(`setCustomData('${t.uid}', {autoFit: false})`);
+                    }
+                }
+                recordScript(`animate('${t.uid}', ${JSON.stringify(props)}, {})`);
             }
         }
     });
@@ -1032,10 +1046,21 @@
         // Where the click is on the canvas itself (accounts for zoom and pan).
         const scene = e.scenePoint || { x: e.e.clientX, y: e.e.clientY };
 
+        if (window._insertHtmlBox) {
+            toolManager.activate('select');
+            const x = Math.round(scene.x), y = Math.round(scene.y);
+            const box = addHtmlBox(x, y, 320, 160, '<p>Double-click to edit</p>', {});
+            recordScript(`addHtmlBox(${x}, ${y}, 320, 160, ${JSON.stringify(box.customData.html)}, ${JSON.stringify({ uid: box.uid })})`);
+            undoManager.push(Commands.addObject(pc, box));
+            pc.setActiveObject(box);
+            editHtmlBox(box);
+            return;
+        }
+
         if (window._shapeTextKind) {
             const kind = window._shapeTextKind;
             toolManager.activate('select');
-            const text = prompt('Enter text');
+            askText().then(text => {
             if (!text) return;
             const x = Math.round(scene.x), y = Math.round(scene.y);
             const make = boundedText(kind);
@@ -1052,6 +1077,7 @@
                 ? `textInRect(${JSON.stringify(text)}, ${x}, ${y}, {}, {}, '${id}')`
                 : `${fnName}(${JSON.stringify(text)}, ${x}, ${y}, {}, {})`;
             recordScript(`_['${id}'] = ${call}; _['${id}'].uid = '${id}'; pc.add(_['${id}']);`);
+            });
             return;
         }
 
@@ -1099,7 +1125,7 @@
 
         if (window.insertRectText) {
             window.insertRectText = false;
-            const text = prompt('Enter text')
+            askText().then(text => {
             if (!text) return;
             let optsText = {}
             let optsRect = {}
@@ -1111,6 +1137,7 @@
             pc.add(tb)
 
             recordScript(`_['${id}'] = textInRect(${JSON.stringify(text)}, ${x}, ${y}, ${JSON.stringify(optsText)}, ${JSON.stringify(optsRect)}, '${id}'); pc.add(_['${id}']);`)
+            });
         }
 
         if (window.insertArray) {
@@ -1158,7 +1185,26 @@
         'w': 'whiten'
     };
 
+    function _isTypingIn(el) {
+        return !!el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable);
+    }
+
+    // Notes kept for an object (window.nodeContents), edited in a side panel.
+    function openNodeContent() {
+        const selected = pc.getActiveObject();
+        if (!selected) return;
+        window.nodeContents = window.nodeContents || {};
+        CKEDITOR.instances['node-content-editor'].setData(window.nodeContents[selected.uid] || '');
+        $('#node-content-holder').show();
+        const $editContentCheckbox = $('#editContentCheckbox')[0];
+        $editContentCheckbox.checked = false;
+        updateNodeContentAsPerCheckbox($editContentCheckbox);
+    }
+
     $(document).keydown(e => {
+        // Keys typed into a text field (Properties panel, dialogs) are text,
+        // not canvas shortcuts; Escape still stops animations and tools.
+        if (_isTypingIn(e.target) && e.key !== 'Escape') return;
         const selectedObj = pc.getActiveObject()
         const selectedObjId = selectedObj?.uid;
 
@@ -1288,18 +1334,6 @@
                 height: 400,
             })
         }
-        if(e.key === 'c' && e.ctrlKey) {
-            const  selected = pc.getActiveObject()
-            if(selected) {
-                window.nodeContents = window.nodeContents || {};
-                const content = window.nodeContents[selected.uid] || ''
-                CKEDITOR.instances['node-content-editor'].setData(content)
-                $('#node-content-holder').show()
-                let $editContentCheckbox = $('#editContentCheckbox')[0];
-                $editContentCheckbox.checked = false
-                updateNodeContentAsPerCheckbox($editContentCheckbox)
-            }
-        }
         if (e.keyCode === 32) {
             // toggleRecording()
         }
@@ -1319,11 +1353,11 @@
                     }
                 }
                 break
-            case 67:
-                if (e.ctrlKey) copy(pc)
+            case 67: // Ctrl/Cmd+C, Ctrl/Cmd+V: copy and paste objects
+                if (e.ctrlKey || e.metaKey) copy(pc)
                 break;
             case 86:
-                if (e.ctrlKey) paste(pc)
+                if (e.ctrlKey || e.metaKey) paste(pc)
                 break;
             case 39: //right
                 if (selectedObj) moveActiveObject('left', 10)
@@ -1459,6 +1493,7 @@
 
     <button onclick="handleImportDialogButtons('OK')">OK</button>
     <button onclick="handleImportDialogButtons('')">Close</button>
+    <div id="importMessage" style="margin-top:8px;"></div>
 </div>
 
 <div id="mathjaxDialog" style="">
@@ -1833,6 +1868,9 @@
             <button onclick="event.stopPropagation(); startShapeText('cloud')">&#9729;&nbsp; Text in cloud</button>
         </div>
     </div>
+    <button class="wb-tool" data-tool="htmlBox" title="HTML box (rich text, lists, links)" onclick="toolManager.activate('htmlBox')">
+        <i class="fas fa-newspaper"></i>
+    </button>
     <button class="wb-tool" data-tool="connector" title="Connector (C)" onclick="toolManager.activate('connector')">
         <i class="fas fa-project-diagram"></i>
     </button>
@@ -1898,6 +1936,11 @@
         <div id="prop-stack-list"></div>
         <div class="prop-section-divider"></div>
     </div>
+    <div id="prop-group-section" style="display:none;">
+        <div class="prop-row"><label style="margin-bottom:0;">Edit item in group</label></div>
+        <div id="prop-group-list"></div>
+        <div class="prop-section-divider"></div>
+    </div>
     <div id="prop-shape-section">
         <div class="prop-row">
             <label>Fill</label>
@@ -1949,6 +1992,10 @@
                 <option value="spotlight:circle">Spotlight (circle)</option>
                 <option value="spotlight:rect">Spotlight (rect)</option>
                 <option value="flow">Flow (source &rarr; target)</option>
+                <option value="reveal:left">Reveal (left &rarr; right)</option>
+                <option value="reveal:right">Reveal (right &rarr; left)</option>
+                <option value="reveal:top">Reveal (top &rarr; bottom)</option>
+                <option value="reveal:bottom">Reveal (bottom &rarr; top)</option>
             </select>
             <button id="prop-anim-toggle" class="prop-toggle" onclick="toggleSelectedAnim()" title="Start/Stop animation">&#9654; Start</button>
         </div>
@@ -1973,6 +2020,35 @@
         </select>
         <button onclick="openMediaOverlay()" title="Open media"
                 style="padding:3px 8px;font-size:12px;border:1px solid #ddd;border-radius:4px;background:#f5f5f5;cursor:pointer;white-space:nowrap;">&#9654; Open</button>
+    </div>
+    <!-- HTML box section (shown for HTML boxes); formatting applies while editing -->
+    <div id="prop-html-section" style="display:none;">
+        <div class="prop-section-divider"></div>
+        <div class="prop-row">
+            <button id="prop-html-edit" class="prop-toggle" style="width:auto;padding:0 8px;" onclick="toggleHtmlBoxEdit()">Edit HTML</button>
+            <label style="margin-left:8px;">Padding</label>
+            <input type="number" id="prop-html-padding" min="0" max="80" step="1" style="width:56px;" onchange="applyHtmlPadding(parseInt(this.value))">
+        </div>
+        <div class="prop-row prop-text-buttons prop-html-format">
+            <button class="prop-toggle" title="Bold" onmousedown="event.preventDefault()" onclick="htmlBoxFormat('bold')"><b>B</b></button>
+            <button class="prop-toggle" title="Italic" onmousedown="event.preventDefault()" onclick="htmlBoxFormat('italic')"><i>I</i></button>
+            <button class="prop-toggle" title="Underline" onmousedown="event.preventDefault()" onclick="htmlBoxFormat('underline')"><u>U</u></button>
+            <button class="prop-toggle" title="Bulleted list" onmousedown="event.preventDefault()" onclick="htmlBoxFormat('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
+            <button class="prop-toggle" title="Numbered list" onmousedown="event.preventDefault()" onclick="htmlBoxFormat('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
+            <button class="prop-toggle" title="Link" onmousedown="event.preventDefault()" onclick="htmlBoxLink()"><i class="fas fa-link"></i></button>
+        </div>
+        <div class="prop-row prop-html-format">
+            <label>Text</label>
+            <input type="color" id="prop-html-color" value="#222222" onchange="htmlBoxFormat('foreColor', this.value)">
+            <select id="prop-html-size" style="margin-left:6px;" onchange="htmlBoxFormat('fontSize', this.value); this.value=''">
+                <option value="">Size</option>
+                <option value="2">Small</option>
+                <option value="3">Normal</option>
+                <option value="5">Large</option>
+                <option value="6">Larger</option>
+                <option value="7">Huge</option>
+            </select>
+        </div>
     </div>
     <!-- Text formatting section (shown only for text/label objects) -->
     <div id="prop-text-section" style="display:none;">
@@ -2041,12 +2117,13 @@
         <div id="ctx-layer-list"></div>
         <div class="ctx-separator"></div>
     </div>
-    <div class="ctx-item" onclick="copy(pc); closeContextMenu()"><i class="fas fa-copy"></i> Copy <span class="shortcut">Ctrl+C</span></div>
-    <div class="ctx-item" onclick="paste(pc); closeContextMenu()"><i class="fas fa-paste"></i> Paste <span class="shortcut">Ctrl+V</span></div>
+    <div class="ctx-item" onclick="copy(pc); closeContextMenu()"><i class="fas fa-copy"></i> Copy <span class="shortcut">Ctrl/&#8984;+C</span></div>
+    <div class="ctx-item" onclick="paste(pc); closeContextMenu()"><i class="fas fa-paste"></i> Paste <span class="shortcut">Ctrl/&#8984;+V</span></div>
     <div class="ctx-item" onclick="duplicateSelected(); closeContextMenu()"><i class="fas fa-clone"></i> Duplicate</div>
     <div class="ctx-separator"></div>
     <div class="ctx-item" onclick="deleteSelectedAndClose()"><i class="fas fa-trash"></i> Delete <span class="shortcut">Del</span></div>
     <div class="ctx-item" onclick="openLabelPicker(); closeContextMenu()"><i class="fas fa-tag"></i> Add Label</div>
+    <div class="ctx-item" onclick="openNodeContent(); closeContextMenu()"><i class="fas fa-sticky-note"></i> Notes</div>
     <div class="ctx-separator"></div>
     <div class="ctx-item" onclick="bringToFrontSelected(); closeContextMenu()"><i class="fas fa-layer-group"></i> Bring to Front</div>
     <div class="ctx-item" onclick="sendToBackSelected(); closeContextMenu()"><i class="fas fa-layer-group"></i> Send to Back</div>
@@ -2127,7 +2204,9 @@
     initShapeDrawingTool(pc, toolManager);
 
     // Alignment guides
-    window.alignmentGuides = initAlignmentGuides(pc);
+    // A snap moves the object after the tree/connector lines were updated for this step.
+    initHtmlBoxes(pc);
+    window.alignmentGuides = initAlignmentGuides(pc, { onSnap: t => updateTreeItem(t) });
 
     // Sticky note editing
     enableStickyNoteEditing(pc);
@@ -2243,13 +2322,62 @@
                (obj.customData && obj.customData.type === 'shapeLabel');
     }
 
+    // The object the panel edits: the selection, or an item picked inside a
+    // selected group (see _renderGroupList).
+    window._propChild = null;
+    function _propTarget() {
+        const active = pc.getActiveObject();
+        const child = window._propChild;
+        return child && active && child.group === active ? child : active;
+    }
+
     function showPropertyPanel(e) {
         const obj = e.selected ? e.selected[0] : null;
         if (!obj) return;
+        window._propChild = null;
         const panel = document.getElementById('property-panel');
         panel.classList.add('visible');
         _renderStackList();
         _syncFlowOption();
+        _renderGroupList();
+        _fillPropertyFields(obj);
+    }
+
+    // Groups (other than sticky notes, which have their own fields) list their
+    // items so one can be picked and edited on its own.
+    function _renderGroupList() {
+        const section = document.getElementById('prop-group-section');
+        const list = document.getElementById('prop-group-list');
+        const grp = pc.getActiveObject();
+        list.innerHTML = '';
+        const editable = grp && grp.type === 'group' && !_isStickyNote(grp);
+        section.style.display = editable ? '' : 'none';
+        if (!editable) return;
+        const addRow = (label, item) => {
+            const row = document.createElement('div');
+            const picked = item ? window._propChild === item : !window._propChild;
+            row.className = 'tree-child-row prop-stack-row' + (picked ? ' selected' : '');
+            const swatch = document.createElement('span');
+            swatch.className = 'prop-stack-swatch';
+            const colour = item && _layerSwatchColour(item);
+            if (colour) swatch.style.background = colour;
+            const lbl = document.createElement('span');
+            lbl.className = 'tree-child-label';
+            lbl.textContent = label;
+            row.appendChild(swatch);
+            row.appendChild(lbl);
+            row.onclick = () => {
+                window._propChild = item;
+                _renderGroupList();
+                _fillPropertyFields(item || grp);
+            };
+            list.appendChild(row);
+        };
+        addRow('Whole group', null);
+        grp.getObjects().slice().reverse().forEach(o => addRow(layerLabel(o), o));
+    }
+
+    function _fillPropertyFields(obj) {
 
         const shapeSection = document.getElementById('prop-shape-section');
         const textSection = document.getElementById('prop-text-section');
@@ -2289,6 +2417,13 @@
                 document.getElementById('prop-stroke-type').value = detectStrokeType(shapeSrc.strokeDashArray);
                 document.getElementById('prop-opacity').value = obj.opacity != null ? obj.opacity : 1;
             }
+        }
+
+        const isHtml = typeof isHtmlBox === 'function' && isHtmlBox(obj);
+        document.getElementById('prop-html-section').style.display = isHtml ? '' : 'none';
+        if (isHtml) {
+            document.getElementById('prop-html-padding').value = obj.customData.padding || 0;
+            _syncHtmlEditButton();
         }
 
         // Tree node panel — only show when there are outgoing children
@@ -2348,7 +2483,15 @@
         // rgb(...) or named color -> use canvas trick
         const ctx = document.createElement('canvas').getContext('2d');
         ctx.fillStyle = color;
-        return ctx.fillStyle; // returns hex
+        const css = ctx.fillStyle;
+        if (css.charAt(0) === '#') return css;
+        // Colours with transparency come back as rgba(); a colour input can
+        // only show opaque colours, so use the colour itself, or white when
+        // fully transparent (what shows through on the white canvas).
+        const m = css.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+        if (!m) return null;
+        if (m[4] !== undefined && parseFloat(m[4]) === 0) return '#ffffff';
+        return '#' + [m[1], m[2], m[3]].map(n => (+n).toString(16).padStart(2, '0')).join('');
     }
 
     // For sticky notes, the active object is a Group whose paper colour
@@ -2381,13 +2524,17 @@
                 prev.forEach(p => p.t.set(prop === 'cornerRadius' ? { rx: p.v, ry: p.v } : { [prop]: p.v }));
                 obj.dirty = true;
                 pc.requestRenderAll();
-            }
+            },
+            script: obj.uid ? {
+                undo: `setPartProp(${JSON.stringify(obj.uid)}, ${JSON.stringify(part)}, ${JSON.stringify(prop)}, ${JSON.stringify(prev[0].v)})`,
+                redo: `setPartProp(${JSON.stringify(obj.uid)}, ${JSON.stringify(part)}, ${JSON.stringify(prop)}, ${JSON.stringify(value)})`
+            } : null
         });
         if (obj.uid) recordScript(`setPartProp(${JSON.stringify(obj.uid)}, ${JSON.stringify(part)}, ${JSON.stringify(prop)}, ${JSON.stringify(value)})`);
     }
 
     function applyProperty(prop, value) {
-        const obj = pc.getActiveObject();
+        const obj = _propTarget();
         if (!obj) return;
         if (prop !== 'opacity' && compositeParts(obj)) {
             _applyPart(obj, _PART_TEXT_PROPS.includes(prop) ? 'text' : 'shape', prop, value);
@@ -2410,8 +2557,44 @@
         if (obj.uid) recordScript(`setProp('${obj.uid}', '${prop}', ${JSON.stringify(value)})`);
     }
 
+    // ---- HTML boxes ----
+    function toggleHtmlBoxEdit() {
+        if (window._htmlBoxEditing) { exitHtmlBoxEdit(true); return; }
+        const obj = _propTarget();
+        if (isHtmlBox(obj)) editHtmlBox(obj);
+    }
+
+    function _syncHtmlEditButton() {
+        const editing = !!window._htmlBoxEditing;
+        const btn = document.getElementById('prop-html-edit');
+        if (btn) { btn.textContent = editing ? 'Done' : 'Edit HTML'; btn.classList.toggle('active', editing); }
+        document.querySelectorAll('.prop-html-format button, .prop-html-format input, .prop-html-format select')
+            .forEach(c => { c.disabled = !editing; });
+    }
+
+    function htmlBoxLink() {
+        askText('Link address (https://...)').then(url => { if (url) htmlBoxFormat('createLink', url.trim()); });
+    }
+
+    function applyHtmlPadding(value) {
+        const obj = _propTarget();
+        if (!isHtmlBox(obj) || !(value >= 0)) return;
+        const prev = obj.customData.padding || 0;
+        obj.customData.padding = value;
+        pc.requestRenderAll();
+        undoManager.push({
+            undo() { obj.customData.padding = prev; pc.requestRenderAll(); },
+            redo() { obj.customData.padding = value; pc.requestRenderAll(); },
+            script: obj.uid ? {
+                undo: `setCustomData(${JSON.stringify(obj.uid)}, {padding: ${JSON.stringify(prev)}})`,
+                redo: `setCustomData(${JSON.stringify(obj.uid)}, {padding: ${JSON.stringify(value)}})`
+            } : null
+        });
+        if (obj.uid) recordScript(`setCustomData(${JSON.stringify(obj.uid)}, {padding: ${JSON.stringify(value)}})`);
+    }
+
     function applyCornerRadius(radius) {
-        const obj = pc.getActiveObject();
+        const obj = _propTarget();
         if (compositeParts(obj)) { _applyPart(obj, 'shape', 'cornerRadius', radius); return; }
         if (!(obj instanceof fabric.Rect)) return;
         const prevState = { rx: obj.rx || 0, ry: obj.ry || 0 };
@@ -2421,7 +2604,7 @@
     }
 
     function applyTextFill(value) {
-        const obj = pc.getActiveObject();
+        const obj = _propTarget();
         if (!obj) return;
         if (_isStickyNote(obj)) {
             setStickyProp(obj, 'textFill', value);
@@ -2435,7 +2618,7 @@
     }
 
     function toggleTextProp(prop, onVal, offVal) {
-        const obj = pc.getActiveObject();
+        const obj = _propTarget();
         if (!obj) return;
         const sticky = _isStickyNote(obj);
         // For sticky notes, read current value from the inner textbox.
@@ -2487,7 +2670,7 @@
     }
 
     function applyStrokeType(type) {
-        const obj = pc.getActiveObject();
+        const obj = _propTarget();
         if (!obj) return;
         const prev = obj.strokeDashArray ? [...obj.strokeDashArray] : null;
         const value = STROKE_DASH_PRESETS[type] ? [...STROKE_DASH_PRESETS[type]] : null;
@@ -2501,7 +2684,7 @@
 
     // ---- Media overlay ----
     function applyMediaData() {
-        const obj = pc.getActiveObject();
+        const obj = _propTarget();
         if (!obj) return;
         const cd = customData(obj);
         cd.mediaUrl = document.getElementById('prop-media-url').value.trim();
@@ -2515,7 +2698,7 @@
     // intermediate positions so replay calls animatePath instead of animate.
     // OR-ed with the global #recordPathToggle in the object:moving handler.
     function applyRecordPath(value) {
-        const obj = pc.getActiveObject();
+        const obj = _propTarget();
         if (!obj) return;
         const cd = customData(obj);
         cd.recordPath = !!value;
@@ -2692,8 +2875,8 @@
             ['Ctrl/\u2318 + Shift + Z,  Ctrl/\u2318 + Y', 'Redo'],
             ['Ctrl/\u2318 + A', 'Select all'],
             ['Ctrl/\u2318 + G', 'Group selected objects'],
-            ['Ctrl + C', 'Copy (also opens the notes editor for the selected object)'],
-            ['Ctrl + V', 'Paste'],
+            ['Ctrl/\u2318 + C', 'Copy selected objects (right-click \u2192 Notes opens an object\u2019s notes)'],
+            ['Ctrl/\u2318 + V', 'Paste'],
             ['Delete,  Backspace', 'Delete selected'],
             ['E', 'Edit selected object'],
             ['H', 'Hide selected object'],
@@ -2748,78 +2931,20 @@
         el.classList.toggle('visible', open);
     }
 
-    // Functions a recorded script can call, grouped for the "? Functions" popup.
-    const SCRIPT_HELP = [
-        ['Create', [
-            ['addRect(left, top, width, height, opts)', 'Rectangle'],
-            ['addDiamond(left, top, width, height, opts)', 'Diamond'],
-            ['addEllipse(left, top, rx, ry, opts)', 'Ellipse'],
-            ['addLine([x1, y1, x2, y2], opts)', 'Straight line'],
-            ['arrow(x1, y1, x2, y2, opts)', 'Arrow (returns it; add with pc.add)'],
-            ['textbox(opts)', 'Text box (returns it; add with pc.add)'],
-            ['textInRect(text, x, y, optsText, optsRect, uid)', 'Text inside a rectangle (returns it; add with pc.add)'],
-            ['textInQuad(text, x, y, width, height, optsText, optsShape)', 'Text inside a reshapeable box; returns {quad, text}'],
-            ['textInCircle(text, x, y, optsText, optsShape)', 'Text inside a circle (returns it; add with pc.add). Also textInEllipse, textInDiamond, textInHexagon, textInStar, textInCloud'],
-            ['addStickyNote(x, y, opts)', 'Sticky note'],
-            ['addShapeLabel(shapeUid, position, text, opts)', 'Label attached to a shape'],
-            ['addImage(url, left, top, opts)', 'Image from a URL'],
-            ['addMath(tex, left, top, opts)', 'Rendered maths (TeX)'],
-            ['createFreehandPath(pathString, opts)', 'Freehand path (returns it; add with pc.add or oc.add)'],
-            ['showArray(items, x, y, canvas, opts)', 'Row of boxed values'],
-            ['showMatrix(rows, x, y, canvas, opts)', 'Grid of boxed values'],
-            ['renderSubtree(values, opts, node)', 'Tree of nodes'],
-            ['writeTextList(lines, x, y, opts)', 'Write lines of text (also writeTextListOrdered)'],
-            ['typeTextList(lines, x, y, opts)', 'Type lines of text (also typeTextListOrdered)'],
-        ]],
-        ['Change', [
-            ['setProp(uid, prop, value)', 'Set one property, e.g. fill'],
-            ['setCornerRadius(uid, radius)', 'Round the corners of a rectangle'],
-            ["setPartProp(uid, 'text' | 'shape', prop, value)", 'Change the text or the shape of a text-in-shape object'],
-            ['setText(uid, text)', 'Replace the text of an object'],
-            ['setStickyProp(uid, prop, value)', 'Sticky note colour or text property'],
-            ['setQuadLabel(uid, text)', 'Text of a textInQuad box'],
-            ['setCustomData(uid, data)', 'Merge into customData'],
-            ['reshapeLine(uid, points, cx, cy)', 'Move the end points of a line'],
-            ['reshapeLineXY(uid, x1, y1, x2, y2)', 'Move the end points of a line'],
-            ['reshapeQuad(uid, points, props)', 'Move the corners of a box'],
-            ['bringToFront(uid)', 'Put on top of everything'],
-            ['sendToBack(uid)', 'Put behind everything'],
-            ['hideObject(uid)', 'Hide (and its tree lines)'],
-            ['showObject(uid)', 'Show again'],
-            ['removeByUid(uid)', 'Delete'],
-            ['addClones([json])', 'Recreate duplicated / pasted objects (recorded for you)'],
-        ]],
-        ['Animate', [
-            ['animate(uid, props, {duration})', 'Tween properties; waits until done (default 1000 ms)'],
-            ['animatePath(uid, samples, {duration})', 'Replay a recorded curved drag'],
-            ['anim(uid, type, opts)', "Start 'highlight', 'spotlight', 'spotlight:circle', 'spotlight:rect' or 'flow'"],
-            ["anim(uid, 'flow', {duration, color})", 'Dot travels along an arrow from its source to where it points'],
-            ['stopAnim(uid)', 'Stop it; with no argument stops everything'],
-            ['zoomSelectedObject(uid, isPlus, amount)', 'Grow or shrink an object'],
-            ['expandTreeItems(uid)', 'Show the children of a tree node'],
-            ['collapseTreeItems(uid)', 'Hide the children of a tree node'],
-        ]],
-        ['Canvas & timing', [
-            ['sleep(seconds)', 'Pause; returns a promise'],
-            ['clear(layer)', "Clear 'pc', 'oc' or 'txt'; no argument clears all"],
-            ['findIfRequired(uid)', 'Look up an object by uid'],
-            ['pc  /  oc', 'Main and overlay canvases (Fabric.js)'],
-            ["_['id']", 'Objects stored by earlier script lines'],
-        ]],
-    ];
 
     function renderScriptHelp(filter) {
         const q = (filter || '').trim().toLowerCase();
         const list = document.getElementById('scriptHelpList');
         list.innerHTML = '';
-        SCRIPT_HELP.forEach(([group, items]) => {
-            const shown = items.filter(([sig, desc]) => !q || (sig + ' ' + desc).toLowerCase().includes(q));
+        SCRIPT_FUNCTIONS.forEach(([group, items]) => {
+            const shown = items.filter(([sig, desc, opts]) => !q ||
+                [sig, desc, ...(opts || []).flat()].join(' ').toLowerCase().includes(q));
             if (!shown.length) return;
             const h = document.createElement('div');
             h.textContent = group;
             h.style.cssText = 'padding:6px 10px 2px;font-weight:600;color:#666;';
             list.appendChild(h);
-            shown.forEach(([sig, desc]) => {
+            shown.forEach(([sig, desc, opts]) => {
                 const row = document.createElement('div');
                 row.className = 'script-help-row';
                 row.title = 'Insert at cursor';
@@ -2834,6 +2959,21 @@
                 d.style.cssText = 'color:#777;font-size:11px;';
                 row.appendChild(code);
                 row.appendChild(d);
+                // The options the function takes, one per line.
+                if (opts && opts.length) {
+                    const o = document.createElement('div');
+                    o.style.cssText = 'margin:2px 0 0 10px;font-size:11px;color:#555;display:grid;grid-template-columns:auto 1fr;gap:1px 8px;';
+                    opts.forEach(([key, meaning]) => {
+                        const k = document.createElement('code');
+                        k.textContent = key;
+                        k.style.cssText = 'color:#6a1b9a;white-space:nowrap;';
+                        const m = document.createElement('span');
+                        m.textContent = meaning;
+                        o.appendChild(k);
+                        o.appendChild(m);
+                    });
+                    row.appendChild(o);
+                }
                 row.onclick = () => {
                     const ed = ensureScriptEditor();
                     ed.insert(sig);
@@ -3024,9 +3164,9 @@
         const lines = (window.recordedScriptLines || []).map(s => (s + '').trim()).filter(Boolean);
         if (!lines.length) return;
         const fns = (typeof buildScriptExecutables === 'function')
-            ? buildScriptExecutables().map(eval)
+            ? buildScriptExecutables().map(compileScriptLine)
             : lines.map(l => {
-                const exec = (l.startsWith('animate') || l.startsWith('Promise')) ? 'return ' + l + ';' : l;
+                const exec = (l.startsWith('animate') || l.startsWith('Promise') || l.startsWith('connectObjects') || l.startsWith('reveal')) ? 'return ' + l + ';' : l;
                 return eval('(() => { ' + exec + ' })');
               });
         window._stepwiseState = { lines: lines, fns: fns, index: 0, busy: false };
@@ -3387,18 +3527,40 @@
         document.getElementById('wb-context-menu').classList.remove('visible');
     }
 
+    // Multi-line replacement for prompt(): Enter starts a new line,
+    // Ctrl/Cmd+Enter or OK confirms, Escape or Cancel gives null.
+    function askText(title) {
+        return new Promise(resolve => {
+            const box = document.createElement('div');
+            box.id = 'askTextPopup';
+            box.style.cssText = 'position:fixed;top:30%;left:50%;transform:translateX(-50%);z-index:9999998;width:min(360px, calc(100% - 32px));background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,0.25);padding:10px;font-size:13px;display:flex;flex-direction:column;gap:8px;';
+            box.innerHTML = '<div></div><textarea rows="4" style="width:100%;box-sizing:border-box;resize:vertical;font:inherit;"></textarea>' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;"><span style="color:#888;font-size:11px;">Ctrl/Cmd+Enter to add</span>' +
+                '<span><button type="button" data-a="cancel">Cancel</button> <button type="button" data-a="ok">OK</button></span></div>';
+            box.firstChild.textContent = title || 'Enter text';
+            const ta = box.querySelector('textarea');
+            const done = value => { box.remove(); resolve(value); };
+            box.querySelector('[data-a="ok"]').onclick = () => done(ta.value);
+            box.querySelector('[data-a="cancel"]').onclick = () => done(null);
+            // Keep keys away from the canvas shortcuts (Delete, undo, space pan, ...).
+            ['keydown', 'keyup', 'keypress'].forEach(type => box.addEventListener(type, e => {
+                e.stopPropagation();
+                if (type !== 'keydown') return;
+                if (e.key === 'Escape') { e.preventDefault(); done(null); }
+                else if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); done(ta.value); }
+            }));
+            document.body.appendChild(box);
+            ta.focus();
+        });
+    }
+
     function duplicateSelected() {
         const obj = pc.getActiveObject();
         if (obj) duplicate(obj);
     }
 
     function deleteSelectedAndClose() {
-        const obj = pc.getActiveObject();
-        if (obj) {
-            undoManager.push(Commands.removeObject(pc, obj));
-            if (obj.uid) recordScript(`removeByUid(${JSON.stringify(obj.uid)})`);
-            deleteFabricObject(obj);
-        }
+        deleteSelectedObjects();
         closeContextMenu();
     }
 
@@ -3446,7 +3608,7 @@
         // Multi-select (activeSelection) has no uid of its own — gather
         // every child's uid so we drive the animation across the whole
         // selection. Single-object case becomes a 1-element list.
-        const isSelection = obj.type === 'activeSelection' && Array.isArray(obj._objects);
+        const isSelection = obj.type === 'activeselection' && Array.isArray(obj._objects);
         const uids = isSelection
             ? obj._objects.map(o => o.uid).filter(Boolean)
             : (obj.uid ? [obj.uid] : []);
@@ -3458,6 +3620,13 @@
         const type = colon === -1 ? raw : raw.slice(0, colon);
         const shape = colon === -1 ? null : raw.slice(colon + 1);
         const opts = shape ? { shape: shape } : null;
+        // A reveal plays once to the end, so it is recorded as it starts.
+        if (type === 'reveal') {
+            pc.discardActiveObject();
+            reveal(uids, shape);
+            recordScript(`reveal(${JSON.stringify(uids)}, ${JSON.stringify(shape)}, {"duration":800})`);
+            return;
+        }
         // anim() accepts an array, an activeSelection, or a single uid.
         anim(uids, type, opts || undefined);
         window._activeAnim = { uids: uids, type: type, opts: opts, startedAt: Date.now() };
