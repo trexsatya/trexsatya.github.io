@@ -29,7 +29,6 @@
 (wellbeing)|må bra|glad|lugn|
 (sexuality)|kåt|sexuellt upphetsad|åtrå|sexuell lust|
 (desire)|(är du )tänd på (henne)|
-
 #Common things and actions
 (perception)|förnimmelse|sinnesintryck|perception|intryck(vdg.)|
 (perceive)|förnimma|ana(vdg.)|förnam|förnummit
@@ -449,7 +448,7 @@ Lägra( sig)|<*slå läger|
 (rolemodel)|förebild|<*se upp till|exemplarisk|
 (guidingstar)|ledstjärna|
 (random)|slumpmässig|godtycklig|godtycke|vind för våg
-(haphazard)| på måfå| på slump|av en slump|
+(haphazard)| på måfå| på slump|av en slump|händelsevis
 (luck)|Halka in på ett bananskal
 (chance)|slump|chans|chanser|
 (dice)|kasta tärningar|tärningsslag|
@@ -486,25 +485,26 @@ Lägra( sig)|<*slå läger|
 (speechless)|stum|tyst|mållös|
 (astonished)|ställd|häpen|snopen|förvånad|paff|förbluffad|svarslös|villrådig|förvånansvärd|förvånansvärt|förvånande
 (astonished)|Tappa hakan|Se ut som en fågelholk|Höja på ögonbrynen
-(helpless)|Stå handfallen|
+(helpless)|<*Stå handfallen|
 (wideeyed)|storögd|
 (startling)|häpnasväckande|
 (neutral)|Varken bu eller bä|
 (defensive)|Med armarna i kors|
 (unexpected)|oväntad|
-(surprise)|Dyka upp som gubben i lådan|Slå ner som en bomb
-(proverb)|När man talar om trollen så står de i farstun
-(surprise)|Kors i taket
+(surprise)|(Dyka) upp som gubben i lådan|(Slå) ner som en bomb
+(proverb)|När man talar om trollen (så står de i farstun)
+(surprise, good lord, look at that!)|Kors i taket
 (proverb)|Prisa ej dag förrän sol gått ner|Ropa inte hej förrän du är över bäcken
-(proverb)|Även en blind höna kan finna ett korn
-(proverb)|Även en trasig klocka visar rätt två gånger per dygn
+(Even a blind hen can find a grain, pure luck)|Även en blind höna kan finna ett korn
+(Pure luck)|Även en trasig klocka visar rätt två gånger per dygn
 (someday)|En vacker dag
-(unlikely)|mot förmodan|till äventyrs
+(unlikely, by any chance)|mot förmodan|till äventyrs|händelsevis
 (silence)|tiga|tiger|teg|tigit|tigande|
 (silence)|Tiga som muren
 (silence)|Tala är silver, tiga är guld|Visdomen har långa öron och kort tunga
 (silence)|Även dåren tros vis om han tiger
 (silence)|tig nu|tyst|håll käften|knip igen|
+(Keep quiet)|<*hålla snattran
 (silent)|Tyst som en mus|Tyst som i graven
 (careful)|Hålla tungan rätt i mun
 (confused)|förvirrad|vimsig|snurrig|förbryllad|virrig|Bortkommen|Yr i mössan|Yr i bollen|Myror i huvudet
@@ -515,7 +515,7 @@ Lägra( sig)|<*slå läger|
 (ambivalent)|ambivalens|ambivalensen|obeslutsam|kluvenhet|tveksamhet|tveksamheter|tvekan|vankelmodig|rådlös|villrådig|
 (indecisive)|hattig|vankelmodig|
 (sad)|ledsen|ledsnad
-(pout)|Hänga läpp
+(Sad)|Hänga läpp
 (melancholy)|vemod|melankoli|tungsinne|tungsint|svårmodig
 (gloomy)|dyster|sorgsen|molnig|dystrare|dystrast|sorglig |sorgligt|sorgsenhet|bedrövlig|snöplig|försmädlig
 (condolence)|lider med dig|jag beklagar|jag beklagar sorgen|
@@ -526,7 +526,7 @@ Lägra( sig)|<*slå läger|
 (boring)|<*Se färg torka|<*höra gräset gro
 (trouble)|<*Ligga illa till|sitta i klistret 
 (depression)|depression|nedstämd|deppig|deprimerad|nedstämdhet|nervsammanbrott|nedslagen|nedslående|nedslå|moloken|
-(unhinged)|Ur gängorna|
+(unhinged, out of balance)|Ur gängorna|
 (sulky)|trumpen|trumpet|trumpna|sur|surt|tjurig|tungsint|grinig|tjura
 (Cranky)|uppretad
 (Grimace)|grimas|
@@ -536,7 +536,7 @@ Lägra( sig)|<*slå läger|
 (tedious)|Utan ände|utdraget|långtråkig|tråkig som tusan|tråkig som en gammal sko|
 (accept)|S<*välja det beska pillret
 (dissatisfied)|vantriv<*as|obehaglig|missnöje|missnöjd|förtrytelse|stygg|purken|surmulen|butter|vresig|misslynt
-(outrage)|Vända på klacken|Skrika i högan sky|
+(outrage)|Vända på klacken|(Skrika) i högan sky|
 (upset)|upprörd|Gå i taket|uppriven|utom sig
 (contained)|Knyta näven i fickan
 (moved)|berörd|
@@ -550,7 +550,7 @@ Lägra( sig)|<*slå läger|
 (embarrassed)|generad|<*göra bort (sig)|<*dabba (sig)|
 (disappointed)|besviken
 (displeased)|misslynt|misshaglig|misshag|
-(ashamed)|Vilja sjunka genom jorden|Skämmas ögonen ur sig|Bära hundhuvudet
+(ashamed)|(Vilja)sjunka genom jorden|(Skämmas) ögonen ur sig|Bära hundhuvudet
 (humiliate)|skämma ut sig|göra bort sig
 (blunder)|Skita i det blå skåpet
 (regret)|ångra|ånger|
@@ -576,7 +576,7 @@ Lägra( sig)|<*slå läger|
 (calm)|vila i frid|lugn|avspänd|avslappnad|slapp|lugn och ro|
 (calm)|lugn|lugna|maklig|fredlig|
 (calm)|Lugn som en filbunke|
-(compose)|hålla sig i skinnet|hålla ihop|Sluta leden|
+(compose)|hålla sig i skinnet|hålla ihop|
 (pulltogether)|skärp dig|skärpa sig|Hålla sig i skinnet|Rycka upp sig
 (accept)|ta skeden i vacker hand|
 (relax)|ta det vackert|Ta det piano|Ta det med ro|Ta det kallt|
@@ -1087,7 +1087,6 @@ Ursäkt|förevändning|täckmantel
 (bliss)|salighet|salig|frälst|
 (sneaky)|smussla|smussel|fuffens|
 (beg)|tigga|tigger|tiggde|tiggt|tigg|bettla|tiggeri|tiggerier|tiggare|tiggare|tiggande|tiggande|
-
 #Time
 (time)|tid|tider|tidsrymd|tidsrymder|dags|
 (it's time)|då var det dags|
@@ -2564,6 +2563,7 @@ Skåpbil|lastbil|
 (joke)|skoja|skämta|driva|driver|drev|drivit|narra|gäcka
 (mock)|förlöjliga|(göra )åtlöje( av)|fån<*a sig|
 (deceive,disappoint)|bedra|besvika|bedraga|lura|förråda|snuva(på)|förråder|förrådde|förrått|förråd|gäcka|
+(Disappointing)|snöplig
 (trick)|Åka på en blåsning|grundlurad|duperad|dragen vid näsan
 (fraud)|bedrägeri|bedrägerit|bedrägerier|bedragare|bedräglig|lurendrejeri|lurendrejare|
 (treason)|förräderi|förräderit|förräderier
@@ -2666,7 +2666,7 @@ Skåpbil|lastbil|
 (support)|uppslutning|uppslutningar|anhängare|meningsfrände|åsiktsfrände|
 (attend)|närvara|delta|bevista|in<*finna <*sig|infinnande|in<*ställa sig|
 (involved)|Med på ett hörn|
-(unite)|förena|förening|
+(unite)|förena|förening|sluta leden
 (member)|medlem|medlemmar|medlemskap|medlemskapet|medlemskapen|
 (assume)|tillträda|tillträder|tillträdde|tillträtt|tillträd|
 (Dismiss)|av<*sätta|
@@ -2954,7 +2954,7 @@ risktagare
 (pretentious)|anspråksfull|pretentiös|pretto|förmäten(mycket)|övermodig|(Pretention)|pretention
 (Showoff)|skrytmåns
 (--effort--)
-(buckle up)|spotta i glaset|
+(buckle up)|
 (cautious undertaking)|Gräv inte upp större sten än du kan bära|
 (persistent)|uthållig|oförtruten|trägen|trägna|enträgen|enträgna|
 (harden)|Det som inte dödar, härdar|Det viktigaste är inte att vinna utan att kämpa väl
@@ -3777,7 +3777,7 @@ Damm|stoft(-et)|stoftmoln|
 (provide)|tillhandahålla|tillhandahåller|tillhandahöll|tillhandahållit|
 (be offered)|tillhandahållas|bjudas|vankas|serveras
 (handy)|händig|händighet|
-(practical)|praktisk|
+(practical)|praktisk|gångbar|praktikabel
 (by means of)|medelst|genom|med hjälp av
 (consume)|konsumera|förbruka|förbrukning|förbrukningar|konsumtion|konsumtioner|åtgång|
 (utilize)|ta nytta av|ha nytta av|använda|begagna|
@@ -4991,7 +4991,6 @@ Täckmantel
 (wriggle out)|slingra(sig; gall. ansvar)|Slingra sig som en orm
 (inevitable)|oundviklig|ofrånkomlig|
 (pre-chewed)|färdigtuggade|
-
 #Idiomatic way
 (both and)|både och|
 (oops)|ajdå|
@@ -5096,7 +5095,6 @@ Täckmantel
 (hand them over)|hit med dem|upp med handen|upp med hakan
 (it happens, that's life)|sånt är livet
 (Hit on someone)|<*lägga in en stöt|
-
 #Speaking style, Phrases
 (can't be)|får inte vara (fåintva)|
 (was I so (vajaså))|
@@ -5263,6 +5261,7 @@ längst <*plats|främst|bakerst|efterst|uppflugen
 [a-za-z]*n[\s]p[a-za-z]*
 [a-za-z]*n[\s]b[a-za-z]*
 [a-za-z]*r[tdnsl][a-za-z]+
+[a-za-z]*r[\s][tdnsl][a-za-z]
 [a-z]*n[\s]g[a-z]*
 [a-z]*bt[a-z]*
 [a-za-z]*n[\s]m[a-za-z]*
