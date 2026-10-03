@@ -4570,26 +4570,60 @@ body.rec-playing #recPlayingSubs { display: block; }
 }
 
 /* Manual cards listed with the search results (see _ensureManualSearchBar). */
-.manual-results-count,
-.manual-results-empty {
-    font-size: 0.82em;
-    color: #666;
-    margin: 2px 0 4px 0;
+.manual-results-empty { font-size: 0.82em; color: #666; margin: 2px 0 4px 0; }
+.manual-head {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 2px 0;
+    font-size: 0.85em;
+    color: #444;
+    cursor: pointer;
 }
+.manual-head:hover { color: #222; }
 .manual-hit {
-    border-left: 3px solid #7986cb;
-    padding: 4px 6px;
-    margin: 4px 0;
+    display: block;
+    width: 100%;
+    text-align: left;
     background: #f7f8fc;
+    border: none;
+    border-left: 3px solid #7986cb;
+    padding: 3px 6px;
+    margin: 3px 0;
+    font: inherit;
+    line-height: 1.35;
+    cursor: pointer;
 }
-.manual-hit-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.8em;
-    color: #555;
+.manual-hit:hover { background: #eceff8; }
+.manual-hit-playlist { font-size: 0.78em; color: #777; margin-right: 4px; }
+
+/* A manual card written as HTML (card-html.js): its own markup lays it out,
+   so the pre-wrap that keeps a plain card's line breaks is turned off. */
+#practiceMode .practice-manual-text.card-html,
+#recPlayingSubs .card-html { white-space: normal; }
+.card-html ul, .card-html ol { text-align: left; margin: 4px 0; padding-left: 1.4em; }
+.card-html p { margin: 0 0 6px 0; }
+.card-html img { max-width: 100%; height: auto; }
+.card-html a { color: inherit; text-decoration: underline; }
+.card-html table { border-collapse: collapse; margin: 4px auto; }
+.card-html td, .card-html th { border: 1px solid rgba(128,128,128,.5); padding: 2px 6px; }
+
+/* Live preview of a manual-card face written as HTML, under its box. */
+.mee-html-preview {
+    margin: 4px 0 2px 0;
+    padding: 4px 6px;
+    border: 1px dashed #b0b8c8;
+    border-radius: 4px;
+    background: #fafbfd;
+    font-size: 0.92em;
 }
-.manual-hit-playlist { flex: 1 1 auto; }
-.manual-hit-link { text-decoration: none; }
-.manual-hit-face { margin-top: 2px; }
-.manual-hit-target { color: #555; font-style: italic; }
+
+/* Playlists changed both here and on GitHub (_askRecordingConflicts). */
+.rec-conflict-intro { font-size: 0.9em; color: #444; margin: 0 0 8px 0; }
+.rec-conflict-row { border: 1px solid #dde3e8; border-radius: 6px; padding: 6px 8px; margin: 6px 0; }
+.rec-conflict-name { font-weight: 600; margin-bottom: 2px; }
+.rec-conflict-side { font-size: 0.85em; color: #555; }
+.rec-conflict-opts { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; font-size: 0.9em; }
+.rec-conflict-opt.disabled { color: #aaa; }
