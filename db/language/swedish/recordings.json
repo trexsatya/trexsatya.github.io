@@ -2,6 +2,522 @@
   "Default": {
     "items": {},
     "createdAt": 1783422000111,
-    "updatedAt": 1783874358317
+    "updatedAt": 1790957392048
+  },
+  "Taare Zameen Par": {
+    "items": {
+      "Manual": {
+        "Card": [
+          {
+            "manual": true,
+            "id": "mc-wvcr8iju0t",
+            "source": "När killen bakom eran han biter på naglarna",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2410",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2410
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-oxa2rphtw1",
+            "source": "Ishan gör en triumferande min som om han hade besegrat tentan eller han ser triumferande ut som om han just hade besegrat tentan",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2419",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2419
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-q89mc32p8d",
+            "source": "Han inser att han har blivit påkommen med sin lögn eller han inser att hans lön har avslöjats",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2515",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2515.47674239833
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-regajnwk1z",
+            "source": "När Ishan inser att han har blivit avslöja han till och göra nervös grimas eller han spärrar upp ögonen och drar på munnen inser att han blivit. Kniper ihop ögonen och grimaserar",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2525",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2525
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-owylgrb8b5",
+            "source": "Han svarar på en fråga och lämnar resten obesvarade eller han besvarar en fråga men lämnar dem resterande frågorna obesvarade",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2702",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2702.1405154169984
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-z74w6ux1qr",
+            "source": "Rektorn lutar sig fram och säger “Mr. Awasthi”.\nPappan rätar på sig (el. ändrar sin sittställning, inte justerar sig) lutar sig också lite framåt för att lyssna - Yes.\nHur som helst går ert barn tredje klass för andra året i rad. Hur som helst är det här andra året som ert barn går i tredje klass",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2716",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-vvd0jkyvc7",
+            "source": "När bilen stannar i trafiken rosa flera barn fram och försöker sälja tidningar. Flera barn springer fram och hoppar upp på motorhuven för att sälja tidningar. Flera barn hoppar fram framför bilen och försöker sälja tidningar",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2754",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2754
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-o60gmy4vqc",
+            "source": "Så här kommer han aldrig att bli bättre. Han kommer inte att förbättras om det fortsätter så här (inte på det här sättet).",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2796",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2796.6831831163267
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-rpsjyckbbt",
+            "source": "Lutar huvudet åt sidan och Klämmer fast telefonen mellan örat och axeln så att han har händerna fria. Pratar i telefon medan han håller den kladdiga handen en bit från kroppen med armen lätt böjd för att inte smutsa ner kläderna. Han håller handen ut från kroppen för att inte få mat på kläderna.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2807",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2807
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-d51k6dkcsf",
+            "source": "Isan slår näven i bordet Eller slår den knutna handen i bordet. (näve kan användas trots att det är det är undersidan av handen istället för knogarna som träffar bordet).\nHan protesterar, “Jag tänker inte gå på internatskola”/ vill inte",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2826",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-7ioiryjh94",
+            "source": "Han har inte varit utan mig förut. Far svarar att han måste vänja sig vid det. \nKan vi inte låta honom gå klart det här skolåret. (inte bli färdig med..)\nIshan frustar (el. flåsar) av ilska.\nTitta på honom, han ångrar sig inte ens. Idiot! På internatskolan kommer de att ge dig genom stryk och lära honom veta hut. (Där kommer de minsann att få ordning på honom). Den här gången(I dag) fick han sin bror att skriva (förfalska) frånvarlapp åt honom. Vem vet vad tar sig till härnäst. (Gud vet vad han kommer att göra imorgon.)\nIshan tittar på sin bror, hans bror sneglar försiktigt mot sin pappa nästan rädd.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2836",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-woxr06ctf6",
+            "source": "Ishan blir förtvivlad  och vädjar: pappa snälla skicka inte ditt. Han ser gråtfärdig ut",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2887",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              2887.2108015393305
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-qa9ypuzghf",
+            "source": "Det vimlar av människor på gatan. De går bland folkmassa plötsligt tappa i sjön taget om sin mammas sorg eller hand han ser förvirrad (förbryllad, överrumplad) ut och tittar sig omkring för att hitta henne. Musiken stegras medan hans oro gradvis övergår i panik.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2906",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-bevlm8rnky",
+            "source": "I nästa scen pågår ett Diwalifirande Ishan sitter tyst och ser lite butter ut, en pojke kommer fram och säger: “Ishan, jag vet att du är rädd för att börja på (inte gå/åka till) internatskolan\". Ishan säger att han inte är rädd. Pojken fortsätter att provocera honom  \"Jo du är rädd det vet jag”. Ishan biter ihop tänderna och spänner käkarna och upprepar trotsig: \"Jag är inte rädd\". sen tar han ett fyrverkeri tänder det och håller det i handen medan han säger jag är inte rädd. Pojken ryggar tillbaka och utbrister “Har du blivit galen?!” (Drar sig bakåt, hasar sig bakåt i halvt stående ställning, rusar därifrån och ropar.., inte hoppar undan). I bakgrunden viftar några barn med brinnande med tomtebloss som sprakar och gnistrar.\nMed tårar i ögonen (tårögd) och gråten i rösten ropar Ishan, “Jag kommer inte gå på internatskola”.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=2991",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-oe8d6hddnk",
+            "source": "Marschera eleverna i takt till trummorna.Längst fram går några elever och slår på trummor, medan de andra marscherar efter dem till kommandot: vänster höger vänster!",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3034",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              3034
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-s51afohthi",
+            "source": "Skolbyggnaden ser inbäddat i grönska (omgivet av träd) ut. Det står en rad stora träd framför byggnaden .",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3045",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              3045.1874964653325
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-siy4xazovi",
+            "source": "I denna scen talar rektorn eller föreståndaren med Ishan medan Ishan står stelt och lyssnar, märkbart rädd. Han säger \"lyssna noga på mig (eller hör nu noga på). Din pappa har berättat för oss att du är envis och trotsig. Sånt går inte an här, här är det disciplin som gäller\". Sedan vänder han sig till pappan och säger \"Oroa er inte, vi har fått ordning på många besvärliga elever här”. (Vi har fått bukt med många bångstyriga pojkar här)",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3056",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-t6hbrzdi9w",
+            "source": "När bilmotorn plötsligt startar rycker Ishan till, han står där och ser bilen åka iväg medan han blir tårögd (ögonen fylls med tårar), drar lite på munnen (underläppen börjar darra). Ishans mamma håller händerna framför ansiktet, sen sänker hon dem, knäpper händerna (eller flätar samman fingrarna), försöker samla sig (behärska sig) och hålla tillbaka gråten medan hon snyftar och håller händerna sammanpressade. (En man står och sopar med en kvast)",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3094",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-qwrxqhxzmg",
+            "source": "Föreståndaren säger till Ishan \"är du klar nu? kom\" sen säger han åt honom att gå till sovsalen och byta om. Ishan går mycket långsamt, tveksamt. Kuvad av situationen ser han rädd och försagd ut.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3158",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              3158.3436399330035
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-gtl7c8eli1",
+            "source": "I sovsalen sitter Ishan hopsjunken på sängen med sänkt huvud och en butter, nedstämd min. Runt omkring honom är det full fart. De andra pojkarna stojar, byter om leker och springer omkring och några klättrar eller hoppar upp i överslafarna.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3213",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              3213.2456642003317
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-zx9o92b4og",
+            "source": "I denna scen sitter Ishans mamma i bilen tårögd och tårstrimmig efter att ha gråtit, hans storebror vilar huvudet mot hennes axel och ser också ledsen ut. Mamman håller handen på hans huvud och stryker (smeker) honom försiktigt över håret. Några lösa hårstrån fladdrar över hennes ansikte i vinden.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3222",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-n0p4yyivx1",
+            "source": "En tår (inte tårdroppe) som är väg på att rinna nerför kinden. just då kommer föreståndaren fram och säger strängt: \"har du inte bytt om än? gå och byta om.”\nI matsalen sitter han bara tyst med maten framför sig på bordet utan att äta. (Pojken bredvid håller på att röra runt i maten (och för ihop till en tugga) med sked och gaffel och ser helt nöjd ut, röra runt=cirkla + blanda. Pojken till vänster bryter av en bit papad). Senare på natten syns hans tomma säng. I nästa scen står han ensam i badrummet lutad mot väggen, pannan vilande en handflatan mellan väggen och huvudet medan han gråter tyst.\nIshan är förtvivlad, känner sig övergiven, djupt nedstämd och har svårt och finna sig till rätta på internatskolan.\nSången i bakgrunden betonar (tyder på) att Ishaan är känslig och sårbar, även om han inte visar det utåt. (Som en kokosnöt, hårt skal på utsidan och mjukt fruktkött på insidan)",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3244",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-9qki931yup",
+            "source": "Hon snabbbläddrar genom tecknigsblocket med tummen så att teckningarna blir till animation. (flippa genom: anglicerat). I teckningarna glider Ishaan längre och längre bort tills han försvinner ur bilden.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3364",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-t49w2cba3r",
+            "source": "Den pojken bakom ser dåsig (tankspridd) ut, armbågen på bänken och huvudet vilande mot näven, andra handen mot kinden, stryker frånvarande under näsan. (stödjer huvudet mot näven med armbågen på bänken). På lärarens uppmaning läser pojken upp en dikt. (läser upp, recitera rytmiskt, inte skandera- skandera innebär stark rytm)",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3496",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              3496.2870590083357
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-rh2i2obki8",
+            "source": "De var faktiskt du som tolkade dikten rätt. De andra eleverna rabblade bara upp det de hade lärt sig utantill. Pojken går med kryckor och har en stödskena med metallstänger och remmar på ena benet (ortos).\nHan sätter kryckorna framför sig, stödjer sig på dem och för kroppen framåt steg för steg, kryckorna klackar mot golvet när han går. (det hörs ett rytmiskt klackande från kryckorna).\nRabbla upp = återge ett inlärt svar/innehåll.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3578",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-m6gi2roe90",
+            "source": "Han tittar ut genom fönstret och ser en fågel mata sina ungar som piper högljutt efter mat (tiggar om mat). Fågelungarna gapar och låter för att få mat, fågeln för näbben (eller ryckar huvudet) fram och tillbaka mot deras öppna näbbar. (Duvor guppar, guppa är en regelbunden rörelse)",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3644",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-e6m679vgyi",
+            "source": "När läraren märker att han sitter och tittar ut genom fönstret, ritar han en punkt på tavlan, kastar en kritbit på Ishan. Kritan träffar Ihsan i huvudet och får honom att reagera. Sen ber läraren Ishan att peka ut punkten, eftersom Ishan har suttit och tittat ut genom fönstret har han inte varit uppmärksam och vet inte vilken punkt läraren menar. Han står bara där och glor med uppspärrade ögon. Läraren blir arg och skäller på honom: vad glor du på? varför står du där och glor som en groda med ögonen uppspärrade.\"",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3674",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionStarts": [
+              3674.2293915169994
+            ],
+            "captionRows": [
+              1
+            ],
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-oefcl2sl0m",
+            "source": "Läraren ber Ishan att föra fram hande och knyta näven.  (\"Fram med handen, knyt näven\"). Ishan håller först även med handflatesidan uppåt men läraren tar tag i hans hand och vrider den så att knogarna är vända uppåt. Sen slår han honom över knogarna med trälinjalen. (en platt trästicka/ en lång, platt träbit). (Inte käpp - käpp, pekpinne är lång och smal stav ofta rund.)\nIshan rycker till och gapar till (grimaserar) av smärta. (reflexmässiga rörelse på munnen när slaget träffar)",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3731",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-4e93r99ihz",
+            "source": "Bokstäverna på tavlan och i böckerna börjar röra sig (lossnar från sina platser och flytar/glider omkring och byter plats med varandra), några bökstäver vänds och spegelvänds (vänds åt motsatt håll) och flyga omkring, vilket gestaltar Ishans dyslexi. Han dunkar huvudet lätt mot tavlan, krafsar (skrapa, gör en krafsande, kloliknande rörelse) med fingrarna på tavlan, kritan gör liknande rörelse över tavlan och lämnar streck efter sig. (inte klösa - klösa brukar innebära en rep).\nBokstäverna börjar bölja, lösas upp och glida iväg, nästand som om de förångas. Han sliter sig i håret av frustation.",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3810",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-w6hy5lbqjb",
+            "source": "Pressar/biter ihop tänderna  (spänner käkarna) och böjer linjalen i frustation och bryter sönder den. ( Han böjer linjalen och pennan tills de går av) (knyter händerna hårt runt linjalen..) \nRiver ut en sida ur boken och rullar ihop den (knyckla ihop om det formas till en boll, press/skynkla ihop: allmänt), placerar rullen i slangbellan, spänner gummibandet och skjuter iväg den. \nSitter hopsjunken (framåtböjd) med armbågarna stödda mot låren och handflatorna pressade mot ögonen (eller med ansiktet begravt i händerna). (med händerna för ögonen - kort sagt)\nIshan sitter med armarna på bordet och vilar huvudet mot den ena armen. Med den andra handen knackar han tavelsuddet rythmiskt mot bordet.\nHan sitter på sängen, framåtböjd med huvudet vilande mot kudden. Han slår upprepade gånger med båda händerna mot sängen på varsin sida om sig, så att kroppen gungar i takt med slagen, sen ger han och sjunker ner på sängen. [frustationen övergår i uppgivenhet].",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3852",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-b8ts0y8c4k",
+            "source": "Han vänder skolväskan upp och ner häller ut alla böckerna i soptunnan / Han tömmer hela skolväskan i soptunnan.\nHan slänger ut skolväskan genom fönstret. Sedan föreställer han sig att spindlar kryper ut ur väskan, tar sig uppför väggen och kryper in genom fönstret mot hans bänk. Plötsligt känner han något krypa på nacken och upptäcker till sin förskräckelse att det är en spindel. (Han rycker till när han upptäcker en spindel som kryper uppför hans nacke)",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3875",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          },
+          {
+            "manual": true,
+            "id": "mc-42cs8b5uns",
+            "source": "Han krossar en av de inbillade spindlarna som kryper på bordet genom att slå till den med tavelsuddet. (slår ihjäl den ..) Han grimaserar av äckel och rycker till med munnen. (Han kväljs av äckel)\nHan för handen häftigt fram och tillbaka över tavlan och drar täta, sammanhängande streck åt höger och vänster. Sedan syns han göra samma rörelse med en penna på pappret. Han trycker så hårt att pennspetsen går av. (drar pennan häftigt i ett sicksackmönster) [inte klottra - klottra innebär slumpmässig ritning]",
+            "target": "",
+            "enabled": true,
+            "mediaUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ&t=3910",
+            "mediaKind": "youtube",
+            "mediaVideoId": "KX6xaWY99wQ",
+            "captionUrl": "https://www.youtube.com/watch?app=desktop&v=KX6xaWY99wQ",
+            "captionField": "source",
+            "captionTitle": "Taare Zameen Par HD 2007 Film, Taare Zameen Par Full Movie, Aamir Khan Movie, Taare Zameen Par Movie - YouTube"
+          }
+        ]
+      }
+    },
+    "createdAt": 1790970709276,
+    "updatedAt": 1791055887724
   }
 }
