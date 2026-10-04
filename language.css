@@ -2518,6 +2518,8 @@ body.practice-mode #mediaContainer #youtubePlayer iframe {
 /* The dir button + delete button live inside the settings panel now;
    they need the same baseline visual as the old chip-style buttons but
    sized to be readable + tappable on phones. */
+#practiceMode .practice-settings-panel .practice-edit,
+#practiceMode .practice-settings-panel .practice-replace,
 #practiceMode .practice-settings-panel .practice-dir {
     flex: 1;
     padding: 6px 10px;
@@ -2528,6 +2530,8 @@ body.practice-mode #mediaContainer #youtubePlayer iframe {
     cursor: pointer;
     font: inherit;
 }
+#practiceMode .practice-settings-panel .practice-edit:hover,
+#practiceMode .practice-settings-panel .practice-replace:hover,
 #practiceMode .practice-settings-panel .practice-dir:hover { background: rgba(255,255,255,0.15); }
 #practiceMode .practice-settings-panel .practice-delete {
     flex: 1;
