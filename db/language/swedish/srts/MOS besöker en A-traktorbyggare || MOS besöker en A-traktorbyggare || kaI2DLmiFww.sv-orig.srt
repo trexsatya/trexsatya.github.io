@@ -1,0 +1,2391 @@
+1
+00:00:02,430 --> 00:00:05,750
+[Applåder]
+
+2
+00:00:04,050 --> 00:00:06,600
+[Musik]
+
+3
+00:00:05,750 --> 00:00:19,069
+[Applåder]
+
+4
+00:00:06,600 --> 00:00:19,069
+[Musik]
+
+5
+00:00:21,920 --> 00:00:26,599
+Jag har företagit rot Kart känner nu
+
+6
+00:00:24,359 --> 00:00:28,840
+igen från två tidigare videos här på
+
+7
+00:00:26,599 --> 00:00:31,439
+Youtubekanalen men idag ska jag faktiskt
+
+8
+00:00:28,840 --> 00:00:34,360
+träffa en A byggare som bygger
+
+9
+00:00:31,439 --> 00:00:38,000
+a-traktorer med deras produkter nämligen
+
+10
+00:00:34,360 --> 00:00:40,200
+Oskar Wallberg från Wallberg Autotech
+
+11
+00:00:38,000 --> 00:00:43,760
+och han bygger av traktorer med den
+
+12
+00:00:40,200 --> 00:00:43,760
+senaste tekniken för just
+
+13
+00:00:44,039 --> 00:00:49,239
+hastighetsreglering jag var 16 år och
+
+14
+00:00:46,879 --> 00:00:51,960
+skulle hade spara up pengar för att köpa
+
+15
+00:00:49,239 --> 00:00:55,160
+en bil som skulle bli Epa så jag fick
+
+16
+00:00:51,960 --> 00:00:57,320
+tag på en Audi a6a för bra pris som jag
+
+17
+00:00:55,160 --> 00:01:00,199
+och min pappa byggde om tillsammans då
+
+18
+00:00:57,320 --> 00:01:03,960
+och det fanns ju en hel uppsjö av olika
+
+19
+00:01:00,199 --> 00:01:07,320
+sätt och få bilen och gå 30 med olika
+
+20
+00:01:03,960 --> 00:01:10,520
+hastighetsregulator och det var ecus
+
+21
+00:01:07,320 --> 00:01:12,840
+spärrar och så vidare Men vi bestämde
+
+22
+00:01:10,520 --> 00:01:15,960
+oss för en hastighetsregulator som vi
+
+23
+00:01:12,840 --> 00:01:18,840
+monterade in och vi upptäckte det att
+
+24
+00:01:15,960 --> 00:01:20,840
+den var både svår att montera Och så sen
+
+25
+00:01:18,840 --> 00:01:22,040
+så antingen så funkar det eller så
+
+26
+00:01:20,840 --> 00:01:24,000
+funkade det inte man fick ingen
+
+27
+00:01:22,040 --> 00:01:26,600
+indikering på varför någonting inte
+
+28
+00:01:24,000 --> 00:01:29,000
+funkade eller vad som var fel så vi fick
+
+29
+00:01:26,600 --> 00:01:31,920
+skicka den där enheten fram och tillbaka
+
+30
+00:01:29,000 --> 00:01:36,240
+tre gånger för för att få ny programvara
+
+31
+00:01:31,920 --> 00:01:38,759
+och för felsökning men sen några epor
+
+32
+00:01:36,240 --> 00:01:41,240
+senare så startade ett företag här i
+
+33
+00:01:38,759 --> 00:01:44,159
+Umeå som heter rotc och släppte en
+
+34
+00:01:41,240 --> 00:01:48,119
+hastighetsregulator och den regulatorn
+
+35
+00:01:44,159 --> 00:01:51,600
+skulle då vara smidig att installera och
+
+36
+00:01:48,119 --> 00:01:51,600
+ha felsökningsmetodik
+
+37
+00:01:59,920 --> 00:02:04,360
+indikering på vad som var fel Och hur
+
+38
+00:02:01,880 --> 00:02:06,719
+man skulle åtgärda det sen så fortsatte
+
+39
+00:02:04,360 --> 00:02:09,080
+jag med de enheterna och jag startade
+
+40
+00:02:06,719 --> 00:02:12,360
+ett företag där jag började koppla in
+
+41
+00:02:09,080 --> 00:02:15,120
+enheter åt kunder några år senare så kom
+
+42
+00:02:12,360 --> 00:02:18,280
+root cart med en ny enhet som vi ska
+
+43
+00:02:15,120 --> 00:02:20,760
+koppla in här idag på två bilar Den är
+
+44
+00:02:18,280 --> 00:02:23,239
+till skillnad från den äldre där som
+
+45
+00:02:20,760 --> 00:02:25,280
+levereras med lösa kablar och som man
+
+46
+00:02:23,239 --> 00:02:28,280
+måste koppla in själv så levereras den
+
+47
+00:02:25,280 --> 00:02:31,160
+här nya enheten med färdiga kontakter
+
+48
+00:02:28,280 --> 00:02:34,360
+för gaspedalen och och en liten klämma
+
+49
+00:02:31,160 --> 00:02:38,280
+som man kopplar in på cambus kablarna
+
+50
+00:02:34,360 --> 00:02:38,280
+och sen är inkopplingen helt
+
+51
+00:02:42,200 --> 00:02:48,040
+färdig som ni ser här så har den här
+
+52
+00:02:44,840 --> 00:02:51,319
+bilen Den har ingen bur eller någon låda
+
+53
+00:02:48,040 --> 00:02:53,000
+över baksätet ännu och det är för att de
+
+54
+00:02:51,319 --> 00:02:56,319
+här bilarna som vi ska visa Idag är
+
+55
+00:02:53,000 --> 00:02:59,000
+bilar som är här under om byggnation och
+
+56
+00:02:56,319 --> 00:03:01,480
+vi tänkte idag ta första steget med och
+
+57
+00:02:59,000 --> 00:03:03,360
+hastighets gränsa de Ah det här är ju
+
+58
+00:03:01,480 --> 00:03:06,640
+extremen va den har vi faktiskt gjort
+
+59
+00:03:03,360 --> 00:03:09,680
+video från rotk om tidigare Jo inför Elm
+
+60
+00:03:06,640 --> 00:03:11,560
+Ja vad de här två lådorna då ska du in
+
+61
+00:03:09,680 --> 00:03:15,879
+med de i de två bilarna som står finns
+
+62
+00:03:11,560 --> 00:03:19,120
+här då eller Ja den ena den här Volvo
+
+63
+00:03:15,879 --> 00:03:20,680
+fas två den ska in i V70N här Eh det kan
+
+64
+00:03:19,120 --> 00:03:23,799
+vara lite missvisande att det står fas
+
+65
+00:03:20,680 --> 00:03:26,040
+två Men det är för att olika bilar byter
+
+66
+00:03:23,799 --> 00:03:28,360
+den Det är ju eftersom Vilken gaspedal
+
+67
+00:03:26,040 --> 00:03:31,360
+kontakt det är man har som enheten har
+
+68
+00:03:28,360 --> 00:03:34,239
+utformad så att att olika eller Volvo
+
+69
+00:03:31,360 --> 00:03:37,000
+byter ibland gaspedal kontakt utan att
+
+70
+00:03:34,239 --> 00:03:39,120
+de byter modell generation så att den
+
+71
+00:03:37,000 --> 00:03:43,840
+här som är till fas två Den börjar redan
+
+72
+00:03:39,120 --> 00:03:46,280
+på sena V70 av den äldre generationen
+
+73
+00:03:43,840 --> 00:03:49,159
+okej och den till vänster då den här
+
+74
+00:03:46,280 --> 00:03:51,959
+till vänster det är till en BMW f-serie
+
+75
+00:03:49,159 --> 00:03:54,159
+och den skiljer sig inte så mycket Den
+
+76
+00:03:51,959 --> 00:03:57,159
+är inte så svår för att det är alla
+
+77
+00:03:54,159 --> 00:03:57,159
+bmwfinans
+
+78
+00:04:00,000 --> 00:04:04,760
+till BMW E serien då är det en annan
+
+79
+00:04:02,280 --> 00:04:05,760
+kontakt till gaspedalen men inkopplingen
+
+80
+00:04:04,760 --> 00:04:08,159
+är
+
+81
+00:04:05,760 --> 00:04:10,640
+identisk Okej men om vi börjar med den
+
+82
+00:04:08,159 --> 00:04:15,000
+högre här då för den som ska in i Volvon
+
+83
+00:04:10,640 --> 00:04:15,000
+bakom här Ja kan vi packa upp
+
+84
+00:04:17,840 --> 00:04:23,600
+den den här är ju pytteliten har jag
+
+85
+00:04:20,959 --> 00:04:23,600
+sett
+
+86
+00:04:25,600 --> 00:04:32,320
+Jo då har vi här det man får med i
+
+87
+00:04:28,479 --> 00:04:36,080
+kittet är en hastighetsregulator och en
+
+88
+00:04:32,320 --> 00:04:39,199
+plombering Det är allt som
+
+89
+00:04:36,080 --> 00:04:41,360
+behövs och på hastighetsregulator så
+
+90
+00:04:39,199 --> 00:04:43,800
+sitter det fast två gaspedal skaar med
+
+91
+00:04:41,360 --> 00:04:46,639
+kontakter så att det är plug and play
+
+92
+00:04:43,800 --> 00:04:49,960
+direkt i gaspedalen och så sätter man
+
+93
+00:04:46,639 --> 00:04:52,479
+gaspedal kontakten här uppe sen inför
+
+94
+00:04:49,960 --> 00:04:54,720
+besiktningen så sätter man en plombering
+
+95
+00:04:52,479 --> 00:04:56,160
+över här och då kan det vara bra att
+
+96
+00:04:54,720 --> 00:04:57,639
+höra också med sitt egna
+
+97
+00:04:56,160 --> 00:04:59,919
+besiktningsorgan där man har tänkt
+
+98
+00:04:57,639 --> 00:05:01,280
+besikta om de vill använda sin EG
+
+99
+00:04:59,919 --> 00:05:02,759
+plombering eller om de vill att man ska
+
+100
+00:05:01,280 --> 00:05:04,919
+använda rotc
+
+101
+00:05:02,759 --> 00:05:08,919
+plombering de flesta brukar vilja ha
+
+102
+00:05:04,919 --> 00:05:12,360
+rotc men vissa kan ha an andra åsikter
+
+103
+00:05:08,919 --> 00:05:15,160
+sen Här finns det en till kabel den här
+
+104
+00:05:12,360 --> 00:05:18,400
+ska man skarva in på cambus och då
+
+105
+00:05:15,160 --> 00:05:23,600
+följer det med en liten cambus kontakt
+
+106
+00:05:18,400 --> 00:05:26,880
+här så att man lägger cambus kablarna de
+
+107
+00:05:23,600 --> 00:05:26,880
+ser ut som ett det är tvinnat
+
+108
+00:05:29,759 --> 00:05:34,000
+enda som är viktigt då är att man håller
+
+109
+00:05:31,160 --> 00:05:36,240
+koll på vilken som är vilken för att den
+
+110
+00:05:34,000 --> 00:05:38,000
+högra här är kopplad till den nedre
+
+111
+00:05:36,240 --> 00:05:41,000
+kabeln och den vänstra är kopplad till
+
+112
+00:05:38,000 --> 00:05:42,720
+den övre kabeln så att då ska man ju
+
+113
+00:05:41,000 --> 00:05:46,199
+skala den här
+
+114
+00:05:42,720 --> 00:05:47,639
+kabeln den ska skalas och så trycker man
+
+115
+00:05:46,199 --> 00:05:49,440
+in den här och det är bara bara det här
+
+116
+00:05:47,639 --> 00:05:51,680
+ytterhöljet som ska skalas bort sen Ska
+
+117
+00:05:49,440 --> 00:05:53,680
+ledarna vara oskalade trycker man in den
+
+118
+00:05:51,680 --> 00:05:55,639
+här och klämmer åt och då är det viktigt
+
+119
+00:05:53,680 --> 00:05:58,240
+att man vänder den rätt men det finns en
+
+120
+00:05:55,639 --> 00:06:00,400
+montageanvisning på rotc hemsida så att
+
+121
+00:05:58,240 --> 00:06:03,240
+det är väldigt enkelt där står det
+
+122
+00:06:00,400 --> 00:06:06,199
+precis Alla steg exakt hur man ska göra
+
+123
+00:06:03,240 --> 00:06:09,960
+Mm så var första steget för dig nu då
+
+124
+00:06:06,199 --> 00:06:14,160
+med den där första steget är att vi ska
+
+125
+00:06:09,960 --> 00:06:16,680
+plocka loss en plastkåpa i bilen sen så
+
+126
+00:06:14,160 --> 00:06:19,560
+ska vi dra ut gaspedal kontakten koppla
+
+127
+00:06:16,680 --> 00:06:22,720
+in den här emellan sen måste man skruva
+
+128
+00:06:19,560 --> 00:06:25,599
+lös OBD uttaget sitter med två skruvar
+
+129
+00:06:22,720 --> 00:06:28,160
+och ta fram kablarna bak på det för att
+
+130
+00:06:25,599 --> 00:06:30,160
+på V70 så ska den här Kusen kopplas in
+
+131
+00:06:28,160 --> 00:06:32,120
+direkt på OBD uttaget
+
+132
+00:06:30,160 --> 00:06:34,000
+så då kopplar vi in den på baksidan av
+
+133
+00:06:32,120 --> 00:06:37,720
+OBD uttaget till kablarna som går till
+
+134
+00:06:34,000 --> 00:06:39,919
+OBD uttaget och då ska man ju klippa av
+
+135
+00:06:37,720 --> 00:06:42,199
+den här cambus kabeln den är väldigt
+
+136
+00:06:39,919 --> 00:06:43,960
+mycket för lång så man ska klippa av den
+
+137
+00:06:42,199 --> 00:06:45,960
+så att den blir rätt längd och så ska
+
+138
+00:06:43,960 --> 00:06:48,840
+man skala den så det gör vi när vi har
+
+139
+00:06:45,960 --> 00:06:51,440
+kopplat in enheten i bilen V70 har en
+
+140
+00:06:48,840 --> 00:06:54,000
+plastkåpa som sitter här just över
+
+141
+00:06:51,440 --> 00:06:56,440
+pedalerna i den här bilen så saknas den
+
+142
+00:06:54,000 --> 00:06:59,639
+så att då behöver vi inte skruva loss
+
+143
+00:06:56,440 --> 00:07:02,599
+någon sån
+
+144
+00:06:59,639 --> 00:07:06,919
+sen så är det att sträckas sig in och
+
+145
+00:07:02,599 --> 00:07:10,160
+lirk lös kontakten till
+
+146
+00:07:06,919 --> 00:07:14,039
+gaspedalen sen är det bara pluggen
+
+147
+00:07:10,160 --> 00:07:17,039
+play så Och den här sätter vi på
+
+148
+00:07:14,039 --> 00:07:17,039
+gaspedalen
+
+149
+00:07:34,520 --> 00:07:38,599
+klick säger det så Är enheten inkopplad
+
+150
+00:07:37,000 --> 00:07:41,560
+på
+
+151
+00:07:38,599 --> 00:07:44,520
+gaspedalen den här sista kabeln som är
+
+152
+00:07:41,560 --> 00:07:47,159
+för lång den ska vi koppla in i på
+
+153
+00:07:44,520 --> 00:07:49,080
+baksidan av OBD uttaget så att det vi
+
+154
+00:07:47,159 --> 00:07:55,520
+gör då är att vi lossar skruvarna till
+
+155
+00:07:49,080 --> 00:07:55,520
+OBD uttaget som sitter med en torx
+
+156
+00:07:56,280 --> 00:08:02,680
+T25 då blir det uttaget löst sen sitter
+
+157
+00:08:00,280 --> 00:08:06,720
+det en isolering bakom som
+
+158
+00:08:02,680 --> 00:08:08,879
+vi River bort en del av då är det det
+
+159
+00:08:06,720 --> 00:08:08,879
+här
+
+160
+00:08:09,280 --> 00:08:16,639
+kabelpark som Kusen ska kopplas in
+
+161
+00:08:13,000 --> 00:08:19,960
+på så det vi gör då är att vi
+
+162
+00:08:16,639 --> 00:08:19,960
+lägger genom
+
+163
+00:08:23,039 --> 00:08:31,440
+den så där och klämmer
+
+164
+00:08:26,759 --> 00:08:31,440
+åt och till det här steget Behövs det
+
+165
+00:08:33,320 --> 00:08:36,499
+[Applåder]
+
+166
+00:08:38,080 --> 00:08:42,919
+Tång så nyper man bara med en tång rätt
+
+167
+00:08:41,240 --> 00:08:45,920
+över den
+
+168
+00:08:42,919 --> 00:08:48,399
+här så att den sitter som den ska
+
+169
+00:08:45,920 --> 00:08:52,200
+klickar till lite grann då tar man den
+
+170
+00:08:48,399 --> 00:08:54,760
+här kabeln sen och då ska ju allting ska
+
+171
+00:08:52,200 --> 00:08:57,200
+ju dras fast med ett buntband runt
+
+172
+00:08:54,760 --> 00:09:01,560
+någonting där det sitter fast här och så
+
+173
+00:08:57,200 --> 00:09:06,160
+ska den här kabeln med lagom längd räcka
+
+174
+00:09:01,560 --> 00:09:06,160
+hit så klipper man den lagomt
+
+175
+00:09:13,519 --> 00:09:19,040
+så sen ska man inte göra som jag gjorde
+
+176
+00:09:17,040 --> 00:09:22,560
+nu och råka skala den inre kablarna
+
+177
+00:09:19,040 --> 00:09:25,800
+också utan de ska vara helt
+
+178
+00:09:22,560 --> 00:09:29,880
+oskalade vänder man de rätt lägger in
+
+179
+00:09:25,800 --> 00:09:29,880
+dem i den här
+
+180
+00:09:29,920 --> 00:09:36,200
+och klämmer
+
+181
+00:09:32,720 --> 00:09:38,360
+åt nu Är enheten installerad när vi är
+
+182
+00:09:36,200 --> 00:09:40,360
+klara med installationen av enheten så
+
+183
+00:09:38,360 --> 00:09:42,680
+har vi ett steg kvar och det är att vi
+
+184
+00:09:40,360 --> 00:09:45,440
+ska logga in på appen i telefonen och
+
+185
+00:09:42,680 --> 00:09:47,800
+konfigurera enheten det vi gör då är att
+
+186
+00:09:45,440 --> 00:09:49,920
+vi slår på tändningen på bilen sen
+
+187
+00:09:47,800 --> 00:09:53,640
+öppnar man en webbläsare går in på
+
+188
+00:09:49,920 --> 00:09:53,640
+adressen rotc
+
+189
+00:09:58,320 --> 00:10:01,760
+web.com karten
+
+190
+00:10:03,000 --> 00:10:07,760
+där ska man slå in bilens
+
+191
+00:10:05,079 --> 00:10:11,160
+registreringsnummer eh och nu har jag
+
+192
+00:10:07,760 --> 00:10:14,560
+glömt bort det Så vi skriver bara a C1
+
+193
+00:10:11,160 --> 00:10:14,560
+23 Det spelar inte så stor
+
+194
+00:10:14,760 --> 00:10:19,440
+roll så kan man få frågan om man vill
+
+195
+00:10:17,279 --> 00:10:22,680
+göra en mjukvaruuppdatering om det har
+
+196
+00:10:19,440 --> 00:10:24,680
+kommit en ny mjukvara efter att enheten
+
+197
+00:10:22,680 --> 00:10:26,839
+tillverkades och det är alltid bra att
+
+198
+00:10:24,680 --> 00:10:29,360
+göra för att det kan innebära att den
+
+199
+00:10:26,839 --> 00:10:31,760
+det är gjort om någonting så att en bil
+
+200
+00:10:29,360 --> 00:10:33,720
+modell går att regleringen i någon viss
+
+201
+00:10:31,760 --> 00:10:36,680
+bilmodell går bättre eller att det har
+
+202
+00:10:33,720 --> 00:10:39,279
+lagts till nya
+
+203
+00:10:36,680 --> 00:10:42,959
+bilmodeller så trycker man uppdatera och
+
+204
+00:10:39,279 --> 00:10:42,959
+så går det hyfsat
+
+205
+00:10:46,800 --> 00:10:51,000
+snabbt när uppdateringen är klar så
+
+206
+00:10:49,959 --> 00:10:55,880
+klickar man
+
+207
+00:10:51,000 --> 00:10:58,200
+Stäng och så går man in på den här som
+
+208
+00:10:55,880 --> 00:10:59,839
+är första steget att då ska man se till
+
+209
+00:10:58,200 --> 00:11:02,839
+att den är inställd på vol och det här
+
+210
+00:10:59,839 --> 00:11:06,440
+är en 2006 Så vi ska ha modell 2005
+
+211
+00:11:02,839 --> 00:11:08,880
+eller senare trycker man nästa så ska
+
+212
+00:11:06,440 --> 00:11:12,320
+man skriva in mätarställningen och den
+
+213
+00:11:08,880 --> 00:11:14,160
+är på
+
+214
+00:11:12,320 --> 00:11:16,720
+30
+
+215
+00:11:14,160 --> 00:11:18,760
+17
+
+216
+00:11:16,720 --> 00:11:21,560
+65 klickar man
+
+217
+00:11:18,760 --> 00:11:24,519
+sök säger den att den har hittat
+
+218
+00:11:21,560 --> 00:11:27,440
+mätarställning och hastighetssignal och
+
+219
+00:11:24,519 --> 00:11:29,720
+man har tre gröna bockar går man vidare
+
+220
+00:11:27,440 --> 00:11:32,000
+till nästa steg då ska g Dalen
+
+221
+00:11:29,720 --> 00:11:35,200
+kalibreras så då trycker man starta
+
+222
+00:11:32,000 --> 00:11:36,320
+kalibrering trampar full gas och släpper
+
+223
+00:11:35,200 --> 00:11:39,399
+ett par
+
+224
+00:11:36,320 --> 00:11:43,680
+gånger och verkligen trampa gasen i
+
+225
+00:11:39,399 --> 00:11:47,040
+botten trycker man avsluta kalibreringen
+
+226
+00:11:43,680 --> 00:11:51,800
+lyckades då kan man se här att ingen gas
+
+227
+00:11:47,040 --> 00:11:51,800
+står 0 % full gas då står det
+
+228
+00:11:52,720 --> 00:11:58,720
+100 nu får man en fråga om appen får
+
+229
+00:11:56,760 --> 00:12:01,360
+använda ens plats Och då trycker man
+
+230
+00:11:58,720 --> 00:12:03,920
+tillåt eftersom att då tar den fram
+
+231
+00:12:01,360 --> 00:12:05,959
+telefonens gps- hastighet här så att när
+
+232
+00:12:03,920 --> 00:12:07,639
+man sen far ut och kör med bilen för att
+
+233
+00:12:05,959 --> 00:12:09,839
+konfigurera hastigheten så att den blir
+
+234
+00:12:07,639 --> 00:12:12,199
+perfekt så kan man kolla på den här
+
+235
+00:12:09,839 --> 00:12:14,680
+istället för att bara kolla på bilens
+
+236
+00:12:12,199 --> 00:12:17,760
+hastighetsmätare för om man skriver 30
+
+237
+00:12:14,680 --> 00:12:19,959
+km eller sätter in den på 30 km här så
+
+238
+00:12:17,760 --> 00:12:22,920
+kan det bli efter när bilens
+
+239
+00:12:19,959 --> 00:12:24,639
+hastighetsmätare visar 30 och beroende
+
+240
+00:12:22,920 --> 00:12:26,959
+på vad man har för däck och så är ju
+
+241
+00:12:24,639 --> 00:12:28,440
+vissa bilar så att de visar lite mer så
+
+242
+00:12:26,959 --> 00:12:30,320
+kan det hända att det går lite för sakta
+
+243
+00:12:28,440 --> 00:12:34,560
+och man vill ju att den ska få gå exakt
+
+244
+00:12:30,320 --> 00:12:36,920
+30 Så då ska man ut och köra och trycka
+
+245
+00:12:34,560 --> 00:12:39,720
+lite upp och ner här så att man får in
+
+246
+00:12:36,920 --> 00:12:39,720
+perfekt att den går
+
+247
+00:12:45,920 --> 00:12:52,639
+30 så nu är vi ute och kör med bilen och
+
+248
+00:12:50,120 --> 00:12:54,600
+konfigureringen av rotk det får man ju
+
+249
+00:12:52,639 --> 00:12:56,680
+göra som passagerare då eftersom att man
+
+250
+00:12:54,600 --> 00:12:58,720
+inte får hålla i telefonen när man kör
+
+251
+00:12:56,680 --> 00:13:02,079
+men då går vi in på hastighet Här ser vi
+
+252
+00:12:58,720 --> 00:13:04,160
+att just Nu kör vi 11 km i timman så g
+
+253
+00:13:02,079 --> 00:13:07,320
+vi en korsning
+
+254
+00:13:04,160 --> 00:13:10,040
+här Nu kommer vi ut och föraren håller
+
+255
+00:13:07,320 --> 00:13:12,480
+full gas och då ser vi att den verkar
+
+256
+00:13:10,040 --> 00:13:17,279
+som att den går 29
+
+257
+00:13:12,480 --> 00:13:18,760
+nu och så höjer vi en km i timman nu går
+
+258
+00:13:17,279 --> 00:13:22,279
+det
+
+259
+00:13:18,760 --> 00:13:24,040
+30 sen har vi en fin grej med rotk också
+
+260
+00:13:22,279 --> 00:13:26,680
+Och det är ju det att eftersom man
+
+261
+00:13:24,040 --> 00:13:28,519
+konfigurerar den via telefonen så är det
+
+262
+00:13:26,680 --> 00:13:31,160
+väldigt enkelt innan man har tryckt
+
+263
+00:13:28,519 --> 00:13:33,480
+avsluta installationen här som man gör
+
+264
+00:13:31,160 --> 00:13:33,480
+när man
+
+265
+00:13:46,920 --> 00:13:50,720
+registreringsbesiktning från stan och
+
+266
+00:13:48,519 --> 00:13:53,399
+har långt till Bilprovningen då kan man
+
+267
+00:13:50,720 --> 00:13:54,959
+köra fort på vägen dit sen när man
+
+268
+00:13:53,399 --> 00:13:56,959
+kommer till
+
+269
+00:13:54,959 --> 00:14:00,399
+Bilprovningen så Stänger man av
+
+270
+00:13:56,959 --> 00:14:04,000
+transportläge och då går bilen 30 igen
+
+271
+00:14:00,399 --> 00:14:06,440
+sen efter att registrerings eller
+
+272
+00:14:04,000 --> 00:14:08,279
+personen på besiktningsorgan som
+
+273
+00:14:06,440 --> 00:14:09,880
+registreringsbesikta bilen säger att Ja
+
+274
+00:14:08,279 --> 00:14:13,079
+men det här är godkänt så kommer han
+
+275
+00:14:09,880 --> 00:14:15,480
+vilja att kunden låser enheten trycker
+
+276
+00:14:13,079 --> 00:14:18,160
+man avsluta installationen Sen trycker
+
+277
+00:14:15,480 --> 00:14:20,800
+man lås enhet och så trycker man ja lås
+
+278
+00:14:18,160 --> 00:14:23,560
+enheten nu men det ska vi inte göra nu
+
+279
+00:14:20,800 --> 00:14:25,519
+för att vi är inte där än Ja det gick ju
+
+280
+00:14:23,560 --> 00:14:28,279
+bra det där ja Nu har vi varit ute och
+
+281
+00:14:25,519 --> 00:14:29,959
+kört Bilen går som en klocka den bryter
+
+282
+00:14:28,279 --> 00:14:32,600
+helt perfekt både uppför och
+
+283
+00:14:29,959 --> 00:14:34,560
+nerförsbackar aldrig några ryck utan man
+
+284
+00:14:32,600 --> 00:14:37,360
+kan hålla full gas hela tiden och bilen
+
+285
+00:14:34,560 --> 00:14:39,240
+håller 30 km i timmen Det där är ju
+
+286
+00:14:37,360 --> 00:14:41,880
+också en sån här fråga som man har hört
+
+287
+00:14:39,240 --> 00:14:44,120
+många som har ställt under åren som jag
+
+288
+00:14:41,880 --> 00:14:46,000
+har jobbat med just a- traktorförare att
+
+289
+00:14:44,120 --> 00:14:50,040
+det har varit lite ryckigt och knycket
+
+290
+00:14:46,000 --> 00:14:50,920
+och det har varit dåligt liksom Ja det
+
+291
+00:14:50,040 --> 00:14:54,000
+är
+
+292
+00:14:50,920 --> 00:14:55,360
+ju Problemet är ju med äldre bilar för
+
+293
+00:14:54,000 --> 00:14:57,199
+att äldre bilar som inte har en
+
+294
+00:14:55,360 --> 00:14:59,440
+elektrisk gaspedal där går det inte att
+
+295
+00:14:57,199 --> 00:15:02,000
+använda en sån här typ av regulator utan
+
+296
+00:14:59,440 --> 00:15:04,000
+där så är de enda sätten som finns idag
+
+297
+00:15:02,000 --> 00:15:06,959
+är att man måste gå in och bryta
+
+298
+00:15:04,000 --> 00:15:09,000
+tändningen av bilen så att man som halv
+
+299
+00:15:06,959 --> 00:15:12,360
+dödar bilen när man kommer upp i 30 och
+
+300
+00:15:09,000 --> 00:15:14,240
+det medför ju rejält stora ryck men med
+
+301
+00:15:12,360 --> 00:15:15,839
+en sån här modern bil med elektrisk
+
+302
+00:15:14,240 --> 00:15:18,079
+gaspedal så kan man ha en
+
+303
+00:15:15,839 --> 00:15:20,600
+hastighetsregulator som det enda den gör
+
+304
+00:15:18,079 --> 00:15:22,880
+är att den släpper upp gasen när det går
+
+305
+00:15:20,600 --> 00:15:25,959
+för fort och reglerar gas på Draget för
+
+306
+00:15:22,880 --> 00:15:28,040
+att hålla perfekt 30 km i Tim så att det
+
+307
+00:15:25,959 --> 00:15:31,319
+enda den gör egentligen är det man själv
+
+308
+00:15:28,040 --> 00:15:33,759
+gör med foten och man ska hålla 30 m men
+
+309
+00:15:31,319 --> 00:15:36,959
+som idag Vi kan ha en liten enhet som
+
+310
+00:15:33,759 --> 00:15:38,519
+sköter åt oss och nu tokvarvar de inte
+
+311
+00:15:36,959 --> 00:15:41,560
+heller utan de går verkligen på rätt
+
+312
+00:15:38,519 --> 00:15:45,399
+varvtal Ja med en sån här så kan man ha
+
+313
+00:15:41,560 --> 00:15:48,319
+växlar ett två och tre man behöver
+
+314
+00:15:45,399 --> 00:15:51,319
+spärra fyran och femman eller sexan om
+
+315
+00:15:48,319 --> 00:15:53,240
+man har en sexa men växlarna ett två och
+
+316
+00:15:51,319 --> 00:15:56,560
+tre Kan man ha Och det betyder ju att på
+
+317
+00:15:53,240 --> 00:15:59,040
+trean i 30 så ligger man på mellan 12
+
+318
+00:15:56,560 --> 00:16:02,880
+och 1300 varv och det är ju helt perfekt
+
+319
+00:15:59,040 --> 00:16:02,880
+för motorn då går den som
+
+320
+00:16:07,519 --> 00:16:12,839
+bäst det måste ju dra mindre soppa också
+
+321
+00:16:10,639 --> 00:16:15,600
+Ja Det drar rejält mycket mindre soppa
+
+322
+00:16:12,839 --> 00:16:17,959
+än om man skulle ligga på 2000 varv
+
+323
+00:16:15,600 --> 00:16:20,240
+eller till och med uppe på 3 4000 varv
+
+324
+00:16:17,959 --> 00:16:23,480
+då bara skriker ju motorn och det drar
+
+325
+00:16:20,240 --> 00:16:27,319
+mängder med bränsle utan 1300 varv det
+
+326
+00:16:23,480 --> 00:16:29,199
+är optimala varvtalet för en modern
+
+327
+00:16:27,319 --> 00:16:30,959
+motor för att då går det den har
+
+328
+00:16:29,199 --> 00:16:34,160
+tillräckligt mycket kraft för att orka
+
+329
+00:16:30,959 --> 00:16:37,040
+köra överallt Men den håller inte för
+
+330
+00:16:34,160 --> 00:16:39,560
+höga varv för att det ska gå billigt
+
+331
+00:16:37,040 --> 00:16:43,680
+sista steget när man har monterat en
+
+332
+00:16:39,560 --> 00:16:46,360
+rotk extrem och fått bilen att gå 30 och
+
+333
+00:16:43,680 --> 00:16:49,160
+allting funkar är ju att man just innan
+
+334
+00:16:46,360 --> 00:16:52,800
+man ska Besikta så ska enheten plomberas
+
+335
+00:16:49,160 --> 00:16:55,600
+så då har vi r är
+
+336
+00:16:52,800 --> 00:16:57,480
+originalkonst kontakt inkopplad så att
+
+337
+00:16:55,600 --> 00:17:00,160
+det här är gaspedal kontakten som satt
+
+338
+00:16:57,480 --> 00:17:03,880
+på gaspedalen som man tog lös Så då
+
+339
+00:17:00,160 --> 00:17:06,520
+sticker man igenom plomberingen mellan
+
+340
+00:17:03,880 --> 00:17:09,039
+kablarna sticker den mellan kablarna på
+
+341
+00:17:06,520 --> 00:17:13,000
+andra sidan
+
+342
+00:17:09,039 --> 00:17:17,839
+också så drar man genom
+
+343
+00:17:13,000 --> 00:17:22,280
+den genom hålet och drar
+
+344
+00:17:17,839 --> 00:17:25,039
+åt då är den låst G aldrig att få
+
+345
+00:17:22,280 --> 00:17:27,880
+upp när enheten är inkopplad och
+
+346
+00:17:25,039 --> 00:17:30,039
+plomberad och konfigurerad via appen så
+
+347
+00:17:27,880 --> 00:17:32,400
+finns det fortfarande två saker kvar och
+
+348
+00:17:30,039 --> 00:17:34,360
+det är att om man har en manuell
+
+349
+00:17:32,400 --> 00:17:36,280
+växellåda så kommer man behöva spärra
+
+350
+00:17:34,360 --> 00:17:39,799
+några växlar för att man får bara ha
+
+351
+00:17:36,280 --> 00:17:42,480
+ettan tvåan och trean brukbara Men det
+
+352
+00:17:39,799 --> 00:17:44,480
+löser man med en antingen en växelplatta
+
+353
+00:17:42,480 --> 00:17:47,039
+från som finns och köpa från diversa
+
+354
+00:17:44,480 --> 00:17:49,360
+företag på internet eller genom att
+
+355
+00:17:47,039 --> 00:17:51,440
+bygga något hemmabyggt sen måste man
+
+356
+00:17:49,360 --> 00:17:53,480
+koppla ur farthållaren också eftersom
+
+357
+00:17:51,440 --> 00:17:56,240
+att alla hastighetsregulator som finns
+
+358
+00:17:53,480 --> 00:17:59,760
+på marknaden enbart kopplar in sig på
+
+359
+00:17:56,240 --> 00:18:01,640
+gaspedalen vilket innebär att eh även om
+
+360
+00:17:59,760 --> 00:18:05,039
+man håller full gas med gaspedalen då
+
+361
+00:18:01,640 --> 00:18:07,480
+bilen håller 30 så kan man trycka igång
+
+362
+00:18:05,039 --> 00:18:09,720
+farthållaren och gasa upp till högre
+
+363
+00:18:07,480 --> 00:18:11,360
+hastigheter med den Du har ju en BMV
+
+364
+00:18:09,720 --> 00:18:13,760
+utanför som vi ska göra ett litet
+
+365
+00:18:11,360 --> 00:18:16,039
+ingrepp på nu också mm Men den är den är
+
+366
+00:18:13,760 --> 00:18:19,039
+lite annorlunda grejer det är lite
+
+367
+00:18:16,039 --> 00:18:21,039
+annorlunda med inkopplingen Volvo V70 är
+
+368
+00:18:19,039 --> 00:18:23,480
+den absolut enklaste att koppla in
+
+369
+00:18:21,039 --> 00:18:25,480
+eftersom att vi har OBD uttaget här där
+
+370
+00:18:23,480 --> 00:18:28,000
+man kopplar in kampus signalen och
+
+371
+00:18:25,480 --> 00:18:30,320
+gaspedalen sitter ju här så att allting
+
+372
+00:18:28,000 --> 00:18:32,640
+är på samma stä på BMW så kommer vi
+
+373
+00:18:30,320 --> 00:18:36,400
+istället behöva ta lös mätarhuset och
+
+374
+00:18:32,640 --> 00:18:38,280
+dra upp kabeln hit upp för att kampus
+
+375
+00:18:36,400 --> 00:18:40,240
+inkopplingen på BMW sker bakom
+
+376
+00:18:38,280 --> 00:18:42,440
+mätarhuset och det den som finns i lådan
+
+377
+00:18:40,240 --> 00:18:45,679
+här då Japp här har vi en låda med en
+
+378
+00:18:42,440 --> 00:18:48,240
+X3M till en BMW f-serie så om vi öppnar
+
+379
+00:18:45,679 --> 00:18:52,520
+den kommer det se precis likadant ut som
+
+380
+00:18:48,240 --> 00:18:54,039
+i den andra Vi har en plombering och vi
+
+381
+00:18:52,520 --> 00:18:59,480
+har en hastighetsregulator
+
+382
+00:18:54,039 --> 00:19:01,280
+och en liten sån här cus kontakt enda
+
+383
+00:18:59,480 --> 00:19:04,080
+skillnaden är
+
+384
+00:19:01,280 --> 00:19:07,280
+att vi har lite längre kablar till
+
+385
+00:19:04,080 --> 00:19:08,840
+gaspedalen på BMW för att gaspedal
+
+386
+00:19:07,280 --> 00:19:11,480
+kontakten sitter på ett sånt sätt att
+
+387
+00:19:08,840 --> 00:19:14,480
+det blir bäst att ha lite längre kablar
+
+388
+00:19:11,480 --> 00:19:17,720
+och det är andra kontaktstycken annars
+
+389
+00:19:14,480 --> 00:19:20,559
+är det precis samma enhet och BMW är en
+
+390
+00:19:17,720 --> 00:19:21,840
+bra bil för att alla bmw:s är väldigt
+
+391
+00:19:20,559 --> 00:19:23,760
+lika inkopplingen av en
+
+392
+00:19:21,840 --> 00:19:27,360
+hastighetsregulator Det är ingen större
+
+393
+00:19:23,760 --> 00:19:29,679
+skillnad på mellan e-serie och f-serie
+
+394
+00:19:27,360 --> 00:19:32,679
+och inte heller mellan de de äldre
+
+395
+00:19:29,679 --> 00:19:35,720
+e-serie E46 och E39 utan det Alla
+
+396
+00:19:32,679 --> 00:19:40,360
+e-serie är likadana alla f-serie är
+
+397
+00:19:35,720 --> 00:19:43,440
+likadana så att det vi gör då är att vi
+
+398
+00:19:40,360 --> 00:19:43,440
+skruvar lös
+
+399
+00:19:47,080 --> 00:19:56,240
+gaspedalen som sitter med en t30 torx
+
+400
+00:19:51,880 --> 00:20:02,120
+längs ner lyfter man bara upp den lirk
+
+401
+00:19:56,240 --> 00:20:02,120
+löst den så sitter här som vi ska koppla
+
+402
+00:20:04,159 --> 00:20:10,480
+ur så tar vi löst det så har vi
+
+403
+00:20:07,440 --> 00:20:14,320
+hastighetsregulator och plomberingen här
+
+404
+00:20:10,480 --> 00:20:18,000
+så det vi gör då är att vi tar den här
+
+405
+00:20:14,320 --> 00:20:18,000
+kabeln kopplar vi in
+
+406
+00:20:20,039 --> 00:20:29,679
+här klick och den här
+
+407
+00:20:25,120 --> 00:20:29,679
+kabeln sätter vi här
+
+408
+00:20:36,120 --> 00:20:40,720
+så sen kan vi montera tillbaka
+
+409
+00:20:46,760 --> 00:20:51,600
+gaspedalen och skruva fast den lilla
+
+410
+00:20:53,000 --> 00:20:58,760
+skruven då är regulatorn inkopplad och
+
+411
+00:20:56,080 --> 00:21:01,240
+på BMW är kablar utformad för att man
+
+412
+00:20:58,760 --> 00:21:04,000
+ska dra upp regulatorn och montera den
+
+413
+00:21:01,240 --> 00:21:06,799
+här uppe mot
+
+414
+00:21:04,000 --> 00:21:09,240
+plasten så att det vi ska göra sen är
+
+415
+00:21:06,799 --> 00:21:13,320
+att den här plasten ska plockas ner den
+
+416
+00:21:09,240 --> 00:21:13,320
+sitter med några torks skruvar här
+
+417
+00:21:13,559 --> 00:21:17,640
+uppe så tar vi löst den här
+
+418
+00:21:18,200 --> 00:21:23,080
+plasten och då kan man dra upp
+
+419
+00:21:21,000 --> 00:21:26,520
+regulatorn här
+
+420
+00:21:23,080 --> 00:21:29,120
+eh att tänka på när man monterar den är
+
+421
+00:21:26,520 --> 00:21:32,919
+ju att de här
+
+422
+00:21:29,120 --> 00:21:35,520
+ska vara synliga de här dioderna för att
+
+423
+00:21:32,919 --> 00:21:39,840
+det som händer när man har besiktat
+
+424
+00:21:35,520 --> 00:21:41,600
+Bilen så ska enheten låsas och när man
+
+425
+00:21:39,840 --> 00:21:45,880
+låser den Det är en knapp Man trycker på
+
+426
+00:21:41,600 --> 00:21:48,120
+i appen så börjar den här med låsikonen
+
+427
+00:21:45,880 --> 00:21:50,000
+den börjar blinka och det är det som
+
+428
+00:21:48,120 --> 00:21:51,840
+både besiktningsmannen ska kontrollera
+
+429
+00:21:50,000 --> 00:21:54,080
+att den blinkar för att då går den
+
+430
+00:21:51,840 --> 00:21:55,640
+aldrig mer ändra och även om man skulle
+
+431
+00:21:54,080 --> 00:21:57,720
+bli stannad av polisen Så ska de
+
+432
+00:21:55,640 --> 00:21:59,039
+kontrollera att den blinkar så att
+
+433
+00:21:57,720 --> 00:22:01,520
+enheten ska
+
+434
+00:21:59,039 --> 00:22:03,159
+monteras här
+
+435
+00:22:01,520 --> 00:22:07,320
+under
+
+436
+00:22:03,159 --> 00:22:09,559
+med ett buntband ungefär så här Det
+
+437
+00:22:07,320 --> 00:22:11,279
+finns ett litet ventilationsgaller här
+
+438
+00:22:09,559 --> 00:22:14,440
+därigenom Kan man dra ett
+
+439
+00:22:11,279 --> 00:22:18,240
+buntband och sätta fast
+
+440
+00:22:14,440 --> 00:22:20,720
+den och se till att kablarna håller sig
+
+441
+00:22:18,240 --> 00:22:24,559
+bakom pedalen och inte fastnar i
+
+442
+00:22:20,720 --> 00:22:29,720
+någonting Men det vi ska göra sen på BMW
+
+443
+00:22:24,559 --> 00:22:29,720
+är att den här kabeln
+
+444
+00:22:31,520 --> 00:22:36,799
+ska dras upp och kopplas in bakom
+
+445
+00:22:34,559 --> 00:22:38,520
+mätarhuset så nu ska vi ta lösmeter
+
+446
+00:22:36,799 --> 00:22:39,720
+huset och visa hur man gör det Så här
+
+447
+00:22:38,520 --> 00:22:42,480
+ser det ut när man plockar lös
+
+448
+00:22:39,720 --> 00:22:44,840
+mätarhuset på en BMW f-serie då har man
+
+449
+00:22:42,480 --> 00:22:48,039
+två klips här som kan vara lite krånglig
+
+450
+00:22:44,840 --> 00:22:51,000
+att komma åt men med en plattmejsel så
+
+451
+00:22:48,039 --> 00:22:53,679
+kan man ta sig in genom hålet här och
+
+452
+00:22:51,000 --> 00:22:55,200
+bryta i framkant av clipset så att man
+
+453
+00:22:53,679 --> 00:22:57,799
+håller ner det så man behöver två
+
+454
+00:22:55,200 --> 00:23:00,240
+plattmejsel i den här storleken som man
+
+455
+00:22:57,799 --> 00:23:03,640
+stoppar in genom andra hålet från varje
+
+456
+00:23:00,240 --> 00:23:07,559
+sida här så får man tag på den här och
+
+457
+00:23:03,640 --> 00:23:07,559
+håller ner den så kan man dra ut hela
+
+458
+00:23:19,480 --> 00:23:26,320
+mätarhuset Nu ska jag ta och läst den
+
+459
+00:23:23,360 --> 00:23:27,960
+här och kontakten som ploppar fram där
+
+460
+00:23:26,320 --> 00:23:33,400
+är det där du ska i nu då här har jag
+
+461
+00:23:27,960 --> 00:23:35,640
+för en sån här klämma till Kusen så att
+
+462
+00:23:33,400 --> 00:23:37,640
+här bak i mätarhuset finns det en
+
+463
+00:23:35,640 --> 00:23:39,440
+kontakt man kan ta lös för att det ska
+
+464
+00:23:37,640 --> 00:23:43,520
+vara lättare att komma
+
+465
+00:23:39,440 --> 00:23:43,520
+åt så har man ett
+
+466
+00:23:44,039 --> 00:23:51,600
+kabelpark Abel och en rödblå kabel som
+
+467
+00:23:47,760 --> 00:23:55,000
+man tvinnar isär och klämmer fast kus
+
+468
+00:23:51,600 --> 00:23:57,320
+kontakten på det man gör sen är att man
+
+469
+00:23:55,000 --> 00:23:59,640
+tar den här långa kabeln sträcker man in
+
+470
+00:23:57,320 --> 00:24:04,559
+ena handen underifrån ifån
+
+471
+00:23:59,640 --> 00:24:04,559
+petar upp kabel får man tag på den
+
+472
+00:24:06,679 --> 00:24:15,240
+här drar man efter den till lämplig
+
+473
+00:24:11,799 --> 00:24:15,240
+längd klipper
+
+474
+00:24:20,400 --> 00:24:26,360
+av skala bort det ytterhöljet på kabeln
+
+475
+00:24:24,000 --> 00:24:29,360
+så att man bara har de två inre ledarna
+
+476
+00:24:26,360 --> 00:24:29,360
+där
+
+477
+00:24:32,919 --> 00:24:38,480
+så sätter man de i
+
+478
+00:24:35,640 --> 00:24:41,840
+Klämman och vänder de rätt man måste
+
+479
+00:24:38,480 --> 00:24:45,600
+kolla på montageanvisning på root cuts
+
+480
+00:24:41,840 --> 00:24:45,600
+hemsida så att man kopplar in dem
+
+481
+00:24:49,799 --> 00:24:57,600
+Rätt så tar man en
+
+482
+00:24:52,760 --> 00:24:57,600
+tång klämmer åt
+
+483
+00:24:58,480 --> 00:25:03,520
+och sätter tillbaka kontakten i
+
+484
+00:25:00,279 --> 00:25:07,919
+mätarhuset nu Är enheten
+
+485
+00:25:03,520 --> 00:25:10,480
+inkopplad på BMW e-serien så är det här
+
+486
+00:25:07,919 --> 00:25:13,080
+momentet med mätarhuset lite enklare
+
+487
+00:25:10,480 --> 00:25:15,520
+eftersom att där sitter det två torks
+
+488
+00:25:13,080 --> 00:25:17,919
+skruvar här uppe istället för de här
+
+489
+00:25:15,520 --> 00:25:20,279
+clipsen så att där är det bara två
+
+490
+00:25:17,919 --> 00:25:22,279
+torgskräck på så kan man dra ut hela
+
+491
+00:25:20,279 --> 00:25:25,799
+mätarhuset på precis samma
+
+492
+00:25:22,279 --> 00:25:29,080
+sätt och dra upp kabeln precis som vi
+
+493
+00:25:25,799 --> 00:25:29,080
+gjorde nu
+
+494
+00:25:30,440 --> 00:25:34,799
+trycker man tillbaks det och så är det
+
+495
+00:25:32,039 --> 00:25:36,600
+färdigt och sen kalibrerar du med mappen
+
+496
+00:25:34,799 --> 00:25:39,880
+precis som du gjorde på Volvon eller ja
+
+497
+00:25:36,600 --> 00:25:42,080
+kalibreringen är precis likadan som på
+
+498
+00:25:39,880 --> 00:25:45,080
+Volvon och det är likadant på alla bilar
+
+499
+00:25:42,080 --> 00:25:46,039
+och de här nya root carart extrem den
+
+500
+00:25:45,080 --> 00:25:48,080
+kommer
+
+501
+00:25:46,039 --> 00:25:50,200
+förkonfigurerad så att för det mesta så
+
+502
+00:25:48,080 --> 00:25:53,120
+behöver man inte välja bilmodell heller
+
+503
+00:25:50,200 --> 00:25:55,520
+men skulle det vara någonting som inte
+
+504
+00:25:53,120 --> 00:25:57,360
+funkar och så upptäcker man att det är
+
+505
+00:25:55,520 --> 00:25:59,760
+valt fel bilmodell så kan man alltid
+
+506
+00:25:57,360 --> 00:26:03,000
+ändra det för att Det finns programvara
+
+507
+00:25:59,760 --> 00:26:06,399
+i varje enhet till alla bilar som rotc
+
+508
+00:26:03,000 --> 00:26:09,600
+har tagit fram mjukvara till och skulle
+
+509
+00:26:06,399 --> 00:26:13,360
+man behöva en ny mjukvara om det man
+
+510
+00:26:09,600 --> 00:26:17,520
+skulle ha en bil som är vissa bilar har
+
+511
+00:26:13,360 --> 00:26:19,600
+olika mjukvara i cambus systemen på
+
+512
+00:26:17,520 --> 00:26:21,679
+mängder av deras olika bilmodeller det
+
+513
+00:26:19,600 --> 00:26:24,520
+kan vara samma gaspedal kontakt och att
+
+514
+00:26:21,679 --> 00:26:26,880
+man kopplar in Kusen på samma ställe men
+
+515
+00:26:24,520 --> 00:26:31,120
+att det är olika signaler som skickas
+
+516
+00:26:26,880 --> 00:26:32,960
+och då behöver man göra en Bilanpassning
+
+517
+00:26:31,120 --> 00:26:35,720
+och det fungerar så att man hör av sig
+
+518
+00:26:32,960 --> 00:26:37,480
+till root cart och om man då skulle ha
+
+519
+00:26:35,720 --> 00:26:40,120
+något problem
+
+520
+00:26:37,480 --> 00:26:42,720
+så ansluter man sin telefon till sin
+
+521
+00:26:40,120 --> 00:26:45,880
+rotk och nu finns V70 som vi gjorde
+
+522
+00:26:42,720 --> 00:26:50,399
+tidigare här också så slår vi in a
+
+523
+00:26:45,880 --> 00:26:52,880
+c 1 T 3 igen och om man om det skulle
+
+524
+00:26:50,399 --> 00:26:56,080
+vara problem med inkopplingen av rot
+
+525
+00:26:52,880 --> 00:26:58,760
+karten så kommer man få upp här att
+
+526
+00:26:56,080 --> 00:27:01,159
+cambus status kanske inte ens ansluten
+
+527
+00:26:58,760 --> 00:27:03,559
+eller så är den ansluten Men den hittar
+
+528
+00:27:01,159 --> 00:27:07,399
+ingen hastighetssignal
+
+529
+00:27:03,559 --> 00:27:09,279
+så det vi ska göra nu är att matta in
+
+530
+00:27:07,399 --> 00:27:12,279
+mätarställningen
+
+531
+00:27:09,279 --> 00:27:16,200
+29 60
+
+532
+00:27:12,279 --> 00:27:16,200
+41 så trycker vi
+
+533
+00:27:17,520 --> 00:27:23,799
+sök nu hittar en kan bus men och
+
+534
+00:27:21,720 --> 00:27:26,320
+hastighetssignal men den har inte hittat
+
+535
+00:27:23,799 --> 00:27:29,559
+mätarställning och det beror på att
+
+536
+00:27:26,320 --> 00:27:31,159
+vissa rotc stödjer inte att den hittar
+
+537
+00:27:29,559 --> 00:27:33,159
+eller vissa bilmodeller går inte att
+
+538
+00:27:31,159 --> 00:27:34,720
+hitta mätarställningen på men funktionen
+
+539
+00:27:33,159 --> 00:27:36,840
+som mätarställningen ska användas till
+
+540
+00:27:34,720 --> 00:27:38,760
+är inte implementerad än så att det
+
+541
+00:27:36,840 --> 00:27:40,679
+spelar ingen roll men vi har i alla fall
+
+542
+00:27:38,760 --> 00:27:42,720
+en hastighetssignal så att inkopplingen
+
+543
+00:27:40,679 --> 00:27:44,919
+av enheten är rätt och den kommer
+
+544
+00:27:42,720 --> 00:27:46,760
+fungera precis som den ska men om det
+
+545
+00:27:44,919 --> 00:27:49,799
+hade blivit något fel så kommer vi se
+
+546
+00:27:46,760 --> 00:27:51,480
+antingen att den inte hittar cambus alls
+
+547
+00:27:49,799 --> 00:27:53,559
+eller att den hittar cambus men inte
+
+548
+00:27:51,480 --> 00:27:55,640
+hittar någon hastighetssignal och om man
+
+549
+00:27:53,559 --> 00:27:57,760
+inte kommer vidare då så är det man kan
+
+550
+00:27:55,640 --> 00:28:01,159
+göra då att man hör av sig till rotc
+
+551
+00:27:57,760 --> 00:28:02,880
+support för att göra en felsökning eller
+
+552
+00:28:01,159 --> 00:28:05,080
+om det inte finns en programvara till
+
+553
+00:28:02,880 --> 00:28:07,120
+bilmodellen som man håller på med så kan
+
+554
+00:28:05,080 --> 00:28:09,919
+man göra en Bilanpassning och det man
+
+555
+00:28:07,120 --> 00:28:12,960
+gör då är att när man pratar i telefon
+
+556
+00:28:09,919 --> 00:28:14,640
+med en tekniker på rotk så trycker man
+
+557
+00:28:12,960 --> 00:28:18,480
+på den här delar knappen kommer upp
+
+558
+00:28:14,640 --> 00:28:21,440
+fjärrsupport så trycker man anslut och
+
+559
+00:28:18,480 --> 00:28:24,600
+då kan teknikerna på rotk kan koppla upp
+
+560
+00:28:21,440 --> 00:28:28,440
+sig från kontoret via din telefon till
+
+561
+00:28:24,600 --> 00:28:30,760
+din rotk så kan de se jättemycket data
+
+562
+00:28:28,440 --> 00:28:33,080
+om hur rot karten fungerar och allting
+
+563
+00:28:30,760 --> 00:28:35,399
+och det de kan göra då är att de kommer
+
+564
+00:28:33,080 --> 00:28:38,159
+be dig att starta bilen och så kommer du
+
+565
+00:28:35,399 --> 00:28:41,000
+få köra några meter framåt och tillbaka
+
+566
+00:28:38,159 --> 00:28:43,679
+så kan de se vars Hur vars
+
+567
+00:28:41,000 --> 00:28:47,960
+hastighetssignal skickas så kan de göra
+
+568
+00:28:43,679 --> 00:28:50,039
+en ny kod en ny programvara till enheten
+
+569
+00:28:47,960 --> 00:28:52,760
+och sen när de hör av sig har gjort en
+
+570
+00:28:50,039 --> 00:28:53,840
+ny programvara så kommer du få upp en
+
+571
+00:28:52,760 --> 00:28:55,360
+ruta här att du kan göra en
+
+572
+00:28:53,840 --> 00:28:57,519
+programvaruuppdatering för att det finns
+
+573
+00:28:55,360 --> 00:29:00,080
+en ny programvara trycker du ladda ner
+
+574
+00:28:57,519 --> 00:29:00,919
+och och sen kommer din nya bil finnas i
+
+575
+00:29:00,080 --> 00:29:05,279
+listan
+
+576
+00:29:00,919 --> 00:29:07,120
+här får man välja rätt tillverkare och
+
+577
+00:29:05,279 --> 00:29:09,159
+modell Kommer det finnas en modell till
+
+578
+00:29:07,120 --> 00:29:11,320
+men som jag fattar så har ju root Cars
+
+579
+00:29:09,159 --> 00:29:14,200
+senaste extreme påverkat ditt byggande
+
+580
+00:29:11,320 --> 00:29:16,600
+också fast negativt Jo det har ju tyvär
+
+581
+00:29:14,200 --> 00:29:19,480
+det eftersom att den förra enheten rotk
+
+582
+00:29:16,600 --> 00:29:21,760
+A2 krävde att man pysslade lite själv
+
+583
+00:29:19,480 --> 00:29:24,440
+med att klippa kablar och löda ihop och
+
+584
+00:29:21,760 --> 00:29:27,640
+skarva Vilket innebar att det var en hel
+
+585
+00:29:24,440 --> 00:29:30,039
+del jobb och koppla in en enhet men det
+
+586
+00:29:27,640 --> 00:29:32,000
+med den här nya enheten som vem som
+
+587
+00:29:30,039 --> 00:29:36,799
+helst kan koppla in med hjälp av
+
+588
+00:29:32,000 --> 00:29:38,919
+montageanvisning på under 40 minuter så
+
+589
+00:29:36,799 --> 00:29:41,200
+har det ju påverkat mitt jobb lite
+
+590
+00:29:38,919 --> 00:29:43,360
+negativt eftersom att det är väldigt
+
+591
+00:29:41,200 --> 00:29:45,960
+mycket svårare att sälja monteringar av
+
+592
+00:29:43,360 --> 00:29:48,360
+hastighetsregulator Så nu har jag ju
+
+593
+00:29:45,960 --> 00:29:49,640
+fått inrikta mig mer på enbart sälja
+
+594
+00:29:48,360 --> 00:29:51,830
+hastighetsregulator Erna som
+
+595
+00:29:49,640 --> 00:29:58,159
+återförsäljare
+
+596
+00:29:51,830 --> 00:29:59,240
+[Musik]
+
+597
+00:29:58,159 --> 00:30:22,940
+s
+
+598
+00:29:59,240 --> 00:30:22,940
+[Musik]
