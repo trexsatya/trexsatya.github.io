@@ -42,6 +42,7 @@
 (life)|leva|lever|levde|levt|lev|
 (being)|vara|(är)|var|varit|varande
 (desire)|vilja|vill|ville|velat|
+(desire comes)|andan faller på
 (determination)|Vilja av stål
 (willpower)|viljeakt
 (intention)|uppsåt(f.)|avsikt(f.)|mening(vdg.)|
@@ -236,7 +237,7 @@
 (sing)|<*Sjunga för full hals|
 (sing)|Sjunga som en näktergal
 (spend)|tillbringa|tillbragt|spendera|<*lägga ner (tid/pengar/energi/osv).* på|
-(wastetime)|för<*driva tid|<*spilla tid|<*sitta och häck<*a|
+(wastetime)|för<*driva tid|<*spilla tid|<*sitta och häck<*a|lalla runt
 (hunt,chase)|jaga|jakt|jakter|jägare(sl-pl)|jägarn|
 (chase)|flåsa <*ngn i nacken
 (shoot)|skjuta|skjuter|sköt|skjutit|skjutning|skjutningar|skott|skottar|skottet|skottar
@@ -620,7 +621,7 @@ Lägra( sig)|<*slå läger|
 (angry)|arg(på)|vredgad|ilsken|ilsket|agg|avog|avig|förargelse|<*se rött för ögonen|tappa humöret|
 (furious)|Tända på alla cylindrar|Resa ragg
 (furious)|rasande|förgrymmad|ursinnig|förbannad|förargad|vansinnig|tokig|knäpp|knasig|knas|
-(rampage)|gå amok|löpa amok|gå bärsärk|gå bärsärkagång|gå bärsärkagångar|Lacka ur
+(rampage)|(gå/löpa) amok|gå bärsärk|<*gå bärsärkagång|gå bärsärkagångar|Lacka ur
 (nonsense)|Prata smörja
 (insane)|från vettet|Utom sig
 (explosion)|Ta hus i helvete|Ta hus i helsike|
@@ -1022,7 +1023,7 @@ Ursäkt|förevändning|täckmantel
 (proverb)|Det flyger inga stekta sparvar i munnen på en
 (burden)|Dra det tyngsta lasset
 (push)|<*Kör så det ryker|<*driva .* till sin spets
-(strain)|<*bemöda <*sig|anstränga|anstränger|ansträngde|ansträngt|spotta i glaset
+(strain)|<*bemöda <*sig|anstränga|anstränger|ansträngde|ansträngt|streta|
 (effort)|<*lägga krut i |Spara inte på krutet|För fulla muggar|Ge järnet
 (thrifty)|den som spar han har|
 (toil)|Slita ont|
@@ -1037,7 +1038,7 @@ Ursäkt|förevändning|täckmantel
 (pinch)|kläm|klämmar|snärt (till)|snärtar|
 (twist)|kränga(däck t.e)|krängning|krängningar|
 (inserted)|instucken|
-(forced)|tvingad|tvång(sl-pl)|påtvånga|tvinga|nödsakad|tvungen|nödd
+(forced)|tvingad|tvång(sl-pl)|påtvånga|tvinga|nödsakad|tvungen|nödd|krysta|(på) krystad sätt
 (rob)|röva|erövra|plundra|kapa|ta ifrån|råna|rov(sl-pl)|
 (excessforce)|övervåld(sl-pl)|
 (hit)|<*slå|drämma(starkare)|<*ge <*sig på|<*ta på|mörbulta
@@ -1287,7 +1288,7 @@ Ursäkt|förevändning|täckmantel
 (connected)|kopplad|hör ihop|hänger ihop|samband|
 (depend)|bero(på)|komma an|kommer inte an på|
 (uniform)|enhetlig|
-(cohesive)|Sammanhållen|
+(cohesive)|Sammanhållen|(hålla den) röda tråden
 (regarding)|apropå( det)|på tal om
 (gap)|mellanrum(sl-pl)|tomrum|
 (gap)|glapp(sl-pl)|klyfta|klyftor|
@@ -1527,7 +1528,7 @@ Ursäkt|förevändning|täckmantel
 (tile)|kakel(sl-pl)|kaklet|kaklen(pl)|
 (hollow)|ihålig|
 (dot)|prick|prickar|
-(edge)|kant|kanter|rand|rander|bård|bårder|hörn|vrå|vrår|
+(edge)|kant|kanter|rand|ränder|bård|bårder|hörn|vrå|vrår|
 (hem)|fåll|
 (line)|linje|linjer|stryk|stryka|strykning|strykningar|
 (stretch)|sträcka|sträckor|
@@ -1707,7 +1708,7 @@ Ursäkt|förevändning|täckmantel
 (mediate)|medla|medlare|
 (stop)|stoppa|hejda|hämma|hämning|bromsa|hindra|hinder|stävja|stjälpa|stjälper|stjälpte|stjälpt|hämsko|stoppning|stoppningar|(sätta)<*ställa sig i vägen|
 under<*trycka|dämpa|förkväva|tillbaka<*hålla
-(Resist)|motstå|mota( bort)|<*simma mot strömmen|<*hålla .* stången
+(Resist)|motstå|mota( bort)|<*simma mot strömmen|<*hålla .* stången|streta emot
 (Mark presence)|markera sig|
 (encounter)|St<*öta på patrull
 (unstoppable)|ostoppbar|obändig|obändbar|hämningslös|ohejdad|ohejdbar
