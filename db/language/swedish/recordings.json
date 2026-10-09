@@ -4,6 +4,105 @@
     "createdAt": 1783422000111,
     "updatedAt": 1790957392048
   },
+  "Demokrati": {
+    "items": {
+      "diffus": {
+        "diffus": [
+          {
+            "searchText": "diffus",
+            "word": "diffus",
+            "id": "eY-XOqkiyO0",
+            "source": "YouTube",
+            "timeStart": 625,
+            "timeEnd": 639,
+            "lineIndex": 19,
+            "enabled": true
+          },
+          {
+            "searchText": "diffus",
+            "word": "diffus",
+            "id": "wXbjtc0VcAQ",
+            "source": "YouTube",
+            "timeStart": 1580,
+            "timeEnd": 1594,
+            "lineIndex": 18,
+            "enabled": true
+          }
+        ]
+      },
+      "suddig|oskarp|oklar|luddig|diffus": {
+        "suddig": [
+          {
+            "searchText": "suddig|oskarp|oklar|luddig|diffus",
+            "word": "suddig",
+            "id": "4v9Wb-Tl1fw",
+            "source": "YouTube",
+            "timeStart": 1202,
+            "timeEnd": 1215,
+            "lineIndex": 18,
+            "enabled": true
+          }
+        ],
+        "luddig": [
+          {
+            "searchText": "suddig|oskarp|oklar|luddig|diffus",
+            "word": "luddig",
+            "id": "MmlIMgQ2SNA",
+            "source": "YouTube",
+            "timeStart": 329,
+            "timeEnd": 341,
+            "lineIndex": 11,
+            "enabled": true
+          }
+        ],
+        "oskarp": [
+          {
+            "searchText": "suddig|oskarp|oklar|luddig|diffus",
+            "word": "oskarp",
+            "id": "WvrAgJOexIA",
+            "source": "YouTube",
+            "timeStart": 601,
+            "timeEnd": 621,
+            "lineIndex": 4,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "createdAt": 1791462047157,
+    "updatedAt": 1791462159668
+  },
+  "Scener": {
+    "items": {
+      "Manual": {
+        "Card": [
+          {
+            "manual": true,
+            "id": "mc-m8o1jem8vp",
+            "source": "<p>&nbsp;</p><figure class=\"image\"><img src=\"https://lh3.googleusercontent.com/pw/AP1GczNj_aewdviMvVcikOGz9PM3QfJMj5UG0bNknCr9ioMhU0eN3-vn-LmQsx4Ja6hR6o5sozvEdhaO9xH6AELMzLNQ1VgVeCATVjd6voIbiGLbv44pzBCn51VgNVw4pkhIBY2_A3ty2rYJ_OGW3di3dOw=w1000-h2168-s-no-gm?authuser=1\"></figure><p>ränder, nätstängsel, Nätmaskor, rutmönster, skåror, Överkant, ovankant, lodrät, vågrät, genomskinlighet, finmaskigt, perrong, skymta, väderskydd, glaspartier, lyktstolpe, nedåtriktade, kontaktledningar, fogar, asfaltyta, löper, breder ut sig, sträcker sig, genomkorsad, upphöjningar, fördjupningar, räfflad, insänkta, plattor, förser med, anger, mellanplanet, lövverk, korniga, Stationsskylt, rundad, välvd, Stödmur</p>",
+            "target": "<figure class=\"image\"><img src=\"https://lh3.googleusercontent.com/pw/AP1GczOaOPBKx788NJkWNLzUpdWjAzs0O678Vjx4h6wy4NiQu8ZOUToeMqgbmwVvDg2Un1F7TsZ5EUZlM4J6MNiEi5W6ChLZxp-tiRV_rdkjossXVrwuEeK93hCa-wJSH7rz4huqcoie93-70dvJWtzCHFI=w941-h1672-s-no-gm?authuser=1\"></figure>",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-bqljzfmpho",
+            "source": "<figure class=\"image\"><img style=\"aspect-ratio:1000/2168;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczOBft2mjlMufNmZPDpo5KwUIrgjzyN7W1TxWfhMRHReXma6huBMdd0o0tHzDpvezqMRhl_cd0xPZpmPV5b3qN7gjwLa6ngfyX_dpKz19IxjtisdrD-0Ss6jrEv_ojjARJrEq-OrPqlbBMwXb8rU99o=w1000-h2168-s-no-gm?authuser=1\" width=\"1000\" height=\"2168\"></figure>",
+            "target": "<figure class=\"image\"><img style=\"aspect-ratio:1122/1402;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczNKKRy2kBkxR4FKUwZesDky22ijWcBrDtJ7w-qz204Pe-Ww4hUrK0zuzpOgLRrDHycGrRBYyTQvfnHwXMF07MrHewwPRq5hG9fjnrntTSs-htNoIDrdB-H2huFBcX30sDPxyHKCIfU-cIQcK_Q9ohk=w1122-h1402-s-no-gm?authuser=1\" width=\"1122\" height=\"1402\"></figure><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1122/1402;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczOi9fufnQVaCyBzYH_RUmRTNNUMKTRV5FxbIl2FCzmKZcdvxv-AZWy1tTOlVefAyA6Fkpd9HI5DeSz8HZWyC76_FcBbcJSxQITmi08FKw6X7wtwquEZZg0WiAdSpa8t7U1U90GJX2T7zKehj4iHEz8=w1122-h1402-s-no-gm?authuser=1\" width=\"1122\" height=\"1402\"></figure>",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-0kbc7bk6nz",
+            "source": "<figure class=\"image\"><img style=\"aspect-ratio:1000/2168;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczMBUYMqhG_sSQabOsxOO6OgNbIiyaSCcJ_yBWMqA3FKFWjIAT_8BrkUu7LMB8UEHWPRMQC-YpX_A9uJ4A9uDkAIIwbNFUYyLJySmuXZaZ0TKs4XPhlotExgJoK1zXJknnjXM7a22E7DIZs-kHBzBUA=w1000-h2168-s-no-gm?authuser=1\" width=\"1000\" height=\"2168\"></figure>",
+            "target": "<figure class=\"image\"><img style=\"aspect-ratio:1122/1402;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczOqKP_Ymx-a9bcJEvCgztEZEPB49MZYY962No-hrp4aFkBpE7kwNRNXBuKmNY9LXTz_tNY4LcuKyhAL8buuaNEo6VHXFFMTzzPXgSDLP6z93tQfl8hiHLArr1nqKvxNi3h6F8ZkjO9I3SpGvftMYWE=w1122-h1402-s-no-gm?authuser=1\" width=\"1122\" height=\"1402\"></figure><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1122/1402;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczNz1axKyWYtfs-ZVxfjKdnpBesJOJ7VAQCgnWhueiZ2OpNw7enZPCeLCEJaCc1V8MDDE4LYwTegXcjtxR7luKTbLA2O8guBqxYBODS7LSyS3ZW2iahSZUxG-TEtIUAoMPZwUQk3w2qcswrGbgEyLoc=w1122-h1402-s-no-gm?authuser=1\" width=\"1122\" height=\"1402\"></figure>",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "createdAt": 1791530923654,
+    "updatedAt": 1791546899717
+  },
   "Taare Zameen Par - 2": {
     "items": {
       "Manual": {
