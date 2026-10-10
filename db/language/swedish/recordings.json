@@ -416,7 +416,7 @@
   "Default": {
     "items": {},
     "createdAt": 1783422000111,
-    "updatedAt": 1789046793494
+    "updatedAt": 1790957392048
   },
   "Demokrati": {
     "items": {
@@ -5392,12 +5392,19 @@
             "source": "<figure class=\"image\"><img style=\"aspect-ratio:1000/2168;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczMBUYMqhG_sSQabOsxOO6OgNbIiyaSCcJ_yBWMqA3FKFWjIAT_8BrkUu7LMB8UEHWPRMQC-YpX_A9uJ4A9uDkAIIwbNFUYyLJySmuXZaZ0TKs4XPhlotExgJoK1zXJknnjXM7a22E7DIZs-kHBzBUA=w1000-h2168-s-no-gm?authuser=1\" width=\"1000\" height=\"2168\"></figure>",
             "target": "<figure class=\"image\"><img style=\"aspect-ratio:1122/1402;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczOqKP_Ymx-a9bcJEvCgztEZEPB49MZYY962No-hrp4aFkBpE7kwNRNXBuKmNY9LXTz_tNY4LcuKyhAL8buuaNEo6VHXFFMTzzPXgSDLP6z93tQfl8hiHLArr1nqKvxNi3h6F8ZkjO9I3SpGvftMYWE=w1122-h1402-s-no-gm?authuser=1\" width=\"1122\" height=\"1402\"></figure><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1122/1402;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczNz1axKyWYtfs-ZVxfjKdnpBesJOJ7VAQCgnWhueiZ2OpNw7enZPCeLCEJaCc1V8MDDE4LYwTegXcjtxR7luKTbLA2O8guBqxYBODS7LSyS3ZW2iahSZUxG-TEtIUAoMPZwUQk3w2qcswrGbgEyLoc=w1122-h1402-s-no-gm?authuser=1\" width=\"1122\" height=\"1402\"></figure>",
             "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-sr3zoo80dm",
+            "source": "<figure class=\"image\"><img style=\"aspect-ratio:1536/1152;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczNYhA8porlJsZJkZdBFchuDHaj64BtUKKwFE0BqrY4SX0xTQVJSFAjLCWA05Ve8asFfZoDPTppfeVJqdR8pq1Ccfrbkk06UuvwZ-fM9--puZfF8h-7MgXy6MyI2877hQtDke4By9iz-W4OJbWAKYbU=w1536-h1152-s-no-gm?authuser=1\" width=\"1536\" height=\"1152\"></figure>",
+            "target": "<figure class=\"image\"><img style=\"aspect-ratio:1448/1086;\" src=\"https://lh3.googleusercontent.com/pw/AP1GczPb-bNb2eNzfyxZZJFcuCi_IyoxboTo-DWUcekIIym7AkOSONM7VC98_VyDTPV_huf3kVn4eMrBf5d7ifvdRfSlGGO3rlcEQETrFuGzdXcEmlC-qgkwB2A-ai4j7s5d-a2ZY8th98hUNuPToItsj8A=w1448-h1086-s-no-gm?authuser=1\" width=\"1448\" height=\"1086\"></figure>",
+            "enabled": true
           }
         ]
       }
     },
     "createdAt": 1791530923654,
-    "updatedAt": 1791661799161
+    "updatedAt": 1791662102756
   },
   "SVT Play - Diagnoser": {
     "items": {
