@@ -2115,11 +2115,13 @@ body.rec-playing #vocabularyResult,
 body.rec-playing #result,
 body.rec-playing #translationPanel,
 body.rec-playing #mediaRelatedContainer,
+body.rec-playing #search-pagination,
 body.practice-mode #mainControlInputs,
 body.practice-mode #vocabularyResult,
 body.practice-mode #result,
 body.practice-mode #translationPanel,
-body.practice-mode #mediaRelatedContainer {
+body.practice-mode #mediaRelatedContainer,
+body.practice-mode #search-pagination {
     display: none !important;
 }
 
