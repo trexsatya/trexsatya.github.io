@@ -114,6 +114,9 @@
       // Same idea for play — ourPlay() bumps this so the play handler
       // doesn't misclassify a synthetic resume as user-initiated.
       expectedPlays: 0,
+      // ourPlay() was asked to play while the app held the page's videos for
+      // a lookup (window.__cupLookupHold); it plays on cupitorLookupRelease.
+      playDeferred: false,
       // Timestamp of our last programmatic seek. replayTick uses
       // a 500 ms grace after this to avoid advancing on stale timeupdates
       // (currentTime can still read the pre-seek value for a brief moment).
@@ -1182,6 +1185,7 @@
       state.chunkFloor = 0;
       state.expectedPauses = 0;
       state.expectedPlays = 0;
+      state.playDeferred = false;
       state.userOverrode = false;
       state.currentVideo = v;
       const listeners = {
@@ -1192,10 +1196,20 @@
             dlog('pause: ours (remaining expected =', state.expectedPauses, ')');
             return;
           }
+          // The app paused it for a lookup and plays it again on release —
+          // not the user stopping playback.
+          if (v.__cupLookupHeld) { dlog('pause: lookup hold'); return; }
           state.userOverrode = true;
           dlog('pause: user → userOverrode=true');
         },
         play: () => {
+          // Checked first so the mark is always used up by the play it
+          // belongs to, never left for the user's next one.
+          if (v.__cupLookupResuming) {
+            v.__cupLookupResuming = false;
+            dlog('play: lookup release');
+            return;
+          }
           if (state.expectedPlays > 0) {
             state.expectedPlays--;
             dlog('play: ours (remaining expected =', state.expectedPlays, ')');
@@ -1230,10 +1244,17 @@
       state.expectedPauses++;
       try { state.currentVideo.pause(); } catch (e) { state.expectedPauses--; }
     }
+    window.addEventListener('cupitorLookupRelease', () => {
+      if (!state.playDeferred) return;
+      state.playDeferred = false;
+      if (state.currentVideo && state.currentVideo.isConnected) ourPlay();
+    });
     function ourPlay() {
       if (!state.currentVideo) return;
       if (state.userOverrode) { dlog('ourPlay suppressed (userOverrode)'); return; }
       if (!state.currentVideo.paused) return; // already playing, no event would fire
+      // Don't start playing behind the lookup dialog; release plays it.
+      if (window.__cupLookupHold) { state.playDeferred = true; dlog('ourPlay deferred (lookup hold)'); return; }
       state.expectedPlays++;
       const p = state.currentVideo.play();
       if (p && typeof p.catch === 'function') p.catch(() => { state.expectedPlays = Math.max(0, state.expectedPlays - 1); });
