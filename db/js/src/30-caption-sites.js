@@ -96,6 +96,9 @@
       // Naming it here is what stops that becoming a second identity for a
       // video already captured from its plain address.
       timeParam: 't',
+      // Every video plays at /watch; the query names which one. Moving on to
+      // another `v` is another video, and the caption list starts over.
+      videoParams: ['v'],
       shrinkSelectors: ['#movie_player', '.html5-video-player'],
     },
     {

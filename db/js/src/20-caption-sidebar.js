@@ -353,12 +353,7 @@
         syncPickUi();
       };
       sb.querySelector('[data-act="send"]').onclick = () => sendSelected();
-      sb.querySelector('[data-act="clear"]').onclick = () => {
-        state.cues = []; state.activeIdx = -1;
-        state.selected = new Set();
-        if (state.listEl) state.listEl.innerHTML = '';
-        syncPickUi();
-      };
+      sb.querySelector('[data-act="clear"]').onclick = () => clearCues();
 
       if (state.cues.length && state.listEl) {
         for (let i = 0; i < state.cues.length; i++) renderCue(state.cues[i], i);
@@ -843,6 +838,29 @@
       }
     }
 
+    // Empty the list and everything that points into it by position: the
+    // selection, translations still on their way, and the chunk being played.
+    // Used by the clear button, and when the page moves on to another video,
+    // whose timeline starts over.
+    function clearCues() {
+      state.cues = []; state.activeIdx = -1;
+      state.selected = new Set();
+      state.pendingTr = Object.create(null);
+      // A replay in progress may have slowed the video down, or paused it to
+      // wait for translations or between passes. The chunk it belonged to is
+      // gone, so leave the video at normal speed and playing — unless the
+      // pause was the viewer's own, which ourPlay leaves alone.
+      const replaying = state.chunkReplaying || state.currentPass > 0;
+      if (replaying && state.currentVideo) {
+        try { state.currentVideo.playbackRate = 1; } catch (_) {}
+      }
+      resetChunk();
+      if (replaying && state.currentVideo && state.currentVideo.paused) ourPlay();
+      state.chunkFloor = 0;
+      if (state.listEl) state.listEl.innerHTML = '';
+      syncPickUi();
+    }
+
     // Reset the in-flight chunk/replay state. Does NOT clear chunkFloor — the
     // caller decides whether the just-replayed region should be re-chunkable.
     function resetChunk() {
@@ -1230,7 +1248,7 @@
     }
 
     return {
-      addCue, buildSidebar, setSplit, setVideoElement,
+      addCue, clearCues, buildSidebar, setSplit, setVideoElement,
       get currentVideo() { return state.currentVideo; },
     };
   }

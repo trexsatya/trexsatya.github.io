@@ -34,7 +34,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 19;
+    const CAPS_VERSION = 20;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -120,13 +120,56 @@
     ownSetInterval(diag, 4000);
     setTimeout(diag, 500);
 
+    // The list belongs to one video. A player that moves on to the next one
+    // without a page load (SVT's autoplay) changes the address, and the new
+    // video's lines start again from 0:00 — keeping the old ones would mix
+    // two timelines. The video is named by the address path; a site whose
+    // path is the same for every video names the query parameters that pick
+    // one (`videoParams`). Everything else in the address — a start offset, a
+    // #fragment, tracking parameters — changes as you watch and is ignored.
+    let videoParams = [];
+    try {
+      if (Array.isArray(site.videoParams)) videoParams = site.videoParams.map(String);
+    } catch (e) {
+      console.warn('[captions] site videoParams could not be read', e);
+    }
+    const pageKey = () => {
+      const key = location.origin + location.pathname;
+      if (!videoParams.length) return key;
+      const q = new URLSearchParams(location.search);
+      return key + '?' + videoParams.map(n => n + '=' + (q.get(n) || '')).join('&');
+    };
+    let lastPageKey = pageKey();
+    // Checked by the poll below and by every path just before it adds a line,
+    // so a line that arrives in the same moment as the new address lands in
+    // the new list rather than being emptied with the old one.
+    let mirrorAfterSwitch = false;
+    function checkPage() {
+      const key = pageKey();
+      if (key === lastPageKey) return;
+      console.log('[caps] new video page — clearing the list:', key);
+      lastPageKey = key;
+      mirrorAfterSwitch = true;
+      ui.clearCues();
+    }
+
     // ---- 1) textTracks: read cues directly ----
+    // The video each track cue was first read under. A player can change the
+    // address before it swaps the track (SVT's autoplay does), so the old
+    // track is still there to be read for a moment after the list is
+    // emptied; its cues were read under the old address and are skipped.
+    // Cues first seen after the switch belong to the new video.
+    const cueVideo = new WeakMap();
     function harvestTrack(track) {
       if (!track || !track.cues) return 0;
+      checkPage();
       let n = 0;
       for (let i = 0; i < track.cues.length; i++) {
         const c = track.cues[i];
         if (!c || !c.text) continue;
+        const seenUnder = cueVideo.get(c);
+        if (seenUnder !== undefined && seenUnder !== lastPageKey) continue;
+        if (seenUnder === undefined) cueVideo.set(c, lastPageKey);
         const text = String(c.text).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
         if (!text) continue;
         ui.addCue({ start: c.startTime || 0, end: c.endTime || (c.startTime || 0) + 3, text });
@@ -181,6 +224,7 @@
       return text && /^﻿?WEBVTT/.test(text.substring(0, 50));
     }
     function parseAndPushVtt(text) {
+      checkPage();
       const lines = text.split(/\r?\n/);
       let i = 0, added = 0;
       while (i < lines.length) {
@@ -243,14 +287,27 @@
       let lastText = '';
       let lastChangeAt = 0;
       ownSetInterval(() => {
+        checkPage();
         const container = document.querySelector(site.domSelector);
         if (!container) return;
         // Prefer the inner cue element (multiple lines) — fall back to the
         // container itself when the site has no inner wrapper.
         const cueEl = (site.cueSelector && container.querySelector(site.cueSelector)) || container;
-        // Join <span> children with newlines so multi-line cues stay separated.
+        // Join the player's line <span>s with newlines so multi-line cues stay
+        // separated. Only outermost spans count, and never the app's own
+        // word spans: the word wrapper turns each word of the painted cue
+        // into a .clickable-word span a moment later; reading those as lines
+        // too would bring the same cue back a second time with every word
+        // repeated on a line of its own.
         let text;
-        const spans = cueEl.querySelectorAll('span');
+        const isLineSpan = (sp) => {
+          if (sp.classList.contains('clickable-word')) return false;
+          for (let p = sp.parentElement; p && p !== cueEl; p = p.parentElement) {
+            if (p.tagName === 'SPAN') return false;
+          }
+          return true;
+        };
+        const spans = Array.from(cueEl.querySelectorAll('span')).filter(isLineSpan);
         if (spans.length) {
           const parts = [];
           spans.forEach(sp => {
@@ -262,7 +319,16 @@
           text = (cueEl.innerText || cueEl.textContent || '').trim();
         }
         text = text.replace(/[ \t]+/g, ' ').trim();
-        if (!text || text === lastText) return;
+        // After moving on to another video, the first empty overlay ends the
+        // old video's cue: the same words painted after it are the new
+        // video's line ("Okej." closing one episode and opening the next).
+        // A cue still showing from before the switch is not read again, and
+        // within one video an overlay that blinks keeps its cue.
+        if (!text) {
+          if (mirrorAfterSwitch) { lastText = ''; mirrorAfterSwitch = false; }
+          return;
+        }
+        if (text === lastText) return;
         lastText = text;
         const now = Date.now();
         if (now - lastChangeAt < 200) return;
@@ -296,6 +362,7 @@
     }
     let lastMarked = null;
     ownSetInterval(() => {
+      checkPage();
       const v = document.querySelector('video');
       if (v) ui.setVideoElement(v);
       const want = isWatchPage() && !!v;
