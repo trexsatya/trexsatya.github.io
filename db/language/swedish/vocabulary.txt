@@ -47,6 +47,18 @@
 (collapse)|stupa|
 (wake)|vakna|vaken|väcka|väcker|väckte|väckt|väckning|väckningar|
 (dormancy)|dvala(ålder.)|
+(relaxation)|avslappning|<*slappna av|<*koppla av|vila|
+(relax)|Slappna av och varva ner|<*släppa spänningar
+(rest)|vila|pausa|paus|pauser|rasta|
+Lägra( sig)|<*slå läger|
+(Gap hour, break)|håltimme
+(sleep)|sova|slockna|tupplur|somna|slumra|slagga(slang)|knoppa(slang)|slummer
+(bedtime)|<*gå och lägga sig|<*Knyta sig(till sängs)
+(sleepdeep)|<*Sova som en klubbad oxe|<*Sova som en klubbad säl|<*Sova som en stock
+(hibernation)|(gå i )dvala|vinterdvala|övervintra|hibernera|
+(closeeyes)|blunda
+(wake)|vakna|vaken|väcka|väcker|väckte|väckt|väckning|väckningar|
+(hibernate)|övervintra|<*gå i ide|<*ligga i ide|
 
 #Perception and awareness
 (perception)|förnimmelse|sinnesintryck|perception|intryck(vdg.)|
@@ -90,59 +102,11 @@
 (spot)|<*få syn på|
 (scout)|spana|span|spaning|spaningar|utkik(sl-pl)|spejande|speja|
 (haptic)|haptisk
-
-#Memory and forgetting
-(memory)|minne(vdg.)|minnet|minnen|minnena|åminnelse|minnas|
-(remember)|(Lägga) i minnet|
-(remember)|<*komma ihåg|minnas|erinra sig(f.)|dra sig till minnes|minns|minns|minn|<*lägga .* i minnet|<*Lägga(något) .* på minnet|
-(reminder)|påminna|påminnelse|erinring|erinran
-(forgetful)|Minne som en guldfisk
-(forgetting)|glömsk|glömma|glömskhet|
-(repression)|för<*tränga|borttränga|<*tränga undan|undan<*tränga|ignorera(vdg.)
-
-#Common things and actions
 (perception)|förnimmelse|sinnesintryck|perception|intryck(vdg.)|
 (perceive)|förnimma|ana(vdg.)|förnam|förnummit
-(feeling)|känsel|Känsla|Känslan|känslor|känslomässig
-(compulsion)|tvångsmässig|kompulsiv(f.)|
 (sense)|känna|känner|kände|känt|känn
 (sense)|<*känna av|
-(state)| må| mår|mådde|mått
-(impulse)|instinktiv(f.)|spontan(vdg.)|I stridens hetta|i stundens hetta|
-
-(life)|leva|lever|levde|levt|lev|
-(being)|vara|(är)|var|varit|varande
-(desire)|vilja|vill|ville|velat|
-(desire comes)|andan faller på
-(determination)|Vilja av stål
-(willpower)|viljeakt
-(intention)|uppsåt(f.)|avsikt(f.)|mening(vdg.)|
-(regard)|av<*se|avseende(f.)|avsedd|syfte(vdg.)|menad(vdg.)
-(reference)|hänvisa|peka på(vdg.)|remiss(på vårdcentral)|
-(Cite)|citera|åberopa|<*stödja sig på|
-(goal)|föresats(f.)|mål(vdg.)
-(consider)|<*Ha i åtanke
-(plan)|ämna|tänka(vdg.)|<*ha .* i kikaren|
-(regarding)|sett till (ngt)|i termer av|med avseende på|med tanke på|med hänsyn till
-(purpose)|<*syfta på|<*gå ut på att|an<*gå|hänvisning|
-(origin)|härkomst|härkomsten|härstamning|härstamningar|börd|börden|ursprung(sl-pl)|
-(derive)|härröra( från)|härrör|härrörde|härrört
-(heredity)|arvsanlag|påbrå|påbrån(pl)
-(inheritance)|ärva|ärver|ärvde|ärvt|ärv| arv |ärftlig|kvarlåtenskap
-(heir)|arvinge|arvingar|arvtagare|arvtagerska|arvtagare|arvtagerskor|
-(innate)|medfödd|nedärvd|
-(roots)|I mina rötter
-(learned)|inlärd|förvärvat|förvärvad|anskaffat|anskaffad
-(mind)|sinne|sinnet|sinnen(pl)|
-(memory)|minne(vdg.)|minnet|minnen|minnena|åminnelse|minnas|
-(forgetful)|Minne som en guldfisk
-(remember)|(Lägga) i minnet|
-(remember)|<*komma ihåg|minnas|erinra sig(f.)|dra sig till minnes|minns|minns|minn|<*lägga .* i minnet|<*Lägga(något) .* på minnet|
-(reminder)|påminna|påminnelse|erinring|erinran
-(forgetting)|glömsk|glömma|glömskhet|
-(repression)|för<*tränga|borttränga|<*tränga undan|undan<*tränga|ignorera(vdg.)
 (smell)|lukta|dofta|lukt|doft|luktning|doftning|lukta på|nosa(sniff)|
-(incense)|rökelse|rökelser|
 (stink)|stinka|stinker|stank|stink|
 (taste)|smaka|smak|smakning
 (Bad taste)|bismak
@@ -157,138 +121,98 @@
 (touch)|vidröra|vidrör|vidrörde|vidrört|känna|
 (touch)|nudda(vdg.)|snudda|
 (awareness)|medveten|medvetande|medvetenhet|kunskap(vdg.)
-(fainting)|medvetslös|medvetet|svimma|dåna|tuppa av
-(sanity)|Vid sina sinnens fulla bruk|
 (ignorance)|ovetande|omedveten|obemärkt|obemärkthet|i skymundan|
-(conscience)|samvete|
-(duty)|plikt|plikter|skyldighet(vdg.)|skyldigheter|ansvar|ansvarig
-(Complete duty)|full<*göra|
-(responsibility)|<*ta på sig (ngt. ansvar)|er<*bjuda sig (att)|<*Ligga bakom|å<*ligga
-(control)|basa (över)|
-(blame, cant controll)|<*rå för|(Jag kan)inte rå för (vad andra säger)|<*rå över|
-(accountability)|<*Ställa till svars
-(consequences)|<*Stå sitt kast|
 (insight)|inblick|inblickar|insikt|insikter|ingivelse|
 (insight)|insyn|
 (notice)|märka|märker|märkte|märkt|uppmärksamma|<*lägga märke till|förnimma|förnimmer|förnam|förnummit|förnim|
 (awareness)|<*Ha ögonen med sig
-(truth)|<*Se sanningen i vitögat
 (impression)|det som <*slå mig (mest)|Slås av (något)
 (listen)|Spetsa öronen|
-(absence)|<*lysa med sin frånvaro
 (realize)|varse<*bli|varsebliva|<*bli varse|notera|anteckna|observera|varsna|
 (alertness)|<*Hålla ögonen öppna|På sin vakt
 (focus)|fokusera|koncentrera|
-(composure)|Åter<*få fattningen|
 (perception)|uppfatta|notera|uppfattning|uppfattningar|
 (check)|kolla|titta|<*ta en titt|<*ha koll på|<*göra en koll|spana in|
 (glance)|<*kasta ett getöga(snabbt)|
-(control)|kontrollera|<*stämma av|avstämma(f.)|avstämning|avstämningar|kolla av(vdg.)|
-(influence)|<*Dra i trådarna
 (observe)|iakt<*ta|
 (spot)|<*få syn på|
 (scout)|spana|span|spaning|spaningar|utkik(sl-pl)|spejande|speja|
-(ignore)|bort<*se(från)|strunta(i)|åsido<*sätta|
-(Give up)|<*stryka på foten( för ngn/ngt)|
-(tolerance)|<*Se mellan fingrarna
-(idleness, without plan)|<*Slå dank|<*Gå dit näsan pekar
-(disregard)|<*Slå dövörat till|<*Prata i munnen på varandra
-(change)|<*Vända blad|
-(futility)|<*Tala för döva öron|
-(avoidance)|(<*Sopa) problemet under mattan|
-(smooth)|<*Släta över (om nåt går fel)|
-(forbearance)|överseende|över<*se|<*se genom fingrarna|
-(neglect)|försumma|förbi<*se|
-(oversight)|<*Falla mellan stolarna|Låta udda vara jämnt
-(denial)|<*Sticka huvudet i sanden|
-(belittle)|förringa|spela ner|nedvärdera(f.)|underskatta(vdg.)|ringakta|efter<*sätta|försumbar|försummelse|<*se ner på(vdg.)|
-(crumbs)|Små smulor är också bröd
-(reject)|försmå|förakta|
-(mismanage)|van<*sköta|vanvårda|mis<*sköta|misskötsel
+(view)|utsikt|utsikter|vy|vyer|
+(look)|titta|stirra|glo|glor|glodde|glott|glo|
+(stare)|titta storögt|titta med stora ögon|stint|betrakta(ngt) stint|uppspärrade ögon|
+(eyes)|Öppna korpgluggarna|
+(glare)|blänga|blänger|blängde|blängt|bläng|
+(peek)|snegla|titta med ögonvrå|glutta|tjuvkika|smygkika|
+(glance)|Kasta en blick
+(blink)|blinka|
+
+#Memory and forgetting
+(memory)|minne(vdg.)|minnet|minnen|minnena|åminnelse|minnas|
+(remember)|(Lägga) i minnet|
+(remember)|<*komma ihåg|minnas|erinra sig(f.)|dra sig till minnes|minns|minns|minn|<*lägga .* i minnet|<*Lägga(något) .* på minnet|
+(reminder)|påminna|påminnelse|erinring|erinran
+(forgetful)|Minne som en guldfisk
+(forgetting)|glömsk|glömma|glömskhet|
+(repression)|för<*tränga|borttränga|<*tränga undan|undan<*tränga|ignorera(vdg.)
+(memory)|minne(vdg.)|minnet|minnen|minnena|åminnelse|minnas|
+(forgetful)|Minne som en guldfisk
+(remember)|(Lägga) i minnet|
+(remember)|<*komma ihåg|minnas|erinra sig(f.)|dra sig till minnes|minns|minns|minn|<*lägga .* i minnet|<*Lägga(något) .* på minnet|
+(reminder)|påminna|påminnelse|erinring|erinran
+(forgetting)|glömsk|glömma|glömskhet|
+(repression)|för<*tränga|borttränga|<*tränga undan|undan<*tränga|ignorera(vdg.)
 (nostalgia)|(se) med goda minnen|
-(indifferent)|Hugget som stucket|spelar ingen roll|
-(need)|behov|behöva|behöver|behövde|behövt|kräva(vdg.)|krävde|krävt|påbjuda|fordra|fordran|fordringar|anspråk(sl-pl)|tarva
-(requirements)|krav(sl-pl)|begär(sl-pl)|kriterium|kriterier|maning|maningar|villkor(vdg.)|å<*lägga(f)|
-(demand)|efterfråga|efterlysa|efterlysning|efterfrågan|efterfrågningar|efterlyst|
-(Saught after)|eftertraktad|
-(desire)|begära|begärde|begärt|begär|lystnad|lysten|sug(sl-pl)|sugen(vdg.)|begiven|hågad|åtrå|längta efter(vdg.)
-(relinquish)|av<*stå|
-(waive)|efterskänka|strunta i
-(concession)|eftergift
-(lustful)|liderlig|begärlig
-(satisfy)|tillfreds<*ställa|tillgodo<*se |förnöja|förnöjer|förnöjde|förnöjt|roa|förnöjsam|(hålla) till godo|<*fylla behov
-(fun)|för nöjes skull|på skoj|Glimten i ögat|på pin kiv|Ha så skoj|
-(outing)|På vift|ute och roar sig
-(Out socializing)|ute i svängen|
-(variety)|Omväxling förnöjer
-(contentment)|nöjd|belåten|tillfredsställd|
-(Complacent)|självbelåten|självbelåtet
-(anticipation)|<*Gnugga händerna|väntans tider
-(acceptance)|Om man inte får den man älskar, får man älska den man får
-(discontent)|obelåtenhet|Gräset är alltid grönare på andra sidan
-(dependence)|beroende|avhängig|
-(reliance)|<*Sitta i knät på någon
-(addiction)|<*Vara som ett gift|
-(ingratitude)|bit inte (den )handen som föder dig|
-(interdependence)|ömsesidigt beroende|
-(independence)|självständig|På egna ben
-(selfreliance)|(bra karl)reder sig själv|(Man får)<*ta saken i egna händer|(Själv är )bästa dräng
-(sex)|sexa|samlag|nyp(slang) |älskog|knull|knulla|
-(sex)|pippa(slang)
-(thrust)|jucka( på)|juckning
-(reproduction)|fortplantning|reproduktion|fortplanta|avla|föröka
-(multiply)|För<*öka sig som kaniner
+(byheart)|utantill|
+
+#Family, ancestry and inheritance
+(origin)|härkomst|härkomsten|härstamning|härstamningar|börd|börden|ursprung(sl-pl)|
+(derive)|härröra( från)|härrör|härrörde|härrört
+(heredity)|arvsanlag|påbrå|påbrån(pl)
+(inheritance)|ärva|ärver|ärvde|ärvt|ärv| arv |ärftlig|kvarlåtenskap
+(heir)|arvinge|arvingar|arvtagare|arvtagerska|arvtagare|arvtagerskor|
+(innate)|medfödd|nedärvd|
+(roots)|I mina rötter
 (offspring)|avkomma|avkommor|ättling|ättlingar|avel
-(inbreeding)|inavel|incest
-(breathing)|andning|andas|andades|andats|utandning|
-(relaxation)|avslappning|<*slappna av|<*koppla av|vila|
-(relax)|Slappna av och varva ner|<*släppa spänningar
-(challenge)|utmaning|utmaningar|
-(challenge)|Handsken är kastad
-(challenge accepted)|utmaning antagen|
-(Stir the pot,challenge status quo)|<*röra om i grytan|
-(courage)|<*Ta tjuren vid hornen
-(potential)|potential|
-(limitation)|begränsning|
+
+#Speech: conversation, questions and answers
 (communicate)|kommunicera|prata|tala|berätta|säga|<*säga till|tillsagt|tala ut|
 (conclude speech or thought)|tala till punkt
 (emphasis)|kraft bakom orden
 (communication)|kommunikation|kommunikationer|dialog|dialoger|konversation|konversationer|samtal|
-(story)|historia|historier|berättelse|
-(mumble)|mumla|muttra|kläm<*ma ur (sig)|
-(murmur)|sorl|sorla|
-(nonsense)|<*prata strunt|snurra|Skitprat
-(argue)|jiddra|
-(vague)|flummig
-(nag)|tjata|gnata|tjafsa|
 (Chat)|snacka|Pratas vid
-(gossip)|Snackis|snackisar|På allas läppar
-(ruminate)|älta(upprepat)|idissla|
-(redundant)|Kaka på kaka|tårta på tårta
-(drone)|<*mala på(tråkigt, entonigt)|
-(superstition)|Vidskepelse|skrock|övertro|trams|nonsens|Gammalt tjosan
-(talkonly)|Mycket snack och lite verkstad
-(eloquence)|Välsmort munläder|
-(byheart)|utantill|
 (oral)|muntlig|
 (Written)|skriftlig|
 (utter)|yttra|yttrandefrihet|
-(Censor)|censur|censurera
 (inform)|meddela|underrätta(f.)|säga till(vdg.)|berätta(vdg.)|informera|del<*ge|delgivning|delgivningar|avisera|varsko( nåt allvarligt)|
 (message)|budskap(sl-pl)|meddelande|meddelanden(pl)|besked(sl-pl)|upplysning|avisering
-(announce)|Basunera(ut)|utropa(vdg. at stations etc)
-(clarify)|<*Kasta ljus över
-(fanfare)|<*Slå på stora trumman|
-(state)|upp<*ge (infon)|an<*ge (infon)|
-(detail)|Kött på benen(extra info)|
 (gesture)|åtbörd|åtbörder|gest|gester|tecken(sl-pl)|tecknet|
 (gesture)|gestikulera|
 (expression)|uppsyn|min|minspel|ansiktsuttryck|
 (Express)|<*få fram|uttrycka
 (signal)|handteckning|handteckningar|signalera|
 (hint)|antyda|antyder|antydde|antytt|indikera|tyda på
-(appear)|fram<*gå|synas(vdg.)|
 (bodylanguage)|kroppsspråk|
+(question)|fråga|frågor|frågeställning|spörsmål|förfrågan
+(request)| be (om)| ber | bad | bett |ansöka|ansöker|ansökte|ansökt|ansökan|ansökningar|an<*hålla|hem<*ställa|begära|begär|begärde|begärt|
+(answer)|svar(sl-pl)|
+(message)|meddelande|meddelanden(pl)|
+(lowkey)|lågmäld|lågmält|
+(discuss)|Stöta och blöta något
+(fill in)|fylla in|sufflera|sufflering|suffleringar|
+(recite)|rabbla upp(mekaniskt och själlöst)|
+(present)|framföra|framför|framförde|framfört|
+
+#Communication: announcements, publicity and signals
+(regard)|av<*se|avseende(f.)|avsedd|syfte(vdg.)|menad(vdg.)
+(reference)|hänvisa|peka på(vdg.)|remiss(på vårdcentral)|
+(Cite)|citera|åberopa|<*stödja sig på|
+(regarding)|sett till (ngt)|i termer av|med avseende på|med tanke på|med hänsyn till
+(Censor)|censur|censurera
+(announce)|Basunera(ut)|utropa(vdg. at stations etc)
+(clarify)|<*Kasta ljus över
+(fanfare)|<*Slå på stora trumman|
+(detail)|Kött på benen(extra info)|
+(appear)|fram<*gå|synas(vdg.)|
 (mark)|markera|
 (poster)|affisch|affischer|poster|postrar|plansch|planscher|plakat(sl-pl)|kungörelse|anslag(sl-pl)|tillkännagivande|tillkännagivanden(pl)|
 (banns)|lysning(för giftermål)|lysningar|
@@ -304,82 +228,53 @@
 (accent)|accent|dialekt|dialekter|brytning|
 (native)|modersmål|folkmål|
 (chant)|skandera|takt<*läsa
-(sing)|sjunga|sjunger|sjöng|sjungit|sjung|dansa
-(sing)|<*Sjunga för full hals|
-(sing)|Sjunga som en näktergal
-(spend)|tillbringa|tillbragt|spendera|<*lägga ner (tid/pengar/energi/osv).* på|
-(wastetime)|för<*driva tid|<*spilla tid|<*sitta och häck<*a|lalla runt
+
+#Hunting, fishing and outdoor activities
 (hunt,chase)|jaga|jakt|jakter|jägare(sl-pl)|jägarn|
 (chase)|flåsa <*ngn i nacken
 (shoot)|skjuta|skjuter|sköt|skjutit|skjutning|skjutningar|skott|skottar|skottet|skottar
 (poacher)|tjuvskytt|tjuvskyttar|krypskytt|krypskyttar
-(slaughter)|slakta|massakrera|
-(Barbarity)|barbari|barbariet|barbarier
 (fish)|meta|fiska|
 (bait)|lockbete|lockbeten(pl)|åtel|åtlar|agn(sl-pl)|
-(movement)|rörelse|rörelser|<*röra <*sig|
-(rest)|vila|pausa|paus|pauser|rasta|
-Lägra( sig)|<*slå läger|
-(leisure)|ledighet|fritid|
-(Gap hour, break)|håltimme
-(sleep)|sova|slockna|tupplur|somna|slumra|slagga(slang)|knoppa(slang)|slummer
-(bedtime)|<*gå och lägga sig|<*Knyta sig(till sängs)
-(sleepdeep)|<*Sova som en klubbad oxe|<*Sova som en klubbad säl|<*Sova som en stock
-(hibernation)|(gå i )dvala|vinterdvala|övervintra|hibernera|
-(closeeyes)|blunda
-(collapse)|stupa|
-(wake)|vakna|vaken|väcka|väcker|väckte|väckt|väckning|väckningar|
-(attraction)|Sevärdheter|lockelse|attraktion|attraktioner|dragning|dragningar|
-(view)|utsikt|utsikter|vy|vyer|
-(toilet)|naturbehov(sl-pl)|skita|skiter|sket|skitit|bajsa|avföring|avföra|
-(toilet)|dass(sl-pl)|toalett|toaletter|mugg(slang)|
-(toiletry)|necessär|necessärer|toalettartiklar|toalettartikel|hygienartikel|hygienartiklar|
-(urinate)|pissa|kissa|pinka(vdg.barnslig)| <*Slå en sjua|<*Gå bakom knuten|Kasta vatten
-(thing)|pryl|prylar|föremål(sl-pl)|grej|grejer|
-(fix)|greja|fixa|mecka|meckning|meckningar|meka|pula(in/med nåt)|dona (med)|pyssla(med)
-(moneytrouble)|penningbekymmer(sl-pl)|bekymret|bekymmer
-(workout)|gymma|träna|
-(beauty)|Vill man vara fin får man lida pin
-(progress)|Du kan inte ta dig an havet före sjön|En vandring på tusen mil börjar alltid med ett steg|Man måste lära sig krypa innan man kan gå
-(question)|fråga|frågor|frågeställning|spörsmål|förfrågan
-(request)| be (om)| ber | bad | bett |ansöka|ansöker|ansökte|ansökt|ansökan|ansökningar|an<*hålla|hem<*ställa|begära|begär|begärde|begärt|
-(answer)|svar(sl-pl)|
-(message)|meddelande|meddelanden(pl)|
-(function)|funger|funka|
-(workwell)|<*göra susen|<*Ta skruv|
-(break)|<*gå sönder|<*gå i kras|vittra(crumble)
-(jam)|kärva
-#Mental Capabilities, abstractions
-(mind)|sinne|sinnet|sinnen(pl)|
-(deliberately)|medvetet|
-(inspiration)|ingivelse|
-(purpose)|mening|meningar|avsikt|avsikter|syfte|syften(pl)|syftet|motiv(sl-pl)|motivet|
-(goal)|mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionärer|idealbild|
-(objective)|ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
-(strive)|eftersträva|eftersträvar|eftersträvade|eftersträvat|eftersträvande|
-(strive)|sträva|
-(resolution, intention)|föresats|föresatser|
+(camp, pitch camp)|Lägra( sig)|<*slå läger|
+(camp)|läger(sl-pl)|
+
+#Thought and abstraction: general concepts
 (regarding)|angående|gällande|beträffande
 (nosy)|(Man ska inte) lägga näsan i blöt|
-(attribute)|till<*skriva|till<*räkna|
-(deliberate, intentional)|med flit|avsiktlig|med vett och vilja|uppsåtlig|överlagd|
 (diligent)|flitig|
-(effort)|(Ligga/gå) i selen(old)
-(aim)|sikta(på)|rikta|<*handla om|rikta|inrikta|inriktning|
-(knowledge)|kännedom|vetskap|vetande|kunskap|
-(ignorance)|ovetenhet|ignorans
-(ignorance)|Det man inte vet, det lider man inte av|ovetenhet är salighet
 (concerned)|avses|berörd|vederbör|vederbörande|
-(concrete, tangible)|konkret|påtaglig|märkbar|synlig|förnimbar|åskådlig|
-(abstract, abstraction)|abstrakt|abstraktion|abstraktioner|abstraktionsförmåga|abstraktionsförmågor|
-(concept)|begrepp|begreppet|begreppen|begreppslig|begreppsliga|begreppslighet|begreppsligheter|
-(phenomenon)|företeelse|företeelser|fenomen(s-pl)|händelse|händelser|tilldragelse|tilldragelser|
+(exclaim)|Tänk att(..)|
+(empathy)|Genom sig själv känner man andra|
+(caution)|Väga sina ord på guldvåg|Vakta sin tunga|Tänk först och tala sen
+(delay)|Sova på saken|
+(sympathize)|känner med dig|
+(guardianship)|förmynderi|förmyndare|förmynderskap|förmynderskapet|
+(guardian)|målsman
+(coat, paint)|be<*stryka|
+(announce)|utlysa|utlyser|utlyste|utlyst|utlysning|utlysningar|
+(sudden)|plötslig|
+(spontaneous)|spontan|
+(impulsive)|Hals över huvud
+(remark)|anmärka|påpeka|
+(expression, heed good advice but reject bad advice)|den råd lyder är vis, men oråd ska ingen lyda|
+(expression, better without bread than without a plan)|bättre brödlös än rådlös|
+(expression, wisdom is easier to conceal than folly)|Lättare döljer en vis sin visdom än en dåre sin dårskap|
+(habitual)|vanemässig|vana|vanor|
+(automatic)|sitter I ryggmärgen|
+(unchangeable)|Ränderna går aldrig ur
+(trait)|egenskap|egenskaper|drag(sl-pl)|lynne|lynnen(pl)|särdrag|
+(temperament)|sinnelag|natur|mentalitet|läggning|läggningar|
+(dear)|(ligga någon) varmt om hjärtat|angelägen|betydelsefull
+(done)|<*sätta sin sista potatis
+
+#Thought, reflection and reasoning
+(consider)|<*Ha i åtanke
+(mind)|sinne|sinnet|sinnen(pl)|
+(sanity)|Vid sina sinnens fulla bruk|
+(ruminate)|älta(upprepat)|idissla|
+(mind)|sinne|sinnet|sinnen(pl)|
 (mental)|själslig|mental|psykisk|andlig
-(ideal)|ideell|översinnlig|
-(physical)|lekamlig|kroppslig|fysisk|
-(materialistic)|krass|materialistisk|jordbunden|
-(information)|uppgift|uppgifter|information|informationer|faktum|faktumet|fakta(pl-bestämd)|
-(Informer)|informant|
 (intelligence)|intelligens|intelligenser|förstånd(sl-pl)|förnuft|förnuftet|
 (think)|tanke|tankar|tänka|tänker|tänkte|tänkt|tänk|
 (ponder)|Gnugga geniknölarna
@@ -390,17 +285,43 @@ Lägra( sig)|<*slå läger|
 (overthink)|övertänka
 (consider)|beakta| <*ta hänsyn till| <*ta (ngt) med i beräkningen|
 (speculate)|spekulera|
-(have an opinion)|tycka|an<*se|
-(exclaim)|Tänk att(..)|
-(deepen)|fördjupa|sätta sig in i
-(empathy)|Genom sig själv känner man andra|
 (ruminate)|älta(upprepat tänka)|Bygger bo i huvudet
-(caution)|Väga sina ord på guldvåg|Vakta sin tunga|Tänk först och tala sen
-(delay)|Sova på saken|
 (sit and ponder, sit by oneself)|kuckelura|
 (absorbed)|försjunken i tankar|absorberad i tankar|
 (immersed)|fördjupad|
+(reason)|resonera|logik|logiker|logisk|logiskt|logikern|logiker|rationell
+(thoughtful)|fundersam|eftertänksam|
+(wise)|klok|smart|påhittig|uppfinningsrik|vettig|förståndig|vis |
+(wise)|eftertänksam|Klok som en uggla|klok som en pudel
+(sense)| vett |förnuft|omdöme|förstånd|
+
+#Knowledge, information and awareness
+(learned)|inlärd|förvärvat|förvärvad|anskaffat|anskaffad
+(knowledge)|kännedom|vetskap|vetande|kunskap|
+(ignorance)|ovetenhet|ignorans
+(ignorance)|Det man inte vet, det lider man inte av|ovetenhet är salighet
+(information)|uppgift|uppgifter|information|informationer|faktum|faktumet|fakta(pl-bestämd)|
+(Informer)|informant|
+(deepen)|fördjupa|sätta sig in i
 (impression)|(få )intryck|
+(recognize)|känner igen mig|känna igen|identifiera|identifiering|
+(hint)|vink|vinkar|signal|signaler|pekpinne|pekpinne|pekning|pekningar|
+
+#Understanding, interpretation and explanation
+(understand)|fatta|greppa|förstå|haja|in<*se|Fatta galoppen
+(summarize)|sammanfatta|sammanfattning|sammanfattningar|
+(summary)|Summa summarum|sammanfattningsvis|I ett nötskal
+(interpret)|tolka|tolkning|tolkningar|
+(explain)|tyda|tydning|tydningar|förklara|förklaring|förklaringar|åskådliggöra|
+(detail)|detaljerad|detalj|detaljer|
+(details)|Djävulen finns i detaljerna|Liten tuva stjälper ofta stort lass
+(describe, portray)|skildra|beskriva|beskrev|beskrivit|beskriv|avbilda|framställa|framställer|framställde|framställt|
+(portray)|utmåla|skildring|skildringar|framställning|
+(keep up)|hänga med|följa
+(demonstrate)|påvisa|demonstrera|uppvisa|förevisa|presentera|lägga fram|framlägga|an<*föra
+
+#Belief, opinion and judgement
+(have an opinion)|tycka|an<*se|
 (believe)|tro|tror|trodde|
 (supposition, theory)|aning|aningar|teori|teorin|teorier|förmodan|förmodanden(pl)|antagande|antaganden(pl)|
 (theory)|i princip|i teorin|på papperet
@@ -420,6 +341,11 @@ Lägra( sig)|<*slå läger|
 (misquote)|Lägga orden i munnen på någon(felaktigt)
 (stance)|ta ställning(till)|ställningstagande|ställningstaganden(pl)|
 (exaggerate)|Ta för stora ord i sin mun|
+(doubt)|ifrågasätta|betvivla|
+(regard)|betrakta|anse
+(theory)|teori|teorin|teorier|hypotes|hypoteser|
+
+#Comparison, similarity and difference
 (compare)|jämföra|
 (similar)|dylikt|sådant|likadant|liknandet
 (Similarly)|likaledes
@@ -430,13 +356,6 @@ Lägra( sig)|<*slå läger|
 (match)|Kaka söker maka|Lika barn leka bäst
 (alike)|Av samma skrot och korn
 (distinguish, difference)|skilja|skillnad|skillnader|urskilja|urskillning|gradskillnad|artskillnad|
-(sift)|sålla|sålla agnarna från vetet|filtrera|sila|avskilja|skräda|skräder|skrädde|skrätt|Skilja agnarna från vetet|
-(analyze)|analysera|överväga|avväga|betänka|betänker|betänkte|betänkt|betänk|
-(Go back to)|Back<*a bandet
-(Tradeoff)|avvägning
-(think through)|stöta och blöta|stötte och blötte|stött och blött|
-(downside)|Medaljens baksida|nackdel
-(consult)|konferera|rådgöra|diskutera|rådfråga|
 (parallel)|dra paralleller mellan|
 (twosides)|Två sidor av samma mynt
 (balance)|Stå och väga|
@@ -449,14 +368,16 @@ Lägra( sig)|<*slå läger|
 (Follow)|<*ta efter|efterlikna
 (likeminded)|likasinnat|
 (reverse)|Vända på steken|
-(generalize)|generalisera|generalisering|dra alla över en kam|Dra inte alla över en kam
-(specify)|precisera|precisering|tydlig<*göra|specificera|specificering|
-(niche)|nischa(mot)|nisch|nischer|
-(reason)|resonera|logik|logiker|logisk|logiskt|logikern|logiker|rationell
-(doubt)|ifrågasätta|betvivla|
+
+#Investigation, examination and analysis
+(sift)|sålla|sålla agnarna från vetet|filtrera|sila|avskilja|skräda|skräder|skrädde|skrätt|Skilja agnarna från vetet|
+(analyze)|analysera|överväga|avväga|betänka|betänker|betänkte|betänkt|betänk|
+(Go back to)|Back<*a bandet
+(Tradeoff)|avvägning
+(think through)|stöta och blöta|stötte och blötte|stött och blött|
+(downside)|Medaljens baksida|nackdel
+(consult)|konferera|rådgöra|diskutera|rådfråga|
 (survey)|kartläggning|kartläggningar|inventering|inventeringar|
-(associate)|förknippa|koppla|associera|koppling|kopplingar|behäftad|med nära band (till)|
-(regard)|betrakta|anse
 (review)|recensera|recension|recensioner|
 (review)|översyn|
 (examine)|granska|skärskåda|syna i sömmarna|granskning|granskningar|rannsaka|rannsakning|rannsakningar|
@@ -467,20 +388,51 @@ Lägra( sig)|<*slå läger|
 (probe)|Känna på pulsen
 (explore)|utforska|
 (recon)|reka(kort av rekognosera)|rekognosera
-(recognize)|känner igen mig|känna igen|identifiera|identifiering|
-(sympathize)|känner med dig|
-(guardianship)|förmynderi|förmyndare|förmynderskap|förmynderskapet|
-(guardian)|målsman
-(understand)|fatta|greppa|förstå|haja|in<*se|Fatta galoppen
-(summarize)|sammanfatta|sammanfattning|sammanfattningar|
-(summary)|Summa summarum|sammanfattningsvis|I ett nötskal
-(interpret)|tolka|tolkning|tolkningar|
-(explain)|tyda|tydning|tydningar|förklara|förklaring|förklaringar|åskådliggöra|
-(detail)|detaljerad|detalj|detaljer|
-(details)|Djävulen finns i detaljerna|Liten tuva stjälper ofta stort lass
-(describe, portray)|skildra|beskriva|beskrev|beskrivit|beskriv|avbilda|framställa|framställer|framställde|framställt|
-(coat, paint)|be<*stryka|
-(portray)|utmåla|skildring|skildringar|framställning|
+(inspect, search)|visitera|
+(gauge)|Ta tempen (särskilt om populäritet o dylikt)|
+
+#Concepts, abstraction and classification
+(attribute)|till<*skriva|till<*räkna|
+(concrete, tangible)|konkret|påtaglig|märkbar|synlig|förnimbar|åskådlig|
+(abstract, abstraction)|abstrakt|abstraktion|abstraktioner|abstraktionsförmåga|abstraktionsförmågor|
+(concept)|begrepp|begreppet|begreppen|begreppslig|begreppsliga|begreppslighet|begreppsligheter|
+(phenomenon)|företeelse|företeelser|fenomen(s-pl)|händelse|händelser|tilldragelse|tilldragelser|
+(ideal)|ideell|översinnlig|
+(physical)|lekamlig|kroppslig|fysisk|
+(materialistic)|krass|materialistisk|jordbunden|
+(generalize)|generalisera|generalisering|dra alla över en kam|Dra inte alla över en kam
+(specify)|precisera|precisering|tydlig<*göra|specificera|specificering|
+(niche)|nischa(mot)|nisch|nischer|
+(associate)|förknippa|koppla|associera|koppling|kopplingar|behäftad|med nära band (till)|
+(hallmark)|kännetecken(sl-pl)|markör|markörer|
+(characterize)|känneteckna|prägla|
+(stamp)|prägel|präglar|avtryck(sl-pl)|stämpel|stämplar|
+(pattern)|mönster(sl-pl)|mall|mallar|förlaga|förlagor|schablon|schabloner|föredöme|modell|modeller|exempel(sl-pl)|
+(nature)|Var fågel sjunger efter sin egen näbb|Var smed har sin sed
+(nature)|väsen(sl-pl)|beskaffenhet|beskaffenheten|
+(essential)|väsentlig|huvudsaklig|avgörande|betydande|viktig|främst|anmärkningsvärd|anmärkningsvärt
+(essence)|Pudelns kärna
+(irrelevant)|oväsentlig|ovidkommande|irrelevant
+(redundancy)|redundans|överflödig|redundant
+(trivial)|petitess|petitesser|småsak|bagatell|baggis|bagatell|struntsak|
+(overall)|övergripande|
+(fundamental)|grundläggande|basal|grundval|
+(comprehensive)|genomgripande|omfattande|
+(comprehensive)|heltäckande|
+
+#Planning, preparation and foresight
+(plan)|ämna|tänka(vdg.)|<*ha .* i kikaren|
+(deliberately)|medvetet|
+(inspiration)|ingivelse|
+(purpose)|mening|meningar|avsikt|avsikter|syfte|syften(pl)|syftet|motiv(sl-pl)|motivet|
+(goal)|mål(sl-pl)|målet|uppsåt(sl-pl)|uppsåtet|vision|visioner|visionär|visionärer|idealbild|
+(objective)|ändamål|målsättning|målsättningar| mål (sl-pl)|slutmål|målmedveten|
+(strive)|eftersträva|eftersträvar|eftersträvade|eftersträvat|eftersträvande|
+(strive)|sträva|
+(resolution, intention)|föresats|föresatser|
+(deliberate, intentional)|med flit|avsiktlig|med vett och vilja|uppsåtlig|överlagd|
+(effort)|(Ligga/gå) i selen(old)
+(aim)|sikta(på)|rikta|<*handla om|rikta|inrikta|inriktning|
 (plan)|planera|plan|
 (prepare)|bereda|förbereda|beredd|beredelse|beredelser|
 (prepare)|Spotta i nävarna|
@@ -492,45 +444,35 @@ Lägra( sig)|<*slå läger|
 (practical)|det finns inget dåligt väder, bara dåliga kläder
 (predict)|spå|förutspå|spår|spådde|spått|sia|förutsäga|
 (warn)|varsla|förebåda|förvarna|varna|varning|varningar|förebud(sl-pl)|varsel(sl-pl)|
-(announce)|utlysa|utlyser|utlyste|utlyst|utlysning|utlysningar|
-(sudden)|plötslig|
-(spontaneous)|spontan|
-(impulsive)|Hals över huvud
-(thoughtful)|fundersam|eftertänksam|
 (planned)|överlagd|planerad|genomtänkt|övervägd|dirigerad
-(remark)|anmärka|påpeka|
-(wise)|klok|smart|påhittig|uppfinningsrik|vettig|förståndig|vis |
-(wise)|eftertänksam|Klok som en uggla|klok som en pudel
-(expression, heed good advice but reject bad advice)|den råd lyder är vis, men oråd ska ingen lyda|
-(expression, better without bread than without a plan)|bättre brödlös än rådlös|
-(expression, wisdom is easier to conceal than folly)|Lättare döljer en vis sin visdom än en dåre sin dårskap|
-(sense)| vett |förnuft|omdöme|förstånd|
-(hallmark)|kännetecken(sl-pl)|markör|markörer|
-(characterize)|känneteckna|prägla|
-(stamp)|prägel|präglar|avtryck(sl-pl)|stämpel|stämplar|
-(pattern)|mönster(sl-pl)|mall|mallar|förlaga|förlagor|schablon|schabloner|föredöme|modell|modeller|exempel(sl-pl)|
 (rolemodel)|förebild|<*se upp till|exemplarisk|
 (guidingstar)|ledstjärna|
-(habitual)|vanemässig|vana|vanor|
-(automatic)|sitter I ryggmärgen|
-(unchangeable)|Ränderna går aldrig ur
-(trait)|egenskap|egenskaper|drag(sl-pl)|lynne|lynnen(pl)|särdrag|
-(nature)|Var fågel sjunger efter sin egen näbb|Var smed har sin sed
-(nature)|väsen(sl-pl)|beskaffenhet|beskaffenheten|
-(temperament)|sinnelag|natur|mentalitet|läggning|läggningar|
-(essential)|väsentlig|huvudsaklig|avgörande|betydande|viktig|främst|anmärkningsvärd|anmärkningsvärt
-(essence)|Pudelns kärna
-(dear)|(ligga någon) varmt om hjärtat|angelägen|betydelsefull
-(irrelevant)|oväsentlig|ovidkommande|irrelevant
-(done)|<*sätta sin sista potatis
-(redundancy)|redundans|överflödig|redundant
-(trivial)|petitess|petitesser|småsak|bagatell|baggis|bagatell|struntsak|
-(overall)|övergripande|
-(fundamental)|grundläggande|basal|grundval|
-(comprehensive)|genomgripande|omfattande|
-(comprehensive)|heltäckande|
+(expression, act first rather than be forestalled)|bättre att förekomma än förekommas|
+(gear up)|kitta sig|förberedda sig|utrusta sig
+(don't start)|Tänd inte den eld som du inte kan släcka
 
 #Motivation, wishes and opportunities
+(desire)|vilja|vill|ville|velat|
+(desire comes)|andan faller på
+(determination)|Vilja av stål
+(willpower)|viljeakt
+(intention)|uppsåt(f.)|avsikt(f.)|mening(vdg.)|
+(goal)|föresats(f.)|mål(vdg.)
+(purpose)|<*syfta på|<*gå ut på att|an<*gå|hänvisning|
+(crumbs)|Små smulor är också bröd
+(need)|behov|behöva|behöver|behövde|behövt|kräva(vdg.)|krävde|krävt|påbjuda|fordra|fordran|fordringar|anspråk(sl-pl)|tarva
+(requirements)|krav(sl-pl)|begär(sl-pl)|kriterium|kriterier|maning|maningar|villkor(vdg.)|å<*lägga(f)|
+(demand)|efterfråga|efterlysa|efterlysning|efterfrågan|efterfrågningar|efterlyst|
+(Saught after)|eftertraktad|
+(desire)|begära|begärde|begärt|begär|lystnad|lysten|sug(sl-pl)|sugen(vdg.)|begiven|hågad|åtrå|längta efter(vdg.)
+(lustful)|liderlig|begärlig
+(satisfy)|tillfreds<*ställa|tillgodo<*se |förnöja|förnöjer|förnöjde|förnöjt|roa|förnöjsam|(hålla) till godo|<*fylla behov
+(anticipation)|<*Gnugga händerna|väntans tider
+(challenge)|utmaning|utmaningar|
+(challenge)|Handsken är kastad
+(challenge accepted)|utmaning antagen|
+(potential)|potential|
+(limitation)|begränsning|
 (desire)|vilja|vill|ville|velat|
 (desire)|begära|begärde|begärt|begär|lystnad|lysten|sug(sl-pl)|sugen(vdg.)|begiven|hågad|åtrå|längta efter(vdg.)
 (determination)|Vilja av stål
@@ -564,10 +506,19 @@ Lägra( sig)|<*slå läger|
 (drive)|driv|drivet|drivkraft|grit|sporre(f.)
 
 #Feelings, emotions
+(feeling)|känsel|Känsla|Känslan|känslor|känslomässig
+(state)| må| mår|mådde|mått
+(composure)|Åter<*få fattningen|
+(indifferent)|Hugget som stucket|spelar ingen roll|
+(contentment)|nöjd|belåten|tillfredsställd|
+(Complacent)|självbelåten|självbelåtet
+(acceptance)|Om man inte får den man älskar, får man älska den man får
+(discontent)|obelåtenhet|Gräset är alltid grönare på andra sidan
+(ingratitude)|bit inte (den )handen som föder dig|
+(state)|upp<*ge (infon)|an<*ge (infon)|
 (mood)|humör|känsel|känslor|sinnestillstånd|
 (sensual)|sinnlig|
 (tactile)|taktil|
-
 (sensitive)|mottaglig|känslig|ömtålig
 (fragile)|Skör som kristall
 (speechless)|stum|tyst|mållös|
@@ -818,7 +769,6 @@ invektiv|smädeord|smädelse|tillmäle|okvädingsord|skällsord|pejorativ|skymfo
 (smitten)|betuttad|förälskad|förtjust (i ngt)|
 (lovestruck)|Kär som en klockarkatt
 (captivated)|gripen|hänförd|betagen|hänryckt|
-(falling)|<*falla pladask|Falla som en fura
 (love)|kär|kärlek|förälskad|
 (unconditional)|älska utan förbehåll|
 (blissful)|Sväva på rosa moln|
@@ -860,70 +810,17 @@ Ursäkt|förevändning|täckmantel
 (forgiving)|förlåtande|Storsint
 (moderate)|Lägga fingrarna emellan|
 (refrain)|låta bli|låta någon vara|ge fan i något
-#Physical activities
-(camp, pitch camp)|Lägra( sig)|<*slå läger|
-(camp)|läger(sl-pl)|
-(carry)|kånka|bära|bär|bar|burit|buren|burna|
-(look)|titta|stirra|glo|glor|glodde|glott|glo|
-(stare)|titta storögt|titta med stora ögon|stint|betrakta(ngt) stint|uppspärrade ögon|
-(eyes)|Öppna korpgluggarna|
-(glare)|blänga|blänger|blängde|blängt|bläng|
-(peek)|snegla|titta med ögonvrå|glutta|tjuvkika|smygkika|
-(glance)|Kasta en blick
-(blink)|blinka|
-(bow)|buga|bocka|knixa|niga|niger|neg|nigit|nig|
-(fold)|vika|
-(huddle)|hopkrupen|kura ihop|ihopkurad|
-(slumped)|hopsjunken
-(somersault)|kullerbytta|kullerbyttor|
-(move)|föra|för|förde|fört|forsla|leda|transportera|flytta|åka|frakta
-(shift)|maka( på ngt)|
-(bring)|föra med sig (ngt)|
-(thread)|trä (över/genom/på nåt)|trär|trädde|trätt|
-(replace)|ersätta|ersättare(sl-pl)|suppleant|suppleanter|kompensera|
-(balance)|uppväga|balansera|
 (calm)|lugna|
 (compose)|sansa|sansad|sansat|
-(wave)|vifta|fläkta|blåsa|vinka(åt/till)|vicka|
-(swing)|svinga|svänga|svänger|svängde|svängt|sväng|vicka|vippa
-(dangle)|dingla|gunga|gungning|
-(circulate)|cirkulera|
-(try)|pröva|prova|testa|försöka|försökte|försökt|försök|
-(impress)|Visa sig från sin goda sida|
-(persistence)|Droppen kan urholka stenen|
-(expression, have another drink)|ta en i det andra benet också
-(risk)|Friskt vågat hälften vunnet|
-(risk)|rasrisk
-(test)|prov|provning|tentamen|tentamina|tenta|tentor|förhör|examination|
-(dance)|dansa|(en runda;ta sig en)svängom|
-(improvise with limited resources)|trolla med knäna|
+(annoying)|störig|
+(annoying)|irriterande|Stå någon upp i halsen|Gå någon på nerverna|enerverande
+(grumpy)|putt|irriterad|surmulen|surtant|surtanter|
+(bliss)|Frid och fröjd
+(pessimism)|Måla fan på väggen(man misstänker)|
+
+#Movement: walking and hiking
 (stomp)|stampa|
 (stomp)|stövla|
-(travel)|be<*ge <*sig|fara|färdas|färdades|färdats
-(leave)|ge sig av|det är dags att ge sig av
-(leave)|låt mig vara|stör inte mig|lämna mig i fred
-(split)|pysa(slang, bege sig)|pys|pyser|pös|pyste|pyst|pysning|pysningar|
-(trip)|tripp|tripper|resa|resor|tur|turer|färd|färder|utflykt|utflykter|åktur|utflyktsmål|upptäcktsresa|upptäcktsfärd|
-(travelling)|På resande fot
-(endup)|hamna|landa|råka|möta|träffa|stöta på|
-(encounter)|stöta på|<*springa på|
-(traveller)|resenär|resenärer|passagerare(sl-pl)|
-(visit)|besöka|
-(inspect, search)|visitera|
-(pay a congratulatory visit)|uppvakta(för att hylla)|
-(meet)|träffa|
-(miss)|missa|Missa tåget
-(performance)|utförande|
-(fit)|passa|
-(catchup)|springa ifatt|komma ifatt|
-(show)|Visa (runt)|visning|genomgång|husesyn|visningstur|visningsturer|visningsrunda|visningsrundor|
-(escape)|smita|rymma|rymmer|rymde|rymt|fly|flyr|flydde|flytt|
-(flee)|Lägga benen på ryggen
-(expression, discretion is the better part of valour)|bättre fly än illa fäkta|
-(dip)|dopp|doppa
-(jerk)|rycka|rycker|ryckte|ryckt|ryck|
-(flail)|sprattla
-(ripoff)|rycka av( e.g. plåstret)|
 (stroll)|ströva|ströv|ströveri|flanera|vanka|vandra|spatserar|en sväng|strosa|knalla|promenera|drälla|dräller|drällde|drällt|
 (stroll)|går en sväng
 (wander)|vimsa|Utan mål och mening|
@@ -931,99 +828,169 @@ Ursäkt|förevändning|täckmantel
 (trudge)|traska|hasa|släpa sig|
 (clomp)|klampa|
 (roam)|irra|flacka|
-(run)|springa|löpa|löper|löpte|löpt|löp|rusa|sprungen|bortsprungen|
-(fitness)|kondition|kondis
 (walk briskly)|Knata|
-(jog)|(gå runt)småspringande|
-(jog)|löprunda|löprundor|
-(flow)|rinna|ränna|drypande|rinnande|rinnande vatten|
 (march)|marsch|
-(rush)|rusning|språng
-(rush)|svepa|sveper|svepte|svept|svischa|susa|rusa|susning|
-(pushup)|armhävning|armhävningar|
-(wade)|vada|
-(bottom)|bottna|
-(splash)|plaska|plask|
-(hurry)|hasta|skynda|barka|Jäkta|Lägga på en rem|Lägga på ett kol
-(slide)|glida|glider|gled|glidit|slinka|slinker|slank|slunkit|slinta|slinter|slant|sluntit|slint|
-(slide)|rutscha|kana|
-(slide (playground equipment))|rutschkana|
-(glide)|<*glida fram|
-(skid)|halka|sladda|Slira|
-(crawl)|krypa|kryper|kröp|krupit|kryp|kravla|krälar
-(stroke)|stryka|stryker|strök|strukit|stryk|klappa|smeka|smeker|smekte|smekt|smek|
-(beating)|Ett kok stryk
-(cuddle)|kela|kelsjuk|gosa|
-(fiddle, potter)|peta|pilla|påta|pyssla|knåpa|
-(petting)|petting|
 (limp)|halta|
 (stride)|stega|kliva|kliver|klev|klivit|kliv|klivande
-(lift)|lyfta (på)|lyfter|lyfte|lyft|kasa upp|häva|höja|
-(climb)|klättra|
+(footstep)|fotsteg(sl-pl)|
+(walk)| gå till fots|Använda apostlahästarna
+
+#Movement: running and hurrying
+(catchup)|springa ifatt|komma ifatt|
+(run)|springa|löpa|löper|löpte|löpt|löp|rusa|sprungen|bortsprungen|
+(jog)|(gå runt)småspringande|
+(jog)|löprunda|löprundor|
+(rush)|rusning|språng
+(rush)|svepa|sveper|svepte|svept|svischa|susa|rusa|susning|
+(hurry)|hasta|skynda|barka|Jäkta|Lägga på en rem|Lägga på ett kol
 (bolt)|skena(rusa okontrollerat)|
-(lower, raise)|sänka|höja|höjning|chockhöjning|sänkning|sänk| höj|sänker|höjer|
-(lower, sink, fall)|sänkte|sänkt|sjunka|sjunker|sjönk|sjunkit|dala|
-(raise)|höjde|höjt|
-(float)|flyta|flyter|flöt|flutit|flyt|
-(hover)|sväva|sväva iväg|spinna iväg
-(push)|putta|stöta|stöter|stötte|stött|skjuta|fjädra|skjuter|sköt|skjutit|sparka|knuffa|puffa|
-(stretch)|tänja|töja|
-(emit clouds of smoke)|bolma|
-(bang)|smäll|smällar|stöt|stötar|slag(sl-pl)|krock|krockar|panga
-(explosion)|sprängning|spränga|spränger|sprängde|sprängt|spräng|
-(postpone)|<*skjuta upp|förhala|anstå|uppskjutning|uppskjutningar|uppskjuten|uppskov|
-(postpone)|Lägga något på hyllan|Lägga (något) på is|(något) <*ligga på is|
-(expression, do not put off until tomorrow what you can do today)|Skjut inte upp till morgondagen, det du kan göra idag|
-(expression, act first rather than be forestalled)|bättre att förekomma än förekommas|
-(expression, nip it in the bud)|bättre att stämma i bäcken än i ån|
-(drag)|dra|släpa|<*dra med sig|dras med|
-(bend)|kröka|kröker|krökte|krökt|krök|knorra|böja|böjer|böjde|böjt|böj|
-(disturb)|rubba|rubbning|
-(disturb, change)|störa|rubba balansen|förskjuta|förrycka|
+(hurry)|bråttom|brådis|brådska|skyndsamhet|Brinner i knutarna|Eld i baken
+(catch up)|komma i kapp|
+
+#Movement: climbing and crawling
+(crawl)|krypa|kryper|kröp|krupit|kryp|kravla|krälar
+(climb)|klättra|
+
+#Movement: jumping and bouncing
+(somersault)|kullerbytta|kullerbyttor|
+(bounce)|studsa|studs|
+(jump)|hoppa|hoppa med plask|
+(Take off)|(ta )avstamp
+(somersault)|saltomortal|volt|voltar|frivolt|kullerbytta
+
+#Movement: slipping, stumbling and falling
+(collapse)|stupa|
+(slide)|glida|glider|gled|glidit|slinka|slinker|slank|slunkit|slinta|slinter|slant|sluntit|slint|
+(slide)|rutscha|kana|
+(glide)|<*glida fram|
+(skid)|halka|sladda|Slira|
+(stagger)|vingla|vackla|stappla|ragla|svikta
+(fall, stumble)|falla|faller|föll|fallit|fall|ramla|störta|rasa|snubbla|snava|tumla|
+(collapse)|Rasa som ett korthus
+(tumble)|Stå på öronen|Stå på näsan|
+(tumble)|trilla|
+(thud)|dunsa|dimpa|duns|dunsar|
+(topple)|välta|välter|välte|vält|vältning|vältningar|
+
+#Movement: turning, swinging and circling
+(swing)|svinga|svänga|svänger|svängde|svängt|sväng|vicka|vippa
+(dangle)|dingla|gunga|gungning|
+(circulate)|cirkulera|
+(circle)|<*ta ett varv|
+(flutter)|fladdra|flaxa
+(spin)|snurra|rotera|svepa|virvla|rulla
+
+#Movement: shaking and trembling
+(wave)|vifta|fläkta|blåsa|vinka(åt/till)|vicka|
+(jerk)|rycka|rycker|ryckte|ryckt|ryck|
+(flail)|sprattla
 (shake)|skaka|ruska (på)|skälva|darra|skumpa|guppa|gunga|
 (tremble)|Darra som ett asplöv
 (nod)|Nicka (till)|
 (shiver)|rysa|ryser|ryste|rös|ryst|rys|huttra
 (tremor)|darrning|ilning|skakning
 (quake)|skalv|
-(bounce)|studsa|studs|
-(jump)|hoppa|hoppa med plask|
-(Take off)|(ta )avstamp
-(circle)|<*ta ett varv|
-(stagger)|vingla|vackla|stappla|ragla|svikta
-(flutter)|fladdra|flaxa
-(fall, stumble)|falla|faller|föll|fallit|fall|ramla|störta|rasa|snubbla|snava|tumla|
-(tripwire)|snubbeltråd|
-(collapse)|Rasa som ett korthus
-(tumble)|Stå på öronen|Stå på näsan|
-(tumble)|trilla|
-(thud)|dunsa|dimpa|duns|dunsar|
+
+#Movement: flowing, floating and dripping
+(flow)|rinna|ränna|drypande|rinnande|rinnande vatten|
+(float)|flyta|flyter|flöt|flutit|flyt|
+(hover)|sväva|sväva iväg|spinna iväg
 (drip)|droppa|sippra
-(topple)|välta|välter|välte|vält|vältning|vältningar|
-(rise)|resa (sig)|reser|reste|rest|resning|resningar|<*resa på sig|
-(clumsy)|drumla sig|drumla sig|klanta|
-(sneak)|smyga|smyger|smög|smugit|smyg|tassa|snika|
-(sneak)|smyga|smyger|smög|smugit|smyg|tassa|
 (spill)|spilla|spiller|spillde|spillt|spill|drälla|dräller|drällde|drällt|skvätta|skvätter|skvätte|skvätt|stänka|stänker|stänkte|stänkt|stänk|sprätta|sprätter|sprätte|sprätt|sprätt|forsa|
 (sprinkle)|beströ|strö över|strö|strör|strödde|strött|
-(pose)|posera|posering|poseringar|posör|posörer|
-(footstep)|fotsteg(sl-pl)|
-(walk)| gå till fots|Använda apostlahästarna
-(rub)|frottera|massera
-(cast)|gjuta|gjuter|göt|gjutit|hälla| ösa|öser | öste| öst|
-(avoid)|slippa|slipper|slapp|sluppit|undgå|undvika|undviker|undvek|undvikit|<*komma undan|kringgå|ducka|dissa
-(wriggle out)|slingra(sig; gall. ansvar)|Slingra sig som en orm
+(spread)|sprida|sprider|spridde|	sprid|spritt|spridit|sprid|
+(spread)|spreta (åt olika håll)|Sprida sig som ringar på vattnet
+
+#Movement: entering, leaving and arriving
+(travel)|be<*ge <*sig|fara|färdas|färdades|färdats
+(leave)|ge sig av|det är dags att ge sig av
+(split)|pysa(slang, bege sig)|pys|pyser|pös|pyste|pyst|pysning|pysningar|
+(trip)|tripp|tripper|resa|resor|tur|turer|färd|färder|utflykt|utflykter|åktur|utflyktsmål|upptäcktsresa|upptäcktsfärd|
+(travelling)|På resande fot
+(endup)|hamna|landa|råka|möta|träffa|stöta på|
+(escape)|smita|rymma|rymmer|rymde|rymt|fly|flyr|flydde|flytt|
+(flee)|Lägga benen på ryggen
+(exit)|utgång|utgångar|utfart|utfarter|
+(enter)|inträda|inträder|inträdde|inträtt|inträd|<*stiga in|infart|påfart|påfarter|
+(dive)|dyka|dyker|dök|dykte|dykt|
+(emerge)|<*dyka upp|framträdda|framträder|framträdde|framträtt
+(return)|återvändo|återvända|återvände
+(departure)|uppbrott|
+(exit)|gå ut|utträda|utträder|utträdde|utträtt|utträde|utträden(pl)|utgång|lämna|utfart|avfart|avfarter|
+(arrive)|anlända|an<*komma|ankomst|ankomster|<*komma fram|
+(arrived)|framkommen
+(departure)|avresa|avresor|
+(arrived)|framkommen
+(enter)|beträda|beträder|beträdde|beträtt|beträd|tillträda|tillträde|
+(reach)|nå|räcka|
+(approach)|närma|närma sig|nalkas|nalkades|nalkats|
+(detour)|omväg|genväg|omvägar|
+(lost)|vilse|vilseledning|misleda|
+(lost)|vilsen|Bortkommen|
+(get lost)|gå vilse|förirra(sig)|
+
+#Movement: carrying, lifting, pushing and pulling
+(carry)|kånka|bära|bär|bar|burit|buren|burna|
+(move)|föra|för|förde|fört|forsla|leda|transportera|flytta|åka|frakta
+(shift)|maka( på ngt)|
+(bring)|föra med sig (ngt)|
+(lift)|lyfta (på)|lyfter|lyfte|lyft|kasa upp|häva|höja|
+(lower, raise)|sänka|höja|höjning|chockhöjning|sänkning|sänk| höj|sänker|höjer|
+(lower, sink, fall)|sänkte|sänkt|sjunka|sjunker|sjönk|sjunkit|dala|
+(raise)|höjde|höjt|
+(push)|putta|stöta|stöter|stötte|stött|skjuta|fjädra|skjuter|sköt|skjutit|sparka|knuffa|puffa|
+(drag)|dra|släpa|<*dra med sig|dras med|
+(fetch)|hämta|avhämta|lämna|leverera|
+(throw)|kasta|slunga|slänga|slänger|slängde|slängt|flimpa|dumpa|bortkasta|langa(slang)|
+(fling)|vräka|vräker|vräkte|vräkt|kasta bort|kasta ut|kasta iväg|kasta ifrån sig|
+(hurl)|hiva|hysta|underarmkast|
+(throw)|slänga|slänger|slängde|slängt|släng|kasta
+
+#Movement: sneaking and moving discreetly
+(sneak)|smyga|smyger|smög|smugit|smyg|tassa|snika|
+(sneak)|smyga|smyger|smög|smugit|smyg|tassa|
 (furtively, in secret)|förstulet| i smyg|
 
-#Games, sports
-(play)|spela|leka|lira|
+#Posture and bodily position
+(bow)|buga|bocka|knixa|niga|niger|neg|nigit|nig|
+(huddle)|hopkrupen|kura ihop|ihopkurad|
+(slumped)|hopsjunken
+(rise)|resa (sig)|reser|reste|rest|resning|resningar|<*resa på sig|
+(pose)|posera|posering|poseringar|posör|posörer|
+
+#Physical actions: touching, rubbing and stretching
+(fold)|vika|
+(thread)|trä (över/genom/på nåt)|trär|trädde|trätt|
+(dip)|dopp|doppa
+(ripoff)|rycka av( e.g. plåstret)|
+(stroke)|stryka|stryker|strök|strukit|stryk|klappa|smeka|smeker|smekte|smekt|smek|
+(cuddle)|kela|kelsjuk|gosa|
+(fiddle, potter)|peta|pilla|påta|pyssla|knåpa|
+(stretch)|tänja|töja|
+(bend)|kröka|kröker|krökte|krökt|krök|knorra|böja|böjer|böjde|böjt|böj|
+(rub)|frottera|massera
+
+#Water activities and swimming
+(wade)|vada|
+(bottom)|bottna|
+(splash)|plaska|plask|
 (splash)|plaska(i vatten)
+
+#Physical activities: general actions
+(movement)|rörelse|rörelser|<*röra <*sig|
+
+#Games, sports
+(workout)|gymma|träna|
+(fitness)|kondition|kondis
+(pushup)|armhävning|armhävningar|
+(slide (playground equipment))|rutschkana|
+(play)|spela|leka|lira|
 (toy)|leksak|
 (Doll)|docka|dockor|marionett(styrs av trådar)|
 (slope)|skidbacke|skidbackar|
-(somersault)|saltomortal|volt|voltar|frivolt|kullerbytta
 (hideandseek)|kurragömma|
 (dodgeball)|spökboll|
+(gymnastics)|gympa(oräkenbart)|gymnastik|gym(sl-pl)|
 (gymnastics)|gympa(oräkenbart)|gymnastik|gym(sl-pl)|
 
 #Basic Necessities
@@ -1066,6 +1033,14 @@ Ursäkt|förevändning|täckmantel
 (secretly)|Under bordet|
 
 #Sex, reproduction, romance
+(sex)|sexa|samlag|nyp(slang) |älskog|knull|knulla|
+(sex)|pippa(slang)
+(thrust)|jucka( på)|juckning
+(reproduction)|fortplantning|reproduktion|fortplanta|avla|föröka
+(multiply)|För<*öka sig som kaniner
+(inbreeding)|inavel|incest
+(falling)|<*falla pladask|Falla som en fura
+(petting)|petting|
 (sex)|sex|samlag|ligga|knull|
 (sex)|knulla
 (reproduction)|reproduktion|
@@ -1101,6 +1076,8 @@ Ursäkt|förevändning|täckmantel
 (birth, childbirth)|födsel|födslar|födelse|födelser|förlossning|förlossningar|
 
 #Birth, death and ageing
+(life)|leva|lever|levde|levt|lev|
+(being)|vara|(är)|var|varit|varande
 (age)|ålder|åldern|åldrar|åldras|föråldras
 (age)|Åldras som mjölk(blir sämre)
 (age)|Åldras som vin
@@ -1112,8 +1089,24 @@ Ursäkt|förevändning|täckmantel
 (death, demise)|död|frånfälle|frånfällen(pl)|
 (perish)|<*gå under|undergång|krevera
 (old)|gammal|gamla|gamle|
+(prime)|I sin glans dagar|I sina bästa år
+(perish)|Gå under
+(die)| dö |dör|dog|dött|avlida|avlider|avled|avlidit|<*gå bort|krevera|duka under
+(About to go under)|försmäkta
+(deceased)|avliden|bortgången
+(perish)| om<*komma(i olycka t.e.)|förolyckas|<*vara med om en olycka|Fara å färde
+Påkörd
+(perish)|<*gå under|undergång|krevera
+(old)|gammal|gamla|gamle|
+(survive)|överleva|
+(survive)|(Leva) ur hand i mun|
 
-#Damages, Distructions, Negative things etc
+#Damage, destruction, injury and suffering
+(slaughter)|slakta|massakrera|
+(Barbarity)|barbari|barbariet|barbarier
+(beating)|Ett kok stryk
+(bang)|smäll|smällar|stöt|stötar|slag(sl-pl)|krock|krockar|panga
+(explosion)|sprängning|spränga|spränger|sprängde|sprängt|spräng|
 (damage)|Skada|Skadan|Skador
 (cut)|hugga|hugger|högg|huggit|stympa|lemlästa|klyva|klyver|klyvde|klöv|kluvit|klyvt|klyv|avsåga|<*såga av|fläka
 (cut)|såga|kapa|malla|
@@ -1133,7 +1126,6 @@ Ursäkt|förevändning|täckmantel
 (sting)|svida|svider|sved|svidit|svid|
 (Cramp)|kramp
 (Corrode)|fräta
-
 (bruised)|blåslagen|
 (harmful)|skadlig|menlig|
 (miserable)|eländig|olycklig|nödställd
@@ -1214,13 +1206,26 @@ Ursäkt|förevändning|täckmantel
 (bliss)|salighet|salig|frälst|
 (sneaky)|smussla|smussel|fuffens|
 (beg)|tigga|tigger|tiggde|tiggt|tigg|bettla|tiggeri|tiggerier|tiggare|tiggare|tiggande|tiggande|
+(puncture)|punktering|punkteringar|punka|punkor
+(demolish)|rasera|<*riva ned|rivning
+(destroy)|förgöra|förinta|tillintetgöra|utrota|utplåna
+(kill)|död|dödar|avliva|mörda|mord(sl-pl)|mordet|<*slå ihjäl|frånfälle|frånfällen(pl)
+(finalblow)|Sätta in nådastöten|
+(wreck)|skrälle|skrällen(pl)|
+
+#Time: scheduling, waiting and postponement
+(postpone)|<*skjuta upp|förhala|anstå|uppskjutning|uppskjutningar|uppskjuten|uppskov|
+(postpone)|Lägga något på hyllan|Lägga (något) på is|(något) <*ligga på is|
+(expression, do not put off until tomorrow what you can do today)|Skjut inte upp till morgondagen, det du kan göra idag|
+
 #Time
+(spend)|tillbringa|tillbragt|spendera|<*lägga ner (tid/pengar/energi/osv).* på|
+(wastetime)|för<*driva tid|<*spilla tid|<*sitta och häck<*a|lalla runt
 (time)|tid|tider|tidsrymd|tidsrymder|dags|
 (it's time)|då var det dags|
 (round)|omgång|omgången|omgångar|
 (moment)|tidspunkt|tidspunkter|
 (time)|gång|stund|
-
 (hour)|timme|timmar|minuter|sekunder|
 (dayparts)|morgon|morgnar|kväll|kvällar|natt|nätter|dag|dagar|vecka|veckor|månad|månader| år (sl-pl)|
 (temporal)|(tidpunkt)förra|föregående|denna|detta|senaste|nästa|
@@ -1345,25 +1350,57 @@ Ursäkt|förevändning|täckmantel
 (coincidence)|sammanträffande|sammanträffanden(pl)|tillfällighet|tillfälligheter
 (weekdays)|veckodagar|
 (yesterday)|igår|gårdag|morgondag|imorgon|
-#Space, Position
-(place)|plats|platser|rum(sl-pl)|utrymme|utrymmen(pl)|
-(extent)|utsträck|mätning|mått|mängd|mängder|utbredning|
-(adverb)|rumsadverb|
-(distance)|avstånd|
-(margin)|marginal|
-(direction)|riktning|riktningar|håll(sl-pl)|
-(direction)|håll(sl-pl)|andra hållet
-(face)|<*vetta (mot)|
-(axes)|(i )sidled|djupled|höjdled|
+(antiquity)|forntid|forntider|
+(approaching)|kommande|annalkande|antågande|antåg|stunda(till)|
+(sudden)|bråd|plötslig|ond bråd död|
+
+#Space and position: general terms
 (entrance)|ingång|insläpp|ingångar|infart|infarter|
-(exit)|utgång|utgångar|utfart|utfarter|
 (ahead)|<*ligga steget före
 (lie)|ligga|ligger|låg|legat|
+(Inconsistent)|spretig|spreta (åt alla håll)|
+(average)|medel|
+(mediator)|medlare|
+(sole)|sula|sulor|sulning|sulningar|
+(slope)|ovanför|nedför
+(slope)|Uppförsbacke|nedförsbacke
+(floors)|Övervåning|nedervåning
+(window)|(blommar står) i fönstret|(stå eller sitta) i fönstret|på fönsterbrädan|utanför fönstret|
+(ceiling)|lampan hänger i taket|hänga i taket|(hänga el sitta) i taket|
+(bed)|<*ligga i sängen|
+(exactly)|På kornet|på pricken|
+(exist, be available)|före<*ligga|
+(by a hair, on the verge)| På håret|På vippen|
+(expression, hard on someone's heels)|Hack i häl|hack och häl| i hälarna|
+(sleep head to foot)|skavfötters(esp)|
+(downhill)|utför|
+(uphill)|uppför|
+(sides)|framsida|baksida
+(end)|ände|ändar|
+(depend)|bero(på)|komma an|kommer inte an på|
+(regarding)|apropå( det)|på tal om
+(foldup)|fälla upp
+(folddown)|fälla ner
+(lookforward)|se fram emot
+(over)|omkull (på marken)|
+(capsize)|stjälpa(slå omkull)|
+(get out of hand)|<*gå överstyr|
+(crosswise)|(gå) på tvärs
+(anticipate)|<*se fram emot|väntans tider|(smockan)<*hänga i luften|
+(surpass)|överlägsna|överträffa|
+(until, not until)|förrän|förrän|fram till|fram till dess|
+(until)|fram till att (ngt)
+(refer)|syfta på
+(farthest, foremost, rearmost, perched)|längst <*plats|främst|bakerst|efterst|uppflugen|
+
+#Space: location, proximity and distance
+(place)|plats|platser|rum(sl-pl)|utrymme|utrymmen(pl)|
+(distance)|avstånd|
+(margin)|marginal|
 (located)|belägen|beläget(i/på)|
 (position)|ställning|belägenhet|
 (everywhere)|överallt|alla håll och kanter|världen över|
 (random)|(slumpartade)Lite här och var
-(Inconsistent)|spretig|spreta (åt alla håll)|
 (past)|förbi|gå förbi|passera|passage|passager|förflyta|Värdshus förbi|
 (above)|ovan|över|övre|överst|översta|överst|ovanpå|ovanför
 (under)|under|undre|underst|understa|underst|
@@ -1371,40 +1408,19 @@ Ursäkt|förevändning|täckmantel
 (inner)|inre|innerste|innerst|innersta|kärna|kärnor|
 (outer)|yttre|ytterste|yttersta|ytterst|
 (middle)|mellersta|mellerste|mittemellan|
-(average)|medel|
-(mediator)|medlare|
-(directions)|uppåt|nedåt|framåt|bakåt|baklänges|framför|bakom|
-(directions)|upp|ner|fram|bak|höger|vänster
-(infront)|framförvarande|
-(front, rear, inward, outward, from inside, from outside)|främre|bakre|eftre|inåt|utåt|inifrån|utifrån
-(upto)|fram till|tillbaks till|tillbaka till
 (topbottom)|topp|toppar|botten|bottnar|
-(sole)|sula|sulor|sulning|sulningar|
-(slope)|ovanför|nedför
-(slope)|Uppförsbacke|nedförsbacke
-(floors)|Övervåning|nedervåning
 (insideoutside)|innanför|utanför
-(window)|(blommar står) i fönstret|(stå eller sitta) i fönstret|på fönsterbrädan|utanför fönstret|
-(ceiling)|lampan hänger i taket|hänga i taket|(hänga el sitta) i taket|
-(bed)|<*ligga i sängen|
-(rightof)|<*ligga till höger om|
-(across)|tvärsigenom|tvärs igenom|tvärs över|tvärsöver|
 (distant)|avlägsen|fjärran|borta
 (far)|längst bort|där borta|undan|
 (nearby)|närliggande|närbelägen|närbeläget|närbelägna|
 (nearby)|på nära håll
 (surrounding)|kringliggande|omkringliggande|omkringliggande|omkringliggande|omgivande|
 (vicinity)|närhet|närheten|I krokarna
-(exactly)|På kornet|på pricken|
 (long)|lång|längre|längst|inte längre|längre bak|längre fram|längre bort|bortre|längre ner|längre upp|längre till vänster
 (near, within reach)|nära|närmre|närmare|närmst|närmast|hitre|främre|inom räckhåll| till hands|
-(exist, be available)|före<*ligga|
 (out of reach)|utom räckhåll|
-(by a hair, on the verge)| På håret|På vippen|
 (beside)|sidan|bredvid|intill|inpå (väldigt)|nära|närbelägen|intilliggande|inemot
 (beside)|vid sidan om|avsides|åt sidan|
-(expression, hard on someone's heels)|Hack i häl|hack och häl| i hälarna|
-(sleep head to foot)|skavfötters(esp)|
 (beyond)|bortom|bortanför
 (thisside)|hitom|hitanför
 (along)|utmed|längs (med)|
@@ -1412,59 +1428,60 @@ Ursäkt|förevändning|täckmantel
 (opposite)|mittemot|rakt över på andra sidan|
 (outsideinside)|utanför|innanför
 (around)|runtom
-(downhill)|utför|
-(uphill)|uppför|
-(sides)|framsida|baksida
-(end)|ände|ändar|
 (atsea)|till sjöss|till havs|på sjön|på havet
-(together)|tillsammans|
-(apart)|isär|åtskild|
-(connected)|kopplad|hör ihop|hänger ihop|samband|
-(depend)|bero(på)|komma an|kommer inte an på|
-(uniform)|enhetlig|
-(cohesive)|Sammanhållen|(hålla den) röda tråden
-(regarding)|apropå( det)|på tal om
 (gap)|mellanrum(sl-pl)|tomrum|
 (gap)|glapp(sl-pl)|klyfta|klyftor|
 (gap)|glipa|
-(latitude)|breddgrad|latitud|polhöjd
-(longitude)|längdgrad|longitud|
-(foldup)|fälla upp
-(folddown)|fälla ner
-(lookforward)|se fram emot
 (outside)|utanpå|utsidan
 (outside)|utvärtes|utomhus|utom
-(over)|omkull (på marken)|
-(capsize)|stjälpa(slå omkull)|
-(get out of hand)|<*gå överstyr|
-(crosswise)|(gå) på tvärs
-(anticipate)|<*se fram emot|väntans tider|(smockan)<*hänga i luften|
-(background)|bakgrund|bakgrunder|fond|fonder
-(foreground)|förgrund|förgrunder|front|fronter
-(surpass)|överlägsna|överträffa|
-(reach)|räckvidd|räckvidder|spann(sl-pl)|räckhåll
-(spectrum)|spektrum|
-(range)|korträckviddig|långräckviddig|
-(edges)|underkant|överkant|
 (outskirts)|utkanten|utkanter|
-(exceed)|överskrida|överskrider|överskred|överskridit|överstiga|överstiger|översteg|överstigit|
-(fallshort)|underskrida|understiga|
-(surplus)|överskott(sl-pl)|överflöd|överflödet|(vara)flott med|
-(deficit)|underskott|
 (inside)|invärtes|inuti|inombords|
-(backtowards)|med ryggen åt|
 (external)|extern|
 (internal)|intern|
-(until, not until)|förrän|förrän|fram till|fram till dess|
-(until)|fram till att (ngt)
+(surroundings)|omgivning|omgivningar|omvärld|omnejd|omgivande|inramning
+(end)|ta vägen|göra av sig|
+
+#Space: direction and orientation
+(direction)|riktning|riktningar|håll(sl-pl)|
+(direction)|håll(sl-pl)|andra hållet
+(face)|<*vetta (mot)|
+(axes)|(i )sidled|djupled|höjdled|
+(directions)|uppåt|nedåt|framåt|bakåt|baklänges|framför|bakom|
+(directions)|upp|ner|fram|bak|höger|vänster
+(infront)|framförvarande|
+(front, rear, inward, outward, from inside, from outside)|främre|bakre|eftre|inåt|utåt|inifrån|utifrån
+(upto)|fram till|tillbaks till|tillbaka till
+(rightof)|<*ligga till höger om|
+(across)|tvärsigenom|tvärs igenom|tvärs över|tvärsöver|
+(backtowards)|med ryggen åt|
 (arrow)|Pil|Pilar|pilspets|pilspetsar|visare(sl-pl)|visarn|
 (point)|peka på|poängtera
-(refer)|syfta på
 (north)|norrut|nord|norr|
 (south)|syd|söder|södra|söderut|
 (east)|öst|öster|östra|österut|
 (west)|väst|väster|västra|västerut|
-(farthest, foremost, rearmost, perched)|längst <*plats|främst|bakerst|efterst|uppflugen|
+
+#Space: extent, boundaries and arrangement
+(extent)|utsträck|mätning|mått|mängd|mängder|utbredning|
+(adverb)|rumsadverb|
+(together)|tillsammans|
+(apart)|isär|åtskild|
+(connected)|kopplad|hör ihop|hänger ihop|samband|
+(uniform)|enhetlig|
+(cohesive)|Sammanhållen|(hålla den) röda tråden
+(latitude)|breddgrad|latitud|polhöjd
+(longitude)|längdgrad|longitud|
+(background)|bakgrund|bakgrunder|fond|fonder
+(foreground)|förgrund|förgrunder|front|fronter
+(reach)|räckvidd|räckvidder|spann(sl-pl)|räckhåll
+(spectrum)|spektrum|
+(range)|korträckviddig|långräckviddig|
+(edges)|underkant|överkant|
+(exceed)|överskrida|överskrider|överskred|överskridit|överstiga|överstiger|översteg|överstigit|
+(fallshort)|underskrida|understiga|
+(surplus)|överskott(sl-pl)|överflöd|överflödet|(vara)flott med|
+(deficit)|underskott|
+(queue)|kö|kön|köer|
 
 #Measurement, Counting
 (quantity)|kvantitativ|antal|belopp(sl-pl)(pengar)|summa|summor|klumpsumma|klumpanslag
@@ -1616,6 +1633,7 @@ Ursäkt|förevändning|täckmantel
 (heavy)|Tungt som bly
 (load)|last|belasta|belastning|belastningar|lass(sl-pl)|börda|bördor|frakt
 (mediocre)|medelmåttig|
+(measure)|uppmäta|uppmäter|uppmätte|uppmätt|uppmät|mäta upp|
 
 #Shapes, arrangements and conditions
 (shape)|form|formar|
@@ -1709,30 +1727,161 @@ Ursäkt|förevändning|täckmantel
 (dip)|svacka|svackor|
 (colourful, motley)|brokig|
 (mottled, striped, watered (fabric))|flammig|strimmig|vattrad|
+(opening)|öppning|inskärning|slits|hål|glugg|gluggar|tapp|tappar|por(liten)|porös|springa|springor|
+(loophole)|skottglugg|kryphål|
+(opening)|vernissage|vernissagen|invigning|inviga|inviger|invigde|invigt|invig|
 
-#Phases, Motion
+#Processes: general change and progression
+(proverb)|Ingenting är nytt under solen
+(fizzle)|Rinna ut i sanden|inte bli av|
+(proverb)|Övning ger färdighet
+(proverb)|Repetition är kunskapens moder|Upprepning är kunskapens moder
+(proverb)|Inget är så bra att det inte kan göras bättre
+(proverb)|Strö salt i såren|Dra undan mattan för någon
+(proverb)|Klappat och klart|Knyta ihop säcken
+(proverb)|Råttorna lämnar ett sjunkande skepp
+(it belongs there)|Var skall sleven vara om inte i grytan?
+(expression, on home ground)|På sin mammas gata
+(proverb)|Var skall sleven vara om inte i grytan
+(proverb)|alla känner apan, men apan känner ingen
+(turnoff)|<*stänga av|
+(expression)|Veta var skon klämmer|
+(proverb)|Det ordnar sig med blommorna, bara kärringen dör
+(proverb)|Nu är goda råd dyra
+(proverb)|Gå inte över ån efter vatten
+(proverb)|Klaga inte över för litet vind – lär dig segla
+(proverb)|Kläder efter väder
+(proverb)|Ta dagen som den kommer|Var dag har nog av sin egen plåga
+(proverb)|Den dagen, den sorgen|
+(proverb)|Kommer tid kommer råd|Tiden läker alla sår
+(proverb)|den som lever får se|Dra det längsta strået
+(proverb)|Vägen till helvetet är kantad med goda föresatser
+(expression)|Få en släng av sleven
+(chain)|En kedja är inte starkare än sin svagaste länk
+
+#Processes: stages, sequence and occurrence
 (phase)|fas|faser|skede|skeden(pl)|stadium|stadiet|stadier|etapp|etapper|säsong|milstolpe|milstolpar|
 (sequence)|nordningsföljd|turordning
 (course)|förlopp(sl-pl)|process|processer|skeende|skeenden(pl)|förfarande|handhavande
 (procedure)|förfarande|förfaranden|
 (finalstage)|slutskede|I grevens tid
+(occur)|utspela|ske|sker|skedde|skett|inträffa|till<*dra sig|<*äga rum|försig<*gå|Gå av stapeln|in<*falla|
+(happen)| <*bli av |blir någott av det|<*Komma till stånd|
+(occur)|förekomma|förekommer|förekom|förekommit|förekommande| ske | sker |skedde|skett|inträffa|inträffar|inträffade|inträffat|tilldra sig|tilldrar sig|tilldrog sig|tilldragit sig|
+(underway)|(vara) på väg (att)|(vara) på gång (att)|På G |
+(ongoing)|pågående|pågå|pågick|pågått|pågång|pågångar|
+(ongoing)|fortgående|fortgå|fortgick|fortgått|fortgång|fortgångar|
+(time)|mycket vatten har runnit/flutit under broarna sedan|
+(phase)|aggregationstillstånd|aggregationsfas
+
+#Processes: beginning and emergence
+(origin)|ursprung(sl-pl)|källa|källan|källor|tillblivelse|tillblivelsen|uppkomst|upphov(sl-pl)|skapelse|skapelser|mynna ut i
+(found)|instifta|inrätta|etablera|grunda
+(begin)|börja|starta|påbörja|<*sätta i gång|<*sätta igång|sjösätta
+(ready)|Kavla upp ärmarna|Ligga i startgroparna|spotta i nävarna
+(done)|Sagt och gjort
+(early)|(vara)I sin linda|
+(start)|utgå|föda|<*slå på|<*köra igång|<*köra i gång|<*få fart på|<*sätta fart(nu)|I farten
+(addition)|tillskott|tillskottet
+(beginner)|nybörjare|novis|nykomling
+(newlyarrived)|nyanländ|
+(beginning)|början|födsel|födslar|födelse|födelser|förlossning|förlossningar|inbrott|
+(childbirth)|barnafödande|
+(arise)|tillkomma|tillkommelse|
+(arise)|uppstå|uppstår|uppstod|uppstått|uppkomma|uppkommer|uppkom|uppkommit|uppkom|
+(sprout)|sprudla|<*slå rot|
+(initiate)|inleda|introducera|påbörja|införa|inför|införde|infört|
+(birth)|Se dagens ljus
+(introduction)|inledning|inledningar|förord(sl-pl)|företal(sl-pl)|introduktion|införande|
+(again)|På nytt|igen|Börja på ny kula
+(Start again)|sadla om(byta jobb)|damma av |
+(sprout)|spira|knoppas|
+
+#Processes: continuation, maintenance and duration
+(existence)|tillvaro|tillväxt|levnad
+(resume)|återupp<*ta|
+(resume)|återuppta|
+(still)|alltjämt|fortfarande
+(continue)|fortsätta|fortgå|pågå|kontinuera|fortlöpa|fortskrida|fortskrider|fortskred|fortskridit|fortskridande|fortsättning|fortsättningar|fort<*gå|
+(continuous)|kontinuerlig|ständig|stadigvarande|permanent|bestående|oupphörlig|fortlöpande|idelig|
+(maintain)|upprätthålla|vidmakthålla|bevara|bevare|be<*hålla
+(Maintain)|bibe<*hålla
+(exist)|finnas|finns|fanns|funnits|
+(stay)|vistas|vistas|vistades|vistats|vistande|<*befinna <*sig|uppehålla|uppehåller|uppehöll|uppehållit|uppehåll|vistelse|<*hålla hus|
+(fit)|rymmas|ryms|rymmes|rymdes|rymts|
+(host)|hysa|hyser|hyste|hyst|hys|härbärgera|
+(unstoppable)|ostoppbar|obändig|obändbar|hämningslös|ohejdad|ohejdbar
+
+#Processes: change, growth and development
+(change)|<*Vända blad|
+(Stir the pot,challenge status quo)|<*röra om i grytan|
+(progress)|Du kan inte ta dig an havet före sjön|En vandring på tusen mil börjar alltid med ett steg|Man måste lära sig krypa innan man kan gå
+(disturb)|rubba|rubbning|
+(disturb, change)|störa|rubba balansen|förskjuta|förrycka|
 (transition)|övergå|övergång|
 (change)|byta|byter|bytte|bytt|byt|
-(compensation)|vederlag(sl-pl)|ersättning|ersättningar
 (shift)|skift(sl-pl)|skifte|skiften(pl)|skifta|skiftar|skiftade|skiftat|skifta|skiftande
 (fluctuate)|fluktuera|variera|växla|omväxla|
 (change)|kan du växla en femtiolapp|växla pengar
 (transform)|omvandla|omvandling|förvandla|
-
 (uniform)|enahanda|enformig|enformighet|enformigheter|monoton
-(proverb)|Ingenting är nytt under solen
-(occur)|utspela|ske|sker|skedde|skett|inträffa|till<*dra sig|<*äga rum|försig<*gå|Gå av stapeln|in<*falla|
-(happen)| <*bli av |blir någott av det|<*Komma till stånd|
-(fizzle)|Rinna ut i sanden|inte bli av|
-(origin)|ursprung(sl-pl)|källa|källan|källor|tillblivelse|tillblivelsen|uppkomst|upphov(sl-pl)|skapelse|skapelser|mynna ut i
-(existence)|tillvaro|tillväxt|levnad
-(destination)|slutdestination|
-(found)|instifta|inrätta|etablera|grunda
+(adapt)|anpassa|anpassning|anpassningar|anpassa sig|anpassar sig|anpassade sig|anpassat sig|
+(adapt)|Ta seden dit man kommer|Man får ta seden dit man kommer|Simma med strömmen|tala med bönder på bönders vis
+(coordinate)|samordna|koordinera
+(develop)|utveckla|förändra|inveckla|invecklad|sofistikerad|avancera|framskrida|förändring|
+(disrupt)|Röra om i grytan
+(improve)|Ett strå vassare|
+(growup)|uppväxa|uppväxer|uppväxte|uppvuxit|uppväxt|<*växa upp|uppvuxen|
+(reshape)|omdana|omskapa|
+(grow)|växa|frodas|frodades|frodats|blomstra|fram<*växa|
+(grow)|Växa så det knakar|
+(matching)|matchande|På samma våglängd
+(mismatched)|Omaka|
+(overturn)|omstörta|omvälva|
+(reverse)|omvända|omvänder|omvände|omvänt|omvänd|omvändelse|
+(upheaval)|omvälvning|omvandling|omvälvningar|omvandlingar|förvandling|
+(improve)|förbättra|Förkovra|Förkovring|
+(streamline)|effektivisera|effektivera|effektiv|
+(worsen)|försämra|förvärra
+(raw)|rå |rått|ofullbordad|råa|mogen|moget|mogna|
+(finished)|färdig|fullbordad|sluförd|överstökat|avslutad|
+(growth)|tillväxt|
+(different)|Andra bullar
+(side trip)|avstickare(sl-pl)|avstickarn|avvikelse|avvikelser|undantag(sl-pl)|avsteg(sl-pl)|
+
+#Processes: stopping, interruption and cancellation
+(stop)|stanna|
+(abolish)|slopa|avskaffa|avveckla|fasa ut|
+(thwart)|kullkasta|förhindra|omintetgöra|omöjliggöra|
+(avert)|avvärja|avvärjer|avvärjde|avvärjt|avvärj|parera|avstyra
+(recall)|återkallelse|återkalla|
+(irreversible)|oåterkallelig|irreversibel
+(stop)|Sluta|slut|upphöra|upphörde|upphört|upphör|uppehålla|ned<*lägga|<*lägga ned|lägga av
+(end)|<*ta slut|På upphällningen|Sjunga på sista versen
+(end)|Lida mot sitt slut
+(interrupt)|avbryta|avbryter|avbröt|avbrutit|avbryt|
+(snap)|Bita av någon
+(writeoff)|av<*skriva|preskribera|<*lägga ned|
+(slow)|bromsa|inskränka|begränsa|<*hålla igen|ransonera
+(intervene)|ingripa|ingriper|ingrepp|ingripit|ingrip|intervenera|<*ta i (något/någon)|
+(mediate)|medla|medlare|
+(stop)|stoppa|hejda|hämma|hämning|bromsa|hindra|hinder|stävja|stjälpa|stjälper|stjälpte|stjälpt|hämsko|stoppning|stoppningar|(sätta)<*ställa sig i vägen|
+under<*trycka|dämpa|förkväva|tillbaka<*hålla
+(Resist)|motstå|mota( bort)|<*simma mot strömmen|<*hålla .* stången|streta emot
+(vanish)|förgå|förlora|försvinna|skingra|lätt fånget, lätt förgånget|
+(vanish)|puts väck|borttrolla|
+(finish)|avsluta|utagerad|avslutning|avslut|avslutad|avrunda|tänka på refrängen|
+(end)|Sätta punkt för något|
+(ending)|avslutning|epilog|
+(cancel)|<*ställa in(vdg.)|avblåsa|upphäva|upphäver|upphävde|upphävt|upphäv|upphävande|annulera|nedlägga
+(cancelled)|nedlagd
+(final)|ultimat|slutgiltig|definitiv|orygglig
+(Endpoint)|Ändpunkt|
+(once)|En gång för alla
+(closing)|finissage|finissagen|
+
+#Creating, building and manufacturing
+(cast)|gjuta|gjuter|göt|gjutit|hälla| ösa|öser | öste| öst|
 (form)|bilda|utgöra|skapa|alstra|smida
 (design)|utforma|gestalta|designa
 (formulate)|formulera|
@@ -1748,184 +1897,59 @@ Ursäkt|förevändning|täckmantel
 (phantom)|fantombild|
 (manufacture)|tillverka|framställa
 (produce)|fram<*ta|framtagen|framtaget| <*ta fram |<*få fram|
-(begin)|börja|starta|påbörja|<*sätta i gång|<*sätta igång|sjösätta
-(ready)|Kavla upp ärmarna|Ligga i startgroparna|spotta i nävarna
-(done)|Sagt och gjort
-(early)|(vara)I sin linda|
-(start)|utgå|föda|<*slå på|<*köra igång|<*köra i gång|<*få fart på|<*sätta fart(nu)|I farten
-(addition)|tillskott|tillskottet
-(beginner)|nybörjare|novis|nykomling
-(newlyarrived)|nyanländ|
-(beginning)|början|födsel|födslar|födelse|födelser|förlossning|förlossningar|inbrott|
-(childbirth)|barnafödande|
-(occur)|förekomma|förekommer|förekom|förekommit|förekommande| ske | sker |skedde|skett|inträffa|inträffar|inträffade|inträffat|tilldra sig|tilldrar sig|tilldrog sig|tilldragit sig|
-(arise)|tillkomma|tillkommelse|
-(arise)|uppstå|uppstår|uppstod|uppstått|uppkomma|uppkommer|uppkom|uppkommit|uppkom|
-(appear)|visa (sig)|framstå|
-(sprout)|sprudla|<*slå rot|
-(initiate)|inleda|introducera|påbörja|införa|inför|införde|infört|
-(birth)|Se dagens ljus
-(introduction)|inledning|inledningar|förord(sl-pl)|företal(sl-pl)|introduktion|införande|
-(enter)|inträda|inträder|inträdde|inträtt|inträd|<*stiga in|infart|påfart|påfarter|
-(again)|På nytt|igen|Börja på ny kula
-(Start again)|sadla om(byta jobb)|damma av |
-(resume)|återupp<*ta|
-(ignite)|tända|tänder|tände|tänt|tändning|tändningar|tända|tändning|tändningar|
-(ignite)|antända|antändande|tändlig
-(dive)|dyka|dyker|dök|dykte|dykt|
-(emerge)|<*dyka upp|framträdda|framträder|framträdde|framträtt
-(open)|öppna|öppet|
-(wideopen)|På vid gavel
-(ajar)|på glänt|halvöppen
-(opening)|öppning|inskärning|slits|hål|glugg|gluggar|tapp|tappar|por(liten)|porös|springa|springor|
-(loophole)|skottglugg|kryphål|
-(punch)|hålslagare|
-(puncture)|punktering|punkteringar|punka|punkor
-(prime)|I sin glans dagar|I sina bästa år
-(close)|stänga|lycka|lycker|lyckte|lyckt
-(closeddoor)|Bakom lyckta dörrar
-(resume)|återuppta|
-(still)|alltjämt|fortfarande
-(continue)|fortsätta|fortgå|pågå|kontinuera|fortlöpa|fortskrida|fortskrider|fortskred|fortskridit|fortskridande|fortsättning|fortsättningar|fort<*gå|
-(continuous)|kontinuerlig|ständig|stadigvarande|permanent|bestående|oupphörlig|fortlöpande|idelig|
-(maintain)|upprätthålla|vidmakthålla|bevara|bevare|be<*hålla
-(Maintain)|bibe<*hålla
-(exist)|finnas|finns|fanns|funnits|
-(stay)|vistas|vistas|vistades|vistats|vistande|<*befinna <*sig|uppehålla|uppehåller|uppehöll|uppehållit|uppehåll|vistelse|<*hålla hus|
-(fit)|rymmas|ryms|rymmes|rymdes|rymts|
-(host)|hysa|hyser|hyste|hyst|hys|härbärgera|
-(underway)|(vara) på väg (att)|(vara) på gång (att)|På G |
-(ongoing)|pågående|pågå|pågick|pågått|pågång|pågångar|
-(ongoing)|fortgående|fortgå|fortgick|fortgått|fortgång|fortgångar|
-(stop)|stanna|
-(adapt)|anpassa|anpassning|anpassningar|anpassa sig|anpassar sig|anpassade sig|anpassat sig|
-(adapt)|Ta seden dit man kommer|Man får ta seden dit man kommer|Simma med strömmen|tala med bönder på bönders vis
-(dress)|Kläder efter väder|
-(coordinate)|samordna|koordinera
-(develop)|utveckla|förändra|inveckla|invecklad|sofistikerad|avancera|framskrida|förändring|
-(disrupt)|Röra om i grytan
-(improve)|Ett strå vassare|
-(time)|mycket vatten har runnit/flutit under broarna sedan|
 (build)|bygga|bygger|byggde|byggt|konstruera|
-(growup)|uppväxa|uppväxer|uppväxte|uppvuxit|uppväxt|<*växa upp|uppvuxen|
-(reshape)|omdana|omskapa|
-(grow)|växa|frodas|frodades|frodats|blomstra|fram<*växa|
-(sprout)|spira|knoppas|
-(grow)|Växa så det knakar|
-(matching)|matchande|På samma våglängd
-(mismatched)|Omaka|
-(practice)|utöva|utövning
-(Put to practice)|om<*sätta|
-(proverb)|Övning ger färdighet
-(proverb)|Repetition är kunskapens moder|Upprepning är kunskapens moder
-(drill)|traggla|traggel|traggler|tragglat|traggla sig igenom|tröska igenom|
-(thresh)|tröska|tröskning|tröskverk|tröskverk|
-(abolish)|slopa|avskaffa|avveckla|fasa ut|
-(demolish)|rasera|<*riva ned|rivning
-(overturn)|omstörta|omvälva|
-(thwart)|kullkasta|förhindra|omintetgöra|omöjliggöra|
-(avert)|avvärja|avvärjer|avvärjde|avvärjt|avvärj|parera|avstyra
-(destroy)|förgöra|förinta|tillintetgöra|utrota|utplåna
-(perish)|Gå under
-(reverse)|omvända|omvänder|omvände|omvänt|omvänd|omvändelse|
-(upheaval)|omvälvning|omvandling|omvälvningar|omvandlingar|förvandling|
-(recall)|återkallelse|återkalla|
-(return)|återvändo|återvända|återvände
-(irreversible)|oåterkallelig|irreversibel
-(improve)|förbättra|Förkovra|Förkovring|
-(proverb)|Inget är så bra att det inte kan göras bättre
-(streamline)|effektivisera|effektivera|effektiv|
-(worsen)|försämra|förvärra
-(proverb)|Strö salt i såren|Dra undan mattan för någon
-(raw)|rå |rått|ofullbordad|råa|mogen|moget|mogna|
-(finished)|färdig|fullbordad|sluförd|överstökat|avslutad|
-(proverb)|Klappat och klart|Knyta ihop säcken
-(growth)|tillväxt|
-(pursue)|förfäkta|driva|köra|
-(stop)|Sluta|slut|upphöra|upphörde|upphört|upphör|uppehålla|ned<*lägga|<*lägga ned|lägga av
-(end)|<*ta slut|På upphällningen|Sjunga på sista versen
-(end)|Lida mot sitt slut
-(departure)|uppbrott|
-(interrupt)|avbryta|avbryter|avbröt|avbrutit|avbryt|
-(snap)|Bita av någon
-(writeoff)|av<*skriva|preskribera|<*lägga ned|
-(slow)|bromsa|inskränka|begränsa|<*hålla igen|ransonera
-(intervene)|ingripa|ingriper|ingrepp|ingripit|ingrip|intervenera|<*ta i (något/någon)|
-(mediate)|medla|medlare|
-(stop)|stoppa|hejda|hämma|hämning|bromsa|hindra|hinder|stävja|stjälpa|stjälper|stjälpte|stjälpt|hämsko|stoppning|stoppningar|(sätta)<*ställa sig i vägen|
-under<*trycka|dämpa|förkväva|tillbaka<*hålla
-(Resist)|motstå|mota( bort)|<*simma mot strömmen|<*hålla .* stången|streta emot
-(Mark presence)|markera sig|
-(encounter)|St<*öta på patrull
-(unstoppable)|ostoppbar|obändig|obändbar|hämningslös|ohejdad|ohejdbar
-(numb)|domna|förlamas|bedövas|söv<*ae
-(vanish)|förgå|förlora|försvinna|skingra|lätt fånget, lätt förgånget|
-(shoo)|Fara och flyga|Få fötter
-(fail)|torska|åka dit( på)|misslyckas( med)|Sjunka som en sten|Gå bet på något
-(futile)|Ett slag i luften
-(ruined)|Det blev pannkaka av alltihop|Det är kört
-(scatter)|Sprids som askan för vinden|Bita i gräset
-(sour)|Surt, sa räven om rönnbären|
-(zero)|kamma noll
-(disaster)|Kapitalt misslyckande
-(vanish)|puts väck|borttrolla|
-(exit)|gå ut|utträda|utträder|utträdde|utträtt|utträde|utträden(pl)|utgång|lämna|utfart|avfart|avfarter|
-(die)| dö |dör|dog|dött|avlida|avlider|avled|avlidit|<*gå bort|krevera|duka under
-(About to go under)|försmäkta
-(deceased)|avliden|bortgången
-(perish)| om<*komma(i olycka t.e.)|förolyckas|<*vara med om en olycka|Fara å färde
-Påkörd
-(kill)|död|dödar|avliva|mörda|mord(sl-pl)|mordet|<*slå ihjäl|frånfälle|frånfällen(pl)
-(perish)|<*gå under|undergång|krevera
-(proverb)|Råttorna lämnar ett sjunkande skepp
-(wither)|vissna|bli vissen|
-(rot)|röta|ruttna|förruttna|förruttnelse|förruttnelser|
-(ferment)|jäsa|jäser|jäste|jäst|jäsning|jäsningar|fermentera|
-(finish)|avsluta|utagerad|avslutning|avslut|avslutad|avrunda|tänka på refrängen|
-(triumphant)|Flaggan i topp
-(end)|Sätta punkt för något|
-(finalblow)|Sätta in nådastöten|
-(ending)|avslutning|epilog|
-(farewell)|avsked|farväl|skilsmässa|
-(arrive)|anlända|an<*komma|ankomst|ankomster|<*komma fram|
-(arrived)|framkommen
-(departure)|avresa|avresor|
-(used)|begagnad|beggad|
-(wreck)|skrälle|skrällen(pl)|
-(old)|gammal|gamla|gamle|
-(antiquity)|forntid|forntider|
-(outdated)|omodern|mossig|föråldrad|förlegad|urmodig|ålderdomlig|gammaldags|
-(modern)|modern|alamodisk|nutida|aktuell|trendig|på modet|trending|På tapeten|modefluga
-(brandnew)|sprillans ny|
-(belong)|tillhöra|tillhör|tillhörde|tillhört|tillhörighet|
-(it belongs there)|Var skall sleven vara om inte i grytan?
-(expression, on home ground)|På sin mammas gata
-(proverb)|Var skall sleven vara om inte i grytan
-(related)|samhörande
-(possess)|besitta|inneha
-(include)|inkludera|innefatta|innehålla|inbegripa|omfatta|<*bestå av|
-(Included)|inklusive| på köpet|
-(inside)|innanmäte|
-(exclude)|exkludera|utesluta|porta|bannlysa|förvisa|bortvisa|utvisa|utslagen|rata|bannlysa|bannlyst|
-(eliminate)|eliminera|uteslutning|uteslutningar|exkludering|exkluderingar|utanförskap|
-(redundant, leftout)|<*Känna sig som femte hjulet under vagnen
-(proverb)|alla känner apan, men apan känner ingen
-(excluded)|utestängd|
+
+#Physical handling: fastening, joining and placing
+(balance)|uppväga|balansera|
 (remove)| <*ta bort|undanröja|<*lägga bort|
-(burn)|bränna|
-(flames)|(stå) I ljusan låga|
-(extinguish)|släcka|slockna|
-(turnoff)|<*stänga av|
-(extinguished)|utslockna|
-(fade)|blekna|
-(cancel)|<*ställa in(vdg.)|avblåsa|upphäva|upphäver|upphävde|upphävt|upphäv|upphävande|annulera|nedlägga
-(cancelled)|nedlagd
-(final)|ultimat|slutgiltig|definitiv|orygglig
-(Endpoint)|Ändpunkt|
-(once)|En gång för alla
-(hibernate)|övervintra|<*gå i ide|<*ligga i ide|
-(survive)|överleva|
-(phase)|aggregationstillstånd|aggregationsfas
+(fasten)|fästa|fastsätta|häfta|fastna|stadga|<*etsa <*sig fast|förankra|förtöja|förtöjning|fastgöra|<*dra åt|bälta
+(Pull to fasten)|<*dra åt|
+(mount)|infästning|fastsatt|
+(cling)|klänga( sig fast)|klamra|
+Hak<*a upp (sig)|
+(nail)|nagla|fastnagla|
+(loosen)|lossa|lossna|lös|lösgöra|riva|avlägsna|lockern|avsliten|lössliten|glappa(sitta lös t.e skor)|
+(tie)|knyta|knyter|knöt|knutit|knyt|
+(key)|nyckel|nyckelar|
+(lock)|lås(sl-pl)|låsa|låser|låste|låst|låsning|låsningar|
+(loosen)|luckra upp|
+(surround)|om<*ge|omringa|om<*sluta|innesluta|inneslutning|inneslutningar|innesluten
+(screen off)|skärma av|
+(tie)|knytta|knyter|knöt|knutit|binda|binder|band(sl-pl)|bundit|
+(shackle)|fjättra|tjudra
+(combine)|kombinera|sammanfläta|sammanbunden|sammankopplad|<*slå ihop
+(wrap)|linda|inlinda|insvepa|insveper|insvepte|insvept|insvep|vira|slingra(  sig)|sno sig|
+(separate)|avskilja|separera|
+(apart)|(vara) ifrån varann|
+(install)|installera|inställning
+(sew)|sy|
+(put)|sätta|sätter|satte|satt|<*sätta på
+(place)|ställa|ställer|ställde|ställt|
+(lay)|lägga|lägger|lade|la|lagt|lägg|placera|
+(preserve)|inlägga|inlägger|inla|inlagt|inlägg(sl-pl)|inläggning|inläggningar|
+(Set aside)|av<*sätta
+(join)|foga|
+(joint)|fogmassa|fogmassor|kitt|skarv|
+(set up)|uppsätta|uppsätter|uppsatte|uppsatt|montera|installera|placera|<*sätta upp|upprätta|rigga|
+(hang)|hänga|
+(hanger)|galge|galgar
+(embed)|inbädda|inbäddning|inbäddningar|
+(insert)|infoga|infogning|infogningar|foga in|inpassa|inpassning|inpassningar|
+(tinker)|mixtra|manipulera
+(load)|ladda|
+(plug)|täppa|täpper|täppte|täppt|tapp|tappar|propp|proppar|
+(cover)|täcka|täcker|täckte|täckt|täckning|täckningar|täcke|täcken(pl)|<*dra för (t.e. fönster)|för<*dra|
+Täckmantel
+(seal)|tätna över|
+(lid)|lock(sl-pl)|
+(sealed)|förseglad|sigill|försegla|besegla|
+(leak)|läcka|läcker|läckte|läckt|
+(leak)|Läcka som ett såll
+(tighten)|tätna|glesna|
+(densify)|förtäta|
+(level)|utjämna|
+
+#Physical states, strength and stability
 (state)|fast|flytande|
 (liquid)|vätska|
 (evaporate)|avdunsta|evaporera|gas|gaser|ånga|ångor|plasma|torr|
@@ -1936,56 +1960,37 @@ Påkörd
 (fog)|dimma|dimmor|
 (frost)|tjäle|
 (foam)|skum|skummet|lödder|löddret|fradga|fradgan|löddra(in)|
-(saliva)|saliv|
 (dry)|torka|torr|blåsa
-(Wipe off)|<*torka av|
 (expression, dry as a bone/dust)|Torrt som fnöske
-(solve)|lösa|löser|löste|löst|lös|löses|klara ut (problem)|
-(expression, Case closed)|Saken är biff
-(solution)|upplösning|upplösningar|
-(effort)|Lägga manken till
-(expression)|Veta var skon klämmer|
-(proverb)|Det ordnar sig med blommorna, bara kärringen dör
-(proverb)|Nu är goda råd dyra
-(proverb)|Gå inte över ån efter vatten
-(proverb)|Klaga inte över för litet vind – lär dig segla
-(proverb)|Kläder efter väder
-(retaliate)|Ont ska med ont fördrivas
-(proverb)|Ta dagen som den kommer|Var dag har nog av sin egen plåga
-(proverb)|Den dagen, den sorgen|
-(survive)|(Leva) ur hand i mun|
-(proverb)|Kommer tid kommer råd|Tiden läker alla sår
 (solid)|solid|fast|stadig|stabil|gedigen|pålitlig|gediget|
 (robust)|robust|oöm|oömma|
-(fasten)|fästa|fastsätta|häfta|fastna|stadga|<*etsa <*sig fast|förankra|förtöja|förtöjning|fastgöra|<*dra åt|bälta
-(Pull to fasten)|<*dra åt|
-(mount)|infästning|fastsatt|
-(cling)|klänga( sig fast)|klamra|
-Hak<*a upp (sig)|
-(nail)|nagla|fastnagla|
 (unstable)|rörlig|instabil|ostadig|skranglig|ranglig|vinglig|vacklande|röran|
-(loosen)|lossa|lossna|lös|lösgöra|riva|avlägsna|lockern|avsliten|lössliten|glappa(sitta lös t.e skor)|
-(tie)|knyta|knyter|knöt|knutit|knyt|
-(solvable)|lösbar|olösbar|
-(key)|nyckel|nyckelar|
-(lock)|lås(sl-pl)|låsa|låser|låste|låst|låsning|låsningar|
 (big)|stor|stöddig|kraftig
 (strength)|styrka|styrkor|
 (lack)|brist|bristen|brister|
-(loosen)|luckra upp|
 (eroded)|urgröpt|urholkad|försvagat|uppluckrat|undergräva|undergrävning|undergrävningar|
 (strengthen)|förstärkat|kraftsamla|kraftsamling|förstärka|förstärker|förstärkte|förstärkt|förstärkning|förstärkningar|
 (fullblast)|fullt ös|För allt vad tygen håller
 (weaken)|försvaga|försvagning|urholka
-(plot)|tomt|tomten|tomter|fastighet|kvarter|kvarter(sl-pl)|
-(surroundings)|omgivning|omgivningar|omvärld|omnejd|omgivande|inramning
-(surround)|om<*ge|omringa|om<*sluta|innesluta|inneslutning|inneslutningar|innesluten
 (narrow)|smalna av|avsmalna|avsmalnande
+(full)|fullsatt|fullspikad(vard.)|fullbelagd|fullbelagt|
+(dense)|tät|packad|ogenomtränglig|kompakt|
+(watertight)|vattentät|
+(sparse)| gles |spridd|utspridd|Tunnsådd|
+(tight)|tätt|tajt|åtsmitande|trång
+
+#Outcomes, victory, defeat and rewards
+(fail)|torska|åka dit( på)|misslyckas( med)|Sjunka som en sten|Gå bet på något
+(futile)|Ett slag i luften
+(ruined)|Det blev pannkaka av alltihop|Det är kört
+(sour)|Surt, sa räven om rönnbären|
+(zero)|kamma noll
+(disaster)|Kapitalt misslyckande
+(triumphant)|Flaggan i topp
 (outcome)|utfalla|utfaller|utföll|utfallit|utfall|slutresultat|resultera|<*visa sig vara|
 (Impact)|genomslag|
 (domino)|Falla som dominobrickor
 (conquer)|erövra|besegra|vinna (över)|spöa(ngn)|Sopa golvet med någon|
-(proverb)|den som lever får se|Dra det längsta strået
 (subdue)|kuva|betvinga|underkuva|nedkämpa|nedslå|segra
 (victory)|Seger|segrar|viktoria|viktorior|triumf|triumfer
 (lose)|förlora|mista|mister|miste|mistade|mist|mistat|förlust|förluster|
@@ -1993,16 +1998,20 @@ Hak<*a upp (sig)|
 (setback)|bortfall(sl-pl)|avbräck(sl-pl)|åderlåtning|motgång|bakslag|
 (failure)|misslyckande|missräkning|missräkningar|fiasko|fiaskon|flopp|floppar|bottennapp|bottennappar|
 (recover)|återfinna|återfå fattningen
-(proverb)|Vägen till helvetet är kantad med goda föresatser
 (deserve)|förtjäna
-(expression)|Få en släng av sleven
 (share)|Sin beskärda del
 (reward)|belöning|belöningar|pris|priser|utmärkelse|utmärkelser|medalj|medaljer
 (rewarding)|givande|
 (reward)|belöna|premiera
-(opening)|vernissage|vernissagen|invigning|inviga|inviger|invigde|invigt|invig|
-(closing)|finissage|finissagen|
-#Activities
+
+#Physical handling: opening and closing
+(open)|öppna|öppet|
+(wideopen)|På vid gavel
+(ajar)|på glänt|halvöppen
+(close)|stänga|lycka|lycker|lyckte|lyckt
+(closeddoor)|Bakom lyckta dörrar
+
+#Activities, participation and involvement
 (activity)|aktivitet|aktiviteter|verksamhet|
 (involve)|inblanda|blanda in|inblandad|insyltad|insyltning|
 (involve)|involvera|Ha ett finger med i spelet
@@ -2010,6 +2019,8 @@ Hak<*a upp (sig)|
 (errand)|ärende|
 
 #Physical appearance
+(attraction)|Sevärdheter|lockelse|attraktion|attraktioner|dragning|dragningar|
+(beauty)|Vill man vara fin får man lida pin
 (kid, brat)|glin(sl-pl)|småglin|glinet|
 (kid, little boy)|knodd|knoddar|
 (tall, imposing)|reslig
@@ -2125,6 +2136,7 @@ Hak<*a upp (sig)|
 (sweaty)|svettig|svettas|svettades|svettats|svettning|svettningar|svett|
 
 #Conditions, states
+(fit)|passa|
 (circumstance)|omständighet|omständigheter|situation|situationer|läge|lägen(pl)|
 (stand)|stå till|
 (unnecessary)|onödig| i onödan|Opåkallad|Opåkallat|
@@ -2154,7 +2166,6 @@ Hak<*a upp (sig)|
 (good)|bra|sjyst|häftig|hyfsad|frän|hygglig|anständig|rimlig|skälig|
 (expression, keeping body and soul together, still in one piece)|Huvudet upp och fötterna ned
 (expression, in your element, at your best)|I sitt esse
-(expression, go like clockwork, run smoothly)|Gå som en dans|Gå som på räls|Gå som på smorda bakplåtar|Gå som smort|Gå som tåget|Rulla på|
 (expression, come full circle)|Cirkeln är sluten|
 (expression, no worries, take it easy)|Lugna puckar
 (decent)|hövisk|anständig|skaplig|
@@ -2203,7 +2214,14 @@ Hak<*a upp (sig)|
 (other)|övrig|
 (diversify)|diversifiera|Lägg inte alla ägg i samma korg
 
+#Conditions: comfort, pleasantness and discomfort
+(pleasant)|skön|härlig|behaglig|ljuvlig|trevlig|ljuv|trevsam|tilltalande|ljuv|
+(nice)|angenäm|piffig|piffa|
+
 #Conditions - normality
+(outdated)|omodern|mossig|föråldrad|förlegad|urmodig|ålderdomlig|gammaldags|
+(modern)|modern|alamodisk|nutida|aktuell|trendig|på modet|trending|På tapeten|modefluga
+(brandnew)|sprillans ny|
 (peculiar)|besynnerlig|konstig|egendomlig|underlig|märklig|märkvärdig|bisarr|knäppgök
 (expression, talk through your hat, talk nonsense)|Prata i nattmössan
 (murky)|dunkel|skum|Osa katt
@@ -2230,6 +2248,13 @@ Hak<*a upp (sig)|
 (castoff)|Kasta loss
 
 #Health and diseases, problems
+(fainting)|medvetslös|medvetet|svimma|dåna|tuppa av
+(addiction)|<*Vara som ett gift|
+(breathing)|andning|andas|andades|andats|utandning|
+(toilet)|naturbehov(sl-pl)|skita|skiter|sket|skitit|bajsa|avföring|avföra|
+(toilet)|dass(sl-pl)|toalett|toaletter|mugg(slang)|
+(urinate)|pissa|kissa|pinka(vdg.barnslig)| <*Slå en sjua|<*Gå bakom knuten|Kasta vatten
+(numb)|domna|förlamas|bedövas|söv<*ae
 (unconscious, faint)|medvetslös|svimma|dåna|tuppa av|
 (stretcher)|bår|bårar|
 (wheezy, rattling)|rossig|
@@ -2328,6 +2353,8 @@ Hak<*a upp (sig)|
 (anomaly)|anomali|anomalier|rubbning|rubbningar|
 
 #Finance, economy, business
+(moneytrouble)|penningbekymmer(sl-pl)|bekymret|bekymmer
+(compensation)|vederlag(sl-pl)|ersättning|ersättningar
 (income)|intäkt|intäkter|inkomst|inkomster|
 (income)|inkomst|
 (turnover)|omsättning|omsättningar|
@@ -2432,6 +2459,7 @@ Hak<*a upp (sig)|
 (valuables)|värdesaker|värdeföremål
 (regular customer)|stamkund|stamkunder|stammis|stammisar|
 (indebted)|den som är satt i skuld är icke fri
+(prosperity)|välstånd|välfärd|
 
 #Animals, birds and characteristics
 (animal)|djur(sl-pl)|
@@ -2536,6 +2564,9 @@ Hak<*a upp (sig)|
 (antler)|hjorthorn|hjorthornen|horn|hornen|horn(sl-pl)|
 
 #Security, safety
+(risk)|Friskt vågat hälften vunnet|
+(risk)|rasrisk
+(tripwire)|snubbeltråd|
 (be involved in an accident)|<*vara med om en olycka|
 (danger is afoot)|Fara å färde|
 (safe)|säker|säkra|säkerhet|skottsäker
@@ -2601,7 +2632,6 @@ Hak<*a upp (sig)|
 (hum)|surra|brumma|morra
 (whisper)|viska
 (whistle)|vissla|tissla|tassel|tissel|tissla och tassla
-
 (snore)|snarka|Dra timmerstockar
 (gargle)|gurgla( sig)|gurgling|
 (jingle)|bjällerklang|klang|klangar|
@@ -2671,7 +2701,9 @@ Hak<*a upp (sig)|
 (flourish)|trudelutt|kort melodi|trudelutter|
 (meow)|jama|
 (Criak)|kväka
+
 #Light
+(fade)|blekna|
 (sparkle)|glittra|blänka|blänker|blänkte|blänkt|glisa|glänsa|skina|lysa|stråla|gassa|
 (shiny)|Blank som en spegel
 (bling)|blinga|
@@ -2707,8 +2739,9 @@ Hak<*a upp (sig)|
 (reddish)|rödlätt|rödaktig
 
 #Transport
+(traveller)|resenär|resenärer|passagerare(sl-pl)|
+(destination)|slutdestination|
 (hit by a vehicle)|Påkörd|
-(arrived)|framkommen
 (vehicle)|transportmedel|färdmedel|fordon|fordonsslag|
 (cart)|vagn|kärra|kärror|bil|pirra|
 (van, lorry)|Skåpbil|lastbil|
@@ -2750,6 +2783,8 @@ Hak<*a upp (sig)|
 (platform)|perrong|perronger|station|stationer|plattform|plattformar|
 (quay)|kaj|kajer|brygga|bryggor|pir|pirar|
 (buoy)| boj | bojar |
+(drive)|köra|ratta|
+(front seat)|framsäte|baksäte|sätet|
 
 #Communication and language
 (communicate)|kommunicera|prata|tala|berätta|säga|<*säga till|tillsagt|tala ut|
@@ -2843,6 +2878,24 @@ Hak<*a upp (sig)|
 (ostracism)|Utfrysning|
 
 #Social relations
+(absence)|<*lysa med sin frånvaro
+(belittle)|förringa|spela ner|nedvärdera(f.)|underskatta(vdg.)|ringakta|efter<*sätta|försumbar|försummelse|<*se ner på(vdg.)|
+(Out socializing)|ute i svängen|
+(dependence)|beroende|avhängig|
+(reliance)|<*Sitta i knät på någon
+(interdependence)|ömsesidigt beroende|
+(independence)|självständig|På egna ben
+(selfreliance)|(bra karl)reder sig själv|(Man får)<*ta saken i egna händer|(Själv är )bästa dräng
+(leave)|låt mig vara|stör inte mig|lämna mig i fred
+(encounter)|stöta på|<*springa på|
+(visit)|besöka|
+(pay a congratulatory visit)|uppvakta(för att hylla)|
+(meet)|träffa|
+(Mark presence)|markera sig|
+(shoo)|Fara och flyga|Få fötter
+(farewell)|avsked|farväl|skilsmässa|
+(related)|samhörande
+(retaliate)|Ont ska med ont fördrivas
 (alone)|ensam|solitär|enslig|
 (individual)|individ|individer|person|snubbe|snubbar|
 (private)|enskild|i enrum|(prata )Mellan fyra ögon
@@ -2850,7 +2903,6 @@ Hak<*a upp (sig)|
 (isolate)|avskärma|isolera|
 (corner)|I skamvrån(som straff)|
 (cold)|Ute i kylan|
-
 (crowd)|folkmassan|flock|
 (behave)|<*förhålla <*sig| <*bete <*sig|<*uppföra <*sig|uppträda|<*bära sig åt|
 <*hålla <*sig på mattan
@@ -3030,6 +3082,17 @@ Hak<*a upp (sig)|
 (manners)|Veta hut|
 (slap)|knäpp på näsan|skälla ut|skälla på|
 (place)|Sätta någon på plats|Smäll på fingrarna
+(meddle)|<*lägga sig i saker|
+(foundation)|stiftelse|stiftelser|
+
+#Inclusion, exclusion and membership
+(include)|inkludera|innefatta|innehålla|inbegripa|omfatta|<*bestå av|
+(Included)|inklusive| på köpet|
+(exclude)|exkludera|utesluta|porta|bannlysa|förvisa|bortvisa|utvisa|utslagen|rata|bannlysa|bannlyst|
+(eliminate)|eliminera|uteslutning|uteslutningar|exkludering|exkluderingar|utanförskap|
+(redundant, leftout)|<*Känna sig som femte hjulet under vagnen
+(excluded)|utestängd|
+
 #Relationships
 (henpecked)|toffelhjälte(mot sin hustru/flickvän)|tofflare|toffelhjältar|
 (relationship)|förhållande|samband|relation|anförvant|anförvanter|släktträd(sl-pl)
@@ -3071,7 +3134,6 @@ Hak<*a upp (sig)|
 
 #Performances, shows, events
 (spin)|snurra
-
 (spectator)|åskådare(sl-pl)|åskådarn|tittare|publik|publiken
 (priority)|företräde|företräden(pl)|
 (prominent)|framstående|högtstående|eminent|distingerad|
@@ -3101,12 +3163,17 @@ hunsa|hundsfottera|köra över
 (order)|befallning|kommando|
 (attention)|lystring|hör upp|
 (urge)|uppmana|uppmaning|uppmaningar|inrådan|påbud(sl-pl)|dekret|förmana|upprop( offentlig uppmaning)
+(performance)|föreställning|föreställningar|pjäser|skådespel(sl-pl)|skådespeleri|skådespelerier|skådespeleriet
+(appear)|framträda|framträder|framträdde|framträtt|framträd|uppträda|uppträder|uppträdde|uppträtt|uppträd|
+(director)|regissör|regi|regissera|
+
 #Mental habits, conditions, personalities
 (embedded)|<*Sitta i väggarna
-
 (hermit)|eremit|
 (virginity)|svendom|svendomar|jungfrudom|jungfru|mödom|mödomar|oskuld|oskulder
 (lad)|sven|svenner|svenne|svennar
+
+#Personality: sensitivity, kindness and compassion
 (--heart related--)
 (callous)|känslokall|skoningslös|obarmhärtig|stram|
 (dulled, numb)|avtrubbad|
@@ -3114,6 +3181,8 @@ hunsa|hundsfottera|köra över
 (Tearful,sentimental)|gråtmild|sentimental|känslosam|
 (thoughtful)|Det är omtänksamt av dig
 (harmless)|Inte gör en fluga förnär
+
+#Personality: politeness, tact and consideration
 (--politeness, concern for others--)
 (polite)|artig|hövlig|
 (refined)|belevad|gentleman|kultiverad
@@ -3129,14 +3198,19 @@ försagd|modlös|klenmodig|förlägen (blyg och förvirrad)
 (rude)|oförskämd|oartig|ohövlig|uppkäftig|oblyg|ohyfsad|uppnosig|näsvis|
 (shameless)|skamlös|oanständig|fräck|hänsynslös|fara fram som ett yrväder|utan blygsel|
 (Blunt)|burdus|brysk|vilde|rättfram|taktlös
-(push)|Armbåga sig fram|Gå över lik
 (manners)|Hut går hem|fräckhet straffar sig
 (sarcastic)|spydig|uppkäftig|provocerande|Vass tunga|
 (rascal like behavior)|lymmel|ofog(sl-pl)|bus(sl-pl)|hyss(sl-pl)|stoj|glam|oskick|
+(consideration)|hänsyn(sl-pl)|beaktande|med hänsyn till|ta hänsyn till|beakta
+
+#Personality: forgiveness and open-mindedness
 (--forgiveness--)
 (turn other cheek)|Vända andra kinden till|
 (big-hearted)|vidsynt|storsint
 (narrowminded)|trångsynt|småaktig
+
+#Personality: courage and cowardice
+(expression, discretion is the better part of valour)|bättre fly än illa fäkta|
 (--bravery--)
 (cowardly)|feg|fegis| mes|mesig|mjäkig|pjoskig|ynkrygg|ynkryggar|
 (bold)|djärv|modig|orädd|frimodig|tapper
@@ -3146,10 +3220,15 @@ försagd|modlös|klenmodig|förlägen (blyg och förvirrad)
 (courage)|civilkurage|
 (go out on a limb)|Sticka ut hakan|
 risktagare
+
+#Personality: goodwill, malice and morality
+(push)|Armbåga sig fram|Gå över lik
 (--goodwill--)
 (mean)|elak|ond|illasinnad|lömsk|försåtlig|nedrig|ondska|elakhet|demon|demonisk
 (malice)|illvilja|
 (sin)|synd|synder|syndig
+
+#Personality: flexibility, stubbornness and steadfastness
 (--flexibility--)
 (welcoming)|välkommande|Öppna armar|
 (accommodating)|tillmötesgående|medgörlig|
@@ -3163,6 +3242,8 @@ risktagare
 (will)|Vilja av stål|ståndaktig
 (steadfast)|karaktärsfast
 (strict)|sträng|stram|strikt|<*ta i med hårdhandskarna|Maktfullkomlig
+
+#Personality: obedience, conformity and rebellion
 (--conformity--)
 (obedient)|foglig|lydig|följsam|lydnad|lydande|underlydande|undergiven|lydig|underdånig|
 (compliant)|undfallande|beskedlig|
@@ -3173,11 +3254,17 @@ risktagare
 (mischievious)|full i fan
 (defy)|trotsa|motstå|
 (oppose)|motarbeta|dissident|dissidenter|
+
+#Personality: loyalty and opportunism
 (--loyalty--)
 (opportunist)|Vända kappan efter vinden|
+
+#Personality: honesty and hypocrisy
 (--honesty--)
 (honest)|ärlig
 (hypocrite)|hycklare|hyckleri|hypokrisi|skenhelighet|fromleri|skrymteri|hyckla
+
+#Personality: sociability, reserve and shyness
 (--social interaction related--)
 (introvert)|introvert|inåtvänd|
 (shy)|folkskygg
@@ -3189,6 +3276,9 @@ risktagare
 (small pond)|Ankdamm
 (stalk)|stalka|
 (presence)|närvaro|närvaron|frånvaro|frånvaron|närvarande|I en annan värld
+(Needy)|klängig|bekräftelsesökande|
+
+#Personality: charisma, popularity and reputation
 (--social status, perception--)
 (charisma)|pondus|karisma|
 (unassailable)|oantastlig|
@@ -3196,6 +3286,8 @@ risktagare
 (popular)|berömd|(komma) i ropet|populär|känd|kändis|omtyckt|omskriven|omtalat|omtyckt|I rampljuset|känd
 (trending)|I ropet(tillfälligtvis)|På tapeten|
 (Defamous)|ökänd|ökänt
+
+#Personality: selfishness, greed and generosity
 (--selfishness--)
 (selfish)|självisk|egoistisk|egoism|egoist|egoister|
 (self interest comes first)|Man är alltid sig själv närmast
@@ -3207,6 +3299,9 @@ risktagare
 (petty)||småaktig
 (miserly)|knusslig(småsnål)|
 (generous)|generös
+
+#Personality: neatness, precision and practical coordination
+(clumsy)|drumla sig|drumla sig|klanta|
 (--neatness, organisation--)
 (punctual)|punktlig|punktlighet
 (clumsy)|töntig|tafatt|klumpig|drummel|tafflig(utan koord.)|tölp|tölpig|lurkig|fumlig|mupp|
@@ -3215,6 +3310,16 @@ risktagare
 (lacks practical knowledge)|(Ha) tummen mitt i handen|
 ()|redig
 (picky)|nogräknad|kräsen|sparsmakad|petig
+(careful)|noga|noggrann|omsorgsfull|grundlig|försiktig|varsam|utförlig|ingående|omsorgsfull|aktsam|
+(Conscientious)|samvetsgrann
+(proper)|Enligt konstens alla regler
+(cautious)|Gå som katten kring het gröt|Behandla någon med silkesvantar|<*skynda långsamt
+(pedantry)|pedanteri(överdriven noggrannhet)|pedant|pedanteri|pedantisk|pedantiskt|
+(sloppy)|slarvig|hafsig
+(careless)|lättvindig|utan omsorg(eller eftertanke)|
+
+#Personality: confidence, pride and arrogance
+(impress)|Visa sig från sin goda sida|
 (--confidence--)
 (cautious, uncertain)|Osvuret är bäst
 (help yourself, confident)|som tar för sig|
@@ -3228,6 +3333,11 @@ risktagare
 (dandy)|sprätt|snobb|arrogant|överlägsen|Stiga åt huvudet|snobberi
 (pretentious)|anspråksfull|pretentiös|pretto|förmäten(mycket)|övermodig|(Pretention)|pretention
 (Showoff)|skrytmåns
+
+#Personality: diligence, persistence and initiative
+(idleness, without plan)|<*Slå dank|<*Gå dit näsan pekar
+(persistence)|Droppen kan urholka stenen|
+(effort)|Lägga manken till
 (--effort--)
 (buckle up)|
 (cautious undertaking)|Gräv inte upp större sten än du kan bära|
@@ -3244,12 +3354,21 @@ risktagare
 (lazy)|lat|oföretagsam|slö|latmask(nedsättande)|slapp|
 (laze)|slappa
 (lethargic)|loj|slöfock|slöfockar|
+(Ta initiativ, aktivt)|<*gå i bräschen|
+
+#Personality: respect and dignity
 (--respect--)
 (respectful)|vördsam|respektfull|respekterad
 (respectable)|vördnadsbjudande|aktningsvärd|vördig
 (venerable)|ärevördig|
+
+#Personality: self-perception and self-pity
 (--self view--)
 (selfpitying)|självömkande|
+
+#Personality: temperament and emotional control
+(compulsion)|tvångsmässig|kompulsiv(f.)|
+(impulse)|instinktiv(f.)|spontan(vdg.)|I stridens hetta|i stundens hetta|
 (--temper--)
 (phlegmatic)|flegmatiker(sl-pl)|stilla
 (hotheaded)|hetsporre
@@ -3264,6 +3383,11 @@ risktagare
 (eccentric)|kuf|särling|ensamvarg|säregen
 (violent)|våldsam|aggressiv|angripande|
 (live fully)|(leva) I sus och dus|Leva loppan
+(flipped)|utflippad|
+(fool around)|tramsa|fjanta|larva( sig)|flamsa|stoja|fjant|flumma|spela allan
+(silly)|larvig|barnslig|fånig|tramsig|
+
+#Personality: talkativeness, eloquence and reserve
 (--talking--)
 (funny)|lustig|skojig|lättsam|
 (talkative)|pratig|pratsam|munvig|pratkvarn
@@ -3271,6 +3395,8 @@ risktagare
 (longwinded)|långrandig|harang|(lång )utläggning
 (eloquent)|vältalig|retorisk|retoriskt begåvad|retoriskt begåvade|elokvent|vältalighet|retorik|retoriker|retoriker|
 (taciturn)|tystlåten|inbunden|reserverad
+
+#Ability: intelligence, competence and experience
 (--intelligense, usefulness--)
 (born yesterday)|Född i farstun|
 (layman)|lekman
@@ -3334,9 +3460,17 @@ risktagare
 (sly)|illfundig|
 (outsmart)|överlista|listigare
 (maneuver)|Utmanövera|
+(handy)|händig|händighet|
+(practical)|praktisk|gångbar|praktikabel
+(proper way)|Så ska en slipsten dras|
+
+#Ability: distinctive strengths and resources
 (--special--)
 (founder)|grundare (av nåt)(sl-pl)|grundarn|instiftare(sl-pl)|skapare(sl-pl)|skaparn|upphovsmakare(sl-pl)|upphovsmakarn|
 (special, ace, a trump card)|Ess i rockärmen
+
+#Ability: creativity, imagination and ingenuity
+(improvise with limited resources)|trolla med knäna|
 (--creativity--)
 (creative)|kreativ|påhittig|originell|finurlig|fyndig|knepig|fiffig
 (improvise,create from limited resources)|koka soppa på en spik
@@ -3345,8 +3479,12 @@ risktagare
 (imagination)|fantasi|inbilla|<*föreställa <*sig|
 (Delusional)|inbilsk|
 (fanatic)|fanatisk|
+
+#Personality: piety and religious disposition
 (--religiousity--)
 (pious)|from|fromhet|from som ett lamm|
+
+#Personality: attitudes and general disposition
 (--overall--)
 (attitude)|inställning|inställningar|hållning|attityd|attityder|förhållningssätt(sl-pl)|
 (spank, hit)|dänga|dängor|
@@ -3354,7 +3492,10 @@ risktagare
 (double benefit)|två flugor i en smäll
 (clash)|Rimmar illa
 (timing)|Var sak har sin tid
+
 #Food, Drink, kitchen, Eating
+(expression, have another drink)|ta en i det andra benet också
+(ferment)|jäsa|jäser|jäste|jäst|jäsning|jäsningar|fermentera|
 (ferment)|jäsa|jäser|jäste|jäst|jäsning|jäsningar|fermentera|
 (sweetness)|sötma
 (eat)|vad äter ni till vardags
@@ -3515,7 +3656,13 @@ risktagare
 (hungry pigs)|Svultna svin rotar mest
 (pre-chewed)|färdigtuggade|
 
-#Clothes, Furnitures
+#Clothing and furnishings: general terms
+(lid)|lock|
+(strain, force)|krysta
+(handle)|handtag
+
+#Clothing, garments and dressing
+(dress)|Kläder efter väder|
 (fashion)|mode|moden(pl)|
 (dressup)|spöka(ut sig)|
 (clothes)|Kläderna gör mannen|Som man är klädd blir man hädd
@@ -3525,24 +3672,14 @@ risktagare
 (dress)| klä|klär|klädde|klätt|klä|k
 (put on)|<*ta på sig|
 (take off)|<*ta av sig|
-(furniture)|möbel|möbeln|möbler|
 (apron)|förkläde|förkläden(pl)|förklä|
 (glove)|handske|handskar|vante|vantar|muff|muffar|
-(knit)|insticka|sticka|
-(crochet)|virka|
 (sweatpants)|mysbyxa|
 (shirt)|skjorta|skjortor|blus|blusar|skjortblus|skjortblusar|
 (cardigan)|kofta|koftor|kappa|kappor|rock|rockar|jacka|jackor|kavaj|kavajer|väst|västar|
 (sweater)|tröja|tröjor|
 (braces, suspenders)|Hängsle|hängslen(pl)|
-(tarpaulin)|presenning|presenningar|tältduk|tältdukar|segelduk|segeldukar|
-(blanket)|filt|filtar|pläd|plädar|duntäcke
-(cover)|täcke|täcken(pl)|täckena|
 (shawl)|schal|schalar|sjal|sjalar
-(pillow)|kudde|kuddar
-(sheet)|lakan(sl-pl)|
-(towel)|handduk|handdukar|
-(napkin)|servett|servetter|
 (underwear)|kalsong|kalsonger|kalling|kallingar|underbyxa|underbyxor|trosa|trosor|byxa|byxor|bralla|brallor|
 (fly)|gylf|gylfar|blixtlås|
 (cap)|mössa|mössor|duschmössa|
@@ -3551,30 +3688,43 @@ risktagare
 (hood, bonnet)|hätta|hättor|
 (hood)|huv|huvar|
 (collar)|krage|kragar|
-(lid)|lock|
 (longsleeved)|långärmad|
 (veil)|slöja|slöjor|flor(sl-pl)
 (diaper)|blöja|blöjor|
 (belt)|bälte|bälten(pl)|kläddetalj|
 (belt)|livrem|livremmar|skärp(sl-pl)|svångrem|
 (buckle)|knäppe|knäppen(pl)|spänne|spännen(pl)|spänna|knäppa
-(strain, force)|krysta
-(handle)|handtag
 (shoe)|sko | skor|doja(slang)|dojor|skodd
 (boot)|stövel|stövlar|känga|kängor|pjäxa|pjäxor|
 (slipper)|toffel|tofflor|pantofflor|innesko|inneskor|toffla|
-(curtain)|gardin|gardiner|persienn|persienner|jalusi|jalusier|jalusin|jalusiner
 (armor)|brynja|brynjor
-(carpet)|matta|mattor|
-(hammock)|Hängmatta|
+(skirt)|kjol|kjolar|maxikjol
+
+#Textiles, fabrics and needlework
+(knit)|insticka|sticka|
+(crochet)|virka|
+(tarpaulin)|presenning|presenningar|tältduk|tältdukar|segelduk|segeldukar|
 (crepe)|kräpp|
-(bed)|bädd|bäddar|säng|sängar|
-(cradle)|vagga(for barn)|vaggor|
 (tannery)|garveri|
 (leather)|läder|
 (tanning)|garvning|
-(skirt)|kjol|kjolar|maxikjol
+
+#Furniture, furnishings and bedding
+(furniture)|möbel|möbeln|möbler|
+(blanket)|filt|filtar|pläd|plädar|duntäcke
+(cover)|täcke|täcken(pl)|täckena|
+(pillow)|kudde|kuddar
+(sheet)|lakan(sl-pl)|
+(towel)|handduk|handdukar|
+(napkin)|servett|servetter|
+(curtain)|gardin|gardiner|persienn|persienner|jalusi|jalusier|jalusin|jalusiner
+(carpet)|matta|mattor|
+(hammock)|Hängmatta|
+(bed)|bädd|bäddar|säng|sängar|
+(cradle)|vagga(for barn)|vaggor|
 (wardrobe)|garderob|
+(wardrobe)|garderob|
+(cabinet)|skåp(sl-pl)|skåpet|hylla|hyllor|skafferi|
 
 #Fruits, Vegetables
 (fruit)|frukt|frukter|
@@ -3585,6 +3735,8 @@ risktagare
 (citronella)|citronella
 
 #Buildings, houses etc
+(show)|Visa (runt)|visning|genomgång|husesyn|visningstur|visningsturer|visningsrunda|visningsrundor|
+(plot)|tomt|tomten|tomter|fastighet|kvarter|kvarter(sl-pl)|
 (warehouse, storehouse)|lagerlokal|Magasin|
 (housing)|boende|boendeform|
 (dwelling)|bostad|bostäder|bostadshus|bostadsområde|bostadsområden|boning|
@@ -3684,6 +3836,8 @@ risktagare
 (spa)|spa|spat|spaet|span(pl)
 (barn)|lada|lador|ladugård|ladugårdar|
 (cabinet)|skåp(sl-pl)|skåpet|hylla|hyllor|skafferi|
+(facility)|inrättning|anläggning|institution
+(institution)|anstalt(t.e. i skol eller vård)|
 
 #Geography and population
 (indigenous)|ursprungsbefolkning|
@@ -3711,6 +3865,8 @@ risktagare
 (colonize)|kolonisera|kolonisering|koloniseringar|
 
 #Cleaning
+(toiletry)|necessär|necessärer|toalettartiklar|toalettartikel|hygienartikel|hygienartiklar|
+(Wipe off)|<*torka av|
 (clean)|städa|städning|städningar|rensa|rensning|rensningar|
 (clean)|rengöra|rengöring|
 (hygiene)|hygien|hygienisk|
@@ -3764,6 +3920,8 @@ risktagare
 (Draincleaner)|propplösare
 
 #Body Parts, Accessories and Actions
+(inside)|innanmäte|
+(saliva)|saliv|
 (saliva)|saliv|
 (skeleton)|skelett(sl-pl)|stomme|
 (torso)|bål|bålar|torso|torson|torsoner|kropp|kroppar|
@@ -3865,6 +4023,8 @@ risktagare
 (pouch, scrotum)|pung|pungar|
 
 #Natural and derived elements
+(emit clouds of smoke)|bolma|
+(rot)|röta|ruttna|förruttna|förruttnelse|förruttnelser|
 (phase)|aggregationstillstånd|aggregationsfas
 (state)|fast|flytande|
 (liquid)|vätska|
@@ -3883,8 +4043,19 @@ risktagare
 (carbonic acid)|kolsyra|
 (gravity)|dragningskraft|
 (ore)|malm|malmer|järnmalm|kopparmalm|silvermalm
+(raw material)|råvara|råvaror|
+
+#Fire, burning and extinguishing
+(ignite)|tända|tänder|tände|tänt|tändning|tändningar|tända|tändning|tändningar|
+(ignite)|antända|antändande|tändlig
+(burn)|bränna|
+(flames)|(stå) I ljusan låga|
+(extinguish)|släcka|slockna|
+(extinguished)|utslockna|
 
 #Nature, Plants, Trees, Farming, Agriculture
+(thresh)|tröska|tröskning|tröskverk|tröskverk|
+(wither)|vissna|bli vissen|
 (nature)|natur|naturen|skog|skogar|skogsdunge|skogsdungar|skogsdung|lövskog|lund|lundar|lundskog|dungedungar|
 (virgin forest)|urskog|urskogar|djungel|djungler|
 (lush)|grönskande|
@@ -3897,7 +4068,6 @@ risktagare
 (biotope)|biotop|biotopar
 (plantation)|plantage|plantager|
 (agriculture)|jordbruk|
-
 (foraged)|vildplockat|vildplockning|vildplockningar|
 (bud)|knopp|knoppar|blomma|blommor|blomning|blomningar|blom|blomning|blomningar|
 (flower bud)|blomknopp|blomknoppar|blommande|blomster
@@ -4052,18 +4222,50 @@ risktagare
 (clay)|lera|morän|
 (flint)|flinta|
 (boulder)|stenblock|
+
 #Flowers
 (geranium)|geranier|geranium|pelargon|pelargoner|
 
-#Managing things, situations
+#Managing: care, handling and maintenance
+(neglect)|försumma|förbi<*se|
+(oversight)|<*Falla mellan stolarna|Låta udda vara jämnt
+(mismanage)|van<*sköta|vanvårda|mis<*sköta|misskötsel
+(fix)|greja|fixa|mecka|meckning|meckningar|meka|pula(in/med nåt)|dona (med)|pyssla(med)
+(function)|funger|funka|
+(workwell)|<*göra susen|<*Ta skruv|
+(break)|<*gå sönder|<*gå i kras|vittra(crumble)
+(jam)|kärva
 (manage)|hantera|behandla|hantering|hanteringar|omhänderta|omhändertagen|behandling|behandlingar|
 (handle)|God hand med
 (care for)|omhänderta|<*ta hand om |<*ta sig an |<*Se till att|(vara) rädd om|<*ta vara på|sköt om dig|sköt om er|
 (deal with)|<*bli kvitt (ngt)|<*få bukt med|<*ta itu med|
 (treat)|bemöta|bemöter|bemötte|bemött|
 (facilitate)|underlätta|Kratta manegen
+(care)|omtanke|omtankar|sörja|
+(provide)|tillhandahålla|tillhandahåller|tillhandahöll|tillhandahållit|
+(be offered)|tillhandahållas|bjudas|vankas|serveras
+(manage)|förmå|förmår|förmådde|förmått|förmå|
+(manage)|klara|klara av|avverka|slut<*föra|Hinna ifatt|Få( oss) igenom|komma igenom|klara sig|klara sig ur
+(manage)|klara|klara <*sig|
+(restore)|återupprätta|återställa|återställning|restaurera|
+(reconstruct)|rekonstruera|uppbygga|uppbyggd|uppbyggt|uppbyggande|uppbyggnad|uppbyggnader|
+(reproduce)|reproducera|åter<*ge|
+(rehabilitate)|upprusta|renovera|
+(recover)|återhämta <*sig|återhämning|<*ta igen <*sig|
+(recover)|tillfriskna|
+(rehabilitate)|rehabilitera|
+(save)|frälsa|bärga|rädda|frälsning|
 
-(display)|till beskådan|
+#Managing: control, leadership and supervision
+(duty)|plikt|plikter|skyldighet(vdg.)|skyldigheter|ansvar|ansvarig
+(Complete duty)|full<*göra|
+(responsibility)|<*ta på sig (ngt. ansvar)|er<*bjuda sig (att)|<*Ligga bakom|å<*ligga
+(control)|basa (över)|
+(blame, cant controll)|<*rå för|(Jag kan)inte rå för (vad andra säger)|<*rå över|
+(accountability)|<*Ställa till svars
+(consequences)|<*Stå sitt kast|
+(control)|kontrollera|<*stämma av|avstämma(f.)|avstämning|avstämningar|kolla av(vdg.)|
+(influence)|<*Dra i trådarna
 (control)|kontrollera|tygla|tygel|kontroll|
 (reins)|Strama tyglar|
 (leverage)|ha en hållhake på (någon)|
@@ -4079,17 +4281,16 @@ risktagare
 (submit)|underkasta(antonym)|
 (command)|Peka med hela handen
 (administer)|förvalta|förvaltning|förvaltningar|
-(setup)|upplägg(sl-pl)|
-(organize)|organisera|strukturera|
-(care)|omtanke|omtankar|sörja|
-(gear up)|kitta sig|förberedda sig|utrusta sig
-(chain)|En kedja är inte starkare än sin svagaste länk
-(earmark)|öronmärka|öronmärkning|öronmärkningar|reservera|reservering|reserveringar|förbehålla
-(book)|boka|bokning|bokningar|bokad|bokat|boka upp|boka av|
-(provide)|tillhandahålla|tillhandahåller|tillhandahöll|tillhandahållit|
-(be offered)|tillhandahållas|bjudas|vankas|serveras
-(handy)|händig|händighet|
-(practical)|praktisk|gångbar|praktikabel
+(take charge)|Ta bollen|
+(take matters)|Ta saken i egna händer|
+(hierarchy)|Min dräng har också en dräng
+(delegation)|delegation|delegationer|delegat|delegering|
+
+#Managing: tasks, work and execution
+(try)|pröva|prova|testa|försöka|försökte|försökt|försök|
+(performance)|utförande|
+(Put to practice)|om<*sätta|
+(pursue)|förfäkta|driva|köra|
 (by means of)|medelst|genom|med hjälp av
 (consume)|konsumera|förbruka|förbrukning|förbrukningar|konsumtion|konsumtioner|åtgång|
 (utilize)|ta nytta av|ha nytta av|använda|begagna|
@@ -4099,32 +4300,135 @@ ta sig för stora friheter
 (assignment)|uppdrag(sl-pl)|
 (task)|uppgift|uppgifter|
 (mandate)|mandat(sl-pl)|
-(measure)|uppmäta|uppmäter|uppmätte|uppmätt|uppmät|mäta upp|
-(gauge)|Ta tempen (särskilt om populäritet o dylikt)|
-(screen)|skärm|
-(screen off)|skärma av|
 (formula)|formel|
 (recipe)|recept|
+(try)|försöka|försöker|försökte|försökt|pröva|testa|prova|tredje gången gillt
+(get moving)|Få tummen ur arslet|Få ändan ur vagnen
+(make do)|Man tager vad man haver
+(trial)|provning|elddop(initial provning)|
+(perform)|utföra|förrätta|uträtta|genomföra|företa|
+(finish)|slutföra|fullfölja|Har man tagit fan i båten får man ro honom i land|Har man sagt A får man säga B
+(go all the way)|Löpa linan ut
+(dedicate)|dedicera|ägna <*sig åt|tillägna|hän<*ge( sig åt)|företa <*sig|verkställa|
+(engage)|idka|syssla (med nåt)|pyssla|bedriva|exekvera| <*ta sig an |gripa sig an|<*ta sig vidare|bearbeta
+(commit)|be<*gå (negativt)|föröva
+(proceed)|förfara|förfar|förfor|förfarit|gå till väga|handhava
+(realize)|förverkliga|realisera|infria( löfte)|
+(reach goal)|komma i mål|
+(take)|vidta|vidtar|vidtog|vidtagit|åtgärda|varva|
+(unnecessary)|<*slå in öppna dörrar|<*gå över ån efter vatten
+(trick)|trix|knep|trick|
+(apply)|tillämpa|tillämpning|tillämpningar|
+(method)|metod|metoder|tillvägagångssätt(sl-pl)|angreppssätt(sl-pl)|taktik|taktiker|strategi|strategier|taktisk|ansats
+(Viable)|framkomlig( väg)
+(way)|på den vägen|på det viset|på det sättet|
+(channel)|kanalisera|
+(shortcut)|Genväg är ofta senväg|
+(workload)|arbetsbörda|
+(make it)|hinna|hinner|hann|hunnit|
+
+#Managing: organisation, order and selection
+(setup)|upplägg(sl-pl)|
+(organize)|organisera|strukturera|
+(earmark)|öronmärka|öronmärkning|öronmärkningar|reservera|reservering|reserveringar|förbehålla
+(book)|boka|bokning|bokningar|bokad|bokat|boka upp|boka av|
+(mess)|strula|krångla|trassla|<*köra ihop sig|tjorva|(är)enda röra|
+(many streams)|Många bäckar små, gör en stor å |
+(collect)|samla|samling|grupp|grupper|flock|flockar|skara|skaror|set(sl-pl)|sammanslutning|kår|insamla|uppbåda|skock|skara
+(gather)|Samla i ladorna
+(set)|uppsättning|uppsättningar|plocka|plockning|picka på(av fåglor)|
+(compile)|sammanställa
+(accumulation)|anhopning|anhopa|hopa|hopar|
+(cluster)|klunga|klungor|klase(blommor)|klasar|
+(bundle)|knippa|knippor|knippe|knippen|bunt|buntar|bestånd(sl-pl)|drös
+(sheaf)|kärve|
+(organize)|organisera|anordna|arrangera|skipa|överordna|underurdna|
+(sort)|sortera|ordna|
+(order)|ordning|pli|disciplin
+(in turn)|i tur och ordning|alternera|turas om|turades om|turats om|omväxla|
+(prioritize)|prioritera|prioritering|prioriteringar|framförallt|framför allt|framförst|först och fram|
+(small things)|Ge dig inte på berg när det finns småsten|
+(orderly)|ordentlig
+(order)|Ordning och reda, pengar på fredag
+(disorder)|oordning|oreda|kaos|rörig|röjig|bökig|brokig|stökig|oordnad|oredlig|flammig|strimmig|vattrad
+(chaos)|huller och buller|
+(loose)|På lösa boliner
+(when cat away)|När katten är borta dansar råttorna på bordet
+(mess up)|ställa till|stöka till|
+(adjust)|justera|tillrätta|ordna|korrigera|justering|justeringar|reglering|regleringar|
+(prepare)|<*göra <*sig i ordning|ordna( till ngn)|ombe<*sörja|
+(sequence)|följd|i snabb följd|följd av|
+(In succession,fast)|På löpande band|slag i slag|i rask följd|
+(choose)|välja|utvälja|
+(Selection)|uttagning
+(choice)|val|urval|utvald|alternativ(sl-pl)|valfrihet|axplock(sl-pl)|
+(appoint)|utnämna|utnämner|utnämnde|utnämnt|utnämn|utnämnande|utnämning|utse|utsedd|till<*sätta|
+(merit)|Don efter person
+(new brooms)|Nya kvastar sopar bäst
+(assign)|tilldela
+(list)|förteckning|förteckningar|katalog|kataloger|tabell|tabeller|lista|listor|översikt|översikter|
+(check off)|bocka av|pricka av
+(overview)|översikt|tablå|tablåer|
+(enumerate)|räkna upp|uppräkning|uppräkningar|
+(calculate)|beräkna|
+(Estimate)|måtta|
+(estimated)|beräknad|(väl/generöst/riktigt/högt/knappt/snålt)tilltagen|
+(assigned)|anvisad|angiven|utpekad|utvald|utnämnd|
+
+#Managing: permission, approval and refusal
+(reject)|försmå|förakta|
+(relinquish)|av<*stå|
+(waive)|efterskänka|strunta i
+(concession)|eftergift
+(wriggle out)|slingra(sig; gall. ansvar)|Slingra sig som en orm
+(confirm)|stadfästa|
+(admission)|antagning|mottagning|<*ta emot|
+(grant)|bevilja|bifalla|tillåta|låta|godkänna|unna|påbjuda|<*vara grönt|
+(Issue)|Utfärda
+(valid)|giltig|valid|gällande|tillämplig
+(permission)|lov|tillåtelse|tillåtelser|tillstånd|be om lov|dispens|
+(illegally)|olovligen|
+(rejection)|avslag|förbud|nekande|avslå|vägra|avböja|av<*stänga|avstängning
+(refuse)|vägra|neka|avvisa|avslå|vägran|underkänna|nobba|kugga|nobba|
+(Accept)|erkänna|bekänna|
+(decline)|undan<*be( sig)|betacka( sig)
+(grudge)|missunna|
+(resist)|Sätta sig på tvären|
+(cold shoulder)|Kalla handen
+(put foot down)|sätta ner foten|<*säga ifrån|Slå näven i bordet|
+(put foot down)|Sätta ner foten(efter misslyckande)|
+
+#Managing: difficulties, endurance and solutions
+(ignore)|bort<*se(från)|strunta(i)|åsido<*sätta|
+(Give up)|<*stryka på foten( för ngn/ngt)|
+(tolerance)|<*Se mellan fingrarna
+(avoidance)|(<*Sopa) problemet under mattan|
+(smooth)|<*Släta över (om nåt går fel)|
+(forbearance)|överseende|över<*se|<*se genom fingrarna|
+(denial)|<*Sticka huvudet i sanden|
+(courage)|<*Ta tjuren vid hornen
+(expression, nip it in the bud)|bättre att stämma i bäcken än i ån|
+(avoid)|slippa|slipper|slapp|sluppit|undgå|undvika|undviker|undvek|undvikit|<*komma undan|kringgå|ducka|dissa
+(encounter)|St<*öta på patrull
+(solve)|lösa|löser|löste|löst|lös|löses|klara ut (problem)|
+(expression, Case closed)|Saken är biff
+(solution)|upplösning|upplösningar|
+(solvable)|lösbar|olösbar|
 (easy)|lätt|lättsam|enkel|enkla|lätt som en plätt|busenkel|baggis|baggisar|
 (minimal)|avskalad|minimalistisk|
-(lowkey)|lågmäld|lågmält|
 (tricky)|vansklig|
 (complicated)|invecklad|trassla|intrasslad|krångla( till )|krånglig|krångel|trasslig|snårig|insnärjd
 (fuss)|konstra|
 (too many cooks)|Ju fler kockar, desto sämre soppa
 (thin ice)|Ute på hal is|
 (burn bridges)|Brän<*na sina broar
-(flipped)|utflippad|
 (cumbersome)|omständlig|jobbig|omständig|strulig|mödosam|besvärlig|
 (Inconvienient)|oläglig|obekväm|besvärlig|opassande|knipa
 (unbearable)|odräglig|olidlig|outhärdlig
 (tricky)|knivig|knepig|marig|kinkig
 (trap)|<*Sitta som i en rävsax
-(annoying)|störig|
-(meddle)|<*lägga sig i saker|
 (stuck)|råk<*a i klister|råk<*a i klistret|hamn<*a i klister|hamn<*a i klistret|
 (difficult)|svår|krävande|jobbig|tuff|tuffing|hetsig|hektisk|febril|slitgöra
-(Needy)|klängig|bekräftelsesökande|
 (demand)|ställa(stora) krav på
 (slippery)|På det hala
 (needle in haystack)|(Lika lätt som att )hitt<*a som en nål i en höstack
@@ -4134,8 +4438,6 @@ ta sig för stora friheter
 (stressful)|stressig|
 (painful)|smärtsam|tröttsam|
 (vulnerability)|utsatthet|utsatt|
-(annoying)|irriterande|Stå någon upp i halsen|Gå någon på nerverna|enerverande
-(grumpy)|putt|irriterad|surmulen|surtant|surtanter|
 (fight)|kämpa|bekämpa|strida|brottas|brottades|brottats|kämpainsats(esp. idrott)|fäkta
 (struggle)|sträta
 (hold)| Hålla ställningarna
@@ -4143,9 +4445,6 @@ ta sig för stora friheter
 (wrestle)|tampas|kivas|slåss|tvista|träta|träter|trätte|trätt
 (struggle)|kamp|kamper|strid|(ta )nappatag|
 (counter)|motverka|
-(pleasant)|skön|härlig|behaglig|ljuvlig|trevlig|ljuv|trevsam|tilltalande|ljuv|
-(bliss)|Frid och fröjd
-(nice)|angenäm|piffig|piffa|
 (roses)|Dans på rosor
 (inconvenience)|olägenhet|olägenheter|men(sl-pl)|mennet|mennen(pl)|
 (uncomfortable)|obekväm|obehaglig|oangenäm|
@@ -4160,83 +4459,174 @@ ta sig för stora friheter
 (restrain)|bärga sig|<*ge sig till tåls|<*lägga band på|
 (tolerant)|fördragsam|tålmodig|tålig|uthållig|uthärdlig|uthärdande|uthärdning|dräglig|vidsynt|
 (intolerant)|trångsint|ofördragsam
-(careful)|noga|noggrann|omsorgsfull|grundlig|försiktig|varsam|utförlig|ingående|omsorgsfull|aktsam|
-(Conscientious)|samvetsgrann
-(proper)|Enligt konstens alla regler
-(cautious)|Gå som katten kring het gröt|Behandla någon med silkesvantar|<*skynda långsamt
-(pedantry)|pedanteri(överdriven noggrannhet)|pedant|pedanteri|pedantisk|pedantiskt|
-(sloppy)|slarvig|hafsig
-(discuss)|Stöta och blöta något
-(careless)|lättvindig|utan omsorg(eller eftertanke)|
-(fool around)|tramsa|fjanta|larva( sig)|flamsa|stoja|fjant|flumma|spela allan
-(mess)|strula|krångla|trassla|<*köra ihop sig|tjorva|(är)enda röra|
-(different)|Andra bullar
-(silly)|larvig|barnslig|fånig|tramsig|
-(drive)|köra|ratta|
-(manage)|förmå|förmår|förmådde|förmått|förmå|
-(try)|försöka|försöker|försökte|försökt|pröva|testa|prova|tredje gången gillt
-(get moving)|Få tummen ur arslet|Få ändan ur vagnen
-(make do)|Man tager vad man haver
-(trial)|provning|elddop(initial provning)|
-(perform)|utföra|förrätta|uträtta|genomföra|företa|
-(finish)|slutföra|fullfölja|Har man tagit fan i båten får man ro honom i land|Har man sagt A får man säga B
-(go all the way)|Löpa linan ut
+(struggle)|Stånga sig blodig|
+(Overcome)|Överbrygga|
+(way out)|utväg|utvägar|
+
+#Managing: success, failure and consequences
+(miss)|missa|Missa tåget
+(scatter)|Sprids som askan för vinden|Bita i gräset
+(expression, go like clockwork, run smoothly)|Gå som en dans|Gå som på räls|Gå som på smorda bakplåtar|Gå som smort|Gå som tåget|Rulla på|
+(succeed)|lyckas|framgång|genombrott(sl-pl)|
+(Manage to succeed)|<*få till |
+(forge)|Envar sin egen lyckas smed|
+(promotion)|befordran|befordringar|framsteg(sl-pl)|
+(progressive)|framstegsvänlig|
+(tailwind)|Vind i seglen|
+(compensate)|Ta igen på gungorna vad man förlorat på karusellen|
+(success)|succé|succén|succéer|
+(highlight)|höjdare|höjdpunkt|höjdpunkter|kulmen|femetta|femettor|fullträff|fullträffar|mitt i prick|
+(underdog)|den fula ankungen  
+(culminate)|kulminera|
+(lag)|hamna efter|På efterkälken|halka efter
+(fail)|misslyckas|misslyckades|misslyckats|
+(go wrong)|Åt pipsvängen|<*gå åt skogen|barka åt skogen|åka på en snyting|Det går utför|Gå åt pipan|Lägga lök på laxen
+(it's over)|Nu är det klippt
+(fail)|Gå på pumpen
+(neither)| Varken hackat eller malet|
+(out of frying pan)|Ur askan i elden|
+(tread water)|Trampa vatten|
+(back to square)|Tillbaka på ruta ett|
+(up and down)|Upp som en sol, ner som en pannkaka|
+(slip)|<*slå slint|
+(zero)|kamma noll|
+(omission)|underlåtenhet|underlåta|underlåter|underlät|underlåtit|misslyckande|misslyckanden|
+(fail)|<*gå i stöpet|rinna ut i sanden|
+(come to nothing)|<*gå om intet|
+(hit snag)|<*stöta på patrull|<*gå på pumpen|åka på pumpen|
+(demotion)|degradering|
+(wreck)|haverist|haverister|
+(failure)|haveri|	haverier|misslyckande|misslyckanden(pl)|fiasko(starkare)|fiaskon(pl)|flopp|floppar|bottennapp(sl-pl)|
+(setback)|bakslag(sl-pl)|motgång|motgångar|tillbakagång
+(catastrophic)|katastrofal|ödesdiger|ödesdigra|ödesmättad
+(icing)|Grädde på moset|Pricken över i:et
+
+#Luck, fortune and misfortune
 (close call)|Nära skjuter ingen hare|
-(don't start)|Tänd inte den eld som du inte kan släcka
-(dedicate)|dedicera|ägna <*sig åt|tillägna|hän<*ge( sig åt)|företa <*sig|verkställa|
-(engage)|idka|syssla (med nåt)|pyssla|bedriva|exekvera| <*ta sig an |gripa sig an|<*ta sig vidare|bearbeta
-(take charge)|Ta bollen|
-(take matters)|Ta saken i egna händer|
-(invest)|investera|insats|investering|investeringar|
-(commit)|be<*gå (negativt)|föröva
-(proceed)|förfara|förfar|förfor|förfarit|gå till väga|handhava
-(realize)|förverkliga|realisera|infria( löfte)|
-(manage)|klara|klara av|avverka|slut<*föra|Hinna ifatt|Få( oss) igenom|komma igenom|klara sig|klara sig ur
-(reach goal)|komma i mål|
 (close call)|Nöd och näppe
-(fetch)|hämta|avhämta|lämna|leverera|
+(sunshine)|Idel solsken gör öken|
+(knock wood)|Peppar, peppar, ta i trä|lycka till
+(cross fingers)|<*hålla tummarna|<*hålla tummen|
+(fate)|öde|öden(pl)|ödet|tur|
+(fortune)|förmögenhet|
+(misfortune)|missöd|incident|olycka|malör|
+(close call)|Nära ögat
+(bad luck)|osis|otur
+(unfortunately)|tyvärr|beklagligtvis|dessvärre
+(misfortune)|En olycka kommer sällan ensam|Lugnet före stormen
+(fortunately)|dessbättre|lyckligtvis|som tur är|gudskelov|som tur var|
+(lucky)|lyllo |lyllos dig|lycklig|lyckosam|lyckosamhet|lyckosamhetens|
+(don't jinx)|Måla inte fan på väggen
+(thank luck)|Tacka sin lyckliga stjärna|Lyckans ost
+(born lucky)|Född med en silversked i munnen|Glida in på en räkmacka|Matjord i fickorna(tur och talang)|
+(served)|Serverat som på silverfat
+(godsend)|Skänk från ovan
+(even blind)|Även en blind höna kan finna ett korn
+(even broken)|Även en trasig klocka visar rätt två gånger per dygn
+
+#Finding, searching and discovering
+(find)|finna|hitta|leta|leta rätt på|
+(search)|Leta efter något med ljus och lykta
+(snoop)|snoka(smygligt)|böka(som en svin, i marken)|rota|luska|
+(grope)|treva( sig runt/fram)|fumla|famla
+(find out)|<*ta reda på|luska|<*få reda på|felsöka
+(See though)|genomskåda
+(know)|ha reda på|ha kläm på|ha koll på
+(pinpoint)|Sätta fingret på något|
+(look up)|<*slå upp|uppslagning|uppslagningar|uppslag(sl-pl)|
+(clue)|ledtråd|ledtrådar|handledning|handledningar
+
+#Visibility, concealment and clarity
+(appear)|visa (sig)|framstå|
+(display)|till beskådan|
+(show)|visa|förevisa|uppvisa|uppvisning
+(hide)|dölja|döljer|dolde|dolt|dölj|döljande|dold|förklätt|hölja|höljas|hölja|höljer|höljde|höljt|
+(skeleton)|Skelett i garderoben|
+(disguise)|<*förklä sig|
+(conceal)|skyla|skyler|skylde|skylt|skyl|skyld|gömma|gömmas|gömma|gömmer|gömde|gömt|
+(go underground)|Gå under jorden
+(mask)|maskera|
+(keep face)|hålla masken
+(behind scenes)|bakom kulisserna|
+(hidden)|dold|fördold|under isen
+(visible)|synlig|uppenbar|synbar|påvisbar
+(obvious)|påtaglig|tydlig|klar|handfast
+(obvious problem)|elefanten i rummet
+(clear)|Klart som korvspad
+(vague)|vag|dunkel|
+(blurry)|Suddig|oskarp|oklar|luddig|diffus|
+(flickering)|fladdrig|
+(incomprehensible)|obegriplig|ofattbar|oförklarlig|oförståelig
+(riddle)|gåta|gåtor|mysterium|mysteriet|mysterier|pussel(sl-pl)|pusslet|
+(enigmatic,mysterious)|gåtful|gåtfull|outgrundlig|oförklarlig
+(mysterious)|mystisk|mysko|underlig
+(unambiguous)|entydig|omisskännlig|omisskännelig
+(ambiguous)|tvetydig|ambiguös|flertydig|ekivok|
+(show)|Visa var skåpet ska stå|
+
+#Mistakes, confusion and learning from experience
+(mistake)|miss<*ta |misstaga|snedsteg|<*ta miste|misstag(sl-pl)|missuppfatta|förvillelse|Få något om bakfoten
+(futile)|Hugga i sten
+(wise)|av skadan blir man vis
+(learn)|Man lär sig av misstagen
+(learn)|Lär dig av andras misstag, du hinner inte själv begå dem alla
+(forget)|Det man inte har i huvudet, får man ha i benen
+(confuse)|förväxla|
+(self-sabotage)|Skjuta sig själv i foten|
+(blunder)|Trampa i klaveret|
+(buy pig)|Köpa grisen i säcken|
+(wrong path)|villovägar|irrvägar|irrgång|
+
+#Possession, acquisition and exchange
+(replace)|ersätta|ersättare(sl-pl)|suppleant|suppleanter|kompensera|
+(used)|begagnad|beggad|
+(belong)|tillhöra|tillhör|tillhörde|tillhört|tillhörighet|
+(possess)|besitta|inneha
+(invest)|investera|insats|investering|investeringar|
 (send)|sända|skicka|langa|
 (hand over)|överlämna|överlåta|upplåta|delegera|anförtro|
-(hierarchy)|Min dräng har också en dräng
-(delegation)|delegation|delegationer|delegat|delegering|
 (disposal)|avyttring|avyttringar|försäljning|försäljningar|
 (abandon)|över<*ge|övergiven|
 (abandon)|Lämna någon/något i sticket
-(tie)|knytta|knyter|knöt|knutit|binda|binder|band(sl-pl)|bundit|
-(shackle)|fjättra|tjudra
-(combine)|kombinera|sammanfläta|sammanbunden|sammankopplad|<*slå ihop
-(many streams)|Många bäckar små, gör en stor å |
-(wrap)|linda|inlinda|insvepa|insveper|insvepte|insvept|insvep|vira|slingra(  sig)|sno sig|
-(spin)|snurra|rotera|svepa|virvla|rulla
 (import)|införsel|införseln|import|importer
 (export)|utförsel|utförseln|export|exporter
-(confirm)|stadfästa|
-(admission)|antagning|mottagning|<*ta emot|
-(grant)|bevilja|bifalla|tillåta|låta|godkänna|unna|påbjuda|<*vara grönt|
-(Issue)|Utfärda
-(valid)|giltig|valid|gällande|tillämplig
-(permission)|lov|tillåtelse|tillåtelser|tillstånd|be om lov|dispens|
-(illegally)|olovligen|
-(rejection)|avslag|förbud|nekande|avslå|vägra|avböja|av<*stänga|avstängning
-(throw)|kasta|slunga|slänga|slänger|slängde|slängt|flimpa|dumpa|bortkasta|langa(slang)|
-(fling)|vräka|vräker|vräkte|vräkt|kasta bort|kasta ut|kasta iväg|kasta ifrån sig|
-(hurl)|hiva|hysta|underarmkast|
-(hose)|slanga(vätska med slang)|slang|slangar|
 (discard)|kassera|skrota|
-(refuse)|vägra|neka|avvisa|avslå|vägran|underkänna|nobba|kugga|nobba|
-(Accept)|erkänna|bekänna|
-(kiss off)|Kyss mig i arslet
-(decline)|undan<*be( sig)|betacka( sig)
-(grudge)|missunna|
-(resist)|Sätta sig på tvären|
-(cold shoulder)|Kalla handen
-(put foot down)|sätta ner foten|<*säga ifrån|Slå näven i bordet|
+(cake)|Man kan inte både ha och äta kakan
+(get)|skaffa|få|förvärva|värva|haffa(slang)|
+(grab)|roffa|greppa|<*ta tag i|
+(obtain)|er<*hålla|<*få fram|
+(extract)|utvinna|utvinner|utvann|utvunnit|utvinn|
+(shared)|delad|
+(Become part of)|till<*falla
+(grip)|tag|grep|fatt
+(grasp)|taga (ålder.)|gripa|griper|grep|gripit|grip|fatta|
+(get hold of)|få tag på|få tag i|få fatt i|fick du tag i|
+(catch)|fånga|
+(subscribe)|abonnera|hyra|anlita|prenumerera|abonnemang(sl-pl)|
+(lease)|arrendera (bara för mark)|arrendator|arrendatorer|arrendeinnehavare|arrendegivare(ant.)|
+(accessible)|åtkomlig|tillgänglig|åtkomst|tillgång|tillgångar|tillgängliggör|(ha/finns) att tillgå|
+(dispose)|förfoga(över)|förfogande|förfoganden|
+(available)|anträffbar|
+(convey)|förmedla|
+(forward)|vidarebefordra|
+(transfer)|överföra|
+(seize)|<*ta i beslag|konfiskera|<*ta över|överta|<*lägga beslag på|
+(grab)|Lägga rabarber på något|roffa åt sig av
+(lay hands)|Lägga vantarna på något
+
+#Negotiation, compromise and reconciliation
+(negotiation)|förhandling|förhandlingar|förhandla|överlägga|
+(confrontation)|konfrontation|uppgörelse|överensekommelse
+(haggle)|pruta|prutning|prutningar|kompromissa|kompromissar|
+(concession)|eftergift|eftergifter|uppoffring
+(settlement)|förlikning|förlikningar|förlikas|förlikas|
+(reconciliation)|försoning|försoningar|försona|försonar|försonade|försonat|
+
+#Containers and storage
 (store)|förvara|förvar|kassaskåp|
 (storage)|förråd(sl-pl)|förrådet|lager(sl-pl)|lagret|förvaring|förvaringar|depå(er)|
 (hoard)|hamstra|hamstring|
 (provisions)|proviant(förråd av mat)|nödproviant
-(wardrobe)|garderob|
-(cabinet)|skåp(sl-pl)|skåpet|hylla|hyllor|skafferi|
 (bag)|påse|påsar|väska|väskor|behållare(sl-pl)|kärl(sl-pl)|kärlet|säck|säckar|kar(sl-pl)|tunna|tunnor|bunke|bunkar|trattbägare|bägare
 (briefcase)|portfölj|portföljer|portmonnä|portmonnäer|
 (binder)|pärm(for books/paper)|
@@ -4251,284 +4641,12 @@ ta sig för stora friheter
 (package)|Paket|Paketer|förpackning|inpacka|packa ihop|kolli|kollin(pl)|
 (envelope)|kuvert|omslag|
 (fill)|fylla|fyller|fyllde|fyllt|fyll|fyllande|
-(fill in)|fylla in|sufflera|sufflering|suffleringar|
 (fill)|mätta|mättad|mätt|
 (empty)|tömma|tömmer|tömde|tömt|tom|
-(blank)|Oskrivet blad
-(collect)|samla|samling|grupp|grupper|flock|flockar|skara|skaror|set(sl-pl)|sammanslutning|kår|insamla|uppbåda|skock|skara
-(gather)|Samla i ladorna
-(set)|uppsättning|uppsättningar|plocka|plockning|picka på(av fåglor)|
-(compile)|sammanställa
-(accumulation)|anhopning|anhopa|hopa|hopar|
-(cluster)|klunga|klungor|klase(blommor)|klasar|
-(bundle)|knippa|knippor|knippe|knippen|bunt|buntar|bestånd(sl-pl)|drös
-(sheaf)|kärve|
-(spread)|sprida|sprider|spridde|	sprid|spritt|spridit|sprid|
-(spread)|spreta (åt olika håll)|Sprida sig som ringar på vattnet
-(separate)|avskilja|separera|
-(apart)|(vara) ifrån varann|
-(manage)|klara|klara <*sig|
-(install)|installera|inställning
-(sew)|sy|
-(put)|sätta|sätter|satte|satt|<*sätta på
-(place)|ställa|ställer|ställde|ställt|
-(lay)|lägga|lägger|lade|la|lagt|lägg|placera|
-(preserve)|inlägga|inlägger|inla|inlagt|inlägg(sl-pl)|inläggning|inläggningar|
-(Set aside)|av<*sätta
 (filling)|fylla|fyller|fyllde|fyllt|fyllning
-(join)|foga|
-(joint)|fogmassa|fogmassor|kitt|skarv|
-(set up)|uppsätta|uppsätter|uppsatte|uppsatt|montera|installera|placera|<*sätta upp|upprätta|rigga|
-(hang)|hänga|
-(hanger)|galge|galgar
-(embed)|inbädda|inbäddning|inbäddningar|
-(insert)|infoga|infogning|infogningar|foga in|inpassa|inpassning|inpassningar|
-(front seat)|framsäte|baksäte|sätet|
 (compartment)|avdelning|avdelningar|fack(sl-pl)|
 Utskott|remiss|
 Myndighet|ämbetsverk
-(position)|befattning|befattning|post|poster|ämbete|ämbeten(pl)|ämbetet|
-(organize)|organisera|anordna|arrangera|skipa|överordna|underurdna|
-(sort)|sortera|ordna|
-(order)|ordning|pli|disciplin
-(in turn)|i tur och ordning|alternera|turas om|turades om|turats om|omväxla|
-(prioritize)|prioritera|prioritering|prioriteringar|framförallt|framför allt|framförst|först och fram|
-(small things)|Ge dig inte på berg när det finns småsten|
-(orderly)|ordentlig
-(order)|Ordning och reda, pengar på fredag
-(take)|vidta|vidtar|vidtog|vidtagit|åtgärda|varva|
-(disorder)|oordning|oreda|kaos|rörig|röjig|bökig|brokig|stökig|oordnad|oredlig|flammig|strimmig|vattrad
-(chaos)|huller och buller|
-(loose)|På lösa boliner
-(when cat away)|När katten är borta dansar råttorna på bordet
-(mess up)|ställa till|stöka till|
-(adjust)|justera|tillrätta|ordna|korrigera|justering|justeringar|reglering|regleringar|
-(tinker)|mixtra|manipulera
-(prepare)|<*göra <*sig i ordning|ordna( till ngn)|ombe<*sörja|
-(sequence)|följd|i snabb följd|följd av|
-(In succession,fast)|På löpande band|slag i slag|i rask följd|
-(choose)|välja|utvälja|
-(Selection)|uttagning
-(choice)|val|urval|utvald|alternativ(sl-pl)|valfrihet|axplock(sl-pl)|
-(cake)|Man kan inte både ha och äta kakan
-(enter)|beträda|beträder|beträdde|beträtt|beträd|tillträda|tillträde|
-(appoint)|utnämna|utnämner|utnämnde|utnämnt|utnämn|utnämnande|utnämning|utse|utsedd|till<*sätta|
-(merit)|Don efter person
-(new brooms)|Nya kvastar sopar bäst
-(get)|skaffa|få|förvärva|värva|haffa(slang)|
-(grab)|roffa|greppa|<*ta tag i|
-(obtain)|er<*hålla|<*få fram|
-(extract)|utvinna|utvinner|utvann|utvunnit|utvinn|
-(raw material)|råvara|råvaror|
-(employer)|arbetsgivare|arbetstagare|löntagare|
-(shared)|delad|
-(assign)|tilldela
-(Become part of)|till<*falla
-(grip)|tag|grep|fatt
-(grasp)|taga (ålder.)|gripa|griper|grep|gripit|grip|fatta|
-(get hold of)|få tag på|få tag i|få fatt i|fick du tag i|
-(catch)|fånga|
-(throw)|slänga|slänger|slängde|slängt|släng|kasta
-(list)|förteckning|förteckningar|katalog|kataloger|tabell|tabeller|lista|listor|översikt|översikter|
-(check off)|bocka av|pricka av
-(overview)|översikt|tablå|tablåer|
-(enumerate)|räkna upp|uppräkning|uppräkningar|
-(recite)|rabbla upp(mekaniskt och själlöst)|
-(calculate)|beräkna|
-(Estimate)|måtta|
-(estimated)|beräknad|(väl/generöst/riktigt/högt/knappt/snålt)tilltagen|
-(facility)|inrättning|anläggning|institution
-(institution)|anstalt(t.e. i skol eller vård)|
-(foundation)|stiftelse|stiftelser|
-(gymnastics)|gympa(oräkenbart)|gymnastik|gym(sl-pl)|
-(possibility)|möjlighet|möjlig|rimlig|görlig|eventuell|
-(show)|visa|förevisa|uppvisa|uppvisning
-(hide)|dölja|döljer|dolde|dolt|dölj|döljande|dold|förklätt|hölja|höljas|hölja|höljer|höljde|höljt|
-(skeleton)|Skelett i garderoben|
-(disguise)|<*förklä sig|
-(conceal)|skyla|skyler|skylde|skylt|skyl|skyld|gömma|gömmas|gömma|gömmer|gömde|gömt|
-(go underground)|Gå under jorden
-(mask)|maskera|
-(keep face)|hålla masken
-(behind scenes)|bakom kulisserna|
-(find)|finna|hitta|leta|leta rätt på|
-(search)|Leta efter något med ljus och lykta
-(snoop)|snoka(smygligt)|böka(som en svin, i marken)|rota|luska|
-(grope)|treva( sig runt/fram)|fumla|famla
-(subscribe)|abonnera|hyra|anlita|prenumerera|abonnemang(sl-pl)|
-(lease)|arrendera (bara för mark)|arrendator|arrendatorer|arrendeinnehavare|arrendegivare(ant.)|
-(hidden)|dold|fördold|under isen
-(visible)|synlig|uppenbar|synbar|påvisbar
-(obvious)|påtaglig|tydlig|klar|handfast
-(unnecessary)|<*slå in öppna dörrar|<*gå över ån efter vatten
-(obvious problem)|elefanten i rummet
-(clear)|Klart som korvspad
-(vague)|vag|dunkel|
-(blurry)|Suddig|oskarp|oklar|luddig|diffus|
-(flickering)|fladdrig|
-(incomprehensible)|obegriplig|ofattbar|oförklarlig|oförståelig
-(riddle)|gåta|gåtor|mysterium|mysteriet|mysterier|pussel(sl-pl)|pusslet|
-(enigmatic,mysterious)|gåtful|gåtfull|outgrundlig|oförklarlig
-(mysterious)|mystisk|mysko|underlig
-(unambiguous)|entydig|omisskännlig|omisskännelig
-(ambiguous)|tvetydig|ambiguös|flertydig|ekivok|
-(keep up)|hänga med|följa
-(trick)|trix|knep|trick|
-(apply)|tillämpa|tillämpning|tillämpningar|
-(theory)|teori|teorin|teorier|hypotes|hypoteser|
-(method)|metod|metoder|tillvägagångssätt(sl-pl)|angreppssätt(sl-pl)|taktik|taktiker|strategi|strategier|taktisk|ansats
-(Viable)|framkomlig( väg)
-(way)|på den vägen|på det viset|på det sättet|
-(load)|ladda|
-(queue)|kö|kön|köer|
-(reach)|nå|räcka|
-(approach)|närma|närma sig|nalkas|nalkades|nalkats|
-(approaching)|kommande|annalkande|antågande|antåg|stunda(till)|
-(accessible)|åtkomlig|tillgänglig|åtkomst|tillgång|tillgångar|tillgängliggör|(ha/finns) att tillgå|
-(dispose)|förfoga(över)|förfogande|förfoganden|
-(available)|anträffbar|
-(plug)|täppa|täpper|täppte|täppt|tapp|tappar|propp|proppar|
-(cover)|täcka|täcker|täckte|täckt|täckning|täckningar|täcke|täcken(pl)|<*dra för (t.e. fönster)|för<*dra|
-Täckmantel
-(seal)|tätna över|
-(lid)|lock(sl-pl)|
-(full)|fullsatt|fullspikad(vard.)|fullbelagd|fullbelagt|
-(dense)|tät|packad|ogenomtränglig|kompakt|
-(watertight)|vattentät|
-(sealed)|förseglad|sigill|försegla|besegla|
-(sparse)| gles |spridd|utspridd|Tunnsådd|
-(leak)|läcka|läcker|läckte|läckt|
-(leak)|Läcka som ett såll
-(tighten)|tätna|glesna|
-(densify)|förtäta|
-(tight)|tätt|tajt|åtsmitande|trång
-(consideration)|hänsyn(sl-pl)|beaktande|med hänsyn till|ta hänsyn till|beakta
-(mistake)|miss<*ta |misstaga|snedsteg|<*ta miste|misstag(sl-pl)|missuppfatta|förvillelse|Få något om bakfoten
-(futile)|Hugga i sten
-(wise)|av skadan blir man vis
-(learn)|Man lär sig av misstagen
-(learn)|Lär dig av andras misstag, du hinner inte själv begå dem alla
-(forget)|Det man inte har i huvudet, får man ha i benen
-(confuse)|förväxla|
-(self-sabotage)|Skjuta sig själv i foten|
-(blunder)|Trampa i klaveret|
-(buy pig)|Köpa grisen i säcken|
-(find out)|<*ta reda på|luska|<*få reda på|felsöka
-(See though)|genomskåda
-(know)|ha reda på|ha kläm på|ha koll på
-(pinpoint)|Sätta fingret på något|
-(look up)|<*slå upp|uppslagning|uppslagningar|uppslag(sl-pl)|
-(instruct)|instruera|handleda|handleder|handledde|handlett|anvisa
-(assigned)|anvisad|angiven|utpekad|utvald|utnämnd|
-(instruction)|anvisning|anvisningar|ledning|ledningar|instruktion|instruktioner|
-(hint)|vink|vinkar|signal|signaler|pekpinne|pekpinne|pekning|pekningar|
-(clue)|ledtråd|ledtrådar|handledning|handledningar
-(demonstrate)|påvisa|demonstrera|uppvisa|förevisa|presentera|lägga fram|framlägga|an<*föra
-(propose)|proponera|föreslå|föreslår|föreslog|föreslagit|förslag|
-(show)|Visa var skåpet ska stå|
-(proper way)|Så ska en slipsten dras|
-(present)|framföra|framför|framförde|framfört|
-(performance)|föreställning|föreställningar|pjäser|skådespel(sl-pl)|skådespeleri|skådespelerier|skådespeleriet
-(appear)|framträda|framträder|framträdde|framträtt|framträd|uppträda|uppträder|uppträdde|uppträtt|uppträd|
-(Ta initiativ, aktivt)|<*gå i bräschen|
-(entertain)|underhålla|underhåller|underhöll|underhållit|underhåll|underhållning|underhållningar|
-(director)|regissör|regi|regissera|
-(succeed)|lyckas|framgång|genombrott(sl-pl)|
-(Manage to succeed)|<*få till |
-(forge)|Envar sin egen lyckas smed|
-(sunshine)|Idel solsken gör öken|
-(prosperity)|välstånd|välfärd|
-(promotion)|befordran|befordringar|framsteg(sl-pl)|
-(progressive)|framstegsvänlig|
-(tailwind)|Vind i seglen|
-(compensate)|Ta igen på gungorna vad man förlorat på karusellen|
-(knock wood)|Peppar, peppar, ta i trä|lycka till
-(cross fingers)|<*hålla tummarna|<*hålla tummen|
-(success)|succé|succén|succéer|
-(highlight)|höjdare|höjdpunkt|höjdpunkter|kulmen|femetta|femettor|fullträff|fullträffar|mitt i prick|
-(underdog)|den fula ankungen  
-(culminate)|kulminera|
-(lag)|hamna efter|På efterkälken|halka efter
-(fail)|misslyckas|misslyckades|misslyckats|
-(go wrong)|Åt pipsvängen|<*gå åt skogen|barka åt skogen|åka på en snyting|Det går utför|Gå åt pipan|Lägga lök på laxen
-(it's over)|Nu är det klippt
-(pessimism)|Måla fan på väggen(man misstänker)|
-(fail)|Gå på pumpen
-(struggle)|Stånga sig blodig|
-(neither)| Varken hackat eller malet|
-(out of frying pan)|Ur askan i elden|
-(tread water)|Trampa vatten|
-(back to square)|Tillbaka på ruta ett|
-(up and down)|Upp som en sol, ner som en pannkaka|
-(put foot down)|Sätta ner foten(efter misslyckande)|
-(slip)|<*slå slint|
-(zero)|kamma noll|
-(omission)|underlåtenhet|underlåta|underlåter|underlät|underlåtit|misslyckande|misslyckanden|
-(fail)|<*gå i stöpet|rinna ut i sanden|
-(come to nothing)|<*gå om intet|
-(hit snag)|<*stöta på patrull|<*gå på pumpen|åka på pumpen|
-(demotion)|degradering|
-(wreck)|haverist|haverister|
-(failure)|haveri|	haverier|misslyckande|misslyckanden(pl)|fiasko(starkare)|fiaskon(pl)|flopp|floppar|bottennapp(sl-pl)|
-(setback)|bakslag(sl-pl)|motgång|motgångar|tillbakagång
-(fate)|öde|öden(pl)|ödet|tur|
-(fortune)|förmögenhet|
-(misfortune)|missöd|incident|olycka|malör|
-(close call)|Nära ögat
-(bad luck)|osis|otur
-(catastrophic)|katastrofal|ödesdiger|ödesdigra|ödesmättad
-(unfortunately)|tyvärr|beklagligtvis|dessvärre
-(misfortune)|En olycka kommer sällan ensam|Lugnet före stormen
-(fortunately)|dessbättre|lyckligtvis|som tur är|gudskelov|som tur var|
-(lucky)|lyllo |lyllos dig|lycklig|lyckosam|lyckosamhet|lyckosamhetens|
-(icing)|Grädde på moset|Pricken över i:et
-(don't jinx)|Måla inte fan på väggen
-(thank luck)|Tacka sin lyckliga stjärna|Lyckans ost
-(born lucky)|Född med en silversked i munnen|Glida in på en räkmacka|Matjord i fickorna(tur och talang)|
-(served)|Serverat som på silverfat
-(godsend)|Skänk från ovan
-(even blind)|Även en blind höna kan finna ett korn
-(convey)|förmedla|
-(forward)|vidarebefordra|
-(transfer)|överföra|
-(seize)|<*ta i beslag|konfiskera|<*ta över|överta|<*lägga beslag på|
-(grab)|Lägga rabarber på något|roffa åt sig av
-(lay hands)|Lägga vantarna på något
-(negotiation)|förhandling|förhandlingar|förhandla|överlägga|
-(confrontation)|konfrontation|uppgörelse|överensekommelse
-(haggle)|pruta|prutning|prutningar|kompromissa|kompromissar|
-(Overcome)|Överbrygga|
-(concession)|eftergift|eftergifter|uppoffring
-(settlement)|förlikning|förlikningar|förlikas|förlikas|
-(reconciliation)|försoning|försoningar|försona|försonar|försonade|försonat|
-(restore)|återupprätta|återställa|återställning|restaurera|
-(reconstruct)|rekonstruera|uppbygga|uppbyggd|uppbyggt|uppbyggande|uppbyggnad|uppbyggnader|
-(reproduce)|reproducera|åter<*ge|
-(rehabilitate)|upprusta|renovera|
-(recover)|återhämta <*sig|återhämning|<*ta igen <*sig|
-(recover)|tillfriskna|
-(rehabilitate)|rehabilitera|
-(save)|frälsa|bärga|rädda|frälsning|
-(channel)|kanalisera|
-(way out)|utväg|utvägar|
-(end)|ta vägen|göra av sig|
-(detour)|omväg|genväg|omvägar|
-(shortcut)|Genväg är ofta senväg|
-(side trip)|avstickare(sl-pl)|avstickarn|avvikelse|avvikelser|undantag(sl-pl)|avsteg(sl-pl)|
-(exception)|Undantaget som bekräftar regeln
-(even broken)|Även en trasig klocka visar rätt två gånger per dygn
-(wrong path)|villovägar|irrvägar|irrgång|
-(lost)|vilse|vilseledning|misleda|
-(feint)|skenmanöver|skenmanöverer
-(lost)|vilsen|Bortkommen|
-(get lost)|gå vilse|förirra(sig)|
-(level)|utjämna|
-(workload)|arbetsbörda|
-(hurry)|bråttom|brådis|brådska|skyndsamhet|Brinner i knutarna|Eld i baken
-(make it)|hinna|hinner|hann|hunnit|
-(catch up)|komma i kapp|
-(sudden)|bråd|plötslig|ond bråd död|
-#Containers and storage
 (storage)|förråd(sl-pl)|förrådet|lager(sl-pl)|lagret|förvaring|förvaringar|depå(er)|
 (hoard)|hamstra|hamstring|
 (provisions)|proviant(förråd av mat)|nödproviant
@@ -4549,6 +4667,10 @@ Täckmantel
 (empty)|tömma|tömmer|tömde|tömt|tom|
 
 #Tools, machines
+(thing)|pryl|prylar|föremål(sl-pl)|grej|grejer|
+(punch)|hålslagare|
+(screen)|skärm|
+(hose)|slanga(vätska med slang)|slang|slangar|
 (crank)|vev|vevar|
 (crankshaft, connecting rod)|vevaxel|vevaxlar|vevstake|vevstakar|vevstång|vevstångar|
 (landing net)|håv|håvar|fiskhåv|håva (in/ut )|
@@ -4709,6 +4831,15 @@ Täckmantel
 (Tweezer)|pincett(-et)|
 
 #Entertainment
+(fun)|för nöjes skull|på skoj|Glimten i ögat|på pin kiv|Ha så skoj|
+(outing)|På vift|ute och roar sig
+(variety)|Omväxling förnöjer
+(sing)|sjunga|sjunger|sjöng|sjungit|sjung|dansa
+(sing)|<*Sjunga för full hals|
+(sing)|Sjunga som en näktergal
+(leisure)|ledighet|fritid|
+(dance)|dansa|(en runda;ta sig en)svängom|
+(entertain)|underhålla|underhåller|underhöll|underhållit|underhåll|underhållning|underhållningar|
 (record)|skiva|skivor|platta|plattor
 (Record)|inspela|
 (slide)|rutschkana|rutschkanor|ränna|rännor|
@@ -4828,6 +4959,11 @@ Täckmantel
 (equalize)|utjämna|
 
 #Studies, school, education
+(test)|prov|provning|tentamen|tentamina|tenta|tentor|förhör|examination|
+(practice)|utöva|utövning
+(drill)|traggla|traggel|traggler|tragglat|traggla sig igenom|tröska igenom|
+(instruct)|instruera|handleda|handleder|handledde|handlett|anvisa
+(instruction)|anvisning|anvisningar|ledning|ledningar|instruktion|instruktioner|
 (science)|vetenskap|vetenskapen|vetenskaper|
 (examination, degree)|examen|
 (study)|studie|studier|inlärning|inlärningar|lärdom|lärdomar|
@@ -4877,6 +5013,8 @@ Täckmantel
 (lab)|laboration|laborationer
 
 #Lines of work, jobs, occupations, professions & related words
+(position)|befattning|befattning|post|poster|ämbete|ämbeten(pl)|ämbetet|
+(employer)|arbetsgivare|arbetstagare|löntagare|
 (poacher)|tjuvskytt|tjuvskyttar|
 (sniper)|krypskytt|krypskyttar|
 (speculator)|spekulant|spekulanter|
@@ -4981,6 +5119,7 @@ Täckmantel
 (workhorse)|arbetshäst|arbetshästar|arbetsmyra|arbetsmyror|
 
 #Writing, publishing and literature
+(story)|historia|historier|berättelse|
 (binder)|pärm(for books/paper)|
 (poet)|poet|poeter|
 (rhyme, verse, poetry)|rimma|rim(sl-pl) |ramsa|ramsor|vers|verser|dikt|dikter|poesi|poetisk|poetiskt|poetiska|
@@ -4997,6 +5136,7 @@ Täckmantel
 (dictionary)|lexikon(sl-pl)|
 
 #Decision making
+(propose)|proponera|föreslå|föreslår|föreslog|föreslagit|förslag|
 (thinking time)|betänketid
 (decide)|avgöra|avgör|avgjorde|avgjort|bestämma|bestämmer|bestämde|bestämt|fastställa|
 (dispose)|disponera
@@ -5074,6 +5214,8 @@ Täckmantel
 (oppose)|mot<*sätta(sig)|opponera|motsäga|bestrida|bestrider|bestred|bestridit|bestrid|
 
 #Truth, Lies, Deception
+(truth)|<*Se sanningen i vitögat
+(feint)|skenmanöver|skenmanöverer
 (truth)|<*Se sanningen i vitögat
 (dishonest)|oredlig|
 (dishonest)|oärlig|tala med kluven tunga|ljuga|blåljuga|ljuger|ljög|ljugit|ljug|lögn|lögner|lögnaktig|lögnaktighet|svindleri|svindel|förljugen
@@ -5153,11 +5295,12 @@ Täckmantel
 (contest)|bestrida|bestrider|bestred|bestridit|bestrid|
 
 #Logic
+(possibility)|möjlighet|möjlig|rimlig|görlig|eventuell|
+(exception)|Undantaget som bekräftar regeln
 (logic)|logik|logiker|logisk|logiskt|logiska|
 (reason)|förnuft|
 (sense)|Rim och reson|förnuftighet
 (separate issue)|Man ska skilja på sak och person
-
 (of course)|förstås|naturligtvis|givetvis|självklart|uppenbarligen|uppenbart|klart|tveklöst
 (seemingly)|till synes|till synes|synbarligen|uppenbarligen|verkar|kännas|känns|kännes|kändes|känts|
 (appear)|förefalla|förefaller|föreföll|förefallit|förefall|tycks|synes|syns|syntes|
@@ -5223,7 +5366,11 @@ Täckmantel
 (context)|sammanhang(sl-pl)|kontext|kontexter|
 (miss forest)|Stirra sig blind på något(missa sammanhanget)|Se skogen för alla träd
 (fact)|sakförhållande|faktum|
+
 #Religion and spirituality
+(incense)|rökelse|rökelser|
+(conscience)|samvete|
+(superstition)|Vidskepelse|skrock|övertro|trams|nonsens|Gammalt tjosan
 (bless)|välsigna|välsignelse|välsignelser|
 (bless)|gud välsigne dig|
 (prayer)| bön|böner|
@@ -5259,15 +5406,18 @@ Täckmantel
 (human)|mänsklig|
 (illusion)|illusion|illusioner|
 
-#Advanced linguistic constructs
-(impress)|imponera|imponerande|grym|beundransvärd|
+#Language and expression: general terms
+(begin)|börja|
+(honor)|honnör|honnörer |militär hälsning|salut|saluter|
+(hell)|helvete|pipsvängen|
+
+#Language: grammar, sentences and structure
 (whereupon)|varpå|
 (phrase)|fras|fraser|uttryck|uttryckningar|uttryckning|uttryckningar|sägning|sägningar|säg
-(formulate)|formulera|formulering|formuleringar|
-(as you shout)|Som man ropar i skogen får man svar
-(express)|ut<*trycka sig|
-(way of expression)|uttryckssätt|uttryckssätt|ordalag(sl-pl )|
 (sentence, clause, paragraph, section)|sats |satser|mening|meningar|stycke|stycken|paragraf|paragrafer|avsnitt|avsnitt|
+(ought)|böra|bör|borde|bort|
+
+#Language: punctuation, spelling and typography
 (punctuation)|skiljetecken(sl-pl)|
 (period)|punkt|komma|kommatecken|bindestreck|talstreck|tankstreck|utropstecken|frågetecken|citattecken|apostrof|kolon|semikolon|
 (underscore, at sign, slash, brackets, body text)|understreck|(ett)snabel-a|snedstreck|parentes|parenteser|klammer|klamrar|måsvinge|måsvingar|brödtext|brödtexter|
@@ -5276,6 +5426,13 @@ Täckmantel
 (lower case)|gemen|minuskel|små bokstäver|gemener|
 (upper case)|majuskel|versal|stora bokstäver|versaler|
 (upper and lower case)|versaler och gemener|
+(hyphen)|bindestreck|
+
+#Language: writing, style and composition
+(blank)|Oskrivet blad
+(formulate)|formulera|formulering|formuleringar|
+(express)|ut<*trycka sig|
+(way of expression)|uttryckssätt|uttryckssätt|ordalag(sl-pl )|
 (heading)|rubrik|rubriker|titel|titlar|överskrift|överskrifter|
 (classify)|rubricera|beteckna|klassificera|kategorisera|kategorisering|kategoriseringar|rubricering|rubriceringar|
 (keyword)|Ledord|
@@ -5285,10 +5442,16 @@ Täckmantel
 (leave behind)|efterlämna|
 (date)|datera|
 (literal)|bokstavlig|bokstavligt talat|ordagrant|ordagrann|
-(speak like book)|Tala som en bok
 (take literally)|Ta .* på orden|
 (figurative)|bildlig|
 (margin note)|marginalanteckning|
+(address)|tilltal|
+(formalities)|formalia|formalitet|formaliteter
+(unspoken)|outtalad|
+
+#Language: humour, irony and rhetoric
+(as you shout)|Som man ropar i skogen får man svar
+(speak like book)|Tala som en bok
 (rejoinder)|replik(sl-pl)|vits
 (jab)|pik |pikar|gliring|gliringar|pika|glira|
 (tell jokes)|Vi kör vitsar
@@ -5296,34 +5459,45 @@ Täckmantel
 (joke)|skämt(sl-pl)|(vulgar)fräckis
 (irony)|ironi|ironier|
 (satire)|satir|satirer|
+(princesses)|Prinsessor dansar inte lyckligare
+
+#Speech: chatter, gossip and unclear speech
+(disregard)|<*Slå dövörat till|<*Prata i munnen på varandra
+(futility)|<*Tala för döva öron|
+(mumble)|mumla|muttra|kläm<*ma ur (sig)|
+(murmur)|sorl|sorla|
+(nonsense)|<*prata strunt|snurra|Skitprat
+(argue)|jiddra|
+(vague)|flummig
+(nag)|tjata|gnata|tjafsa|
+(gossip)|Snackis|snackisar|På allas läppar
+(redundant)|Kaka på kaka|tårta på tårta
+(drone)|<*mala på(tråkigt, entonigt)|
+(talkonly)|Mycket snack och lite verkstad
+(eloquence)|Välsmort munläder|
 (gossip)|skvallra|surra|skvaller|skvallret|sladder|struntprat|dravel|tjafs|sludder|tjalla|gola(slang)|tjall|
 (If you gossip about others, they’ll gossip about you)|Tala inte om dig själv för andra, det blir gjort efter du gått
 (talk nonsense)|Prata goja|goddag yxskaft
 (babble)|svammel|tissla|tassla|svamla|dilla|svamlig|svamlande
 (babble)|babbla|babbel|pladdra|pladder|glappa|
 (mumble)|sluddra|sludder|lalla|Mumla i skägget
+(rumor,hype)|rykte|rykten(pl)|myt|myter|sägen|sägner|legend|legender|saga|sagor|fabel
+(legendary)|mytomspunnen|legendomspunnen|sägenomspunnen|
+
+#Speech: boasting, praise and reputation
+(impress)|imponera|imponerande|grym|beundransvärd|
 (boast)|skryta|skryter|skröt|skrutit|skryt|<*slå sig för bröstet|förhäva(sig)|kråm<*a sig|stoltsera|yvas|högmodas|Skrävla
 (big words)|Stor i orden, liten på jorden
 (empty barrels)|Tomma tunnor skramlar mest
 (self-praise)|Eget beröm luktar illa|
 (bask)|Sola sig i sin egen glans|Slå sig för bröstet
-(rumor,hype)|rykte|rykten(pl)|myt|myter|sägen|sägner|legend|legender|saga|sagor|fabel
-(legendary)|mytomspunnen|legendomspunnen|sägenomspunnen|
 (reputation)|anseende|aktning|respekt|reputation|status|ställning|
 (notorious)|beryktad|
-(princesses)|Prinsessor dansar inte lyckligare
 (sycophant)|ögontjänare|skrymtare|skrymta|skrymt
-(ought)|böra|bör|borde|bort|
-(begin)|börja|
-(honor)|honnör|honnörer |militär hälsning|salut|saluter|
 (slogan, prestige word)|honnörsord(sl-pl)|
-(hell)|helvete|pipsvängen|
-(address)|tilltal|
-(formalities)|formalia|formalitet|formaliteter
-(unspoken)|outtalad|
-(hyphen)|bindestreck|
 
-#Idiomatic way
+#Conversational expressions and responses
+(kiss off)|Kyss mig i arslet
 (both and)|både och|
 (oops)|ajdå|
 (yes)|jadå|yess|jodå|jojomän|jojomänsan|jojomensan
@@ -5360,7 +5534,6 @@ Täckmantel
 (here you are)|varsågod|håll till godo|
 (meet)| ses | syns | träffas | mötas | möts | möttes | mötts|
 (make way)|Maka på dig|Flytta på dig|Gå åt sidan|Ge plats
-
 (fall out)|<*komma ihop sig
 (get through)|<*komma igenom
 (reach goal)|<*komma i mål
@@ -5427,6 +5600,7 @@ Täckmantel
 (hand them over)|hit med dem|upp med handen|upp med hakan
 (it happens, that's life)|sånt är livet
 (Hit on someone)|<*lägga in en stöt|
+
 #Speaking style, Phrases
 (must not be)|får inte vara|fåintva(talspråk)|
 (was I so)|vajaså(talspråk)|
