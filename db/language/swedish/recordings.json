@@ -10064,5 +10064,400 @@
     },
     "createdAt": 1791566486887,
     "updatedAt": 1791803909576
+  },
+  "Konferensrum AV": {
+    "items": {
+      "Manual": {
+        "Card": [
+          {
+            "manual": true,
+            "id": "mc-confav-001",
+            "source": "Vad är den viktigaste mentala modellen vid AV-felsökning?",
+            "target": "Följ signalvägen: dator → port → adapter eller docka → kabel → vägguttag eller switch → projektor eller skärm → vald input.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-002",
+            "source": "Vad betyder “No Signal” på en projektor?",
+            "target": "Projektorn är igång men tar inte emot en giltig videosignal på den valda ingången.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-003",
+            "source": "Vilka tre saker bör du kontrollera först vid “No Signal”?",
+            "target": "Att projektorn är på, att rätt Source eller Input är vald och att kabeln sitter ordentligt.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-004",
+            "source": "Vilken Windows-genväg används för externa skärmar?",
+            "target": "Win + P.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-005",
+            "source": "Vad är skillnaden mellan Duplicera och Utöka?",
+            "target": "Duplicera visar samma bild på båda skärmarna. Utöka gör projektorn till en separat skrivbordsyta.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-006",
+            "source": "Varför kan skrivbordet synas men inte PowerPoint-presentationen?",
+            "target": "Datorn kan stå i Utöka-läge och presentationen ligger på den andra skärmen eller används i Presentatörsvy.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-007",
+            "source": "Vad kan HDMI transportera?",
+            "target": "Digital bild och ljud.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-008",
+            "source": "Vad är DisplayPort?",
+            "target": "En digital displaystandard, vanlig på datorer och dockor, som kan bära bild och ljud.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-009",
+            "source": "Kan DisplayPort gå genom USB-C?",
+            "target": "Ja, via DisplayPort Alt Mode om porten, kabeln och resten av kedjan stöder det.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-010",
+            "source": "Varför garanterar en USB-C-kontakt inte bild?",
+            "target": "USB-C beskriver kontaktformen. Porten kan ha olika funktioner och måste stödja video, exempelvis DisplayPort Alt Mode.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-011",
+            "source": "Vad är DisplayPort Alt Mode?",
+            "target": "Ett sätt att skicka DisplayPort-video genom en USB-C-anslutning.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-012",
+            "source": "Varför kan en docka ladda datorn men ändå inte ge bild?",
+            "target": "Ström via USB Power Delivery kan fungera även om videovägen saknas, inte stöds eller har ett separat fel.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-013",
+            "source": "Vad är Thunderbolt i det här sammanhanget?",
+            "target": "En teknik över USB-C som kan bära snabb data, DisplayPort-video och ström, med tydligare kapacitetskrav än en vanlig USB-C-port.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-014",
+            "source": "Varför kan två USB-C-kablar som ser likadana ut fungera olika?",
+            "target": "De kan stödja olika datahastigheter, videofunktioner, effekt och protokoll trots att kontakterna ser likadana ut.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-015",
+            "source": "Vad är Hot Plug Detect, HPD?",
+            "target": "En signal som talar om för datorn att en bildskärm eller projektor har anslutits.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-016",
+            "source": "Vad är EDID?",
+            "target": "Information från skärmen till datorn om bland annat identitet, stödda upplösningar och uppdateringsfrekvenser.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-017",
+            "source": "Hur kan ett EDID-problem märkas?",
+            "target": "Som konstig upplösning, fel uppdateringsfrekvens, fel skärmid eller att datorn väljer ett olämpligt bildläge.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-018",
+            "source": "Vad menas med HDMI-handshake?",
+            "target": "Processen där enheterna upptäcker varandra, utbyter displayinformation och vid behov autentiserar HDCP.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-019",
+            "source": "Varför hjälper det ibland att dra ur och sätta tillbaka HDMI-kabeln?",
+            "target": "Det triggar en ny detektion och kan starta om EDID- och HDCP-förhandlingen.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-020",
+            "source": "Vad är HDCP?",
+            "target": "Ett kopieringsskydd som autentiserar bildkedjan för visst skyddat digitalt innehåll.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-021",
+            "source": "Skrivbordet fungerar men skyddad streamingvideo blir svart. Vad misstänker du?",
+            "target": "Ett HDCP-problem i någon del av signalkedjan.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-022",
+            "source": "Vad betyder upplösningen 1920 × 1080?",
+            "target": "Bilden är 1920 pixlar bred och 1080 pixlar hög, ungefär 2,1 miljoner pixlar totalt.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-023",
+            "source": "Vad betyder 60 Hz?",
+            "target": "Skärmen uppdaterar bilden ungefär 60 gånger per sekund.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-024",
+            "source": "Varför kräver 4K60 mycket mer bandbredd än 1080p60?",
+            "target": "4K har fyra gånger så många pixlar som 1080p vid samma uppdateringsfrekvens.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-025",
+            "source": "Vad är färgdjup?",
+            "target": "Hur många nivåer som används för varje färgkanal, exempelvis 8, 10 eller 12 bitar.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-026",
+            "source": "Vad händer med bandbreddsbehovet när färgdjupet ökar?",
+            "target": "Det ökar eftersom mer information skickas för varje pixel.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-027",
+            "source": "Vad är chroma subsampling?",
+            "target": "En metod som minskar mängden färginformation för att spara bandbredd.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-028",
+            "source": "Vad betyder 4:4:4?",
+            "target": "Full färgupplösning för varje pixel, vilket är särskilt bra för skarp text och datorgrafik.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-029",
+            "source": "Varför är 4:4:4 extra bra för presentationer, webbsidor och Excel?",
+            "target": "Små bokstäver och skarpa färgkanter blir tydligare än vid kraftigare chroma-subsampling.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-030",
+            "source": "1080p60 är stabilt men 4K60 blinkar. Vad är en stark misstanke?",
+            "target": "Bandbredds- eller signalkvalitetsproblem i exempelvis kabel, docka, switch eller extender.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-031",
+            "source": "Varför är testet 4K60 → 4K30 användbart?",
+            "target": "Om 4K30 fungerar men 4K60 inte gör det tyder det på att kedjan kan ligga nära sin bandbreddsgräns.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-032",
+            "source": "Varför påverkar långa kablar högupplöst video mer?",
+            "target": "Signalkvaliteten försämras med längden och högre datahastigheter har mindre marginal.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-033",
+            "source": "Vad menas med en digital cliff?",
+            "target": "Signalen kan se perfekt ut tills kvaliteten passerar en gräns och bilden plötsligt börjar blinka, få avbrott eller försvinna.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-034",
+            "source": "Vad är MST?",
+            "target": "Multi-Stream Transport, en DisplayPort-funktion som kan bära flera separata bildströmmar över en länk.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-035",
+            "source": "Varför kan en docka klara en 4K-skärm men inte två?",
+            "target": "Två skärmar delar på tillgänglig displaybandbredd och datorns display-controller kan också sätta en gräns.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-036",
+            "source": "Bevisar två HDMI-uttag på dockan att två 4K-skärmar fungerar?",
+            "target": "Nej. Datorn, GPU:n, länken och dockan måste alla stödja den kombinationen.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-037",
+            "source": "Vad är skillnaden mellan DisplayPort och DisplayLink?",
+            "target": "DisplayPort är en vanlig videosignal. DisplayLink skickar bild via USB-data med programvara och ett DisplayLink-chip i dockan eller adaptern.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-038",
+            "source": "Vad betyder Input i ljudinställningar?",
+            "target": "Ljud som går in i datorn, normalt från mikrofonen.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-039",
+            "source": "Vad betyder Output i ljudinställningar?",
+            "target": "Ljud som går ut från datorn till exempelvis högtalare, projektor eller headset.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-040",
+            "source": "Du hör alla andra, men ingen hör dig. Vilken väg felsöker du?",
+            "target": "Mikrofonvägen: rätt input, mute, nivåmätare, USB-anslutning och appbehörigheter.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-041",
+            "source": "Alla hör dig, men du hör ingen. Vilken väg felsöker du?",
+            "target": "Ljudutgången: rätt högtalare eller output, volym och vald ljudenhet i mötesappen.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-042",
+            "source": "Varför kan ljudet plötsligt gå till projektorn?",
+            "target": "HDMI kan bära ljud och projektorn kan automatiskt väljas som ny ljudutgång.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-043",
+            "source": "Vad är AEC?",
+            "target": "Acoustic Echo Cancellation, som försöker ta bort högtalarljud ur mikrofonsignalen så att motparten inte hör sitt eget ljud som eko.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-044",
+            "source": "Varför kan två laptops i samma möte skapa rundgång?",
+            "target": "Om båda har mikrofon och högtalare aktiva kan ljudet matas tillbaka mellan enheterna.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-045",
+            "source": "Vilka tre enheter bör du kontrollera separat i Teams eller Zoom?",
+            "target": "Högtalare, mikrofon och kamera.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-046",
+            "source": "Varför kan Windows och Teams använda olika högtalare?",
+            "target": "Mötesappen kan ha ett eget enhetsval som skiljer sig från operativsystemets standardenhet.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-047",
+            "source": "Vad visar en rörlig mikrofon-nivåmätare?",
+            "target": "Att mikrofonsignalen åtminstone når den nivå där mätaren visas, exempelvis operativsystemet eller mötesappen.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-048",
+            "source": "Vad är BYOD i ett konferensrum?",
+            "target": "Bring Your Own Device: din laptop kör mötet och använder rummets skärm, kamera, mikrofon och högtalare.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-049",
+            "source": "Är skärmdelning och kameravideo samma dataström?",
+            "target": "Nej. De är separata, så den ena kan fungera även om den andra inte gör det.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-050",
+            "source": "Vad är den bästa generella felsökningsprincipen?",
+            "target": "Isolera signalvägen och ändra en sak i taget så att du vet vilken länk som orsakar felet.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-051",
+            "source": "Vilket direkt-test är bäst för att isolera konferensrummets infrastruktur?",
+            "target": "Koppla laptopen direkt till projektorn eller skärmen, exempelvis med HDMI, och bypassa docka, vägguttag och switch.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-052",
+            "source": "Direktkoppling fungerar men rummets vanliga signalväg fungerar inte. Vad vet du?",
+            "target": "Laptop och projektor kan kommunicera. Felet ligger sannolikt i infrastrukturen mellan dem.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-053",
+            "source": "En annan laptop fungerar i samma rum. Vad pekar det på?",
+            "target": "Fokusera på den första datorns port, adapter, drivrutiner eller inställningar.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-054",
+            "source": "Ingen laptop fungerar i samma rum. Vad pekar det på?",
+            "target": "Misstänk konferensrummets kabel, switch, docka, valda input eller annan gemensam infrastruktur.",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-055",
+            "source": "Varför ska du inte ändra fem inställningar samtidigt när du felsöker?",
+            "target": "Då tappar du orsakssambandet och vet inte vilken ändring som faktiskt påverkade problemet.",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "createdAt": 1792051200000,
+    "updatedAt": 1792051200000
   }
 }
