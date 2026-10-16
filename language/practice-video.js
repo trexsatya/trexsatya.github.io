@@ -1,0 +1,1 @@
+export function createPracticeVideoCues({getPlayer:e,isReady:t,isActive:i,waitUntil:a}){let r=0;const c=e=>e===r&&i();return{invalidate:()=>{r++;try{e()?.pauseVideo()}catch(e){}return r},isCurrent:c,cue:async(i,r,n)=>!!c(n)&&(t()||await a(()=>!c(n)||t()),!!c(n)&&(e().cueVideoById({videoId:i,startSeconds:Number(r)||0}),!0))}}
