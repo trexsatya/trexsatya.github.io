@@ -10577,7 +10577,7 @@
             "manual": true,
             "id": "mc-confav-001",
             "source": "Vad är den viktigaste mentala modellen vid AV-felsökning?",
-            "target": "Följ signalvägen: dator → port → adapter eller docka → kabel → vägguttag eller switch → projektor eller skärm → vald input.",
+            "target": "<div>Följ signalvägen: dator → port → adapter eller docka → kabel → vägguttag eller switch → projektor eller skärm → vald input.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/signal-chain.svg\" alt=\"Konferensrum AV – signal\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10640,7 +10640,7 @@
             "manual": true,
             "id": "mc-confav-010",
             "source": "Varför garanterar en USB-C-kontakt inte bild?",
-            "target": "USB-C beskriver kontaktformen. Porten kan ha olika funktioner och måste stödja video, exempelvis DisplayPort Alt Mode.",
+            "target": "<div>USB-C beskriver kontaktformen. Porten kan ha olika funktioner och måste stödja video, exempelvis DisplayPort Alt Mode.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/usb-c-functions.svg\" alt=\"Konferensrum AV – usb\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10682,7 +10682,7 @@
             "manual": true,
             "id": "mc-confav-016",
             "source": "Vad är EDID?",
-            "target": "Information från skärmen till datorn om bland annat identitet, stödda upplösningar och uppdateringsfrekvenser.",
+            "target": "<div>Information från skärmen till datorn om bland annat identitet, stödda upplösningar och uppdateringsfrekvenser.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/handshake-edid-hdcp.svg\" alt=\"Konferensrum AV – handshake\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10696,7 +10696,7 @@
             "manual": true,
             "id": "mc-confav-018",
             "source": "Vad menas med HDMI-handshake?",
-            "target": "Processen där enheterna upptäcker varandra, utbyter displayinformation och vid behov autentiserar HDCP.",
+            "target": "<div>Processen där enheterna upptäcker varandra, utbyter displayinformation och vid behov autentiserar HDCP.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/handshake-edid-hdcp.svg\" alt=\"Konferensrum AV – handshake\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10710,7 +10710,7 @@
             "manual": true,
             "id": "mc-confav-020",
             "source": "Vad är HDCP?",
-            "target": "Ett kopieringsskydd som autentiserar bildkedjan för visst skyddat digitalt innehåll.",
+            "target": "<div>Ett kopieringsskydd som autentiserar bildkedjan för visst skyddat digitalt innehåll.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/handshake-edid-hdcp.svg\" alt=\"Konferensrum AV – handshake\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10738,7 +10738,7 @@
             "manual": true,
             "id": "mc-confav-024",
             "source": "Varför kräver 4K60 mycket mer bandbredd än 1080p60?",
-            "target": "4K har fyra gånger så många pixlar som 1080p vid samma uppdateringsfrekvens.",
+            "target": "<div>4K har fyra gånger så många pixlar som 1080p vid samma uppdateringsfrekvens.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/bandwidth.svg\" alt=\"Konferensrum AV – bandwidth\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10759,14 +10759,14 @@
             "manual": true,
             "id": "mc-confav-027",
             "source": "Vad är chroma subsampling?",
-            "target": "En metod som minskar mängden färginformation för att spara bandbredd.",
+            "target": "<div>En metod som minskar mängden färginformation för att spara bandbredd.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/chroma.svg\" alt=\"Konferensrum AV – chroma\" width=\"100%\">",
             "enabled": true
           },
           {
             "manual": true,
             "id": "mc-confav-028",
             "source": "Vad betyder 4:4:4?",
-            "target": "Full färgupplösning för varje pixel, vilket är särskilt bra för skarp text och datorgrafik.",
+            "target": "<div>Full färgupplösning för varje pixel, vilket är särskilt bra för skarp text och datorgrafik.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/chroma.svg\" alt=\"Konferensrum AV – chroma\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10808,14 +10808,14 @@
             "manual": true,
             "id": "mc-confav-034",
             "source": "Vad är MST?",
-            "target": "Multi-Stream Transport, en DisplayPort-funktion som kan bära flera separata bildströmmar över en länk.",
+            "target": "<div>Multi-Stream Transport, en DisplayPort-funktion som kan bära flera separata bildströmmar över en länk.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/dock-mst.svg\" alt=\"Konferensrum AV – dock\" width=\"100%\">",
             "enabled": true
           },
           {
             "manual": true,
             "id": "mc-confav-035",
             "source": "Varför kan en docka klara en 4K-skärm men inte två?",
-            "target": "Två skärmar delar på tillgänglig displaybandbredd och datorns display-controller kan också sätta en gräns.",
+            "target": "<div>Två skärmar delar på tillgänglig displaybandbredd och datorns display-controller kan också sätta en gräns.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/dock-mst.svg\" alt=\"Konferensrum AV – dock\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10836,14 +10836,14 @@
             "manual": true,
             "id": "mc-confav-038",
             "source": "Vad betyder Input i ljudinställningar?",
-            "target": "Ljud som går in i datorn, normalt från mikrofonen.",
+            "target": "<div>Ljud som går in i datorn, normalt från mikrofonen.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/audio-io.svg\" alt=\"Konferensrum AV – audio\" width=\"100%\">",
             "enabled": true
           },
           {
             "manual": true,
             "id": "mc-confav-039",
             "source": "Vad betyder Output i ljudinställningar?",
-            "target": "Ljud som går ut från datorn till exempelvis högtalare, projektor eller headset.",
+            "target": "<div>Ljud som går ut från datorn till exempelvis högtalare, projektor eller headset.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/audio-io.svg\" alt=\"Konferensrum AV – audio\" width=\"100%\">",
             "enabled": true
           },
           {
@@ -10955,13 +10955,188 @@
             "manual": true,
             "id": "mc-confav-055",
             "source": "Varför ska du inte ändra fem inställningar samtidigt när du felsöker?",
-            "target": "Då tappar du orsakssambandet och vet inte vilken ändring som faktiskt påverkade problemet.",
+            "target": "<div>Då tappar du orsakssambandet och vet inte vilken ändring som faktiskt påverkade problemet.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/troubleshooting-tree.svg\" alt=\"Konferensrum AV – tree\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-056",
+            "source": "Scenario: Projektorn visar “No Signal” och Windows upptäcker inte någon extern skärm. Vad är ett bra första felsökningssteg?",
+            "target": "<div>Börja nära datorn: kontrollera port, adapter eller docka och kabelanslutning. Testa gärna en känd fungerande kabel eller direktanslutning för att se om datorn kan upptäcka skärmen.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/troubleshooting-tree.svg\" alt=\"Konferensrum AV – tree\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-057",
+            "source": "Scenario: Windows upptäcker projektorn som en extern skärm, men projektorn visar fortfarande “No Signal”. Vad blir mer misstänkt?",
+            "target": "<div>Projektorns valda input eller en del längre fram i signalvägen, till exempel switch, vägguttag, extender eller kabel mellan rumsutrustningen och projektorn.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/signal-chain.svg\" alt=\"Konferensrum AV – signal\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-058",
+            "source": "Scenario: Bilden fungerar när datorn kopplas direkt till projektorn men inte via rummets vägguttag. Vad har testet visat?",
+            "target": "<div>Datorns videoutgång och projektorn fungerar sannolikt. Felet ligger troligen i den del som förbikopplades: vägguttag, intern kabel, switch, extender eller annan rumsinfrastruktur.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/signal-chain.svg\" alt=\"Konferensrum AV – signal\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-059",
+            "source": "Scenario: Direkt HDMI från datorn fungerar, men bild via USB-C-dockan gör det inte. Vad isolerar du härnäst?",
+            "target": "<div>Dockan och USB-C-vägen. Kontrollera att datorns USB-C-port stöder video, att kabeln är en fullfunktionskabel och att dockan stöder önskad bildutgång.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/usb-c-functions.svg\" alt=\"Konferensrum AV – usb\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-060",
+            "source": "Scenario: En annan laptop fungerar direkt med samma kabel och projektor. Vad pekar det på?",
+            "target": "<div>Problemet ligger sannolikt i den första datorn, dess port, adapter, drivrutin eller bildskärmsinställningar snarare än i projektorn eller kabeln.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/troubleshooting-tree.svg\" alt=\"Konferensrum AV – tree\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-061",
+            "source": "Scenario: Samma laptop misslyckas i flera olika konferensrum. Vad blir huvudmisstanken?",
+            "target": "<div>Laptopens egen videoutgång, adapter eller docka, dess drivrutiner eller inställningar. Ett fel som följer med enheten är ofta lokalt till enheten eller dess tillbehör.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/troubleshooting-tree.svg\" alt=\"Konferensrum AV – tree\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-062",
+            "source": "Scenario: Bilden försvinner när HDMI-kabeln rörs vid kontakten. Vad misstänker du?",
+            "target": "<div>Ett mekaniskt kabel- eller kontaktfel, till exempel glapp kontakt, skadad kabel eller sliten port.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/signal-chain.svg\" alt=\"Konferensrum AV – signal\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-063",
+            "source": "Scenario: 1080p60 är helt stabilt men 4K60 blinkar och tappar signal. Vilken hypotes testar du först?",
+            "target": "<div>Bandbredd eller signalkvalitet. Prova exempelvis 4K30, kortare eller bättre kabel, eller förbikoppla docka, switch eller extender.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/bandwidth.svg\" alt=\"Konferensrum AV – bandwidth\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-064",
+            "source": "Scenario: 4K-bild visas, men liten text ser ovanligt suddig eller färgfransig ut. Vad bör du kontrollera?",
+            "target": "<div>Att den faktiska upplösningen är korrekt och om signalen använder kraftig chroma-subsampling. För datorgrafik ger 4:4:4 normalt skarpare text.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/chroma.svg\" alt=\"Konferensrum AV – chroma\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-065",
+            "source": "Scenario: Skrivbord och PowerPoint fungerar, men skyddad streamingvideo blir svart på projektorn. Vad är den starkaste misstanken?",
+            "target": "<div>HDCP. Någon del av bildkedjan kan sakna stöd, ha kompatibilitetsproblem eller misslyckas med autentiseringen.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/handshake-edid-hdcp.svg\" alt=\"Konferensrum AV – handshake\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-066",
+            "source": "Scenario: Bild via HDMI fungerar men ljudet kommer fortfarande ur laptopens högtalare. Vad kontrollerar du?",
+            "target": "<div>Datorns valda ljudutgång. Välj HDMI-, skärm- eller konferensrumsenheten som Output om ljudet ska gå den vägen.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/audio-io.svg\" alt=\"Konferensrum AV – audio\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-067",
+            "source": "Scenario: Distansdeltagarna hör sitt eget tal som eko. Vilket grundproblem misstänker du?",
+            "target": "<div>Rummets högtalarljud fångas upp av mikrofonen utan tillräcklig ekokompensation, eller fel ljudenheter används så att AEC inte fungerar som tänkt.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/audio-io.svg\" alt=\"Konferensrum AV – audio\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-068",
+            "source": "Scenario: Du hör deltagarna i Teams, men de hör inte dig. Vad felsöker du först?",
+            "target": "<div>Mikrofonens input: rätt mikrofon vald, inte mutad, appens mikrofonbehörighet och om nivåmätaren reagerar när du talar.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/audio-io.svg\" alt=\"Konferensrum AV – audio\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-069",
+            "source": "Scenario: Kameran fungerar i en annan app men inte i Teams eller Zoom. Vad pekar det mot?",
+            "target": "<div>Appspecifika inställningar, behörigheter eller att fel kamera är vald, snarare än ett rent hårdvarufel.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/conference-system.svg\" alt=\"Konferensrum AV – system\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-070",
+            "source": "Scenario: En USB-kamera försvinner när flera andra USB-enheter ansluts till samma docka. Vad kan orsaka det?",
+            "target": "<div>Begränsad USB-bandbredd, effekt eller ett problem i hubben eller dockan. Testa kameran direkt eller koppla bort andra USB-enheter.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/conference-system.svg\" alt=\"Konferensrum AV – system\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-071",
+            "source": "Scenario: Bilden blir svart i en sekund när du byter upplösning och kommer sedan tillbaka. Är det alltid ett fel?",
+            "target": "<div>Nej. En kort svartbild kan uppstå när länken synkroniserar om och en ny HDMI- eller DisplayPort-handshake görs. Upprepade eller långvariga avbrott är däremot felsymtom.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/handshake-edid-hdcp.svg\" alt=\"Konferensrum AV – handshake\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-072",
+            "source": "Scenario: Dockan ger ingen bild förrän dess egen nätadapter kopplas in. Vad lär du dig av det?",
+            "target": "<div>Dockan behövde extern ström för att driva sin elektronik eller anslutna enheter korrekt. Strömförsörjning är därför en del av felsökningskedjan.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/dock-mst.svg\" alt=\"Konferensrum AV – dock\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-073",
+            "source": "Scenario: USB-C laddar datorn, men varken skärm eller USB-enheter via samma kabel fungerar. Varför bevisar laddningen inte att kabeln är fullt fungerande?",
+            "target": "<div>Ström kan fungera separat från höghastighetsdata och video. Kabeln eller porten kan stödja laddning men sakna eller ha fel på de ledare och funktioner som behövs för data och DisplayPort Alt Mode.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/usb-c-functions.svg\" alt=\"Konferensrum AV – usb\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-074",
+            "source": "Scenario: En HDMI-switch fungerar med två datorer men inte med en tredje. Vad bör du jämföra?",
+            "target": "<div>Den tredje datorns upplösning, uppdateringsfrekvens, HDCP- och EDID-beteende samt adapter. Testa en enklare bildtiming och direktanslutning för att skilja kapacitets- från kompatibilitetsproblem.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/handshake-edid-hdcp.svg\" alt=\"Konferensrum AV – handshake\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-075",
+            "source": "Scenario: Datorn fungerar direkt till projektorn men inte genom en HDMI-extender. Vad testar du?",
+            "target": "<div>Extendern och dess länk: kategori-kabel, sändare/mottagare, ström och stödd upplösning eller bandbredd. Sänk upplösningen som diagnostiskt test.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/signal-chain.svg\" alt=\"Konferensrum AV – signal\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-076",
+            "source": "Scenario: Bilden visas men kanterna är avskurna på projektorn. Vad kontrollerar du?",
+            "target": "<div>Projektorns aspect ratio, zoom eller overscan samt datorns upplösning och skalning. Målet är en native eller stödd timing utan beskärning.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/bandwidth.svg\" alt=\"Konferensrum AV – bandwidth\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-077",
+            "source": "Scenario: Utöka fungerar, men Duplicera ger fel upplösning eller ingen bild. Varför kan lägena bete sig olika?",
+            "target": "<div>Duplicera kräver ett gemensamt bildläge som båda skärmarna kan använda. Om deras EDID och stödda timings skiljer sig mycket kan spegling välja ett problematiskt kompromissläge.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/handshake-edid-hdcp.svg\" alt=\"Konferensrum AV – handshake\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-078",
+            "source": "Scenario: En extern 4K-skärm fungerar via dockan, men den andra blir svart när du ansluter två. Vad undersöker du?",
+            "target": "<div>Dockans och datorns gränser för antal skärmar, MST och total displaybandbredd. Två utgångar betyder inte automatiskt att vilken kombination av upplösning och Hz som helst stöds.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/dock-mst.svg\" alt=\"Konferensrum AV – dock\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-079",
+            "source": "Scenario: Efter att HDMI ansluts blir mötet plötsligt tyst trots att bilden fungerar. Vad kan ha hänt?",
+            "target": "<div>Operativsystemet kan automatiskt ha bytt ljudutgång till HDMI-skärmen eller projektorn. Kontrollera Output-enheten i systemet och mötesappen.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/audio-io.svg\" alt=\"Konferensrum AV – audio\" width=\"100%\">",
+            "enabled": true
+          },
+          {
+            "manual": true,
+            "id": "mc-confav-080",
+            "source": "Scenario: Du har ett intermittent AV-fel. Vilken arbetsmetod ger bäst chans att hitta orsaken?",
+            "target": "<div>Reproducera felet, följ signalvägen, förenkla kedjan, byt en komponent eller variabel i taget, retesta efter varje ändring och dokumentera vad som faktiskt ändrade beteendet.</div><br><img src=\"https://trexsatya.github.io/db/language/swedish/images/conference-av/troubleshooting-tree.svg\" alt=\"Konferensrum AV – tree\" width=\"100%\">",
             "enabled": true
           }
         ]
       }
     },
     "createdAt": 1792051200000,
-    "updatedAt": 1792051200000
+    "updatedAt": 1792140996498
   }
 }
