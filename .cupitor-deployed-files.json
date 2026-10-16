@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "7fc6626c5da4027702d9219b6e475fae24c8171a",
+  "sourceRevision": "98bad3f4047ad7d52c66e52c94e8ffcaf04384f6",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -159,6 +159,7 @@
     "language/srt-parser.js",
     "language/stemming.js",
     "language/subtitle-naming.js",
+    "language/subtitle-state.js",
     "language/time-format.js",
     "language/translate-block.js",
     "language/translate-lines.js",
@@ -219,7 +220,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.184c942f2de42bb175933aecc6cf44d6.js",
+    "precache-manifest.26f5e99d4b6808c3074176ceca9bf5f2.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
