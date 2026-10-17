@@ -458,6 +458,7 @@ Lägra( sig)|<*slå läger|
 (mood)|humör|känsel|känslor|sinnestillstånd|
 (sensual)|sinnlig|
 (tactile)|taktil|
+
 (sensitive)|mottaglig|känslig|ömtålig
 (fragile)|Skör som kristall
 (speechless)|stum|tyst|mållös|
@@ -752,7 +753,6 @@ Ursäkt|förevändning|täckmantel
 (forgiving)|förlåtande|Storsint
 (moderate)|Lägga fingrarna emellan|
 (refrain)|låta bli|låta någon vara|ge fan i något
-
 #Movement: walking and hiking
 (stomp)|stampa|
 (stomp)|stövla|
@@ -1022,6 +1022,7 @@ Påkörd
 (survive)|(Leva) ur hand i mun|
 
 #Damage, destruction, injury and suffering
+(slaughter)|slakta|massakrera|
 (Barbarity)|barbari|barbariet|barbarier
 (beating)|Ett kok stryk
 (bang)|smäll|smällar|stöt|stötar|slag(sl-pl)|krock|krockar|panga
@@ -1044,6 +1045,7 @@ Påkörd
 (sharp)|brännande|stickande|frän|
 (sting)|svida|svider|sved|svidit|svid|
 (Cramp)|kramp
+(Corrode)|fräta
 (bruised)|blåslagen|
 (harmful)|skadlig|menlig|
 (miserable)|eländig|olycklig|nödställd
@@ -1097,11 +1099,27 @@ Påkörd
 (stale)|kvalm
 (strangle)|strypa|stryper|ströp|strypte|strypt|stryp|
 (drown)|drunkna|förlisning|
+(break)|bryta|bryter|bröt|brutit|bruten|knäcka|knäcker|knäckte|knäckt|bräcka|bräcker|bräckte|bräckt|brott|brytning|
 (sprain)|vricka|stuka|stukning|stukningar|vrickning|vrickningar|
 (flatten)|platta (till)|vika ihop|
+(crack)|spräcka|spräcker|spräckte|spräckt|spricka|sprickor|spricker|sprack|spruckit|
+(rupture)|Bristning|
+(crush)|krossa|söndergöra|förstöra|rubba|sumpa|förstör|förstörde|förstört|sabba|sabotera|fördärva|slå in|inslagen|
 (Distort)|förvrida|förvriden|förvridet
+(obstruct)|Sätta käppar i hjulet
+(tear)| riva (ner,upp)|river| rev | rivit|van<*ställa|fördärv|kväsa|kväser|kväste|kväst|kväs|
+(breakdown)|paja|<*ge vika|
+(shatter)|splittra|splittring|
+(devastate)|föröda|förödande|härja|härjning|härjningar|ödelägga|ödeläggelse|ödeläggelser|skövla|tillintetgöra|
+(vandalize)|vandalisera|föröda|vandalism|förödelse|
 (devastated)|Se ut som sju svåra år
+(crash)|krascha|störta|haverera
+(crack)|rämna|falla|sönderfalla|
 (fall)|stupa|
+(wear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt
+(wornout)|utsliten|uttjänt|förbrukad| slitning|
+(run-down)|nedgång|sunkig|nedgående
+(Downfall)|dekis(vdg.)|dekad|dekadent|förfallen
 (scrape)|skrapa|skrapor|skava|
 (wear)|slipa|slipmaskin|nöta|nöter|nötte|nött|nöt|gnida|gnider|gned|gnidit|gnugga|gno |
 (snowrub)|mula(gnugga snö i ansiktet)|
@@ -1109,6 +1127,10 @@ Påkörd
 (sneaky)|smussla|smussel|fuffens|
 (beg)|tigga|tigger|tiggde|tiggt|tigg|bettla|tiggeri|tiggerier|tiggare|tiggare|tiggande|tiggande|
 (puncture)|punktering|punkteringar|punka|punkor
+(demolish)|rasera|<*riva ned|rivning
+(destroy)|förgöra|förinta|tillintetgöra|utrota|utplåna
+(kill)|död|dödar|avliva|mörda|mord(sl-pl)|mordet|<*slå ihjäl|frånfälle|frånfällen(pl)
+(finalblow)|Sätta in nådastöten|
 (wreck)|skrälle|skrällen(pl)|
 
 #Time: scheduling, waiting and postponement
@@ -1504,7 +1526,7 @@ Påkörd
 (eternal)|evig|evighet|
 (lasting)|beständig|
 (finite)|timlig|förgänglig|ändlig|
-(often)|ofta|
+(often)|ofta| i regel
 (seldom)|sällan|
 (few)| få | färre|färst
 (little)|lite|mindre|minst|medellängd|Som en droppe i havet|Som en fis i vinden (eller rymden)|nätt(litet och fint)|
@@ -1967,6 +1989,9 @@ under<*trycka|dämpa|förkväva|tillbaka<*hålla
 (occur)|utspela|ske|sker|skedde|skett|inträffa|till<*dra sig|<*äga rum|försig<*gå|Gå av stapeln|in<*falla|
 (happen)| <*bli av |blir någott av det|<*Komma till stånd|
 (occur)|förekomma|förekommer|förekom|förekommit|förekommande| ske | sker |skedde|skett|inträffa|inträffar|inträffade|inträffat|tilldra sig|tilldrar sig|tilldrog sig|tilldragit sig|
+(underway)|(vara) på väg (att)|(vara) på gång (att)|På G | i färd med|
+(ongoing)|pågående|pågå|pågick|pågått|pågång|pågångar|
+(ongoing)|fortgående|fortgå|fortgick|fortgått|fortgång|fortgångar|
 (time)|mycket vatten har runnit/flutit under broarna sedan|
 (phase)|aggregationstillstånd|aggregationsfas
 
@@ -2213,6 +2238,7 @@ Täckmantel
 (good)|bra|sjyst|häftig|hyfsad|frän|hygglig|anständig|rimlig|skälig|
 (expression, keeping body and soul together, still in one piece)|Huvudet upp och fötterna ned
 (expression, in your element, at your best)|I sitt esse
+(expression, come full circle)|Cirkeln är sluten|
 (expression, no worries, take it easy)|Lugna puckar
 (decent)|hövisk|anständig|skaplig|
 (excellent)|galant|suverän|utmärkt|kanon|jättebra|toppen|förträfflig|pipa(vard.)|fantastisk|underbar|magnifik|glimrande|strålande|särdeles|utomordentlig|förträfflig|
@@ -5245,7 +5271,11 @@ Myndighet|ämbetsverk
 (account)|redogörelse|bevisföring
 (fictional)|fiktiv|påhittad|overklig|
 (Whim)|hugskott
+(invention)|påhitt|påfund|idé|idéer|tanke|tankar|infall|hugskott|nyck|nycker|
+(invention)|uppfinning|genombrott|
 (capricious)|nyckfull|lynnig|ombytlig|oberäknelig|där vinnet går in går vettet|oförutsägbar|
+(invent)|påhitta|<*hitta på|<*komma på|<*lista ut|<*komma med|klura ut|Gripa.* ur luften|skaka.* ur ärmen|
+(invent)|uppfinna|fynd(sl-pl)|
 ( improvise )|det man inte har i huvudet får man ha i benen|improvisera|koka soppa på en spik|spåna
 (get idea)|få för sig|flög i mig|
 (on tip of tongue)|<*Ha.* på tungan
@@ -5709,3 +5739,21 @@ visa=visa,visar,visade,visat
 [a-z]*bt[a-z]*
 [a-za-z]*n[\s]m[a-za-z]*
 [a-z]*gt[a-z]*
+#Creating, building and manufacturing
+(cast)|gjuta|gjuter|göt|gjutit|hälla| ösa|öser | öste| öst|
+(form)|bilda|utgöra|skapa|alstra|smida|beskaffa
+(design)|utforma|gestalta|designa
+(formulate)|formulera|
+(sketch)|skissa|skiss|skisser|
+(contour)|kontur|konturer|
+(paint)|måla|kludda(dåligt måla)|kludd|kluddar|klotter|klottra|kladda|
+(smear)|smeta
+(tar)|tjära|
+(spackle)|spackling|spackla|spackel
+(coat)|bestryka|grundmåla
+(carve)|rista|ristning|hällristning|
+(carve)|karva|
+(phantom)|fantombild|
+(manufacture)|tillverka|framställa
+(produce)|fram<*ta|framtagen|framtaget| <*ta fram |<*få fram|
+(build)|bygga|bygger|byggde|byggt|konstruera|
