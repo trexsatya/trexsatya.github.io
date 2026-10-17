@@ -228,7 +228,7 @@
           box-shadow: 0 -2px 10px rgba(0,0,0,0.6);
         }
         .cup-sub-head {
-          padding: 6px 8px; display: flex; gap: 4px; align-items: center;
+          padding: 6px 8px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
           background: #1a1a1a; border-bottom: 1px solid rgba(255,255,255,0.1);
           user-select: none; flex: 0 0 auto;
         }
@@ -325,6 +325,7 @@
           <button data-act="split" class="cup-on" title="Toggle split view">⇋</button>
           <button data-act="scroll" class="cup-on" title="Auto-scroll">⇩</button>
           <button data-act="translate" title="Toggle translation">🌐</button>
+          <button data-act="download" title="Download YouTube subtitles" style="display:none">⤓CC</button>
           <button data-act="settings" title="Strategy &amp; settings">⚙</button>
           <button data-act="prev" title="Previous cue">⟨</button>
           <button data-act="next" title="Next cue">⟩</button>
@@ -362,6 +363,11 @@
       };
       syncPickUi();
       sb.querySelector('[data-act="settings"]').onclick = () => openSettingsDialog();
+      const download = sb.querySelector('[data-act="download"]');
+      if (typeof opts.onDownloadSubtitles === 'function') {
+        download.style.display = '';
+        download.onclick = () => opts.onDownloadSubtitles();
+      }
       sb.querySelector('[data-act="prev"]').onclick = () => seekRelative(-1);
       sb.querySelector('[data-act="next"]').onclick = () => seekRelative(+1);
       sb.querySelector('[data-act="copy"]').onclick = () => {
@@ -384,7 +390,10 @@
         syncPickUi();
       };
       sb.querySelector('[data-act="send"]').onclick = () => sendSelected();
-      sb.querySelector('[data-act="clear"]').onclick = () => clearCues();
+      sb.querySelector('[data-act="clear"]').onclick = () => {
+        clearCues();
+        if (typeof opts.onClearCues === 'function') opts.onClearCues();
+      };
 
       if (state.cues.length && state.listEl) {
         for (let i = 0; i < state.cues.length; i++) renderCue(state.cues[i], i);
@@ -582,6 +591,21 @@
       // NOTE: chunk progression is intentionally NOT driven from here — see
       // onPlayheadCue(). Harvested cues stream ahead of the playhead; counting
       // them on arrival made chunks fire on unwatched cues.
+    }
+
+    // Replace a complete downloaded track in one pass. Unlike the streaming
+    // addCue path, no repeated insertion/duplicate scan is needed per line.
+    function replaceCues(cues, language) {
+      clearCues();
+      buildSidebar();
+      if (language) state.translationSource = language;
+      state.cues = cues.map(cue => ({ ...cue, id: state.nextCueId++ }));
+      if (state.listEl) {
+        for (let i = 0; i < state.cues.length; i++) renderCue(state.cues[i], i);
+      }
+      if (state.translationEnabled) {
+        for (let i = 0; i < state.cues.length; i++) requestTranslation(i);
+      }
     }
 
     // Selection is only offered inside Cupitor: without the channel there is
@@ -1279,8 +1303,9 @@
     }
 
     return {
-      addCue, clearCues, buildSidebar, setSplit, setVideoElement,
+      addCue, clearCues, replaceCues, buildSidebar, setSplit, setVideoElement,
       get currentVideo() { return state.currentVideo; },
+      get sourceLanguage() { return state.translationSource; },
     };
   }
   // ── The address a captured block is sent under ───────────────────────
@@ -1493,7 +1518,13 @@
     },
     {
       id: 'youtube',
-      host: /(^|\.)youtube\.com$|^youtu\.be$/,
+      host: /(^|\.)youtube(?:-nocookie)?\.com$|^youtu\.be$/,
+      isWatchPage: () => {
+        const url = new URL(location.href);
+        return /^[A-Za-z0-9_-]{11}$/.test(url.searchParams.get('v') || '') ||
+          /^\/(?:shorts|embed|live|v)\/[A-Za-z0-9_-]{11}(?:\/|$)/.test(url.pathname) ||
+          (url.hostname === 'youtu.be' && /^\/[A-Za-z0-9_-]{11}(?:\/|$)/.test(url.pathname));
+      },
       domSelector: '.ytp-caption-window-container',
       cueSelector: '.ytp-caption-segment',
       // Arrive at a video through a timed link and the address keeps `t`.
@@ -2978,7 +3009,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 20;
+    const CAPS_VERSION = 21;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -2995,6 +3026,9 @@
       document.body.classList.remove('cup-sub-split');
       // CSS-in-JS marker class we may have left on a player wrapper.
       document.querySelectorAll('.cup-shrink-target').forEach(el => el.classList.remove('cup-shrink-target'));
+      if (window.__cupImportYouTubeSubtitles === importYouTubeSubtitles) {
+        delete window.__cupImportYouTubeSubtitles;
+      }
     }
     // Wrap setInterval so every timer this install starts can be cleared
     // by teardown later. Keeps the install fully self-contained.
@@ -3021,7 +3055,83 @@
       shrinkSelectors: site.shrinkSelectors,
       timeParam: timeParam,
       timeLinkOn: timeLinkOn,
+      onDownloadSubtitles: site.id === 'youtube' && window.YouTubeSubtitles &&
+        typeof window.YouTubeSubtitles.postMessage === 'function'
+        ? () => window.YouTubeSubtitles.postMessage(JSON.stringify({op: 'download'}))
+        : null,
+      onClearCues: () => {
+        const id = downloadedVideoId;
+        downloadedVideoId = null;
+        if (id) {
+          try {
+            sessionStorage.setItem(cacheKey, JSON.stringify(readDownloads().filter(t => t.videoId !== id)));
+          } catch (_) {}
+        }
+      },
     });
+
+    function currentYouTubeId() {
+      if (site.id !== 'youtube') return null;
+      const url = new URL(location.href);
+      const id = url.searchParams.get('v') ||
+        (/^\/(?:shorts|embed|live|v)\/([^/?#]+)/.exec(url.pathname) || [])[1] ||
+        (url.hostname === 'youtu.be' ? url.pathname.slice(1).split('/')[0] : '');
+      return /^[A-Za-z0-9_-]{11}$/.test(id || '') ? id : null;
+    }
+    const defaultSourceLanguage = ui.sourceLanguage;
+    let downloadedVideoId = null;
+    const cacheKey = 'cupitorDownloadedYouTubeSubtitles';
+    function readDownloads() {
+      try {
+        const value = JSON.parse(sessionStorage.getItem(cacheKey) || '[]');
+        return Array.isArray(value) ? value.slice(-5) : [];
+      } catch (_) { return []; }
+    }
+    function normalizeDownload(payload) {
+      if (!payload || !/^[A-Za-z0-9_-]{11}$/.test(payload.videoId || '') ||
+          !Array.isArray(payload.lines)) return null;
+      const seen = new Set();
+      const lines = [];
+      for (const cue of payload.lines) {
+        if (!cue || typeof cue.text !== 'string' || !cue.text.trim()) continue;
+        if (typeof cue.start !== 'number' || typeof cue.end !== 'number') continue;
+        const start = Number(cue.start), end = Number(cue.end);
+        if (!Number.isFinite(start) || !Number.isFinite(end) || start < 0 || end <= start) continue;
+        const text = cue.text.trim();
+        const key = JSON.stringify([start, end, text]);
+        if (seen.has(key)) continue;
+        seen.add(key);
+        lines.push({start, end, text});
+      }
+      if (!lines.length) return null;
+      lines.sort((a, b) => a.start - b.start || a.end - b.end);
+      const language = typeof payload.lang === 'string' ? payload.lang.trim() : '';
+      const lang = /^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$/.test(language) ? language : defaultSourceLanguage;
+      return {videoId: payload.videoId, lang, lines};
+    }
+    function importYouTubeSubtitles(payload, remember = true) {
+      const track = normalizeDownload(payload);
+      if (!track || track.videoId !== currentYouTubeId()) return false;
+      checkPage();
+      downloadedVideoId = track.videoId;
+      ui.setVideoElement(document.querySelector('video'));
+      ui.replaceCues(track.lines, track.lang);
+      ui.setSplit(!!document.querySelector('video'));
+      if (remember) {
+        try {
+          const previous = readDownloads().filter(t => t && t.videoId !== track.videoId);
+          sessionStorage.setItem(cacheKey, JSON.stringify([...previous, track].slice(-5)));
+        } catch (_) { /* The live transcript still works if storage is full. */ }
+      }
+      return true;
+    }
+    function restoreDownload() {
+      const id = currentYouTubeId();
+      if (!id || downloadedVideoId === id) return;
+      const cached = readDownloads().find(t => t && t.videoId === id);
+      if (cached) importYouTubeSubtitles(cached, false);
+    }
+    if (site.id === 'youtube') window.__cupImportYouTubeSubtitles = importYouTubeSubtitles;
 
     function isWatchPage() {
       // Sites that also serve non-video pages narrow this down; everywhere
@@ -3094,7 +3204,9 @@
       console.log('[caps] new video page — clearing the list:', key);
       lastPageKey = key;
       mirrorAfterSwitch = true;
-      ui.clearCues();
+      if (downloadedVideoId) ui.replaceCues([], defaultSourceLanguage);
+      else ui.clearCues();
+      downloadedVideoId = null;
     }
 
     // ---- 1) textTracks: read cues directly ----
@@ -3107,6 +3219,7 @@
     function harvestTrack(track) {
       if (!track || !track.cues) return 0;
       checkPage();
+      if (downloadedVideoId && downloadedVideoId === currentYouTubeId()) return 0;
       let n = 0;
       for (let i = 0; i < track.cues.length; i++) {
         const c = track.cues[i];
@@ -3169,6 +3282,7 @@
     }
     function parseAndPushVtt(text) {
       checkPage();
+      if (downloadedVideoId && downloadedVideoId === currentYouTubeId()) return;
       const lines = text.split(/\r?\n/);
       let i = 0, added = 0;
       while (i < lines.length) {
@@ -3232,6 +3346,7 @@
       let lastChangeAt = 0;
       ownSetInterval(() => {
         checkPage();
+        if (downloadedVideoId && downloadedVideoId === currentYouTubeId()) return;
         const container = document.querySelector(site.domSelector);
         if (!container) return;
         // Prefer the inner cue element (multiple lines) — fall back to the
@@ -3307,6 +3422,7 @@
     let lastMarked = null;
     ownSetInterval(() => {
       checkPage();
+      restoreDownload();
       const v = document.querySelector('video');
       if (v) ui.setVideoElement(v);
       const want = isWatchPage() && !!v;
