@@ -197,7 +197,7 @@
           box-shadow: 0 -2px 10px rgba(0,0,0,0.6);
         }
         .cup-sub-head {
-          padding: 6px 8px; display: flex; gap: 4px; align-items: center;
+          padding: 6px 8px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
           background: #1a1a1a; border-bottom: 1px solid rgba(255,255,255,0.1);
           user-select: none; flex: 0 0 auto;
         }
@@ -294,6 +294,7 @@
           <button data-act="split" class="cup-on" title="Toggle split view">⇋</button>
           <button data-act="scroll" class="cup-on" title="Auto-scroll">⇩</button>
           <button data-act="translate" title="Toggle translation">🌐</button>
+          <button data-act="download" title="Download YouTube subtitles" style="display:none">⤓CC</button>
           <button data-act="settings" title="Strategy &amp; settings">⚙</button>
           <button data-act="prev" title="Previous cue">⟨</button>
           <button data-act="next" title="Next cue">⟩</button>
@@ -331,6 +332,11 @@
       };
       syncPickUi();
       sb.querySelector('[data-act="settings"]').onclick = () => openSettingsDialog();
+      const download = sb.querySelector('[data-act="download"]');
+      if (typeof opts.onDownloadSubtitles === 'function') {
+        download.style.display = '';
+        download.onclick = () => opts.onDownloadSubtitles();
+      }
       sb.querySelector('[data-act="prev"]').onclick = () => seekRelative(-1);
       sb.querySelector('[data-act="next"]').onclick = () => seekRelative(+1);
       sb.querySelector('[data-act="copy"]').onclick = () => {
@@ -353,7 +359,10 @@
         syncPickUi();
       };
       sb.querySelector('[data-act="send"]').onclick = () => sendSelected();
-      sb.querySelector('[data-act="clear"]').onclick = () => clearCues();
+      sb.querySelector('[data-act="clear"]').onclick = () => {
+        clearCues();
+        if (typeof opts.onClearCues === 'function') opts.onClearCues();
+      };
 
       if (state.cues.length && state.listEl) {
         for (let i = 0; i < state.cues.length; i++) renderCue(state.cues[i], i);
@@ -551,6 +560,21 @@
       // NOTE: chunk progression is intentionally NOT driven from here — see
       // onPlayheadCue(). Harvested cues stream ahead of the playhead; counting
       // them on arrival made chunks fire on unwatched cues.
+    }
+
+    // Replace a complete downloaded track in one pass. Unlike the streaming
+    // addCue path, no repeated insertion/duplicate scan is needed per line.
+    function replaceCues(cues, language) {
+      clearCues();
+      buildSidebar();
+      if (language) state.translationSource = language;
+      state.cues = cues.map(cue => ({ ...cue, id: state.nextCueId++ }));
+      if (state.listEl) {
+        for (let i = 0; i < state.cues.length; i++) renderCue(state.cues[i], i);
+      }
+      if (state.translationEnabled) {
+        for (let i = 0; i < state.cues.length; i++) requestTranslation(i);
+      }
     }
 
     // Selection is only offered inside Cupitor: without the channel there is
@@ -1248,8 +1272,9 @@
     }
 
     return {
-      addCue, clearCues, buildSidebar, setSplit, setVideoElement,
+      addCue, clearCues, replaceCues, buildSidebar, setSplit, setVideoElement,
       get currentVideo() { return state.currentVideo; },
+      get sourceLanguage() { return state.translationSource; },
     };
   }
   // ── The address a captured block is sent under ───────────────────────

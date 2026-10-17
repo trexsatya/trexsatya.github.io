@@ -89,7 +89,13 @@
     },
     {
       id: 'youtube',
-      host: /(^|\.)youtube\.com$|^youtu\.be$/,
+      host: /(^|\.)youtube(?:-nocookie)?\.com$|^youtu\.be$/,
+      isWatchPage: () => {
+        const url = new URL(location.href);
+        return /^[A-Za-z0-9_-]{11}$/.test(url.searchParams.get('v') || '') ||
+          /^\/(?:shorts|embed|live|v)\/[A-Za-z0-9_-]{11}(?:\/|$)/.test(url.pathname) ||
+          (url.hostname === 'youtu.be' && /^\/[A-Za-z0-9_-]{11}(?:\/|$)/.test(url.pathname));
+      },
       domSelector: '.ytp-caption-window-container',
       cueSelector: '.ytp-caption-segment',
       // Arrive at a video through a timed link and the address keeps `t`.
