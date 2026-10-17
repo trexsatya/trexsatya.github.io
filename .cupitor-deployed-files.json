@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "54f63110e2649af13df38f8b075494dbd7aa4a5a",
+  "sourceRevision": "349f1997414d01bbe761d60c03fad73dd73f57aa",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -102,6 +102,7 @@
     "language/account-panel.js",
     "language/account-state.js",
     "language/account.js",
+    "language/app-lifecycle.js",
     "language/cache-manager.js",
     "language/caption-capture.js",
     "language/card-html.js",
@@ -131,6 +132,7 @@
     "language/practice-video.js",
     "language/random-playlist.js",
     "language/rare-words.js",
+    "language/recording-video.js",
     "language/recordings-3way.js",
     "language/recordings-gc.js",
     "language/recordings-merge.js",
@@ -224,7 +226,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.19e53a38915447da7eef57debafdd588.js",
+    "precache-manifest.e6d9e214f3cab28d5ce6bdbe7052c19e.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
