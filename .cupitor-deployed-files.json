@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "31bf82fa3b7ed77eb699033dfee4ca42f0def2bf",
+  "sourceRevision": "d990dd463a914154cb0dae34216e78a362a7cede",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -113,6 +113,7 @@
     "language/dialog-scrolling.js",
     "language/different-prefix.js",
     "language/filmot-parse.js",
+    "language/full-srt-dialog.js",
     "language/highlight.js",
     "language/html-utils.js",
     "language/image-viewer.js",
@@ -171,6 +172,7 @@
     "language/study-calls.js",
     "language/study-chrome.js",
     "language/study-divider.js",
+    "language/subtitle-bundles.js",
     "language/subtitle-naming.js",
     "language/subtitle-state.js",
     "language/time-format.js",
@@ -233,7 +235,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.525d46b7ef09ffde30a1f96b1ab72715.js",
+    "precache-manifest.bccbf850ceec038fd757a0fa48150b57.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
