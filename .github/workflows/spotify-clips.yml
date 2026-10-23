@@ -1,0 +1,38 @@
+name: Spotify clip regression tests
+
+on:
+  pull_request:
+    branches: [gh-pages]
+    paths:
+      - 'language/**'
+      - 'language.html'
+      - '.github/workflows/spotify-clips.yml'
+  push:
+    branches: [gh-pages]
+    paths:
+      - 'language/**'
+      - 'language.html'
+      - '.github/workflows/spotify-clips.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  spotify-clips:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install test dependencies
+        run: npm install --prefix "$RUNNER_TEMP/cupitor-spotify-tests" --no-audit --no-fund jsdom@26.1.0 jquery@3.7.1 @babel/parser@7.28.5
+      - name: Check player syntax
+        run: |
+          node --check language/spotify-player.js
+          node --check language/language.js
+      - name: Run Spotify and card selection regressions
+        run: CUPITOR_JSDOM="$RUNNER_TEMP/cupitor-spotify-tests/node_modules/jsdom" node --test language/spotify-*.test.mjs language/card-selection-search.test.mjs

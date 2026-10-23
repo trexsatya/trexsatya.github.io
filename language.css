@@ -1,0 +1,5062 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(webfonts/Beattingvile.woff);
+    font-weight: bold;
+}
+
+/* ── Toolbar ──────────────────────────────────────── */
+.lang-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 4px 0;
+}
+
+.lang-toolbar-center {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+
+.lang-search-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.lang-search-top-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.lang-toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-search-input {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 130px;
+    padding: 4px 28px 4px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.lang-search-input-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    min-width: 130px;
+}
+
+.lang-search-input-wrap .lang-search-input {
+    width: 100%;
+}
+
+.lang-search-input-clear {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    line-height: 14px;
+    padding: 0;
+    border: none;
+    background: #ced4da;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-search-input-clear:hover {
+    background: #6c757d;
+}
+
+/* Hide the native WebKit search-clear "x" so we don't show two clear buttons. */
+.lang-search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Clear (X) button injected into the select2 dropdown's search field. */
+.select2-search--dropdown {
+    position: relative;
+}
+.select2-search-clear {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    line-height: 14px;
+    padding: 0;
+    border: none;
+    background: #ced4da;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.select2-search-clear:hover {
+    background: #6c757d;
+}
+.select2-search-clear.is-visible {
+    display: flex;
+}
+/* Suppress the native WebKit clear icon inside select2's search field too. */
+.select2-search__field::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.lang-search-select-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+
+.lang-search-select-row .select2,
+.lang-search-select-row .select2-container {
+    width: 100% !important;
+}
+/* The vocabulary select and the SV/EN switch share one line: the switch says
+   which language the box below is searched in, so it belongs next to it rather
+   than buried in Settings. The select takes the rest of the row. */
+.lang-search-select-row .lang-select-with-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+}
+/* The original <select> is skipped once select2 has taken it over. select2
+   parks it off-screen at 1px and relies on that staying 1px; this rule is more
+   specific and would size it to its widest option instead — hundreds of pixels
+   of page that nothing is drawn on, which the phone will happily scroll to.
+   Before select2 runs, and if it never does, the plain select is still the
+   control and still gets sized. */
+.lang-search-select-row .lang-select-with-toggle > select:not(.select2-hidden-accessible),
+.lang-search-select-row .lang-select-with-toggle .select2-container {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto !important;   /* beats the row-wide 100% above */
+}
+/* bootstrap-toggle replaces the checkbox with a .toggle widget; size and paint
+   that, not the input.
+
+   It is a Bootstrap 3 widget and this page loads Bootstrap 4, so the classes it
+   asks for — .btn-default above all — no longer exist and the switch arrives
+   with no appearance at all, just the words SV/EN in the flow. Its own CSS
+   still does the sliding, so only the looks are supplied here. */
+.lang-search-select-row .lang-select-with-toggle .toggle {
+    flex: 0 0 auto;
+    width: 44px !important;
+    height: 22px !important;
+    min-width: 44px;
+    border: 1px solid #c8d1da;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #eef1f4;
+    cursor: pointer;
+}
+.lang-search-select-row .lang-select-with-toggle .toggle .btn {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 3px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 20px;
+    min-height: 0;
+}
+/* The language actually in use reads as the "on" side whichever it is. */
+.lang-search-select-row .lang-select-with-toggle .toggle .toggle-on {
+    background: #2f6feb;
+    color: #fff;
+    text-align: left;
+}
+.lang-search-select-row .lang-select-with-toggle .toggle .toggle-off {
+    background: #7c8794;
+    color: #fff;
+    text-align: right;
+}
+.lang-search-select-row .lang-select-with-toggle .toggle .toggle-handle {
+    background: #fff;
+    border: 1px solid #c8d1da;
+    border-radius: 999px;
+    width: 14px;
+    padding: 0;
+}
+
+.lang-tool-btn {
+    padding: 5px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background: #f8f9fa;
+    cursor: pointer;
+    font-size: 0.85em;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.lang-tool-btn:hover {
+    background: #e2e6ea;
+    border-color: #adb5bd;
+}
+
+.lang-tool-btn--icon {
+    padding: 5px 7px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.lang-toolbar-separator {
+    width: 1px;
+    height: 22px;
+    background: #ced4da;
+    margin: 0 2px;
+    flex-shrink: 0;
+}
+
+/* Settings panel footer: build info + Logs button */
+.settings-footer {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed #d0d7de;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8em;
+    color: #6a737d;
+}
+.build-info {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    color: #57606a;
+    user-select: text;
+}
+.lang-tool-btn#syncSrtEditsBtn.has-pending {
+    background: #fff8c5;
+    border-color: #d4a72c;
+    color: #4d3800;
+    font-weight: 600;
+}
+
+/* SRT edits review dialog — opens when the user clicks the Sync button so
+   they can pick which buffered edits to actually push to GitHub. */
+#srtEditsReviewDialog .srt-review-info {
+    padding: 4px 4px 8px;
+    font-size: 12px;
+    color: #57606a;
+}
+.srt-review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 4px;
+}
+.srt-review-list .srt-review-empty {
+    padding: 24px 8px;
+    text-align: center;
+    color: #888;
+}
+.srt-review-file {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background: #fafbfc;
+    padding: 8px 10px;
+}
+.srt-review-file-head {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    color: #24292f;
+    font-weight: 600;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #d0d7de;
+    margin-bottom: 6px;
+}
+/* The header doubles as the file's own select/deselect control. */
+.srt-review-file-keep-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.srt-review-file-keep {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+.srt-review-file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.srt-review-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 0;
+    border-bottom: 1px dotted #e1e4e8;
+}
+.srt-review-row:last-child { border-bottom: none; }
+.srt-review-keep-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #57606a;
+    cursor: pointer;
+}
+.srt-review-keep-wrap .srt-review-meta { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.srt-review-keep-wrap .srt-review-age { color: #8b949e; margin-left: 6px; }
+.srt-review-text {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 13px;
+    padding: 6px 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    background: #fff;
+    color: #24292f;
+    resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.srt-review-actions {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    gap: 8px;
+    padding: 8px 4px 4px;
+    background: linear-gradient(to top, rgba(255,255,255,0.96), rgba(255,255,255,0.85));
+    flex-wrap: wrap;
+}
+#srtEditsPushSelected {
+    background: #2e7d32;
+    color: #fff;
+    border-color: #2e7d32;
+    font-weight: 600;
+}
+#srtEditsPushSelected:hover { background: #1b5e20; border-color: #1b5e20; }
+#srtEditsDiscardSelected {
+    background: #c62828;
+    color: #fff;
+    border-color: #c62828;
+}
+#srtEditsDiscardSelected:hover { background: #b71c1c; border-color: #b71c1c; }
+
+/* Log viewer dialog */
+.log-viewer-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+.log-viewer-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85em;
+}
+.log-viewer-search {
+    flex: 1 1 120px;
+    min-width: 100px;
+    padding: 4px 6px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+.log-viewer-body {
+    margin: 0;
+    padding: 8px;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11.5px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 60vh;
+    overflow: auto;
+    border-radius: 4px;
+}
+.log-viewer-body .log-line {
+    display: block;
+    padding: 1px 0;
+    border-bottom: 1px dotted #21262d;
+}
+.log-viewer-body .log-line[data-level="error"]  { color: #ff7b72; }
+.log-viewer-body .log-line[data-level="warn"]   { color: #f0b72f; }
+.log-viewer-body .log-line[data-level="info"]   { color: #79c0ff; }
+.log-viewer-body .log-line[data-level="debug"]  { color: #8b949e; }
+.log-viewer-body .log-ts {
+    color: #6e7681;
+    margin-right: 6px;
+}
+.log-viewer-body .log-level {
+    display: inline-block;
+    min-width: 38px;
+    margin-right: 6px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.search-vocab-popover-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+/* Rare / unused vocabulary finder dialog */
+.rare-words-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.rare-words-threshold-label {
+    font-size: 0.85em;
+    display: inline-flex;
+    align-items: center;
+}
+.rare-words-status {
+    font-size: 12px;
+    color: #6a737d;
+}
+.rare-words-progress {
+    width: 100%;
+    height: 3px;
+    background: #eee;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+.rare-words-progress-fill {
+    width: 0;
+    height: 100%;
+    background: #4dba87;
+    transition: width .15s ease;
+}
+.rare-words-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 50vh;
+    overflow: auto;
+    padding: 2px;
+    align-content: flex-start;
+}
+.rare-words-empty {
+    font-size: 0.85em;
+    color: #8b949e;
+    padding: 8px 2px;
+}
+.rare-word-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 14px;
+    background: #f6f8fa;
+    cursor: pointer;
+    font-size: 0.85em;
+    color: #24292f;
+    max-width: 100%;
+}
+.rare-word-item:hover {
+    background: #eaf5ff;
+    border-color: #54aeff;
+}
+.rare-word-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 220px;
+}
+.rare-word-count {
+    font-size: 0.78em;
+    font-weight: 600;
+    color: #fff;
+    background: #8c959f;
+    border-radius: 9px;
+    padding: 0 6px;
+    min-width: 16px;
+    text-align: center;
+}
+.rare-words-pager {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.rare-words-pageinfo {
+    font-size: 0.8em;
+    color: #6a737d;
+}
+
+/* Option panel that appears when the user clicks a subtitle word. */
+.subtitle-word-popover {
+    position: absolute;
+    z-index: 10000;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 140px;
+}
+.subtitle-word-popover[hidden] { display: none; }
+.subtitle-word-popover button {
+    text-align: left;
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    line-height: 1.2;
+}
+.subtitle-word-popover button:hover {
+    background: #f1f3f5;
+}
+
+.search-vocab-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    padding: 4px;
+    gap: 2px;
+}
+
+.search-vocab-menu-item {
+    text-align: left;
+    width: 100%;
+}
+
+.vocabulary-segment.similar-tier-0 { background: #f3e8ff; }
+.vocabulary-segment.similar-tier-2 { background: #e8f1fb; }
+.vocabulary-segment.similar-tier-3-d1 { background: #fff7d6; }
+.vocabulary-segment.similar-tier-3-d2 { background: #fde9e3; }
+
+.similar-segment-header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* Stick to the top of the viewport while the user scrolls through the
+       expanded body, so the matched line stays in view. */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+}
+.vocabulary-segment.similar-tier-0 .similar-segment-header { background: #f3e8ff; }
+.vocabulary-segment.similar-tier-2 .similar-segment-header { background: #e8f1fb; }
+.vocabulary-segment.similar-tier-3-d1 .similar-segment-header { background: #fff7d6; }
+.vocabulary-segment.similar-tier-3-d2 .similar-segment-header { background: #fde9e3; }
+/* Chevron next to the collapsible header — uses a FontAwesome `<i>` so the
+   glyph is guaranteed to render regardless of system font. The element is
+   inserted by the JS that builds each header and rotates 90° when the
+   parent has `.is-open`. */
+.similar-chevron {
+    color: #444;
+    margin-right: 6px;
+    flex: 0 0 auto;
+    transition: transform 0.12s ease;
+    transform-origin: 35% 50%;
+    font-size: 0.85em;
+}
+.similar-segment-header.is-open .similar-chevron,
+.l-accordion.active .similar-chevron,
+.prefix-group-header.is-open .prefix-group-chevron {
+    transform: rotate(90deg);
+}
+
+/* Outer collapsible that groups prefix-search results by which search part
+   they matched (e.g. "kvällstysta" → a "kväll" group and a "tyst" group). */
+.prefix-group { margin-top: 4px; border: 1px solid #e2e2e2; border-radius: 4px; }
+.prefix-group-header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    background: #f7f7f7;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+.prefix-group-header .prefix-group-count { color: #777; font-weight: normal; margin-left: 6px; font-size: 0.85em; }
+.prefix-group-header .prefix-group-part { color: #1565c0; }
+.prefix-group-chevron {
+    color: #444;
+    flex: 0 0 auto;
+    transition: transform 0.12s ease;
+    transform-origin: 35% 50%;
+    font-size: 0.85em;
+}
+.prefix-group-body { padding: 4px 6px; }
+
+/* Sticky headings for the SRT findings accordion (#result). z-index has to
+   beat `.lines-cntnr .buttons` (which is also sticky inside the panel) so
+   the accordion title stays visible when both pin at the top. */
+#result .l-accordion {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+/* On phones the results belong to the document's scroll surface. A second
+   viewport-height scroller here competes with the page above/below it: a
+   gesture can latch to the wrong surface, especially at the list's edges
+   in Android WebView. Dialogs keep their own bounded native scroll areas. */
+@media (max-width: 999px) {
+    #result {
+        height: auto !important;
+        overflow: visible !important;
+    }
+}
+
+/* Pin the similar / different-prefix dialogs to the viewport. jQuery UI
+   uses position: absolute by default, which means re-opening the dialog
+   after the user scrolls anchors it at the original document offset
+   rather than the current viewport — the page jumps down to it and back
+   up on close. position: fixed keeps it locked to the viewport. */
+.ui-dialog:has(> #similarMoreDialog),
+.ui-dialog:has(> #diffPrefixDialog) {
+    position: fixed !important;
+}
+
+/* Ensure jQuery UI dialogs sit above page chrome. The default z-index of
+   100 isn't enough on language.html — the toolbar / result panel can sit
+   on top and visually swallow the dialog. */
+.ui-dialog {
+    z-index: 100000 !important;
+}
+
+/* Shared viewport limit for all jQuery UI dialogs, including asynchronously
+   populated Study notifications. Flex lets the body shrink without hiding
+   the titlebar or footer actions; scrolling remains native. */
+.ui-dialog.cupitor-scroll-dialog {
+    box-sizing: border-box;
+    max-height: var(--cupitor-dialog-height, calc(100dvh - 40px));
+    max-width: var(--cupitor-dialog-width, calc(100vw - 20px));
+    min-height: 0 !important;
+    flex-direction: column;
+    overflow: hidden;
+}
+.ui-dialog.cupitor-scroll-dialog > .ui-dialog-titlebar,
+.ui-dialog.cupitor-scroll-dialog > .ui-dialog-buttonpane {
+    flex: 0 0 auto;
+}
+.ui-dialog.cupitor-scroll-dialog > .ui-dialog-content {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Select2 attaches its open dropdown to <body>, so it must outrank
+   .ui-dialog above — otherwise dropdowns opened from inside a dialog
+   (e.g. "Reference word" in #addToVocabularyDialog) render behind it. */
+.select2-container--open {
+    z-index: 100001 !important;
+}
+
+/* Pin the captured-subtitles review dialog to the viewport so a scrolled
+   page doesn't render it above the fold (top:0 in document coords). */
+.ui-dialog:has(> #captured-subtitles-dialog) {
+    position: fixed !important;
+}
+
+/* ── Drop-down panels ─────────────────────────────── */
+.lang-panel {
+    margin-top: 4px;
+    padding: 8px 12px 2em;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 0.88em;
+}
+
+/* Background-music panel — reached from Settings and from the playlist
+   dialog, so the controls live in one place instead of two. */
+#musicPanelDialog .mp-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+#musicPanelDialog .mp-lbl {
+    flex: 0 0 auto;
+    min-width: 88px;
+    font-size: 12px;
+    color: #555;
+}
+#musicPanelDialog .mp-grow {
+    flex: 1 1 auto;
+    min-width: 0;          /* let the select shrink instead of pushing 🗑 out */
+}
+#musicPanelDialog .mp-add input {
+    min-width: 0;
+}
+#musicPanelDialog .mp-warn {
+    font-size: 12px;
+    color: #a3352f;
+    margin: -4px 0 8px;
+}
+#musicPanelDialog .mp-hint {
+    font-size: 11px;
+    color: #888;
+    margin: -4px 0 10px;
+}
+/* Reads as a state, not just a control — the panel may be reopened long
+   after the music was silenced, and the button is where the answer lives. */
+#musicPanelDialog .mp-hush.mp-hush-on {
+    background: #fdf0d8;
+    border-color: #e0b877;
+    color: #6b4a12;
+}
+#musicPanelDialog .mp-modes {
+    flex-wrap: wrap;
+}
+#musicPanelDialog .mp-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+}
+#musicPanelDialog .mp-slider {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+#musicPanelDialog .mp-vol-val {
+    flex: 0 0 auto;
+    min-width: 38px;
+    text-align: right;
+    font-size: 12px;
+    color: #555;
+}
+/* Phone: the label + slider + readout don't fit one line beside a 88px
+   label, and the add row has two text inputs competing for the same space. */
+@media (max-width: 640px) {
+    #musicPanelDialog .mp-add {
+        flex-wrap: wrap;
+    }
+    #musicPanelDialog .mp-add input {
+        flex: 1 1 100%;
+    }
+    #musicPanelDialog .mp-lbl {
+        min-width: 72px;
+    }
+}
+
+/* Opens a dialog rather than holding a value, so it sits with the labels but
+   reads as an action. */
+.lang-panel-btn {
+    font-size: 0.88em;
+    padding: 2px 8px;
+    white-space: nowrap;
+}
+
+.lang-panel-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.88em;
+    color: #495057;
+    cursor: default;
+    gap: 4px;
+    user-select: none;
+}
+
+
+.l-accordion {
+    background-color: #eee;
+    color: #7d7676;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    padding-left: 1rem;
+}
+
+div.l-accordion h2, div.l-accordion h1, div.l-accordion h3, div.l-accordion h4, div.l-accordion h5, div.l-accordion h6 {
+    padding-bottom: 1%;
+    margin-top: 0;
+    margin-right: 5vw;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.l-accordion.even * {
+    color: #248cb1;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .l-accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default.
+   No `overflow: hidden` — that would create a sticky containing block for
+   `.lines-cntnr .buttons` and break its `position: sticky` behavior. The
+   panel is toggled via display:none/block, so it doesn't need clipping. */
+.l-accordion + * {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+}
+
+.article {
+    font-size: 0.8rem;
+}
+
+.title-popup {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.no-result {
+    color: #cdc0c0;
+    background-color: #f5f5f5 !important;
+}
+.no-result .match-count { display: none; }
+
+/* Match-count badge next to the word in each SRT accordion header — shows
+   the total number of matches available for that word after source/dedup
+   filtering, even when only `numberOfFindingsToShow` are rendered below. */
+.l-accordion .match-count {
+    margin-left: 6px;
+    font-size: 0.85em;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+#playBtn {
+    border-radius: 10%;
+    height: 3em;
+    width: 4em;
+    cursor: pointer;
+}
+
+#starredLinesSelect {
+    margin-right: 2em;
+    height: 3em;
+    margin-bottom: 5px;
+    border: 1px solid green;
+    border-width: 3px;
+}
+
+.play-btn {
+    background: blue;
+    color: white;
+}
+
+.pause-btn {
+    background: red;
+    color: white;
+}
+
+body {
+    touch-action: manipulation;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.Comment {
+    border-left: 1px solid black;
+    padding-left: 4px;
+}
+
+.btn:hover {
+    background-color: cyan;
+}
+
+.highlight, .highlighted-selection {
+    background-color: yellow;
+}
+
+.srt-line.selected {
+    background-color: cyan;
+}
+
+.line:nth-child(even) {
+   background-color: cyan;
+}
+
+.line {
+    padding: 5px 10px;
+}
+
+.main-line {
+    color: blue;
+}
+
+.secondary-line {
+    color: grey;
+}
+
+.info {
+    color: grey;
+}
+
+.starred-sub {
+    left: 1em;
+    float: left;
+    border-radius: 1em;
+    padding: 5px;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+    font-size: smaller;
+    margin-top: 2px;
+}
+
+.button-62 {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-10 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-10:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
+.button-3 {
+    appearance: none;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
+.button-3:hover {
+    background-color: #2c974b;
+}
+
+.button-3:focus {
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+}
+
+.button-3:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+.button-3:active {
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.button-24 {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.button-24:active {
+    opacity: .5;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+[class*="button-"] {
+    display: inline;
+    margin-top: 6px;
+}
+
+.checkbox-wrapper-22 .switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    top: 12px;
+}
+
+.checkbox-wrapper-22 .switch input {
+    display: none;
+}
+
+.checkbox-wrapper-22 .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.checkbox-wrapper-22 .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+.checkbox-wrapper-22 input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+.checkbox-wrapper-22 input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.checkbox-wrapper-22 .slider.round {
+    border-radius: 34px;
+}
+
+.checkbox-wrapper-22 .slider.round:before {
+    border-radius: 50%;
+}
+
+/* ── Compact settings-panel checkboxes ───────────────────────────────────
+   Shrink the default 60×34 slider toggles to a pill ~26×14 so the panel
+   doesn't wrap on mobile. Targets both the bare .switch and the
+   .checkbox-wrapper-22 variant so all three (Clear on click / Auto prefix /
+   Jokes) and any other settings-panel switches collapse uniformly. */
+#settingsPanel .switch,
+#settingsPanel .checkbox-wrapper-22 .switch {
+    width: 28px;
+    height: 14px;
+    vertical-align: middle;
+    top: 0;
+}
+#settingsPanel .slider,
+#settingsPanel .checkbox-wrapper-22 .slider {
+    border-radius: 14px;
+}
+#settingsPanel .slider:before,
+#settingsPanel .checkbox-wrapper-22 .slider:before {
+    height: 10px;
+    width: 10px;
+    left: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+}
+#settingsPanel input:checked + .slider:before,
+#settingsPanel .checkbox-wrapper-22 input:checked + .slider:before {
+    transform: translateX(14px);
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+}
+#settingsPanel .checkbox-wrapper-22 .slider.round { border-radius: 14px; }
+
+/* Source badge inside match cards — YouTube as the red play-button glyph,
+   SVT as a small monogram pill. Keeps the row compact. */
+.source-tag .src-ico {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+.source-tag .src-ico-svt {
+    background: #1976d2;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+/* Inline subtitle line edit — pencil icon appears next to each line on
+   hover; click swaps the line for a textarea + Save / Cancel. Used to
+   correct wrong translations directly from search results; saves back
+   to the matching .sv.srt / .en.srt file on gh-pages. */
+.line {
+    position: relative;
+}
+.line .edit-line-btn {
+    display: none;
+    margin-left: 6px;
+    color: #2196f3;
+    cursor: pointer;
+    user-select: none;
+    font-size: 12px;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+.line:hover .edit-line-btn,
+.line.editing .edit-line-btn {
+    display: inline-block;
+}
+.line .edit-line-btn:hover { opacity: 1; }
+/* On touch devices :hover doesn't fire reliably — show pencil persistently. */
+@media (hover: none) {
+    .line .edit-line-btn { display: inline-block; opacity: 0.4; }
+}
+.line.editing .edit-line-btn { display: none; }
+.line.editing { background: #fffde7; padding: 4px; border-radius: 3px; }
+.line .edit-line-input {
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    padding: 4px 6px;
+    border: 1px solid #ffb300;
+    border-radius: 3px;
+    background: #fff;
+    resize: vertical;
+}
+.line .edit-line-actions {
+    display: inline-flex;
+    gap: 6px;
+    margin-top: 4px;
+}
+.line .edit-line-actions .btn {
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+}
+.line .edit-line-save {
+    background: #2e7d32;
+    color: #fff;
+    border-color: #1b5e20;
+}
+.line .edit-line-save:hover { background: #388e3c; }
+.line .edit-line-save:disabled { background: #9e9e9e; border-color: #757575; cursor: progress; }
+.line .edit-line-cancel:hover { background: #e0e0e0; }
+
+/* ── SRT merge-conflict dialog ─────────────────────────────────────────
+   Shown when a captured subtitle's start time matches an existing entry
+   on gh-pages but the texts differ. Lets the user pick per-row whether
+   to keep existing, use the new one, or hand-edit. */
+#srt-merge-dialog .srt-merge-intro {
+    margin: 0 0 10px;
+    color: #555;
+    font-size: 13px;
+}
+#srt-merge-dialog .srt-merge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#srt-merge-dialog .srt-conflict {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 8px;
+    background: #fafafa;
+}
+#srt-merge-dialog .srt-conflict-time {
+    font-family: monospace;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+}
+#srt-merge-dialog .srt-conflict-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+#srt-merge-dialog .srt-conflict-side {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 6px 8px;
+    min-height: 40px;
+}
+#srt-merge-dialog .srt-conflict-existing { border-left: 3px solid #fb8c00; }
+#srt-merge-dialog .srt-conflict-incoming { border-left: 3px solid #2e7d32; }
+#srt-merge-dialog .srt-conflict-head {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    margin-bottom: 4px;
+}
+#srt-merge-dialog .srt-conflict-text {
+    font-size: 13px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+#srt-merge-dialog .srt-conflict-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+#srt-merge-dialog .srt-conflict-actions label {
+    cursor: pointer;
+    user-select: none;
+}
+#srt-merge-dialog .srt-conflict-actions input[type=radio] {
+    vertical-align: middle;
+    margin-right: 3px;
+}
+#srt-merge-dialog .srt-conflict-edit {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    font: inherit;
+    padding: 4px 6px;
+    border: 1px solid #ffb300;
+    border-radius: 3px;
+    resize: vertical;
+}
+@media (max-width: 600px) {
+    #srt-merge-dialog .srt-conflict-cols { grid-template-columns: 1fr; }
+}
+
+/* ── Channel manager dialog ─────────────────────────────────────────── */
+#channelManagerDialog .ch-mgr-intro {
+    margin: 0 0 10px;
+    color: #555;
+    font-size: 13px;
+}
+#channelManagerDialog .ch-mgr-list { display: flex; flex-direction: column; gap: 6px; }
+#channelManagerDialog .ch-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background: #fafafa;
+}
+#channelManagerDialog .ch-row:hover { background: #f0f0f0; }
+#channelManagerDialog .ch-name {
+    flex: 1;
+    font-size: 13px;
+    word-break: break-word;
+}
+#channelManagerDialog .ch-name-blocked {
+    text-decoration: line-through;
+    opacity: 0.55;
+}
+#channelManagerDialog .ch-count {
+    background: #e0e0e0;
+    color: #555;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 11px;
+    font-family: monospace;
+}
+#channelManagerDialog .ch-delete {
+    padding: 3px 8px;
+    font-size: 12px;
+    color: #a00;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+#channelManagerDialog .ch-delete:hover { background: #ffebee; }
+#channelManagerDialog .ch-delete:disabled { cursor: progress; opacity: 0.6; }
+
+/* SRT boot-loading progress banner — sits along the bottom of the viewport
+   while the index is being walked. Visible regardless of which panel the user
+   is on, auto-hides ~600ms after the last fetch settles. */
+#srtLoadingBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99998;
+    background: #fffde7;
+    border-top: 1px solid #ffc107;
+    padding: 4px 12px calc(6px + env(safe-area-inset-bottom, 0px));
+    font-size: 12px;
+    color: #5d4037;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.08);
+    display: none;
+    /* Only a notice — taps go through to whatever sits under it. */
+    pointer-events: none;
+}
+/* Study cards show their own loading state. Keep the main-page notice from
+   showing through the full-screen study views, including during fade-out. */
+body.rec-playing #srtLoadingBanner,
+body.practice-mode #srtLoadingBanner {
+    display: none !important;
+}
+#srtLoadingBanner #srtLoadingText {
+    display: block;
+    margin-bottom: 2px;
+}
+#srtLoadingBanner .srt-loading-track {
+    height: 3px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+}
+#srtLoadingBanner #srtLoadingFill {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #4dba87;
+    transition: width 0.2s ease;
+}
+
+.add-prev-btn, .remove-next-btn, .add-next-btn, .remove-prev-btn {
+    cursor: pointer;
+    border: 1px solid green;
+    padding: 1px 8px;
+    border-radius: 50%;
+}
+
+.add-prev-btn, .remove-next-btn {
+    float: left;
+}
+
+.secondary-line a {
+    color: grey;
+}
+
+#toggleEnSubBtn {
+    border-radius: 4%;
+}
+
+#result a {
+    text-decoration: none;
+}
+
+.search-text-info {
+    padding: 1em;
+    color: green;
+    font-size: small;
+}
+
+.vocabulary-line {
+    padding: 0.3em 0.3em 0.3em 1em;
+}
+
+.vocabulary-line.highlighted {
+    background-color: #f1f1a7;
+}
+
+.vocabulary-line:nth-child(even) {
+    color: green;
+}
+
+.vocabulary-line:nth-child(odd) {
+    color: blueviolet;
+}
+
+.vocabulary-segment-content {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.vocabulary-segment {
+    margin-bottom: 1em;
+    border-bottom: 1px solid grey;
+}
+
+#vocabularyResult {
+    margin-bottom: 1em;
+    border-top: 1px solid black;
+}
+
+.lines-cntnr .buttons {
+    position: sticky;
+    /* Park flush against the sticky `#result .l-accordion` header. The
+       `--accordion-h` variable is measured by JS after the first results
+       render (see populateSRTFindings); falls back to 2.5rem if no value
+       is available yet. */
+    top: var(--accordion-h, 2.5rem);
+    background: #fff;
+    z-index: 5;
+    padding: 2px 0;
+    margin-top: 0;
+}
+/* Erase the residual top margin / hr that used to sit between the
+   accordion and the buttons — they're flush now, the divider just shows
+   the gap underneath when sticky. */
+.lines-cntnr > hr:first-child {
+    margin: 0;
+    border: none;
+    height: 0;
+}
+
+/* Capture button — hidden unless the user is actively recording (the
+   recording state-machine toggles `body.rec-active`). A short flash
+   animation confirms the click hit the buffer. Mobile-friendly hit
+   target (32×32) with a clear red border so it stands out among the
+   other small grey ●/+/- buttons in the same row. */
+.lines-cntnr .buttons .capture-btn {
+    display: none;
+    color: #fff;
+    background: #c62828;
+    border: 1px solid #b71c1c;
+    border-radius: 50%;
+    margin-left: 8px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+body.rec-active .lines-cntnr .buttons .capture-btn { display: inline-block; }
+body.rec-paused .lines-cntnr .buttons .capture-btn { opacity: 0.4; pointer-events: none; }
+.lines-cntnr .buttons .capture-btn.captured {
+    background: #ffd54f;
+    color: #5d4037;
+    transform: scale(1.25);
+    transition: all 0.4s;
+}
+/* Persistent "already captured" state — shown whenever an item with this
+   (url, lineIndex, current searchText, current word) is in the recording
+   buffer. Distinct green so the user can tell at a glance which matches
+   are already in the queue. */
+.lines-cntnr .buttons .capture-btn.is-captured {
+    background: #2e7d32;
+    border-color: #1b5e20;
+    color: #fff;
+}
+.lines-cntnr .buttons .capture-btn.is-captured::after {
+    content: '✓';
+    font-size: 14px;
+}
+.lines-cntnr .buttons .capture-btn.is-captured { font-size: 0; line-height: 24px; }
+
+/* Review-dialog sortable placeholder + row hover. The placeholder reserves
+   the dragged row's space so the list doesn't jump while reordering. */
+/* A finding reached through a guessed word rather than through the search
+   itself — neither of its two lines can carry a highlight, so this is the
+   only thing saying why it is in the list. */
+.srt-via-guess {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 3px;
+    background: #eef3fa;
+    color: #3a5a80;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* A whole group reached that way: every line under this heading came in on the
+   guess, and not one of their English lines says what was searched for. Dimmed
+   rather than hidden — these are the uses a straight English search cannot
+   reach, and sometimes they are the interesting half. */
+h5.l-accordion.srt-guess-only {
+    opacity: 0.55;
+    font-style: italic;
+}
+
+h5.l-accordion.srt-guess-only:hover {
+    opacity: 1;
+}
+
+#recordingReviewDialog .rec-item {
+    min-width: 0;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    cursor: grab;
+}
+#recordingReviewDialog .rec-grp { overflow-wrap: anywhere; }
+#recordingReviewDialog .rec-page-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 12px;
+}
+#recordingReviewDialog .rec-page-input { width: 4em; }
+#recordingReviewDialog .rec-page-step { min-width: 30px; min-height: 30px; }
+#recordingReviewDialog .rec-page-range { color: #666; }
+#recordingReviewDialog .rec-item-row1 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+/* Position in the playlist. Tabular figures, and enough reserved width that
+   the controls beside them still line up across two- and three-digit rows. */
+#recordingReviewDialog .rec-item-no {
+    flex: 0 0 auto;
+    min-width: 2em;
+    text-align: right;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: #9aa0a6;
+    user-select: none;
+}
+#recordingReviewDialog .rec-item-preview {
+    font-size: 11px;
+    color: #2e7d32;
+    background: #f1f8e9;
+    border-left: 3px solid #aed581;
+    padding: 2px 6px;
+    margin-left: 28px;
+    border-radius: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#recordingReviewDialog .rec-item-preview.rec-item-preview-missing {
+    color: #888;
+    background: #fafafa;
+    border-left-color: #cfd8dc;
+    font-style: italic;
+}
+#recordingReviewDialog .rec-item .rec-dup {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    border: 1px solid #cfd8dc;
+    background: #f5f7fa;
+    color: #455a64;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 4px;
+}
+#recordingReviewDialog .rec-item .rec-dup:hover {
+    background: #fff3e0;
+    border-color: #ef6c00;
+    color: #e65100;
+}
+/* Virtual playlist banner + read-only item rows */
+#recordingReviewDialog .rec-virtual-banner {
+    background: #e8eaf6;
+    border: 1px solid #c5cae9;
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #283593;
+}
+#recordingReviewDialog .rec-virtual-member {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #9fa8da;
+    border-radius: 10px;
+    padding: 1px 8px;
+    margin: 2px 2px 0 0;
+    font-size: 11px;
+}
+#recordingReviewDialog .rec-virtual-note {
+    margin-top: 4px;
+    color: #5c6bc0;
+    font-style: italic;
+    font-size: 11px;
+}
+#recordingReviewDialog .rec-item.rec-item-readonly { cursor: default; }
+/* Last-played item — highlighted after the player closes so the user can
+   see where they left off. */
+#recordingReviewDialog .rec-item.rec-item-lastplayed {
+    background: #fff8e1;
+    box-shadow: inset 3px 0 0 #ffb300;
+    border-radius: 3px;
+}
+#recordingReviewDialog .rec-item.rec-item-lastplayed .rec-item-text::after {
+    content: ' ◀ last played';
+    color: #ff8f00;
+    font-family: inherit;
+    font-size: 10px;
+    font-style: italic;
+}
+
+/* Placeholder phrase translation shown in the review row + Practice back. */
+#recordingReviewDialog .rec-item-gloss { color: #2e7d32; font-style: italic; }
+.practice-phrase-gloss {
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #c8e6c9;
+}
+.practice-phrase-gloss[data-auto="1"]::after {
+    content: ' (auto)';
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+    font-size: 11px;
+}
+
+/* Virtual-playlist member picker dialog */
+#virtualPlaylistEditor .vpe-name-label {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 8px;
+}
+#virtualPlaylistEditor #vpeName {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    margin-top: 3px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+}
+#virtualPlaylistEditor .vpe-hint {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+#virtualPlaylistEditor .vpe-list {
+    max-height: 50vh;
+    overflow: auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+#virtualPlaylistEditor .vpe-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+#virtualPlaylistEditor .vpe-row:last-child { border-bottom: none; }
+#virtualPlaylistEditor .vpe-row:hover { background: #f5f7fa; }
+#virtualPlaylistEditor .vpe-row-name { flex: 1; }
+#virtualPlaylistEditor .vpe-row-count {
+    font-family: monospace;
+    font-size: 11px;
+    color: #888;
+}
+#recordingReviewDialog .rec-item-list .rec-item:hover {
+    background: rgba(0,0,0,0.04);
+}
+#recordingReviewDialog .rec-item-placeholder {
+    height: 24px;
+    background: #fff8e1;
+    border: 1px dashed #ffb300;
+    border-radius: 3px;
+    margin: 2px 0;
+}
+/* Reorder handle. It is a <button>, not a span, because tapping it is the only
+   way to reorder on a phone — jQuery UI sortable binds no touch events, so the
+   drag half is desktop-only. Button defaults are stripped so it still reads as
+   a handle rather than a control. */
+#recordingReviewDialog .rec-item .rec-drag {
+    color: #bbb;
+    user-select: none;
+    cursor: grab;
+    font-size: 12px;
+    background: none;
+    border: none;
+    padding: 0 2px;
+    margin: 0;
+    line-height: 1;
+    font-family: inherit;
+}
+#recordingReviewDialog .rec-item .rec-drag:hover { color: #555; }
+/* Touch: no dragging available, so make it an obvious tap target of its own. */
+@media (pointer: coarse) {
+    #recordingReviewDialog .rec-item .rec-drag {
+        cursor: pointer;
+        color: #888;
+        font-size: 15px;
+        padding: 6px 8px;
+        margin: -6px 0;
+    }
+}
+#recordingReviewDialog .rec-item.ui-sortable-helper {
+    background: #fffde7;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+#recordingReviewDialog .rec-item-text {
+    flex: 1;
+    font-family: monospace;
+}
+#recordingReviewDialog .rec-item-text.rec-item-off {
+    opacity: 0.45;
+    text-decoration: line-through;
+}
+#recordingReviewDialog .rec-item-text.rec-item-manual {
+    font-family: inherit;
+    color: #333;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    min-width: 0;             /* allow flex shrink past intrinsic content width */
+}
+/* Give card text and captured clip details their own line on mobile so long
+   translations cannot force the entire scroll area wider than the dialog. */
+@media (max-width: 600px) {
+    #recordingReviewDialog .rec-item-row1 { flex-wrap: wrap; }
+    #recordingReviewDialog .rec-item-text {
+        flex: 1 1 100%;
+        min-width: 0;
+        order: -1;
+        overflow-wrap: anywhere;
+    }
+    #recordingReviewDialog .rec-item-row1:has(.rec-item-manual) {
+        flex-wrap: wrap;
+        row-gap: 4px;
+    }
+    #recordingReviewDialog .rec-item-row1:has(.rec-item-manual) .rec-item-text.rec-item-manual {
+        flex: 1 1 100%;
+        order: -1;            /* text first, controls below */
+        font-size: 14px;
+        line-height: 1.35;
+    }
+    /* The "Copy to…" select is ~120px and the biggest space-eater. Drop it
+       to icon-only width on the manual row; the option labels still expand
+       on tap. */
+    #recordingReviewDialog .rec-item-row1:has(.rec-item-manual) .rec-copy-to {
+        max-width: 88px;
+    }
+    /* Every pixel on this row is spoken for — a captured row already runs
+       wider than the dialog. The number gives up its column before the
+       controls give up their place on the line. */
+    #recordingReviewDialog .rec-item-no {
+        min-width: 0;
+        font-size: 10px;
+    }
+}
+#recordingReviewDialog .rec-item-media {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #e8eef6;
+    color: #36507a;
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+#recordingReviewDialog .rec-item-media:hover { background: #d6e1ef; }
+#recordingReviewDialog .rec-manual-edit {
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0 4px;
+    line-height: 1;
+}
+#recordingReviewDialog .rec-manual-edit:hover { color: #000; }
+
+/* Manual-entry editor dialog */
+#manualEntryEditor .mee-row { margin-bottom: 10px; display: flex; flex-direction: column; gap: 4px; }
+#manualEntryEditor .mee-lbl { font-size: 12px; color: #555; font-weight: 600; }
+/* The face's buttons are siblings of the label, not children of it: a <label>
+   with no `for` takes the first labelable descendant as its control, so a
+   button inside one fires when the user taps the word. */
+#manualEntryEditor .mee-lbl-row { display: flex; align-items: center; flex-wrap: wrap; }
+#manualEntryEditor .mee-tr-note { font-size: 11px; color: #666; margin-left: 8px; }
+#manualEntryEditor .mee-lbl-hint { font-weight: 400; color: #888; }
+#manualEntryEditor .mee-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#manualEntryEditor textarea.mee-input { resize: vertical; min-height: 44px; }
+
+/* Practice manual card text + media button.
+   The parent .practice-front has no explicit width/display rule, but the
+   3D-transformed flipper chain on mobile sometimes lets the child collapse
+   to its intrinsic min-content width (one character per "line"). Force
+   the parent .practice-front to behave as a full-width block too, and pin
+   the manual text node to the face's content width directly so neither
+   the front nor its child can collapse. */
+#practiceMode .practice-front:has(.practice-manual-text),
+#practiceMode .practice-back:has(.practice-manual-text) {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+#practiceMode .practice-manual-text {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 6px 4px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    text-align: center;
+}
+#practiceMode .practice-back .practice-manual-text,
+#practiceMode .practice-back-target .practice-manual-text { color: #80cbc4; }
+@media (max-width: 480px) {
+    #practiceMode .practice-manual-text {
+        font-size: 16px;
+        padding: 4px 2px;
+    }
+}
+#practiceMode .practice-media-link {
+    background: #36507a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 4px;
+}
+#practiceMode .practice-media-link:hover { background: #2a3f60; }
+#recordingReviewDialog .rec-del {
+    color: #a00;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+/* Compact toggle that replaces the include/exclude checkbox. No external
+   label — the on/off state is conveyed by the knob position and track
+   colour. Hidden native input keeps keyboard + screen-reader semantics. */
+#recordingReviewDialog .rec-toggle {
+    position: relative;
+    display: inline-block;
+    width: 26px;
+    height: 14px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    user-select: none;
+}
+#recordingReviewDialog .rec-toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
+}
+#recordingReviewDialog .rec-toggle-track {
+    position: absolute;
+    inset: 0;
+    background: #bdbdbd;
+    border-radius: 7px;
+    transition: background 0.15s;
+}
+#recordingReviewDialog .rec-toggle-knob {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    transition: left 0.15s;
+}
+#recordingReviewDialog .rec-toggle input:checked + .rec-toggle-track {
+    background: #2e7d32;
+}
+#recordingReviewDialog .rec-toggle input:checked + .rec-toggle-track .rec-toggle-knob {
+    left: 13px;
+}
+#recordingReviewDialog .rec-toggle input:focus-visible + .rec-toggle-track {
+    outline: 2px solid #66bb6a;
+    outline-offset: 1px;
+}
+
+/* Recordings-header CRUD buttons: full label on desktop, icon-only on
+   narrow screens to keep the row from wrapping. */
+#recordingReviewDialog .rec-rec-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    line-height: 1;
+}
+#recordingReviewDialog .rec-rec-btn .rec-rec-ico {
+    font-size: 14px;
+    line-height: 1;
+}
+#recordingReviewDialog .rec-rec-danger { color: #a00; }
+/* Sync button: green when local has unpushed changes, neutral when in
+   sync, and shows a small spinner-ish state while pushing. */
+#recordingReviewDialog #recRecSync.rec-rec-dirty {
+    color: #fff;
+    background: #2e7d32;
+    border-color: #1b5e20;
+}
+#recordingReviewDialog #recRecSync:disabled { opacity: 0.5; cursor: default; }
+#recordingReviewDialog #recRecSync.syncing { opacity: 0.6; cursor: progress; }
+/* Shuffle / Loop mode buttons in the review-dialog header. Show an
+   "active" state for shuffle (toggle) and the cycled loop label. */
+#recordingReviewDialog #recModeShuffle.active {
+    background: #c8e6c9;
+    border-color: #2e7d32;
+    color: #1b5e20;
+    font-weight: 600;
+}
+#recordingReviewDialog #recModeLoop[data-loop="one"],
+#recordingReviewDialog #recModeLoop[data-loop="playlist"],
+#recordingReviewDialog #recModeLoop[data-loop="all"] {
+    background: #e3f2fd;
+    border-color: #1976d2;
+    color: #0d47a1;
+    font-weight: 600;
+}
+/* Per-row play / copy controls. The ▶ button is small and inline; the
+   "Copy to…" picker is a compact select that resets after each pick. */
+#recordingReviewDialog .rec-item .rec-play-from {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    border: 1px solid #cfd8dc;
+    background: #f5f7fa;
+    color: #455a64;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    margin-right: 4px;
+}
+#recordingReviewDialog .rec-item .rec-play-from:hover {
+    background: #e1f5fe;
+    border-color: #0288d1;
+    color: #01579b;
+}
+#recordingReviewDialog .rec-item .rec-copy-to {
+    margin-left: 6px;
+    font-size: 11px;
+    max-width: 110px;
+    padding: 2px 4px;
+    border: 1px solid #cfd8dc;
+    border-radius: 4px;
+    background: #f5f7fa;
+    color: #455a64;
+}
+@media (max-width: 600px) {
+    #recordingReviewDialog .rec-rec-btn .rec-rec-lbl { display: none; }
+    #recordingReviewDialog .rec-rec-btn {
+        padding: 6px 8px;
+        min-width: 32px;
+        justify-content: center;
+    }
+    #recordingReviewDialog .rec-rec-btn .rec-rec-ico { font-size: 16px; }
+}
+body.rec-active #recStartBtn:not(.always),
+body.rec-paused #recStartBtn { /* hidden via JS toggle, keep CSS no-op */ }
+#recStartBtn.is-recording {
+    background: #fbeaea;
+    color: #b71c1c;
+    border: 1px solid #b71c1c;
+}
+
+/* ── Play-recording mode: declutter the page so the user focuses on the
+   playing YouTube clip. We deliberately don't drive playback via the live
+   #result DOM (search results aren't deterministic), so the rules below
+   hide the search UI / vocab panel / result list entirely. The recorded
+   item's context is shown in #recPlayingBanner instead. */
+body.rec-playing,
+body.practice-mode {
+    background: #0a0a0a !important;
+    color: #f5f5f5;
+}
+/* A separate opaque layer covers page widgets without painting over the
+   shared video (100001), audio panel or study controls (100002+). */
+body.rec-playing::before,
+body.practice-mode::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: #0a0a0a;
+}
+/* Existing dialogs belong to the covered page. Only dialogs explicitly
+   opened from a study view may sit above its opaque backdrop. */
+body:is(.rec-playing, .practice-mode) .ui-dialog.behind-study-view,
+body:is(.rec-playing, .practice-mode):not(.dialog-above-practice) .ui-widget-overlay {
+    z-index: 99999 !important;
+}
+body.practice-mode #recPlayingBanner,
+body.practice-mode #recPlayingSubs,
+body.practice-mode #recPlayingWord,
+body.practice-mode #recPlayingTransport,
+body.practice-mode #recPlayingMinimizeBtn,
+body.practice-mode #recPlayingCloseBtn,
+body.practice-mode #recPlayingRestorePill,
+body.practice-mode #recPlayNavToast { display: none !important; }
+body.rec-playing #mainControlInputs,
+body.rec-playing #vocabularyResult,
+body.rec-playing #result,
+body.rec-playing #translationPanel,
+body.rec-playing #mediaRelatedContainer,
+body.rec-playing #search-pagination,
+body.practice-mode #mainControlInputs,
+body.practice-mode #vocabularyResult,
+body.practice-mode #result,
+body.practice-mode #translationPanel,
+body.practice-mode #mediaRelatedContainer,
+body.practice-mode #search-pagination {
+    display: none !important;
+}
+
+/* Pin the YouTube player to a fixed slot at the top of the viewport.
+   The natural layout collapses (its parent .fl-left has float:left and
+   most of its other children are display:none in play mode), which made
+   the iframe render at zero height. Fixed positioning sidesteps that. */
+/* A manual card has no video. Hide the YouTube slot entirely and let
+   #recPlayingAudio take that space, rather than leaving a black 16:9 box
+   above a card that is only ever going to make sound. Overrides the
+   display:block !important below, so it has to be at least as specific. */
+/* Two ways a practice card has no use for the slot: it holds this card's own
+   recordings instead, or the card has no video at all. Both hide the video —
+   the audio panel is drawn over the same fixed strip, so a card carrying a link
+   AND a recording would otherwise paint one on top of the other, with the
+   uncovered band below still taking taps meant for the card. */
+body.rec-playing.rec-playing-manual:not(.practice-mode) #mediaContainer,
+body.practice-mode.practice-manual #mediaContainer,
+body.practice-mode.practice-no-video #mediaContainer {
+    display: none !important;
+}
+/* Audio player for a manual card's recordings — same fixed slot the video
+   would have used. Real <audio controls> so the recording can be scrubbed and
+   replayed by hand, not just driven by the playlist's timing. */
+#recPlayingAudio {
+    position: fixed;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100vw, 900px);
+    box-sizing: border-box;
+    padding: 10px 12px;
+    background: #111;
+    color: #eee;
+    z-index: 100001;
+    display: none;
+}
+/* Requires .rec-playing, which minimizing removes — otherwise this fixed,
+   900px-wide black panel stays parked over the page the user just minimized
+   the player to get back to (the 🔍 "search this word" button minimizes too). */
+body.rec-playing.rec-playing-manual:not(.practice-mode) #recPlayingAudio { display: block; }
+/* A playlist session does not end when Practice opens — minimising only pauses
+   it — so the player's panel has to stand aside rather than share the slot. */
+body.practice-mode #recPlayingAudio { display: none !important; }
+
+/* Practice's own panel, in the slot the video would have had: a manual card's
+   recordings are what there is to practise with, and a 16:9 black box above a
+   card that will never show video is worse than nothing. Its own element, not
+   the player's — see _practiceAudioEl. */
+#practiceAudio {
+    position: fixed;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100vw, 900px);
+    box-sizing: border-box;
+    padding: 10px 12px;
+    background: #111;
+    color: #eee;
+    z-index: 100003;
+    display: none;
+}
+body.practice-mode.practice-manual #practiceAudio { display: block; }
+#practiceAudio .rec-pa-face {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    min-height: 14px;
+    margin-bottom: 6px;
+}
+#practiceAudio .rec-pa-el { width: 100%; display: block; }
+#practiceAudio .rec-pa-faces {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+#practiceAudio .rec-pa-face-btn {
+    flex: 1 1 0;
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #eee;
+    background: #262626;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#practiceAudio .rec-pa-face-btn:active { background: #383838; }
+#recPlayingAudio .rec-pa-face {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    min-height: 14px;
+    margin-bottom: 6px;
+}
+#recPlayingAudio .rec-pa-el {
+    width: 100%;
+    display: block;
+}
+/* Replay one face on demand. The card plays Source then Target and then holds
+   on its text; during that hold these are the only way to hear a face again. */
+#recPlayingAudio .rec-pa-faces {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+#recPlayingAudio .rec-pa-face-btn {
+    flex: 1 1 0;
+    /* Comfortably tappable with a thumb — this is used mid-listen, one-handed,
+       and often without looking. */
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #eee;
+    background: #262626;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#recPlayingAudio .rec-pa-face-btn:active {
+    background: #383838;
+}
+
+body.rec-playing #mediaContainer,
+body.practice-mode #mediaContainer {
+    display: block !important;
+    position: fixed !important;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100vw, 900px);
+    margin: 0;
+    z-index: 100001;
+    background: #000;
+}
+body.rec-playing #mediaContainer #youtubePlayer,
+body.practice-mode #mediaContainer #youtubePlayer {
+    margin-top: 0 !important;
+}
+body.rec-playing #mediaContainer iframe,
+body.rec-playing #mediaContainer #youtubePlayer iframe,
+body.practice-mode #mediaContainer iframe,
+body.practice-mode #mediaContainer #youtubePlayer iframe {
+    width: 100% !important;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    display: block;
+}
+
+/* ── Practice (flashcard) mode ──────────────────────────────────────── */
+#practiceMode {
+    position: fixed;
+    inset: 0;
+    z-index: 100002;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;   /* let taps reach the YT player up top */
+    color: #f5f5f5;
+}
+#practiceMode .practice-topbar,
+#practiceMode .practice-card,
+#practiceMode .practice-nav { pointer-events: auto; }
+#practiceMode .practice-topbar {
+    position: fixed;
+    top: 6px;
+    left: 8px;
+    right: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    z-index: 100004;
+}
+#practiceMode .practice-player-btn,
+#recPlayingBanner .rec-pb-practice-btn {
+    flex: 0 0 auto;
+    min-height: 30px;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 16px;
+    color: #f5f5f5;
+    background: #304b69;
+    cursor: pointer;
+    font-size: 13px;
+}
+#practiceMode .practice-player-btn { margin-left: auto; }
+#recPlayingBanner .rec-pb-practice-btn { display: none; }
+#recPlayingBanner.rec-pb-expanded .rec-pb-practice-btn { display: inline-flex; align-items: center; justify-content: center; }
+.study-mobile-icon { display: none; }
+@media (max-width: 999px) {
+    .keyboard-shortcuts-btn { display: none !important; }
+    .study-desktop-label { display: none; }
+    .study-mobile-icon { display: inline-flex; align-items: center; justify-content: center; }
+    #recPlayingBanner .rec-pb-replay-btn,
+    #recPlayingBanner .rec-pb-practice-btn,
+    #practiceMode .practice-player-btn { width: 34px; height: 34px; padding: 4px; }
+}
+@media (pointer: coarse) {
+    .keyboard-shortcuts-btn { display: none !important; }
+}
+@media (max-width: 480px) {
+    #practiceMode .practice-topbar { gap: 4px; }
+    #practiceMode .practice-player-btn { padding: 4px 7px; font-size: 12px; }
+}
+#practiceMode .practice-player-btn:focus-visible,
+#recPlayingBanner .rec-pb-practice-btn:focus-visible { outline: 2px solid #80cbc4; outline-offset: 2px; }
+#practiceMode .practice-count {
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(0,0,0,0.55);
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+#practiceMode .practice-dir {
+    margin-left: auto;
+    font-size: 12px;
+    padding: 4px 10px;
+    border: 1px solid #555;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#practiceMode .practice-minimize,
+#practiceMode .practice-close {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border: none;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#practiceMode .practice-minimize { margin-left: auto; }
+#practiceMode .practice-minimize:hover,
+#practiceMode .practice-close:hover { background: rgba(0,0,0,0.85); }
+#practiceMode .practice-info,
+#practiceMode .practice-shuffle,
+#practiceMode .practice-settings {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    border: none;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#practiceMode .practice-info.active,
+#practiceMode .practice-shuffle.active,
+#practiceMode .practice-settings.active { background: rgba(25, 118, 210, 0.85); }
+#practiceMode .practice-info:hover,
+#practiceMode .practice-shuffle:hover,
+#practiceMode .practice-settings:hover { background: rgba(0,0,0,0.85); }
+/* Slide-down panels under the topbar. Both info + settings share the same
+   anchor + animation; only one is open at a time (see _togglePracticeInfoPanel
+   / _togglePracticeSettingsPanel). */
+#practiceMode .practice-info-panel,
+#practiceMode .practice-settings-panel {
+    position: fixed;
+    top: 46px;
+    left: 8px;
+    right: 8px;
+    z-index: 100006;
+    background: #212121;
+    color: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    pointer-events: auto;
+    max-height: calc(100vh - 58px);
+    max-height: calc(100dvh - 58px);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+#practiceMode .practice-info-head { font-weight: bold; margin-bottom: 4px; }
+#practiceMode .practice-info-meta { color: #ccc; font-family: monospace; word-break: break-all; }
+#practiceMode.minimized .practice-info-panel,
+#practiceMode.minimized .practice-settings-panel { display: none !important; }
+/* Shadowing bar — Rec / Keep / discard for takes spoken over a clip. Sits
+   above the prev/next row at the foot of the card, inside #practiceMode so it
+   travels with the practice overlay's stacking. */
+#practiceMode .practice-rec-bar {
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    bottom: 60px;
+    z-index: 100004;
+    display: block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(33, 33, 33, 0.94);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
+}
+#practiceMode.minimized .practice-rec-bar { display: none !important; }
+#practiceMode .prec-btn {
+    flex: 0 0 auto;
+    min-height: 30px;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5f5f5;
+    font-size: 13px;
+    cursor: pointer;
+}
+#practiceMode .prec-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.16); }
+#practiceMode .prec-btn:disabled { opacity: 0.4; cursor: default; }
+/* The one control the thumb goes for without looking: a round button in the
+   middle of the bar, big enough to hit while watching the video rather than
+   the screen. */
+/* The row the record button is centred in. Status on the left, Keep and
+   discard on the right, and the button pinned to the middle regardless of
+   either — the two sides are capped so they cannot reach under it. */
+#practiceMode .prec-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 64px;
+}
+#practiceMode .prec-row > .prec-status,
+#practiceMode .prec-row > .prec-side {
+    max-width: calc(50% - 40px);
+}
+#practiceMode .prec-btn.prec-toggle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    min-height: 64px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 1;
+    color: #ff5252;
+}
+/* Recording is the one state worth spotting from across the room. */
+#practiceMode .prec-btn.prec-toggle.on {
+    background: #b71c1c;
+    border-color: #d32f2f;
+    color: #fff;
+    font-weight: 600;
+}
+/* The takes get a row of their own across the whole bar, rather than crowding
+   the column beside the record button. Only rendered when there are any, so
+   the bar is one row until the first take exists. */
+#practiceMode .prec-takes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    /* The bar is anchored to the bottom, so rows of takes grow upwards over
+       the card. Two rows, then scroll. */
+    max-height: 68px;
+    overflow-y: auto;
+}
+#practiceMode .prec-btn.prec-take {
+    width: 28px;
+    height: 28px;
+    min-height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+}
+/* A take the card does not hold yet — Keep is what makes it stay. */
+#practiceMode .prec-btn.prec-take.unkept {
+    border-color: rgba(255, 82, 82, 0.5);
+    color: #ffb3b3;
+}
+/* Keep and discard share the right-hand column, ending at the bar's edge. */
+#practiceMode .prec-side {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+}
+#practiceMode .prec-status {
+    min-width: 0;
+    color: #bbb;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Panels must also clear the shared resize divider (100006) and the video
+   wake surface (100007). Their parent is a stacking context, so raising only
+   the panel cannot lift it over those siblings. Restore the normal stacking
+   when closed so media and resize controls remain reachable. */
+#practiceMode.panel-open:not(.minimized) { z-index: 100008; }
+
+/* Settings-panel rows. Each row is a label + control; rows stack so they
+   read top-to-bottom on the narrow phone width. */
+#practiceMode .practice-settings-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+}
+#practiceMode .practice-settings-row + .practice-settings-row {
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+#practiceMode .practice-settings-lbl {
+    flex: 0 0 80px;
+    color: #aaa;
+    font-size: 12px;
+}
+#practiceMode .practice-reveal-select {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 4px 6px;
+    border-radius: 4px;
+    font: inherit;
+}
+/* The dir button + delete button live inside the settings panel now;
+   they need the same baseline visual as the old chip-style buttons but
+   sized to be readable + tappable on phones. */
+#practiceMode .practice-settings-panel .practice-edit,
+#practiceMode .practice-settings-panel .practice-replace,
+#practiceMode .practice-settings-panel .practice-dir {
+    flex: 1;
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+}
+#practiceMode .practice-settings-panel .practice-edit:hover,
+#practiceMode .practice-settings-panel .practice-replace:hover,
+#practiceMode .practice-settings-panel .practice-dir:hover { background: rgba(255,255,255,0.15); }
+#practiceMode .practice-settings-panel .practice-delete {
+    flex: 1;
+    padding: 6px 10px;
+    background: #b71c1c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+}
+#practiceMode .practice-settings-panel .practice-delete:hover { background: #d32f2f; }
+/* The card content sits below the fixed video (video bottom ≈ 64px +
+   56.25% of min(100vw,900px)). */
+/* Nothing in the slot at all — a manual card with no video and no recordings.
+   The card starts where the slot would have, with nothing above it. Listed
+   before the rule below so a card that does have an audio panel keeps its own
+   height (equal specificity, so the later rule wins). */
+body.practice-no-video #practiceMode .practice-card {
+    top: calc(64px + var(--practice-media-h, 0px) + 12px);
+}
+/* A manual card's slot holds the audio panel, not a 16:9 video, so the card
+   starts right below whatever height that turned out to be. */
+body.practice-manual #practiceMode .practice-card {
+    top: calc(64px + var(--practice-media-h, 150px) + 12px);
+}
+#practiceMode .practice-card {
+    position: absolute;
+    top: calc(64px + min(100vw, 900px) * 0.5625 + 12px);
+    /* Fill the full height between the video (top) and the bottom nav
+       (fixed at bottom:16px, ~48px tall — clear ~64px). Content scrolls
+       within the card when it overflows. The shadowing bar, when shown, is
+       pinned at bottom:60px over the card's foot — end above it instead
+       (--prec-bar-h, set by _renderPracticeRecBar). */
+    bottom: max(64px, calc(60px + var(--prec-bar-h, 0px) + 6px));
+    left: 50%;
+    transform: translateX(-50%);
+    /* Let the browser scroll vertically but hand horizontal gestures to the
+       swipe handler (so dragging left/right navigates cards). */
+    touch-action: pan-y;
+    cursor: grab;
+    width: min(94vw, 680px);
+    /* The 3D flipper needs perspective on the parent so rotateY reads as
+       depth, not a flat squash. */
+    perspective: 1200px;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+}
+/* Flipper: holds front + back faces and rotates as a unit when reveal mode
+   is 'flip'. In 'hide'/'both' modes the front-face spans the whole card and
+   the back-face stays hidden (no flip mechanics in play). */
+#practiceMode .practice-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
+}
+#practiceMode .practice-flipper.flipped { transform: rotateY(180deg); }
+#practiceMode .practice-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: rgba(20,20,20,0.92);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    overflow: auto;
+    /* Hand horizontal swipes up to the card's swipe handler (which navigates
+       between cards). Without this the browser may keep the touch for
+       horizontal panning inside the face and the swipe listener never sees a
+       useful pointermove. Vertical panning still scrolls the face content. */
+    touch-action: pan-y;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+#practiceMode .practice-back-face { transform: rotateY(180deg); }
+/* Pointer-events on the non-visible face: even though backface-visibility
+   hides the rendering, in 3D-preserve hit-testing Chrome/iOS Safari can
+   still let the back-face intercept touch/click — which would block the
+   card's swipe listener (the back-face has no swipe handler). Disable
+   pointer-events on whichever face is currently facing away. */
+#practiceMode .practice-flipper:not(.flipped) .practice-back-face { pointer-events: none; }
+#practiceMode .practice-flipper.flipped .practice-front-face { pointer-events: none; }
+/* In non-flip modes the back-face is irrelevant — hide it so the front-face
+   sits flat without 3D-stacking artefacts. */
+#practiceMode.reveal-hide .practice-back-face,
+#practiceMode.reveal-both .practice-back-face { display: none; }
+/* In flip mode the legacy inline .practice-back (sibling-below) is unused —
+   the target text lives on the back-face instead. */
+#practiceMode.reveal-flip .practice-front-face .practice-back { display: none !important; }
+#practiceMode .practice-back-target {
+    font-size: 17px;
+    line-height: 1.4;
+    color: #80cbc4;
+    margin-bottom: 14px;
+}
+#practiceMode .practice-unflip {
+    margin-top: 6px;
+    width: 40px;
+    height: 32px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #455a64;
+    color: #fff;
+    cursor: pointer;
+}
+#practiceMode .practice-unflip:hover { background: #546e7a; }
+#practiceMode .practice-word {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffd54f;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+#practiceMode .practice-front {
+    font-size: 19px;
+    line-height: 1.4;
+}
+#practiceMode .practice-back {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #444;
+    font-size: 17px;
+    line-height: 1.4;
+    color: #80cbc4;
+}
+#practiceMode .practice-loading { color: #888; font-size: 14px; }
+/* Context controls — small pills above the front text. */
+#practiceMode .practice-ctx-ctrl {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+#practiceMode .practice-ctx-ctrl button {
+    font-size: 11px;
+    padding: 2px 8px;
+    border: 1px solid #555;
+    background: rgba(255,255,255,0.08);
+    color: #cfd8dc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#practiceMode .practice-ctx-ctrl button:hover { background: rgba(255,255,255,0.18); }
+/* Subtitle lines within the card — matched line emphasised, context dimmed. */
+#practiceMode .practice-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 2px 0;
+}
+#practiceMode .practice-line-text { flex: 1; }
+#practiceMode .practice-line:not(.practice-line-match) .practice-line-text { opacity: 0.6; font-size: 0.9em; }
+#practiceMode .practice-line-match .practice-line-text { font-weight: 600; }
+#practiceMode .practice-line-edit {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+#practiceMode .practice-line-edit:hover { background: rgba(255,255,255,0.25); }
+/* Inline editor box replacing a line while editing. */
+/* Manage popover — opens beneath the "Manage…" button, holds the three
+   maintenance entry-points (Channels, Rare words, Duplicate SRTs). Closes
+   on outside click via JS. */
+.manage-popover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    min-width: 180px;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0;
+}
+.manage-popover .manage-item {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #24292f;
+    cursor: pointer;
+}
+.manage-popover .manage-item:hover { background: #f6f8fa; }
+
+/* Notification bell inbox — icon button with an unread badge, opening a
+   newest-first dropdown of study reminders that fired. Mirrors the manage
+   popover; closes on outside click via JS. */
+.notif-bell-wrap { display: inline-block; }
+#notifBellBtn { position: relative; }
+.notif-bell-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #d1242f;
+    color: #fff;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+/* Fixed + JS-positioned (reparented to <body>) so no overflow-clipping or
+   stacking ancestor in the toolbar can squash or hide it. */
+.notif-bell-panel {
+    position: fixed;
+    width: 340px;
+    max-width: 90vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    /* Above page chrome / result panels (which can reach ~100020) — the bell
+       dropdown never coexists with a jQuery UI dialog, so this is safe. */
+    z-index: 100050;
+}
+.notif-bell-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eaeef2;
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+.notif-bell-hd span { font-weight: 700; font-size: 13px; color: #24292f; }
+.notif-bell-readall {
+    background: transparent;
+    border: none;
+    color: #0969da;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+}
+.notif-bell-readall[disabled] { color: #8c959f; cursor: default; }
+.notif-bell-empty { padding: 16px 12px; color: #8c959f; font-size: 12px; text-align: center; }
+.notif-bell-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f2f4f6;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.notif-bell-row:hover { background: #f6f8fa; }
+.notif-bell-row[data-open="0"] { cursor: default; }
+.notif-bell-row.unread { background: #f0f6ff; }
+.notif-bell-row.unread:hover { background: #e4eeff; }
+.notif-bell-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: transparent;
+}
+.notif-bell-row.unread .notif-bell-dot { background: #0969da; }
+.notif-bell-main { flex: 1 1 auto; min-width: 0; }
+.notif-bell-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #24292f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notif-bell-body {
+    display: block;
+    font-size: 12px;
+    color: #57606a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notif-bell-meta { display: block; font-size: 11px; color: #8c959f; margin-top: 2px; }
+.notif-bell-missed { color: #bc4c00; font-weight: 600; }
+
+/* Replace-item picker — a radio list of alternative auto-captured examples. */
+.repl-hd { font-size: 13px; color: #24292f; margin-bottom: 8px; }
+.repl-cand-list { max-height: 46vh; overflow-y: auto; }
+.repl-cand {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 6px;
+    border-bottom: 1px solid #f2f4f6;
+    cursor: pointer;
+}
+.repl-cand:hover { background: #f6f8fa; }
+.repl-cand input { margin-top: 3px; flex: 0 0 auto; }
+.repl-cand-body { display: flex; flex-direction: column; min-width: 0; }
+.repl-cand-text { font-size: 13px; color: #24292f; }
+.repl-cand-meta { font-size: 11px; color: #8c959f; margin-top: 2px; }
+
+/* Rare words category headers (when no category filter is active). */
+.rare-words-cat-hdr {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #57606a;
+    border-bottom: 1px solid #d0d7de;
+    padding: 6px 4px 3px;
+    margin: 6px 0 2px;
+    font-weight: 600;
+}
+
+/* Duplicate SRTs dialog. */
+#duplicateSrtsDialog .dup-srts-info {
+    padding: 4px 4px 8px;
+    font-size: 12px;
+    color: #57606a;
+}
+.dup-srts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dup-srts-empty {
+    padding: 24px 8px;
+    text-align: center;
+    color: #888;
+}
+.dup-srts-group {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background: #fafbfc;
+    padding: 8px 10px;
+}
+.dup-srts-head {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    color: #24292f;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #d0d7de;
+    margin-bottom: 6px;
+}
+.dup-srts-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+.dup-srts-row:not(:last-child) { border-bottom: 1px dotted #e1e4e8; }
+.dup-srts-name {
+    flex: 1;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    color: #24292f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dup-srts-keep {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 1px 6px;
+    font-size: 10px;
+    background: #e7f3e7;
+    color: #1b5e20;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+.dup-srts-del {
+    background: #c62828;
+    color: #fff;
+    border-color: #c62828;
+}
+.dup-srts-del:hover { background: #b71c1c; border-color: #b71c1c; }
+.dup-srts-actions { margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Unavailable-videos dialog — orphan-word chips under each row. */
+.unavail-uniq-hdr {
+    font-size: 11px;
+    color: #57606a;
+    padding: 4px 0 4px;
+}
+.unavail-uniq-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.unavail-uniq-word {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 11px;
+    background: #fff1d6;
+    border: 1px solid #d4a72c;
+    color: #4d3800;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+/* Lift any jQuery UI dialog above the Practice overlay (z-index 100002 +
+   100004 for topbar/nav). Without this, dialogs opened while practice is
+   active render behind the card. !important beats the inline z-index that
+   jQuery UI may stamp on the wrapper during focus management. */
+.ui-dialog.above-practice-mode {
+    z-index: 100020 !important;
+}
+
+/* Practice line edit dialog — replaces the previous inline edit so the
+   on-screen keyboard doesn't cover the textarea. */
+#practiceLineEditDialog .practice-edit-meta {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px;
+    color: #57606a;
+    padding-bottom: 6px;
+}
+#practiceLineEditDialog .practice-edit-input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding: 8px 10px;
+    border: 1px solid #1976d2;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 4em;
+    font-family: inherit;
+}
+#practiceMode .practice-word[style*="hidden"] { /* keep layout height while hidden */ }
+#practiceMode .practice-reveal {
+    margin-top: 12px;
+    width: 44px;
+    height: 36px;
+    font-size: 18px;
+    line-height: 1;
+    border: none;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#practiceMode .practice-reveal:hover { background: #1565c0; }
+#practiceMode .practice-nav {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 100004;
+}
+#practiceMode .practice-nav button {
+    /* Square icon buttons — wider than tall keeps single-glyph labels (‹ › ▶)
+       comfortably tappable on mobile without taking screen real estate. */
+    min-width: 44px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 18px;
+    line-height: 1;
+    border: none;
+    border-radius: 10px;
+    background: #424242;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.45);
+}
+#practiceMode .practice-nav button:hover { background: #616161; }
+#practiceMode .practice-nav .practice-play { background: #2e7d32; }
+#practiceMode .practice-nav .practice-play:hover { background: #388e3c; }
+#practiceMode .practice-nav .practice-speed {
+    /* Speed is text ("1.25×"), so let it be a bit wider and use a slightly
+       smaller font so the multi-character label doesn't crowd the icons. */
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 52px;
+}
+
+/* Minimized state — collapse the whole UI to a tiny pill that stays out of
+   the way but lets the user resume practice in one tap. */
+#practiceMode .practice-restore {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    display: none;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    background: rgba(0,0,0,0.78);
+    color: #fff;
+    border-radius: 20px;
+    z-index: 100004;
+    pointer-events: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+#practiceMode .practice-restore-count {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 4px;
+}
+#practiceMode .practice-restore-btn,
+#practiceMode .practice-restore-close {
+    width: 28px; height: 28px;
+    font-size: 14px;
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#practiceMode .practice-restore-btn:hover,
+#practiceMode .practice-restore-close:hover { background: rgba(255,255,255,0.25); }
+/* Hide the main practice UI when minimized; only the restore pill remains. */
+#practiceMode.minimized .practice-topbar,
+#practiceMode.minimized .practice-card,
+#practiceMode.minimized .practice-nav { display: none; }
+#practiceMode.minimized .practice-restore { display: flex; }
+
+/* Playback queue dialog — shows the ordered queue with the current item
+   highlighted. Click anywhere on a row (or its ▶) to jump there. */
+#playingQueueDialog .pqd-list { display: flex; flex-direction: column; gap: 4px; }
+#playingQueueDialog .pqd-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #fff;
+}
+#playingQueueDialog .pqd-row:hover { background: #f5f7fa; }
+#playingQueueDialog .pqd-row.pqd-current {
+    background: #e3f2fd;
+    border-color: #90caf9;
+}
+#playingQueueDialog .pqd-num {
+    flex: 0 0 auto;
+    width: 28px;
+    text-align: right;
+    font-family: monospace;
+    font-size: 12px;
+    color: #555;
+}
+#playingQueueDialog .pqd-body { flex: 1; min-width: 0; }
+/* A queue is read by scanning, so every row gets the same height whatever the
+   card holds: one sentence-long card must not push the next twenty off the
+   screen. The full text is in the row's tooltip, and on the card itself. */
+#playingQueueDialog .pqd-text,
+#playingQueueDialog .pqd-sub {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+#playingQueueDialog .pqd-text {
+    font-size: 14px;
+    color: #222;
+    -webkit-line-clamp: 2;
+}
+#playingQueueDialog .pqd-sub {
+    font-size: 11px;
+    color: #777;
+    margin-top: 2px;
+    -webkit-line-clamp: 1;
+}
+#playingQueueDialog .pqd-play {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #1976d2;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+#playingQueueDialog .pqd-play:hover { background: #1565c0; }
+#playingQueueDialog .pqd-row.pqd-current .pqd-play { background: #2e7d32; }
+/* jQuery UI dialogs default to z-index ~100, but the play overlay sits at
+   100002–100004 (banner, transport, corner buttons). Bump the queue dialog
+   above all of them so it doesn't render behind the banner. */
+.ui-dialog:has(> #playingQueueDialog) { z-index: 100010 !important; }
+/* Same reason: the music panel opens from the player overlay too. Its modal
+   backdrop needs lifting as well — jQuery UI gives .ui-widget-overlay no
+   z-index of its own, so it would otherwise dim the page BEHIND the banner. */
+.ui-dialog:has(> #musicPanelDialog) { z-index: 100010 !important; }
+body.music-panel-open .ui-widget-overlay { z-index: 100009 !important; }
+/* The card editor is lifted to 100020 over practice and the player; its modal
+   backdrop has to come up with it, or those two keep showing through around
+   the dialog instead of being dimmed behind it. Just under the dialog. */
+body.manual-editor-open .ui-widget-overlay { z-index: 100019 !important; }
+/* A modal's backdrop belongs with the dialog it dims. Left where it is, the
+   dialog floats in front while the overlay it is meant to dim shows through
+   beside it, untouched. */
+body.dialog-above-practice .ui-widget-overlay { z-index: 100019 !important; }
+
+/* Where minimized dialogs park; they stack upwards so several at once never
+   land on each other. Raised a pill's height off the bottom edge to clear the
+   band the other floating pills own — Practice's restore pill (bottom-right)
+   and the playback pill (bottom-center, which reaches into this corner on a
+   phone). Above every dialog z-index in this file, because a pill is the only
+   way back to what it holds: behind the playback-queue or music-panel dialog
+   it would strand a parked card until that dialog was closed. */
+#minimizedDialogs {
+    position: fixed;
+    bottom: 64px;
+    right: 16px;
+    z-index: 100030;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 8px;
+    /* Only the pills catch clicks — the gaps between them belong to the page
+       underneath. */
+    pointer-events: none;
+}
+#minimizedDialogs > * { pointer-events: auto; }
+
+/* One parked dialog. Clicking it brings the dialog back as it was. */
+.dlg-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: min(78vw, 320px);
+    padding: 6px 14px;
+    background: rgba(33, 33, 33, 0.94);
+    color: #f5f5f5;
+    border-radius: 24px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+.dlg-pill:hover { background: rgba(33, 33, 33, 1); }
+.dlg-pill .dlg-pill-icon { font-size: 16px; }
+.dlg-pill .dlg-pill-label {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Minimize control in a dialog titlebar. jQuery UI pins its close button to
+   the right edge of the bar, so this one is placed just inside it. */
+.ui-dialog-titlebar .dlg-minimize {
+    position: absolute;
+    right: 2.4em;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+}
+.ui-dialog-titlebar .dlg-minimize:hover { background: rgba(0, 0, 0, 0.12); }
+
+/* The rare-words pill is the one that can also be dismissed: the dialog
+   behind it is closed rather than parked, so its results can be let go of
+   from here. Hidden until a rare-word click minimizes the dialog. */
+#rareWordsRestorePill {
+    display: none;
+    padding-right: 8px;
+}
+#rareWordsRestorePill .rare-pill-close {
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #b71c1c;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+#rareWordsRestorePill .rare-pill-close:hover { background: #d32f2f; }
+
+/* Settings → "Unavailable (N)…" review dialog. Lists every video that
+   errored out during a play session, with per-row "Open / Remove / Forget"
+   actions. Layout mirrors the playback-queue dialog (.pqd-row) so the two
+   maintenance dialogs feel consistent. */
+#playUnavailableDialog .pud-info {
+    color: #555;
+    font-size: 13px;
+    padding-bottom: 8px;
+}
+#playUnavailableDialog .pud-list { display: flex; flex-direction: column; gap: 6px; }
+#playUnavailableDialog .pud-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background: #fff;
+}
+#playUnavailableDialog .pud-row:hover { background: #f5f7fa; }
+#playUnavailableDialog .pud-body { flex: 1; min-width: 0; }
+#playUnavailableDialog .pud-label {
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+    color: #222;
+}
+#playUnavailableDialog .pud-sub {
+    font-size: 11px;
+    color: #777;
+    margin-top: 2px;
+    font-family: monospace;
+    overflow-wrap: anywhere;
+}
+#playUnavailableDialog .pud-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+#playUnavailableDialog .pud-actions .lang-tool-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+}
+#playUnavailableDialog .pud-empty {
+    padding: 16px;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+#playUnavailableDialog .pud-footer {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+/* Narrow viewports: wrap action buttons under the label rather than
+   squeezing them into a column that gets cropped. */
+@media (max-width: 600px) {
+    #playUnavailableDialog .pud-row { flex-wrap: wrap; }
+    #playUnavailableDialog .pud-actions { width: 100%; justify-content: flex-end; }
+}
+
+/* The row owns positioning for all seven controls. It can wrap on very
+   narrow screens; landscape keeps it above the bottom edge of the viewport. */
+#recPlayingTransport {
+    position: fixed;
+    top: min(calc(76px + min(100vw, 900px) * 0.5625), calc(100vh - 64px));
+    top: min(calc(76px + min(100vw, 900px) * 0.5625), calc(100dvh - 64px));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100003;
+    width: max-content;
+    max-width: calc(100% - 16px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(4px, 1.5vw, 12px);
+}
+#recPlayingTransport > button { flex: 0 0 auto; }
+body.rec-playing #recPlayingTransport { display: flex; }
+body.rec-playing-minimized #recPlayingTransport,
+body.practice-mode #recPlayingTransport { display: none; }
+
+/* Queue / playlist button: sits in the middle of the transport row where
+   the old Stop button used to live. Stop has moved up to a Close (✕)
+   button in the top-right corner. */
+#recPlayingQueueBtn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #424242;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+}
+body.rec-playing #recPlayingQueueBtn { display: inline-flex; }
+#recPlayingQueueBtn:hover { background: #616161; }
+#recPlayingQueueBtn svg { display: block; }
+
+/* Pause / Resume — sits to the left of the Stop button at the lower edge
+   of the YouTube player. Same vertical anchor as #recPlayingStopBtn so
+   the two read as a single control group. */
+#recPlayingPauseBtn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #424242;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+}
+body.rec-playing #recPlayingPauseBtn { display: inline-flex; }
+#recPlayingPauseBtn:hover { background: #616161; }
+body.rec-paused #recPlayingPauseBtn { background: #2e7d32; }
+body.rec-paused #recPlayingPauseBtn:hover { background: #388e3c; }
+
+/* Previous / Next — flank the Pause/Stop pair so the order reads
+   [Prev] [Pause] [Stop] [Next]. Same vertical anchor as the stop button. */
+#recPlayingPrevBtn,
+#recPlayingNextBtn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #424242;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+}
+body.rec-playing #recPlayingPrevBtn,
+body.rec-playing #recPlayingNextBtn { display: inline-flex; }
+
+/* Top-right corner: [Minimize ⌄] [Close ✕]. Both sit above the YT player
+   chrome with a tight gap; banner sits to their left or below. Only
+   visible during normal play (not while minimized). */
+#recPlayingMinimizeBtn,
+#recPlayingCloseBtn {
+    position: fixed;
+    top: 12px;
+    z-index: 100004;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+}
+#recPlayingMinimizeBtn { right: 56px;  background: rgba(0,0,0,0.65); }
+#recPlayingCloseBtn    { right: 12px;  background: #b71c1c; }
+body.rec-playing #recPlayingMinimizeBtn,
+body.rec-playing #recPlayingCloseBtn { display: inline-flex; }
+#recPlayingMinimizeBtn:hover { background: rgba(0,0,0,0.85); }
+#recPlayingCloseBtn:hover { background: #d32f2f; }
+#recPlayingCloseBtn svg { display: block; }
+
+/* Search-this-word — sits in the bottom transport row between the Queue
+   (center) button and the Next button. Tapping minimises the overlay and
+   drops the current word into the main search box. */
+#recPlayingSearchBtn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #424242;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+    font-size: 18px;
+}
+body.rec-playing #recPlayingSearchBtn { display: inline-flex; }
+#recPlayingSearchBtn:hover { background: #616161; }
+
+/* Restore pill — shown only while play mode is minimized. Compact bar at
+   the bottom of the viewport with the queue cursor and two buttons:
+   ⌃ restore (re-enters play overlay) and ✕ stop (cancels the session). */
+#recPlayingRestorePill {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100005;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px 6px 14px;
+    background: rgba(33, 33, 33, 0.94);
+    color: #f5f5f5;
+    border-radius: 24px;
+    font-size: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+/* Not while Practice is open. The paused deck is still alive underneath, and
+   this pill sits above Practice at z-index 100005 — tapping it resumes the deck
+   into a screen Practice owns, where the deck's own scrub bar and face buttons
+   are hidden, leaving sound with only the transport to stop it. Closing
+   Practice brings the pill straight back. */
+body.rec-playing-minimized:not(.practice-mode) #recPlayingRestorePill { display: inline-flex; }
+#recPlayingRestorePill .rec-pill-count {
+    font-family: monospace;
+    font-weight: 700;
+    padding-right: 4px;
+}
+#recPlayingRestorePill .rec-pill-restore,
+#recPlayingRestorePill .rec-pill-close {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+#recPlayingRestorePill .rec-pill-restore:hover { background: rgba(255,255,255,0.3); }
+#recPlayingRestorePill .rec-pill-close { background: #b71c1c; }
+#recPlayingRestorePill .rec-pill-close:hover { background: #d32f2f; }
+
+/* While minimized, the play overlay hides itself but the body class is
+   still flipped on (rec-playing-minimized). Make sure the various
+   "show during play" rules don't keep stale UI visible.
+
+   Except the video slot, and only while Practice has it. Minimising the deck is
+   the normal way into Practice from a running session, and nothing clears this
+   class on the way — so without the exception a practice VIDEO card hides its
+   own player, leaving a 16:9 gap where it should be and sound coming out of an
+   iframe nobody can see. */
+body.rec-playing-minimized:not(.practice-mode) #mediaContainer,
+body.rec-playing-minimized #recPlayingBanner,
+body.rec-playing-minimized #recPlayingWord,
+body.rec-playing-minimized #recPlayingSubs,
+body.rec-playing-minimized #recPlayingQueueBtn,
+body.rec-playing-minimized #recPlayingPauseBtn,
+body.rec-playing-minimized #recPlayingPrevBtn,
+body.rec-playing-minimized #recPlayingNextBtn,
+body.rec-playing-minimized #recPlayingShuffleBtn,
+body.rec-playing-minimized #recPlayingLoopBtn,
+body.rec-playing-minimized #recPlayingMinimizeBtn,
+body.rec-playing-minimized #recPlayingSearchBtn,
+body.rec-playing-minimized #recPlayingCloseBtn { display: none !important; }
+#recPlayingPrevBtn:hover,
+#recPlayingNextBtn:hover { background: #616161; }
+#recPlayingPrevBtn svg,
+#recPlayingNextBtn svg { display: block; }
+
+/* Shuffle / Loop — playback-state toggles, slightly smaller than the
+   transport buttons so the [Shuffle] [Prev] [Pause] [Stop] [Next] [Loop]
+   row reads as "modes flank the transport". The .active state is the
+   visual cue that shuffle is on / loop is non-off. */
+#recPlayingShuffleBtn,
+#recPlayingLoopBtn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #424242;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+    /* OFF state: muted/faded so it's clearly distinct from the bright
+       blue ON state below. The 🔀 shuffle icon never changes shape, so
+       opacity does the talking (color alone isn't enough — fails for
+       color-blind users and blends into the dark overlay). */
+    opacity: 0.45;
+}
+body.rec-playing #recPlayingShuffleBtn,
+body.rec-playing #recPlayingLoopBtn { display: inline-flex; }
+#recPlayingShuffleBtn:hover,
+#recPlayingLoopBtn:hover { background: #616161; opacity: 0.75; }
+#recPlayingShuffleBtn.active,
+#recPlayingLoopBtn.active {
+    background: #1976d2;
+    opacity: 1;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.55), 0 4px 10px rgba(0, 0, 0, 0.45);
+}
+#recPlayingShuffleBtn.active:hover,
+#recPlayingLoopBtn.active:hover { background: #1565c0; }
+
+/* Compact sizes keep all seven controls in one row on 320px screens. */
+@media (max-width: 480px) {
+    #recPlayingShuffleBtn,
+    #recPlayingLoopBtn {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+    /* The row supplies even gaps; every button keeps its full hit area. */
+    #recPlayingPrevBtn,
+    #recPlayingPauseBtn,
+    #recPlayingQueueBtn,
+    #recPlayingSearchBtn,
+    #recPlayingNextBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+/* Current word — big bold display pinned at the top of the viewport
+   above the video. Visible only in play mode. */
+#recPlayingWord {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100002;
+    padding: 4px 14px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 8px;
+    letter-spacing: 0.02em;
+    max-width: 92vw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: none;
+}
+body.rec-playing #recPlayingWord { display: block; }
+
+/* Transient "Will play x/y next" toast, flashed when the user taps the
+   prev/next transport buttons. Centred low on screen, above the controls,
+   and fades itself out (the .visible class is removed on a timer). */
+#recPlayNavToast {
+    position: fixed;
+    left: 50%;
+    bottom: 18%;
+    transform: translateX(-50%) translateY(8px);
+    z-index: 100004;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(25, 118, 210, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    max-width: 90vw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+#recPlayNavToast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Now-playing info banner. Desktop: shows the full head + meta + progress
+   bar in the top-right corner. Mobile (narrow viewports): a single
+   compact row — count, progress bar, ℹ toggle — sits at the top; tapping
+   ℹ expands the head + meta below. */
+#recPlayingBanner {
+    position: fixed;
+    /* Pushed down from top:16 so the top-right corner buttons
+       (Minimize / Close) have room. Anchored left so banner spans
+       toward the middle without sitting under the corner controls. */
+    top: 58px;
+    left: 16px;
+    right: 16px;
+    z-index: 100002;
+    background: rgba(33, 33, 33, 0.92);
+    color: #f5f5f5;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+/* A card's two faces can hold a whole sentence, and the banner floats over the
+   video — left to run, a long one pushes the details block down the screen and
+   covers what is playing. Clamped to a couple of lines each; the full text is
+   on the card itself. `anywhere` so a long unbroken URL breaks instead of
+   widening the banner. */
+#recPlayingBanner .rec-pb-head,
+#recPlayingBanner .rec-pb-meta {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+#recPlayingBanner .rec-pb-head {
+    font-weight: bold;
+    margin-bottom: 4px;
+    -webkit-line-clamp: 2;
+}
+#recPlayingBanner .rec-pb-meta {
+    font-family: monospace;
+    font-size: 11px;
+    opacity: 0.8;
+    -webkit-line-clamp: 2;
+}
+#recPlayingBanner .rec-pb-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+#recPlayingBanner .rec-pb-progress {
+    /* Taller bar so the count text reads on top of it. The count is
+       absolutely-positioned + centered so it stays put as the fill
+       grows/shrinks behind it. */
+    flex: 1 1 100px;
+    position: relative;
+    height: 22px;
+    background: rgba(255,255,255,0.14);
+    border-radius: 11px;
+    overflow: hidden;
+}
+#recPlayingBanner .rec-pb-bar {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #4caf50;
+    transition: width 0.4s linear;
+}
+/* During the inter-item gap the bar starts full and drains to 0 — visually
+   distinguished by a warm color so the user can tell at a glance that the
+   bar is "time-until-next" instead of "clip-progress". */
+#recPlayingBanner .rec-pb-bar.gap { background: #ff9800; }
+#recPlayingBanner .rec-pb-count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    pointer-events: none;
+    white-space: nowrap;
+}
+#recPlayingBanner .rec-pb-info-btn {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: #f5f5f5;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#recPlayingBanner .rec-pb-info-btn:hover { background: rgba(255,255,255,0.22); }
+#recPlayingBanner .rec-pb-info-btn svg { display: block; }
+#recPlayingBanner .rec-pb-replay-btn {
+    flex: 0 0 auto;
+    min-height: 32px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.12);
+    color: #f5f5f5;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+}
+#recPlayingBanner .rec-pb-replay-btn:hover { background: rgba(255,255,255,0.22); }
+#recPlayingBanner .rec-pb-replay-btn:focus-visible { outline: 2px solid #80cbc4; outline-offset: 2px; }
+/* Same shape as ℹ, but deliberately NOT covered by the desktop rule that
+   hides ℹ: that one is a details toggle the wide layout makes redundant,
+   while this opens the music panel and is wanted at every width. */
+#recPlayingBanner .rec-pb-music-btn {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: #f5f5f5;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 1;
+}
+#recPlayingBanner .rec-pb-music-btn:hover { background: rgba(255,255,255,0.22); }
+/* Playing right now — so it's findable at a glance while a track is running. */
+body.music-on #recPlayingBanner .rec-pb-music-btn {
+    background: rgba(120, 190, 255, 0.32);
+}
+/* Same shape and the same exemption as ♫: the desktop rule that hides ℹ
+   must not take this with it — which side of a card comes first is worth
+   seeing at every width. */
+#recPlayingBanner .rec-pb-swap-btn {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: #f5f5f5;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 1;
+}
+#recPlayingBanner .rec-pb-swap-btn:hover { background: rgba(255,255,255,0.22); }
+/* Turned over right now, so the deck's direction is readable at a glance
+   rather than something you work out from the card in front of you. */
+#recPlayingBanner .rec-pb-swap-btn.rec-pb-swap-on {
+    background: rgba(255, 196, 120, 0.34);
+}
+#recPlayingBanner .rec-pb-details { margin-top: 8px; }
+
+/* Inline gap stepper in the playback banner — pill-shaped, sits next to
+   the progress bar. Click − / + to step by 5s, tap the value to type. */
+#recPlayingBanner .rec-pb-gap {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 0 2px;
+}
+#recPlayingBanner .rec-pb-gap > button {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #f5f5f5;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+}
+#recPlayingBanner .rec-pb-gap > button:hover { background: rgba(255,255,255,0.18); }
+#recPlayingBanner .rec-pb-gap-val,
+#recPlayingBanner .rec-pb-sgap-val {
+    min-width: 36px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 2px 4px;
+    user-select: none;
+}
+
+/* Source→Target pause stepper. Only shown while a card with both recordings
+   is playing, so it sits beside the item-gap pill and needs a little more
+   width for its "ᔆᵀ 30s" readout. Tinted so the two pills don't read as one
+   control. */
+#recPlayingBanner .rec-pb-sgap {
+    background: rgba(120, 190, 255, 0.18);
+}
+#recPlayingBanner .rec-pb-sgap-val { min-width: 52px; }
+
+/* Captured-captions dialog — where a block of caption lines sent from the
+   host's video sidebar lands. The preview is capped in height so a select-all
+   on a whole transcript can't push the playlist picker off screen. */
+#captionCaptureDialog .cap-cap-meta { margin-bottom: 8px; }
+#captionCaptureDialog .cap-cap-title {
+    font-weight: 600;
+    word-break: break-word;
+}
+#captionCaptureDialog .cap-cap-count { font-size: 12px; color: #666; margin-top: 2px; }
+#captionCaptureDialog .cap-cap-preview {
+    max-height: 30vh;
+    overflow-y: auto;
+    background: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin-bottom: 10px;
+}
+#captionCaptureDialog .cap-cap-line {
+    font-size: 13px;
+    line-height: 1.45;
+    padding: 1px 0;
+    word-break: break-word;
+    /* A picked sentence keeps the line breaks the page gave it, and the
+       preview is where you decide whether to send it — so show them. */
+    white-space: pre-wrap;
+}
+#captionCaptureDialog .cap-cap-more { font-size: 12px; color: #888; padding-top: 4px; }
+#captionCaptureDialog .cap-cap-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+#captionCaptureDialog .cap-cap-row label { font-size: 13px; }
+#captionCaptureDialog .cap-cap-lbl { font-size: 13px; }
+#captionCaptureDialog .cap-cap-row + .cap-cap-row { margin-top: 8px; }
+#captionCaptureDialog .cap-cap-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+#captionCaptureDialog .cap-cap-radio input { margin: 0; }
+#captionCaptureDialog .cap-cap-hint {
+    font-size: 12px;
+    color: #666;
+    margin: 4px 0 8px;
+}
+#captionCaptureDialog #capCapPlaylist,
+#captionCaptureDialog #capCapItem { flex: 1 1 160px; min-width: 0; max-width: 100%; }
+
+/* Both time steppers, inside the ℹ details block. They are set now and then,
+   not watched, so they cost the top row nothing while the deck runs — and the
+   row no longer has to choose which of the two pills it has room for. */
+#recPlayingBanner .rec-pb-times {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Mobile / narrow viewports — collapse to the compact row by default,
+   show details only when the user toggles the ℹ button. The banner
+   takes the top strip; #recPlayingWord stacks right below it so they
+   don't overlap. */
+@media (max-width: 999px) {
+    #recPlayingBanner {
+        top: 4px;
+        /* Clear the top-right corner pair (Minimize at right:56 + Close at
+           right:12, each 36px wide). Without this the gap stepper at the
+           right edge of the banner sits underneath them. */
+        right: 100px;
+        left: 4px;
+        max-width: none;
+        min-width: 0;
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    #recPlayingBanner .rec-pb-details { display: none; }
+    #recPlayingBanner.rec-pb-expanded .rec-pb-details { display: block; }
+    #recPlayingWord {
+        top: 40px;
+        font-size: 20px;
+        padding: 3px 12px;
+    }
+}
+
+/* Subtitle overlay during play mode — shows the recorded matched line
+   plus configured before/after context. The active line (the one whose
+   time bracket contains the current playhead) is highlighted and
+   updated by _refreshPlayingSubtitles on every tick. */
+#recPlayingSubs {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.92);
+    color: #f5f5f5;
+    padding: 14px 20px 80px;
+    z-index: 100002;
+    font-size: 16px;
+    line-height: 1.45;
+    max-height: 45vh;
+    overflow-y: auto;
+    box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+body.rec-playing #recPlayingSubs { display: block; }
+
+/* The media region includes the transport in Player. Both text panes grow
+   into the remaining viewport instead of retaining a fixed maximum height. */
+#studyMediaDivider {
+    position: fixed;
+    top: calc(var(--study-split-y) - 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100vw, 900px);
+    height: 18px;
+    z-index: 100006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: row-resize;
+    touch-action: none;
+    background: #171717;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #333;
+}
+#studyMediaDivider[hidden] { display: none; }
+#studyMediaDivider > span { width: 52px; border-top: 3px solid #aaa; border-radius: 3px; }
+#studyMediaDivider:focus-visible { outline: 2px solid #80cbc4; outline-offset: -2px; }
+@media (max-width: 999px) {
+    #recPlayingBanner .rec-pb-top { gap: 6px; }
+    #recPlayingBanner .rec-pb-progress { flex-basis: 128px; min-width: 128px; }
+}
+body.study-resizing { user-select: none; cursor: row-resize; }
+body.study-split-active #mediaContainer { height: var(--study-media-h); overflow: hidden; }
+body.study-split-active #mediaContainer iframe,
+body.study-split-active #mediaContainer #youtubePlayer,
+body.study-split-active #mediaContainer #youtubePlayer iframe {
+    height: var(--study-media-h) !important;
+    aspect-ratio: auto;
+}
+body.study-split-active.rec-playing #recPlayingAudio,
+body.study-split-active.practice-mode #practiceAudio {
+    height: var(--study-media-h);
+    overflow-y: auto;
+}
+body.study-split-active.rec-playing #recPlayingTransport { top: calc(var(--study-split-y) - 56px); }
+body.study-split-active.rec-playing #recPlayingSubs { top: calc(var(--study-split-y) + 10px); max-height: none; padding-bottom: 20px; }
+body.study-split-active.practice-mode #practiceMode .practice-card { top: calc(var(--study-split-y) + 10px); }
+
+/* Hide only the controls: visibility preserves every media/text measurement. */
+:is(#recPlayingBanner .rec-pb-top > :not(.rec-pb-progress), #recPlayingBanner .rec-pb-details,
+    #recPlayingTransport, #recPlayingMinimizeBtn, #recPlayingCloseBtn,
+    #recPlayNavToast, #studyMediaDivider, #practiceMode .practice-topbar,
+    #practiceMode .practice-nav, #practiceMode .practice-ctx-ctrl,
+    #practiceMode .practice-line-edit, #practiceMode .practice-rec-bar,
+    #practiceMode .practice-restore, #practiceAudio > *, #recPlayingAudio > *) {
+    transition: opacity .18s ease, visibility .18s;
+}
+body.study-controls-hidden :is(#recPlayingBanner .rec-pb-top > :not(.rec-pb-progress),
+    #recPlayingBanner .rec-pb-details, #recPlayingTransport, #recPlayingMinimizeBtn,
+    #recPlayingCloseBtn, #recPlayNavToast, #studyMediaDivider, #practiceMode .practice-topbar,
+    #practiceMode .practice-nav > :not(.practice-unflip), #practiceMode .practice-ctx-ctrl,
+    #practiceMode .practice-line-edit,
+    #practiceMode .practice-restore, #practiceAudio > *, #recPlayingAudio > *) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+/* Keep the live countdown/progress readout in place while its buttons fade. */
+body.study-controls-hidden #recPlayingBanner {
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+}
+body.study-controls-hidden #recPlayingBanner .rec-pb-progress { background: rgba(33,33,33,0.92); }
+
+/* Selection makes Search stand out without changing its size or position. */
+#recPlayingSearchBtn.study-selection-search,
+#practiceMode .practice-search.study-selection-search {
+    background: #ffd54f;
+    color: #111;
+    outline: 3px solid #ffb300;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #111, 0 4px 12px rgba(0,0,0,0.45);
+}
+
+#studyControlsWakeSurface {
+    position: fixed;
+    z-index: 100007;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+#studyControlsWakeSurface[hidden] { display: none; }
+
+/* Spotify's visible embed shares the study media slot with YouTube. */
+#spotifyClipPlayer { display: none; }
+body.study-spotify.rec-playing:not(.practice-mode) #mediaContainer,
+body.study-spotify.practice-mode #mediaContainer { display: block !important; overflow-y: auto; }
+body.study-spotify #mediaContainer > :not(#spotifyClipPlayer) { display: none !important; }
+body.study-spotify #spotifyClipPlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 190px;
+    height: var(--study-media-h, 190px);
+    width: 100%;
+    background: #121212;
+}
+body.study-spotify #mediaContainer #spotifyClipPlayer iframe {
+    width: 100% !important;
+    height: 152px !important;
+    aspect-ratio: auto;
+    border: 0;
+}
+.spotify-clip-status { padding: 8px 12px; color: #eee; font: 13px system-ui, sans-serif; min-height: 22px; }
+body.study-spotify #studyControlsWakeSurface { display: none !important; }
+body.study-spotify.practice-mode #practiceMode .practice-play { display: inline-flex !important; }
+body.study-spotify.practice-mode #practiceMode .practice-speed { display: none !important; }
+body.study-spotify.practice-mode:not(.study-split-active) #practiceMode .practice-card { top: 266px; }
+body.rec-playing #scrollButton, body.practice-mode #scrollButton { display: none; }
+#recPlayingSubs .rec-ps-row {
+    padding: 4px 6px;
+    opacity: 0.55;
+    border-left: 3px solid transparent;
+    transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+}
+#recPlayingSubs .rec-ps-row.rec-ps-active {
+    opacity: 1;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: #4caf50;
+}
+/* A manual card's text is stored with real newlines — a caption capture puts
+   one cue per line — so the overlay has to honour them instead of collapsing
+   the whole card onto one run-on line. */
+#recPlayingSubs .rec-ps-main,
+#recPlayingSubs .rec-ps-sec {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+#recPlayingSubs .rec-ps-sec {
+    font-size: 0.85em;
+    font-style: italic;
+    opacity: 0.75;
+    margin-top: 2px;
+}
+#recPlayingSubs .rec-ps-err,
+#recPlayingSubs .rec-ps-loading { color: #ffcdd2; font-size: 14px; }
+
+/* Highlight the captured word in Player + Practice views: bold + yellow.
+   <mark> defaults to a yellow background in browsers but with black text on
+   white — keep it readable on the dark Player panel and on the light Practice
+   card by pinning colors explicitly. */
+#recPlayingSubs mark.hl-word,
+#practiceMode mark.hl-word {
+    background: #ffeb3b;
+    color: #111;
+    font-weight: 700;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+/* Search-term highlight inside the #searchedWords select2 dropdown,
+   AND inside .vocabulary-line entries in the result panel. Applied by
+   _highlightMatchInText (dropdown) and _highlightSearchInVocabLine
+   (vocabulary results) — same CSS class so the visual is consistent. */
+.select2-results__option mark.vocab-hl,
+.vocabulary-line mark.vocab-hl {
+    background: #fff59d;
+    color: inherit;
+    font-weight: 600;
+    padding: 0 1px;
+    border-radius: 2px;
+}
+
+/* ── Practice Log / Schedule dialog ─────────────────────────────── */
+/* jQuery UI manages height + overflow:auto on the .ui-dialog-content via its
+   maxHeight option (set in openPracticeLogDialog). We only add inner padding
+   so the last row doesn't hug the scrollbar. Extra padding-bottom keeps the
+   "Add custom item" row clear of the actions bar when the content scrolls. */
+#practiceLogDialog {
+    padding-bottom: 64px;
+    -webkit-overflow-scrolling: touch; /* momentum scrolling on older iOS */
+    touch-action: pan-y;               /* allow native vertical pan/scroll */
+    overscroll-behavior: contain;      /* don't bubble scroll to body */
+}
+.practice-log-front-btn {
+    background: #1e7e34;
+    color: #fff;
+    border: 1px solid #185c27;
+    padding: 6px 14px;
+    font-size: 0.95em;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.practice-log-front-btn:hover { background: #1c7430; }
+
+/* "Plan your week" cue: applied to both #practiceLogFrontBtn and
+   #practiceLogSettingsBtn by _refreshPracticeLogBtnHighlight whenever
+   neither the current nor next ISO week has any planned content. */
+@keyframes practice-log-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(255, 152, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+}
+.practice-log-needs-attention {
+    animation: practice-log-pulse 1.6s ease-out infinite;
+    background: #ff9800 !important;
+    color: #111 !important;
+    border-color: #c66900 !important;
+    font-weight: 600;
+}
+
+#practiceLogDialog .practice-log-tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+}
+#practiceLogDialog .practice-log-tab {
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom: none;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #555;
+    border-radius: 4px 4px 0 0;
+}
+#practiceLogDialog .practice-log-tab.active {
+    background: #fff;
+    border-color: #ddd;
+    color: #222;
+    font-weight: 600;
+    position: relative;
+    top: 1px;
+}
+#practiceLogDialog .practice-log-week-label {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 6px;
+}
+#practiceLogDialog .practice-log-item {
+    display: grid;
+    grid-template-columns: 130px 130px 1fr auto;
+    gap: 6px;
+    align-items: start;
+    padding: 6px 0;
+    border-bottom: 1px dashed #eee;
+}
+#practiceLogDialog .practice-log-item-name {
+    font-weight: 600;
+    font-size: 0.92em;
+    padding-top: 4px;
+}
+#practiceLogDialog .practice-log-item-status {
+    font-size: 0.85em;
+    padding: 3px 4px;
+}
+#practiceLogDialog .practice-log-item-notes {
+    font-family: inherit;
+    font-size: 0.85em;
+    width: 100%;
+    min-height: 2.4em;
+    resize: vertical;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 3px 5px;
+    box-sizing: border-box;
+}
+#practiceLogDialog .practice-log-item-remove {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #c33;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    font-size: 0.85em;
+    padding: 0;
+    line-height: 1;
+}
+#practiceLogDialog .practice-log-item-remove:hover { background: #fee; }
+#practiceLogDialog .practice-log-add-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+#practiceLogDialog .practice-log-add-row input {
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+#practiceLogDialog .practice-log-history-config {
+    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 8px;
+}
+#practiceLogDialog .practice-log-history-week {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    background: #fafafa;
+}
+#practiceLogDialog .practice-log-history-week-header {
+    font-weight: 600;
+    font-size: 0.88em;
+    margin-bottom: 4px;
+    color: #333;
+}
+#practiceLogDialog .practice-log-history-item {
+    font-size: 0.82em;
+    padding: 2px 0;
+    color: #444;
+}
+#practiceLogDialog .practice-log-history-item .pl-status {
+    display: inline-block;
+    min-width: 90px;
+    font-weight: 600;
+}
+#practiceLogDialog .practice-log-notes-toggle {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0 4px;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    line-height: 1.2;
+}
+#practiceLogDialog .practice-log-notes-toggle:hover { background: #f0f0f0; }
+#practiceLogDialog .practice-log-history-notes {
+    margin: 4px 0 6px 100px;
+    padding: 5px 8px;
+    background: #fff;
+    border-left: 3px solid #ffc107;
+    color: #555;
+    font-size: 0.85em;
+    white-space: pre-wrap;
+}
+#practiceLogDialog .pl-status-done       { color: #1e7e34; }
+#practiceLogDialog .pl-status-progress   { color: #b8860b; }
+#practiceLogDialog .pl-status-skipped    { color: #999; text-decoration: line-through; }
+#practiceLogDialog .pl-status-notstarted { color: #888; }
+#practiceLogDialog .practice-log-actions {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+    #practiceLogDialog .practice-log-item {
+        grid-template-columns: 1fr;
+    }
+    #practiceLogDialog .practice-log-item-name { padding-top: 0; }
+}
+
+/* ── Library (EPUB) full-text search — the bar and results injected at the
+   top of #result. Driven by PlaylistBridge's globalSearch op; only present
+   inside the Cupitor app. ───────────────────────────────────────────── */
+.lib-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 4px 6px;
+    margin-bottom: 4px;
+    background: #f6f8fa;
+    border-bottom: 1px solid #dde3e8;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.lib-auto-label {
+    font-size: 0.82em;
+    color: #555;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+}
+.lib-search-status {
+    font-size: 0.82em;
+    color: #666;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.lib-status-busy::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+    border: 2px solid #bbb;
+    border-top-color: #4dba87;
+    border-radius: 50%;
+    animation: lib-spin 0.8s linear infinite;
+    vertical-align: -1px;
+}
+@keyframes lib-spin { to { transform: rotate(360deg); } }
+.lib-results:not(:empty) {
+    padding: 2px 6px 6px 6px;
+    border-bottom: 1px solid #dde3e8;
+    margin-bottom: 6px;
+}
+.lib-head {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 2px 0;
+    margin-bottom: 4px;
+    font-size: 0.82em;
+    color: #555;
+    cursor: pointer;
+}
+.lib-head:hover { color: #222; }
+.lib-caret { display: inline-block; width: 10px; color: #888; }
+.lib-collapsed .lib-body { display: none; }
+.lib-capped { color: #b8860b; }
+.lib-streaming { color: #4dba87; }
+.lib-cancelled { color: #999; }
+.lib-empty { font-size: 0.85em; color: #777; padding: 2px 0; }
+.lib-group { margin-bottom: 6px; }
+.lib-group-title {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 1px 0;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #24405c;
+    cursor: pointer;
+}
+.lib-group-title:hover { text-decoration: underline; }
+.lib-group-title mark { background: #ffe680; padding: 0 2px; border-radius: 2px; }
+.lib-group-count { font-weight: 400; color: #888; font-size: 0.85em; }
+.lib-group-collapsed .lib-group-body { display: none; }
+.lib-chapter-book { color: #555; }
+.lib-chapter { margin: 3px 0 3px 8px; }
+.lib-open {
+    background: transparent;
+    border: none;
+    border-left: 3px solid #4dba87;
+    padding: 0 0 0 6px;
+    font-size: 0.85em;
+    color: #1d6fa5;
+    cursor: pointer;
+    text-align: left;
+}
+.lib-open:hover { text-decoration: underline; }
+.lib-snip {
+    display: block;
+    width: calc(100% - 9px);
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 1px 2px;
+    font-size: 0.85em;
+    font-family: inherit;
+    color: #333;
+    margin: 2px 0 2px 9px;
+    line-height: 1.35;
+    cursor: pointer;
+}
+.lib-snip:hover { background: #f0f4f8; }
+.lib-snip mark { background: #ffe680; padding: 0 1px; }
+
+/* Manual-card editor: per-face dictation button + recorder bar. Source and
+   Target each own an independent recording (played back to back in Play All). */
+#manualEntryEditor .mee-mic {
+    background: transparent;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px 5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#manualEntryEditor .mee-mic:hover { background: #f6f8fa; }
+/* Listening — pulses so it's obvious the mic is open. */
+#manualEntryEditor .mee-mic-live {
+    background: #ffe9e9;
+    border-color: #d1242f;
+    animation: mee-mic-pulse 1s ease-in-out infinite;
+}
+@keyframes mee-mic-pulse { 50% { opacity: 0.45; } }
+/* Fill this face from the other one's translation. Shares the mic button's
+   shape so the two sit together on a label without looking like two systems. */
+#manualEntryEditor .mee-rich,
+#manualEntryEditor .mee-tr {
+    background: transparent;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px 5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#manualEntryEditor .mee-tr:hover { background: #f6f8fa; }
+#manualEntryEditor .mee-tr:disabled { opacity: 0.5; cursor: default; }
+/* Waiting on the host's answer. The button is disabled while it works, so this
+   has to out-rank both .mee-tr:hover and .mee-tr:disabled — and restate
+   opacity, or the pulse animates down from the disabled 0.5 and barely reads. */
+#manualEntryEditor .mee-tr.mee-tr-busy,
+#manualEntryEditor .mee-tr.mee-tr-busy:hover,
+#manualEntryEditor .mee-tr.mee-tr-busy:disabled {
+    background: #eaf3ff;
+    border-color: #0969da;
+    opacity: 1;
+    cursor: default;
+    animation: mee-mic-pulse 1s ease-in-out infinite;
+}
+#manualEntryEditor .mee-audio-bar {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+#manualEntryEditor .mee-audio-status { font-size: 11px; color: #666; margin-left: 4px; }
+/* The recorder bar is four controls per face, eight on a card — at full button
+   size they were most of the dialog. Small type and tight padding shrink the
+   strip; min-height keeps the box itself tappable, because Delete is in here
+   and it does not ask twice. */
+#manualEntryEditor .mee-audio-bar .btn {
+    font-size: 11px;
+    line-height: 1.1;
+    padding: 3px 7px;
+    min-height: 26px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    background: #fff;
+}
+/* The global .btn:hover paints cyan; the rule above out-ranks it and would
+   otherwise leave these the only controls in the dialog with no hover at all. */
+#manualEntryEditor .mee-audio-bar .btn:hover:not(:disabled) { background: #f6f8fa; }
+#manualEntryEditor .mee-audio-bar .btn:disabled { opacity: 0.45; }
+
+/* Swap: the two faces trade text and recording. Sits between the boxes because
+   that is the thing it acts on — a hinge, not a toolbar button. */
+#manualEntryEditor .mee-swap-row {
+    display: flex;
+    justify-content: center;
+    margin: -4px 0 6px;
+}
+#manualEntryEditor .mee-swap {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    line-height: 1;
+    padding: 3px 9px;
+    color: #57606a;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 999px;
+    cursor: pointer;
+}
+#manualEntryEditor .mee-swap:hover { background: #f6f8fa; color: #24292f; }
+#manualEntryEditor .mee-swap-lbl { font-weight: 600; letter-spacing: 0.02em; }
+
+/* Which way round this card translates — asked once, above the editor. */
+#meeDirAsk .mee-dir-q { font-size: 13px; color: #24292f; margin-bottom: 6px; }
+#meeDirAsk .mee-dir-hint { font-size: 11px; color: #777; }
+
+/* ── The host's dictionary for an English search ─────────────────────────
+   Sits above the findings: what the word means, before what it looks like in
+   use. Every term is a search in the studied language, so the whole panel is
+   a row of buttons rather than text. */
+#translationPanel {
+    margin: 0 0 8px;
+    border: 1px solid #cfd8e3;
+    border-radius: 6px;
+    background: #f7f9fc;
+    font-size: 13px;
+}
+/* Reserve one summary row before the asynchronous answer arrives. Opening
+   the answer overlays the results, so neither arrival nor expansion moves them. */
+#translationSlot { position: relative; height: 40px; margin-bottom: 8px; clear: both; z-index: 20; }
+#translationSlot #translationPanel { position: absolute; top: 0; left: 0; right: 0; margin: 0; }
+#translationSlot .xl-summary { height: 38px; box-sizing: border-box; overflow: hidden; white-space: nowrap; }
+#translationSlot .xl-word { overflow: hidden; text-overflow: ellipsis; }
+#translationSlot .xl-body { max-height: min(40vh, 260px); overflow-y: auto; border-top: 1px solid #cfd8e3; box-shadow: 0 5px 8px #0002; }
+body.rec-playing #translationSlot, body.practice-mode #translationSlot { display: none; }
+.channel-filter-list { max-height: 45vh; overflow: auto; margin-top: 10px; }
+.channel-filter-list label { display: block; padding: 5px; }
+.cache-manager-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #ddd; }
+#practiceMode .practice-speeds-row { flex-wrap: wrap; }
+#practiceMode .practice-speeds-input { width: 160px; max-width: 100%; color: #fff; background: #333; border: 1px solid #777; border-radius: 5px; padding: 6px; }
+#practiceMode .practice-speeds-save { color: #fff; background: #444; border: 1px solid #777; border-radius: 5px; padding: 6px; }
+#practiceMode .practice-speeds-row small, #practiceMode .practice-speeds-status { flex-basis: 100%; font-size: 12px; }
+#translationPanel .xl-summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+/* The default disclosure triangle sits awkwardly against the flex row; the
+   summary already reads as expandable from its own marker below. */
+#translationPanel .xl-summary::-webkit-details-marker { display: none; }
+#translationPanel .xl-summary::before {
+    content: "▸";
+    font-size: 11px;
+    color: #5a7ba6;
+}
+#translationPanel[open] .xl-summary::before { content: "▾"; }
+#translationPanel .xl-dir {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: #5a7ba6;
+    text-transform: uppercase;
+}
+#translationPanel .xl-word { font-weight: 700; color: #22303f; }
+#translationPanel .xl-n {
+    margin-left: auto;
+    font-size: 11px;
+    color: #6b7c90;
+}
+#translationPanel .xl-body { padding: 0 10px 10px; }
+#translationPanel .xl-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+#translationPanel .xl-term {
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    cursor: pointer;
+    /* Tappable with a thumb — this is a phone control as much as a desktop one. */
+    min-height: 32px;
+}
+/* Colour is the dictionary's own confidence, strongest first. Not a traffic
+   light: a pale chip is still a real translation, just a rarer sense — so the
+   weakest is readable rather than greyed towards invisible. */
+#translationPanel .xl-conf-high {
+    background: #1d6f42;
+    border-color: #1d6f42;
+    color: #fff;
+    font-weight: 600;
+}
+#translationPanel .xl-conf-medium {
+    background: #dff0e4;
+    border-color: #8fc0a1;
+    color: #1d4f31;
+}
+#translationPanel .xl-conf-low {
+    background: #fff;
+    border-color: #c8d2de;
+    color: #4a5a6b;
+}
+#translationPanel .xl-term:active { transform: translateY(1px); }
+/* A term too short for the search to accept (a one-letter word like "ö"). Worth
+   reading, so it keeps its colour — but it is not a button, and nothing about
+   it should invite a tap. */
+#translationPanel .xl-term:disabled {
+    cursor: default;
+    opacity: 0.75;
+    border-style: dashed;
+}
+#translationPanel .xl-term:disabled:active { transform: none; }
+
+@media (max-width: 600px) {
+    #translationPanel .xl-body { padding: 0 8px 8px; }
+    #translationPanel .xl-term { font-size: 14px; }
+}
+
+/* ─── Search-history list (long press on Prev / Next) ─────────────────── */
+/* Fixed and body-parented, like the notification panel, so no toolbar
+   ancestor clips it. */
+.srch-hist-panel {
+    position: fixed;
+    max-width: 90vw;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    z-index: 100050;
+}
+.srch-hist-hd {
+    padding: 6px 10px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #6b7c90;
+    border-bottom: 1px solid #eef1f5;
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+.srch-hist-empty { padding: 10px; font-size: 13px; color: #6b7c90; }
+.srch-hist-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #f2f4f7;
+    text-align: left;
+    font-size: 14px;
+    color: #22303f;
+    cursor: pointer;
+    /* Tappable with a thumb. */
+    min-height: 40px;
+}
+.srch-hist-row:last-child { border-bottom: 0; }
+.srch-hist-row:hover { background: #f6f8fb; }
+.srch-hist-row.is-current { background: #eef4ff; font-weight: 600; }
+.srch-hist-term { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.srch-hist-lang, .srch-hist-here {
+    flex: 0 0 auto;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #5a7ba6;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    padding: 1px 6px;
+}
+.srch-hist-here { color: #1d6f42; border-color: #8fc0a1; }
+
+/* A break in the video between two lines that sit next to each other in the
+   subtitle file: these files stitch captures from distant moments together,
+   and playback stops at the break rather than running across it. */
+.line.line-gap {
+    color: #9aa4ae;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 2px 0;
+    user-select: none;
+    cursor: default;
+}
+
+/* Held, on the way to being deleted. */
+#practiceMode .prec-btn.prec-take.prec-take-holding {
+    transform: scale(0.88);
+    border-color: #ff5252;
+    transition: transform 0.4s ease-out;
+}
+
+/* Manual cards listed with the search results (see _ensureManualSearchBar). */
+.manual-results-empty { font-size: 0.82em; color: #666; margin: 2px 0 4px 0; }
+.manual-head {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 2px 0;
+    font-size: 0.85em;
+    color: #444;
+    cursor: pointer;
+}
+.manual-head:hover { color: #222; }
+.manual-hit {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #f7f8fc;
+    border: none;
+    border-left: 3px solid #7986cb;
+    padding: 3px 6px;
+    margin: 3px 0;
+    font: inherit;
+    line-height: 1.35;
+    cursor: pointer;
+}
+.manual-hit:hover { background: #eceff8; }
+.manual-hit-playlist { font-size: 0.78em; color: #777; margin-right: 4px; }
+
+/* A manual card written as HTML (card-html.js): its own markup lays it out,
+   so the pre-wrap that keeps a plain card's line breaks is turned off. */
+#practiceMode .practice-manual-text.card-html,
+#recPlayingSubs .card-html { white-space: normal; }
+.card-html ul, .card-html ol { text-align: left; margin: 4px 0; padding-left: 1.4em; }
+.card-html p { margin: 0 0 6px 0; }
+.card-html img { max-width: 100%; height: auto; cursor: zoom-in; }
+
+/* Full-screen picture viewer (image-viewer.js). Above Practice, the
+   shadowing bar and every dialog. */
+.img-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 100200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.92);
+    touch-action: none;
+    overflow: hidden;
+    cursor: zoom-out;
+}
+.img-viewer.zoomed { cursor: grab; }
+.img-viewer-img {
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+    transform-origin: center center;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: zoom-in;
+}
+.img-viewer.zoomed .img-viewer-img { cursor: grab; }
+.img-viewer-close {
+    position: absolute;
+    top: max(12px, env(safe-area-inset-top));
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    /* Dark, so it reads over a white picture as well as the backdrop. */
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.card-html a { color: inherit; text-decoration: underline; }
+.card-html table { border-collapse: collapse; margin: 4px auto; }
+.card-html td, .card-html th { border: 1px solid rgba(128,128,128,.5); padding: 2px 6px; }
+
+/* Live preview of a manual-card face written as HTML, under its box. */
+.mee-html-preview {
+    margin: 4px 0 2px 0;
+    padding: 4px 6px;
+    border: 1px dashed #b0b8c8;
+    border-radius: 4px;
+    background: #fafbfd;
+    font-size: 0.92em;
+}
+
+/* Playlists changed both here and on GitHub (_askRecordingConflicts). */
+.rec-conflict-intro { font-size: 0.9em; color: #444; margin: 0 0 8px 0; }
+.rec-conflict-row { border: 1px solid #dde3e8; border-radius: 6px; padding: 6px 8px; margin: 6px 0; }
+.rec-conflict-name { font-weight: 600; margin-bottom: 2px; }
+.rec-conflict-side { font-size: 0.85em; color: #555; }
+.rec-conflict-opts { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; font-size: 0.9em; }
+.rec-conflict-opt.disabled { color: #aaa; }
+
+/* A manual card with a YouTube link AND its own recordings (body class set in
+   _showPracticeAudioPanel): the video keeps its 16:9 slot, the recordings panel
+   sits right under it, and the card under both — so either can be played.
+   More specific than the rule that hides the slot for a recordings card. */
+body.practice-mode.practice-manual.practice-manual-video #mediaContainer {
+    display: block !important;
+}
+body.practice-mode.practice-manual.practice-manual-video #practiceAudio {
+    top: calc(64px + min(100vw, 900px) * 0.5625);
+}
+body.practice-manual.practice-manual-video #practiceMode .practice-card {
+    top: calc(64px + min(100vw, 900px) * 0.5625 + var(--practice-media-h, 150px) + 12px);
+}
+
+/* Rich-text editor for a card face (_openRichCardEditor). CKEditor's floating
+   panels (link balloon, heading list, table grid) attach to <body>; every
+   dialog here sits at z-index 100000+, so they would open behind it. */
+/* Scoped as well as on :root: CKEditor injects its own :root defaults when it
+   loads, after this sheet, and would win a tie. */
+:root, .ck.ck-body-wrapper, #richCardEditor {
+    --ck-z-default: 100100;
+    --ck-z-panel: calc(var(--ck-z-default) + 999);
+}
+.mee-rich { margin-left: 4px; }
+#richCardEditor .ck-editor__editable { min-height: 160px; max-height: 55vh; }
+#richCardEditor .rce-url { display: flex; gap: 6px; margin-bottom: 6px; }
+#richCardEditor .rce-url-input { flex: 1; min-width: 0; padding: 4px 6px; }
+
+#search-pagination { padding: 4px 0; }
+#search-pagination .btn.disabled { opacity: 0.4; pointer-events: none; }
+#search-pagination select { margin: 0 4px; }
+
+/* Account banner and panel (language/account-panel.js) */
+.account-banner { background: #fff6d6; border: 1px solid #e8d27a; border-radius: 6px; padding: 6px 10px; margin: 6px 0; font-size: 13px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+#accountDialog p { margin: 6px 0; }
+#accountDialog .acct-msg { font-weight: bold; }
+#accountDialog .acct-err { color: #a00; }
+#accountDialog .acct-notice { color: #865; font-size: 12px; }
+#accountDialog .acct-step { font-size: 13px; }
+#accountDialog .acct-step-done { color: #2a7; }
+#accountDialog .acct-step-failed { color: #a00; }
+#accountDialog .acct-token input[type="password"] { width: 100%; box-sizing: border-box; }
+#accountDialog .acct-remember { display: block; margin: 4px 0; font-weight: normal; }
+#accountDialog .acct-setup, #accountDialog .acct-token, #accountDialog .acct-other { border-top: 1px solid #eee; padding-top: 6px; margin-top: 6px; }
+#accountDialog .acct-other select { max-width: 100%; margin-left: 4px; }
+
+#keyboardShortcutsDialog, #keyboardShortcutsDialog table { color: #24292f; background: #fff; }
+.keyboard-shortcuts-table { width: 100%; border-collapse: collapse; }
+.keyboard-shortcuts-table td { padding: 5px 8px; vertical-align: top; }
+.keyboard-shortcuts-table td:first-child { white-space: nowrap; width: 7em; }
+.keyboard-shortcuts-table kbd { display: inline-block; margin-right: 4px; padding: 2px 5px; border: 1px solid #bcc4cc; border-radius: 3px; background: #f6f8fa; color: #24292f; }
+#keyboardShortcutsDialog p { font-size: .85em; color: #57606a; }
+/* Study calls and reminder dialogs: clear controls, compact mobile layout. */
+.cupitor-panel-window.ui-dialog { border:1px solid #d6dfdf; border-radius:16px; padding:0; box-shadow:0 16px 60px #102b2933; background:#fff; overflow:hidden; }
+.cupitor-panel-window .ui-dialog-titlebar { background:#fff; border:0; border-bottom:1px solid #e3e9e8; border-radius:0; padding:17px 60px 17px 20px; color:#153b34; font-size:17px; font-weight:700; }
+.cupitor-panel-window .ui-dialog-titlebar-close { display:flex; align-items:center; justify-content:center; width:38px!important; height:38px!important; margin-top:-19px!important; right:10px!important; border:1px solid #ccd8d5!important; border-radius:10px; background:#f5f8f7!important; color:#244c44; font:26px/1 sans-serif; text-indent:0; padding:0; }
+.cupitor-panel-window .ui-dialog-titlebar-close .ui-icon { display:none; }
+#studyCallsDialog { padding:20px; background:#f8faf9; color:#203b35; font:14px/1.5 system-ui,-apple-system,sans-serif; }
+#studyCallsDialog *, #notifDialog *, #notifSchedulePreview * { box-sizing:border-box; }
+#studyCallsDialog h2 { margin:0; color:#163c32; font-size:22px; line-height:1.25; font-weight:750; }
+#studyCallsDialog h3 { margin:0 0 12px; font-size:15px; font-weight:700; color:#244a40; }
+#studyCallsDialog p { margin:8px 0; }
+#studyCallsDialog label { display:block; margin:12px 0; font-size:13px; font-weight:650; color:#304c43; }
+#studyCallsDialog input, #studyCallsDialog textarea, #studyCallsDialog select { display:block; width:100%; margin-top:6px; padding:10px 11px; min-height:44px; border:1px solid #bfcfca; border-radius:9px; background:#fff; color:#183b30; box-shadow:inset 0 1px 2px #163b3006; font-family:inherit; font-size:15px; line-height:1.4; font-weight:400; }
+#studyCallsDialog input:focus, #studyCallsDialog textarea:focus, #studyCallsDialog select:focus { outline:2px solid #69ae98; outline-offset:1px; border-color:#28785e; }
+#studyCallsDialog input[type=checkbox], #studyCallsDialog input[type=radio] { display:inline-block; width:20px; height:20px; min-height:20px; margin:0 8px 0 0; flex:none; accent-color:#186c52; box-shadow:none; }
+#studyCallsDialog button, #notifDialog button, #notifSchedulePreview button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 15px; border:1px solid #b9cdc5; border-radius:9px; background:#fff; color:#254c3e; box-shadow:0 1px 2px #153b3010; font-family:inherit; font-size:14px; font-weight:650; line-height:1.3; text-align:center; text-decoration:none; cursor:pointer; white-space:normal; }
+#studyCallsDialog button:hover:not(:disabled), #notifDialog button:hover:not(:disabled), #notifSchedulePreview button:hover:not(:disabled) { background:#edf5f1; border-color:#6f9f8c; }
+#studyCallsDialog button:focus-visible, #notifDialog button:focus-visible, #notifSchedulePreview button:focus-visible { outline:3px solid #9ac9b6; outline-offset:2px; }
+#studyCallsDialog button.btn-primary, #notifDialog #notifEnableBtn { background:#17694f; border-color:#17694f; color:#fff; box-shadow:0 2px 3px #163b3020; }
+#studyCallsDialog button.btn-primary:hover:not(:disabled), #notifDialog #notifEnableBtn:hover:not(:disabled) { background:#10553f; border-color:#10553f; }
+#studyCallsDialog button.study-call-danger, #notifDialog button.notif-disable { color:#a3352b; border-color:#e8c9c4; background:#fff9f8; }
+#studyCallsDialog button:disabled, #notifDialog button:disabled { opacity:.48; cursor:default; box-shadow:none; }
+#studyCallsDialog [hidden] { display:none!important; }
+#studyCallsDialog .study-call-heading { display:flex; align-items:flex-start; gap:12px; margin-bottom:16px; }
+#studyCallsDialog .study-call-navigation, #notifSchedulePreview .notif-schedule-navigation { position:sticky; top:0; z-index:2; padding:4px 0 12px; background:#f8faf9; }
+#studyCallsDialog .study-call-heading p { margin:5px 0 0; color:#62796f; font-size:13px; }
+#studyCallsDialog .study-call-phone { display:flex; width:44px; height:44px; align-items:center; justify-content:center; flex:none; border-radius:13px; background:#e2f0e9; color:#17694f; font-size:25px; }
+#studyCallsDialog .study-call-nav, #studyCallsDialog .study-call-actions, #studyCallsDialog .study-call-permissions { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+#studyCallsDialog .study-call-nav { padding-bottom:14px; border-bottom:1px solid #dce6e1; }
+#studyCallsDialog .study-call-nav button { flex:1 1 auto; padding:8px 12px; font-size:13px; }
+#studyCallsDialog .study-call-info { margin:14px 0; padding:10px 12px; background:#eef4f1; border:1px solid #dce6e1; border-radius:9px; color:#527165; font-size:12px; line-height:1.5; }
+#studyCallsDialog .study-call-main-actions { margin:16px 0; }
+#studyCallsDialog .study-call-main-actions button { flex:1; }
+#studyCallsDialog .study-call-list-caption { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; margin:18px 0 10px; font-size:12px; color:#6d8077; }
+#studyCallsDialog .study-call-list-caption strong { color:#345447; font-size:13px; }
+#studyCallsDialog .study-call-history-row { padding:15px; margin:12px 0; background:#fff; border:1px solid #dbe5df; border-radius:12px; box-shadow:0 2px 4px #163b3005; overflow-wrap:anywhere; }
+#studyCallsDialog .study-call-row-title { font-size:15px; color:#213e31; }
+#studyCallsDialog .study-call-badge { display:inline-block; padding:2px 8px; margin:0 0 4px 8px; border-radius:20px; background:#eaf3ee; color:#39634d; font-size:11px; font-weight:650; text-transform:capitalize; }
+#studyCallsDialog .study-call-history-row p { color:#3f594b; margin:8px 0; }
+#studyCallsDialog .study-call-history-row button { margin:12px 6px 0 0; padding:8px 12px; font-size:12px; }
+#studyCallsDialog .study-call-meta { display:block; color:#718376; font-size:12px; }
+#studyCallsDialog .study-call-section, #studyCallsDialog .study-call-settings { border:1px solid #dbe5df; border-radius:12px; background:#fff; padding:15px; margin:14px 0; }
+#studyCallsDialog .study-call-section-title { display:flex; justify-content:space-between; align-items:center; gap:8px; margin:20px 0 8px; }
+#studyCallsDialog .study-call-section-title h3 { margin:0; }
+#studyCallsDialog .study-call-section-title button { padding:8px 10px; font-size:12px; }
+#studyCallsDialog .study-call-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+#studyCallsDialog .study-call-inline { display:flex; align-items:center; gap:4px; }
+#studyCallsDialog .study-call-hint { font-size:12px; font-weight:400; color:#687e70; line-height:1.5; }
+#studyCallsDialog summary { cursor:pointer; color:#305d46; font-size:13px; font-weight:650; padding:3px 0; }
+#studyCallsDialog .study-call-alternative { display:flex; align-items:center; gap:6px; margin:10px 0; }
+#studyCallsDialog .study-call-alternative input[type=text] { flex:1; min-width:0; margin:0; }
+#studyCallsDialog .study-call-alternative button { flex:none; margin:0; padding:8px; font-size:11px; }
+#studyCallsDialog .study-call-upload { padding:20px 16px; margin:16px 0; text-align:center; border:1.5px dashed #9ebfb0; border-radius:13px; background:#f1f8f4; }
+#studyCallsDialog .study-call-upload strong { display:block; color:#2b5540; font-size:15px; }
+#studyCallsDialog .study-call-upload button { margin:8px 0; }
+#studyCallsDialog .study-call-file-name { color:#6a7f71; font-size:12px; overflow-wrap:anywhere; }
+#studyCallsDialog .study-call-wide { width:100%; }
+#studyCallsDialog .study-call-back { margin:14px 0 4px; }
+#studyCallsDialog .study-call-empty { padding:30px 18px; border:1px dashed #ccdcd1; border-radius:12px; text-align:center; color:#6a8171; font-size:13px; background:#fff; }
+#studyCallsDialog [data-call-status]:not(:empty) { margin-top:14px; padding:12px; border:1px solid #c3dfcd; border-radius:9px; background:#eaf5ed; color:#2b6342; font-size:13px; }
+#studyCallsDialog [data-call-status].study-call-error { background:#fff0ee; border-color:#ecc6c0; color:#a13527; }
+#studyCallsDialog .study-call-editor-actions { padding:14px 0 4px; }
+#notifDialog, #notifSchedulePreview { min-height:0!important; max-height:calc(100dvh - 120px); overflow-y:auto!important; overscroll-behavior-y:contain; -webkit-overflow-scrolling:touch; background:#f8faf9; color:#233f33; }
+#notifDialog .notif-row { background:#fff; border:1px solid #dbe5df; border-radius:10px; margin:10px 0; padding:12px!important; }
+#notifDialog .mee-lbl { color:#3c5848; font-weight:650; margin-bottom:5px; }
+#notifDialog select { min-height:38px; padding:6px; border:1px solid #bfcfca; border-radius:7px; background:#fff; color:#264331; }
+.notif-schedule-table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+.notif-schedule-table th, .notif-schedule-table td { padding:10px 8px; text-align:left; border-bottom:1px solid #dbe5df; overflow-wrap:break-word; }
+@media(max-width:480px) {
+  #studyCallsDialog { padding:16px; }
+  #studyCallsDialog .study-call-grid { grid-template-columns:1fr; gap:0; }
+  #studyCallsDialog .study-call-alternative button { max-width:64px; }
+  #studyCallsDialog .study-call-section { padding:13px; }
+}
+@media(max-width:540px) {
+  .notif-schedule-table thead { display:none; }
+  .notif-schedule-table tbody tr { display:grid; grid-template-columns:64px 1fr; border-bottom:1px solid #dbe5df; padding:10px 4px; }
+  .notif-schedule-table td { border:0; padding:5px; }
+  .notif-schedule-table td:first-child { font-weight:700; }
+  .notif-schedule-table td:first-child::before { content:'Item '; }
+  .notif-schedule-table td:nth-child(3), .notif-schedule-table td:nth-child(4) { grid-column:1 / -1; }
+  .notif-schedule-table td:nth-child(3)::before { content:'When: '; font-weight:650; }
+  .notif-schedule-table td:nth-child(4)::before { content:'Status: '; font-weight:650; }
+}

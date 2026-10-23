@@ -1,0 +1,286 @@
+{
+  "format": "cupitor-recordings-v1",
+  "playlists": [
+    {
+      "name": "assimilation",
+      "meta": {
+        "createdAt": 1789816199538,
+        "updatedAt": 1791881537264
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/add17d89d6811ead78fa9b64122d3e4eda3db4518f927f22f58c5d927a23e449.json"
+      ]
+    },
+    {
+      "name": "Default",
+      "meta": {
+        "createdAt": 1783422000111,
+        "updatedAt": 1789046793494
+      },
+      "hasItems": true,
+      "parts": []
+    },
+    {
+      "name": "Demokrati",
+      "meta": {
+        "createdAt": 1791462047157,
+        "updatedAt": 1791462159668
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/d9a8096e89ba4f204409276f12115f855f29ac668bd94ab35bbfce8725cb4b92.json"
+      ]
+    },
+    {
+      "name": "Den sista resan | SVT Play",
+      "meta": {
+        "createdAt": 1791231065601,
+        "updatedAt": 1792052138447
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/7538ce336a041c48d39c789d0259a089bfdcd13fee2c06a382d5f50b98ac114b.json"
+      ]
+    },
+    {
+      "name": "Familjen Andersson",
+      "meta": {
+        "createdAt": 1791481533108,
+        "updatedAt": 1791983656896
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/6a2e6c8b8aeb6c0c5f72562824d0076abfb19ae10dec9ead29e87ce46e640ade.json"
+      ]
+    },
+    {
+      "name": "Globalisering",
+      "meta": {
+        "createdAt": 1790242074650,
+        "updatedAt": 1792079163377
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/03f73e35f78dd5bb255b01da77432bb7e8b51a1a6e7cce704ec75bd3050af8ee.json"
+      ]
+    },
+    {
+      "name": "Högtider i världen – bilduttryck",
+      "meta": {
+        "createdAt": 1792404992627,
+        "updatedAt": 1792404992627
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/2c3d6378f02748ff7f21d8bd340e348d30823a23993a67a939863102c61d0d4a.json"
+      ]
+    },
+    {
+      "name": "Indiska högtider – bilduttryck",
+      "meta": {
+        "createdAt": 1792402975482,
+        "updatedAt": 1792416606914
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/04d8fbc79c6c81252643c2e85d6582ce0412eb69ad2a8ff93a75c892d1c3cb37.json"
+      ]
+    },
+    {
+      "name": "Konferensrum AV",
+      "meta": {
+        "createdAt": 1792051200000,
+        "updatedAt": 1792140996498
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/e0dd3d6fc538d95b838dbd3fc33641bbede566cd7e9bc6813db4099a15f6e586.json"
+      ]
+    },
+    {
+      "name": "Muntlig interaktion - 4",
+      "meta": {
+        "createdAt": 1789890911512,
+        "updatedAt": 1790141665973
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/835128af8a953bb7d649762768d2551764a884c37a63901deb31bb6cfaa97f3b.json"
+      ]
+    },
+    {
+      "name": "Muntlig interaktion i akademiska sammanhang - 3",
+      "meta": {
+        "createdAt": 1789188815044,
+        "updatedAt": 1790144532438
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/a4213d99378a627ac0fe11f2bf1f12a204b47c12ea3158fb734a144f6b6236b0.json"
+      ]
+    },
+    {
+      "name": "Muntlig interaktion i akademiska sammanhang – 2",
+      "meta": {
+        "createdAt": 1789050960797,
+        "updatedAt": 1789914378330
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/793bc62add335a5c60fdc06b1e778670a481c6c7ca9868ef03a35c2acb079e6a.json"
+      ]
+    },
+    {
+      "name": "Random-1",
+      "meta": {
+        "createdAt": 1791347958478,
+        "updatedAt": 1791833567965,
+        "random": true
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/fce17f11e942ffb1d5e5c6d781ef3988bc1232a99ff7ea110c1958642609c3c5.json"
+      ]
+    },
+    {
+      "name": "Random-2",
+      "meta": {
+        "createdAt": 1791386090830,
+        "updatedAt": 1792311091607,
+        "random": true
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/8607d16e9fed930b6c940f5f75c403daf1204ed99a4ef37e6543ea135a88caf7.json"
+      ]
+    },
+    {
+      "name": "REPRIS: Därför har du svårt att fokusera | Listen to the Pod",
+      "meta": {
+        "createdAt": 1792422786353,
+        "updatedAt": 1792432542152
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/50f1b18e5157bf2afdb8f4faddfe2d0eea426d9c18632ad19bf7dc7f50b3150d.json"
+      ]
+    },
+    {
+      "name": "SAS-1",
+      "meta": {
+        "createdAt": 1788184441734,
+        "updatedAt": 1789152770381
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/87cece7bfe034095e907bc69318b81cf51b1829f666b0b82513b1c27ecc25c1e.json"
+      ]
+    },
+    {
+      "name": "Scener",
+      "meta": {
+        "createdAt": 1791530923654,
+        "updatedAt": 1792526112617
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/c0ce214dc9482d3b316c8179756985a51405d1f78b13ce34ac16f97bb93bde6f.json"
+      ]
+    },
+    {
+      "name": "Skilsmässobarn",
+      "meta": {
+        "createdAt": 1791888502179,
+        "updatedAt": 1792526100814
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/4ebded7182a53c925dd666e271487726b5f3d51b03ec2603e4b36e41f2adbd23.json"
+      ]
+    },
+    {
+      "name": "SVT Play - Diagnoser",
+      "meta": {
+        "createdAt": 1789752977087,
+        "updatedAt": 1791548813309
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/732eaef130dbdefe1e20ecefc1c9a15db6356a12d1f0e3ccde955ab4b3320d53.json"
+      ]
+    },
+    {
+      "name": "Taare Zameen Par - 2",
+      "meta": {
+        "createdAt": 1790970709276,
+        "updatedAt": 1792526089480
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/d62a28e57092351e976f6e1d805ac9a2a208d164f6dc7ebbf0d4b78dad231dec.json"
+      ]
+    },
+    {
+      "name": "Taare-Zameen-Par-svenskt-manus",
+      "meta": {
+        "createdAt": 1791992822656,
+        "updatedAt": 1792526074217
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/efa73a964e5835d82eea3d1febd1ae69c53293517707bed66d472504fbe0703d.json"
+      ]
+    },
+    {
+      "name": "Tillåt mig tvivla - bok",
+      "meta": {
+        "createdAt": 1791566486887,
+        "updatedAt": 1792052893516
+      },
+      "hasItems": true,
+      "parts": []
+    },
+    {
+      "name": "Tillåt mig tvivla - Ord",
+      "meta": {
+        "createdAt": 1791552147577,
+        "updatedAt": 1792356427957
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/2b2f3454a9a9b569afdc00d2fa8aee7493ea98cb0c0c3731776ee1ba857182c6.json"
+      ]
+    },
+    {
+      "name": "Verb och uttryck – lägga, ställa, sätta, ligga, stå, sitta",
+      "meta": {
+        "createdAt": 1792662313037,
+        "updatedAt": 1792662313037
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/eb8f724d4450e53da124d6a3fbf7a85b9540efdd7d65d29faa752e6acefde401.json"
+      ]
+    },
+    {
+      "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
+      "meta": {
+        "createdAt": 1792505467043,
+        "updatedAt": 1792522794101
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/67d5fc3994959109e1bfb6bebdcb633e5797268126c49c5c6c9644465164a686.json"
+      ]
+    }
+  ],
+  "retiredParts": {
+    "recordings/4691a589e879d7b1a994bcbf44e36db852cf22eec054c261b85710c22aec145a.json": 1792526060596,
+    "recordings/c55118baed23debc499ad590f585486606cc574257463d5a20378b790d31d012.json": 1792526060596,
+    "recordings/d650d327868f78ea567910ef423e44504796a6f7e5ff41d383bb933319e5a219.json": 1792526060596,
+    "recordings/8fac85fa3f7703f58687c7400f8ffb7ec4c4a69c40e078edb6319842517d90c4.json": 1792526060596,
+    "recordings/b629093407b273f8bcedf6c99566facc103e3394117908b730bf14ae5ad19a49.json": 1792526060596
+  },
+  "partsScannedAt": 1792526060596
+}

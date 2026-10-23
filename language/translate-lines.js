@@ -1,0 +1,1 @@
+export async function translateLines(n,t,a={}){const r=n||[],e=Math.max(1,a.concurrency||4),c=new Array(r.length);let l=0;async function o(){for(;l<r.length;){const n=l++,a=r[n];null!=a&&String(a).trim()?c[n]=await t(a):c[n]=a}}const i=[];for(let n=0;n<Math.min(e,r.length);n++)i.push(o());return await Promise.all(i),c}

@@ -1,0 +1,75 @@
+{
+  "format": "cupitor-srt-bundles",
+  "version": 1,
+  "maxFiles": 200,
+  "maxBytes": 1048576,
+  "nextPack": 12,
+  "packs": [
+    {
+      "path": "packs/pack-000001.json",
+      "revision": 1,
+      "files": 34,
+      "bytes": 987939
+    },
+    {
+      "path": "packs/pack-000002.json",
+      "revision": 1,
+      "files": 30,
+      "bytes": 965919
+    },
+    {
+      "path": "packs/pack-000003.json",
+      "revision": 1,
+      "files": 38,
+      "bytes": 1028691
+    },
+    {
+      "path": "packs/pack-000004.json",
+      "revision": 1,
+      "files": 16,
+      "bytes": 973730
+    },
+    {
+      "path": "packs/pack-000005.json",
+      "revision": 1,
+      "files": 27,
+      "bytes": 973077
+    },
+    {
+      "path": "packs/pack-000006.json",
+      "revision": 1,
+      "files": 26,
+      "bytes": 919187
+    },
+    {
+      "path": "packs/pack-000007.json",
+      "revision": 1,
+      "files": 31,
+      "bytes": 1042689
+    },
+    {
+      "path": "packs/pack-000008.json",
+      "revision": 1,
+      "files": 28,
+      "bytes": 1039263
+    },
+    {
+      "path": "packs/pack-000009.json",
+      "revision": 1,
+      "files": 12,
+      "bytes": 826893
+    },
+    {
+      "path": "packs/pack-000010.json",
+      "revision": 1,
+      "files": 12,
+      "bytes": 962697
+    },
+    {
+      "path": "packs/pack-000011.json",
+      "revision": 1,
+      "files": 13,
+      "bytes": 593188
+    }
+  ]
+}
