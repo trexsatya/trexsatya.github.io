@@ -1,1 +1,1 @@
-import{sameJson as n}from"./recordings-3way.js?v=8c323a76de";function e(n){const e={};for(const[r,t]of Object.entries(n||{})){if(!t||t.external||t.readOnly)continue;const{updatedAt:n,...o}=t;e[r]=o}return e}export function recordingsHaveChanges(r,t,o=!1){return null==t?!!o:!n(e(r),e(t))}
+import{sameJson as n}from"./recordings-3way.js?v=fab2b423cf";function e(n){const e={};for(const[r,t]of Object.entries(n||{})){if(!t||t.external||t.readOnly)continue;const{updatedAt:n,...o}=t;e[r]=o}return e}export function recordingsHaveChanges(r,t,o=!1){return null==t?!!o:!n(e(r),e(t))}
