@@ -5,7 +5,7 @@
       "name": "assimilation",
       "meta": {
         "createdAt": 1789816199538,
-        "updatedAt": 1791881537264
+        "updatedAt": 1792868050774
       },
       "hasItems": true,
       "parts": [
@@ -159,7 +159,16 @@
       "name": "REPRIS: Därför har du svårt att fokusera | Listen to the Pod",
       "meta": {
         "createdAt": 1792422786353,
-        "updatedAt": 1792432542152
+        "updatedAt": 1792744224494,
+        "notifKey": "reclist-1h0hr3ro89l2kji1",
+        "callSettings": {
+          "direction": "source-target",
+          "response_type": "text",
+          "language": "sv-SE",
+          "max_retries": 3,
+          "match_threshold": 0.8,
+          "voice_response": true
+        }
       },
       "hasItems": true,
       "parts": [
@@ -222,41 +231,32 @@
       ]
     },
     {
-      "name": "Taare-Zameen-Par-svenskt-manus",
-      "meta": {
-        "createdAt": 1791992822656,
-        "updatedAt": 1792526074217
-      },
-      "hasItems": true,
-      "parts": [
-        "recordings/efa73a964e5835d82eea3d1febd1ae69c53293517707bed66d472504fbe0703d.json"
-      ]
-    },
-    {
       "name": "Tillåt mig tvivla - bok",
       "meta": {
         "createdAt": 1791566486887,
-        "updatedAt": 1792052893516
+        "updatedAt": 1792672133675
       },
       "hasItems": true,
-      "parts": []
+      "parts": [
+        "recordings/daaab0aa4377ff128fc5f3e998581ab3a923f4480d837889ee3ba49f2f67475b.json"
+      ]
     },
     {
       "name": "Tillåt mig tvivla - Ord",
       "meta": {
         "createdAt": 1791552147577,
-        "updatedAt": 1792356427957
+        "updatedAt": 1792670534863
       },
       "hasItems": true,
       "parts": [
-        "recordings/2b2f3454a9a9b569afdc00d2fa8aee7493ea98cb0c0c3731776ee1ba857182c6.json"
+        "recordings/4c3f91274b8e1e94faac737284e4da59830e9a5dc707b83e44eef5873a0353e5.json"
       ]
     },
     {
       "name": "Verb och uttryck – lägga, ställa, sätta, ligga, stå, sitta",
       "meta": {
         "createdAt": 1792662313037,
-        "updatedAt": 1792662313037
+        "updatedAt": 1792757835559
       },
       "hasItems": true,
       "parts": [
@@ -267,11 +267,11 @@
       "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
       "meta": {
         "createdAt": 1792505467043,
-        "updatedAt": 1792522794101
+        "updatedAt": 1792833318132
       },
       "hasItems": true,
       "parts": [
-        "recordings/67d5fc3994959109e1bfb6bebdcb633e5797268126c49c5c6c9644465164a686.json"
+        "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
       ]
     }
   ],
@@ -280,7 +280,10 @@
     "recordings/c55118baed23debc499ad590f585486606cc574257463d5a20378b790d31d012.json": 1792526060596,
     "recordings/d650d327868f78ea567910ef423e44504796a6f7e5ff41d383bb933319e5a219.json": 1792526060596,
     "recordings/8fac85fa3f7703f58687c7400f8ffb7ec4c4a69c40e078edb6319842517d90c4.json": 1792526060596,
-    "recordings/b629093407b273f8bcedf6c99566facc103e3394117908b730bf14ae5ad19a49.json": 1792526060596
+    "recordings/b629093407b273f8bcedf6c99566facc103e3394117908b730bf14ae5ad19a49.json": 1792526060596,
+    "recordings/efa73a964e5835d82eea3d1febd1ae69c53293517707bed66d472504fbe0703d.json": 1792868170216,
+    "recordings/2b2f3454a9a9b569afdc00d2fa8aee7493ea98cb0c0c3731776ee1ba857182c6.json": 1792868170216,
+    "recordings/67d5fc3994959109e1bfb6bebdcb633e5797268126c49c5c6c9644465164a686.json": 1792868170216
   },
-  "partsScannedAt": 1792526060596
+  "partsScannedAt": 1792868170216
 }
