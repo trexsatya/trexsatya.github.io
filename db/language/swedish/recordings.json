@@ -231,6 +231,17 @@
       ]
     },
     {
+      "name": "Taare Zameen Par – Svenskt manus",
+      "meta": {
+        "createdAt": 1792943820000,
+        "updatedAt": 1792943820000
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/3c48d03399448777f1ce268b3e99e8bf958841e8d91b7b801e32ed1fa0f28c06.json"
+      ]
+    },
+    {
       "name": "Tillåt mig tvivla - bok",
       "meta": {
         "createdAt": 1791566486887,
