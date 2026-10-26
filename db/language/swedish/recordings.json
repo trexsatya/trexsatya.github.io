@@ -284,6 +284,17 @@
       "parts": [
         "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
       ]
+    },
+    {
+      "name": "Telefonsamtal",
+      "meta": {
+        "createdAt": 1793034002337,
+        "updatedAt": 1793034002337
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/56d2271803f3c2da1a70f711b887f2fe07c87d8f6a6fe4f59c215e5fc3f0fc52.json"
+      ]
     }
   ],
   "retiredParts": {
