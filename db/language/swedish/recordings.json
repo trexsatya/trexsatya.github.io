@@ -110,6 +110,17 @@
       ]
     },
     {
+      "name": "Ljus",
+      "meta": {
+        "createdAt": 1793045122766,
+        "updatedAt": 1793045122766
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/0ff8431027e15562c7eae7ffa26b58957745cca5c909f594624fc284ffe65014.json"
+      ]
+    },
+    {
       "name": "Muntlig interaktion - 4",
       "meta": {
         "createdAt": 1789890911512,
