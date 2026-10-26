@@ -55,6 +55,17 @@
       ]
     },
     {
+      "name": "Fysiska rörelser",
+      "meta": {
+        "createdAt": 1793036039771,
+        "updatedAt": 1793036039771
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/b74a230f68fdb30c28e8eed9bf69d1b64dc134989b8f327cfa8a83168bc1ec3a.json"
+      ]
+    },
+    {
       "name": "Globalisering",
       "meta": {
         "createdAt": 1790242074650,
