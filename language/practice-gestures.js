@@ -1,0 +1,1 @@
+export function isPracticeTouchGesture(e){return"touch"===e?.pointerType}export function isPracticeTouchDoubleTap(e,t=!1){const o=e?.pointerType||"";return o?"touch"===o:!!t&&!1!==e?.sourceCapabilities?.firesTouchEvents}
