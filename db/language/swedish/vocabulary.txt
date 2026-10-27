@@ -1356,7 +1356,8 @@
 (swing)|svinga|svänga|svänger|svängde|svängt|sväng|
 (wiggle, tip)|vicka|vippa|
 (dangle)|dingla|
-(swing, rock)|gunga|
+(swing, rock)|gunga|vaja
+(Sway)|svaja
 (rocking, swinging)|gungning|
 (circulate)|cirkulera|
 (circle)|<*ta ett varv|
@@ -1495,7 +1496,8 @@
 
 #Movement: sneaking and moving discreetly
 (sneak)|smyga|smyger|smög|smugit|smyg|
-(pad, tread softly)|tassa( soft steps)|
+(pad, tread softly)|tassa( soft steps)|(gå )i strumplästen|
+(Go pitter-patter, pit-a-pat)|trippa
 (cadge, seek gain)|snika|
 (sneak)|smyga|smyger|smög|smugit|smyg|tassa( soft steps)|
 (furtively, in secret)|förstulet| i smyg|
@@ -2861,6 +2863,7 @@
 (wafer)|oblat|
 (elongated)|prolat|långsmal|avlång|
 (layer)|lager(sl-pl)|skikt(sl-pl)|
+(Section, cut out)|Utsnitt
 (sheet, large piece)|sjok(sl-pl)|
 (coating)|beläggning|beläggningar|
 (thin film, membrane)|hinna|hinnor|
@@ -3773,6 +3776,7 @@
 (slippery)|hal|halt|
 (expression, as slippery as an eel)|Hal som en ål|
 (comb)|kamma|
+(tousle)|rufsa
 (comb)|kam|kammar|
 (part)|bena|
 (strong)|stark|Råg i ryggen|
@@ -3797,6 +3801,7 @@
 (spry)|spänstig|
 (smooth)|len( smooth to touch)|
 (soft)|mjuk|
+(Gracious)|graciös
 (slack, limp)|slak|
 (tender)|ömt|
 (fragile, delicate)|bräcklig|skör|ömtålig|
@@ -7038,7 +7043,7 @@
 (gust)|vindpust|
 (air)|luft(Oräknebart)|
 (wind)|vind|vindar|
-(light breeze)|fläkt(svag-vind, poetisk)|
+(light breeze)|fläkt(svag-vind, poetisk)|bris|brisar|briser
 (storm)|storm|
 (storm)|storma|
 (bad weather)|oväder|
@@ -7389,7 +7394,7 @@
 (make do)|Man tager vad man haver|
 (testing, trial)|provning|
 (baptism of fire)|elddop(initial provning)|
-(perform, carry out)|utföra|förrätta(f.)|uträtta|genomföra|
+(perform, carry out)|utföra|förrätta(f.)|uträtta|genomföra|av<*lägga(f.)
 (undertake)|företa(f.)|
 (complete, follow through)|slutföra|fullfölja|
 (expression, finish what you started)|Har man tagit fan i båten får man ro honom i land|Har man sagt A får man säga B|
@@ -7750,7 +7755,7 @@
 (hide)|gömma|gömma|gömmer|gömde|gömt|
 (be hidden)|gömmas|
 (go underground)|Gå under jorden|
-(mask)|maskera|
+(mask)|maskera|för<*ställa <*sig
 (keep face)|hålla masken|
 (behind scenes)|bakom kulisserna|
 (hidden, concealed)|dold|fördold|förtäckt|
@@ -8255,6 +8260,7 @@
 (legalist)|paragrafryttare(nedsättande)|
 (money laundering)|penningtvätt|
 (regulate)|reglera|
+(Control, slider)|reglage|rullmojäng
 (regulation)|reglering|regleringar|
 (law)|lag|lagar|
 (rule)|regel|reglar|
