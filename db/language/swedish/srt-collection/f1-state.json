@@ -1164,10 +1164,10 @@
       "skipped": false
     },
     "skrymt": {
-      "noYieldStreak": 1,
-      "runs": 1,
-      "lastCount": 1,
-      "lastRemaining": 4,
+      "noYieldStreak": 0,
+      "runs": 2,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "skvallra": {
@@ -1225,37 +1225,170 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "sorgsen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "späda": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "spärr": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "spela ner": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "spiller": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sprängt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ståhej": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stålar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ställningstagande": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ståndpunkt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stängsel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "staplar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stilar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stirra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stöder": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stoft": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stoja": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stora bokstäver": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stråla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 9,
-    "spentCredits": 501,
-    "savedCaptures": 683
+    "batches": 10,
+    "spentCredits": 544,
+    "savedCaptures": 763
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "redskap",
-      "remmar",
-      "sammanbunden",
-      "sammankopplad",
-      "samvete",
-      "sisådär",
-      "skandera",
-      "skapelser",
-      "skikt",
-      "skina",
-      "skrämd",
       "skrymt",
-      "skvallra",
-      "slingra",
-      "slockna",
-      "småprat",
-      "smeker",
-      "snårig",
-      "snäv",
-      "snava"
+      "sorgsen",
+      "späda",
+      "spärr",
+      "spela ner",
+      "spiller",
+      "sprängt",
+      "ståhej",
+      "stålar",
+      "ställningstagande",
+      "ståndpunkt",
+      "stängsel",
+      "staplar",
+      "stilar",
+      "stirra",
+      "stöder",
+      "stoft",
+      "stoja",
+      "stora bokstäver",
+      "stråla"
     ],
-    "credits": 54
+    "credits": 43
   }
 }
