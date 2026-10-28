@@ -1918,37 +1918,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "bitti": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "blänka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "blinka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "böja": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "bostadshus": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "bråkstakar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dager": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dagrar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 4,
+      "lastRemaining": 1,
+      "skipped": false
+    },
+    "dimridåer": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "doja": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dumbom": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fiskhåv": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 2,
+      "lastRemaining": 3,
+      "skipped": false
+    },
+    "flamma": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fodral": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förbindelse": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fördömelse": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förekomma": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "föresätta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 3,
+      "lastRemaining": 2,
+      "skipped": false
+    },
+    "föresätta sig": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 2,
+      "lastRemaining": 3,
+      "skipped": false
+    },
+    "föreställningar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 14,
-    "spentCredits": 685,
-    "savedCaptures": 1057
+    "batches": 15,
+    "spentCredits": 755,
+    "savedCaptures": 1108
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "anseende",
-      "anstå",
-      "ansträngt",
-      "antagande",
-      "återgälda",
-      "åtgång",
-      "avdelningar",
-      "avrunda",
-      "avskild",
-      "avsmak",
-      "bedrövlig",
-      "begåvning",
-      "behäftad",
-      "behärska",
-      "belägenhet",
-      "belägga",
-      "belöningar",
-      "benägen",
-      "berörd",
-      "beteckna"
+      "bitti",
+      "blänka",
+      "blinka",
+      "böja",
+      "bostadshus",
+      "bråkstakar",
+      "dager",
+      "dagrar",
+      "dimridåer",
+      "doja",
+      "dumbom",
+      "fiskhåv",
+      "flamma",
+      "fodral",
+      "förbindelse",
+      "fördömelse",
+      "förekomma",
+      "föresätta",
+      "föresätta sig",
+      "föreställningar"
     ],
-    "credits": 31
+    "credits": 70
   }
 }
