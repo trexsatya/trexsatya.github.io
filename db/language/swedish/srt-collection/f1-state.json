@@ -672,37 +672,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "komplott": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "konstgjord": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "konventioner": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "köpcentrum": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "krysta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "krystat": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "krystat sätt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 2,
+      "lastRemaining": 3,
+      "skipped": false
+    },
+    "kvast": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "låsning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "linjal": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "luddig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "luven": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "mäkta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "manick": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "minsann": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "mittemellan": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "motstå": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "motstridig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "motvalls": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "mynna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 5,
-    "spentCredits": 295,
-    "savedCaptures": 382
+    "batches": 6,
+    "spentCredits": 330,
+    "savedCaptures": 459
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "helljus",
-      "högskolor",
-      "hopsjunken",
-      "huka",
-      "huka sig",
-      "hyckla",
-      "hypoteser",
-      "hysterisk",
-      "ihärdig",
-      "ingenjör",
-      "ingenjörer",
-      "ingriper",
-      "innevånare",
-      "käpp",
-      "kategorisera",
-      "klagomål",
-      "klarlägga",
-      "klösa",
-      "klunkar",
-      "kommandot"
+      "komplott",
+      "konstgjord",
+      "konventioner",
+      "köpcentrum",
+      "krysta",
+      "krystat",
+      "krystat sätt",
+      "kvast",
+      "låsning",
+      "linjal",
+      "luddig",
+      "luven",
+      "mäkta",
+      "manick",
+      "minsann",
+      "mittemellan",
+      "motstå",
+      "motstridig",
+      "motvalls",
+      "mynna"
     ],
-    "credits": 42
+    "credits": 35
   }
 }
