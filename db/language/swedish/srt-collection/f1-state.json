@@ -849,10 +849,10 @@
       "skipped": false
     },
     "nödsakad": {
-      "noYieldStreak": 1,
-      "runs": 1,
-      "lastCount": 1,
-      "lastRemaining": 4,
+      "noYieldStreak": 0,
+      "runs": 2,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "oförenlig": {
@@ -952,37 +952,170 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "outhärdlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "överensstämma": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "överensstämmer": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "övers": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "översta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "påkommen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "påkörd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "påslag": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "pekpinne": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "pekuniär": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 2,
+      "lastRemaining": 3,
+      "skipped": false
+    },
+    "penseldrag": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "penseln": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "piggar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "rabbla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "räfflor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "rättmätig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "rättskaffens": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "reder": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "redogörelse": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 7,
-    "spentCredits": 395,
-    "savedCaptures": 532
+    "batches": 8,
+    "spentCredits": 447,
+    "savedCaptures": 609
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "myter",
-      "mytomspunnen",
-      "näbbar",
-      "nedför",
-      "nedvärdera",
       "nödsakad",
-      "oförenlig",
-      "olikartad",
-      "olycksbådande",
-      "omedveten",
-      "omfatta",
-      "omodern",
-      "omsluter",
-      "omsvep",
-      "onaturlig",
-      "orädd",
-      "orättvis",
-      "ordagrant",
-      "orubblig",
-      "oskarp"
+      "outhärdlig",
+      "överensstämma",
+      "överensstämmer",
+      "övers",
+      "översta",
+      "påkommen",
+      "påkörd",
+      "påslag",
+      "pekpinne",
+      "pekuniär",
+      "penseldrag",
+      "penseln",
+      "piggar",
+      "rabbla",
+      "räfflor",
+      "rättmätig",
+      "rättskaffens",
+      "reder",
+      "redogörelse"
     ],
-    "credits": 65
+    "credits": 52
   }
 }
