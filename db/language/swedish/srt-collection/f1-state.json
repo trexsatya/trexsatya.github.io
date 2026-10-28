@@ -1358,37 +1358,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "stundtals": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "suddig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "svaja": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sväljer": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "svammel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "synsätt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tankegång": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tapper": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tentorna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillägna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillbe": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillbehör": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillblivelsen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillställning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "törstig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "träbit": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "träbitar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tramsa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "trängsel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "trappsteg": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 10,
-    "spentCredits": 544,
-    "savedCaptures": 763
+    "batches": 11,
+    "spentCredits": 588,
+    "savedCaptures": 843
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "skrymt",
-      "sorgsen",
-      "späda",
-      "spärr",
-      "spela ner",
-      "spiller",
-      "sprängt",
-      "ståhej",
-      "stålar",
-      "ställningstagande",
-      "ståndpunkt",
-      "stängsel",
-      "staplar",
-      "stilar",
-      "stirra",
-      "stöder",
-      "stoft",
-      "stoja",
-      "stora bokstäver",
-      "stråla"
+      "stundtals",
+      "suddig",
+      "svaja",
+      "sväljer",
+      "svammel",
+      "synsätt",
+      "tankegång",
+      "tapper",
+      "tentorna",
+      "tillägna",
+      "tillbe",
+      "tillbehör",
+      "tillblivelsen",
+      "tillställning",
+      "törstig",
+      "träbit",
+      "träbitar",
+      "tramsa",
+      "trängsel",
+      "trappsteg"
     ],
-    "credits": 43
+    "credits": 44
   }
 }
