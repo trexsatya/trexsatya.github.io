@@ -9,11 +9,11 @@
       "skipped": true
     },
     "lysramp": {
-      "noYieldStreak": 1,
-      "runs": 3,
+      "noYieldStreak": 2,
+      "runs": 4,
       "lastCount": 2,
       "lastRemaining": 3,
-      "skipped": false
+      "skipped": true
     },
     "medborgarn": {
       "noYieldStreak": 2,
@@ -716,11 +716,11 @@
       "skipped": false
     },
     "krystat sätt": {
-      "noYieldStreak": 1,
-      "runs": 2,
+      "noYieldStreak": 2,
+      "runs": 3,
       "lastCount": 2,
       "lastRemaining": 3,
-      "skipped": false
+      "skipped": true
     },
     "kvast": {
       "noYieldStreak": 0,
@@ -863,8 +863,8 @@
       "skipped": false
     },
     "olikartad": {
-      "noYieldStreak": 0,
-      "runs": 1,
+      "noYieldStreak": 1,
+      "runs": 2,
       "lastCount": 2,
       "lastRemaining": 3,
       "skipped": false
@@ -1017,8 +1017,8 @@
       "skipped": false
     },
     "pekuniär": {
-      "noYieldStreak": 0,
-      "runs": 1,
+      "noYieldStreak": 1,
+      "runs": 2,
       "lastCount": 2,
       "lastRemaining": 3,
       "skipped": false
@@ -2450,37 +2450,149 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "mothugg": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "motsträvig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nedlåtande": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nedstämd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nonsens": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nötskal": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "olägenhet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omgivande": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omstridd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "önskan": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ordnar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "örfil": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "överskådlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "påfågel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "papperet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "plaska": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 18,
-    "spentCredits": 892,
-    "savedCaptures": 1277
+    "batches": 19,
+    "spentCredits": 927,
+    "savedCaptures": 1325
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "ironi",
-      "kammar",
-      "kännetecken",
-      "käpprätt",
-      "klapp",
-      "klase",
-      "klibbig",
-      "klottra",
-      "knuffa",
-      "konstlad",
-      "kroppsspråk",
       "krystat sätt",
-      "kuvert",
-      "lägga av",
-      "lägga fram",
-      "lågor",
-      "lyktor",
       "lysramp",
-      "medalj",
-      "medkänsla"
+      "mothugg",
+      "motsträvig",
+      "nedlåtande",
+      "nedstämd",
+      "nonsens",
+      "nötskal",
+      "olägenhet",
+      "olikartad",
+      "omgivande",
+      "omstridd",
+      "önskan",
+      "ordnar",
+      "örfil",
+      "överskådlig",
+      "påfågel",
+      "papperet",
+      "pekuniär",
+      "plaska"
     ],
-    "credits": 42
+    "credits": 35
   }
 }
