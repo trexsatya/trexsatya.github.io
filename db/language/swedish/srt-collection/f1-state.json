@@ -1101,10 +1101,10 @@
       "skipped": false
     },
     "sammanbunden": {
-      "noYieldStreak": 1,
-      "runs": 2,
-      "lastCount": 3,
-      "lastRemaining": 2,
+      "noYieldStreak": 0,
+      "runs": 3,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "sammankopplad": {
@@ -2900,8 +2900,8 @@
       "skipped": false
     },
     "tomma tunnor skramlar mest": {
-      "noYieldStreak": 0,
-      "runs": 1,
+      "noYieldStreak": 1,
+      "runs": 2,
       "lastCount": 3,
       "lastRemaining": 2,
       "skipped": false
@@ -3794,37 +3794,163 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "svänga": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sveper": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "täckning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillblivelse": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillsätta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "trick": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "trovärdighet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tunna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tvingad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tycks": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "underskatta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppgiven": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "upphov": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppkommit": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "upplägg": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "upprop": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppsatt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppstyltad": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 3,
+      "lastRemaining": 2,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 28,
-    "spentCredits": 1253,
-    "savedCaptures": 1751
+    "batches": 29,
+    "spentCredits": 1296,
+    "savedCaptures": 1787
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "puckla",
-      "ränder",
-      "ringakta",
       "sammanbunden",
-      "såväl",
-      "signalera",
-      "skäller",
-      "skämta",
-      "sken",
-      "skiljas",
-      "skimra",
-      "skjorta",
-      "skjortan",
-      "skriftlig",
-      "slant",
-      "släta",
-      "sopar",
-      "spärrar",
-      "stillhet",
-      "studsa"
+      "svänga",
+      "sveper",
+      "täckning",
+      "tillblivelse",
+      "tillsätta",
+      "tomma tunnor skramlar mest",
+      "trick",
+      "trovärdighet",
+      "tunna",
+      "tvingad",
+      "tycks",
+      "underskatta",
+      "uppgiven",
+      "upphov",
+      "uppkommit",
+      "upplägg",
+      "upprop",
+      "uppsatt",
+      "uppstyltad"
     ],
-    "credits": 44
+    "credits": 43
   }
 }
