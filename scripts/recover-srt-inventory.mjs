@@ -117,6 +117,13 @@ for (const path of changedPacks) {
   else current.storage.packs.push({path,revision,files:Object.keys(files).length,bytes:size(files)});
   for (const entry of current.index) if (entry.bundle===path) entry.bundleRevision=revision;
 }
+// Repair stale cache revisions after any prior pack restoration, too.
+const revisionByPack = new Map(current.storage.packs.map(p=>[p.path,p.revision]));
+for (const entry of current.index) {
+  if (entry.bundle && revisionByPack.has(entry.bundle)) {
+    entry.bundleRevision = revisionByPack.get(entry.bundle);
+  }
+}
 const modifications=new Map([...changedPacks].map(p=>[p,bundleText(current.packs.get(p))]));
 modifications.set('storage.json',jsonText(current.storage));
 modifications.set('index.json',jsonText(current.index));
