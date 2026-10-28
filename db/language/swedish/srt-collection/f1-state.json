@@ -2688,37 +2688,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "skimmer": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skopor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skramlar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skymning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "slå ihop": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "slumpmässig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smita": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smörgås": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smutsen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smyga": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "snöre": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "snubbla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "spade": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "spindlar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "staket": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ställningstaganden": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stänka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stänker": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stava": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stödde": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 20,
-    "spentCredits": 958,
-    "savedCaptures": 1379
+    "batches": 21,
+    "spentCredits": 981,
+    "savedCaptures": 1438
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "olikartad",
-      "pekuniär",
-      "plikt",
-      "prydlig",
-      "pussel",
-      "pusslet",
-      "räcke",
-      "räkna upp",
-      "ramaskri",
-      "ränna",
-      "rättfärdig",
-      "replik",
-      "rov",
-      "rymd",
-      "rymde",
-      "salig",
-      "saliv",
-      "sammanfläta",
-      "såren",
-      "skildra"
+      "skimmer",
+      "skopor",
+      "skramlar",
+      "skymning",
+      "slå ihop",
+      "slumpmässig",
+      "smita",
+      "smörgås",
+      "smutsen",
+      "smyga",
+      "snöre",
+      "snubbla",
+      "spade",
+      "spindlar",
+      "staket",
+      "ställningstaganden",
+      "stänka",
+      "stänker",
+      "stava",
+      "stödde"
     ],
-    "credits": 31
+    "credits": 23
   }
 }
