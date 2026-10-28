@@ -1638,37 +1638,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "ute och cyklar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utfrysning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utgångar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utlopp": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utsnitt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uttryckssätt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utvald": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vaja": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "välmåga": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vansklig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vattenpöl": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vedertagen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vevar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vingla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vippa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vissna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vistats": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ålderdomlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ånger": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "anhängare": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 12,
-    "spentCredits": 622,
-    "savedCaptures": 920
+    "batches": 13,
+    "spentCredits": 654,
+    "savedCaptures": 997
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "trippa",
-      "trösta",
-      "trotsig",
-      "trumvirvel",
-      "tunnel",
-      "tyda",
-      "tyda på",
-      "undergräva",
-      "uppåt väggarna",
-      "uppbyggnad",
-      "uppehåll",
-      "uppfattningar",
-      "upphöjningar",
-      "uppkomst",
-      "upplysande",
-      "upprört",
-      "upprymd",
-      "urskilja",
-      "urval",
-      "utantill"
+      "ute och cyklar",
+      "utfrysning",
+      "utgångar",
+      "utlopp",
+      "utsnitt",
+      "uttryckssätt",
+      "utvald",
+      "vaja",
+      "välmåga",
+      "vansklig",
+      "vattenpöl",
+      "vedertagen",
+      "vevar",
+      "vingla",
+      "vippa",
+      "vissna",
+      "vistats",
+      "ålderdomlig",
+      "ånger",
+      "anhängare"
     ],
-    "credits": 34
+    "credits": 32
   }
 }
