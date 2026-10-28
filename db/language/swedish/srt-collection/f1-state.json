@@ -863,11 +863,11 @@
       "skipped": false
     },
     "olikartad": {
-      "noYieldStreak": 1,
-      "runs": 2,
+      "noYieldStreak": 2,
+      "runs": 3,
       "lastCount": 2,
       "lastRemaining": 3,
-      "skipped": false
+      "skipped": true
     },
     "olycksbådande": {
       "noYieldStreak": 0,
@@ -1017,11 +1017,11 @@
       "skipped": false
     },
     "pekuniär": {
-      "noYieldStreak": 1,
-      "runs": 2,
+      "noYieldStreak": 2,
+      "runs": 3,
       "lastCount": 2,
       "lastRemaining": 3,
-      "skipped": false
+      "skipped": true
     },
     "penseldrag": {
       "noYieldStreak": 0,
@@ -2562,37 +2562,163 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "plikt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "prydlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "pussel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "pusslet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "räcke": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "räkna upp": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ramaskri": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ränna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "rättfärdig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "replik": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "rov": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "rymd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "rymde": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "salig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "saliv": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sammanfläta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "såren": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skildra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 19,
-    "spentCredits": 927,
-    "savedCaptures": 1325
+    "batches": 20,
+    "spentCredits": 958,
+    "savedCaptures": 1379
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "krystat sätt",
-      "lysramp",
-      "mothugg",
-      "motsträvig",
-      "nedlåtande",
-      "nedstämd",
-      "nonsens",
-      "nötskal",
-      "olägenhet",
       "olikartad",
-      "omgivande",
-      "omstridd",
-      "önskan",
-      "ordnar",
-      "örfil",
-      "överskådlig",
-      "påfågel",
-      "papperet",
       "pekuniär",
-      "plaska"
+      "plikt",
+      "prydlig",
+      "pussel",
+      "pusslet",
+      "räcke",
+      "räkna upp",
+      "ramaskri",
+      "ränna",
+      "rättfärdig",
+      "replik",
+      "rov",
+      "rymd",
+      "rymde",
+      "salig",
+      "saliv",
+      "sammanfläta",
+      "såren",
+      "skildra"
     ],
-    "credits": 35
+    "credits": 31
   }
 }
