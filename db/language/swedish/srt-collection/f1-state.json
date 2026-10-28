@@ -252,37 +252,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "ess": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "evenemang": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "färdigheter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "farväl": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "festande": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fladdra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "flaket": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fnissa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "följder": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "folkmassan": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förbryllad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förefalla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "företeelse": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förfalska": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förkasta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förödelse": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förrätt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förringa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "försåtlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "försumbar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 2,
-    "spentCredits": 153,
-    "savedCaptures": 144
+    "batches": 3,
+    "spentCredits": 187,
+    "savedCaptures": 224
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "förkonstlad",
-      "lysramp",
-      "medborgarn",
-      "påtvånga",
-      "bråkmakare",
-      "bringa",
-      "brisera",
-      "burdus",
-      "butter",
-      "citera",
-      "dåsig",
-      "dialekter",
-      "diffus",
-      "dockor",
-      "dräpa",
-      "drunkna",
-      "ducka",
-      "dyrka",
-      "efterbliven",
-      "eliminera"
+      "ess",
+      "evenemang",
+      "färdigheter",
+      "farväl",
+      "festande",
+      "fladdra",
+      "flaket",
+      "fnissa",
+      "följder",
+      "folkmassan",
+      "förbryllad",
+      "förefalla",
+      "företeelse",
+      "förfalska",
+      "förkasta",
+      "förödelse",
+      "förrätt",
+      "förringa",
+      "försåtlig",
+      "försumbar"
     ],
-    "credits": 49
+    "credits": 34
   }
 }
