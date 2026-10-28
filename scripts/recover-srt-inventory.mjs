@@ -57,6 +57,7 @@ const originalCurrent = new Map([...current.keys].map(([k,v])=>[k,v.map(x=>({...
 const indexById = new Map(current.index.filter(x=>x?.link).map(e=>[e.link,e]));
 const oldIndex = new Map(old.index.filter(x=>x?.link).map(e=>[e.link,e]));
 const changedPacks = new Set(), restored = [];
+let newTail = null;
 const byBase = new Map();
 for (const row of missing) {
   const key = baseOf(row.name);
@@ -72,6 +73,11 @@ function allocate() {
   current.packs.set(path,{});
   return path;
 }
+function newPackFor(group) {
+  if (newTail && acceptable({...current.packs.get(newTail),...group})) return newTail;
+  newTail = allocate();
+  return newTail;
+}
 for (const [base,entries] of byBase) {
   const id = videoId(entries[0].name), indexed = id && indexById.get(id);
   const historical = id && oldIndex.get(id);
@@ -84,9 +90,18 @@ for (const [base,entries] of byBase) {
   }
   const group=Object.fromEntries(entries.map(e=>[e.name,e.text]));
   if (pack && !acceptable({...current.packs.get(pack),...group})) {
-    throw Error('Existing indexed pack full; refusing to split tracks: '+base);
+    // Move only this video's existing sibling tracks, preserving their bytes.
+    const oldContents = current.packs.get(pack);
+    const siblings = Object.fromEntries(Object.entries(oldContents).filter(([key])=>baseOf(key)===base));
+    const combined = {...siblings,...group};
+    if (!acceptable(combined)) throw Error('Media too large to recover as one group: '+base);
+    const destination = newPackFor(combined);
+    for (const key of Object.keys(siblings)) delete oldContents[key];
+    Object.assign(current.packs.get(destination), siblings);
+    changedPacks.add(pack);
+    pack = destination;
   }
-  if (!pack) pack=allocate();
+  if (!pack) pack=newPackFor(group);
   const contents=current.packs.get(pack);
   if (!acceptable({...contents,...group})) throw Error('Historical media exceeds pack bounds: '+base);
   Object.assign(contents,group);
@@ -102,7 +117,7 @@ for (const [base,entries] of byBase) {
 for (const [name,copies] of originalCurrent) {
   const next=[];
   for (const [pack,files] of current.packs) if (Object.hasOwn(files,name)) next.push({pack,text:files[name]});
-  if (next.length!==copies.length || copies.some(c=>!next.some(x=>x.pack===c.pack&&x.text===c.text)))
+  if (next.length!==copies.length || copies.some(c=>next.filter(x=>x.text===c.text).length !== copies.filter(x=>x.text===c.text).length))
     throw Error('Current SRT inventory altered: '+name);
 }
 for (const row of missing) {
@@ -144,7 +159,7 @@ for (const [path,value] of modifications) {
 const verified=scan(curFile);
 for (const [name,copies] of originalCurrent) {
   const after=verified.keys.get(name);
-  if (!after || after.length!==copies.length || copies.some(c=>!after.some(x=>x.pack===c.pack&&x.text===c.text)))
+  if (!after || after.length!==copies.length || copies.some(c=>after.filter(x=>x.text===c.text).length !== copies.filter(x=>x.text===c.text).length))
     throw Error('Post-write current inventory mismatch: '+name);
 }
 for (const row of missing) if (!verified.keys.get(row.name)?.some(c=>c.text===row.text))
