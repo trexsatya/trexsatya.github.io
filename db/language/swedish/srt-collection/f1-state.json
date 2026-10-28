@@ -3915,11 +3915,11 @@
       "skipped": false
     },
     "uppstyltad": {
-      "noYieldStreak": 1,
-      "runs": 3,
+      "noYieldStreak": 2,
+      "runs": 4,
       "lastCount": 4,
       "lastRemaining": 1,
-      "skipped": false
+      "skipped": true
     },
     "utbrister": {
       "noYieldStreak": 0,
@@ -3944,9 +3944,9 @@
     },
     "vanvårda": {
       "noYieldStreak": 0,
-      "runs": 1,
-      "lastCount": 4,
-      "lastRemaining": 1,
+      "runs": 2,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "variera": {
@@ -4711,37 +4711,59 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "utan omsvep": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utbyte": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utläggning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vetter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vrede": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 35,
-    "spentCredits": 1474,
-    "savedCaptures": 1912
+    "batches": 36,
+    "spentCredits": 1487,
+    "savedCaptures": 1918
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "skinnet",
-      "skoningslös",
-      "skräms",
-      "skryter",
-      "slank",
-      "slätar",
-      "stå ut",
-      "stammar",
-      "stånd",
-      "stolpar",
-      "sträng",
-      "strömmar",
-      "tårarna",
-      "tassa",
-      "tentor",
-      "tillit",
-      "tillräcklig",
-      "uppmärksamma",
-      "uppror",
-      "uppstyltad"
+      "uppstyltad",
+      "utan omsvep",
+      "utbyte",
+      "utläggning",
+      "vanvårda",
+      "vetter",
+      "vrede"
     ],
-    "credits": 19
+    "credits": 13
   }
 }
