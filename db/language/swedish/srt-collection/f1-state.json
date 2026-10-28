@@ -2040,9 +2040,9 @@
     },
     "föresätta": {
       "noYieldStreak": 0,
-      "runs": 1,
-      "lastCount": 3,
-      "lastRemaining": 2,
+      "runs": 2,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "föresätta sig": {
@@ -3248,37 +3248,170 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "dussin": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "en smula": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "entusiasm": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ersätta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "facit": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fasad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fiskarna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "flämta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "företeelser": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förgäves": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förhindra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förlossning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förstärka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förstärker": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förtjust": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förvirrad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "frågeställning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gapar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "genomsnittlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 24,
-    "spentCredits": 1115,
-    "savedCaptures": 1595
+    "batches": 25,
+    "spentCredits": 1143,
+    "savedCaptures": 1635
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "äckel",
-      "äng",
-      "angår",
-      "anspråk",
-      "anställa",
-      "ärmarna",
-      "avslappnad",
-      "avstamp",
-      "axeln",
-      "belägg",
-      "bemöter",
-      "bestå",
-      "blixtsnabbt",
-      "bön",
-      "bristning",
-      "disparat",
-      "döljer",
-      "drivrutin",
-      "drivrutiner",
-      "dunkel"
+      "dussin",
+      "en smula",
+      "entusiasm",
+      "ersätta",
+      "facit",
+      "fasad",
+      "fiskarna",
+      "flämta",
+      "föresätta",
+      "företeelser",
+      "förgäves",
+      "förhindra",
+      "förlossning",
+      "förstärka",
+      "förstärker",
+      "förtjust",
+      "förvirrad",
+      "frågeställning",
+      "gapar",
+      "genomsnittlig"
     ],
-    "credits": 38
+    "credits": 28
   }
 }
