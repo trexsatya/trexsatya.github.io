@@ -2900,10 +2900,10 @@
       "skipped": false
     },
     "tomma tunnor skramlar mest": {
-      "noYieldStreak": 1,
-      "runs": 2,
-      "lastCount": 3,
-      "lastRemaining": 2,
+      "noYieldStreak": 0,
+      "runs": 3,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "tömmer": {
@@ -3915,42 +3915,168 @@
       "skipped": false
     },
     "uppstyltad": {
-      "noYieldStreak": 1,
+      "noYieldStreak": 0,
+      "runs": 2,
+      "lastCount": 4,
+      "lastRemaining": 1,
+      "skipped": false
+    },
+    "utbrister": {
+      "noYieldStreak": 0,
       "runs": 1,
-      "lastCount": 3,
-      "lastRemaining": 2,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "utsmyckad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vägguttag": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vanvårda": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 4,
+      "lastRemaining": 1,
+      "skipped": false
+    },
+    "variera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "väser": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vidrör": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vifta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vissla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vrida": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "affisch": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ansluta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ansluter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "avbryter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "avstå": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "bål": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "balsam": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "begränsning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     }
   },
   "totals": {
-    "batches": 29,
-    "spentCredits": 1296,
-    "savedCaptures": 1787
+    "batches": 30,
+    "spentCredits": 1341,
+    "savedCaptures": 1817
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "sammanbunden",
-      "svänga",
-      "sveper",
-      "täckning",
-      "tillblivelse",
-      "tillsätta",
       "tomma tunnor skramlar mest",
-      "trick",
-      "trovärdighet",
-      "tunna",
-      "tvingad",
-      "tycks",
-      "underskatta",
-      "uppgiven",
-      "upphov",
-      "uppkommit",
-      "upplägg",
-      "upprop",
-      "uppsatt",
-      "uppstyltad"
+      "uppstyltad",
+      "utbrister",
+      "utsmyckad",
+      "vägguttag",
+      "vanvårda",
+      "variera",
+      "väser",
+      "vidrör",
+      "vifta",
+      "vissla",
+      "vrida",
+      "affisch",
+      "ansluta",
+      "ansluter",
+      "avbryter",
+      "avstå",
+      "bål",
+      "balsam",
+      "begränsning"
     ],
-    "credits": 43
+    "credits": 45
   }
 }
