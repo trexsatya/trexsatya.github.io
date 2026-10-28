@@ -9,8 +9,8 @@
       "skipped": true
     },
     "lysramp": {
-      "noYieldStreak": 0,
-      "runs": 2,
+      "noYieldStreak": 1,
+      "runs": 3,
       "lastCount": 2,
       "lastRemaining": 3,
       "skipped": false
@@ -716,8 +716,8 @@
       "skipped": false
     },
     "krystat sätt": {
-      "noYieldStreak": 0,
-      "runs": 1,
+      "noYieldStreak": 1,
+      "runs": 2,
       "lastCount": 2,
       "lastRemaining": 3,
       "skipped": false
@@ -2324,37 +2324,163 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "ironi": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "kammar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "kännetecken": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "käpprätt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "klapp": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "klase": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "klibbig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "klottra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "knuffa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "konstlad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "kroppsspråk": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "kuvert": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "lägga av": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "lägga fram": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "lågor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "lyktor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "medalj": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "medkänsla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 17,
-    "spentCredits": 850,
-    "savedCaptures": 1223
+    "batches": 18,
+    "spentCredits": 892,
+    "savedCaptures": 1277
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "gläder",
-      "glansig",
-      "gnistra",
-      "gudomligt",
-      "guppa",
-      "hemland",
-      "himlavalvet",
-      "högtravande",
-      "höjdare",
-      "honnör",
-      "ilsket",
-      "inkludera",
-      "innebörd",
-      "instabil",
-      "inställningar",
-      "interaktion",
-      "intet ont anande",
-      "inträffar",
-      "introduktion",
-      "invecklad"
+      "ironi",
+      "kammar",
+      "kännetecken",
+      "käpprätt",
+      "klapp",
+      "klase",
+      "klibbig",
+      "klottra",
+      "knuffa",
+      "konstlad",
+      "kroppsspråk",
+      "krystat sätt",
+      "kuvert",
+      "lägga av",
+      "lägga fram",
+      "lågor",
+      "lyktor",
+      "lysramp",
+      "medalj",
+      "medkänsla"
     ],
-    "credits": 55
+    "credits": 42
   }
 }
