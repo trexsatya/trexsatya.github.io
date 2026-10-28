@@ -490,7 +490,10 @@
           if (e.target !== el && e.target.closest &&
               e.target.closest('.clickable-word')) return;
           const w = el.getAttribute('data-w') || el.textContent || '';
-          try { window.CaptionHandler && window.CaptionHandler.postMessage(w); } catch (_) {}
+          try {
+            if (typeof opts.onWord === 'function') opts.onWord(w);
+            else if (window.CaptionHandler) window.CaptionHandler.postMessage(w);
+          } catch (_) {}
         });
       });
     }
@@ -598,6 +601,7 @@
     // Selection is only offered inside Cupitor: without the channel there is
     // nowhere to send, so the button would be a dead control in a browser.
     function canSend() {
+      if (typeof opts.onCapture === 'function') return true;
       try {
         return !!(window.CaptionCollector &&
                   typeof window.CaptionCollector.postMessage === 'function');
@@ -658,8 +662,8 @@
         }
       }
       const status = sb.querySelector('[data-r="status"]');
-      if (status && state.picking) {
-        status.textContent = state.selected.size + ' selected';
+      if (status) {
+        status.textContent = state.picking ? state.selected.size + ' selected' : state.cues.length + ' cues';
       }
     }
 
@@ -689,7 +693,8 @@
         document.title, state.translationSource,
         lines, state.timeParam, state.timeLinkOn);
       try {
-        window.CaptionCollector.postMessage(JSON.stringify(payload));
+        if (typeof opts.onCapture === 'function') opts.onCapture(payload);
+        else window.CaptionCollector.postMessage(JSON.stringify(payload));
         console.log('[caps] sent', lines.length, 'lines');
         setPicking(false);
         const pickBtn = state.sidebar && state.sidebar.querySelector('[data-act="pick"]');
@@ -815,11 +820,17 @@
     function requestTranslation(idx) {
       const cue = state.cues[idx];
       if (!cue || cue.translation || cue.trPending) return;
-      if (!window.TranslateRequest || typeof window.TranslateRequest.postMessage !== 'function') return;
+      if (typeof opts.translateText !== 'function' &&
+          (!window.TranslateRequest || typeof window.TranslateRequest.postMessage !== 'function')) return;
       const id = state.nextTrId++;
       state.pendingTr[id] = idx;
       cue.trPending = true;
       rerenderCue(idx);
+      if (typeof opts.translateText === 'function') {
+        Promise.resolve().then(() => opts.translateText(cue.text, state.translationSource, state.translationTarget))
+          .then(result => receiveTranslation(id, result), error => receiveTranslation(id, null, String(error)));
+        return;
+      }
       try {
         window.TranslateRequest.postMessage(JSON.stringify({
           id,
@@ -834,7 +845,7 @@
     }
 
     // Flutter calls this back. (Optional 3rd arg is an error message.)
-    window.__cupTranslated = function(id, result, err) {
+    function receiveTranslation(id, result, err) {
       const idx = state.pendingTr[id];
       delete state.pendingTr[id];
       if (idx == null) return;
@@ -845,7 +856,8 @@
       else cue.translation = String(result || '');
       rerenderCue(idx);
       onTranslationDone(idx);
-    };
+    }
+    if (typeof opts.translateText !== 'function') window.__cupTranslated = receiveTranslation;
 
     // -------- strategy hooks (PLAYBACK-driven) --------
     // Called from syncHighlight when the playhead ENTERS cue `idx` (the
@@ -1326,6 +1338,8 @@
         notice.hidden = !message;
       },
       get currentVideo() { return state.currentVideo; },
+      get element() { return state.sidebar; },
+      get cueCount() { return state.cues.length; },
       get sourceLanguage() { return state.translationSource; },
     };
   }

@@ -52,6 +52,22 @@ and Spotify-aware pause/resume around word lookup.
 
 ## YouTube downloads
 
+YouTube watch pages have a visible **SRT · Capture** launcher, including mobile
+YouTube. It reopens the same split subtitle panel after it is closed. The panel
+can open before the video element has rendered; **⤓CC** downloads a complete
+track, **☑** selects lines and **⤴** sends the selection to Cupitor. Closing the
+panel stays closed across discovery ticks until the launcher is tapped again.
+
+`window.__cupOpenSubtitlePanel()` provides the same entry point for the native
+app's CC button and returns false outside video pages. The native button can
+fall back to its existing full-track capture dialog if page injection failed.
+
+The shared `20-caption-sidebar.js` also accepts optional `onWord`, `onCapture`
+and asynchronous `translateText` callbacks for the language app's local-file
+player. That app mirrors this source verbatim as `language/caption-sidebar.js`;
+update both copies when changing the component. Using `translateText` leaves the
+embedding app's `window.__cupTranslated` callback intact.
+
 In a compatible Cupitor app, the YouTube sidebar's **⤓CC** button asks the
 native `YouTubeSubtitles` JavaScript channel to download the current video's
 subtitles. The app reuses its existing track picker and yt-dlp downloader.

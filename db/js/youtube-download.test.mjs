@@ -66,6 +66,39 @@ test('YouTube download button invokes the native flow; older app versions hide i
   } finally { p.close(); old.close(); }
 });
 
+test('mobile YouTube has a visible SRT capture launcher; closing stays closed until reopened', () => {
+  const p = boot({address: 'https://m.youtube.com/watch?v=' + id});
+  try {
+    const button = p.window.document.getElementById('cup-youtube-srt-toggle');
+    assert.equal(button.hidden, false);
+    assert.match(button.textContent, /SRT.*Capture/);
+    p.click('split');
+    p.tick(); p.tick();
+    assert.equal(p.window.document.body.classList.contains('cup-sub-split'), false);
+    button.click();
+    assert.equal(p.window.document.body.classList.contains('cup-sub-split'), true);
+    assert.equal(p.window.__cupOpenSubtitlePanel(), true, 'native CC can reopen the same panel');
+    p.click('download');
+    assert.deepEqual(p.requests, [{op:'download'}]);
+    p.window.history.pushState({}, '', '/');
+    p.tick();
+    assert.equal(button.hidden, true);
+    assert.equal(p.window.__cupOpenSubtitlePanel(), false);
+  } finally { p.close(); }
+});
+
+test('capture entry is available before the mobile video element renders', () => {
+  const p = boot({address: 'https://m.youtube.com/watch?v=' + id});
+  try {
+    p.video.remove();
+    p.tick();
+    assert.equal(p.window.__cupOpenSubtitlePanel(), true);
+    assert.equal(p.window.document.getElementById('cup-youtube-srt-toggle').hidden, false);
+    p.click('download');
+    assert.deepEqual(p.requests, [{op:'download'}]);
+  } finally { p.close(); }
+});
+
 test('a full downloaded track replaces harvested lines once, sorted and deduplicated', () => {
   const p = boot();
   try {
