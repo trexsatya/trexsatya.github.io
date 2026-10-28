@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "attempts": {
+    "förkonstlad": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 0,
+      "lastRemaining": 5,
+      "skipped": false
+    },
+    "lysramp": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 0,
+      "lastRemaining": 5,
+      "skipped": false
+    },
+    "medborgarn": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 0,
+      "lastRemaining": 5,
+      "skipped": false
+    },
+    "påtvånga": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 0,
+      "lastRemaining": 5,
+      "skipped": false
+    },
+    "skedar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "småsten": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smutsa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smutta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smycka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "snärta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "snärtar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "spraka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stappla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stearinljus": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stödja sig på": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "strödde": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "trave": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "vända sig om": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "bölja": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "böner": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    }
+  },
+  "totals": {
+    "batches": 1,
+    "spentCredits": 104,
+    "savedCaptures": 78
+  },
+  "lastRun": {
+    "status": 0,
+    "words": [
+      "förkonstlad",
+      "lysramp",
+      "medborgarn",
+      "påtvånga",
+      "skedar",
+      "småsten",
+      "smutsa",
+      "smutta",
+      "smycka",
+      "snärta",
+      "snärtar",
+      "spraka",
+      "stappla",
+      "stearinljus",
+      "stödja sig på",
+      "strödde",
+      "trave",
+      "vända sig om",
+      "bölja",
+      "böner"
+    ],
+    "credits": 104
+  }
+}
