@@ -1085,37 +1085,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "redskap": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "remmar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sammanbunden": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 3,
+      "lastRemaining": 2,
+      "skipped": false
+    },
+    "sammankopplad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "samvete": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sisådär": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skandera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skapelser": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skikt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skina": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skrämd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skrymt": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 1,
+      "lastRemaining": 4,
+      "skipped": false
+    },
+    "skvallra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "slingra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "slockna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "småprat": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "smeker": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "snårig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "snäv": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "snava": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 8,
-    "spentCredits": 447,
-    "savedCaptures": 609
+    "batches": 9,
+    "spentCredits": 501,
+    "savedCaptures": 683
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "nödsakad",
-      "outhärdlig",
-      "överensstämma",
-      "överensstämmer",
-      "övers",
-      "översta",
-      "påkommen",
-      "påkörd",
-      "påslag",
-      "pekpinne",
-      "pekuniär",
-      "penseldrag",
-      "penseln",
-      "piggar",
-      "rabbla",
-      "räfflor",
-      "rättmätig",
-      "rättskaffens",
-      "reder",
-      "redogörelse"
+      "redskap",
+      "remmar",
+      "sammanbunden",
+      "sammankopplad",
+      "samvete",
+      "sisådär",
+      "skandera",
+      "skapelser",
+      "skikt",
+      "skina",
+      "skrämd",
+      "skrymt",
+      "skvallra",
+      "slingra",
+      "slockna",
+      "småprat",
+      "smeker",
+      "snårig",
+      "snäv",
+      "snava"
     ],
-    "credits": 52
+    "credits": 54
   }
 }
