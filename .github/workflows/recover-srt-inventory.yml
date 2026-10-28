@@ -1,0 +1,39 @@
+name: Recover historical subtitle inventory (review branch only)
+on:
+  push:
+    branches: [recover/srt-missing-eWKShBhCSCQ]
+    paths:
+      - scripts/recover-srt-inventory.mjs
+      - .github/workflows/recover-srt-inventory.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preview historical missing SRT inventory
+        run: node scripts/recover-srt-inventory.mjs
+      - name: Recover only missing tracks and assert unchanged current tracks
+        run: node scripts/recover-srt-inventory.mjs --apply
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: historical-subtitle-recovery-audit
+          path: srt-recovery-report/report.json
+      - name: Commit additive recovery only to review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add db/language/swedish/srts/
+          if ! git diff --cached --quiet; then
+            git commit -m "Recover historical subtitle tracks without altering current SRTs"
+            git push origin HEAD:recover/srt-missing-eWKShBhCSCQ
+          fi
