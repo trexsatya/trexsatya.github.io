@@ -1101,8 +1101,8 @@
       "skipped": false
     },
     "sammanbunden": {
-      "noYieldStreak": 0,
-      "runs": 1,
+      "noYieldStreak": 1,
+      "runs": 2,
       "lastCount": 3,
       "lastRemaining": 2,
       "skipped": false
@@ -3661,37 +3661,170 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "puckla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ränder": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ringakta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "såväl": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "signalera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skäller": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skämta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sken": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skiljas": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skimra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skjorta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skjortan": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skriftlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "slant": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "släta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sopar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "spärrar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stillhet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "studsa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 27,
-    "spentCredits": 1209,
-    "savedCaptures": 1713
+    "batches": 28,
+    "spentCredits": 1253,
+    "savedCaptures": 1751
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "lalla",
-      "ledningar",
-      "mellanrum",
-      "missvisa",
-      "modersmål",
-      "motsatt",
-      "närmre",
-      "nicka",
-      "nödd",
-      "ordalag",
-      "övergå",
-      "övergång",
-      "övergripande",
-      "påhopp",
-      "pennor",
-      "pika",
-      "pikar",
-      "posering",
-      "prägel",
-      "provet"
+      "puckla",
+      "ränder",
+      "ringakta",
+      "sammanbunden",
+      "såväl",
+      "signalera",
+      "skäller",
+      "skämta",
+      "sken",
+      "skiljas",
+      "skimra",
+      "skjorta",
+      "skjortan",
+      "skriftlig",
+      "slant",
+      "släta",
+      "sopar",
+      "spärrar",
+      "stillhet",
+      "studsa"
     ],
-    "credits": 31
+    "credits": 44
   }
 }
