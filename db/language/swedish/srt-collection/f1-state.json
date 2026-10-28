@@ -3915,8 +3915,8 @@
       "skipped": false
     },
     "uppstyltad": {
-      "noYieldStreak": 0,
-      "runs": 2,
+      "noYieldStreak": 1,
+      "runs": 3,
       "lastCount": 4,
       "lastRemaining": 1,
       "skipped": false
@@ -4578,37 +4578,170 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "skinnet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skoningslös": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skräms": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "skryter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "slank": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "slätar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stå ut": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stammar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stånd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stolpar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "sträng": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "strömmar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tårarna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tassa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tentor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillit": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillräcklig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppmärksamma": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppror": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 34,
-    "spentCredits": 1455,
-    "savedCaptures": 1893
+    "batches": 35,
+    "spentCredits": 1474,
+    "savedCaptures": 1912
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "omvälva",
-      "övergiven",
-      "översikt",
-      "panna",
-      "pauser",
-      "perrong",
-      "piper",
-      "piska",
-      "pladder",
-      "provocera",
-      "räckhåll",
-      "refrängen",
-      "rubrik",
-      "rycker",
-      "sakna",
-      "samhörighet",
-      "se ner på",
-      "sidled",
-      "skalning",
-      "skapelse"
+      "skinnet",
+      "skoningslös",
+      "skräms",
+      "skryter",
+      "slank",
+      "slätar",
+      "stå ut",
+      "stammar",
+      "stånd",
+      "stolpar",
+      "sträng",
+      "strömmar",
+      "tårarna",
+      "tassa",
+      "tentor",
+      "tillit",
+      "tillräcklig",
+      "uppmärksamma",
+      "uppror",
+      "uppstyltad"
     ],
-    "credits": 26
+    "credits": 19
   }
 }
