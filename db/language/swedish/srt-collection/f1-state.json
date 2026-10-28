@@ -1969,11 +1969,11 @@
       "skipped": false
     },
     "dagrar": {
-      "noYieldStreak": 1,
-      "runs": 2,
+      "noYieldStreak": 2,
+      "runs": 3,
       "lastCount": 4,
       "lastRemaining": 1,
-      "skipped": false
+      "skipped": true
     },
     "dimridåer": {
       "noYieldStreak": 0,
@@ -2095,8 +2095,8 @@
       "skipped": false
     },
     "försagd": {
-      "noYieldStreak": 0,
-      "runs": 1,
+      "noYieldStreak": 1,
+      "runs": 2,
       "lastCount": 4,
       "lastRemaining": 1,
       "skipped": false
@@ -4179,37 +4179,163 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "fört": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "framföra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "framfört": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "frigöra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "front": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "garanterat": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gengäld": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "genomgående": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "genväg": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gnissla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gradvis": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "granska": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gråtit": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "grimas": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "griper": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "guldfisk": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "hån": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "himmel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 31,
-    "spentCredits": 1371,
-    "savedCaptures": 1835
+    "batches": 32,
+    "spentCredits": 1405,
+    "savedCaptures": 1853
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "begynnande",
-      "belastning",
-      "beteenden",
-      "biter",
-      "blända",
-      "bokstavligt",
-      "bokstavligt talat",
-      "boskapen",
       "dagrar",
-      "diamanter",
-      "disciplin",
-      "docka",
-      "duka",
-      "efterkälken",
-      "farten",
-      "föreslår",
-      "förhållningssätt",
-      "förklaringar",
-      "formar",
-      "förrädare"
+      "försagd",
+      "fört",
+      "framföra",
+      "framfört",
+      "frigöra",
+      "front",
+      "garanterat",
+      "gengäld",
+      "genomgående",
+      "genväg",
+      "gnissla",
+      "gradvis",
+      "granska",
+      "gråtit",
+      "grimas",
+      "griper",
+      "guldfisk",
+      "hån",
+      "himmel"
     ],
-    "credits": 30
+    "credits": 34
   }
 }
