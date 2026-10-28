@@ -2,32 +2,32 @@
   "version": 1,
   "attempts": {
     "förkonstlad": {
-      "noYieldStreak": 1,
-      "runs": 1,
+      "noYieldStreak": 2,
+      "runs": 2,
       "lastCount": 0,
       "lastRemaining": 5,
-      "skipped": false
+      "skipped": true
     },
     "lysramp": {
-      "noYieldStreak": 1,
-      "runs": 1,
-      "lastCount": 0,
-      "lastRemaining": 5,
+      "noYieldStreak": 0,
+      "runs": 2,
+      "lastCount": 2,
+      "lastRemaining": 3,
       "skipped": false
     },
     "medborgarn": {
-      "noYieldStreak": 1,
-      "runs": 1,
+      "noYieldStreak": 2,
+      "runs": 2,
       "lastCount": 0,
       "lastRemaining": 5,
-      "skipped": false
+      "skipped": true
     },
     "påtvånga": {
-      "noYieldStreak": 1,
-      "runs": 1,
+      "noYieldStreak": 2,
+      "runs": 2,
       "lastCount": 0,
       "lastRemaining": 5,
-      "skipped": false
+      "skipped": true
     },
     "skedar": {
       "noYieldStreak": 0,
@@ -140,12 +140,124 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "bråkmakare": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "bringa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "brisera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "burdus": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "butter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "citera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dåsig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dialekter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "diffus": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dockor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dräpa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "drunkna": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ducka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "dyrka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "efterbliven": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "eliminera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 1,
-    "spentCredits": 104,
-    "savedCaptures": 78
+    "batches": 2,
+    "spentCredits": 153,
+    "savedCaptures": 144
   },
   "lastRun": {
     "status": 0,
@@ -154,23 +266,23 @@
       "lysramp",
       "medborgarn",
       "påtvånga",
-      "skedar",
-      "småsten",
-      "smutsa",
-      "smutta",
-      "smycka",
-      "snärta",
-      "snärtar",
-      "spraka",
-      "stappla",
-      "stearinljus",
-      "stödja sig på",
-      "strödde",
-      "trave",
-      "vända sig om",
-      "bölja",
-      "böner"
+      "bråkmakare",
+      "bringa",
+      "brisera",
+      "burdus",
+      "butter",
+      "citera",
+      "dåsig",
+      "dialekter",
+      "diffus",
+      "dockor",
+      "dräpa",
+      "drunkna",
+      "ducka",
+      "dyrka",
+      "efterbliven",
+      "eliminera"
     ],
-    "credits": 104
+    "credits": 49
   }
 }
