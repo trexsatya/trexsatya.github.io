@@ -812,37 +812,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "myter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "mytomspunnen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "näbbar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nedför": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nedvärdera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nödsakad": {
+      "noYieldStreak": 1,
+      "runs": 1,
+      "lastCount": 1,
+      "lastRemaining": 4,
+      "skipped": false
+    },
+    "oförenlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "olikartad": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 2,
+      "lastRemaining": 3,
+      "skipped": false
+    },
+    "olycksbådande": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omedveten": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omfatta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omodern": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omsluter": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omsvep": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "onaturlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "orädd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "orättvis": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ordagrant": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "orubblig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "oskarp": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 6,
-    "spentCredits": 330,
-    "savedCaptures": 459
+    "batches": 7,
+    "spentCredits": 395,
+    "savedCaptures": 532
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "komplott",
-      "konstgjord",
-      "konventioner",
-      "köpcentrum",
-      "krysta",
-      "krystat",
-      "krystat sätt",
-      "kvast",
-      "låsning",
-      "linjal",
-      "luddig",
-      "luven",
-      "mäkta",
-      "manick",
-      "minsann",
-      "mittemellan",
-      "motstå",
-      "motstridig",
-      "motvalls",
-      "mynna"
+      "myter",
+      "mytomspunnen",
+      "näbbar",
+      "nedför",
+      "nedvärdera",
+      "nödsakad",
+      "oförenlig",
+      "olikartad",
+      "olycksbådande",
+      "omedveten",
+      "omfatta",
+      "omodern",
+      "omsluter",
+      "omsvep",
+      "onaturlig",
+      "orädd",
+      "orättvis",
+      "ordagrant",
+      "orubblig",
+      "oskarp"
     ],
-    "credits": 35
+    "credits": 65
   }
 }
