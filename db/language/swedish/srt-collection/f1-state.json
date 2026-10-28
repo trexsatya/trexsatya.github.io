@@ -1997,10 +1997,10 @@
       "skipped": false
     },
     "fiskhåv": {
-      "noYieldStreak": 1,
-      "runs": 1,
-      "lastCount": 2,
-      "lastRemaining": 3,
+      "noYieldStreak": 0,
+      "runs": 2,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "flamma": {
@@ -2046,13 +2046,139 @@
       "skipped": false
     },
     "föresätta sig": {
-      "noYieldStreak": 1,
-      "runs": 1,
+      "noYieldStreak": 2,
+      "runs": 2,
       "lastCount": 2,
       "lastRemaining": 3,
-      "skipped": false
+      "skipped": true
     },
     "föreställningar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "företagsam": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förmågor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förmått": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "formuleringar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förolämpning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "försagd": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 4,
+      "lastRemaining": 1,
+      "skipped": false
+    },
+    "förskräckt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förtjusning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förvridet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fotfästet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fresta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fullsatt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gaffel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ge vika": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "genomtänkt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gestalta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gester": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "giltig": {
       "noYieldStreak": 0,
       "runs": 1,
       "lastCount": 5,
@@ -2061,34 +2187,34 @@
     }
   },
   "totals": {
-    "batches": 15,
-    "spentCredits": 755,
-    "savedCaptures": 1108
+    "batches": 16,
+    "spentCredits": 795,
+    "savedCaptures": 1163
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "bitti",
-      "blänka",
-      "blinka",
-      "böja",
-      "bostadshus",
-      "bråkstakar",
-      "dager",
-      "dagrar",
-      "dimridåer",
-      "doja",
-      "dumbom",
       "fiskhåv",
-      "flamma",
-      "fodral",
-      "förbindelse",
-      "fördömelse",
-      "förekomma",
-      "föresätta",
       "föresätta sig",
-      "föreställningar"
+      "företagsam",
+      "förmågor",
+      "förmått",
+      "formuleringar",
+      "förolämpning",
+      "försagd",
+      "förskräckt",
+      "förtjusning",
+      "förvridet",
+      "fotfästet",
+      "fresta",
+      "fullsatt",
+      "gaffel",
+      "ge vika",
+      "genomtänkt",
+      "gestalta",
+      "gester",
+      "giltig"
     ],
-    "credits": 70
+    "credits": 40
   }
 }
