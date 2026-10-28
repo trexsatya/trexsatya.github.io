@@ -2828,37 +2828,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "strålkastare": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "streta": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "stryker": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "synvinklar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tågar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "termin": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tiggare": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillförsäkra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tillrop": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tjafs": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tomma tunnor skramlar mest": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 3,
+      "lastRemaining": 2,
+      "skipped": false
+    },
+    "tömmer": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "trilsk": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "tystlåten": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "underlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppbyggt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "uppenbar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "upphöjning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "upplösning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "upplösningar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 21,
-    "spentCredits": 981,
-    "savedCaptures": 1438
+    "batches": 22,
+    "spentCredits": 1035,
+    "savedCaptures": 1496
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "skimmer",
-      "skopor",
-      "skramlar",
-      "skymning",
-      "slå ihop",
-      "slumpmässig",
-      "smita",
-      "smörgås",
-      "smutsen",
-      "smyga",
-      "snöre",
-      "snubbla",
-      "spade",
-      "spindlar",
-      "staket",
-      "ställningstaganden",
-      "stänka",
-      "stänker",
-      "stava",
-      "stödde"
+      "strålkastare",
+      "streta",
+      "stryker",
+      "synvinklar",
+      "tågar",
+      "termin",
+      "tiggare",
+      "tillförsäkra",
+      "tillrop",
+      "tjafs",
+      "tomma tunnor skramlar mest",
+      "tömmer",
+      "trilsk",
+      "tystlåten",
+      "underlig",
+      "uppbyggt",
+      "uppenbar",
+      "upphöjning",
+      "upplösning",
+      "upplösningar"
     ],
-    "credits": 23
+    "credits": 54
   }
 }
