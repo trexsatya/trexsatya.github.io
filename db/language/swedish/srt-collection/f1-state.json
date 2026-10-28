@@ -2095,10 +2095,10 @@
       "skipped": false
     },
     "försagd": {
-      "noYieldStreak": 1,
-      "runs": 2,
-      "lastCount": 4,
-      "lastRemaining": 1,
+      "noYieldStreak": 0,
+      "runs": 3,
+      "lastCount": 5,
+      "lastRemaining": 0,
       "skipped": false
     },
     "förskräckt": {
@@ -4305,37 +4305,170 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "högskola": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "huggit": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "inledning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "kabel": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "kaxig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "krångla": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "kruka": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "laddning": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "lampor": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "linan": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "medvetenhet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "motivera": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "muntlig": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "muren": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "nedslagen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "normer": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "ögonbrynen": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "oklar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "omsider": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 32,
-    "spentCredits": 1405,
-    "savedCaptures": 1853
+    "batches": 33,
+    "spentCredits": 1429,
+    "savedCaptures": 1873
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "dagrar",
       "försagd",
-      "fört",
-      "framföra",
-      "framfört",
-      "frigöra",
-      "front",
-      "garanterat",
-      "gengäld",
-      "genomgående",
-      "genväg",
-      "gnissla",
-      "gradvis",
-      "granska",
-      "gråtit",
-      "grimas",
-      "griper",
-      "guldfisk",
-      "hån",
-      "himmel"
+      "högskola",
+      "huggit",
+      "inledning",
+      "kabel",
+      "kaxig",
+      "krångla",
+      "kruka",
+      "laddning",
+      "lampor",
+      "linan",
+      "medvetenhet",
+      "motivera",
+      "muntlig",
+      "muren",
+      "nedslagen",
+      "normer",
+      "ögonbrynen",
+      "oklar",
+      "omsider"
     ],
-    "credits": 34
+    "credits": 24
   }
 }
