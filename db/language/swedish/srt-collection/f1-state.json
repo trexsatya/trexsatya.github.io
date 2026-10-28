@@ -392,37 +392,177 @@
       "lastCount": 5,
       "lastRemaining": 0,
       "skipped": false
+    },
+    "försummelse": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "förtäckt": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fosterland": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "framlägga": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "framställa": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "framträder": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fraser": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fräser": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "frodas": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "fullo": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "garnityr": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "glädja": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "glapp": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "glittra": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "glöda": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gnista": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gnuggar": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "groda": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "gyllene": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
+    },
+    "häpet": {
+      "noYieldStreak": 0,
+      "runs": 1,
+      "lastCount": 5,
+      "lastRemaining": 0,
+      "skipped": false
     }
   },
   "totals": {
-    "batches": 3,
-    "spentCredits": 187,
-    "savedCaptures": 224
+    "batches": 4,
+    "spentCredits": 253,
+    "savedCaptures": 304
   },
   "lastRun": {
     "status": 0,
     "words": [
-      "ess",
-      "evenemang",
-      "färdigheter",
-      "farväl",
-      "festande",
-      "fladdra",
-      "flaket",
-      "fnissa",
-      "följder",
-      "folkmassan",
-      "förbryllad",
-      "förefalla",
-      "företeelse",
-      "förfalska",
-      "förkasta",
-      "förödelse",
-      "förrätt",
-      "förringa",
-      "försåtlig",
-      "försumbar"
+      "försummelse",
+      "förtäckt",
+      "fosterland",
+      "framlägga",
+      "framställa",
+      "framträder",
+      "fraser",
+      "fräser",
+      "frodas",
+      "fullo",
+      "garnityr",
+      "glädja",
+      "glapp",
+      "glittra",
+      "glöda",
+      "gnista",
+      "gnuggar",
+      "groda",
+      "gyllene",
+      "häpet"
     ],
-    "credits": 34
+    "credits": 66
   }
 }
