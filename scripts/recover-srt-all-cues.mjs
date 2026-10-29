@@ -191,7 +191,13 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
   const actualByIdentity=new Map();
   for(const row of rows){
     const p=parse(row.text);
-    if(p.invalid.length)throw Error('Invalid active cues '+row.name);
+    if(p.invalid.length) {
+      // Legacy subtitles can contain empty/malformed blocks. Retain these byte-for-byte;
+      // they must never block unrelated video recovery or be silently rewritten.
+      if(!before.some(old=>old.id===row.id && old.lang===row.lang && old.text===row.text))
+        throw Error('Previously valid active cues became invalid: '+row.name);
+      continue;
+    }
     if(!actualByIdentity.has(row.key))actualByIdentity.set(row.key,new Map());
     const counts=actualByIdentity.get(row.key);
     for(const cue of p.cues){const k=cueKey(cue);counts.set(k,(counts.get(k)||0)+1);}
