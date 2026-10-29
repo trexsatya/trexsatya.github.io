@@ -29,11 +29,11 @@ function parse(text) {
   if (blocks.length === 1 && !blocks[0]) return { cues: [], invalid: [] };
   const cues = [], invalid = [];
   for (const block of blocks) {
-    const m = block.match(/^(?:\d+[ \t]*\n)?(\d+:\d\d:\d\d[,.]\d{3})[ \t]*-->[ \t]*(\d+:\d\d:\d\d[,.]\d{3})(?:[^\n]*)\n([\s\S]*)$/);
+    const m = block.match(/^(?:\d+[ \t]*\n)?(\d+:\d\d:\d\d[,.]\d{3})[ \t]*-->[ \t]*(\d+:\d\d:\d\d[,.]\d{3})(?:[^\n]*)(?:\n([\s\S]*))?$/);
     if (!m) { invalid.push(block); continue; }
     const start = stamp(m[1]), end = stamp(m[2]);
     if (!Number.isFinite(start) || !Number.isFinite(end) || start >= end) { invalid.push(block); continue; }
-    cues.push({ start, end, time: m[1].replace('.', ',') + ' --> ' + m[2].replace('.', ','), body: m[3].replace(/\s+$/, '') });
+    cues.push({ start, end, time: m[1].replace('.', ',') + ' --> ' + m[2].replace('.', ','), body: (m[3]||'').replace(/\s+$/, '') });
   }
   return { cues, invalid };
 }
@@ -71,7 +71,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
   }
   const oldIndex = historicalIndex || new Map();
   const touchedMedia = new Set([...historical.keys()].map(key => key.slice(0,key.lastIndexOf(':'))));
-  const errors=[], moved=[], missing=[], details=[], conflictExamples=[];
+  const errors=[], moved=[], missing=[], details=[], conflictExamples=[], preexistingDuplicates=[], preexistingUnreachable=[];
   const byId = new Map();
   for (const row of rows) {
     if(!byId.has(row.id)) byId.set(row.id,[]);
@@ -100,7 +100,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     if(!entry || !siblings.length) continue;
     const langCount=new Map();
     for(const row of siblings) langCount.set(row.lang,(langCount.get(row.lang)||0)+1);
-    if([...langCount.values()].some(n=>n>1)) { errors.push({id,issue:'pre-existing duplicate language tracks'}); continue; }
+    if([...langCount.values()].some(n=>n>1)) { preexistingDuplicates.push(id); continue; }
     const canonical=entry.bundleKey||entry.name;
     const accessible=siblings.every(row=>row.pack===entry.bundle && row.name===canonical+'.'+row.lang+'.srt');
     if(accessible) continue;
@@ -117,6 +117,18 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     if(!entry) { errors.push({id,lang,issue:'no index entry'}); continue; }
     let row=indexedRow(entry,lang);
     if(!row) row=siblings.length===1?siblings[0]:null;
+    if(!row && siblings.length>1) {
+      // Retain all historical duplicate copies. Select the current indexed
+      // pack/base if possible, otherwise pick a deterministic existing row.
+      row=siblings.find(r=>r.pack===entry.bundle && baseOf(r.name)===(entry.bundleKey||entry.name))
+        || siblings.find(r=>r.pack===entry.bundle)
+        || siblings.find(r=>variants.some(v=>v.name===r.name))
+        || siblings.slice().sort((a,b)=>a.name.localeCompare(b.name))[0];
+      if(!indexedRow(entry,lang)) {
+        entry.bundle=row.pack;
+        if(baseOf(row.name)!==entry.name)entry.bundleKey=baseOf(row.name);
+      }
+    }
     if(!row && siblings.length) { errors.push({id,lang,issue:'ambiguous active track'}); continue; }
     const pref=oldIndex.get(id);
     variants.sort((a,b)=>Number(baseOf(b.name)===(pref?.bundleKey||pref?.name))-Number(baseOf(a.name)===(pref?.bundleKey||pref?.name))||a.name.localeCompare(b.name));
@@ -222,7 +234,8 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     const entry=idx.get(id);
     if(!entry)continue;
     for(const row of group(id))if(row.name!==(entry.bundleKey||entry.name)+'.'+row.lang+'.srt'||row.pack!==entry.bundle){
-      errors.push({id,lang:row.lang,issue:'unloadable sibling'});
+      if(preexistingDuplicates.includes(id))preexistingUnreachable.push({id,lang:row.lang});
+      else errors.push({id,lang:row.lang,issue:'unloadable sibling'});
     }
   }
   const modified=new Map();
@@ -243,7 +256,8 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     restoredCues:restored, updatedMedia:[...new Set(details.filter(d=>d.added).map(d=>d.id))].length,
     indexRelocations:moved.length, newTracks:addedTracks, identicalHistoricalCues:identical,
     overlappingAlternativesKeptInArchive:overlapping, invalidHistoricalCuesKeptInArchive:malformed,
-    modifiedPacks:modified.size, errors, conflictsSample:conflictExamples, perTrack:details};
+    modifiedPacks:modified.size, preexistingDuplicateMedia:preexistingDuplicates.length,
+    preexistingUnreachableSiblings:preexistingUnreachable.length, errors, conflictsSample:conflictExamples, perTrack:details};
   return {storage,index,modified,report};
 }
 function main(){
