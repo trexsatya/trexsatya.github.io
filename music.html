@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Sequence Search</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/github-utils.js?v=1c72a0d9b4"></script>
+    <script src="/github-utils.js?v=8c2c4094bd"></script>
     <script src="/vendor/opensheetmusicdisplay.min.js"></script>
     <script src="/vendor/tone.js"></script>
-    <link rel="stylesheet" href="/music.css?v=1c72a0d9b4">
+    <link rel="stylesheet" href="/music.css?v=8c2c4094bd">
     <script src="https://www.youtube.com/iframe_api"></script>
     <style>
         body {
@@ -1200,37 +1200,37 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=1c72a0d9b4';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=1c72a0d9b4';
-  import { runQuery } from './music-query.js?v=1c72a0d9b4';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=8c2c4094bd';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=8c2c4094bd';
+  import { runQuery } from './music-query.js?v=8c2c4094bd';
   import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges,
-    parseBarRange, renderAlignedSegments } from './music-render.js?v=1c72a0d9b4';
-  import { init as initFretboard } from './fretboard-panel.js?v=1c72a0d9b4';
-  import { chordDisplayName } from './music-chords.js?v=1c72a0d9b4';
+    parseBarRange, renderAlignedSegments } from './music-render.js?v=8c2c4094bd';
+  import { init as initFretboard } from './fretboard-panel.js?v=8c2c4094bd';
+  import { chordDisplayName } from './music-chords.js?v=8c2c4094bd';
   import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript, renamePhraseInScript,
-    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=1c72a0d9b4';
-  import { safeHtml } from './music-richtext.js?v=1c72a0d9b4';
-  import { keyExplanation } from './music-key.js?v=1c72a0d9b4';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=1c72a0d9b4';
-  import { createMusicStore } from './music-local-store.js?v=1c72a0d9b4';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=1c72a0d9b4';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=1c72a0d9b4';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=1c72a0d9b4';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=1c72a0d9b4';
+    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=8c2c4094bd';
+  import { safeHtml } from './music-richtext.js?v=8c2c4094bd';
+  import { keyExplanation } from './music-key.js?v=8c2c4094bd';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=8c2c4094bd';
+  import { createMusicStore } from './music-local-store.js?v=8c2c4094bd';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=8c2c4094bd';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=8c2c4094bd';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=8c2c4094bd';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=8c2c4094bd';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=1c72a0d9b4';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=8c2c4094bd';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
-    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=1c72a0d9b4';
-  import { renameTagInPhrases } from './music-phrase.js?v=1c72a0d9b4';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=1c72a0d9b4';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=1c72a0d9b4';
-  import { generateCounterLines } from './music-counterpoint.js?v=1c72a0d9b4';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=1c72a0d9b4';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=1c72a0d9b4';
-  import { splitSingleVoice } from './music-voice-split.js?v=1c72a0d9b4';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=1c72a0d9b4';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=1c72a0d9b4';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=1c72a0d9b4';
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=8c2c4094bd';
+  import { renameTagInPhrases } from './music-phrase.js?v=8c2c4094bd';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=8c2c4094bd';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=8c2c4094bd';
+  import { generateCounterLines } from './music-counterpoint.js?v=8c2c4094bd';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=8c2c4094bd';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=8c2c4094bd';
+  import { splitSingleVoice } from './music-voice-split.js?v=8c2c4094bd';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=8c2c4094bd';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=8c2c4094bd';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=8c2c4094bd';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;

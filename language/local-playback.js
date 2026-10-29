@@ -1,0 +1,1 @@
+export async function playLocalMedia(a,r=a=>console.warn("Local media playback failed",a)){try{return await a.play(),!0}catch(a){return a&&"AbortError"===a.name||r(a),!1}}
