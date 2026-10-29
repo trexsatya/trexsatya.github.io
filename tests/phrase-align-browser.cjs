@@ -27,5 +27,7 @@ const xml = '<?xml version="1.0" encoding="utf-8"?>'
     assert.equal(result.wrapped.length,0,'Comparison phrases unexpectedly wrapped');
     assert.ok(result.systems.length >= 2,'Expected at least two staff systems');
     assert.ok(result.delta <= 2,'First-note positions differ by '+result.delta.toFixed(2)+'px');
+    assert.ok(result.timeSigns.some(s => s.hidden),'Synthesized time signature should be hidden after layout');
+    assert.ok(result.timeSigns.some(s => !s.hidden),'Original time signature must remain visible');
   } finally { await browser.close(); }
 })().catch(error => {console.error(error);process.exitCode=1;});
