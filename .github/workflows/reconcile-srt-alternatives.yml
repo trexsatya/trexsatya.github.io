@@ -1,0 +1,24 @@
+name: Reconcile all subtitle alternatives (review branch)
+on:
+  push:
+    branches: [recover/all-historical-srt-cues]
+    paths:
+      - scripts/reconcile-srt-alternatives.mjs
+      - .github/workflows/reconcile-srt-alternatives.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit extra cues, conflicting starts, malformed historical blocks and duplicates
+        run: node scripts/reconcile-srt-alternatives.mjs
