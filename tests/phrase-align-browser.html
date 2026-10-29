@@ -16,6 +16,6 @@ window.phraseAlignBrowserTest = async xml => {
     if (!note) throw new Error('No rendered note in measure '+measure+': '+JSON.stringify(notes.map(n=>n.measure)));
     return note.el.getBoundingClientRect().x;
   };
-  return {x1:xOf(1), x5:xOf(5), delta:Math.abs(xOf(1)-xOf(5)), systems:aligned.systems, wrapped:aligned.wrapped, timeSigns:[...document.querySelectorAll('g.vf-timesignature')].map(g=>({hidden:g.style.visibility==='hidden',x:g.getBBox().x,y:g.getBBox().y}))};
+  return {x1:xOf(1), x5:xOf(5), delta:Math.abs(xOf(1)-xOf(5)), systems:aligned.systems, wrapped:aligned.wrapped, noteXs:Object.fromEntries(Array.from({length:8},(_,i)=>[i+1,xOf(i+1)])), timeSigns:[...document.querySelectorAll('g.vf-timesignature')].map(g=>({hidden:g.style.visibility==='hidden',x:g.getBBox().x,y:g.getBBox().y}))};
 };
 </script></body></html>
