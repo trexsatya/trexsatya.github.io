@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "8bd6c395a4fde02fe3482c713382c0bcbcff962a",
+  "sourceRevision": "7c9d3ff5fb9f2f245881904c437eb7143fdba1a5",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -108,6 +108,7 @@
     "language/caption-capture.js",
     "language/caption-sidebar.js",
     "language/card-html.js",
+    "language/card-playback.js",
     "language/card-selection-search.js",
     "language/corresponding-words.js",
     "language/data-source.js",
@@ -244,7 +245,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.7271431ab70ee54a5cb815b4078a1c09.js",
+    "precache-manifest.954172ce73d4d4ab71d230644745be68.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
