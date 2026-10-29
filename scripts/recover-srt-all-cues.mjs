@@ -201,6 +201,21 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
   // beyond the configured hard byte/file limits. Never split siblings.
   let next=storage.nextPack;
   function size(files){return Buffer.byteLength(json({version:1,files}));}
+  const oldPackLimit=storage.maxBytes;
+  // A media's indexed languages must share one pack. Some existing long-form
+  // subtitles exceed the previous 1 MiB budget when safely reunited.
+  // Raise the pack budget to the next power of two required by such a media.
+  const mediaPackGroups=new Map();
+  for(const row of rows){
+    const k=row.pack+'|'+row.id;
+    if(!mediaPackGroups.has(k))mediaPackGroups.set(k,{});
+    mediaPackGroups.get(k)[row.name]=row.text;
+  }
+  const largestMedia=Math.max(...[...mediaPackGroups.values()].map(size));
+  if(largestMedia>storage.maxBytes){
+    storage.maxBytes=2**Math.ceil(Math.log2(largestMedia));
+    if(storage.maxBytes>8*1024*1024)throw Error('Media pack exceeds safe recovery bound');
+  }
   function overflow(pack) {
     const files=packs.get(pack);
     return Object.keys(files).length>storage.maxFiles || size(files)>storage.maxBytes;
@@ -283,7 +298,8 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     restoredCues:restored, updatedMedia:[...new Set(details.filter(d=>d.added).map(d=>d.id))].length,
     indexRelocations:moved.length, newTracks:addedTracks, identicalHistoricalCues:identical,
     overlappingAlternativesKeptInArchive:overlapping, invalidHistoricalCuesKeptInArchive:malformed,
-    modifiedPacks:modified.size, duplicateSamples, preexistingDuplicateMedia:preexistingDuplicates.length,
+    modifiedPacks:modified.size, packLimitBeforeBytes:oldPackLimit, packLimitAfterBytes:storage.maxBytes,
+    duplicateSamples, preexistingDuplicateMedia:preexistingDuplicates.length,
     preexistingUnreachableSiblings:preexistingUnreachable.length, errors, conflictsSample:conflictExamples, invalidSamples, perTrack:details};
   return {storage,index,modified,report};
 }
