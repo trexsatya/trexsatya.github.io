@@ -73,7 +73,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
   }
   const oldIndex = historicalIndex || new Map();
   const touchedMedia = new Set([...historical.keys()].map(key => key.slice(0,key.lastIndexOf(':'))));
-  const errors=[], moved=[], missing=[], details=[], conflictExamples=[], invalidSamples=[], preexistingDuplicates=[], preexistingUnreachable=[];
+  const errors=[], moved=[], missing=[], details=[], conflictExamples=[], invalidSamples=[], preexistingDuplicates=[], duplicateSamples=[], preexistingUnreachable=[];
   const byId = new Map();
   for (const row of rows) {
     if(!byId.has(row.id)) byId.set(row.id,[]);
@@ -102,7 +102,11 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     if(!entry || !siblings.length) continue;
     const langCount=new Map();
     for(const row of siblings) langCount.set(row.lang,(langCount.get(row.lang)||0)+1);
-    if([...langCount.values()].some(n=>n>1)) { preexistingDuplicates.push(id); continue; }
+    if([...langCount.values()].some(n=>n>1)) {
+      preexistingDuplicates.push(id);
+      if(duplicateSamples.length<9)duplicateSamples.push({id,index:{pack:entry.bundle,base:entry.bundleKey||entry.name},copies:siblings.map(r=>({pack:r.pack,base:baseOf(r.name),lang:r.lang}))});
+      continue;
+    }
     const canonical=entry.bundleKey||entry.name;
     const accessible=siblings.every(row=>row.pack===entry.bundle && row.name===canonical+'.'+row.lang+'.srt');
     if(accessible) continue;
@@ -259,7 +263,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     restoredCues:restored, updatedMedia:[...new Set(details.filter(d=>d.added).map(d=>d.id))].length,
     indexRelocations:moved.length, newTracks:addedTracks, identicalHistoricalCues:identical,
     overlappingAlternativesKeptInArchive:overlapping, invalidHistoricalCuesKeptInArchive:malformed,
-    modifiedPacks:modified.size, preexistingDuplicateMedia:preexistingDuplicates.length,
+    modifiedPacks:modified.size, duplicateSamples, preexistingDuplicateMedia:preexistingDuplicates.length,
     preexistingUnreachableSiblings:preexistingUnreachable.length, errors, conflictsSample:conflictExamples, invalidSamples, perTrack:details};
   return {storage,index,modified,report};
 }
