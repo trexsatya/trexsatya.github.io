@@ -63,6 +63,10 @@ for(const prev of before.rows){
   assert(matching,'Lost or modified current physical track/cue: '+prev.name);
   candidates.splice(candidates.indexOf(matching),1);
 }
+console.log('INDEPENDENT DEBUG',JSON.stringify({baselineCues,latestCues,delta:latestCues-baselineCues,
+  beforeRawTotal:before.rows.reduce((sum,row)=>sum+row.text.length,0),
+  afterRawTotal:after.rows.reduce((sum,row)=>sum+row.text.length,0),
+  changedByName:before.rows.filter(prev=>!after.rows.some(cur=>cur.name===prev.name&&cur.text===prev.text)).length}));
 const report=JSON.parse(now('srt-recovery-report/alternatives-resolution.json'));
 assert.equal(report.status,'verified');
 assert.equal(report.currentTracksPreserved,17914);
