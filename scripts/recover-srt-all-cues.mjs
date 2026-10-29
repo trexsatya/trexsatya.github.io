@@ -119,7 +119,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
         // An extra language such as sv-orig can exceed the pack budget.
         // Do not break previously loadable tracks just to move that variant.
         const prospective={...packs.get(target),[name]:selected.text};
-        if(Object.keys(prospective).length<=storage.maxFiles && size(prospective)<=Math.max(storage.maxBytes,2*1024*1024))
+        if(Object.keys(prospective).length<=storage.maxFiles && size(prospective)<=8*1024*1024)
           move(selected,target,name);
       }
       entry.bundle=target;
