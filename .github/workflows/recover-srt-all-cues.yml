@@ -1,0 +1,25 @@
+name: Recover missing cues across all videos (review branch)
+on:
+  push:
+    branches: [recover/all-historical-srt-cues]
+    paths:
+      - scripts/recover-srt-all-cues.mjs
+      - .github/workflows/recover-srt-all-cues.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    if: github.repository == 'trexsatya/trexsatya.github.io' && github.ref == 'refs/heads/recover/all-historical-srt-cues'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dry-run all historical cue restorations and preservation checks
+        run: node scripts/recover-srt-all-cues.mjs
