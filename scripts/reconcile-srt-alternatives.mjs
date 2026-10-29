@@ -98,6 +98,21 @@ function reconcile(){
     }
   }
   const baseline=tracks.map(r=>({...r,parsed:parse(r.text)}));
+  const trackByPhysicalKey=new Map(tracks.map(r=>[r.pack+'\0'+r.name,r]));
+  const states=new Map();
+  const stateFor=row=>{
+    if(!states.has(row)){
+      const parsed=parse(row.text);
+      const starts=new Map(),keys=new Set();
+      for(const cue of parsed.cues){
+        keys.add(key(cue));
+        if(!starts.has(cue.start))starts.set(cue.start,[]);
+        starts.get(cue.start).push(cue);
+      }
+      states.set(row,{cues:parsed.cues,invalid:parsed.invalid,starts,keys,changed:false});
+    }
+    return states.get(row);
+  };
   const conflicts=new Map(),resolutions=[],estimated=[],unresolved=[],touched=new Set();
   const sourceCoverage={exact:0,additional:0,alternate:0,invalidRecovered:0,invalidBlocked:0};
   let historicalSources=0;
@@ -109,11 +124,11 @@ function reconcile(){
       values.push(item);
   }
   function accept(canonical,cue,source,sourceName,wasInvalid=false){
-    const indexed=parse(canonical.text);
-    if(indexed.invalid.length) {unresolved.push({id:canonical.id,lang:canonical.lang,reason:'malformed indexed SRT',source:sourceName});return;}
-    const duplicate=indexed.cues.find(c=>key(c)===key(cue));
-    if(duplicate){sourceCoverage.exact++;return;}
-    const competing=indexed.cues.filter(c=>c.start===cue.start);
+    const state=stateFor(canonical);
+    if(state.invalid.length) {unresolved.push({id:canonical.id,lang:canonical.lang,reason:'malformed indexed SRT',source:sourceName});return;}
+    const k=key(cue);
+    if(state.keys.has(k)){sourceCoverage.exact++;return;}
+    const competing=state.starts.get(cue.start)||[];
     if(competing.length){
       const current=competing[0];
       // Never silently change current text, punctuation or cue duration.
@@ -122,9 +137,7 @@ function reconcile(){
       sourceCoverage.alternate++;
       return;
     }
-    const next=indexed.cues.concat(cue);
-    canonical.text=render(next);
-    packs.get(canonical.pack)[canonical.name]=canonical.text;
+    state.cues.push(cue);state.keys.add(k);state.starts.set(cue.start,[cue]);state.changed=true;
     touched.add(canonical.id);
     sourceCoverage.additional++;
     if(wasInvalid)sourceCoverage.invalidRecovered++;
@@ -157,6 +170,11 @@ function reconcile(){
       }
     }
   }
+  // Render each changed track once after all source alternatives are processed.
+  for(const [row,state] of states)if(state.changed){
+    row.text=render(state.cues);
+    packs.get(row.pack)[row.name]=row.text;
+  }
   // Conflicting source cues remain separate, first-class SRTs in review data
   // with exact names/timestamps, rather than getting buried in large JSON archives.
   const sidecars=new Map();
@@ -182,9 +200,8 @@ function reconcile(){
   }
   // Keep every existing physical record and every cue, including duplicates.
   for(const prev of baseline){
-    const candidates=byId(prev.id).filter(r=>r===tracks.find(x=>x.pack===prev.pack&&x.name===prev.name));
-    if(!candidates.length)throw Error('Current physical track removed: '+prev.name);
-    const current=candidates[0];
+    const current=trackByPhysicalKey.get(prev.pack+'\0'+prev.name);
+    if(!current)throw Error('Current physical track removed: '+prev.name);
     if(prev.parsed.invalid.length){
       assert.equal(current.text,prev.text,'Malformed current record must remain exact: '+prev.name);
     }else{
