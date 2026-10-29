@@ -285,7 +285,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     const entry=idx.get(id);
     if(!entry)continue;
     for(const lang of new Set(group(id).map(r=>r.lang)))
-      if(!indexedRow(entry,lang))errors.push({id,lang,issue:'no indexed active language track'});
+      if(!indexedRow(entry,lang))errors.push({id,lang,issue:'no indexed active language track',indexed:{pack:entry.bundle,base:entry.bundleKey||entry.name},rows:group(id).map(row=>({lang:row.lang,pack:row.pack,base:baseOf(row.name)}))});
   }
   const modified=new Map();
   for(const [path,files] of packs){
