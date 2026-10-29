@@ -219,7 +219,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
       const siblings=group(id).filter(r=>r.pack===pack);
       const fresh='packs/pack-'+String(next++).padStart(6,'0')+'.json';
       const files=Object.fromEntries(siblings.map(r=>[r.name,r.text]));
-      if(Object.keys(files).length>storage.maxFiles||size(files)>storage.maxBytes)throw Error('Single video exceeds pack limits '+id);
+      if(Object.keys(files).length>storage.maxFiles||size(files)>storage.maxBytes)throw Error('Single video exceeds pack limits '+id+' '+JSON.stringify(siblings.map(r=>({lang:r.lang,bytes:Buffer.byteLength(r.text),pack:r.pack,name:r.name.slice(0,28)}))));
       packs.set(fresh,{});
       for(const row of siblings)move(row,fresh,row.name);
       if(idx.get(id).bundle===pack)idx.get(id).bundle=fresh;
