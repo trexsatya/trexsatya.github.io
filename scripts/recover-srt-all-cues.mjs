@@ -71,7 +71,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
   }
   const oldIndex = historicalIndex || new Map();
   const touchedMedia = new Set([...historical.keys()].map(key => key.slice(0,key.lastIndexOf(':'))));
-  const errors=[], moved=[], missing=[], details=[], conflictExamples=[], preexistingDuplicates=[], preexistingUnreachable=[];
+  const errors=[], moved=[], missing=[], details=[], conflictExamples=[], invalidSamples=[], preexistingDuplicates=[], preexistingUnreachable=[];
   const byId = new Map();
   for (const row of rows) {
     if(!byId.has(row.id)) byId.set(row.id,[]);
@@ -150,6 +150,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     for(const v of variants) {
       const source=parse(v.text);
       bad+=source.invalid.length;
+      for(const part of source.invalid.slice(0,2))if(invalidSamples.length<20)invalidSamples.push({id,lang,part:part.slice(0,220)});
       for(const cue of source.cues) {
         if(!cue.body.trim()) {bad++;continue;}
         const ck=cueKey(cue);
@@ -257,7 +258,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     indexRelocations:moved.length, newTracks:addedTracks, identicalHistoricalCues:identical,
     overlappingAlternativesKeptInArchive:overlapping, invalidHistoricalCuesKeptInArchive:malformed,
     modifiedPacks:modified.size, preexistingDuplicateMedia:preexistingDuplicates.length,
-    preexistingUnreachableSiblings:preexistingUnreachable.length, errors, conflictsSample:conflictExamples, perTrack:details};
+    preexistingUnreachableSiblings:preexistingUnreachable.length, errors, conflictsSample:conflictExamples, invalidSamples, perTrack:details};
   return {storage,index,modified,report};
 }
 function main(){
