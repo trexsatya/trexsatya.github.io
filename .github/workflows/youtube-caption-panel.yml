@@ -1,0 +1,20 @@
+name: YouTube caption panel
+on:
+  pull_request:
+    branches: [gh-pages]
+    paths: ['db/js/**', 'tests/youtube-caption-browser.cjs', '.github/workflows/youtube-caption-panel.yml']
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save jsdom@26 playwright@1.51.1
+      - run: npx playwright install --with-deps chromium
+      - run: sh db/js/build.sh --check
+      - run: node --test db/js/*.test.mjs
+      - run: node --test tests/youtube-caption-browser.cjs
