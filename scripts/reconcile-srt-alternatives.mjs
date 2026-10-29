@@ -265,6 +265,12 @@ function main(){
     return;
   }
   if(!process.argv.includes('--apply'))return;
+  // Keep the first successful certificate: an idempotent rerun has zero new
+  // changes, but must NOT replace historical addition totals with zero.
+  if(result.report.addedUniqueCues===0 && result.report.changedPacks===0 && existsSync(REPORT)){
+    console.log('No new cues: leaving original recovery certificate and SRTs unchanged.');
+    return;
+  }
   for(const [path,raw] of result.modified){
     const dest=join(ROOT,path);mkdirSync(dirname(dest),{recursive:true});writeFileSync(dest,raw);
   }
