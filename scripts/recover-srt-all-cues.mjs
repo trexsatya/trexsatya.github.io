@@ -207,7 +207,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
       // Legacy subtitles can contain empty/malformed blocks. Retain these byte-for-byte;
       // they must never block unrelated video recovery or be silently rewritten.
       if(!before.some(old=>old.id===row.id && old.lang===row.lang && old.text===row.text))
-        throw Error('Previously valid active cues became invalid: '+row.name);
+        throw Error('Previously valid active cues became invalid: '+row.name+' invalid='+JSON.stringify(p.invalid.slice(0,3)).slice(0,450)+' original='+before.filter(b=>b.id===row.id&&b.lang===row.lang).map(b=>({file:b.name,changed:b.text!==row.text,invalid:b.cues.invalid.length})).map(x=>JSON.stringify(x)).join(';'));
       continue;
     }
     if(!actualByIdentity.has(row.key))actualByIdentity.set(row.key,new Map());
