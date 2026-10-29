@@ -205,17 +205,19 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     while(overflow(pack)){
       if(++attempts>500)throw Error('Cannot fit pack '+pack);
       const candidates=[...new Set(rows.filter(r=>r.pack===pack).map(r=>r.id))]
-        .filter(id=>idx.has(id) && group(id).every(r=>r.pack===pack))
-        .sort((a,b)=>group(b).reduce((s,r)=>s+Buffer.byteLength(r.text),0)-group(a).reduce((s,r)=>s+Buffer.byteLength(r.text),0));
+        .filter(id=>idx.has(id))
+        .sort((a,b)=>group(b).filter(r=>r.pack===pack).reduce((s,r)=>s+Buffer.byteLength(r.text),0)-group(a).filter(r=>r.pack===pack).reduce((s,r)=>s+Buffer.byteLength(r.text),0));
       const id=candidates[0];
       if(!id)throw Error('Cannot safely relocate overflowing pack '+pack);
-      const siblings=group(id);
+      // A video's extra historical variants may live in OTHER packs. Relocate
+      // only the copies actually in this overflowing pack and keep all others.
+      const siblings=group(id).filter(r=>r.pack===pack);
       const fresh='packs/pack-'+String(next++).padStart(6,'0')+'.json';
       const files=Object.fromEntries(siblings.map(r=>[r.name,r.text]));
       if(Object.keys(files).length>storage.maxFiles||size(files)>storage.maxBytes)throw Error('Single video exceeds pack limits '+id);
       packs.set(fresh,{});
       for(const row of siblings)move(row,fresh,row.name);
-      idx.get(id).bundle=fresh;
+      if(idx.get(id).bundle===pack)idx.get(id).bundle=fresh;
     }
   }
   storage.nextPack=next;
