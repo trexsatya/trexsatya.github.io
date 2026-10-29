@@ -20,3 +20,9 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/phrase-align-http.log 2>&1 &
       - run: node tests/phrase-align-browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: phrase-align-browser-screenshot
+          path: phrase-align-browser.png
+          if-no-files-found: ignore
