@@ -27,7 +27,7 @@ import{primaryVoice as e,canonicalChordSpans as t}from"./music-encoding.js?v=30a
       // first system's meter. Suppress the redundant visual signature.
       if (currentTime && !time) {
         const hiddenTime = currentTime.cloneNode(true);
-        hiddenTime.setAttribute('print-object', 'no');
+        // Preserve the glyph's layout width; it is concealed after OSMD draws.
         let attributes = attrs[0];
         if (!attributes) {
           attributes = doc.createElement('attributes');
