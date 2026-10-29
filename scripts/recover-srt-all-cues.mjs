@@ -152,7 +152,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
       bad+=source.invalid.length;
       for(const part of source.invalid.slice(0,2))if(invalidSamples.length<20)invalidSamples.push({id,lang,part:part.slice(0,220)});
       for(const cue of source.cues) {
-        if(!cue.body.trim()) {bad++;continue;}
+        // Empty cue bodies are legitimate stored SRT context, not corrupt data.
         const ck=cueKey(cue);
         if(keys.has(ck)){duplicate++;continue;}
         if(combined.some(other=>overlaps(other,cue))) {
