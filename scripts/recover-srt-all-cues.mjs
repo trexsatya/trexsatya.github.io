@@ -29,7 +29,7 @@ function parse(text) {
   if (blocks.length === 1 && !blocks[0]) return { cues: [], invalid: [] };
   const cues = [], invalid = [];
   for (const block of blocks) {
-    const m = block.match(/^(?:\d+[ \t]*\n)?(\d+:\d\d:\d\d[,.]\d{3})[ \t]*-->[ \t]*(\d+:\d\d:\d\d[,.]\d{3})(?:[^\n]*)(?:\n([\s\S]*))?$/);
+    const m = block.trim().match(/^(?:\d+[ \t]*\n)?(\d+:\d\d:\d\d[,.]\d{3})[ \t]*-->[ \t]*(\d+:\d\d:\d\d[,.]\d{3})(?:[^\n]*)(?:\n([\s\S]*))?$/);
     if (!m) { invalid.push(block); continue; }
     const start = stamp(m[1]), end = stamp(m[2]);
     if (!Number.isFinite(start) || !Number.isFinite(end) || start >= end) { invalid.push(block); continue; }
