@@ -4,6 +4,7 @@ on:
     branches: [recover/all-historical-srt-cues]
     paths:
       - scripts/reconcile-srt-alternatives.mjs
+      - scripts/verify-srt-alternatives.mjs
       - .github/workflows/reconcile-srt-alternatives.yml
   workflow_dispatch:
 permissions:
@@ -25,6 +26,7 @@ jobs:
         run: |
           node scripts/reconcile-srt-alternatives.mjs --apply
           node scripts/reconcile-srt-alternatives.mjs --verify
+          node scripts/verify-srt-alternatives.mjs
           git diff --check
           git add db/language/swedish/srts/ srt-recovery-report/alternatives-resolution.json srt-recovery-report/reconciled-alternatives/
           if git diff --cached --quiet; then
