@@ -38,7 +38,9 @@ function parse(text) {
   return { cues, invalid };
 }
 const cueKey = cue => JSON.stringify([cue.start, cue.end, cue.body]);
-const overlaps = (a, b) => a.start < b.end && b.start < a.end;
+// Captions may overlap naturally; only competing text at the same cue start
+// is an alternative. Do not throw away separate historical lines for intersecting ranges.
+const overlaps = (a, b) => a.start === b.start;
 const render = cues => cues.slice().sort((a,b) => a.start-b.start || a.end-b.end || a.body.localeCompare(b.body))
   .map((cue, i) => String(i+1) + '\n' + cue.time + '\n' + cue.body + '\n').join('\n');
 
