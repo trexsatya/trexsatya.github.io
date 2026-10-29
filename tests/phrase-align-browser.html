@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Phrase alignment browser regression</title>
+<style>body{margin:0;padding:20px}#score{width:1200px;max-width:1200px}</style>
+<script src="../vendor/opensheetmusicdisplay.min.js"></script>
+</head><body><div id="score"></div>
+<script type="module">
+import { createMusicRenderer, drawnNotesOf } from '../music-render.js';
+window.phraseAlignBrowserTest = async xml => {
+  const renderer = createMusicRenderer(document.getElementById('score'));
+  const loaded = await renderer.loadDetail({format:'musicxml',source:xml,meta:{key:'D minor'}});
+  if (!loaded.ok) throw new Error('Failed to load the MusicXML fixture');
+  const aligned = await renderer.setPhraseAlign([1,5]);
+  const notes = drawnNotesOf(renderer.osmd);
+  const xOf = measure => {
+    const note = notes.find(n => n.measure === measure && n.el?.isConnected);
+    if (!note) throw new Error('No rendered note in measure '+measure+': '+JSON.stringify(notes.map(n=>n.measure)));
+    return note.el.getBoundingClientRect().x;
+  };
+  return {x1:xOf(1), x5:xOf(5), delta:Math.abs(xOf(1)-xOf(5)), systems:aligned.systems, wrapped:aligned.wrapped, noteXs:Object.fromEntries(Array.from({length:8},(_,i)=>[i+1,xOf(i+1)])), timeSigns:[...document.querySelectorAll('g.vf-timesignature')].map(g=>({hidden:g.style.visibility==='hidden',x:g.getBBox().x,y:g.getBBox().y}))};
+};
+</script></body></html>
