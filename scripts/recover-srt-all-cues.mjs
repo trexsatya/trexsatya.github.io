@@ -108,7 +108,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
       // Keep every duplicate copy, but make ONE existing copy of each language
       // reachable via the indexed pack/base. Relocate, never duplicate/delete.
       const canonical=entry.bundleKey||entry.name;
-      const target=packs.has(entry.bundle)?entry.bundle:siblings[0].pack;
+      let target=packs.has(entry.bundle)?entry.bundle:siblings[0].pack;
       for(const lang of langCount.keys()) {
         if(indexedRow(entry,lang))continue;
         const candidates=siblings.filter(row=>row.lang===lang).sort((a,b)=>
@@ -119,8 +119,22 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
         // An extra language such as sv-orig can exceed the pack budget.
         // Do not break previously loadable tracks just to move that variant.
         const prospective={...packs.get(target),[name]:selected.text};
-        if(Object.keys(prospective).length<=storage.maxFiles && size(prospective)<=8*1024*1024)
+        if(Object.keys(prospective).length<=storage.maxFiles && size(prospective)<=8*1024*1024) {
           move(selected,target,name);
+        } else {
+          // The indexed pack may already have 200 tracks. Relocate the
+          // existing indexed language(s) and this sibling together to a new
+          // pack, never overwrite the other historical duplicate versions.
+          let fresh;
+          do fresh='packs/pack-'+String(storage.nextPack++).padStart(6,'0')+'.json';
+          while(packs.has(fresh));
+          packs.set(fresh,{});
+          const indexedSiblings=group(id).filter(row=>row.pack===target && baseOf(row.name)===canonical);
+          for(const row of indexedSiblings)move(row,fresh,canonical+'.'+row.lang+'.srt');
+          move(selected,fresh,name);
+          target=fresh;
+          entry.bundle=fresh;
+        }
       }
       entry.bundle=target;
       continue;
