@@ -40,7 +40,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 26;
+    const CAPS_VERSION = 27;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -58,6 +58,9 @@
       document.body.classList.remove('cup-sub-spotify');
       const launcher = document.getElementById('cup-spotify-srt-toggle');
       if (launcher) launcher.remove();
+      const youtubeLauncher = document.getElementById('cup-youtube-srt-toggle');
+      if (youtubeLauncher) youtubeLauncher.remove();
+      if (window.__cupOpenSubtitlePanel === openSubtitlePanel) delete window.__cupOpenSubtitlePanel;
       // CSS-in-JS marker class we may have left on a player wrapper.
       document.querySelectorAll('.cup-shrink-target').forEach(el => el.classList.remove('cup-shrink-target'));
       if (window.__cupImportYouTubeSubtitles === importYouTubeSubtitles) {
@@ -102,7 +105,7 @@
       mediaUrl: site.mediaUrl,
       onOpenSubtitles: hasLocalPicker ? openLocalSubtitles : null,
       onSplitChange: on => {
-        if (!adaptedPlayer) return;
+        if (!adaptedPlayer && site.id !== 'youtube') return;
         spotifyPanelOpen = on;
         updateSpotifyControls();
       },
@@ -122,14 +125,27 @@
       },
     });
 
+    function openSubtitlePanel() {
+      if (!isWatchPage() && !adaptedPlayer) return false;
+      spotifyPanelOpen = true;
+      ui.buildSidebar();
+      ui.setVideoElement(getPlayer());
+      ui.setSplit(true);
+      updateSpotifyControls();
+      return true;
+    }
+    window.__cupOpenSubtitlePanel = openSubtitlePanel;
+
     function updateSpotifyControls() {
-      if (!adaptedPlayer) return;
-      let button = document.getElementById('cup-spotify-srt-toggle');
+      const youtube = site.id === 'youtube';
+      if (!adaptedPlayer && !youtube) return;
+      const id = youtube ? 'cup-youtube-srt-toggle' : 'cup-spotify-srt-toggle';
+      let button = document.getElementById(id);
       if (!button) {
         button = document.createElement('button');
-        button.id = 'cup-spotify-srt-toggle';
+        button.id = id;
         button.type = 'button';
-        button.textContent = 'SRT';
+        button.textContent = youtube ? 'SRT · Capture' : 'SRT';
         button.title = 'Show or hide the SRT subtitle panel';
         button.setAttribute('aria-label', 'SRT subtitle panel');
         button.className = 'cup-nolookup';
@@ -145,6 +161,13 @@
         document.body.appendChild(button);
       }
       button.setAttribute('aria-expanded', String(spotifyPanelOpen ?? isWatchPage()));
+      button.hidden = youtube && !isWatchPage();
+      if (youtube) {
+        ui.showNotice(!window.YouTubeSubtitles
+          ? 'Update Cupitor to download a full YouTube SRT. Live captions can still be selected and sent.'
+          : !ui.cueCount ? 'Use ⤓CC to download subtitles, then ☑ to select lines and ⤴ to capture them.' : '');
+        return;
+      }
       const hasMedia = !!site.mediaKey();
       ui.setImportAvailable(hasMedia);
       ui.showNotice(!hasLocalPicker
@@ -571,7 +594,9 @@
       restoreDownload();
       const v = getPlayer();
       if (v) ui.setVideoElement(v);
-      const want = adaptedPlayer ? (spotifyPanelOpen ?? isWatchPage()) : isWatchPage() && !!v;
+      const want = adaptedPlayer ? (spotifyPanelOpen ?? isWatchPage())
+        : site.id === 'youtube' ? isWatchPage() && (spotifyPanelOpen ?? true)
+          : isWatchPage() && !!v;
       if (want) ui.buildSidebar();
       ui.setSplit(want);
       updateSpotifyControls();

@@ -521,7 +521,10 @@
           if (e.target !== el && e.target.closest &&
               e.target.closest('.clickable-word')) return;
           const w = el.getAttribute('data-w') || el.textContent || '';
-          try { window.CaptionHandler && window.CaptionHandler.postMessage(w); } catch (_) {}
+          try {
+            if (typeof opts.onWord === 'function') opts.onWord(w);
+            else if (window.CaptionHandler) window.CaptionHandler.postMessage(w);
+          } catch (_) {}
         });
       });
     }
@@ -629,6 +632,7 @@
     // Selection is only offered inside Cupitor: without the channel there is
     // nowhere to send, so the button would be a dead control in a browser.
     function canSend() {
+      if (typeof opts.onCapture === 'function') return true;
       try {
         return !!(window.CaptionCollector &&
                   typeof window.CaptionCollector.postMessage === 'function');
@@ -689,8 +693,8 @@
         }
       }
       const status = sb.querySelector('[data-r="status"]');
-      if (status && state.picking) {
-        status.textContent = state.selected.size + ' selected';
+      if (status) {
+        status.textContent = state.picking ? state.selected.size + ' selected' : state.cues.length + ' cues';
       }
     }
 
@@ -720,7 +724,8 @@
         document.title, state.translationSource,
         lines, state.timeParam, state.timeLinkOn);
       try {
-        window.CaptionCollector.postMessage(JSON.stringify(payload));
+        if (typeof opts.onCapture === 'function') opts.onCapture(payload);
+        else window.CaptionCollector.postMessage(JSON.stringify(payload));
         console.log('[caps] sent', lines.length, 'lines');
         setPicking(false);
         const pickBtn = state.sidebar && state.sidebar.querySelector('[data-act="pick"]');
@@ -846,11 +851,17 @@
     function requestTranslation(idx) {
       const cue = state.cues[idx];
       if (!cue || cue.translation || cue.trPending) return;
-      if (!window.TranslateRequest || typeof window.TranslateRequest.postMessage !== 'function') return;
+      if (typeof opts.translateText !== 'function' &&
+          (!window.TranslateRequest || typeof window.TranslateRequest.postMessage !== 'function')) return;
       const id = state.nextTrId++;
       state.pendingTr[id] = idx;
       cue.trPending = true;
       rerenderCue(idx);
+      if (typeof opts.translateText === 'function') {
+        Promise.resolve().then(() => opts.translateText(cue.text, state.translationSource, state.translationTarget))
+          .then(result => receiveTranslation(id, result), error => receiveTranslation(id, null, String(error)));
+        return;
+      }
       try {
         window.TranslateRequest.postMessage(JSON.stringify({
           id,
@@ -865,7 +876,7 @@
     }
 
     // Flutter calls this back. (Optional 3rd arg is an error message.)
-    window.__cupTranslated = function(id, result, err) {
+    function receiveTranslation(id, result, err) {
       const idx = state.pendingTr[id];
       delete state.pendingTr[id];
       if (idx == null) return;
@@ -876,7 +887,8 @@
       else cue.translation = String(result || '');
       rerenderCue(idx);
       onTranslationDone(idx);
-    };
+    }
+    if (typeof opts.translateText !== 'function') window.__cupTranslated = receiveTranslation;
 
     // -------- strategy hooks (PLAYBACK-driven) --------
     // Called from syncHighlight when the playhead ENTERS cue `idx` (the
@@ -1357,6 +1369,8 @@
         notice.hidden = !message;
       },
       get currentVideo() { return state.currentVideo; },
+      get element() { return state.sidebar; },
+      get cueCount() { return state.cues.length; },
       get sourceLanguage() { return state.translationSource; },
     };
   }
@@ -3407,7 +3421,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 26;
+    const CAPS_VERSION = 27;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -3425,6 +3439,9 @@
       document.body.classList.remove('cup-sub-spotify');
       const launcher = document.getElementById('cup-spotify-srt-toggle');
       if (launcher) launcher.remove();
+      const youtubeLauncher = document.getElementById('cup-youtube-srt-toggle');
+      if (youtubeLauncher) youtubeLauncher.remove();
+      if (window.__cupOpenSubtitlePanel === openSubtitlePanel) delete window.__cupOpenSubtitlePanel;
       // CSS-in-JS marker class we may have left on a player wrapper.
       document.querySelectorAll('.cup-shrink-target').forEach(el => el.classList.remove('cup-shrink-target'));
       if (window.__cupImportYouTubeSubtitles === importYouTubeSubtitles) {
@@ -3469,7 +3486,7 @@
       mediaUrl: site.mediaUrl,
       onOpenSubtitles: hasLocalPicker ? openLocalSubtitles : null,
       onSplitChange: on => {
-        if (!adaptedPlayer) return;
+        if (!adaptedPlayer && site.id !== 'youtube') return;
         spotifyPanelOpen = on;
         updateSpotifyControls();
       },
@@ -3489,14 +3506,27 @@
       },
     });
 
+    function openSubtitlePanel() {
+      if (!isWatchPage() && !adaptedPlayer) return false;
+      spotifyPanelOpen = true;
+      ui.buildSidebar();
+      ui.setVideoElement(getPlayer());
+      ui.setSplit(true);
+      updateSpotifyControls();
+      return true;
+    }
+    window.__cupOpenSubtitlePanel = openSubtitlePanel;
+
     function updateSpotifyControls() {
-      if (!adaptedPlayer) return;
-      let button = document.getElementById('cup-spotify-srt-toggle');
+      const youtube = site.id === 'youtube';
+      if (!adaptedPlayer && !youtube) return;
+      const id = youtube ? 'cup-youtube-srt-toggle' : 'cup-spotify-srt-toggle';
+      let button = document.getElementById(id);
       if (!button) {
         button = document.createElement('button');
-        button.id = 'cup-spotify-srt-toggle';
+        button.id = id;
         button.type = 'button';
-        button.textContent = 'SRT';
+        button.textContent = youtube ? 'SRT · Capture' : 'SRT';
         button.title = 'Show or hide the SRT subtitle panel';
         button.setAttribute('aria-label', 'SRT subtitle panel');
         button.className = 'cup-nolookup';
@@ -3512,6 +3542,13 @@
         document.body.appendChild(button);
       }
       button.setAttribute('aria-expanded', String(spotifyPanelOpen ?? isWatchPage()));
+      button.hidden = youtube && !isWatchPage();
+      if (youtube) {
+        ui.showNotice(!window.YouTubeSubtitles
+          ? 'Update Cupitor to download a full YouTube SRT. Live captions can still be selected and sent.'
+          : !ui.cueCount ? 'Use ⤓CC to download subtitles, then ☑ to select lines and ⤴ to capture them.' : '');
+        return;
+      }
       const hasMedia = !!site.mediaKey();
       ui.setImportAvailable(hasMedia);
       ui.showNotice(!hasLocalPicker
@@ -3938,7 +3975,9 @@
       restoreDownload();
       const v = getPlayer();
       if (v) ui.setVideoElement(v);
-      const want = adaptedPlayer ? (spotifyPanelOpen ?? isWatchPage()) : isWatchPage() && !!v;
+      const want = adaptedPlayer ? (spotifyPanelOpen ?? isWatchPage())
+        : site.id === 'youtube' ? isWatchPage() && (spotifyPanelOpen ?? true)
+          : isWatchPage() && !!v;
       if (want) ui.buildSidebar();
       ui.setSplit(want);
       updateSpotifyControls();
