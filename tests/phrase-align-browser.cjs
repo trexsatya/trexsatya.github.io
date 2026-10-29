@@ -22,6 +22,8 @@ const xml = '<?xml version="1.0" encoding="utf-8"?>'
     await page.waitForFunction(() => typeof window.phraseAlignBrowserTest === 'function');
     const result = await page.evaluate(xml => window.phraseAlignBrowserTest(xml), xml);
     console.log('First-note alignment coordinates:',JSON.stringify(result));
+    console.log('SVG time classes:', await page.evaluate(() => [...document.querySelectorAll('[class*="time"]')].slice(0,30).map(e => ({tag:e.tagName,cls:e.getAttribute('class'),html:e.outerHTML.slice(0,180)}))));
+    await page.screenshot({path:'phrase-align-browser.png',fullPage:true});
     assert.equal(result.wrapped.length,0,'Comparison phrases unexpectedly wrapped');
     assert.ok(result.systems.length >= 2,'Expected at least two staff systems');
     assert.ok(result.delta <= 2,'First-note positions differ by '+result.delta.toFixed(2)+'px');
