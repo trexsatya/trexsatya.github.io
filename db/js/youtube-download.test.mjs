@@ -17,11 +17,19 @@ const lines = [
   {start: 20, end: 24, text: 'Andra meningen'},
 ];
 
-function boot({bridge = true, translate = false, storage, address = url(id)} = {}) {
+function boot({bridge = true, translate = false, storage, address = url(id), requireTrustedHTML = false} = {}) {
   const dom = new JSDOM('<html><head><title>A video</title></head><body><div id="movie_player"><video></video><div class="ytp-caption-window-container"><span class="ytp-caption-segment"></span></div></div></body></html>', {
     url: address, runScripts: 'outside-only', pretendToBeVisual: true,
   });
   const {window} = dom;
+  const innerHTML = Object.getOwnPropertyDescriptor(window.Element.prototype, 'innerHTML');
+  // Model YouTube's require-trusted-types-for 'script' CSP. Browser coverage
+  // also enforces it through a real response header.
+  if (requireTrustedHTML) {
+    Object.defineProperty(window.Element.prototype, 'innerHTML', {
+      ...innerHTML, set() { throw new TypeError('This document requires TrustedHTML assignment'); },
+    });
+  }
   window.console = {log() {}, warn() {}, error() {}, info() {}};
   const intervals = new Map();
   let timer = 0;
@@ -50,7 +58,10 @@ function boot({bridge = true, translate = false, storage, address = url(id)} = {
     click: act => window.document.querySelector(`[data-act="${act}"]`).click(),
     navigate: video => window.history.pushState({}, '', url(video)),
     get plays() { return plays; },
-    close: () => window.close(),
+    close: () => {
+      Object.defineProperty(window.Element.prototype, 'innerHTML', innerHTML);
+      window.close();
+    },
   };
   return result;
 }
@@ -64,6 +75,32 @@ test('YouTube download button invokes the native flow; older app versions hide i
     assert.deepEqual(p.requests, [{op: 'download'}]);
     assert.equal(old.window.document.querySelector('[data-act="download"]').style.display, 'none');
   } finally { p.close(); old.close(); }
+});
+
+test('SRT opens, imports, translates, captures and clears without HTML injection sinks', () => {
+  const p = boot({address: 'https://m.youtube.com/watch?v=' + id, requireTrustedHTML: true});
+  try {
+    const button = p.window.document.getElementById('cup-youtube-srt-toggle');
+    p.click('split');
+    button.click();
+    assert.equal(p.window.document.body.classList.contains('cup-sub-split'), true);
+    p.click('download');
+    assert.deepEqual(p.requests, [{op: 'download'}]);
+    assert.equal(p.import(), true);
+    assert.equal(p.rows().length, 2);
+    p.click('translate');
+    assert.ok(p.translations.length >= 2);
+    p.window.__cupTranslated(p.translations[0].id, '<b>First</b>');
+    assert.equal(p.window.document.querySelector('.cup-sub-tr').textContent, '<b>First</b>');
+    assert.equal(p.window.document.querySelector('.cup-sub-tr b'), null);
+    p.click('settings');
+    p.window.document.querySelector('[data-f="source"]').value = 'de';
+    p.window.document.querySelector('.cup-sub-modal [data-act="save"]').click();
+    p.click('pick'); p.rows()[0].click(); p.click('send');
+    assert.equal(p.captures.length, 1);
+    p.click('clear');
+    assert.equal(p.rows().length, 0);
+  } finally { p.close(); }
 });
 
 test('mobile YouTube has a visible SRT capture launcher; closing stays closed until reopened', () => {
