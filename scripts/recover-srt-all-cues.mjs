@@ -119,7 +119,7 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
         // An extra language such as sv-orig can exceed the pack budget.
         // Do not break previously loadable tracks just to move that variant.
         const prospective={...packs.get(target),[name]:selected.text};
-        if(Object.keys(prospective).length<=storage.maxFiles && size(prospective)<=storage.maxBytes)
+        if(Object.keys(prospective).length<=storage.maxFiles && size(prospective)<=Math.max(storage.maxBytes,2*1024*1024))
           move(selected,target,name);
       }
       entry.bundle=target;
@@ -279,6 +279,13 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
       if(preexistingDuplicates.includes(id))preexistingUnreachable.push({id,lang:row.lang});
       else errors.push({id,lang:row.lang,issue:'unloadable sibling'});
     }
+  }
+  // Every affected media/language must now be discoverable through its index.
+  for(const id of touchedMedia){
+    const entry=idx.get(id);
+    if(!entry)continue;
+    for(const lang of new Set(group(id).map(r=>r.lang)))
+      if(!indexedRow(entry,lang))errors.push({id,lang,issue:'no indexed active language track'});
   }
   const modified=new Map();
   for(const [path,files] of packs){
