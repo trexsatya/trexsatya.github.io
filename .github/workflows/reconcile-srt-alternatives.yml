@@ -1,0 +1,39 @@
+name: Reconcile all subtitle alternatives (review branch)
+on:
+  push:
+    branches: [recover/all-historical-srt-cues]
+    paths:
+      - scripts/reconcile-srt-alternatives.mjs
+      - scripts/verify-srt-alternatives.mjs
+      - .github/workflows/reconcile-srt-alternatives.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    if: github.repository == 'trexsatya/trexsatya.github.io' && github.ref == 'refs/heads/recover/all-historical-srt-cues'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore additional cues and publish exact conflicted alternatives
+        run: |
+          node scripts/reconcile-srt-alternatives.mjs --apply
+          node scripts/reconcile-srt-alternatives.mjs --verify
+          node scripts/verify-srt-alternatives.mjs
+          git diff --check
+          git add db/language/swedish/srts/ srt-recovery-report/alternatives-resolution.json srt-recovery-report/reconciled-alternatives/
+          if git diff --cached --quiet; then
+            echo "No further subtitle alternative changes; preserving current branch"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Restore duplicate-only cues and publish every conflicting subtitle alternative"
+          git push origin HEAD:refs/heads/recover/all-historical-srt-cues
