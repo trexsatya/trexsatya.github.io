@@ -105,6 +105,19 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
     if([...langCount.values()].some(n=>n>1)) {
       preexistingDuplicates.push(id);
       if(duplicateSamples.length<9)duplicateSamples.push({id,index:{pack:entry.bundle,base:entry.bundleKey||entry.name},copies:siblings.map(r=>({pack:r.pack,base:baseOf(r.name),lang:r.lang}))});
+      // Keep every duplicate copy, but make ONE existing copy of each language
+      // reachable via the indexed pack/base. Relocate, never duplicate/delete.
+      const canonical=entry.bundleKey||entry.name;
+      const target=packs.has(entry.bundle)?entry.bundle:siblings[0].pack;
+      for(const lang of langCount.keys()) {
+        if(indexedRow(entry,lang))continue;
+        const candidates=siblings.filter(row=>row.lang===lang).sort((a,b)=>
+          Number(b.pack===target)-Number(a.pack===target)
+          ||Number(baseOf(b.name)===canonical)-Number(baseOf(a.name)===canonical)
+          ||a.name.localeCompare(b.name));
+        move(candidates[0],target,canonical+'.'+lang+'.srt');
+      }
+      entry.bundle=target;
       continue;
     }
     const canonical=entry.bundleKey||entry.name;
