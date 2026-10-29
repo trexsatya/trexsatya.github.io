@@ -1,0 +1,31 @@
+name: Verify restored captured context
+
+on:
+  pull_request:
+    paths:
+      - db/language/swedish/srts/**
+      - scripts/fordomelse-recovery.test.mjs
+      - .github/workflows/fordomelse-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    # This preservation certificate compares one repair with a fixed baseline.
+    # Later subtitle authoring PRs must not be held to that old inventory.
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'fix/restore-fordomelse-context'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch immutable comparison snapshots
+        run: |
+          git fetch --depth=1 origin 6e075167bf3274c338ba37611b9b140faa90885c f350695ef963a96732fb6fda2efafee1cb003c2f a9471feabddbbb3d3ea8faf5bef404c725cc7e7f
+      - name: Verify all 14 cues, unchanged subtitles and cache revisions
+        run: node --test scripts/fordomelse-recovery.test.mjs
