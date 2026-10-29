@@ -115,7 +115,12 @@ export function restore({dir=ROOT, archive=ARCHIVE, historicalIndex=null}={}) {
           Number(b.pack===target)-Number(a.pack===target)
           ||Number(baseOf(b.name)===canonical)-Number(baseOf(a.name)===canonical)
           ||a.name.localeCompare(b.name));
-        move(candidates[0],target,canonical+'.'+lang+'.srt');
+        const selected=candidates[0], name=canonical+'.'+lang+'.srt';
+        // An extra language such as sv-orig can exceed the pack budget.
+        // Do not break previously loadable tracks just to move that variant.
+        const prospective={...packs.get(target),[name]:selected.text};
+        if(Object.keys(prospective).length<=storage.maxFiles && size(prospective)<=storage.maxBytes)
+          move(selected,target,name);
       }
       entry.bundle=target;
       continue;
