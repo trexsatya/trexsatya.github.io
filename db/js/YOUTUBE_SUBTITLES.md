@@ -84,11 +84,17 @@ native stacking above the player. Browser checks exercise actual touch/mouse
 hit targets and control handlers before resizing, after resizing and after
 closing the subtitle panel.
 
-The shared `20-caption-sidebar.js` also accepts optional `onWord`, `onCapture`
-and asynchronous `translateText` callbacks for the language app's local-file
-player. That app mirrors this source verbatim as `language/caption-sidebar.js`;
-update both copies when changing the component. Using `translateText` leaves the
-embedding app's `window.__cupTranslated` callback intact.
+The canonical runtime source is now in `trexsatya/cupitor`, under
+`frontend/vue3/cupitor-frontend/public/page-scripts/`, with the shared subtitle
+component at `public/language/caption-sidebar.js`. Cupitor's production build
+packages the minified `snippet.js` and `frame-boot.js` and publishes them to this
+repository's existing `db/js/` paths. Native app URLs remain unchanged.
+
+After the deployment manifest lists these endpoints, `sh db/js/build.sh --check`
+validates the delivered scripts. Rebuilding from this repository's legacy source
+copy is blocked; make runtime changes and run source tests in Cupitor instead.
+The browser regression here executes the delivered bundle, including its
+Trusted Types behavior. Legacy sources remain available for baseline comparison.
 
 In a compatible Cupitor app, the YouTube sidebar's **⤓CC** button asks the
 native `YouTubeSubtitles` JavaScript channel to download the current video's
@@ -117,16 +123,10 @@ timeline. Up to five downloaded tracks are remembered in `sessionStorage`,
 and returning to one of those videos restores its track. Clear removes it
 from both the panel and that session cache.
 
-Regenerate `snippet.js` after changing the numbered sources:
+For runtime changes, edit Cupitor's canonical sources and run its build and
+tests. This repository can still validate the published bundle:
 
 ```sh
-sh db/js/build.sh
-CUPITOR_JSDOM=/path/to/jsdom node --test db/js/youtube-download.test.mjs
-CUPITOR_JSDOM=/path/to/jsdom node db/js/caption-capture.test.mjs
-CUPITOR_JSDOM=/path/to/jsdom node db/js/caption-link.test.mjs
-CUPITOR_CHROME_PATH=/path/to/chrome node --test db/js/youtube-layout.browser.cjs
+sh db/js/build.sh --check
+CUPITOR_CHROME_PATH=/path/to/chrome node --test tests/youtube-caption-browser.cjs
 ```
-
-The app update is in `trexsatya/cupitor-flutter`; the two changes can be merged
-in either order. Refresh the video page after both are deployed. Older apps
-continue their existing caption capture flow without a download button.

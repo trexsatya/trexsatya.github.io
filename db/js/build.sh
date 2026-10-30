@@ -21,6 +21,20 @@
 set -e
 cd "$(dirname "$0")"
 
+# Once Cupitor publishes these endpoints, its deployment manifest owns them.
+# Validate the delivered files; never rebuild them from the legacy source copy.
+if command -v node > /dev/null 2>&1 && [ -f ../../.cupitor-deployed-files.json ] &&
+   node -e 'const m=require("../../.cupitor-deployed-files.json");process.exit(Array.isArray(m.files)&&["db/js/snippet.js","db/js/frame-boot.js"].every(f=>m.files.includes(f))?0:1)'; then
+  if [ "$1" != "--check" ]; then
+    echo 'Runtime scripts are built in trexsatya/cupitor. Edit and build them there.' >&2
+    exit 1
+  fi
+  node --check snippet.js
+  node --check frame-boot.js
+  echo 'Cupitor-built runtime scripts parse successfully; source checks run in Cupitor.'
+  exit 0
+fi
+
 CHECK_ONLY=no
 if [ "$1" = "--check" ]; then CHECK_ONLY=yes; fi
 
