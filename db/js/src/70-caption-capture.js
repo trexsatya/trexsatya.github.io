@@ -40,7 +40,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 29;
+    const CAPS_VERSION = 30;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
@@ -56,6 +56,7 @@
       if (oldSidebar) oldSidebar.remove();
       document.body.classList.remove('cup-sub-split');
       document.body.classList.remove('cup-sub-spotify');
+      if (youtubeLayout) youtubeLayout.dispose();
       const launcher = document.getElementById('cup-spotify-srt-toggle');
       if (launcher) launcher.remove();
       const youtubeLauncher = document.getElementById('cup-youtube-srt-toggle');
@@ -93,6 +94,8 @@
     }
     const adaptedPlayer = typeof site.createPlayer === 'function' ? site.createPlayer() : null;
     const getPlayer = () => adaptedPlayer || document.querySelector('video');
+    const youtubeLayout = site.id === 'youtube' && typeof shared.createYouTubeSplitLayout === 'function'
+      ? shared.createYouTubeSplitLayout(getPlayer) : null;
     const hasLocalPicker = !!(window.LocalSubtitles && typeof window.LocalSubtitles.postMessage === 'function');
     let spotifyPanelOpen = null;
     if (adaptedPlayer) window.__cupCaptionPlayer = adaptedPlayer;
@@ -599,8 +602,9 @@
           : isWatchPage() && !!v;
       if (want) ui.buildSidebar();
       ui.setSplit(want);
+      if (youtubeLayout) youtubeLayout.update();
       updateSpotifyControls();
-      if (want && v && !adaptedPlayer) {
+      if (want && v && !adaptedPlayer && !youtubeLayout) {
         const wrap = findPlayerContainer(v);
         if (wrap && wrap !== lastMarked) {
           if (lastMarked) lastMarked.classList.remove('cup-shrink-target');
