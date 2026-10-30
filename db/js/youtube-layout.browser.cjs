@@ -30,7 +30,7 @@ const fixture = `<!doctype html><html><head><style>
 let browser;
 before(async () => {
   browser = await chromium.launch({
-    executablePath: process.env.CUPITOR_CHROME_PATH || '/usr/bin/google-chrome',
+    executablePath: process.env.CUPITOR_CHROME_PATH,
     headless: true, args: ['--no-sandbox'],
   });
 });

@@ -17,4 +17,4 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: sh db/js/build.sh --check
       - run: node --test db/js/*.test.mjs
-      - run: node --test tests/youtube-caption-browser.cjs
+      - run: node --test tests/youtube-caption-browser.cjs db/js/youtube-layout.browser.cjs
