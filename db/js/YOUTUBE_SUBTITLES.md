@@ -58,9 +58,15 @@ can open before the video element has rendered; **⤓CC** downloads a complete
 track, **☑** selects lines and **⤴** sends the selection to Cupitor. Closing the
 panel stays closed across discovery ticks until the launcher is tapped again.
 
-`window.__cupOpenSubtitlePanel()` provides the same entry point for the native
-app's CC button and returns false outside video pages. The native button can
-fall back to its existing full-track capture dialog if page injection failed.
+`window.__cupOpenSubtitlePanel()` opens the panel and returns false outside
+video pages. The native app's CC button lists caption tracks directly, then
+imports the chosen track into the playing page's panel.
+
+The video height cap uses the split viewport height, rather than a percentage
+of its immediate parent. Mobile YouTube positions the video absolutely in a
+zero-height wrapper; a `100%` cap collapsed it to zero when the panel opened.
+The cap applies only while split view is active, so closing restores the
+player's own layout.
 
 The shared `20-caption-sidebar.js` also accepts optional `onWord`, `onCapture`
 and asynchronous `translateText` callbacks for the language app's local-file
@@ -102,6 +108,7 @@ sh db/js/build.sh
 CUPITOR_JSDOM=/path/to/jsdom node --test db/js/youtube-download.test.mjs
 CUPITOR_JSDOM=/path/to/jsdom node db/js/caption-capture.test.mjs
 CUPITOR_JSDOM=/path/to/jsdom node db/js/caption-link.test.mjs
+CUPITOR_CHROME_PATH=/path/to/chrome node --test db/js/youtube-layout.browser.cjs
 ```
 
 The app update is in `trexsatya/cupitor-flutter`; the two changes can be merged

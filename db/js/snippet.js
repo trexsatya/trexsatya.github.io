@@ -206,11 +206,11 @@
 
     function injectCss() {
       const existing = document.getElementById('cup-sub-css');
-      if (existing && existing.dataset.version === '23') return;
+      if (existing && existing.dataset.version === '24') return;
       if (existing) existing.remove();
       const s = document.createElement('style');
       s.id = 'cup-sub-css';
-      s.dataset.version = '23';
+      s.dataset.version = '24';
       // Build per-site CSS. The host module also marks the player wrapper
       // at runtime with .cup-shrink-target so we shrink the *container*
       // (which holds overlay controls) rather than just the <video>
@@ -226,7 +226,9 @@
           max-height: var(--cup-vid-h) !important;
           bottom: auto !important;
         }
-        body.${state.bodyClass} video { max-height: 100% !important; }
+        /* YouTube's absolutely positioned video can live in a zero-height
+           wrapper. A percentage cap resolves to zero there and hides it. */
+        body.${state.bodyClass} video { max-height: var(--cup-vid-h) !important; }
         body.${state.bodyClass} .cup-sub-sidebar { display: flex !important; }
 
         .cup-sub-sidebar {
@@ -3417,7 +3419,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 28;
+    const CAPS_VERSION = 29;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
