@@ -77,6 +77,13 @@ the picture without cropping as the divider moves. Rotation and replacement
 players recalculate the frame bounds; closing the panel and teardown release
 the adapter's classes, CSS variables and listeners.
 
+The adapter preserves YouTube's native control layers. The empty mobile
+`#player-control-container` keeps its original geometry, so hidden controls
+cannot intercept taps on the video. Volume and settings popups keep their
+native stacking above the player. Browser checks exercise actual touch/mouse
+hit targets and control handlers before resizing, after resizing and after
+closing the subtitle panel.
+
 The shared `20-caption-sidebar.js` also accepts optional `onWord`, `onCapture`
 and asynchronous `translateText` callbacks for the language app's local-file
 player. That app mirrors this source verbatim as `language/caption-sidebar.js`;

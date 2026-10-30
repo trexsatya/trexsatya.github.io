@@ -1842,18 +1842,26 @@
         min-height: 0 !important; padding: 0 !important;
         box-sizing: border-box !important; overflow: hidden !important;
         transition: none !important;
-        z-index: 2147483644 !important;
       }
       body.cup-sub-split .${marker} #player,
       body.cup-sub-split .${marker} #movie_player,
       body.cup-sub-split .${marker} .html5-video-player,
-      body.cup-sub-split .${marker} .html5-video-container,
-      body.cup-sub-split .${marker} #player-control-container {
+      body.cup-sub-split .${marker} .html5-video-container {
         position: absolute !important; inset: 0 !important;
         width: 100% !important; height: 100% !important;
         max-height: 100% !important; min-height: 0 !important;
         padding: 0 !important; aspect-ratio: auto !important;
         transition: none !important;
+      }
+      /* Mobile controls are siblings of #player. Keep their native wrapper
+         unexpanded: an empty full-frame wrapper intercepts video taps even
+         while the actual controls are hidden. Order the visible overlay over
+         the media without raising the whole player over YouTube's popups. */
+      body.cup-sub-split #player-container-id.${marker} #player {
+        z-index: 0 !important;
+      }
+      body.cup-sub-split #player-container-id.${marker} #player-control-overlay {
+        z-index: 1 !important;
       }
       body.cup-sub-split .${marker} .html5-video-container {
         transform: none !important;
@@ -3522,7 +3530,7 @@
     // Version tag: bump whenever the snippet changes in a way that requires
     // tearing down the previous install (new UI, new state shape, etc).
     // The previous install's tear-down hook clears its sidebar + intervals.
-    const CAPS_VERSION = 30;
+    const CAPS_VERSION = 31;
     const prev = window.__cupCapsInstalled;
     if (prev && typeof prev === 'object' && prev.version >= CAPS_VERSION) return;
     if (prev && typeof prev === 'object' && typeof prev.teardown === 'function') {
