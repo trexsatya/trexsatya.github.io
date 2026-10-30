@@ -22,18 +22,26 @@
         min-height: 0 !important; padding: 0 !important;
         box-sizing: border-box !important; overflow: hidden !important;
         transition: none !important;
-        z-index: 2147483644 !important;
       }
       body.cup-sub-split .${marker} #player,
       body.cup-sub-split .${marker} #movie_player,
       body.cup-sub-split .${marker} .html5-video-player,
-      body.cup-sub-split .${marker} .html5-video-container,
-      body.cup-sub-split .${marker} #player-control-container {
+      body.cup-sub-split .${marker} .html5-video-container {
         position: absolute !important; inset: 0 !important;
         width: 100% !important; height: 100% !important;
         max-height: 100% !important; min-height: 0 !important;
         padding: 0 !important; aspect-ratio: auto !important;
         transition: none !important;
+      }
+      /* Mobile controls are siblings of #player. Keep their native wrapper
+         unexpanded: an empty full-frame wrapper intercepts video taps even
+         while the actual controls are hidden. Order the visible overlay over
+         the media without raising the whole player over YouTube's popups. */
+      body.cup-sub-split #player-container-id.${marker} #player {
+        z-index: 0 !important;
+      }
+      body.cup-sub-split #player-container-id.${marker} #player-control-overlay {
+        z-index: 1 !important;
       }
       body.cup-sub-split .${marker} .html5-video-container {
         transform: none !important;
