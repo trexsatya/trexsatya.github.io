@@ -1841,6 +1841,7 @@
         max-height: max(1px, calc(var(--cup-vid-h) - var(--cup-youtube-top))) !important;
         min-height: 0 !important; padding: 0 !important;
         box-sizing: border-box !important; overflow: hidden !important;
+        transition: none !important;
         z-index: 2147483644 !important;
       }
       body.cup-sub-split .${marker} #player,
@@ -1852,6 +1853,7 @@
         width: 100% !important; height: 100% !important;
         max-height: 100% !important; min-height: 0 !important;
         padding: 0 !important; aspect-ratio: auto !important;
+        transition: none !important;
       }
       body.cup-sub-split .${marker} .html5-video-container {
         transform: none !important;
@@ -1862,6 +1864,7 @@
         max-width: 100% !important; max-height: 100% !important;
         margin: 0 !important; transform: none !important;
         object-fit: contain !important;
+        transition: none !important;
       }
     `;
     (document.head || document.documentElement).appendChild(style);

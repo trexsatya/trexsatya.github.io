@@ -181,8 +181,11 @@ test('touch dragging and later inline player rewrites cannot crop the video', as
         document.dispatchEvent(new TouchEvent('touchmove', {bubbles: true, cancelable: true, touches: [touch(y)]}));
         document.dispatchEvent(new TouchEvent('touchend', {bubbles: true, changedTouches: [touch(y)]}));
         const video = document.querySelector('video');
-        Object.assign(video.style, {width: '900px', height: '506px', top: '300px', left: '-80px'});
+        Object.assign(video.style, {width: '900px', height: '506px', top: '300px', left: '-80px', transition: 'all 1.5s'});
+        video.parentElement.style.transition = 'all 1.5s';
       }, y);
+      assert.equal(await page.locator('video').evaluate(video => getComputedStyle(video).transitionDuration), '0s');
+      assert.equal(await page.locator('.html5-video-container').evaluate(frame => getComputedStyle(frame).transitionDuration), '0s');
       await assertWholePicture(page);
       await tick();
       await assertWholePicture(page);
