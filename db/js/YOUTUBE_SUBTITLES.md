@@ -59,14 +59,23 @@ track, **☑** selects lines and **⤴** sends the selection to Cupitor. Closing
 panel stays closed across discovery ticks until the launcher is tapped again.
 
 `window.__cupOpenSubtitlePanel()` opens the panel and returns false outside
-video pages. The native app's CC button lists caption tracks directly, then
-imports the chosen track into the playing page's panel.
+video pages. Use the panel's **⤓CC** button to choose and download caption
+tracks into the playing page. The redundant native floating CC button is
+removed in the companion app change.
 
 The video height cap uses the split viewport height, rather than a percentage
 of its immediate parent. Mobile YouTube positions the video absolutely in a
 zero-height wrapper; a `100%` cap collapsed it to zero when the panel opened.
 The cap applies only while split view is active, so closing restores the
 player's own layout.
+
+YouTube also needs its complete player frame resized together. The dedicated
+`26-youtube-split-layout.js` adapter fits the mobile aspect-ratio wrapper,
+video container and native controls into the area between the page header
+and the divider. It overrides stale inline centering offsets and contains
+the picture without cropping as the divider moves. Rotation and replacement
+players recalculate the frame bounds; closing the panel and teardown release
+the adapter's classes, CSS variables and listeners.
 
 The shared `20-caption-sidebar.js` also accepts optional `onWord`, `onCapture`
 and asynchronous `translateText` callbacks for the language app's local-file
