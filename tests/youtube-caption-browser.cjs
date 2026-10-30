@@ -4,9 +4,10 @@ const path = require('node:path');
 const {test, before, after} = require('node:test');
 const {chromium} = require('playwright');
 const {execFileSync} = require('node:child_process');
-const sources = ['20-caption-sidebar.js', '26-youtube-split-layout.js', '30-caption-sites.js', '70-caption-capture.js'].map(name =>
+const sources = process.env.CUPITOR_BASELINE ? ['20-caption-sidebar.js', '26-youtube-split-layout.js', '30-caption-sites.js', '70-caption-capture.js'].map(name =>
   process.env.CUPITOR_BASELINE ? execFileSync('git', ['show', 'origin/gh-pages:db/js/src/' + name], {encoding: 'utf8'}) :
-    fs.readFileSync(path.join(__dirname, '../db/js/src', name), 'utf8'));
+    fs.readFileSync(path.join(__dirname, '../db/js/src', name), 'utf8'))
+  : [fs.readFileSync(process.env.CUPITOR_RUNTIME_BUNDLE || path.join(__dirname, '../db/js/snippet.js'), 'utf8')];
 let browser;
 before(async () => { browser = await chromium.launch({executablePath: process.env.CUPITOR_CHROME_PATH, headless: true, args: ['--no-sandbox']}); });
 after(async () => { await browser?.close(); });
