@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "bb7c10de620bfe7dab55dd59da3729d8e6c4cdd8",
+  "sourceRevision": "ffb9ec6e0f5478e302ed4750a77876a824d793de",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -240,6 +240,7 @@
     "music_search.js",
     "musicxml.js",
     "notepad.html",
+    "play-composites.js",
     "play-flow.js",
     "play-layers.js",
     "play-recorder.js",
@@ -252,7 +253,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.3c236f6df70aef4c0f10ca59ebf6ccc5.js",
+    "precache-manifest.cb2c07e156d62d813ff94f0aaf23b113.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
