@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "735f98db0527517bb5eb0748e08a17fa1e354204",
+  "sourceRevision": "b5b088f9f6d17eb4a1b20e9bb605ceab17248b64",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -137,6 +137,8 @@
     "language/owner-label.js",
     "language/package.json",
     "language/play-queue.js",
+    "language/playlist-browser.js",
+    "language/playlist-folders.js",
     "language/practice-clip.js",
     "language/practice-gestures.js",
     "language/practice-log.js",
@@ -250,7 +252,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.6de9fba9cffcb63707ac015ccb451ac5.js",
+    "precache-manifest.ff535fb6cccc78ec71873b3c442ccb69.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
