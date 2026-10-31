@@ -5,7 +5,8 @@
       "name": "assimilation",
       "meta": {
         "createdAt": 1789816199538,
-        "updatedAt": 1793262911944
+        "updatedAt": 1793437301377,
+        "folder": "Swedish Language"
       },
       "hasItems": true,
       "parts": [
@@ -13,19 +14,11 @@
       ]
     },
     {
-      "name": "Default",
-      "meta": {
-        "createdAt": 1783422000111,
-        "updatedAt": 1792914029191
-      },
-      "hasItems": true,
-      "parts": []
-    },
-    {
       "name": "Demokrati",
       "meta": {
         "createdAt": 1791462047157,
-        "updatedAt": 1791462159668
+        "updatedAt": 1793436768680,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -36,7 +29,8 @@
       "name": "Den sista resan | SVT Play",
       "meta": {
         "createdAt": 1791231065601,
-        "updatedAt": 1792052138447
+        "updatedAt": 1793436660648,
+        "folder": "Films & Series"
       },
       "hasItems": true,
       "parts": [
@@ -47,7 +41,8 @@
       "name": "Familjen Andersson",
       "meta": {
         "createdAt": 1791481533108,
-        "updatedAt": 1791983656896
+        "updatedAt": 1793436660648,
+        "folder": "Films & Series"
       },
       "hasItems": true,
       "parts": [
@@ -58,7 +53,8 @@
       "name": "Fysiska rörelser",
       "meta": {
         "createdAt": 1793036039771,
-        "updatedAt": 1793123296543
+        "updatedAt": 1793436793904,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -69,7 +65,8 @@
       "name": "Globalisering",
       "meta": {
         "createdAt": 1790242074650,
-        "updatedAt": 1792079163377
+        "updatedAt": 1793436806533,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -80,7 +77,8 @@
       "name": "Högtider i världen – bilduttryck",
       "meta": {
         "createdAt": 1792404992627,
-        "updatedAt": 1792404992627
+        "updatedAt": 1793436820623,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -91,7 +89,8 @@
       "name": "Indiska högtider – bilduttryck",
       "meta": {
         "createdAt": 1792402975482,
-        "updatedAt": 1792416606914
+        "updatedAt": 1793436828330,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -102,7 +101,8 @@
       "name": "Konferensrum AV",
       "meta": {
         "createdAt": 1792051200000,
-        "updatedAt": 1792140996498
+        "updatedAt": 1793436835616,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -113,7 +113,8 @@
       "name": "Ljus",
       "meta": {
         "createdAt": 1793045122766,
-        "updatedAt": 1793045122766
+        "updatedAt": 1793436847779,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -124,7 +125,8 @@
       "name": "Muntlig interaktion - 4",
       "meta": {
         "createdAt": 1789890911512,
-        "updatedAt": 1790141665973
+        "updatedAt": 1793436866615,
+        "folder": "Books"
       },
       "hasItems": true,
       "parts": [
@@ -135,7 +137,8 @@
       "name": "Muntlig interaktion i akademiska sammanhang - 3",
       "meta": {
         "createdAt": 1789188815044,
-        "updatedAt": 1790144532438
+        "updatedAt": 1793436873197,
+        "folder": "Books"
       },
       "hasItems": true,
       "parts": [
@@ -146,7 +149,8 @@
       "name": "Muntlig interaktion i akademiska sammanhang – 2",
       "meta": {
         "createdAt": 1789050960797,
-        "updatedAt": 1789914378330
+        "updatedAt": 1793436879379,
+        "folder": "Books"
       },
       "hasItems": true,
       "parts": [
@@ -157,8 +161,9 @@
       "name": "Random-1",
       "meta": {
         "createdAt": 1791347958478,
-        "updatedAt": 1791833567965,
-        "random": true
+        "updatedAt": 1793436997172,
+        "random": true,
+        "folder": "Swedish Language"
       },
       "hasItems": true,
       "parts": [
@@ -169,8 +174,9 @@
       "name": "Random-2",
       "meta": {
         "createdAt": 1791386090830,
-        "updatedAt": 1792311091607,
-        "random": true
+        "updatedAt": 1793437003270,
+        "random": true,
+        "folder": "Swedish Language"
       },
       "hasItems": true,
       "parts": [
@@ -181,7 +187,7 @@
       "name": "REPRIS: Därför har du svårt att fokusera | Listen to the Pod",
       "meta": {
         "createdAt": 1792422786353,
-        "updatedAt": 1792744224494,
+        "updatedAt": 1793437322764,
         "notifKey": "reclist-1h0hr3ro89l2kji1",
         "callSettings": {
           "direction": "source-target",
@@ -190,7 +196,8 @@
           "max_retries": 3,
           "match_threshold": 0.8,
           "voice_response": true
-        }
+        },
+        "folder": "Health"
       },
       "hasItems": true,
       "parts": [
@@ -201,7 +208,8 @@
       "name": "SAS-1",
       "meta": {
         "createdAt": 1788184441734,
-        "updatedAt": 1789152770381
+        "updatedAt": 1793437089495,
+        "folder": "Swedish Language"
       },
       "hasItems": true,
       "parts": [
@@ -212,7 +220,8 @@
       "name": "Scener",
       "meta": {
         "createdAt": 1791530923654,
-        "updatedAt": 1792526112617
+        "updatedAt": 1793437102132,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -223,7 +232,8 @@
       "name": "Skilsmässobarn",
       "meta": {
         "createdAt": 1791888502179,
-        "updatedAt": 1792526100814
+        "updatedAt": 1793436660648,
+        "folder": "Films & Series"
       },
       "hasItems": true,
       "parts": [
@@ -234,7 +244,8 @@
       "name": "SVT Play - Diagnoser",
       "meta": {
         "createdAt": 1789752977087,
-        "updatedAt": 1791548813309
+        "updatedAt": 1793436660648,
+        "folder": "Films & Series"
       },
       "hasItems": true,
       "parts": [
@@ -245,7 +256,8 @@
       "name": "Taare Zameen Par - ord",
       "meta": {
         "createdAt": 1793221445029,
-        "updatedAt": 1793221472005
+        "updatedAt": 1793436750491,
+        "folder": "Films & Series"
       },
       "hasItems": true,
       "parts": []
@@ -254,7 +266,8 @@
       "name": "Taare Zameen Par – Svenskt manus",
       "meta": {
         "createdAt": 1792943820000,
-        "updatedAt": 1793262801133
+        "updatedAt": 1793436660648,
+        "folder": "Films & Series"
       },
       "hasItems": true,
       "parts": [
@@ -265,7 +278,8 @@
       "name": "Telefonsamtal",
       "meta": {
         "createdAt": 1793034002337,
-        "updatedAt": 1793034002337
+        "updatedAt": 1793437119975,
+        "folder": "General"
       },
       "hasItems": true,
       "parts": [
@@ -276,7 +290,8 @@
       "name": "Tillåt mig tvivla - bok",
       "meta": {
         "createdAt": 1791566486887,
-        "updatedAt": 1792672133675
+        "updatedAt": 1793437128500,
+        "folder": "Books"
       },
       "hasItems": true,
       "parts": [
@@ -287,36 +302,73 @@
       "name": "Tillåt mig tvivla - Ord",
       "meta": {
         "createdAt": 1791552147577,
-        "updatedAt": 1793219618377
+        "updatedAt": 1793437135016,
+        "folder": "Books"
       },
       "hasItems": true,
       "parts": [
-        "recordings/f46fe4d05cad2ee931f3438217b9b7f59ac9d213a81c484d9cedc0cdc8206c00.json"
-      ]
-    },
-    {
-      "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
-      "meta": {
-        "createdAt": 1792505467043,
-        "updatedAt": 1792833318132
-      },
-      "hasItems": true,
-      "parts": [
-        "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
+        "recordings/8f7dcd491ee7f284ee8aaab8929aac0ca6e9a0a8d91f9b01f83d030007b93c81.json"
       ]
     },
     {
       "name": "Verb och uttryck – lägga, ställa, sätta, ligga, stå, sitta",
       "meta": {
         "createdAt": 1792662313037,
-        "updatedAt": 1792757835559
+        "updatedAt": 1793437140921,
+        "folder": "Swedish Language"
       },
       "hasItems": true,
       "parts": [
         "recordings/eb8f724d4450e53da124d6a3fbf7a85b9540efdd7d65d29faa752e6acefde401.json"
       ]
+    },
+    {
+      "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
+      "meta": {
+        "createdAt": 1792505467043,
+        "updatedAt": 1793437155363,
+        "folder": "General"
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
+      ]
     }
   ],
+  "folders": {
+    "Filmer": {
+      "updatedAt": 1793436295014,
+      "deleted": true
+    },
+    "Filmer, Serier": {
+      "updatedAt": 1793436644612,
+      "deleted": true
+    },
+    "Books": {
+      "updatedAt": 1793436609013,
+      "deleted": false
+    },
+    "Films,Series": {
+      "updatedAt": 1793436660648,
+      "deleted": true
+    },
+    "Films & Series": {
+      "updatedAt": 1793436660648,
+      "deleted": false
+    },
+    "General": {
+      "updatedAt": 1793436750490,
+      "deleted": false
+    },
+    "Health": {
+      "updatedAt": 1793436947423,
+      "deleted": false
+    },
+    "Swedish Language": {
+      "updatedAt": 1793436980470,
+      "deleted": false
+    }
+  },
   "retiredParts": {
     "recordings/efa73a964e5835d82eea3d1febd1ae69c53293517707bed66d472504fbe0703d.json": 1792868170216,
     "recordings/2b2f3454a9a9b569afdc00d2fa8aee7493ea98cb0c0c3731776ee1ba857182c6.json": 1792868170216,
@@ -324,7 +376,8 @@
     "recordings/b74a230f68fdb30c28e8eed9bf69d1b64dc134989b8f327cfa8a83168bc1ec3a.json": 1793262559138,
     "recordings/3c48d03399448777f1ce268b3e99e8bf958841e8d91b7b801e32ed1fa0f28c06.json": 1793262559138,
     "recordings/4c3f91274b8e1e94faac737284e4da59830e9a5dc707b83e44eef5873a0353e5.json": 1793262559138,
-    "recordings/d62a28e57092351e976f6e1d805ac9a2a208d164f6dc7ebbf0d4b78dad231dec.json": 1793262920625
+    "recordings/d62a28e57092351e976f6e1d805ac9a2a208d164f6dc7ebbf0d4b78dad231dec.json": 1793262920625,
+    "recordings/f46fe4d05cad2ee931f3438217b9b7f59ac9d213a81c484d9cedc0cdc8206c00.json": 1793437376165
   },
-  "partsScannedAt": 1793262559138
+  "partsScannedAt": 1793437376165
 }
