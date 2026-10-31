@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "ffb9ec6e0f5478e302ed4750a77876a824d793de",
+  "sourceRevision": "37248ebef89b05b623862e9f16f48fbee66c6e98",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -199,6 +199,10 @@
     "language/vocab-search.js",
     "language/vocabulary-matcher.js",
     "language/word-forms.js",
+    "language/word-map-model.js",
+    "language/word-maps-entry.js",
+    "language/word-maps.css",
+    "language/word-maps.js",
     "language/youtube-media-adapter.js",
     "manifest.json",
     "music-analysis.js",
@@ -253,7 +257,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.cb2c07e156d62d813ff94f0aaf23b113.js",
+    "precache-manifest.e4c16c79e689632a5e5f0ad9ae78ddc5.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",

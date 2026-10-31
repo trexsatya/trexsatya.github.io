@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="language/word-maps.css?v=d71bbfe654">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
@@ -11,7 +12,7 @@
     <script type="text/javascript" src="/vendor/split-type.js"></script>
     <script type="text/javascript" src="/vendor/pagination.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap.min.js"></script>
-    <link href="/index.css?v=0cebf71133" rel="stylesheet"/>
+    <link href="/index.css?v=d71bbfe654" rel="stylesheet"/>
     <script type="text/javascript" src="/vendor/string-similarity.js"></script>
     <script type="text/javascript" src="/vendor/mediaelement.js"></script>
     <link href="/vendor/mediaelement-player.css" rel="stylesheet">
@@ -30,9 +31,9 @@
 
     <script src="/vendor/select2.min.js"></script>
     <script src="/vendor/lodash.js"></script>
-    <script src="/github-utils.js?v=0cebf71133"></script>
-    <script type="module" src="/data-structures.js?v=0cebf71133"></script>
-    <script type="module" src="/language/spanish.js?v=0cebf71133"></script>
+    <script src="/github-utils.js?v=d71bbfe654"></script>
+    <script type="module" src="/data-structures.js?v=d71bbfe654"></script>
+    <script type="module" src="/language/spanish.js?v=d71bbfe654"></script>
     <script>
       // The native Flutter lookup can arrive while deferred JavaScript imports
       // and document-ready handlers are still initializing. Hold the newest
@@ -46,8 +47,9 @@
         }
       });
     </script>
-    <script type="module" src="/language/language.js?v=0cebf71133"></script>
-    <link href="/language.css?v=0cebf71133" rel="stylesheet"/>
+    <script type="module" src="/language/language.js?v=d71bbfe654"></script>
+    <script type="module" src="/language/word-maps-entry.js?v=d71bbfe654"></script>
+    <link href="/language.css?v=d71bbfe654" rel="stylesheet"/>
     <link rel="stylesheet" href="/vendor/fontawesome-all.css">
     <style>
 
@@ -399,6 +401,7 @@
                         <button type="button" id="recReviewBtn" class="lang-tool-btn" style="margin-left:4px;">Playlists</button>
                         <span id="recStatus" style="margin-left:6px;font-size:12px;color:#888;"></span>
                     </span>
+                    <button type="button" id="wordMapsBtn" class="lang-tool-btn" onclick="openWordMaps()">Word maps</button>
                     <button id="addToVocabBtn" onclick="openAddToVocabDialog()" class="button-62" disabled>Add To Vocab</button>
                     <button id="saveStarredLinesBtn" onclick="saveStarredLines()" style="display: none;">Save Starred Lines</button>
                     <button id="reviewCapturedBtn" onclick="openCapturedSubtitlesReview()" style="display: none;">Review Captured</button>
