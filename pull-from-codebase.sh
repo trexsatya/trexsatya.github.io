@@ -10,7 +10,8 @@ if [ "$1" != "" ]; then
 	echo "API_URL = 'https://raw.githubusercontent.com/trexsatya/trexsatya.github.io/gh-pages/db/'" >> config.js
 	echo "PRELOAD_SEARCH = true" >> config.js
 	echo "WRITE_API_URL = 'https://cupitor-ghpages-backend.herokuapp.com/'" >> config.js
-	
+  find . -name '*.test.js' -delete
+  find . -name '*.test.mjs' -delete
 	# mkdir build/article
 	# mkdir build/articles
 	# cp build/index.html build/article
