@@ -126,6 +126,7 @@
 (perception, opinion)|uppfattning|uppfattningar|
 (perceive, sense)|förnimma|förnam|förnummit|
 (suspect, sense faintly)|ana(vdg.)|
+(Keep in mind)|<*ha på känn
 (sense of touch)|känsel|
 (feeling)|Känsla|Känslan|känslor|
 (emotional)|känslomässig|
@@ -367,7 +368,7 @@
 (announce, call for)|utlysa|utlyser|utlyste|utlyst|
 (announcement)|utlysning|utlysningar|
 (sudden)|plötslig|
-(spontaneous)|spontan|
+(spontaneous)|spontan|<*dra till med( gissning, förslag, handling)
 (impulsive)|Hals över huvud|
 (remark)|anmärka|påpeka|
 (expression, heed good advice but reject bad advice)|den råd lyder är vis, men oråd ska ingen lyda|
@@ -410,7 +411,7 @@
 (sit and ponder, sit by oneself)|kuckelura|
 (absorbed)|försjunken i tankar|absorberad i tankar|
 (immersed)|fördjupad|
-(reason, discuss)|resonera|
+(reason, discuss)|resonera|rationalisering|efterrationalisera
 (logic)|logik|logiker|
 (logical)|logisk|logiskt|
 (logician)|logikern|logiker|
@@ -435,7 +436,7 @@
 (information)|uppgift|uppgifter|information|informationer|
 (fact)|faktum|faktumet|fakta(pl-bestämd)|
 (Informer)|informant|
-(deepen)|fördjupa|sätta sig in i|
+(deepen)|fördjupa|<*sätta sig in i|
 (impression)|(få )intryck|
 (recognize)|känner igen mig|känna igen|
 (identify)|identifiera|
@@ -666,6 +667,7 @@
 (direct, orient)|rikta|rikta|inrikta|
 (be about)|<*handla om|
 (direction, orientation)|inriktning|
+(Weather cock/vane)|flöjel|vindflöjel|flöjel|vindflöjlar
 (plan)|planera|
 (plan, scheme)|plan|
 (prepare)|bereda|förbereda|
@@ -1230,7 +1232,7 @@
 (jealous)|svartsjuk|sotis|
 (envy, begrudgingness)|missunnsamhet|avundsjuka|avundsjukor|
 (envious)|avundsjuk|avis(slang)|aviser|
-(doubt)|tvivla|tvivel|betvivla|
+(doubt)|tvivla|tvivel|betvivla|skepsis|misstro
 (waver, hesitate)|vela|tveka|
 (torn)|I valet och kvalet|
 (undecided)|<*Stå som en åsna mellan två hötappar|<*sitta på två stolar samtidigt|
@@ -1536,6 +1538,8 @@
 (splash)|plaska|
 (splash)|plask|
 (splash)|plaska(i vatten)|
+(Lap)|Skvalpa
+(Ripple)|krusas|krusning
 
 #Physical activities: general actions
 (movement)|rörelse|rörelser|
@@ -1795,7 +1799,7 @@
 (inserted)|instucken|
 (forced, obliged)|tvingad|nödsakad|tvungen|nödd|
 (coercion)|tvång(sl-pl)|
-(impose)|påtvånga|
+(impose)|påtvinga|
 (force, compel)|tvinga|
 (strain, force)|krysta|
 (in a forced way)|(på) krystat sätt|
@@ -1827,7 +1831,7 @@
 (punch)|knytnävsslag|snyting|smocka|
 (riot)|upplopp|
 (quarrel)|(råka/vara) i luven på varandra|
-(quarrel)|gräl(sl-pl)|
+(quarrel)|gräl(sl-pl)|käbbel( smågräl)
 (quarrel, bicker)|gräla|gnabbas|tjivas|
 (bickering)|gnabbande|
 (explode)|brisera|explodera|krevera|
@@ -2272,6 +2276,7 @@
 (time of waiting)|väntans tider|
 (be imminent)|(smockan)<*hänga i luften|
 (surpass)|överlägsna|överträffa|
+(Upper hand)|överläge|(få )övertag|
 (not until, before)|förrän|förrän|
 (until)|fram till|fram till dess|
 (until)|fram till att (ngt)|
@@ -2613,7 +2618,7 @@
 (calmly, undisturbed)|I godan ro|
 (slowly but surely)|Sakta men säkert|
 (expression, a colossus with feet of clay, deceptively fragile)|(vara som) en koloss på lerfötter|
-(fast, quick)|snabb|hastig|rask|
+(fast, quick)|snabb|hastig|rask|ilfart
 (quickly)|fort|blixtsnabbt|
 (expression, as quick as lightning)|Snabb som blixten|Snabb som en skottspole|
 (brisk lads)|Raska gossar|
@@ -2925,7 +2930,7 @@
 (pour)|hälla|
 (scoop, ladle)| ösa|öser | öste| öst|
 (form, create)|bilda|skapa|
-(constitute)|utgöra|
+(constitute)|ut<*göra|
 (generate)|alstra|
 (forge)|smida|
 (procure)|beskaffa|
@@ -2965,7 +2970,7 @@
 (invention)|uppfinning|
 (breakthrough)|genombrott|
 (invent, think up)|påhitta|<*hitta på|<*komma på|
-(figure out)|<*lista ut|klura ut|
+(figure out)|<*lista ut|klura ut|<*komma underfund( med)
 (come up with)|<*komma med|
 (make up from nothing)|Gripa.* ur luften|skaka.* ur ärmen|
 (invent)|uppfinna|
@@ -3282,7 +3287,7 @@
 (make impossible)|omöjliggöra|
 (avert)|avvärja|avvärjer|avvärjde|avvärjt|avvärj|parera|avstyra|
 (slow down)|bromsa|
-(restrict, limit)|inskränka|begränsa|
+(restrict, limit)|inskränka|begränsa|<*sätta koppel på
 (hold back)|<*hålla igen|
 (ration)|ransonera|
 (suppress, stifle)|under<*trycka|dämpa|förkväva|tillbaka<*hålla|
@@ -3801,6 +3806,7 @@
 (spry)|spänstig|
 (smooth)|len( smooth to touch)|
 (soft)|mjuk|
+(Fluffy)|fluffig
 (Gracious)|graciös
 (slack, limp)|slak|
 (tender)|ömt|
@@ -3891,6 +3897,7 @@
 (expression, to err is human)|Det är mänskligt att fela|Även den bäste kan fela|
 (expression, two wrongs do not make a right)|Två fel gör inte ett rätt|
 (acceptable, satisfactory)|godtagbar|acceptabel|nöjaktig|tillfredsställande|
+(Accept)|anamma|godtaga|upptaga|antaga|<*ta till sig
 (be acceptable)| <*gå an |
 (sufficient)|tillräcklig|
 (fully adequate)|fullgod|fullgott|
@@ -3935,6 +3942,7 @@
 (marvelous)|vidunderlig|underbar|fantastisk|
 (extraordinary)|oerhörd|makalös|utomordentlig|ypperlig|oöverträffad|
 (extraordinarily, extremely)|oerhört|så in i norden|så in i vassen|
+(Bloody, damned)|sabla|djävla
 (outstanding,extraordinary)|ojämförlig|otrolig|storslagen|enastående|unik|som saknade motstycke|oslagbar|
 (irresistible)|oemotståndlig|
 (hardtobeat)|Svårslagen|
@@ -4023,6 +4031,7 @@
 (zeitgeist)|tidsanda|
 (expression, age alone does not make foolishness worthy of respect)|Man ska inte buga för dumheten bara för att den är gammal|
 (accepted, established)|vedertagen|
+(Widespread)|utbredd
 (prevailing)|rådande|
 (moral, decent)|sedlig|
 (immoral)|omoralisk|osedlig|sedeslös|
@@ -4529,6 +4538,7 @@
 (oyster)|ostron(sl-pl)|
 (spider)|spindel|spindlar|
 (insect)|insekt|insekter|
+(Cockroach)|kackerlacka|kackerlackor
 (mite)|kvalster(sl-pl)|
 (hornet)|Bålgeting|Bålgetingar|
 (mammal)|däggdjur|mammalier|
@@ -5255,7 +5265,7 @@
 (union)|fackförening|fackföreningar|
 (corps)|kår|kårar|
 (solidarity)|solidaritet|solidariteter|
-(ally)|alliera|
+(ally)|alliera|liera( sig med)
 (join)|ansluta|ansluter|anslöt|anslutit|anslut|anknyta|anknyter|anknöt|anknutit|anknyt|
 (tag along, join)|haka på| hänga med| ansluta (sig)|sälla (sig)till|förena(sig)|
 (unite, combine)|förena|
@@ -5356,7 +5366,7 @@
 (have a bone to pick with someone)|Ha en gås oplockad med någon|
 (discord, conflict)|osämja|konflikt|konflikter|tvedräkt|
 (unsettled matter, dealings)|mellanhavande|mellanhavanden(pl)|
-(escalate)|eskalera|uptrappa|
+(escalate)|eskalera|upptrappa|
 (escalation)|uptrappning|eskalering|
 (provoke)|Väck inte den björn som sover|
 (discord)|missämja|
@@ -5839,6 +5849,7 @@
 (thorough)|grundlig|
 (cautious, gentle)|försiktig|varsam|aktsam|
 (detailed, thorough)|utförlig|ingående|
+(Polish)|finslipa|putsa( till)
 (Conscientious)|samvetsgrann|
 (proper)|Enligt konstens alla regler|
 (beat about the bush)|Gå som katten kring het gröt|
@@ -6189,7 +6200,7 @@
 (bowl)|skål|skålar|
 (bedpan, basin)|bäcken(sl-pl)|bäcknet|
 (jug)|kanna|kannor|
-(vessel, container)|kärl(sl-pl)|
+(vessel, container)|kärl(sl-pl)|kanna
 (cup)|kopp|koppar|
 (glass)|glas(sl-pl)|
 (jar, tin)|burk|burkar|
@@ -6254,7 +6265,7 @@
 (scrape)|skrapa(ur degbunken)|
 (knead)|knåda|knådar|knådade|knådat|
 (kneading)|knådning|knådningar|
-(shape)|forma|
+(shape, carve out)|forma|bilda|mejsla ut|utmejsla
 (roll)|rulla|rullar|rullade|rullat|trilla|
 (rolling)|rullning|rullningar|
 (roll about, wallow)|vältra( sig)|
@@ -6555,7 +6566,7 @@
 (interior, furnishing)|inredning|inredningar|
 (furnish, decorate)|inreda|inreder|inredde|inrett|inred|
 (interior wear and tear)|inredningsslitage|
-(colorful)|Färgglad inredning|
+(colorful)|Färgglad|färgstark|färgsprakande
 (furnish)|möblera|möblerar|möblerade|möblerat|
 (furnishing)|möblering|möbleringar|
 (piece of furniture)|möbel|
@@ -6672,6 +6683,7 @@
 (cupboard, cabinet)|skåp(sl-pl)|skåpet|
 (pantry)|skafferi|
 (facility)|inrättning|anläggning|institution|
+(Establishment)|etablissemang
 (institution)|anstalt(t.e. i skol eller vård)|
 
 #Geography and population
@@ -7371,7 +7383,7 @@
 (try, attempt)|försöka|försökte|försökt|försök|
 (performance)|utförande|
 (Put to practice)|om<*sätta|
-(champion, advocate)|förfäkta(f.)|
+(champion, advocate)|förfäkta(f.)|plädera(f.)|förkämpe
 (pursue, drive)|driva|
 (drive, run)|köra|
 (by means of)|medelst(f.)|genom|med hjälp av|
@@ -7583,6 +7595,7 @@
 (expression, nip it in the bud)|bättre att stämma i bäcken än i ån|
 (be spared, escape)|slippa|slipper|slapp|sluppit|undgå|<*komma undan|
 (avoid)|undvika|undviker|undvek|undvikit|ducka|
+(Make way, avoid hitting)|väja( för ngt)|väjer|väjde|väjt
 (circumvent)|kringgå|
 (snub, dismiss)|dissa|
 (encounter)|St<*öta på patrull|
@@ -7780,7 +7793,7 @@
 (mysterious)|mystisk|mysko|underlig|
 (unambiguous)|entydig|
 (unmistakable)|omisskännlig|omisskännelig|
-(ambiguous)|tvetydig|ambiguös|flertydig|
+(ambiguous)|tvetydig|ambiguös|flertydig|mångtydig
 (equivocal, suggestive)|ekivok|
 (show)|Visa var skåpet ska stå|
 
@@ -8300,6 +8313,7 @@
 (handcuffs)|handklovar|
 (inmate)|intagen|
 (evidence)|bevis|
+(Circumstantial evidence)|indicium(f.)|indicier|tecken
 (steal)|stjäla|stjäl|stal|stulit|tatta(slang)|
 (theft)|stöld|
 (rob)|råna|
@@ -8334,7 +8348,7 @@
 (scum)|skitstövel|fähund|usling|Luspudel|
 (hooligan)|huligan|huliganer|våldsverkare(sl-pl)|
 (troublemaker)|bråkmakare(sl-pl)|bråkmakarn|
-(crook, criminal)|skurk|skurkar|kriminell|kriminella|förbrytare|
+(crook, criminal)|skurk|skurkar|kriminell|kriminella|förbrytare|bov|bovar
 (perpetrator)|förövare(sl-pl)|förövarn|
 (rowdy)|bråkstake|bråkstakar|bråkmakare(sl-pl)|
 (tangle)|härva|härvor|
@@ -8688,7 +8702,7 @@
 (dictionary)|lexikon(sl-pl)|
 
 #Decision making
-(propose)|proponera|föreslå|föreslår|föreslog|föreslagit|
+(propose)|proponera|föreslå|föreslår|föreslog|föreslagit|förorda|tillstyrka
 (proposal)|förslag|
 (thinking time)|betänketid|
 (decide)|avgöra|avgör|avgjorde|avgjort|bestämma|bestämmer|bestämde|bestämt|fastställa|
@@ -9544,7 +9558,7 @@ visa=visa,visar,visade,visat
 (pour)|hälla|
 (scoop, ladle)| ösa|öser | öste| öst|
 (form, create)|bilda|skapa|
-(constitute)|utgöra|
+(constitute)|ut<*göra|
 (generate)|alstra|
 (forge)|smida|
 (procure)|beskaffa|
