@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="language/word-maps.css?v=3ced81fd9e">
+    <link rel="stylesheet" href="language/word-maps.css?v=84d0d6eab7">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/vendor/split-type.js"></script>
     <script type="text/javascript" src="/vendor/pagination.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap.min.js"></script>
-    <link href="/index.css?v=3ced81fd9e" rel="stylesheet"/>
+    <link href="/index.css?v=84d0d6eab7" rel="stylesheet"/>
     <script type="text/javascript" src="/vendor/string-similarity.js"></script>
     <script type="text/javascript" src="/vendor/mediaelement.js"></script>
     <link href="/vendor/mediaelement-player.css" rel="stylesheet">
@@ -31,9 +31,9 @@
 
     <script src="/vendor/select2.min.js"></script>
     <script src="/vendor/lodash.js"></script>
-    <script src="/github-utils.js?v=3ced81fd9e"></script>
-    <script type="module" src="/data-structures.js?v=3ced81fd9e"></script>
-    <script type="module" src="/language/spanish.js?v=3ced81fd9e"></script>
+    <script src="/github-utils.js?v=84d0d6eab7"></script>
+    <script type="module" src="/data-structures.js?v=84d0d6eab7"></script>
+    <script type="module" src="/language/spanish.js?v=84d0d6eab7"></script>
     <script>
       // The native Flutter lookup can arrive while deferred JavaScript imports
       // and document-ready handlers are still initializing. Hold the newest
@@ -47,9 +47,9 @@
         }
       });
     </script>
-    <script type="module" src="/language/language.js?v=3ced81fd9e"></script>
-    <script type="module" src="/language/word-maps-entry.js?v=3ced81fd9e"></script>
-    <link href="/language.css?v=3ced81fd9e" rel="stylesheet"/>
+    <script type="module" src="/language/language.js?v=84d0d6eab7"></script>
+    <script type="module" src="/language/word-maps-entry.js?v=84d0d6eab7"></script>
+    <link href="/language.css?v=84d0d6eab7" rel="stylesheet"/>
     <link rel="stylesheet" href="/vendor/fontawesome-all.css">
     <style>
 
@@ -415,6 +415,7 @@
                             <button type="button" class="manage-item" onclick="closeManageMenu(); openDuplicateSrtsDialog()" title="Find SRT index entries that share a video id and remove the extras">Duplicate SRTs…</button>
                             <button type="button" class="manage-item" onclick="closeManageMenu(); openUnavailableVideosDialog()" title="Find YouTube videos whose thumbnail no longer resolves (removed/private/embedding-disabled)">Unavailable…</button>
                             <button type="button" class="manage-item" onclick="closeManageMenu(); openSubtitleCacheDialog()">Cached data…</button>
+                            <button type="button" class="manage-item" onclick="closeManageMenu(); openDeviceDataDialog()">Device data…</button>
                             <button type="button" class="manage-item" onclick="closeManageMenu(); refreshSubtitlesCache()" title="Clear the local subtitle cache and re-fetch every SRT pair from GitHub. Use after editing subtitles on GitHub directly.">Refresh subtitles…</button>
                         </div>
                     </span>
