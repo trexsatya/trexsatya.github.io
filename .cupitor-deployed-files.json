@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "63bac004dff02f1404793685507f5df5003cb856",
+  "sourceRevision": "41619b9d8bbd86dbf767cbb1ede6d59ac00b4cc3",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -193,6 +193,7 @@
     "language/subtitle-corpus-store.js",
     "language/subtitle-index-store.js",
     "language/subtitle-naming.js",
+    "language/subtitle-pack-loading.js",
     "language/subtitle-search-client.js",
     "language/subtitle-search-engine.js",
     "language/subtitle-search-index.js",
@@ -274,7 +275,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.16cd6bce4141cb4fded7b394f3e6ffde.js",
+    "precache-manifest.32c2ce1ab04f902669e75288a356b0ad.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
