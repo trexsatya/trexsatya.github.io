@@ -53,12 +53,12 @@
       "name": "Fysiska rörelser",
       "meta": {
         "createdAt": 1793036039771,
-        "updatedAt": 1793436793904,
+        "updatedAt": 1793892363424,
         "folder": "General"
       },
       "hasItems": true,
       "parts": [
-        "recordings/5e2eecafdc56c50e53b2c821301112e9ce978062efd8c86d38f1cdf16b217105.json"
+        "recordings/b7b6c4a108c278aaf461fd04c27f2067324cc1c95ea31e36f3ca633d6fcc8dc9.json"
       ]
     },
     {
@@ -370,15 +370,9 @@
     }
   },
   "retiredParts": {
-    "recordings/efa73a964e5835d82eea3d1febd1ae69c53293517707bed66d472504fbe0703d.json": 1792868170216,
-    "recordings/2b2f3454a9a9b569afdc00d2fa8aee7493ea98cb0c0c3731776ee1ba857182c6.json": 1792868170216,
-    "recordings/67d5fc3994959109e1bfb6bebdcb633e5797268126c49c5c6c9644465164a686.json": 1792868170216,
-    "recordings/b74a230f68fdb30c28e8eed9bf69d1b64dc134989b8f327cfa8a83168bc1ec3a.json": 1793262559138,
-    "recordings/3c48d03399448777f1ce268b3e99e8bf958841e8d91b7b801e32ed1fa0f28c06.json": 1793262559138,
-    "recordings/4c3f91274b8e1e94faac737284e4da59830e9a5dc707b83e44eef5873a0353e5.json": 1793262559138,
-    "recordings/d62a28e57092351e976f6e1d805ac9a2a208d164f6dc7ebbf0d4b78dad231dec.json": 1793262920625,
     "recordings/f46fe4d05cad2ee931f3438217b9b7f59ac9d213a81c484d9cedc0cdc8206c00.json": 1793437376165,
-    "recordings/7146760b843652f0492ce99bb764d9bc97e9bd634089016a0eed111b0da21ba9.json": 1793438112194
+    "recordings/7146760b843652f0492ce99bb764d9bc97e9bd634089016a0eed111b0da21ba9.json": 1793438112194,
+    "recordings/5e2eecafdc56c50e53b2c821301112e9ce978062efd8c86d38f1cdf16b217105.json": 1793892381514
   },
-  "partsScannedAt": 1793437376165
+  "partsScannedAt": 1793892381514
 }
