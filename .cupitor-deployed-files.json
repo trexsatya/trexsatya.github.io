@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "b0165da57e99d1fb15e6a05f7a6feee422baff80",
+  "sourceRevision": "22fa5654c61545789ae7832855706404a7a11c55",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -175,6 +175,7 @@
     "language/renderer/srt-edits-review-vm.js",
     "language/return-guard.js",
     "language/rich-card-formatting.js",
+    "language/rich-card-layout.js",
     "language/rich-card-paragraph.js",
     "language/rich-card-paste.js",
     "language/rich-card-shortcuts.js",
@@ -281,7 +282,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.5dc437aebfb9c705c600ec9eb3653cda.js",
+    "precache-manifest.4892e83ae96b738c45d9faca9459dd1b.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
