@@ -29,7 +29,7 @@
       "name": "Den sista resan | SVT Play",
       "meta": {
         "createdAt": 1791231065601,
-        "updatedAt": 1793436660648,
+        "updatedAt": 1793903906090,
         "folder": "Films & Series"
       },
       "hasItems": true,
@@ -53,7 +53,7 @@
       "name": "Fysiska rörelser",
       "meta": {
         "createdAt": 1793036039771,
-        "updatedAt": 1794068262693,
+        "updatedAt": 1793972785064,
         "folder": "General"
       },
       "hasItems": true,
@@ -205,6 +205,18 @@
       ]
     },
     {
+      "name": "Sambandord",
+      "meta": {
+        "folder": "Swedish Language",
+        "createdAt": 1794127006180,
+        "updatedAt": 1794127235826
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/1f74a5391ddffff1d395862cb1055f8d46403cefa8dfff54176c7091bab99dc4.json"
+      ]
+    },
+    {
       "name": "SAS-1",
       "meta": {
         "createdAt": 1788184441734,
@@ -241,11 +253,23 @@
       ]
     },
     {
+      "name": "Smartare än hjärnan – SVT Play",
+      "meta": {
+        "folder": "",
+        "createdAt": 1793908672116,
+        "updatedAt": 1793956990562
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/52367183761d62d479f77c4a7409713f96985f3158678029f8364c8fbb74eda2.json"
+      ]
+    },
+    {
       "name": "Sophistication",
       "meta": {
         "folder": "Swedish Language",
         "createdAt": 1794060123557,
-        "updatedAt": 1794074491819
+        "updatedAt": 1794082347973
       },
       "hasItems": true,
       "parts": [
@@ -279,7 +303,7 @@
       "meta": {
         "folder": "Films & Series",
         "createdAt": 1792943820000,
-        "updatedAt": 1793436660648
+        "updatedAt": 1793438614817
       },
       "hasItems": true,
       "parts": [
@@ -302,36 +326,24 @@
       "name": "Tillåt mig tvivla - bok",
       "meta": {
         "createdAt": 1791566486887,
-        "updatedAt": 1793437128500,
+        "updatedAt": 1793696405386,
         "folder": "Books"
       },
       "hasItems": true,
       "parts": [
-        "recordings/daaab0aa4377ff128fc5f3e998581ab3a923f4480d837889ee3ba49f2f67475b.json"
+        "recordings/11859999f4fee847738bc93ecfc3521ee6a1509f623f894e2e43fe96432bcc3f.json"
       ]
     },
     {
       "name": "Tillåt mig tvivla - Ord",
       "meta": {
         "createdAt": 1791552147577,
-        "updatedAt": 1793437135016,
+        "updatedAt": 1793903960443,
         "folder": "Books"
       },
       "hasItems": true,
       "parts": [
         "recordings/8f7dcd491ee7f284ee8aaab8929aac0ca6e9a0a8d91f9b01f83d030007b93c81.json"
-      ]
-    },
-    {
-      "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
-      "meta": {
-        "createdAt": 1792505467043,
-        "updatedAt": 1793437155363,
-        "folder": "General"
-      },
-      "hasItems": true,
-      "parts": [
-        "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
       ]
     },
     {
@@ -344,6 +356,18 @@
       "hasItems": true,
       "parts": [
         "recordings/eb8f724d4450e53da124d6a3fbf7a85b9540efdd7d65d29faa752e6acefde401.json"
+      ]
+    },
+    {
+      "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
+      "meta": {
+        "createdAt": 1792505467043,
+        "updatedAt": 1793437155363,
+        "folder": "General"
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
       ]
     }
   ],
@@ -383,7 +407,8 @@
   },
   "retiredParts": {
     "recordings/5e2eecafdc56c50e53b2c821301112e9ce978062efd8c86d38f1cdf16b217105.json": 1793892381514,
-    "recordings/b7b6c4a108c278aaf461fd04c27f2067324cc1c95ea31e36f3ca633d6fcc8dc9.json": 1793972804712
+    "recordings/b7b6c4a108c278aaf461fd04c27f2067324cc1c95ea31e36f3ca633d6fcc8dc9.json": 1793972804712,
+    "recordings/daaab0aa4377ff128fc5f3e998581ab3a923f4480d837889ee3ba49f2f67475b.json": 1794127247592
   },
   "partsScannedAt": 1794082090584
 }
