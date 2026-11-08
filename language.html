@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="language/word-maps.css?v=65737feb4e">
+    <link rel="stylesheet" href="language/word-maps.css?v=3a2f9a70ae">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/vendor/split-type.js"></script>
     <script type="text/javascript" src="/vendor/pagination.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap.min.js"></script>
-    <link href="/index.css?v=65737feb4e" rel="stylesheet"/>
+    <link href="/index.css?v=3a2f9a70ae" rel="stylesheet"/>
     <script type="text/javascript" src="/vendor/string-similarity.js"></script>
     <script type="text/javascript" src="/vendor/mediaelement.js"></script>
     <link href="/vendor/mediaelement-player.css" rel="stylesheet">
@@ -31,9 +31,9 @@
 
     <script src="/vendor/select2.min.js"></script>
     <script src="/vendor/lodash.js"></script>
-    <script src="/github-utils.js?v=65737feb4e"></script>
-    <script type="module" src="/data-structures.js?v=65737feb4e"></script>
-    <script type="module" src="/language/spanish.js?v=65737feb4e"></script>
+    <script src="/github-utils.js?v=3a2f9a70ae"></script>
+    <script type="module" src="/data-structures.js?v=3a2f9a70ae"></script>
+    <script type="module" src="/language/spanish.js?v=3a2f9a70ae"></script>
     <script>
       // The native Flutter lookup can arrive while deferred JavaScript imports
       // and document-ready handlers are still initializing. Hold the newest
@@ -47,9 +47,10 @@
         }
       });
     </script>
-    <script type="module" src="/language/language.js?v=65737feb4e"></script>
-    <script type="module" src="/language/word-maps-entry.js?v=65737feb4e"></script>
-    <link href="/language.css?v=65737feb4e" rel="stylesheet"/>
+    <script type="module" src="/language/language.js?v=3a2f9a70ae"></script>
+    <script type="module" src="/language/page-find.js?v=3a2f9a70ae"></script>
+    <script type="module" src="/language/word-maps-entry.js?v=3a2f9a70ae"></script>
+    <link href="/language.css?v=3a2f9a70ae" rel="stylesheet"/>
     <link rel="stylesheet" href="/vendor/fontawesome-all.css">
     <style>
 
@@ -219,6 +220,20 @@
 </head>
 
 <body style="padding: 0.5em;">
+<!-- In-page text Find, separate from the SRT/library search below.
+     Fixed to the viewport so it works in the Android WebView too. -->
+<div id="cupPageFindBar" class="cup-page-find" role="search" aria-label="Find on page" hidden>
+    <label class="cup-page-find-field" for="cupPageFindInput">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.7"/><path d="m16 16 5 5"/></svg>
+        <input id="cupPageFindInput" type="search" placeholder="Find on page" aria-label="Find on page" autocomplete="off" spellcheck="false">
+    </label>
+    <span id="cupPageFindCount" class="cup-page-find-count" aria-live="polite"></span>
+    <button type="button" id="cupPageFindPrevious" class="cup-page-find-action" title="Previous match (Shift+Enter)" aria-label="Previous match" disabled><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 15 6-6 6 6"/></svg></button>
+    <button type="button" id="cupPageFindNext" class="cup-page-find-action" title="Next match (Enter)" aria-label="Next match" disabled><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+    <button type="button" id="cupPageFindClose" class="cup-page-find-action" title="Close Find (Esc)" aria-label="Close Find"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+</div>
+
+
 
 <button id="scrollButton" style="display: none;"  data-direction="down">&#x25BC;</button>
 <div id="languageColumns">
@@ -256,9 +271,11 @@
                     <svg width="18" data-role="collapseUpSign" style="display:none" height="18" viewBox="0 0 24 24" role="presentation"><use href="#collapseUpPath"/></svg>
                     <svg width="18" data-role="expandDownSign" height="18" viewBox="0 0 24 24" role="presentation"><use href="#expandDownPath"/></svg>
                 </button>
-                <button id="toggleMediaRelatedContainer" class="lang-tool-btn lang-tool-btn--icon" title="Toggle player" data-toggle-state="collapsed" data-view-id="mediaRelatedContainer">
-                    <svg width="18" data-role="collapseUpSign" style="display:none" height="18" viewBox="0 0 24 24" role="presentation"><use href="#collapseUpPath"/></svg>
-                    <svg width="18" data-role="expandDownSign" height="18" viewBox="0 0 24 24" role="presentation"><use href="#expandDownPath"/></svg>
+                <button type="button" id="cupPageFindToggle" class="lang-tool-btn lang-tool-btn--icon" title="Find on page (Ctrl/Cmd+F)" aria-label="Find on page" aria-controls="cupPageFindBar" aria-expanded="false">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="presentation" aria-hidden="true">
+                        <circle cx="10.8" cy="10.8" r="6.7"></circle>
+                        <path d="m16 16 5 5"></path>
+                    </svg>
                 </button>
                 <button id="toggleMediaContainer" class="lang-tool-btn lang-tool-btn--icon" title="Toggle video" data-toggle-state="collapsed" data-view-id="mediaContainer">
                     <svg width="18" data-role="collapseUpSign" style="display:none" height="18" viewBox="0 0 24 24" role="presentation"><use href="#collapseUpPath"/></svg>
@@ -374,6 +391,10 @@
                             <option value="recordings">Recorded audio</option>
                             <option value="both" selected>Both (linked first)</option>
                         </select>
+                    </label>
+                    <label class="lang-panel-label" title="Use device speech for text-only manual cards when no saved audio or playable linked media is present. Saved recordings always take priority.">
+                        <input type="checkbox" id="recPlayTtsFallback" aria-label="Speak cards without saved audio" style="margin-right:6px;">
+                        Speak cards without audio (TTS)
                     </label>
                     <button type="button" id="openMusicPanel" class="btn lang-panel-btn"
                             title="Background music that plays under a playlist: saved tracks, when it sounds, and how loud.">♫ Music…</button>
