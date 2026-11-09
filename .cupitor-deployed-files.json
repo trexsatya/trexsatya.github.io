@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "ec43f4f7aa5e860a7850d95e8476535673a8fcbf",
+  "sourceRevision": "24aecc7c49594caa51bdf56cd439397a7f2a8533",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -285,7 +285,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.99c7b2cbb418997fad97fad7e8aea401.js",
+    "precache-manifest.f48065feb77ecb8bb9b3116c02ef0674.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
