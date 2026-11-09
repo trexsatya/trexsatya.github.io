@@ -929,6 +929,18 @@
           "textColor": "#ffffff",
           "shape": "rectangle",
           "images": []
+        },
+        {
+          "id": "1a796351-3b65-47e5-a964-72318c040d77",
+          "word": "kasta sig över",
+          "x": 190,
+          "y": 474.73863636363643,
+          "lookup": "",
+          "note": "Att angripa någon fysiskt eller verbalt. \nKunde också vara att passionerat krama eller något ",
+          "color": "#f36551",
+          "textColor": "#ffffff",
+          "shape": "rectangle",
+          "images": []
         }
       ],
       "edges": [
@@ -1919,6 +1931,20 @@
           "relation": "association",
           "label": "",
           "note": "Klassificeras som konkret handling.",
+          "source": "",
+          "uncertain": false,
+          "dashed": false,
+          "lineStyle": "",
+          "marker": "",
+          "arrows": "none"
+        },
+        {
+          "id": "2161b70c-ff90-410a-922b-b984602cdffe",
+          "from": "1a796351-3b65-47e5-a964-72318c040d77",
+          "to": "konflikt-42",
+          "relation": "association",
+          "label": "",
+          "note": "",
           "source": "",
           "uncertain": false,
           "dashed": false,
@@ -4580,7 +4606,7 @@
         },
         {
           "id": "2ec89f24-b402-41e4-bd74-097beae558fa",
-          "word": "Stå inför en fråga",
+          "word": "Stå inför en fråga (frågeställning)",
           "x": 241.0022921441967,
           "y": 497.92039667484437,
           "lookup": "Stå inför",
