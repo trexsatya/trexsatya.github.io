@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "62f81b6286abe46e525da0d5fdf19c30c1c557ed",
+  "sourceRevision": "783b1a2003530b311ce3d993ad06a9ae1d094411",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -106,6 +106,7 @@
     "language/account-state.js",
     "language/account.js",
     "language/app-lifecycle.js",
+    "language/browser-speakover.js",
     "language/cache-manager.js",
     "language/caption-capture.js",
     "language/caption-sidebar.js",
@@ -286,7 +287,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.3920598bf7aa21d4d23b21ceacf0cb45.js",
+    "precache-manifest.72d48fe04977f1f2bc32ddf89629f1b5.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
