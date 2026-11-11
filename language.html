@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="language/word-maps.css?v=9297f9d963">
+    <link rel="stylesheet" href="language/word-maps.css?v=d9ff5bf98e">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/vendor/split-type.js"></script>
     <script type="text/javascript" src="/vendor/pagination.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap.min.js"></script>
-    <link href="/index.css?v=9297f9d963" rel="stylesheet"/>
+    <link href="/index.css?v=d9ff5bf98e" rel="stylesheet"/>
     <script type="text/javascript" src="/vendor/string-similarity.js"></script>
     <script type="text/javascript" src="/vendor/mediaelement.js"></script>
     <link href="/vendor/mediaelement-player.css" rel="stylesheet">
@@ -31,9 +31,9 @@
 
     <script src="/vendor/select2.min.js"></script>
     <script src="/vendor/lodash.js"></script>
-    <script src="/github-utils.js?v=9297f9d963"></script>
-    <script type="module" src="/data-structures.js?v=9297f9d963"></script>
-    <script type="module" src="/language/spanish.js?v=9297f9d963"></script>
+    <script src="/github-utils.js?v=d9ff5bf98e"></script>
+    <script type="module" src="/data-structures.js?v=d9ff5bf98e"></script>
+    <script type="module" src="/language/spanish.js?v=d9ff5bf98e"></script>
     <script>
       // The native Flutter lookup can arrive while deferred JavaScript imports
       // and document-ready handlers are still initializing. Hold the newest
@@ -47,10 +47,10 @@
         }
       });
     </script>
-    <script type="module" src="/language/language.js?v=9297f9d963"></script>
-    <script type="module" src="/language/page-find.js?v=9297f9d963"></script>
-    <script type="module" src="/language/word-maps-entry.js?v=9297f9d963"></script>
-    <link href="/language.css?v=9297f9d963" rel="stylesheet"/>
+    <script type="module" src="/language/language.js?v=d9ff5bf98e"></script>
+    <script type="module" src="/language/page-find.js?v=d9ff5bf98e"></script>
+    <script type="module" src="/language/word-maps-entry.js?v=d9ff5bf98e"></script>
+    <link href="/language.css?v=d9ff5bf98e" rel="stylesheet"/>
     <link rel="stylesheet" href="/vendor/fontawesome-all.css">
     <style>
 
@@ -126,15 +126,11 @@
             } catch (e) { console.warn('onPlayerError handler failed', e) }
         }
 
-        // The search/front page does not need a YouTube iframe. Create the
-        // shared player only when Player or Practice is opened. This avoids
-        // loading an unrelated sample video (and avoids its autoplay) on page
-        // entry. Player/Practice continue to use window.ytPlayer as before.
+        // Create the shared iframe on demand for standalone media, Player, or
+        // Practice. Merely opening Search never creates it.
         window.__youtubeIframeApiReady = false;
-        window.ensureStudyYoutubePlayer = () => {
+        window.ensureYoutubePlayer = () => {
             if (!window.__youtubeIframeApiReady || window.ytPlayer) return window.ytPlayer || null;
-            if (!document.body.classList.contains('rec-playing') &&
-                !document.body.classList.contains('practice-mode')) return null;
             const host = document.getElementById('youtubePlayer');
             if (!host) return null;
             window.ytPlayer = new YT.Player("youtubePlayer", {
@@ -157,9 +153,13 @@
             });
             return window.ytPlayer;
         };
+        const ensureStudyYoutubePlayer = () => {
+            if (document.body?.classList.contains('rec-playing') ||
+                document.body?.classList.contains('practice-mode')) window.ensureYoutubePlayer();
+        };
         window.onYouTubeIframeAPIReady = () => {
             window.__youtubeIframeApiReady = true;
-            window.ensureStudyYoutubePlayer();
+            ensureStudyYoutubePlayer();
         };
         // Study views are body-class driven and can be opened from several
         // entry points. Observe that single source of truth rather than
@@ -167,15 +167,12 @@
         const observeStudyViews = () => {
             if (!document.body) return;
             const studyPlayerObserver = new MutationObserver(() => {
-                if (document.body.classList.contains('rec-playing') ||
-                    document.body.classList.contains('practice-mode')) {
-                    window.ensureStudyYoutubePlayer();
-                }
+                ensureStudyYoutubePlayer();
                 window.enforceYoutubePlaybackView?.();
             });
             studyPlayerObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
             // Covers a study view opened before the observer was attached.
-            window.ensureStudyYoutubePlayer();
+            ensureStudyYoutubePlayer();
         };
         if (document.body) observeStudyViews();
         else document.addEventListener('DOMContentLoaded', observeStudyViews, { once: true });
@@ -290,6 +287,7 @@
                 </button>
             </div>
 
+            <button type="button" id="returnToMediaPlayer" class="lang-tool-btn" style="display:none;">Back to player</button>
             <div id="searchSourceChips" class="search-source-chips" role="group" aria-label="Search sources">
                 <label class="search-source-chip"><input type="checkbox" id="includeLibraryInSearchCb"><span>Books</span></label>
                 <label class="search-source-chip"><input type="checkbox" id="includeSrtsInSearchCb" checked><span>SRTs</span></label>
@@ -542,10 +540,10 @@
                         <button id="playStarredLinesBtn" type="button" onclick="playStarredLines()" class="lang-tool-btn" title="Play the starred lines of this media as a playlist" style="display: none;">▶ Play Starred</button>
                         <button id="practiceStarredLinesBtn" type="button" onclick="practiceStarredLines()" class="lang-tool-btn" title="Practice the starred lines of this media as flashcards" style="display: none;">🎴 Practice Starred</button>
                     </span>
+                    <div id="mediaPlaybackStatus" role="status"></div>
                 </div>
                 <div id="localMediaContainer" style="display: none; margin-top: 4px;">
                     <label for="localFiles" class="lang-tool-btn local-file-open">Open audio or video</label>
-                    <button type="button" id="localResumePlayer" class="lang-tool-btn" style="display:none;">Return to local player</button>
                     <input type="file" class="local-file-input" aria-label="Open local media and subtitles" accept="video/*,audio/*,.srt,.json" multiple="multiple" id="localFiles"
                            onchange="loadLocalFiles()">
                     <div class="local-subtitle-note">MP3, WAV or MP4. You can add SRT subtitles now or during playback.</div>
@@ -747,7 +745,6 @@
 
         </div>
 
-        <button type="button" id="youtubeResumePlayer" class="lang-tool-btn" style="display:none;">Resume YouTube player</button>
         <div id="mediaContainer" style="width: 100%;display:none;">
             <div id="youtubeMediaHeader" class="local-media-title" style="display:none;">
                 <strong id="youtubeMediaName">YouTube</strong>
