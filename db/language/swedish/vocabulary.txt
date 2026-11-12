@@ -367,7 +367,7 @@
 (coat, paint)|be<*stryka|
 (announce, call for)|utlysa|utlyser|utlyste|utlyst|
 (announcement)|utlysning|utlysningar|
-(sudden)|plötslig|
+(sudden)|plötslig|vips
 (spontaneous)|spontan|<*dra till med( gissning, förslag, handling)
 (impulsive)|Hals över huvud|
 (remark)|anmärka|påpeka|
@@ -485,6 +485,7 @@
 (assume, presuppose)|<*utgå från|förutsätta|
 (prerequisite, assumption)|förutsättning|
 (belief, faith)|tro|tron|
+(Profess to)|be<*känna sig till
 (outlook, belief system)|åskådning|åskådningar|
 (expression, everyone finds comfort in their own beliefs)|var och en blir salig på sin tro|
 (assessment, judgement)|bedömning|bedömningar|omdöme|omdömen(pl)|omdömet|
@@ -628,6 +629,7 @@
 (nature)|Var fågel sjunger efter sin egen näbb|Var smed har sin sed|
 (nature)|väsen(sl-pl)|beskaffenhet(f.)|beskaffenheten|
 (essential, important)|väsentlig|huvudsaklig|viktig|
+(Prominent)|framträdande
 (decisive)|avgörande|
 (significant)|betydande|
 (primarily, foremost)|främst|
@@ -967,7 +969,7 @@
 (free)|fri<*göra(sig från)|
 (indifferent)|likgiltig|oberörd|egal|
 (apathetic)|apatisk|
-(equal)|jämlik|
+(equal)|jämlik|gelike|gelikar
 (unequal)|ojämlik|
 (fate)|Olika falla ödets lotter|
 (debate)|Där tvistar de lärde|
@@ -2969,7 +2971,7 @@
 (whim)|nyck|nycker|
 (invention)|uppfinning|
 (breakthrough)|genombrott|
-(invent, think up)|påhitta|<*hitta på|<*komma på|
+(invent, think up)|påhitta|<*hitta på|<*komma på|fantisera ihop
 (figure out)|<*lista ut|klura ut|<*komma underfund( med)
 (come up with)|<*komma med|
 (make up from nothing)|Gripa.* ur luften|skaka.* ur ärmen|
@@ -3003,7 +3005,7 @@
 (continuous, unceasing)|kontinuerlig|ständig|oupphörlig|fortlöpande|idelig|
 (permanent, lasting)|stadigvarande|permanent|bestående|
 (exist)|finnas|finns|fanns|funnits|
-(stay, be located)|vistas|vistas|vistades|vistats|vistande|<*befinna <*sig|vistelse|
+(stay, be located)|vistas|vistas|vistades|vistats|vistande|<*befinna <*sig|vistelse|<*hålla till
 (maintain, detain)|uppehålla|uppehåller|uppehöll|uppehållit|
 (pause, stay)|uppehåll|
 (stay, visit)|<*hålla hus|
@@ -4562,6 +4564,7 @@
 (assert oneself)|hävda <*sig|
 (protection)|beskydd|beskyddet|
 (protect, defend)|värna|skydda|<*slå vakt om|värja( sig)|försvara|beskydda|
+(One cannot help but get the impression)|värja sig för intrycket
 (care for, have to oneself)|rå om|
 (protect)|Slå vakt om något|
 (vulnerable, exposed)|utsatt|
@@ -7574,7 +7577,7 @@
 (refusal)|vägran|
 (fail, disapprove)|underkänna( judge inadequate)|kugga( fail an exam)|
 (acknowledge, admit)|erkänna|
-(confess, profess)|bekänna|
+(confess, profess)|be<*känna|
 (decline)|undan<*be( sig)(f.)|betacka( sig)|
 (grudge)|missunna|
 (resist)|Sätta sig på tvären|
@@ -7584,6 +7587,7 @@
 
 #Managing: difficulties, endurance and solutions
 (ignore)|bort<*se(från)|strunta(i)|åsido<*sätta|
+(Look away)|slita blicken( från)
 (Give up)|<*stryka på foten( för ngn/ngt)|
 (tolerance)|<*Se mellan fingrarna|
 (avoidance)|(<*Sopa) problemet under mattan|
@@ -7596,7 +7600,7 @@
 (be spared, escape)|slippa|slipper|slapp|sluppit|undgå|<*komma undan|
 (avoid)|undvika|undviker|undvek|undvikit|ducka|
 (Make way, avoid hitting)|väja( för ngt)|väjer|väjde|väjt
-(circumvent)|kringgå|
+(circumvent)|kring<*gå|runda
 (snub, dismiss)|dissa|
 (encounter)|St<*öta på patrull|
 (solve)|lösa|löser|löste|löst|lös|löses|klara ut (problem)|
@@ -7823,7 +7827,7 @@
 (belong to)|tillhöra|tillhör|tillhörde|tillhört|
 (belonging, affiliation)|tillhörighet|
 (possess)|besitta(f.)|inneha(f.)|
-(invest)|investera|
+(invest)|investera|satsa på
 (stake, contribution)|insats|
 (investment)|investering|investeringar|
 (send)|sända|skicka|langa|
@@ -8051,7 +8055,7 @@
 (rivet)| nit |nitar|
 (nail)|spik|spikar|
 (hammer)|hammare|
-(sledgehammer)|slägga|
+(sledgehammer)|slägga|klubba|
 (stick)|sticka|stickor|
 (stick, rod)|pinne|spö|spöt|käpp|käppar|
 (the rod)|spöet|spön(pl)|
@@ -8349,6 +8353,8 @@
 (hooligan)|huligan|huliganer|våldsverkare(sl-pl)|
 (troublemaker)|bråkmakare(sl-pl)|bråkmakarn|
 (crook, criminal)|skurk|skurkar|kriminell|kriminella|förbrytare|bov|bovar
+(Criminal)|brottsling
+(Accomplice)|kumpan|medbrottsling
 (perpetrator)|förövare(sl-pl)|förövarn|
 (rowdy)|bråkstake|bråkstakar|bråkmakare(sl-pl)|
 (tangle)|härva|härvor|
@@ -8705,11 +8711,12 @@
 (propose)|proponera|föreslå|föreslår|föreslog|föreslagit|förorda|tillstyrka
 (proposal)|förslag|
 (thinking time)|betänketid|
-(decide)|avgöra|avgör|avgjorde|avgjort|bestämma|bestämmer|bestämde|bestämt|fastställa|
+(decide)|avgöra|avgör|avgjorde|avgjort|bestämma|bestämmer|bestämde|bestämt|fastställa|klubba igenom|
 (Set out to)|föresätta sig( att)|
 (dispose)|disponera|
 (establish, state firmly)|fast<*slå|<*slå fast|
 (decide)|besluta|beslutar|beslöt|beslutit|
+(Decision)|låsning
 (cement, entrench)|cementera|
 (pass)|klubbas på en stämma|
 (verdict)|utslag(sl-pl)|
@@ -8780,7 +8787,7 @@
 (test-drive)|provköra|
 (incite, goad)|hetsa|egga|piska upp|uppvigla|
 (incitement)|uppvigling|
-(encourage, cheer up)|uppmuntra|peppa|gaska upp (ngn)|
+(encourage, cheer up)|uppmuntra|peppa|gaska upp (ngn)|sporra(stimulera)
 (pull oneself together)|<*ta sig i kragen|
 (encouragement, enthusiasm)|pepp(en)|
 (cheers, words of encouragement)|glada tillrop|hejarop|
@@ -9087,6 +9094,7 @@
 (fake)|fejka|
 (behave affectedly)|(uppträda) tillgjort|
 (false, fake)|oäkta|
+(Apparent)|skenbar|bara till synes
 (unholy)|ohelig|
 (unnatural)|onaturlig|
 (affected)|tillgjord|
@@ -9422,6 +9430,7 @@
 (firewall)|brandvägg|brandväggar|
 #Expansions
 sörja=sörja,sörjer,sörjde,sörjt
+aer=a,er,te,t
 hänga=hänga,hänger,hängde,hängt
 ngn=honom,henne,dig,er,de,någon,mig,oss
 a=a,ar,ade,at,ande,ning
@@ -9436,6 +9445,7 @@ en=en,et,na,ne
 sig=sig,dig,mig,oss,honom,henne,er,sig
 få=få,får,fick,fått
 lägga=lägga,lägger,lade,lagt
+yga=yga,yger,ög,ugit
 ha=ha,har,hade,haft
 slappna=slappna,slappnar,slappnade,slappnat
 koppla=koppla,kopplar,kopplade,kopplat
@@ -9542,6 +9552,7 @@ vända=vända,vänder,vände,vänt
 vara=vara,är,var,varit
 växa=växa,växer,växte,vuxit
 vetta=vetta,vetter,vette,vettat
+öja=öja,öjer,öjde,öjt
 visa=visa,visar,visade,visat
 
 #Assimilations
