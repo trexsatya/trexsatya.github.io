@@ -1,0 +1,131 @@
+{
+  "customItems": [
+    "Reading",
+    "Writing",
+    "Listening",
+    "Speaking",
+    "Vocabulary",
+    "Grammar"
+  ],
+  "weeks": {
+    "2026-W42": {
+      "Reading": {
+        "status": "in_progress",
+        "notes": "Tillåt mig tvivla: kapitel 1-2\nTaare zameen par"
+      },
+      "Writing": {
+        "status": "in_progress",
+        "notes": "Lustiga meningar"
+      },
+      "Listening": {
+        "status": "in_progress",
+        "notes": "Tillåt mig tvivla ord\nDemokrati ord\nTaare zameen par ord"
+      },
+      "Speaking": {
+        "status": "in_progress",
+        "notes": "Demokrati"
+      },
+      "Vocabulary": {
+        "status": "in_progress",
+        "notes": ".."
+      },
+      "Grammar": {
+        "status": "in_progress",
+        "notes": ".."
+      }
+    },
+    "2026-W43": {
+      "Reading": {
+        "status": "not_started",
+        "notes": "Tillåt mig tvivla: kapitel 3-5\nTaare zameen par"
+      },
+      "Writing": {
+        "status": "not_started",
+        "notes": "Lustiga meningar\nDemokrati"
+      },
+      "Listening": {
+        "status": "not_started",
+        "notes": "Tillåt mig tvivla ord\nDemokrati ord\nTaare zameen par ord"
+      },
+      "Speaking": {
+        "status": "not_started",
+        "notes": ""
+      },
+      "Vocabulary": {
+        "status": "not_started",
+        "notes": "Tillåt mig tvivla ord\nDemokrati ord\nTaare zameen par ord"
+      },
+      "Grammar": {
+        "status": "not_started",
+        "notes": ""
+      }
+    },
+    "2026-W46": {
+      "Reading": {
+        "status": "in_progress",
+        "notes": "Tillåt mig tvivla"
+      },
+      "Writing": {
+        "status": "not_started",
+        "notes": "Hälsa och livslängd"
+      },
+      "Listening": {
+        "status": "not_started",
+        "notes": "Hälsa och livslängd"
+      },
+      "Speaking": {
+        "status": "not_started",
+        "notes": ""
+      },
+      "Vocabulary": {
+        "status": "not_started",
+        "notes": "Tillåt mig tvivla"
+      },
+      "Grammar": {
+        "status": "not_started",
+        "notes": ""
+      }
+    },
+    "2026-W47": {
+      "Reading": {
+        "status": "not_started",
+        "notes": ""
+      },
+      "Writing": {
+        "status": "not_started",
+        "notes": ""
+      },
+      "Listening": {
+        "status": "not_started",
+        "notes": ""
+      },
+      "Speaking": {
+        "status": "not_started",
+        "notes": ""
+      },
+      "Vocabulary": {
+        "status": "not_started",
+        "notes": ""
+      },
+      "Grammar": {
+        "status": "not_started",
+        "notes": ""
+      }
+    }
+  },
+  "historyRetainWeeks": 100,
+  "reminders": {
+    "enabled": true,
+    "slots": [
+      {
+        "time": "15:29",
+        "days": [
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "updatedAt": 1794493618623
+  }
+}
