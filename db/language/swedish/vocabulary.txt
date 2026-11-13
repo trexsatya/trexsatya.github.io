@@ -1404,7 +1404,7 @@
 (seep, trickle)|sippra|
 (spill)|spilla|spiller|spillde|spillt|spill|drälla|dräller|drällde|drällt|
 (splash, spatter)|skvätta|skvätter|skvätte|skvätt|stänka|stänker|stänkte|stänkt|stänk|sprätta|sprätter|sprätte|sprätt|sprätt|
-(gush)|forsa|
+(gush)|forsa|väll<*aerd( fram/ut)
 (sprinkle)|beströ|strö över|strö|strör|strödde|strött|
 (spread)|sprida|sprider|spridde|	sprid|spritt|spridit|sprid|
 (splay, stick out)|spreta (åt olika håll)|
@@ -2314,7 +2314,7 @@
 (down, below)|nere|
 (lowest)|nederst|
 (below)|nedanför|
-(inner, innermost)|inre|innerste|innerst|innersta|
+(inner, innermost)|inre|innerste|innerst|innersta|invändig( på insidan)
 (core)|kärna|kärnor|
 (outer)|yttre|
 (outermost)|ytterste|yttersta|ytterst|
@@ -2691,7 +2691,7 @@
 (gradually)|Pö om pö|en bit i taget|
 (splinter)|flisa (mest. trä)|flisor|flisbit|
 (scarcely, barely)|knappt|knappt|nätt och jämnt|
-(paltry, insignificant)|ynka|ynklig|futtig|obetydlig|föga|oansenlig|försumbar|
+(paltry, insignificant)|ynka|ynklig|futtig|obetydlig|föga|oansenlig|försumbar|hårsmån( gäller avstånd)
 (sparing, sparse)|sparsam|
 (scant)|knapp|
 (somewhat)|något|
@@ -9431,6 +9431,7 @@
 #Expansions
 sörja=sörja,sörjer,sörjde,sörjt
 aer=a,er,te,t
+aerd=a,er,de,t
 hänga=hänga,hänger,hängde,hängt
 ngn=honom,henne,dig,er,de,någon,mig,oss
 a=a,ar,ade,at,ande,ning
