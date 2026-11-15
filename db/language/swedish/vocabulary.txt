@@ -1889,7 +1889,7 @@
 (wear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt|
 (worn out, spent)|utsliten|uttjänt|förbrukad|
 (wear, friction)| slitning|
-(decline)|nedgång|
+(decline)|nedgång|lågkonjunktur|recession
 (run-down, grubby)|sunkig|
 (declining)|nedgående|
 (down and out)|dekis(vdg.)|
@@ -4395,7 +4395,7 @@
 (expression, stubborn as a mule)|envis som en röd gris|
 (expression, scream like a stuck pig)|skrika som en stucken gris|
 (expression, fat as a pig)|tjock som en julegris|
-(horse)|häst|hästar|pålle|pållar|
+(horse)|häst|hästar|pålle|pållar|märr(hästhona)
 (expression, strong as a horse)|stark som en häst|
 (run like a horse)|springa som en häst|
 (expression, work like a horse)|arbeta som en häst|
@@ -5793,7 +5793,7 @@
 (small pond)|Ankdamm|
 (stalk)|stalka|
 (presence)|närvaro|närvaron|
-(absence)|frånvaro|frånvaron|
+(absence)|frånvaro|frånvaron|ute<*bli
 (present)|närvarande|
 (in another world, distracted)|I en annan värld|
 (clingy)|klängig|
@@ -8020,7 +8020,8 @@
 (wire)|vajer|vajern|vajrar|
 (cable)|kabel|kablar|
 (band, strap)|band(sl-pl)|
-(elastic cord, tie)|snodd|snoddar|stropp(gummiband)|stroppar|
+(elastic cord, tie)|snodd|snoddar|stropp(gummiband)|stroppar|träns(flätad snodd)
+(Bridle)|betsel
 (strip)|strimma|strimmor|
 (strip)|remsa|remsor|strimmel|strimlar|
 (strap)|rem |remmen|remmar|
@@ -8214,7 +8215,7 @@
 (paint the town red)|Rulla hatt|
 (Potluck)|knytkalas|knytis|
 (party on)|blir festen av|blir det fest|kommer festen att hållas|
-(the party is cancelled)|festen är avblåst|festen är inställt|
+(the party is cancelled)|festen är avblåst|festen är inställt|blev aldrig av|ute<*bli|blev inte av
 (not happen)|<*bli inte av|
 (lively atmosphere)|Liv i luckan|
 (festive, amusing)|festlig|
@@ -9120,7 +9121,7 @@
 (sentence)|mening|meningar|
 (paragraph, passage)|stycke|stycken|
 (section of law)|paragraf|paragrafer|
-(section)|avsnitt|avsnitt|
+(section)|avsnitt|avsnitt|inslag( om)
 (ought)|böra|bör|borde|bort|
 
 #Language: punctuation, spelling and typography
