@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="language/word-maps.css?v=2cdbdbe94b">
+    <link rel="stylesheet" href="language/word-maps.css?v=3715955c23">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/vendor/split-type.js"></script>
     <script type="text/javascript" src="/vendor/pagination.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap.min.js"></script>
-    <link href="/index.css?v=2cdbdbe94b" rel="stylesheet"/>
+    <link href="/index.css?v=3715955c23" rel="stylesheet"/>
     <script type="text/javascript" src="/vendor/string-similarity.js"></script>
     <script type="text/javascript" src="/vendor/mediaelement.js"></script>
     <link href="/vendor/mediaelement-player.css" rel="stylesheet">
@@ -31,9 +31,9 @@
 
     <script src="/vendor/select2.min.js"></script>
     <script src="/vendor/lodash.js"></script>
-    <script src="/github-utils.js?v=2cdbdbe94b"></script>
-    <script type="module" src="/data-structures.js?v=2cdbdbe94b"></script>
-    <script type="module" src="/language/spanish.js?v=2cdbdbe94b"></script>
+    <script src="/github-utils.js?v=3715955c23"></script>
+    <script type="module" src="/data-structures.js?v=3715955c23"></script>
+    <script type="module" src="/language/spanish.js?v=3715955c23"></script>
     <script>
       // The native Flutter lookup can arrive while deferred JavaScript imports
       // and document-ready handlers are still initializing. Hold the newest
@@ -47,11 +47,11 @@
         }
       });
     </script>
-    <script type="module" src="/language/language.js?v=2cdbdbe94b"></script>
-    <script type="module" src="/language/page-find.js?v=2cdbdbe94b"></script>
-    <script type="module" src="/language/word-maps-entry.js?v=2cdbdbe94b"></script>
-    <link href="/language.css?v=2cdbdbe94b" rel="stylesheet"/>
-    <link href="/language/mobile-search.css?v=2cdbdbe94b" rel="stylesheet"/>
+    <script type="module" src="/language/language.js?v=3715955c23"></script>
+    <script type="module" src="/language/page-find.js?v=3715955c23"></script>
+    <script type="module" src="/language/word-maps-entry.js?v=3715955c23"></script>
+    <link href="/language.css?v=3715955c23" rel="stylesheet"/>
+    <link href="/language/mobile-search.css?v=3715955c23" rel="stylesheet"/>
     <link rel="stylesheet" href="/vendor/fontawesome-all.css">
     <style>
 
@@ -253,10 +253,10 @@
                         </svg>
                     </button>
                     <div id="searchSourceChips" class="search-source-chips" role="group" aria-label="Search sources">
-                        <label class="search-source-chip"><input type="checkbox" id="includeLibraryInSearchCb"><i class="search-source-check" aria-hidden="true"></i><span>Books</span></label>
-                        <label class="search-source-chip"><input type="checkbox" id="includeSrtsInSearchCb" checked><i class="search-source-check" aria-hidden="true"></i><span>SRTs</span></label>
-                        <label class="search-source-chip"><input type="checkbox" id="wordMapSearchIncludeCb"><i class="search-source-check" aria-hidden="true"></i><span>Maps</span></label>
-                        <label class="search-source-chip"><input type="checkbox" id="manualSearchIncludeCb"><i class="search-source-check" aria-hidden="true"></i><span>Cards</span></label>
+                        <label class="search-source-chip"><input type="checkbox" id="includeLibraryInSearchCb"><span class="search-source-face"><i class="search-source-check" aria-hidden="true"></i>Books</span></label>
+                        <label class="search-source-chip"><input type="checkbox" id="includeSrtsInSearchCb" checked><span class="search-source-face"><i class="search-source-check" aria-hidden="true"></i>SRTs</span></label>
+                        <label class="search-source-chip"><input type="checkbox" id="wordMapSearchIncludeCb"><span class="search-source-face"><i class="search-source-check" aria-hidden="true"></i>Maps</span></label>
+                        <label class="search-source-chip"><input type="checkbox" id="manualSearchIncludeCb"><span class="search-source-face"><i class="search-source-check" aria-hidden="true"></i>Cards</span></label>
                     </div>
                     <div class="lang-toolbar-center">
                         <!-- Settings gear button -->
@@ -858,19 +858,19 @@
 
 <nav id="mobileSearchNav" aria-label="Cupitor navigation">
     <button type="button" id="mobileSearchHome" aria-current="page">
-        <span class="search-nav-icon"><i class="fas fa-search" aria-hidden="true"></i></span><span>Search</span>
+        <span class="search-nav-icon"><i class="fas fa-search" aria-hidden="true"></i></span><span class="search-nav-label">Search</span>
     </button>
     <button type="button" data-search-action="headerPlaylistsBtn" aria-haspopup="dialog">
-        <span class="search-nav-icon"><i class="fas fa-list-ul" aria-hidden="true"></i></span><span>Playlists</span>
+        <span class="search-nav-icon"><i class="fas fa-list-ul" aria-hidden="true"></i></span><span class="search-nav-label">Playlists</span>
     </button>
     <button type="button" data-search-action="headerWordMapsBtn" aria-haspopup="dialog">
-        <span class="search-nav-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></span><span>Word Maps</span>
+        <span class="search-nav-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></span><span class="search-nav-label">Word Maps</span>
     </button>
     <button type="button" data-search-action="headerPracticeLogBtn" aria-haspopup="dialog">
-        <span class="search-nav-icon"><i class="fas fa-clipboard-list" aria-hidden="true"></i></span><span>Practice Log</span>
+        <span class="search-nav-icon"><i class="fas fa-clipboard-list" aria-hidden="true"></i></span><span class="search-nav-label">Practice Log</span>
     </button>
     <button type="button" id="mobileSearchToolsBtn" aria-haspopup="dialog" aria-controls="mobileSearchTools">
-        <span class="search-nav-icon"><i class="fas fa-sliders-h" aria-hidden="true"></i></span><span>Tools</span>
+        <span class="search-nav-icon"><i class="fas fa-sliders-h" aria-hidden="true"></i></span><span class="search-nav-label">Tools</span>
     </button>
 </nav>
 
