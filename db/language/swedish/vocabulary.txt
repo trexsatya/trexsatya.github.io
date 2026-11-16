@@ -38,6 +38,7 @@
 (study)|Studera|
 (learn)|Lära sig|
 (read)|Läsa|
+(reading)|lektyr|nattlektyr
 (write)|Skriva|
 (walk)|Gå |
 (hike, walk)|Vandra|
@@ -1364,6 +1365,7 @@
 (Sway)|svaja
 (rocking, swinging)|gungning|
 (circulate)|cirkulera|
+(circulation)|omlopp(sl-pl)|
 (circle)|<*ta ett varv|
 (flutter, flap)|fladdra|flaxa|
 (spin, rotate)|snurra|rotera|
@@ -1889,7 +1891,6 @@
 (wear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt|
 (worn out, spent)|utsliten|uttjänt|förbrukad|
 (wear, friction)| slitning|
-(decline)|nedgång|lågkonjunktur|recession
 (run-down, grubby)|sunkig|
 (declining)|nedgående|
 (down and out)|dekis(vdg.)|
@@ -1923,6 +1924,7 @@
 (finalblow)|Sätta in nådastöten|
 (wreck)|skrälle|skrällen(pl)|
 
+(decline)|nedgång|lågkonjunktur|recession
 #Time: scheduling, waiting and postponement
 (postpone, delay)|<*skjuta upp|förhala|anstå|
 (postponement, respite)|uppskjutning|uppskjutningar|uppskov|
@@ -2774,6 +2776,7 @@
 (expression, do not judge a book by its cover)|Döm inte hunden efter håren|
 (expression, still waters run deep)|I de lugnaste vattnen går de största fiskarna|
 (hole)|hål(sl-pl)|
+(Pierce, perforate)|genomtränga|genomborra|perforera
 (smooth, even)|slät( even surface)|jämn|len( smooth to touch)|
 (flat, level)|platt|platt|plan|flack|
 (supple, agile)|smidig|
@@ -2824,7 +2827,7 @@
 (tile)|kakel(sl-pl)|kaklet|kaklen(pl)|
 (hollow)|ihålig|
 (dot)|prick|prickar|
-(edge, border)|kant|kanter|rand|ränder|bård|bårder|
+(edge, border)|kant|kanter|rand|ränder|bård|bårder|flank(ytterst kant)|
 (corner)|hörn|
 (nook)|vrå|vrår|
 (hem)|fåll|
@@ -3351,6 +3354,7 @@
 (promotion)|befordran|befordringar|
 (progress)|framsteg(sl-pl)|
 (progressive)|framstegsvänlig|
+(backward)|bakåtsträvare|bakåtsträvande
 (tailwind)|Vind i seglen|
 (compensate)|Ta igen på gungorna vad man förlorat på karusellen|
 (success)|succé|succén|succéer|
@@ -3717,7 +3721,7 @@
 (pomp, splendour)|prål|prålet|prakt|flärd|pomp|pompa|pompa och ståt|
 (frippery)|bjäfs|
 (Unnecessary things)|krams|krafs|småkrafs|bjäfs|
-(adorn, decorate)|pryda|pryder|prydde|prytt|pryd|smycka|försköna|dekorera|skönmåla|
+(adorn, decorate)|pryda|pryder|prydde|prytt|pryd|smycka|försköna|dekorera|skönmåla|retuschera
 (decoration)|pynt|
 (portray favourably)|snygga till|
 (gild, brighten)|förgylla|
@@ -4395,7 +4399,6 @@
 (expression, stubborn as a mule)|envis som en röd gris|
 (expression, scream like a stuck pig)|skrika som en stucken gris|
 (expression, fat as a pig)|tjock som en julegris|
-(horse)|häst|hästar|pålle|pållar|märr(hästhona)
 (expression, strong as a horse)|stark som en häst|
 (run like a horse)|springa som en häst|
 (expression, work like a horse)|arbeta som en häst|
@@ -4549,6 +4552,7 @@
 (antler)|hjorthorn|hjorthornen|
 (horn)|horn|hornen|horn(sl-pl)|
 
+(horse)|häst|hästar|pålle|pållar|märr(hästhona)
 #Security, safety
 (risk)|Friskt vågat hälften vunnet|
 (risk)|rasrisk|
@@ -4649,6 +4653,7 @@
 (volume)|ljudnivå|ljudnivåer|ljudvolym|ljudvolymen|volym|
 (soundscape, background sound)|Ljudkuliss|
 (call)|läte(ex.fågelläte)|
+(Birdchirp)| fågelkvitter|
 (hoarse, rough)|hes | sträv |grov|raspig|
 (rasp, rasping)| rasp|
 (buzz, hum)|surra|brumma|
@@ -4769,7 +4774,7 @@
 (bang)|pang|
 (buzz)|surra|
 (gurgle)|kurra|
-(rattle, patter)|smattra|
+(rattle, patter)|smattra|knattra|smatter|knatter
 (sputter, simmer)|puttra|
 (hum)|nynna|gnola|tralla|
 (clear one's throat)|harkla|
@@ -5793,12 +5798,12 @@
 (small pond)|Ankdamm|
 (stalk)|stalka|
 (presence)|närvaro|närvaron|
-(absence)|frånvaro|frånvaron|ute<*bli
 (present)|närvarande|
 (in another world, distracted)|I en annan värld|
 (clingy)|klängig|
 (seeking validation)|bekräftelsesökande|
 
+(absence)|frånvaro|frånvaron|ute<*bli
 #Personality: charisma, popularity and reputation
 (--social status, perception--)
 (authority, presence)|pondus|
@@ -6175,6 +6180,7 @@
 (diet, catering arrangements)|kosthåll|
 (kitchen)|kök(sl-pl) |
 (pastry)|bakverk|bakelse|
+(Frost, icing)|glasyr
 (oven)|ugn|ugnar|
 (tiled stove)|kakelugn|
 (stove)|spis|spisar|
@@ -7017,6 +7023,8 @@
 (tree)|träd(sl-pl)|trädet|
 (branch)|gren|grenar|
 (twig)|kvist|
+(Tuft)|tuva|grästuva|
+(straw)|strå|strået|strån(pl)
 (conifer needle)|barr(sl-pl)|
 (root fiber)|rottråd|rottrådar|
 (bark)|bark|barkar|
@@ -7040,6 +7048,7 @@
 (atmosphere)|atmosfär|
 (mountain)|berg|fjäll(sl-pl)|
 (rock, cliff)|klippa|klippor|
+(Stone cairn)|stenröse|stenrösen(pl)|röse|stenrös(sl-pl)|
 (hill)|kulle|kullar|
 (ridge)| ås | åsar |
 (exposed rock slab)|klipphäll|klipphällar|
@@ -7147,6 +7156,7 @@
 (wetland, marsh)|våtmark|myr|myrar|kärr(sl-pl)|myrmark|
 (bog)|mosse|mossar|
 (swamp)|träsk(sl-pl)|
+(Pond)|göl
 (peat)|torv|torven|
 (peatland)|torvmark|
 (marshy)|sank|
@@ -7180,6 +7190,7 @@
 (inland lake)|insjö|
 (watercourse)|vattendrag(sl-pl)|
 (Strait)|sund|
+(Tarn, mere)|tjärn|
 (spring, source)|källa|källor|
 (well)|brunn|brunnar|
 (brook)|bäck|bäckar|
@@ -7389,6 +7400,7 @@
 (champion, advocate)|förfäkta(f.)|plädera(f.)|förkämpe
 (pursue, drive)|driva|
 (drive, run)|köra|
+(takeover)|<*köra om|omkörning
 (by means of)|medelst(f.)|genom|med hjälp av|
 (consume, use up)|konsumera|förbruka|
 (consumption, usage)|förbrukning|förbrukningar|konsumtion|konsumtioner|åtgång|
@@ -7788,7 +7800,7 @@
 (blurred, out of focus)|Suddig|oskarp|
 (unclear, vague)|oklar|luddig|diffus|
 (flickering)|fladdrig|
-(incomprehensible)|obegriplig|ofattbar|oförståelig|
+(incomprehensible)|obegriplig|ofattbar|oförståelig|ofattlig
 (inexplicable)|oförklarlig|
 (riddle)|gåta|gåtor|
 (mystery)|mysterium|mysteriet|mysterier|
@@ -8020,8 +8032,6 @@
 (wire)|vajer|vajern|vajrar|
 (cable)|kabel|kablar|
 (band, strap)|band(sl-pl)|
-(elastic cord, tie)|snodd|snoddar|stropp(gummiband)|stroppar|träns(flätad snodd)
-(Bridle)|betsel
 (strip)|strimma|strimmor|
 (strip)|remsa|remsor|strimmel|strimlar|
 (strap)|rem |remmen|remmar|
@@ -8187,6 +8197,8 @@
 (grip)|grepp(sl-pl)|
 (Tweezer)|pincett(-et)|
 
+(elastic cord, tie)|snodd|snoddar|stropp(gummiband)|stroppar|träns(flätad snodd)
+(Bridle)|betsel
 #Entertainment
 (for fun)|för nöjes skull|på skoj|
 (twinkle in the eye)|Glimten i ögat|
@@ -8215,7 +8227,6 @@
 (paint the town red)|Rulla hatt|
 (Potluck)|knytkalas|knytis|
 (party on)|blir festen av|blir det fest|kommer festen att hållas|
-(the party is cancelled)|festen är avblåst|festen är inställt|blev aldrig av|ute<*bli|blev inte av
 (not happen)|<*bli inte av|
 (lively atmosphere)|Liv i luckan|
 (festive, amusing)|festlig|
@@ -8249,6 +8260,7 @@
 (atmosphere)|stämning|stämningar|atmosfär|atmosfärer|
 (regular guest)|stamgäst|stamgäster|
 
+(the party is cancelled)|festen är avblåst|festen är inställt|blev aldrig av|ute<*bli|blev inte av
 #Crimes, Law, Rules, Regulation, Punishments, Justice
 (murder)|mord(sl-pl)|mordet|
 (murder)|mord(sl-pl)|
@@ -9121,9 +9133,9 @@
 (sentence)|mening|meningar|
 (paragraph, passage)|stycke|stycken|
 (section of law)|paragraf|paragrafer|
-(section)|avsnitt|avsnitt|inslag( om)
 (ought)|böra|bör|borde|bort|
 
+(section)|avsnitt|avsnitt|inslag( om)
 #Language: punctuation, spelling and typography
 (punctuation)|skiljetecken(sl-pl)|
 (full stop)|punkt|
@@ -9241,6 +9253,7 @@
 #Speech: boasting, praise and reputation
 (impress)|imponera|
 (impressive, admirable)|imponerande|beundransvärd|
+(Thrilled, excited)|begeistrad|imponerad|förtjust
 (cruel, awesome)|grym|
 (boast)|skryta|skryter|skröt|skrutit|<*slå sig för bröstet|förhäva(sig)|kråm<*a sig|stoltsera|yvas|högmodas|Skrävla|
 (boasting)|skryt|
@@ -9407,6 +9420,8 @@
 (it happens, that's life)|sånt är livet|
 (Hit on someone)|<*lägga in en stöt|
 
+(it suits you)|det klär dig|
+(good catch)|bra spaning där|
 #Speaking style, Phrases
 (must not be)|får inte vara|fåintva(talspråk)|
 (was I so)|vajaså(talspråk)|
