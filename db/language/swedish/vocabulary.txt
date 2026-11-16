@@ -986,7 +986,7 @@
 (terrified)|livrädd|Rädd som en hare|
 (fear, dread)|rädsla|rädslor|fruktan|fasa|fasor|skräck|
 (fright)|skrämsel|skrämseln|
-(anxiety)|ångest|ångesten|ängslan(lättare)|noja|
+(anxiety)|ångest|ångesten|ängslan(lättare)|noja|vånda
 (worry, concern)|bekymmer(sl-pl)|
 (worry someone)|oroa|bekymra|
 (worry, fret)|oroa <*sig|gruva sig|
@@ -1031,7 +1031,7 @@
 (angrily)|ilsket|
 (resentment)|agg|
 (hostile, unfriendly)|avog|avig|
-(annoyance)|förargelse|
+(annoyance)|förargelse|(till någons )förtret
 (expression, see red, lose one's temper)|<*se rött för ögonen|tappa humöret|
 (furious)|Tända på alla cylindrar|Resa ragg|
 (furious)|rasande|förgrymmad|ursinnig|förbannad|
@@ -1051,7 +1051,7 @@
 (proverb)|arga katter får rivet skinn|
 (hotheaded)|Hetlevrad|kolerisk|
 (irritate)|<*ilskna till|
-(annoy, anger)|förarga|vredga|
+(annoy, anger)|förarga|vredga|förtryta|förtreta
 (have an outburst)|Få frispel|
 (provoke)|Sticka i ögonen|
 (proverb)|Ett mjukt svar stillar vreden|
@@ -1191,7 +1191,7 @@
 (majestic, grand)|majestätisk|ståtlig|storslagen|
 (bombastic)|svulstig|
 (splurge)|Slå på stort|
-(pompous)|högtravande|pompös|
+(pompous)|högtravande|pompös|grötmyndig
 (loudly)|Med buller och bång|
 (hope)|hopp(sl-pl)|förhoppning|förhoppningar|
 (optimism)|optimism|
@@ -1239,7 +1239,7 @@
 (waver, hesitate)|vela|tveka|
 (torn)|I valet och kvalet|
 (undecided)|<*Stå som en åsna mellan två hötappar|<*sitta på två stolar samtidigt|
-(uncertain)|osäker|villrådig|famla i blindo|Sväva i ovisshet|ute på djupt vatten|
+(uncertain)|osäker|villrådig|famla i blindo|Sväva i ovisshet|ute på djupt vatten|tvehågsen|tveksam
 (tentative)|trevande|bollen är rund|
 (indisputable)|otvivelaktig|
 (certainly)|onekligen|säkert|
@@ -2693,7 +2693,7 @@
 (gradually)|Pö om pö|en bit i taget|
 (splinter)|flisa (mest. trä)|flisor|flisbit|
 (scarcely, barely)|knappt|knappt|nätt och jämnt|
-(paltry, insignificant)|ynka|ynklig|futtig|obetydlig|föga|oansenlig|försumbar|hårsmån( gäller avstånd)
+(paltry, insignificant)|ynka|ynklig|futtig|obetydlig|föga|oansenlig|försumbar|hårsmån( gäller avstånd)|obskyr
 (sparing, sparse)|sparsam|
 (scant)|knapp|
 (somewhat)|något|
@@ -3732,7 +3732,7 @@
 (powder)|pudra|
 (cosmetic)|kosmetisk|
 (ornament)|utsira|
-(neat, tidy)|prydlig|
+(neat, tidy)|prydlig|sirlig
 (ornament, decoration)|prydnad|utsmyckning|pynt|garnityr|utsirning|garnering|
 (vignette)|vinjett(i bok framst)|
 (lush)|frodig|
@@ -3816,7 +3816,7 @@
 (Gracious)|graciös
 (slack, limp)|slak|
 (tender)|ömt|
-(fragile, delicate)|bräcklig|skör|ömtålig|
+(fragile, delicate)|bräcklig|skör|ömtålig|grannlaga
 (brittle, crisp)|spröd|sprött|
 (crispy, crunchy)|frasig|krispig|knastrig|knaprig|
 (eloquent)|munvig|
@@ -4004,7 +4004,7 @@
 (peculiar, strange)|besynnerlig|konstig|egendomlig|underlig|märklig|märkvärdig|bisarr|
 (eccentric person)|knäppgök|
 (expression, talk through your hat, talk nonsense)|Prata i nattmössan|
-(murky, suspicious)|dunkel|skum|
+(murky, suspicious)|dunkel|skum|obskyr
 (seem fishy)|Osa katt|
 (especially)|särskilt|synnerligen|i synnerhet|
 (exceptional, particular)|synnerlig|särskild|
@@ -4295,7 +4295,7 @@
 (bargain price)|vrakpris|
 (good value for money)|prisvärd|
 (value)|Man får vad man betalar för|
-(valuable object, treasure)|dyrgrip|dyrbarhet|
+(valuable object, treasure)|dyrgrip|dyrbarhet|klenod
 (valuable)|värdefull|
 (invaluable)|ovärderlig|oskattbar|
 (unworthy)|ovärdig(ant. )|
@@ -4348,7 +4348,7 @@
 (credit)|kredit|
 (credible)|kredibel|
 (buy on credit)|krita(slang)|
-(reliable, trustworthy)|tillförlitlig|pålitlig|trovärdig|
+(reliable, trustworthy)|tillförlitlig|pålitlig|trovärdig|vederhäftig
 (reliability, credibility)|tillförlitlighet|pålitlighet|trovärdighet|
 (trust, confidence)|tillit|tillförsikt|förtroende|
 (trusting)|förtroendefull|
@@ -5645,7 +5645,7 @@
 (gentleman)|gentleman|
 (choose)|Skräda orden|
 (modest, unassuming)|anspråkslös|
-(tactful, considerate)|taktfull|hänsynsfull|finkänslig|
+(tactful, considerate)|taktfull|hänsynsfull|finkänslig|grannlaga
 (quiet, shy)|försynt|försynt|
 (thoughtful, caring)|omtänksam|
 (gentle, sparing)|skonsam|
@@ -5664,13 +5664,13 @@
 (intrude, impose oneself)|Tränga <*sig på|
 (pushy, ruthless)|Vassa armbågar|
 (arrogant, on one's high horse)|På höga hästar|
-(rude, impolite)|oförskämd|oartig|ohövlig|ohyfsad|
+(rude, impolite)|oförskämd|oartig|ohövlig|ohyfsad|otidig
 (insolent, cheeky)|uppkäftig|uppnosig|näsvis|
 (unabashed)|oblyg|
 (shameless)|skamlös|
 (indecent)|oanständig|
 (impudent, bold)|fräck|
-(inconsiderate, ruthless)|hänsynslös|
+(inconsiderate, ruthless)|hänsynslös|tarvlig
 (rush about wildly)|fara fram som ett yrväder|
 (without embarrassment)|utan blygsel|
 (brusque, blunt)|burdus|brysk|
@@ -5703,7 +5703,7 @@
 (cowardly, timid)|feg|mesig|mjäkig|pjoskig|
 (coward, weakling)|fegis| mes|ynkrygg|ynkryggar|
 (bold, brave)|djärv|modig|
-(fearless)|orädd|
+(fearless)|orädd|karsk
 (frank, confident)|frimodig|
 (valiant)|tapper|
 (warrior)|kämpe|
@@ -5823,7 +5823,7 @@
 (selfishness)|egoism|
 (selfish person, egoist)|egoist|egoister|
 (self interest comes first)|Man är alltid sig själv närmast|
-(smug, self-important)|självgod|förnumstig|
+(smug, self-important, sapient)|självgod|förnumstig|
 (know-it-all)|besserwisser|
 (greedy)|girig|Mycket vill ha mer|
 (glutton)|girigbuk|girigbukar|
@@ -5887,7 +5887,7 @@
 (snob)|stropp|
 (Complacent)|självbelåten|egenkär|självgod|
 (fall)|Högmod går före fall|
-(cocky, arrogant)|kaxig|pösig|dryg|stöddig|morsk|stursk|
+(cocky, arrogant)|kaxig|pösig|dryg|stöddig|morsk|stursk|grötmyndig
 (expression, proud as a peacock)|Stolt som en tupp|
 (straight as a pine)|Rak som en fura|
 (dandy, snob)|sprätt|snobb|
@@ -5907,6 +5907,7 @@
 (--effort--)
 (cautious undertaking)|Gräv inte upp större sten än du kan bära|
 (persistent, persevering)|uthållig|oförtruten|trägen|trägna|
+(meddlesome, officious)|beskäftig|näbbig
 (insistent, importunate)|enträgen( insistent)|enträgna|
 (expression, what does not kill you makes you stronger)|Det som inte dödar, härdar|
 (expression, participation matters more than winning)|Det viktigaste är inte att vinna utan att kämpa väl|
@@ -6087,7 +6088,7 @@
 (brilliant, ingenious)|genial|snillrik|
 (stay in your lane)|Bli vid sin läst|
 (knowitall)|förståsigpåare(nedsättande, ironisk)|
-(cunning, crafty)|slug|rävslug|listig|listig som en räv|fullflätad|Slug som en räv|
+(cunning, crafty)|slug|rävslug|listig|listig som en räv|fullflätad|Slug som en räv|förslagen
 (quick-witted)|klipsk|
 (calculating)|beräknande|
 (cunning)|Listig som en orm|Räv bakom örat|
@@ -7773,6 +7774,7 @@
 (hide, conceal)|dölja|döljer|dolde|dolt|dölj|
 (concealing)|döljande|
 (hidden)|dold|
+(ambush)|bakhåll(dold ställning för anfall)
 (disguised)|förklätt|
 (cover, veil)|hölja|hölja|höljer|höljde|höljt|
 (be covered)|höljas|
@@ -9110,7 +9112,7 @@
 (Apparent)|skenbar|bara till synes
 (unholy)|ohelig|
 (unnatural)|onaturlig|
-(affected)|tillgjord|
+(affected)|tillgjord|snirklad
 (not gold)|allt är inte guld som glimmar|Skenet bedrar|
 (affected, stilted)|förkonstlad|uppstyltad|högtravande|konstlad|
 (artificial, man-made)|konstgjord|
