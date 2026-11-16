@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="language/word-maps.css?v=392f58b501">
+    <link rel="stylesheet" href="language/word-maps.css?v=5b80f756ce">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/vendor/split-type.js"></script>
     <script type="text/javascript" src="/vendor/pagination.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap.min.js"></script>
-    <link href="/index.css?v=392f58b501" rel="stylesheet"/>
+    <link href="/index.css?v=5b80f756ce" rel="stylesheet"/>
     <script type="text/javascript" src="/vendor/string-similarity.js"></script>
     <script type="text/javascript" src="/vendor/mediaelement.js"></script>
     <link href="/vendor/mediaelement-player.css" rel="stylesheet">
@@ -31,9 +31,9 @@
 
     <script src="/vendor/select2.min.js"></script>
     <script src="/vendor/lodash.js"></script>
-    <script src="/github-utils.js?v=392f58b501"></script>
-    <script type="module" src="/data-structures.js?v=392f58b501"></script>
-    <script type="module" src="/language/spanish.js?v=392f58b501"></script>
+    <script src="/github-utils.js?v=5b80f756ce"></script>
+    <script type="module" src="/data-structures.js?v=5b80f756ce"></script>
+    <script type="module" src="/language/spanish.js?v=5b80f756ce"></script>
     <script>
       // The native Flutter lookup can arrive while deferred JavaScript imports
       // and document-ready handlers are still initializing. Hold the newest
@@ -47,11 +47,11 @@
         }
       });
     </script>
-    <script type="module" src="/language/language.js?v=392f58b501"></script>
-    <script type="module" src="/language/page-find.js?v=392f58b501"></script>
-    <script type="module" src="/language/word-maps-entry.js?v=392f58b501"></script>
-    <link href="/language.css?v=392f58b501" rel="stylesheet"/>
-    <link href="/language/mobile-search.css?v=392f58b501" rel="stylesheet"/>
+    <script type="module" src="/language/language.js?v=5b80f756ce"></script>
+    <script type="module" src="/language/page-find.js?v=5b80f756ce"></script>
+    <script type="module" src="/language/word-maps-entry.js?v=5b80f756ce"></script>
+    <link href="/language.css?v=5b80f756ce" rel="stylesheet"/>
+    <link href="/language/mobile-search.css?v=5b80f756ce" rel="stylesheet"/>
     <link rel="stylesheet" href="/vendor/fontawesome-all.css">
     <style>
 
@@ -343,16 +343,16 @@
                                 <button type="button" class="lang-tool-btn search-vocab-menu-item" data-mode="prefix">Search by prefix</button>
                                 <button type="button" class="lang-tool-btn search-vocab-menu-item" data-mode="similar">Search Similar</button>
                                 <button type="button" class="lang-tool-btn search-vocab-menu-item" data-mode="rerun" title="Run the current search again">Rerun Search</button>
-                                <div class="vocab-lookup-controls" role="group" aria-label="Vocabulary search">
-                                    <label>Learning <select id="vocabularyLearningLanguage"></select></label>
-                                    <label>I know well <select id="vocabularyLookupLanguage"></select></label>
-                                </div>
                                 <label id="vocabularyEditOption" class="vocab-edit-option">
                                     <input type="checkbox" id="showEditVocabulary" aria-controls="vocabularyResult">
                                     Show Edit vocabulary
                                 </label>
                             </div>
                         </div>
+                    </div>
+                    <div id="vocabularyLanguages" class="vocab-lookup-controls" role="group" aria-label="Learning languages">
+                        <label>Learning <select id="vocabularyLearningLanguage"></select></label>
+                        <label>I know well <select id="vocabularyLookupLanguage"></select></label>
                     </div>
                     <div id="btns-2" class="lang-search-select-row" style="margin-bottom: 0;">
                         <div class="lang-select-with-toggle">
