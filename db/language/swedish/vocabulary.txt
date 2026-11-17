@@ -5135,7 +5135,7 @@
 (isolated)|avskild|avskilt|
 (isolate)|avskärma|isolera|
 (corner)|I skamvrån(som straff)|
-(cold)|Ute i kylan|
+(Out in the cold)|ute i kylan|
 (crowd)|folkmassan|
 (flock, group)|flock|
 (relate to, take a stance)|<*förhålla <*sig|
