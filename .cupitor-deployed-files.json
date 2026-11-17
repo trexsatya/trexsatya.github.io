@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "2a6256093764f87a27fb75d27a6efd3fab64b108",
+  "sourceRevision": "834557432d671f912046a680cdf276f385e834b2",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -202,6 +202,7 @@
     "language/study-calls.js",
     "language/study-chrome.js",
     "language/study-divider.js",
+    "language/study-session-timeout.js",
     "language/subtitle-batches.js",
     "language/subtitle-bundles.js",
     "language/subtitle-corpus-store.js",
@@ -294,7 +295,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.f0da111a0c203b7ef88922b672bd28f3.js",
+    "precache-manifest.576537b4f08dfbb54e7eae755866bfe8.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
