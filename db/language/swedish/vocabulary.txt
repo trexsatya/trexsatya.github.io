@@ -382,7 +382,7 @@
 (trait, characteristic)|egenskap|egenskaper|drag(sl-pl)|särdrag|
 (temperament)|lynne|lynnen(pl)|
 (temperament)|sinnelag|natur|mentalitet|läggning|läggningar|
-(dear to someone)|(ligga någon) varmt om hjärtat|
+(dear to someone)|(ligga någon) varmt om hjärtat|(vara)ögonsten|
 (important, significant)|angelägen|betydelsefull|
 (done)|<*sätta sin sista potatis|
 
@@ -824,7 +824,7 @@
 (crazy)|ha tomtar på loftet|
 (dizzy)|vimmelkantig|omtumlad|groggy|
 (confusion)|förvirring|förvirringar|
-(mislead)|förvilla|
+(mislead, obfuscate)|förvilla|
 (ambivalence)|ambivalens|ambivalensen|kluvenhet|
 (indecisive)|obeslutsam|vankelmodig|
 (hesitation, doubt)|tveksamhet|tveksamheter|tvekan|
@@ -1458,7 +1458,8 @@
 (shortcut)|genväg|
 (lost)|vilse|
 (misleading guidance)|vilseledning|
-(mislead)|misleda|
+(mislead)|misleda|avleda
+(red herring)|villospår|avledningsmanöver|villoväg
 (lost)|vilsen|Bortkommen|
 (get lost)|gå vilse|förirra(sig)|
 (newlyarrived)|nyanländ|
@@ -3125,7 +3126,7 @@
 (inhibit)|hämma|
 (inhibition)|hämning|
 (hinder, obstruct)|hindra|
-(obstacle)|hinder|hämsko|
+(obstacle)|hinder|hämsko|flaskhals(bottleneck)
 (topple, thwart)|stjälpa|stjälper|stjälpte|stjälpt|
 (padding, stuffing)|stoppning|stoppningar|
 (stand in the way)|(sätta)<*ställa sig i vägen|
@@ -3352,7 +3353,7 @@
 (Manage to succeed)|<*få till |
 (forge)|Envar sin egen lyckas smed|
 (promotion)|befordran|befordringar|
-(progress)|framsteg(sl-pl)|
+(progress)|framsteg(sl-pl)|landvinning(stor)|
 (progressive)|framstegsvänlig|
 (backward)|bakåtsträvare|bakåtsträvande
 (tailwind)|Vind i seglen|
@@ -3383,7 +3384,7 @@
 (hit snag)|<*stöta på patrull|<*gå på pumpen|åka på pumpen|
 (demotion)|degradering|
 (person whose venture has failed, crank)|haverist|haverister|
-(failure)|haveri|	haverier|misslyckande|misslyckanden(pl)|fiasko(starkare)|fiaskon(pl)|flopp|floppar|bottennapp(sl-pl)|
+(failure)|haveri|	haverier|misslyckande|misslyckanden(pl)|fiasko(starkare)|fiaskon(pl)|flopp|floppar|bottennapp(sl-pl)|stolpskott
 (setback)|bakslag(sl-pl)|motgång|motgångar|
 (regression, decline)|tillbakagång|
 (catastrophic, disastrous)|katastrofal|ödesdiger|ödesdigra|
@@ -3685,7 +3686,7 @@
 (stylish, elegant)|stilig|flott|flådig|elegant|snitsig|
 (tasteful)|smakfull|
 (fancy)|tjusig|
-(attractive)|lockande|attraktiv|tilltalande|tilldragande|
+(attractive)|lockande|attraktiv|tilltalande|tilldragande|dragplåster
 (mislead, tempt astray)|förleda|
 (entice, attract)|locka|
 (seduce)|förföra|
@@ -4328,6 +4329,7 @@
 (debt)|skuld|skulder|gäld(f.)|gälder|
 (indebtedness)|skuldsättning|
 (put in debt)|skuld<*sätta|
+(scapegoat)|syndabock
 (debt)|skuldsanering|skuldsaneringar|
 (guarantee)|garanti|garantier|
 (guarantee)|garantera|garanterar|garanterade|garanterat|
@@ -5269,6 +5271,7 @@
 (company, being together)|samvaro|
 (community, fellowship)|gemenskap|samhörighet|
 (society)|samhälle|
+(parlour)|finrum
 (All know)|bevingat ord|
 (union)|fackförening|fackföreningar|
 (corps)|kår|kårar|
@@ -5362,6 +5365,7 @@
 (pact)|pakt|fördrag|
 (agree)|överensstämma|överensstämmer|överensstämde|överensstämt|överensstäm|
 (disagreement)|meningsskiljaktighet|meningsskiljaktigheter|
+(watershed)|vattendelare
 (disparate, dissimilar)|disparat|olikartad|
 (incompatible, conflicting)|oförenlig|motstridig|
 (quarrel, make a fuss)|bråka|tvista|<*gå an |härja|
@@ -5442,7 +5446,7 @@
 (Blame,grudge)|<*hålla .* räkning för(ngt)|<*bära agg mot(ngn)|
 (smear, malign)|smutskasta|kasta smuts|
 (slander)|förtal|
-(criticism)|kritik|
+(criticism)|kritik|bakläxa
 (retort, opposition)|mothugg(sl-pl)|
 (scolding)|utskällning|
 (be severely scolded)|<*få sina fiskar varma|
@@ -6906,6 +6910,7 @@
 (ear)|öra|öron|örat|
 (eye)|öga|ögon(pl)|ögat|
 (eyelash)|ögonfrans|ögonfransar|
+(Pupil)|pupill|ögonsten
 (eyebrow)|ögonbryn(sl-pl)|
 (eye socket)|ögonhåla|ögonhålor|
 (organ)|organ(sl-pl)|
@@ -7915,7 +7920,7 @@
 (custody, storage)|förvar|
 (safe)|kassaskåp|
 (stock, supplies)|förråd(sl-pl)|förrådet|lager(sl-pl)|lagret|
-(storage)|förvaring|förvaringar|
+(storage)|förvaring|förvaringar|durk(förvaringsrum)
 (depot)|depå(er)|
 (hoard)|hamstra|
 (hoarding)|hamstring|
@@ -8312,7 +8317,7 @@
 (punish)|bestraffa|straffa|
 (beat, whip)|prygla |aga|snärta|piska|spöa|smiska|
 (beat up)| klå (upp)|klår|klådde|klått|
-(punishment)|straffning|
+(punishment)|straffning|(löpa)gatlopp
 (prison)|fängelse|finka|
 (imprison)|fängsla|
 (imprisonment)|fängsling|
@@ -8442,6 +8447,7 @@
 (teach, learn)|lära|
 (learn)|lära sig|inlära|
 (learning)|lärande|inlärande|inläranden|
+(homework)|bakläxa|hemläxa|skoluppgift
 (expression, train children early)|Det ska böjas i tid, det som krokigt ska bli|
 (expression, you cannot teach an old dog new tricks)|Man kan inte lära gamla hundar sitta|
 (learning)| Lärdom är mer värt än guld|Man lär så länge man lever|
