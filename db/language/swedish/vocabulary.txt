@@ -77,7 +77,6 @@
 (feel unwell)|må dåligt|
 (sad)|ledsen|
 (angry)|arg|
-(afraid)|rädd|haja till
 (stressed)|stressad|
 (worried)|orolig|
 (nervous)|nervös|
@@ -89,6 +88,7 @@
 (desire, lust)|åtrå|sexuell lust|
 (desire)|(är du )tänd på (henne)|
 
+(afraid)|rädd|haja till
 #Sleep and rest
 (relaxation)|avslappning|
 (relax)|<*slappna av|<*koppla av|
@@ -342,7 +342,6 @@
 (shoot)|skjuta|skjuter|sköt|skjutit|
 (shooting)|skjutning|skjutningar|
 (shot)|skott|skottar|skottet|skottar|
-(Cartridge)|patron|projektil
 (poacher)|tjuvskytt|tjuvskyttar|
 (sniper)|krypskytt|krypskyttar|
 (fish)|meta|fiska|
@@ -350,6 +349,7 @@
 (camp, pitch camp)|Lägra( sig)|<*slå läger|
 (camp)|läger(sl-pl)|
 
+(Cartridge)|patron|projektil
 #Thought and abstraction: general concepts
 (regarding)|angående|gällande|beträffande(f.)|
 (nosy)|(Man ska inte) lägga näsan i blöt|
@@ -378,7 +378,6 @@
 (expression, wisdom is easier to conceal than folly)|Lättare döljer en vis sin visdom än en dåre sin dårskap|
 (habitual)|vanemässig|
 (habit)|vana|vanor|
-(automatic)|<*sitta i ryggmärgen|
 (unchangeable)|Ränderna går aldrig ur|
 (trait, characteristic)|egenskap|egenskaper|drag(sl-pl)|särdrag|
 (temperament)|lynne|lynnen(pl)|
@@ -387,6 +386,7 @@
 (important, significant)|angelägen|betydelsefull|
 (done)|<*sätta sin sista potatis|
 
+(automatic)|<*sitta i ryggmärgen|
 #Thought, reflection and reasoning
 (consider)|<*Ha i åtanke|
 (mind)|sinne|sinnet|sinnen(pl)|
@@ -2918,7 +2918,6 @@
 #Beginning and creation: starting and initiating
 (found)|instifta|inrätta|etablera|grunda|
 (begin)|börja|starta|påbörja|<*sätta i gång|<*sätta igång|sjösätta|
-(Launch)|lansera|framkasta
 (done)|Sagt och gjort|
 (start from, proceed from)|utgå|
 (give birth, feed)|föda|
@@ -2933,6 +2932,7 @@
 (introduction, implementation)|införande|
 (begin)|börja|
 
+(Launch)|lansera|framkasta
 #Beginning and creation: forming, building and producing
 (cast, pour into a mould)|gjuta|gjuter|göt|gjutit|
 (pour)|hälla|
@@ -4823,7 +4823,7 @@
 (spark)|Gnista|gnistor|
 (sparkle)|gnistra|
 (radiant)|strålande|lysande|glänsande|gnistrande|
-(glow)|glöda|glöder|glödde|glött|
+(glow)|glöda|glöder|glödde|glött|pyra|
 (glow, embers)|glöd|
 (glowing)|glödande|
 (blink)|blinka|
@@ -8427,7 +8427,6 @@
 (testing)|provning|
 (oral examination, interrogation)|förhör|
 (practise)|utöva|
-(practice, exercise)|utövning|praktik|
 (drill, plod through)|traggla|traggler|tragglat|traggla sig igenom|tröska igenom|
 (repetitive practice)|traggel|
 (instruct)|instruera|anvisa|
@@ -8516,6 +8515,7 @@
 (general knowledge)|allmänbildning|
 (lab)|laboration|laborationer|
 
+(practice, exercise)|utövning|praktik|
 #Lines of work, jobs, occupations, professions & related words
 (position)|befattning|befattning|post|poster|ämbete(f.)|ämbeten(pl)|ämbetet|
 (employer)|arbetsgivare|
@@ -8641,6 +8641,7 @@
 (crofter)|torpare|
 (croft)|torp(sl-pl)|
 (farmer)|bonde|bonden|bönder|
+(peasantry)| allmoge| allmogen
 (carver)|täljare(sl-pl)|täljarn|
 (craft)|slöjd|slöjder|hantverk|
 (throw pottery)|dreja|
