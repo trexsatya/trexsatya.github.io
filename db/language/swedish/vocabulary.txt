@@ -7782,6 +7782,8 @@
 (concealing)|döljande|
 (hidden)|dold|
 (ambush)|bakhåll(dold ställning för anfall)
+(lie in ambush, lie in wait)|ligga i försåt|låg i försåt|
+(lay a trap for someone, set an ambush for someone)|ställa försåt för någon|lägga försåt för någon|
 (disguised)|förklätt|
 (cover, veil)|hölja|hölja|höljer|höljde|höljt|
 (be covered)|höljas|
@@ -8855,11 +8857,19 @@
 (feint)|skenmanöver|skenmanöverer|
 (dishonest)|oredlig|
 (dishonest, deceitful)|oärlig|lögnaktig|förljugen|
+(sly, underhanded)|bakslug|bakslugt|baksluga|
+(treacherous, faithless)|svekfull|svekfullt|svekfulla|
+(insidious)|insidiös(mindre brukligt)|insidiöst|insidiösa|
+(treachery, insidiousness)|försåtlighet|försåtligheten|
 (lie, speak deceitfully)|tala med kluven tunga|ljuga|blåljuga|ljuger|ljög|ljugit|ljug|
 (lie, falsehood)|lögn|lögner|
 (mendacity)|lögnaktighet|
 (fraud)|svindleri|svindel|
 (honest, sincere)|ärlig|uppriktig|renhjärtad|renhjärtig|
+(honesty)|ärlighet|ärligheten|
+(sincerity, candour)|uppriktighet|uppriktigheten|
+(openness, transparency)|öppenhet|öppenheten|
+(fair play, clean play)|rent spel|
 (outspoken)|frispråkig|
 (truthful)|sanningsenlig|
 (upright)|rakryggad|
@@ -8890,14 +8900,18 @@
 (cry wolf)|Man ska inte ropa varg i onödan|
 (deceive, swindle)|lura (av)|blåsa(vard. )|bedra|bedrar|bedrog|bedragit|svindla|
 (mislead)|vilseleda|missvisa|
+(manipulate someone, influence someone unfairly)|manipulera|manipulerar|manipulerade|manipulerat|
 (tricky, ingenious)|klurig|
 (misleading)|vilseledande|
 (trick question)|kuggfråga|kuggfrågor|
+(deceptive question, question meant to trap someone)|försåtlig fråga|försåtliga frågor|
 (trick, deceive)|narra|
 (mock)|göra narr av|gäcka|
 (lead astray)|(Föra någon) bakom ljuset|
 (lead astray)|Föra någon bakom ljuset|
 (after something)|Ute efter (ngt)|
+(ulterior motive, hidden intention)|baktanke|baktanken|baktankar|
+(pretext, false excuse)|svepskäl|svepskälet|svepskälen|
 (secret)|hemlighet|hemlis|
 (keep secret)|hemlighålla|undanhålla|förtiga|fördölja|
 (put lid on)|Lägga locket på|
@@ -8919,11 +8933,16 @@
 (clarify, establish)|klarlägga|
 (out someone)|Hänga ut någon|
 (suspect)|misstänka|Ana ugglor i mossen|(ana )Osa katt|
+(sense trouble, suspect something is wrong)|ana oråd|anade oråd|
 (fear)|befara|
 (look askance)|Titta snett på någon|
 (something fishy)|Här ligger en hund begraven|inte <*stå rätt till|
 (take with salt)|(Ta något) med en nypa salt|
 (conspiracy, plot)|konspiration|intrig|intriger|komplott|komplotter|sammansvärjning|sammansvärjningar|ränk|ränker|
+(underhand plot, treacherous scheme)|lömsk intrig|lömska intriger|
+(scheming, intrigue)|ränkspel|ränkspelet|
+(ambush, trap, underhand plot)|försåt|försåtet|
+(fall into the trap)|gå i fällan|gick i fällan|gått i fällan|
 (clever plan)|listig plan|
 (sit by oneself, ponder)|kuckelura|
 (give an account, report)|redogöra|åter<*ge|redovisa|upp<*ge|av<*ge rapport|
