@@ -77,7 +77,7 @@
 (feel unwell)|må dåligt|
 (sad)|ledsen|
 (angry)|arg|
-(afraid)|rädd|
+(afraid)|rädd|haja till
 (stressed)|stressad|
 (worried)|orolig|
 (nervous)|nervös|
@@ -342,6 +342,7 @@
 (shoot)|skjuta|skjuter|sköt|skjutit|
 (shooting)|skjutning|skjutningar|
 (shot)|skott|skottar|skottet|skottar|
+(Cartridge)|patron|projektil
 (poacher)|tjuvskytt|tjuvskyttar|
 (sniper)|krypskytt|krypskyttar|
 (fish)|meta|fiska|
@@ -377,7 +378,7 @@
 (expression, wisdom is easier to conceal than folly)|Lättare döljer en vis sin visdom än en dåre sin dårskap|
 (habitual)|vanemässig|
 (habit)|vana|vanor|
-(automatic)|sitter I ryggmärgen|
+(automatic)|<*sitta i ryggmärgen|
 (unchangeable)|Ränderna går aldrig ur|
 (trait, characteristic)|egenskap|egenskaper|drag(sl-pl)|särdrag|
 (temperament)|lynne|lynnen(pl)|
@@ -2917,6 +2918,7 @@
 #Beginning and creation: starting and initiating
 (found)|instifta|inrätta|etablera|grunda|
 (begin)|börja|starta|påbörja|<*sätta i gång|<*sätta igång|sjösätta|
+(Launch)|lansera|framkasta
 (done)|Sagt och gjort|
 (start from, proceed from)|utgå|
 (give birth, feed)|föda|
@@ -8425,7 +8427,7 @@
 (testing)|provning|
 (oral examination, interrogation)|förhör|
 (practise)|utöva|
-(practice, exercise)|utövning|
+(practice, exercise)|utövning|praktik|
 (drill, plod through)|traggla|traggler|tragglat|traggla sig igenom|tröska igenom|
 (repetitive practice)|traggel|
 (instruct)|instruera|anvisa|
