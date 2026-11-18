@@ -5091,7 +5091,16 @@
 (thoroughly deceived)|grundlurad|
 (duped)|duperad|dragen vid näsan|
 (fraud)|bedrägeri|bedrägeriet|bedrägerier|lurendrejeri|
+(hoax, bluff, scam)|bluff|bluffen|bluffar|
+(con, rip-off)|blåsning(vard.)|blåsningen|blåsningar|
+(fraudulent deal, scam)|bluffaffär|bluffaffären|bluffaffärer|
+(con trick, swindle)|bondfångeri|bondfångeriet|
+(sham, fraud)|humbug|humbugen|
 (fraudster)|bedragare|lurendrejare|
+(swindler, con artist)|svindlare|svindlaren|
+(hoaxer, con artist)|bluffmakare|bluffmakaren|
+(crook, con artist)|skojare|skojaren|
+(con artist, swindler)|bondfångare|bondfångaren|
 (fraudulent)|bedräglig|
 (treason)|förräderi|förräderiet|förräderier|
 (romance scam)|Sol-och-vårande|romansbedrägeri|
@@ -8865,6 +8874,7 @@
 (lie, falsehood)|lögn|lögner|
 (mendacity)|lögnaktighet|
 (fraud)|svindleri|svindel|
+(forgery, falsification)|förfalskning|förfalskningen|förfalskningar|
 (honest, sincere)|ärlig|uppriktig|renhjärtad|renhjärtig|
 (honesty)|ärlighet|ärligheten|
 (sincerity, candour)|uppriktighet|uppriktigheten|
