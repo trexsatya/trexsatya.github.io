@@ -1,2 +1,7 @@
 # Lookup languages with shared vocabulary hints
 hi
+de
+es
+pt
+pl
+uk
