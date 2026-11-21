@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "languages": [
+    {
+      "name": "swedish",
+      "code": "sv",
+      "locale": "sv-SE",
+      "subtitleSuffix": ".sv.srt",
+      "dictionary": "sv",
+      "capabilities": {
+        "study": true,
+        "calls": true,
+        "morphology": "swedish"
+      }
+    },
+    {
+      "name": "spanish",
+      "code": "es",
+      "locale": "es-ES",
+      "subtitleSuffix": ".es.srt",
+      "dictionary": "es",
+      "capabilities": {
+        "study": true,
+        "calls": true,
+        "morphology": "spanish"
+      }
+    },
+    {
+      "name": "english",
+      "code": "en",
+      "locale": "en-US",
+      "subtitleSuffix": ".en.srt",
+      "dictionary": "en",
+      "capabilities": {
+        "study": false,
+        "calls": true,
+        "morphology": null
+      }
+    },
+    {
+      "name": "french",
+      "code": "fr",
+      "locale": "fr-FR",
+      "subtitleSuffix": ".fr.srt",
+      "dictionary": "fr",
+      "capabilities": {
+        "study": false,
+        "calls": true,
+        "morphology": null
+      }
+    },
+    {
+      "name": "german",
+      "code": "de",
+      "locale": "de-DE",
+      "subtitleSuffix": ".de.srt",
+      "dictionary": "de",
+      "capabilities": {
+        "study": false,
+        "calls": true,
+        "morphology": null
+      }
+    },
+    {
+      "name": "hindi",
+      "code": "hi",
+      "locale": "hi-IN",
+      "subtitleSuffix": ".hi.srt",
+      "dictionary": "hi",
+      "capabilities": {
+        "study": false,
+        "calls": true,
+        "morphology": null
+      }
+    },
+    {
+      "name": "greek",
+      "code": "el",
+      "locale": "el-GR",
+      "subtitleSuffix": ".el.srt",
+      "dictionary": "el",
+      "capabilities": {
+        "study": false,
+        "calls": true,
+        "morphology": null
+      }
+    }
+  ]
+}
