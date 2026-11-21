@@ -54,7 +54,7 @@
 (support)|<*stödja|
 (support, stand by someone)|<*hålla .* om ryggen|<*hålla .* under armarna|
 (families, clans)|Släkter|
-(relative)|släkting|
+(relative)|släkting|(manlig släkting)frände
 (family)|Familj|
 (friends)|Vänner|
 (colleagues)|Kollegor|
@@ -198,6 +198,7 @@
 (Bad taste)|bismak|
 (unaware)|ovetande|omedveten|
 (inspiration, sudden idea)|ingivelse|
+(Give a feeling or thought)|in<*ge( e.g. hopp)
 (glance)|<*kasta ett getöga(snabbt)|
 (view)|utsikt|utsikter|vy|vyer|
 (look)|titta|
@@ -274,7 +275,7 @@
 (Express)|<*få fram|uttrycka|
 (hand signal)|handteckning|handteckningar|
 (signal)|signalera|
-(hint, suggest)|antyda|antyder|antydde|antytt|
+(hint, suggest)|antyda|antyder|antydde|antytt|insinuera(negativ innebörd)|<*låta påskina
 (indicate, point to)|indikera|tyda på|
 (bodylanguage)|kroppsspråk|
 (question, issue)|fråga|frågor|frågeställning|spörsmål|
@@ -369,7 +370,7 @@
 (coat, paint)|be<*stryka|
 (announce, call for)|utlysa|utlyser|utlyste|utlyst|
 (announcement)|utlysning|utlysningar|
-(sudden)|plötslig|vips
+(sudden)|plötslig|vips|hux flux
 (spontaneous)|spontan|<*dra till med( gissning, förslag, handling)
 (impulsive)|Hals över huvud|
 (remark)|anmärka|påpeka|
@@ -541,7 +542,7 @@
 (same situation)|<*Sitta i samma båt|
 (imitate)|efterlikna|
 (Follow)|<*ta efter|efterlikna|
-(likeminded)|likasinnat|
+(likeminded)|likasinnad|likasinnat|sympatisör|frände
 (reverse)|Vända på steken|
 (uniform, monotonous)|enahanda|enformig|monoton|
 (monotony)|enformighet|enformigheter|
@@ -562,6 +563,7 @@
 (confer, consult together)|konferera|rådgöra|
 (discuss)|diskutera|
 (consult someone)|rådfråga|
+(Sounding board)|bollplank
 (mapping, survey)|kartläggning|kartläggningar|
 (inventory, stocktaking)|inventering|inventeringar|
 (review, critique)|recensera|
@@ -985,7 +987,7 @@
 (scared)|skrajsen|
 (scare, frighten)|skrämmas|skrämma|skrämmer|skrämde|skrämt|skrämma upp|vad du skräms|
 (terrified)|livrädd|Rädd som en hare|
-(fear, dread)|rädsla|rädslor|fruktan|fasa|fasor|skräck|
+(fear, dread)|rädsla|rädslor|fruktan|fasa|fasor|skräck|bäva
 (fright)|skrämsel|skrämseln|
 (anxiety)|ångest|ångesten|ängslan(lättare)|noja|vånda
 (worry, concern)|bekymmer(sl-pl)|
@@ -995,7 +997,7 @@
 (apply oneself to, take pains over)|<*lägga sig an på|
 (spoiled)|Smolk i glädjebägaren|Dra öronen åt sig|
 (thrilling)|Skräckblandad förtjusning|
-(scary, frightening)|skrämmande|ryslig|otäck|läskig|hemsk|gräslig|läbbig|
+(scary, frightening)|skrämmande|ryslig|otäck|läskig|hemsk|gräslig|läbbig|hisklig
 (deterrent, discouraging)|avskräckande|
 (horrible, dreadful)|ruskig|ruggig|fasansfull|fruktansvärd|förskräcklig|förfärlig|
 (eerie)|kuslig|
@@ -1261,7 +1263,7 @@
 (authenticity)|äkthet|
 (excuse, pretext)|Ursäkt|förevändning|täckmantel|
 (solid)|rejäl|redig|riktig|
-(treacherous, insidious)|lömsk|försåtlig|
+(treacherous, insidious)|lömsk|försåtlig|förrädisk
 (unreliable)|opålitlig|
 (not credible)|otrovärdig|
 (dangerous)|farlig|
@@ -1890,7 +1892,7 @@
 (fall)|falla|
 (disintegrate)|sönderfalla|
 (fall)|stupa|
-(wear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt|
+(wear and tear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt|
 (worn out, spent)|utsliten|uttjänt|förbrukad|
 (wear, friction)| slitning|
 (run-down, grubby)|sunkig|
@@ -2089,7 +2091,7 @@
 (frequently, repeatedly)| i tid och otid|jämnt och ständigt|stup i kvarten|ideligen|stup i ett|gång på gång|åter och åter|
 (on ordinary days)|till vardags|
 (at a time)| åt gången|
-(in all weather)|i ur och skur|i regn och rusk|
+(in all weather)|i ur och skur|i regn och rusk|i vått och torrt
 (whether)|vare sig|
 (in advance)|(planering)på förhand|i förväg|
 (afterwards)|i efterhand|
@@ -3176,7 +3178,7 @@
 
 #End and destruction: decay, decline and disappearance
 (Corrode)|fräta|
-(wear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt|
+(wear and tear)|slita|sliter|slet|slitit|slit|tära|tär|tärde|tärt|
 (worn out, spent)|utsliten|uttjänt|förbrukad|
 (wear, friction)| slitning|
 (decline)|nedgång|
@@ -3411,7 +3413,7 @@
 (fluctuate)|fluktuera|variera|växla|omväxla|
 (transform)|omvandla|förvandla|
 (transformation)|omvandling|
-(adapt)|anpassa|
+(adapt)|anpassa|skräddarsy( råd)
 (adaptation)|anpassning|anpassningar|
 (adapt oneself)|anpassa sig|anpassar sig|anpassade sig|anpassat sig|
 (adapt to local customs)|Ta seden dit man kommer|Man får ta seden dit man kommer|tala med bönder på bönders vis|
@@ -3785,6 +3787,7 @@
 (fat person)|tjockis|
 (overweight)|överviktig|
 (underweight)|underviktig|
+(Diet)|banta
 (bony)|benig|
 (slimy)|slipprig|slemmig|
 (slippery)|hal|halt|
@@ -3886,7 +3889,7 @@
 (expression, a storm in a teacup, a tempest in a teapot)|Storm i ett vattenglas|
 (necessary)|nödvändig|välbehövlig|erforderlig(f.)|
 (fine-grained)|finkornig|
-(whenitcounts)|när det kniper|när det kommer till kritan|när saken sätts på sin spets|
+(whenitcounts)|när det kniper|när det kommer till kritan|när saken sätts på sin spets|(ngt) ställs på sin spets|(ställa ngt) på sin spets
 (expression, necessity knows no law)|Nöden har ingen lag|
 (expression, it is about time, it is high time)|Det är på tiden nu|det var hög tid (att)|
 (unexplored)|outforskad|obruten|
@@ -4022,7 +4025,7 @@
 (isolated, occasional)|enstaka|
 (either one)|endera|
 (monopoly)|ensamrätt|ensamrätter|
-(different, divergent)|annorlunda|avvikande|avvikande|
+(different, divergent)|annorlunda|avvikande|avvikande|väsensskild(helt olik)
 (anomaly, deviation)|anomali|anomalier|avvikelse|
 (depart from)|från<*gå|
 (expression, the black sheep)|Svarta fåret|
@@ -5251,6 +5254,7 @@
 (compliment)|komplimang|komplimanger|
 (polite phrase)|artighetsfras|artighetsfraser|
 (praise)|rosa|prisa|lovorda|
+(Admirable)|lovvärd|berömvärd|prisvärd
 (praise, rose)|ros|
 (appreciate)|uppskatta|
 (admire)|beundra|
@@ -5291,6 +5295,7 @@
 (join)|ansluta|ansluter|anslöt|anslutit|anslut|anknyta|anknyter|anknöt|anknutit|anknyt|
 (tag along, join)|haka på| hänga med| ansluta (sig)|sälla (sig)till|förena(sig)|
 (unite, combine)|förena|
+(Befriend)|befrynda( sig)
 (association, union)|förening|föreningar|
 (connect)|förbinda|förbinder|förband|förbundit|förbind|
 (connection, relation)|anknytning|förbindelse|
@@ -5430,7 +5435,7 @@
 (late)|Sent skall syndaren vakna|
 (guilt, sense of guilt)|skuldkänsla|skuldkänslor|skuld|skulder|
 (silence speaks for itself)|tystnaden talar för sig själv|
-(make someone feel guilty)|skuldbelägga|
+(make someone feel guilty)|skuldbelägga|skamma
 (guilt-inducing)|skuldbeläggande|
 (impositions of guilt)|skuldbeläggningar|
 (smoke)|Ingen rök utan eld|
@@ -5467,7 +5472,7 @@
 (put one's own house in order)|Sopa rent framför sin egen dörr|
 (hypocrisy)|Kasta inte sten i glashus|
 (undermine)|Såga någon vid fotknölarna|
-(reprimand)|tillrättavisa|näpsa|huta åt|åthuta|
+(reprimand)|tillrättavisa|näpsa|huta åt|åthuta|snäsa( av ngn)|fräsa
 (give someone a dressing-down)|Ge någon en känga|
 (reprimand, rebuff)|Knäpp på näsan|
 (straight)|På rätt köl|
@@ -5508,7 +5513,7 @@
 (family, kin)|släkt|
 (one's loved ones)|de sina|
 (blood)|blod är tjockare än vatten|
-(related)|besläktad|
+(related)|besläktad|befryndad
 (kinship)|släktskap|
 (family)|familj|familjer|
 (single)|singel|singlar|
@@ -6700,6 +6705,7 @@
 (wooden fence)|trästaket|
 (fence)|staket|
 (wallpaper)|tapet|tapeter|väggpapper|väggpapper|
+(Tapestry, wall hänging)|bonad|gobeläng
 (avenue)|aveny|avenyer|
 (street)|gata|gator|
 (spa)|spa|spat|spaet|span(pl)|
@@ -7247,7 +7253,7 @@
 (drain land)|utdika|dika ut|
 (land drainage)|utdikning|utdikningar|
 (furrow, groove)|fåra|fåror|rilla|rillor|räffla|räfflor|
-(track, course)|bana|
+(track, course)|bana|stråk(trafikerad gata)
 (channel, canal)|kanal|kanaler|ränna|rännor|
 (ditching)|dikning|dikningar|
 (vein, seam)|åder|ådror|
@@ -7390,6 +7396,7 @@
 (check)|<*hålla i schack|
 (all clear, free to proceed)|fritt fram|Kusten är klar|Så det är fritt fram|
 (give someone free rein)|Ge någon fria tyglar|
+(Unleash)|koppla lös|släppa lös
 (rampage)|härja fritt|
 (dominate, rule)|dominera|behärska|härska|
 (dominant)|dominerande|
@@ -7422,7 +7429,7 @@
 (consume, use up)|konsumera|förbruka|
 (consumption, usage)|förbrukning|förbrukningar|konsumtion|konsumtioner|åtgång|
 (benefit from)|ta nytta av|ha nytta av|
-(use)|använda|begagna(f.)|
+(use)|använda|begagna(f.)|använda <*sig av( ngt)
 (exploit)|utnyttja|
 (take excessive liberties)|ta sig för stora friheter|
 (drain)|utsuga|
@@ -7567,7 +7574,7 @@
 (overview)|översikt|tablå|tablåer|
 (enumerate)|räkna upp|
 (enumeration)|uppräkning|uppräkningar|
-(calculate)|beräkna|
+(calculate)|beräkna|kalkylera
 (Estimate)|måtta|
 (estimated)|beräknad|(väl/generöst/riktigt/högt/knappt/snålt)tilltagen|
 (assigned, indicated)|anvisad|angiven|utpekad|
@@ -7902,7 +7909,7 @@
 (assets)|tillgångar|
 (make accessible)|tillgängliggör|
 (be available)|(ha/finns) att tillgå|
-(have at one's disposal)|förfoga(över)|
+(have at one's disposal)|förfoga(över)|<*sitta på|
 (disposal, availability)|förfogande|förfoganden|
 (available)|anträffbar|
 (convey)|förmedla|
@@ -8374,7 +8381,7 @@
 (set, establish)|statuera|
 (ordinance)|förordning|förordningar|
 (lawful)|lagenlig|laglig|
-(rightful, justified)|rättmätig|berättigad|berättigat|
+(rightful, justified)|rättmätig|berättigad|berättigat|lovlig
 (proper, due)|tillbörlig(f.)|
 (right)|Rätt och riktigt|
 (authority, power)|befogenhet|befogenheter|
@@ -8665,6 +8672,7 @@
 (weaving)|vävning|vävningar|
 (textile fibres)|textilfibrer(sl-pl)|
 (wickerwork, interlacing)|flätverk|
+(Lace)|spets|knypplan(bobbin lace)
 (yarn)|garn|garner|
 (thread)|tråd|trådar|
 (string)|sträng|strängar|
@@ -9026,7 +9034,7 @@
 (seem, appear)|förefalla|förefaller|föreföll|förefallit|förefall|tycks|synes|
 (be visible)|syns|syntes|
 (penny dropped)|Nu trillade polletten ner|
-(seem)|te(ter, tedde, tett) sig|verka|
+(seem)|te sig|ter sig|tedde sig|tett sig|verka|
 (therefore, thus)|alltså|
 (that is, in other words)|det vill säga|
 (namely, you see)|nämligen|
@@ -9153,7 +9161,7 @@
 (affected)|tillgjord|snirklad
 (not gold)|allt är inte guld som glimmar|Skenet bedrar|
 (affected, stilted)|förkonstlad|uppstyltad|högtravande|konstlad|
-(artificial, man-made)|konstgjord|
+(artificial, man-made)|konstgjord|(falsk)sken
 (human)|mänsklig|
 (illusion)|illusion|illusioner|
 
