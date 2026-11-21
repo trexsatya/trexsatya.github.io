@@ -1362,6 +1362,7 @@
 #Movement: climbing and crawling
 (crawl)|krypa|kryper|kröp|krupit|kryp|kravla|krälar|
 (climb)|klättra|
+(Board on vehicle)|äntra
 
 #Movement: jumping and bouncing
 (somersault)|kullerbytta|kullerbyttor|
@@ -7353,7 +7354,7 @@
 (drain land)|utdika|dika ut|
 (land drainage)|utdikning|utdikningar|
 (furrow, groove)|fåra|fåror|rilla|rillor|räffla|räfflor|
-(track, course)|bana|stråk(trafikerad gata)
+(track, course)|bana|
 (channel, canal)|kanal|kanaler|ränna|rännor|
 (ditching)|dikning|dikningar|
 (vein, seam)|åder|ådror|
@@ -7368,6 +7369,7 @@
 (fish trap)|mjärde|mjärdar|
 (fyke net)|ryssja|ryssjor|
 (trap)|fälla|fällor|
+(set a trap)|gillra|<*ställa upp en fälla
 (felling, precipitation)|fällning|fällningar|
 (fell, trap)|fälla|fäller|fällde|fällt|fäll|
 (ensnare)|snärja|
@@ -7949,7 +7951,7 @@
 #Mistakes, confusion and learning from experience
 (mistake, be mistaken)|miss<*ta |misstaga|<*ta miste|
 (misstep)|snedsteg|
-(mistake)|misstag(sl-pl)|
+(mistake)|misstag(sl-pl)|fadäs|tabbe|tabbar|blunder|
 (misunderstand)|missuppfatta|Få något om bakfoten|
 (delusion, error)|förvillelse|
 (futile)|Hugga i sten|
@@ -8934,7 +8936,7 @@
 (yield, bring profit)|avkasta|vinstbringa|
 (play the game)|den som ger sig in i leken får leken tåla|
 (corner)|Ställa någon mot väggen|
-(agree)| <*gå med på |
+(agree to, join)| <*gå med på |nappa på
 (bite)| nappa|
 (over my dead body)|Över min döda kropp|
 (change)|ändra( sig)|
@@ -9863,7 +9865,6 @@ visa=visa,visar,visade,visat
 (produce, develop)|fram<*ta| <*ta fram |<*få fram|
 (produced, developed)|framtagen|framtaget|
 (build)|bygga|bygger|byggde|byggt|konstruera|
-
 
 #Weather and seasons
 (slushy snow)|snömodd|
