@@ -5,3 +5,5 @@ es
 pt
 pl
 uk
+th
+zh-Hans
