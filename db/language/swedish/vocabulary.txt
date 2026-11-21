@@ -119,6 +119,10 @@
 (go into hibernation)|<*gå i ide|
 (be in hibernation)|<*ligga i ide|
 
+(newly awake)|nyvaken|nyvaket|nyvakna|nymornad|nymornat|nymornade|
+(sleep deprivation)|sömnbrist|
+(circadian rhythm)|dygnsrytm|dygnsrytmer|
+(recovery after exertion)|återhämtning|
 #Perception and awareness
 (sensation, sensory impression)|förnimmelse|sinnesintryck|
 (perception)|perception|
@@ -244,6 +248,10 @@
 (offspring, descendant)|avkomma|avkommor|ättling|ättlingar|
 (breeding)|avel|
 
+(niece or nephew)|syskonbarn|
+(grandchild)|barnbarn|
+(partner living separately)|särbo|särbor|
+(legal guardian of a child)|vårdnadshavare|
 #Speech: conversation, questions and answers
 (communicate)|kommunicera|
 (talk, speak)|prata|tala|
@@ -414,7 +422,7 @@
 (sit and ponder, sit by oneself)|kuckelura|
 (absorbed)|försjunken i tankar|absorberad i tankar|
 (immersed)|fördjupad|
-(reason, discuss)|resonera|rationalisering|efterrationalisera
+(reason, discuss)|resonera|resonerar|resonerade|resonerat|
 (logic)|logik|logiker|
 (logical)|logisk|logiskt|
 (logician)|logikern|logiker|
@@ -428,6 +436,13 @@
 (wise)|Klok som en uggla|klok som en pudel|
 (sense)| vett |förnuft|omdöme|förstånd|
 
+(self-examination)|självrannsakan|
+(starting point for reasoning)|utgångspunkt|utgångspunkter|
+(line of reasoning)|resonemang|resonemanget|resonemangen|
+(rationalize a decision after the fact)|efterrationalisera|efterrationaliserar|efterrationaliserade|efterrationaliserat|
+(post-hoc rationalization)|efterrationalisering|efterrationaliseringar|
+(rationalization of behaviour)|rationalisering(psykologiskt)|
+(rationalize behaviour)|rationalisera(psykologiskt)|
 #Knowledge, information and awareness
 (learned)|inlärd|
 (acquired)|förvärvat|förvärvad|anskaffat|anskaffad|
@@ -449,6 +464,14 @@
 (admonition)|pekpinne|pekpinne|
 (pointing)|pekning|pekningar|
 
+(source criticism)|källkritik|
+(objectivity)|objektivitet|
+(subjectivity)|subjektivitet|
+(factual impartiality)|saklighet|
+(well-founded)|välgrundad|välgrundat|välgrundade|
+(substantiated)|underbyggd|underbyggt|underbyggda|
+(unsubstantiated)|obestyrkt|obestyrkta|
+(alleged)|påstådd|påstått|påstådda|
 #Understanding, interpretation and explanation
 (understand, grasp)|fatta|greppa|förstå|haja|Fatta galoppen|
 (realize)|in<*se|
@@ -474,6 +497,10 @@
 (demonstrate, show)|påvisa|demonstrera|uppvisa|förevisa(f.)|presentera|
 (present, put forward)|lägga fram|framlägga|an<*föra(f.)|
 
+(implicit)|implicit|implicita|underförstådd|underförstått|underförstådda|
+(explicit)|explicit|explicita|
+(nuance a statement)|nyansera|nyanserar|nyanserade|nyanserat|
+(explanatory model)|förklaringsmodell|förklaringsmodeller|
 #Belief, opinion and judgement
 (have an opinion)|tycka|an<*se|
 (believe)|tro|tror|trodde|
@@ -550,6 +577,9 @@
 (expression, on the same wavelength)|På samma våglängd|
 (mismatched)|Omaka|
 
+(correlation)|korrelation|korrelationer|
+(covariation)|samvariation|
+(correspondence or agreement)|överensstämmelse|överensstämmelser|
 #Investigation, examination and analysis
 (sift, filter)|sålla|filtrera|sila|skräda|skräder|skrädde|skrätt|
 (separate)|avskilja|
@@ -587,6 +617,10 @@
 (inspect, search)|visitera|
 (gauge)|Ta tempen (särskilt om populäritet o dylikt)|
 
+(question underlying assumptions)|problematisera|problematiserar|problematiserade|problematiserat|
+(sample for a spot check)|stickprov|stickprovet|stickproven|
+(margin of error)|felmarginal|felmarginaler|
+(measurement error)|mätfel|mätfelet|mätfelen|
 #Concepts, abstraction and classification
 (attribute)|till<*skriva|till<*räkna|
 (concrete, tangible)|konkret|påtaglig|
@@ -1937,6 +1971,11 @@
 (be on hold)|(något) <*ligga på is|
 (expression, do not put off until tomorrow what you can do today)|Skjut inte upp till morgondagen, det du kan göra idag|
 
+(reschedule a booking)|boka om|omboka|ombokar|ombokade|ombokat|
+(cancel a booking)|avboka|avbokar|avbokade|avbokat|
+(move to a later time)|senarelägga|senarelägger|senarelade|senarelagt|
+(move to an earlier time)|tidigarelägga|tidigarelägger|tidigarelade|tidigarelagt|
+(planning ahead)|framförhållning|
 #Time
 (spend)|tillbringa|tillbragt|spendera|<*lägga ner (tid/pengar/energi/osv).* på|
 (wastetime)|för<*driva tid|<*spilla tid|<*sitta och häck<*a|lalla runt|
@@ -3252,6 +3291,10 @@
 (cause)|vålla (bara -ve)|förvålla|
 (last straw)|droppen som fick bägaren att rinna över|
 
+(causal connection)|orsakssamband|orsakssambandet|orsakssambanden|
+(causality)|kausalitet|
+(stem from)|bottna i|bottnar i|bottnade i|bottnat i|
+(be due to)|komma sig av|kommer sig av|kom sig av|kommit sig av|
 #Cause and condition: requirements, prerequisites and dependencies
 (need)|behov|
 (need, require)|behöva|behöver|behövde|behövt|
@@ -3435,9 +3478,12 @@
 (unchanged)|Allt är sig likt då|
 (unchanging)|oföränderlig|statisk( miljö)|
 
+(unchanged in state)|oförändrad|oförändrat|oförändrade|
 #Change and stability: reversibility and irreversible change
 (irreversible)|oåterkallelig|irreversibel|
 
+(reversible)|reversibel|reversibelt|reversibla|
+(restorable)|återställbar|återställbart|återställbara|
 #Processes: general change and progression
 (proverb)|Ingenting är nytt under solen|
 (proverb)|Övning ger färdighet|
@@ -4216,6 +4262,9 @@
 (junkie)|pundare|knarkare|missbrukare|
 (anomaly)|anomali|anomalier|rubbning|rubbningar|
 
+(minor ailment)|krämpa|krämpor|
+(anxiety about ageing)|åldersnoja(vardagligt)|
+(life expectancy)|medellivslängd|förväntad livslängd|
 #Finance, economy, business
 (moneytrouble)|penningbekymmer(sl-pl)|bekymret|bekymmer|
 (compensation)|vederlag(sl-pl)(f.)|ersättning|ersättningar|
@@ -4370,6 +4419,20 @@
 (indebted)|den som är satt i skuld är icke fri|
 (prosperity)|välstånd|välfärd|
 
+(interest on money)|ränta|räntor|
+(compound interest)|ränta på ränta|
+(insurance deductible)|självrisk|självrisker|
+(due date for payment)|förfallodag|förfallodagar|
+(direct debit)|autogiro|autogirot|autogiron|
+(electronic invoice)|e-faktura|e-fakturor|
+(tax return)|deklaration|deklarationer|
+(tax refund)|skatteåterbäring|
+(savings account)|sparkonto|sparkontot|sparkonton|
+(index fund)|indexfond|indexfonder|
+(exchange rate)|växelkurs|växelkurser|
+(loan repayment of principal)|amortering|amorteringar|
+(purchasing power)|köpkraft|
+(household budget)|hushållsbudget|hushållsbudgetar|
 #Animals, birds and characteristics
 (animal)|djur(sl-pl)|
 (beastly, bestial)|bestialisk|
@@ -5486,6 +5549,10 @@
 (meddle)|<*lägga sig i saker|
 (foundation)|stiftelse|stiftelser|
 
+(mutuality)|ömsesidighet|
+(setting personal boundaries)|gränssättning|
+(personal integrity)|integritet(personlig)|personlig integritet|
+(self-determination)|självbestämmande|
 #Inclusion, exclusion and membership
 (include, encompass)|inkludera|innefatta|inbegripa|omfatta|
 (contain)|innehålla|
@@ -5803,6 +5870,10 @@
 (hypocrisy)|hyckleri|hypokrisi|skenhelighet|fromleri|skrymteri|
 (act hypocritically)|hyckla|
 
+(self-deception)|självbedrägeri|självbedrägerier|
+(intellectual honesty)|intellektuell hederlighet|
+(hypocritically virtuous)|skenhelig|skenheligt|skenheliga|
+(unscrupulous)|samvetslös|samvetslöst|samvetslösa|
 #Personality: sociability, reserve and shyness
 (--social interaction related--)
 (introvert)|introvert|inåtvänd|
@@ -5965,6 +6036,10 @@
 (--self view--)
 (selfpitying)|självömkande|
 
+(self-esteem)|självkänsla|
+(self-confidence)|självförtroende|
+(self-knowledge)|självkännedom|självinsikt|
+(ability to laugh at oneself)|självdistans|
 #Personality: temperament and emotional control
 (compulsive)|tvångsmässig|kompulsiv( technical)|
 (instinctive)|instinktiv|
@@ -6428,6 +6503,12 @@
 (hungry pigs)|Svultna svin rotar mest|
 (pre-chewed)|färdigtuggade|
 
+(colander)|durkslag|durkslaget|durkslagen|
+(saucepan)|kastrull|kastruller|
+(cooking pot)|gryta|grytor|
+(grater)|rivjärn|rivjärnet|rivjärnen|
+(chopping board)|skärbräda|skärbrädor|
+(rolling pin)|kavel|kavlar|
 #Clothing and furnishings: general terms
 (lid)|lock|
 (strain, force)|krysta|
@@ -6507,6 +6588,10 @@
 (leather)|läder|
 (tanning)|garvning|
 
+(make bobbin lace)|knyppla|knypplar|knypplade|knypplat|
+(embroider)|brodera|broderar|broderade|broderat|
+(sewing thread)|sytråd|sytrådar|
+(seam allowance)|sömsmån|sömsmåner|
 #Furniture, furnishings and bedding
 (furniture)|möbel|möbeln|möbler|
 (blanket)|filt|filtar|pläd|plädar|
@@ -6529,6 +6614,9 @@
 (shelf)|hylla|hyllor|
 (pantry)|skafferi|
 
+(duvet cover)|påslakan|påslakanet|påslakanen|
+(pillowcase)|örngott|örngottet|örngotten|
+(bedspread)|överkast|överkastet|överkasten|
 #Fruits, Vegetables
 (fruit)|frukt|frukter|
 (vegetable)|grönsak|grönsaker|
@@ -6717,6 +6805,10 @@
 (Establishment)|etablissemang
 (institution)|anstalt(t.e. i skol eller vård)|
 
+(housing queue)|bostadskö|bostadsköer|
+(direct rental contract)|förstahandskontrakt|förstahandskontraktet|förstahandskontrakten|
+(subletting contract)|andrahandskontrakt|andrahandskontraktet|andrahandskontrakten|
+(laundry room)|tvättstuga|tvättstugor|
 #Geography and population
 (indigenous population)|ursprungsbefolkning|
 (density)|(befolknings)täthet|
@@ -6861,6 +6953,14 @@
 (skidmark)|bromsspår|
 (Draincleaner)|propplösare|
 
+(air a room)|vädra|vädrar|vädrade|vädrat|
+(defrost an appliance)|avfrosta|avfrostar|avfrostade|avfrostat|
+(sort waste for recycling)|källsortera|källsorterar|källsorterade|källsorterat|
+(recycle materials)|återvinna|återvinner|återvann|återvunnit|
+(dishwashing liquid)|diskmedel|diskmedlet|
+(laundry detergent)|tvättmedel|tvättmedlet|
+(fabric softener)|sköljmedel|sköljmedlet|
+(dishcloth)|disktrasa|disktrasor|
 #Body Parts, Accessories and Actions
 (inside)|innanmäte|
 (saliva)|saliv|
@@ -7485,6 +7585,12 @@
 (workload)|arbetsbörda|
 (make it)|hinna|hinner|hann|hunnit|
 
+(streamline an operation)|rationalisera(verksamhet)|rationaliserar|rationaliserade|rationaliserat|
+(streamlining of an operation)|rationalisering(av verksamhet)|rationaliseringar|
+(feedback on performance)|återkoppling|
+(follow-up of results)|uppföljning|uppföljningar|
+(room for action)|handlingsutrymme|
+(decision-making material)|beslutsunderlag|beslutsunderlaget|beslutsunderlagen|
 #Managing: organisation, order and selection
 (setup)|upplägg(sl-pl)|
 (organize)|organisera|strukturera|
@@ -8440,6 +8546,14 @@
 (disadvantage)|missgynna|
 (equalize)|utjämna|
 
+(population registration)|folkbokföring|
+(personal identity number)|personnummer|personnumret|personnumren|
+(identity document)|legitimation|legitimationer|
+(administrative form)|blankett|blanketter|
+(processing time)|handläggningstid|handläggningstider|
+(power of attorney)|fullmakt|fullmakter|
+(consent)|samtycke|samtycket|samtycken|
+(reconsideration of a decision)|omprövning|omprövningar|
 #Studies, school, education
 (test, examination)|prov|tentamen|tentamina|tenta|tentor|examination|
 (testing)|provning|
@@ -8534,6 +8648,8 @@
 (lab)|laboration|laborationer|
 
 (practice, exercise)|utövning|praktik|
+(take attendance)|ta närvaro|tar närvaro|tog närvaro|tagit närvaro|
+(attendance list)|närvarolista|närvarolistor|
 #Lines of work, jobs, occupations, professions & related words
 (position)|befattning|befattning|post|poster|ämbete(f.)|ämbeten(pl)|ämbetet|
 (employer)|arbetsgivare|
@@ -8715,6 +8831,18 @@
 (workhorse)|arbetshäst|arbetshästar|
 (hard worker)|arbetsmyra|arbetsmyror|
 
+(clock in)|klocka in|klockar in|klockade in|klockat in|stämpla in|
+(clock out)|klocka ut|klockar ut|klockade ut|klockat ut|stämpla ut|
+(flexible working hours)|flextid|
+(work shift)|arbetspass|arbetspasset|arbetspassen|
+(leave of absence)|tjänstledighet|
+(notice period)|uppsägningstid|uppsägningstider|
+(employment contract)|anställningsavtal|anställningsavtalet|anställningsavtalen|
+(work environment)|arbetsmiljö|arbetsmiljöer|
+(workload)|arbetsbelastning|
+(payslip)|lönespecifikation|lönespecifikationer|lönebesked|lönebeskedet|lönebeskeden|
+(probationary employment)|provanställning|provanställningar|
+(permanent employment)|tillsvidareanställning|tillsvidareanställningar|
 #Writing, publishing and literature
 (story)|historia|historier|berättelse|
 (binder)|pärm(for books/paper)|
@@ -9076,7 +9204,7 @@
 (have feet)|Ha på fötterna|
 (someone else)|någon annan|
 (something else)|något annat|
-(among others)|bland annat|
+(among other things)|bland annat|
 (in other words)|med andra ord|
 (on one hand)|Å ena sidan|
 (the other)|den andra|
@@ -9098,6 +9226,27 @@
 (see the wood for the trees)|Se skogen för alla träd|
 (fact)|sakförhållande|faktum|
 
+(logical fallacy)|felslut|felslutet|felsluten|
+(error in thinking)|tankefel|tankefelet|tankefelen|
+(circular reasoning)|cirkelresonemang|cirkelresonemanget|cirkelresonemangen|
+(contradiction)|motsägelse|motsägelser|
+(self-contradiction)|självmotsägelse|självmotsägelser|
+(contradictory)|motsägelsefull|motsägelsefullt|motsägelsefulla|
+(derive a conclusion)|härleda|härleder|härledde|härlett|
+(logical derivation)|härledning|härledningar|
+(disprove)|motbevisa|motbevisar|motbevisade|motbevisat|
+(reservation or qualification)|förbehåll|förbehållet|förbehållen|
+(relevant)|relevant|relevanta|
+(universally applicable)|allmängiltig|allmängiltigt|allmängiltiga|
+(on the other hand)|å andra sidan|
+(among other people)|bland andra|
+(in doing so or at that point)|därvid(f.)|
+(whereupon or in the course of which)|varvid(f.)|
+(insofar as)|såtillvida|så till vida|
+(unless)|såvida inte|
+(as a result of the fact that)|i och med att|
+(in the long run)|i längden|
+(eventually after some time)|så småningom|
 #Religion and spirituality
 (incense)|rökelse|rökelser|
 (conscience)|samvete|
@@ -9146,6 +9295,20 @@
 (make a pilgrimage)|vallfärda|
 (pilgrimage)|vallfärdande|
 
+(worldview or philosophy of life)|livsåskådning|livsåskådningar|
+(secular)|sekulär|sekulärt|sekulära|
+(impermanence)|förgänglighet|
+(meditation)|meditation|meditationer|
+(monastery or convent)|kloster|klostret|klostren|
+(monk)|munk|munkar|
+(nun)|nunna|nunnor|
+(rebirth)|återfödelse|
+(equanimity)|jämnmod|
+(peace of mind)|sinnesro|
+(renunciation of comforts)|försakelse|försakelser|
+(abstinence)|avhållsamhet|
+(intrinsic value)|egenvärde|egenvärden|
+(end in itself)|självändamål|självändamålet|självändamålen|
 #Non-physical
 (natural)|naturlig|
 (genuine, unadulterated)|äkta|oförfalskad|ren|
@@ -9470,6 +9633,21 @@
 
 (it suits you)|det klär dig|
 (good catch)|bra spaning där|
+(come to a head)|ställa sig på sin spets|ställer sig på sin spets|ställde sig på sin spets|ställt sig på sin spets|
+(shy away from)|skygga för|skyggar för|skyggade för|skyggat för|
+(finally get started)|komma till skott|kommer till skott|kom till skott|kommit till skott|
+(miss out on)|gå miste om|går miste om|gick miste om|gått miste om|
+(get to grips with a problem)|komma till rätta med|kommer till rätta med|kom till rätta med|kommit till rätta med|
+(take something for granted)|ta för givet|tar för givet|tog för givet|tagit för givet|
+(fade into the background)|hamna i skymundan|hamnar i skymundan|hamnade i skymundan|hamnat i skymundan|
+(make concessions on)|göra avkall på|gör avkall på|gjorde avkall på|gjort avkall på|
+(be forgiving of)|ha överseende med|har överseende med|hade överseende med|haft överseende med|
+(remedy a problem)|råda bot på|råder bot på|rådde bot på|rått bot på|
+(pinpoint the issue)|sätta fingret på|sätter fingret på|satte fingret på|satt fingret på|
+(be mentioned)|komma på tal|kommer på tal|kom på tal|kommit på tal|
+(take over where something ends)|ta vid|tar vid|tog vid|tagit vid|
+(make oneself known)|ge sig till känna|ger sig till känna|gav sig till känna|gett sig till känna|
+(get hung up on)|hänga upp sig på|hänger upp sig på|hängde upp sig på|hängt upp sig på|
 #Speaking style, Phrases
 (must not be)|får inte vara|fåintva(talspråk)|
 (was I so)|vajaså(talspråk)|
@@ -9484,7 +9662,7 @@
 (DDoS attack)|överbelastningsattack|
 (software engineering)|mjukvaruteknik|
 (computer)|dator|datorn|datorer|
-(tablet)|läsplatta|läsplattor|
+(e-book reader)|läsplatta|läsplattor|
 (bold)|fetstil|
 (server)|server|servrar|
 (client)|klient|klienter|
@@ -9492,6 +9670,26 @@
 (version)|utgåva|utgåvor|
 (driver)|drivrutin|drivrutiner|
 (firewall)|brandvägg|brandväggar|
+(tablet computer)|surfplatta|surfplattor|
+(password)|lösenord|lösenordet|lösenorden|
+(username)|användarnamn|användarnamnet|användarnamnen|
+(web browser)|webbläsare|webbläsaren|
+(search engine)|sökmotor|sökmotorer|
+(search field)|sökfält|sökfältet|sökfälten|
+(clipboard contents)|urklipp|urklippet|urklippen|
+(computer clipboard)|klippbord|klippbordet|
+(backup copy)|säkerhetskopia|säkerhetskopior|
+(make a backup)|säkerhetskopiera|säkerhetskopierar|säkerhetskopierade|säkerhetskopierat|
+(download)|ladda ned|ladda ner|laddar ned|laddade ned|laddat ned|
+(upload)|ladda upp|laddar upp|laddade upp|laddat upp|
+(update software)|uppdatera|uppdaterar|uppdaterade|uppdaterat|
+(uninstall)|avinstallera|avinstallerar|avinstallerade|avinstallerat|
+(user interface)|användargränssnitt|användargränssnittet|användargränssnitten|
+(troubleshooting)|felsökning|
+(source code)|källkod|källkoden|
+(software)|programvara|programvaror|
+(hardware)|maskinvara|maskinvaror|
+(copyright)|upphovsrätt|upphovsrätten|
 #Expansions
 sörja=sörja,sörjer,sörjde,sörjt
 aer=a,er,te,t
@@ -9665,3 +9863,14 @@ visa=visa,visar,visade,visat
 (produce, develop)|fram<*ta| <*ta fram |<*få fram|
 (produced, developed)|framtagen|framtaget|
 (build)|bygga|bygger|byggde|byggt|konstruera|
+
+
+#Weather and seasons
+(slushy snow)|snömodd|
+(drizzle)|duggregn|
+(hoarfrost)|rimfrost|
+(thawing weather)|töväder|
+(gust of wind)|vindby|vindbyar|
+(weather without precipitation)|uppehållsväder|
+(sunrise)|soluppgång|soluppgångar|
+(sunset)|solnedgång|solnedgångar|
