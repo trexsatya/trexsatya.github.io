@@ -3,7 +3,7 @@
 `languages.txt` lists the hint languages offered by **I know well**. English is
 always available as the fallback. The registry includes Hindi (`hi`), German
 (`de`), Spanish (`es`), Portuguese (`pt`), Polish (`pl`), Ukrainian (`uk`),
-Thai (`th`) and Simplified Chinese (`zh-Hans`).
+Thai (`th`), Simplified Chinese (`zh-Hans`) and French (`fr`).
 
 Each language has a UTF-8 text file using this format:
 
@@ -77,3 +77,27 @@ See [Wiktionary's copyright information](https://en.wiktionary.org/wiki/Wiktiona
 [Kaikki's licensing information](https://kaikki.org/dictionary/index.html), and the
 CC-CEDICT license notice in its downloadable source. This notice applies to
 `th.txt` and `zh-Hans.txt`, rather than the repository as a whole.
+
+## French
+
+`fr.txt` adds French hints and search aliases to **I know well**. All 206 entries
+from the recent Swedish vocabulary extension have French hints. Cues without a
+translation keep the existing English fallback. The
+[French review report](../../../../docs/vocabulary-hints-french-2026-11-21.md)
+records coverage, source details and validation.
+
+This table adapts the English–French FreeDict+WikDict dictionary published by
+Karl Bartel through [WikDict](https://www.wikdict.com/page/download), release
+2026-06-23. Its base data comes from
+[Wiktionary contributors](https://www.wiktionary.org/) via
+[DBnary](http://kaiko.getalp.org/about-dbnary/), with distribution through the
+[FreeDict project](https://freedict.org/). The source archive's metadata credits
+these contributors and licenses the data under
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+The adapted `fr.txt` table is provided under the same license.
+
+Changes include selecting complete English cues used by Cupitor, extracting
+French translation fields, filtering marked obsolete and regional senses,
+limiting dictionary aliases, normalising Unicode, and adding contextual
+translations for the recent extension and selected ambiguous terms. This notice
+applies to `fr.txt`, rather than the repository as a whole.
