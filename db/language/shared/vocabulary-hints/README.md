@@ -101,3 +101,27 @@ French translation fields, filtering marked obsolete and regional senses,
 limiting dictionary aliases, normalising Unicode, and adding contextual
 translations for the recent extension and selected ambiguous terms. This notice
 applies to `fr.txt`, rather than the repository as a whole.
+
+## Meaning-specific corrections — 2026-11-22
+
+Translation coverage and successful search checks do not establish semantic
+accuracy. An isolated English cue can omit an idiom's meaning or select the wrong
+sense of a word. For example, `children and fools` does not explain the proverb,
+and `must` can mean fruit juice rather than obligation.
+
+The shared [vocabulary-meanings catalog](../vocabulary-meanings.json) now records
+curated row-specific hints against the actual Swedish wording. These overrides
+have precedence over shared English-cue translations and the older generated
+Hindi pack. They are editable through the existing vocabulary-hint editor.
+Hindi corrections cover expressions, proverbs, the Truth/Lies/Deception section,
+selected ambiguous groups, and common verb forms. The seven expressions reported
+in the screenshot also have row-specific corrections in all nine registered
+non-English hint languages. Eight English rows, including one duplicate proverb,
+now explain the complete meanings instead of supplying fragments.
+
+The [semantic review report](../../../../docs/vocabulary-hints-semantic-review-2026-11-22.md)
+records scope, examples and checks. Remaining dictionary-derived and generated
+entries have not all been semantically reviewed. Row-specific corrections must
+not be promoted to shared single-word cues when doing so would change another
+Swedish sense; for example, keep the proverb's full meaning separate from the
+ordinary adjective `obscure`.

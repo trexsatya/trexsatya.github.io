@@ -4256,7 +4256,7 @@
 (knocked out, incapacitated)|utslagen|
 (drink too much)|titta för djupt i glaset|
 (Hung over)|bakis|bakfull|
-(drunk talks)|den drucknes tal är den nyktres tankar|
+(drunken people say what sober people keep to themselves)|den drucknes tal är den nyktres tankar|
 (abuse, misuse)|missbruka|
 (take illicit drugs)|knarka|
 (abuse, addiction)|missbruk|
@@ -9062,13 +9062,13 @@
 (pretext, false excuse)|svepskäl|svepskälet|svepskälen|
 (secret)|hemlighet|hemlis|
 (keep secret)|hemlighålla|undanhålla|förtiga|fördölja|
-(put lid on)|Lägga locket på|
-(keep on tenterhooks)|Hålla någon på halster|Hålla någon på sträckbänken|
-(children and fools)|av barn och dårar får man höra sanningen|
-(drunk speaks)|den drucknes tal är den nyktres tankar|
-(obscure)|det dunkelt sagda (är det dunkelt tänkta)|
-(conceal)|Sticka under stol med|
-(behind scenes)|Spel bakom kulisserna|
+(suppress information or discussion, cover up an issue)|Lägga locket på|
+(keep someone anxiously waiting for an answer, keep someone in suspense)|Hålla någon på halster|Hålla någon på sträckbänken|
+(children and fools tell the truth without restraint)|av barn och dårar får man höra sanningen|
+(drunken people say what sober people keep to themselves)|den drucknes tal är den nyktres tankar|
+(unclear expression reflects unclear thinking)|det dunkelt sagda (är det dunkelt tänkta)|
+(conceal something rather than openly admitting it)|Sticka under stol med|
+(secret manoeuvring or dealings behind the scenes)|Spel bakom kulisserna|
 (reticent, secretive)|förtegen|hemlighetsfull|förbehållsam|
 (secret)|hemlig|
 (secrecy)|hemlighetsmakeri|hemlighetsmakerier|

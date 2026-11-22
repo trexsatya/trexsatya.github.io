@@ -1,0 +1,4575 @@
+{
+  "version": 1,
+  "meanings": {},
+  "groups": {
+    "hints-b492ab597206ef7a0a1f0e66d15cdfd334aabe88cb5fe42fda1c55ede6a24a3c": {
+      "language": "sv",
+      "category": "Everyday Life",
+      "line": "(wake early)|uppe med tuppen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सुबह उठ जाना",
+          "मुर्गे की बाँग के साथ उठना"
+        ]
+      }
+    },
+    "hints-1643ca6ecc4f4b46710daf0aa38b639d1afb0e2fc345116746f36b4b3fc405c7": {
+      "language": "sv",
+      "category": "Sleep and rest",
+      "line": "(waking, wake-up)|väckning|väckningar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जगाने की प्रक्रिया",
+          "नींद से उठाने का संकेत"
+        ]
+      }
+    },
+    "hints-43bf4ec5a0b4114020588241c36d56ea648a7650b37a26bc71d63d47f9780ad3": {
+      "language": "sv",
+      "category": "Perception and awareness",
+      "line": "(sharp)|<*Se som en hök|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत पैनी नज़र होना",
+          "छोटी-से-छोटी चीज़ देख लेना"
+        ]
+      }
+    },
+    "hints-80fc479d60dbe95282f8d174e4401969a735de256e329c55da408bfb15381fd5": {
+      "language": "sv",
+      "category": "Memory and forgetting",
+      "line": "(forgetful)|Minne som en guldfisk|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत कमज़ोर याददाश्त",
+          "पल भर में भूल जाना"
+        ]
+      }
+    },
+    "hints-61ab0c0270d35a13adcaa1553646cca560a994d55deafa2440efc3af84f6ddad": {
+      "language": "sv",
+      "category": "Speech: conversation, questions and answers",
+      "line": "(facial appearance, expression)|uppsyn|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "चेहरे का हाव-भाव",
+          "मुखमुद्रा"
+        ]
+      }
+    },
+    "hints-c90411e31c3c00c4586bc8c8c3859d480785ca9f9691112085d4012b282d3966": {
+      "language": "sv",
+      "category": "Speech: conversation, questions and answers",
+      "line": "(facial expression)|min|ansiktsuttryck|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "चेहरे का भाव",
+          "मुखमुद्रा"
+        ]
+      }
+    },
+    "hints-ccf72a71b870ffbfd891a0d0b1f76ae548335c53e290f657a323fadd4009940c": {
+      "language": "sv",
+      "category": "Speech: conversation, questions and answers",
+      "line": "(indicate, point to)|indikera|tyda på|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "संकेत देना",
+          "किसी बात की ओर इशारा करना"
+        ]
+      }
+    },
+    "hints-f4f3ec656966c3c6ed318c5d67f5c769c04705cb1f7863272da3f911e2b83295": {
+      "language": "sv",
+      "category": "Thought and abstraction: general concepts",
+      "line": "(expression, heed good advice but reject bad advice)|den råd lyder är vis, men oråd ska ingen lyda|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अच्छी सलाह मानना समझदारी है, बुरी सलाह नहीं माननी चाहिए"
+        ]
+      }
+    },
+    "hints-0e7df24b35d1ca50000dd0cdb5e51dbd0b6c3f2767ccfd58401e4aec6a458915": {
+      "language": "sv",
+      "category": "Thought and abstraction: general concepts",
+      "line": "(expression, better without bread than without a plan)|bättre brödlös än rådlös|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "रोटी न हो तो भी उपाय और सूझ-बूझ होना बेहतर है"
+        ]
+      }
+    },
+    "hints-7dd8823a639ca4a2f79dc1cb6b0e18f90d188d9846dff952b4fb13143a8ac26f": {
+      "language": "sv",
+      "category": "Thought and abstraction: general concepts",
+      "line": "(expression, wisdom is easier to conceal than folly)|Lättare döljer en vis sin visdom än en dåre sin dårskap|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "समझदार अपनी समझ छिपा सकता है, मूर्ख अपनी मूर्खता नहीं"
+        ]
+      }
+    },
+    "hints-ac47dcfb0ffcc2883e788557f0a780065eba0d11a9815983fc96e0f06c20c016": {
+      "language": "sv",
+      "category": "Thought, reflection and reasoning",
+      "line": "(sit and ponder, sit by oneself)|kuckelura|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अकेले बैठकर सोच-विचार करना"
+        ]
+      }
+    },
+    "hints-f053823bdda1c84f2f57700f2659b0924c67b0a32b519502e9ed9a9fbd0bc44d": {
+      "language": "sv",
+      "category": "Understanding, interpretation and explanation",
+      "line": "(illustrate, make clear)|åskådliggöra|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "उदाहरण देकर स्पष्ट करना",
+          "बात समझ में आने लायक बनाना"
+        ]
+      }
+    },
+    "hints-55dafdef3f6e3f7348c36d3ff3808dfac534022894f3d0035704928b14f858c2": {
+      "language": "sv",
+      "category": "Belief, opinion and judgement",
+      "line": "(expression, everyone finds comfort in their own beliefs)|var och en blir salig på sin tro|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "हर किसी को अपने विश्वास में संतोष मिलता है"
+        ]
+      }
+    },
+    "hints-7c43bb84d4b8765e734bd45f47916e9c2622fcc9e64b72d99dffc38494265be8": {
+      "language": "sv",
+      "category": "Concepts, abstraction and classification",
+      "line": "(expression, tar everyone with the same brush)|dra alla över en kam|Dra inte alla över en kam|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सबको एक ही तराज़ू में तौलना"
+        ]
+      }
+    },
+    "hints-12bcd04b8221d88fae32fbbd7a06590574e79273c214f7c65b425151f84d1843": {
+      "language": "sv",
+      "category": "Planning, preparation and foresight",
+      "line": "(expression, act first rather than be forestalled)|bättre att förekomma än förekommas|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दूसरों के पहल करने से पहले स्वयं कदम उठा लेना बेहतर है"
+        ]
+      }
+    },
+    "hints-cff21e9fd263889e188fc3c7f916cad76f0e719d3da675587c01826a73032400": {
+      "language": "sv",
+      "category": "Motivation, wishes and opportunities",
+      "line": "(expression, give someone an inch and they will take a mile)|Ger man honom lillfingret så tar han hela handen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "थोड़ी छूट मिले तो उसका हद से ज़्यादा फ़ायदा उठाना"
+        ]
+      }
+    },
+    "hints-6ac85e06df9538c4eb568921aec80d6d53ba8b11f44ca1d6f1a10dc817e0eeae": {
+      "language": "sv",
+      "category": "Feelings, emotions",
+      "line": "(naughty, nasty)|stygg|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शरारती",
+          "बुरा व्यवहार करने वाला",
+          "दुष्ट"
+        ]
+      }
+    },
+    "hints-b351980a2092aa0266b389e52b7fe0546f2b5c21815136211de58c0500335659": {
+      "language": "sv",
+      "category": "Feelings, emotions",
+      "line": "(saying)|Man har aldrig roligare än vad man gör sig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मज़ा उतना ही आता है जितना आप खुद माहौल बनाते हैं"
+        ]
+      }
+    },
+    "hints-1167245937abc1fb055b2f5476899303c5fd51d0ec131c475c3a300f3ec36220": {
+      "language": "sv",
+      "category": "Feelings, emotions",
+      "line": "(irritable)|Arg som ett bi|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत गुस्से में",
+          "आगबबूला"
+        ]
+      }
+    },
+    "hints-d84dd04e7229e516193600a68abc6fb3f2c43c4bf242a3a9deceb61ab9518154": {
+      "language": "sv",
+      "category": "Feelings, emotions",
+      "line": "(proverb)|Upp flyga orden, tanken stilla står|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शब्द तो निकलते हैं, पर मन उनका साथ नहीं देता",
+          "केवल मुँह से कहना, मन से नहीं"
+        ]
+      }
+    },
+    "hints-30998e2fb8cb3f8f6064f0dd204932e782cf99b53d7a9cf0e92f4c09dc363bc6": {
+      "language": "sv",
+      "category": "Feelings, emotions",
+      "line": "(expression, be no pushover, be formidable)|inte tåla för hackor|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जिसे हल्के में न लिया जा सके",
+          "जिसे आसानी से दबाया न जा सके"
+        ]
+      }
+    },
+    "hints-ec89873855e1068eafa15fb9b6457f5e3dd44f09f7876a1e0a460602ab7dc2bd": {
+      "language": "sv",
+      "category": "Movement: flowing, floating and dripping",
+      "line": "(expression, spread like ripples)|Sprida sig som ringar på vattnet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "असर का लहरों की तरह दूर-दूर तक फैलना"
+        ]
+      }
+    },
+    "hints-51ccce1ce982297c1c14b51a82849c00c5903a52af54115e53c1fe562b2db31d": {
+      "language": "sv",
+      "category": "Basic Necessities",
+      "line": "(drink, soak up)|suga i sig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "तरल पी लेना",
+          "सोख लेना"
+        ]
+      }
+    },
+    "hints-8d8ab63bbff3a6e4fdadea65a50e015e9537d69d8e9dfac93273ea92f82b1268": {
+      "language": "sv",
+      "category": "Basic Necessities",
+      "line": "(expression, let the food do the talking, no talking while eating)|Låta maten tysta mun|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खाना खाते समय चुप रहना"
+        ]
+      }
+    },
+    "hints-c7e81705493b609d32c3832d1f8e503d8fa7aee5d762b82fc70c26860fd1bb81": {
+      "language": "sv",
+      "category": "Basic Necessities",
+      "line": "(expression, it is more blessed to give than to receive)|det är saligare att giva än att taga|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "लेने से बढ़कर सुख देने में है"
+        ]
+      }
+    },
+    "hints-2c3cbd06a23ff38920e0ad990f22d9ce30d8358e8f44995b0954da5300dce384": {
+      "language": "sv",
+      "category": "Basic Necessities",
+      "line": "(expression, wear it in good health)|Slit den med hälsan|slita med hälsan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "इसे खुशी-खुशी इस्तेमाल करो",
+          "इसे पहनकर खूब आनंद लो"
+        ]
+      }
+    },
+    "hints-00ff6028e8ae0958ab1bcfceb4373f7bf5492b74e43b60a79abd910e86f3dd29": {
+      "language": "sv",
+      "category": "Basic Necessities",
+      "line": "(expression, look a gift horse in the mouth)|Skåda en given häst i munnen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मिली हुई भेंट में मीन-मेख निकालना"
+        ]
+      }
+    },
+    "hints-e005b10ef9ce96102488fda2a1a93bcdaedfc7ba357a24b8196f3bb689add984": {
+      "language": "sv",
+      "category": "Sex, reproduction, romance",
+      "line": "(multiply)|För<*öka sig som kaniner|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत तेज़ी से संतान बढ़ाना"
+        ]
+      }
+    },
+    "hints-07b8f59055ea4d5fc2f722e40edec3fc12e7626f6177533810ccbf8b0f2ed4b0": {
+      "language": "sv",
+      "category": "Birth, death and ageing",
+      "line": "(expression, you never get old, only older)|Man blir aldrig gammal, bara äldre|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "इंसान बूढ़ा नहीं होता, बस उसकी उम्र बढ़ती जाती है"
+        ]
+      }
+    },
+    "hints-196410393a00185240fe4912c2e3a306a64b3b6e36c0d7fd09ba77f2957c17af": {
+      "language": "sv",
+      "category": "Damage, destruction, injury and suffering",
+      "line": "(expression, rip off the plaster)|riva av plåstret|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मुश्किल या अप्रिय काम को टालने के बजाय एक बार में निपटा देना"
+        ]
+      }
+    },
+    "hints-489b8970a90ef75c9923c045b097c44e1d410f9b8b914d69dbfc4c2dc8d03672": {
+      "language": "sv",
+      "category": "Time: scheduling, waiting and postponement",
+      "line": "(expression, do not put off until tomorrow what you can do today)|Skjut inte upp till morgondagen, det du kan göra idag|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आज का काम कल पर मत टालो"
+        ]
+      }
+    },
+    "hints-f5b88985b5c8a57dbde3b77bbee337802940641a6ef397a6367bae07f07d9d45": {
+      "language": "sv",
+      "category": "Time",
+      "line": "(most recently, at the latest)|senast|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सबसे हाल में",
+          "अधिक से अधिक तय समय तक"
+        ]
+      }
+    },
+    "hints-3c80acfeaec04ed63afb80bfcee4c63159e9191330f4531f5ce0e09ec607bed4": {
+      "language": "sv",
+      "category": "Time",
+      "line": "(future)|framtida|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आने वाला",
+          "भविष्य का"
+        ]
+      }
+    },
+    "hints-f2cf2f2b707587ba735612b07806c0f7e568107e448d179c04e72783ddbdb9a9": {
+      "language": "sv",
+      "category": "Time",
+      "line": "(proverb)|Man blir aldrig gammal, bara äldre|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "इंसान बूढ़ा नहीं होता, बस उसकी उम्र बढ़ती जाती है"
+        ]
+      }
+    },
+    "hints-92771181290af0d61d7e650451bfcd333db995ec68377b92a9ee4e4f20387400": {
+      "language": "sv",
+      "category": "Time",
+      "line": "(proverb)|Lätt fånget, lätt förgånget|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जो आसानी से मिलता है, आसानी से चला भी जाता है"
+        ]
+      }
+    },
+    "hints-1f1948132210fe091c34cfcae503731a9258d67b032580e316e6bdc2988c9705": {
+      "language": "sv",
+      "category": "Space and position: general terms",
+      "line": "(expression, hard on someone's heels)|Hack i häl|hack och häl| i hälarna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी के बिल्कुल पीछे-पीछे",
+          "करीब से पीछा करना"
+        ]
+      }
+    },
+    "hints-ca8b992e9e680a8791845e36d7ee138891c583dc39ee4925726125302b826948": {
+      "language": "sv",
+      "category": "Space: location, proximity and distance",
+      "line": "(expression, keep moving past an inn)|Värdshus förbi|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिना रुके या मिले आगे निकल जाना"
+        ]
+      }
+    },
+    "hints-e095b322cfc7beee7a26e9b4cc6571a28191d6459a6549e0f20f90736fa3726a": {
+      "language": "sv",
+      "category": "Measurement, Counting",
+      "line": "(expression, a drop in the ocean)|en droppe i havet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ऊँट के मुँह में जीरा",
+          "ज़रूरत के मुकाबले बहुत थोड़ा"
+        ]
+      }
+    },
+    "hints-03cc2fc041a5ed2441e9d596ce67fe6ffa05ac255fa551651d7c228dd4376d98": {
+      "language": "sv",
+      "category": "Measurement, Counting",
+      "line": "(expression, hold your horses)|Sakta i backarna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ज़रा ठहरो",
+          "इतनी जल्दी मत करो"
+        ]
+      }
+    },
+    "hints-567982e0ec930df459e8ecc0394b824a0d4ce6287da5aa8245b99c2566c48412": {
+      "language": "sv",
+      "category": "Measurement, Counting",
+      "line": "(expression, a colossus with feet of clay, deceptively fragile)|(vara som) en koloss på lerfötter|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बाहर से ताक़तवर, भीतर से कमज़ोर",
+          "ऊपर से विशाल, नींव कमज़ोर"
+        ]
+      }
+    },
+    "hints-1fd55690ae28062d20c5dd450ada9eb709d81c3522481e34e694222b00026106": {
+      "language": "sv",
+      "category": "Measurement, Counting",
+      "line": "(expression, growth has its limits)|Inga träd växer till himlen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विकास की भी एक सीमा होती है"
+        ]
+      }
+    },
+    "hints-b80a285e1d62686cffc4f5354371f2f63ce54d3f77f70a0973747c782a356514": {
+      "language": "sv",
+      "category": "Measurement, Counting",
+      "line": "(expression, a drop in the ocean, negligible)|Som en droppe i havet|Som en fis i vinden (eller rymden)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ऊँट के मुँह में जीरा",
+          "न के बराबर"
+        ]
+      }
+    },
+    "hints-64fdee86b4805c65dc3e6fa7a5322f4e36d77d6b5efaa7a1c3bc829e3a7d95fa": {
+      "language": "sv",
+      "category": "Measurement, Counting",
+      "line": "(expression, strain at a gnat and swallow a camel, fuss over trifles and overlook major faults)|Sila mygg och svälja kameler|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छोटी बातों में खोट निकालना और बड़ी गलतियाँ अनदेखी कर देना"
+        ]
+      }
+    },
+    "hints-1041ed661065a3a61f82258669d5be21741c3f31577232bfd25cb147344d5c0f": {
+      "language": "sv",
+      "category": "Shapes, arrangements and conditions",
+      "line": "(expression, do not judge a book by its cover)|Döm inte hunden efter håren|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "केवल बाहरी रूप देखकर किसी को मत परखो"
+        ]
+      }
+    },
+    "hints-dfe7c3a9db8283ed1d88803c48716244620d018dc105e7917c480df4fa0ba6ec": {
+      "language": "sv",
+      "category": "Shapes, arrangements and conditions",
+      "line": "(expression, still waters run deep)|I de lugnaste vattnen går de största fiskarna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शांत दिखने वाला व्यक्ति भी गहरा और अप्रत्याशित हो सकता है"
+        ]
+      }
+    },
+    "hints-d93161117e980d923cef1da82d0f37e1cedd350dbf051398290a0e9c13f65642": {
+      "language": "sv",
+      "category": "Shapes, arrangements and conditions",
+      "line": "(expression, first come first served)|Först till kvarn får först mala|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पहले आओ, पहले पाओ"
+        ]
+      }
+    },
+    "hints-e128446b88c71754cf7747a5b4318337499774944408737d13f18cfc3a645c46": {
+      "language": "sv",
+      "category": "Beginning and creation: invention and conception",
+      "line": "(invention, contrivance)|påhitt|påfund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सूझी हुई युक्ति",
+          "गढ़ी हुई बात या चीज़"
+        ]
+      }
+    },
+    "hints-a171c4576b1e858c57546e8b75fae9c751b67f3e015d5705bea7e9411e434fa4": {
+      "language": "sv",
+      "category": "Beginning and creation: invention and conception",
+      "line": "(idea, thought)|idé|idéer|tanke|tankar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विचार",
+          "खयाल"
+        ]
+      }
+    },
+    "hints-9e45817c35b74bd997f270cbf514db9a19b087e22526278ecefa59e56bb22a09": {
+      "language": "sv",
+      "category": "Beginning and creation: invention and conception",
+      "line": "(breakthrough)|genombrott|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बड़ी उपलब्धि",
+          "महत्वपूर्ण प्रगति"
+        ]
+      }
+    },
+    "hints-0a8709389cc649214386b5cdd62530006d9f12e12c1c266e548d0d883b37d3d1": {
+      "language": "sv",
+      "category": "Beginning and creation: invention and conception",
+      "line": "(come up with)|<*komma med|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "कोई विचार या प्रस्ताव पेश करना"
+        ]
+      }
+    },
+    "hints-f2d766196a91f9306190cb28b5f7d3940c26332a3560c296484da925d48b7e51": {
+      "language": "sv",
+      "category": "Beginning and creation: invention and conception",
+      "line": "(make up from nothing)|Gripa.* ur luften|skaka.* ur ärmen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिना आधार बात गढ़ लेना",
+          "मन से बना देना"
+        ]
+      }
+    },
+    "hints-5fb996fb33fcd1612094c50db2bdf198df566c334e4d9cff2d659e008179523a": {
+      "language": "sv",
+      "category": "Beginning and creation: invention and conception",
+      "line": "(invent)|uppfinna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आविष्कार करना"
+        ]
+      }
+    },
+    "hints-4b97c6a4481b81797101258b1d9dd6391fa33e8160f9f2e8b71142cce4ed34f1": {
+      "language": "sv",
+      "category": "Beginning and creation: invention and conception",
+      "line": "(find, discovery)|fynd(sl-pl)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खोज में मिली वस्तु",
+          "मूल्यवान खोज"
+        ]
+      }
+    },
+    "hints-74b2961a6bf777868367da54dafb6238b44eef37dbbaaca57e58d4e3c123eb49": {
+      "language": "sv",
+      "category": "End and destruction: finishing and completion",
+      "line": "(expression, think about leaving)|tänka på refrängen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विदा लेने या लौटने का समय हो चला है, ऐसा सोचना"
+        ]
+      }
+    },
+    "hints-bd276660acce76fe72e8714ae8639d990caeff49ac0d9bed19acd7c19284a896": {
+      "language": "sv",
+      "category": "End and destruction: finishing and completion",
+      "line": "(expression, come full circle)|Cirkeln är sluten|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बात घूम-फिरकर वहीं आ पहुँचना जहाँ से शुरू हुई थी"
+        ]
+      }
+    },
+    "hints-08daa7ee9532366e2061d9d9d54b2b2e2bf0e2db1fade9969d51a824d99c8bf3": {
+      "language": "sv",
+      "category": "End and destruction: decay, decline and disappearance",
+      "line": "(expression, easy come easy go)|lätt fånget, lätt förgånget|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जो आसानी से मिलता है, आसानी से चला भी जाता है"
+        ]
+      }
+    },
+    "hints-43d6a87e865114ee8f21771b28f35ab5a288601f434d898cb7e9d7155082e0da": {
+      "language": "sv",
+      "category": "Cause and condition: enabling, supporting and facilitating",
+      "line": "(expression, with all one's might)|För kung och fosterland|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पूरे ज़ोर-शोर से",
+          "अपनी पूरी ताक़त लगाकर"
+        ]
+      }
+    },
+    "hints-d35e160a28d435ee5dead364189a756a03e5ed0159c04c57f966b22d3b0986a6": {
+      "language": "sv",
+      "category": "Cause and condition: preventing, obstructing and inhibiting",
+      "line": "(expression, swim against the tide)|<*simma mot strömmen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुमत या प्रचलन के विरुद्ध अपनी राह चलना",
+          "धारा के विपरीत चलना"
+        ]
+      }
+    },
+    "hints-f675a60713b045975e3638f6909408f3a6d347842948d82a52d44415b666418d": {
+      "language": "sv",
+      "category": "Effect: results, consequences and repercussions",
+      "line": "(expression, follow inevitably)|Komma som ett brev på posten|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नतीजे का तय या अपेक्षित रूप से सामने आना"
+        ]
+      }
+    },
+    "hints-2d0c36ef43987ae1ed16ecefd9396e482554b77ac532da3a1fe414f9fc64c6d9": {
+      "language": "sv",
+      "category": "Effect: results, consequences and repercussions",
+      "line": "(expression, make a bad choice)|Hoppa i galen tunna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "गलत कदम उठा लेना",
+          "गलत चुनाव कर बैठना"
+        ]
+      }
+    },
+    "hints-27d84f149e7d73a0c264269b80ac737511c66f358572362c1474815fa87e3497": {
+      "language": "sv",
+      "category": "Effect: success, failure and evaluation of outcomes",
+      "line": "(expression, bite the dust)|Bita i gräset|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "हार जाना",
+          "परास्त होना",
+          "जान से हाथ धो बैठना"
+        ]
+      }
+    },
+    "hints-d9fb978ac137fa2368dfbd40e6cd9c65eb815f55ffc04aa0dec9635a099aa722": {
+      "language": "sv",
+      "category": "Effect: success, failure and evaluation of outcomes",
+      "line": "(expression, go like clockwork, run smoothly)|Gå som en dans|Gå som på räls|Gå som på smorda bakplåtar|Gå som smort|Gå som tåget|Rulla på|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिना किसी अड़चन के सुचारु रूप से चलना"
+        ]
+      }
+    },
+    "hints-7c70f0ef860836a35173eb73f2fed94e7b4cc2c6d4bfd0aba107adec139dec22": {
+      "language": "sv",
+      "category": "Effect: success, failure and evaluation of outcomes",
+      "line": "(breakthrough)|genombrott(sl-pl)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बड़ी उपलब्धि",
+          "महत्वपूर्ण प्रगति"
+        ]
+      }
+    },
+    "hints-9c406ab5d4f6167c5bb0a6b509d1d78b8832167a6f5944a237e31413c32e4475": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, rub salt in the wound)|Strö salt i såren|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ज़ख्म पर नमक छिड़कना",
+          "दुख और बढ़ा देना"
+        ]
+      }
+    },
+    "hints-ef9d7b29ac92e4452364f4630bbe223a96297cbe523d738a047074cb98fad530": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, pull the rug from under someone)|Dra undan mattan för någon|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अचानक किसी का सहारा छीन लेना",
+          "किसी की योजना की नींव हिला देना"
+        ]
+      }
+    },
+    "hints-2e2ddd8aa1c278dc38c7d7bf523a33f5d6b1c9e5fae2c9903c13aec0fac41eab": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, all done and ready)|Klappat och klart|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सब कुछ तय और तैयार",
+          "काम पूरा हो चुका"
+        ]
+      }
+    },
+    "hints-47614febe7b857ea138ee98d0c9c1fa9ca2756231e9189cda6939fd4ae82772a": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, tie up loose ends)|Knyta ihop säcken|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बाकी बचे छोटे-मोटे काम निपटाकर काम पूरा करना"
+        ]
+      }
+    },
+    "hints-6fd6808d859aaf0aa92c0cc20f1470db433fb339691cbc1f9fd23cbcd5a6c479": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, on home ground)|På sin mammas gata|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपने जाने-पहचाने माहौल में",
+          "अपने इलाके में"
+        ]
+      }
+    },
+    "hints-995877240538628e7fe9115ddf63c49cef670f06656f2a647e6cc0d13267bc46": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(proverb)|Var skall sleven vara om inte i grytan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "वह इसमें शामिल न हो तो और कौन होगा",
+          "उसका यहाँ होना तो स्वाभाविक है"
+        ]
+      }
+    },
+    "hints-7161a3c8f22e8ab3ffc24ad92422bd881f81d937ccde4f196c872cce15fe0d1b": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, know where the problem lies)|Veta var skon klämmer|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "समस्या की असली जड़ पहचानना"
+        ]
+      }
+    },
+    "hints-99009dda9f9783d0619e3335ff0cb0fa6bb579fbb880ac05cf5dd0389336983e": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(proverb)|Det ordnar sig med blommorna, bara kärringen dör|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पहले मुख्य बात हो जाए, छोटी-मोटी व्यवस्थाएँ बाद में हो जाएँगी"
+        ]
+      }
+    },
+    "hints-71814a1e20231380244bc60dc16b430434d080a3bb3abe3994ef1ba8108bb498": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, take each day as it comes)|Ta dagen som den kommer|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आज जैसा आए, उसे उसी तरह स्वीकार कर जीना"
+        ]
+      }
+    },
+    "hints-a7ff1d576e8eabdd93271d40258e665428609a9ab1c49de3a67e88ab9283e787": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(proverb)|Den dagen, den sorgen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जब वह समस्या आएगी, तब उससे निपटेंगे",
+          "कल की चिंता आज नहीं"
+        ]
+      }
+    },
+    "hints-7136cf9133065c17b8ae673e2e78f20f8651743dc497d73c031192cbb29dd4aa": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, time will bring a solution)|Kommer tid kommer råd|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "समय आने पर कोई न कोई उपाय भी निकल आएगा"
+        ]
+      }
+    },
+    "hints-e056dbb2d1ded61f57aa2cd1738364f2ed63f48251c1ca8b4f784bc10596e21d": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, come out on top)|Dra det längsta strået|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बाज़ी मार लेना",
+          "सफल पक्ष में रहना"
+        ]
+      }
+    },
+    "hints-56c6c5d180ce236f62c3e05df979c5c00341db4f94b0dffd1da8b8a7f10fe51b": {
+      "language": "sv",
+      "category": "Processes: general change and progression",
+      "line": "(expression, get a share of the blame or criticism)|Få en släng av sleven|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दूसरों के साथ दोष या आलोचना का कुछ हिस्सा खुद भी झेलना"
+        ]
+      }
+    },
+    "hints-db547a44ac90c76ded5f12a80bb50428a5c1cb0f5de871505c5dc79d9c1ede65": {
+      "language": "sv",
+      "category": "Processes: stages, sequence and occurrence",
+      "line": "(expression, in the nick of time)|I grevens tid|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ऐन समय पर",
+          "ठीक आखिरी मौके पर"
+        ]
+      }
+    },
+    "hints-82bf39e46110c52475bb70129293be7c38e6d4e5c761f83c5cc4a1ec14a314f2": {
+      "language": "sv",
+      "category": "Physical states, strength and stability",
+      "line": "(expression, soaked to the skin, wet as a drowned rat)|Som en blöt hund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पूरी तरह भीगा हुआ",
+          "सिर से पाँव तक भीगा हुआ"
+        ]
+      }
+    },
+    "hints-49a10ac24ffac0c362b4184eaa5188e2723389e5b9765b1f6f5143b5d4756aff": {
+      "language": "sv",
+      "category": "Physical states, strength and stability",
+      "line": "(expression, dry as a bone/dust)|Torrt som fnöske|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिल्कुल सूखा",
+          "एकदम रूखा-सूखा"
+        ]
+      }
+    },
+    "hints-35939fcf62405137bba204f595e44f1a0775a632f70c723e5e9c250781912c33": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, put lipstick on a pig)|Sminka en gris|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खराब चीज़ को ऊपर से सजाकर अच्छा दिखाने की कोशिश करना"
+        ]
+      }
+    },
+    "hints-52c268efb2aa5268805396cac8caca951eb6cefeb002c1998c6c6ce090bcef93": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, someone is repeating what they have heard from others)|det har varit i säck innan det har kommit i påse|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सुनी-सुनाई बात दोहराना",
+          "यह बात पहले भी दूसरों से होकर आई है"
+        ]
+      }
+    },
+    "hints-06d92a34ca26b30c98abe74bf18ad5ff1ee6a8525e8bd3c2ce9aba7e3ad8ad3e": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, the only difference between men and boys is the price of their toys)|Skillnaden mellan män och pojkar är priset på leksakerna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बड़े भी खिलौनों के शौकीन रहते हैं, बस उनके खिलौने महँगे होते हैं"
+        ]
+      }
+    },
+    "hints-eaa222b3231ef979b6e21b665d125decbf6a65eda9f9a53d13cace094842cd9b": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, in the buff, in your birthday suit)|I bara mässingen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिल्कुल नंगा",
+          "निर्वस्त्र"
+        ]
+      }
+    },
+    "hints-b60111957b1075abd3766085a8e4e07b07baac3d610b7c13410f2dacff4f769f": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, as slippery as an eel)|Hal som en ål|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आसानी से पकड़ में न आने वाला",
+          "बात टालकर बच निकलने वाला"
+        ]
+      }
+    },
+    "hints-6a5091843159661c318d244af3390feb9fb6caa9452d1b15322e519c80eeaad5": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, as strong as an ox, as strong as a bear)|Stark som en björn|Stark som en oxe|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत ताक़तवर"
+        ]
+      }
+    },
+    "hints-284eae3f9f2ff0aa63f7ace62699d984c7ac17799ae234040c4b08c571a3e883": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, as stiff as a board, as nimble as a refrigerator (ironic))|Vig som ett kylskåp|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "व्यंग्य में बेहद अकड़ा हुआ या अनाड़ी",
+          "ज़रा भी फुर्तीला नहीं"
+        ]
+      }
+    },
+    "hints-e488baf8863018097c0e77cf6e842e4f812a6115e06ed9646736a6461c6d9de2": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, as agile as a cat)|Vig som en katt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिल्ली की तरह फुर्तीला",
+          "बहुत चुस्त"
+        ]
+      }
+    },
+    "hints-b8ae593546b4eacee1549af565904890fa2274f517312e289144488e24f008d0": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, a lazy person overloads themselves to avoid a second trip)|Lat man bär hellre ihjäl sig än går två gånger|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दो चक्कर लगाने से बचने के लिए एक ही बार में बेहिसाब बोझ उठा लेना"
+        ]
+      }
+    },
+    "hints-fc394b9e53d691b4b1f694c2b6287fc8cd90026575ee8e20c5eecf75552ef676": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, a lazy tailor takes a long thread, shortcuts may make more work)|Lat skräddare tar lång tråd|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आलस में अपनाया छोटा रास्ता उलटे काम बढ़ा देता है"
+        ]
+      }
+    },
+    "hints-9c21fbb5e1748ff452ab45b672599c72cfffe4d8e04bca861b369a7e2f919d12": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, the lazy person has to rush at the last minute)|Om kvällen får den late brått|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "काम टालने वाले को आखिरी समय में भाग-दौड़ करनी पड़ती है"
+        ]
+      }
+    },
+    "hints-42853c7cda56afa97185e23840d41319b484384a6b8ea3a49a6051102664a5fc": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, the weakest link in the chain)|svagaste länken i kedjan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पूरी व्यवस्था का सबसे कमज़ोर हिस्सा",
+          "कमज़ोर कड़ी"
+        ]
+      }
+    },
+    "hints-4d8efbc3011f9f7da14fbbc2bab7d5ec88379d7be4c0a3b2c51870ea0e1ecc1a": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, bright-eyed and bushy-tailed, full of beans)|Pigg som en lärka|Pigg som en mört|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खूब चुस्त-दुरुस्त और तरोताज़ा"
+        ]
+      }
+    },
+    "hints-4596c77fb4e0b105f83f87f57bd988218d9b4be382ddf7ba423b3e2c67ae971e": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, as fit as a fiddle, as sound as a bell)|Frisk som en nötkärna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पूरी तरह स्वस्थ",
+          "एकदम तंदुरुस्त"
+        ]
+      }
+    },
+    "hints-5314715c28f815a791da4708469d08e934ed2369f6a37e14df4fa5933fef9df8": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, be sick as a dog, vomit violently)|Spy som en hund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ज़ोर-ज़ोर से उल्टियाँ करना",
+          "बुरी तरह उल्टी होना"
+        ]
+      }
+    },
+    "hints-5e090c0fd62640ee4e53c786252f8b6a4347d14843a998f1581c236071f56dea": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, up with the lark)|uppe med tuppen( är bra för kroppen)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सुबह उठ जाना",
+          "मुर्गे की बाँग के साथ उठना"
+        ]
+      }
+    },
+    "hints-45ed095bb6c3d7a33596baf710409bbe54abb1d54da0c1fda73cb03d8464491d": {
+      "language": "sv",
+      "category": "Physical appearance",
+      "line": "(expression, the early bird catches the worm)|Morgonstund har guld i mund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सुबह जल्दी शुरुआत करने में फ़ायदा है"
+        ]
+      }
+    },
+    "hints-39203786ce32167cc986c406221589f9ae5ee4ed1e4626f8a20ddd6d19b194ac": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, make a mountain out of a molehill)|Göra en höna av en fjäder|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "राई का पहाड़ बनाना"
+        ]
+      }
+    },
+    "hints-caa35ee52d946efbef4b1ed59145c901884abce901e5904a61ec6ad7129752dc": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, use a sledgehammer to crack a nut)|Skjuta mygg med kanoner|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छोटी समस्या के लिए ज़रूरत से कहीं बड़ा उपाय अपनाना"
+        ]
+      }
+    },
+    "hints-e12a4f3e01bb311a48b1d9662022c121c3b8ee12cd80ec74f7463c9488d9a2c1": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, strain every sinew, go all out)|Ta i så man spricker|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपना पूरा ज़ोर लगा देना",
+          "जी-जान लगा देना"
+        ]
+      }
+    },
+    "hints-f02c3e235de6fe8d69fe4a0e4f8819b7f0f19f36ce8b4a628278a9e6cc4cf0e3": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, a storm in a teacup, a tempest in a teapot)|Storm i ett vattenglas|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ज़रा-सी बात पर बड़ा बवाल",
+          "छोटी बात को लेकर हंगामा"
+        ]
+      }
+    },
+    "hints-6cce9a241ac245c8354f25af3a25f231b2ff6c9e113d5ca7f2e56b6945e2b85f": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, necessity knows no law)|Nöden har ingen lag|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मजबूरी में नियम-कानून का ध्यान नहीं रहता"
+        ]
+      }
+    },
+    "hints-2a959bb622b7896b5b76c5d1e13b370752922c580bfca5a0953c03fcb9039079": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, it is about time, it is high time)|Det är på tiden nu|det var hög tid (att)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अब तो बहुत देर हो चुकी, यह काम हो जाना चाहिए"
+        ]
+      }
+    },
+    "hints-a1e3ab09724f9ea922ac48dd607cb6bd08be7cc478e2ef89908c049a500fa47f": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, to err is human)|Det är mänskligt att fela|Även den bäste kan fela|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "गलती इंसान से ही होती है",
+          "अच्छे से अच्छा व्यक्ति भी गलती कर सकता है"
+        ]
+      }
+    },
+    "hints-d441227fd66bd6d4942da0f684492a64e87074a6aa454011775dd2ad37a6f74b": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, two wrongs do not make a right)|Två fel gör inte ett rätt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "एक गलती दूसरी गलती को सही नहीं ठहरा देती"
+        ]
+      }
+    },
+    "hints-e374f066bec63df20c74abbfeb74ea813fb0ded802e16d1babef2dc665b527b2": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, keeping body and soul together, still in one piece)|Huvudet upp och fötterna ned|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जैसे-तैसे ठीक-ठाक चल रहा है",
+          "अभी सलामत हैं"
+        ]
+      }
+    },
+    "hints-3bbfb77a1e741e465434d3e1c8cb0121b961199b806f0e0a011d350ecb6089ee": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, in your element, at your best)|I sitt esse|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपने मनपसंद काम या माहौल में पूरे रंग में होना"
+        ]
+      }
+    },
+    "hints-bedc61f7acdf28b2e8dcc549de9ffb99892502b8c12e369eecff8cf2d0e059de": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, come full circle)|Cirkeln är sluten|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बात घूम-फिरकर वहीं आ पहुँचना जहाँ से शुरू हुई थी"
+        ]
+      }
+    },
+    "hints-2151ce92a187ba7672edc33794ea685a1b8f16bc183da494808059cd949bf2ea": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, no worries, take it easy)|Lugna puckar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "फ़िक्र की कोई बात नहीं",
+          "आराम से"
+        ]
+      }
+    },
+    "hints-ec3a9999c02b3a1e8ba63b9e21e60e895245cd6e40efef8a5a5c1faf2409f977": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, first-rate, just the ticket, terrific)|Fint som snus|Alla tiders|Fina fisken|Något i hästväg|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत बढ़िया",
+          "एकदम शानदार",
+          "बिल्कुल उपयुक्त"
+        ]
+      }
+    },
+    "hints-cb6d5210149efaf1690b408eb3af1411a00682b2ecc05aeb487bef1eb9368161": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, a wonder of wonders)|Undret över alla under|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अजूबों का अजूबा",
+          "बेहद आश्चर्यजनक बात"
+        ]
+      }
+    },
+    "hints-5c87c170de31a8c18bd55dd82da840b93e577b9c745e6507dd076a96da7a5f16": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, nothing to sneeze at, no mean feat)|Inte gå av för hackor|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मामूली न होना",
+          "कमाल का या दमदार होना"
+        ]
+      }
+    },
+    "hints-7d0a8e6b1dc9d556722992a01e581beea566ca6bb38ca48a91b68efc6b495bf6": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, mediocre at best)|på sin höjd medelmåttig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ज़्यादा से ज़्यादा औसत दर्जे का"
+        ]
+      }
+    },
+    "hints-b90453eac8c83982ceb7dfb10438fb096e31490a205dd944c1f02572d032f5bb": {
+      "language": "sv",
+      "category": "Conditions, states",
+      "line": "(expression, bite off more than you can chew, get in over your head)|Ta sig vatten över huvudet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपनी क्षमता से बड़ा काम हाथ में ले लेना"
+        ]
+      }
+    },
+    "hints-122ca5f16c627415bdbd63403ed3d5ffd7a48cce3f3d74beaa65383808406d55": {
+      "language": "sv",
+      "category": "Conditions - normality",
+      "line": "(expression, talk through your hat, talk nonsense)|Prata i nattmössan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिना सिर-पैर की बातें करना",
+          "बकवास करना"
+        ]
+      }
+    },
+    "hints-fc5fddb4eb02d88f61868e4d87c705eb2ae9733da4dffdfe324a69139781a19c": {
+      "language": "sv",
+      "category": "Conditions - normality",
+      "line": "(expression, be obstinate, insist on having your way)|Vara den som är den|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपनी बात पर अड़े रहना",
+          "अपनी ही चलाना"
+        ]
+      }
+    },
+    "hints-d221cd490d1db0f4f1405a477c08ac2c572adf5a3f2f9614db6fcd793723f749": {
+      "language": "sv",
+      "category": "Conditions - normality",
+      "line": "(expression, the black sheep)|Svarta fåret|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "परिवार या समूह का बदनाम या अलग-थलग सदस्य"
+        ]
+      }
+    },
+    "hints-1897aa60dba6d8defd2846b0bba9b629050026d0eee51324baf15c0d4abc3ddf": {
+      "language": "sv",
+      "category": "Conditions - normality",
+      "line": "(expression, ten a penny)|Tretton på dussinet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आसानी से मिलने वाला मामूली व्यक्ति या चीज़",
+          "बहुत आम"
+        ]
+      }
+    },
+    "hints-db8761c518f2a0f144dd899f91d73d76c600082c3162211747e80cbbda25c5f2": {
+      "language": "sv",
+      "category": "Conditions - normality",
+      "line": "(expression, age alone does not make foolishness worthy of respect)|Man ska inte buga för dumheten bara för att den är gammal|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "केवल पुरानी होने से मूर्खता सम्मान के योग्य नहीं हो जाती"
+        ]
+      }
+    },
+    "hints-5c71c54bcaa66962cae130d65b79cc8d9fae3292bb246aef0eed3dd1cb522e35": {
+      "language": "sv",
+      "category": "Health and diseases, problems",
+      "line": "(expression, good health goes unnoticed)|Hälsan tiger still|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अच्छे स्वास्थ्य का एहसास प्रायः बीमारी आने पर होता है"
+        ]
+      }
+    },
+    "hints-a702920754cbc8a0c3a59b804900d90111024b31d48629383e005e1f6d904564": {
+      "language": "sv",
+      "category": "Health and diseases, problems",
+      "line": "(expression, as high as a kite)|Hög som ett hus|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नशे में पूरी तरह धुत"
+        ]
+      }
+    },
+    "hints-b07b35f5cef30ce9a4c14f6fe3d13e9100dcb9250b1d38333f7680c608bacc8b": {
+      "language": "sv",
+      "category": "Health and diseases, problems",
+      "line": "(expression, no cause for alarm, no worries)|Ingen ko på isen|Ingen fara på taket|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "घबराने की कोई बात नहीं",
+          "कोई आफ़त नहीं आई"
+        ]
+      }
+    },
+    "hints-d16bad824e36b231336a492284a98d54a3a289ece8f9916cd43d203626355f8a": {
+      "language": "sv",
+      "category": "Health and diseases, problems",
+      "line": "(expression, no immediate cause for alarm while things are still standing)|Ingen fara på taket, så länge skorstenen står|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जब तक हालात संभले हुए हैं, घबराने की कोई बात नहीं"
+        ]
+      }
+    },
+    "hints-861a17af85b885f4008d114a21ddf374e483f4551ad5da48b0a6968af0e7ef40": {
+      "language": "sv",
+      "category": "Health and diseases, problems",
+      "line": "(expression, ears feel blocked, ears pop)|Slå lock för öronen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "कान बंद-से लगना",
+          "कानों में दबाव महसूस होना"
+        ]
+      }
+    },
+    "hints-daa9be599dde5e9751b5b1f89360fff55ebe0b3607d13cd4929f3b1037d33c72": {
+      "language": "sv",
+      "category": "Health and diseases, problems",
+      "line": "(itchy, itching)|kliande|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खुजली करने वाला",
+          "जिसमें खुजली हो"
+        ]
+      }
+    },
+    "hints-2d481a14e79e8c889bc9e09b863ccdc4e776dc3db3f1bb92ba1308730c67dc39": {
+      "language": "sv",
+      "category": "Health and diseases, problems",
+      "line": "(drunken people say what sober people keep to themselves)|den drucknes tal är den nyktres tankar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नशे में व्यक्ति वह कह देता है जिसे होश में लोग मन में दबाए रखते हैं"
+        ],
+        "de": [
+          "Betrunkene sprechen aus, was Nüchterne für sich behalten"
+        ],
+        "es": [
+          "Los borrachos dicen lo que los sobrios piensan pero callan"
+        ],
+        "fr": [
+          "Les gens ivres disent ce que les gens sobres pensent tout bas"
+        ],
+        "pt": [
+          "Os bêbados dizem o que os sóbrios pensam mas calam"
+        ],
+        "pl": [
+          "Pijani mówią to, co trzeźwi myślą, lecz przemilczają"
+        ],
+        "uk": [
+          "П'яні кажуть те, що тверезі думають, але приховують"
+        ],
+        "th": [
+          "คนเมาพูดสิ่งที่คนไม่เมาคิดแต่ไม่พูด"
+        ],
+        "zh-Hans": [
+          "醉者说出清醒者藏在心里的话"
+        ]
+      }
+    },
+    "hints-c5e77105ed2ffb758818b4365a3c0ed650b8a440150c27e9eaffeb0bdb8aa63e": {
+      "language": "sv",
+      "category": "Finance, economy, business",
+      "line": "(expression, all roads lead to Rome)|alla vägar bär till Rom|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "एक ही लक्ष्य तक पहुँचने के कई रास्ते होते हैं"
+        ]
+      }
+    },
+    "hints-4a1d7ee9f325c536ede54bcfa2bde72d4a5d773d66f9015a7de1fd2dabead797": {
+      "language": "sv",
+      "category": "Finance, economy, business",
+      "line": "(expression, do not cry over spilt milk)|Gråt inte över spilld mjölk|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बीती बात पर पछताने से क्या फ़ायदा",
+          "हो चुके नुकसान पर रोना छोड़ो"
+        ]
+      }
+    },
+    "hints-c617907a8e895579a1097c6eda03fce1d9f45861233f8057850d0097870ae2df": {
+      "language": "sv",
+      "category": "Finance, economy, business",
+      "line": "(expression, cast pearls before swine)|Kasta pärlor för svin|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जिसे कदर न हो उस पर अच्छी चीज़ या सलाह व्यर्थ करना"
+        ]
+      }
+    },
+    "hints-49fb8f54b2870be3b1a9e5a797fff0a52addf047d0eef021c4ec2afa16add0d0": {
+      "language": "sv",
+      "category": "Finance, economy, business",
+      "line": "(expression, the end of the road)|Vägs ände|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आगे कोई रास्ता न बचना",
+          "अंतिम पड़ाव"
+        ]
+      }
+    },
+    "hints-217d66a834e6ee167691b16d26e226471515268be0b2be183c7d1631b4998e45": {
+      "language": "sv",
+      "category": "Finance, economy, business",
+      "line": "(expression, like a scalded cat, frantically)|Som en skållad råtta|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "घबराकर बेतहाशा भागना या हरकत करना"
+        ]
+      }
+    },
+    "hints-06329f6eb519486e444525f127f3d76b6b53650320c1a669865c633087eafdf5": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, angry as a bee)|arg som ett bi|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत गुस्से में",
+          "आगबबूला"
+        ]
+      }
+    },
+    "hints-37a477d3f8f0a00e7e98eb751c00f50357e43151a909012462637e7e6704f73a": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, busy as a bee)|flitig som ett bi|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत मेहनती और काम में लगा रहने वाला"
+        ]
+      }
+    },
+    "hints-da359628decea981c799c6c0911478461239d260404a48971631db491b127bd1": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, work like a dog)|slita som ett djur|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जी-तोड़ मेहनत करना"
+        ]
+      }
+    },
+    "hints-1a072cc28499f7ef13737e25a2e03a79688ec4ada55126c64cb1b32f3b99e2fa": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, industrious as an ant)|flitig som en myra|jobba som en myra|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत मेहनती",
+          "लगातार मेहनत करते रहना"
+        ]
+      }
+    },
+    "hints-d0eba91e10b593ce11cecafc83de04ca4d243a375b1508ca14ed4c983bbca7c7": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, greedy as a vulture)|girig som en gam|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत लालची"
+        ]
+      }
+    },
+    "hints-1b46ce0eada246fc087c20d58d1b45ed56804f181d993ed6fb03ec7dc5192aa3": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, free as a bird)|fri som en fågel|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पूरी तरह आज़ाद"
+        ]
+      }
+    },
+    "hints-e9d9d51e8921e53b2448a11a5ee53e538fae69ee6cfecdb16a93fc09a8b01a82": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, eat like a bird)|äta som en fågel|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत थोड़ा खाना",
+          "चिड़िया जितनी खुराक"
+        ]
+      }
+    },
+    "hints-8ce62cfe633bf4392a7eb7163be622463b25e0900f279b0e04f70c4034983d82": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, dirty as a pig)|smutsig som en gris|se ut som en svinstia|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत गंदा",
+          "गंदगी से भरा हुआ"
+        ]
+      }
+    },
+    "hints-12d13c4b73b5b1ff120328e190843c77549b2542ba4b48c9c2ccafc5b5b6732d": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, eat like a pig)|äta som en gris|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत गंदे या भद्दे ढंग से खाना"
+        ]
+      }
+    },
+    "hints-8f4b86e6ecb9739080ac8773b454980703f1124249fda3f3d9bc4bd13ab79718": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, stubborn as a mule)|envis som en röd gris|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बेहद ज़िद्दी"
+        ]
+      }
+    },
+    "hints-e898c71e009ab0318cdbff6705668fbd800da4b3a18d9ba17b44a60d5a9d8491": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, scream like a stuck pig)|skrika som en stucken gris|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत तेज़ और चुभती हुई आवाज़ में चीखना"
+        ]
+      }
+    },
+    "hints-9a007b3cf8e687da37c2273479e62d425587818e0f1c21d9959c7fa135409545": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, fat as a pig)|tjock som en julegris|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत मोटा"
+        ]
+      }
+    },
+    "hints-b344995784b31c1032d5a8369f4f8e3aa820730dd57e65c5941858b37e0b6345": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, strong as a horse)|stark som en häst|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत ताक़तवर"
+        ]
+      }
+    },
+    "hints-6442e45503a6568298669df68916e29fd7a0b4be93422e2f168eba231c561f51": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, work like a horse)|arbeta som en häst|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जी-तोड़ मेहनत करना"
+        ]
+      }
+    },
+    "hints-59ac00712eec578503a90a228a3dcdd53890020fd99844dd976c813238a86b4a": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, eat like a horse)|äta som en häst|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत ज़्यादा खाना",
+          "भरपूर खुराक लेना"
+        ]
+      }
+    },
+    "hints-5a887b10914ab8aab24de351149a5b35f328dfb2c42e9235c9eabbcdd0c2fe91": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, lie through one's teeth)|ljuga som en häst travar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "धड़ल्ले से झूठ बोलना",
+          "बिना हिचक झूठ बोलते जाना"
+        ]
+      }
+    },
+    "hints-9869f5dc1eac9aafc860b62a988cfe5a7ab211d01be9a065b759edd8d374c6cb": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, look dumbfounded)|se ut som en fågelholk|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "हक्का-बक्का होकर ताकते रहना"
+        ]
+      }
+    },
+    "hints-ea3e8c0e99c716d3dc91fcdb7e9469a4dadea9b00032f6961f951381561ebc51": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, have eyes like a hawk)|se som en hök|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत पैनी नज़र होना",
+          "छोटी-से-छोटी चीज़ देख लेना"
+        ]
+      }
+    },
+    "hints-19d72747aafabd8c0cbcc8309264f266393693e667cb1aff4a0c2bdcb1a3093a": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, have a memory like a sieve)|minne som en guldfisk|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत कमज़ोर याददाश्त",
+          "पल भर में भूल जाना"
+        ]
+      }
+    },
+    "hints-d9a401ad9908c4abc2baa0a4c59e1857c8acadebdd0b5e940e403898f28e56d1": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, silly as a goose)|dum som en gås|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत मूर्ख"
+        ]
+      }
+    },
+    "hints-ddf95eedca894f726c8cb6285e998113ba20f7ff3f5d3cb6719b97899a2df091": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, loud as a goose)|högljudd som en gås|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत शोर मचाने वाला"
+        ]
+      }
+    },
+    "hints-d6a49f88fc96033c9afe14518a42c40f3512295f58e9c1ba7ecc1a0e4772830e": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, fast as a hare)|snabb som en hare|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत तेज़"
+        ]
+      }
+    },
+    "hints-2fd96f2b274c09163e8b86e6d2495b05d50bb453eef67e81a341232ea1aa73fe": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, timid as a hare)|rädd som en hare|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत डरपोक"
+        ]
+      }
+    },
+    "hints-d80bad631c6e7b27e65f86a41a1d9e900eff56f7eaae6ec3bfe32330714942ca": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, quick as a weasel)|snabb som en vessla|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत फुर्तीला",
+          "तेज़ी से हिलने-डुलने वाला"
+        ]
+      }
+    },
+    "hints-a22272e1dbebd84acb5c069f387f0e00d3e0af5b550eb324885513a6e0803642": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, faithful as a dog)|trogen som en hund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत वफ़ादार"
+        ]
+      }
+    },
+    "hints-bbebfcfe2324caf9b4fe1bfdb2aa13a4d79816f76f2438733bcae7570f15655b": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, curious as a cat)|nyfiken som en katt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत जिज्ञासु"
+        ]
+      }
+    },
+    "hints-74d82fe1e283f29d8d923ae6b59bf5590d3f93b1c2098aff050d3e3d82618b02": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, like cat and dog)|som hund och katt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "लगातार लड़ते-झगड़ते रहना",
+          "एक-दूसरे से बिल्कुल न बनना"
+        ]
+      }
+    },
+    "hints-d5a6f560f8d337bb9ea72414976564bd790494e86b01279e409210ace2e9d443": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, agile as a cat)|vig som en katt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिल्ली की तरह फुर्तीला",
+          "बहुत चुस्त"
+        ]
+      }
+    },
+    "hints-35636b42bd691b0d8ca72614b04ff32d448baa55889928540906207241e929bb": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, shed crocodile tears)|gråta krokodiltårar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मगरमच्छ के आँसू बहाना",
+          "झूठा दुख जताना"
+        ]
+      }
+    },
+    "hints-066b0d0f289d7745c576beb018d5ee2549a11e47135474ba021754a1cbaaa2dd": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, black as a raven)|svart som en korp|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत काला",
+          "कौए जैसा काला"
+        ]
+      }
+    },
+    "hints-2b04f70db100a565e23cff3af0dcf99c0797ed402e47753bfc982f7c66a3f472": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, stupid as a donkey)|dum som en åsna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत मूर्ख"
+        ]
+      }
+    },
+    "hints-c9d052da0e7d9fd08fea44ba714d7277e72a790ac3a691187a18f59f5fef0300": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, stubborn as a donkey)|envis som en åsna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत ज़िद्दी"
+        ]
+      }
+    },
+    "hints-db846b77bc6421132e278ea2cf6e4ccd01561492b43ab85174a55c377b43f18a": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, be unable to choose)|stå som en åsna mellan två hötappar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दो विकल्पों के बीच उलझकर फैसला न कर पाना"
+        ]
+      }
+    },
+    "hints-09b7476cc3565da10ac4a33fb579820b897f20e98b61486c0386145fd15207d5": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, drunk as a skunk)|full som en kaja|full som en alika|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नशे में पूरी तरह धुत"
+        ]
+      }
+    },
+    "hints-667fd79f575105f76858ac4f002223dafbb0e17bc679459bbbdd820b8edfd552": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, breed like rabbits)|föröka sig som kaniner|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत तेज़ी से संतान बढ़ाना"
+        ]
+      }
+    },
+    "hints-44b7beb0ce34f2ba5053de3be7e1d15d2573f96249e989fd68d0d6297e7587b0": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, meek as a lamb)|from som ett lamm|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सीधा-सादा और विनम्र"
+        ]
+      }
+    },
+    "hints-48f2c3ac2f2830805123475dc1f517e724ae35c60747a1ab5cfdbd5fdbe73303": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, quiet as a lamb)|tyst som ett lamm|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिल्कुल चुप",
+          "बहुत शांत"
+        ]
+      }
+    },
+    "hints-660b5c5cbe1fe8f566f914d3abd7f670328e0fc583606f0667b006060cdfd19e": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, innocent as a lamb)|oskyldig som ett lamm|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिल्कुल निर्दोष",
+          "बहुत भोला"
+        ]
+      }
+    },
+    "hints-23f6dc22ecff86167eb5d0c0a82514e8d31d3bbfd94e9a49d8bd319a16f402bc": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, strong as a lion)|stark som ett lejon|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत ताक़तवर"
+        ]
+      }
+    },
+    "hints-09bf43df42c69bd0ca382db279fc10cbc5c33b22cfaeebaf37febd7a8147fd33": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, brave as a lion)|modig som ett lejon|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शेर जैसा बहादुर",
+          "बहुत साहसी"
+        ]
+      }
+    },
+    "hints-29795feffb2cd870a5888db7cc49cb0b38bae31eca0a70439d08b7a37dca83ae": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, strong as an ox)|stark som en oxe|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत ताक़तवर"
+        ]
+      }
+    },
+    "hints-02ee4ebdadec9a7d2f3251d3ed0157fad5363ca451e13bf4e1666e3c1d4de217": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, sleep like a log)|sova som en klubbad oxe|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत गहरी नींद सोना",
+          "बेसुध होकर सोना"
+        ]
+      }
+    },
+    "hints-91134f5c0a06e2be189687332a68c303e43ac95ca1825c33d5a4faba30694d2f": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, sleep like a log)|sova som en klubbad säl|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत गहरी नींद सोना",
+          "बेसुध होकर सोना"
+        ]
+      }
+    },
+    "hints-be3870cc9fd495df772c08a56e9898b70808ada69b0bd7870354f0988a513335": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, bright as a lark)|pigg som en lärka|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खूब चुस्त-दुरुस्त और तरोताज़ा"
+        ]
+      }
+    },
+    "hints-3b13dfbf5ea0be3e72902b2afd24fea6a8db87ef2ec7649259c8ea024477230c": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, bright-eyed and bushy-tailed)|pigg som en mört|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खूब चुस्त-दुरुस्त और तरोताज़ा"
+        ]
+      }
+    },
+    "hints-508dbb518de95271a4940b43fa6484eeaa76f660f8231bdc82ee01fdb16ed413": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, quiet as a mouse)|tyst som en mus|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिल्कुल चुप",
+          "ज़रा भी आवाज़ न करना"
+        ]
+      }
+    },
+    "hints-f2afbe8efa87d2f99455e4f77328f2b3dc4b47a3402ac65bbf55b02493c9e663": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, sing like a nightingale)|sjunga som en näktergal|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सुरीला गाना"
+        ]
+      }
+    },
+    "hints-d2e38b0071921e3f096ec339b2d75963c5c3457754727b70f45433fa21996c40": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, cunning as a snake)|listig som en orm|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत चालाक और कपटी"
+        ]
+      }
+    },
+    "hints-1a62224e122101c0362560c7e49a0b31f2d1a24b7a275e2feda04d9681609637": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, wise as an owl)|klok som en uggla|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत बुद्धिमान"
+        ]
+      }
+    },
+    "hints-d14d53c3ebe5a7b7ff775d0410e845187380a4196146c7addd55c39b26453857": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, cunning as a fox)|listig som en räv|slug som en räv|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "लोमड़ी जैसा चालाक",
+          "बहुत धूर्त"
+        ]
+      }
+    },
+    "hints-7b768d4fcc646eb302fa8e20aacc5086fe66729037eb764c52b22fdd2428e3be": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, caught in a trap)|sitta som i en rävsax (fälla)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ऐसी मुश्किल में फँसना जहाँ से निकलना कठिन हो"
+        ]
+      }
+    },
+    "hints-07f8a14c2a7bd0ba2cc9e9959066a262856b8d4c1472ff8233777eee024aab87": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, like cat and mouse)|som katt och råtta|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी को बार-बार पकड़ने और बच निकलने का खेल",
+          "जानबूझकर परेशान करना"
+        ]
+      }
+    },
+    "hints-b559fe78df08617b4933c0f0b632d08f32d09266b1f4dd2340b922072ccbd9b9": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, slow as a snail)|seg som en snigel|långsam som en snigel|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बेहद धीमा",
+          "बहुत सुस्त गति से"
+        ]
+      }
+    },
+    "hints-dfeb32766e1a4101cde4d54d77e6eb49cd380336ed6f637e21bb12b757721dc7": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, proud as a peacock)|stolt som en tupp|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "घमंड से फूला हुआ",
+          "बहुत गर्वित"
+        ]
+      }
+    },
+    "hints-3a41ac9b92f617b22d73d49d1ed8a36b729b8a0b84e5903647f80f2c769c1193": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, mad as a hatter)|galen som en tupp|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सनकी",
+          "बिल्कुल पागल"
+        ]
+      }
+    },
+    "hints-6d209e4cee1d69add06f6988650402e57541833d4437d50a150f3c6d24799751": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, hungry as a wolf)|hungrig som en varg|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत ज़ोर की भूख लगी होना"
+        ]
+      }
+    },
+    "hints-fcae0b71b82c8292672f22121c3845d47ae86efa5b29c7a52184dc41414cec23": {
+      "language": "sv",
+      "category": "Animals, birds and characteristics",
+      "line": "(expression, slippery as an eel)|hal som en ål|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आसानी से पकड़ में न आने वाला",
+          "बात टालकर बच निकलने वाला"
+        ]
+      }
+    },
+    "hints-e949d198fdb710f3fdc3f003face016ced19667c1d82521e8a5344aa07ad3879": {
+      "language": "sv",
+      "category": "Security, safety",
+      "line": "(expression, be firmly in control)|<*sitta säkert i sadeln|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपनी स्थिति पर मज़बूती से काबिज़",
+          "पद सुरक्षित होना"
+        ]
+      }
+    },
+    "hints-8d96decee572c685fc02587299605bbe1ba03142ed0d8fe3efcdb742050a1930": {
+      "language": "sv",
+      "category": "Security, safety",
+      "line": "(expression, you can forget about it, it is curtains for someone)|Hälsa hem|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अब उम्मीद छोड़ दो",
+          "उसका खेल खत्म समझो"
+        ]
+      }
+    },
+    "hints-24e2427660dff84409ceea7a09c7a011f057703744809e1f54c238fba9c33662": {
+      "language": "sv",
+      "category": "Security, safety",
+      "line": "(expression, better late than never)|bättre sent än aldrig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "देर आए, दुरुस्त आए",
+          "कभी न होने से देर से होना बेहतर है"
+        ]
+      }
+    },
+    "hints-50eb3c97cca523ac8bf882b68dcda0b6eac978056f290562a6a7ce5ea0eb282d": {
+      "language": "sv",
+      "category": "Sounds",
+      "line": "(squeal)|Skrika som en stucken gris|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत तेज़ और चुभती हुई आवाज़ में चीखना"
+        ]
+      }
+    },
+    "hints-3e222437f90762d95ca8c9cc72db6a67b3c6080c8eeca91d46c4ce5a618949e1": {
+      "language": "sv",
+      "category": "Sounds",
+      "line": "(imprint, instil)|inprägla|inpränta| etsa|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मन में गहराई से बैठाना",
+          "गहरी छाप डालना",
+          "उकेरना"
+        ]
+      }
+    },
+    "hints-bf9427c07c49ed9688c1df38060e14a2f5c0763eda06cdf801563312c9dfc8cd": {
+      "language": "sv",
+      "category": "Communication and language",
+      "line": "(indicate, point to)|indikera|tyda på|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "संकेत देना",
+          "किसी बात की ओर इशारा करना"
+        ]
+      }
+    },
+    "hints-627038ec1aceb0ffadb0d2849b2d1ab9ae9032b59361655a4719d95f6e2a24d2": {
+      "language": "sv",
+      "category": "Communication and language",
+      "line": "(sing)|Sjunga som en näktergal|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सुरीला गाना"
+        ]
+      }
+    },
+    "hints-26df89966f9da2ae4c09ed76f63e314073197ed19ec7911b7bd89339decd57d2": {
+      "language": "sv",
+      "category": "Interactions among people",
+      "line": "(faithful)|Trogen som en hund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत वफ़ादार"
+        ]
+      }
+    },
+    "hints-f7aa574fa9b594307305ca49c1f034160c0a12895709f48c62581fa335741314": {
+      "language": "sv",
+      "category": "Social relations",
+      "line": "(disparate, dissimilar)|disparat|olikartad|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "एक-दूसरे से भिन्न",
+          "अलग-अलग प्रकृति के"
+        ]
+      }
+    },
+    "hints-bd9737196454b8f17fb8f21ead06f48349ba6c61d1e33d850b043d1f2c53b9ba": {
+      "language": "sv",
+      "category": "Inclusion, exclusion and membership",
+      "line": "(include, encompass)|inkludera|innefatta|inbegripa|omfatta|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शामिल करना",
+          "समेटना",
+          "अपने दायरे में लेना"
+        ]
+      }
+    },
+    "hints-2a57e246fbdc509bba6a8822a13d05b7c3a5128004d6957719b52d45a22b9898": {
+      "language": "sv",
+      "category": "Personality: politeness, tact and consideration",
+      "line": "(quiet, shy)|försynt|försynt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "संकोची और विनम्र",
+          "चुपचाप रहने वाला"
+        ]
+      }
+    },
+    "hints-2a8829597d550b7220fe6bc99a893854084690dfa90005cf3737196c6f1956bf": {
+      "language": "sv",
+      "category": "Personality: politeness, tact and consideration",
+      "line": "(expression, meek as a lamb)|From som ett lamm|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सीधा-सादा और विनम्र"
+        ]
+      }
+    },
+    "hints-c0f204d11143b984a249475397a5d21307fd7d9afc70e7e038e66efce87b3f1f": {
+      "language": "sv",
+      "category": "Personality: politeness, tact and consideration",
+      "line": "(pushy, ruthless)|Vassa armbågar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपने फ़ायदे के लिए दूसरों को पीछे धकेलने वाला",
+          "निर्दयता से आगे बढ़ने वाला"
+        ]
+      }
+    },
+    "hints-3c373e8db35f4f81307f6a6a1f2e7ca935ea02b27b3db904dc314a84d1da247c": {
+      "language": "sv",
+      "category": "Personality: politeness, tact and consideration",
+      "line": "(rude, impolite)|oförskämd|oartig|ohövlig|ohyfsad|otidig",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बदतमीज़",
+          "अशिष्ट",
+          "अभद्र"
+        ]
+      }
+    },
+    "hints-c89785c98c184a73d90517d8e26f09cb2a33070a8ce68b06647e378ec8ab4334": {
+      "language": "sv",
+      "category": "Personality: courage and cowardice",
+      "line": "(expression, discretion is the better part of valour)|bättre fly än illa fäkta|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बेवजह भिड़ने से समझदारी से पीछे हटना बेहतर है"
+        ]
+      }
+    },
+    "hints-0fe19f88727df2227a43993ebfb1c09617c6b7668843d7142170ab2ba15c83ac": {
+      "language": "sv",
+      "category": "Personality: courage and cowardice",
+      "line": "(brave)|Modig som ett lejon|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शेर जैसा बहादुर",
+          "बहुत साहसी"
+        ]
+      }
+    },
+    "hints-70ee7785e5e3b78caef79ea322da26f08ae478f07d31fd4043355be82806f27f": {
+      "language": "sv",
+      "category": "Personality: neatness, precision and practical coordination",
+      "line": "(expression, conspicuously clumsy)|Diskret som en elefant i en porslinsbutik|Smidig som ett kylskåp|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत अनाड़ी",
+          "नाज़ुक स्थिति में भी बेढंगा व्यवहार करने वाला"
+        ]
+      }
+    },
+    "hints-92ab505d3505c0eace697ef850c501f6d3231fa336da84991671da30a15a3637": {
+      "language": "sv",
+      "category": "Personality: neatness, precision and practical coordination",
+      "line": "(expression, stiff as a board)|Stel som en pinne|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अकड़ा हुआ",
+          "तनकर सीधा और कड़ा"
+        ]
+      }
+    },
+    "hints-3ab499a8feba8588d7bc90481b005a4245ae9941d6c2c6142618d66655d05c37": {
+      "language": "sv",
+      "category": "Personality: confidence, pride and arrogance",
+      "line": "(proud)|Stolt som en tupp|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "घमंड से फूला हुआ",
+          "बहुत गर्वित"
+        ]
+      }
+    },
+    "hints-342ce17d85aaf9db8deb1a3bbece7b3b9dcc19bd9728737de93820ea20a3a803": {
+      "language": "sv",
+      "category": "Personality: confidence, pride and arrogance",
+      "line": "(expression, proud as a peacock)|Stolt som en tupp|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "घमंड से फूला हुआ",
+          "बहुत गर्वित"
+        ]
+      }
+    },
+    "hints-99cbc1f58e1ca34e1aee31a4d05ba3a7ee01f3e0e4792455a5e498b4b50fdf0d": {
+      "language": "sv",
+      "category": "Personality: diligence, persistence and initiative",
+      "line": "(expression, what does not kill you makes you stronger)|Det som inte dödar, härdar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जो मुश्किल जान नहीं लेती, वह और मज़बूत बनाती है"
+        ]
+      }
+    },
+    "hints-6297f1bd64149e7251903a4c22063b04c4f3837b9742041d294325b9580e6323": {
+      "language": "sv",
+      "category": "Personality: diligence, persistence and initiative",
+      "line": "(expression, participation matters more than winning)|Det viktigaste är inte att vinna utan att kämpa väl|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जीतने से अधिक महत्वपूर्ण है पूरी लगन से प्रयास करना"
+        ]
+      }
+    },
+    "hints-9a4e56aa8b67f75bb0e2e0cc5d8878dc0d3ca041727d942e3341352987eeb598": {
+      "language": "sv",
+      "category": "Personality: diligence, persistence and initiative",
+      "line": "(expression, all's well that ends well)|Slutet gott, allting gott|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अंत भला तो सब भला"
+        ]
+      }
+    },
+    "hints-5887ca0f17120710b0ac92286cc5be3e4b100466f24a4ef84cf6c13dd941a120": {
+      "language": "sv",
+      "category": "Personality: diligence, persistence and initiative",
+      "line": "(expression, the end justifies the means)|Ändamålet helgar medlen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अच्छे लक्ष्य के नाम पर किसी भी साधन को उचित ठहराना"
+        ]
+      }
+    },
+    "hints-9ee9621d9a93395711acd81e9747d194943857614eaab823a645146c4426f99a": {
+      "language": "sv",
+      "category": "Ability: intelligence, competence and experience",
+      "line": "(expression, very stupid)|Dum som en gås|Dum som en åsna|Dummare än tåget|tomt i ladan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत मूर्ख",
+          "बिल्कुल बेअक्ल"
+        ]
+      }
+    },
+    "hints-1f686fc6ead76bb0f68ada5229350457baf76f31e4e3a2c9baa8645a8710e4f2": {
+      "language": "sv",
+      "category": "Ability: intelligence, competence and experience",
+      "line": "(expression, have a screw loose)|En skruv lös|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दिमाग का एक पेंच ढीला होना",
+          "कुछ सनकी होना"
+        ]
+      }
+    },
+    "hints-93ce6b44b31b89133fb3ef9f03d70414c77a66aacf46914ce50309c41b5e2098": {
+      "language": "sv",
+      "category": "Ability: intelligence, competence and experience",
+      "line": "(eligibility, qualification)|behörighet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पात्रता",
+          "आवश्यक योग्यता या अधिकार"
+        ]
+      }
+    },
+    "hints-8afea5535456138efc51cedc3bb22eedd990660429e0aea9b3cc706f9b415e2c": {
+      "language": "sv",
+      "category": "Personality: piety and religious disposition",
+      "line": "(expression, meek as a lamb)|from som ett lamm|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सीधा-सादा और विनम्र"
+        ]
+      }
+    },
+    "hints-82946e69cc970514ffe140c143dc23edc3130ff808e98d677f19e37be9ac5f73": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(expression, have another drink)|ta en i det andra benet också|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "एक पैग और पी लेना"
+        ]
+      }
+    },
+    "hints-f1819c6c41cabc06ece3cdbb0fca642f1b5701ab323c4a82121effc31a93a13e": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(eat)|vad äter ni till vardags|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आप रोज़मर्रा में क्या खाते हैं?"
+        ]
+      }
+    },
+    "hints-501d12fd90c4d71a095cb8c7c41b77d4e50aeca19cca90cfef702837e2f5b969": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(eat)|Äta som en fågel|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत थोड़ा खाना",
+          "चिड़िया जितनी खुराक"
+        ]
+      }
+    },
+    "hints-f7672c6ab8ea5232f811627a6728b845690c0e48831ae8e055687f52f5f6df2f": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(expression, one person's loss is another person's gain)|den enas död är den andras bröd|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी का नुकसान किसी और का फ़ायदा बन जाता है"
+        ]
+      }
+    },
+    "hints-068ff500f01087f559eb6f2931c584e53fc14dab55c55a6d6d0a31182cbc2c5b": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(work)|Slita som ett djur|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जी-तोड़ मेहनत करना"
+        ]
+      }
+    },
+    "hints-57feae47ecf383bdb06f0622e13ad39fcd1b46a4a471eb83230eb264d927fe15": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(greased, lubricated)|smord|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "चिकनाई लगा हुआ",
+          "तेल या ग्रीस से चिकना किया हुआ"
+        ]
+      }
+    },
+    "hints-090241bbff70e6672ea7b705e1a0c2063e810e5e2f6eaa485cc7247f07f2375f": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(expression, when wine goes in wit goes out)|Där vinet går in går vettet ut|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नशा चढ़ते ही अक्ल और विवेक साथ छोड़ देते हैं"
+        ]
+      }
+    },
+    "hints-7e4e65aaab4ceb5a42b6528ff13d1834311b263e8e341dc4b42bd271fb176449": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(must, juice)|must|juice|juicer|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "फलों का रस",
+          "बिना किण्वन वाला फलरस"
+        ]
+      }
+    },
+    "hints-119684e43dc368eb6324c4b860829caca72cbe06d3867c75eebb17a08fd390f2": {
+      "language": "sv",
+      "category": "Food, Drink, kitchen, Eating",
+      "line": "(expression, a little bird told me)|En fågel har kvittrat|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी अनाम सूत्र से खबर मिलना",
+          "किसी ने चुपके से बताया"
+        ]
+      }
+    },
+    "hints-e93d083132292ba73d35b43f1fdd46b9a11d01f4077ff231d446183d76e5e30e": {
+      "language": "sv",
+      "category": "Buildings, houses etc",
+      "line": "(expression, those who will not work shall not eat)|den som inte arbetar ska inte heller äta|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जो काम नहीं करता, उसे खाने की उम्मीद भी नहीं करनी चाहिए"
+        ]
+      }
+    },
+    "hints-075f72c1883a8ccbfe407eeed691b264555986255aedb013b311af1bf02b14b4": {
+      "language": "sv",
+      "category": "Geography and population",
+      "line": "(expression, only Sweden has Swedish gooseberries)|blott sverige svenska krusbär har|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपने देश की खास चीज़ों पर गर्व जताना"
+        ]
+      }
+    },
+    "hints-0e410068e566ce41dea8b4cc73a0bfdb49b72a0932ade1ed709dfeae43e2b434": {
+      "language": "sv",
+      "category": "Geography and population",
+      "line": "(expression, there is no place like home)|borta bra men hemma bäst|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दूसरी जगह अच्छी हो सकती है, लेकिन अपना घर सबसे अच्छा है"
+        ]
+      }
+    },
+    "hints-c8d2d4cb18a4061727ec20d896461f90b2bd867fb5414c02e7d499d4b9e1122a": {
+      "language": "sv",
+      "category": "Cleaning",
+      "line": "(pigsty)|Se ut som en svinstia|Smutsig som en gris|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत गंदा",
+          "गंदगी से भरा हुआ"
+        ]
+      }
+    },
+    "hints-9c723799cc3e6112910180650d55af880632449bc2dadb0e356df3751ea49c6e": {
+      "language": "sv",
+      "category": "Natural and derived elements",
+      "line": "(expression, soaked to the skin, wet as a drowned rat)|Som en blöt hund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पूरी तरह भीगा हुआ",
+          "सिर से पाँव तक भीगा हुआ"
+        ]
+      }
+    },
+    "hints-51eff841e3f69f04fe6470e5d31a88de91690232bc5f038c31ee00f496fab60a": {
+      "language": "sv",
+      "category": "Managing: tasks, work and execution",
+      "line": "(expression, third time lucky)|tredje gången gillt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "तीसरी कोशिश में काम बनना"
+        ]
+      }
+    },
+    "hints-788f268d2b9c0f19debee43464d6b22ed310b6a8d51378f7030394b658164cd5": {
+      "language": "sv",
+      "category": "Managing: tasks, work and execution",
+      "line": "(expression, finish what you started)|Har man tagit fan i båten får man ro honom i land|Har man sagt A får man säga B|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शुरुआत की है तो काम को अंजाम तक पहुँचाना ही होगा"
+        ]
+      }
+    },
+    "hints-b3741b2a67ce0d26f1be55dd9b659933ebc4ec7cd4465c6f71f3ec9bb284d3ae": {
+      "language": "sv",
+      "category": "Managing: tasks, work and execution",
+      "line": "(shortcut)|Genväg är ofta senväg|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छोटा रास्ता कई बार उलटे ज़्यादा समय लेता है"
+        ]
+      }
+    },
+    "hints-6dc44b07cb6e28c41871e9fa1511c501db212d77328eaf4caacde7af3b6b90c4": {
+      "language": "sv",
+      "category": "Managing: permission, approval and refusal",
+      "line": "(acknowledge, admit)|erkänna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मान लेना",
+          "स्वीकार करना"
+        ]
+      }
+    },
+    "hints-18dfd091191518530831575d9db826ebd789f9c2dd6ff087e056b9c9ed45e7ce": {
+      "language": "sv",
+      "category": "Managing: difficulties, endurance and solutions",
+      "line": "(expression, nip it in the bud)|bättre att stämma i bäcken än i ån|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "समस्या को शुरू में ही रोक देना, बढ़ने न देना"
+        ]
+      }
+    },
+    "hints-3d231ec647e5dac346ee139ce7152687a8f87a70a0be30848be26bb5fe25298d": {
+      "language": "sv",
+      "category": "Managing: difficulties, endurance and solutions",
+      "line": "(expression, Case closed)|Saken är biff|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बात पक्की",
+          "मामला तय हो गया"
+        ]
+      }
+    },
+    "hints-698d4d3169ccb8118fc8cc21fa96c00811679749dfadeb2ab35c0e7ea708a626": {
+      "language": "sv",
+      "category": "Managing: difficulties, endurance and solutions",
+      "line": "(trap)|<*Sitta som i en rävsax|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ऐसी मुश्किल में फँसना जहाँ से निकलना कठिन हो"
+        ]
+      }
+    },
+    "hints-153f8e28c2f4f7f7b3ebc20b755465cdcc20395d5fd0d84e95d6a165d6a3146c": {
+      "language": "sv",
+      "category": "Managing: difficulties, endurance and solutions",
+      "line": "(expression, perseverance wins)|Trägen vinner|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "लगातार कोशिश करने वाला आखिर सफल होता है"
+        ]
+      }
+    },
+    "hints-c2052827bc4817e4248f17ac0aada7394eadd50850a1b5f13a95bdcec98b9242": {
+      "language": "sv",
+      "category": "Managing: difficulties, endurance and solutions",
+      "line": "(expression, patience is the art of hoping)|Tålamod är konsten att hoppas|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "धैर्य का अर्थ उम्मीद बनाए रखना है"
+        ]
+      }
+    },
+    "hints-8cc42eeba4e8121d840637e0c505d2a4a641ae399083d9e7d9aafb158a5b1119": {
+      "language": "sv",
+      "category": "Managing: difficulties, endurance and solutions",
+      "line": "(expression, that is the last straw)|Måttet är rågat|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अब हद हो गई",
+          "सहनशक्ति की सीमा पार हो गई"
+        ]
+      }
+    },
+    "hints-34e4e01f145ab0c3d24e8b386594a3561a0d9b88f0e2b78dfafda1b1fdc325f5": {
+      "language": "sv",
+      "category": "Luck, fortune and misfortune",
+      "line": "(mishap, accident)|missöde|olycka|malör|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दुर्भाग्यपूर्ण घटना",
+          "दुर्घटना"
+        ]
+      }
+    },
+    "hints-26d05f5a8094c2f8596673d24d73f992c1303acdf9daec113f0b94eca3d98f7b": {
+      "language": "sv",
+      "category": "Luck, fortune and misfortune",
+      "line": "(expression, misfortunes never come singly)|En olycka kommer sällan ensam|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मुसीबतें अक्सर अकेली नहीं आतीं",
+          "एक के बाद एक आफ़त"
+        ]
+      }
+    },
+    "hints-9d9f77a9eeb16f2a3303d717dd77ff55c5c3899530fa9a60e62fbb6e001c0732": {
+      "language": "sv",
+      "category": "Possession, acquisition and exchange",
+      "line": "(replacement, substitute)|ersättare(sl-pl)|suppleant|suppleanter|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "स्थानापन्न व्यक्ति",
+          "किसी की जगह काम करने वाला"
+        ]
+      }
+    },
+    "hints-55c4c3b0cbfd8254f9e5659c8cab305975235c3dddb4ed9cee297b9358123f78": {
+      "language": "sv",
+      "category": "Entertainment",
+      "line": "(sing)|Sjunga som en näktergal|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सुरीला गाना"
+        ]
+      }
+    },
+    "hints-aeaf1f93ffcfe6442c2e9ff7d706519fbc8bee9d7bca5e18401af62893cc2577": {
+      "language": "sv",
+      "category": "Crimes, Law, Rules, Regulation, Punishments, Justice",
+      "line": "(abduct, kidnap)|enlevera|kidnappa|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपहरण करना",
+          "अगवा करना"
+        ]
+      }
+    },
+    "hints-387890079f196a77a589d6557258273c9c7986a7d9a87f2fdaf9b0551a3d986f": {
+      "language": "sv",
+      "category": "Studies, school, education",
+      "line": "(expression, train children early)|Det ska böjas i tid, det som krokigt ska bli|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अच्छी आदतें और संस्कार बचपन से डालने चाहिए"
+        ]
+      }
+    },
+    "hints-12f168333cc5835eac3d04b32ba41215e5f361ef5d5b76c1a4bcab843189ba7c": {
+      "language": "sv",
+      "category": "Studies, school, education",
+      "line": "(expression, you cannot teach an old dog new tricks)|Man kan inte lära gamla hundar sitta|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पुरानी आदतें बदलना कठिन होता है",
+          "बूढ़े तोते को पढ़ाना मुश्किल है"
+        ]
+      }
+    },
+    "hints-caadd0b268a22a8fc712c834373cd3515a1f5f5429dafa8fab67ad30c751fc25": {
+      "language": "sv",
+      "category": "Decision making",
+      "line": "(expression, you can bet your life on it)|Det kan du hoppa upp och sätta dig på|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "इस बात पर पूरा भरोसा रख सकते हो",
+          "यह पक्की बात है"
+        ]
+      }
+    },
+    "hints-7612302f8e82a128dbd99008e907677e3b5dcb900024c7873806278064cb58ff": {
+      "language": "sv",
+      "category": "Decision making",
+      "line": "(admit, acknowledge)|med<*ge|er<*känna|till<*stå(f.)|vid<*gå(f.)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मान लेना",
+          "स्वीकार करना"
+        ]
+      }
+    },
+    "hints-f7888e02af15596065766393de9bfe65a105eae24e025fb09254d016d3dc760f": {
+      "language": "sv",
+      "category": "Decision making",
+      "line": "(dispute, contest)|bestrida|bestrider|bestred|bestridit|bestrid|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी दावे या माँग को चुनौती देना",
+          "मानने से इनकार करना"
+        ]
+      }
+    },
+    "hints-dbbf77a059001dee1862f55ea7fe7a32f6f3196056c006761d9e40444c0c2973": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(truth)|<*Se sanningen i vitögat|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सच्चाई का सामना करना",
+          "हकीकत से मुँह न मोड़ना"
+        ]
+      }
+    },
+    "hints-99949bdbf92cf4147d19932e53d5096cec6cd63b2942c16c4b368bd8ba457cb4": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(feint)|skenmanöver|skenmanöverer|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "धोखा देने के लिए किया गया दिखावटी कदम",
+          "ध्यान भटकाने की चाल"
+        ]
+      }
+    },
+    "hints-ea161d5ab77cf79ecb95f12664715678c9bd6fc38c2a266fbc1b1a223284449a": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(sly, underhanded)|bakslug|bakslugt|baksluga|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पीठ पीछे चाल चलने वाला",
+          "कपटी"
+        ]
+      }
+    },
+    "hints-d559072af2c5abfc39821370865a782d5995683584b79dbf094616dc466ccf75": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(treacherous, faithless)|svekfull|svekfullt|svekfulla|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विश्वासघाती",
+          "भरोसा तोड़ने वाला"
+        ]
+      }
+    },
+    "hints-4f751699e2fa843ac3085da9e4c96c404c477cb77bc078d0ac669e6b7cc0b848": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(insidious)|insidiös(mindre brukligt)|insidiöst|insidiösa|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छिपे तौर पर हानिकारक",
+          "कपटपूर्ण"
+        ]
+      }
+    },
+    "hints-e6385f77e2dac4a87f1dff68959248b12cb0d3a8edaaf9b1f572c90626af986f": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(treachery, insidiousness)|försåtlighet|försåtligheten|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "कपट",
+          "विश्वासघात की प्रवृत्ति"
+        ]
+      }
+    },
+    "hints-b00097b328388a348cdb2a27028cc46793c2fb1806339a5c146361db7ead5ae1": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(lie, speak deceitfully)|tala med kluven tunga|ljuga|blåljuga|ljuger|ljög|ljugit|ljug|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "झूठ बोलना",
+          "दोमुंही बातें करना"
+        ]
+      }
+    },
+    "hints-df7973e7d06e820f5a4cda815080311beb826e0916aa09b1ecf3a467aca518f8": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(mendacity)|lögnaktighet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "झूठ बोलने की आदत",
+          "झूठापन"
+        ]
+      }
+    },
+    "hints-2e884e3051fd0d796871357d029952ea2e680204e65ebe4a4c7caaea39cfe05a": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(forgery, falsification)|förfalskning|förfalskningen|förfalskningar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जालसाज़ी",
+          "नकली दस्तावेज़ या चीज़ बनाना"
+        ]
+      }
+    },
+    "hints-8ebd14af7977c477f526d8c81c46a42aae1581b4d4de5094e733ac6abdf29d37": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(honest, sincere)|ärlig|uppriktig|renhjärtad|renhjärtig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ईमानदार",
+          "सच्चे दिल का"
+        ]
+      }
+    },
+    "hints-e1ac5bf2afdf5257e142fea26d30a0f7da2f291fcfaeebdc4a90eb826f04764f": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(honesty)|ärlighet|ärligheten|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ईमानदारी"
+        ]
+      }
+    },
+    "hints-e383d1ee06072bc89ba0feae59ab54f127a419e20006688c5112d0c05de5d4de": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(sincerity, candour)|uppriktighet|uppriktigheten|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "निष्कपटता",
+          "दिल की बात साफ़ कहने का गुण"
+        ]
+      }
+    },
+    "hints-55ef61bc2a747f9c8e280c861a80983a8f9722cd897896dace61662af5cfa601": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(openness, transparency)|öppenhet|öppenheten|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खुलापन",
+          "पारदर्शिता"
+        ]
+      }
+    },
+    "hints-8f03257048a11ff6a03bfadba151aaaaaae51c275c46e0055b03704a1253e2cf": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(fair play, clean play)|rent spel|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "ईमानदारी से व्यवहार करना",
+          "निष्पक्ष खेल"
+        ]
+      }
+    },
+    "hints-405e09ba4dceb2e07b8265042a2efe9bf89835f368a7282d76a1fd44a0bf5d96": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(outspoken)|frispråkig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खुलकर अपनी बात कहने वाला",
+          "बेबाक"
+        ]
+      }
+    },
+    "hints-cdba351f8334af5936588661c90b401c8ce6af6ef4310df9e52e3b27e77d1c9c": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(truthful)|sanningsenlig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सच्चाई के अनुरूप",
+          "सत्यपरक"
+        ]
+      }
+    },
+    "hints-a124a8727bdcf9c90776ad790c90efe727703c0bda9f0271f42a27e69040eeed": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(upright)|rakryggad|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "उसूलों पर अडिग",
+          "ईमानदार और स्वाभिमानी"
+        ]
+      }
+    },
+    "hints-b9eeb7764d03bb56ab891f8a759fe2a1628a09d39c783e972e5e8986bac88d76": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(Sincere, heart-felt)|innerlig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "हार्दिक",
+          "दिल से निकला हुआ"
+        ]
+      }
+    },
+    "hints-0e474dcd5de958e5f3c7a8f04aaeb6ef56ba4a2eba2c8ffea9b7c9bac3e136d6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(factual, objective)|saklig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "तथ्यों पर आधारित",
+          "निष्पक्ष"
+        ]
+      }
+    },
+    "hints-1815fa546c90cc2030b53b90b77dc4762c67152b9cc5829a635d09477bfb350b": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(hand on heart)|Handen på hjärtat|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सच-सच बताओ",
+          "पूरी ईमानदारी से"
+        ]
+      }
+    },
+    "hints-ffa7a9b1ba4eff9444e75806926964efcce661528ce08e45a1191369e6d7dc6b": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(expression, have nothing to hide)|Rent mjöl i påsen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दामन साफ़ होना",
+          "छिपाने के लिए कुछ गलत न होना"
+        ]
+      }
+    },
+    "hints-4e5018131f9b490ab12b8a183d0a1eebbdb0e3e152f2d59199fa9bd7344cb70f": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(speak from heart)|Varav hjärtat är fullt talar munnen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मन में जो भरा होता है, वही ज़ुबान पर आता है"
+        ]
+      }
+    },
+    "hints-9d210d771c51f100b11accd1c4a4091dc6b46e66d1f9b1877d57abccd183ded0": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(honesty lasts)|Ärlighet varar längst|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आखिरकार ईमानदारी ही काम आती है"
+        ]
+      }
+    },
+    "hints-3302bfbcef0ef0feeb8817f0cda0db2b39aa452262b6d5c3db73df9db0cdf050": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(practice what you preach)|Leva som man lär|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जैसी सीख दूसरों को देते हो, वैसा खुद भी आचरण करो"
+        ]
+      }
+    },
+    "hints-52229117bc037c30fbfee9f81762a724c44434d979c2f340f814f8eeaafff982": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(double standards)|dubbelmoral|dubbelmoralism|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दोहरे मापदंड",
+          "अपने और दूसरों के लिए अलग नियम"
+        ]
+      }
+    },
+    "hints-53e57e0df135f581d58fcbd6a42b334371f17d1f86778f679196862ac419b9a1": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(hypocritical)|dubbelmoralisk|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दोहरे मापदंड अपनाने वाला",
+          "पाखंडी"
+        ]
+      }
+    },
+    "hints-33629255b3a364eaaa5d5d278eb1ad2265d9a3d048eb7c62eb3dad3f823dfb41": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(people with double standards)|dubbelmoralister|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपने और दूसरों के लिए अलग नैतिक नियम रखने वाले लोग"
+        ]
+      }
+    },
+    "hints-7ff1890fb4703af5cb67f775516bda8df1e2abc7f22fd9a6f36e510c8b9ae2a2": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(cheat)|fuska|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बेईमानी करना",
+          "नकल करना",
+          "नियम तोड़कर फ़ायदा उठाना"
+        ]
+      }
+    },
+    "hints-90c32c670c0916e7c318309c2c8d00604002035d3acee5dfd6a533e561dd6bb8": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(shortcut)|Genväg är ofta senväg|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छोटा रास्ता कई बार उलटे ज़्यादा समय लेता है"
+        ]
+      }
+    },
+    "hints-6811c95d749104fdeec009ecf36f9149019396faafcc7b6457ea2663e4ef2912": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(pack of lies)|Lögn och förbannad dikt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सरासर झूठ",
+          "पूरी तरह मनगढ़ंत बात"
+        ]
+      }
+    },
+    "hints-db6c53a438bbb9cfbbc8ffec861e24e4c20bce578e6bdf1da740634c752b7004": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(lie through teeth)|Ljuga som en häst travar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "धड़ल्ले से झूठ बोलना",
+          "बिना हिचक झूठ बोलते जाना"
+        ]
+      }
+    },
+    "hints-940ecc7323e841e0ac3ab84b86ac660ddff77e345a7cfc77d6447bfaaa4422ca": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(lie blatantly)|Ljuga sig blå|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बढ़-चढ़कर झूठ बोलना"
+        ]
+      }
+    },
+    "hints-759ea5da991b9276ce69b822e0d95b626923a6e4a92c833f50a6a3f5ee9807c4": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(white lie)|Lite ljuga pryder tal|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किस्से में थोड़ा मसाला डालने से बात रोचक हो जाती है"
+        ]
+      }
+    },
+    "hints-e60fd4e40770a02236d72ca89208982d0df1d6044b206a5ac1f84981ad0912c6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(liar once)|Lögnaren blir bara trodd en gång|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "झूठ बोलने वाले का भरोसा एक बार ही किया जाता है"
+        ]
+      }
+    },
+    "hints-bd0aefb21fe2dc31a81573672440b556a36d448ef5fae505cc1b5a19679669eb": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(bend the truth, speak untruthfully)|Slira på sanningen|Fara med osanning|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सच्चाई को तोड़-मरोड़कर कहना",
+          "झूठ बोलना"
+        ]
+      }
+    },
+    "hints-bd75a7b48d706c078857896d144b45ba35397b16273e7406fbf1f357705b35f2": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(expression, better an honest no than a dishonest yes)|bättre ett ärligt nej än ett falskt ja|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "झूठी हाँ से सच्चा इनकार बेहतर है"
+        ]
+      }
+    },
+    "hints-ced01abc4814e128b5ad55bde5241f036555bca47bd6474eda9bb3ce5b2bb4e0": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(truth comes out)|Det som göms i snö kommer upp i tö|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छिपी हुई सच्चाई आखिर सामने आ ही जाती है"
+        ]
+      }
+    },
+    "hints-8045867c7b9902b72e7e184498215220c3dfcf8a1e3810c34b3f189dcf177db6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(cry wolf)|Man ska inte ropa varg i onödan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बेवजह झूठा खतरा बताकर हल्ला मचाना"
+        ]
+      }
+    },
+    "hints-4866e188797774ce736fa605bf83a30b045cbe42a1fd02039e13838b32541c86": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(deceive, swindle)|lura (av)|blåsa(vard. )|bedra|bedrar|bedrog|bedragit|svindla|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "धोखा देना",
+          "ठगना"
+        ]
+      }
+    },
+    "hints-5197a2dd8fc723859e92e221198dbb89a90e6869df0bcf4faaca206a618487c0": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(manipulate someone, influence someone unfairly)|manipulera|manipulerar|manipulerade|manipulerat|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपने फ़ायदे के लिए किसी की सोच या व्यवहार को अनुचित ढंग से प्रभावित करना"
+        ]
+      }
+    },
+    "hints-9b13fe1ad21e79db905084f3d8fed6495ac02ba01784e2ba4d67e2f1c87216a4": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(tricky, ingenious)|klurig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पेचीदा मगर सूझ-बूझ से हल होने वाला",
+          "चतुराई भरा"
+        ]
+      }
+    },
+    "hints-0fc1e8370e75e23e0767693055080966e5a6e325922593e19de82b8f9e03e1cb": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(trick question)|kuggfråga|kuggfrågor|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "फँसाने वाला सवाल",
+          "ऐसा सवाल जिसमें गलती करना आसान हो"
+        ]
+      }
+    },
+    "hints-9898ede8cf6c27f21bc0f7a33021bc3ecdbaf88a17040b00e5398b32e3fec18c": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(deceptive question, question meant to trap someone)|försåtlig fråga|försåtliga frågor|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "धोखे से फँसाने के लिए पूछा गया सवाल"
+        ]
+      }
+    },
+    "hints-1e18e3117be83f3fd08efc9034df2b399c9d6f6ea0a3137c830de044ad70a4bc": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(trick, deceive)|narra|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छलना",
+          "धोखा देना"
+        ]
+      }
+    },
+    "hints-a89885285eb5558639b4768c83648909f66415c84f494ffe08563a81c2465948": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(mock)|göra narr av|gäcka|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मज़ाक उड़ाना",
+          "उपहास करना"
+        ]
+      }
+    },
+    "hints-6390c996cc526bf79b65c0fbe55bc3ad0ee15fabfe3d488d65dc143128879202": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(lead astray)|(Föra någon) bakom ljuset|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी को धोखे में रखना",
+          "असलियत से अनजान रखना"
+        ]
+      }
+    },
+    "hints-89203ffe1b60aedfde23675e391a6b31a829494b12965df9ca8375c9ae441c91": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(lead astray)|Föra någon bakom ljuset|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी को धोखे में रखना",
+          "असलियत से अनजान रखना"
+        ]
+      }
+    },
+    "hints-1b74a2f9a7691bdb2f42202c5d1b1c682f200d3f07b307adf2c666df24dda0b0": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(after something)|Ute efter (ngt)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी चीज़ की फिराक में होना",
+          "कुछ हासिल करना चाहना"
+        ]
+      }
+    },
+    "hints-6fe3396142aed0b7866cbbc588da3fcb4d7ba9420cd0a73be4c7cd956a9f89d6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(ulterior motive, hidden intention)|baktanke|baktanken|baktankar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छिपा हुआ मकसद",
+          "मन में छिपा इरादा"
+        ]
+      }
+    },
+    "hints-a3f4229e7107f2f2f6b6b45e1c42c1dd1767f3826bc9fcdc03d3da14068a3979": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(pretext, false excuse)|svepskäl|svepskälet|svepskälen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहाना",
+          "असली कारण छिपाने के लिए दिया गया कारण"
+        ]
+      }
+    },
+    "hints-71c463063cbb068e90d8320a1a20c5f9498eb208fbb024cb98da9a24352acef4": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(keep secret)|hemlighålla|undanhålla|förtiga|fördölja|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बात गुप्त रखना",
+          "जानकारी जानबूझकर न बताना"
+        ]
+      }
+    },
+    "hints-da08f643ca6f47332bc1882a189f6318346a55f4b154cf6f6567b7cdb26b44e9": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(suppress information or discussion, cover up an issue)|Lägga locket på|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बात दबा देना",
+          "मामले की जानकारी बाहर न आने देना"
+        ],
+        "de": [
+          "ein Thema unterdrücken",
+          "Informationen zurückhalten"
+        ],
+        "es": [
+          "silenciar un asunto",
+          "ocultar información"
+        ],
+        "fr": [
+          "étouffer une affaire",
+          "empêcher la divulgation d'informations"
+        ],
+        "pt": [
+          "abafar um assunto",
+          "ocultar informações"
+        ],
+        "pl": [
+          "zatuszować sprawę",
+          "nie ujawniać informacji"
+        ],
+        "uk": [
+          "замовчувати справу",
+          "приховувати інформацію"
+        ],
+        "th": [
+          "ปิดข่าว",
+          "ปิดบังเรื่องไว้ไม่ให้คนรู้"
+        ],
+        "zh-Hans": [
+          "封锁消息",
+          "压下不谈"
+        ]
+      }
+    },
+    "hints-5225d76af0349fd1b923eb71d113c0b081ee2602b5953f72e4ccd67c17de7f22": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(keep someone anxiously waiting for an answer, keep someone in suspense)|Hålla någon på halster|Hålla någon på sträckbänken|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी को बेचैनी और अनिश्चितता में इंतज़ार करवाना",
+          "जवाब न देकर उत्सुकता बनाए रखना"
+        ],
+        "de": [
+          "jemanden im Ungewissen lassen",
+          "jemanden auf die Folter spannen"
+        ],
+        "es": [
+          "mantener a alguien en vilo",
+          "hacer esperar una respuesta con incertidumbre"
+        ],
+        "fr": [
+          "faire languir quelqu'un",
+          "laisser quelqu'un dans l'incertitude"
+        ],
+        "pt": [
+          "deixar alguém na expectativa",
+          "manter alguém na incerteza"
+        ],
+        "pl": [
+          "trzymać kogoś w niepewności",
+          "odwlekać odpowiedź"
+        ],
+        "uk": [
+          "тримати когось у напруженому очікуванні",
+          "не давати відповіді"
+        ],
+        "th": [
+          "ปล่อยให้รออย่างกระวนกระวาย",
+          "ทำให้อยากรู้โดยไม่ยอมบอก"
+        ],
+        "zh-Hans": [
+          "吊人胃口",
+          "让人焦急地等待答案"
+        ]
+      }
+    },
+    "hints-84575b263efaefa00e3dac9d7d17a4a713f876ab07ef44d656fbeea5768ebbc6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(children and fools tell the truth without restraint)|av barn och dårar får man höra sanningen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बच्चे और नासमझ लोग बिना लाग-लपेट सच कह देते हैं"
+        ],
+        "de": [
+          "Kinder und Narren sagen unverblümt die Wahrheit"
+        ],
+        "es": [
+          "Los niños y los necios dicen la verdad sin disimulo"
+        ],
+        "fr": [
+          "Les enfants et les fous disent la vérité sans détour"
+        ],
+        "pt": [
+          "As crianças e os tolos dizem a verdade sem rodeios"
+        ],
+        "pl": [
+          "Dzieci i głupcy mówią prawdę bez ogródek"
+        ],
+        "uk": [
+          "Діти й дурні кажуть правду без прикрас"
+        ],
+        "th": [
+          "เด็กกับคนเขลามักพูดความจริงออกมาตรง ๆ"
+        ],
+        "zh-Hans": [
+          "孩子和傻子往往直言真相"
+        ]
+      }
+    },
+    "hints-47790cba16ecbe98d9fc549a7b91e0b88635d84c606c47377ea95134758b5b08": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(drunken people say what sober people keep to themselves)|den drucknes tal är den nyktres tankar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नशे में व्यक्ति वह कह देता है जिसे होश में लोग मन में दबाए रखते हैं"
+        ],
+        "de": [
+          "Betrunkene sprechen aus, was Nüchterne für sich behalten"
+        ],
+        "es": [
+          "Los borrachos dicen lo que los sobrios piensan pero callan"
+        ],
+        "fr": [
+          "Les gens ivres disent ce que les gens sobres pensent tout bas"
+        ],
+        "pt": [
+          "Os bêbados dizem o que os sóbrios pensam mas calam"
+        ],
+        "pl": [
+          "Pijani mówią to, co trzeźwi myślą, lecz przemilczają"
+        ],
+        "uk": [
+          "П'яні кажуть те, що тверезі думають, але приховують"
+        ],
+        "th": [
+          "คนเมาพูดสิ่งที่คนไม่เมาคิดแต่ไม่พูด"
+        ],
+        "zh-Hans": [
+          "醉者说出清醒者藏在心里的话"
+        ]
+      }
+    },
+    "hints-49273039911b3fb6d9c83ee634cd0dfe2e03df2a962179df107d43e4ee500671": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(unclear expression reflects unclear thinking)|det dunkelt sagda (är det dunkelt tänkta)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अस्पष्ट कथन अस्पष्ट सोच को दर्शाता है"
+        ],
+        "de": [
+          "Unklare Worte spiegeln unklare Gedanken wider"
+        ],
+        "es": [
+          "Lo que se expresa de forma confusa refleja un pensamiento confuso"
+        ],
+        "fr": [
+          "Ce qui se dit obscurément se pense obscurément"
+        ],
+        "pt": [
+          "Uma expressão confusa revela um pensamento confuso"
+        ],
+        "pl": [
+          "Niejasne wypowiedzi świadczą o niejasnym myśleniu"
+        ],
+        "uk": [
+          "Нечіткі висловлювання відображають нечітке мислення"
+        ],
+        "th": [
+          "คำพูดที่ไม่ชัดเจนสะท้อนความคิดที่ไม่ชัดเจน"
+        ],
+        "zh-Hans": [
+          "言语含糊，反映思想不清"
+        ]
+      }
+    },
+    "hints-acd6854dc9137456b13fa4dc0d5c2ff0ca9a8ab2f1e757ba47853e4cd31ddac1": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(conceal something rather than openly admitting it)|Sticka under stol med|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बात छिपाना",
+          "खुलकर न बताना"
+        ],
+        "de": [
+          "etwas verheimlichen",
+          "etwas nicht offen zugeben"
+        ],
+        "es": [
+          "ocultar algo",
+          "no admitirlo abiertamente"
+        ],
+        "fr": [
+          "cacher quelque chose",
+          "ne pas l'avouer ouvertement"
+        ],
+        "pt": [
+          "esconder algo",
+          "não admitir abertamente"
+        ],
+        "pl": [
+          "ukrywać coś",
+          "nie mówić otwarcie"
+        ],
+        "uk": [
+          "приховувати щось",
+          "не говорити відверто"
+        ],
+        "th": [
+          "ปกปิดเรื่องบางอย่าง",
+          "ไม่ยอมพูดอย่างเปิดเผย"
+        ],
+        "zh-Hans": [
+          "隐瞒某事",
+          "不公开承认"
+        ]
+      }
+    },
+    "hints-35e39008faf921ff8d4e33c903d7cbb62a2d08e9010740752c5942282a4005e9": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(secret manoeuvring or dealings behind the scenes)|Spel bakom kulisserna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "पर्दे के पीछे की जोड़तोड़",
+          "गुप्त सांठगांठ"
+        ],
+        "de": [
+          "Machenschaften hinter den Kulissen",
+          "geheime Absprachen"
+        ],
+        "es": [
+          "maniobras entre bastidores",
+          "intrigas ocultas"
+        ],
+        "fr": [
+          "manœuvres en coulisses",
+          "intrigues secrètes"
+        ],
+        "pt": [
+          "manobras nos bastidores",
+          "acordos secretos"
+        ],
+        "pl": [
+          "zakulisowe rozgrywki",
+          "potajemne układy"
+        ],
+        "uk": [
+          "закулісні ігри",
+          "таємні домовленості"
+        ],
+        "th": [
+          "การชักใยอยู่เบื้องหลัง",
+          "การตกลงกันลับ ๆ"
+        ],
+        "zh-Hans": [
+          "幕后操纵",
+          "暗中串通"
+        ]
+      }
+    },
+    "hints-f46013d07f35cde7073c61181065a01e43ed1b5c720d402443328bf6143851b6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(reticent, secretive)|förtegen|hemlighetsfull|förbehållsam|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मन की बात न बताने वाला",
+          "बातों को गुप्त रखने वाला"
+        ]
+      }
+    },
+    "hints-6506139b765499148ce77031935c7a11911ee2988f41701bd39a9c0daf02cc75": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(secret)|hemlig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "गुप्त",
+          "छिपा हुआ"
+        ]
+      }
+    },
+    "hints-8be936e5f4062eb474a967344b0ae54ebf7b7d4a4300f6bae801ec1bc046ce58": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(reveal, disclose)|avslöja|röja|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "राज़ खोलना",
+          "खुलासा करना"
+        ]
+      }
+    },
+    "hints-c18cfff669e9aee2de999266fca42bfe4111a1f9feacf5c7acacfe6f05834602": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(initiate, let in on)|inviga|inviger|invigde|invigt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "गोपनीय बात बताकर विश्वास में लेना",
+          "किसी रहस्य से परिचित कराना"
+        ]
+      }
+    },
+    "hints-10d2ec1abf40fa2820be49957403911db5537bddc2d83391ca05bd12bb15f7b7": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(slip)|Prata bredvid mun(med skvaller)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अनजाने में राज़ उगल देना",
+          "गलती से गुप्त बात कह देना"
+        ]
+      }
+    },
+    "hints-9f5bb1b49080d6f276f719fd8f16505a3ebba36923ac90a3235282f724a273b6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(keep quiet)|Hålla tand för tunga|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपनी ज़ुबान पर काबू रखना",
+          "राज़ न खोलना"
+        ]
+      }
+    },
+    "hints-9a8990ca30e56b453dfcabc37b88923250013386a2e804dfb72325bfd49ac58b": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(lay your cards on the table)|Lägga korten på bordet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अपनी बात और इरादे साफ़-साफ़ सामने रख देना"
+        ]
+      }
+    },
+    "hints-01388f25310371a7cc57f2ea1dd5daec276e79983191aee9d28197c9ff6e1ebd": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(expose, reveal)|blotta|exponera|ådagalägga(f.)|<*lägga i dagen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "उजागर करना",
+          "सामने लाना"
+        ]
+      }
+    },
+    "hints-07bd9b5f68b4ac5158c2679b79166e3b133a02fdf659bc3913d5bc427e2eb51e": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(clarify, establish)|klarlägga|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "तथ्य स्पष्ट करके असलियत का पता लगाना"
+        ]
+      }
+    },
+    "hints-2486b19b602e06bc667aa67e30be81c158ea7021983c523cf86d47bfe7eef3a9": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(out someone)|Hänga ut någon|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी को सार्वजनिक रूप से उजागर या बदनाम करना"
+        ]
+      }
+    },
+    "hints-ccebd803e9a667b5b280621e5b74280b72802077ba23f5fac05b2ff760cfa9d9": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(suspect)|misstänka|Ana ugglor i mossen|(ana )Osa katt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "शक करना",
+          "कुछ गड़बड़ होने की आशंका होना"
+        ]
+      }
+    },
+    "hints-8703daa2006320e0cd3d3f8c0465409165b40a19e1246cdf7f171da781d01f35": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(sense trouble, suspect something is wrong)|ana oråd|anade oråd|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "गड़बड़ी या खतरे का आभास होना"
+        ]
+      }
+    },
+    "hints-d8230e2125a474e75a00334725c26164e236de15615ac7096daf489278d9ca70": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(fear)|befara|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी बुरी बात के होने की आशंका करना"
+        ]
+      }
+    },
+    "hints-07f57d95e43b433efbc436707976662acd6c1086a4c831c7dbd3332020930013": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(look askance)|Titta snett på någon|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी को शक या नापसंदगी की नज़र से देखना"
+        ]
+      }
+    },
+    "hints-3c32960977ddc0e8a7148938b26528214b26f904894492fdbe9578d2412d89cb": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(something fishy)|Här ligger en hund begraven|inte <*stå rätt till|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "कुछ-न-कुछ गड़बड़ होना",
+          "कोई बात छिपाई जा रही होना"
+        ]
+      }
+    },
+    "hints-9d3ab3282042a2822ca6c326f0e3e66a3e4c1cc11c71e7e126a09933212e7576": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(take with salt)|(Ta något) med en nypa salt|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी बात पर पूरी तरह यकीन न करना",
+          "सुनी बात को सावधानी से लेना"
+        ]
+      }
+    },
+    "hints-2c432943d9bd69c25dea51cd5e71afcc6e723a0c485b1fe49c1f5d49de275b5f": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(conspiracy, plot)|konspiration|intrig|intriger|komplott|komplotter|sammansvärjning|sammansvärjningar|ränk|ränker|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "षड्यंत्र",
+          "गुप्त साज़िश"
+        ]
+      }
+    },
+    "hints-903287897c31d7b8f19edb3205abb568d59abd79b65c128c8e56d373b57a5ded": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(underhand plot, treacherous scheme)|lömsk intrig|lömska intriger|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छिपकर रची गई नुकसान पहुँचाने की साज़िश"
+        ]
+      }
+    },
+    "hints-45a7df4a570b40ecc64d4c18a466e7172a1eb99ab5a48307d252394d80a950a3": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(scheming, intrigue)|ränkspel|ränkspelet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "छिपी हुई चालें चलना",
+          "षड्यंत्र रचना"
+        ]
+      }
+    },
+    "hints-db226944301a20e8dcb97311218ef6c39fe8bba154fc73eabef1cefe5e0c01f7": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(ambush, trap, underhand plot)|försåt|försåtet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "घात",
+          "धोखे से फँसाने का जाल",
+          "छिपी साज़िश"
+        ]
+      }
+    },
+    "hints-b702e7ea62716dc597b786d48e469143d07cd3b99fa9e25091c680f30f92c8c9": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(fall into the trap)|gå i fällan|gick i fällan|gått i fällan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जाल में फँस जाना",
+          "चाल का शिकार हो जाना"
+        ]
+      }
+    },
+    "hints-027b7375a2167ae9e9f6d3ea3741d63f12ac7941796acfb83d098c0509f21f58": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(sit by oneself, ponder)|kuckelura|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अकेले बैठकर सोच-विचार करना"
+        ]
+      }
+    },
+    "hints-f5451f974451aa08c09a9cc43fa5ebbfc8c183924679abb385b5cff8f5a2ec57": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(give an account, report)|redogöra|åter<*ge|redovisa|upp<*ge|av<*ge rapport|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विवरण देना",
+          "घटनाक्रम बयान करना",
+          "रिपोर्ट पेश करना"
+        ]
+      }
+    },
+    "hints-dcbdc685df2ca4d8682f512844be7e3205ac290d2907f64092cd09e58fd68652": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(present, put forward)|framlägga|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "प्रस्तुत करना",
+          "विचार या प्रस्ताव सामने रखना"
+        ]
+      }
+    },
+    "hints-e10e3511ce01cd732aab69506c0e9012f22c18cff3423553646e1ca481b1726d": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(account, report)|redogörelse|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विवरण",
+          "घटनाक्रम का ब्यौरा",
+          "रिपोर्ट"
+        ]
+      }
+    },
+    "hints-6e0ae899f81e5d9d058f71c47419b2e74c6b4e290d71a284f6af7ade7a59e876": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(invention, contrivance)|påhitt|påfund|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सूझी हुई युक्ति",
+          "गढ़ी हुई बात या चीज़"
+        ]
+      }
+    },
+    "hints-85064bb0a635a720aa64056d45df0168163c131ddccd75ac25f7b49d083910d4": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(idea, thought)|idé|idéer|tanke|tankar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विचार",
+          "खयाल"
+        ]
+      }
+    },
+    "hints-7b71745bce1b5408aa6138b45105d4e85dd1b992b5f5fcf960f39a244f0b9619": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(breakthrough)|genombrott|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बड़ी उपलब्धि",
+          "महत्वपूर्ण प्रगति"
+        ]
+      }
+    },
+    "hints-afade164e4e8d03286b52e94bff09fcc25a307c0278beb3b2f8468661c1263d9": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(capricious, changeable)|nyckfull|lynnig|ombytlig|oberäknelig|oförutsägbar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मनमौजी",
+          "जिसका मिज़ाज या व्यवहार अचानक बदल जाए"
+        ]
+      }
+    },
+    "hints-157912ac0af252b581cfac8ad01a874632177f99881645737ea4368892ba7674": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(expression, when wine goes in wit goes out)|där vinnet går in går vettet|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नशा चढ़ते ही अक्ल और विवेक साथ छोड़ देते हैं"
+        ]
+      }
+    },
+    "hints-7eae068a34ca85be8cd2346a61ebbd6d32b6858891358115111132002b7d2cb8": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(invent, think up)|påhitta|<*hitta på|<*komma på|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "कल्पना करके गढ़ना",
+          "कोई उपाय या विचार सोचना"
+        ]
+      }
+    },
+    "hints-09c99491ebb26798a0eb25f1f1814aad8bc58692cc6dcd297d64d62ee1814be8": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(figure out)|<*lista ut|klura ut|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "सोच-समझकर हल निकालना",
+          "गुत्थी सुलझाना"
+        ]
+      }
+    },
+    "hints-14e6ec6b9a497348c79313ac0bb801e301be0933eab6ee3d114b8eeef6c8d5ae": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(come up with)|<*komma med|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "कोई विचार या प्रस्ताव पेश करना"
+        ]
+      }
+    },
+    "hints-b6149af0c5ff2ace022601118e4c50b0f48c97ce0e93cc0c9fff6278fdf93c7c": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(make up from nothing)|Gripa.* ur luften|skaka.* ur ärmen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बिना आधार बात गढ़ लेना",
+          "मन से बना देना"
+        ]
+      }
+    },
+    "hints-aae56c7deeaf71837eb27d8035e17070fcb7db284b6f9a934e08c98968bfdc6e": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(invent)|uppfinna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "आविष्कार करना"
+        ]
+      }
+    },
+    "hints-cd6edbe6233069413689ec57f2ff1af7c99abc3091fc44dcbd9aa560c756ddba": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(find, discovery)|fynd(sl-pl)|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खोज में मिली वस्तु",
+          "मूल्यवान खोज"
+        ]
+      }
+    },
+    "hints-2d6669f6118347e1b619ba8b2fb4edc93cfb61f24ab036fbb48cc317f99136aa": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(expression, what you forget you must make up for with your legs)|det man inte har i huvudet får man ha i benen|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जो चीज़ याद रखना भूलो, उसके लिए फिर से दौड़-धूप करनी पड़ती है"
+        ]
+      }
+    },
+    "hints-f6d36d152ca93dca70f8ff39638b70618a8ccb275d9c8a82e0e35cdef216cf4f": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(improvise, make do)|improvisera|koka soppa på en spik|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मौके पर उपाय निकाल लेना",
+          "थोड़े साधनों में काम चला लेना"
+        ]
+      }
+    },
+    "hints-942a0fa187b3a1fb1c5a9d1439d309dbbb031be1231d302cbf9189fc21ba689a": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(brainstorm)|spåna|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "नए विचारों के लिए खुलकर सोच-विचार करना",
+          "विचार-मंथन करना"
+        ]
+      }
+    },
+    "hints-2bd91906db6d0ab7b36207e7227509112bc0b050f96d049a4220ac3a2663f3db": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(get idea)|få för sig|flög i mig|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "मन में कोई विचार आ जाना",
+          "किसी बात का खयाल सूझना"
+        ]
+      }
+    },
+    "hints-8cde9d649f29dd5a9bdf49c65aebac5633b6cfba095a660f96d000d6dec4b3e6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(on tip of tongue)|<*Ha.* på tungan|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बात या नाम याद आते-आते रह जाना",
+          "ज़ुबान पर होना लेकिन याद न आना"
+        ]
+      }
+    },
+    "hints-10c01f2197d3dbb103270751e2bba75150eb805ea3af90912cf5a5b392f3f8eb": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(discover, uncover)|upptäcka|uppdaga|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "खोज निकालना",
+          "छिपी बात का पता लगाना"
+        ]
+      }
+    },
+    "hints-253e49be4908829dc3a9855d86f1b91d983b7fbc5ed0d72f8f38a2965ae5e4b1": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(be met by)|möts av|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी प्रतिक्रिया या स्थिति का सामना होना"
+        ]
+      }
+    },
+    "hints-4b2b3fa6ee167bab7c87f6d99cbdac07f51b493b913a91e491690cd0028623ad": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(encounter)|stöta på|stöter på|stötte på|stött på|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अचानक मिल जाना",
+          "किसी स्थिति से सामना हो जाना"
+        ]
+      }
+    },
+    "hints-71cf7a4977c6085037ada76ecdafc11d82fdd46e3f1fd4eafe586f3eea29a4f2": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(catch, catch in the act)|ertappa|<*grippa (ngt) på bar gärning|<*ta (ngn) på bar (ngt) gärning|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "गलत काम करते हुए रंगे हाथों पकड़ना"
+        ]
+      }
+    },
+    "hints-0cd7a489e23d1862f92d100b3f4fd339384699fc8c1b11fe410aab6b75d3e372": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(caught red-handed)|Med byxorna nere|Med fingrarna i syltburken|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "रंगे हाथों पकड़ा जाना"
+        ]
+      }
+    },
+    "hints-6fa61db37dca4b2343b36bb86b2cf383bb98374dcbf8fee7e997d6936982a26a": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(report, notify)|anmäla|anmäl|anmälde|anmält|rapportera|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "रिपोर्ट करना",
+          "संबंधित व्यक्ति या विभाग को सूचना देना"
+        ]
+      }
+    },
+    "hints-912752d616490f5cdbfa0676f173f9ea3bf2d6df135247228431afc820e37262": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(report, notification)|anmälning|anmälningar|anmälan|rapport|rapporter|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "रिपोर्ट",
+          "दी गई सूचना या शिकायत"
+        ]
+      }
+    },
+    "hints-5a4e1b090c7153fe5234083e519e23a68540c2e1a782f1ba265b0d831126da18": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(reporting)|rapportering|rapporteringar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "रिपोर्ट या सूचना देने की प्रक्रिया"
+        ]
+      }
+    },
+    "hints-a2f69594783477d6b50cfaa9f3555abc3fccadbfc951f8251cd096200d462016": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(reporter)|rapportör|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "रिपोर्ट देने वाला व्यक्ति",
+          "संवाददाता"
+        ]
+      }
+    },
+    "hints-4308088d1a666d374d40fd6d9d82737388111eeb770e7affb8ef35201f67aae6": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(investigate)|utreda|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जाँच करना",
+          "मामले की पड़ताल करना"
+        ]
+      }
+    },
+    "hints-367877a77f6c988ad29a09869e4957439e27fbae0f9be118bf9a2a3889c82227": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(pretend)|låtsas|låtsades|låtsats|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "दिखावा करना",
+          "होने का नाटक करना"
+        ]
+      }
+    },
+    "hints-2240508bbb075af11832c7df767dd38fe2b3f9bcbb89ce4f97d9942649670655": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(pretend)|(vara )på låtsas|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बनावटी तौर पर",
+          "सचमुच नहीं, केवल दिखावे में"
+        ]
+      }
+    },
+    "hints-2248df2440e7882f053b7ec03474bd724c9543d64ca4abb56276dd4633991f8c": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(pretend)|Låtsas som det regnar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अनजान बनने का नाटक करना",
+          "जानबूझकर ध्यान न देना"
+        ]
+      }
+    },
+    "hints-8d3948d881f0e397d3e1f413f73bea9b9e59567c3b5e12df2bba906933d3894e": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(pretend ok)|<*hålla skenet uppe|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "असल स्थिति छिपाकर सब ठीक होने का दिखावा करना"
+        ]
+      }
+    },
+    "hints-469979c7ecd37a296fbe370d1b814047965b14392b8ae44f78a044d6cba6f42b": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(debatable)|omtvistad|diskutabel|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "जिस पर बहस या सवाल किया जा सके",
+          "विवादास्पद"
+        ]
+      }
+    },
+    "hints-eb7fcec637604d23d5c0cc4e89d30cc7f0c01e8fba0bec46ad429d4467c67225": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(word against word)|Ord står mot ord|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "एक की बात के खिलाफ दूसरे की बात, पर निर्णायक सबूत न होना"
+        ]
+      }
+    },
+    "hints-8bfcfe1ed8ceda6cddfba4063db1cc697758fd2039c45563ed037579f1a9c47e": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(hot potato)|Het potatis|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "विवादास्पद और नाज़ुक मुद्दा"
+        ]
+      }
+    },
+    "hints-b8f0c46e8f5cd5f0f3786ba58107c1f850a5fe70926469c59f6cf210d33cb460": {
+      "language": "sv",
+      "category": "Truth, Lies, Deception",
+      "line": "(contest)|bestrida|bestrider|bestred|bestridit|bestrid|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "किसी दावे या माँग को चुनौती देना",
+          "मानने से इनकार करना"
+        ]
+      }
+    },
+    "hints-e49f4825161485289e2c50711e1fdf46896eaf8a410eccdbb692b100beba0493": {
+      "language": "sv",
+      "category": "Logic",
+      "line": "(expression, fault is shared in a quarrel)|Det är inte ens fel när två träter|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "झगड़े में अक्सर दोनों तरफ की गलती होती है"
+        ]
+      }
+    },
+    "hints-df55652a5c7c29e26e134b0a170599cac56087035977ff71462e557e06a82856": {
+      "language": "sv",
+      "category": "Logic",
+      "line": "(expression, one swallow does not make a summer)|En svala gör ingen sommar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "एक घटना से कोई सामान्य निष्कर्ष नहीं निकाला जा सकता"
+        ]
+      }
+    },
+    "hints-73d368142d6df2229670151a634a6791068a427c39c717698716e98d06b4b027": {
+      "language": "sv",
+      "category": "Logic",
+      "line": "(expression, do not trust newly formed ice)|Man ska inte lita på nattgammal is|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "अभी बनी स्थिति या रिश्ते पर तुरंत भरोसा नहीं करना चाहिए"
+        ]
+      }
+    },
+    "hints-25bce44f0a89dfc40b7f943fc15ddb81b86659ca08b7be911abb20c1382b3935": {
+      "language": "sv",
+      "category": "Religion and spirituality",
+      "line": "(pray, imperative)| bed |",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "प्रार्थना करो"
+        ]
+      }
+    },
+    "hints-a174ef6d50f7ea4639a4907c8451b24f8b406fc7f723124782e66c4c188d0059": {
+      "language": "sv",
+      "category": "Religion and spirituality",
+      "line": "(expression, meek as a lamb)|from som ett lamm|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बहुत सीधा-सादा और विनम्र"
+        ]
+      }
+    },
+    "hints-60e93f544e1fcc79a7d8f10e572c41c7c099f4f16bec624be0d74e8e5bf39b88": {
+      "language": "sv",
+      "category": "Language: grammar, sentences and structure",
+      "line": "(saying, utterance)|sägning|sägningar|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "कथन",
+          "कही गई बात"
+        ]
+      }
+    },
+    "hints-b5354642eb0751627a506bad87442c10609670b7684229914ebe8953c93022b9": {
+      "language": "sv",
+      "category": "Language: writing, style and composition",
+      "line": "(classify, categorize)|rubricera|beteckna|klassificera|kategorisera|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "श्रेणियों में बाँटना",
+          "वर्गीकृत करना"
+        ]
+      }
+    },
+    "hints-a80b51b79ae3844c2da65102e3b3afe3d6a0af26e56d5b74709be6740c0a16c7": {
+      "language": "sv",
+      "category": "Conversational expressions and responses",
+      "line": "(better run)|bättre fly än illa fäkta|",
+      "forms": [],
+      "hintOverrides": {
+        "hi": [
+          "बेवजह भिड़ने से समझदारी से पीछे हटना बेहतर है"
+        ]
+      }
+    }
+  },
+  "attribution": {
+    "method": "Meaning-specific editorial corrections based on the Swedish expressions, not isolated English cue fragments.",
+    "reviewedOn": "2026-11-22",
+    "scope": "Hindi expressions, proverbs, Truth/Lies/Deception vocabulary, selected ambiguous groups and shared base-form hints; seven screenshot meanings corrected in all registered non-English hint languages.",
+    "references": [
+      "https://svenska.se/?activeTab=saob&exactMatch=true&id=9558833&q=sanning",
+      "https://svenska.se/?activeTab=alla&exactMatch=true&highlightLabel=stolsrygg&q=stolsrygg",
+      "https://sv.wiktionary.org/wiki/halster",
+      "https://sv.wiktionary.org/wiki/Appendix:Idiomatiska_uttryck/Svenska",
+      "https://spraakbanken.gu.se/resurser/data/karp/so-2009-webbversion/v%C3%A4rdshus.html"
+    ]
+  }
+}
