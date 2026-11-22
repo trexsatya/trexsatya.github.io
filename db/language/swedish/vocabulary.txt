@@ -131,7 +131,7 @@
 (perception, opinion)|uppfattning|uppfattningar|
 (perceive, sense)|förnimma|förnam|förnummit|
 (suspect, sense faintly)|ana(vdg.)|
-(Keep in mind)|<*ha på känn
+(have a hunch, sense intuitively)|<*ha på känn
 (sense of touch)|känsel|
 (feeling)|Känsla|Känslan|känslor|
 (emotional)|känslomässig|
@@ -1309,7 +1309,7 @@
 (unfaithful)|otrogen|
 (cheat)|Hoppa över skaklarna|
 (forgiving)|förlåtande|Storsint|
-(moderate)|Lägga fingrarna emellan|
+(be lenient, show restraint)|Lägga fingrarna emellan|
 (refrain)|låta bli|låta någon vara|ge fan i något|
 #Movement: walking and hiking
 (stomp)|stampa|
@@ -1522,7 +1522,7 @@
 (decline, drift down)|dala|
 (raise)|höjde|höjt|
 (push, shove)|putta|stöta|stöter|stötte|stött|fjädra|skjuter|sköt|skjutit|knuffa|puffa|fösa|föser|föste|föst|
-(spring, flex)|skjuta|
+(push, slide)|skjuta|
 (kick)|sparka|
 (pull, drag)|dra|släpa|<*dra med sig|
 (be burdened with)|dras med|
@@ -5262,7 +5262,7 @@
 (lead)|bättre föregå än föregås|
 (advantage)|försprång|försteg|
 (foreman, supervisor)|förman|förmän|föreståndare(sl-pl)|
-(counsellor, curator)|kurator|kuratorer|
+(counsellor, social worker)|kurator|kuratorer|
 (ruler)|härskare|
 (dictator)|diktator|
 (arbitrary, high-handed)|egenmäktig|
@@ -8886,7 +8886,7 @@
 (thinking time)|betänketid|
 (decide)|avgöra|avgör|avgjorde|avgjort|bestämma|bestämmer|bestämde|bestämt|fastställa|klubba igenom|
 (Set out to)|föresätta sig( att)|
-(dispose)|disponera|
+(allocate, have at one's disposal)|disponera|
 (establish, state firmly)|fast<*slå|<*slå fast|
 (decide)|besluta|beslutar|beslöt|beslutit|
 (Decision)|låsning

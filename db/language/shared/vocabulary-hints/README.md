@@ -125,3 +125,16 @@ entries have not all been semantically reviewed. Row-specific corrections must
 not be promoted to shared single-word cues when doing so would change another
 Swedish sense; for example, keep the proverb's full meaning separate from the
 ordinary adjective `obscure`.
+
+## Thai semantic review — 2026-11-22
+
+The Thai pack has a source-register and Swedish-sense review. Common hints now
+prefer ordinary Thai; inappropriate slang, royal usage and misleading fragments
+were removed where supported by source labels. Specific Swedish meanings and
+full idiom explanations live in the shared vocabulary-meanings catalog, with
+precedence over the general English cue table. Existing Hindi and other-language
+row meanings were preserved. Five misleading English cues were corrected.
+
+The [Thai review report](../../../../docs/vocabulary-hints-thai-review-2026-11-22.md)
+records scope, examples, source checksum and checks. Coverage counts and lookup
+checks do not certify every remaining dictionary sense or native-level fluency.
