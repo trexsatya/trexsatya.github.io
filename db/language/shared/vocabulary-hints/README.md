@@ -161,3 +161,20 @@ semantic review and a full-file structural/search check, not independent native
 proofreading of every remaining dictionary-derived translation. Existing Hindi
 and Thai row meanings are retained; the optional wording of a screenshot row is
 rebound, and the Thai shed cue receives one additional noun-sense correction.
+
+## Dictionary-derived entries — 2026-11-24
+
+The remaining dictionary-derived material has a further whole-vocabulary audit
+against Swedish definitions, English translation records and native usage labels.
+Every row flagged by the grammatical audit has a recorded correction or
+acceptance. Direct corrections cover ordinary ambiguous words, unmarked idioms,
+false grammatical matches and Chinese register failures; conservative source
+filters remove additional independently supported conflicts.
+
+The [dictionary review report](../../../../docs/vocabulary-hints-dictionary-review-2026-11-24.md)
+records scope, source checksums, examples and validation. The
+[editorial review table](../../../../docs/vocabulary-hints-dictionary-review-2026-11-24.tsv)
+contains the resulting seven-language meanings for the direct editorial rows
+and additional duplicates. These contextual corrections live in the shared
+catalog so that a single English homonym does not impose one wrong sense on
+every Swedish row. All current Hindi and Thai displays are preserved.
