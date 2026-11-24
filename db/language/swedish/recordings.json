@@ -14,27 +14,51 @@
       ]
     },
     {
+      "name": "Biohacking - ta kontroll över kroppen och överlista naturen",
+      "meta": {
+        "folder": "Health/Liv och död",
+        "createdAt": 1794943785935,
+        "updatedAt": 1795338550443
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/df21f64d2f10b13047c34a76470935f37d2ee37bc4dc2c125c66c204954776d0.json"
+      ]
+    },
+    {
       "name": "Demokrati",
       "meta": {
         "createdAt": 1791462047157,
-        "updatedAt": 1793436768680,
+        "updatedAt": 1795371803179,
         "folder": "General"
       },
       "hasItems": true,
       "parts": [
-        "recordings/d9a8096e89ba4f204409276f12115f855f29ac668bd94ab35bbfce8725cb4b92.json"
+        "recordings/3de9c6f42fc4f8c8def867b7a7c06eecca491f7b8a67e3e09942cba772419bd5.json"
       ]
     },
     {
       "name": "Den sista resan | SVT Play",
       "meta": {
         "createdAt": 1791231065601,
-        "updatedAt": 1793436660648,
+        "updatedAt": 1793903906090,
         "folder": "Films & Series"
       },
       "hasItems": true,
       "parts": [
         "recordings/7538ce336a041c48d39c789d0259a089bfdcd13fee2c06a382d5f50b98ac114b.json"
+      ]
+    },
+    {
+      "name": "Dödsföredelser",
+      "meta": {
+        "folder": "Health/Liv och död",
+        "createdAt": 1794858225071,
+        "updatedAt": 1795338584262
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/e4546e1f5dbd3dfead9ace1102fee20a6a961dfe288729159dcd7e7c3885572b.json"
       ]
     },
     {
@@ -53,7 +77,7 @@
       "name": "Fysiska rörelser",
       "meta": {
         "createdAt": 1793036039771,
-        "updatedAt": 1794082111516,
+        "updatedAt": 1793972785064,
         "folder": "General"
       },
       "hasItems": true,
@@ -65,12 +89,36 @@
       "name": "Globalisering",
       "meta": {
         "createdAt": 1790242074650,
-        "updatedAt": 1793436806533,
+        "updatedAt": 1795376192096,
         "folder": "General"
       },
       "hasItems": true,
       "parts": [
         "recordings/03f73e35f78dd5bb255b01da77432bb7e8b51a1a6e7cce704ec75bd3050af8ee.json"
+      ]
+    },
+    {
+      "name": "Hur gammal vill du bli? | Listen to the Podcast on Spotify",
+      "meta": {
+        "folder": "Health/Liv och död",
+        "createdAt": 1795257442108,
+        "updatedAt": 1795338625812
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/b1a970d5628c18646bd08ccd58c0488b8b4e6cc38bee49474a6c9b435b3dc426.json"
+      ]
+    },
+    {
+      "name": "Hälsa och Evigt Liv",
+      "meta": {
+        "folder": "General",
+        "createdAt": 1794638028194,
+        "updatedAt": 1795338281955
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/6a4d3b04ccc8631bda6f35f215b09d4e277a458b428fbef8a5d6635041c3412a.json"
       ]
     },
     {
@@ -107,6 +155,18 @@
       "hasItems": true,
       "parts": [
         "recordings/e0dd3d6fc538d95b838dbd3fc33641bbede566cd7e9bc6813db4099a15f6e586.json"
+      ]
+    },
+    {
+      "name": "kropp_sjal_biohacking_20201208_1004_5fcf5fbf.mp3",
+      "meta": {
+        "folder": "Health/Liv och död",
+        "createdAt": 1794494654275,
+        "updatedAt": 1795338608178
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/31ef9f37e72c6ef54eca7581bfcd10124fcd9e9232cdb4ad3262f3c4c160a524.json"
       ]
     },
     {
@@ -158,6 +218,30 @@
       ]
     },
     {
+      "name": "Ordförråd - konflikt",
+      "meta": {
+        "folder": "Swedish Language",
+        "createdAt": 1794673766547,
+        "updatedAt": 1794675943091
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/cd5e07a92f894df1aface5ec310d5e14331d4a00ce78ee055d7be6bf50c13311.json"
+      ]
+    },
+    {
+      "name": "Parterapi i Gagnef",
+      "meta": {
+        "folder": "Films & Series",
+        "createdAt": 1794330972104,
+        "updatedAt": 1794809487244
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/eaea10e9217a6e2dfdd392059548b943dd9f0d7991d23ca59acdeb7a20ac2f6f.json"
+      ]
+    },
+    {
       "name": "Random-1",
       "meta": {
         "createdAt": 1791347958478,
@@ -205,11 +289,23 @@
       ]
     },
     {
+      "name": "REPRIS: Kaffe – hot eller bot för hälsan? | Listen to the Po",
+      "meta": {
+        "folder": "Health/Food",
+        "createdAt": 1795439174728,
+        "updatedAt": 1795446705551
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/2f5c261ef9ea4a26e35ec35e66cc30b4ff344b0fc182b2a0b62c5b37d78aad57.json"
+      ]
+    },
+    {
       "name": "Sambandord",
       "meta": {
         "folder": "Swedish Language",
         "createdAt": 1794127006180,
-        "updatedAt": 1794127235826
+        "updatedAt": 1794144353390
       },
       "hasItems": true,
       "parts": [
@@ -257,7 +353,7 @@
       "meta": {
         "folder": "General",
         "createdAt": 1793908672116,
-        "updatedAt": 1794132130125
+        "updatedAt": 1794509699608
       },
       "hasItems": true,
       "parts": [
@@ -269,11 +365,11 @@
       "meta": {
         "folder": "Swedish Language",
         "createdAt": 1794060123557,
-        "updatedAt": 1794235245730
+        "updatedAt": 1794344925758
       },
       "hasItems": true,
       "parts": [
-        "recordings/6355cf4af32a91c84298ce19c254647da103a225495e14c70e02ccc24d2cfbee.json"
+        "recordings/50119a3a662d8085319556d58b959cc26309d0cd25b98c49813c5a9c868f8390.json"
       ]
     },
     {
@@ -303,7 +399,7 @@
       "meta": {
         "folder": "Films & Series",
         "createdAt": 1792943820000,
-        "updatedAt": 1793436660648
+        "updatedAt": 1793438614817
       },
       "hasItems": true,
       "parts": [
@@ -338,24 +434,12 @@
       "name": "Tillåt mig tvivla - Ord",
       "meta": {
         "createdAt": 1791552147577,
-        "updatedAt": 1793437135016,
+        "updatedAt": 1793903960443,
         "folder": "Books"
       },
       "hasItems": true,
       "parts": [
         "recordings/8f7dcd491ee7f284ee8aaab8929aac0ca6e9a0a8d91f9b01f83d030007b93c81.json"
-      ]
-    },
-    {
-      "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
-      "meta": {
-        "createdAt": 1792505467043,
-        "updatedAt": 1793437155363,
-        "folder": "General"
-      },
-      "hasItems": true,
-      "parts": [
-        "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
       ]
     },
     {
@@ -368,6 +452,18 @@
       "hasItems": true,
       "parts": [
         "recordings/eb8f724d4450e53da124d6a3fbf7a85b9540efdd7d65d29faa752e6acefde401.json"
+      ]
+    },
+    {
+      "name": "Välgörenhet eller välfärd? Om filantropi och demokrati | Lis",
+      "meta": {
+        "createdAt": 1792505467043,
+        "updatedAt": 1793437155363,
+        "folder": "General"
+      },
+      "hasItems": true,
+      "parts": [
+        "recordings/3fd5e0939d28fc00fab7270656b6f96cee253b4be35b7b65d6cca36037d07b36.json"
       ]
     }
   ],
@@ -403,15 +499,19 @@
     "Swedish Language": {
       "updatedAt": 1793436980470,
       "deleted": false
+    },
+    "Health/Liv och död": {
+      "updatedAt": 1795338532861,
+      "deleted": false
+    },
+    "Health/Food": {
+      "updatedAt": 1795446677922,
+      "deleted": false
     }
   },
   "retiredParts": {
-    "recordings/5e2eecafdc56c50e53b2c821301112e9ce978062efd8c86d38f1cdf16b217105.json": 1793892381514,
-    "recordings/b7b6c4a108c278aaf461fd04c27f2067324cc1c95ea31e36f3ca633d6fcc8dc9.json": 1793972804712,
-    "recordings/daaab0aa4377ff128fc5f3e998581ab3a923f4480d837889ee3ba49f2f67475b.json": 1794127247592,
-    "recordings/28317cdc5997316cae71d72b0dd70b38e28fa320223f0720fc771e66a4aec00a.json": 1794143429099,
-    "recordings/b4acf2a488a819d52bfe79dd36468eeb75ad54e245883b4ea0fec035466e9c6a.json": 1794210409657,
-    "recordings/61f5e5689f1c4a2cd52c478fa2c6ff77b36611ab74d911e70c9d9d778a1f64d6.json": 1794235250140
+    "recordings/d9a8096e89ba4f204409276f12115f855f29ac668bd94ab35bbfce8725cb4b92.json": 1795504471016,
+    "recordings/6355cf4af32a91c84298ce19c254647da103a225495e14c70e02ccc24d2cfbee.json": 1795504471016
   },
-  "partsScannedAt": 1794210409657
+  "partsScannedAt": 1795504471016
 }
