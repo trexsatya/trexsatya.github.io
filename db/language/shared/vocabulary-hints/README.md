@@ -138,3 +138,26 @@ row meanings were preserved. Five misleading English cues were corrected.
 The [Thai review report](../../../../docs/vocabulary-hints-thai-review-2026-11-22.md)
 records scope, examples, source checksum and checks. Coverage counts and lookup
 checks do not certify every remaining dictionary sense or native-level fluency.
+
+## Remaining-pack semantic review — 2026-11-24
+
+Simplified Chinese, German, Spanish, Portuguese, Polish, Ukrainian and French now
+have a further Swedish-context review. The shared catalog supplies full meanings
+for marked expressions and selected ambiguous rows, including distinctions such
+as a school principal, a device driver, cutting food into cubes and unfermented
+fruit juice. The Chinese shared table also has common-language cue corrections.
+
+Source-backed grammatical corrections remove aliases belonging to another part
+of speech only when a retained alias is supported by the dictionary sense with
+an exact Swedish translation match. This avoids treating the first English sense
+as a translation. Same-part-of-speech ambiguity is handled by explicit editorial
+corrections; automated dictionary matches alone do not settle it.
+
+The [review report](../../../../docs/vocabulary-hints-seven-pack-review-2026-11-24.md)
+records scope, counts, source attribution and application-level validation.
+The [contextual review table](../../../../docs/vocabulary-hints-seven-pack-review-2026-11-24.tsv)
+lists the reviewed Swedish rows and their seven-language hints. This is a focused
+semantic review and a full-file structural/search check, not independent native
+proofreading of every remaining dictionary-derived translation. Existing Hindi
+and Thai row meanings are retained; the optional wording of a screenshot row is
+rebound, and the Thai shed cue receives one additional noun-sense correction.
