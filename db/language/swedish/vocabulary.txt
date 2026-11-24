@@ -738,6 +738,7 @@
 
 #Motivation, wishes and opportunities
 (desire)|vilja|vill|ville|velat|
+(Ready, willing to do)|beredvillig
 (desire comes)|andan faller på|
 (determination)|Vilja av stål|
 (willpower)|viljeakt|
@@ -1039,7 +1040,7 @@
 (Ominous)|olycksbådande|illavarslande|
 (goosebumps)|gåshud|
 (stressed, under pressure)|stressad|pressad|
-(nervous, anxious)|nervös|ängslig|byxis|
+(nervous, anxious)|nervös|ängslig|byxis|stirrig|stissig
 (frustrated)|frustrerad|
 (excited, agitated)|upphetsad|
 (agitate, excite)|hetsa upp|
@@ -2775,6 +2776,7 @@
 (load, strain)|belastning|belastningar|
 (freight)|frakt|
 (measure)|uppmäta|uppmäter|uppmätte|uppmätt|uppmät|mäta upp|
+(Clock in at)|klock<*a in på
 (addition)|tillskott|tillskottet|
 
 #Shapes, arrangements and conditions
@@ -2959,7 +2961,7 @@
 
 #Beginning and creation: starting and initiating
 (found)|instifta|inrätta|etablera|grunda|
-(begin)|börja|starta|påbörja|<*sätta i gång|<*sätta igång|sjösätta|
+(begin)|börja|starta|påbörja|<*sätta i gång|<*sätta igång|sjösätta|klock<*a in|
 (done)|Sagt och gjort|
 (start from, proceed from)|utgå|
 (give birth, feed)|föda|
@@ -4125,7 +4127,7 @@
 (wellbeing)|välbefinnande|välmåga|
 (expression, good health goes unnoticed)|Hälsan tiger still|
 (unwell)|krasslig|sjuk|
-(disease, ailment)|sjukdom|åkomma|åkommor|sjukdomar|
+(disease, ailment)|sjukdom|åkomma|åkommor|sjukdomar|krämpa(småsjukdom)|krämpor
 (case of illness)|sjukdomsfall(sl-pl)|
 (wreck)|vrak|
 (symptom)|symtom(sl-pl)|symtomen|sjukdomsyttring|sjukdomsyttringar|
@@ -4256,16 +4258,13 @@
 (knocked out, incapacitated)|utslagen|
 (drink too much)|titta för djupt i glaset|
 (Hung over)|bakis|bakfull|
-(drunken people say what sober people keep to themselves)|den drucknes tal är den nyktres tankar|
+(drunk talks)|den drucknes tal är den nyktres tankar|
 (abuse, misuse)|missbruka|
 (take illicit drugs)|knarka|
 (abuse, addiction)|missbruk|
 (junkie)|pundare|knarkare|missbrukare|
 (anomaly)|anomali|anomalier|rubbning|rubbningar|
 
-(minor ailment)|krämpa|krämpor|
-(anxiety about ageing)|åldersnoja(vardagligt)|
-(life expectancy)|medellivslängd|förväntad livslängd|
 #Finance, economy, business
 (moneytrouble)|penningbekymmer(sl-pl)|bekymret|bekymmer|
 (compensation)|vederlag(sl-pl)(f.)|ersättning|ersättningar|
@@ -4353,6 +4352,7 @@
 (value)|Man får vad man betalar för|
 (valuable object, treasure)|dyrgrip|dyrbarhet|klenod
 (valuable)|värdefull|
+(Added value)|(skapa )mervärde|
 (invaluable)|ovärderlig|oskattbar|
 (unworthy)|ovärdig(ant. )|
 (save, economize)|spara|Vända på slantarna|<*hålla igen|
@@ -5141,6 +5141,7 @@
 (harem)|harem|
 (guest)|gäst|
 (host)|värd|
+(Hospitality)|gästfrihet
 (joke, tease)|skoja|skämta|driva|driver|drev|drivit|
 (deceive, mock)|narra|gäcka|
 (ridicule)|förlöjliga|(göra )åtlöje( av)|
@@ -5318,7 +5319,7 @@
 (compliment)|komplimang|komplimanger|
 (polite phrase)|artighetsfras|artighetsfraser|
 (praise)|rosa|prisa|lovorda|
-(Admirable)|lovvärd|berömvärd|prisvärd
+(Admirable)|lovvärd|lovvärt|berömvärd|prisvärd
 (praise, rose)|ros|
 (appreciate)|uppskatta|
 (admire)|beundra|
@@ -9062,13 +9063,13 @@
 (pretext, false excuse)|svepskäl|svepskälet|svepskälen|
 (secret)|hemlighet|hemlis|
 (keep secret)|hemlighålla|undanhålla|förtiga|fördölja|
-(suppress information or discussion, cover up an issue)|Lägga locket på|
-(keep someone anxiously waiting for an answer, keep someone in suspense)|Hålla någon på halster|Hålla någon på sträckbänken|
-(children and fools tell the truth without restraint)|av barn och dårar får man höra sanningen|
-(drunken people say what sober people keep to themselves)|den drucknes tal är den nyktres tankar|
-(unclear expression reflects unclear thinking)|det dunkelt sagda (är det dunkelt tänkta)|
-(conceal something rather than openly admitting it)|Sticka under stol med|
-(secret manoeuvring or dealings behind the scenes)|Spel bakom kulisserna|
+(put lid on)|Lägga locket på|
+(keep on tenterhooks)|(Hålla någon) på halster|(Hålla någon) på sträckbänken|
+(children and fools)|av barn och dårar får man höra sanningen|
+(drunk speaks)|den drucknes tal är den nyktres tankar|
+(obscure)|det dunkelt sagda (är det dunkelt tänkta)|
+(conceal)|Sticka under stol med|
+(behind scenes)|Spel bakom kulisserna|
 (reticent, secretive)|förtegen|hemlighetsfull|förbehållsam|
 (secret)|hemlig|
 (secrecy)|hemlighetsmakeri|hemlighetsmakerier|
