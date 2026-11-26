@@ -57,7 +57,7 @@ for (const [index, [code, language]] of languages.entries()) {
   const directory = resolve(root, 'db/language', language)
   const file = resolve(directory, 'vocabulary.txt')
   const existing = await readFile(file, 'utf8').catch(error => { if (error.code === 'ENOENT') return ''; throw error })
-  if (!existing.endsWith(generated)) {
+  if (!existing.includes(generated)) {
     assert(write, `${language}: vocabulary differs from the source table`)
     // Refuse to overwrite hand edits or create repeated headings: the app's
     // vocabulary parser replaces a category when it sees its heading again.
