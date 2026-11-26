@@ -44,7 +44,7 @@
       "subtitleSuffix": ".fr.srt",
       "dictionary": "fr",
       "capabilities": {
-        "study": false,
+        "study": true,
         "calls": true,
         "morphology": null
       }
@@ -56,7 +56,7 @@
       "subtitleSuffix": ".de.srt",
       "dictionary": "de",
       "capabilities": {
-        "study": false,
+        "study": true,
         "calls": true,
         "morphology": null
       }
