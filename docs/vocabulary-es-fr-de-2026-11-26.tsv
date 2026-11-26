@@ -1,0 +1,734 @@
+english	spanish	french	german
+#Core - Greetings and courtesy
+hello	hola	bonjour|salut	hallo|guten Tag
+good morning	buenos días	bonjour	guten Morgen
+good evening	buenas tardes|buenas noches	bonsoir	guten Abend
+good night	buenas noches	bonne nuit	gute Nacht
+goodbye	adiós|hasta luego	au revoir|salut	auf Wiedersehen|tschüss
+see you tomorrow	hasta mañana	à demain	bis morgen
+please	por favor	s'il vous plaît|s'il te plaît	bitte
+thank you	gracias	merci	danke|vielen Dank
+you are welcome	de nada	de rien|je vous en prie	gern geschehen|bitte
+excuse me	perdón|disculpe|disculpa	excusez-moi|excuse-moi	Entschuldigung|entschuldigen Sie
+I am sorry	lo siento	je suis désolé|je suis désolée	es tut mir leid
+yes	sí	oui	ja
+no	no	non	nein
+perhaps, maybe	quizás|tal vez	peut-être	vielleicht
+of course	por supuesto|claro	bien sûr	natürlich|selbstverständlich
+welcome	bienvenido|bienvenida|bienvenidos|bienvenidas	bienvenue	willkommen
+how are you	cómo estás|cómo está usted	comment allez-vous|comment vas-tu	wie geht es dir|wie geht es Ihnen
+nice to meet you	encantado de conocerte|encantada de conocerte	enchanté de faire votre connaissance|enchantée de faire votre connaissance	freut mich, dich kennenzulernen|freut mich, Sie kennenzulernen
+#Core - Essential verbs and pronouns
+be	ser|soy|eres|es|somos|sois|son|era|fui|sido|estar|estoy|estás|está|estamos|estáis|están|estaba|estuve|estado	être|je suis|tu es|il est|elle est|nous sommes|vous êtes|ils sont|elles sont|j'étais|j'ai été	sein|bin|bist|ist|sind|seid|war|waren|gewesen
+have	tener|tengo|tienes|tiene|tenemos|tenéis|tienen|tenía|tuve|tenido	avoir|j'ai|tu as|il a|elle a|nous avons|vous avez|ils ont|elles ont|j'avais|j'ai eu	haben|habe|hast|hat|habt|hatte|hatten|gehabt
+do, make	hacer|hago|haces|hace|hacemos|hacéis|hacen|hacía|hice|hecho	faire|je fais|tu fais|il fait|elle fait|nous faisons|vous faites|ils font|elles font|je faisais|j'ai fait	machen|macht|machte|gemacht|tun|tut|tat|getan
+live (be alive)	vivir|vivo|vive|vivió|vivido	vivre|je vis|il vit|vécu	leben|lebt|lebte|gelebt
+live (reside)	vivir|residir|resido|residió|residido	habiter|j'habite|habité	wohnen|wohnt|wohnte|gewohnt
+stay, remain	quedarse|me quedo|se quedó|quedado	rester|je reste|resté	bleiben|bleibt|blieb|geblieben
+wait	esperar|espero|esperó|esperado	attendre|j'attends|attendu	warten|wartet|wartete|gewartet
+meet, encounter	encontrarse con|me encuentro con|se encontró con	rencontrer|je rencontre|rencontré	treffen|trifft|traf|getroffen
+seem, appear	parecer|parece|pareció|parecido	sembler|il semble|semblé	scheinen|scheint|schien|geschienen
+exist	existir|existe|existió|existido	exister|il existe|existé	existieren|existiert|existierte|existiert
+I	yo	je|j'	ich
+you (informal singular)	tú	tu	du
+you (formal)	usted|ustedes	vous	Sie
+he	él	il	er
+she	ella	elle	sie
+we	nosotros|nosotras	nous	wir
+you (informal plural)	vosotros|vosotras|ustedes	vous	ihr
+they	ellos|ellas	ils|elles	sie
+my	mi|mis|mío|mía|míos|mías	mon|ma|mes	mein|meine|meinen|meinem|meiner|meines
+your (informal singular)	tu|tus|tuyo|tuya|tuyos|tuyas	ton|ta|tes	dein|deine|deinen|deinem|deiner|deines
+our	nuestro|nuestra|nuestros|nuestras	notre|nos	unser|unsere|unseren|unserem|unserer|unseres
+who	quién|quiénes	qui	wer|wen|wem|wessen
+what	qué	que|quoi|qu'est-ce que	was
+where	dónde	où	wo
+when	cuándo	quand	wann
+why	por qué	pourquoi	warum
+how	cómo	comment	wie
+which	cuál|cuáles	quel|quelle|quels|quelles	welcher|welche|welches
+#Core - People and family
+person	persona|la persona|personas	personne|la personne|personnes	Person|die Person|Personen
+people	gente|la gente	gens|les gens	Leute|die Leute|Menschen
+man	hombre|el hombre|hombres	homme|l'homme|hommes	Mann|der Mann|Männer
+woman	mujer|la mujer|mujeres	femme|la femme|femmes	Frau|die Frau|Frauen
+child	niño|niña|niños|niñas	enfant|l'enfant|enfants	Kind|das Kind|Kinder
+adult	adulto|adulta|adultos|adultas	adulte|l'adulte|adultes	Erwachsener|Erwachsene|Erwachsenen
+family	familia|la familia|familias	famille|la famille|familles	Familie|die Familie|Familien
+mother	madre|la madre|madres	mère|la mère|mères	Mutter|die Mutter|Mütter
+father	padre|el padre|padres	père|le père|pères	Vater|der Vater|Väter
+parents	padres|los padres	parents|les parents	Eltern|die Eltern
+son	hijo|el hijo|hijos	fils|le fils|les fils	Sohn|der Sohn|Söhne
+daughter	hija|la hija|hijas	fille|la fille|filles	Tochter|die Tochter|Töchter
+brother	hermano|el hermano|hermanos	frère|le frère|frères	Bruder|der Bruder|Brüder
+sister	hermana|la hermana|hermanas	sœur|la sœur|sœurs	Schwester|die Schwester|Schwestern
+friend	amigo|amiga|amigos|amigas	ami|amie|amis|amies	Freund|Freundin|Freunde|Freundinnen
+neighbour	vecino|vecina|vecinos|vecinas	voisin|voisine|voisins|voisines	Nachbar|Nachbarin|Nachbarn|Nachbarinnen
+guest	invitado|invitada|invitados|invitadas	invité|invitée|invités|invitées	Gast|der Gast|Gäste
+stranger (unknown person)	desconocido|desconocida|desconocidos|desconocidas	inconnu|inconnue|inconnus|inconnues	Fremder|Fremde|Fremden
+relationship	relación|la relación|relaciones	relation|la relation|relations	Beziehung|die Beziehung|Beziehungen
+loneliness	soledad|la soledad	solitude|la solitude	Einsamkeit|die Einsamkeit
+#Core - Daily routine
+wake up	despertarse|me despierto|se despertó|despertado	se réveiller|je me réveille|réveillé	aufwachen|wacht auf|wachte auf|aufgewacht
+get up	levantarse|me levanto|se levantó|levantado	se lever|je me lève|levé	aufstehen|steht auf|stand auf|aufgestanden
+sleep	dormir|duermo|durmió|dormido	dormir|je dors|il dort|dormi	schlafen|schläft|schlief|geschlafen
+fall asleep	dormirse|me duermo|se durmió|dormido	s'endormir|je m'endors|endormi	einschlafen|schläft ein|schlief ein|eingeschlafen
+rest	descansar|descanso|descansó|descansado	se reposer|je me repose|reposé	sich ausruhen|ruht sich aus|ausgeruht
+wash oneself	lavarse|me lavo|se lavó|lavado	se laver|je me lave|lavé	sich waschen|wäscht sich|wusch sich|sich gewaschen
+take a shower	ducharse|me ducho|se duchó	prendre une douche|je prends une douche	duschen|duscht|duschte|geduscht
+brush one's teeth	cepillarse los dientes|me cepillo los dientes	se brosser les dents|je me brosse les dents	sich die Zähne putzen|putzt sich die Zähne
+get dressed	vestirse|me visto|se vistió|vestido	s'habiller|je m'habille|habillé	sich anziehen|zieht sich an|zog sich an|sich angezogen
+undress	desvestirse|me desvisto|se desvistió	se déshabiller|je me déshabille|déshabillé	sich ausziehen|zieht sich aus|zog sich aus|sich ausgezogen
+have breakfast	desayunar|desayuno|desayunó	prendre le petit déjeuner|je prends le petit déjeuner	frühstücken|frühstückt|frühstückte|gefrühstückt
+cook	cocinar|cocino|cocinó|cocinado	cuisiner|je cuisine|cuisiné	kochen|kocht|kochte|gekocht
+clean	limpiar|limpio|limpió|limpiado	nettoyer|je nettoie|nettoyé	putzen|putzt|putzte|geputzt
+wash dishes	lavar los platos|fregar los platos	faire la vaisselle|je fais la vaisselle	Geschirr spülen|spült Geschirr|Geschirr gespült
+do laundry	lavar la ropa	faire la lessive	Wäsche waschen
+go shopping	hacer la compra|ir de compras	faire les courses	einkaufen gehen
+go to bed	acostarse|me acuesto|se acostó	se coucher|je me couche|couché	ins Bett gehen|geht ins Bett|ging ins Bett
+routine	rutina|la rutina|rutinas	routine|la routine|routines	Routine|die Routine|Routinen
+#Core - Food and drink
+food	comida|la comida|alimentos	nourriture|la nourriture	Essen|das Essen|Nahrungsmittel
+meal	comida|la comida|comidas	repas|le repas|les repas	Mahlzeit|die Mahlzeit|Mahlzeiten
+breakfast	desayuno|el desayuno|desayunos	petit déjeuner|le petit déjeuner|petits déjeuners	Frühstück|das Frühstück
+lunch	almuerzo|el almuerzo|almuerzos	déjeuner|le déjeuner|déjeuners	Mittagessen|das Mittagessen
+dinner	cena|la cena|cenas	dîner|le dîner|dîners	Abendessen|das Abendessen
+bread	pan|el pan|panes	pain|le pain|pains	Brot|das Brot|Brote
+rice	arroz|el arroz	riz|le riz	Reis|der Reis
+pasta	pasta|la pasta	pâtes|les pâtes	Nudeln|die Nudeln
+potato	patata|la patata|patatas|papa|papas	pomme de terre|la pomme de terre|pommes de terre	Kartoffel|die Kartoffel|Kartoffeln
+vegetable	verdura|la verdura|verduras	légume|le légume|légumes	Gemüse|das Gemüse
+fruit	fruta|la fruta|frutas	fruit|le fruit|fruits	Obst|das Obst|Frucht|Früchte
+apple	manzana|la manzana|manzanas	pomme|la pomme|pommes	Apfel|der Apfel|Äpfel
+tomato	tomate|el tomate|tomates	tomate|la tomate|tomates	Tomate|die Tomate|Tomaten
+onion	cebolla|la cebolla|cebollas	oignon|l'oignon|oignons	Zwiebel|die Zwiebel|Zwiebeln
+meat	carne|la carne	viande|la viande	Fleisch|das Fleisch
+fish as food	pescado|el pescado|pescados	poisson|le poisson|poissons	Fisch|der Fisch|Fische
+egg	huevo|el huevo|huevos	œuf|l'œuf|œufs	Ei|das Ei|Eier
+milk	leche|la leche	lait|le lait	Milch|die Milch
+cheese	queso|el queso|quesos	fromage|le fromage|fromages	Käse|der Käse
+butter	mantequilla|la mantequilla	beurre|le beurre	Butter|die Butter
+water	agua|el agua|aguas	eau|l'eau|eaux	Wasser|das Wasser
+coffee	café|el café|cafés	café|le café|cafés	Kaffee|der Kaffee
+tea	té|el té|tés	thé|le thé|thés	Tee|der Tee|Tees
+juice	zumo|el zumo|jugos|jugo	jus|le jus|les jus	Saft|der Saft|Säfte
+salt	sal|la sal	sel|le sel	Salz|das Salz
+sugar	azúcar|el azúcar	sucre|le sucre	Zucker|der Zucker
+eat	comer|como|comió|comido	manger|je mange|mangé	essen|isst|aß|gegessen
+drink	beber|bebo|bebió|bebido	boire|je bois|il boit|bu	trinken|trinkt|trank|getrunken
+taste (sample food)	probar|pruebo|probó|probado	goûter|je goûte|goûté	probieren|probiert|probierte|probiert
+hungry	tener hambre|tengo hambre	avoir faim|j'ai faim	hungrig|Hunger haben
+thirsty	tener sed|tengo sed	avoir soif|j'ai soif	durstig|Durst haben
+delicious	delicioso|deliciosa|deliciosos|deliciosas	délicieux|délicieuse|délicieuses	köstlich|lecker
+#Core - Home and household
+home	hogar|el hogar|hogares	chez soi|foyer|le foyer	Zuhause|das Zuhause
+house	casa|la casa|casas	maison|la maison|maisons	Haus|das Haus|Häuser
+apartment	piso|el piso|pisos|apartamento|apartamentos	appartement|l'appartement|appartements	Wohnung|die Wohnung|Wohnungen
+room	habitación|la habitación|habitaciones	pièce|la pièce|pièces	Zimmer|das Zimmer|die Zimmer
+bedroom	dormitorio|el dormitorio|dormitorios	chambre|la chambre|chambres	Schlafzimmer|das Schlafzimmer|die Schlafzimmer
+kitchen	cocina|la cocina|cocinas	cuisine|la cuisine|cuisines	Küche|die Küche|Küchen
+bathroom	baño|el baño|baños	salle de bains|la salle de bains|salles de bains	Badezimmer|das Badezimmer|die Badezimmer
+door	puerta|la puerta|puertas	porte|la porte|portes	Tür|die Tür|Türen
+window	ventana|la ventana|ventanas	fenêtre|la fenêtre|fenêtres	Fenster|das Fenster|die Fenster
+wall	pared|la pared|paredes	mur|le mur|murs	Wand|die Wand|Wände
+floor (room surface)	suelo|el suelo|suelos	sol|le sol|sols	Fußboden|der Fußboden|Fußböden
+roof	tejado|el tejado|tejados	toit|le toit|toits	Dach|das Dach|Dächer
+table	mesa|la mesa|mesas	table|la table|tables	Tisch|der Tisch|Tische
+chair	silla|la silla|sillas	chaise|la chaise|chaises	Stuhl|der Stuhl|Stühle
+bed	cama|la cama|camas	lit|le lit|lits	Bett|das Bett|Betten
+key	llave|la llave|llaves	clé|la clé|clés	Schlüssel|der Schlüssel|die Schlüssel
+light (lamp)	lámpara|la lámpara|lámparas	lampe|la lampe|lampes	Lampe|die Lampe|Lampen
+heating	calefacción|la calefacción	chauffage|le chauffage	Heizung|die Heizung|Heizungen
+rent (payment)	alquiler|el alquiler|alquileres	loyer|le loyer|loyers	Miete|die Miete|Mieten
+move house	mudarse|me mudo|se mudó	déménager|je déménage|déménagé	umziehen|zieht um|zog um|umgezogen
+#Core - Body and health
+body	cuerpo|el cuerpo|cuerpos	corps|le corps|les corps	Körper|der Körper|die Körper
+head	cabeza|la cabeza|cabezas	tête|la tête|têtes	Kopf|der Kopf|Köpfe
+face	cara|la cara|caras	visage|le visage|visages	Gesicht|das Gesicht|Gesichter
+eye	ojo|el ojo|ojos	œil|l'œil|yeux|les yeux	Auge|das Auge|Augen
+ear	oreja|la oreja|orejas	oreille|l'oreille|oreilles	Ohr|das Ohr|Ohren
+mouth	boca|la boca|bocas	bouche|la bouche|bouches	Mund|der Mund|Münder
+tooth	diente|el diente|dientes	dent|la dent|dents	Zahn|der Zahn|Zähne
+hand	mano|la mano|manos	main|la main|mains	Hand|die Hand|Hände
+arm	brazo|el brazo|brazos	bras|le bras|les bras	Arm|der Arm|Arme
+leg	pierna|la pierna|piernas	jambe|la jambe|jambes	Bein|das Bein|Beine
+foot	pie|el pie|pies	pied|le pied|pieds	Fuß|der Fuß|Füße
+heart	corazón|el corazón|corazones	cœur|le cœur|cœurs	Herz|das Herz|Herzen
+blood	sangre|la sangre	sang|le sang	Blut|das Blut
+breathe	respirar|respiro|respiró|respirado	respirer|je respire|respiré	atmen|atmet|atmete|geatmet
+pain	dolor|el dolor|dolores	douleur|la douleur|douleurs	Schmerz|der Schmerz|Schmerzen
+ill, sick	enfermo|enferma|enfermos|enfermas	malade|malades	krank
+healthy	sano|sana|sanos|sanas	en bonne santé|sain|saine	gesund
+tired	cansado|cansada|cansados|cansadas	fatigué|fatiguée|fatigués|fatiguées	müde
+fever	fiebre|la fiebre	fièvre|la fièvre	Fieber|das Fieber
+medicine	medicamento|el medicamento|medicamentos	médicament|le médicament|médicaments	Medikament|das Medikament|Medikamente
+doctor	médico|médica|médicos|médicas	médecin|le médecin|la médecin|médecins	Arzt|Ärztin|Ärzte|Ärztinnen
+hospital	hospital|el hospital|hospitales	hôpital|l'hôpital|hôpitaux	Krankenhaus|das Krankenhaus|Krankenhäuser
+recover, get well	recuperarse|me recupero|se recuperó	guérir|je guéris|guéri	gesund werden|wird gesund|wurde gesund
+appointment	cita|la cita|citas	rendez-vous|le rendez-vous|les rendez-vous	Termin|der Termin|Termine
+#Core - Clothes and belongings
+clothes	ropa|la ropa	vêtements|les vêtements	Kleidung|die Kleidung
+shirt	camisa|la camisa|camisas	chemise|la chemise|chemises	Hemd|das Hemd|Hemden
+trousers	pantalón|el pantalón|pantalones	pantalon|le pantalon|pantalons	Hose|die Hose|Hosen
+dress	vestido|el vestido|vestidos	robe|la robe|robes	Kleid|das Kleid|Kleider
+coat	abrigo|el abrigo|abrigos	manteau|le manteau|manteaux	Mantel|der Mantel|Mäntel
+shoe	zapato|el zapato|zapatos	chaussure|la chaussure|chaussures	Schuh|der Schuh|Schuhe
+sock	calcetín|el calcetín|calcetines	chaussette|la chaussette|chaussettes	Socke|die Socke|Socken
+hat	sombrero|el sombrero|sombreros	chapeau|le chapeau|chapeaux	Hut|der Hut|Hüte
+bag	bolsa|la bolsa|bolsas	sac|le sac|sacs	Tasche|die Tasche|Taschen
+backpack	mochila|la mochila|mochilas	sac à dos|le sac à dos|les sacs à dos	Rucksack|der Rucksack|Rucksäcke
+wallet	cartera|la cartera|carteras	portefeuille|le portefeuille|portefeuilles	Geldbeutel|der Geldbeutel|die Geldbeutel
+glasses, spectacles	gafas|las gafas	lunettes|les lunettes	Brille|die Brille|Brillen
+wear clothes	llevar ropa	porter des vêtements	Kleidung tragen
+fit (be the right size)	quedar bien|me queda bien	être à la bonne taille	passen|passt|passte|gepasst
+#Core - Movement and physical actions
+go	ir|voy|va|fue|ido	aller|je vais|il va|allé	gehen|geht|ging|gegangen
+come	venir|vengo|viene|vino|venido	venir|je viens|il vient|venu	kommen|kommt|kam|gekommen
+walk	caminar|camino|caminó|caminado	marcher|je marche|marché	gehen|zu Fuß gehen|geht zu Fuß
+run	correr|corro|corrió|corrido	courir|je cours|couru	laufen|läuft|lief|gelaufen|rennen|rennt|rannte|gerannt
+jump	saltar|salto|saltó|saltado	sauter|je saute|sauté	springen|springt|sprang|gesprungen
+sit	estar sentado|estar sentada	être assis|être assise	sitzen|sitzt|saß|gesessen
+sit down	sentarse|me siento|se sentó	s'asseoir|je m'assieds|assis	sich setzen|setzt sich|setzte sich|sich gesetzt
+stand	estar de pie	être debout	stehen|steht|stand|gestanden
+lie down	tumbarse|me tumbo|se tumbó	s'allonger|je m'allonge|allongé	sich hinlegen|legt sich hin|legte sich hin|sich hingelegt
+fall	caer|caigo|cayó|caído	tomber|je tombe|tombé	fallen|fällt|fiel|gefallen
+rise, go upwards	subir|subo|subió|subido	monter|je monte|monté	steigen|steigt|stieg|gestiegen
+go down	bajar|bajo|bajó|bajado	descendre|je descends|descendu	hinuntergehen|geht hinunter|ging hinunter|hinuntergegangen
+enter	entrar|entro|entró|entrado	entrer|j'entre|entré	hineingehen|geht hinein|ging hinein|hineingegangen
+leave, go out	salir|salgo|salió|salido	sortir|je sors|sorti	hinausgehen|geht hinaus|ging hinaus|hinausgegangen
+return, come back	volver|vuelvo|volvió|vuelto	revenir|je reviens|revenu	zurückkommen|kommt zurück|kam zurück|zurückgekommen
+turn (change direction)	girar|giro|giró|girado	tourner|je tourne|tourné	abbiegen|biegt ab|bog ab|abgebogen
+push	empujar|empujo|empujó|empujado	pousser|je pousse|poussé	schieben|schiebt|schob|geschoben
+pull	tirar de|tiro de|tiró de	tirer|je tire|tiré	ziehen|zieht|zog|gezogen
+lift	levantar|levanto|levantó|levantado	soulever|je soulève|soulevé	heben|hebt|hob|gehoben
+carry	llevar|llevo|llevó|llevado	porter|je porte|porté	tragen|trägt|trug|getragen
+throw	lanzar|lanzo|lanzó|lanzado	lancer|je lance|lancé	werfen|wirft|warf|geworfen
+catch a thrown object	atrapar|atrapo|atrapó|atrapado	attraper|j'attrape|attrapé	fangen|fängt|fing|gefangen
+hold	sostener|sostengo|sostuvo|sostenido	tenir|je tiens|tenu	halten|hält|hielt|gehalten
+let go	soltar|suelto|soltó|soltado	lâcher|je lâche|lâché	loslassen|lässt los|ließ los|losgelassen
+#Core - Travel and transport
+journey	viaje|el viaje|viajes	voyage|le voyage|voyages	Reise|die Reise|Reisen
+travel	viajar|viajo|viajó|viajado	voyager|je voyage|voyagé	reisen|reist|reiste|gereist
+road, street	calle|la calle|calles	rue|la rue|rues	Straße|die Straße|Straßen
+path	camino|el camino|caminos	chemin|le chemin|chemins	Weg|der Weg|Wege
+car	coche|el coche|coches	voiture|la voiture|voitures	Auto|das Auto|Autos
+bus	autobús|el autobús|autobuses	bus|le bus|les bus	Bus|der Bus|Busse
+train	tren|el tren|trenes	train|le train|trains	Zug|der Zug|Züge
+bicycle	bicicleta|la bicicleta|bicicletas	vélo|le vélo|vélos	Fahrrad|das Fahrrad|Fahrräder
+airplane	avión|el avión|aviones	avion|l'avion|avions	Flugzeug|das Flugzeug|Flugzeuge
+station (railway station)	estación|la estación|estaciones	gare|la gare|gares	Bahnhof|der Bahnhof|Bahnhöfe
+bus stop	parada de autobús|la parada de autobús|paradas de autobús	arrêt de bus|l'arrêt de bus|arrêts de bus	Bushaltestelle|die Bushaltestelle|Bushaltestellen
+airport	aeropuerto|el aeropuerto|aeropuertos	aéroport|l'aéroport|aéroports	Flughafen|der Flughafen|Flughäfen
+ticket	billete|el billete|billetes	billet|le billet|billets	Fahrkarte|die Fahrkarte|Fahrkarten
+passport	pasaporte|el pasaporte|pasaportes	passeport|le passeport|passeports	Reisepass|der Reisepass|Reisepässe
+arrive	llegar|llego|llegó|llegado	arriver|j'arrive|arrivé	ankommen|kommt an|kam an|angekommen
+depart	partir|parto|partió|partido	partir|je pars|parti	abfahren|fährt ab|fuhr ab|abgefahren
+delay	retraso|el retraso|retrasos	retard|le retard|retards	Verspätung|die Verspätung|Verspätungen
+change trains	hacer transbordo	changer de train	umsteigen|steigt um|stieg um|umgestiegen
+drive a vehicle	conducir|conduzco|condujo|conducido	conduire|je conduis|conduit	ein Fahrzeug fahren|fährt|fuhr|gefahren
+on foot	a pie	à pied	zu Fuß
+#Core - Space and direction
+here	aquí|acá	ici	hier
+there	allí|ahí|allá	là|là-bas	dort|da
+near	cerca|cerca de	près|près de	nah|in der Nähe
+far	lejos|lejos de	loin|loin de	weit|weit weg
+left (direction)	izquierda|a la izquierda	gauche|à gauche	links|nach links
+right (direction)	derecha|a la derecha	droite|à droite	rechts|nach rechts
+straight ahead	todo recto|en línea recta	tout droit	geradeaus
+above, over	encima|encima de|sobre	au-dessus|au-dessus de	über|oberhalb
+below, under	debajo|debajo de|bajo	en dessous|en dessous de|sous	unter|unterhalb
+inside	dentro|dentro de	à l'intérieur|dans	drinnen|innerhalb
+outside	fuera|fuera de	dehors|à l'extérieur	draußen|außerhalb
+between	entre	entre	zwischen
+behind	detrás|detrás de	derrière	hinter
+in front of	delante de	devant	vor
+beside	al lado de	à côté de	neben
+opposite (facing)	enfrente de	en face de	gegenüber
+everywhere	en todas partes	partout	überall
+nowhere	en ninguna parte	nulle part	nirgendwo
+#Core - Time and frequency
+time	tiempo|el tiempo	temps|le temps	Zeit|die Zeit
+now	ahora	maintenant	jetzt
+then, at that time	entonces	alors|à ce moment-là	damals|zu diesem Zeitpunkt
+today	hoy	aujourd'hui	heute
+yesterday	ayer	hier	gestern
+tomorrow	mañana	demain	morgen
+day	día|el día|días	jour|le jour|jours	Tag|der Tag|Tage
+week	semana|la semana|semanas	semaine|la semaine|semaines	Woche|die Woche|Wochen
+month	mes|el mes|meses	mois|le mois|les mois	Monat|der Monat|Monate
+year	año|el año|años	an|l'an|ans|année|années	Jahr|das Jahr|Jahre
+morning	mañana|la mañana|mañanas	matin|le matin|matins	Morgen|der Morgen|die Morgen
+afternoon	tarde|la tarde|tardes	après-midi|l'après-midi|les après-midi	Nachmittag|der Nachmittag|Nachmittage
+evening	noche|la noche|noches	soir|le soir|soirs	Abend|der Abend|Abende
+night	noche|la noche|noches	nuit|la nuit|nuits	Nacht|die Nacht|Nächte
+early	temprano	tôt	früh
+late	tarde	tard	spät
+soon	pronto	bientôt	bald
+already	ya	déjà	schon|bereits
+not yet	todavía no|aún no	pas encore	noch nicht
+always	siempre	toujours	immer
+often	a menudo|con frecuencia	souvent	oft|häufig
+sometimes	a veces	parfois|quelquefois	manchmal
+rarely	rara vez|raramente	rarement	selten
+never	nunca|jamás	jamais	nie|niemals
+before, earlier	antes|anteriormente	avant|auparavant	vorher|früher
+afterwards	después|luego	ensuite|après	danach|anschließend
+meanwhile	mientras tanto	pendant ce temps	inzwischen|währenddessen
+for a long time	durante mucho tiempo	longtemps	lange|seit Langem
+#Core - Days and numbers
+Monday	lunes|el lunes	lundi|le lundi	Montag|der Montag
+Tuesday	martes|el martes	mardi|le mardi	Dienstag|der Dienstag
+Wednesday	miércoles|el miércoles	mercredi|le mercredi	Mittwoch|der Mittwoch
+Thursday	jueves|el jueves	jeudi|le jeudi	Donnerstag|der Donnerstag
+Friday	viernes|el viernes	vendredi|le vendredi	Freitag|der Freitag
+Saturday	sábado|el sábado	samedi|le samedi	Samstag|der Samstag
+Sunday	domingo|el domingo	dimanche|le dimanche	Sonntag|der Sonntag
+zero	cero	zéro	null
+one	uno|una|un	un|une	eins|ein|eine
+two	dos	deux	zwei
+three	tres	trois	drei
+four	cuatro	quatre	vier
+five	cinco	cinq	fünf
+six	seis	six	sechs
+seven	siete	sept	sieben
+eight	ocho	huit	acht
+nine	nueve	neuf	neun
+ten	diez	dix	zehn
+eleven	once	onze	elf
+twelve	doce	douze	zwölf
+twenty	veinte	vingt	zwanzig
+hundred	cien|ciento	cent	hundert
+thousand	mil	mille	tausend
+first	primero|primera|primer	premier|première	erste|erster|erstes
+last (final)	último|última|últimos|últimas	dernier|dernière|derniers|dernières	letzte|letzter|letztes
+half	mitad|la mitad|medio|media	moitié|la moitié|demi|demie	Hälfte|die Hälfte|halb
+enough	suficiente|suficientes|bastante	assez|suffisant|suffisante	genug|ausreichend
+too much	demasiado|demasiada|demasiados|demasiadas	trop	zu viel
+#Core - Weather and nature
+weather	tiempo|el tiempo	temps|le temps	Wetter|das Wetter
+sun	sol|el sol	soleil|le soleil	Sonne|die Sonne
+rain	lluvia|la lluvia|lluvias	pluie|la pluie|pluies	Regen|der Regen
+snow	nieve|la nieve	neige|la neige	Schnee|der Schnee
+wind	viento|el viento|vientos	vent|le vent|vents	Wind|der Wind|Winde
+cloud	nube|la nube|nubes	nuage|le nuage|nuages	Wolke|die Wolke|Wolken
+storm	tormenta|la tormenta|tormentas	tempête|la tempête|tempêtes	Sturm|der Sturm|Stürme
+hot (temperature)	caliente|calientes	chaud|chaude|chauds|chaudes	heiß
+cold	frío|fría|fríos|frías	froid|froide|froids|froides	kalt
+warm	templado|templada|templados|templadas	chaud|chaude|tiède|tièdes	warm
+spring (season)	primavera|la primavera|primaveras	printemps|le printemps|les printemps	Frühling|der Frühling|Frühlinge
+summer	verano|el verano|veranos	été|l'été|étés	Sommer|der Sommer|die Sommer
+autumn	otoño|el otoño|otoños	automne|l'automne|automnes	Herbst|der Herbst|Herbste
+winter	invierno|el invierno|inviernos	hiver|l'hiver|hivers	Winter|der Winter|die Winter
+tree	árbol|el árbol|árboles	arbre|l'arbre|arbres	Baum|der Baum|Bäume
+flower	flor|la flor|flores	fleur|la fleur|fleurs	Blume|die Blume|Blumen
+forest	bosque|el bosque|bosques	forêt|la forêt|forêts	Wald|der Wald|Wälder
+mountain	montaña|la montaña|montañas	montagne|la montagne|montagnes	Berg|der Berg|Berge
+river	río|el río|ríos	rivière|la rivière|rivières	Fluss|der Fluss|Flüsse
+sea	mar|el mar|mares	mer|la mer|mers	Meer|das Meer|Meere
+lake	lago|el lago|lagos	lac|le lac|lacs	See|der See|Seen
+earth (soil)	tierra|la tierra	terre|la terre	Erde|die Erde
+fire	fuego|el fuego|fuegos	feu|le feu|feux	Feuer|das Feuer|die Feuer
+air	aire|el aire	air|l'air	Luft|die Luft
+#Core - Animals
+animal	animal|el animal|animales	animal|l'animal|animaux	Tier|das Tier|Tiere
+dog	perro|el perro|perros	chien|le chien|chiens	Hund|der Hund|Hunde
+cat	gato|el gato|gatos	chat|le chat|chats	Katze|die Katze|Katzen
+bird	pájaro|el pájaro|pájaros	oiseau|l'oiseau|oiseaux	Vogel|der Vogel|Vögel
+horse	caballo|el caballo|caballos	cheval|le cheval|chevaux	Pferd|das Pferd|Pferde
+cow	vaca|la vaca|vacas	vache|la vache|vaches	Kuh|die Kuh|Kühe
+sheep	oveja|la oveja|ovejas	mouton|le mouton|moutons	Schaf|das Schaf|Schafe
+insect	insecto|el insecto|insectos	insecte|l'insecte|insectes	Insekt|das Insekt|Insekten
+bee	abeja|la abeja|abejas	abeille|l'abeille|abeilles	Biene|die Biene|Bienen
+butterfly	mariposa|la mariposa|mariposas	papillon|le papillon|papillons	Schmetterling|der Schmetterling|Schmetterlinge
+#Core - Qualities and comparisons
+good	bueno|buena|buenos|buenas|buen	bon|bonne|bons|bonnes	gut
+bad	malo|mala|malos|malas|mal	mauvais|mauvaise|mauvaises	schlecht
+big, large	grande|grandes|gran	grand|grande|grands|grandes	groß
+small	pequeño|pequeña|pequeños|pequeñas	petit|petite|petits|petites	klein
+long	largo|larga|largos|largas	long|longue|longs|longues	lang
+short in length	corto|corta|cortos|cortas	court|courte|courts|courtes	kurz
+high	alto|alta|altos|altas	haut|haute|hauts|hautes	hoch
+low	bajo|baja|bajos|bajas	bas|basse|basses	niedrig
+wide	ancho|ancha|anchos|anchas	large|larges	breit
+narrow	estrecho|estrecha|estrechos|estrechas	étroit|étroite|étroits|étroites	eng|schmal
+heavy	pesado|pesada|pesados|pesadas	lourd|lourde|lourds|lourdes	schwer
+light in weight	ligero|ligera|ligeros|ligeras	léger|légère|légers|légères	leicht
+fast	rápido|rápida|rápidos|rápidas	rapide|rapides|vite	schnell
+slow	lento|lenta|lentos|lentas	lent|lente|lents|lentes	langsam
+new	nuevo|nueva|nuevos|nuevas	nouveau|nouvel|nouvelle|nouveaux|nouvelles	neu
+old (not new)	viejo|vieja|viejos|viejas	vieux|vieil|vieille|vieilles	alt
+young	joven|jóvenes	jeune|jeunes	jung
+beautiful	bonito|bonita|bonitos|bonitas	beau|bel|belle|beaux|belles	schön
+easy	fácil|fáciles	facile|faciles	einfach|leicht
+difficult	difícil|difíciles	difficile|difficiles	schwierig|schwer
+possible	posible|posibles	possible|possibles	möglich
+impossible	imposible|imposibles	impossible|impossibles	unmöglich
+necessary	necesario|necesaria|necesarios|necesarias	nécessaire|nécessaires	nötig|notwendig
+important	importante|importantes	important|importante|importants|importantes	wichtig
+same	mismo|misma|mismos|mismas	même|mêmes	gleich|derselbe|dieselbe|dasselbe
+different	diferente|diferentes	différent|différente|différents|différentes	anders|verschieden
+better	mejor|mejores	meilleur|meilleure|meilleurs|meilleures|mieux	besser
+worse	peor|peores	pire|pires|plus mal	schlechter
+#Core - Colours and shapes
+white	blanco|blanca|blancos|blancas	blanc|blanche|blancs|blanches	weiß
+black	negro|negra|negros|negras	noir|noire|noirs|noires	schwarz
+red	rojo|roja|rojos|rojas	rouge|rouges	rot
+blue	azul|azules	bleu|bleue|bleus|bleues	blau
+green	verde|verdes	vert|verte|verts|vertes	grün
+yellow	amarillo|amarilla|amarillos|amarillas	jaune|jaunes	gelb
+brown	marrón|marrones	marron	braun
+grey	gris|grises	gris|grise|grises	grau
+round	redondo|redonda|redondos|redondas	rond|ronde|ronds|rondes	rund
+square (shape)	cuadrado|el cuadrado|cuadrados	carré|le carré|carrés	Quadrat|das Quadrat|Quadrate
+circle	círculo|el círculo|círculos	cercle|le cercle|cercles	Kreis|der Kreis|Kreise
+line	línea|la línea|líneas	ligne|la ligne|lignes	Linie|die Linie|Linien
+edge	borde|el borde|bordes	bord|le bord|bords	Rand|der Rand|Ränder
+hole	agujero|el agujero|agujeros	trou|le trou|trous	Loch|das Loch|Löcher
+#Core - Communication and language
+speak	hablar|hablo|habló|hablado	parler|je parle|parlé	sprechen|spricht|sprach|gesprochen
+say	decir|digo|dice|dijo|dicho	dire|je dis|il dit|dit	sagen|sagt|sagte|gesagt
+tell (narrate)	contar|cuento|contó|contado	raconter|je raconte|raconté	erzählen|erzählt|erzählte|erzählt
+ask a question	preguntar|pregunto|preguntó|preguntado	poser une question|je pose une question	eine Frage stellen|fragen|fragt|fragte|gefragt
+answer	responder|respondo|respondió|respondido	répondre|je réponds|répondu	antworten|antwortet|antwortete|geantwortet
+listen	escuchar|escucho|escuchó|escuchado	écouter|j'écoute|écouté	zuhören|hört zu|hörte zu|zugehört
+hear	oír|oigo|oyó|oído	entendre|j'entends|entendu	hören|hört|hörte|gehört
+read	leer|leo|leyó|leído	lire|je lis|lu	lesen|liest|las|gelesen
+write	escribir|escribo|escribió|escrito	écrire|j'écris|écrit	schreiben|schreibt|schrieb|geschrieben
+explain	explicar|explico|explicó|explicado	expliquer|j'explique|expliqué	erklären|erklärt|erklärte|erklärt
+describe	describir|describo|describió|descrito	décrire|je décris|décrit	beschreiben|beschreibt|beschrieb|beschrieben
+translate	traducir|traduzco|tradujo|traducido	traduire|je traduis|traduit	übersetzen|übersetzt|übersetzte|übersetzt
+repeat	repetir|repito|repitió|repetido	répéter|je répète|répété	wiederholen|wiederholt|wiederholte|wiederholt
+pronounce	pronunciar|pronuncio|pronunció|pronunciado	prononcer|je prononce|prononcé	aussprechen|spricht aus|sprach aus|ausgesprochen
+word	palabra|la palabra|palabras	mot|le mot|mots	Wort|das Wort|Wörter
+sentence (language)	frase|la frase|frases	phrase|la phrase|phrases	Satz|der Satz|Sätze
+meaning	significado|el significado|significados	signification|la signification|significations	Bedeutung|die Bedeutung|Bedeutungen
+language	idioma|el idioma|idiomas|lengua|lenguas	langue|la langue|langues	Sprache|die Sprache|Sprachen
+conversation	conversación|la conversación|conversaciones	conversation|la conversation|conversations	Gespräch|das Gespräch|Gespräche
+message	mensaje|el mensaje|mensajes	message|le message|messages	Nachricht|die Nachricht|Nachrichten
+voice	voz|la voz|voces	voix|la voix|les voix	Stimme|die Stimme|Stimmen
+silence	silencio|el silencio	silence|le silence	Stille|die Stille|Schweigen|das Schweigen
+#Core - Learning and work
+learn	aprender|aprendo|aprendió|aprendido	apprendre|j'apprends|appris	lernen|lernt|lernte|gelernt
+study	estudiar|estudio|estudió|estudiado	étudier|j'étudie|étudié	lernen|studieren|studiert|studierte|studiert
+teach	enseñar|enseño|enseñó|enseñado	enseigner|j'enseigne|enseigné	unterrichten|unterrichtet|unterrichtete|unterrichtet
+practise	practicar|practico|practicó|practicado	s'exercer|je m'exerce|exercé	üben|übt|übte|geübt
+school	escuela|la escuela|escuelas	école|l'école|écoles	Schule|die Schule|Schulen
+university	universidad|la universidad|universidades	université|l'université|universités	Universität|die Universität|Universitäten
+teacher	profesor|profesora|profesores|profesoras	professeur|professeure|professeurs|professeures	Lehrer|Lehrerin|Lehrerinnen
+student	estudiante|el estudiante|la estudiante|estudiantes	étudiant|étudiante|étudiants|étudiantes	Student|Studentin|Studenten|Studentinnen
+book	libro|el libro|libros	livre|le livre|livres	Buch|das Buch|Bücher
+exercise (practice task)	ejercicio|el ejercicio|ejercicios	exercice|l'exercice|exercices	Übung|die Übung|Übungen
+exam	examen|el examen|exámenes	examen|l'examen|examens	Prüfung|die Prüfung|Prüfungen
+mistake	error|el error|errores	erreur|l'erreur|erreurs	Fehler|der Fehler|die Fehler
+progress	progreso|el progreso|progresos	progrès|le progrès|les progrès	Fortschritt|der Fortschritt|Fortschritte
+work (activity)	trabajo|el trabajo|trabajos	travail|le travail|travaux	Arbeit|die Arbeit|Arbeiten
+work (verb)	trabajar|trabajo|trabajó|trabajado	travailler|je travaille|travaillé	arbeiten|arbeitet|arbeitete|gearbeitet
+job (employment)	empleo|el empleo|empleos	emploi|l'emploi|emplois	Arbeitsstelle|die Arbeitsstelle|Arbeitsstellen
+colleague	compañero de trabajo|compañera de trabajo	collègue|le collègue|la collègue|collègues	Kollege|Kollegin|Kollegen|Kolleginnen
+meeting	reunión|la reunión|reuniones	réunion|la réunion|réunions	Besprechung|die Besprechung|Besprechungen
+task	tarea|la tarea|tareas	tâche|la tâche|tâches	Aufgabe|die Aufgabe|Aufgaben
+deadline	fecha límite|la fecha límite|fechas límite	date limite|la date limite|dates limites	Frist|die Frist|Fristen
+salary	sueldo|el sueldo|sueldos	salaire|le salaire|salaires	Gehalt|das Gehalt|Gehälter
+experience	experiencia|la experiencia|experiencias	expérience|l'expérience|expériences	Erfahrung|die Erfahrung|Erfahrungen
+#Core - Thinking and memory
+think	pensar|pienso|pensó|pensado	penser|je pense|pensé	denken|denkt|dachte|gedacht
+know a fact	saber|sé|sabe|supo|sabido	savoir|je sais|il sait|su	wissen|weiß|wusste|gewusst
+know a person or place	conocer|conozco|conoció|conocido	connaître|je connais|connu	kennen|kennt|kannte|gekannt
+understand	entender|entiendo|entendió|entendido|comprender	comprendre|je comprends|compris	verstehen|versteht|verstand|verstanden
+remember	recordar|recuerdo|recordó|recordado	se souvenir|je me souviens|souvenu	sich erinnern|erinnert sich|erinnerte sich|sich erinnert
+forget	olvidar|olvido|olvidó|olvidado	oublier|j'oublie|oublié	vergessen|vergisst|vergaß|vergessen
+notice	notar|noto|notó|notado	remarquer|je remarque|remarqué	bemerken|bemerkt|bemerkte|bemerkt
+recognise	reconocer|reconozco|reconoció|reconocido	reconnaître|je reconnais|reconnu	erkennen|erkennt|erkannte|erkannt
+imagine	imaginar|imagino|imaginó|imaginado	imaginer|j'imagine|imaginé	sich vorstellen|stellt sich vor|stellte sich vor|sich vorgestellt
+believe	creer|creo|creyó|creído	croire|je crois|cru	glauben|glaubt|glaubte|geglaubt
+doubt (verb)	dudar|dudo|dudó|dudado	douter|je doute|douté	zweifeln|zweifelt|zweifelte|gezweifelt
+suppose	suponer|supongo|supuso|supuesto	supposer|je suppose|supposé	vermuten|vermutet|vermutete|vermutet
+consider (reflect on)	reflexionar sobre|reflexiono sobre	réfléchir à|je réfléchis à|réfléchi	nachdenken über|denkt nach|dachte nach|nachgedacht
+compare	comparar|comparo|comparó|comparado	comparer|je compare|comparé	vergleichen|vergleicht|verglich|verglichen
+distinguish	distinguir|distingo|distinguió|distinguido	distinguer|je distingue|distingué	unterscheiden|unterscheidet|unterschied|unterschieden
+concentrate	concentrarse|me concentro|se concentró	se concentrer|je me concentre|concentré	sich konzentrieren|konzentriert sich|sich konzentriert
+thought	pensamiento|el pensamiento|pensamientos	pensée|la pensée|pensées	Gedanke|der Gedanke|Gedanken
+idea	idea|la idea|ideas	idée|l'idée|idées	Idee|die Idee|Ideen
+memory (faculty)	memoria|la memoria	mémoire|la mémoire	Gedächtnis|das Gedächtnis
+attention	atención|la atención	attention|l'attention	Aufmerksamkeit|die Aufmerksamkeit
+#Core - Feelings and reactions
+feel	sentir|siento|sintió|sentido	ressentir|je ressens|ressenti	fühlen|fühlt|fühlte|gefühlt
+happy	feliz|felices	heureux|heureuse|heureuses	glücklich
+sad	triste|tristes	triste|tristes	traurig
+angry	enfadado|enfadada|enfadados|enfadadas	en colère	wütend|verärgert
+afraid	tener miedo|tengo miedo	avoir peur|j'ai peur	Angst haben|ängstlich
+worried	preocupado|preocupada|preocupados|preocupadas	inquiet|inquiète|inquiets|inquiètes	besorgt
+calm	tranquilo|tranquila|tranquilos|tranquilas	calme|calmes	ruhig
+surprised	sorprendido|sorprendida|sorprendidos|sorprendidas	surpris|surprise|surprises	überrascht
+curious	curioso|curiosa|curiosos|curiosas	curieux|curieuse|curieuses	neugierig
+bored	aburrido|aburrida|aburridos|aburridas	qui s'ennuie|je m'ennuie	gelangweilt
+ashamed	tener vergüenza|me da vergüenza	avoir honte|j'ai honte	sich schämen|schämt sich|sich geschämt
+proud	orgulloso|orgullosa|orgullosos|orgullosas	fier|fière|fiers|fières	stolz
+grateful	agradecido|agradecida|agradecidos|agradecidas	reconnaissant|reconnaissante|reconnaissants|reconnaissantes	dankbar
+disappointed	decepcionado|decepcionada|decepcionados|decepcionadas	déçu|déçue|déçus|déçues	enttäuscht
+hope (noun)	esperanza|la esperanza|esperanzas	espoir|l'espoir|espoirs	Hoffnung|die Hoffnung|Hoffnungen
+fear (noun)	miedo|el miedo|miedos	peur|la peur|peurs	Angst|die Angst|Ängste
+joy	alegría|la alegría|alegrías	joie|la joie|joies	Freude|die Freude|Freuden
+suffering	sufrimiento|el sufrimiento|sufrimientos	souffrance|la souffrance|souffrances	Leid|das Leid
+laugh	reír|río|rio|reído	rire|je ris|ri	lachen|lacht|lachte|gelacht
+cry, weep	llorar|lloro|lloró|llorado	pleurer|je pleure|pleuré	weinen|weint|weinte|geweint
+smile	sonreír|sonrío|sonrió|sonreído	sourire|je souris|souri	lächeln|lächelt|lächelte|gelächelt
+trust (verb)	confiar|confío|confió|confiado	faire confiance|je fais confiance	vertrauen|vertraut|vertraute|vertraut
+#Core - Intention and decisions
+want	querer|quiero|quiso|querido	vouloir|je veux|il veut|voulu	wollen|will|wollte|gewollt
+need	necesitar|necesito|necesitó|necesitado	avoir besoin de|j'ai besoin de	brauchen|braucht|brauchte|gebraucht
+can (be able to)	poder|puedo|pudo|podido	pouvoir|je peux|il peut|pu|être capable de	können|kann|konnte|gekonnt
+must (have to)	tener que|tengo que|deber|debo	devoir|je dois|il doit|dû	müssen|muss|musste|gemusst
+may (be allowed to)	tener permiso para|se permite	avoir le droit de|être autorisé à	dürfen|darf|durfte|gedurft
+decide	decidir|decido|decidió|decidido	décider|je décide|décidé	entscheiden|entscheidet|entschied|entschieden
+choose	elegir|elijo|eligió|elegido	choisir|je choisis|choisi	wählen|wählt|wählte|gewählt
+prefer	preferir|prefiero|prefirió|preferido	préférer|je préfère|préféré	bevorzugen|bevorzugt|bevorzugte|bevorzugt
+try, attempt	intentar|intento|intentó|intentado	essayer|j'essaie|essayé	versuchen|versucht|versuchte|versucht
+plan (verb)	planear|planeo|planeó|planeado	planifier|je planifie|planifié	planen|plant|plante|geplant
+intend	tener la intención de|tengo la intención de	avoir l'intention de|j'ai l'intention de	beabsichtigen|beabsichtigt|beabsichtigte|beabsichtigt
+avoid	evitar|evito|evitó|evitado	éviter|j'évite|évité	vermeiden|vermeidet|vermied|vermieden
+accept	aceptar|acepto|aceptó|aceptado	accepter|j'accepte|accepté	akzeptieren|akzeptiert|akzeptierte|akzeptiert
+refuse	rechazar|rechazo|rechazó|rechazado	refuser|je refuse|refusé	ablehnen|lehnt ab|lehnte ab|abgelehnt
+allow	permitir|permito|permitió|permitido	permettre|je permets|permis	erlauben|erlaubt|erlaubte|erlaubt
+forbid	prohibir|prohíbo|prohibió|prohibido	interdire|j'interdis|interdit	verbieten|verbietet|verbot|verboten
+goal	objetivo|el objetivo|objetivos	objectif|l'objectif|objectifs	Ziel|das Ziel|Ziele
+choice	elección|la elección|elecciones	choix|le choix|les choix	Wahl|die Wahl|Wahlen
+opportunity	oportunidad|la oportunidad|oportunidades	occasion|l'occasion|occasions	Gelegenheit|die Gelegenheit|Gelegenheiten
+responsibility	responsabilidad|la responsabilidad|responsabilidades	responsabilité|la responsabilité|responsabilités	Verantwortung|die Verantwortung
+#Core - Change and causation
+begin	empezar|empiezo|empezó|empezado	commencer|je commence|commencé	beginnen|beginnt|begann|begonnen
+continue	continuar|continúo|continuó|continuado	continuer|je continue|continué	weitermachen|macht weiter|machte weiter|weitergemacht
+finish	terminar|termino|terminó|terminado	terminer|je termine|terminé	beenden|beendet|beendete|beendet
+stop an activity	parar|paro|paró|parado|dejar de	arrêter|j'arrête|arrêté	aufhören|hört auf|hörte auf|aufgehört
+change, alter	cambiar|cambio|cambió|cambiado	changer|je change|changé	ändern|ändert|änderte|geändert
+become	convertirse en|se convierte en|se convirtió en	devenir|je deviens|devenu	werden|wird|wurde|geworden
+increase (verb)	aumentar|aumento|aumentó|aumentado	augmenter|j'augmente|augmenté	zunehmen|nimmt zu|nahm zu|zugenommen
+decrease (verb)	disminuir|disminuyo|disminuyó|disminuido	diminuer|je diminue|diminué	abnehmen|nimmt ab|nahm ab|abgenommen
+improve	mejorar|mejoro|mejoró|mejorado	améliorer|j'améliore|amélioré	verbessern|verbessert|verbesserte|verbessert
+worsen	empeorar|empeoro|empeoró|empeorado	empirer|ça empire|empiré	sich verschlechtern|verschlechtert sich|sich verschlechtert
+happen	ocurrir|ocurre|ocurrió|ocurrido	se produire|se produit|produit	geschehen|geschieht|geschah|geschehen
+cause (verb)	causar|causo|causó|causado	causer|je cause|causé	verursachen|verursacht|verursachte|verursacht
+affect, influence	influir|influyo|influyó|influido	influencer|j'influence|influencé	beeinflussen|beeinflusst|beeinflusste|beeinflusst
+depend on	depender de|depende de|dependió de	dépendre de|dépend de|dépendu de	abhängen von|hängt ab|hing ab|abgehangen
+prevent	impedir|impido|impidió|impedido	empêcher|j'empêche|empêché	verhindern|verhindert|verhinderte|verhindert
+create	crear|creo|creó|creado	créer|je crée|créé	erschaffen|erschafft|erschuf|erschaffen
+destroy	destruir|destruyo|destruyó|destruido	détruire|je détruis|détruit	zerstören|zerstört|zerstörte|zerstört
+result, outcome	resultado|el resultado|resultados	résultat|le résultat|résultats	Ergebnis|das Ergebnis|Ergebnisse
+cause (noun)	causa|la causa|causas	cause|la cause|causes	Ursache|die Ursache|Ursachen
+consequence	consecuencia|la consecuencia|consecuencias	conséquence|la conséquence|conséquences	Folge|die Folge|Folgen
+#Core - Handling objects
+give	dar|doy|da|dio|dado	donner|je donne|donné	geben|gibt|gab|gegeben
+take	tomar|tomo|tomó|tomado	prendre|je prends|pris	nehmen|nimmt|nahm|genommen
+put, place	poner|pongo|puso|puesto	mettre|je mets|mis	stellen|stellt|stellte|gestellt|legen|legt|legte|gelegt
+bring	traer|traigo|trajo|traído	apporter|j'apporte|apporté	bringen|bringt|brachte|gebracht
+send	enviar|envío|envió|enviado	envoyer|j'envoie|envoyé	schicken|schickt|schickte|geschickt
+receive	recibir|recibo|recibió|recibido	recevoir|je reçois|reçu	bekommen|bekommt|bekam|bekommen
+find	encontrar|encuentro|encontró|encontrado	trouver|je trouve|trouvé	finden|findet|fand|gefunden
+look for	buscar|busco|buscó|buscado	chercher|je cherche|cherché	suchen|sucht|suchte|gesucht
+lose	perder|pierdo|perdió|perdido	perdre|je perds|perdu	verlieren|verliert|verlor|verloren
+open	abrir|abro|abrió|abierto	ouvrir|j'ouvre|ouvert	öffnen|öffnet|öffnete|geöffnet
+close	cerrar|cierro|cerró|cerrado	fermer|je ferme|fermé	schließen|schließt|schloss|geschlossen
+use	usar|uso|usó|usado|utilizar	utiliser|j'utilise|utilisé	benutzen|benutzt|benutzte|benutzt
+repair	reparar|reparo|reparó|reparado	réparer|je répare|réparé	reparieren|repariert|reparierte|repariert
+break something	romper|rompo|rompió|roto	casser|je casse|cassé	zerbrechen|zerbricht|zerbrach|zerbrochen
+cut	cortar|corto|cortó|cortado	couper|je coupe|coupé	schneiden|schneidet|schnitt|geschnitten
+join, connect	unir|uno|unió|unido	relier|je relie|relié	verbinden|verbindet|verband|verbunden
+separate	separar|separo|separó|separado	séparer|je sépare|séparé	trennen|trennt|trennte|getrennt
+fill	llenar|lleno|llenó|llenado	remplir|je remplis|rempli	füllen|füllt|füllte|gefüllt
+empty (verb)	vaciar|vacío|vació|vaciado	vider|je vide|vidé	leeren|leert|leerte|geleert
+save (keep)	guardar|guardo|guardó|guardado	garder|je garde|gardé	aufbewahren|bewahrt auf|bewahrte auf|aufbewahrt
+#Core - Money and shopping
+money	dinero|el dinero	argent|l'argent	Geld|das Geld
+price	precio|el precio|precios	prix|le prix|les prix	Preis|der Preis|Preise
+cost (noun)	coste|el coste|costes|costo|costos	coût|le coût|coûts	Kosten|die Kosten
+buy	comprar|compro|compró|comprado	acheter|j'achète|acheté	kaufen|kauft|kaufte|gekauft
+sell	vender|vendo|vendió|vendido	vendre|je vends|vendu	verkaufen|verkauft|verkaufte|verkauft
+pay	pagar|pago|pagó|pagado	payer|je paie|payé	bezahlen|bezahlt|bezahlte|bezahlt
+spend money	gastar dinero|gasto dinero	dépenser de l'argent|je dépense de l'argent	Geld ausgeben|gibt Geld aus|gab Geld aus|Geld ausgegeben
+save money	ahorrar|ahorro|ahorró|ahorrado	économiser|j'économise|économisé	sparen|spart|sparte|gespart
+borrow	pedir prestado|pedir prestada	emprunter|j'emprunte|emprunté	ausleihen|leiht aus|lieh aus|ausgeliehen|sich leihen
+lend	prestar|presto|prestó|prestado	prêter|je prête|prêté	verleihen|verleiht|verlieh|verliehen
+cheap	barato|barata|baratos|baratas	bon marché|pas cher|pas chère	billig|preiswert
+expensive	caro|cara|caros|caras	cher|chère|chers|chères	teuer
+free of charge	gratis|gratuito|gratuita|gratuitos|gratuitas	gratuit|gratuite|gratuits|gratuites	kostenlos|gratis
+shop, store	tienda|la tienda|tiendas	magasin|le magasin|magasins	Geschäft|das Geschäft|Geschäfte|Laden|der Laden|Läden
+receipt	recibo|el recibo|recibos	reçu|le reçu|reçus	Kassenbon|der Kassenbon|Kassenbons
+bill, invoice	factura|la factura|facturas	facture|la facture|factures	Rechnung|die Rechnung|Rechnungen
+bank	banco|el banco|bancos	banque|la banque|banques	Bank|die Bank|Banken
+account (bank account)	cuenta bancaria|la cuenta bancaria|cuentas bancarias	compte bancaire|le compte bancaire|comptes bancaires	Bankkonto|das Bankkonto|Bankkonten
+cash	efectivo|el efectivo|dinero en efectivo	espèces|les espèces|argent liquide	Bargeld|das Bargeld
+debt	deuda|la deuda|deudas	dette|la dette|dettes	Schuld|die Schuld|Schulden
+#Core - Society and public life
+society	sociedad|la sociedad|sociedades	société|la société|sociétés	Gesellschaft|die Gesellschaft|Gesellschaften
+country	país|el país|países	pays|le pays|les pays	Land|das Land|Länder
+city	ciudad|la ciudad|ciudades	ville|la ville|villes	Stadt|die Stadt|Städte
+village	pueblo|el pueblo|pueblos	village|le village|villages	Dorf|das Dorf|Dörfer
+government	gobierno|el gobierno|gobiernos	gouvernement|le gouvernement|gouvernements	Regierung|die Regierung|Regierungen
+state (political entity)	estado|el estado|estados	État|l'État|États	Staat|der Staat|Staaten
+citizen	ciudadano|ciudadana|ciudadanos|ciudadanas	citoyen|citoyenne|citoyens|citoyennes	Bürger|Bürgerin|Bürgerinnen
+election	elección|la elección|elecciones	élection|l'élection|élections	Wahl|die Wahl|Wahlen
+vote (verb)	votar|voto|votó|votado	voter|je vote|voté	wählen|wählt|wählte|gewählt
+law	ley|la ley|leyes	loi|la loi|lois	Gesetz|das Gesetz|Gesetze
+rule, regulation	norma|la norma|normas|regla|reglas	règle|la règle|règles	Regel|die Regel|Regeln
+right (entitlement)	derecho|el derecho|derechos	droit|le droit|droits	Recht|das Recht|Rechte
+duty	deber|el deber|deberes	devoir|le devoir|devoirs	Pflicht|die Pflicht|Pflichten
+freedom	libertad|la libertad|libertades	liberté|la liberté|libertés	Freiheit|die Freiheit|Freiheiten
+free (not captive)	libre|libres	libre|libres	frei
+equality	igualdad|la igualdad	égalité|l'égalité	Gleichheit|die Gleichheit
+justice	justicia|la justicia	justice|la justice	Gerechtigkeit|die Gerechtigkeit
+peace	paz|la paz	paix|la paix	Frieden|der Frieden
+war	guerra|la guerra|guerras	guerre|la guerre|guerres	Krieg|der Krieg|Kriege
+tax	impuesto|el impuesto|impuestos	impôt|l'impôt|impôts	Steuer|die Steuer|Steuern
+public	público|pública|públicos|públicas	public|publique|publics|publiques	öffentlich
+private	privado|privada|privados|privadas	privé|privée|privés|privées	privat
+#Core - Cooperation and conflict
+help (verb)	ayudar|ayudo|ayudó|ayudado	aider|j'aide|aidé	helfen|hilft|half|geholfen
+support (verb)	apoyar|apoyo|apoyó|apoyado	soutenir|je soutiens|soutenu	unterstützen|unterstützt|unterstützte|unterstützt
+share	compartir|comparto|compartió|compartido	partager|je partage|partagé	teilen|teilt|teilte|geteilt
+cooperate	cooperar|coopero|cooperó|cooperado	coopérer|je coopère|coopéré	zusammenarbeiten|arbeitet zusammen|arbeitete zusammen|zusammengearbeitet
+agree	estar de acuerdo|estoy de acuerdo	être d'accord|je suis d'accord	zustimmen|stimmt zu|stimmte zu|zugestimmt
+disagree	no estar de acuerdo|no estoy de acuerdo	ne pas être d'accord|je ne suis pas d'accord	widersprechen|widerspricht|widersprach|widersprochen
+discuss	debatir|debato|debatió|debatido|discutir	discuter|je discute|discuté	diskutieren|diskutiert|diskutierte|diskutiert
+argue (quarrel)	reñir|riño|riñó|reñido|pelearse	se disputer|je me dispute|disputé	streiten|streitet|stritt|gestritten
+criticise	criticar|critico|criticó|criticado	critiquer|je critique|critiqué	kritisieren|kritisiert|kritisierte|kritisiert
+praise	elogiar|elogio|elogió|elogiado	féliciter|je félicite|félicité|louer	loben|lobt|lobte|gelobt
+blame (verb)	culpar|culpo|culpó|culpado	blâmer|je blâme|blâmé	beschuldigen|beschuldigt|beschuldigte|beschuldigt
+forgive	perdonar|perdono|perdonó|perdonado	pardonner|je pardonne|pardonné	verzeihen|verzeiht|verzieh|verziehen
+promise (verb)	prometer|prometo|prometió|prometido	promettre|je promets|promis	versprechen|verspricht|versprach|versprochen
+threaten	amenazar|amenazo|amenazó|amenazado	menacer|je menace|menacé	drohen|droht|drohte|gedroht
+protect	proteger|protejo|protegió|protegido	protéger|je protège|protégé	schützen|schützt|schützte|geschützt
+attack (verb)	atacar|ataco|atacó|atacado	attaquer|j'attaque|attaqué	angreifen|greift an|griff an|angegriffen
+defend	defender|defiendo|defendió|defendido	défendre|je défends|défendu	verteidigen|verteidigt|verteidigte|verteidigt
+compromise (agreement)	acuerdo intermedio|el acuerdo intermedio|solución de compromiso	compromis|le compromis|les compromis	Kompromiss|der Kompromiss|Kompromisse
+#Core - Truth and reasoning
+truth	verdad|la verdad|verdades	vérité|la vérité|vérités	Wahrheit|die Wahrheit|Wahrheiten
+lie (false statement)	mentira|la mentira|mentiras	mensonge|le mensonge|mensonges	Lüge|die Lüge|Lügen
+true	verdadero|verdadera|verdaderos|verdaderas|cierto|cierta	vrai|vraie|vrais|vraies	wahr
+false	falso|falsa|falsos|falsas	faux|fausse|fausses	falsch
+honest	honesto|honesta|honestos|honestas	honnête|honnêtes	ehrlich
+deceive	engañar|engaño|engañó|engañado	tromper|je trompe|trompé	täuschen|täuscht|täuschte|getäuscht
+evidence	pruebas|las pruebas|indicios	éléments de preuve|les éléments de preuve	Belege|die Belege|Beweismaterial
+proof	demostración|la demostración|demostraciones	preuve|la preuve|preuves	Beweis|der Beweis|Beweise
+claim, assertion	afirmación|la afirmación|afirmaciones	affirmation|l'affirmation|affirmations	Behauptung|die Behauptung|Behauptungen
+argument (reasoning)	argumento|el argumento|argumentos	argument|l'argument|arguments	Argument|das Argument|Argumente
+reason (explanation)	razón|la razón|razones	raison|la raison|raisons	Grund|der Grund|Gründe
+assumption	suposición|la suposición|suposiciones	hypothèse|l'hypothèse|hypothèses|supposition	Annahme|die Annahme|Annahmen
+premise	premisa|la premisa|premisas	prémisse|la prémisse|prémisses	Prämisse|die Prämisse|Prämissen
+conclusion	conclusión|la conclusión|conclusiones	conclusion|la conclusion|conclusions	Schlussfolgerung|die Schlussfolgerung|Schlussfolgerungen
+contradiction	contradicción|la contradicción|contradicciones	contradiction|la contradiction|contradictions	Widerspruch|der Widerspruch|Widersprüche
+consistent (logically coherent)	coherente|coherentes	cohérent|cohérente|cohérents|cohérentes	widerspruchsfrei|schlüssig
+valid (logical form)	válido|válida|válidos|válidas	valide|valides	gültig
+invalid	inválido|inválida|inválidos|inválidas	non valide|non valides	ungültig
+certain, sure	seguro|segura|seguros|seguras	certain|certaine|certains|certaines	sicher|gewiss
+uncertain	incierto|incierta|inciertos|inciertas	incertain|incertaine|incertains|incertaines	unsicher|ungewiss
+likely	probable|probables	probable|probables	wahrscheinlich
+unlikely	improbable|improbables	peu probable|peu probables	unwahrscheinlich
+objective (impartial)	objetivo|objetiva|objetivos|objetivas	objectif|objective|objectifs|objectives	objektiv
+subjective	subjetivo|subjetiva|subjetivos|subjetivas	subjectif|subjective|subjectifs|subjectives	subjektiv
+prove	demostrar|demuestro|demostró|demostrado	prouver|je prouve|prouvé	beweisen|beweist|bewies|bewiesen
+refute	refutar|refuto|refutó|refutado	réfuter|je réfute|réfuté	widerlegen|widerlegt|widerlegte|widerlegt
+justify	justificar|justifico|justificó|justificado	justifier|je justifie|justifié	begründen|begründet|begründete|begründet
+infer	deducir|deduzco|dedujo|deducido	déduire|je déduis|déduit	folgern|folgert|folgerte|gefolgert
+#Core - Mind and philosophy
+consciousness	conciencia|la conciencia|consciencia	conscience|la conscience	Bewusstsein|das Bewusstsein
+perception	percepción|la percepción|percepciones	perception|la perception|perceptions	Wahrnehmung|die Wahrnehmung|Wahrnehmungen
+awareness	conciencia|la conciencia|consciencia	conscience|la conscience	Bewusstheit|die Bewusstheit
+desire	deseo|el deseo|deseos	désir|le désir|désirs	Wunsch|der Wunsch|Wünsche|Verlangen|das Verlangen
+attachment (clinging)	apego|el apego|apegos	attachement|l'attachement|attachements	Anhaftung|die Anhaftung|Anhaftungen
+habit	hábito|el hábito|hábitos	habitude|l'habitude|habitudes	Gewohnheit|die Gewohnheit|Gewohnheiten
+intention	intención|la intención|intenciones	intention|l'intention|intentions	Absicht|die Absicht|Absichten
+action	acción|la acción|acciones	action|l'action|actions	Handlung|die Handlung|Handlungen
+identity	identidad|la identidad|identidades	identité|l'identité|identités	Identität|die Identität|Identitäten
+existence	existencia|la existencia	existence|l'existence	Existenz|die Existenz
+reality	realidad|la realidad|realidades	réalité|la réalité|réalités	Wirklichkeit|die Wirklichkeit
+appearance (seeming)	apariencia|la apariencia|apariencias	apparence|l'apparence|apparences	Schein|der Schein|Anschein|der Anschein
+impermanence	impermanencia|la impermanencia	impermanence|l'impermanence	Vergänglichkeit|die Vergänglichkeit
+compassion	compasión|la compasión	compassion|la compassion	Mitgefühl|das Mitgefühl
+wisdom	sabiduría|la sabiduría	sagesse|la sagesse	Weisheit|die Weisheit
+ignorance	ignorancia|la ignorancia	ignorance|l'ignorance	Unwissenheit|die Unwissenheit
+ethics	ética|la ética	éthique|l'éthique	Ethik|die Ethik
+value (principle)	valor|el valor|valores	valeur|la valeur|valeurs	Wert|der Wert|Werte
+purpose	propósito|el propósito|propósitos	but|le but|buts	Zweck|der Zweck|Zwecke
+meditation	meditación|la meditación	méditation|la méditation	Meditation|die Meditation
+observe	observar|observo|observó|observado	observer|j'observe|observé	beobachten|beobachtet|beobachtete|beobachtet
+reflect, contemplate	contemplar|contemplo|contempló|contemplado	contempler|je contemple|contemplé	betrachten|betrachtet|betrachtete|betrachtet
+#Core - Technology and media
+computer	ordenador|el ordenador|ordenadores|computadora|computadoras	ordinateur|l'ordinateur|ordinateurs	Computer|der Computer|die Computer
+phone	teléfono|el teléfono|teléfonos	téléphone|le téléphone|téléphones	Telefon|das Telefon|Telefone
+screen	pantalla|la pantalla|pantallas	écran|l'écran|écrans	Bildschirm|der Bildschirm|Bildschirme
+keyboard	teclado|el teclado|teclados	clavier|le clavier|claviers	Tastatur|die Tastatur|Tastaturen
+file (computer file)	archivo|el archivo|archivos	fichier|le fichier|fichiers	Datei|die Datei|Dateien
+folder (computer directory)	carpeta|la carpeta|carpetas	dossier|le dossier|dossiers	Ordner|der Ordner|die Ordner
+password	contraseña|la contraseña|contraseñas	mot de passe|le mot de passe|mots de passe	Passwort|das Passwort|Passwörter
+network	red|la red|redes	réseau|le réseau|réseaux	Netzwerk|das Netzwerk|Netzwerke
+website	sitio web|el sitio web|sitios web	site web|le site web|sites web	Website|die Website|Websites
+download (verb)	descargar|descargo|descargó|descargado	télécharger|je télécharge|téléchargé	herunterladen|lädt herunter|lud herunter|heruntergeladen
+upload (verb)	subir un archivo|subo un archivo	téléverser|je téléverse|téléversé	hochladen|lädt hoch|lud hoch|hochgeladen
+save a file	guardar un archivo|guardo un archivo	enregistrer un fichier|j'enregistre un fichier	eine Datei speichern|speichern|speichert|speicherte|gespeichert
+delete	eliminar|elimino|eliminó|eliminado	supprimer|je supprime|supprimé	löschen|löscht|löschte|gelöscht
+search (verb)	buscar|busco|buscó|buscado	rechercher|je recherche|recherché	suchen|sucht|suchte|gesucht
+click	hacer clic|hago clic	cliquer|je clique|cliqué	klicken|klickt|klickte|geklickt
+record audio	grabar audio|grabo audio	enregistrer du son|j'enregistre du son	Ton aufnehmen|nimmt auf|nahm auf|aufgenommen
+subtitle	subtítulo|el subtítulo|subtítulos	sous-titre|le sous-titre|sous-titres	Untertitel|der Untertitel|die Untertitel
+video	vídeo|el vídeo|vídeos|video|videos	vidéo|la vidéo|vidéos	Video|das Video|Videos
+software	software|el software	logiciel|le logiciel|logiciels	Software|die Software
+update (noun)	actualización|la actualización|actualizaciones	mise à jour|la mise à jour|mises à jour	Aktualisierung|die Aktualisierung|Aktualisierungen
+#Core - Leisure and creativity
+music	música|la música	musique|la musique	Musik|die Musik
+song	canción|la canción|canciones	chanson|la chanson|chansons	Lied|das Lied|Lieder
+film	película|la película|películas	film|le film|films	Film|der Film|Filme
+story	historia|la historia|historias	histoire|l'histoire|histoires	Geschichte|die Geschichte|Geschichten
+picture	imagen|la imagen|imágenes	image|l'image|images	Bild|das Bild|Bilder
+art	arte|el arte|artes	art|l'art|arts	Kunst|die Kunst|Künste
+game	juego|el juego|juegos	jeu|le jeu|jeux	Spiel|das Spiel|Spiele
+play a game	jugar|juego|jugó|jugado	jouer|je joue|joué	spielen|spielt|spielte|gespielt
+sing	cantar|canto|cantó|cantado	chanter|je chante|chanté	singen|singt|sang|gesungen
+dance	bailar|bailo|bailó|bailado	danser|je danse|dansé	tanzen|tanzt|tanzte|getanzt
+draw	dibujar|dibujo|dibujó|dibujado	dessiner|je dessine|dessiné	zeichnen|zeichnet|zeichnete|gezeichnet
+paint	pintar|pinto|pintó|pintado	peindre|je peins|peint	malen|malt|malte|gemalt
+invent	inventar|invento|inventó|inventado	inventer|j'invente|inventé	erfinden|erfindet|erfand|erfunden
+enjoy	disfrutar|disfruto|disfrutó|disfrutado	apprécier|j'apprécie|apprécié	genießen|genießt|genoss|genossen
+relax	relajarse|me relajo|se relajó	se détendre|je me détends|détendu	sich entspannen|entspannt sich|sich entspannt
+free time	tiempo libre|el tiempo libre	temps libre|le temps libre	Freizeit|die Freizeit
+#Core - Connections and argument structure
+and	y	et	und
+or	o	ou	oder
+but	pero	mais	aber
+because	porque	parce que	weil
+therefore	por lo tanto|por eso	donc|par conséquent	deshalb|daher
+although	aunque	bien que|quoique	obwohl
+however	sin embargo	cependant|pourtant	jedoch|allerdings
+despite	a pesar de	malgré	trotz
+if	si	si	wenn|falls
+unless	a menos que	à moins que	es sei denn
+while (during the time that)	mientras	pendant que	während
+whereas	mientras que	alors que	wohingegen|während
+in order to	para|a fin de	pour|afin de	um zu|damit
+for example	por ejemplo	par exemple	zum Beispiel
+in other words	en otras palabras	en d'autres termes	mit anderen Worten
+on the other hand	por otro lado	d'autre part|en revanche	andererseits
+in addition	además	de plus|en outre	außerdem
+instead of	en lugar de	au lieu de	statt|anstatt
+according to	según	selon	laut|gemäß
+as a result	en consecuencia	par conséquent	infolgedessen
+#Core - Useful expressions
+I do not understand	no entiendo	je ne comprends pas	ich verstehe nicht
+could you repeat that	puedes repetirlo|puede repetirlo	pouvez-vous répéter|peux-tu répéter	können Sie das wiederholen|kannst du das wiederholen
+what does it mean	qué significa	qu'est-ce que cela veut dire|qu'est-ce que ça veut dire	was bedeutet das
+how do you say this	cómo se dice esto	comment dit-on cela|comment on dit ça	wie sagt man das
+I do not know	no lo sé	je ne sais pas	ich weiß es nicht
+I think so	creo que sí	je pense que oui	ich glaube schon
+it depends	depende	ça dépend|cela dépend	es kommt darauf an
+it does not matter	no importa	ce n'est pas grave|peu importe	es macht nichts|das ist egal
+take your time	tómate tu tiempo|tómese su tiempo	prends ton temps|prenez votre temps	lass dir Zeit|lassen Sie sich Zeit
+be careful	ten cuidado|tenga cuidado	fais attention|faites attention	sei vorsichtig|seien Sie vorsichtig
+I need help	necesito ayuda	j'ai besoin d'aide	ich brauche Hilfe
+where is the station	dónde está la estación	où est la gare	wo ist der Bahnhof
+how much does it cost	cuánto cuesta	combien ça coûte|combien cela coûte	wie viel kostet das
+I would like	me gustaría|quisiera	je voudrais|j'aimerais	ich möchte|ich hätte gern
+I am learning	estoy aprendiendo	j'apprends	ich lerne
+little by little	poco a poco	petit à petit|peu à peu	nach und nach
+from time to time	de vez en cuando	de temps en temps	von Zeit zu Zeit
+better late than never	más vale tarde que nunca	mieux vaut tard que jamais	besser spät als nie
+practice makes perfect	la práctica hace al maestro	c'est en forgeant qu'on devient forgeron	Übung macht den Meister
+to get straight to the point	ir al grano	aller droit au but	auf den Punkt kommen
