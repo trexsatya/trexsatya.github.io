@@ -1,5 +1,9 @@
 # Spanish, French and German study vocabulary
 
+The later [Swedish-coverage expansion](vocabulary-es-fr-de-expanded-2026-11-26.md)
+extends these starter collections to roughly ten thousand entries per language.
+The counts below describe the original starter addition.
+
 This addition supplies 700 core vocabulary entries in each language, grouped in
 33 matching semantic categories. Spanish retains its complete preceding
 vocabulary file byte-for-byte, followed by the new categories. French and German
