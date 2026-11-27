@@ -62,6 +62,42 @@
       }
     },
     {
+      "name": "portuguese",
+      "code": "pt",
+      "locale": "pt-PT",
+      "subtitleSuffix": ".pt.srt",
+      "dictionary": "pt",
+      "capabilities": {
+        "study": true,
+        "calls": true,
+        "morphology": null
+      }
+    },
+    {
+      "name": "chinese",
+      "code": "zh",
+      "locale": "zh-CN",
+      "subtitleSuffix": ".zh.srt",
+      "dictionary": "zh",
+      "capabilities": {
+        "study": true,
+        "calls": true,
+        "morphology": null
+      }
+    },
+    {
+      "name": "thai",
+      "code": "th",
+      "locale": "th-TH",
+      "subtitleSuffix": ".th.srt",
+      "dictionary": "th",
+      "capabilities": {
+        "study": true,
+        "calls": true,
+        "morphology": null
+      }
+    },
+    {
       "name": "hindi",
       "code": "hi",
       "locale": "hi-IN",
