@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Sequence Search</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/github-utils.js?v=dff5489848"></script>
+    <script src="/github-utils.js?v=a0046fa2bf"></script>
     <script src="/vendor/opensheetmusicdisplay.min.js"></script>
     <script src="/vendor/tone.js"></script>
-    <link rel="stylesheet" href="/music.css?v=dff5489848">
+    <link rel="stylesheet" href="/music.css?v=a0046fa2bf">
     <script src="https://www.youtube.com/iframe_api"></script>
     <style>
         body {
@@ -839,6 +839,8 @@
     <button class="btn toggle" data-for="suppressModeChk" title="Click notes to silence them"><span class="ic">🔇</span><span class="txt">Suppress notes</span></button>
     <button class="btn toggle" data-for="hearAllChk" title="Temporarily hear every suppressed note"><span class="ic">👂</span><span class="txt">Hear all</span></button>
     <span id="voiceChips"></span>
+    <span id="registerChips" role="group" aria-label="Suppress by pitch" style="display:none"></span>
+    <button id="recalculateChordsBtn" type="button" class="btn" aria-label="Recalculate chords" title="Recalculate chords from the notes left audible"><span class="ic">↻</span><span class="txt">Recalculate chords</span></button>
     <span id="suppressHint" style="font-size:.8em;color:#a0660a"></span>
     <input type="checkbox" id="suppressModeChk" hidden>
     <input type="checkbox" id="hearAllChk" hidden>
@@ -1221,37 +1223,37 @@ Can you hear it?       &gt; ask()"></textarea>
 <button id="fabPlay" title="Play / pause" aria-label="Play or pause"><span id="fabIcon">▶</span><span id="fabTag" hidden></span></button>
 
 <script type="module">
-  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=dff5489848';
-  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=dff5489848';
-  import { runQuery } from './music-query.js?v=dff5489848';
+  import { getSystemFromUrl, getMusicResourceUrl, loadLibrary, loadIndex, computeChanges, pushPending, filterByTags, removePieceFromLibrary } from './music-index.js?v=a0046fa2bf';
+  import { splitMusicXmlPieces, defaultTitlePrefix, pieceTitle } from './music-split.js?v=a0046fa2bf';
+  import { runQuery } from './music-query.js?v=a0046fa2bf';
   import { createMusicRenderer, resolveMatchMeasures, collapsedChordSpans, groupsInsideBars, formatMeasureRanges,
-    parseBarRange, renderAlignedSegments } from './music-render.js?v=dff5489848';
-  import { init as initFretboard } from './fretboard-panel.js?v=dff5489848';
-  import { chordDisplayName } from './music-chords.js?v=dff5489848';
+    parseBarRange, renderAlignedSegments } from './music-render.js?v=a0046fa2bf';
+  import { init as initFretboard } from './fretboard-panel.js?v=a0046fa2bf';
+  import { chordDisplayName } from './music-chords.js?v=a0046fa2bf';
   import { parseScript, describeStep, tempoForPass, COMMANDS, renameTagInScript, renamePhraseInScript,
-    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=dff5489848';
-  import { safeHtml } from './music-richtext.js?v=dff5489848';
-  import { keyExplanation } from './music-key.js?v=dff5489848';
-  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=dff5489848';
-  import { createMusicStore } from './music-local-store.js?v=dff5489848';
-  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=dff5489848';
-  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=dff5489848';
-  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=dff5489848';
-  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=dff5489848';
+    parseCalls, proseCut, formatLine, ARG_UI } from './music-script.js?v=a0046fa2bf';
+  import { safeHtml } from './music-richtext.js?v=a0046fa2bf';
+  import { keyExplanation } from './music-key.js?v=a0046fa2bf';
+  import { buildChordQuery, buildMelodyQuery, matchSummary } from './music-search-ui.js?v=a0046fa2bf';
+  import { createMusicStore } from './music-local-store.js?v=a0046fa2bf';
+  import { PRACTICE_STATUSES, statusMeta, weekStart, weekLabel, makeEntry, upsertEntry, removeEntry, sortEntries, mergeFieldName } from './music-practice.js?v=a0046fa2bf';
+  import { buildSchedule, buildScheduleFromMusicXml, concatSchedules, createMusicPlayer, createYouTubeController, parseYouTubeId, instrumentVoiceKey } from './music-player.js?v=a0046fa2bf';
+  import { createMetronome, downbeatAlignment } from './music-metronome.js?v=a0046fa2bf';
+  import { guessSegmentStart, linkYouTubeLocal } from './music-media.js?v=a0046fa2bf';
   import { buildSnapshot, buildVocabEntry, upsertVocab, uniqueVocabId, loadVocab, loadRemoteVocab, groupVocabByCategory,
-    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=dff5489848';
+    vocabItemStatus, revertVocabEntry, vocabMatchesRemote } from './music-vocab.js?v=a0046fa2bf';
   import { addTag as addTagReg, removeTag as removeTagReg, mergeRegistry,
-    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=dff5489848';
-  import { renameTagInPhrases } from './music-phrase.js?v=dff5489848';
-  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=dff5489848';
-  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=dff5489848';
-  import { generateCounterLines } from './music-counterpoint.js?v=dff5489848';
-  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=dff5489848';
-  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=dff5489848';
-  import { splitSingleVoice } from './music-voice-split.js?v=dff5489848';
-  import { encodeMusicXml, midiToName } from './music-encoding.js?v=dff5489848';
-  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=dff5489848';
-  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=dff5489848';
+    renameTag as renameTagReg, renameInAssignments } from './music-tags.js?v=a0046fa2bf';
+  import { renameTagInPhrases } from './music-phrase.js?v=a0046fa2bf';
+  import { parseRanges, formatRanges, measureCount } from './music-rhythm-group.js?v=a0046fa2bf';
+  import { TECHNIQUES, generateVariations } from './music-embellish.js?v=a0046fa2bf';
+  import { generateCounterLines } from './music-counterpoint.js?v=a0046fa2bf';
+  import { extractSegmentXml, applyVariation, coloredNoteMarks, ADDED_NOTE_COLOR, writeVoice } from './music-embellish-xml.js?v=a0046fa2bf';
+  import { buildChordByMeasure, buildVoiceNotes, orderedVoiceIds, addressableMidis, variationFretSteps, voicePickerEntries, counterLineToNotesByMeasure, buildBeatNotes, distinctVoiceIdsInOrder } from './music-embellish-ui.js?v=a0046fa2bf';
+  import { splitSingleVoice } from './music-voice-split.js?v=a0046fa2bf';
+  import { encodeMusicXml, midiToName } from './music-encoding.js?v=a0046fa2bf';
+  import { transposeMusicXml, nearestSemitones } from './music-transpose.js?v=a0046fa2bf';
+  import { listParts, mergeParts, explodeStaves, shiftOctaves } from './music-merge.js?v=a0046fa2bf';
 
   const system = getSystemFromUrl().name;
   document.getElementById('systemLabel').textContent = system;
@@ -2115,13 +2117,39 @@ Can you hear it?       &gt; ask()"></textarea>
   }
   function onSuppressionChange() {
     renderVoiceChips();
+    renderRegisterChips();
     const n = (renderer && renderer.getSuppressedNotes) ? renderer.getSuppressedNotes().length : 0;
     document.getElementById('suppressHint').textContent = n ? `${n} note${n === 1 ? '' : 's'} suppressed` : '';
   }
+  function renderRegisterChips() {
+    const box = document.getElementById('registerChips');
+    box.innerHTML = '';
+    if (!renderer || !renderer.listRegisters) return;
+    renderer.listRegisters().forEach(group => {
+      const name = group.id[0].toUpperCase() + group.id.slice(1);
+      const chip = document.createElement('button');
+      chip.type = 'button'; chip.className = 'voiceChip registerChip' + (group.allSuppressed ? ' active' : '');
+      chip.textContent = name; chip.dataset.register = group.id;
+      chip.disabled = !group.count;
+      chip.setAttribute('aria-pressed', String(group.allSuppressed));
+      chip.title = `${group.allSuppressed ? 'Restore' : 'Suppress'} ${name.toLowerCase()} sounding pitches at each note’s start, including held notes (${group.count} notes)`;
+      chip.onclick = () => renderer.suppressRegister(group.id, !group.allSuppressed);
+      box.appendChild(chip);
+    });
+  }
+  function showSuppressChoices(on) {
+    document.getElementById('voiceChips').style.display = on ? 'inline' : 'none';
+    document.getElementById('registerChips').style.display = on ? 'inline-flex' : 'none';
+  }
   document.getElementById('suppressModeChk').onchange = (e) => {
     if (renderer) renderer.setSuppressMode(e.target.checked);
-    document.getElementById('voiceChips').style.display = e.target.checked ? 'inline' : 'none';
-    if (e.target.checked) renderVoiceChips();
+    showSuppressChoices(e.target.checked);
+    if (e.target.checked) onSuppressionChange();
+  };
+  document.getElementById('recalculateChordsBtn').onclick = () => {
+    if (!renderer) return;
+    renderer.recalculateChords();
+    setMediaMsg('Chords recalculated from the audible notes.', 'ok');
   };
   document.getElementById('hearAllChk').onchange = (e) => { if (renderer) renderer.setHearAll(e.target.checked); };
   // Switching Follow on jumps to the cursor straight away rather than waiting for the next note —
@@ -2669,7 +2697,7 @@ Can you hear it?       &gt; ask()"></textarea>
     document.getElementById('suppressPanel').style.display = '';
     document.getElementById('suppressModeChk').checked = false;
     document.getElementById('hearAllChk').checked = false;
-    document.getElementById('voiceChips').style.display = 'none';
+    showSuppressChoices(false);
     // Pattern tags: the renderer loaded detail.patterns on load; reset the tag controls and rebuild
     // the tag UI for the fresh piece. Keep the panel's visibility following its toggle.
     document.getElementById('tagModeChk').checked = false;
@@ -6489,7 +6517,7 @@ Can you hear it?       &gt; ask()"></textarea>
     if (renderer) renderer.setSuppressedNotes(entry.suppressed || []);
     document.getElementById('suppressModeChk').checked = false;
     document.getElementById('hearAllChk').checked = false;
-    document.getElementById('voiceChips').style.display = 'none';
+    showSuppressChoices(false);
     document.getElementById('suppressPanel').style.display = '';
     syncToggles();           // reflect suppress-mode/hear-all buttons as off
     onSuppressionChange();   // refresh chips + hint
