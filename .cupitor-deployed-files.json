@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceRevision": "b3124496c241d07b5ca660e755ca70eef26549e1",
+  "sourceRevision": "eea96811f65dc63a12eff2489b917909c2425b18",
   "files": [
     ".nojekyll",
     "DOCS.MD",
@@ -254,6 +254,7 @@
     "manifest.json",
     "music-analysis.js",
     "music-beats.js",
+    "music-chord-what-if.js",
     "music-chords.js",
     "music-composition.js",
     "music-counterpoint.js",
@@ -305,7 +306,7 @@
     "playground.html",
     "playground.js",
     "practice-words.html",
-    "precache-manifest.b632f0f32a02eb76d5e8c9442def251f.js",
+    "precache-manifest.326ddb90cdd4dca4a213da42522024f4.js",
     "robots.txt",
     "sample-anim-script.js",
     "scientists.html",
